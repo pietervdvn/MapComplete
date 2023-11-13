@@ -37,12 +37,12 @@ A charging station
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:disused:amenity' target='_blank'>disused:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:amenity%3Dcharging_station' target='_blank'>charging_station</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:planned:amenity' target='_blank'>planned:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station' target='_blank'>charging_station</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:construction:amenity' target='_blank'>construction:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:construction:amenity%3Dcharging_station' target='_blank'>charging_station</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:construction:amenity' target='_blank'>construction:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:construction:amenity%3Dcharging_station' target='_blank'>charging_station</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:disused:amenity' target='_blank'>disused:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:amenity%3Dcharging_station' target='_blank'>charging_station</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:planned:amenity' target='_blank'>planned:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station' target='_blank'>charging_station</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22charging_station%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22construction%3Aamenity%22%3D%22charging_station%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22disused%3Aamenity%22%3D%22charging_station%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22planned%3Aamenity%22%3D%22charging_station%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -158,10 +158,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -187,15 +187,15 @@ The question is  *Which vehicles are allowed to charge here?*
 
 
 
-  - *<b>Bicycles</b> can be charged here*  corresponds with  `bicycle=yes`
+  - *<b>Bicycles</b> can be charged here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
-  - *<b>Cars</b> can be charged here*  corresponds with  `motorcar=yes`
+  - *<b>Cars</b> can be charged here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dno' target='_blank'>no</a>
-  - *<b>Scooters</b> can be charged here*  corresponds with  `scooter=yes`
+  - *<b>Scooters</b> can be charged here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:scooter' target='_blank'>scooter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:scooter%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:scooter' target='_blank'>scooter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:scooter%3Dno' target='_blank'>no</a>
-  - *<b>Heavy good vehicles</b> (such as trucks) can be charged here*  corresponds with  `hgv=yes`
+  - *<b>Heavy good vehicles</b> (such as trucks) can be charged here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dno' target='_blank'>no</a>
-  - *<b>Buses</b> can be charged here*  corresponds with  `bus=yes`
+  - *<b>Buses</b> can be charged here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dno' target='_blank'>no</a>
 
 
@@ -215,13 +215,13 @@ This is rendered with  `Access is {access}`
 
 
 
-  - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=yes`
-  - *Anyone can use this charging station (payment might be needed)*  corresponds with  `access=public`
-  - This option cannot be chosen as answer
-  - *Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>*  corresponds with  `access=customers`
-  - *A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>*  corresponds with  `access=key`
-  - *Not accessible to the general public (e.g. only accessible to the owners, employees, …)*  corresponds with  `access=private`
-  - *This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.*  corresponds with  `access=permissive`
+  - *Anyone can use this charging station (payment might be needed)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - *Anyone can use this charging station (payment might be needed)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+  - _This option cannot be chosen as answer_
+  - *Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - *A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
+  - *Not accessible to the general public (e.g. only accessible to the owners, employees, …)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+  - *This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
 
 
 
@@ -250,70 +250,70 @@ The question is  *Which charging connections are available here?*
 
 
 
-  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)*  corresponds with  `socket:schuko=1`
-  - Unselecting this answer will add 
-  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)*  corresponds with  `socket:schuko~.+ &socket:schuko!=1`
-  - This option cannot be chosen as answer
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E)*  corresponds with  `socket:typee=1`
-  - Unselecting this answer will add 
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E)*  corresponds with  `socket:typee~.+ &socket:typee!=1`
-  - This option cannot be chosen as answer
-  - *<b>Chademo</b>*  corresponds with  `socket:chademo=1`
-  - Unselecting this answer will add 
-  - *<b>Chademo</b>*  corresponds with  `socket:chademo~.+ &socket:chademo!=1`
-  - This option cannot be chosen as answer
-  - *<b>Type 1 with cable</b> (J1772)*  corresponds with  `socket:type1_cable=1`
-  - Unselecting this answer will add 
-  - *<b>Type 1 with cable</b> (J1772)*  corresponds with  `socket:type1_cable~.+ &socket:type1_cable!=1`
-  - This option cannot be chosen as answer
-  - *<b>Type 1 <i>without</i> cable</b> (J1772)*  corresponds with  `socket:type1=1`
-  - Unselecting this answer will add 
-  - *<b>Type 1 <i>without</i> cable</b> (J1772)*  corresponds with  `socket:type1~.+ &socket:type1!=1`
-  - This option cannot be chosen as answer
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo)*  corresponds with  `socket:type1_combo=1`
-  - Unselecting this answer will add 
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo)*  corresponds with  `socket:type1_combo~.+ &socket:type1_combo!=1`
-  - This option cannot be chosen as answer
-  - *<b>Tesla Supercharger</b>*  corresponds with  `socket:tesla_supercharger=1`
-  - Unselecting this answer will add 
-  - *<b>Tesla Supercharger</b>*  corresponds with  `socket:tesla_supercharger~.+ &socket:tesla_supercharger!=1`
-  - This option cannot be chosen as answer
-  - *<b>Type 2</b> (mennekes)*  corresponds with  `socket:type2=1`
-  - Unselecting this answer will add 
-  - *<b>Type 2</b> (mennekes)*  corresponds with  `socket:type2~.+ &socket:type2!=1`
-  - This option cannot be chosen as answer
-  - *<b>Type 2 CCS</b> (mennekes)*  corresponds with  `socket:type2_combo=1`
-  - Unselecting this answer will add 
-  - *<b>Type 2 CCS</b> (mennekes)*  corresponds with  `socket:type2_combo~.+ &socket:type2_combo!=1`
-  - This option cannot be chosen as answer
-  - *<b>Type 2 with cable</b> (mennekes)*  corresponds with  `socket:type2_cable=1`
-  - Unselecting this answer will add 
-  - *<b>Type 2 with cable</b> (mennekes)*  corresponds with  `socket:type2_cable~.+ &socket:type2_cable!=1`
-  - This option cannot be chosen as answer
-  - *<b>Tesla Supercharger CCS</b> (a branded type2_css)*  corresponds with  `socket:tesla_supercharger_ccs=1`
-  - Unselecting this answer will add 
-  - *<b>Tesla Supercharger CCS</b> (a branded type2_css)*  corresponds with  `socket:tesla_supercharger_ccs~.+ &socket:tesla_supercharger_ccs!=1`
-  - This option cannot be chosen as answer
-  - *<b>Tesla Supercharger (destination)</b>*  corresponds with  `socket:tesla_destination=1`
-  - Unselecting this answer will add 
-  - *<b>Tesla Supercharger (destination)</b>*  corresponds with  `socket:tesla_destination~.+ &socket:tesla_destination!=1 &_country=us`
-  - This option cannot be chosen as answer
-  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)*  corresponds with  `socket:tesla_destination=1`
-  - Unselecting this answer will add 
-  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)*  corresponds with  `socket:tesla_destination~.+ &socket:tesla_destination!=1 &_country!=us`
-  - This option cannot be chosen as answer
-  - *<b>USB</b> to charge phones and small electronics*  corresponds with  `socket:USB-A=1`
-  - Unselecting this answer will add 
-  - *<b>USB</b> to charge phones and small electronics*  corresponds with  `socket:USB-A~.+ &socket:USB-A!=1`
-  - This option cannot be chosen as answer
-  - *<b>Bosch Active Connect with 3 pins</b> and cable*  corresponds with  `socket:bosch_3pin=1`
-  - Unselecting this answer will add 
-  - *<b>Bosch Active Connect with 3 pins</b> and cable*  corresponds with  `socket:bosch_3pin~.+ &socket:bosch_3pin!=1`
-  - This option cannot be chosen as answer
-  - *<b>Bosch Active Connect with 5 pins</b> and cable*  corresponds with  `socket:bosch_5pin=1`
-  - Unselecting this answer will add 
-  - *<b>Bosch Active Connect with 5 pins</b> and cable*  corresponds with  `socket:bosch_5pin~.+ &socket:bosch_5pin!=1`
-  - This option cannot be chosen as answer
+  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko' target='_blank'>socket:schuko</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:schuko=
+  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)*  corresponds with  socket:schuko~.+ & socket:schuko!=1
+  - _This option cannot be chosen as answer_
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee' target='_blank'>socket:typee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:typee=
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E)*  corresponds with  socket:typee~.+ & socket:typee!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Chademo</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo' target='_blank'>socket:chademo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:chademo=
+  - *<b>Chademo</b>*  corresponds with  socket:chademo~.+ & socket:chademo!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Type 1 with cable</b> (J1772)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable' target='_blank'>socket:type1_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:type1_cable=
+  - *<b>Type 1 with cable</b> (J1772)*  corresponds with  socket:type1_cable~.+ & socket:type1_cable!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Type 1 <i>without</i> cable</b> (J1772)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1' target='_blank'>socket:type1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:type1=
+  - *<b>Type 1 <i>without</i> cable</b> (J1772)*  corresponds with  socket:type1~.+ & socket:type1!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo' target='_blank'>socket:type1_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:type1_combo=
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo)*  corresponds with  socket:type1_combo~.+ & socket:type1_combo!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Tesla Supercharger</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger' target='_blank'>socket:tesla_supercharger</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:tesla_supercharger=
+  - *<b>Tesla Supercharger</b>*  corresponds with  socket:tesla_supercharger~.+ & socket:tesla_supercharger!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Type 2</b> (mennekes)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2' target='_blank'>socket:type2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:type2=
+  - *<b>Type 2</b> (mennekes)*  corresponds with  socket:type2~.+ & socket:type2!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Type 2 CCS</b> (mennekes)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo' target='_blank'>socket:type2_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:type2_combo=
+  - *<b>Type 2 CCS</b> (mennekes)*  corresponds with  socket:type2_combo~.+ & socket:type2_combo!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Type 2 with cable</b> (mennekes)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable' target='_blank'>socket:type2_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:type2_cable=
+  - *<b>Type 2 with cable</b> (mennekes)*  corresponds with  socket:type2_cable~.+ & socket:type2_cable!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Tesla Supercharger CCS</b> (a branded type2_css)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs' target='_blank'>socket:tesla_supercharger_ccs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:tesla_supercharger_ccs=
+  - *<b>Tesla Supercharger CCS</b> (a branded type2_css)*  corresponds with  socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Tesla Supercharger (destination)</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:tesla_destination=
+  - *<b>Tesla Supercharger (destination)</b>*  corresponds with  socket:tesla_destination~.+ & socket:tesla_destination!=1 & <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dus' target='_blank'>us</a>
+  - _This option cannot be chosen as answer_
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:tesla_destination=
+  - *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)*  corresponds with  socket:tesla_destination~.+ & socket:tesla_destination!=1 & _country!=us
+  - _This option cannot be chosen as answer_
+  - *<b>USB</b> to charge phones and small electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A' target='_blank'>socket:USB-A</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:USB-A=
+  - *<b>USB</b> to charge phones and small electronics*  corresponds with  socket:USB-A~.+ & socket:USB-A!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Bosch Active Connect with 3 pins</b> and cable*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin' target='_blank'>socket:bosch_3pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_3pin%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:bosch_3pin=
+  - *<b>Bosch Active Connect with 3 pins</b> and cable*  corresponds with  socket:bosch_3pin~.+ & socket:bosch_3pin!=1
+  - _This option cannot be chosen as answer_
+  - *<b>Bosch Active Connect with 5 pins</b> and cable*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin' target='_blank'>socket:bosch_5pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_5pin%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:bosch_5pin=
+  - *<b>Bosch Active Connect with 5 pins</b> and cable*  corresponds with  socket:bosch_5pin~.+ & socket:bosch_5pin!=1
+  - _This option cannot be chosen as answer_
 
 
 
@@ -330,7 +330,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:schuko}</b> plugs o
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ &socket:schuko!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ & socket:schuko!=0`
 
 
 
@@ -346,7 +346,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:typee}</b> plugs of
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ &socket:typee!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ & socket:typee!=0`
 
 
 
@@ -362,7 +362,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:chademo}</b> plugs 
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ &socket:chademo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ & socket:chademo!=0`
 
 
 
@@ -378,7 +378,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:type1_cable}</b> pl
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ &socket:type1_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ & socket:type1_cable!=0`
 
 
 
@@ -394,7 +394,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:type1}</b> plugs of
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ &socket:type1!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ & socket:type1!=0`
 
 
 
@@ -410,7 +410,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:type1_combo}</b> pl
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ &socket:type1_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ & socket:type1_combo!=0`
 
 
 
@@ -426,7 +426,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:tesla_supercharger}
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ &socket:tesla_supercharger!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0`
 
 
 
@@ -442,7 +442,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:type2}</b> plugs of
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ &socket:type2!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ & socket:type2!=0`
 
 
 
@@ -458,7 +458,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:type2_combo}</b> pl
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ &socket:type2_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ & socket:type2_combo!=0`
 
 
 
@@ -474,7 +474,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:type2_cable}</b> pl
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ &socket:type2_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ & socket:type2_cable!=0`
 
 
 
@@ -490,7 +490,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:tesla_supercharger_
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ &socket:tesla_supercharger_ccs!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0`
 
 
 
@@ -506,7 +506,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:tesla_destination}<
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 
 
@@ -522,7 +522,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:tesla_destination}<
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 
 
@@ -538,7 +538,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:USB-A}</b> plugs of
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ &socket:USB-A!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ & socket:USB-A!=0`
 
 
 
@@ -554,7 +554,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:bosch_3pin}</b> plu
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ &socket:bosch_3pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ & socket:bosch_3pin!=0`
 
 
 
@@ -570,7 +570,7 @@ This is rendered with  `There are <b class='text-xl'>{socket:bosch_5pin}</b> plu
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ &socket:bosch_5pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ & socket:bosch_5pin!=0`
 
 
 
@@ -588,10 +588,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Schuko wall plu
 
 
 
-  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs 230 volt*  corresponds with  `socket:schuko:voltage=230 V`
+  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs 230 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage' target='_blank'>socket:schuko:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:voltage%3D230 V' target='_blank'>230 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ &socket:schuko!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ & socket:schuko!=0`
 
 This tagrendering has labels  `technical`
 
@@ -611,10 +611,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Schuko wall plu
 
 
 
-  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 16 A*  corresponds with  `socket:schuko:current=16 A`
+  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 16 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current' target='_blank'>socket:schuko:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:current%3D16 A' target='_blank'>16 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ &socket:schuko!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ & socket:schuko!=0`
 
 This tagrendering has labels  `technical`
 
@@ -634,10 +634,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Schuko wall plu
 
 
 
-  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kw A*  corresponds with  `socket:schuko:output=3.6 kW`
+  - *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output' target='_blank'>socket:schuko:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:output%3D3.6 kW' target='_blank'>3.6 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ &socket:schuko!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ & socket:schuko!=0`
 
 This tagrendering has labels  `technical`
 
@@ -657,10 +657,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>European wall p
 
 
 
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs 230 volt*  corresponds with  `socket:typee:voltage=230 V`
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs 230 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage' target='_blank'>socket:typee:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:voltage%3D230 V' target='_blank'>230 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ &socket:typee!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ & socket:typee!=0`
 
 This tagrendering has labels  `technical`
 
@@ -680,10 +680,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>European wall p
 
 
 
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 16 A*  corresponds with  `socket:typee:current=16 A`
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 16 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:current' target='_blank'>socket:typee:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:current%3D16 A' target='_blank'>16 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ &socket:typee!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ & socket:typee!=0`
 
 This tagrendering has labels  `technical`
 
@@ -703,11 +703,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>European wall p
 
 
 
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kw A*  corresponds with  `socket:typee:output=3 kW`
-  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kw A*  corresponds with  `socket:typee:output=22 kW`
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D3 kW' target='_blank'>3 kW</a>
+  - *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D22 kW' target='_blank'>22 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ &socket:typee!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ & socket:typee!=0`
 
 This tagrendering has labels  `technical`
 
@@ -727,10 +727,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Chademo</b></b>
 
 
 
-  - *<b>Chademo</b> outputs 500 volt*  corresponds with  `socket:chademo:voltage=500 V`
+  - *<b>Chademo</b> outputs 500 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage' target='_blank'>socket:chademo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:voltage%3D500 V' target='_blank'>500 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ &socket:chademo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ & socket:chademo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -750,10 +750,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Chademo</b></b>
 
 
 
-  - *<b>Chademo</b> outputs at most 120 A*  corresponds with  `socket:chademo:current=120 A`
+  - *<b>Chademo</b> outputs at most 120 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current' target='_blank'>socket:chademo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:current%3D120 A' target='_blank'>120 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ &socket:chademo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ & socket:chademo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -773,10 +773,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Chademo</b></b>
 
 
 
-  - *<b>Chademo</b> outputs at most 50 kw A*  corresponds with  `socket:chademo:output=50 kW`
+  - *<b>Chademo</b> outputs at most 50 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output' target='_blank'>socket:chademo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:output%3D50 kW' target='_blank'>50 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ &socket:chademo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ & socket:chademo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -796,11 +796,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 with cab
 
 
 
-  - *<b>Type 1 with cable</b> (J1772) outputs 200 volt*  corresponds with  `socket:type1_cable:voltage=200 V`
-  - *<b>Type 1 with cable</b> (J1772) outputs 240 volt*  corresponds with  `socket:type1_cable:voltage=240 V`
+  - *<b>Type 1 with cable</b> (J1772) outputs 200 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D200 V' target='_blank'>200 V</a>
+  - *<b>Type 1 with cable</b> (J1772) outputs 240 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D240 V' target='_blank'>240 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ &socket:type1_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ & socket:type1_cable!=0`
 
 This tagrendering has labels  `technical`
 
@@ -820,10 +820,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 with cab
 
 
 
-  - *<b>Type 1 with cable</b> (J1772) outputs at most 32 A*  corresponds with  `socket:type1_cable:current=32 A`
+  - *<b>Type 1 with cable</b> (J1772) outputs at most 32 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current' target='_blank'>socket:type1_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:current%3D32 A' target='_blank'>32 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ &socket:type1_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ & socket:type1_cable!=0`
 
 This tagrendering has labels  `technical`
 
@@ -843,11 +843,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 with cab
 
 
 
-  - *<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kw A*  corresponds with  `socket:type1_cable:output=3.7 kW`
-  - *<b>Type 1 with cable</b> (J1772) outputs at most 7 kw A*  corresponds with  `socket:type1_cable:output=7 kW`
+  - *<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D3.7 kW' target='_blank'>3.7 kW</a>
+  - *<b>Type 1 with cable</b> (J1772) outputs at most 7 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D7 kW' target='_blank'>7 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ &socket:type1_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ & socket:type1_cable!=0`
 
 This tagrendering has labels  `technical`
 
@@ -867,11 +867,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 <i>witho
 
 
 
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 200 volt*  corresponds with  `socket:type1:voltage=200 V`
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 240 volt*  corresponds with  `socket:type1:voltage=240 V`
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 200 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D200 V' target='_blank'>200 V</a>
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 240 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D240 V' target='_blank'>240 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ &socket:type1!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ & socket:type1!=0`
 
 This tagrendering has labels  `technical`
 
@@ -891,10 +891,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 <i>witho
 
 
 
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 32 A*  corresponds with  `socket:type1:current=32 A`
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 32 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:current' target='_blank'>socket:type1:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:current%3D32 A' target='_blank'>32 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ &socket:type1!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ & socket:type1!=0`
 
 This tagrendering has labels  `technical`
 
@@ -914,13 +914,13 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 <i>witho
 
 
 
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kw A*  corresponds with  `socket:type1:output=3.7 kW`
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kw A*  corresponds with  `socket:type1:output=6.6 kW`
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kw A*  corresponds with  `socket:type1:output=7 kW`
-  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kw A*  corresponds with  `socket:type1:output=7.2 kW`
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D3.7 kW' target='_blank'>3.7 kW</a>
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D6.6 kW' target='_blank'>6.6 kW</a>
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7 kW' target='_blank'>7 kW</a>
+  - *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7.2 kW' target='_blank'>7.2 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ &socket:type1!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ & socket:type1!=0`
 
 This tagrendering has labels  `technical`
 
@@ -940,11 +940,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 CCS</b> 
 
 
 
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 400 volt*  corresponds with  `socket:type1_combo:voltage=400 V`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 1000 volt*  corresponds with  `socket:type1_combo:voltage=1000 V`
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 400 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D400 V' target='_blank'>400 V</a>
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 1000 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D1000 V' target='_blank'>1000 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ &socket:type1_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ & socket:type1_combo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -964,11 +964,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 CCS</b> 
 
 
 
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 A*  corresponds with  `socket:type1_combo:current=50 A`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 125 A*  corresponds with  `socket:type1_combo:current=125 A`
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D50 A' target='_blank'>50 A</a>
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 125 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D125 A' target='_blank'>125 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ &socket:type1_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ & socket:type1_combo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -988,13 +988,13 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 CCS</b> 
 
 
 
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kw A*  corresponds with  `socket:type1_combo:output=50 kW`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kw A*  corresponds with  `socket:type1_combo:output=62.5 kW`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kw A*  corresponds with  `socket:type1_combo:output=150 kW`
-  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kw A*  corresponds with  `socket:type1_combo:output=350 kW`
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D50 kW' target='_blank'>50 kW</a>
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D62.5 kW' target='_blank'>62.5 kW</a>
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D150 kW' target='_blank'>150 kW</a>
+  - *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D350 kW' target='_blank'>350 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ &socket:type1_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ & socket:type1_combo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1014,10 +1014,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger</b> outputs 480 volt*  corresponds with  `socket:tesla_supercharger:voltage=480 V`
+  - *<b>Tesla Supercharger</b> outputs 480 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage' target='_blank'>socket:tesla_supercharger:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:voltage%3D480 V' target='_blank'>480 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ &socket:tesla_supercharger!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1037,11 +1037,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger</b> outputs at most 125 A*  corresponds with  `socket:tesla_supercharger:current=125 A`
-  - *<b>Tesla Supercharger</b> outputs at most 350 A*  corresponds with  `socket:tesla_supercharger:current=350 A`
+  - *<b>Tesla Supercharger</b> outputs at most 125 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D125 A' target='_blank'>125 A</a>
+  - *<b>Tesla Supercharger</b> outputs at most 350 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D350 A' target='_blank'>350 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ &socket:tesla_supercharger!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1061,12 +1061,12 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger</b> outputs at most 120 kw A*  corresponds with  `socket:tesla_supercharger:output=120 kW`
-  - *<b>Tesla Supercharger</b> outputs at most 150 kw A*  corresponds with  `socket:tesla_supercharger:output=150 kW`
-  - *<b>Tesla Supercharger</b> outputs at most 250 kw A*  corresponds with  `socket:tesla_supercharger:output=250 kW`
+  - *<b>Tesla Supercharger</b> outputs at most 120 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D120 kW' target='_blank'>120 kW</a>
+  - *<b>Tesla Supercharger</b> outputs at most 150 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D150 kW' target='_blank'>150 kW</a>
+  - *<b>Tesla Supercharger</b> outputs at most 250 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D250 kW' target='_blank'>250 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ &socket:tesla_supercharger!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1086,11 +1086,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2</b> (men
 
 
 
-  - *<b>Type 2</b> (mennekes) outputs 230 volt*  corresponds with  `socket:type2:voltage=230 V`
-  - *<b>Type 2</b> (mennekes) outputs 400 volt*  corresponds with  `socket:type2:voltage=400 V`
+  - *<b>Type 2</b> (mennekes) outputs 230 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D230 V' target='_blank'>230 V</a>
+  - *<b>Type 2</b> (mennekes) outputs 400 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D400 V' target='_blank'>400 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ &socket:type2!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ & socket:type2!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1110,11 +1110,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2</b> (men
 
 
 
-  - *<b>Type 2</b> (mennekes) outputs at most 16 A*  corresponds with  `socket:type2:current=16 A`
-  - *<b>Type 2</b> (mennekes) outputs at most 32 A*  corresponds with  `socket:type2:current=32 A`
+  - *<b>Type 2</b> (mennekes) outputs at most 16 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D16 A' target='_blank'>16 A</a>
+  - *<b>Type 2</b> (mennekes) outputs at most 32 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D32 A' target='_blank'>32 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ &socket:type2!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ & socket:type2!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1134,11 +1134,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2</b> (men
 
 
 
-  - *<b>Type 2</b> (mennekes) outputs at most 11 kw A*  corresponds with  `socket:type2:output=11 kW`
-  - *<b>Type 2</b> (mennekes) outputs at most 22 kw A*  corresponds with  `socket:type2:output=22 kW`
+  - *<b>Type 2</b> (mennekes) outputs at most 11 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D11 kW' target='_blank'>11 kW</a>
+  - *<b>Type 2</b> (mennekes) outputs at most 22 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D22 kW' target='_blank'>22 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ &socket:type2!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ & socket:type2!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1158,11 +1158,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 CCS</b> 
 
 
 
-  - *<b>Type 2 CCS</b> (mennekes) outputs 500 volt*  corresponds with  `socket:type2_combo:voltage=500 V`
-  - *<b>Type 2 CCS</b> (mennekes) outputs 920 volt*  corresponds with  `socket:type2_combo:voltage=920 V`
+  - *<b>Type 2 CCS</b> (mennekes) outputs 500 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D500 V' target='_blank'>500 V</a>
+  - *<b>Type 2 CCS</b> (mennekes) outputs 920 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D920 V' target='_blank'>920 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ &socket:type2_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ & socket:type2_combo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1182,11 +1182,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 CCS</b> 
 
 
 
-  - *<b>Type 2 CCS</b> (mennekes) outputs at most 125 A*  corresponds with  `socket:type2_combo:current=125 A`
-  - *<b>Type 2 CCS</b> (mennekes) outputs at most 350 A*  corresponds with  `socket:type2_combo:current=350 A`
+  - *<b>Type 2 CCS</b> (mennekes) outputs at most 125 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D125 A' target='_blank'>125 A</a>
+  - *<b>Type 2 CCS</b> (mennekes) outputs at most 350 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D350 A' target='_blank'>350 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ &socket:type2_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ & socket:type2_combo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1206,10 +1206,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 CCS</b> 
 
 
 
-  - *<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A*  corresponds with  `socket:type2_combo:output=50 kW`
+  - *<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output' target='_blank'>socket:type2_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:output%3D50 kW' target='_blank'>50 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ &socket:type2_combo!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ & socket:type2_combo!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1229,11 +1229,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 with cab
 
 
 
-  - *<b>Type 2 with cable</b> (mennekes) outputs 230 volt*  corresponds with  `socket:type2_cable:voltage=230 V`
-  - *<b>Type 2 with cable</b> (mennekes) outputs 400 volt*  corresponds with  `socket:type2_cable:voltage=400 V`
+  - *<b>Type 2 with cable</b> (mennekes) outputs 230 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D230 V' target='_blank'>230 V</a>
+  - *<b>Type 2 with cable</b> (mennekes) outputs 400 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D400 V' target='_blank'>400 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ &socket:type2_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ & socket:type2_cable!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1253,11 +1253,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 with cab
 
 
 
-  - *<b>Type 2 with cable</b> (mennekes) outputs at most 16 A*  corresponds with  `socket:type2_cable:current=16 A`
-  - *<b>Type 2 with cable</b> (mennekes) outputs at most 32 A*  corresponds with  `socket:type2_cable:current=32 A`
+  - *<b>Type 2 with cable</b> (mennekes) outputs at most 16 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D16 A' target='_blank'>16 A</a>
+  - *<b>Type 2 with cable</b> (mennekes) outputs at most 32 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D32 A' target='_blank'>32 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ &socket:type2_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ & socket:type2_cable!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1277,11 +1277,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 with cab
 
 
 
-  - *<b>Type 2 with cable</b> (mennekes) outputs at most 11 kw A*  corresponds with  `socket:type2_cable:output=11 kW`
-  - *<b>Type 2 with cable</b> (mennekes) outputs at most 22 kw A*  corresponds with  `socket:type2_cable:output=22 kW`
+  - *<b>Type 2 with cable</b> (mennekes) outputs at most 11 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D11 kW' target='_blank'>11 kW</a>
+  - *<b>Type 2 with cable</b> (mennekes) outputs at most 22 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D22 kW' target='_blank'>22 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ &socket:type2_cable!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ & socket:type2_cable!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1301,11 +1301,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 500 volt*  corresponds with  `socket:tesla_supercharger_ccs:voltage=500 V`
-  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 920 volt*  corresponds with  `socket:tesla_supercharger_ccs:voltage=920 V`
+  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 500 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D500 V' target='_blank'>500 V</a>
+  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 920 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D920 V' target='_blank'>920 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ &socket:tesla_supercharger_ccs!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1325,11 +1325,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 125 A*  corresponds with  `socket:tesla_supercharger_ccs:current=125 A`
-  - *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 350 A*  corresponds with  `socket:tesla_supercharger_ccs:current=350 A`
+  - *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 125 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D125 A' target='_blank'>125 A</a>
+  - *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 350 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D350 A' target='_blank'>350 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ &socket:tesla_supercharger_ccs!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1349,10 +1349,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs at most 50 kw A*  corresponds with  `socket:tesla_supercharger_ccs:output=50 kW`
+  - *<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs at most 50 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output' target='_blank'>socket:tesla_supercharger_ccs:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:output%3D50 kW' target='_blank'>50 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ &socket:tesla_supercharger_ccs!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1372,10 +1372,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> outputs 480 volt*  corresponds with  `socket:tesla_destination:voltage=480 V`
+  - *<b>Tesla Supercharger (Destination)</b> outputs 480 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D480 V' target='_blank'>480 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1395,11 +1395,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 125 A*  corresponds with  `socket:tesla_destination:current=125 A`
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 350 A*  corresponds with  `socket:tesla_destination:current=350 A`
+  - *<b>Tesla Supercharger (Destination)</b> outputs at most 125 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D125 A' target='_blank'>125 A</a>
+  - *<b>Tesla Supercharger (Destination)</b> outputs at most 350 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D350 A' target='_blank'>350 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1419,12 +1419,12 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 120 kw A*  corresponds with  `socket:tesla_destination:output=120 kW`
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 150 kw A*  corresponds with  `socket:tesla_destination:output=150 kW`
-  - *<b>Tesla Supercharger (Destination)</b> outputs at most 250 kw A*  corresponds with  `socket:tesla_destination:output=250 kW`
+  - *<b>Tesla Supercharger (Destination)</b> outputs at most 120 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D120 kW' target='_blank'>120 kW</a>
+  - *<b>Tesla Supercharger (Destination)</b> outputs at most 150 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D150 kW' target='_blank'>150 kW</a>
+  - *<b>Tesla Supercharger (Destination)</b> outputs at most 250 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D250 kW' target='_blank'>250 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1444,11 +1444,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla superchar
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 230 volt*  corresponds with  `socket:tesla_destination:voltage=230 V`
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 400 volt*  corresponds with  `socket:tesla_destination:voltage=400 V`
+  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 230 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D230 V' target='_blank'>230 V</a>
+  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 400 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D400 V' target='_blank'>400 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1468,11 +1468,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A*  corresponds with  `socket:tesla_destination:current=16 A`
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A*  corresponds with  `socket:tesla_destination:current=32 A`
+  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D16 A' target='_blank'>16 A</a>
+  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D32 A' target='_blank'>32 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1492,11 +1492,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 
 
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 11 kw A*  corresponds with  `socket:tesla_destination:output=11 kW`
-  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 22 kw A*  corresponds with  `socket:tesla_destination:output=22 kW`
+  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 11 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D11 kW' target='_blank'>11 kW</a>
+  - *<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 22 kw A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D22 kW' target='_blank'>22 kW</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ &socket:tesla_destination!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1516,10 +1516,10 @@ This is rendered with  `<div style='display: inline-block'><b><b>USB</b> to char
 
 
 
-  - *<b>USB</b> to charge phones and small electronics outputs 5 volt*  corresponds with  `socket:USB-A:voltage=5 V`
+  - *<b>USB</b> to charge phones and small electronics outputs 5 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage' target='_blank'>socket:USB-A:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:voltage%3D5 V' target='_blank'>5 V</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ &socket:USB-A!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ & socket:USB-A!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1539,11 +1539,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>USB</b> to char
 
 
 
-  - *<b>USB</b> to charge phones and small electronics outputs at most 1 A*  corresponds with  `socket:USB-A:current=1 A`
-  - *<b>USB</b> to charge phones and small electronics outputs at most 2 A*  corresponds with  `socket:USB-A:current=2 A`
+  - *<b>USB</b> to charge phones and small electronics outputs at most 1 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D1 A' target='_blank'>1 A</a>
+  - *<b>USB</b> to charge phones and small electronics outputs at most 2 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D2 A' target='_blank'>2 A</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ &socket:USB-A!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ & socket:USB-A!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1563,11 +1563,11 @@ This is rendered with  `<div style='display: inline-block'><b><b>USB</b> to char
 
 
 
-  - *<b>USB</b> to charge phones and small electronics outputs at most 5w A*  corresponds with  `socket:USB-A:output=5W`
-  - *<b>USB</b> to charge phones and small electronics outputs at most 10w A*  corresponds with  `socket:USB-A:output=10W`
+  - *<b>USB</b> to charge phones and small electronics outputs at most 5w A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D5W' target='_blank'>5W</a>
+  - *<b>USB</b> to charge phones and small electronics outputs at most 10w A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D10W' target='_blank'>10W</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ &socket:USB-A!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ & socket:USB-A!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1590,7 +1590,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ &socket:bosch_3pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ & socket:bosch_3pin!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1613,7 +1613,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ &socket:bosch_3pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ & socket:bosch_3pin!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1636,7 +1636,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ &socket:bosch_3pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ & socket:bosch_3pin!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1659,7 +1659,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ &socket:bosch_5pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ & socket:bosch_5pin!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1682,7 +1682,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ &socket:bosch_5pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ & socket:bosch_5pin!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1705,7 +1705,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ &socket:bosch_5pin!=0`
+This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ & socket:bosch_5pin!=0`
 
 This tagrendering has labels  `technical`
 
@@ -1725,7 +1725,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 
@@ -1740,12 +1740,12 @@ The question is  *Does one have to pay to use this charging station?*
 
 
 
-  - *Free to use (without authenticating)*  corresponds with  `fee=no &authentication:none=yes`
-  - *Free to use, but one has to authenticate*  corresponds with  `fee=no &authentication:none=no`
-  - *Free to use*  corresponds with  `fee=no`
-  - This option cannot be chosen as answer
-  - *Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station*  corresponds with  `fee=yes &fee:conditional=no @ customers`
-  - *Paid use*  corresponds with  `fee=yes`
+  - *Free to use (without authenticating)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & fee:conditional= & charge= & <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dyes' target='_blank'>yes</a>
+  - *Free to use, but one has to authenticate*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & fee:conditional= & charge= & <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dno' target='_blank'>no</a>
+  - *Free to use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+  - _This option cannot be chosen as answer_
+  - *Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee:conditional' target='_blank'>fee:conditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee:conditional%3Dno @ customers' target='_blank'>no @ customers</a>
+  - *Paid use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & fee:conditional=
 
 
 
@@ -1762,7 +1762,7 @@ This is rendered with  `Using this charging station costs <b>{charge}</b>`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -1776,19 +1776,19 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Payment is done using a dedicated app*  corresponds with  `payment:app=yes`
+  - *Payment is done using a dedicated app*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
-  - *Payment is done using a membership card*  corresponds with  `payment:membership_card=yes`
+  - *Payment is done using a membership card*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes |charge~.+`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> | charge~.+`
 
 
 
@@ -1802,21 +1802,21 @@ The question is  *What kind of authentication is available at the charging stati
 
 
 
-  - *Authentication by a membership card*  corresponds with  `authentication:membership_card=yes`
+  - *Authentication by a membership card*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:membership_card' target='_blank'>authentication:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:membership_card%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:membership_card' target='_blank'>authentication:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:membership_card%3Dno' target='_blank'>no</a>
-  - *Authentication by an app*  corresponds with  `authentication:app=yes`
+  - *Authentication by an app*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:app' target='_blank'>authentication:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:app%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:app' target='_blank'>authentication:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:app%3Dno' target='_blank'>no</a>
-  - *Authentication via phone call is available*  corresponds with  `authentication:phone_call=yes`
+  - *Authentication via phone call is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dno' target='_blank'>no</a>
-  - *Authentication via SMS is available*  corresponds with  `authentication:short_message=yes`
+  - *Authentication via SMS is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dno' target='_blank'>no</a>
-  - *Authentication via NFC is available*  corresponds with  `authentication:nfc=yes`
+  - *Authentication via NFC is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:nfc' target='_blank'>authentication:nfc</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:nfc%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:nfc' target='_blank'>authentication:nfc</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:nfc%3Dno' target='_blank'>no</a>
-  - *Authentication via Money Card is available*  corresponds with  `authentication:money_card=yes`
+  - *Authentication via Money Card is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:money_card' target='_blank'>authentication:money_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:money_card%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:money_card' target='_blank'>authentication:money_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:money_card%3Dno' target='_blank'>no</a>
-  - *Authentication via debit card is available*  corresponds with  `authentication:debit_card=yes`
+  - *Authentication via debit card is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:debit_card' target='_blank'>authentication:debit_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:debit_card%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:debit_card' target='_blank'>authentication:debit_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:debit_card%3Dno' target='_blank'>no</a>
-  - *Charging here is (also) possible without authentication*  corresponds with  `authentication:none=yes`
+  - *Charging here is (also) possible without authentication*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dno' target='_blank'>no</a>
 
 
@@ -1834,7 +1834,7 @@ This is rendered with  `Authenticate by calling or SMS'ing to <a href='tel:{auth
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `authentication:phone_call=yes |authentication:short_message=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -1852,10 +1852,10 @@ This is rendered with  `One can stay at most <b>{canonical(maxstay)}</b>`
 
 
 
-  - *No timelimit on leaving your vehicle here*  corresponds with  `maxstay=unlimited`
+  - *No timelimit on leaving your vehicle here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `maxstay~.+ |motorcar=yes |hgv=yes |bus=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a> | maxstay~.+`
 
 
 
@@ -1873,15 +1873,15 @@ This is rendered with  `Part of the network <b>{network}</b>`
 
 
 
-  - *Not part of a bigger network, e.g. because the charging station is maintained by a local business*  corresponds with  `no:network=yes`
-  - *Not part of a bigger network*  corresponds with  `network=none`
-  - This option cannot be chosen as answer
-  - *AeroVironment*  corresponds with  `network=AeroVironment`
-  - *Blink*  corresponds with  `network=Blink`
-  - *EVgo*  corresponds with  `network=EVgo`
-  - *Allego*  corresponds with  `network=Allego`
-  - *Blue Corner*  corresponds with  `network=Blue Corner`
-  - *Tesla*  corresponds with  `network=Tesla`
+  - *Not part of a bigger network, e.g. because the charging station is maintained by a local business*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:no:network' target='_blank'>no:network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:no:network%3Dyes' target='_blank'>yes</a>
+  - *Not part of a bigger network*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3Dnone' target='_blank'>none</a>
+  - _This option cannot be chosen as answer_
+  - *AeroVironment*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DAeroVironment' target='_blank'>AeroVironment</a>
+  - *Blink*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DBlink' target='_blank'>Blink</a>
+  - *EVgo*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DEVgo' target='_blank'>EVgo</a>
+  - *Allego*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DAllego' target='_blank'>Allego</a>
+  - *Blue Corner*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DBlue Corner' target='_blank'>Blue Corner</a>
+  - *Tesla*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DTesla' target='_blank'>Tesla</a>
 
 
 
@@ -1900,7 +1900,7 @@ This is rendered with  `This charging station is operated by {operator}`
 
 
 
-  - *Actually, {operator} is the network*  corresponds with  `network=`
+  - *Actually, {operator} is the network*  corresponds with  network=
 
 
 
@@ -1975,13 +1975,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -2014,11 +2014,11 @@ The question is  *Is this charging point in use?*
 
 
 
-  - *This charging station works*  corresponds with  `amenity=charging_station`
-  - *This charging station is broken*  corresponds with  `operational_status=broken &amenity=charging_station`
-  - *A charging station is planned here*  corresponds with  `planned:amenity=charging_station`
-  - *A charging station is constructed here*  corresponds with  `construction:amenity=charging_station`
-  - *This charging station has beed permanently disabled and is not in use anymore but is still visible*  corresponds with  `disused:amenity=charging_station`
+  - *This charging station works*  corresponds with  planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>
+  - *This charging station is broken*  corresponds with  planned:amenity= & construction:amenity= & disused:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>
+  - *A charging station is planned here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:planned:amenity' target='_blank'>planned:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station' target='_blank'>charging_station</a> & construction:amenity= & disused:amenity= & operational_status= & amenity=
+  - *A charging station is constructed here*  corresponds with  planned:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:construction:amenity' target='_blank'>construction:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:construction:amenity%3Dcharging_station' target='_blank'>charging_station</a> & disused:amenity= & operational_status= & amenity=
+  - *This charging station has beed permanently disabled and is not in use anymore but is still visible*  corresponds with  planned:amenity= & construction:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:disused:amenity' target='_blank'>disused:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:amenity%3Dcharging_station' target='_blank'>charging_station</a> & operational_status= & amenity=
 
 
 
@@ -2033,8 +2033,8 @@ The question is  *Does one have to pay a parking fee while charging?*
 
 
 
-  - *No additional parking cost while charging*  corresponds with  `parking:fee=no`
-  - *An additional parking fee should be paid while charging*  corresponds with  `parking:fee=yes`
+  - *No additional parking cost while charging*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking:fee' target='_blank'>parking:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dno' target='_blank'>no</a>
+  - *An additional parking fee should be paid while charging*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking:fee' target='_blank'>parking:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -2103,7 +2103,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -2127,14 +2127,14 @@ id | question | osmTags
 ---- | ---------- | ---------
 vehicle-type.0 | All vehicle types (default) | 
 vehicle-type.1 | Charging station for bicycles | bicycle=yes
-vehicle-type.2 | Charging station for cars | car=yes \|motorcar=yes
+vehicle-type.2 | Charging station for cars | car=yes \| motorcar=yes
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-working.0 | Only working charging stations | operational_status!=broken &amenity=charging_station
+working.0 | Only working charging stations | operational_status!=broken & amenity=charging_station
 
 
 

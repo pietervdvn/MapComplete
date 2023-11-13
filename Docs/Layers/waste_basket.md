@@ -38,12 +38,7 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_basket' target='_blank'>waste_basket</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_basket' target='_blank'>waste_basket</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22waste_basket%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -81,10 +76,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -110,15 +105,15 @@ The question is  *What kind of waste basket is this?*
 
 
 
-  - *A waste basket for general waste*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *A waste basket for general waste*  corresponds with  `waste=trash`
-  - *A waste basket for dog excrements*  corresponds with  `waste=dog_excrement`
-  - *A waste basket for cigarettes*  corresponds with  `waste=cigarettes`
-  - *A waste basket for drugs*  corresponds with  `waste=drugs`
-  - *A waste basket for needles and other sharp objects*  corresponds with  `waste=sharps`
-  - *A waste basket for plastic*  corresponds with  `waste=plastic`
-  - *A waste basket for paper*  corresponds with  `waste=paper`
+  - *A waste basket for general waste*  corresponds with  waste=
+  - _This option cannot be chosen as answer_
+  - *A waste basket for general waste*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash' target='_blank'>trash</a>
+  - *A waste basket for dog excrements*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement' target='_blank'>dog_excrement</a>
+  - *A waste basket for cigarettes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes' target='_blank'>cigarettes</a>
+  - *A waste basket for drugs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs' target='_blank'>drugs</a>
+  - *A waste basket for needles and other sharp objects*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps' target='_blank'>sharps</a>
+  - *A waste basket for plastic*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic' target='_blank'>plastic</a>
+  - *A waste basket for paper*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper' target='_blank'>paper</a>
 
 
 
@@ -133,10 +128,10 @@ The question is  *Does this waste basket have a dispenser for dog excrement bags
 
 
 
-  - *This waste basket has a dispenser for (dog) excrement bags*  corresponds with  `vending=dog_excrement_bag`
-  - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags*  corresponds with  `not:vending=dog_excrement_bag`
-  - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *This waste basket has a dispenser for (dog) excrement bags*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddog_excrement_bag' target='_blank'>dog_excrement_bag</a> & not:vending=
+  - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:not:vending' target='_blank'>not:vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:vending%3Ddog_excrement_bag' target='_blank'>dog_excrement_bag</a> & vending=
+  - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags*  corresponds with  vending=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -193,7 +188,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

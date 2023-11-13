@@ -36,13 +36,10 @@ Layer showing vending machines
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
-  - vending!~^((parking_tickets|public_transport_tickets|bottle_return|excrement_bags|elongated_coin))$
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
+1. vending!~^((parking_tickets|public_transport_tickets|bottle_return|excrement_bags|elongated_coin))$
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22vending_machine%22%5D%5B%22vending%22!~%22%5E%28%28parking_tickets%7Cpublic_transport_tickets%7Cbottle_return%7Cexcrement_bags%7Celongated_coin%29%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -87,10 +84,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -120,33 +117,33 @@ This is rendered with  `This vending machine sells {vending}`
 
 
 
-  - *Drinks are sold*  corresponds with  `vending=drinks`
-  - *Sweets are sold*  corresponds with  `vending=sweets`
-  - *Food is sold*  corresponds with  `vending=food`
-  - *Cigarettes are sold*  corresponds with  `vending=cigarettes`
-  - *Condoms are sold*  corresponds with  `vending=condoms`
-  - *Coffee is sold*  corresponds with  `vending=coffee`
-  - *Drinking water is sold*  corresponds with  `vending=water`
-  - *Newspapers are sold*  corresponds with  `vending=newspapers`
-  - *Bicycle inner tubes are sold*  corresponds with  `vending=bicycle_tube`
-  - *Milk is sold*  corresponds with  `vending=milk`
-  - *Bread is sold*  corresponds with  `vending=bread`
-  - *Eggs are sold*  corresponds with  `vending=eggs`
-  - *Cheese is sold*  corresponds with  `vending=cheese`
-  - *Honey is sold*  corresponds with  `vending=honey`
-  - *Potatoes are sold*  corresponds with  `vending=potatoes`
-  - *Meat is sold*  corresponds with  `vending=meat`
-  - *Fruit is sold*  corresponds with  `vending=fruit`
-  - *Strawberries are sold*  corresponds with  `vending=strawberries`
-  - *Flowers are sold*  corresponds with  `vending=flowers`
-  - *Parking tickets are sold*  corresponds with  `vending=parking_tickets`
-  - *Pressed pennies are sold*  corresponds with  `vending=elongated_coin`
-  - *Public transport tickets are sold*  corresponds with  `vending=public_transport_tickets`
-  - *Bicycle lights are sold*  corresponds with  `vending=bicycle_light`
-  - *Gloves are sold*  corresponds with  `vending=gloves`
-  - *Bicycle repair kits are sold*  corresponds with  `vending=bicycle_repair_kit`
-  - *Bicycle pumps are sold*  corresponds with  `vending=bicycle_pump`
-  - *Bicycle locks are sold*  corresponds with  `vending=bicycle_lock`
+  - *Drinks are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddrinks' target='_blank'>drinks</a>
+  - *Sweets are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dsweets' target='_blank'>sweets</a>
+  - *Food is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfood' target='_blank'>food</a>
+  - *Cigarettes are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcigarettes' target='_blank'>cigarettes</a>
+  - *Condoms are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcondoms' target='_blank'>condoms</a>
+  - *Coffee is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcoffee' target='_blank'>coffee</a>
+  - *Drinking water is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dwater' target='_blank'>water</a>
+  - *Newspapers are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dnewspapers' target='_blank'>newspapers</a>
+  - *Bicycle inner tubes are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_tube' target='_blank'>bicycle_tube</a>
+  - *Milk is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmilk' target='_blank'>milk</a>
+  - *Bread is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbread' target='_blank'>bread</a>
+  - *Eggs are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Deggs' target='_blank'>eggs</a>
+  - *Cheese is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcheese' target='_blank'>cheese</a>
+  - *Honey is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dhoney' target='_blank'>honey</a>
+  - *Potatoes are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpotatoes' target='_blank'>potatoes</a>
+  - *Meat is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmeat' target='_blank'>meat</a>
+  - *Fruit is sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfruit' target='_blank'>fruit</a>
+  - *Strawberries are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dstrawberries' target='_blank'>strawberries</a>
+  - *Flowers are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dflowers' target='_blank'>flowers</a>
+  - *Parking tickets are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparking_tickets' target='_blank'>parking_tickets</a>
+  - *Pressed pennies are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin' target='_blank'>elongated_coin</a>
+  - *Public transport tickets are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets' target='_blank'>public_transport_tickets</a>
+  - *Bicycle lights are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_light' target='_blank'>bicycle_light</a>
+  - *Gloves are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dgloves' target='_blank'>gloves</a>
+  - *Bicycle repair kits are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_repair_kit' target='_blank'>bicycle_repair_kit</a>
+  - *Bicycle pumps are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_pump' target='_blank'>bicycle_pump</a>
+  - *Bicycle locks are sold*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_lock' target='_blank'>bicycle_lock</a>
 
 
 
@@ -165,7 +162,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 
@@ -180,21 +177,21 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cash=
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cards=
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Coins are accepted here*  corresponds with  `payment:coins=yes`
+  - *Coins are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
-  - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
+  - *Bank notes are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
-  - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
+  - *Debit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
-  - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
+  - *Credit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
@@ -210,24 +207,24 @@ The question is  *What coins can you use to pay here?*
 
 
 
-  - *1 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.01 EUR`
-  - *2 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.02 EUR`
-  - *5 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.05 EUR`
-  - *10 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.10 EUR`
-  - *20 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.20 EUR`
-  - *50 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.50 EUR`
-  - *1 euro coins are accepted*  corresponds with  `payment:coins:denominations=1 EUR`
-  - *2 euro coins are accepted*  corresponds with  `payment:coins:denominations=2 EUR`
-  - *5 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.05 CHF`
-  - *10 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.10 CHF`
-  - *20 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.20 CHF`
-  - *½ franc coins are accepted*  corresponds with  `payment:coins:denominations=0.50 CHF`
-  - *1 franc coins are accepted*  corresponds with  `payment:coins:denominations=1 CHF`
-  - *2 francs coins are accepted*  corresponds with  `payment:coins:denominations=2 CHF`
-  - *5 francs coins are accepted*  corresponds with  `payment:coins:denominations=5 CHF`
+  - *1 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR' target='_blank'>0.01 EUR</a>
+  - *2 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR' target='_blank'>0.02 EUR</a>
+  - *5 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR' target='_blank'>0.05 EUR</a>
+  - *10 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR' target='_blank'>0.10 EUR</a>
+  - *20 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR' target='_blank'>0.20 EUR</a>
+  - *50 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
+  - *1 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR' target='_blank'>1 EUR</a>
+  - *2 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR' target='_blank'>2 EUR</a>
+  - *5 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF' target='_blank'>0.05 CHF</a>
+  - *10 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF' target='_blank'>0.10 CHF</a>
+  - *20 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF' target='_blank'>0.20 CHF</a>
+  - *½ franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF' target='_blank'>0.50 CHF</a>
+  - *1 franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF' target='_blank'>1 CHF</a>
+  - *2 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF' target='_blank'>2 CHF</a>
+  - *5 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF' target='_blank'>5 CHF</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)`
 
 
 
@@ -241,22 +238,22 @@ The question is  *what notes can you use to pay here?*
 
 
 
-  - *5 euro notes are accepted*  corresponds with  `payment:notes:denominations=5 EUR`
-  - *10 euro notes are accepted*  corresponds with  `payment:notes:denominations=10 EUR`
-  - *20 euro notes are accepted*  corresponds with  `payment:notes:denominations=20 EUR`
-  - *50 euro notes are accepted*  corresponds with  `payment:notes:denominations=50 EUR`
-  - *100 euro notes are accepted*  corresponds with  `payment:notes:denominations=100 EUR`
-  - *200 euro notes are accepted*  corresponds with  `payment:notes:denominations=200 EUR`
-  - *500 euro notes are accepted*  corresponds with  `payment:notes:denominations=500 EUR`
-  - *10 francs notes are accepted*  corresponds with  `payment:notes:denominations=10 CHF`
-  - *20 francs notes are accepted*  corresponds with  `payment:notes:denominations=20 CHF`
-  - *50 francs notes are accepted*  corresponds with  `payment:notes:denominations=50 CHF`
-  - *100 francs notes are accepted*  corresponds with  `payment:notes:denominations=100 CHF`
-  - *200 francs notes are accepted*  corresponds with  `payment:notes:denominations=200 CHF`
-  - *1000 francs notes are accepted*  corresponds with  `payment:notes:denominations=1000 CHF`
+  - *5 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR' target='_blank'>5 EUR</a>
+  - *10 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR' target='_blank'>10 EUR</a>
+  - *20 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 EUR' target='_blank'>20 EUR</a>
+  - *50 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 EUR' target='_blank'>50 EUR</a>
+  - *100 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 EUR' target='_blank'>100 EUR</a>
+  - *200 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 EUR' target='_blank'>200 EUR</a>
+  - *500 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D500 EUR' target='_blank'>500 EUR</a>
+  - *10 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 CHF' target='_blank'>10 CHF</a>
+  - *20 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 CHF' target='_blank'>20 CHF</a>
+  - *50 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 CHF' target='_blank'>50 CHF</a>
+  - *100 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 CHF' target='_blank'>100 CHF</a>
+  - *200 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF' target='_blank'>200 CHF</a>
+  - *1000 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF' target='_blank'>1000 CHF</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)`
 
 
 
@@ -284,10 +281,10 @@ The question is  *Is this vending machine indoors?*
 
 
 
-  - *This vending machine is outdoors*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *This vending machine is indoors*  corresponds with  `indoor=yes`
-  - *This vending machine is outdoors*  corresponds with  `indoor=no`
+  - *This vending machine is outdoors*  corresponds with  indoor=
+  - _This option cannot be chosen as answer_
+  - *This vending machine is indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+  - *This vending machine is outdoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
 
 
 
@@ -320,13 +317,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -347,8 +344,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -369,8 +366,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -429,7 +426,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

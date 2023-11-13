@@ -22,7 +22,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -46,7 +46,7 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows  with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
@@ -76,7 +76,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Bird watching places' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Bird watching places' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -96,57 +96,57 @@
     },
     {
       "key": "shelter",
-      "description": "Layer 'Bird watching places' shows shelter=no with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows shelter=no & building= & amenity= with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "no"
     },
     {
       "key": "building",
-      "description": "Layer 'Bird watching places' shows shelter=no with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key building.",
+      "description": "Layer 'Bird watching places' shows shelter=no & building= & amenity= with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key building.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Bird watching places' shows shelter=no with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key amenity.",
+      "description": "Layer 'Bird watching places' shows shelter=no & building= & amenity= with a fixed text, namely 'Bird blind' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key amenity.",
       "value": ""
     },
     {
       "key": "amenity",
-      "description": "Layer 'Bird watching places' shows amenity=shelter &building=yes &shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter & building=yes & shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "shelter"
     },
     {
       "key": "building",
-      "description": "Layer 'Bird watching places' shows amenity=shelter &building=yes &shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter & building=yes & shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "shelter",
-      "description": "Layer 'Bird watching places' shows amenity=shelter &building=yes &shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter & building=yes & shelter=yes with a fixed text, namely 'Bird hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "building",
-      "description": "Layer 'Bird watching places' shows building=tower &bird_hide=tower with a fixed text, namely 'Bird tower hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows building=tower & bird_hide=tower with a fixed text, namely 'Bird tower hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "tower"
     },
     {
       "key": "bird_hide",
-      "description": "Layer 'Bird watching places' shows building=tower &bird_hide=tower with a fixed text, namely 'Bird tower hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows building=tower & bird_hide=tower with a fixed text, namely 'Bird tower hide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "tower"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Bird watching places' shows amenity=shelter |building=yes |shelter=yes with a fixed text, namely 'Bird hide shelter' (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter | building=yes | shelter=yes with a fixed text, namely 'Bird hide shelter' (in the mapcomplete.org theme 'Into nature')",
       "value": "shelter"
     },
     {
       "key": "building",
-      "description": "Layer 'Bird watching places' shows amenity=shelter |building=yes |shelter=yes with a fixed text, namely 'Bird hide shelter' (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter | building=yes | shelter=yes with a fixed text, namely 'Bird hide shelter' (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "shelter",
-      "description": "Layer 'Bird watching places' shows amenity=shelter |building=yes |shelter=yes with a fixed text, namely 'Bird hide shelter' (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Bird watching places' shows amenity=shelter | building=yes | shelter=yes with a fixed text, namely 'Bird hide shelter' (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
@@ -195,7 +195,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Nature reserve' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Nature reserve' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -219,62 +219,62 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Nature reserve' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=yes & fee= with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Nature reserve' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=yes & fee= with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Nature reserve' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=no & fee= with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "no"
     },
     {
       "key": "fee",
-      "description": "Layer 'Nature reserve' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=no & fee= with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Nature reserve' shows access=private with a fixed text, namely 'Not accessible as this is a private area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=private & fee= with a fixed text, namely 'Not accessible as this is a private area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "private"
     },
     {
       "key": "fee",
-      "description": "Layer 'Nature reserve' shows access=private with a fixed text, namely 'Not accessible as this is a private area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=private & fee= with a fixed text, namely 'Not accessible as this is a private area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Nature reserve' shows access=permissive with a fixed text, namely 'Accessible despite being a privately owned area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=permissive & fee= with a fixed text, namely 'Accessible despite being a privately owned area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "permissive"
     },
     {
       "key": "fee",
-      "description": "Layer 'Nature reserve' shows access=permissive with a fixed text, namely 'Accessible despite being a privately owned area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=permissive & fee= with a fixed text, namely 'Accessible despite being a privately owned area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Nature reserve' shows access=guided with a fixed text, namely 'Only accessible with a guide or during organised activities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=guided & fee= with a fixed text, namely 'Only accessible with a guide or during organised activities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "guided"
     },
     {
       "key": "fee",
-      "description": "Layer 'Nature reserve' shows access=guided with a fixed text, namely 'Only accessible with a guide or during organised activities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
+      "description": "Layer 'Nature reserve' shows access=guided & fee= with a fixed text, namely 'Only accessible with a guide or during organised activities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key fee.",
       "value": ""
     },
     {
       "key": "access",
-      "description": "Layer 'Nature reserve' shows access=yes &fee=yes with a fixed text, namely 'Accessible with fee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=yes & fee=yes with a fixed text, namely 'Accessible with fee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Nature reserve' shows access=yes &fee=yes with a fixed text, namely 'Accessible with fee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows access=yes & fee=yes with a fixed text, namely 'Accessible with fee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
@@ -297,31 +297,31 @@
     },
     {
       "key": "name",
-      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Into nature') (This is only shown if name:nl=)"
     },
     {
       "key": "noname",
-      "description": "Layer 'Nature reserve' shows noname=yes with a fixed text, namely 'This area doesn't have a name' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows noname=yes & name= with a fixed text, namely 'This area doesn't have a name' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if name:nl=)",
       "value": "yes"
     },
     {
       "key": "name",
-      "description": "Layer 'Nature reserve' shows noname=yes with a fixed text, namely 'This area doesn't have a name' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key name.",
+      "description": "Layer 'Nature reserve' shows noname=yes & name= with a fixed text, namely 'This area doesn't have a name' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key name. (This is only shown if name:nl=)",
       "value": ""
     },
     {
       "key": "dog",
-      "description": "Layer 'Nature reserve' shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if access=yes |access=permissive |access=guided)",
+      "description": "Layer 'Nature reserve' shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if access=yes | access=permissive | access=guided)",
       "value": "leashed"
     },
     {
       "key": "dog",
-      "description": "Layer 'Nature reserve' shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if access=yes |access=permissive |access=guided)",
+      "description": "Layer 'Nature reserve' shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if access=yes | access=permissive | access=guided)",
       "value": "no"
     },
     {
       "key": "dog",
-      "description": "Layer 'Nature reserve' shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if access=yes |access=permissive |access=guided)",
+      "description": "Layer 'Nature reserve' shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if access=yes | access=permissive | access=guided)",
       "value": "yes"
     },
     {
@@ -362,7 +362,7 @@
     },
     {
       "key": "wikidata",
-      "description": "Layer 'Nature reserve' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key wikidata.",
+      "description": "Layer 'Nature reserve' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key wikidata.",
       "value": ""
     },
     {
@@ -377,7 +377,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -446,37 +446,37 @@
     },
     {
       "key": "map_source",
-      "description": "Layer 'Maps' shows map_source=OpenStreetMap with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap & not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "OpenStreetMap"
     },
     {
       "key": "not:map_source",
-      "description": "Layer 'Maps' shows map_source=OpenStreetMap with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key not:map_source.",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap & not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key not:map_source.",
       "value": ""
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
       "value": "yes"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
       "value": "incomplete"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
       "value": "sticker"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
       "value": "none"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM)",
+      "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the mapcomplete.org theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
       "value": "no"
     },
     {
@@ -486,7 +486,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Information boards' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Information boards' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -511,7 +511,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -531,12 +531,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Benches' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "two_sided",
-      "description": "Layer 'Benches' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Benches' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
     },
     {
@@ -660,7 +660,7 @@
     },
     {
       "key": "inscription",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key inscription.",
+      "description": "Layer 'Benches' shows inscription= with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key inscription.",
       "value": ""
     },
     {
@@ -675,22 +675,22 @@
     },
     {
       "key": "tourism",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key tourism.",
+      "description": "Layer 'Benches' shows tourism= with a fixed text, namely 'This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key tourism.",
       "value": ""
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key historic. (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key historic. (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
       "value": "memorial"
     },
     {
@@ -700,7 +700,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -720,31 +720,31 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Into nature')"
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)"
     },
     {
       "key": "location",
-      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key level.",
+      "description": "Layer 'Picnic tables' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "-1"
     },
     {
@@ -773,7 +773,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -793,31 +793,31 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Into nature')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)"
     },
     {
       "key": "location",
-      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key level.",
+      "description": "Layer 'Toilets' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if repeat_on=)",
       "value": "-1"
     },
     {
@@ -924,7 +924,7 @@
     },
     {
       "key": "door:width",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Into nature') (This is only shown if wheelchair=yes |wheelchair=designated)"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Into nature') (This is only shown if (wheelchair=yes | wheelchair=designated))"
     },
     {
       "key": "toilets:position",
@@ -1011,7 +1011,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Guideposts' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Guideposts' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",

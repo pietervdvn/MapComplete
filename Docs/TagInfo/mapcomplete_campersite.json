@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Camper sites' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Campersites') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Camper sites' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Campersites') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -74,12 +74,12 @@
     },
     {
       "key": "internet_access",
-      "description": "Layer 'Camper sites' shows internet_access=wifi |internet_access=wlan with a fixed text, namely 'There is internet access' (in the mapcomplete.org theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows internet_access=wifi | internet_access=wlan with a fixed text, namely 'There is internet access' (in the mapcomplete.org theme 'Campersites')",
       "value": "wifi"
     },
     {
       "key": "internet_access",
-      "description": "Layer 'Camper sites' shows internet_access=wifi |internet_access=wlan with a fixed text, namely 'There is internet access' (in the mapcomplete.org theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows internet_access=wifi | internet_access=wlan with a fixed text, namely 'There is internet access' (in the mapcomplete.org theme 'Campersites')",
       "value": "wlan"
     },
     {
@@ -151,7 +151,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Sanitary dump stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Campersites') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Sanitary dump stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Campersites') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",

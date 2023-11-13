@@ -30,7 +30,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Bicycle rental' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Bicycle rental' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -50,12 +50,12 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Bicycle rental' shows shop=rental &bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
+      "description": "Layer 'Bicycle rental' shows shop=rental & bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
       "value": "rental"
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows shop=rental &bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
+      "description": "Layer 'Bicycle rental' shows shop=rental & bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
       "value": "shop"
     },
     {
@@ -65,12 +65,12 @@
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes &shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes & shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
       "value": "yes"
     },
     {
       "key": "shop",
-      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes &shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes & shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if amenity=bicycle_rental)",
       "value": "bicycle"
     },
     {
@@ -114,7 +114,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop~.+ |opening_hours~.+)"
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop~.+ | opening_hours~.+)"
     },
     {
       "key": "payment:cash",
@@ -133,27 +133,27 @@
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop=)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop=)",
       "value": "yes"
     },
     {
       "key": "payment:qr_code",
-      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop=)",
       "value": "yes"
     },
     {
       "key": "payment:app",
-      "description": "Layer 'Bicycle rental' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop=)",
       "value": "yes"
     },
     {
       "key": "payment:membership_card",
-      "description": "Layer 'Bicycle rental' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop=)",
       "value": "yes"
     },
     {

@@ -36,12 +36,7 @@ Towers with a panoramic view
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:tower:type' target='_blank'>tower:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tower:type%3Dobservation' target='_blank'>observation</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:tower:type' target='_blank'>tower:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tower:type%3Dobservation' target='_blank'>observation</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22tower%3Atype%22%3D%22observation%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -87,10 +82,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -120,7 +115,7 @@ This is rendered with  `This tower is called <b>{name}</b>`
 
 
 
-  - *This tower doesn't have a specific name*  corresponds with  `noname=yes`
+  - *This tower doesn't have a specific name*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -149,8 +144,8 @@ The question is  *Can this tower be visited?*
 
 
 
-  - *This tower is publicly accessible*  corresponds with  `access=yes`
-  - *This tower can only be visited with a guide*  corresponds with  `access=guided`
+  - *This tower is publicly accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - *This tower can only be visited with a guide*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>
 
 
 
@@ -169,10 +164,10 @@ This is rendered with  `Visiting this tower costs <b>{charge}</b>`
 
 
 
-  - *Free to visit*  corresponds with  `fee=no`
+  - *Free to visit*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & charge=
 
 
-This tagrendering is only visible in the popup if the following condition is met: `access=yes |access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>`
 
 
 
@@ -186,15 +181,15 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes |charge~.+`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> | charge~.+`
 
 
 
@@ -212,8 +207,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -232,7 +227,7 @@ This is rendered with  `This tower has {step_count} steps to reach the top`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `access=yes |access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>`
 
 
 
@@ -246,11 +241,11 @@ The question is  *Does this tower have an elevator?*
 
 
 
-  - *This tower has an elevator which takes visitors to the top*  corresponds with  `elevator=yes`
-  - *This tower does not have an elevator*  corresponds with  `elevator=no`
+  - *This tower has an elevator which takes visitors to the top*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:elevator' target='_blank'>elevator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dyes' target='_blank'>yes</a>
+  - *This tower does not have an elevator*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:elevator' target='_blank'>elevator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `access=yes |access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>`
 
 
 
@@ -278,13 +273,13 @@ The question is  *Is this place accessible with a wheelchair?*
 
 
 
-  - *This place is specially adapted for wheelchair users*  corresponds with  `wheelchair=designated`
-  - *This place is easily reachable with a wheelchair*  corresponds with  `wheelchair=yes`
-  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  `wheelchair=limited`
-  - *This place is not reachable with a wheelchair*  corresponds with  `wheelchair=no`
+  - *This place is specially adapted for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+  - *This place is easily reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+  - *This place is not reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `elevator=yes &access=yes |access=guided`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:elevator' target='_blank'>elevator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dyes' target='_blank'>yes</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>)`
 
 
 
@@ -304,10 +299,10 @@ This is rendered with  `{wikipedia():max-height:25rem}`
 
 
 
-  - *{wikipedia():max-height:25rem}*  corresponds with  `wikipedia~.+`
-  - This option cannot be chosen as answer
-  - *No Wikipedia page has been linked yet*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *{wikipedia():max-height:25rem}*  corresponds with  wikipedia~.+
+  - _This option cannot be chosen as answer_
+  - *No Wikipedia page has been linked yet*  corresponds with  wikidata=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -354,7 +349,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

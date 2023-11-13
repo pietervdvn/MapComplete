@@ -36,13 +36,10 @@ A layer showing vending machines for bicycle tubes (either purpose-built bicycle
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
-  - vending~^(.*bicycle_tube.*)$
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
+1. vending~^(.*bicycle_tube.*)$
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22vending_machine%22%5D%5B%22vending%22~%22%5E%28.*bicycle_tube.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -83,10 +80,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -116,9 +113,9 @@ This is rendered with  `The operational status is <i>{operational_status}</i>`
 
 
 
-  - *This vending machine works*  corresponds with  ``
-  - *This vending machine is broken*  corresponds with  `operational_status=broken`
-  - *This vending machine is closed*  corresponds with  `operational_status=closed`
+  - *This vending machine works*  corresponds with  operational_status=
+  - *This vending machine is broken*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
+  - *This vending machine is closed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
 
 
 
@@ -147,21 +144,21 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cash=
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cards=
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Coins are accepted here*  corresponds with  `payment:coins=yes`
+  - *Coins are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
-  - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
+  - *Bank notes are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
-  - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
+  - *Debit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
-  - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
+  - *Credit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
@@ -181,8 +178,8 @@ This is rendered with  `{brand} tubes are sold here`
 
 
 
-  - *Continental tubes are sold here*  corresponds with  `brand=Continental`
-  - *Schwalbe tubes are sold here*  corresponds with  `brand=Schwalbe`
+  - *Continental tubes are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DContinental' target='_blank'>Continental</a>
+  - *Schwalbe tubes are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DSchwalbe' target='_blank'>Schwalbe</a>
 
 
 
@@ -201,8 +198,8 @@ This is rendered with  `This vending machine is maintained by {operator}`
 
 
 
-  - *Maintained by Schwalbe*  corresponds with  `operator=Schwalbe`
-  - *Maintained by Continental*  corresponds with  `operator=Continental`
+  - *Maintained by Schwalbe*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DSchwalbe' target='_blank'>Schwalbe</a>
+  - *Maintained by Continental*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DContinental' target='_blank'>Continental</a>
 
 
 
@@ -217,12 +214,12 @@ The question is  *Are other biycle accessories sold here?*
 
 
 
-  - *Bicycle inner tubes are sold here*  corresponds with  `vending=bicycle_tube`
-  - *Bicycle lights are sold here*  corresponds with  `vending=bicycle_light`
-  - *Gloves are sold here*  corresponds with  `vending=gloves`
-  - *Bicycle repair kits are sold here*  corresponds with  `vending=bicycle_repair_kit`
-  - *Bicycle pumps are sold here*  corresponds with  `vending=bicycle_pump`
-  - *Bicycle locks are sold here*  corresponds with  `vending=bicycle_lock`
+  - *Bicycle inner tubes are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_tube' target='_blank'>bicycle_tube</a>
+  - *Bicycle lights are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_light' target='_blank'>bicycle_light</a>
+  - *Gloves are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dgloves' target='_blank'>gloves</a>
+  - *Bicycle repair kits are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_repair_kit' target='_blank'>bicycle_repair_kit</a>
+  - *Bicycle pumps are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_pump' target='_blank'>bicycle_pump</a>
+  - *Bicycle locks are sold here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_lock' target='_blank'>bicycle_lock</a>
 
 
 
@@ -279,7 +276,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

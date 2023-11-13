@@ -36,12 +36,10 @@ A shop specifically selling bicycles or related items
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> &service:bicycle:retail!=no &service:bicycle:repair!=no &<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbicycle' target='_blank'>bicycle</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dcycling' target='_blank'>cycling</a> |
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dcycling' target='_blank'>cycling</a> | sport=) & service:bicycle:retail!=no & service:bicycle:repair!=no
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22shop%22%3D%22bicycle%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B%22sport%22%3D%22bicycle%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B%22sport%22%3D%22cycling%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B!%22sport%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -92,10 +90,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -121,10 +119,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *This business focuses on rental*  corresponds with  `shop=rental`
+  - *This business focuses on rental*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop~.+ &shop!~^(bicycle)$ &shop!~^(sports)$`
+This tagrendering is only visible in the popup if the following condition is met: `shop~.+ & shop!~^(bicycle)$ & shop!~^(sports)$`
 
 
 
@@ -156,8 +154,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -178,8 +176,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -200,8 +198,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 
 
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  `contact:email~.+`
-  - This option cannot be chosen as answer
+  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -246,8 +244,8 @@ The question is  *Does this shop sell bikes?*
 
 
 
-  - *This shop sells bikes*  corresponds with  `service:bicycle:retail=yes`
-  - *This shop doesn't sell bikes*  corresponds with  `service:bicycle:retail=no`
+  - *This shop sells bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
+  - *This shop doesn't sell bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>
 
 
 
@@ -262,10 +260,10 @@ The question is  *Does this shop repair bikes?*
 
 
 
-  - *This shop repairs bikes*  corresponds with  `service:bicycle:repair=yes`
-  - *This shop doesn't repair bikes*  corresponds with  `service:bicycle:repair=no`
-  - *This shop only repairs bikes bought here*  corresponds with  `service:bicycle:repair=only_sold`
-  - *This shop only repairs bikes of a certain brand*  corresponds with  `service:bicycle:repair=brand`
+  - *This shop repairs bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
+  - *This shop doesn't repair bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
+  - *This shop only repairs bikes bought here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>
+  - *This shop only repairs bikes of a certain brand*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>
 
 
 
@@ -280,8 +278,8 @@ The question is  *Does this shop rent out bikes?*
 
 
 
-  - *This shop rents out bikes*  corresponds with  `service:bicycle:rental=yes`
-  - *This shop doesn't rent out bikes*  corresponds with  `service:bicycle:rental=no`
+  - *This shop rents out bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
+  - *This shop doesn't rent out bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>
 
 
 
@@ -296,9 +294,9 @@ The question is  *Does this shop sell second-hand bikes?*
 
 
 
-  - *This shop sells second-hand bikes*  corresponds with  `service:bicycle:second_hand=yes`
-  - *This shop doesn't sell second-hand bikes*  corresponds with  `service:bicycle:second_hand=no`
-  - *This shop only sells second-hand bikes*  corresponds with  `service:bicycle:second_hand=only`
+  - *This shop sells second-hand bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a>
+  - *This shop doesn't sell second-hand bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno' target='_blank'>no</a>
+  - *This shop only sells second-hand bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a>
 
 
 
@@ -313,9 +311,9 @@ The question is  *Does this shop offer a bike pump for use by anyone?*
 
 
 
-  - *This shop offers a bike pump for anyone*  corresponds with  `service:bicycle:pump=yes`
-  - *This shop doesn't offer a bike pump for anyone*  corresponds with  `service:bicycle:pump=no`
-  - *There is bicycle pump, it is shown as a separate point*  corresponds with  `service:bicycle:pump=separate`
+  - *This shop offers a bike pump for anyone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+  - *This shop doesn't offer a bike pump for anyone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
+  - *There is bicycle pump, it is shown as a separate point*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate' target='_blank'>separate</a>
 
 
 
@@ -330,9 +328,9 @@ The question is  *Are there tools here to repair your own bike?*
 
 
 
-  - *This shop offers tools for DIY repair*  corresponds with  `service:bicycle:diy=yes`
-  - *This shop doesn't offer tools for DIY repair*  corresponds with  `service:bicycle:diy=no`
-  - *Tools for DIY repair are only available if you bought/hire the bike in the shop*  corresponds with  `service:bicycle:diy=only_sold`
+  - *This shop offers tools for DIY repair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
+  - *This shop doesn't offer tools for DIY repair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
+  - *Tools for DIY repair are only available if you bought/hire the bike in the shop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold' target='_blank'>only_sold</a>
 
 
 
@@ -347,9 +345,9 @@ The question is  *Are bicycles washed here?*
 
 
 
-  - *This shop cleans bicycles*  corresponds with  `service:bicycle:cleaning=yes`
-  - *This shop has an installation where one can clean bicycles themselves*  corresponds with  `service:bicycle:cleaning=diy`
-  - *This shop doesn't offer bicycle cleaning*  corresponds with  `service:bicycle:cleaning=no`
+  - *This shop cleans bicycles*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes' target='_blank'>yes</a>
+  - *This shop has an installation where one can clean bicycles themselves*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>
+  - *This shop doesn't offer bicycle cleaning*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno' target='_blank'>no</a>
 
 
 
@@ -430,7 +428,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -459,14 +457,14 @@ open_now.0 | Open now | _isOpen=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-sells_second-hand.0 | Sells second-hand bicycles | service:bicycle:second_hand=yes \|service:bicycle:second_hand=only
+sells_second-hand.0 | Sells second-hand bicycles | service:bicycle:second_hand=yes \| service:bicycle:second_hand=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-offers_diy_repair.0 | Offers DIY bike repair | service:bicycle:diy=yes \|service:bicycle:diy=only
+offers_diy_repair.0 | Offers DIY bike repair | service:bicycle:diy=yes \| service:bicycle:diy=only
  
 
 This document is autogenerated from [assets/layers/bike_shop/bike_shop.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_shop/bike_shop.json)

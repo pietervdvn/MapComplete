@@ -38,12 +38,10 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22barrier%22%3D%22bollard%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22barrier%22%3D%22cycle_barrier%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -87,10 +85,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -116,8 +114,8 @@ The question is  *Can a bicycle go past this barrier?*
 
 
 
-  - *A cyclist can go past this.*  corresponds with  `bicycle=yes`
-  - *A cyclist can not go past this.*  corresponds with  `bicycle=no`
+  - *A cyclist can go past this.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
+  - *A cyclist can not go past this.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_referencing_ways~.+`
@@ -134,8 +132,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *This is a single bollard in the road*  corresponds with  `barrier=bollard`
-  - *This is a cycle barrier slowing down cyclists*  corresponds with  `barrier=cycle_barrier`
+  - *This is a single bollard in the road*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>
+  - *This is a cycle barrier slowing down cyclists*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
 
 
 
@@ -150,14 +148,14 @@ The question is  *What kind of bollard is this?*
 
 
 
-  - *Removable bollard*  corresponds with  `bollard=removable`
-  - *Fixed bollard*  corresponds with  `bollard=fixed`
-  - *Bollard that can be folded down*  corresponds with  `bollard=foldable`
-  - *Flexible bollard, usually plastic*  corresponds with  `bollard=flexible`
-  - *Rising bollard*  corresponds with  `bollard=rising`
+  - *Removable bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable' target='_blank'>removable</a>
+  - *Fixed bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed' target='_blank'>fixed</a>
+  - *Bollard that can be folded down*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable' target='_blank'>foldable</a>
+  - *Flexible bollard, usually plastic*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible' target='_blank'>flexible</a>
+  - *Rising bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising' target='_blank'>rising</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `barrier=bollard`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>`
 
 
 
@@ -171,13 +169,13 @@ The question is  *What kind of cycling barrier is this?*
 
 
 
-  - *Single, just two barriers with a space inbetween*  corresponds with  `cycle_barrier=single`
-  - *Double, two barriers behind each other*  corresponds with  `cycle_barrier=double`
-  - *Triple, three barriers behind each other*  corresponds with  `cycle_barrier=triple`
-  - *Squeeze gate, gap is smaller at top, than at the bottom*  corresponds with  `cycle_barrier=squeeze`
+  - *Single, just two barriers with a space inbetween*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>
+  - *Double, two barriers behind each other*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>
+  - *Triple, three barriers behind each other*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
+  - *Squeeze gate, gap is smaller at top, than at the bottom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `barrier=cycle_barrier`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>`
 
 
 
@@ -193,7 +191,7 @@ This is rendered with  `Maximum width: {maxwidth:physical} m`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier!=double &cycle_barrier!=triple &_referencing_ways~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_referencing_ways~.+ & cycle_barrier!=double & cycle_barrier!=triple`
 
 
 
@@ -209,7 +207,7 @@ This is rendered with  `Space between barriers (along the length of the road): {
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double |cycle_barrier=triple`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
 
 
 
@@ -225,7 +223,7 @@ This is rendered with  `Width of opening: {width:opening} m`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double |cycle_barrier=triple`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
 
 
 
@@ -241,7 +239,7 @@ This is rendered with  `Overlap: {overlap} m`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double |cycle_barrier=triple`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
 
 
 
@@ -287,7 +285,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

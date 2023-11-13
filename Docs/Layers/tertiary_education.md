@@ -36,12 +36,11 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege' target='_blank'>college</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dschool' target='_blank'>school</a> &isced:2011:level~^(.*bachelor.*)$ |isced:2011:level~^(.*master.*)$
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege' target='_blank'>college</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dschool' target='_blank'>school</a> & (isced:2011:level~^(.*bachelor.*)$ | isced:2011:level~^(.*master.*)$)
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22college%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22university%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22school%22%5D%5B%22isced%3A2011%3Alevel%22~%22%5E%28.*bachelor.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22school%22%5D%5B%22isced%3A2011%3Alevel%22~%22%5E%28.*master.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -82,10 +81,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -99,8 +98,8 @@ The question is  *What kind of institution is this?*
 
 
 
-  - *This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here*  corresponds with  `amenity=college`
-  - *This is a university, an institution of tertiary education where bachelor degrees or higher are awarded.*  corresponds with  `amenity=university`
+  - *This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege' target='_blank'>college</a>
+  - *This is a university, an institution of tertiary education where bachelor degrees or higher are awarded.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>
 
 
 
@@ -115,12 +114,12 @@ The question is  *What level of education is given here?*
 
 
 
-  - *Bachelor degrees are awarded here*  corresponds with  `isced:2011:level=bachelor`
-  - *Master degrees are awarded here*  corresponds with  `isced:2011:level=master`
-  - *Doctorate degrees are awarded here*  corresponds with  `isced:2011:level=doctorate`
+  - *Bachelor degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dbachelor' target='_blank'>bachelor</a>
+  - *Master degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dmaster' target='_blank'>master</a>
+  - *Doctorate degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Ddoctorate' target='_blank'>doctorate</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=university`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>`
 
 
 
@@ -138,8 +137,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -160,8 +159,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 
 
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  `contact:email~.+`
-  - This option cannot be chosen as answer
+  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -182,8 +181,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -222,7 +221,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

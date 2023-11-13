@@ -36,12 +36,7 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22waste_disposal%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -80,10 +75,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -111,8 +106,8 @@ The question is  *What kind of waste disposal bin is this?*
 
 
 
-  - *This is a medium to large bin for disposal of (household) waste*  corresponds with  `amenity=waste_disposal`
-  - *This is actually a recycling container*  corresponds with  `amenity=recycling`
+  - *This is a medium to large bin for disposal of (household) waste*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
+  - *This is actually a recycling container*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a>
 
 
 
@@ -131,9 +126,9 @@ This is rendered with  `Access: {access}`
 
 
 
-  - *This bin can be used by anyone*  corresponds with  `access=yes`
-  - *This bin is private*  corresponds with  `access=no`
-  - *This bin is only for residents*  corresponds with  `access=residents`
+  - *This bin can be used by anyone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - *This bin is private*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+  - *This bin is only for residents*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents' target='_blank'>residents</a>
 
 
 
@@ -148,9 +143,9 @@ The question is  *Where is this container located?*
 
 
 
-  - *This is an underground container*  corresponds with  `location=underground`
-  - *This container is located indoors*  corresponds with  `location=indoor`
-  - *This container is located outdoors*  corresponds with  ``
+  - *This is an underground container*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - *This container is located indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
+  - *This container is located outdoors*  corresponds with  location=
 
 
 
@@ -207,7 +202,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

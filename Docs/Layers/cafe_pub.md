@@ -37,12 +37,13 @@ A layer showing cafés and pubs where one can gather around a drink. The layer a
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbiergarten' target='_blank'>biergarten</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub' target='_blank'>nightclub</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbiergarten' target='_blank'>biergarten</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub' target='_blank'>nightclub</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22biergarten%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22nightclub%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -92,10 +93,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -139,13 +140,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -176,12 +177,12 @@ The question is  *What kind of cafe is this?*
 
 
 
-  - *A pub, mostly for drinking beers in a warm, relaxed interior*  corresponds with  `amenity=pub`
-  - *A more modern and commercial <b>bar</b>, possibly with a music and light installation*  corresponds with  `amenity=bar`
-  - *A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment*  corresponds with  `amenity=cafe`
-  - *A <b>restaurant</b> where one can get a proper meal*  corresponds with  `amenity=restaurant`
-  - *An open space where beer is served, typically seen in Germany*  corresponds with  `amenity=biergarten`
-  - *This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks*  corresponds with  `amenity=nightclub`
+  - *A pub, mostly for drinking beers in a warm, relaxed interior*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>
+  - *A more modern and commercial <b>bar</b>, possibly with a music and light installation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>
+  - *A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>
+  - *A <b>restaurant</b> where one can get a proper meal*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
+  - *An open space where beer is served, typically seen in Germany*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbiergarten' target='_blank'>biergarten</a>
+  - *This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub' target='_blank'>nightclub</a>
 
 
 
@@ -214,8 +215,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -236,8 +237,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 
 
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  `contact:email~.+`
-  - This option cannot be chosen as answer
+  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -258,8 +259,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -276,11 +277,11 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
@@ -296,10 +297,10 @@ The question is  *Is this place accessible with a wheelchair?*
 
 
 
-  - *This place is specially adapted for wheelchair users*  corresponds with  `wheelchair=designated`
-  - *This place is easily reachable with a wheelchair*  corresponds with  `wheelchair=yes`
-  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  `wheelchair=limited`
-  - *This place is not reachable with a wheelchair*  corresponds with  `wheelchair=no`
+  - *This place is specially adapted for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+  - *This place is easily reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+  - *This place is not reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -314,9 +315,9 @@ The question is  *Is smoking allowed at {title()}?*
 
 
 
-  - *Smoking is <b>allowed</b>*  corresponds with  `smoking=yes`
-  - *Smoking is <b>not allowed</b>*  corresponds with  `smoking=no`
-  - *Smoking is <b>allowed outside</b>.*  corresponds with  `smoking=outside`
+  - *Smoking is <b>allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes' target='_blank'>yes</a>
+  - *Smoking is <b>not allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno' target='_blank'>no</a>
+  - *Smoking is <b>allowed outside</b>.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside' target='_blank'>outside</a>
 
 
 
@@ -331,10 +332,10 @@ The question is  *Does this amenity have electrical outlets, available to custom
 
 
 
-  - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  `service:electricity=yes`
-  - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  `service:electricity=limited`
-  - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked*  corresponds with  `service:electricity=ask`
-  - *There are a no domestic sockets available to customers seated indoors*  corresponds with  `service:electricity=no`
+  - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes' target='_blank'>yes</a>
+  - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited' target='_blank'>limited</a>
+  - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
+  - *There are a no domestic sockets available to customers seated indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
 
 
 
@@ -349,10 +350,10 @@ The question is  *Are dogs allowed in this business?*
 
 
 
-  - *Dogs are allowed*  corresponds with  `dog=yes`
-  - *Dogs are <b>not</b> allowed*  corresponds with  `dog=no`
-  - *Dogs are allowed, but they have to be leashed*  corresponds with  `dog=leashed`
-  - *Dogs are allowed and can run around freely*  corresponds with  `dog=unleashed`
+  - *Dogs are allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+  - *Dogs are <b>not</b> allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
+  - *Dogs are allowed, but they have to be leashed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
+  - *Dogs are allowed and can run around freely*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
 
 
 
@@ -367,12 +368,12 @@ The question is  *Does this place offer internet access?*
 
 
 
-  - *This place offers wireless internet access*  corresponds with  `internet_access=wlan`
-  - *This place <b>does not</b> offer internet access*  corresponds with  `internet_access=no`
-  - *This place offers internet access*  corresponds with  `internet_access=yes`
-  - This option cannot be chosen as answer
-  - *This place offers internet access via a terminal or computer*  corresponds with  `internet_access=terminal`
-  - *This place offers wired internet access*  corresponds with  `internet_access=wired`
+  - *This place offers wireless internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+  - *This place <b>does not</b> offer internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
+  - *This place offers internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - *This place offers internet access via a terminal or computer*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+  - *This place offers wired internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
 
 
 This tagrendering has labels  `internet-all`
@@ -389,12 +390,12 @@ The question is  *Is there a fee for internet access?*
 
 
 
-  - *There is a fee for the internet access at this place*  corresponds with  `internet_access:fee=yes`
-  - *Internet access is free at this place*  corresponds with  `internet_access:fee=no`
-  - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
+  - *There is a fee for the internet access at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
+  - *Internet access is free at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
+  - *Internet access is free at this place, for customers only*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no & internet_access~.+`
 
 This tagrendering has labels  `internet-all`
 
@@ -414,10 +415,10 @@ This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 
-  - *Telekom*  corresponds with  `internet_access:ssid=Telekom`
+  - *Telekom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
 
 This tagrendering has labels  `internet-all`
 
@@ -487,7 +488,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -530,7 +531,7 @@ accepts_cards.0 | Accepts payment cards | payment:cards=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-has_internet.0 | Offers internet | internet_access=wlan \|internet_access=yes \|internet_access=wired
+has_internet.0 | Offers internet | internet_access=wlan \| internet_access=yes \| internet_access=wired
 
 
 

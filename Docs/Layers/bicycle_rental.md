@@ -37,12 +37,12 @@ Bicycle rental stations
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a> |bicycle_rental~.+ |<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> |rental~^(.*bicycle.*)$
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
+ - bicycle_rental~.+
+ - rental~^(.*bicycle.*)$
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_rental%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Arental%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22bicycle_rental%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22rental%22~%22%5E%28.*bicycle.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -90,10 +90,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -119,15 +119,15 @@ The question is  *What kind of bicycle rental is this?*
 
 
 
-  - *This is a shop whose main focus is bicycle rental*  corresponds with  `shop=rental &bicycle_rental=shop`
-  - *This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus*  corresponds with  `shop=rental`
-  - *This is a shop which sells or repairs bicycles, but also rents out bicycles*  corresponds with  `service:bicycle:rental=yes &shop=bicycle`
-  - *This is an automated docking station, where a bicycle is mechanically locked to a structure*  corresponds with  `bicycle_rental=docking_station`
-  - *A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby*  corresponds with  `bicycle_rental=key_dispensing_machine`
-  - *This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only*  corresponds with  `bicycle_rental=dropoff_point`
+  - *This is a shop whose main focus is bicycle rental*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dshop' target='_blank'>shop</a>
+  - *This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
+  - *This is a shop which sells or repairs bicycles, but also rents out bicycles*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
+  - *This is an automated docking station, where a bicycle is mechanically locked to a structure*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddocking_station' target='_blank'>docking_station</a>
+  - *A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dkey_dispensing_machine' target='_blank'>key_dispensing_machine</a>
+  - *This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddropoff_point' target='_blank'>dropoff_point</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bicycle_rental`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a>`
 
 
 
@@ -145,8 +145,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -167,8 +167,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 
 
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  `contact:email~.+`
-  - This option cannot be chosen as answer
+  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -189,8 +189,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -209,7 +209,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop~.+ |opening_hours~.+`
+This tagrendering is only visible in the popup if the following condition is met: `opening_hours~.+ | shop~.+`
 
 
 
@@ -223,11 +223,11 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
@@ -245,15 +245,15 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Payment is done using a dedicated app*  corresponds with  `payment:app=yes`
+  - *Payment is done using a dedicated app*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
-  - *Payment is done using a membership card*  corresponds with  `payment:membership_card=yes`
+  - *Payment is done using a membership card*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
 
 
@@ -273,14 +273,14 @@ This is rendered with  `{rental} is rented here`
 
 
 
-  - *Normal city bikes can be rented here*  corresponds with  `rental=city_bike`
-  - *Electrical bikes can be rented here*  corresponds with  `rental=ebike`
-  - *BMX bikes can be rented here*  corresponds with  `rental=bmx`
-  - *Mountainbikes can be rented here*  corresponds with  `rental=mtb`
-  - *Bikes for children can be rented here*  corresponds with  `rental=kid_bike`
-  - *Tandem bicycles can be rented here*  corresponds with  `rental=tandem`
-  - *Race bicycles can be rented here*  corresponds with  `rental=racebike`
-  - *Bike helmets can be rented here*  corresponds with  `rental=bike_helmet`
+  - *Normal city bikes can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
+  - *Electrical bikes can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
+  - *BMX bikes can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>
+  - *Mountainbikes can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>
+  - *Bikes for children can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>
+  - *Tandem bicycles can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>
+  - *Race bicycles can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
+  - *Bike helmets can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
 
 
 This tagrendering has labels  `bicycle_rental`
@@ -465,7 +465,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

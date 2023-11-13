@@ -41,12 +41,7 @@ A layer showing kerbs.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dkerb' target='_blank'>kerb</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dkerb' target='_blank'>kerb</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22barrier%22%3D%22kerb%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -85,10 +80,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -114,16 +109,16 @@ The question is  *What is the height of this kerb?*
 
 
 
-  - *This kerb is raised (>3 cm)*  corresponds with  `kerb=raised`
-  - *This kerb is lowered (~3 cm)*  corresponds with  `kerb=lowered`
-  - *This kerb is flush (~0cm)*  corresponds with  `kerb=flush`
-  - *There is no kerb here*  corresponds with  `kerb=no`
-  - This option cannot be chosen as answer
-  - *There is a kerb of unknown height*  corresponds with  `kerb=yes`
-  - This option cannot be chosen as answer
+  - *This kerb is raised (>3 cm)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised' target='_blank'>raised</a>
+  - *This kerb is lowered (~3 cm)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered' target='_blank'>lowered</a>
+  - *This kerb is flush (~0cm)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush' target='_blank'>flush</a>
+  - *There is no kerb here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dno' target='_blank'>no</a>
+  - _This option cannot be chosen as answer_
+  - *There is a kerb of unknown height*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_geometry:type=Point`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>`
 
 
 
@@ -137,13 +132,13 @@ The question is  *Is there tactile paving at this kerb?*
 
 
 
-  - *This kerb has tactile paving.*  corresponds with  `tactile_paving=yes`
-  - *This kerb does not have tactile paving.*  corresponds with  `tactile_paving=no`
-  - *This kerb has tactile paving, but it is incorrect.*  corresponds with  `tactile_paving=incorrect`
-  - This option cannot be chosen as answer
+  - *This kerb has tactile paving.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
+  - *This kerb does not have tactile paving.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
+  - *This kerb has tactile paving, but it is incorrect.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>
+  - _This option cannot be chosen as answer_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_geometry:type=Point`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>`
 
 
 
@@ -161,7 +156,7 @@ This is rendered with  `Kerb height: {kerb:height}`
 
 
 
-  - *This kerb is flush and is lower than 1cm.*  corresponds with  `kerb:height=0`
+  - *This kerb is flush and is lower than 1cm.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb:height' target='_blank'>kerb:height</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0' target='_blank'>0</a>
 
 
 
@@ -198,7 +193,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -225,7 +220,7 @@ kerb-type.1 | Raised kerb (>3 cm) | kerb=raised
 kerb-type.2 | Lowered kerb (~3 cm) | kerb=lowered
 kerb-type.3 | Flush kerb (~0cm) | kerb=flush
 kerb-type.4 | No kerb | kerb=no
-kerb-type.5 | Kerb with unknown height | 
+kerb-type.5 | Kerb with unknown height | kerb=
 
 
 
@@ -235,7 +230,7 @@ id | question | osmTags
 tactile_paving_advanced.0 | With or without tactile paving (default) | 
 tactile_paving_advanced.1 | With tactile paving | tactile_paving=yes
 tactile_paving_advanced.2 | Without tactile paving | tactile_paving=no
-tactile_paving_advanced.3 | No information about tactile paving | 
+tactile_paving_advanced.3 | No information about tactile paving | tactile_paving=
  
 
 This document is autogenerated from [assets/layers/kerbs/kerbs.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/kerbs/kerbs.json)

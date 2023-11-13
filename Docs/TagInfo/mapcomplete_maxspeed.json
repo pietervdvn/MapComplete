@@ -82,7 +82,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Maxspeed' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Maxspeed' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "maxspeed",
@@ -100,7 +100,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Speed Camera' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Speed Camera' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "maxspeed",
@@ -113,7 +113,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Speed Display' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Speed Display' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "maxspeed",

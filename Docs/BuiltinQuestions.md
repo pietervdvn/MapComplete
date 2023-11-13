@@ -196,10 +196,10 @@ This is rendered with  `{wikipedia():max-height:25rem}`
 
 
 
-  - *{wikipedia():max-height:25rem}*  corresponds with  `wikipedia~.+`
-  - This option cannot be chosen as answer
-  - *No Wikipedia page has been linked yet*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *{wikipedia():max-height:25rem}*  corresponds with  wikipedia~.+
+  - _This option cannot be chosen as answer_
+  - *No Wikipedia page has been linked yet*  corresponds with  wikidata=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -242,8 +242,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -276,7 +276,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *<span class='alert'>Uploading...</alert>*  corresponds with  `id~^(=-)$`
+  - *<span class='alert'>Uploading...</alert>*  corresponds with  id~^(=-)$
 
 
 
@@ -295,8 +295,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 
 
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  `contact:email~.+`
-  - This option cannot be chosen as answer
+  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -317,8 +317,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -335,10 +335,10 @@ The question is  *Is this place accessible with a wheelchair?*
 
 
 
-  - *This place is specially adapted for wheelchair users*  corresponds with  `wheelchair=designated`
-  - *This place is easily reachable with a wheelchair*  corresponds with  `wheelchair=yes`
-  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  `wheelchair=limited`
-  - *This place is not reachable with a wheelchair*  corresponds with  `wheelchair=no`
+  - *This place is specially adapted for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+  - *This place is easily reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+  - *This place is not reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -353,10 +353,10 @@ The question is  *Are dogs allowed in this business?*
 
 
 
-  - *Dogs are allowed*  corresponds with  `dog=yes`
-  - *Dogs are <b>not</b> allowed*  corresponds with  `dog=no`
-  - *Dogs are allowed, but they have to be leashed*  corresponds with  `dog=leashed`
-  - *Dogs are allowed and can run around freely*  corresponds with  `dog=unleashed`
+  - *Dogs are allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+  - *Dogs are <b>not</b> allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
+  - *Dogs are allowed, but they have to be leashed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
+  - *Dogs are allowed and can run around freely*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
 
 
 
@@ -403,7 +403,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 
@@ -422,9 +422,9 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *Only by appointment*  corresponds with  `opening_hours="by appointment"`
-  - *Only by appointment*  corresponds with  `opening_hours~^("by appointment"|by appointment)$`
-  - This option cannot be chosen as answer
+  - *Only by appointment*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
+  - *Only by appointment*  corresponds with  opening_hours~^("by appointment"|by appointment)$
+  - _This option cannot be chosen as answer_
 
 
 
@@ -439,10 +439,10 @@ The question is  *Does this amenity have electrical outlets, available to custom
 
 
 
-  - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  `service:electricity=yes`
-  - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  `service:electricity=limited`
-  - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked*  corresponds with  `service:electricity=ask`
-  - *There are a no domestic sockets available to customers seated indoors*  corresponds with  `service:electricity=no`
+  - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes' target='_blank'>yes</a>
+  - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited' target='_blank'>limited</a>
+  - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
+  - *There are a no domestic sockets available to customers seated indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
 
 
 
@@ -457,11 +457,11 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
@@ -477,21 +477,21 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cash=
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cards=
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Coins are accepted here*  corresponds with  `payment:coins=yes`
+  - *Coins are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
-  - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
+  - *Bank notes are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
-  - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
+  - *Debit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
-  - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
+  - *Credit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
@@ -507,15 +507,15 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Payment is done using a dedicated app*  corresponds with  `payment:app=yes`
+  - *Payment is done using a dedicated app*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
-  - *Payment is done using a membership card*  corresponds with  `payment:membership_card=yes`
+  - *Payment is done using a membership card*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
 
 
@@ -531,24 +531,24 @@ The question is  *What coins can you use to pay here?*
 
 
 
-  - *1 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.01 EUR`
-  - *2 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.02 EUR`
-  - *5 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.05 EUR`
-  - *10 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.10 EUR`
-  - *20 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.20 EUR`
-  - *50 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.50 EUR`
-  - *1 euro coins are accepted*  corresponds with  `payment:coins:denominations=1 EUR`
-  - *2 euro coins are accepted*  corresponds with  `payment:coins:denominations=2 EUR`
-  - *5 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.05 CHF`
-  - *10 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.10 CHF`
-  - *20 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.20 CHF`
-  - *½ franc coins are accepted*  corresponds with  `payment:coins:denominations=0.50 CHF`
-  - *1 franc coins are accepted*  corresponds with  `payment:coins:denominations=1 CHF`
-  - *2 francs coins are accepted*  corresponds with  `payment:coins:denominations=2 CHF`
-  - *5 francs coins are accepted*  corresponds with  `payment:coins:denominations=5 CHF`
+  - *1 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR' target='_blank'>0.01 EUR</a>
+  - *2 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR' target='_blank'>0.02 EUR</a>
+  - *5 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR' target='_blank'>0.05 EUR</a>
+  - *10 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR' target='_blank'>0.10 EUR</a>
+  - *20 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR' target='_blank'>0.20 EUR</a>
+  - *50 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
+  - *1 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR' target='_blank'>1 EUR</a>
+  - *2 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR' target='_blank'>2 EUR</a>
+  - *5 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF' target='_blank'>0.05 CHF</a>
+  - *10 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF' target='_blank'>0.10 CHF</a>
+  - *20 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF' target='_blank'>0.20 CHF</a>
+  - *½ franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF' target='_blank'>0.50 CHF</a>
+  - *1 franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF' target='_blank'>1 CHF</a>
+  - *2 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF' target='_blank'>2 CHF</a>
+  - *5 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF' target='_blank'>5 CHF</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)`
 
 
 
@@ -562,22 +562,22 @@ The question is  *what notes can you use to pay here?*
 
 
 
-  - *5 euro notes are accepted*  corresponds with  `payment:notes:denominations=5 EUR`
-  - *10 euro notes are accepted*  corresponds with  `payment:notes:denominations=10 EUR`
-  - *20 euro notes are accepted*  corresponds with  `payment:notes:denominations=20 EUR`
-  - *50 euro notes are accepted*  corresponds with  `payment:notes:denominations=50 EUR`
-  - *100 euro notes are accepted*  corresponds with  `payment:notes:denominations=100 EUR`
-  - *200 euro notes are accepted*  corresponds with  `payment:notes:denominations=200 EUR`
-  - *500 euro notes are accepted*  corresponds with  `payment:notes:denominations=500 EUR`
-  - *10 francs notes are accepted*  corresponds with  `payment:notes:denominations=10 CHF`
-  - *20 francs notes are accepted*  corresponds with  `payment:notes:denominations=20 CHF`
-  - *50 francs notes are accepted*  corresponds with  `payment:notes:denominations=50 CHF`
-  - *100 francs notes are accepted*  corresponds with  `payment:notes:denominations=100 CHF`
-  - *200 francs notes are accepted*  corresponds with  `payment:notes:denominations=200 CHF`
-  - *1000 francs notes are accepted*  corresponds with  `payment:notes:denominations=1000 CHF`
+  - *5 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR' target='_blank'>5 EUR</a>
+  - *10 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR' target='_blank'>10 EUR</a>
+  - *20 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 EUR' target='_blank'>20 EUR</a>
+  - *50 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 EUR' target='_blank'>50 EUR</a>
+  - *100 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 EUR' target='_blank'>100 EUR</a>
+  - *200 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 EUR' target='_blank'>200 EUR</a>
+  - *500 euro notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D500 EUR' target='_blank'>500 EUR</a>
+  - *10 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 CHF' target='_blank'>10 CHF</a>
+  - *20 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 CHF' target='_blank'>20 CHF</a>
+  - *50 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 CHF' target='_blank'>50 CHF</a>
+  - *100 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 CHF' target='_blank'>100 CHF</a>
+  - *200 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF' target='_blank'>200 CHF</a>
+  - *1000 francs notes are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF' target='_blank'>1000 CHF</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)`
 
 
 
@@ -591,7 +591,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -619,10 +619,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -640,13 +640,13 @@ This is rendered with  `This elevator goes to floors {level}`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 
@@ -679,13 +679,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -702,9 +702,9 @@ The question is  *Is smoking allowed at {title()}?*
 
 
 
-  - *Smoking is <b>allowed</b>*  corresponds with  `smoking=yes`
-  - *Smoking is <b>not allowed</b>*  corresponds with  `smoking=no`
-  - *Smoking is <b>allowed outside</b>.*  corresponds with  `smoking=outside`
+  - *Smoking is <b>allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes' target='_blank'>yes</a>
+  - *Smoking is <b>not allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno' target='_blank'>no</a>
+  - *Smoking is <b>allowed outside</b>.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside' target='_blank'>outside</a>
 
 
 
@@ -721,8 +721,8 @@ The question is  *Does this place have an audio induction loop for people with r
 
 
 
-  - *This place has an audio induction loop*  corresponds with  `hearing_loop=yes`
-  - *This place <b>does not</b> have an audio induction loop*  corresponds with  `hearing_loop=no`
+  - *This place has an audio induction loop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
+  - *This place <b>does not</b> have an audio induction loop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
 
 
 
@@ -737,12 +737,12 @@ The question is  *Does this place offer internet access?*
 
 
 
-  - *This place offers wireless internet access*  corresponds with  `internet_access=wlan`
-  - *This place <b>does not</b> offer internet access*  corresponds with  `internet_access=no`
-  - *This place offers internet access*  corresponds with  `internet_access=yes`
-  - This option cannot be chosen as answer
-  - *This place offers internet access via a terminal or computer*  corresponds with  `internet_access=terminal`
-  - *This place offers wired internet access*  corresponds with  `internet_access=wired`
+  - *This place offers wireless internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+  - *This place <b>does not</b> offer internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
+  - *This place offers internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - *This place offers internet access via a terminal or computer*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+  - *This place offers wired internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
 
 
 This tagrendering has labels  `internet-all`
@@ -759,12 +759,12 @@ The question is  *Is there a fee for internet access?*
 
 
 
-  - *There is a fee for the internet access at this place*  corresponds with  `internet_access:fee=yes`
-  - *Internet access is free at this place*  corresponds with  `internet_access:fee=no`
-  - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
+  - *There is a fee for the internet access at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
+  - *Internet access is free at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
+  - *Internet access is free at this place, for customers only*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no & internet_access~.+`
 
 This tagrendering has labels  `internet-all`
 
@@ -784,10 +784,10 @@ This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 
-  - *Telekom*  corresponds with  `internet_access:ssid=Telekom`
+  - *Telekom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
 
 This tagrendering has labels  `internet-all`
 
@@ -803,10 +803,10 @@ The question is  *Is this object lit or does it emit light?*
 
 
 
-  - *This object both emits light and is lighted by an external light source*  corresponds with  `lit=yes &luminous=yes`
-  - *This object emits light*  corresponds with  `luminous=yes`
-  - *This object is lit externally, e.g. by a spotlight or other lights*  corresponds with  `lit=yes`
-  - *This object does not emit light and is not lighted by externally*  corresponds with  `lit=no &luminous=no`
+  - *This object both emits light and is lighted by an external light source*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
+  - *This object emits light*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
+  - *This object is lit externally, e.g. by a spotlight or other lights*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
+  - *This object does not emit light and is not lighted by externally*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dno' target='_blank'>no</a>
 
 
 
@@ -825,7 +825,7 @@ This is rendered with  `This object was last surveyed on <b>{survey:date}</b>`
 
 
 
-  - *This object was last surveyed today*  corresponds with  `survey:date=`
+  - *This object was last surveyed today*  corresponds with  survey:date=
 
 
 
@@ -844,7 +844,7 @@ This is rendered with  `This object was last checked on <b>{check_date}</b>`
 
 
 
-  - *This object was last checked today*  corresponds with  `check_date=`
+  - *This object was last checked today*  corresponds with  check_date=
 
 
 
@@ -859,10 +859,10 @@ The question is  *Does this shop have a sugar free offering?*
 
 
 
-  - *This shop <b>only sells sugar free</b> products*  corresponds with  `diet:sugar_free=only`
-  - *This shop has a big sugar free offering*  corresponds with  `diet:sugar_free=yes`
-  - *This shop has a <b>limited sugar free</b> offering*  corresponds with  `diet:sugar_free=limited`
-  - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
+  - *This shop <b>only sells sugar free</b> products*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly' target='_blank'>only</a>
+  - *This shop has a big sugar free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes' target='_blank'>yes</a>
+  - *This shop has a <b>limited sugar free</b> offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited' target='_blank'>limited</a>
+  - *This shop has no sugar free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `diets`
@@ -879,10 +879,10 @@ The question is  *Does {title()} have a lactose-free offering?*
 
 
 
-  - *<b>Only sells lactose free</b> products*  corresponds with  `diet:lactose_free=only`
-  - *Big lactose free offering*  corresponds with  `diet:lactose_free=yes`
-  - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
-  - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
+  - *<b>Only sells lactose free</b> products*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
+  - *Big lactose free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
+  - *<b>Limited lactose free</b> offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
+  - *No lactose free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `diets`
@@ -899,10 +899,10 @@ The question is  *Does this shop have a gluten free offering?*
 
 
 
-  - *This shop <b>only sells gluten free</b> products*  corresponds with  `diet:gluten_free=only`
-  - *This shop has a big gluten free offering*  corresponds with  `diet:gluten_free=yes`
-  - *This shop has a <b>limited gluten free</b> offering*  corresponds with  `diet:gluten_free=limited`
-  - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
+  - *This shop <b>only sells gluten free</b> products*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
+  - *This shop has a big gluten free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
+  - *This shop has a <b>limited gluten free</b> offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited' target='_blank'>limited</a>
+  - *This shop has no gluten free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `diets`
@@ -919,10 +919,10 @@ The question is  *Does this place offer a vegan option?*
 
 
 
-  - *This place <b>only sells vegan</b> products*  corresponds with  `diet:vegan=only`
-  - *This shop has a big vegan offering*  corresponds with  `diet:vegan=yes`
-  - *This shop has a <b>limited vegan</b> offering*  corresponds with  `diet:vegan=limited`
-  - *This shop has no vegan offering*  corresponds with  `diet:vegan=no`
+  - *This place <b>only sells vegan</b> products*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly' target='_blank'>only</a>
+  - *This shop has a big vegan offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
+  - *This shop has a <b>limited vegan</b> offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
+  - *This shop has no vegan offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `diets` 

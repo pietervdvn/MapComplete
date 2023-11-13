@@ -38,13 +38,10 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DANPR' target='_blank'>ANPR</a>
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a>
+1. <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DANPR' target='_blank'>ANPR</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22man_made%22%3D%22surveillance%22%5D%5B%22surveillance%3Atype%22%3D%22camera%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22man_made%22%3D%22surveillance%22%5D%5B%22surveillance%3Atype%22%3D%22ALPR%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22man_made%22%3D%22surveillance%22%5D%5B%22surveillance%3Atype%22%3D%22ANPR%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -89,10 +86,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -118,8 +115,8 @@ The question is  *Can this camera automatically detect license plates?*
 
 
 
-  - *This is a camera without number plate recognition.*  corresponds with  `surveillance:type=camera`
-  - *This is an ALPR (Automatic License Plate Reader)*  corresponds with  `surveillance:type=ALPR`
+  - *This is a camera without number plate recognition.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a>
+  - *This is an ALPR (Automatic License Plate Reader)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a>
 
 
 
@@ -134,9 +131,9 @@ The question is  *What kind of camera is this?*
 
 
 
-  - *A fixed (non-moving) camera*  corresponds with  `camera:type=fixed`
-  - *A dome camera (which can turn)*  corresponds with  `camera:type=dome`
-  - *A panning camera*  corresponds with  `camera:type=panning`
+  - *A fixed (non-moving) camera*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dfixed' target='_blank'>fixed</a>
+  - *A dome camera (which can turn)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddome' target='_blank'>dome</a>
+  - *A panning camera*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dpanning' target='_blank'>panning</a>
 
 
 
@@ -155,8 +152,8 @@ This is rendered with  `Films to a compass heading of {camera:direction}`
 
 
 
-  - *Films to a compass heading of {direction}*  corresponds with  `direction~.+`
-  - This option cannot be chosen as answer
+  - *Films to a compass heading of {direction}*  corresponds with  camera:direction= & direction~.+
+  - _This option cannot be chosen as answer_
 
 
 
@@ -185,9 +182,9 @@ The question is  *What kind of surveillance is this camera?*
 
 
 
-  - *A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …*  corresponds with  `surveillance=public`
-  - *An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)*  corresponds with  `surveillance=outdoor`
-  - *A private indoor area is surveilled, e.g. a shop, a private underground parking, …*  corresponds with  `surveillance=indoor`
+  - *A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dpublic' target='_blank'>public</a>
+  - *An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Doutdoor' target='_blank'>outdoor</a>
+  - *A private indoor area is surveilled, e.g. a shop, a private underground parking, …*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dindoor' target='_blank'>indoor</a>
 
 
 
@@ -202,13 +199,13 @@ The question is  *Is the public space surveilled by this camera an indoor or out
 
 
 
-  - *This camera is located indoors*  corresponds with  `indoor=yes`
-  - *This camera is located outdoors*  corresponds with  `indoor=no`
-  - *This camera is probably located outdoors*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *This camera is located indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+  - *This camera is located outdoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
+  - *This camera is probably located outdoors*  corresponds with  indoor=
+  - _This option cannot be chosen as answer_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `surveillance:type=public`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dpublic' target='_blank'>public</a>`
 
 
 
@@ -224,7 +221,7 @@ This is rendered with  `Located on level {level}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `indoor=yes |surveillance:type=ye`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dye' target='_blank'>ye</a>`
 
 
 
@@ -242,12 +239,12 @@ This is rendered with  `Surveills a {surveillance:zone}`
 
 
 
-  - *Surveills a parking*  corresponds with  `surveillance:zone=parking`
-  - *Surveills the traffic*  corresponds with  `surveillance:zone=traffic`
-  - *Surveills an entrance*  corresponds with  `surveillance:zone=entrance`
-  - *Surveills a corridor*  corresponds with  `surveillance:zone=corridor`
-  - *Surveills a public tranport platform*  corresponds with  `surveillance:zone=public_transport_platform`
-  - *Surveills a shop*  corresponds with  `surveillance:zone=shop`
+  - *Surveills a parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dparking' target='_blank'>parking</a>
+  - *Surveills the traffic*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dtraffic' target='_blank'>traffic</a>
+  - *Surveills an entrance*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dentrance' target='_blank'>entrance</a>
+  - *Surveills a corridor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dcorridor' target='_blank'>corridor</a>
+  - *Surveills a public tranport platform*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dpublic_transport_platform' target='_blank'>public_transport_platform</a>
+  - *Surveills a shop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dshop' target='_blank'>shop</a>
 
 
 
@@ -266,11 +263,11 @@ This is rendered with  `Mounting method: {camera:mount}`
 
 
 
-  - *This camera is placed against a wall*  corresponds with  `camera:mount=wall`
-  - *This camera is placed on a pole*  corresponds with  `camera:mount=pole`
-  - *This camera is placed on the ceiling*  corresponds with  `camera:mount=ceiling`
-  - *This camera is placed on a street light*  corresponds with  `camera:mount=street_lamp`
-  - *This camera is placed on a tree*  corresponds with  `camera:mount=tree`
+  - *This camera is placed against a wall*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall' target='_blank'>wall</a>
+  - *This camera is placed on a pole*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dpole' target='_blank'>pole</a>
+  - *This camera is placed on the ceiling*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dceiling' target='_blank'>ceiling</a>
+  - *This camera is placed on a street light*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dstreet_lamp' target='_blank'>street_lamp</a>
+  - *This camera is placed on a tree*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dtree' target='_blank'>tree</a>
 
 
 
@@ -317,7 +314,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

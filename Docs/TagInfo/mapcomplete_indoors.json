@@ -37,7 +37,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Indoors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Indoors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -57,40 +57,40 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Indoors' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors')"
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)"
     },
     {
       "key": "location",
-      "description": "Layer 'Indoors' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Indoors' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Indoors' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Indoors' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Indoors' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level.",
+      "description": "Layer 'Indoors' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Indoors' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Indoors' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Indoors' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Indoors' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "-1"
     },
     {
       "key": "ref",
-      "description": "Layer 'Indoors' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Indoors') (This is only shown if indoor=room |indoor=area |indoor=corridor)"
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Indoors') (This is only shown if indoor=room | indoor=area | indoor=corridor)"
     },
     {
       "key": "name",
-      "description": "Layer 'Indoors' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Indoors') (This is only shown if indoor=room |indoor=area |indoor=corridor)"
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Indoors') (This is only shown if indoor=room | indoor=area | indoor=corridor)"
     },
     {
       "key": "room",
@@ -209,7 +209,7 @@
     },
     {
       "key": "capacity",
-      "description": "Layer 'Indoors' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Indoors') (This is only shown if room=waiting |room=restaurant |room=office |room=nursery |room=conference |room=auditorium |room=chapel |room=bedroom |room=classroom)"
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Indoors') (This is only shown if room=waiting | room=restaurant | room=office | room=nursery | room=conference | room=auditorium | room=chapel | room=bedroom | room=classroom)"
     },
     {
       "key": "highway",
@@ -238,7 +238,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -258,31 +258,31 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Elevator' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors')"
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)"
     },
     {
       "key": "location",
-      "description": "Layer 'Elevator' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Elevator' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Elevator' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Elevator' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Elevator' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level.",
+      "description": "Layer 'Elevator' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Elevator' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Elevator' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Elevator' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Elevator' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "-1"
     },
     {
@@ -302,7 +302,7 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Elevator' shows  with a fixed text, namely 'This elevator works' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Elevator' shows operational_status= with a fixed text, namely 'This elevator works' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key operational_status.",
       "value": ""
     },
     {
@@ -362,7 +362,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -382,31 +382,31 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Entrance' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors')"
+      "description": "Layer 'Entrance' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)"
     },
     {
       "key": "location",
-      "description": "Layer 'Entrance' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Entrance' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Entrance' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level.",
+      "description": "Layer 'Entrance' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Entrance' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Entrance' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
       "value": "-1"
     },
     {
@@ -416,82 +416,82 @@
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key entrance.",
+      "description": "Layer 'Entrance' shows entrance= & indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key entrance.",
       "value": ""
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows entrance= & indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "door"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows indoor= & entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows indoor= & entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "main"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows indoor= & entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows indoor= & entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "secondary"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows indoor= & entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows indoor= & entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "service"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows indoor= & entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows indoor= & entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "exit"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows indoor= & entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows indoor= & entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "entrance"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows indoor= & entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows indoor= & entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "emergency"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows indoor= & entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "description": "Layer 'Entrance' shows indoor= & entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "home"
     },
     {

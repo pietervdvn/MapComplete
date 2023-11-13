@@ -24,12 +24,12 @@ Waymarked trails
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - route~^(.*foot.*)$ |route~^(.*hiking.*)$ |route~^(.*bycicle.*)$ |route~^(.*horse.*)$
-
+ - route~^(.*foot.*)$
+ - route~^(.*hiking.*)$
+ - route~^(.*bycicle.*)$
+ - route~^(.*horse.*)$
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22route%22~%22%5E%28.*foot.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E%28.*hiking.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E%28.*bycicle.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22route%22~%22%5E%28.*horse.*%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -70,10 +70,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -127,9 +127,9 @@ This is rendered with  `This trail is maintained by {operator}`
 
 
 
-  - *This trail is maintained by Natuurpunt*  corresponds with  `operator=Natuurpunt`
-  - *This trail is maintained by {operator}*  corresponds with  `operator~^((n|N)atuurpunt.*)$`
-  - This option cannot be chosen as answer
+  - *This trail is maintained by Natuurpunt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+  - *This trail is maintained by {operator}*  corresponds with  operator~^((n|N)atuurpunt.*)$
+  - _This option cannot be chosen as answer_
 
 
 
@@ -148,10 +148,10 @@ This is rendered with  `The reference colour is {colour}`
 
 
 
-  - *Blue trail*  corresponds with  `colour=blue`
-  - *Red trail*  corresponds with  `colour=red`
-  - *Green trail*  corresponds with  `colour=green`
-  - *Yellow trail*  corresponds with  `colour=yellow`
+  - *Blue trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
+  - *Red trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
+  - *Green trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
+  - *Yellow trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
 
 
 
@@ -166,8 +166,8 @@ The question is  *Is this trail wheelchair accessible?*
 
 
 
-  - *This trail is wheelchair-accessible*  corresponds with  `wheelchair=yes`
-  - *This trail is not wheelchair accessible*  corresponds with  `wheelchair=no`
+  - *This trail is wheelchair-accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - *This trail is not wheelchair accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -182,8 +182,8 @@ The question is  *Is this trail accessible with a pushchair?*
 
 
 
-  - *This trail is accessible with a pushchair*  corresponds with  `pushchair=yes`
-  - *This trail is not accessible with a pushchair*  corresponds with  `pushchair=no`
+  - *This trail is accessible with a pushchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes' target='_blank'>yes</a>
+  - *This trail is not accessible with a pushchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -220,7 +220,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

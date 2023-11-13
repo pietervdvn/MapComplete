@@ -41,15 +41,12 @@ A layer showing drinking water fountains
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddrinking_water' target='_blank'>drinking_water</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:drinking_water' target='_blank'>drinking_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drinking_water%3Dyes' target='_blank'>yes</a>
-  - man_made!=reservoir_covered
-  - access!=permissive
-  - access!=private
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddrinking_water' target='_blank'>drinking_water</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:drinking_water' target='_blank'>drinking_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drinking_water%3Dyes' target='_blank'>yes</a>
+1. man_made!=reservoir_covered
+2. access!=permissive
+3. access!=private
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22drinking_water%22%5D%5B%22man_made%22!%3D%22reservoir_covered%22%5D%5B%22access%22!%3D%22permissive%22%5D%5B%22access%22!%3D%22private%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22drinking_water%22%3D%22yes%22%5D%5B%22man_made%22!%3D%22reservoir_covered%22%5D%5B%22access%22!%3D%22permissive%22%5D%5B%22access%22!%3D%22private%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -87,10 +84,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -120,9 +117,9 @@ This is rendered with  `The operational status is <i>{operational_status}</i>`
 
 
 
-  - *This drinking water works*  corresponds with  ``
-  - *This drinking water is broken*  corresponds with  `operational_status=broken`
-  - *This drinking water is closed*  corresponds with  `operational_status=closed`
+  - *This drinking water works*  corresponds with  operational_status=
+  - *This drinking water is broken*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
+  - *This drinking water is closed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
 
 
 
@@ -137,8 +134,8 @@ The question is  *How easy is it to fill water bottles?*
 
 
 
-  - *It is easy to refill water bottles*  corresponds with  `bottle=yes`
-  - *Water bottles may not fit*  corresponds with  `bottle=no`
+  - *It is easy to refill water bottles*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes' target='_blank'>yes</a>
+  - *Water bottles may not fit*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno' target='_blank'>no</a>
 
 
 
@@ -207,7 +204,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

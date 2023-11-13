@@ -37,12 +37,7 @@ A layer showing where you can park your bike
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_parking' target='_blank'>bicycle_parking</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_parking' target='_blank'>bicycle_parking</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_parking%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -85,10 +80,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -118,14 +113,14 @@ This is rendered with  `This is a bicycle parking of the type: {bicycle_parking}
 
 
 
-  - *Staple racks*  corresponds with  `bicycle_parking=stands`
-  - *Wheel rack/loops*  corresponds with  `bicycle_parking=wall_loops`
-  - *Handlebar holder*  corresponds with  `bicycle_parking=handlebar_holder`
-  - *Rack*  corresponds with  `bicycle_parking=rack`
-  - *Two-tiered*  corresponds with  `bicycle_parking=two_tier`
-  - *Shed*  corresponds with  `bicycle_parking=shed`
-  - *Bollard*  corresponds with  `bicycle_parking=bollard`
-  - *An area on the floor which is marked for bicycle parking*  corresponds with  `bicycle_parking=floor`
+  - *Staple racks*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
+  - *Wheel rack/loops*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
+  - *Handlebar holder*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder' target='_blank'>handlebar_holder</a>
+  - *Rack*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack' target='_blank'>rack</a>
+  - *Two-tiered*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier' target='_blank'>two_tier</a>
+  - *Shed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed' target='_blank'>shed</a>
+  - *Bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard' target='_blank'>bollard</a>
+  - *An area on the floor which is marked for bicycle parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor' target='_blank'>floor</a>
 
 
 
@@ -140,11 +135,11 @@ The question is  *What is the relative location of this bicycle parking?*
 
 
 
-  - *Underground parking*  corresponds with  `location=underground`
-  - *Surface level parking*  corresponds with  `location=surface`
-  - *Rooftop parking*  corresponds with  `location=rooftop`
-  - *Surface level parking*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *Underground parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - *Surface level parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface' target='_blank'>surface</a>
+  - *Rooftop parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop' target='_blank'>rooftop</a>
+  - *Surface level parking*  corresponds with  location=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -159,8 +154,8 @@ The question is  *Is this parking covered? Also select "covered" for indoor park
 
 
 
-  - *This parking is covered (it has a roof)*  corresponds with  `covered=yes`
-  - *This parking is not covered*  corresponds with  `covered=no`
+  - *This parking is covered (it has a roof)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
+  - *This parking is not covered*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
 
 
 
@@ -193,9 +188,9 @@ This is rendered with  `{access}`
 
 
 
-  - *Publicly accessible*  corresponds with  `access=yes`
-  - *Access is primarily for visitors to a business*  corresponds with  `access=customers`
-  - *Access is limited to members of a school, company or organisation*  corresponds with  `access=private`
+  - *Publicly accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - *Access is primarily for visitors to a business*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - *Access is limited to members of a school, company or organisation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
 
 
@@ -210,9 +205,9 @@ The question is  *Does this bicycle parking have spots for cargo bikes?*
 
 
 
-  - *This parking has room for cargo bikes*  corresponds with  `cargo_bike=yes`
-  - *This parking has designated (official) spots for cargo bikes.*  corresponds with  `cargo_bike=designated`
-  - *You're not allowed to park cargo bikes*  corresponds with  `cargo_bike=no`
+  - *This parking has room for cargo bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes' target='_blank'>yes</a>
+  - *This parking has designated (official) spots for cargo bikes.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated' target='_blank'>designated</a>
+  - *You're not allowed to park cargo bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
 
 
 
@@ -285,7 +280,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

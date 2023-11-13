@@ -39,12 +39,10 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22fast_food%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -109,10 +107,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -152,8 +150,8 @@ The question is  *What type of business is this?*
 
 
 
-  - *This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.*  corresponds with  `amenity=fast_food`
-  - *A <b>restaurant</b>, focused on creating a nice experience where one is served at the table*  corresponds with  `amenity=restaurant`
+  - *This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a>
+  - *A <b>restaurant</b>, focused on creating a nice experience where one is served at the table*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
 
 
 
@@ -186,8 +184,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -208,8 +206,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 
 
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  `contact:email~.+`
-  - This option cannot be chosen as answer
+  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -230,8 +228,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -248,11 +246,11 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
@@ -286,13 +284,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -309,10 +307,10 @@ The question is  *Is this place accessible with a wheelchair?*
 
 
 
-  - *This place is specially adapted for wheelchair users*  corresponds with  `wheelchair=designated`
-  - *This place is easily reachable with a wheelchair*  corresponds with  `wheelchair=yes`
-  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  `wheelchair=limited`
-  - *This place is not reachable with a wheelchair*  corresponds with  `wheelchair=no`
+  - *This place is specially adapted for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+  - *This place is easily reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+  - *This place is not reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -331,21 +329,21 @@ This is rendered with  `This place mostly serves {cuisine}`
 
 
 
-  - *This is a pizzeria*  corresponds with  `cuisine=pizza`
-  - *This is a friture*  corresponds with  `cuisine=friture`
-  - *Mainly serves pasta*  corresponds with  `cuisine=pasta`
-  - *This is kebab shop*  corresponds with  `cuisine=kebab`
-  - *This is a sandwich shop*  corresponds with  `cuisine=sandwich`
-  - *Burgers are served here*  corresponds with  `cuisine=burger`
-  - *Sushi is served here*  corresponds with  `cuisine=sushi`
-  - *Coffee is served here*  corresponds with  `cuisine=coffee`
-  - *This is an Italian restaurant (which serves more than pasta and pizza)*  corresponds with  `cuisine=italian`
-  - *French dishes are served here*  corresponds with  `cuisine=french`
-  - *Chinese dishes are served here*  corresponds with  `cuisine=chinese`
-  - *Greek dishes are served here*  corresponds with  `cuisine=greek`
-  - *Indian dishes are served here*  corresponds with  `cuisine=indian`
-  - *Turkish dishes are served here*  corresponds with  `cuisine=turkish`
-  - *Thai dishes are served here*  corresponds with  `cuisine=thai`
+  - *This is a pizzeria*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpizza' target='_blank'>pizza</a>
+  - *This is a friture*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>
+  - *Mainly serves pasta*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpasta' target='_blank'>pasta</a>
+  - *This is kebab shop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dkebab' target='_blank'>kebab</a>
+  - *This is a sandwich shop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsandwich' target='_blank'>sandwich</a>
+  - *Burgers are served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dburger' target='_blank'>burger</a>
+  - *Sushi is served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsushi' target='_blank'>sushi</a>
+  - *Coffee is served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dcoffee' target='_blank'>coffee</a>
+  - *This is an Italian restaurant (which serves more than pasta and pizza)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Ditalian' target='_blank'>italian</a>
+  - *French dishes are served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfrench' target='_blank'>french</a>
+  - *Chinese dishes are served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dchinese' target='_blank'>chinese</a>
+  - *Greek dishes are served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dgreek' target='_blank'>greek</a>
+  - *Indian dishes are served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dindian' target='_blank'>indian</a>
+  - *Turkish dishes are served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dturkish' target='_blank'>turkish</a>
+  - *Thai dishes are served here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dthai' target='_blank'>thai</a>
 
 
 
@@ -360,13 +358,13 @@ The question is  *Is a reservation required for this place?*
 
 
 
-  - *A reservation is required at this place*  corresponds with  `reservation=required`
-  - *A reservation is not required, but still recommended to make sure you get a table*  corresponds with  `reservation=recommended`
-  - *Reservation is possible at this place*  corresponds with  `reservation=yes`
-  - *Reservation is not possible at this place*  corresponds with  `reservation=no`
+  - *A reservation is required at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired' target='_blank'>required</a>
+  - *A reservation is not required, but still recommended to make sure you get a table*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended' target='_blank'>recommended</a>
+  - *Reservation is possible at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes' target='_blank'>yes</a>
+  - *Reservation is not possible at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=restaurant`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>`
 
 
 
@@ -380,9 +378,9 @@ The question is  *Does this place offer take-away?*
 
 
 
-  - *This is a take-away only business*  corresponds with  `takeaway=only`
-  - *Take-away is possible here*  corresponds with  `takeaway=yes`
-  - *Take-away is not possible here*  corresponds with  `takeaway=no`
+  - *This is a take-away only business*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:takeaway' target='_blank'>takeaway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Donly' target='_blank'>only</a>
+  - *Take-away is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:takeaway' target='_blank'>takeaway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dyes' target='_blank'>yes</a>
+  - *Take-away is not possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:takeaway' target='_blank'>takeaway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dno' target='_blank'>no</a>
 
 
 
@@ -397,8 +395,8 @@ The question is  *Does {title()} deliver food to your home?*
 
 
 
-  - *This business does home delivery (eventually via a third party)*  corresponds with  `delivery=yes`
-  - *This business does not deliver at home*  corresponds with  `delivery=no`
+  - *This business does home delivery (eventually via a third party)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes' target='_blank'>yes</a>
+  - *This business does not deliver at home*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno' target='_blank'>no</a>
 
 
 
@@ -413,10 +411,10 @@ The question is  *Does this restaurant have a vegetarian option?*
 
 
 
-  - *No vegetarian options are available*  corresponds with  `diet:vegetarian=no`
-  - *Some vegetarian options are available*  corresponds with  `diet:vegetarian=limited`
-  - *Vegetarian options are available*  corresponds with  `diet:vegetarian=yes`
-  - *All dishes are vegetarian*  corresponds with  `diet:vegetarian=only`
+  - *No vegetarian options are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
+  - *Some vegetarian options are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited' target='_blank'>limited</a>
+  - *Vegetarian options are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
+  - *All dishes are vegetarian*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly' target='_blank'>only</a>
 
 
 
@@ -431,10 +429,10 @@ The question is  *Does this business serve vegan meals?*
 
 
 
-  - *No vegan options available*  corresponds with  `diet:vegan=no`
-  - *Some vegan options are available*  corresponds with  `diet:vegan=limited`
-  - *Vegan options are available*  corresponds with  `diet:vegan=yes`
-  - *All dishes are vegan*  corresponds with  `diet:vegan=only`
+  - *No vegan options available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
+  - *Some vegan options are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
+  - *Vegan options are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
+  - *All dishes are vegan*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly' target='_blank'>only</a>
 
 
 
@@ -449,10 +447,10 @@ The question is  *Does this restaurant offer a halal menu?*
 
 
 
-  - *There are no halal options available*  corresponds with  `diet:halal=no`
-  - *There is a small halal menu*  corresponds with  `diet:halal=limited`
-  - *There is a halal menu*  corresponds with  `diet:halal=yes`
-  - *Only halal options are available*  corresponds with  `diet:halal=only`
+  - *There are no halal options available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:halal' target='_blank'>diet:halal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dno' target='_blank'>no</a>
+  - *There is a small halal menu*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:halal' target='_blank'>diet:halal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dlimited' target='_blank'>limited</a>
+  - *There is a halal menu*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:halal' target='_blank'>diet:halal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dyes' target='_blank'>yes</a>
+  - *Only halal options are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:halal' target='_blank'>diet:halal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Donly' target='_blank'>only</a>
 
 
 
@@ -467,10 +465,10 @@ The question is  *Does this shop have a sugar free offering?*
 
 
 
-  - *This shop <b>only sells sugar free</b> products*  corresponds with  `diet:sugar_free=only`
-  - *This shop has a big sugar free offering*  corresponds with  `diet:sugar_free=yes`
-  - *This shop has a <b>limited sugar free</b> offering*  corresponds with  `diet:sugar_free=limited`
-  - *This shop has no sugar free offering*  corresponds with  `diet:sugar_free=no`
+  - *This shop <b>only sells sugar free</b> products*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly' target='_blank'>only</a>
+  - *This shop has a big sugar free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes' target='_blank'>yes</a>
+  - *This shop has a <b>limited sugar free</b> offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited' target='_blank'>limited</a>
+  - *This shop has no sugar free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `diets`
@@ -487,10 +485,10 @@ The question is  *Does this shop have a gluten free offering?*
 
 
 
-  - *This shop <b>only sells gluten free</b> products*  corresponds with  `diet:gluten_free=only`
-  - *This shop has a big gluten free offering*  corresponds with  `diet:gluten_free=yes`
-  - *This shop has a <b>limited gluten free</b> offering*  corresponds with  `diet:gluten_free=limited`
-  - *This shop has no gluten free offering*  corresponds with  `diet:gluten_free=no`
+  - *This shop <b>only sells gluten free</b> products*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
+  - *This shop has a big gluten free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
+  - *This shop has a <b>limited gluten free</b> offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited' target='_blank'>limited</a>
+  - *This shop has no gluten free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `diets`
@@ -507,10 +505,10 @@ The question is  *Does {title()} have a lactose-free offering?*
 
 
 
-  - *<b>Only sells lactose free</b> products*  corresponds with  `diet:lactose_free=only`
-  - *Big lactose free offering*  corresponds with  `diet:lactose_free=yes`
-  - *<b>Limited lactose free</b> offering*  corresponds with  `diet:lactose_free=limited`
-  - *No lactose free offering*  corresponds with  `diet:lactose_free=no`
+  - *<b>Only sells lactose free</b> products*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
+  - *Big lactose free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
+  - *<b>Limited lactose free</b> offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
+  - *No lactose free offering*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `diets`
@@ -527,9 +525,9 @@ The question is  *Does this restaurant offer organic food?*
 
 
 
-  - *There are no organic options available*  corresponds with  `organic=no`
-  - *There is an organic menu*  corresponds with  `organic=yes`
-  - *Only organic options are available*  corresponds with  `organic=only`
+  - *There are no organic options available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno' target='_blank'>no</a>
+  - *There is an organic menu*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes' target='_blank'>yes</a>
+  - *Only organic options are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly' target='_blank'>only</a>
 
 
 
@@ -544,12 +542,12 @@ The question is  *Does this fries shop have vegetarian snacks?*
 
 
 
-  - *Vegetarian snacks are available*  corresponds with  `diet:vegetarian=yes`
-  - *Only a small selection of snacks are vegetarian*  corresponds with  `diet:vegetarian=limited`
-  - *No vegetarian snacks are available*  corresponds with  `diet:vegetarian=no`
+  - *Vegetarian snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
+  - *Only a small selection of snacks are vegetarian*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited' target='_blank'>limited</a>
+  - *No vegetarian snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>`
 
 
 
@@ -563,12 +561,12 @@ The question is  *Does this fries shop have vegan snacks?*
 
 
 
-  - *Vegan snacks are available*  corresponds with  `diet:vegan=yes`
-  - *A small selection of vegan snacks are available*  corresponds with  `diet:vegan=limited`
-  - *No vegan snacks are available*  corresponds with  `diet:vegan=no`
+  - *Vegan snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
+  - *A small selection of vegan snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
+  - *No vegan snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>`
 
 
 
@@ -582,12 +580,12 @@ The question is  *Does this fries shop offer organic snacks?*
 
 
 
-  - *Organic snacks are available*  corresponds with  `organic=yes`
-  - *No organic snacks are available*  corresponds with  `organic=no`
-  - *Only organic snacks are available*  corresponds with  `organic=only`
+  - *Organic snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes' target='_blank'>yes</a>
+  - *No organic snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno' target='_blank'>no</a>
+  - *Only organic snacks are available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly' target='_blank'>only</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>`
 
 
 
@@ -601,11 +599,11 @@ The question is  *Does this fries shop use vegetable or animal oil for cooking?*
 
 
 
-  - *The frying is done with vegetable oil*  corresponds with  `friture:oil=vegetable`
-  - *The frying is done with animal oil*  corresponds with  `friture:oil=animal`
+  - *The frying is done with vegetable oil*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Dvegetable' target='_blank'>vegetable</a>
+  - *The frying is done with animal oil*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal' target='_blank'>animal</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>`
 
 
 
@@ -619,12 +617,12 @@ The question is  *If you bring your own container (such as a cooking pot and sma
 
 
 
-  - *You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste*  corresponds with  `reusable_packaging:accept=yes`
-  - *Bringing your own container is <b>not allowed</b>*  corresponds with  `reusable_packaging:accept=no`
-  - *You <b>must</b> bring your own container to order here.*  corresponds with  `reusable_packaging:accept=only`
+  - *You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept' target='_blank'>reusable_packaging:accept</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dyes' target='_blank'>yes</a>
+  - *Bringing your own container is <b>not allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept' target='_blank'>reusable_packaging:accept</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dno' target='_blank'>no</a>
+  - *You <b>must</b> bring your own container to order here.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept' target='_blank'>reusable_packaging:accept</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly' target='_blank'>only</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>`
 
 
 
@@ -638,10 +636,10 @@ The question is  *Does this amenity have electrical outlets, available to custom
 
 
 
-  - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  `service:electricity=yes`
-  - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  `service:electricity=limited`
-  - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked*  corresponds with  `service:electricity=ask`
-  - *There are a no domestic sockets available to customers seated indoors*  corresponds with  `service:electricity=no`
+  - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes' target='_blank'>yes</a>
+  - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited' target='_blank'>limited</a>
+  - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
+  - *There are a no domestic sockets available to customers seated indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
 
 
 
@@ -656,10 +654,10 @@ The question is  *Are dogs allowed in this business?*
 
 
 
-  - *Dogs are allowed*  corresponds with  `dog=yes`
-  - *Dogs are <b>not</b> allowed*  corresponds with  `dog=no`
-  - *Dogs are allowed, but they have to be leashed*  corresponds with  `dog=leashed`
-  - *Dogs are allowed and can run around freely*  corresponds with  `dog=unleashed`
+  - *Dogs are allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+  - *Dogs are <b>not</b> allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
+  - *Dogs are allowed, but they have to be leashed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
+  - *Dogs are allowed and can run around freely*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
 
 
 
@@ -674,12 +672,12 @@ The question is  *Does this place offer internet access?*
 
 
 
-  - *This place offers wireless internet access*  corresponds with  `internet_access=wlan`
-  - *This place <b>does not</b> offer internet access*  corresponds with  `internet_access=no`
-  - *This place offers internet access*  corresponds with  `internet_access=yes`
-  - This option cannot be chosen as answer
-  - *This place offers internet access via a terminal or computer*  corresponds with  `internet_access=terminal`
-  - *This place offers wired internet access*  corresponds with  `internet_access=wired`
+  - *This place offers wireless internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+  - *This place <b>does not</b> offer internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
+  - *This place offers internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - *This place offers internet access via a terminal or computer*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+  - *This place offers wired internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
 
 
 This tagrendering has labels  `internet-all`
@@ -696,12 +694,12 @@ The question is  *Is there a fee for internet access?*
 
 
 
-  - *There is a fee for the internet access at this place*  corresponds with  `internet_access:fee=yes`
-  - *Internet access is free at this place*  corresponds with  `internet_access:fee=no`
-  - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
+  - *There is a fee for the internet access at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
+  - *Internet access is free at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
+  - *Internet access is free at this place, for customers only*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no &internet_access~.+`
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no & internet_access~.+`
 
 This tagrendering has labels  `internet-all`
 
@@ -721,10 +719,10 @@ This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 
-  - *Telekom*  corresponds with  `internet_access:ssid=Telekom`
+  - *Telekom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
 
 This tagrendering has labels  `internet-all`
 
@@ -794,7 +792,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -823,7 +821,7 @@ open_now.0 | Open now | _isOpen=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-reservation.0 | Reservation not required | reservation=no \|reservation=optional \|
+reservation.0 | Reservation not required | reservation=no \| reservation=optional \| reservation=
 
 
 
@@ -839,49 +837,49 @@ food-category.2 | Only restaurants | amenity=restaurant
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegetarian.0 | Has a vegetarian menu | diet:vegetarian=yes \|diet:vegetarian=only \|diet:vegan=yes \|diet:vegan=only
+vegetarian.0 | Has a vegetarian menu | diet:vegetarian=yes \| diet:vegetarian=only \| diet:vegan=yes \| diet:vegan=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-vegan.0 | Has a vegan menu | diet:vegan=yes \|diet:vegan=only
+vegan.0 | Has a vegan menu | diet:vegan=yes \| diet:vegan=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-halal.0 | Has a halal menu | diet:halal=yes \|diet:halal=only
+halal.0 | Has a halal menu | diet:halal=yes \| diet:halal=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-has_organic.0 | Has organic options | organic=yes \|organic=only
+has_organic.0 | Has organic options | organic=yes \| organic=only
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes \|diet:sugar_free=only \|diet:sugar_free=limited
+sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes \| diet:sugar_free=only \| diet:sugar_free=limited
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes \|diet:gluten_free=only \|diet:gluten_free=limited
+gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes \| diet:gluten_free=only \| diet:gluten_free=limited
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes \|diet:lactose_free=only \|diet:lactose_free=limited
+lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes \| diet:lactose_free=only \| diet:lactose_free=limited
 
 
 
@@ -903,7 +901,7 @@ accepts_cards.0 | Accepts payment cards | payment:cards=yes
 id | question | osmTags
 ---- | ---------- | ---------
 dogs.0 | No preference towards dogs (default) | 
-dogs.1 | Dogs allowed | dog=unleashed \|dog=yes
+dogs.1 | Dogs allowed | dog=unleashed \| dog=yes
 dogs.2 | No dogs allowed | dog=no
  
 

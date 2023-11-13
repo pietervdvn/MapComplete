@@ -36,13 +36,10 @@ Sanitary dump stations
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dsanitary_dump_station' target='_blank'>sanitary_dump_station</a>
-  - vehicle!~^(no)$
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dsanitary_dump_station' target='_blank'>sanitary_dump_station</a>
+1. vehicle!~^(no)$
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22sanitary_dump_station%22%5D%5B%22vehicle%22!~%22%5E%28no%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -87,10 +84,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -116,8 +113,8 @@ The question is  *Does this place charge a fee?*
 
 
 
-  - *You need to pay for use*  corresponds with  `fee=yes`
-  - *Can be used for free*  corresponds with  `fee=no`
+  - *You need to pay for use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+  - *Can be used for free*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
 
 
 
@@ -134,7 +131,7 @@ This is rendered with  `This place charges {charge}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -148,8 +145,8 @@ The question is  *Does this place have a water point?*
 
 
 
-  - *This place has a water point*  corresponds with  `water_point=yes`
-  - *This place does not have a water point*  corresponds with  `water_point=no`
+  - *This place has a water point*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dyes' target='_blank'>yes</a>
+  - *This place does not have a water point*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dno' target='_blank'>no</a>
 
 
 
@@ -164,8 +161,8 @@ The question is  *Can you dispose of grey water here?*
 
 
 
-  - *You can dispose of grey water here*  corresponds with  `sanitary_dump_station:grey_water=yes`
-  - *You cannot dispose of gray water here*  corresponds with  `sanitary_dump_station:grey_water=no`
+  - *You can dispose of grey water here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dyes' target='_blank'>yes</a>
+  - *You cannot dispose of gray water here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dno' target='_blank'>no</a>
 
 
 
@@ -180,8 +177,8 @@ The question is  *Can you dispose of chemical toilet waste here?*
 
 
 
-  - *You can dispose of chemical toilet waste here*  corresponds with  `sanitary_dump_station:chemical_toilet=yes`
-  - *You cannot dispose of chemical toilet waste here*  corresponds with  `sanitary_dump_station:chemical_toilet=no`
+  - *You can dispose of chemical toilet waste here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dyes' target='_blank'>yes</a>
+  - *You cannot dispose of chemical toilet waste here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dno' target='_blank'>no</a>
 
 
 
@@ -196,11 +193,11 @@ The question is  *Who can use this dump station?*
 
 
 
-  - *You need a network key/code to use this*  corresponds with  `access=network`
-  - *You need to be a customer of camping/campersite to use this place*  corresponds with  `access=customers`
-  - *Anyone can use this dump station*  corresponds with  `access=public`
-  - This option cannot be chosen as answer
-  - *Anyone can use this dump station*  corresponds with  `access=yes`
+  - *You need a network key/code to use this*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dnetwork' target='_blank'>network</a>
+  - *You need to be a customer of camping/campersite to use this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - *Anyone can use this dump station*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+  - _This option cannot be chosen as answer_
+  - *Anyone can use this dump station*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -251,7 +248,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -289,8 +286,8 @@ The question is  *Does this place have a power supply?*
 
 
 
-  - *This place has a power supply*  corresponds with  `power_supply=yes`
-  - *This place does not have power supply*  corresponds with  `power_supply=no`
+  - *This place has a power supply*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
+  - *This place does not have power supply*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
  
 
 This document is autogenerated from [assets/themes/campersite/campersite.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/campersite/campersite.json)

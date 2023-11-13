@@ -36,12 +36,7 @@ A birdhide
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dbird_hide' target='_blank'>bird_hide</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dbird_hide' target='_blank'>bird_hide</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22leisure%22%3D%22bird_hide%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -80,10 +75,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -109,11 +104,11 @@ The question is  *Is this a bird blind or a bird watching shelter?*
 
 
 
-  - *Bird blind*  corresponds with  `shelter=no`
-  - *Bird hide*  corresponds with  `amenity=shelter &building=yes &shelter=yes`
-  - *Bird tower hide*  corresponds with  `building=tower &bird_hide=tower`
-  - *Bird hide shelter*  corresponds with  `amenity=shelter |building=yes |shelter=yes`
-  - This option cannot be chosen as answer
+  - *Bird blind*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dno' target='_blank'>no</a> & building= & amenity=
+  - *Bird hide*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dshelter' target='_blank'>shelter</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes' target='_blank'>yes</a>
+  - *Bird tower hide*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dtower' target='_blank'>tower</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bird_hide' target='_blank'>bird_hide</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bird_hide%3Dtower' target='_blank'>tower</a>
+  - *Bird hide shelter*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dshelter' target='_blank'>shelter</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
 
 
 
@@ -128,10 +123,10 @@ The question is  *Is this bird hide accessible to wheelchair users?*
 
 
 
-  - *There are special provisions for wheelchair users*  corresponds with  `wheelchair=designated`
-  - *A wheelchair can easily use this birdhide*  corresponds with  `wheelchair=yes`
-  - *This birdhide is reachable by wheelchair, but it is not easy*  corresponds with  `wheelchair=limited`
-  - *Not accessible to wheelchair users*  corresponds with  `wheelchair=no`
+  - *There are special provisions for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+  - *A wheelchair can easily use this birdhide*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - *This birdhide is reachable by wheelchair, but it is not easy*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+  - *Not accessible to wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -150,8 +145,8 @@ This is rendered with  `Operated by {operator}`
 
 
 
-  - *Operated by Natuurpunt*  corresponds with  `operator=Natuurpunt`
-  - *Operated by the Agency for Nature and Forests*  corresponds with  `operator=Agentschap Natuur en Bos`
+  - *Operated by Natuurpunt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+  - *Operated by the Agency for Nature and Forests*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>
 
 
 
@@ -208,7 +203,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -230,14 +225,14 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-wheelchair.0 | Wheelchair accessible | wheelchair=yes \|wheelchair=designated \|wheelchair=permissive
+wheelchair.0 | Wheelchair accessible | wheelchair=yes \| wheelchair=designated \| wheelchair=permissive
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-shelter.0 | Only covered birdhides | shelter=yes \|building~.+ &covered!=no
+shelter.0 | Only covered birdhides | (shelter=yes \| building~.+) & covered!=no
  
 
 This document is autogenerated from [assets/layers/birdhide/birdhide.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/birdhide/birdhide.json)

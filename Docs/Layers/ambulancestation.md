@@ -36,12 +36,7 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dambulance_station' target='_blank'>ambulance_station</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dambulance_station' target='_blank'>ambulance_station</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22emergency%22%3D%22ambulance_station%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -82,10 +77,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -164,10 +159,10 @@ This is rendered with  `The operator is a(n) {operator:type} entity.`
 
 
 
-  - *The station is operated by the government.*  corresponds with  `operator:type=government`
-  - *The station is operated by a community-based, or informal organization.*  corresponds with  `operator:type=community`
-  - *The station is operated by a formal group of volunteers.*  corresponds with  `operator:type=ngo`
-  - *The station is privately operated.*  corresponds with  `operator:type=private`
+  - *The station is operated by the government.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
+  - *The station is operated by a community-based, or informal organization.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>
+  - *The station is operated by a formal group of volunteers.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>
+  - *The station is privately operated.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
 
 
 
@@ -216,7 +211,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

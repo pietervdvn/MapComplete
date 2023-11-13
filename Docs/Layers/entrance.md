@@ -41,12 +41,11 @@ A layer showing entrances and offering capabilities to survey some advanced data
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - entrance~.+ |<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a> |door~.+
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a>
+ - door~.+
+ - entrance~.+
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22indoor%22%3D%22door%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22door%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22entrance%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -88,10 +87,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -135,13 +134,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -158,16 +157,16 @@ The question is  *What type of entrance is this?*
 
 
 
-  - *No specific entrance type is known*  corresponds with  `entrance=yes`
-  - This option cannot be chosen as answer
-  - *This is an indoor door, separating a room or a corridor within a single building*  corresponds with  `indoor=door`
-  - *This is the main entrance*  corresponds with  `entrance=main`
-  - *This is a secondary entrance*  corresponds with  `entrance=secondary`
-  - *This is a service entrance - normally only used for employees, delivery, …*  corresponds with  `entrance=service`
-  - *This is an exit where one can not enter*  corresponds with  `entrance=exit`
-  - *This is an entrance where one can only enter (but not exit)*  corresponds with  `entrance=entrance`
-  - *This is emergency exit*  corresponds with  `entrance=emergency`
-  - *This is the entrance to a private home*  corresponds with  `entrance=home`
+  - *No specific entrance type is known*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - *This is an indoor door, separating a room or a corridor within a single building*  corresponds with  entrance= & <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a>
+  - *This is the main entrance*  corresponds with  indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dmain' target='_blank'>main</a>
+  - *This is a secondary entrance*  corresponds with  indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dsecondary' target='_blank'>secondary</a>
+  - *This is a service entrance - normally only used for employees, delivery, …*  corresponds with  indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dservice' target='_blank'>service</a>
+  - *This is an exit where one can not enter*  corresponds with  indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dexit' target='_blank'>exit</a>
+  - *This is an entrance where one can only enter (but not exit)*  corresponds with  indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dentrance' target='_blank'>entrance</a>
+  - *This is emergency exit*  corresponds with  indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Demergency' target='_blank'>emergency</a>
+  - *This is the entrance to a private home*  corresponds with  indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dhome' target='_blank'>home</a>
 
 
 
@@ -182,13 +181,13 @@ The question is  *What is the type of this door?*
 
 
 
-  - *The door type is not known*  corresponds with  `door=yes`
-  - This option cannot be chosen as answer
-  - *A classical, hinged door supported by joints*  corresponds with  `door=hinged`
-  - *A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure*  corresponds with  `door=revolving`
-  - *A sliding door where the door slides sidewards, typically parallel with a wall*  corresponds with  `door=sliding`
-  - *A door which rolls from overhead, typically seen for garages*  corresponds with  `door=overhead`
-  - *This is an entrance without a physical door*  corresponds with  `door=no`
+  - *The door type is not known*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - *A classical, hinged door supported by joints*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Dhinged' target='_blank'>hinged</a>
+  - *A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Drevolving' target='_blank'>revolving</a>
+  - *A sliding door where the door slides sidewards, typically parallel with a wall*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Dsliding' target='_blank'>sliding</a>
+  - *A door which rolls from overhead, typically seen for garages*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Doverhead' target='_blank'>overhead</a>
+  - *This is an entrance without a physical door*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Dno' target='_blank'>no</a>
 
 
 
@@ -203,16 +202,16 @@ The question is  *Is this door automated?*
 
 
 
-  - *This is an automatic door*  corresponds with  `automatic_door=yes`
-  - This option cannot be chosen as answer
-  - *This door is <b>not</b> automated*  corresponds with  `automatic_door=no`
-  - *This door will open automatically when <b>motion</b> is detected*  corresponds with  `automatic_door=motion`
-  - *This door will open automatically when a <b>sensor in the floor</b> is triggered*  corresponds with  `automatic_door=floor`
-  - *This door will open automatically when a <b>button is pressed</b>*  corresponds with  `automatic_door=button`
-  - *This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users*  corresponds with  `automatic_door=slowdown_button`
-  - *This door revolves automatically all the time*  corresponds with  `automatic_door=continuous`
-  - *This door will be opened by staff when requested by <b>pressing a button</b>*  corresponds with  `automatic_door=serviced_on_button_press`
-  - *This door will be opened by staff when requested*  corresponds with  `automatic_door=serviced_on_request`
+  - *This is an automatic door*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - *This door is <b>not</b> automated*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dno' target='_blank'>no</a>
+  - *This door will open automatically when <b>motion</b> is detected*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dmotion' target='_blank'>motion</a>
+  - *This door will open automatically when a <b>sensor in the floor</b> is triggered*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dfloor' target='_blank'>floor</a>
+  - *This door will open automatically when a <b>button is pressed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dbutton' target='_blank'>button</a>
+  - *This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dslowdown_button' target='_blank'>slowdown_button</a>
+  - *This door revolves automatically all the time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dcontinuous' target='_blank'>continuous</a>
+  - *This door will be opened by staff when requested by <b>pressing a button</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_button_press' target='_blank'>serviced_on_button_press</a>
+  - *This door will be opened by staff when requested*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_request' target='_blank'>serviced_on_request</a>
 
 
 
@@ -245,7 +244,7 @@ This is rendered with  `The kerb height of this door is {kerb:height}`
 
 
 
-  - *This door does not have a kerb*  corresponds with  `kerb:height=0`
+  - *This door does not have a kerb*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb:height' target='_blank'>kerb:height</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0' target='_blank'>0</a>
 
 
 
@@ -282,7 +281,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

@@ -35,13 +35,10 @@ Facade gardens
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dgarden' target='_blank'>garden</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:garden:type' target='_blank'>garden:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:garden:type%3Dfacade_garden' target='_blank'>facade_garden</a>
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:garden:type' target='_blank'>garden:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:garden:type%3Dfacade_garden' target='_blank'>facade_garden</a>
+1. <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dgarden' target='_blank'>garden</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22garden%3Atype%22%3D%22facade_garden%22%5D%5B%22leisure%22%3D%22garden%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -84,10 +81,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -127,9 +124,9 @@ The question is  *Is the garden shaded or sunny?*
 
 
 
-  - *The garden is in full sun*  corresponds with  `direct_sunlight=yes`
-  - *The garden is in partial shade*  corresponds with  `direct_sunlight=partial`
-  - *The garden is in the shade*  corresponds with  `direct_sunlight=no`
+  - *The garden is in full sun*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>
+  - *The garden is in partial shade*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>
+  - *The garden is in the shade*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>
 
 
 
@@ -144,8 +141,8 @@ The question is  *Is there a water barrel installed for the garden?*
 
 
 
-  - *There is a rain barrel*  corresponds with  `rain_barrel=yes`
-  - *There is no rain barrel*  corresponds with  `rain_barrel=no`
+  - *There is a rain barrel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>
+  - *There is no rain barrel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>
 
 
 
@@ -174,8 +171,8 @@ The question is  *Are there any edible plants?*
 
 
 
-  - *There are edible plants*  corresponds with  `edible=yes`
-  - *There are no edible plants*  corresponds with  `edible=no`
+  - *There are edible plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>
+  - *There are no edible plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>
 
 
 
@@ -190,10 +187,10 @@ The question is  *What kinds of plants grow here?*
 
 
 
-  - *There are vines*  corresponds with  `plant=vine`
-  - *There are flowering plants*  corresponds with  `plant=flower`
-  - *There are shrubs*  corresponds with  `plant=shrub`
-  - *There are groundcovering plants*  corresponds with  `plant=groundcover`
+  - *There are vines*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>
+  - *There are flowering plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>
+  - *There are shrubs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>
+  - *There are groundcovering plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>
 
 
 
@@ -264,7 +261,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

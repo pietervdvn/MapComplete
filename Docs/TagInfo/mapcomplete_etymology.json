@@ -20,7 +20,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Has etymology' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Has etymology' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -44,11 +44,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Has etymology' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Has etymology' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Has etymology' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Has etymology' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Streets without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Streets without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -101,11 +101,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Streets without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Streets without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {
@@ -140,7 +140,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Parks and forests without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Parks and forests without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -164,11 +164,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Parks and forests without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Parks and forests without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {
@@ -218,7 +218,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Education institutions without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Education institutions without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -242,11 +242,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Education institutions without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Education institutions without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {
@@ -296,7 +296,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Cultural places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Cultural places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -320,11 +320,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Cultural places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Cultural places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {
@@ -369,7 +369,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Toursistic places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Toursistic places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -393,11 +393,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Toursistic places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Toursistic places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Toursistic places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Toursistic places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {
@@ -437,7 +437,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Health and social places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Health and social places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -461,11 +461,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Health and social places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Health and social places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {
@@ -505,7 +505,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Sport places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Sport places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -529,11 +529,11 @@
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)"
+      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Sport places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ |)",
+      "description": "Layer 'Sport places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a street named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
       "value": "unknown"
     },
     {

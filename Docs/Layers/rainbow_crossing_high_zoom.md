@@ -36,13 +36,7 @@ A layer showing pedestrian crossings with rainbow paintings
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcrossing' target='_blank'>crossing</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway' target='_blank'>footway</a> &<a href='https://wiki.openstreetmap.org/wiki/Key:footway' target='_blank'>footway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:footway%3Dcrossing' target='_blank'>crossing</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22surface%3Acolour%22%3D%22rainbow%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -78,10 +72,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -107,10 +101,10 @@ The question is  *Does this crossing has rainbow paintings?*
 
 
 
-  - *This crossing has rainbow paintings*  corresponds with  `surface:colour=rainbow`
-  - *No rainbow paintings here*  corresponds with  `not:surface:colour=rainbow`
-  - *No rainbow paintings here*  corresponds with  `surface:colour!=rainbow`
-  - This option cannot be chosen as answer
+  - *This crossing has rainbow paintings*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
+  - *No rainbow paintings here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:not:surface:colour' target='_blank'>not:surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:surface:colour%3Drainbow' target='_blank'>rainbow</a>
+  - *No rainbow paintings here*  corresponds with  surface:colour!=rainbow
+  - _This option cannot be chosen as answer_
 
 
 
@@ -147,7 +141,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

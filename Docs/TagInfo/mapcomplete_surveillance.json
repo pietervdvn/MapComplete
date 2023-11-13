@@ -32,7 +32,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Surveillance camera's' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Surveillance camera's' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -77,16 +77,16 @@
     },
     {
       "key": "camera:direction",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ |direction~.+ |camera:type!=dome |camera:type=dome &camera:mount=wall)"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))"
     },
     {
       "key": "camera:direction",
-      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction. (This is only shown if camera:direction~.+ |direction~.+ |camera:type!=dome |camera:type=dome &camera:mount=wall)",
+      "description": "Layer 'Surveillance camera's' shows camera:direction= & direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction. (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))",
       "value": ""
     },
     {
       "key": "direction",
-      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ |direction~.+ |camera:type!=dome |camera:type=dome &camera:mount=wall)"
+      "description": "Layer 'Surveillance camera's' shows camera:direction= & direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))"
     },
     {
       "key": "operator",
@@ -119,12 +119,12 @@
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows  with a fixed text, namely 'This camera is probably located outdoors' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor. (This is only shown if surveillance:type=public)",
+      "description": "Layer 'Surveillance camera's' shows indoor= with a fixed text, namely 'This camera is probably located outdoors' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor. (This is only shown if surveillance:type=public)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if indoor=yes |surveillance:type=ye)"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if indoor=yes | surveillance:type=ye)"
     },
     {
       "key": "surveillance:zone",

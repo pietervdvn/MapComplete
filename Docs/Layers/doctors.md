@@ -37,12 +37,7 @@ This layer shows doctor offices
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddoctors' target='_blank'>doctors</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddoctors' target='_blank'>doctors</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22doctors%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -84,10 +79,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -131,9 +126,9 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *Only by appointment*  corresponds with  `opening_hours="by appointment"`
-  - *Only by appointment*  corresponds with  `opening_hours~^("by appointment"|by appointment)$`
-  - This option cannot be chosen as answer
+  - *Only by appointment*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
+  - *Only by appointment*  corresponds with  opening_hours~^("by appointment"|by appointment)$
+  - _This option cannot be chosen as answer_
 
 
 
@@ -152,8 +147,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
-  - This option cannot be chosen as answer
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -174,8 +169,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 
 
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  `contact:email~.+`
-  - This option cannot be chosen as answer
+  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -196,8 +191,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -218,10 +213,10 @@ This is rendered with  `This doctor is specialized in {healthcare:speciality}`
 
 
 
-  - *This is a general practitioner*  corresponds with  `healthcare:speciality=general`
-  - *This is a gynaecologist*  corresponds with  `healthcare:speciality=gynaecology`
-  - *This is a psychiatrist*  corresponds with  `healthcare:speciality=psychiatry`
-  - *This is a paediatrician*  corresponds with  `healthcare:speciality=paediatrics`
+  - *This is a general practitioner*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgeneral' target='_blank'>general</a>
+  - *This is a gynaecologist*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgynaecology' target='_blank'>gynaecology</a>
+  - *This is a psychiatrist*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpsychiatry' target='_blank'>psychiatry</a>
+  - *This is a paediatrician*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpaediatrics' target='_blank'>paediatrics</a>
 
 
 
@@ -278,7 +273,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
