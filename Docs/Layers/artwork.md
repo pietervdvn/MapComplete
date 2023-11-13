@@ -37,12 +37,7 @@ An open map of statues, busts, graffitis and other artwork all over the world
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22tourism%22%3D%22artwork%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -85,10 +80,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -118,19 +113,19 @@ This is rendered with  `This is a {artwork_type}`
 
 
 
-  - *Architecture*  corresponds with  `artwork_type=architecture`
-  - *Mural*  corresponds with  `artwork_type=mural`
-  - *Painting*  corresponds with  `artwork_type=painting`
-  - *Sculpture*  corresponds with  `artwork_type=sculpture`
-  - *Statue*  corresponds with  `artwork_type=statue`
-  - *Bust*  corresponds with  `artwork_type=bust`
-  - *Stone*  corresponds with  `artwork_type=stone`
-  - *Installation*  corresponds with  `artwork_type=installation`
-  - *Graffiti*  corresponds with  `artwork_type=graffiti`
-  - *Relief*  corresponds with  `artwork_type=relief`
-  - *Azulejo (Spanish decorative tilework)*  corresponds with  `artwork_type=azulejo`
-  - *Tilework*  corresponds with  `artwork_type=tilework`
-  - *Woodcarving*  corresponds with  `artwork_type=woodcarving`
+  - *Architecture*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture' target='_blank'>architecture</a>
+  - *Mural*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural' target='_blank'>mural</a>
+  - *Painting*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting' target='_blank'>painting</a>
+  - *Sculpture*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture' target='_blank'>sculpture</a>
+  - *Statue*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue' target='_blank'>statue</a>
+  - *Bust*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust' target='_blank'>bust</a>
+  - *Stone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone' target='_blank'>stone</a>
+  - *Installation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation' target='_blank'>installation</a>
+  - *Graffiti*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti' target='_blank'>graffiti</a>
+  - *Relief*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief' target='_blank'>relief</a>
+  - *Azulejo (Spanish decorative tilework)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo' target='_blank'>azulejo</a>
+  - *Tilework*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework' target='_blank'>tilework</a>
+  - *Woodcarving*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving' target='_blank'>woodcarving</a>
 
 
 This tagrendering has labels  `artwork-question`
@@ -201,10 +196,10 @@ This is rendered with  `{wikipedia():max-height:25rem}`
 
 
 
-  - *{wikipedia():max-height:25rem}*  corresponds with  `wikipedia~.+`
-  - This option cannot be chosen as answer
-  - *No Wikipedia page has been linked yet*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *{wikipedia():max-height:25rem}*  corresponds with  wikipedia~.+
+  - _This option cannot be chosen as answer_
+  - *No Wikipedia page has been linked yet*  corresponds with  wikidata=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -237,10 +232,10 @@ The question is  *Does this artwork serve as a bench?*
 
 
 
-  - *This artwork also serves as a bench*  corresponds with  `amenity=bench`
-  - *This artwork does not serve as a bench*  corresponds with  ``
-  - *This artwork does not serve as a bench*  corresponds with  `amenity!=bench`
-  - This option cannot be chosen as answer
+  - *This artwork also serves as a bench*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+  - *This artwork does not serve as a bench*  corresponds with  amenity=
+  - *This artwork does not serve as a bench*  corresponds with  amenity!=bench
+  - _This option cannot be chosen as answer_
 
 
 
@@ -297,7 +292,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -320,8 +315,8 @@ This tagrendering has no question and is thus read-only
 id | question | osmTags
 ---- | ---------- | ---------
 has_image.0 | With and without images (default) | 
-has_image.1 | Has at least one image | image~.+ \|image:0~.+ \|image:1~.+ \|image:2~.+ \|image:3~.+ \|mapillary~.+
-has_image.2 | Probably does not have an image | 
+has_image.1 | Has at least one image | image~.+ \| image:0~.+ \| image:1~.+ \| image:2~.+ \| image:3~.+ \| mapillary~.+
+has_image.2 | Probably does not have an image | image= & image:0= & image:1= & image:2= & image:3= & mapillary=
  
 
 This document is autogenerated from [assets/layers/artwork/artwork.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/artwork/artwork.json)

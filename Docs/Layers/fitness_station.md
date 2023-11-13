@@ -36,12 +36,7 @@ Find a fitness station near you, and add missing ones.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_station' target='_blank'>fitness_station</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_station' target='_blank'>fitness_station</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22leisure%22%3D%22fitness_station%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -81,10 +76,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -114,7 +109,7 @@ This is rendered with  `This fitness station is called {name}`
 
 
 
-  - *This fitness station doesn't have a name*  corresponds with  `noname=yes`
+  - *This fitness station doesn't have a name*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -129,31 +124,31 @@ The question is  *What kind of equipment does this fitness station have?*
 
 
 
-  - *This fitness station has a horizontal bar, high enough for pull-ups.*  corresponds with  `fitness_station=horizontal_bar`
-  - *This fitness station has a sign with instructions for a specific exercise.*  corresponds with  `fitness_station=sign`
-  - *This fitness station has a facility for sit-ups.*  corresponds with  `fitness_station=sit-up`
-  - *This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars.*  corresponds with  `fitness_station=push-up`
-  - *This fitness station has bars for stretching.*  corresponds with  `fitness_station=stretch_bars`
-  - *This fitness station has a station for making hyperextensions.*  corresponds with  `fitness_station=hyperextension`
-  - *This fitness station has rings for gymnastic exercises.*  corresponds with  `fitness_station=rings`
-  - *This fitness station has a horizontal ladder, also known as monkey bars.*  corresponds with  `fitness_station=horizontal_ladder`
-  - *This fitness station has wall bars to climb on.*  corresponds with  `fitness_station=wall_bars`
-  - *This fitness station has posts for performing slalom exercises.*  corresponds with  `fitness_station=slalom`
-  - *This fitness station has stepping stones.*  corresponds with  `fitness_station=stepping_stones`
-  - *This fitness station has cones for performing leapfrog jumps.*  corresponds with  `fitness_station=leapfrog`
-  - *This fitness station has beams to jump over.*  corresponds with  `fitness_station=beam_jump`
-  - *This fitness station has hurdles to cross.*  corresponds with  `fitness_station=hurdling`
-  - *This fitness station has a wall to climb on.*  corresponds with  `fitness_station=wall`
-  - *This fitness station has a balance beam.*  corresponds with  `fitness_station=balance_beam`
-  - *This fitness station has a log with a handle on the end to lift.*  corresponds with  `fitness_station=log_lifting`
-  - *This fitness station has a chair with only elbow supports and a rear (without seat), for performing leg raises.*  corresponds with  `fitness_station=captains_chair`
-  - *This fitness station has a box that can be used for jumping.*  corresponds with  `fitness_station=box`
-  - *This fitness station has battling ropes.*  corresponds with  `fitness_station=battling_ropes`
-  - *This fitness station has a stationary bicycle.*  corresponds with  `fitness_station=excercise_bike`
-  - *This fitness station has a cross-trainer.*  corresponds with  `fitness_station=elliptical_trainer`
-  - *This fitness station has an air walker.*  corresponds with  `fitness_station=air_walker`
-  - *This fitness station has a rower.*  corresponds with  `fitness_station=rower`
-  - *This fitness station has a slackline.*  corresponds with  `fitness_station=slackline`
+  - *This fitness station has a horizontal bar, high enough for pull-ups.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_bar' target='_blank'>horizontal_bar</a>
+  - *This fitness station has a sign with instructions for a specific exercise.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsign' target='_blank'>sign</a>
+  - *This fitness station has a facility for sit-ups.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsit-up' target='_blank'>sit-up</a>
+  - *This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dpush-up' target='_blank'>push-up</a>
+  - *This fitness station has bars for stretching.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstretch_bars' target='_blank'>stretch_bars</a>
+  - *This fitness station has a station for making hyperextensions.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhyperextension' target='_blank'>hyperextension</a>
+  - *This fitness station has rings for gymnastic exercises.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drings' target='_blank'>rings</a>
+  - *This fitness station has a horizontal ladder, also known as monkey bars.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_ladder' target='_blank'>horizontal_ladder</a>
+  - *This fitness station has wall bars to climb on.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall_bars' target='_blank'>wall_bars</a>
+  - *This fitness station has posts for performing slalom exercises.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslalom' target='_blank'>slalom</a>
+  - *This fitness station has stepping stones.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstepping_stones' target='_blank'>stepping_stones</a>
+  - *This fitness station has cones for performing leapfrog jumps.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dleapfrog' target='_blank'>leapfrog</a>
+  - *This fitness station has beams to jump over.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbeam_jump' target='_blank'>beam_jump</a>
+  - *This fitness station has hurdles to cross.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhurdling' target='_blank'>hurdling</a>
+  - *This fitness station has a wall to climb on.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall' target='_blank'>wall</a>
+  - *This fitness station has a balance beam.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbalance_beam' target='_blank'>balance_beam</a>
+  - *This fitness station has a log with a handle on the end to lift.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dlog_lifting' target='_blank'>log_lifting</a>
+  - *This fitness station has a chair with only elbow supports and a rear (without seat), for performing leg raises.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dcaptains_chair' target='_blank'>captains_chair</a>
+  - *This fitness station has a box that can be used for jumping.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbox' target='_blank'>box</a>
+  - *This fitness station has battling ropes.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbattling_ropes' target='_blank'>battling_ropes</a>
+  - *This fitness station has a stationary bicycle.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dexcercise_bike' target='_blank'>excercise_bike</a>
+  - *This fitness station has a cross-trainer.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Delliptical_trainer' target='_blank'>elliptical_trainer</a>
+  - *This fitness station has an air walker.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dair_walker' target='_blank'>air_walker</a>
+  - *This fitness station has a rower.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drower' target='_blank'>rower</a>
+  - *This fitness station has a slackline.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslackline' target='_blank'>slackline</a>
 
 
 
@@ -186,7 +181,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 
@@ -233,7 +228,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

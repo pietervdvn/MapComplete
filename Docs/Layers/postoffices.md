@@ -37,12 +37,10 @@ A layer showing post offices.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_office' target='_blank'>post_office</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_office' target='_blank'>post_office</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22post_office%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22post_office%22%3D%22post_partner%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -87,10 +85,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -140,11 +138,11 @@ The question is  *Is this a post partner?*
 
 
 
-  - *This shop is a post partner*  corresponds with  `post_office=post_partner`
-  - *This shop is not a post partner*  corresponds with  ``
+  - *This shop is a post partner*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
+  - *This shop is not a post partner*  corresponds with  post_office=
 
 
-This tagrendering is only visible in the popup if the following condition is met: `post_office=post_partner`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>`
 
 
 
@@ -162,17 +160,17 @@ This is rendered with  `This location offers services for {post_office:brand}`
 
 
 
-  - *This location offers services for DHL*  corresponds with  `post_office:brand=DHL`
-  - *This location offers services for DPD*  corresponds with  `post_office:brand=DPD`
-  - *This location offers services for GLS*  corresponds with  `post_office:brand=GLS`
-  - *This location offers services for UPS*  corresponds with  `post_office:brand=UPS`
-  - *This location is a DHL Paketshop*  corresponds with  `post_office:brand=DHL Paketshop`
-  - *This location is a Hermes PaketShop*  corresponds with  `post_office:brand=Hermes PaketShop`
-  - *This location is a PostNL-point*  corresponds with  `post_office:brand=PostNL`
-  - *This location offers services for bpost*  corresponds with  `post_office:brand=bpost`
+  - *This location offers services for DHL*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL' target='_blank'>DHL</a>
+  - *This location offers services for DPD*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD' target='_blank'>DPD</a>
+  - *This location offers services for GLS*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS' target='_blank'>GLS</a>
+  - *This location offers services for UPS*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS' target='_blank'>UPS</a>
+  - *This location is a DHL Paketshop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop' target='_blank'>DHL Paketshop</a>
+  - *This location is a Hermes PaketShop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop' target='_blank'>Hermes PaketShop</a>
+  - *This location is a PostNL-point*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL' target='_blank'>PostNL</a>
+  - *This location offers services for bpost*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost' target='_blank'>bpost</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `post_office=post_partner`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>`
 
 
 
@@ -190,8 +188,8 @@ This is rendered with  `You can post letters with these companies: {post_office:
 
 
 
-  - *You can post letters here*  corresponds with  `post_office:letter_from=yes`
-  - *You can't post letters here*  corresponds with  `post_office:letter_from=no`
+  - *You can post letters here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes' target='_blank'>yes</a>
+  - *You can't post letters here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno' target='_blank'>no</a>
 
 
 
@@ -210,8 +208,8 @@ This is rendered with  `You can post parcels with these companies: {post_office:
 
 
 
-  - *You can send parcels here*  corresponds with  `post_office:parcel_from=yes`
-  - *You can't send parcels here*  corresponds with  `post_office:parcel_from=no`
+  - *You can send parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes' target='_blank'>yes</a>
+  - *You can't send parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno' target='_blank'>no</a>
 
 
 
@@ -230,8 +228,8 @@ This is rendered with  `You can pick up parcels from these companies: {post_offi
 
 
 
-  - *You can pick up missed parcels here*  corresponds with  `post_office:parcel_pickup=yes`
-  - *You can't pick up missed parcels here*  corresponds with  `post_office:parcel_pickup=no`
+  - *You can pick up missed parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes' target='_blank'>yes</a>
+  - *You can't pick up missed parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno' target='_blank'>no</a>
 
 
 
@@ -250,8 +248,8 @@ This is rendered with  `You can send parcels to here for pickup with these compa
 
 
 
-  - *You can send parcels to here for pickup*  corresponds with  `post_office:parcel_to=yes`
-  - *You can't send parcels to here for pickup*  corresponds with  `post_office:parcel_to=no`
+  - *You can send parcels to here for pickup*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes' target='_blank'>yes</a>
+  - *You can't send parcels to here for pickup*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno' target='_blank'>no</a>
 
 
 
@@ -270,8 +268,8 @@ This is rendered with  `You can buy stamps from companies: {post_office:stamps}`
 
 
 
-  - *You can buy stamps here*  corresponds with  `post_office:stamps=yes`
-  - *You can't buy stamps here*  corresponds with  `post_office:stamps=no`
+  - *You can buy stamps here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes' target='_blank'>yes</a>
+  - *You can't buy stamps here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno' target='_blank'>no</a>
 
 
 
@@ -286,9 +284,9 @@ The question is  *Does this post office have an ATM?*
 
 
 
-  - *This post office has an ATM*  corresponds with  `atm=yes`
-  - *This post office does <b>not</b> have an ATM*  corresponds with  `atm=no`
-  - *This post office does have an ATM, but it is mapped as a different icon*  corresponds with  `atm=separate`
+  - *This post office has an ATM*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes' target='_blank'>yes</a>
+  - *This post office does <b>not</b> have an ATM*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno' target='_blank'>no</a>
+  - *This post office does have an ATM, but it is mapped as a different icon*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate' target='_blank'>separate</a>
 
 
 
@@ -313,7 +311,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

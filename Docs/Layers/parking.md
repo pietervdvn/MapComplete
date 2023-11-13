@@ -38,12 +38,7 @@ A layer showing car parkings
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking' target='_blank'>parking</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking' target='_blank'>parking</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22parking%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -83,10 +78,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -130,13 +125,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -153,16 +148,16 @@ The question is  *What kind of parking is this?*
 
 
 
-  - *This is a surface parking lot*  corresponds with  `parking=surface`
-  - *This is a parking bay next to a street*  corresponds with  `parking=street_side`
-  - *This is an underground parking garage*  corresponds with  `parking=underground`
-  - *This is a multi-storey parking garage*  corresponds with  `parking=multi-storey`
-  - *This is a rooftop parking deck*  corresponds with  `parking=rooftop`
-  - *This is a lane for parking on the road*  corresponds with  `parking=lane`
-  - *This is parking covered by carports*  corresponds with  `parking=carports`
-  - *This a parking consisting of garage boxes*  corresponds with  `parking=garage_boxes`
-  - *This is a parking on a layby*  corresponds with  `parking=layby`
-  - *This is a parking consisting of sheds*  corresponds with  `parking=sheds`
+  - *This is a surface parking lot*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface' target='_blank'>surface</a>
+  - *This is a parking bay next to a street*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side' target='_blank'>street_side</a>
+  - *This is an underground parking garage*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground' target='_blank'>underground</a>
+  - *This is a multi-storey parking garage*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey' target='_blank'>multi-storey</a>
+  - *This is a rooftop parking deck*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop' target='_blank'>rooftop</a>
+  - *This is a lane for parking on the road*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane' target='_blank'>lane</a>
+  - *This is parking covered by carports*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports' target='_blank'>carports</a>
+  - *This a parking consisting of garage boxes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes' target='_blank'>garage_boxes</a>
+  - *This is a parking on a layby*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby' target='_blank'>layby</a>
+  - *This is a parking consisting of sheds*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds' target='_blank'>sheds</a>
 
 
 
@@ -181,11 +176,11 @@ This is rendered with  `There are {capacity:disabled} disabled parking spots`
 
 
 
-  - *There are disabled parking spots, but it is not known how many*  corresponds with  `capacity:disabled=yes`
-  - This option cannot be chosen as answer
-  - *There are no disabled parking spots*  corresponds with  `capacity:disabled=no`
-  - This option cannot be chosen as answer
-  - *There are no disabled parking spots*  corresponds with  `capacity:disabled=0`
+  - *There are disabled parking spots, but it is not known how many*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - *There are no disabled parking spots*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dno' target='_blank'>no</a>
+  - _This option cannot be chosen as answer_
+  - *There are no disabled parking spots*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0' target='_blank'>0</a>
 
 
 
@@ -256,7 +251,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Observation towers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Observation towers') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Observation towers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Observation towers') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -60,31 +60,31 @@
     },
     {
       "key": "charge",
-      "description": "Layer 'Observation towers' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes |access=guided)"
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes | access=guided)"
     },
     {
       "key": "fee",
-      "description": "Layer 'Observation towers' shows fee=no with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows fee=no & charge= with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes | access=guided)",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Observation towers' shows fee=no with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') Picking this answer will delete the key charge. (This is only shown if access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows fee=no & charge= with a fixed text, namely 'Free to visit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') Picking this answer will delete the key charge. (This is only shown if access=yes | access=guided)",
       "value": ""
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Observation towers' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if fee=yes |charge~.+)",
+      "description": "Layer 'Observation towers' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if fee=yes | charge~.+)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Observation towers' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if fee=yes |charge~.+)",
+      "description": "Layer 'Observation towers' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if fee=yes | charge~.+)",
       "value": "yes"
     },
     {
       "key": "payment:qr_code",
-      "description": "Layer 'Observation towers' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if fee=yes |charge~.+)",
+      "description": "Layer 'Observation towers' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if fee=yes | charge~.+)",
       "value": "yes"
     },
     {
@@ -97,16 +97,16 @@
     },
     {
       "key": "step_count",
-      "description": "Layer 'Observation towers' shows and asks freeform values for key 'step_count' (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes |access=guided)"
+      "description": "Layer 'Observation towers' shows and asks freeform values for key 'step_count' (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes | access=guided)"
     },
     {
       "key": "elevator",
-      "description": "Layer 'Observation towers' shows elevator=yes with a fixed text, namely 'This tower has an elevator which takes visitors to the top' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows elevator=yes with a fixed text, namely 'This tower has an elevator which takes visitors to the top' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes | access=guided)",
       "value": "yes"
     },
     {
       "key": "elevator",
-      "description": "Layer 'Observation towers' shows elevator=no with a fixed text, namely 'This tower does not have an elevator' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows elevator=no with a fixed text, namely 'This tower does not have an elevator' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if access=yes | access=guided)",
       "value": "no"
     },
     {
@@ -115,22 +115,22 @@
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Observation towers' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes &access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes & (access=yes | access=guided))",
       "value": "designated"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Observation towers' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes &access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes & (access=yes | access=guided))",
       "value": "yes"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Observation towers' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes &access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes & (access=yes | access=guided))",
       "value": "limited"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'Observation towers' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes &access=yes |access=guided)",
+      "description": "Layer 'Observation towers' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Observation towers') (This is only shown if elevator=yes & (access=yes | access=guided))",
       "value": "no"
     },
     {
@@ -143,7 +143,7 @@
     },
     {
       "key": "wikidata",
-      "description": "Layer 'Observation towers' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Observation towers') Picking this answer will delete the key wikidata.",
+      "description": "Layer 'Observation towers' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Observation towers') Picking this answer will delete the key wikidata.",
       "value": ""
     }
   ]

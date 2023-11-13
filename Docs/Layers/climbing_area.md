@@ -37,16 +37,13 @@ An area where climbing is possible, e.g. a crag, site, boulder, … Contains agg
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>
-  - climbing!~^(route)$
-  - leisure!~^(sports_centre)$
-  - climbing!=route_top
-  - climbing!=route_bottom
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>
+1. climbing!~^(route)$
+2. climbing!=route_top
+3. climbing!=route_bottom
+4. leisure!~^(sports_centre)$
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22climbing%22!~%22%5E%28route%29%24%22%5D%5B%22climbing%22!%3D%22route_top%22%5D%5B%22climbing%22!%3D%22route_bottom%22%5D%5B%22leisure%22!~%22%5E%28sports_centre%29%24%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -85,10 +82,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -160,7 +157,7 @@ This is rendered with  `<strong>{name}</strong>`
 
 
 
-  - *This climbing opportunity doesn't have a name*  corresponds with  `noname=yes`
+  - *This climbing opportunity doesn't have a name*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
 
 
 
@@ -175,9 +172,9 @@ The question is  *What kind of climbing opportunity is this?*
 
 
 
-  - *A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope*  corresponds with  `climbing=boulder`
-  - *A climbing crag - a single rock or cliff with at least a few climbing routes*  corresponds with  `climbing=crag`
-  - *A climbing area with one or more climbing crags and/or boulders*  corresponds with  `climbing=area`
+  - *A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder' target='_blank'>boulder</a>
+  - *A climbing crag - a single rock or cliff with at least a few climbing routes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a>
+  - *A climbing area with one or more climbing crags and/or boulders*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea' target='_blank'>area</a>
 
 
 
@@ -196,10 +193,10 @@ This is rendered with  `The rock type is {rock}`
 
 
 
-  - *Limestone*  corresponds with  `rock=limestone`
+  - *Limestone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rock' target='_blank'>rock</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone' target='_blank'>limestone</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `climbing=crag |natural=cliff |natural=bare_rock`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dcliff' target='_blank'>cliff</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dbare_rock' target='_blank'>bare_rock</a>`
 
 
 
@@ -223,7 +220,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

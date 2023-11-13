@@ -37,12 +37,10 @@ A map, meant for tourists which is permanently installed in the public space
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dmap' target='_blank'>map</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dmap' target='_blank'>map</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dmap' target='_blank'>map</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dmap' target='_blank'>map</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22information%22%3D%22map%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22tourism%22%3D%22map%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -82,10 +80,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -111,10 +109,10 @@ The question is  *What type of map is shown?*
 
 
 
-  - *Topographical map <p class='subtle'>The map contains contour lines. </p>*  corresponds with  `map_type=topo`
-  - *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>*  corresponds with  `map_type=street`
-  - *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> *  corresponds with  `map_type=scheme`
-  - *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>*  corresponds with  `map_type=toposcope`
+  - *Topographical map <p class='subtle'>The map contains contour lines. </p>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtopo' target='_blank'>topo</a>
+  - *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dstreet' target='_blank'>street</a>
+  - *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dscheme' target='_blank'>scheme</a>
+  - *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtoposcope' target='_blank'>toposcope</a>
 
 
 
@@ -129,11 +127,11 @@ The question is  *What is the size of the shown area on the map?*
 
 
 
-  - *A map of the rooms within a building*  corresponds with  `map_size=building`
-  - *A map of special site, like of a historical castle, a park, a campus, a forest, ....*  corresponds with  `map_size=site`
-  - *A map showing the village or town*  corresponds with  `map_size=village`
-  - * A map of a city*  corresponds with  `map_size=city`
-  - *The map of an entire region, showing multiple cities and villages*  corresponds with  `map_size=region`
+  - *A map of the rooms within a building*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding' target='_blank'>building</a>
+  - *A map of special site, like of a historical castle, a park, a campus, a forest, ....*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite' target='_blank'>site</a>
+  - *A map showing the village or town*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dvillage' target='_blank'>village</a>
+  - * A map of a city*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
+  - *The map of an entire region, showing multiple cities and villages*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion' target='_blank'>region</a>
 
 
 
@@ -152,7 +150,7 @@ This is rendered with  `This map is based on {map_source}`
 
 
 
-  - *This map is based on OpenStreetMap*  corresponds with  `map_source=OpenStreetMap`
+  - *This map is based on OpenStreetMap*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a> & not:map_source=
 
 
 This tagrendering has labels  `map`
@@ -169,15 +167,15 @@ The question is  *Is the OpenStreetMap-attribution given?*
 
 
 
-  - *OpenStreetMap is clearly attributed, including the ODBL-license*  corresponds with  `map_source:attribution=yes`
-  - *OpenStreetMap is clearly attributed, but the license is not mentioned*  corresponds with  `map_source:attribution=incomplete`
-  - *OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it*  corresponds with  `map_source:attribution=sticker`
-  - *There is no attribution at all*  corresponds with  `map_source:attribution=none`
-  - *There is no attribution at all*  corresponds with  `map_source:attribution=no`
-  - This option cannot be chosen as answer
+  - *OpenStreetMap is clearly attributed, including the ODBL-license*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>
+  - *OpenStreetMap is clearly attributed, but the license is not mentioned*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>
+  - *OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>
+  - *There is no attribution at all*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>
+  - *There is no attribution at all*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>
+  - _This option cannot be chosen as answer_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `map_source~^((O|)pen(S|s)treet(M|m)ap)$ |map_source=osm |map_source=OSM`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3Dosm' target='_blank'>osm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOSM' target='_blank'>OSM</a> | map_source~^((O|)pen(S|s)treet(M|m)ap)$`
 
 This tagrendering has labels  `map`
 
@@ -235,7 +233,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

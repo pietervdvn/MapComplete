@@ -37,12 +37,7 @@ Layer showing individual parking spaces.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking_space' target='_blank'>parking_space</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking_space' target='_blank'>parking_space</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22parking_space%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -80,10 +75,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -109,22 +104,22 @@ The question is  *What kind of parking space is this?*
 
 
 
-  - *This is a normal parking space.*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *This is a normal parking space.*  corresponds with  `parking_space=normal`
-  - *This is a disabled parking space.*  corresponds with  `parking_space=disabled`
-  - *This is a private parking space.*  corresponds with  `parking_space=private`
-  - *This is parking space reserved for charging vehicles.*  corresponds with  `parking_space=charging`
-  - *This is parking space reserved for deliveries.*  corresponds with  `parking_space=delivery`
-  - *This is parking space reserved for heavy goods vehicles.*  corresponds with  `parking_space=hgv`
-  - *This is parking space reserved for caravans or RVs.*  corresponds with  `parking_space=caravan`
-  - *This is parking space reserved for buses.*  corresponds with  `parking_space=bus`
-  - *This is parking space reserved for motorcycles.*  corresponds with  `parking_space=motorcycle`
-  - *This is a parking space reserved for parents with children.*  corresponds with  `parking_space=parent`
-  - *This is a parking space reserved for staff.*  corresponds with  `parking_space=staff`
-  - *This is a parking space reserved for taxis.*  corresponds with  `parking_space=taxi`
-  - *This is a parking space reserved for vehicles towing a trailer.*  corresponds with  `parking_space=trailer`
-  - *This is a parking space reserved for car sharing.*  corresponds with  `parking_space=car_sharing`
+  - *This is a normal parking space.*  corresponds with  parking_space=
+  - _This option cannot be chosen as answer_
+  - *This is a normal parking space.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dnormal' target='_blank'>normal</a>
+  - *This is a disabled parking space.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddisabled' target='_blank'>disabled</a>
+  - *This is a private parking space.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dprivate' target='_blank'>private</a>
+  - *This is parking space reserved for charging vehicles.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcharging' target='_blank'>charging</a>
+  - *This is parking space reserved for deliveries.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddelivery' target='_blank'>delivery</a>
+  - *This is parking space reserved for heavy goods vehicles.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dhgv' target='_blank'>hgv</a>
+  - *This is parking space reserved for caravans or RVs.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcaravan' target='_blank'>caravan</a>
+  - *This is parking space reserved for buses.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dbus' target='_blank'>bus</a>
+  - *This is parking space reserved for motorcycles.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dmotorcycle' target='_blank'>motorcycle</a>
+  - *This is a parking space reserved for parents with children.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dparent' target='_blank'>parent</a>
+  - *This is a parking space reserved for staff.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dstaff' target='_blank'>staff</a>
+  - *This is a parking space reserved for taxis.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtaxi' target='_blank'>taxi</a>
+  - *This is a parking space reserved for vehicles towing a trailer.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtrailer' target='_blank'>trailer</a>
+  - *This is a parking space reserved for car sharing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcar_sharing' target='_blank'>car_sharing</a>
 
 
 
@@ -139,7 +134,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *This parking space has 1 space.*  corresponds with  `capacity=1`
+  - *This parking space has 1 space.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:capacity' target='_blank'>capacity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity%3D1' target='_blank'>1</a>
 
 
 
@@ -176,7 +171,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

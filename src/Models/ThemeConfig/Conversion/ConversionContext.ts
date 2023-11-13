@@ -25,7 +25,14 @@ export class ConversionContext {
         if (this.path.some((p) => typeof p === "object" || p === "[object Object]")) {
             throw "ConversionMessage: got an object as path entry:" + JSON.stringify(path)
         }
+        if (this.path.some((p) => typeof p === "number" && p < 0)) {
+            if (!ConversionContext.reported) {
+                ConversionContext.reported = true
+                console.trace("ConversionContext: got a path containing a negative number")
+            }
+        }
     }
+    private static reported = false
 
     public static construct(path: (string | number)[], operation: string[]) {
         return new ConversionContext([], [...path], [...operation])
@@ -71,6 +78,10 @@ export class ConversionContext {
 
     public enter(key: string | number | (string | number)[]) {
         if (!Array.isArray(key)) {
+            if (typeof key === "number" && key < 0) {
+                console.trace("Invalid key")
+                throw "Invalid key: <0"
+            }
             return new ConversionContext(this.messages, [...this.path, key], this.operation)
         }
         return new ConversionContext(this.messages, [...this.path, ...key], this.operation)

@@ -398,7 +398,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `has_presets=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:has_presets' target='_blank'>has_presets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:has_presets%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -410,7 +410,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `has_note_layer=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:has_note_layer' target='_blank'>has_note_layer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:has_note_layer%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -422,7 +422,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 id | question | osmTags
 ---- | ---------- | ---------
-action.0 | only_if_action_is_possible | has_note_layer=yes \|has_presets=yes
+action.0 | only_if_action_is_possible | has_note_layer=yes \| has_presets=yes
 
 
 
@@ -668,7 +668,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *The language was set via an URL-parameter and cannot be set by the user.²*  corresponds with  `__url_parameter_initialized:language=yes`
+  - *The language was set via an URL-parameter and cannot be set by the user.²*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:__url_parameter_initialized:language' target='_blank'>__url_parameter_initialized:language</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:__url_parameter_initialized:language%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -683,8 +683,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *{link(Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,)}*  corresponds with  `_unreadMessages=0`
-  - *{link(<b class='alert'>You have &LBRACE_unreadMessages&RBRACE</b><br/>Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,)}*  corresponds with  `_unreadMessages>0`
+  - *{link(Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,)}*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:_unreadMessages' target='_blank'>_unreadMessages</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_unreadMessages%3D0' target='_blank'>0</a>
+  - *{link(<b class='alert'>You have &LBRACE_unreadMessages&RBRACE</b><br/>Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,)}*  corresponds with  _unreadMessages>0
 
 
 
@@ -717,7 +717,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_theme:backgroundLayer~.+ &mapcomplete-preferred-background-layer~.+ &_theme:backgroundLayer!=`
+This tagrendering is only visible in the popup if the following condition is met: `_theme:backgroundLayer!= & _theme:backgroundLayer~.+ & mapcomplete-preferred-background-layer~.+`
 
 
 
@@ -731,13 +731,13 @@ The question is  *What background layer should be shown by default?*
 
 
 
-  - *Use the default background layer*  corresponds with  ``
-  - *Use OpenStreetMap-carto as default layer*  corresponds with  `mapcomplete-preferred-background-layer=osm`
-  - *Use aerial imagery as default background*  corresponds with  `mapcomplete-preferred-background-layer=photo`
-  - *Use a non-openstreetmap based map as default background*  corresponds with  `mapcomplete-preferred-background-layer=map`
-  - *Use the current background layer (<span class='code'>{__current_background}</span>) as default background*  corresponds with  `mapcomplete-preferred-background-layer=`
-  - *Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background*  corresponds with  `mapcomplete-preferred-background-layer~.+`
-  - This option cannot be chosen as answer
+  - *Use the default background layer*  corresponds with  mapcomplete-preferred-background-layer=
+  - *Use OpenStreetMap-carto as default layer*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-preferred-background-layer' target='_blank'>mapcomplete-preferred-background-layer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dosm' target='_blank'>osm</a>
+  - *Use aerial imagery as default background*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-preferred-background-layer' target='_blank'>mapcomplete-preferred-background-layer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dphoto' target='_blank'>photo</a>
+  - *Use a non-openstreetmap based map as default background*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-preferred-background-layer' target='_blank'>mapcomplete-preferred-background-layer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-preferred-background-layer%3Dmap' target='_blank'>map</a>
+  - *Use the current background layer (<span class='code'>{__current_background}</span>) as default background*  corresponds with  mapcomplete-preferred-background-layer=
+  - *Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background*  corresponds with  mapcomplete-preferred-background-layer~.+
+  - _This option cannot be chosen as answer_
 
 
 
@@ -754,11 +754,11 @@ The question is  *Under what license do you want to publish your pictures?*
 
 
 
-  - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.*  corresponds with  `mapcomplete-pictures-license=CC0`
-  - *Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you*  corresponds with  `mapcomplete-pictures-license=CC-BY 4.0`
-  - *Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.*  corresponds with  `mapcomplete-pictures-license=CC-BY-SA 4.0`
+  - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>*  corresponds with  mapcomplete-pictures-license=
+  - _This option cannot be chosen as answer_
+  - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license' target='_blank'>mapcomplete-pictures-license</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC0' target='_blank'>CC0</a>
+  - *Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license' target='_blank'>mapcomplete-pictures-license</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY 4.0' target='_blank'>CC-BY 4.0</a>
+  - *Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license' target='_blank'>mapcomplete-pictures-license</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY-SA 4.0' target='_blank'>CC-BY-SA 4.0</a>
 
 
 
@@ -773,10 +773,10 @@ The question is  *Show the raw OpenStreetMap-tags?*
 
 
 
-  - *Never show the tags.*  corresponds with  `mapcomplete-show_tags=no`
-  - *Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets*  corresponds with  ``
-  - *Show the tags that will be applied when making a change*  corresponds with  `mapcomplete-show_tags=yes`
-  - *Show the tags that will be applied when making a change and show the tags table on every feature*  corresponds with  `mapcomplete-show_tags=full`
+  - *Never show the tags.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_tags' target='_blank'>mapcomplete-show_tags</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dno' target='_blank'>no</a>
+  - *Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets*  corresponds with  mapcomplete-show_tags=
+  - *Show the tags that will be applied when making a change*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_tags' target='_blank'>mapcomplete-show_tags</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dyes' target='_blank'>yes</a>
+  - *Show the tags that will be applied when making a change and show the tags table on every feature*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_tags' target='_blank'>mapcomplete-show_tags</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dfull' target='_blank'>full</a>
 
 
 
@@ -791,8 +791,8 @@ The question is  *Should questions for unknown data fields appear one-by-one or 
 
 
 
-  - *Show all questions in the infobox together*  corresponds with  `mapcomplete-show-all-questions=true`
-  - *Show questions one-by-one*  corresponds with  `mapcomplete-show-all-questions=false`
+  - *Show all questions in the infobox together*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show-all-questions' target='_blank'>mapcomplete-show-all-questions</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dtrue' target='_blank'>true</a>
+  - *Show questions one-by-one*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show-all-questions' target='_blank'>mapcomplete-show-all-questions</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dfalse' target='_blank'>false</a>
 
 
 
@@ -807,10 +807,10 @@ The question is  *Should a crosshair be shown in the center of the display?*
 
 
 
-  - *Show a crosshair in the center of the map (when zoomed in above level 17)*  corresponds with  `mapcomplete-show_crosshair=yes`
-  - *Do not show a crosshair in the center of the map*  corresponds with  `mapcomplete-show_crosshair=no`
-  - *Do not show a crosshair in the center of the map*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *Show a crosshair in the center of the map (when zoomed in above level 17)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_crosshair' target='_blank'>mapcomplete-show_crosshair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_crosshair%3Dyes' target='_blank'>yes</a>
+  - *Do not show a crosshair in the center of the map*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_crosshair' target='_blank'>mapcomplete-show_crosshair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_crosshair%3Dno' target='_blank'>no</a>
+  - *Do not show a crosshair in the center of the map*  corresponds with  mapcomplete-show_crosshair=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -825,8 +825,8 @@ The question is  *Should north always be up?*
 
 
 
-  - *Allow to rotate the map*  corresponds with  ``
-  - *Always keep north pointing up*  corresponds with  `mapcomplete-fixate-north=yes`
+  - *Allow to rotate the map*  corresponds with  mapcomplete-fixate-north=
+  - *Always keep north pointing up*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-fixate-north' target='_blank'>mapcomplete-fixate-north</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-fixate-north%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -861,9 +861,9 @@ The question is  *Do you want to help translating MapComplete?*
 
 
 
-  - *Don't show a button to quickly change translations*  corresponds with  `mapcomplete-translation-mode=false`
-  - *Show a button to quickly open translations when using MapComplete on a big screen*  corresponds with  `mapcomplete-translation-mode=true`
-  - *Always show the translation buttons, including on mobile*  corresponds with  `mapcomplete-translation-mode=mobile`
+  - *Don't show a button to quickly change translations*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dfalse' target='_blank'>false</a>
+  - *Show a button to quickly open translations when using MapComplete on a big screen*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue' target='_blank'>true</a>
+  - *Always show the translation buttons, including on mobile*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile' target='_blank'>mobile</a>
 
 
 
@@ -878,7 +878,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.*  corresponds with  `mapcomplete-translation-mode=yes |mapcomplete-translation-mode=true |mapcomplete-translation-mode=mobile`
+  - *Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue' target='_blank'>true</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile' target='_blank'>mobile</a>
 
 
 
@@ -893,10 +893,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *Completely translated*  corresponds with  `_translation_percentage=100`
+  - *Completely translated*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:_translation_percentage' target='_blank'>_translation_percentage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_translation_percentage%3D100' target='_blank'>100</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-translation-mode=yes |mapcomplete-translation-mode=true |mapcomplete-translation-mode=mobile`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue' target='_blank'>true</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile' target='_blank'>mobile</a>`
 
 
 
@@ -908,7 +908,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_translation_links~.+ &mapcomplete-translation-mode=true |mapcomplete-translation-mode=mobile`
+This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue' target='_blank'>true</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode' target='_blank'>mapcomplete-translation-mode</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile' target='_blank'>mobile</a>) & _translation_links~.+`
 
 
 
@@ -922,8 +922,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>*  corresponds with  `_mastodon_link~.+`
-  - *We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href="{_mastodon_candidate}" rel="me"&gtMastodon&lt/a&gt*  corresponds with  `_mastodon_candidate~.+`
+  - *A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>*  corresponds with  _mastodon_link~.+
+  - *We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href="{_mastodon_candidate}" rel="me"&gtMastodon&lt/a&gt*  corresponds with  _mastodon_candidate~.+
 
 
 
@@ -938,7 +938,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You have made changes on {_csCount} different occasions! That is awesome!*  corresponds with  `_csCount>0`
+  - *You have made changes on {_csCount} different occasions! That is awesome!*  corresponds with  _csCount>0
 
 
 
@@ -953,7 +953,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You have contributed to translating MapComplete! That's awesome!*  corresponds with  `_translation_contributions>0`
+  - *You have contributed to translating MapComplete! That's awesome!*  corresponds with  _translation_contributions>0
 
 
 
@@ -968,8 +968,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!*  corresponds with  `_code_contributions>0`
-  - This option cannot be chosen as answer
+  - *You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!*  corresponds with  _code_contributions>0
+  - _This option cannot be chosen as answer_
 
 
 
@@ -984,10 +984,10 @@ The question is  *Show user settings debug info?*
 
 
 
-  - *Show debug info*  corresponds with  `mapcomplete-show_debug=yes`
-  - *Don't show debug info*  corresponds with  `mapcomplete-show_debug=no`
-  - *Don't show debug info*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *Show debug info*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_debug' target='_blank'>mapcomplete-show_debug</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dyes' target='_blank'>yes</a>
+  - *Don't show debug info*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_debug' target='_blank'>mapcomplete-show_debug</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dno' target='_blank'>no</a>
+  - *Don't show debug info*  corresponds with  mapcomplete-show_debug=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -1000,7 +1000,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-show_debug=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_debug' target='_blank'>mapcomplete-show_debug</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -1012,7 +1012,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-show_debug=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_debug' target='_blank'>mapcomplete-show_debug</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dyes' target='_blank'>yes</a>`
 
 
 

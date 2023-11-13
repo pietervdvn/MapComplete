@@ -37,13 +37,10 @@ Layer showing penny presses.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **all** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin' target='_blank'>elongated_coin</a>
-
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
+1. <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin' target='_blank'>elongated_coin</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22vending_machine%22%5D%5B%22vending%22%3D%22elongated_coin%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -89,10 +86,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -122,7 +119,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 
@@ -141,10 +138,10 @@ This is rendered with  `This penny press has {coin:design_count} designs availab
 
 
 
-  - *This penny press has one design available.*  corresponds with  `coin:design_count=1`
-  - *This penny press has two designs available.*  corresponds with  `coin:design_count=2`
-  - *This penny press has three designs available.*  corresponds with  `coin:design_count=3`
-  - *This penny press has four designs available.*  corresponds with  `coin:design_count=4`
+  - *This penny press has one design available.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D1' target='_blank'>1</a>
+  - *This penny press has two designs available.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D2' target='_blank'>2</a>
+  - *This penny press has three designs available.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D3' target='_blank'>3</a>
+  - *This penny press has four designs available.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D4' target='_blank'>4</a>
 
 
 
@@ -159,9 +156,9 @@ The question is  *Does it cost money to press a penny?*
 
 
 
-  - *It costs money to press a penny.*  corresponds with  ``
-  - *It costs money to press a penny.*  corresponds with  `fee=yes`
-  - *It is free to press a penny.*  corresponds with  `fee=no`
+  - *It costs money to press a penny.*  corresponds with  fee=
+  - *It costs money to press a penny.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+  - *It is free to press a penny.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
 
 
 
@@ -176,21 +173,21 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cash=
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cards=
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Coins are accepted here*  corresponds with  `payment:coins=yes`
+  - *Coins are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
-  - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
+  - *Bank notes are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
-  - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
+  - *Debit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
-  - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
+  - *Credit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
@@ -210,13 +207,13 @@ This is rendered with  `This penny press uses a {coin:type} coin for pressing.`
 
 
 
-  - *This penny press uses a 2 cent coin for pressing.*  corresponds with  `coin:type=2cent`
-  - *This penny press uses a 5 cent coin for pressing.*  corresponds with  `coin:type=5cent`
-  - *This penny press uses a 10 cent coin for pressing.*  corresponds with  `coin:type=10cent`
-  - *This penny press uses a 25 cent coin for pressing.*  corresponds with  `coin:type=25cent`
-  - *This penny press uses a 50 cent coin for pressing.*  corresponds with  `coin:type=50cent`
-  - *This penny press uses a 10 centimes coin for pressing.*  corresponds with  `coin:type=10centimes`
-  - *This penny press uses a 20 centimes coin for pressing.*  corresponds with  `coin:type=20centimes`
+  - *This penny press uses a 2 cent coin for pressing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:type' target='_blank'>coin:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D2cent' target='_blank'>2cent</a>
+  - *This penny press uses a 5 cent coin for pressing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:type' target='_blank'>coin:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D5cent' target='_blank'>5cent</a>
+  - *This penny press uses a 10 cent coin for pressing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:type' target='_blank'>coin:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D10cent' target='_blank'>10cent</a>
+  - *This penny press uses a 25 cent coin for pressing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:type' target='_blank'>coin:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D25cent' target='_blank'>25cent</a>
+  - *This penny press uses a 50 cent coin for pressing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:type' target='_blank'>coin:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D50cent' target='_blank'>50cent</a>
+  - *This penny press uses a 10 centimes coin for pressing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:type' target='_blank'>coin:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D10centimes' target='_blank'>10centimes</a>
+  - *This penny press uses a 20 centimes coin for pressing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:type' target='_blank'>coin:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:type%3D20centimes' target='_blank'>20centimes</a>
 
 
 
@@ -235,8 +232,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
-  - This option cannot be chosen as answer
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -257,10 +254,10 @@ This is rendered with  `It costs {charge} to press a penny.`
 
 
 
-  - *It costs 1 euro to press a penny.*  corresponds with  `charge=1 EUR`
-  - *It costs 2 euros to press a penny.*  corresponds with  `charge=2 EUR`
-  - *It costs 2 Swiss francs to press a penny.*  corresponds with  `charge=2 CHF`
-  - *It costs 1 Swiss franc to press a penny.*  corresponds with  `charge=1 CHF`
+  - *It costs 1 euro to press a penny.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D1 EUR' target='_blank'>1 EUR</a>
+  - *It costs 2 euros to press a penny.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 EUR' target='_blank'>2 EUR</a>
+  - *It costs 2 Swiss francs to press a penny.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 CHF' target='_blank'>2 CHF</a>
+  - *It costs 1 Swiss franc to press a penny.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D1 CHF' target='_blank'>1 CHF</a>
 
 
 
@@ -275,24 +272,24 @@ The question is  *What coins can you use to pay here?*
 
 
 
-  - *1 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.01 EUR`
-  - *2 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.02 EUR`
-  - *5 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.05 EUR`
-  - *10 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.10 EUR`
-  - *20 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.20 EUR`
-  - *50 cent coins are accepted*  corresponds with  `payment:coins:denominations=0.50 EUR`
-  - *1 euro coins are accepted*  corresponds with  `payment:coins:denominations=1 EUR`
-  - *2 euro coins are accepted*  corresponds with  `payment:coins:denominations=2 EUR`
-  - *5 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.05 CHF`
-  - *10 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.10 CHF`
-  - *20 centimes coins are accepted*  corresponds with  `payment:coins:denominations=0.20 CHF`
-  - *½ franc coins are accepted*  corresponds with  `payment:coins:denominations=0.50 CHF`
-  - *1 franc coins are accepted*  corresponds with  `payment:coins:denominations=1 CHF`
-  - *2 francs coins are accepted*  corresponds with  `payment:coins:denominations=2 CHF`
-  - *5 francs coins are accepted*  corresponds with  `payment:coins:denominations=5 CHF`
+  - *1 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR' target='_blank'>0.01 EUR</a>
+  - *2 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR' target='_blank'>0.02 EUR</a>
+  - *5 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR' target='_blank'>0.05 EUR</a>
+  - *10 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR' target='_blank'>0.10 EUR</a>
+  - *20 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR' target='_blank'>0.20 EUR</a>
+  - *50 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
+  - *1 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR' target='_blank'>1 EUR</a>
+  - *2 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR' target='_blank'>2 EUR</a>
+  - *5 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF' target='_blank'>0.05 CHF</a>
+  - *10 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF' target='_blank'>0.10 CHF</a>
+  - *20 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF' target='_blank'>0.20 CHF</a>
+  - *½ franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF' target='_blank'>0.50 CHF</a>
+  - *1 franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF' target='_blank'>1 CHF</a>
+  - *2 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF' target='_blank'>2 CHF</a>
+  - *5 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF' target='_blank'>5 CHF</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:coins=yes |payment:cash=yes &_currency~^(.*EUR.*)$ |_currency~^(.*CHF.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)`
 
 
 
@@ -306,8 +303,8 @@ The question is  *Is the penny press indoors?*
 
 
 
-  - *This penny press is located indoors.*  corresponds with  `indoor=yes`
-  - *This penny press is located outdoors.*  corresponds with  `indoor=no`
+  - *This penny press is located indoors.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+  - *This penny press is located outdoors.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
 
 
 
@@ -340,13 +337,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -367,7 +364,7 @@ This is rendered with  `This object was last checked on <b>{check_date}</b>`
 
 
 
-  - *This object was last checked today*  corresponds with  `check_date=`
+  - *This object was last checked today*  corresponds with  check_date=
 
 
 
@@ -424,7 +421,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

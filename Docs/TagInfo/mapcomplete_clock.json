@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Clocks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Clocks') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Clocks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Clocks') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -102,7 +102,7 @@
     },
     {
       "key": "date",
-      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the date' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key date.",
+      "description": "Layer 'Clocks' shows date= with a fixed text, namely 'This clock does probably not display the date' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key date.",
       "value": ""
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "key": "thermometer",
-      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the temperature' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key thermometer.",
+      "description": "Layer 'Clocks' shows thermometer= with a fixed text, namely 'This clock does probably not display the temperature' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key thermometer.",
       "value": ""
     },
     {
@@ -132,7 +132,7 @@
     },
     {
       "key": "barometer",
-      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the air pressure' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key barometer.",
+      "description": "Layer 'Clocks' shows barometer= with a fixed text, namely 'This clock does probably not display the air pressure' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key barometer.",
       "value": ""
     },
     {
@@ -147,7 +147,7 @@
     },
     {
       "key": "hygrometer",
-      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the humidity' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key hygrometer.",
+      "description": "Layer 'Clocks' shows hygrometer= with a fixed text, namely 'This clock does probably not display the humidity' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key hygrometer.",
       "value": ""
     },
     {

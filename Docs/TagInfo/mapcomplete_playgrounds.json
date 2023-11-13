@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Playgrounds' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Playgrounds' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -183,7 +183,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -203,12 +203,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "two_sided",
-      "description": "Layer 'Benches' shows backrest=yes &two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'Benches' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
@@ -332,7 +332,7 @@
     },
     {
       "key": "inscription",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key inscription.",
+      "description": "Layer 'Benches' shows inscription= with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key inscription.",
       "value": ""
     },
     {
@@ -347,22 +347,22 @@
     },
     {
       "key": "tourism",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key tourism.",
+      "description": "Layer 'Benches' shows tourism= with a fixed text, namely 'This bench <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key tourism.",
       "value": ""
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key historic. (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key historic. (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial |inscription~.+ |memorial=bench |tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
       "value": "memorial"
     },
     {
@@ -372,7 +372,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -392,31 +392,31 @@
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Playgrounds')"
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if repeat_on=)"
     },
     {
       "key": "location",
-      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if repeat_on=)",
       "value": "underground"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if repeat_on=)",
       "value": "0"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key level.",
+      "description": "Layer 'Picnic tables' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if repeat_on=)",
       "value": "1"
     },
     {
       "key": "level",
-      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if repeat_on=)",
       "value": "-1"
     },
     {

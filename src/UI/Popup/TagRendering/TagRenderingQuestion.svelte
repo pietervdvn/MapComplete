@@ -172,6 +172,8 @@
     state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
   let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined)
   let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0
+  let question = config.question
+  $: question = config.question
   if (state?.osmConnection) {
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
@@ -181,7 +183,7 @@
   }
 </script>
 
-{#if config.question !== undefined}
+{#if question !== undefined}
   <div
     class="interactive border-interactive relative flex flex-col overflow-y-auto p-1 px-2"
     style="max-height: 85vh"
@@ -190,7 +192,7 @@
       <div class="interactive sticky top-0 flex justify-between">
         <span class="font-bold">
           <SpecialTranslation
-            t={config.question}
+            t={question}
             {tags}
             {state}
             {layer}

@@ -80,9 +80,14 @@
           }
         ],
         "minzoom": 12,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/layers/id_presets/maki-shop.svg"
+            "marker": [
+              {},
+              {
+                "icon": "./assets/layers/id_presets/maki-shop.svg"
+              }
+            ]
           }
         ]
       }

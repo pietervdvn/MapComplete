@@ -1061,10 +1061,20 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                         "'"
                 )
         }
+        if (json["pointRenderings"]?.length > 0) {
+            context
+                .enter("pointRenderings")
+                .err("Detected a 'pointRenderingS', it is written singular")
+        }
 
         if (!(json.pointRendering?.length > 0)) {
             context.enter("pointRendering").err("There are no pointRenderings at all...")
         }
+
+        if (json["mapRendering"]) {
+            context.enter("mapRendering").err("This layer has a legacy 'mapRendering'")
+        }
+
         if (json.presets?.length > 0) {
             if (!(json.pointRendering?.length > 0)) {
                 context.enter("presets").warn("A preset is defined, but there is no pointRendering")

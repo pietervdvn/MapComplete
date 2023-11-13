@@ -36,12 +36,7 @@ Map layer to show fire hydrants.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22emergency%22%3D%22fire_hydrant%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -84,10 +79,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -105,8 +100,8 @@ This is rendered with  `The hydrant color is {colour}`
 
 
 
-  - *The hydrant color is yellow.*  corresponds with  `colour=yellow`
-  - *The hydrant color is red.*  corresponds with  `colour=red`
+  - *The hydrant color is yellow.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
+  - *The hydrant color is red.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
 
 
 
@@ -125,10 +120,10 @@ This is rendered with  ` Hydrant type: {fire_hydrant:type}`
 
 
 
-  - *Pillar type.*  corresponds with  `fire_hydrant:type=pillar`
-  - *Pipe type.*  corresponds with  `fire_hydrant:type=pipe`
-  - *Wall type.*  corresponds with  `fire_hydrant:type=wall`
-  - *Underground type.*  corresponds with  `fire_hydrant:type=underground`
+  - *Pillar type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>
+  - *Pipe type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>
+  - *Wall type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>
+  - *Underground type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground' target='_blank'>underground</a>
 
 
 
@@ -143,9 +138,9 @@ The question is  *Is this hydrant still working?*
 
 
 
-  - *The hydrant is (fully or partially) working*  corresponds with  `emergency=fire_hydrant`
-  - *The hydrant is unavailable*  corresponds with  `disused:emergency=fire_hydrant`
-  - *The hydrant has been removed*  corresponds with  `removed:emergency=fire_hydrant`
+  - *The hydrant is (fully or partially) working*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
+  - *The hydrant is unavailable*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:disused:emergency' target='_blank'>disused:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
+  - *The hydrant has been removed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:removed:emergency' target='_blank'>removed:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:removed:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
 
 
 
@@ -192,9 +187,9 @@ This is rendered with  `Couplings: {couplings:type}`
 
 
 
-  - *Storz coupling*  corresponds with  `couplings:type=Storz`
-  - *UNI coupling*  corresponds with  `couplings:type=UNI`
-  - *Barcelona coupling*  corresponds with  `couplings:type=Barcelona`
+  - *Storz coupling*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DStorz' target='_blank'>Storz</a>
+  - *UNI coupling*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DUNI' target='_blank'>UNI</a>
+  - *Barcelona coupling*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DBarcelona' target='_blank'>Barcelona</a>
 
 
 
@@ -257,7 +252,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

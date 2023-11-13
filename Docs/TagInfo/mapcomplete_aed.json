@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Defibrillators' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Defibrillators') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Defibrillators' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Defibrillators') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -76,7 +76,7 @@
     },
     {
       "key": "defibrillator",
-      "description": "Layer 'Defibrillators' shows  with a fixed text, namely 'There is no info about the type of device' (in the mapcomplete.org theme 'Defibrillators') Picking this answer will delete the key defibrillator. (This is only shown if access=no)",
+      "description": "Layer 'Defibrillators' shows defibrillator= with a fixed text, namely 'There is no info about the type of device' (in the mapcomplete.org theme 'Defibrillators') Picking this answer will delete the key defibrillator. (This is only shown if access=no)",
       "value": ""
     },
     {

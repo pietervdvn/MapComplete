@@ -50,9 +50,11 @@
         "id": "bicycle_rental_non_docking",
         "minzoom": 14,
         "=presets": [],
-        "=mapRendering": [
+        "=pointRendering": [
           {
-            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
+            "marker":[{
+            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg"
+            }],
             "iconSize": "40,40",
             "anchor": "bottom",
             "location": [
@@ -79,9 +81,11 @@
           "sameAs": "bicycle_rental_non_docking"
         },
         "minzoom": 18,
-        "=mapRendering": [
+        "=pointRendering": [
           {
-            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
+            "marker":[{
+            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg"
+            }],
             "iconSize": "40,40",
             "anchor": "bottom",
             "location": [

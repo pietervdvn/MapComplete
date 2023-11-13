@@ -49,8 +49,16 @@ export class Or extends TagsFilter {
         return choices
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
-        return this.or.map((t) => t.asHumanString(linkToWiki, shorten, properties)).join(" |")
+    asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {
+        return this.or
+            .map((t) => {
+                let e = t.asHumanString(linkToWiki, shorten, properties)
+                if (t["and"]) {
+                    e = "(" + e + ")"
+                }
+                return e
+            })
+            .join(" | ")
     }
 
     isUsableAsAnswer(): boolean {

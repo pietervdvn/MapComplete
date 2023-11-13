@@ -59,9 +59,13 @@
       "builtin": "cafe_pub",
       "override": {
         "minzoom": 15,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/cafe.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/cafe.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom",
             "label": null
@@ -73,9 +77,13 @@
       "builtin": "entrance",
       "override": {
         "minzoom": 18,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "circle:white;./assets/themes/onwheels/entrance.svg"
+            "=marker": [
+              {
+                "icon": "circle:white;./assets/themes/onwheels/entrance.svg"
+              }
+            ]
           }
         ],
         "syncSelection": "theme-only",
@@ -120,9 +128,13 @@
       "builtin": "food",
       "override": {
         "minzoom": 15,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/restaurant.svg",
+            "marker": [
+              {
+                "icon": "./assets/themes/onwheels/restaurant.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom",
             "label": null
@@ -135,11 +147,13 @@
       "override": {
         "minzoom": 18,
         "syncSelection": "theme-only",
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": {
-              "render": "./assets/themes/onwheels/cone.svg"
-            }
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/cone.svg"
+              }
+            ]
           }
         ],
         "=filter": [
@@ -210,9 +224,18 @@
       "builtin": "parking",
       "override": {
         "minzoom": 15,
-        "mapRendering": [
+        "lineRendering": [
           {
-            "icon": "./assets/themes/onwheels/parking.svg",
+            "color": "#225f92"
+          }
+        ],
+        "pointRendering": [
+          {
+            "marker": [
+              {
+                "icon": "./assets/themes/onwheels/parking.svg"
+              }
+            ],
             "anchor": "bottom",
             "=iconSize": {
               "render": "20,20",
@@ -228,9 +251,6 @@
                 }
               ]
             }
-          },
-          {
-            "color": "#225f92"
           }
         ]
       }
@@ -241,11 +261,13 @@
         "source": {
           "osmTags": "parking_space=disabled"
         },
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": {
-              "mappings": null
-            },
+            "marker": [
+              {
+                "mappings": null
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "center",
             "iconBadges": [
@@ -276,13 +298,19 @@
       "builtin": "shops",
       "override": {
         "minzoom": 15,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/shop.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/shop.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom",
             "label": null
-          },
+          }
+        ],
+        "lineRendering": [
           {
             "color": "#ea4a94"
           }
@@ -294,9 +322,13 @@
       "override": {
         "minzoom": 18,
         "syncSelection": "theme-only",
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/toilet.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/toilet.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom"
           }
@@ -308,9 +340,13 @@
       "override": {
         "minzoom": 15,
         "shownByDefault": false,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/pharmacy.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/pharmacy.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom",
             "label": null
@@ -323,9 +359,13 @@
       "shownByDefault": false,
       "override": {
         "minzoom": 15,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/doctor.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/doctor.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom"
           }
@@ -337,12 +377,18 @@
       "override": {
         "minzoom": 15,
         "shownByDefault": false,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/hospital.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/hospital.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom"
-          },
+          }
+        ],
+        "lineRendering": [
           {
             "color": "#dd463b"
           }
@@ -362,9 +408,13 @@
       "override": {
         "minzoom": 18,
         "syncSelection": "theme-only",
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "circle:white;./assets/themes/onwheels/elevator.svg",
+            "=marker": [
+              {
+                "icon": "circle:white;./assets/themes/onwheels/elevator.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom"
           }
@@ -376,9 +426,13 @@
       "override": {
         "minzoom": 15,
         "shownByDefault": false,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/hotel.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/hotel.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom"
           }
@@ -389,9 +443,13 @@
       "builtin": "governments",
       "override": {
         "minzoom": 15,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/onwheels/government.svg",
+            "=marker": [
+              {
+                "icon": "./assets/themes/onwheels/government.svg"
+              }
+            ],
             "iconSize": "40,40",
             "anchor": "bottom"
           }
@@ -401,13 +459,17 @@
     {
       "builtin": "current_view",
       "override": {
-        "+mapRendering": [
+        "+pointRendering": [
           {
             "location": [
               "point",
               "centroid"
             ],
-            "icon": "statistics"
+            "marker": [
+              {
+                "icon": "statistics"
+              }
+            ]
           }
         ],
         "=title": {

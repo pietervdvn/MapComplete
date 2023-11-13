@@ -29,8 +29,9 @@
   let specs: RenderingSpecification[] = []
   $: {
     try {
+      txt = t.textFor($language)
       if (txt !== undefined) {
-        const key = "cached_special_spec_" + $language
+        let key = "cached_special_spec_" + $language
         specs = t[key]
         if (specs === undefined) {
           specs = SpecialVisualizations.constructSpecification(txt)
@@ -67,6 +68,6 @@
       <WeblateLink context={t.context} />
     </span>
   {:else if $tags !== undefined}
-    <ToSvelte construct={createVisualisation(specpart)} />
+    <ToSvelte construct={() => createVisualisation(specpart)} />
   {/if}
 {/each}

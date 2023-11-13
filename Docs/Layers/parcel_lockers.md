@@ -36,12 +36,10 @@ Layer showing parcel lockers for collecting and sending parcels.
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparcel_locker' target='_blank'>parcel_locker</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a> &<a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparcel_pickup;parcel_mail_in' target='_blank'>parcel_pickup;parcel_mail_in</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparcel_locker' target='_blank'>parcel_locker</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparcel_pickup;parcel_mail_in' target='_blank'>parcel_pickup;parcel_mail_in</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22parcel_locker%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22vending_machine%22%5D%5B%22vending%22%3D%22parcel_pickup%3Bparcel_mail_in%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -83,10 +81,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -116,10 +114,10 @@ This is rendered with  `This is a {brand} parcel locker`
 
 
 
-  - *This is an Amazon Locker*  corresponds with  `brand=Amazon Locker`
-  - *This is a DHL Packstation*  corresponds with  `brand=DHL Packstation`
-  - *This is a DPD Pickup Station*  corresponds with  `brand=Pickup Station`
-  - *This is a PostNL Parcel Locker*  corresponds with  `brand=PostNL`
+  - *This is an Amazon Locker*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DAmazon Locker' target='_blank'>Amazon Locker</a>
+  - *This is a DHL Packstation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DDHL Packstation' target='_blank'>DHL Packstation</a>
+  - *This is a DPD Pickup Station*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DPickup Station' target='_blank'>Pickup Station</a>
+  - *This is a PostNL Parcel Locker*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DPostNL' target='_blank'>PostNL</a>
 
 
 
@@ -152,7 +150,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 
@@ -181,11 +179,11 @@ The question is  *Can you send packages from this parcel locker?*
 
 
 
-  - *You can send packages from this parcel locker*  corresponds with  `parcel_mail_in=yes`
-  - *You <b>can't</b> send packages from this parcel locker*  corresponds with  `parcel_mail_in=no`
+  - *You can send packages from this parcel locker*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_mail_in' target='_blank'>parcel_mail_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dyes' target='_blank'>yes</a>
+  - *You <b>can't</b> send packages from this parcel locker*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_mail_in' target='_blank'>parcel_mail_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=parcel_locker`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparcel_locker' target='_blank'>parcel_locker</a>`
 
 
 
@@ -199,11 +197,11 @@ The question is  *Can you pick up packages from this parcel locker?*
 
 
 
-  - *You can pick up packages from this parcel locker*  corresponds with  `parcel_pickup=yes`
-  - *You <b>can't</b> pick up packages from this parcel locker*  corresponds with  `parcel_pickup=no`
+  - *You can pick up packages from this parcel locker*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_pickup' target='_blank'>parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dyes' target='_blank'>yes</a>
+  - *You <b>can't</b> pick up packages from this parcel locker*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_pickup' target='_blank'>parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=parcel_locker`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparcel_locker' target='_blank'>parcel_locker</a>`
 
 
 
@@ -259,7 +257,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

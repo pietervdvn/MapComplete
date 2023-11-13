@@ -123,9 +123,13 @@
             "point",
             "centroid"
           ],
-          "icon": {
-            "render": "teardrop:#00cc00"
-          },
+          "marker": [
+            {
+              "icon": {
+                "render": "teardrop:#00cc00"
+              }
+            }
+          ],
           "iconSize": "30,30",
           "anchor": "center"
         }

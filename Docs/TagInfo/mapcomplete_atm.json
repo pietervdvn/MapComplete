@@ -17,7 +17,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'ATMs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'ATMs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -49,7 +49,7 @@
     },
     {
       "key": "cash_out",
-      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You can withdraw cash from this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_out.",
+      "description": "Layer 'ATMs' shows cash_out= with a fixed text, namely 'You can withdraw cash from this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_out.",
       "value": ""
     },
     {
@@ -64,7 +64,7 @@
     },
     {
       "key": "cash_in",
-      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You probably cannot deposit cash into this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_in.",
+      "description": "Layer 'ATMs' shows cash_in= with a fixed text, namely 'You probably cannot deposit cash into this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_in.",
       "value": ""
     },
     {
@@ -79,37 +79,37 @@
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=5 EUR with a fixed text, namely '5 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if  |cash_out=yes & |_currency~^(.*EUR.*)$)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=5 EUR with a fixed text, namely '5 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if (cash_out= | cash_out=yes) & (_currency= | _currency~^(.*EUR.*)$))",
       "value": "5 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=10 EUR with a fixed text, namely '10 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if  |cash_out=yes & |_currency~^(.*EUR.*)$)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=10 EUR with a fixed text, namely '10 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if (cash_out= | cash_out=yes) & (_currency= | _currency~^(.*EUR.*)$))",
       "value": "10 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=20 EUR with a fixed text, namely '20 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if  |cash_out=yes & |_currency~^(.*EUR.*)$)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=20 EUR with a fixed text, namely '20 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if (cash_out= | cash_out=yes) & (_currency= | _currency~^(.*EUR.*)$))",
       "value": "20 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=50 EUR with a fixed text, namely '50 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if  |cash_out=yes & |_currency~^(.*EUR.*)$)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=50 EUR with a fixed text, namely '50 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if (cash_out= | cash_out=yes) & (_currency= | _currency~^(.*EUR.*)$))",
       "value": "50 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=100 EUR with a fixed text, namely '100 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if  |cash_out=yes & |_currency~^(.*EUR.*)$)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=100 EUR with a fixed text, namely '100 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if (cash_out= | cash_out=yes) & (_currency= | _currency~^(.*EUR.*)$))",
       "value": "100 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=200 EUR with a fixed text, namely '200 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if  |cash_out=yes & |_currency~^(.*EUR.*)$)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=200 EUR with a fixed text, namely '200 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if (cash_out= | cash_out=yes) & (_currency= | _currency~^(.*EUR.*)$))",
       "value": "200 EUR"
     },
     {
       "key": "cash_out:notes:denominations",
-      "description": "Layer 'ATMs' shows cash_out:notes:denominations=500 EUR with a fixed text, namely '500 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if  |cash_out=yes & |_currency~^(.*EUR.*)$)",
+      "description": "Layer 'ATMs' shows cash_out:notes:denominations=500 EUR with a fixed text, namely '500 euro notes can be withdrawn' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if (cash_out= | cash_out=yes) & (_currency= | _currency~^(.*EUR.*)$))",
       "value": "500 EUR"
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Banks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Banks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -179,7 +179,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Post offices' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Post offices' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -208,7 +208,7 @@
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows  with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key post_office. (This is only shown if post_office=post_partner)",
+      "description": "Layer 'Post offices' shows post_office= with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key post_office. (This is only shown if post_office=post_partner)",
       "value": ""
     },
     {
@@ -352,7 +352,7 @@
     },
     {
       "key": "id",
-      "description": "Layer 'Post offices' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ &_last_edit:passed_time<300 & |_version_number=1)"
+      "description": "Layer 'Post offices' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
@@ -381,7 +381,7 @@
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows  with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key post_office. (This is only shown if post_office=post_partner)",
+      "description": "Layer 'Post offices' shows post_office= with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key post_office. (This is only shown if post_office=post_partner)",
       "value": ""
     },
     {

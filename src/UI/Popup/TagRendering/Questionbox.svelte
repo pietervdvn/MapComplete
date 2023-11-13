@@ -29,6 +29,7 @@
    */
   export let notForLabels: string[] | undefined = undefined
   const _notForLabels = new Set(notForLabels)
+  let showAllQuestionsAtOnce = state.userRelatedState.showAllQuestionsAtOnce
 
   function allowed(labels: string[]) {
     if (onlyForLabels?.length > 0 && !labels.some((l) => _onlyForLabels.has(l))) {
@@ -67,11 +68,12 @@
     },
     [skippedQuestions]
   )
+  let firstQuestion = questionsToAsk.map(qta => qta[0])
 
   let answered: number = 0
   let skipped: number = 0
 
-  function skip(question: TagRenderingConfig, didAnswer: boolean = false) {
+  function skip(question: {id: string}, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id)
     skippedQuestions.ping()
     if (didAnswer) {
@@ -136,36 +138,34 @@
     {/if}
   {:else}
     <div>
-      <If condition={state.userRelatedState.showAllQuestionsAtOnce}>
+      {#if $showAllQuestionsAtOnce}
         <div>
           {#each $questionsToAsk as question (question.id)}
             <TagRenderingQuestion config={question} {tags} {selectedElement} {state} {layer} />
           {/each}
         </div>
-
-        <div slot="else">
-          <TagRenderingQuestion
-            config={$questionsToAsk[0]}
+      {:else}
+        <TagRenderingQuestion
+            config={$firstQuestion}
             {layer}
             {selectedElement}
             {state}
             {tags}
             on:saved={() => {
-              skip($questionsToAsk[0], true)
+              skip($firstQuestion, true)
             }}
           >
             <button
               class="secondary"
               on:click={() => {
-                skip(questionsToAsk[0])
+                skip($firstQuestion)
               }}
               slot="cancel"
             >
               <Tr t={Translations.t.general.skip} />
             </button>
           </TagRenderingQuestion>
-        </div>
-      </If>
+      {/if}
     </div>
   {/if}
 </div>

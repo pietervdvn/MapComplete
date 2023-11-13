@@ -39,12 +39,7 @@ A layer showing (public) toilets
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22toilets%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -93,10 +88,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -140,13 +135,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -167,12 +162,12 @@ This is rendered with  `Access is {access}`
 
 
 
-  - *Public access*  corresponds with  `access=yes`
-  - *Only access to customers*  corresponds with  `access=customers`
-  - *Not accessible*  corresponds with  `access=no`
-  - *Accessible, but one has to ask a key to enter*  corresponds with  `access=key`
-  - *Public access*  corresponds with  `access=public`
-  - This option cannot be chosen as answer
+  - *Public access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - *Only access to customers*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - *Not accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+  - *Accessible, but one has to ask a key to enter*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
+  - *Public access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `relevant-questions`
@@ -189,8 +184,8 @@ The question is  *Are these toilets free to use?*
 
 
 
-  - *These are paid toilets*  corresponds with  `fee=yes`
-  - *Free to use*  corresponds with  `fee=no`
+  - *These are paid toilets*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+  - *Free to use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `relevant-questions`
@@ -209,7 +204,7 @@ This is rendered with  `The fee is {charge}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -225,25 +220,25 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
-  - This option cannot be chosen as answer
-  - Unselecting this answer will add 
-  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cash=
+  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+  - Unselecting this answer will add payment:cards=
+  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Coins are accepted here*  corresponds with  `payment:coins=yes`
+  - *Coins are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
-  - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
+  - *Bank notes are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
-  - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
+  - *Debit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
-  - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
+  - *Credit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -263,7 +258,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 This tagrendering has labels  `relevant-questions`
@@ -280,9 +275,9 @@ The question is  *Is there a dedicated toilet for wheelchair users?*
 
 
 
-  - *There is a dedicated toilet for wheelchair users*  corresponds with  `wheelchair=yes`
-  - *No wheelchair access*  corresponds with  `wheelchair=no`
-  - *There is only a dedicated toilet for wheelchair users*  corresponds with  `wheelchair=designated`
+  - *There is a dedicated toilet for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - *No wheelchair access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+  - *There is only a dedicated toilet for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
 
 
 This tagrendering has labels  `relevant-questions`
@@ -301,7 +296,7 @@ This is rendered with  `The door to the wheelchair-accessible toilet is {canonic
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `wheelchair=yes |wheelchair=designated`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -317,10 +312,10 @@ The question is  *Which kind of toilets are these?*
 
 
 
-  - *There are only seated toilets*  corresponds with  `toilets:position=seated`
-  - *There are only urinals here*  corresponds with  `toilets:position=urinal`
-  - *There are only squat toilets here*  corresponds with  `toilets:position=squat`
-  - *Both seated toilets and urinals are available here*  corresponds with  `toilets:position=seated;urinal`
+  - *There are only seated toilets*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated' target='_blank'>seated</a>
+  - *There are only urinals here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Durinal' target='_blank'>urinal</a>
+  - *There are only squat toilets here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dsquat' target='_blank'>squat</a>
+  - *Both seated toilets and urinals are available here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated;urinal' target='_blank'>seated;urinal</a>
 
 
 This tagrendering has labels  `relevant-questions`
@@ -337,8 +332,8 @@ The question is  *Is a changing table (to change diapers) available?*
 
 
 
-  - *A changing table is available*  corresponds with  `changing_table=yes`
-  - *No changing table is available*  corresponds with  `changing_table=no`
+  - *A changing table is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
+  - *No changing table is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `relevant-questions`
@@ -359,13 +354,13 @@ This is rendered with  `The changing table is located at {changing_table:locatio
 
 
 
-  - *The changing table is in the toilet for women. *  corresponds with  `changing_table:location=female_toilet`
-  - *The changing table is in the toilet for men. *  corresponds with  `changing_table:location=male_toilet`
-  - *The changing table is in the toilet for wheelchair users. *  corresponds with  `changing_table:location=wheelchair_toilet`
-  - *The changing table is in a dedicated room. *  corresponds with  `changing_table:location=dedicated_room`
+  - *The changing table is in the toilet for women. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
+  - *The changing table is in the toilet for men. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet' target='_blank'>male_toilet</a>
+  - *The changing table is in the toilet for wheelchair users. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
+  - *The changing table is in a dedicated room. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `changing_table=yes`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>`
 
 This tagrendering has labels  `relevant-questions`
 
@@ -381,8 +376,8 @@ The question is  *Do these toilets have a sink to wash your hands?*
 
 
 
-  - *These toilets have a sink to wash your hands*  corresponds with  `toilets:handwashing=yes`
-  - *These toilets <b>don't</b> have a sink to wash your hands*  corresponds with  `toilets:handwashing=no`
+  - *These toilets have a sink to wash your hands*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes' target='_blank'>yes</a>
+  - *These toilets <b>don't</b> have a sink to wash your hands*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `relevant-questions`
@@ -399,8 +394,8 @@ The question is  *Does one have to bring their own toilet paper to this toilet?*
 
 
 
-  - *This toilet is equipped with toilet paper*  corresponds with  `toilets:paper_supplied=yes`
-  - *You have to bring your own toilet paper to this toilet*  corresponds with  `toilets:paper_supplied=no`
+  - *This toilet is equipped with toilet paper*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes' target='_blank'>yes</a>
+  - *You have to bring your own toilet paper to this toilet*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `relevant-questions`
@@ -473,7 +468,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -495,7 +490,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-wheelchair.0 | Wheelchair accessible | wheelchair=yes \|wheelchair=designated
+wheelchair.0 | Wheelchair accessible | wheelchair=yes \| wheelchair=designated
 
 
 
@@ -509,7 +504,7 @@ changing_table.0 | Has a changing table | changing_table=yes
 
 id | question | osmTags
 ---- | ---------- | ---------
-free.0 | Free to use | fee=no \|fee=0 \|charge=0
+free.0 | Free to use | fee=no \| fee=0 \| charge=0
 
 
 

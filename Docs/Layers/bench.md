@@ -38,12 +38,7 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22bench%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -87,10 +82,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -116,9 +111,9 @@ The question is  *Does this bench have a backrest?*
 
 
 
-  - *This bench is two-sided and shares the backrest*  corresponds with  `backrest=yes &two_sided=yes`
-  - *Does have a backrest*  corresponds with  `backrest=yes`
-  - *Does <b>not</b> have a backrest*  corresponds with  `backrest=no`
+  - *This bench is two-sided and shares the backrest*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:two_sided' target='_blank'>two_sided</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:two_sided%3Dyes' target='_blank'>yes</a>
+  - *Does have a backrest*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a>
+  - *Does <b>not</b> have a backrest*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `bench-questions`
@@ -139,7 +134,7 @@ This is rendered with  `{seats} seats`
 
 
 
-  - *This bench does not have separated seats*  corresponds with  `seats:separated=no`
+  - *This bench does not have separated seats*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:seats:separated' target='_blank'>seats:separated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seats:separated%3Dno' target='_blank'>no</a>
 
 
 This tagrendering has labels  `bench-questions`
@@ -160,12 +155,12 @@ This is rendered with  `Material: {material}`
 
 
 
-  - *The seating is made from wood*  corresponds with  `material=wood`
-  - *The seating is made from metal*  corresponds with  `material=metal`
-  - *The seating is made from stone*  corresponds with  `material=stone`
-  - *The seating is made from concrete*  corresponds with  `material=concrete`
-  - *The seating is made from plastic*  corresponds with  `material=plastic`
-  - *The seating is made from steel*  corresponds with  `material=steel`
+  - *The seating is made from wood*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood' target='_blank'>wood</a>
+  - *The seating is made from metal*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal' target='_blank'>metal</a>
+  - *The seating is made from stone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone' target='_blank'>stone</a>
+  - *The seating is made from concrete*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete' target='_blank'>concrete</a>
+  - *The seating is made from plastic*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic' target='_blank'>plastic</a>
+  - *The seating is made from steel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel' target='_blank'>steel</a>
 
 
 This tagrendering has labels  `bench-questions`
@@ -202,14 +197,14 @@ This is rendered with  `Colour: {colour}`
 
 
 
-  - *Colour: brown*  corresponds with  `colour=brown`
-  - *Colour: green*  corresponds with  `colour=green`
-  - *Colour: gray*  corresponds with  `colour=gray`
-  - *Colour: white*  corresponds with  `colour=white`
-  - *Colour: red*  corresponds with  `colour=red`
-  - *Colour: black*  corresponds with  `colour=black`
-  - *Colour: blue*  corresponds with  `colour=blue`
-  - *Colour: yellow*  corresponds with  `colour=yellow`
+  - *Colour: brown*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown' target='_blank'>brown</a>
+  - *Colour: green*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
+  - *Colour: gray*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray' target='_blank'>gray</a>
+  - *Colour: white*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite' target='_blank'>white</a>
+  - *Colour: red*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
+  - *Colour: black*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack' target='_blank'>black</a>
+  - *Colour: blue*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
+  - *Colour: yellow*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
 
 
 This tagrendering has labels  `bench-questions`
@@ -230,7 +225,7 @@ This is rendered with  `This bench was last surveyed on {survey:date}`
 
 
 
-  - *Surveyed today!*  corresponds with  `survey:date=`
+  - *Surveyed today!*  corresponds with  survey:date=
 
 
 This tagrendering has labels  `bench-questions`
@@ -251,9 +246,9 @@ This is rendered with  `This bench does have the following inscription:<br/><p><
 
 
 
-  - *This bench does not have an inscription*  corresponds with  `not:inscription=yes`
-  - *This bench does <span class='subtle'>(probably)</span> not have an inscription*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *This bench does not have an inscription*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:not:inscription' target='_blank'>not:inscription</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:inscription%3Dyes' target='_blank'>yes</a>
+  - *This bench does <span class='subtle'>(probably)</span> not have an inscription*  corresponds with  inscription=
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `bench-questions`
@@ -270,10 +265,10 @@ The question is  *Does this bench have an artistic element?*
 
 
 
-  - *This bench has an integrated artwork*  corresponds with  `tourism=artwork`
-  - *This bench does not have an integrated artwork*  corresponds with  `not:tourism:artwork=yes`
-  - *This bench <span class="subtle">probably</span> doesn't have an integrated artwork*  corresponds with  ``
-  - This option cannot be chosen as answer
+  - *This bench has an integrated artwork*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+  - *This bench does not have an integrated artwork*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:not:tourism:artwork' target='_blank'>not:tourism:artwork</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:tourism:artwork%3Dyes' target='_blank'>yes</a>
+  - *This bench <span class="subtle">probably</span> doesn't have an integrated artwork*  corresponds with  tourism=
+  - _This option cannot be chosen as answer_
 
 
 
@@ -288,11 +283,11 @@ The question is  *Does this bench act as memorial for someone or something?*
 
 
 
-  - *This bench is a memorial for someone or something*  corresponds with  `historic=memorial`
-  - *This bench is a <b>not</b> a memorial for someone or something*  corresponds with  `not:historic=memorial`
+  - *This bench is a memorial for someone or something*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
+  - *This bench is a <b>not</b> a memorial for someone or something*  corresponds with  historic= & <a href='https://wiki.openstreetmap.org/wiki/Key:not:historic' target='_blank'>not:historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:historic%3Dmemorial' target='_blank'>memorial</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `historic=memorial |inscription~.+ |memorial=bench |tourism=artwork`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench' target='_blank'>bench</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a> | inscription~.+`
 
 This tagrendering has labels  `bench-questions`
 
@@ -350,7 +345,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 
@@ -372,7 +367,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-bench_is_memorial.0 | is a memorial | historic=memorial \|memorial=bench
+bench_is_memorial.0 | is a memorial | historic=memorial \| memorial=bench
 
 
 
@@ -389,8 +384,8 @@ has_backrest.2 | Has no backrest | backrest=no
 id | question | osmTags
 ---- | ---------- | ---------
 has_image.0 | With and without images (default) | 
-has_image.1 | Has at least one image | image~.+ \|image:0~.+ \|image:1~.+ \|image:2~.+ \|image:3~.+ \|mapillary~.+
-has_image.2 | Probably does not have an image | 
+has_image.1 | Has at least one image | image~.+ \| image:0~.+ \| image:1~.+ \| image:2~.+ \| image:3~.+ \| mapillary~.+
+has_image.2 | Probably does not have an image | image= & image:0= & image:1= & image:2= & image:3= & mapillary=
  
 
 This document is autogenerated from [assets/layers/bench/bench.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bench/bench.json)

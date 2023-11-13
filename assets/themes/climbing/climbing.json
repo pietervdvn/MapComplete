@@ -491,7 +491,7 @@
       ],
       "override": {
         "minzoom": 15,
-        "mapRendering": [
+        "pointRendering": [
           {
             "iconSize": "30,30"
           }

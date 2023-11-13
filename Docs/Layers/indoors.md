@@ -38,12 +38,13 @@ Basic indoor mapping: shows room outlines
 
 
 
-Elements must have the all of following tags to be shown on this layer:
+Elements must match **any** of the following expressions:
 
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Droom' target='_blank'>room</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Darea' target='_blank'>area</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dwall' target='_blank'>wall</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a> |<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dlevel' target='_blank'>level</a>
-
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Droom' target='_blank'>room</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Darea' target='_blank'>area</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dwall' target='_blank'>wall</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dlevel' target='_blank'>level</a>
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22indoor%22%3D%22room%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22indoor%22%3D%22area%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22indoor%22%3D%22wall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22indoor%22%3D%22door%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22indoor%22%3D%22level%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -84,10 +85,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -141,13 +142,13 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
+  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+  - _This option cannot be chosen as answer_
+  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+  - *Located on the ground floor*  corresponds with  level=
+  - _This option cannot be chosen as answer_
+  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 This tagrendering has labels  `level`
@@ -166,7 +167,7 @@ This is rendered with  `This room has the reference number {ref}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `indoor=room |indoor=area |indoor=corridor`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Droom' target='_blank'>room</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Darea' target='_blank'>area</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dcorridor' target='_blank'>corridor</a>`
 
 
 
@@ -182,7 +183,7 @@ This is rendered with  `This room is named {name}`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `indoor=room |indoor=area |indoor=corridor`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Droom' target='_blank'>room</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Darea' target='_blank'>area</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dcorridor' target='_blank'>corridor</a>`
 
 
 
@@ -196,30 +197,30 @@ The question is  *What type of room is this?*
 
 
 
-  - *This is a administrative room*  corresponds with  `room=administration`
-  - *This is a auditorium*  corresponds with  `room=auditorium`
-  - *This is a bedroom*  corresponds with  `room=bedroom`
-  - *This is a chapel*  corresponds with  `room=chapel`
-  - *This is a classroom*  corresponds with  `room=class`
-  - *This is a classroom*  corresponds with  `room=classroom`
-  - This option cannot be chosen as answer
-  - *This is a computer room*  corresponds with  `room=computer`
-  - *This is a conference room*  corresponds with  `room=conference`
-  - *This is a crypt*  corresponds with  `room=crypt`
-  - *This is a kitchen*  corresponds with  `room=kitchen`
-  - *This is a laboratory*  corresponds with  `room=laboratory`
-  - *This is a library*  corresponds with  `room=library`
-  - *This is a locker room*  corresponds with  `room=locker`
-  - *This is a nursery*  corresponds with  `room=nursery`
-  - *This is an office*  corresponds with  `room=office`
-  - *This is a prison_cell*  corresponds with  `room=prison_cell`
-  - *This is a restaurant*  corresponds with  `room=restaurant`
-  - *This is a room to perform security checks*  corresponds with  `room=security_check`
-  - *This is a sport room*  corresponds with  `room=sport`
-  - *This is a storage room*  corresponds with  `room=storage`
-  - *This is a technical room*  corresponds with  `room=technical`
-  - *These are toilets*  corresponds with  `room=toilets`
-  - *This is a waiting room*  corresponds with  `room=waiting`
+  - *This is a administrative room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dadministration' target='_blank'>administration</a>
+  - *This is a auditorium*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dauditorium' target='_blank'>auditorium</a>
+  - *This is a bedroom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dbedroom' target='_blank'>bedroom</a>
+  - *This is a chapel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dchapel' target='_blank'>chapel</a>
+  - *This is a classroom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dclass' target='_blank'>class</a>
+  - *This is a classroom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dclassroom' target='_blank'>classroom</a>
+  - _This option cannot be chosen as answer_
+  - *This is a computer room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dcomputer' target='_blank'>computer</a>
+  - *This is a conference room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dconference' target='_blank'>conference</a>
+  - *This is a crypt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dcrypt' target='_blank'>crypt</a>
+  - *This is a kitchen*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dkitchen' target='_blank'>kitchen</a>
+  - *This is a laboratory*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dlaboratory' target='_blank'>laboratory</a>
+  - *This is a library*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dlibrary' target='_blank'>library</a>
+  - *This is a locker room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dlocker' target='_blank'>locker</a>
+  - *This is a nursery*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dnursery' target='_blank'>nursery</a>
+  - *This is an office*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Doffice' target='_blank'>office</a>
+  - *This is a prison_cell*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dprison_cell' target='_blank'>prison_cell</a>
+  - *This is a restaurant*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Drestaurant' target='_blank'>restaurant</a>
+  - *This is a room to perform security checks*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dsecurity_check' target='_blank'>security_check</a>
+  - *This is a sport room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dsport' target='_blank'>sport</a>
+  - *This is a storage room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dstorage' target='_blank'>storage</a>
+  - *This is a technical room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dtechnical' target='_blank'>technical</a>
+  - *These are toilets*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dtoilets' target='_blank'>toilets</a>
+  - *This is a waiting room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dwaiting' target='_blank'>waiting</a>
 
 
 
@@ -236,7 +237,7 @@ This is rendered with  `At most {capacity} people fit this room`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `room=waiting |room=restaurant |room=office |room=nursery |room=conference |room=auditorium |room=chapel |room=bedroom |room=classroom`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dwaiting' target='_blank'>waiting</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Drestaurant' target='_blank'>restaurant</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Doffice' target='_blank'>office</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dnursery' target='_blank'>nursery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dconference' target='_blank'>conference</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dauditorium' target='_blank'>auditorium</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dchapel' target='_blank'>chapel</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dbedroom' target='_blank'>bedroom</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dclassroom' target='_blank'>classroom</a>`
 
 
 
@@ -282,7 +283,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

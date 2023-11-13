@@ -24,12 +24,7 @@ Route markers are small markers often found along official hiking/cycling/riding
 
 
 
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Droute_marker' target='_blank'>route_marker</a>
-
+Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Droute_marker' target='_blank'>route_marker</a>**
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22information%22%3D%22route_marker%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
@@ -65,10 +60,10 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_backend~.+ &_last_edit:passed_time<300 & |_version_number=1`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
 
 
@@ -94,16 +89,16 @@ The question is  *For what kind of route is this marker?*
 
 
 
-  - *This is a route marker for a bicycle route.*  corresponds with  `bicycle=yes`
-  - Unselecting this answer will add 
-  - *This is a route marker for a hiking route.*  corresponds with  `hiking=yes`
-  - Unselecting this answer will add 
-  - *This is a route marker for a mountain bike route.*  corresponds with  `mtb=yes`
-  - Unselecting this answer will add 
-  - *This is a route marker for a horse riding route.*  corresponds with  `horse=yes`
-  - Unselecting this answer will add 
-  - *This is a route marker for a ski route.*  corresponds with  `ski=yes`
-  - Unselecting this answer will add 
+  - *This is a route marker for a bicycle route.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
+  - Unselecting this answer will add biycle=
+  - *This is a route marker for a hiking route.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hiking' target='_blank'>hiking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hiking%3Dyes' target='_blank'>yes</a>
+  - Unselecting this answer will add hiking=
+  - *This is a route marker for a mountain bike route.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:mtb' target='_blank'>mtb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mtb%3Dyes' target='_blank'>yes</a>
+  - Unselecting this answer will add mtb=
+  - *This is a route marker for a horse riding route.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:horse' target='_blank'>horse</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:horse%3Dyes' target='_blank'>yes</a>
+  - Unselecting this answer will add horse=
+  - *This is a route marker for a ski route.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:ski' target='_blank'>ski</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ski%3Dyes' target='_blank'>yes</a>
+  - Unselecting this answer will add ski=
 
 
 
@@ -160,7 +155,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+ &_last_edit:changeset~.+`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
 
 

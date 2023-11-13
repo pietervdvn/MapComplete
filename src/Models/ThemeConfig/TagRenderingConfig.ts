@@ -746,17 +746,11 @@ export default class TagRenderingConfig {
                             new Combine([
                                 new FixedUiElement(m.then.txt).SetClass("font-bold"),
                                 " corresponds with ",
-                                new FixedUiElement(m.if.asHumanString(false, false, {})).SetClass(
-                                    "code"
-                                ),
+                                m.if.asHumanString(true, false, {}),
                             ]),
                         ]
                         if (m.hideInAnswer === true) {
-                            msgs.push(
-                                new FixedUiElement(
-                                    "This option cannot be chosen as answer"
-                                ).SetClass("italic")
-                            )
+                            msgs.push("_This option cannot be chosen as answer_")
                         }
                         if (m.ifnot !== undefined) {
                             msgs.push(
@@ -774,7 +768,9 @@ export default class TagRenderingConfig {
         if (this.condition !== undefined && !this.condition?.matchesProperties({})) {
             condition = new Combine([
                 "This tagrendering is only visible in the popup if the following condition is met:",
-                new FixedUiElement(this.condition.asHumanString(false, false, {})).SetClass("code"),
+                new FixedUiElement(
+                    (<TagsFilter>this.condition.optimize()).asHumanString(true, false, {})
+                ).SetClass("code"),
             ])
         }
 
