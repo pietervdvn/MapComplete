@@ -3,17 +3,16 @@
    * Shows all questions for which the answers are unknown.
    * The questions can either be shown all at once or one at a time (in which case they can be skipped)
    */
-  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
-  import type { Feature } from "geojson"
-  import type { SpecialVisualizationState } from "../../SpecialVisualization"
-  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import If from "../../Base/If.svelte"
-  import { onDestroy } from "svelte"
-  import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
-  import Tr from "../../Base/Tr.svelte"
-  import Translations from "../../i18n/Translations.js"
-  import { Utils } from "../../../Utils"
+  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
+  import { UIEventSource } from "../../../Logic/UIEventSource";
+  import type { Feature } from "geojson";
+  import type { SpecialVisualizationState } from "../../SpecialVisualization";
+  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+  import If from "../../Base/If.svelte";
+  import TagRenderingQuestion from "./TagRenderingQuestion.svelte";
+  import Tr from "../../Base/Tr.svelte";
+  import Translations from "../../i18n/Translations.js";
+  import { Utils } from "../../../Utils";
 
   export let layer: LayerConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -69,15 +68,6 @@
     [skippedQuestions]
   )
 
-  let _questionsToAsk: TagRenderingConfig[]
-  let _firstQuestion: TagRenderingConfig
-  onDestroy(
-    questionsToAsk.subscribe((qta) => {
-      _questionsToAsk = qta
-      _firstQuestion = qta[0]
-    })
-  )
-
   let answered: number = 0
   let skipped: number = 0
 
@@ -98,9 +88,9 @@
 <div
   bind:this={questionboxElem}
   class="marker-questionbox-root"
-  class:hidden={_questionsToAsk.length === 0 && skipped === 0 && answered === 0}
+  class:hidden={$questionsToAsk.length === 0 && skipped === 0 && answered === 0}
 >
-  {#if _questionsToAsk.length === 0}
+  {#if $questionsToAsk.length === 0}
     {#if skipped + answered > 0}
       <div class="thanks">
         <Tr t={Translations.t.general.questionBox.done} />
@@ -148,26 +138,26 @@
     <div>
       <If condition={state.userRelatedState.showAllQuestionsAtOnce}>
         <div>
-          {#each _questionsToAsk as question (question.id)}
+          {#each $questionsToAsk as question (question.id)}
             <TagRenderingQuestion config={question} {tags} {selectedElement} {state} {layer} />
           {/each}
         </div>
 
         <div slot="else">
           <TagRenderingQuestion
-            config={_firstQuestion}
+            config={$questionsToAsk[0]}
             {layer}
             {selectedElement}
             {state}
             {tags}
             on:saved={() => {
-              skip(_firstQuestion, true)
+              skip($questionsToAsk[0], true)
             }}
           >
             <button
               class="secondary"
               on:click={() => {
-                skip(_firstQuestion)
+                skip(questionsToAsk[0])
               }}
               slot="cancel"
             >
