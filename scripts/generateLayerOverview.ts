@@ -395,10 +395,11 @@ class LayerOverviewUtils extends Script {
             JSON.stringify({ layers: Array.from(sharedLayers.values()) })
         )
 
+        const mcChangesPath = "./assets/themes/mapcomplete-changes/mapcomplete-changes.json"
         if (
             recompiledThemes.length > 0 &&
             !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes") &&
-            args.indexOf("--generate-change-map") >= 0
+            (args.indexOf("--generate-change-map") >= 0 || !existsSync(mcChangesPath))
         ) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme = Array.from(sharedThemes.values()).map((th) => ({
@@ -415,10 +416,7 @@ class LayerOverviewUtils extends Script {
             )
             const rendering = protolayer.pointRendering[0]
             rendering.marker[0].icon["mappings"] = iconsPerTheme
-            writeFileSync(
-                "./assets/themes/mapcomplete-changes/mapcomplete-changes.json",
-                JSON.stringify(proto, null, "  ")
-            )
+            writeFileSync(mcChangesPath, JSON.stringify(proto, null, "  "))
         }
 
         this.checkAllSvgs()

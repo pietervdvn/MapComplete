@@ -234,7 +234,47 @@
       ],
       "pointRendering": [],
       "lineRendering": [
-        {}
+        {
+          "width": {
+            "render": "2",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "5"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00c",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "#ff00ff"
+              },
+              {
+                "if": "building=house",
+                "then": "#a00"
+              },
+              {
+                "if": "building=shed",
+                "then": "#563e02"
+              },
+              {
+                "if": {
+                  "or": [
+                    "building=garage",
+                    "building=garages"
+                  ]
+                },
+                "then": "#f9bfbb"
+              },
+              {
+                "if": "building=yes",
+                "then": "#0774f2"
+              }
+            ]
+          }
+        }
       ]
     },
     {
@@ -441,9 +481,63 @@
           "_imported_osm_still_fresh!=true"
         ]
       },
-      "pointRendering": [],
-      "lineRendering": [
-        {}
+      "pointRendering": [ {
+        "label": {
+          "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+          "condition": "addr:housenumber~*"
+        },
+        "iconSize": "50,50",
+        "marker":[{
+          "icon": {
+            "mappings": [
+              {
+                "if": "_intersects_with_other_features~*",
+                "then": "./assets/themes/grb/warning.svg"
+              },
+              {
+                "if": "addr:housenumber~*",
+                "then": "./assets/themes/grb/housenumber_blank.svg"
+              }
+            ]
+          }
+        }],
+        
+        "location": [
+          "point",
+          "centroid"
+        ],
+        "anchor": "center"
+      }],
+      "lineRendering":[
+      {
+        "width": {
+          "render": 5,
+          "mappings": [
+            {
+              "if": "_imported=yes",
+              "then": "1"
+            }
+          ]
+        },
+        "color": {
+          "render": "#00a",
+          "mappings": [
+            {
+              "if": "_imported=yes",
+              "then": "#00ff00"
+            },
+            {
+              "if": {
+                "and": [
+                  "_imported_osm_object_found=true",
+                  "_imported_osm_still_fresh=true"
+                ]
+              },
+              "then": "#0f0"
+            }
+          ]
+        }
+      }
       ]
     },
     {
@@ -456,8 +550,10 @@
       "title": "Service road",
       "tagRenderings": [],
       "pointRendering": [],
-      "lineRendering": [
-        {}
+      "lineRendering": [ {
+        "width": 4,
+        "color": "#888888"
+      }
       ]
     },
     {
@@ -500,7 +596,11 @@
       ],
       "pointRendering": [],
       "lineRendering": [
-        {}
+        {
+          "color": "#ccc",
+          "width": "1",
+          "fill": "no"
+        }
       ]
     },
     "address",
@@ -664,12 +764,14 @@
             "render": "{auto_apply(grb, _applicable_conflate, Import-button, Conflate all non-conflicting buildings in view)}"
           }
         ],
-        "+mapRendering": [
+        "+pointRendering": [
           {
             "location": [
               "point"
             ],
-            "icon": "./assets/svg/robot.svg",
+            "marker":[{
+            "icon": "./assets/svg/robot.svg"
+            }],
             "iconSize": "15,15"
           }
         ]

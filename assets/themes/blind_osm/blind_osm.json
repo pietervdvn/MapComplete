@@ -46,7 +46,7 @@
     {
       "builtin": "crossings",
       "override": {
-        "mapRendering": [
+        "pointRendering": [
           {
             "iconBadges": [
               {
@@ -69,7 +69,7 @@
       "builtin": "kerbs",
       "override": {
         "minzoom": 18,
-        "mapRendering": [
+        "pointRendering": [
           {
             "iconBadges": [
               {
@@ -88,7 +88,7 @@
     {
       "builtin": "transit_stops",
       "override": {
-        "mapRendering": [
+        "pointRendering": [
           {
             "iconBadges": [
               {

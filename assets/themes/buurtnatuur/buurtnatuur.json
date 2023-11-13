@@ -88,9 +88,55 @@
           }
         }
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#ffffff"
+            },
+            {
+              "icon": "./assets/themes/buurtnatuur/nature_reserve.svg"
+            }
+          ],
+          "iconSize": "50,50",
+          "location": [
+            "point"
+          ],
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "color": {
+            "render": "#3c3",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname=",
+                    "operator=",
+                    "access=",
+                    "access:description=",
+                    "leisure=park"
+                  ]
+                },
+                "then": "#cc1100"
+              },
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname="
+                  ]
+                },
+                "then": "#fccb37"
+              }
+            ]
+          },
+          "width": "5"
+        }
       ]
     },
     {
@@ -159,9 +205,42 @@
           }
         }
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#ffffff"
+            },
+            {
+              "icon": "./assets/themes/buurtnatuur/park.svg"
+            }
+          ],
+          "iconSize": "40,40",
+          "location": [
+            "point"
+          ],
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "color": {
+            "render": "#3c3",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname="
+                  ]
+                },
+                "then": "#fccb37"
+              }
+            ]
+          },
+          "width": "5"
+        }
       ]
     },
     {
@@ -231,9 +310,61 @@
           }
         }
       ],
-      "pointRendering": [],
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "white"
+            },
+            {
+              "icon": "./assets/themes/buurtnatuur/forest.svg"
+            }
+          ],
+          "iconSize": "40,40",
+          "location": [
+            "point"
+          ],
+          "anchor": "center"
+        }
+      ],
       "lineRendering": [
-        {}
+        {
+          "color": {
+            "render": "#3a3",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "operator=",
+                    "access=",
+                    "access:description="
+                  ]
+                },
+                "then": "#cc1100"
+              },
+              {
+                "if": {
+                  "and": [
+                    "operator="
+                  ]
+                },
+                "then": "#cccc00"
+              },
+              {
+                "if": {
+                  "and": [
+                    "name=",
+                    "noname="
+                  ]
+                },
+                "then": "#fccb37"
+              }
+            ]
+          },
+          "width": "5"
+        }
+        
       ]
     },
     "viewpoint"

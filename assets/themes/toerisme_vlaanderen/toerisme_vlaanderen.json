@@ -50,13 +50,17 @@
           }
         },
         "filter": null,
-        "=mapRendering": [
+        "=pointRendering": [
           {
             "location": [
               "point",
               "centroid"
             ],
-            "icon": "./assets/themes/toerisme_vlaanderen/charging_station_ebike.svg"
+            "marker": [
+              {
+                "icon": "./assets/themes/toerisme_vlaanderen/charging_station_ebike.svg"
+              }
+            ]
           }
         ],
         "=presets": [
@@ -89,8 +93,9 @@
       "builtin": "toilet",
       "override": {
         "minzoom": 14,
-        "mapRendering": [
+        "pointRendering": [
           {
+            "=marker":[{
             "icon": {
               "render": "./assets/themes/toerisme_vlaanderen/toilets.svg",
               "=mappings": [
@@ -101,16 +106,20 @@
               ]
             }
           }
-        ]
+        ]}]
       }
     },
     {
       "builtin": "bench",
       "override": {
         "minzoom": 14,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/toerisme_vlaanderen/bench.svg"
+            "=marker": [
+              {
+                "icon": "./assets/themes/toerisme_vlaanderen/bench.svg"
+              }
+            ]
           }
         ]
       }
@@ -119,9 +128,13 @@
       "builtin": "picnic_table",
       "override": {
         "minzoom": 14,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/toerisme_vlaanderen/picnic_table.svg"
+            "=marker": [
+              {
+                "icon": "./assets/themes/toerisme_vlaanderen/picnic_table.svg"
+              }
+            ]
           }
         ]
       }
@@ -130,9 +143,13 @@
       "builtin": "observation_tower",
       "override": {
         "minzoom": 14,
-        "mapRendering": [
+        "pointRendering": [
           {
-            "icon": "./assets/themes/toerisme_vlaanderen/observation_tower.svg"
+            "=marker": [
+              {
+                "icon": "./assets/themes/toerisme_vlaanderen/observation_tower.svg"
+              }
+            ]
           }
         ]
       }
@@ -141,35 +158,39 @@
       "builtin": "bike_repair_station",
       "override": {
         "minzoom": 14,
-        "=mapRendering": [
+        "=pointRendering": [
           {
             "location": [
               "point",
               "centroid"
             ],
-            "icon": {
-              "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg",
-              "mappings": [
-                {
-                  "if": {
-                    "and": [
-                      "service:bicycle:tools=yes",
-                      "service:bicycle:pump=yes"
-                    ]
-                  },
-                  "then": "./assets/themes/toerisme_vlaanderen/cycle_repair_and_pump.svg"
-                },
-                {
-                  "if": {
-                    "and": [
-                      "service:bicycle:tools=yes",
-                      "service:bicycle:pump=no"
-                    ]
-                  },
-                  "then": "./assets/themes/toerisme_vlaanderen/cycle_repair.svg"
+            "=marker": [
+              {
+                "icon": {
+                  "render": "./assets/themes/toerisme_vlaanderen/cycle_pump.svg",
+                  "mappings": [
+                    {
+                      "if": {
+                        "and": [
+                          "service:bicycle:tools=yes",
+                          "service:bicycle:pump=yes"
+                        ]
+                      },
+                      "then": "./assets/themes/toerisme_vlaanderen/cycle_repair_and_pump.svg"
+                    },
+                    {
+                      "if": {
+                        "and": [
+                          "service:bicycle:tools=yes",
+                          "service:bicycle:pump=no"
+                        ]
+                      },
+                      "then": "./assets/themes/toerisme_vlaanderen/cycle_repair.svg"
+                    }
+                  ]
                 }
-              ]
-            },
+              }
+            ],
             "iconBadges": [
               {
                 "if": "service:bicycle:pump:operational_status=broken",
@@ -225,9 +246,12 @@
       "builtin": "playground",
       "override": {
         "minzoom": 14,
-        "mapRendering": [
+        "pointRendering": [
           {
+            "=marker":[{
+              
             "icon": "./assets/themes/toerisme_vlaanderen/playground.svg"
+            }]
           }
         ]
       },

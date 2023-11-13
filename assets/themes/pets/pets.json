@@ -49,13 +49,17 @@
           "zh_Hant": "寵物友善餐廳",
           "pl": "Restauracje przyjazne psom"
         },
-        "mapRendering": [
+        "pointRendering": [
           {
             "location": [
               "point",
               "centroid"
             ],
-            "icon": "./assets/themes/pets/dog-food.svg",
+            "marker": [
+              {
+                "icon": "./assets/themes/pets/dog-food.svg"
+              }
+            ],
             "iconSize": "30,30"
           }
         ],
@@ -124,33 +128,37 @@
             }
           ]
         },
-        "mapRendering": [
+        "pointRendering": [
           {
             "location": [
               "point",
               "centroid"
             ],
-            "icon": {
-              "render": "./assets/themes/pets/dogshop.svg",
-              "+mappings": [
-                {
-                  "if": {
-                    "and": [
-                      "shop=pet"
-                    ]
-                  },
-                  "then": "./assets/themes/pets/petshop.svg"
+            "marker": [{},
+              {
+                "icon": {
+                  "render": "./assets/themes/pets/dogshop.svg",
+                  "+mappings": [
+                    {
+                      "if": {
+                        "and": [
+                          "shop=pet"
+                        ]
+                      },
+                      "then": "./assets/themes/pets/petshop.svg"
+                    }
+                  ]
                 }
-              ]
-            },
+              }
+            ],
             "iconSize": "30,30"
-          },
-          {
-            "#": "Rendering of a line",
-            "color": "#ff0",
-            "width": 5
           }
         ],
+        "=lineRendering":[          {
+          "#": "Rendering of a line",
+          "color": "#ff0",
+          "width": 5
+        }],
         "=presets": [],
         "source": {
           "=osmTags": {
