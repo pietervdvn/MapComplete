@@ -39,6 +39,15 @@ else
   echo "$ASSET_URL"
 fi
 
+# sanity check
+if [[ -f "bookcases.html" ]]
+then
+  echo "Bookcases exists"
+else
+  echo "Bookcases.html does not exist - aborting"
+  exit 1
+fi
+
 export NODE_OPTIONS=--max-old-space-size=7000
 which vite
 vite build --sourcemap 
