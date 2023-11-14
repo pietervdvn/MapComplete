@@ -16,10 +16,10 @@ import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
 
 export class IconConfig extends WithContextLoader {
+    public static readonly defaultIcon = new IconConfig({ icon: "pin", color: "#ff9939" })
     public readonly icon: TagRenderingConfig
     public readonly color: TagRenderingConfig
 
-    public static readonly defaultIcon = new IconConfig({ icon: "pin", color: "#ff9939" })
     constructor(
         config: {
             icon: string | TagRenderingConfigJson
@@ -199,11 +199,13 @@ export default class PointRenderingConfig extends WithContextLoader {
     public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
         return new SvelteUIElement(DynamicMarker, { config: this, tags: new ImmutableStore(tags) })
     }
+
     public RenderIcon(
         tags: Store<Record<string, string>>,
         options?: {
             noSize?: false | boolean
             includeBadges?: true | boolean
+            metatags?: Store<Record<string, string>>
         }
     ): {
         html: BaseUIElement
@@ -225,16 +227,14 @@ export default class PointRenderingConfig extends WithContextLoader {
             return Utils.SubstituteKeys(str, tags.data).replace(/{.*}/g, "")
         }
 
-        const iconSize = render(this.iconSize, "40,40").split(",")
-
-        const iconW = num(iconSize[0])
-        let iconH = num(iconSize[1])
-
-        const anchor = render(this.anchor, "center")
-        const mode = anchor?.trim()?.toLowerCase() ?? "center"
         // in MapLibre, the offset is relative to the _center_ of the object, with left = [-x, 0] and up = [0,-y]
         let anchorW = 0
         let anchorH = 0
+        const anchor = render(this.anchor, "center")
+        const mode = anchor?.trim()?.toLowerCase() ?? "center"
+        const size = this.iconSize.GetRenderValue(tags.data).Subs(tags).txt ?? "[40,40]"
+        const [iconW, iconH] = size.split(",").map((x) => num(x))
+
         if (mode === "left") {
             anchorW = -iconW / 2
         }
@@ -254,15 +254,20 @@ export default class PointRenderingConfig extends WithContextLoader {
         )
         let badges = undefined
         if (options?.includeBadges ?? true) {
-            badges = this.GetBadges(tags)
+            badges = this.GetBadges(tags, options.metatags)
         }
         const iconAndBadges = new Combine([icon, badges]).SetClass("block relative")
 
-        if (!options?.noSize) {
-            iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
-        } else {
+        if (options?.noSize) {
             iconAndBadges.SetClass("w-full h-full")
         }
+        tags.map((tags) => this.iconSize.GetRenderValue(tags).Subs(tags).txt ?? "[40,40]").map(
+            (size) => {
+                const [iconW, iconH] = size.split(",").map((x) => num(x))
+                console.log("Setting size to", iconW, iconH)
+                iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
+            }
+        )
 
         const css = this.cssDef?.GetRenderValue(tags.data)?.txt
         const cssClasses = this.cssClasses?.GetRenderValue(tags.data)?.txt
@@ -293,41 +298,58 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     }
 
-    private GetBadges(tags: Store<Record<string, string>>): BaseUIElement {
+    private GetBadges(
+        tags: Store<Record<string, string>>,
+        metaTags?: Store<Record<string, string>>
+    ): BaseUIElement {
         if (this.iconBadges.length === 0) {
             return undefined
         }
         return new VariableUiElement(
-            tags.map((tags) => {
-                const badgeElements = this.iconBadges.map((badge) => {
-                    if (!badge.if.matchesProperties(tags)) {
-                        // Doesn't match...
-                        return undefined
-                    }
+            tags.map(
+                (tags) => {
+                    const badgeElements = this.iconBadges.map((badge) => {
+                        if (!badge.if.matchesProperties(tags)) {
+                            // Doesn't match...
+                            return undefined
+                        }
+                        const metaCondition = badge.then.metacondition
+                        if (
+                            metaCondition &&
+                            metaTags &&
+                            !metaCondition.matchesProperties(metaTags.data)
+                        ) {
+                            // Doesn't match
+                            return undefined
+                        }
 
-                    const htmlDefs = Utils.SubstituteKeys(
-                        badge.then.GetRenderValue(tags)?.txt,
-                        tags
-                    )
-                    if (htmlDefs.startsWith("<") && htmlDefs.endsWith(">")) {
-                        // This is probably an HTML-element
-                        return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tags))
+                        const htmlDefs = Utils.SubstituteKeys(
+                            badge.then.GetRenderValue(tags)?.txt,
+                            tags
+                        )
+                        if (htmlDefs.startsWith("<") && htmlDefs.endsWith(">")) {
+                            // This is probably an HTML-element
+                            return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tags))
+                                .SetStyle("width: 1.5rem")
+                                .SetClass("block")
+                        }
+                        const badgeElement = PointRenderingConfig.FromHtmlMulti(
+                            htmlDefs,
+                            "0",
+                            true
+                        )?.SetClass("block relative")
+                        if (badgeElement === undefined) {
+                            return undefined
+                        }
+                        return new Combine([badgeElement])
                             .SetStyle("width: 1.5rem")
                             .SetClass("block")
-                    }
-                    const badgeElement = PointRenderingConfig.FromHtmlMulti(
-                        htmlDefs,
-                        "0",
-                        true
-                    )?.SetClass("block relative")
-                    if (badgeElement === undefined) {
-                        return undefined
-                    }
-                    return new Combine([badgeElement]).SetStyle("width: 1.5rem").SetClass("block")
-                })
+                    })
 
-                return new Combine(badgeElements).SetClass("inline-flex h-full")
-            })
+                    return new Combine(badgeElements).SetClass("inline-flex h-full")
+                },
+                [metaTags]
+            )
         ).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
     }
 

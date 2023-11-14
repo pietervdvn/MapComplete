@@ -434,7 +434,7 @@ export default {
       "type": "object",
       "properties": {
         "render": {
-          "description": "question: What value should be rendered?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+          "description": "question: What value should be shown (if no predifined option matches)?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
           "type": "string"
         },
         "mappings": {
@@ -521,7 +521,7 @@ export default {
       "type": "object",
       "properties": {
         "render": {
-          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: no text is rendered if no predefined options match",
+          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: No text is shown if no predefined options match.",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -558,7 +558,7 @@ export default {
           ]
         },
         "icon": {
-          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: do not show an icon next to the \"render\"-value",
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: No additional icon is shown next to the always shown text",
           "anyOf": [
             {
               "type": "object",
@@ -1146,7 +1146,7 @@ export default {
           }
         },
         "render": {
-          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: no text is rendered if no predefined options match",
+          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: No text is shown if no predefined options match.",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1183,7 +1183,7 @@ export default {
           ]
         },
         "icon": {
-          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: do not show an icon next to the \"render\"-value",
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: No additional icon is shown next to the always shown text",
           "anyOf": [
             {
               "type": "object",
@@ -1360,7 +1360,7 @@ export default {
           }
         },
         "render": {
-          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: no text is rendered if no predefined options match",
+          "description": "question: What text should be rendered?\n\nThis piece of text will be shown in the infobox.\nIn this text, values within braces (such as {braced(key)}) are replaced by the corresponding `value` in the object.\nFor example, if the object contains tags `amenity=school; name=Windy Hill School`, the render string `This school is named {name}` will be shown to the user as `This school is named Windy Hill School`\n\nThis text will be shown if:\n- there is no mapping which matches (or there are no matches)\n- no question, no mappings and no 'freeform' is set\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`\ntype: rendered\nifunset: No text is shown if no predefined options match.",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1397,7 +1397,7 @@ export default {
           ]
         },
         "icon": {
-          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: do not show an icon next to the \"render\"-value",
+          "description": "question: what icon should be shown next to the 'render' value?\nAn icon shown next to the rendering; typically shown pretty small\nThis is only shown next to the \"render\" value\nType: icon\nifunset: No additional icon is shown next to the always shown text",
           "anyOf": [
             {
               "type": "object",
@@ -1866,7 +1866,7 @@ export default {
           "type": "number"
         },
         "title": {
-          "description": "question: What title should be shown on the infobox?\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation\ninline: {translated{value}}",
+          "description": "question: Edit the popup title\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation\ninline: {translated{value}}",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -1915,7 +1915,7 @@ export default {
           ]
         },
         "pointRendering": {
-          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\ngroup: pointrendering",
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\n\ngroup: pointrendering",
           "type": "array",
           "items": {
             "$ref": "#/definitions/default_4"
@@ -2001,7 +2001,7 @@ export default {
           }
         },
         "tagRenderings": {
-          "description": "question: Edit this tagRendering\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
+          "description": "question: Edit this attribute showing piece/question\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
           "type": "array",
           "items": {
             "anyOf": [
@@ -2265,7 +2265,7 @@ export default {
           "type": "number"
         },
         "title": {
-          "description": "question: What title should be shown on the infobox?\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation\ninline: {translated{value}}",
+          "description": "question: Edit the popup title\nThe title shown in a popup for elements of this layer.\n\ngroup: title\ntypes: use a fixed translation ; Use a dynamic tagRendering ; hidden\ntypesdefault: 1\ntype: translation\ninline: {translated{value}}",
           "anyOf": [
             {
               "$ref": "#/definitions/Record<string,string>"
@@ -2314,7 +2314,7 @@ export default {
           ]
         },
         "pointRendering": {
-          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\ngroup: pointrendering",
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\n\ngroup: pointrendering",
           "type": "array",
           "items": {
             "$ref": "#/definitions/default_4"
@@ -2400,7 +2400,7 @@ export default {
           }
         },
         "tagRenderings": {
-          "description": "question: Edit this tagRendering\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
+          "description": "question: Edit this attribute showing piece/question\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
           "type": "array",
           "items": {
             "anyOf": [

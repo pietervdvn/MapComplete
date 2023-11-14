@@ -14,7 +14,7 @@
     "hints": {
       "typehint": "rendered",
       "question": "What text should be rendered?",
-      "ifunset": "no text is rendered if no predefined options match"
+      "ifunset": "No text is shown if no predefined options match."
     },
     "type": [
       {
@@ -60,7 +60,7 @@
     "hints": {
       "typehint": "icon",
       "question": "what icon should be shown next to the 'render' value?",
-      "ifunset": "do not show an icon next to the \"render\"-value"
+      "ifunset": "No additional icon is shown next to the always shown text"
     },
     "type": [
       {

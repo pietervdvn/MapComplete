@@ -395,6 +395,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 layer: fs.layer.layerDef,
                 features: filtered,
                 doShowLayer,
+                metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
                 selectedLayer: this.selectedLayer,
                 fetchStore: (id) => this.featureProperties.getStore(id),
@@ -511,6 +512,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             layer: this.newPointDialog.layerDef,
             selectedElement: this.selectedElement,
             selectedLayer: this.selectedLayer,
+            metaTags: this.userRelatedState.preferencesAsTags,
             onClick: (feature: Feature) => {
                 if (this.mapProperties.zoom.data < Constants.minZoomLevelToAddNewPoint) {
                     this.map.data.flyTo({
@@ -614,6 +616,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 features,
                 doShowLayer: flayer.isDisplayed,
                 layer: flayer.layerDef,
+                metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
                 selectedLayer: this.selectedLayer,
             })

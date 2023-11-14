@@ -1103,9 +1103,11 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         if (json.tagRenderings !== undefined && json.tagRenderings.length > 0) {
             new On("tagRendering", new Each(new ValidateTagRenderings(json)))
             if (json.title === undefined && json.source !== "special:library") {
-                context.err(
-                    "This layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
-                )
+                context
+                    .enter("title")
+                    .err(
+                        "This layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
+                    )
             }
             if (json.title === null) {
                 context.info(

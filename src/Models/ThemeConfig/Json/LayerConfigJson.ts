@@ -210,7 +210,7 @@ export interface LayerConfigJson {
     minzoomVisible?: number
 
     /**
-     * question: What title should be shown on the infobox?
+     * question: Edit the popup title
      * The title shown in a popup for elements of this layer.
      *
      * group: title
@@ -379,7 +379,7 @@ export interface LayerConfigJson {
     }[]
 
     /**
-     * question: Edit this tagRendering
+     * question: Edit this way this attributed is displayed or queried
      *
      * A tag rendering is a block that either shows the known value or asks a question.
      *

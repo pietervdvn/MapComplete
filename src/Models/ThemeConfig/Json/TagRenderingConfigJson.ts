@@ -6,7 +6,7 @@ import { Translatable } from "./Translatable"
  */
 export interface MinimalTagRenderingConfigJson {
     /**
-     * question: What value should be rendered?
+     * question: What value should be shown (if no predifined option matches)?
      *
      * This piece of text will be shown in the infobox.
      * Note that "&LBRACEkey&RBRACE"-parts are substituted by the corresponding values of the element.
@@ -56,7 +56,7 @@ export interface TagRenderingConfigJson {
      *
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`
      * type: rendered
-     * ifunset: no text is rendered if no predefined options match
+     * ifunset: No text is shown if no predefined options match.
      */
     render?:
         | Translatable
@@ -67,7 +67,7 @@ export interface TagRenderingConfigJson {
      * An icon shown next to the rendering; typically shown pretty small
      * This is only shown next to the "render" value
      * Type: icon
-     * ifunset: do not show an icon next to the "render"-value
+     * ifunset: No additional icon is shown next to the always shown text
      */
     icon?:
         | string
