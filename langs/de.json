@@ -628,6 +628,11 @@
             "description": "eine Zahl",
             "feedback": "Dies ist keine Zahl"
         },
+        "id": {
+            "description": "Ein Identifikator",
+            "invalidCharacter": "Eine ID darf nur Buchstaben, Ziffern und Unterstriche enthalten",
+            "shouldBeLonger": "Eine ID sollte mindestens 3 Zeichen lang sein"
+        },
         "int": {
             "description": "eine ganze Zahl"
         },
