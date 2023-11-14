@@ -35,4 +35,5 @@ export interface ShowDataLayerOptions {
     fetchStore?: (id: string) => Store<Record<string, string>>
 
     onClick?: (feature: Feature) => void
+    metaTags?: Store<Record<string, string>>
 }

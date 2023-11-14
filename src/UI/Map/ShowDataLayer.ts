@@ -27,12 +27,14 @@ class PointRenderingLayer {
     private readonly _allMarkers: Map<string, Marker> = new Map<string, Marker>()
     private readonly _selectedElement: Store<{ properties: { id?: string } }>
     private readonly _markedAsSelected: HTMLElement[] = []
+    private readonly _metatags: Store<Record<string, string>>
     private _dirty = false
 
     constructor(
         map: MlMap,
         features: FeatureSource,
         config: PointRenderingConfig,
+        metatags?: Store<Record<string, string>>,
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<Record<string, string>>,
         onClick?: (feature: Feature) => void,
@@ -41,6 +43,7 @@ class PointRenderingLayer {
         this._visibility = visibility
         this._config = config
         this._map = map
+        this._metatags = metatags
         this._fetchStore = fetchStore
         this._onClick = onClick
         this._selectedElement = selectedElement
@@ -143,7 +146,7 @@ class PointRenderingLayer {
         } else {
             store = new ImmutableStore(<OsmTags>feature.properties)
         }
-        const { html, iconAnchor } = this._config.RenderIcon(store)
+        const { html, iconAnchor } = this._config.RenderIcon(store, { metatags: this._metatags })
         html.SetClass("marker")
         if (this._onClick !== undefined) {
             html.SetClass("cursor-pointer")
@@ -525,6 +528,7 @@ export default class ShowDataLayer {
                     map,
                     features,
                     pointRenderingConfig,
+                    this._options.metaTags,
                     doShowLayer,
                     fetchStore,
                     onClick,

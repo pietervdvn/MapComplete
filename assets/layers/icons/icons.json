@@ -63,7 +63,8 @@
           },
           "then": "circle:#f0f;clock:#fff"
         }
-      ]
+      ],
+      "metacondition": "__showTimeSensitiveIcons!=no"
     },
     {
       "id": "phonelink",

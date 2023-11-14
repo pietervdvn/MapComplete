@@ -86,7 +86,7 @@
                 "_direction:leftright~*"
               ]
             },
-            "then": "100,35,center"
+            "then": "50,35,center"
           }
         ],
         "render": "35,35,center"
