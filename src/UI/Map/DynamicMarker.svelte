@@ -9,10 +9,12 @@
   export let config: PointRenderingConfig
   let icons: IconConfig[] = config.marker
   export let tags: Store<Record<string, string>>
+  let rotation = tags.map(tags => config.rotation.GetRenderValue(tags).Subs(tags).txt)
+
 </script>
 
 {#if config !== undefined}
-  <div class="relative h-full w-full">
+  <div class="relative h-full w-full" style={`transform: rotate(${$rotation})`}>
     {#each icons as icon}
       <DynamicIcon {icon} {tags} />
     {/each}
