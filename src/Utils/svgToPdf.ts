@@ -974,6 +974,9 @@ class SvgToPdfPage {
         }
 //*/
         svgImage.setAttribute("xlink:href", await SvgToPdfPage.blobToBase64(png))
+        svgImage.style.width = width + "mm"
+        svgImage.style.height = height + "mm"
+        console.log("Adding map element to PDF", svgImage)
         smallestRect.parentElement.insertBefore(svgImage, smallestRect)
         await this.prepareElement(svgImage, [], false)
         const smallestRectCss = SvgToPdfInternals.parseCss(smallestRect.getAttribute("style"))

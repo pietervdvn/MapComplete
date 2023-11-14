@@ -6,7 +6,13 @@ import { MapLibreAdaptor } from "../UI/Map/MapLibreAdaptor"
 import { AvailableRasterLayers } from "../Models/RasterLayers"
 
 export interface PngMapCreatorOptions {
+    /**
+     * In mm
+     */
     readonly width: number
+    /**
+     * In mm
+     */
     readonly height: number
 }
 
@@ -27,8 +33,23 @@ export class PngMapCreator {
     public async CreatePng(freeComponentId: string, status?: UIEventSource<string>): Promise<Blob> {
         const div = document.createElement("div")
         div.id = "mapdiv-" + PngMapCreator.id
+
+        /**
+         * We want a certain amount of pixels per mm² for a high print quality
+         * For this, we create a bigger map on the screen with a canvas, which has a pixelratio given
+         *
+         * We know that the default DPI of a canvas is 92, but to print something, we need a bit more
+         * So, instead, we give it PIXELRATIO more mm and let it render.
+         * We then draw this onto the PDF as if it were smaller, so it'll have plenty of quality there.
+         *
+         * However, we also need to compensate for this in the zoom level
+         *
+         */
+
+        const pixelRatio = 2 // dots per mm
         div.style.width = this._options.width + "mm"
         div.style.height = this._options.height + "mm"
+
         PngMapCreator.id++
         try {
             const layout = this._state.layout
@@ -43,18 +64,18 @@ export class PngMapCreator {
             const l = settings.location.data
 
             document.getElementById(freeComponentId).appendChild(div)
-            const pixelRatio = 4
+            const newZoom = settings.zoom.data + Math.log2(pixelRatio) - 1
             const mapElem = new MlMap({
                 container: div.id,
                 style: AvailableRasterLayers.maptilerDefaultLayer.properties.url,
                 center: [l.lon, l.lat],
-                zoom: settings.zoom.data,
+                zoom: newZoom,
                 pixelRatio,
             })
 
             const map = new UIEventSource<MlMap>(mapElem)
             const mla = new MapLibreAdaptor(map)
-            mla.zoom.setData(settings.zoom.data)
+            mla.zoom.setData(newZoom)
             mla.location.setData(settings.location.data)
             mla.rasterLayer.setData(settings.rasterLayer.data)
             mla.allowZooming.setData(false)
@@ -70,9 +91,12 @@ export class PngMapCreator {
                 console.log("Waiting for the style to be loaded...")
                 await Utils.waitFor(250)
             }
+
             // Some extra buffer...
-            setState("One second pause to make sure all images are loaded...")
-            await Utils.waitFor(1000)
+            for (let i = 0; i < 5; i++) {
+                setState(5 - i + " seconds pause to make sure all images are loaded...")
+                await Utils.waitFor(1000)
+            }
             setState(
                 "Exporting png (" +
                     this._options.width +
@@ -82,7 +106,13 @@ export class PngMapCreator {
                     pixelRatio +
                     ")"
             )
-            return await mla.exportAsPng(pixelRatio)
+            const progress = new UIEventSource<{ current: number; total: number }>(undefined)
+            progress.addCallbackD(({ current, total }) => {
+                setState(`Rendering marker ${current}/${total}`)
+            })
+            const png = await mla.exportAsPng(pixelRatio, progress)
+            setState("Offering as download...")
+            return png
         } finally {
             div.parentElement.removeChild(div)
         }

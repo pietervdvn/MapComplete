@@ -9,6 +9,7 @@ import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
+import { draw } from "svelte/transition"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -180,20 +181,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    public static setDpi(
-        drawOn: HTMLCanvasElement,
-        ctx: CanvasRenderingContext2D,
-        dpiFactor: number
-    ) {
-        drawOn.style.width = drawOn.style.width || drawOn.width + "px"
-        drawOn.style.height = drawOn.style.height || drawOn.height + "px"
-
-        // Resize canvas and scale future draws.
-        drawOn.width = Math.ceil(drawOn.width * dpiFactor)
-        drawOn.height = Math.ceil(drawOn.height * dpiFactor)
-        ctx.scale(dpiFactor, dpiFactor)
-    }
-
     /**
      * Prepares an ELI-URL to be compatible with mapbox
      */
@@ -224,27 +211,55 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return url
     }
 
-    public async exportAsPng(markerScale: number = 1): Promise<Blob> {
+    private static async toBlob(canvas: HTMLCanvasElement): Promise<Blob> {
+        return await new Promise<Blob>((resolve) => canvas.toBlob((blob) => resolve(blob)))
+    }
+
+    private static async createImage(url: string): Promise<HTMLImageElement> {
+        return new Promise((resolve, reject) => {
+            const img = new Image()
+            img.decode = () => resolve(img) as any
+            img.onload = () => resolve(img)
+            img.onerror = reject
+            img.crossOrigin = "anonymous"
+            img.decoding = "async"
+            img.src = url
+        })
+    }
+
+    public async exportAsPng(
+        rescaleIcons: number = 1,
+        progress: UIEventSource<{ current: number; total: number }> = undefined
+    ): Promise<Blob> {
         const map = this._maplibreMap.data
         if (!map) {
             return undefined
         }
-        const drawOn = document.createElement("canvas")
-        drawOn.width = map.getCanvas().width
-        drawOn.height = map.getCanvas().height
-
+        const drawOn = document.createElement("canvas", {})
         const ctx = drawOn.getContext("2d")
-        // Set up CSS size.
-        MapLibreAdaptor.setDpi(drawOn, ctx, markerScale / map.getPixelRatio())
+        // The width/height has been set in 'mm' on the parent element and converted to pixels by the browser
+        const w = map.getContainer().getBoundingClientRect().width
+        const h = map.getContainer().getBoundingClientRect().height
+
+        let dpi = map.getPixelRatio()
+        console.log("Sizes:", {
+            dpi,
+            w,
+            h,
+            origSizeW: drawOn.style.width,
+            origSizeH: drawOn.style.height,
+        })
+        // The 'css'-size stays constant...
+        drawOn.style.width = w + "px"
+        drawOn.style.height = h + "px"
+
+        // ...but the number of pixels is increased
+        drawOn.width = Math.ceil(w * dpi)
+        drawOn.height = Math.ceil(h * dpi)
 
         await this.exportBackgroundOnCanvas(ctx)
-
-        // MapLibreAdaptor.setDpi(drawOn, ctx, 1)
-        await this.drawMarkers(markerScale, ctx)
-        ctx.scale(markerScale, markerScale)
-        this._maplibreMap.data?.resize()
-
-        return await new Promise<Blob>((resolve) => drawOn.toBlob((blob) => resolve(blob)))
+        await this.drawMarkers(ctx, rescaleIcons, progress)
+        return await MapLibreAdaptor.toBlob(drawOn)
     }
 
     /**
@@ -273,16 +288,26 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         map.resize()
     }
 
-    private async drawMarkers(dpiFactor: number, drawOn: CanvasRenderingContext2D): Promise<void> {
+    /**
+     * Draws the markers of the current map on the specified canvas.
+     * The DPIfactor is used to calculate the correct position, whereas 'rescaleIcons' can be used to make the icons smaller
+     * @param drawOn
+     * @param rescaleIcons
+     * @private
+     */
+    private async drawMarkers(
+        drawOn: CanvasRenderingContext2D,
+        rescaleIcons: number = 1,
+        progress: UIEventSource<{ current: number; total: number }>
+    ): Promise<void> {
         const map = this._maplibreMap.data
         if (!map) {
+            console.error("There is no map to export from")
             return undefined
         }
-        map.getCanvas().style.display = "none"
 
-        const width = map.getCanvas().width
-        const height = map.getCanvas().height
         const container = map.getContainer()
+
         function isDisplayed(el: Element) {
             const r1 = el.getBoundingClientRect()
             const r2 = container.getBoundingClientRect()
@@ -293,32 +318,50 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 r2.bottom < r1.top
             )
         }
+
         const markers = Array.from(container.getElementsByClassName("marker"))
         for (let i = 0; i < markers.length; i++) {
-            const marker = markers[i]
+            const marker = <HTMLElement>markers[i]
             if (!isDisplayed(marker)) {
                 continue
             }
-            const markerRect = marker.getBoundingClientRect()
-            const w = markerRect.width
-            const h = markerRect.height
-            console.log("Drawing marker", i, "/", markers.length, marker)
-            const markerImg = await htmltoimage.toCanvas(<HTMLElement>marker, {
-                pixelRatio: dpiFactor,
-                canvasWidth: width * dpiFactor,
-                canvasHeight: height * dpiFactor,
-                width: width,
-                height: height,
-            })
 
+            const pixelRatio = map.getPixelRatio()
+            let x = marker.getBoundingClientRect().x
+            let y = marker.getBoundingClientRect().y
+            const style = marker.style.transform
+            marker.style.transform = ""
+            const offset = style.match(/translate\(([-0-9]+)%, ?([-0-9]+)%\)/)
+
+            console.log("MARKER", marker)
+            const w = marker.style.width
+            // Force a wider view for icon badges
+            marker.style.width = marker.getBoundingClientRect().width * 4 + "px"
+            const svgSource = await htmltoimage.toSvg(marker)
+            const img = await MapLibreAdaptor.createImage(svgSource)
+            marker.style.width = w
+            if (offset && rescaleIcons !== 1) {
+                const [_, relXStr, relYStr] = offset
+                const relX = Number(relXStr)
+                const relY = Number(relYStr)
+                console.log("Moving icon with", relX, relY, img.width, img.height, x, y)
+                // x += img.width * (relX / 100)
+                y += img.height * (relY / 100)
+            }
+
+            x *= pixelRatio
+            y *= pixelRatio
+
+            if (progress) {
+                progress.setData({ current: i, total: markers.length })
+            }
             try {
-                drawOn.drawImage(markerImg, markerRect.x, markerRect.y)
+                drawOn.drawImage(img, x, y, img.width * rescaleIcons, img.height * rescaleIcons)
             } catch (e) {
                 console.log("Could not draw image because of", e)
             }
+            marker.style.transform = style
         }
-
-        map.getCanvas().style.display = "unset"
     }
 
     private updateStores(isSetup: boolean = false): void {

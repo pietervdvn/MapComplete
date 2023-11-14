@@ -92,7 +92,7 @@
     mimetype="image/png"
     mainText={t.downloadAsPng}
     helperText={t.downloadAsPngHelper}
-    construct={() => state.mapProperties.exportAsPng(1)}
+    construct={() => state.mapProperties.exportAsPng()}
   />
 
   <div class="flex flex-col">

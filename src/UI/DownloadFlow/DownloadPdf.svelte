@@ -15,7 +15,6 @@
   export let templateName: string
   export let state: ThemeViewState
   const template: PdfTemplateInfo = SvgToPdf.templates[templateName]
-  console.log("template", template)
   let mainText: Translation =
     typeof template.description === "string"
       ? new Translation(template.description)
@@ -47,7 +46,6 @@
     })
 
     const unsub = creator.status.addCallbackAndRunD((s) => {
-      console.log("SVG creator status:", s)
       status?.setData(s)
     })
     await creator.ExportPdf(Locale.language.data)
