@@ -30,6 +30,7 @@ export default class DynamicTileSource extends FeatureSourceMerger {
                         if (options?.isActive && !options?.isActive.data) {
                             return undefined
                         }
+
                         if (mapProperties.zoom.data < minzoom) {
                             return undefined
                         }
@@ -40,8 +41,8 @@ export default class DynamicTileSource extends FeatureSourceMerger {
                             bounds.getSouth(),
                             bounds.getWest()
                         )
-                        if (tileRange.total > 10000) {
-                            console.error(
+                        if (tileRange.total > 500) {
+                            console.warn(
                                 "Got a really big tilerange, bounds and location might be out of sync"
                             )
                             return undefined
