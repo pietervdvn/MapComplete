@@ -188,10 +188,7 @@
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist darzustellen</li><li>Jede Änderung muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
             "noDataLoaded": "Noch keine Daten geladen. Download in Kürze verfügbar",
-            "pdf": {
-                "current_view_a3": "PDF (A3, Hochformat) der aktuellen Ansicht exportieren",
-                "current_view_a4": "PDF (A4, Querformat) der aktuellen Ansicht exportieren"
-            },
+            "pdf": {},
             "title": "Download",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },

@@ -313,6 +313,9 @@ class SvgToPdfInternals {
             console.log("Creating image with key", key, "searching rect in", x, y)
             const rectangle: SVGRectElement = this.page.findSmallestRectContaining(x, y, false)
             console.log("Got rect", rectangle)
+            if (!rectangle) {
+                throw new Error("No rectangle found for tspan with text:" + txt)
+            }
             const w = SvgToPdfInternals.attrNumber(rectangle, "width")
             const h = SvgToPdfInternals.attrNumber(rectangle, "height")
             x = SvgToPdfInternals.attrNumber(rectangle, "x")
@@ -320,23 +323,25 @@ class SvgToPdfInternals {
 
             // Actually, dots per mm, not dots per inch ;)
             const dpi = 60
+
             const img = this.page.options.createImage(key, dpi * w + "px", dpi * h + "px")
-
-            const canvas = document.createElement("canvas")
-            const ctx = canvas.getContext("2d")
-
-            canvas.width = w * dpi
-            canvas.height = h * dpi
-            img.style.width = `${w * dpi}px`
-            img.style.height = `${h * dpi}px`
-
-            ctx.drawImage(img, 0, 0, w * dpi, h * dpi)
-            const base64img = canvas.toDataURL("image/png")
-            // Don't ask me why this magicFactor transformation is needed - but it works
-            const magicFactor = 3.8
-            this.addMatrix(this.doc.Matrix(1 / magicFactor, 0, 0, 1 / magicFactor, 0, 0))
-            this.doc.addImage(base64img, "png", x, y, w, h)
-            this.undoTransform()
+            if (typeof img === "string") {
+                this.doc.addImage(img, "png", x, y, w, h)
+            } else {
+                const canvas = document.createElement("canvas")
+                canvas.width = w * dpi
+                canvas.height = h * dpi
+                const ctx = canvas.getContext("2d")
+                img.style.width = `${w * dpi}px`
+                img.style.height = `${h * dpi}px`
+                ctx.drawImage(img, 0, 0, w * dpi, h * dpi)
+                const base64img = canvas.toDataURL("image/png")
+                // Don't ask me why this magicFactor transformation is needed - but it works
+                const magicFactor = 3.8
+                this.addMatrix(this.doc.Matrix(1 / magicFactor, 0, 0, 1 / magicFactor, 0, 0))
+                this.doc.addImage(base64img, "png", x, y, w, h)
+                this.undoTransform()
+            }
             this.usedRectangles.add(rectangle.id)
             return
         }
@@ -557,7 +562,7 @@ export interface SvgToPdfOptions {
      */
     state?: ThemeViewState
 
-    createImage(key: string, width: string, height: string): HTMLImageElement
+    createImage(key: string, width: string, height: string): HTMLImageElement | string
 }
 
 class SvgToPdfPage {
@@ -1002,7 +1007,13 @@ export interface PdfTemplateInfo {
 
 export class SvgToPdf {
     public static readonly templates: Record<
-        "flyer_a4" | "poster_a3" | "poster_a2" | "current_view_a4" | "current_view_a3",
+        | "flyer_a4"
+        | "poster_a3"
+        | "poster_a2"
+        | "current_view_a4"
+        | "current_view_a3_portrait"
+        | "current_view_a3_landscape"
+        | "current_view_a2_landscape",
         PdfTemplateInfo
     > = {
         flyer_a4: {
@@ -1037,10 +1048,17 @@ export class SvgToPdf {
 
             isPublic: true,
         },
-        current_view_a3: {
+        current_view_a3_landscape: {
+            format: "a3",
+            orientation: "landscape",
+            pages: ["./assets/templates/CurrentMapWithHeader_A3_Landscape.svg"],
+            description: Translations.t.general.download.pdf.current_view_a3,
+            isPublic: true,
+        },
+        current_view_a3_portrait: {
             format: "a3",
             orientation: "portrait",
-            pages: ["./assets/templates/CurrentMapWithHeaderA3.svg"],
+            pages: ["./assets/templates/CurrentMapWithHeader_A3_Portrait.svg"],
             description: Translations.t.general.download.pdf.current_view_a3,
             isPublic: true,
         },

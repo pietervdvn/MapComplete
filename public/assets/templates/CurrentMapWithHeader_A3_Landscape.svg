@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="420mm"
+   height="297mm"
+   viewBox="0 0 420 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
+   sodipodi:docname="CurrentMapWithHeader_A3_Landscape.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs33">
+    <rect
+       x="989.26202"
+       y="1556.4272"
+       width="26.202676"
+       height="5.3831315"
+       id="rect1" />
+    <rect
+       x="41.54771"
+       y="103.43336"
+       width="118.76163"
+       height="107.62454"
+       id="rect19815" />
+    <rect
+       x="730.99915"
+       y="857.75903"
+       width="646.31287"
+       height="26.69614"
+       id="rect10143" />
+    <rect
+       x="52.013119"
+       y="82.676552"
+       width="85.749054"
+       height="40.108173"
+       id="rect13117" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffe1d9"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="5.2990029"
+     inkscape:cx="1456.9722"
+     inkscape:cy="1082.3734"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2"
+     inkscape:snap-global="false"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="bg"
+     style="display:inline">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.34249;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect27895"
+       width="410.75531"
+       height="283.68674"
+       x="3.3383784"
+       y="6.4437408"
+       ry="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0.456196;stroke:#000000;stroke-width:0.581828;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect28206"
+       width="203.38158"
+       height="35.362419"
+       x="6.3702731"
+       y="9.6101332"
+       ry="3.858089"
+       rx="4.3605742" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text4911"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4913);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text10253"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect10255);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,14.472331,73.799994)"
+       id="text56705"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect56707);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"><tspan
+         x="0"
+         y="0"
+         id="tspan17"><tspan
+           style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
+           id="tspan1">$map(current)</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,45.266489,29.697692)"
+       id="text3510"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3512);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"><tspan
+         x="0"
+         y="0"
+         id="tspan19"><tspan
+           style="font-size:16px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
+           id="tspan18">$general.pdf.attr&#10;</tspan></tspan><tspan
+         x="0"
+         y="14.634375"
+         id="tspan20">&#10;</tspan><tspan
+         x="0"
+         y="16.799999"
+         id="tspan22">            <tspan
+   style="font-size:16px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
+   id="tspan21">$general.pdf.attrBackground&#10;</tspan></tspan><tspan
+         x="0"
+         y="31.434374"
+         id="tspan23">&#10;</tspan><tspan
+         x="0"
+         y="33.599998"
+         id="tspan25">            <tspan
+   style="font-size:16px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
+   id="tspan24">$general.pdf.generatedWith</tspan>&#10;</tspan><tspan
+         x="0"
+         y="52.492732"
+         id="tspan27">                <tspan
+   style="font-size:18.6667px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
+   id="tspan26">&#10;</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text19136"
+       style="font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;white-space:pre;shape-inside:url(#rect19138);display:inline;fill:#000000;stroke:#000000;stroke-width:0.377953;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-310.11022,64.009997)"
+       id="text10141"
+       style="font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;white-space:pre;shape-inside:url(#rect10143);display:inline;fill:#000000;fill-opacity:0.914749;stroke:#ff0000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"><tspan
+         x="1182.4844"
+         y="871.91602"
+         id="tspan29"><tspan
+           style="fill-opacity:1;stroke:none"
+           id="tspan28">$general.pdf.versionInfo</tspan></tspan></text>
+    <g
+       id="g1402"
+       style="display:inline"
+       transform="translate(-0.22805341,-0.31130177)">
+      <text
+         xml:space="preserve"
+         transform="scale(0.26458333)"
+         id="text13115"
+         style="font-size:8px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';white-space:pre;shape-inside:url(#rect13117);display:inline;fill:#000000;fill-opacity:0.559173;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"><tspan
+           x="52.013672"
+           y="88.953906"
+           id="tspan30">$img(layouticon)</tspan></text>
+      <rect
+         style="fill:#ffffff;fill-opacity:0.559173;stroke:#ff00ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="rect963"
+         width="29.907761"
+         height="29.907761"
+         x="10.527658"
+         y="12.790291"
+         rx="0"
+         ry="0" />
+    </g>
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:0.559173;stroke:none;stroke-width:0.97063;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="qrholder"
+       width="29.029371"
+       height="29.029369"
+       x="381.86578"
+       y="264.94128"
+       rx="0"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       id="text1"
+       style="font-size:5.33333px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';white-space:pre;shape-inside:url(#rect1);display:inline;fill:#000000;stroke-width:0.377953"
+      ><tspan
+          x="381.86578"
+       y="264.94128"
+         id="tspan32"><tspan
+           style="font-size:1.41111px"
+           id="tspan31">$img(qr)</tspan></tspan></text>
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text62796"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect62798);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="102.80793"
+       y="16.415634"
+       id="text8611-8"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="102.80793"
+         y="16.415634"
+         id="tspan8613-8" /></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text81704"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect81706);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,45.026071,20.99111)"
+       id="text135030"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect135032);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="0"
+         y="0"
+         id="tspan34"><tspan
+           style="font-weight:bold;font-size:34.6667px;-inkscape-font-specification:'sans-serif, Bold'"
+           id="tspan33">${title}</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="105.86118"
+       y="116.25558"
+       id="text53309"><tspan
+   sodipodi:role="line"
+   id="tspan53307"
+   style="stroke-width:0.264583"
+   x="105.86118"
+   y="116.25558" />             <tspan
+   sodipodi:role="line"
+   style="stroke-width:0.264583"
+   id="tspan53311"
+   x="105.86118"
+   y="116.25558" /></text>
+  </g>
+</svg>

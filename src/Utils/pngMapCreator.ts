@@ -73,6 +73,8 @@ export class PngMapCreator {
                 pixelRatio,
             })
 
+            console.log("Creating a map with size", this._options.width, this._options.height)
+
             const map = new UIEventSource<MlMap>(mapElem)
             const mla = new MapLibreAdaptor(map)
             mla.zoom.setData(newZoom)
@@ -81,10 +83,10 @@ export class PngMapCreator {
             mla.allowZooming.setData(false)
             mla.allowMoving.setData(false)
 
-            this._state?.showNormalDataOn(map)
-            console.log("Creating a map with size", this._options.width, this._options.height)
-
             setState("Waiting for the data")
+            this._state?.showNormalDataOn(map)
+            setState("Waiting for the data")
+
             await this._state.dataIsLoading.AsPromise((loading) => !loading)
             setState("Waiting for styles to be fully loaded")
             while (!map?.data?.isStyleLoaded()) {

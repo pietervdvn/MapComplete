@@ -11,14 +11,11 @@
   import Locale from "../i18n/Locale"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import DownloadHelper from "./DownloadHelper"
+  import Qr from "../../Utils/Qr";
 
   export let templateName: string
   export let state: ThemeViewState
   const template: PdfTemplateInfo = SvgToPdf.templates[templateName]
-  let mainText: Translation =
-    typeof template.description === "string"
-      ? new Translation(template.description)
-      : template.description
   let t = Translations.t.general.download
   const downloadHelper = new DownloadHelper(state)
 
@@ -32,8 +29,14 @@
     const creator = new SvgToPdf(title, templates, {
       state,
       freeComponentId: "belowmap",
-      createImage: (key: string, width: string, height: string) =>
-        downloadHelper.createImage(key, width, height),
+      createImage: (key: string, width: string, height: string) => {
+        console.log("Creating an image for key", key)
+        if(key === "qr"){
+          const toShare = window.location.href.split("#")[0]
+          return new Qr(toShare).toImageElement(parseFloat(width), parseFloat(height))
+        }
+        return downloadHelper.createImage(key, width, height);
+      },
       textSubstitutions: <Record<string, string>>{
         "layout.title": state.layout.title,
         layoutid: state.layout.id,
@@ -59,7 +62,7 @@
   extension="pdf"
   helperText={t.downloadAsPdfHelper}
   metaIsIncluded={false}
-  {mainText}
+  mainText={t.pdf.current_view_generic.Subs({orientation: template.orientation, paper_size: template.format.toUpperCase()})}
   mimetype="application/pdf"
   {state}
 />

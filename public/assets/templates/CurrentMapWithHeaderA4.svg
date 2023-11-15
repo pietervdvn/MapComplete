@@ -7,7 +7,7 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
    sodipodi:docname="CurrentMapWithHeaderA4.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -15,6 +15,12 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs33">
+    <rect
+       x="1046.1989"
+       y="769.93724"
+       width="41.96155"
+       height="9.4432596"
+       id="rect1" />
     <rect
        x="52.013117"
        y="82.676553"
@@ -63,6 +69,24 @@
        width="646.31286"
        height="26.696141"
        id="rect10143" />
+    <rect
+       x="52.013117"
+       y="82.676553"
+       width="11.700066"
+       height="3.225487"
+       id="rect916" />
+    <rect
+       x="52.013117"
+       y="82.676553"
+       width="85.749051"
+       height="40.108173"
+       id="rect1042" />
+    <rect
+       x="52.013117"
+       y="82.676553"
+       width="8.2386692"
+       height="2.5334366"
+       id="rect3260" />
   </defs>
   <sodipodi:namedview
      id="namedview7"
@@ -76,16 +100,18 @@
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="1.5544701"
-     inkscape:cx="130.59113"
-     inkscape:cy="85.23805"
+     inkscape:zoom="0.79385057"
+     inkscape:cx="640.54876"
+     inkscape:cy="808.08659"
      inkscape:window-width="1920"
      inkscape:window-height="995"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer2"
-     inkscape:snap-global="false" />
+     inkscape:snap-global="false"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#d1d1d1" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
@@ -110,79 +136,81 @@
        rx="4.3605742" />
     <text
        xml:space="preserve"
-       transform="(0.26458333)"
        id="text4911"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4913);fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4913);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
     <text
        xml:space="preserve"
        id="text10253"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect10255);fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect10255);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,38.20272,27.672609)"
        id="text3510"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3512);fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"><tspan
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3512);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"><tspan
          x="0"
          y="0"
-         id="tspan1371"><tspan
+         id="tspan21"><tspan
            style="font-size:18.6667px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan1369">
-</tspan></tspan></text>
+           id="tspan1">&#10;</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text19136"
-       style="fill:#000000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:16px;text-align:center;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.37795276;stroke:#000000;white-space:pre;shape-inside:url(#rect19138);stroke-opacity:1" />
+       style="font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;white-space:pre;shape-inside:url(#rect19138);display:inline;fill:#000000;stroke:#000000;stroke-width:0.377953;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-308.35032,-23.177635)"
        id="text10141"
-       style="font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;white-space:pre;shape-inside:url(#rect10143);fill:#000000;fill-opacity:0.914749;stroke:#ff0000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"><tspan
+       style="font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;white-space:pre;shape-inside:url(#rect10143);display:inline;fill:#000000;fill-opacity:0.914749;stroke:#ff0000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"><tspan
          x="1182.4844"
          y="871.91602"
-         id="tspan1375"><tspan
+         id="tspan23"><tspan
            style="fill-opacity:1;stroke:none"
-           id="tspan1373">$general.pdf.versionInfo</tspan></tspan></text>
+           id="tspan22">$general.pdf.versionInfo</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text9425"
-       style="font-size:8px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';white-space:pre;shape-inside:url(#rect9427);fill:#000000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"
+       style="font-size:8px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';white-space:pre;shape-inside:url(#rect9427);display:inline;fill:#000000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"
        transform="matrix(0.27887389,0,0,0.27887389,3.4774857,-1.6117409)"><tspan
          x="146.35156"
          y="109.84234"
-         id="tspan1379"><tspan
+         id="tspan25"><tspan
            style="font-size:18.6667px"
-           id="tspan1377">$general.pdf.attr
-</tspan></tspan><tspan
+           id="tspan24">$general.pdf.attr&#10;</tspan></tspan><tspan
          x="146.35156"
          y="129.44238"
-         id="tspan1383"><tspan
+         id="tspan27"><tspan
            style="font-size:18.6667px"
-           id="tspan1381">$general.pdf.attrBackground
-</tspan></tspan><tspan
+           id="tspan26">$general.pdf.attrBackground&#10;</tspan></tspan><tspan
          x="146.35156"
          y="149.04242"
-         id="tspan1387"><tspan
+         id="tspan29"><tspan
            style="font-size:18.6667px"
-           id="tspan1385">$general.pdf.generatedWith</tspan></tspan></text>
+           id="tspan28">$general.pdf.generatedWith</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text11530"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect11532);fill:#ff0000;fill-opacity:0.559173;stroke:#ff00ff;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect11532);display:inline;fill:#ff0000;fill-opacity:0.559173;stroke:#ff00ff;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"><tspan
          x="44.572266"
          y="92.258594"
-         id="tspan1391"><tspan
+         id="tspan31"><tspan
            style="fill:#000000;stroke:none"
-           id="tspan1389">$map(current)</tspan></tspan></text>
+           id="tspan30">$map(current)</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
        id="text13115"
-       style="font-size:8px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';white-space:pre;shape-inside:url(#rect13117);fill:#000000;fill-opacity:0.559173;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"><tspan
+       style="font-size:8px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';white-space:pre;shape-inside:url(#rect13117);display:inline;fill:#000000;fill-opacity:0.559173;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"><tspan
          x="52.013672"
          y="88.953906"
-         id="tspan1393">$img(layouticon)</tspan></text>
+         id="tspan32">&#10;</tspan><tspan
+         x="52.013672"
+         y="97.353908"
+         id="tspan33">        </tspan><tspan
+         x="52.013672"
+         y="105.75391"
+         id="tspan34">$img(layouticon)</tspan></text>
     <rect
-       style="fill:#ffffff;fill-opacity:0.55917299;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:#ff00ff;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:0.559173;stroke:#ff00ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        id="rect963"
        width="29.907761"
        height="29.907761"
@@ -190,6 +218,24 @@
        y="12.790291"
        rx="0"
        ry="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0.559173;stroke:none;stroke-width:0.97063;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="qrholder"
+       width="29.029371"
+       height="29.029369"
+       x="262.39819"
+       y="177.69299"
+       rx="0"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       id="text1"
+       style="font-size:5.33333px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';white-space:pre;shape-inside:url(#rect1);display:inline;fill:#000000;fill-opacity:0;stroke-width:0.377953;stroke-dasharray:none"><tspan
+         x="262.39819"
+         y="177.69299"
+         id="tspan36"><tspan
+           style="fill-opacity:1"
+           id="tspan35">$img(qr)</tspan></tspan></text>
   </g>
   <g
      inkscape:label="Layer 1"
@@ -199,7 +245,7 @@
     <text
        xml:space="preserve"
        id="text62796"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect62798);fill:#000000;fill-opacity:1;stroke:none" />
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect62798);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -214,7 +260,7 @@
     <text
        xml:space="preserve"
        id="text81704"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect81706);fill:#000000;fill-opacity:1;stroke:none" />
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect81706);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -234,16 +280,16 @@
     <text
        xml:space="preserve"
        id="text20597"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect20599);fill:#000000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round" />
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect20599);display:inline;fill:#000000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round" />
     <text
        xml:space="preserve"
        id="text29941"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect29943);fill:#000000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect29943);display:inline;fill:#000000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"
        transform="matrix(0.27887389,0,0,0.27887389,3.2770649,-0.61374399)"><tspan
          x="146.53711"
          y="77.943514"
-         id="tspan1397"><tspan
+         id="tspan38"><tspan
            style="font-weight:bold;font-size:34.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan1395">${title}</tspan></tspan></text>
+           id="tspan37">${title}</tspan></tspan></text>
   </g>
 </svg>

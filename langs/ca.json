@@ -186,10 +186,7 @@
             "includeMetaData": "Incloure metadades (darrer editor, valors calculats, ...)",
             "licenseInfo": "<h3>Avís de drets de còpia</h3>Les dades proveïdes estan sota ODbL. Es poden reutilitzar de forma gratuïta, però <ul><li>l'atribució a <b>© Contribuïdors d'OpenStreetMap</b> s'ha de mostrar</li><li> Qualsevol canvi s'ha de publicar sota la mateixa llicència</li></ul> Llegeix sencer <ahref=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">l'avís de drets de còpia</a> per més detalls.",
             "noDataLoaded": "No s'han carregat dades. La baixada estarà disponible aviat",
-            "pdf": {
-                "current_view_a3": "Exporta un PDF (A3, vertical) de la vista actual",
-                "current_view_a4": "Exporta un PDF (A4, horitzontal) de la vista actual"
-            },
+            "pdf": {},
             "title": "Descarrega",
             "uploadGpx": "Pujar la teva traça a OpenStreetMap"
         },
