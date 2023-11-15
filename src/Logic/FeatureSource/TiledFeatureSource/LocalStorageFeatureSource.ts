@@ -4,11 +4,12 @@ import { BBox } from "../../BBox"
 import TileLocalStorage from "../Actors/TileLocalStorage"
 import { Feature } from "geojson"
 import StaticFeatureSource from "../Sources/StaticFeatureSource"
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 
 export default class LocalStorageFeatureSource extends DynamicTileSource {
     constructor(
         backend: string,
-        layername: string,
+        layer: LayerConfig,
         zoomlevel: number,
         mapProperties: {
             bounds: Store<BBox>
@@ -19,6 +20,7 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
             maxAge?: number // In seconds
         }
     ) {
+        const layername = layer.id
         const storage = TileLocalStorage.construct<Feature[]>(
             backend,
             layername,
@@ -26,6 +28,7 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
         )
         super(
             zoomlevel,
+            layer.minzoom,
             (tileIndex) =>
                 new StaticFeatureSource(
                     storage.getTileSource(tileIndex).mapD((features) => {

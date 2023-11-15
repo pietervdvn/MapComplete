@@ -66,6 +66,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
         const blackList = new Set<string>()
         super(
             source.geojsonZoomLevel,
+            layer.minzoom,
             (zxy) => {
                 if (whitelist !== undefined) {
                     const isWhiteListed = whitelist.get(zxy[1])?.has(zxy[2])

@@ -11,6 +11,7 @@ import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
 export default class DynamicTileSource extends FeatureSourceMerger {
     constructor(
         zoomlevel: number,
+        minzoom: number,
         constructSource: (tileIndex) => FeatureSource,
         mapProperties: {
             bounds: Store<BBox>
@@ -26,6 +27,12 @@ export default class DynamicTileSource extends FeatureSourceMerger {
             mapProperties.bounds
                 .mapD(
                     (bounds) => {
+                        if (options?.isActive && !options?.isActive.data) {
+                            return undefined
+                        }
+                        if (mapProperties.zoom.data < minzoom) {
+                            return undefined
+                        }
                         const tileRange = Tiles.TileRangeBetween(
                             zoomlevel,
                             bounds.getNorth(),

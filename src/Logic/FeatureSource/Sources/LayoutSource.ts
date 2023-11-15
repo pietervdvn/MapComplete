@@ -39,7 +39,7 @@ export default class LayoutSource extends FeatureSourceMerger {
         const osmLayers = layers.filter((layer) => layer.source.geojsonSource === undefined)
         const fromCache = osmLayers.map(
             (l) =>
-                new LocalStorageFeatureSource(backend, l.id, 15, mapProperties, {
+                new LocalStorageFeatureSource(backend, l, 15, mapProperties, {
                     isActive: isDisplayed(l.id),
                     maxAge: l.maxAgeOfCache,
                 })
