@@ -1012,8 +1012,7 @@ export class SvgToPdf {
         | "poster_a2"
         | "current_view_a4"
         | "current_view_a3_portrait"
-        | "current_view_a3_landscape"
-        | "current_view_a2_landscape",
+        | "current_view_a3_landscape",
         PdfTemplateInfo
     > = {
         flyer_a4: {
