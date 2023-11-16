@@ -57,6 +57,7 @@ import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { Imgur } from "../Logic/ImageProviders/Imgur"
+import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSource"
 
 /**
  *
@@ -95,6 +96,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly indexedFeatures: IndexedFeatureSource & LayoutSource
     readonly currentView: FeatureSource<Feature<Polygon>>
     readonly featuresInView: FeatureSource
+    /**
+     * Contains a few (<10) >features that are near the center of the map.
+     */
+    readonly closestFeatures: FeatureSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
@@ -131,6 +136,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.map = new UIEventSource<MlMap>(undefined)
         const initial = new InitialMapPositioning(layout)
         this.mapProperties = new MapLibreAdaptor(this.map, initial)
+
         const geolocationState = new GeoLocationState()
 
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
@@ -234,6 +240,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 })
             )
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
+
             this.dataIsLoading = layoutSource.isLoading
 
             const indexedElements = this.indexedFeatures
@@ -331,7 +338,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
 
         this.perLayerFiltered = this.showNormalDataOn(this.map)
-
+        this.closestFeatures = new NearbyFeatureSource(
+            this.mapProperties.location,
+            this.perLayerFiltered,
+            3,
+            this.layerState,
+            this.mapProperties.zoom
+        )
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
             layout,
@@ -364,6 +377,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             return true
         })
     }
+
     public showNormalDataOn(map: Store<MlMap>): ReadonlyMap<string, FilteringFeatureSource> {
         const filteringFeatureSource = new Map<string, FilteringFeatureSource>()
         this.perLayer.forEach((fs, layerName) => {
@@ -404,6 +418,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
         return filteringFeatureSource
     }
 
+    public openNewDialog() {
+        this.selectedLayer.setData(undefined)
+        this.selectedElement.setData(undefined)
+
+        const { lon, lat } = this.mapProperties.location.data
+        const feature = this.lastClickObject.createFeature(lon, lat)
+        this.featureProperties.trackFeature(feature)
+        this.selectedElement.setData(feature)
+        this.selectedLayer.setData(this.newPointDialog.layerDef)
+    }
+
     /**
      * Various small methods that need to be called
      */
@@ -425,6 +450,21 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
     }
 
+    /**
+     * Selects the feature that is 'i' closest to the map center
+     * @param i
+     * @private
+     */
+    private selectClosestAtCenter(i: number = 0) {
+        const toSelect = this.closestFeatures.features.data[i]
+        if (!toSelect) {
+            return
+        }
+        const layer = this.layout.getMatchingLayer(toSelect.properties)
+        this.selectedElement.setData(undefined)
+        this.selectedLayer.setData(layer)
+        this.selectedElement.setData(toSelect)
+    }
     private initHotkeys() {
         Hotkeys.RegisterHotkey(
             { nomod: "Escape", onUp: true },
@@ -435,6 +475,36 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.focusOnMap()
             }
         )
+
+        this.mapProperties.lastKeyNavigation.addCallbackAndRunD((_) => {
+            Hotkeys.RegisterHotkey(
+                {
+                    nomod: " ",
+                    onUp: true,
+                },
+                Translations.t.hotkeyDocumentation.selectItem,
+                () => this.selectClosestAtCenter(0)
+            )
+            Hotkeys.RegisterHotkey(
+                {
+                    nomod: "Spacebar",
+                    onUp: true,
+                },
+                Translations.t.hotkeyDocumentation.selectItem,
+                () => this.selectClosestAtCenter(0)
+            )
+            for (let i = 1; i < 9; i++) {
+                Hotkeys.RegisterHotkey(
+                    {
+                        nomod: "" + i,
+                        onUp: true,
+                    },
+                    Translations.t.hotkeyDocumentation.selectItem,
+                    () => this.selectClosestAtCenter(i - 1)
+                )
+            }
+            return true // unregister
+        })
 
         this.featureSwitches.featureSwitchBackgroundSelection.addCallbackAndRun((enable) => {
             if (!enable) {
@@ -529,17 +599,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.selectedLayer.setData(this.newPointDialog.layerDef)
             },
         })
-    }
-
-    public openNewDialog() {
-        this.selectedLayer.setData(undefined)
-        this.selectedElement.setData(undefined)
-
-        const { lon, lat } = this.mapProperties.location.data
-        const feature = this.lastClickObject.createFeature(lon, lat)
-        this.featureProperties.trackFeature(feature)
-        this.selectedElement.setData(feature)
-        this.selectedLayer.setData(this.newPointDialog.layerDef)
     }
 
     /**

@@ -12,7 +12,7 @@ import { GlobalFilter } from "./GlobalFilter"
 
 export default class FilteredLayer {
     /**
-     * Wether or not the specified layer is shown
+     * Whether or not the specified layer is enabled by the user
      */
     readonly isDisplayed: UIEventSource<boolean>
     /**

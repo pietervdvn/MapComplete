@@ -9,7 +9,6 @@ import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
-import { draw } from "svelte/transition"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -41,6 +40,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
+    /**
+     * When was the last navigation by arrow keys?
+     * If set, this is a hint to use arrow compatibility
+     * Number of _seconds_ since epoch
+     */
+    readonly lastKeyNavigation: UIEventSource<number> = new UIEventSource<number>(undefined)
     private readonly _maplibreMap: Store<MLMap>
     /**
      * Used for internal bookkeeping (to remove a rasterLayer when done loading)
@@ -127,6 +132,16 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             })
             map.on("dblclick", (e) => {
                 handleClick(e)
+            })
+            map.getContainer().addEventListener("keydown", (event) => {
+                if (
+                    event.key === "ArrowRight" ||
+                    event.key === "ArrowLeft" ||
+                    event.key === "ArrowUp" ||
+                    event.key === "ArrowDown"
+                ) {
+                    this.lastKeyNavigation.setData(Date.now() / 1000)
+                }
             })
         })
 

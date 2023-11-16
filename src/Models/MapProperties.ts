@@ -14,6 +14,7 @@ export interface MapProperties {
     readonly allowRotating: UIEventSource<true | boolean>
     readonly lastClickLocation: Store<{ lon: number; lat: number }>
     readonly allowZooming: UIEventSource<true | boolean>
+    readonly lastKeyNavigation: UIEventSource<number>
 }
 
 export interface ExportableMap {

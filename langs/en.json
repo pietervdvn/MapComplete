@@ -404,6 +404,7 @@
         "key": "Key combination",
         "openLayersPanel": "Opens the layers and filters panel",
         "selectAerial": "Set the background to aerial or satellite imagery. Toggles between the two best, available layers",
+        "selectItem": "Select the POI which is closest to the map center (crosshair). Only when in keyboard navigation is used",
         "selectMap": "Set the background to a map from external sources. Toggles between the two best, available layers",
         "selectMapnik": "Set the background layer to OpenStreetMap-carto",
         "selectOsmbasedmap": "Set the background layer to on OpenStreetMap-based map (or disable the background raster layer)",
