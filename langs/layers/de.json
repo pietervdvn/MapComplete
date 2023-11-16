@@ -35,6 +35,16 @@
             "1": {
                 "title": "eine freistehende Posterbox"
             },
+            "10": {
+                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+                "title": "ein Schild"
+            },
+            "11": {
+                "title": "eine Skulptur"
+            },
+            "12": {
+                "title": "eine Wandmalerei"
+            },
             "2": {
                 "title": "eine wandmontierte Posterbox"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "ein Totem"
-            },
-            "10": {
-                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
-                "title": "ein Schild"
-            },
-            "11": {
-                "title": "eine Skulptur"
-            },
-            "12": {
-                "title": "eine Wandmalerei"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Dies ist ein Brett"
                     },
+                    "10": {
+                        "then": "Dies ist eine Wandmalerei"
+                    },
                     "2": {
                         "then": "Dies ist eine Litfaßsäule"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Dies ist ein Totem"
-                    },
-                    "10": {
-                        "then": "Dies ist eine Wandmalerei"
                     }
                 },
                 "question": "Welche Art von Werbung ist das?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Brett"
+                },
+                "10": {
+                    "then": "Wandmalerei"
                 },
                 "2": {
                     "then": "Posterbox"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Wandmalerei"
                 }
             }
         }
@@ -285,6 +285,7 @@
         }
     },
     "animal_shelter": {
+        "description": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. ",
         "name": "Tierheime",
         "presets": {
             "0": {
@@ -352,6 +353,15 @@
                     "1": {
                         "then": "Wandbild"
                     },
+                    "10": {
+                        "then": "Azulejo (spanische dekorative Fliesenarbeit)"
+                    },
+                    "11": {
+                        "then": "Fliesenarbeit"
+                    },
+                    "12": {
+                        "then": "Holzschnitzerei"
+                    },
                     "2": {
                         "then": "Malerei"
                     },
@@ -375,15 +385,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (spanische dekorative Fliesenarbeit)"
-                    },
-                    "11": {
-                        "then": "Fliesenarbeit"
-                    },
-                    "12": {
-                        "then": "Holzschnitzerei"
                     }
                 },
                 "question": "Um welche Art Kunstwerk handelt es sich?",
@@ -1869,6 +1870,15 @@
             "mappings": {
                 "0": {
                     "then": "<i>{name}</i>"
+                },
+                "1": {
+                    "then": "Bar"
+                },
+                "2": {
+                    "then": "Café"
+                },
+                "3": {
+                    "then": "Nachtclub"
                 }
             },
             "render": "Kneipe"
@@ -1932,6 +1942,27 @@
                     "1": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     },
+                    "10": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
+                    },
+                    "11": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS vonTesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
+                    },
+                    "12": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Anschluss"
+                    },
+                    "13": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
+                    },
+                    "14": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>USB</b>-Anschluss zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 3 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> und Kabel"
+                    },
+                    "16": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 5 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> und Kabel"
+                    },
                     "2": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
                     },
@@ -1955,27 +1986,6 @@
                     },
                     "9": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
-                    },
-                    "10": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
-                    },
-                    "11": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS vonTesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
-                    },
-                    "12": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Anschluss"
-                    },
-                    "13": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
-                    },
-                    "14": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>USB</b>-Anschluss zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 3 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> und Kabel"
-                    },
-                    "16": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 5 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> und Kabel"
                     }
                 }
             }
@@ -2031,30 +2041,6 @@
                     "1": {
                         "then": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)"
                     },
-                    "2": {
-                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
-                    },
-                    "3": {
-                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo-Anschluss</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo-Anschluss</b>"
-                    },
-                    "6": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>Typ 1 CCS</b> (Typ 1 Combo)"
                     },
@@ -2084,6 +2070,9 @@
                     },
                     "19": {
                         "then": "<b>Typ 2 mit Kabel</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)"
@@ -2115,11 +2104,32 @@
                     "29": {
                         "then": "<b> Bosch Active Connect mit 3 Pins </b> und Kabel"
                     },
+                    "3": {
+                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect mit 5 Pins</b> und Kabel"
                     },
                     "31": {
                         "then": "<b> Bosch Active Connect mit 5 Pins </b> und Kabel"
+                    },
+                    "4": {
+                        "then": "<b>Chademo-Anschluss</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo-Anschluss</b>"
+                    },
+                    "6": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
                     }
                 },
                 "question": "Welche Ladeanschlüsse gibt es hier?"
@@ -3657,6 +3667,15 @@
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
+                    "10": {
+                        "then": "Dieser Radweg besteht aus feinem Schotter"
+                    },
+                    "11": {
+                        "then": "Der Radweg ist aus Kies"
+                    },
+                    "12": {
+                        "then": "Dieser Radweg besteht aus Rohboden"
+                    },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
@@ -3680,15 +3699,6 @@
                     },
                     "9": {
                         "then": "Der Radweg ist aus Schotter"
-                    },
-                    "10": {
-                        "then": "Dieser Radweg besteht aus feinem Schotter"
-                    },
-                    "11": {
-                        "then": "Der Radweg ist aus Kies"
-                    },
-                    "12": {
-                        "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
                 "question": "Was ist der Belag dieses Radwegs?",
@@ -3737,6 +3747,15 @@
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
+                    "10": {
+                        "then": "Dieser Radweg besteht aus feinem Schotter"
+                    },
+                    "11": {
+                        "then": "Der Radweg ist aus Kies"
+                    },
+                    "12": {
+                        "then": "Dieser Radweg besteht aus Rohboden"
+                    },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
@@ -3760,15 +3779,6 @@
                     },
                     "9": {
                         "then": "Der Radweg ist aus Schotter"
-                    },
-                    "10": {
-                        "then": "Dieser Radweg besteht aus feinem Schotter"
-                    },
-                    "11": {
-                        "then": "Der Radweg ist aus Kies"
-                    },
-                    "12": {
-                        "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
                 "question": "Was ist der Belag dieser Straße?",
@@ -4215,6 +4225,7 @@
         "name": "Trinkwasserstellen",
         "presets": {
             "0": {
+                "description": "Typischerweise ein Trinkbrunnen, Wasserhahn, Brunnen oder eine natürliche Quelle",
                 "title": "eine Trinkwasserstelle"
             }
         },
@@ -4667,6 +4678,54 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Keine Bevorzugung von Hunden"
+                    },
+                    "1": {
+                        "question": "Hunde erlaubt"
+                    },
+                    "2": {
+                        "question": "Keine Hunde erlaubt"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Internetzugang vorhanden"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Stromanschluss vorhanden"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Hat zuckerfreie Angebote"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Hat glutenfreie Angebote"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Hat laktosefreie Angebote"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -4735,54 +4794,6 @@
                 "options": {
                     "0": {
                         "question": "Nutzung kostenlos"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Keine Bevorzugung von Hunden"
-                    },
-                    "1": {
-                        "question": "Hunde erlaubt"
-                    },
-                    "2": {
-                        "question": "Keine Hunde erlaubt"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Internetzugang vorhanden"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Stromanschluss vorhanden"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Hat zuckerfreie Angebote"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Hat glutenfreie Angebote"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Hat laktosefreie Angebote"
                     }
                 }
             }
@@ -4904,30 +4915,6 @@
                     "1": {
                         "then": "Die Fitness-Station hat ein Schild mit Anweisungen für eine bestimmte Übung."
                     },
-                    "2": {
-                        "then": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
-                    },
-                    "3": {
-                        "then": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
-                    },
-                    "4": {
-                        "then": "Die Fitness-Station hat Stangen zum Dehnen."
-                    },
-                    "5": {
-                        "then": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
-                    },
-                    "6": {
-                        "then": "Die Fitness-Station hat Ringe für Gymnastikübungen."
-                    },
-                    "7": {
-                        "then": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
-                    },
-                    "8": {
-                        "then": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
-                    },
-                    "9": {
-                        "then": "Die Fitness-Station hat Pfosten für Slalomübungen."
-                    },
                     "10": {
                         "then": "Die Fitness-Station hat Trittsteine."
                     },
@@ -4958,6 +4945,9 @@
                     "19": {
                         "then": "Die Fitness-Station hat Kampfseile (battle ropes)."
                     },
+                    "2": {
+                        "then": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
+                    },
                     "20": {
                         "then": "Die Fitness-Station hat ein Fahrradergometer."
                     },
@@ -4972,6 +4962,27 @@
                     },
                     "24": {
                         "then": "Die Fitness-Station hat eine Slackline."
+                    },
+                    "3": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
+                    },
+                    "4": {
+                        "then": "Die Fitness-Station hat Stangen zum Dehnen."
+                    },
+                    "5": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
+                    },
+                    "6": {
+                        "then": "Die Fitness-Station hat Ringe für Gymnastikübungen."
+                    },
+                    "7": {
+                        "then": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
+                    },
+                    "8": {
+                        "then": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
+                    },
+                    "9": {
+                        "then": "Die Fitness-Station hat Pfosten für Slalomübungen."
                     }
                 },
                 "question": "Welche Übungsgeräte gibt es an dieser Fitness-Station?"
@@ -5091,6 +5102,21 @@
                     "1": {
                         "then": "Dies ist eine Pommesbude"
                     },
+                    "10": {
+                        "then": "Hier werden chinesische Gerichte serviert"
+                    },
+                    "11": {
+                        "then": "Hier werden griechische Gerichte serviert"
+                    },
+                    "12": {
+                        "then": "Hier werden indische Gerichte serviert"
+                    },
+                    "13": {
+                        "then": "Hier werden türkische Gerichte serviert"
+                    },
+                    "14": {
+                        "then": "Hier werden thailändische Gerichte serviert"
+                    },
                     "2": {
                         "then": "Bietet vorwiegend Pastagerichte an"
                     },
@@ -5114,21 +5140,6 @@
                     },
                     "9": {
                         "then": "Hier werden französische Gerichte serviert"
-                    },
-                    "10": {
-                        "then": "Hier werden chinesische Gerichte serviert"
-                    },
-                    "11": {
-                        "then": "Hier werden griechische Gerichte serviert"
-                    },
-                    "12": {
-                        "then": "Hier werden indische Gerichte serviert"
-                    },
-                    "13": {
-                        "then": "Hier werden türkische Gerichte serviert"
-                    },
-                    "14": {
-                        "then": "Hier werden thailändische Gerichte serviert"
                     }
                 },
                 "question": "Was für Essen gibt es hier?",
@@ -5431,6 +5442,28 @@
                 "title": "ein Wegweiser"
             }
         },
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Wegweiser zeigt Fahrradrouten"
+                    },
+                    "1": {
+                        "then": "Dieser Wegweiser zeigt Wanderwege"
+                    },
+                    "2": {
+                        "then": "Dieser Wegweiser zeigt Mountainbike-Routen"
+                    },
+                    "3": {
+                        "then": "Dieser Wegweiser zeigt Reitwege"
+                    },
+                    "4": {
+                        "then": "Dieser Wegweiser zeigt Skirouten"
+                    }
+                },
+                "question": "Welche Arten von Routen werden auf diesem Wegweiser angezeigt?"
+            }
+        },
         "title": "Wegweiser"
     },
     "hackerspace": {
@@ -5687,6 +5720,30 @@
             }
         }
     },
+    "ice_cream": {
+        "description": "Ein Ort, an dem Eiscreme an der Theke verkauft wird",
+        "name": "Eisdielen",
+        "presets": {
+            "0": {
+                "description": "Ein Geschäft, in dem man nur Eiscreme und damit verbundene Artikel kaufen kann. Normalerweise wird das Eis mit der Hand portioniert.",
+                "title": "eine Eisdiele"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Wie heißt diese Eisdiele?",
+                "render": "Diese Eisdiele heißt <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Eisdiele"
+        }
+    },
     "icons": {
         "description": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
     },
@@ -5720,30 +5777,6 @@
                     "1": {
                         "then": "Dies ist ein Auditorium"
                     },
-                    "2": {
-                        "then": "Dies ist ein Schlafzimmer"
-                    },
-                    "3": {
-                        "then": "Dies ist eine Kapelle"
-                    },
-                    "4": {
-                        "then": "Dies ist ein Klassenzimmer"
-                    },
-                    "5": {
-                        "then": "Dies ist ein Klassenzimmer"
-                    },
-                    "6": {
-                        "then": "Dies ist ein Computerraum"
-                    },
-                    "7": {
-                        "then": "Dies ist ein Konferenzraum"
-                    },
-                    "8": {
-                        "then": "Dies ist eine Krypta"
-                    },
-                    "9": {
-                        "then": "Dies ist eine Küche"
-                    },
                     "10": {
                         "then": "Dies ist ein Labor"
                     },
@@ -5774,6 +5807,9 @@
                     "19": {
                         "then": "Dies ist ein Lagerraum"
                     },
+                    "2": {
+                        "then": "Dies ist ein Schlafzimmer"
+                    },
                     "20": {
                         "then": "Dies ist ein Technikraum"
                     },
@@ -5782,6 +5818,27 @@
                     },
                     "22": {
                         "then": "Dies ist ein Wartezimmer"
+                    },
+                    "3": {
+                        "then": "Dies ist eine Kapelle"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Klassenzimmer"
+                    },
+                    "5": {
+                        "then": "Dies ist ein Klassenzimmer"
+                    },
+                    "6": {
+                        "then": "Dies ist ein Computerraum"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Konferenzraum"
+                    },
+                    "8": {
+                        "then": "Dies ist eine Krypta"
+                    },
+                    "9": {
+                        "then": "Dies ist eine Küche"
                     }
                 },
                 "question": "Wie wird dieser Raum genutzt?"
@@ -6436,6 +6493,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Alle Notizen"
+                    },
+                    "1": {
+                        "question": "Importnotizen ausblenden"
+                    },
+                    "2": {
+                        "question": "Nur Importnotizen anzeigen"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -6489,19 +6559,6 @@
                 "options": {
                     "0": {
                         "question": "Nur offene Notizen anzeigen"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Alle Notizen"
-                    },
-                    "1": {
-                        "question": "Importnotizen ausblenden"
-                    },
-                    "2": {
-                        "question": "Nur Importnotizen anzeigen"
                     }
                 }
             }
@@ -6832,6 +6889,21 @@
                     "1": {
                         "then": "Dies ist ein normaler Stellplatz."
                     },
+                    "10": {
+                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
+                    },
+                    "11": {
+                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
+                    },
+                    "12": {
+                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
+                    },
+                    "13": {
+                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
+                    },
+                    "14": {
+                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
+                    },
                     "2": {
                         "then": "Dies ist ein Behindertenstellplatz."
                     },
@@ -6855,21 +6927,6 @@
                     },
                     "9": {
                         "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
-                    },
-                    "10": {
-                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
-                    },
-                    "11": {
-                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
-                    },
-                    "12": {
-                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
-                    },
-                    "13": {
-                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
-                    },
-                    "14": {
-                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
                     }
                 },
                 "question": "Welche Art von Stellplatz ist dies?"
@@ -7461,6 +7518,21 @@
                     "1": {
                         "then": "2-Cent-Münzen werden akzeptiert"
                     },
+                    "10": {
+                        "then": "20-Centime-Münzen werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "½-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "13": {
+                        "then": "2-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "14": {
+                        "then": "5-Schweizer Franken-Münzen werden akzeptiert"
+                    },
                     "2": {
                         "then": "5-Cent-Münzen werden akzeptiert"
                     },
@@ -7484,21 +7556,6 @@
                     },
                     "9": {
                         "then": "10-Centime-Münzen werden akzeptiert"
-                    },
-                    "10": {
-                        "then": "20-Centime-Münzen werden akzeptiert"
-                    },
-                    "11": {
-                        "then": "½-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "12": {
-                        "then": "1-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "13": {
-                        "then": "2-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "14": {
-                        "then": "5-Schweizer Franken-Münzen werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Münzen kann man hier bezahlen?"
@@ -7510,6 +7567,15 @@
                     },
                     "1": {
                         "then": "10-Euro-Scheine werden angenommen"
+                    },
+                    "10": {
+                        "then": "100-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "200-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1000-Schweizer Franken-Scheine werden akzeptiert"
                     },
                     "2": {
                         "then": "20-Euro-Scheine werden angenommen"
@@ -7534,15 +7600,6 @@
                     },
                     "9": {
                         "then": "50-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "10": {
-                        "then": "100-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "11": {
-                        "then": "200-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "12": {
-                        "then": "1000-Schweizer Franken-Scheine werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Banknoten kann man hier bezahlen?"
@@ -7851,6 +7908,23 @@
                 "question": "Wann wurde dieses Objekt zuletzt geprüft?",
                 "render": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>"
             },
+            "vegan": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort verkauft <b>nur vegane</b> Produkte"
+                    },
+                    "1": {
+                        "then": "Dieser Laden hat ein großes veganes Angebot"
+                    },
+                    "2": {
+                        "then": "Dieser Laden hat ein <b>begrenztes veganes</b> Angebot"
+                    },
+                    "3": {
+                        "then": "Dieser Laden bietet keine veganen Produkte an"
+                    }
+                },
+                "question": "Bietet dieser Ort eine vegane Option an?"
+            },
             "website": {
                 "question": "Wie lautet die Webseite von {title()}?"
             },
@@ -7976,30 +8050,6 @@
                     "1": {
                         "question": "Recycling von Batterien"
                     },
-                    "2": {
-                        "question": "Recycling von Getränkekartons"
-                    },
-                    "3": {
-                        "question": "Recycling von Dosen"
-                    },
-                    "4": {
-                        "question": "Recycling von Kleidung"
-                    },
-                    "5": {
-                        "question": "Recycling von Speiseöl"
-                    },
-                    "6": {
-                        "question": "Recycling von Motoröl"
-                    },
-                    "7": {
-                        "question": "Recycling von Leuchtstoffröhren"
-                    },
-                    "8": {
-                        "question": "Recycling von Grünabfällen"
-                    },
-                    "9": {
-                        "question": "Recycling von Glasflaschen"
-                    },
                     "10": {
                         "question": "Recycling von Glas"
                     },
@@ -8030,11 +8080,35 @@
                     "19": {
                         "question": "Recycling von Restabfällen"
                     },
+                    "2": {
+                        "question": "Recycling von Getränkekartons"
+                    },
                     "20": {
                         "question": "Recycling von Druckerpatronen"
                     },
                     "21": {
                         "question": "Recycling von Fahrrädern"
+                    },
+                    "3": {
+                        "question": "Recycling von Dosen"
+                    },
+                    "4": {
+                        "question": "Recycling von Kleidung"
+                    },
+                    "5": {
+                        "question": "Recycling von Speiseöl"
+                    },
+                    "6": {
+                        "question": "Recycling von Motoröl"
+                    },
+                    "7": {
+                        "question": "Recycling von Leuchtstoffröhren"
+                    },
+                    "8": {
+                        "question": "Recycling von Grünabfällen"
+                    },
+                    "9": {
+                        "question": "Recycling von Glasflaschen"
                     }
                 }
             },
@@ -8102,30 +8176,6 @@
                     "1": {
                         "then": "Getränkekartons können hier recycelt werden"
                     },
-                    "2": {
-                        "then": "Dosen können hier recycelt werden"
-                    },
-                    "3": {
-                        "then": "Kleidung kann hier recycelt werden"
-                    },
-                    "4": {
-                        "then": "Speiseöl kann hier recycelt werden"
-                    },
-                    "5": {
-                        "then": "Motoröl kann hier recycelt werden"
-                    },
-                    "6": {
-                        "then": "Hier können Leuchtstoffröhren recycelt werden"
-                    },
-                    "7": {
-                        "then": "Grünabfälle können hier recycelt werden"
-                    },
-                    "8": {
-                        "then": "Bio-Abfall kann hier recycelt werden"
-                    },
-                    "9": {
-                        "then": "Glasflaschen können hier recycelt werden"
-                    },
                     "10": {
                         "then": "Glas kann hier recycelt werden"
                     },
@@ -8156,6 +8206,9 @@
                     "19": {
                         "then": "Schuhe können hier recycelt werden"
                     },
+                    "2": {
+                        "then": "Dosen können hier recycelt werden"
+                    },
                     "20": {
                         "then": "Elektrokleingeräte können hier recycelt werden"
                     },
@@ -8170,6 +8223,27 @@
                     },
                     "24": {
                         "then": "Fahrräder können hier recycelt werden"
+                    },
+                    "3": {
+                        "then": "Kleidung kann hier recycelt werden"
+                    },
+                    "4": {
+                        "then": "Speiseöl kann hier recycelt werden"
+                    },
+                    "5": {
+                        "then": "Motoröl kann hier recycelt werden"
+                    },
+                    "6": {
+                        "then": "Hier können Leuchtstoffröhren recycelt werden"
+                    },
+                    "7": {
+                        "then": "Grünabfälle können hier recycelt werden"
+                    },
+                    "8": {
+                        "then": "Bio-Abfall kann hier recycelt werden"
+                    },
+                    "9": {
+                        "then": "Glasflaschen können hier recycelt werden"
                     }
                 },
                 "question": "Was kann hier recycelt werden?"
@@ -8217,6 +8291,41 @@
                 }
             },
             "render": "Recyclinganlage"
+        }
+    },
+    "route_marker": {
+        "description": "Routenmarkierungen sind kleine Markierungen, die häufig entlang offizieller Wander-/Rad-/Reit-/Skirouten zu finden sind, um die Richtung der Route anzuzeigen.",
+        "name": "Routenmarkierungen",
+        "presets": {
+            "0": {
+                "description": "Ein Routenmarker ist ein kleiner Marker, der oft entlang offizieller Wander-/Fahrrad-/Reit-/Skirouten zu finden ist, um die Richtung der Route anzuzeigen.",
+                "title": "ein Routenmarker"
+            }
+        },
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Routenmarker für eine Fahrradstrecke."
+                    },
+                    "1": {
+                        "then": "Dies ist ein Routenmarker für eine Wanderroute."
+                    },
+                    "2": {
+                        "then": "Dies ist ein Routenmarker für eine Mountainbikestrecke."
+                    },
+                    "3": {
+                        "then": "Dies ist ein Routenmarker für eine Reitroute."
+                    },
+                    "4": {
+                        "then": "Dies ist ein Routenmarker für eine Skiroute."
+                    }
+                },
+                "question": "Für welche Art von Route ist dieser Marker?"
+            }
+        },
+        "title": {
+            "render": "Routenmarker"
         }
     },
     "school": {
@@ -8429,6 +8538,20 @@
                     "render": "Das ist ein {shop}"
                 }
             },
+            "key_cutter": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Laden ist auch auf das Schlüsselschneiden spezialisiert"
+                    },
+                    "1": {
+                        "then": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an"
+                    },
+                    "2": {
+                        "then": "Dieser Laden bietet kein Schlüsselschneiden als Dienstleistung an"
+                    }
+                },
+                "question": "Bietet dieser Laden Schlüsselschneiden an?"
+            },
             "organic": {
                 "mappings": {
                     "0": {
@@ -8535,7 +8658,38 @@
     },
     "slow_roads": {
         "description": "Alle autofreien Straßen",
+        "name": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen",
         "tagRenderings": {
+            "explanation": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Wohnstraße"
+                    },
+                    "1": {
+                        "then": "Dies ist eine breite, autofreie Straße"
+                    },
+                    "2": {
+                        "then": "Dies ist ein Fußweg"
+                    },
+                    "3": {
+                        "then": "Dies ist ein schmaler Pfad"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Reitweg"
+                    },
+                    "5": {
+                        "then": "Dies ist eine Zufahrtsstraße"
+                    }
+                }
+            },
+            "slow_road_is_lit": {
+                "mappings": {
+                    "1": {
+                        "then": "Nicht beleuchtet"
+                    }
+                },
+                "question": "Ist diese Straße nachts beleuchtet?"
+            },
             "slow_roads-surface": {
                 "mappings": {
                     "0": {
@@ -8563,8 +8717,29 @@
                         "then": "Die Oberfläche ist <b>gepflastert</b>"
                     }
                 },
+                "question": "Welche Oberfläche hat diese Straße?",
                 "render": "Die Oberfläche ist <b>{surface}</b>"
             }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Fußweg"
+                },
+                "2": {
+                    "then": "Radweg"
+                },
+                "3": {
+                    "then": "Fußgängerzone"
+                },
+                "4": {
+                    "then": "Wohnstraße"
+                },
+                "5": {
+                    "then": "Schmaler Pfad"
+                }
+            },
+            "render": "Geschwindigkeitsreduzierte Straße"
         }
     },
     "speed_camera": {
@@ -8986,6 +9161,12 @@
                     "1": {
                         "then": "Diese Straßenlaterne verwendet LEDs"
                     },
+                    "10": {
+                        "then": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)"
+                    },
+                    "11": {
+                        "then": "Diese Straßenlaterne wird mit Gas beleuchtet"
+                    },
                     "2": {
                         "then": "Diese Straßenlaterne verwendet Glühlampenlicht"
                     },
@@ -9009,12 +9190,6 @@
                     },
                     "9": {
                         "then": "Diese Straßenlaterne verwendet Niederdruck-Natriumdampflampen (einfarbig orange)"
-                    },
-                    "10": {
-                        "then": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)"
-                    },
-                    "11": {
-                        "then": "Diese Straßenlaterne wird mit Gas beleuchtet"
                     }
                 },
                 "question": "Mit welcher Art von Beleuchtung arbeitet diese Straßenlaterne?"
@@ -9600,6 +9775,7 @@
         }
     },
     "trail": {
+        "description": "Markierte Wanderwege",
         "name": "Wanderwege",
         "tagRenderings": {
             "Color": {
@@ -9616,7 +9792,47 @@
                     "3": {
                         "then": "Gelber Weg"
                     }
-                }
+                },
+                "question": "Was ist die Referenzfarbe dieses Weges?",
+                "render": "Die Referenzfarbe ist {colour}"
+            },
+            "Name": {
+                "question": "Wie heißt dieser Weg?",
+                "render": "Dieser Weg heißt <b>{name}</b>"
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Weg wird von Natuurpunt gepflegt"
+                    },
+                    "1": {
+                        "then": "Dieser Weg wird von {operator} gepflegt"
+                    }
+                },
+                "question": "Wer pflegt diesen Weg?",
+                "render": "Dieser Weg wird von {operator} gepflegt"
+            },
+            "Wheelchair access": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Weg ist rollstuhlgerecht"
+                    },
+                    "1": {
+                        "then": "Dieser Weg ist nicht rollstuhlgerecht"
+                    }
+                },
+                "question": "Ist dieser Weg rollstuhlgerecht?"
+            },
+            "pushchair access": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Weg ist mit einem Kinderwagen zugänglich"
+                    },
+                    "1": {
+                        "then": "Dieser Weg ist nicht mit einem Kinderwagen zugänglich"
+                    }
+                },
+                "question": "Ist dieser Weg mit einem Kinderwagen zugänglich?"
             },
             "trail-length": {
                 "render": "Der Wanderweg ist {_length:km} Kilometer lang"
@@ -10151,30 +10367,6 @@
                     "1": {
                         "question": "Verkauf von Getränken"
                     },
-                    "2": {
-                        "question": "Verkauf von Süßigkeiten"
-                    },
-                    "3": {
-                        "question": "Verkauf von Lebensmitteln"
-                    },
-                    "4": {
-                        "question": "Verkauf von Zigaretten"
-                    },
-                    "5": {
-                        "question": "Verkauf von Kondomen"
-                    },
-                    "6": {
-                        "question": "Verkauf von Kaffee"
-                    },
-                    "7": {
-                        "question": "Verkauf von Trinkwasser"
-                    },
-                    "8": {
-                        "question": "Verkauf von Zeitungen"
-                    },
-                    "9": {
-                        "question": "Verkauf von Fahrradschläuchen"
-                    },
                     "10": {
                         "question": "Verkauf von Milch"
                     },
@@ -10205,6 +10397,9 @@
                     "19": {
                         "question": "Verkauf von Blumen"
                     },
+                    "2": {
+                        "question": "Verkauf von Süßigkeiten"
+                    },
                     "20": {
                         "question": "Verkauf von Parkscheinen"
                     },
@@ -10228,6 +10423,27 @@
                     },
                     "27": {
                         "question": "Verkauf von Fahrradschlössern"
+                    },
+                    "3": {
+                        "question": "Verkauf von Lebensmitteln"
+                    },
+                    "4": {
+                        "question": "Verkauf von Zigaretten"
+                    },
+                    "5": {
+                        "question": "Verkauf von Kondomen"
+                    },
+                    "6": {
+                        "question": "Verkauf von Kaffee"
+                    },
+                    "7": {
+                        "question": "Verkauf von Trinkwasser"
+                    },
+                    "8": {
+                        "question": "Verkauf von Zeitungen"
+                    },
+                    "9": {
+                        "question": "Verkauf von Fahrradschläuchen"
                     }
                 }
             }
@@ -10274,30 +10490,6 @@
                     "1": {
                         "then": "Süßigkeiten werden verkauft"
                     },
-                    "2": {
-                        "then": "Lebensmittel werden verkauft"
-                    },
-                    "3": {
-                        "then": "Zigaretten werden verkauft"
-                    },
-                    "4": {
-                        "then": "Kondome werden verkauft"
-                    },
-                    "5": {
-                        "then": "Kaffee wird verkauft"
-                    },
-                    "6": {
-                        "then": "Trinkwasser wird verkauft"
-                    },
-                    "7": {
-                        "then": "Zeitungen werden verkauft"
-                    },
-                    "8": {
-                        "then": "Fahrradschläuche werden verkauft"
-                    },
-                    "9": {
-                        "then": "Milch wird verkauft"
-                    },
                     "10": {
                         "then": "Brot wird verkauft"
                     },
@@ -10328,6 +10520,9 @@
                     "19": {
                         "then": "Parkscheine werden verkauft"
                     },
+                    "2": {
+                        "then": "Lebensmittel werden verkauft"
+                    },
                     "20": {
                         "then": "Souvenirmünzen werden verkauft"
                     },
@@ -10348,6 +10543,27 @@
                     },
                     "26": {
                         "then": "Fahrradschlösser werden verkauft"
+                    },
+                    "3": {
+                        "then": "Zigaretten werden verkauft"
+                    },
+                    "4": {
+                        "then": "Kondome werden verkauft"
+                    },
+                    "5": {
+                        "then": "Kaffee wird verkauft"
+                    },
+                    "6": {
+                        "then": "Trinkwasser wird verkauft"
+                    },
+                    "7": {
+                        "then": "Zeitungen werden verkauft"
+                    },
+                    "8": {
+                        "then": "Fahrradschläuche werden verkauft"
+                    },
+                    "9": {
+                        "then": "Milch wird verkauft"
                     }
                 },
                 "question": "Was wird in diesem Automaten verkauft?",
