@@ -461,5 +461,9 @@
         }
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
 }
