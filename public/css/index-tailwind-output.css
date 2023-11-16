@@ -848,18 +848,9 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mx-12 {
   margin-left: 3rem;
   margin-right: 3rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .mr-2 {
@@ -888,6 +879,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1606,6 +1601,10 @@ video {
   border-style: dashed;
 }
 
+.border-dotted {
+  border-style: dotted;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1619,6 +1618,11 @@ video {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 .border-gray-600 {
@@ -2506,8 +2510,16 @@ select:hover {
 
 .subtle {
   /* For all information that is not important for 99% of the users */
-  color: #999;
+  color: #666;
   font-weight: normal;
+}
+
+.low-interaction .subtle {
+  color: #444;
+}
+
+.interactive .subtle {
+  color: #333;
 }
 
 .link-underline .subtle a {
@@ -2756,6 +2768,10 @@ a.link-underline {
 
   .sm\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .sm\:mr-4 {
+    margin-right: 1rem;
   }
 
   .sm\:mr-2 {

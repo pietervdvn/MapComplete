@@ -438,8 +438,16 @@ select:hover {
 
 .subtle {
     /* For all information that is not important for 99% of the users */
-    color: #999;
+    color: #666;
     font-weight: normal;
+}
+
+.low-interaction .subtle {
+    color: #444;
+}
+
+.interactive .subtle {
+    color: #333;
 }
 
 .link-underline .subtle a {

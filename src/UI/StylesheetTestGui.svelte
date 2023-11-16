@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Svg from "../Svg"
-  import Loading from "./Base/Loading.svelte"
-  import ToSvelte from "./Base/ToSvelte.svelte"
+  import Svg from "../Svg";
+  import Loading from "./Base/Loading.svelte";
+  import ToSvelte from "./Base/ToSvelte.svelte";
 </script>
 
 <div>
@@ -15,7 +15,8 @@
     <span class="literal-code">normal-background</span>
     -style which is used if there is nothing special going on. Some general information, with at most
     <a href="https://example.com" target="_blank">a link to someplace</a>
-    .
+    <div class="subtle">Subtle</div>
+
     <div class="alert">Alert: something went wrong</div>
     <div class="warning">Warning</div>
     <div class="information">Some important information</div>
@@ -35,6 +36,7 @@
     <div class="border-interactive interactive">
       Highly interactive area (mostly: active question)
     </div>
+    <div class="subtle">Subtle</div>
 
     <div class="flex">
       <button class="primary">
@@ -53,6 +55,7 @@
 
       <button class="small primary">Small button</button>
       <button class="small primary disabled">Small, disabled button</button>
+
     </div>
     <div class="flex">
       <button>
@@ -99,6 +102,7 @@
       There are <span class="literal-code">interactive</span>
       areas, where many buttons and input elements will appear.
     </p>
+    <div class="subtle">Subtle</div>
 
     <div class="flex">
       <button class="primary">
@@ -114,6 +118,7 @@
         Small button
       </button>
     </div>
+
     <div class="flex">
       <button>
         <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
