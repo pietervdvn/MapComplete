@@ -11,6 +11,9 @@ import { ImmutableStore } from "../Logic/UIEventSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { QueryParameters } from "../Logic/Web/QueryParameters"
 import { OsmConnectionFeatureSwitches } from "../Logic/State/FeatureSwitchState"
+import { SubtleButton } from "./Base/SubtleButton"
+import Svg from "../Svg"
+import Link from "./Base/Link"
 
 export default class AllThemesGui {
     setup() {
@@ -35,10 +38,20 @@ export default class AllThemesGui {
             new Combine([
                 intro,
                 new MoreScreen(state, true),
-                new LoginToggle(undefined, Translations.t.index.logIn, {
-                    osmConnection,
-                    featureSwitchUserbadge: new ImmutableStore(true),
-                }).SetClass("flex justify-center w-full"),
+                new LoginToggle(
+                    new Link(
+                        new Combine([
+                            Svg.pencil_svg().SetClass("w-6 h-6 mr-2"),
+                            Translations.t.general.morescreen.createYourOwnTheme,
+                        ]).SetClass("flex p-2"),
+                        window.location.protocol + "//" + window.location.host + "/studio.html"
+                    ).SetClass("w-full h-fit button"),
+                    Translations.t.index.logIn,
+                    {
+                        osmConnection,
+                        featureSwitchUserbadge: new ImmutableStore(true),
+                    }
+                ).SetClass("flex justify-center w-full"),
                 Translations.t.general.aboutMapComplete.intro.SetClass("link-underline"),
                 new FixedUiElement("v" + Constants.vNumber).SetClass("block"),
             ])

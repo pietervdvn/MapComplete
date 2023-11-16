@@ -26,6 +26,9 @@
   import EditTheme from "./Studio/EditTheme.svelte"
   import * as meta from "../../package.json"
   import Checkbox from "./Base/Checkbox.svelte"
+  import { Utils } from "../Utils";
+  import Translations from "./i18n/Translations";
+  import Tr from "./Base/Tr.svelte";
 
   export let studioUrl =
     window.location.hostname === "127.0.0.2"
@@ -184,15 +187,19 @@
           >
             Create a new theme
           </NextButton>
-          <NextButton
-            clss="small"
+          <button
+            class="small"
             on:click={() => {
               showIntro.setData("intro")
             }}
           >
             <QuestionMarkCircleIcon class="h-6 w-6" />
             Show the introduction again
-          </NextButton>
+          </button>
+          <a class="flex button" href={Utils.HomepageLink()}>
+            <img class="h-6 w-6" src="./assets/svg/add.svg" />
+            <Tr t={Translations.t.general.backToIndex} />
+          </a>
         </div>
         <div>
           <Checkbox selected={expertMode}>Enable more options (expert mode)</Checkbox>
