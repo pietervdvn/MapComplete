@@ -780,7 +780,7 @@
                 },
                 "question": "¿Este banco tiene una inscripción?",
                 "questionHint": "Por ejemplo, en una placa montada, en el respaldo, …",
-                "render": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscripción}</i></p>"
+                "render": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
                 "mappings": {
