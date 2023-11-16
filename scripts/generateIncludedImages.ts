@@ -52,7 +52,13 @@ function genImages(dryrun = false) {
         const nameUC = name.toUpperCase().at(0) + name.substring(1)
         const svelteCode =
             '<script>\nexport let color = "#000000"\n</script>\n' +
-            svg.replace(/\\"/g, '"').replace(/(rgb\(0%,0%,0%\)|#000000|#000)/g, "{color}")
+            svg
+                .replace(
+                    "<svg ",
+                    "<svg {...$$$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown "
+                )
+                .replace(/\\"/g, '"')
+                .replace(/(rgb\(0%,0%,0%\)|#000000|#000)/g, "{color}")
         fs.writeFileSync("./src/assets/svg/" + nameUC + ".svelte", svelteCode, "utf8")
     }
     module += `public static All = {${allNames.join(",")}};`
