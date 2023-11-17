@@ -29,7 +29,7 @@ Note that this also works withing predifined options
 
 # Special values
 
-Special components can be summoned by calling them. For example, the relevant wikipedia will be displayed by entering the text `{wikipedia()}`. A table with opening hours is displayed with `{opening_hours()}`. For a full reference, [see the documentation](../SpecialRenderings.md).
+Special components can be summoned by calling them. For example, the relevant wikipedia will be displayed by entering the text `{wikipedia()}`. A table with opening hours is displayed with `{opening_hours()}`. For a full reference, [see the documentation](https://github.com/pietervdvn/MapComplete/blob/master/Docs/SpecialRenderings.md).
 
 # Requesting data with predefined options
 
