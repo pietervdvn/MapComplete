@@ -1,9 +1,16 @@
 {
     "centerMessage": {
         "loadingData": "Caricamento dei dati…",
+        "noData": "Nessuna feature rilevante nella vista corrente",
         "ready": "Finito!",
         "retrying": "Caricamento dei dati fallito. Nuovo tentativo tra {count} secondi…",
         "zoomIn": "Ingrandisci la mappa per vedere e modificare i dati"
+    },
+    "communityIndex": {
+        "available": "Questa comunità parla {native}",
+        "intro": "Contatta altre persone per conoscerle, imparare da loro, …",
+        "notAvailable": "Questa comunità non parla {native}",
+        "title": "Entra in contatto con altri"
     },
     "delete": {
         "cancel": "Annulla",

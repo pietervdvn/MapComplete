@@ -254,7 +254,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         )
         let badges = undefined
         if (options?.includeBadges ?? true) {
-            badges = this.GetBadges(tags, options.metatags)
+            badges = this.GetBadges(tags, options?.metatags)
         }
         const iconAndBadges = new Combine([icon, badges]).SetClass("block relative")
 

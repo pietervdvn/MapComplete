@@ -534,6 +534,15 @@
                         "render": "Fahrrad-Wegweiser"
                     }
                 }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten"
+                        }
+                    }
+                }
             }
         },
         "title": "Fahrrad-Knotenpunktnetzwerke"
@@ -854,6 +863,10 @@
         "description": "Auf dieser Karte finden Sie Hotels in Ihrer Nähe",
         "title": "Hotels"
     },
+    "icecream": {
+        "description": "Eine Karte, die Eisdielen und Eisautomaten zeigt",
+        "title": "Eiscreme"
+    },
     "indoors": {
         "description": "Diese Karte zeigt öffentlich zugängliche Innenräume",
         "title": "Innenräume"
@@ -1011,6 +1024,33 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1052,33 +1092,6 @@
             "8": {
                 "override": {
                     "name": "Barrierefreie Parkplätze"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1240,10 +1253,6 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
-            },
             "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1275,6 +1284,10 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"
@@ -1358,6 +1371,7 @@
         "title": "Verkaufsautomaten"
     },
     "walkingnodes": {
+        "description": "Diese Karte zeigt Wandernetzwerke und ermöglicht es Ihnen, einfach neue Knoten hinzuzufügen",
         "layers": {
             "0": {
                 "name": "Knotenpunktverbindungen",
@@ -1379,9 +1393,57 @@
                 }
             },
             "1": {
-                "name": "Knotenpunkte"
+                "name": "Knotenpunkte",
+                "presets": {
+                    "0": {
+                        "title": "ein Wanderknoten"
+                    }
+                },
+                "tagRenderings": {
+                    "node-expected_rwn_route_relations": {
+                        "freeform": {
+                            "placeholder": "z.B. 3"
+                        },
+                        "question": "Mit wie vielen anderen Wanderknoten ist dieser Knoten verbunden?",
+                        "render": "Dieser Knoten ist mit {expected_rwn_route_relations} anderen Wanderknoten verbunden."
+                    },
+                    "node-rwn_ref": {
+                        "freeform": {
+                            "placeholder": "z.B. 1"
+                        },
+                        "question": "Was ist die Referenznummer dieses Wanderknotens?",
+                        "render": "Dieser Wanderknoten hat die Referenznummer {rwn_ref}"
+                    },
+                    "survey_date": {
+                        "override": {
+                            "question": "Wann wurde dieser Wanderknoten zuletzt überprüft?",
+                            "render": "Dieser Wanderknoten wurde zuletzt am {survey:date} überprüft"
+                        }
+                    }
+                },
+                "title": {
+                    "render": "Wanderknoten <strong>{rwn_ref}</strong>"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Wanderwegweiser",
+                    "title": {
+                        "render": "Wanderwegweiser"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten"
+                        }
+                    }
+                }
             }
-        }
+        },
+        "title": "Netzwerke von Wanderknoten"
     },
     "walls_and_buildings": {
         "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
