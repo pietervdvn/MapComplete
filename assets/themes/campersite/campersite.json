@@ -84,7 +84,7 @@
         "eu": "Akanpatzeko tokiak",
         "pl": "Miejsca kamperowe"
       },
-      "minzoom": 10,
+      "minzoom": 7,
       "source": {
         "osmTags": {
           "and": [
@@ -967,7 +967,7 @@
         "es": "Estaciones sanitarias",
         "pl": "Stacje zrzutów sanitarnych"
       },
-      "minzoom": 10,
+      "minzoom": 7,
       "source": {
         "osmTags": {
           "and": [

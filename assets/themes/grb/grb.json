@@ -785,7 +785,7 @@
     }
   ],
   "overrideAll": {
-    "minzoom": 18
+    "minzoom": 17
   },
   "widenFactor": 2,
   "overpassMaxZoom": 15,

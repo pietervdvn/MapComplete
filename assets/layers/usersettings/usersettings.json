@@ -372,7 +372,7 @@
       "mappings": [
         {
           "if": "mapcomplete-show_crosshair=yes",
-          "then": "Show a crosshair in the center of the map (when zoomed in above level 17)"
+          "then": "Show a crosshair in the center of the map when zoomed in above level 17"
         },
         {
           "if": "mapcomplete-show_crosshair=no",
@@ -382,6 +382,10 @@
           "if": "mapcomplete-show_crosshair=",
           "then": "Do not show a crosshair in the center of the map",
           "hideInAnswer": true
+        },
+        {
+          "if": "mapcomplete-show_crosshair=always",
+          "then": "Always show a crosshair in the center of the map"
         }
       ]
     },
