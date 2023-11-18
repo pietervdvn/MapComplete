@@ -433,7 +433,7 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(AddNewPoint, {
                         state,
                         coordinate: { lon, lat },
-                    }).SetClass("w-full h-full")
+                    }).SetClass("w-full h-full overflow-auto")
                 },
             },
             {
