@@ -88,7 +88,7 @@ export interface SpecialVisualization {
     readonly funcName: string
     readonly docs: string | BaseUIElement
     readonly example?: string
-    readonly needsUrls: string[]
+    readonly needsUrls: string[] | ((args: string[]) => string)
 
     /**
      * Indicates that this special visualisation will make requests to the 'alLNodesDatabase' and that it thus should be included

@@ -15,6 +15,7 @@ import { ImmutableStore } from "../src/Logic/UIEventSource"
 import * as crypto from "crypto"
 import * as eli from "../src/assets/editor-layer-index.json"
 import * as eli_global from "../src/assets/global-raster-layers.json"
+import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtils"
 
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
@@ -264,6 +265,7 @@ async function eliUrls(): Promise<string[]> {
 
 async function generateCsp(
     layout: LayoutConfig,
+    layoutJson: LayoutConfigJson,
     options: {
         scriptSrcs: string[]
     }
@@ -275,9 +277,20 @@ async function generateCsp(
         Constants.nominatimEndpoint,
         "https://api.openstreetmap.org",
         "https://pietervdvn.goatcounter.com",
-    ]
-        .concat(...SpecialVisualizations.specialVisualizations.map((sv) => sv.needsUrls))
-        .concat(...(await eliUrls()))
+    ].concat(...(await eliUrls()))
+
+    const usedSpecialVisualisations = ValidationUtils.getSpecialVisualisationsWithArgs(layoutJson)
+    for (const usedSpecialVisualisation of usedSpecialVisualisations) {
+        if (typeof usedSpecialVisualisation === "string") {
+            continue
+        }
+        const neededUrls = usedSpecialVisualisation.func.needsUrls
+        if (typeof neededUrls === "function") {
+            apiUrls.push(...neededUrls(usedSpecialVisualisation.args))
+        } else {
+            apiUrls.push(...neededUrls)
+        }
+    }
 
     const geojsonSources: string[] = layout.layers.map((l) => l.source?.geojsonSource)
     const hosts = new Set<string>()
@@ -299,6 +312,10 @@ async function generateCsp(
         }
     }
 
+    if (hosts.has("*")) {
+        throw "* is not allowed as connect-src"
+    }
+
     const connectSrc = Array.from(hosts).sort()
 
     const newSrcs = connectSrc.filter((newItem) => !previousSrc.has(newItem))
@@ -317,7 +334,7 @@ async function generateCsp(
         "default-src": "'self'",
         "child-src": "'self' blob: ",
         "img-src": "* data:", // maplibre depends on 'data:' to load
-        "connect-src": connectSrc.join(" "),
+        "connect-src": onnectSrc.join(" "),
         "report-to": "https://report.mapcomplete.org/csp",
         "worker-src": "'self' blob:", // Vite somehow loads the worker via a 'blob'
         "style-src": "'self' 'unsafe-inline'", // unsafe-inline is needed to change the default background pin colours
@@ -344,7 +361,13 @@ const removeOtherLanguagesHash = crypto
     .update(removeOtherLanguages)
     .digest("base64")
 
-async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
+async function createLandingPage(
+    layout: LayoutConfig,
+    layoutJson: LayoutConfigJson,
+    manifest,
+    whiteIcons,
+    alreadyWritten
+) {
     Locale.language.setData(layout.language[0])
     const targetLanguage = layout.language[0]
     const ogTitle = Translations.T(layout.title).textFor(targetLanguage).replace(/"/g, '\\"')
@@ -428,7 +451,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
         .replace(
             /<!-- CSP -->/,
-            await generateCsp(layout, {
+            await generateCsp(layout, layoutJson, {
                 scriptSrcs: [`'sha256-${removeOtherLanguagesHash}'`],
             })
         )
@@ -518,7 +541,13 @@ async function main(): Promise<void> {
         writeFile("public/" + manifestLocation, manif, err)
 
         // Create a landing page for the given theme
-        const landing = await createLandingPage(layout, manifest, whiteIcons, alreadyWritten)
+        const landing = await createLandingPage(
+            layout,
+            layoutConfigJson,
+            manifest,
+            whiteIcons,
+            alreadyWritten
+        )
 
         writeFile(enc(layout.id) + ".html", landing, err)
         await createIndexFor(layout)

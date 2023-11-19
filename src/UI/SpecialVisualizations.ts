@@ -1454,7 +1454,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 docs: "Shows events that are happening based on a Giggity URL",
-                needsUrls: ["*"],
+                needsUrls: (args) => args[0],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
