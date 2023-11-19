@@ -999,7 +999,7 @@ class SvgToPdfPage {
 
 export interface PdfTemplateInfo {
     pages: string[]
-    description: string | Translation
+    description?: string | Translation
     format: "a3" | "a4" | "a2"
     orientation: "portrait" | "landscape"
     isPublic: boolean
@@ -1043,22 +1043,18 @@ export class SvgToPdf {
             format: "a4",
             orientation: "landscape",
             pages: ["./assets/templates/CurrentMapWithHeaderA4.svg"],
-            description: Translations.t.general.download.pdf.current_view_a4,
-
             isPublic: true,
         },
         current_view_a3_landscape: {
             format: "a3",
             orientation: "landscape",
             pages: ["./assets/templates/CurrentMapWithHeader_A3_Landscape.svg"],
-            description: Translations.t.general.download.pdf.current_view_a3,
             isPublic: true,
         },
         current_view_a3_portrait: {
             format: "a3",
             orientation: "portrait",
             pages: ["./assets/templates/CurrentMapWithHeader_A3_Portrait.svg"],
-            description: Translations.t.general.download.pdf.current_view_a3,
             isPublic: true,
         },
     }

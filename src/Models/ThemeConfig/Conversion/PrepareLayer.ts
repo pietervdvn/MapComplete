@@ -1193,6 +1193,32 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 }
 
+export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super(
+            "Adds the 'rating'-element if a reviews-element is used in the tagRenderings",
+            ["titleIcons"],
+            "AddRatingBadge"
+        )
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        if (!json.tagRenderings) {
+            return json
+        }
+
+        const specialVis: RenderingSpecification[] = ValidationUtils.getAllSpecialVisualisations(
+            <QuestionableTagRenderingConfigJson[]>json.tagRenderings
+        )
+
+        const calledFuncs = new Set<string>(specialVis.map((rs) => rs["func"]))
+        if (calledFuncs.has("list_reviews")) {
+            ;(<(string | TagRenderingConfigJson)[]>json.titleIcons).push("ratings")
+        }
+        return json
+    }
+}
+
 export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
@@ -1223,6 +1249,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) =>
                     new Concat(new ExpandTagRendering(state, layer, { noHardcodedStrings: true }))
             ),
+            new AddRatingBadge(),
             new ExpandFilter(state)
         )
     }

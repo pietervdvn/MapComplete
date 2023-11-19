@@ -78,7 +78,6 @@ export default class Locale {
             Locale.showLinkToWeblate.setData(Locale.showLinkToWeblate.data || tr)
         })
 
-        console.log("Initial language:", source, source.data)
         return source
     }
 }

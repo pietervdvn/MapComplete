@@ -110,7 +110,7 @@ export class DoesImageExist extends DesugaringStep<string> {
                 )
             } else if (!this.doesPathExist(image)) {
                 context.err(
-                    `Image with path ${image} does not exist; it is used in ${context}.\n     Check for typo's and missing directories in the path.`
+                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path.`
                 )
             } else {
                 context.err(

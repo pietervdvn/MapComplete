@@ -19,6 +19,9 @@
   import Teardrop from "../../assets/svg/Teardrop.svelte"
   import Teardrop_with_hole_green from "../../assets/svg/Teardrop_with_hole_green.svelte"
   import Triangle from "../../assets/svg/Triangle.svelte"
+  import Brick_wall_square from "../../assets/svg/Brick_wall_square.svelte";
+  import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte";
+  import Gps_arrow from "../../assets/svg/Gps_arrow.svelte";
 
   /**
    * Renders a single icon.
@@ -72,6 +75,22 @@
       <Teardrop_with_hole_green {color} />
     {:else if icon === "triangle"}
       <Triangle {color} />
+    {:else if icon === "brick_wall_square"}
+      <Brick_wall_square {color} />
+    {:else if icon === "brick_wall_round"}
+      <Brick_wall_round {color} />
+    {:else if icon === "gps_arrow"}
+      <Gps_arrow {color} />
+    {:else if icon === "checkmark"}
+      <Checkmark {color} />
+    {:else if icon === "help"}
+      <Help {color} />
+    {:else if icon === "clock"}
+      <Clock {color} />
+    {:else if icon === "close"}
+      <Close {color} />
+    {:else if icon === "invalid"}
+      <Invalid {color} />
     {:else}
       <img class="h-full w-full" src={icon} />
     {/if}

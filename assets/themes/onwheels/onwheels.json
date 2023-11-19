@@ -467,7 +467,7 @@
             ],
             "marker": [
               {
-                "icon": "statistics"
+                "icon": "./assets/svg/statistics.svg"
               }
             ]
           }

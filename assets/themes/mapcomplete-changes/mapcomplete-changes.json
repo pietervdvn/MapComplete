@@ -604,7 +604,7 @@
             ],
             "marker": [
               {
-                "icon": "statistics:black"
+                "icon": "./assets/svg/statistics.svg"
               }
             ],
             "iconSize": "30,30",
