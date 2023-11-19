@@ -92,7 +92,7 @@ export class DoesImageExist extends DesugaringStep<string> {
             return image
         }
         if (image.match(/[a-z]*/)) {
-            if (Svg.All[image + ".svg"] !== undefined) {
+            if (Constants.defaultPinIcons.indexOf(image) >= 0) {
                 // This is a builtin img, e.g. 'checkmark' or 'crosshair'
                 return image
             }

@@ -29,6 +29,7 @@
   import { Utils } from "../Utils";
   import Translations from "./i18n/Translations";
   import Tr from "./Base/Tr.svelte";
+  import Add from "../assets/svg/Add.svelte";
 
   export let studioUrl =
     window.location.hostname === "127.0.0.2"
@@ -197,7 +198,7 @@
             Show the introduction again
           </button>
           <a class="flex button" href={Utils.HomepageLink()}>
-            <img class="h-6 w-6" src="./assets/svg/add.svg" />
+            <Add class="h-6 w-6" />
             <Tr t={Translations.t.general.backToIndex} />
           </a>
         </div>

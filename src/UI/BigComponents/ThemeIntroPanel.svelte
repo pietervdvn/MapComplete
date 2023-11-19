@@ -15,6 +15,7 @@
   import If from "../Base/If.svelte"
   import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
   import type { Readable } from "svelte/store"
+  import Add from "../../assets/svg/Add.svelte";
 
   /**
    * The theme introduction panel
@@ -156,7 +157,7 @@
   <div class="links-as-button links-w-full m-2 flex flex-col gap-y-1">
     <!-- bottom buttons, a bit hidden away: switch layout -->
     <a class="flex" href={Utils.HomepageLink()}>
-      <img class="h-6 w-6" src="./assets/svg/add.svg" />
+      <Add  class="h-6 w-6"/>
       <Tr t={Translations.t.general.backToIndex} />
     </a>
   </div>

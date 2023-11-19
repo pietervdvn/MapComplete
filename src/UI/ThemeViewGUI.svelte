@@ -43,18 +43,25 @@
   import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
   import IfHidden from "./Base/IfHidden.svelte";
   import { onDestroy } from "svelte";
-  import { OpenJosm } from "./BigComponents/OpenJosm";
   import MapillaryLink from "./BigComponents/MapillaryLink.svelte";
   import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
   import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte";
   import StateIndicator from "./BigComponents/StateIndicator.svelte";
-  import Locale from "./i18n/Locale";
   import ShareScreen from "./BigComponents/ShareScreen.svelte";
   import UploadingImageCounter from "./Image/UploadingImageCounter.svelte";
   import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte";
   import Cross from "../assets/svg/Cross.svelte";
   import Summary from "./BigComponents/Summary.svelte";
   import LanguagePicker from "./InputElement/LanguagePicker.svelte";
+  import Mastodon from "../assets/svg/Mastodon.svelte";
+  import Bug from "../assets/svg/Bug.svelte";
+  import Liberapay from "../assets/svg/Liberapay.svelte";
+  import OpenJosm from "./Base/OpenJosm.svelte";
+  import Min from "../assets/svg/Min.svelte";
+  import Plus from "../assets/svg/Plus.svelte";
+  import Filter from "../assets/svg/Filter.svelte";
+  import Add from "../assets/svg/Add.svelte";
+  import Statistics from "../assets/svg/Statistics.svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -205,7 +212,7 @@
         <!-- bottom left elements -->
         <If condition={state.featureSwitches.featureSwitchFilter}>
           <MapControlButton on:click={() => state.guistate.openFilterView()}>
-            <ToSvelte construct={Svg.filter_svg().SetClass("h-6 w-6")} />
+            <Filter class="h-6 w-6"/>
           </MapControlButton>
         </If>
         <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
@@ -244,10 +251,10 @@
         </div>
       </If>
       <MapControlButton on:click={() => mapproperties.zoom.update((z) => z + 1)}>
-        <ToSvelte construct={Svg.plus_svg().SetClass("w-8 h-8")} />
+        <Plus class="w-8 h-8" />
       </MapControlButton>
       <MapControlButton on:click={() => mapproperties.zoom.update((z) => z - 1)}>
-        <ToSvelte construct={Svg.min_svg().SetClass("w-8 h-8")} />
+        <Min class="w-8 h-8"/>
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
         <MapControlButton>
@@ -340,7 +347,7 @@
       </div>
 
       <div class="flex" slot="title1">
-        <ToSvelte construct={Svg.filter_svg().SetClass("w-4 h-4")} />
+        <Filter class="w-4 h-4"/>
         <Tr t={Translations.t.general.menu.filter} />
       </div>
 
@@ -431,27 +438,27 @@
         <Tr t={Translations.t.general.aboutMapComplete.intro} />
 
         <a class="flex" href={Utils.HomepageLink()}>
-          <img class="h-6 w-6" src="./assets/svg/add.svg" />
+          <Add class="h-6 w-6"/>
           <Tr t={Translations.t.general.backToIndex} />
         </a>
 
         <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
-          <img class="h-6 w-6" src="./assets/svg/bug.svg" />
+          <Bug class="h-6 w-6"/>
           <Tr t={Translations.t.general.attribution.openIssueTracker} />
         </a>
 
         <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
-          <img class="h-6 w-6" src="./assets/svg/mastodon.svg" />
+          <Mastodon class="w-6 h-6" />
           <Tr t={Translations.t.general.attribution.followOnMastodon} />
         </a>
 
         <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
-          <img class="h-6 w-6" src="./assets/svg/liberapay.svg" />
+          <Liberapay class="h-6 w-6" />
           <Tr t={Translations.t.general.attribution.donate} />
         </a>
 
         <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
-          <img class="h-6 w-6" src="./assets/svg/statistics.svg" />
+          <Statistics class="h-6 w-6" />
           <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: "MapComplete" })} />
         </a>
         {Constants.vNumber}
@@ -503,10 +510,7 @@
       <div class="m-2 flex flex-col" slot="content4">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
           <OpenIdEditor mapProperties={state.mapProperties} />
-          <ToSvelte
-            construct={() =>
-              new OpenJosm(state.osmConnection, state.mapProperties.bounds).SetClass("w-full")}
-          />
+          <OpenJosm {state}/>
           <MapillaryLink mapProperties={state.mapProperties} />
         </If>
 

@@ -3,16 +3,15 @@
    * Shows an 'upload'-button which will start the upload for this feature
    */
 
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import { ImmutableStore, Store } from "../../Logic/UIEventSource"
-  import type { OsmTags } from "../../Models/OsmFeature"
-  import LoginToggle from "../Base/LoginToggle.svelte"
-  import Translations from "../i18n/Translations"
-  import Tr from "../Base/Tr.svelte"
-  import UploadingImageCounter from "./UploadingImageCounter.svelte"
-  import FileSelector from "../Base/FileSelector.svelte"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import Svg from "../../Svg"
+  import type { SpecialVisualizationState } from "../SpecialVisualization";
+  import { ImmutableStore, Store } from "../../Logic/UIEventSource";
+  import type { OsmTags } from "../../Models/OsmFeature";
+  import LoginToggle from "../Base/LoginToggle.svelte";
+  import Translations from "../i18n/Translations";
+  import Tr from "../Base/Tr.svelte";
+  import UploadingImageCounter from "./UploadingImageCounter.svelte";
+  import FileSelector from "../Base/FileSelector.svelte";
+  import Camera_plus from "../../assets/svg/Camera_plus.svelte";
 
   export let state: SpecialVisualizationState
 
@@ -58,7 +57,7 @@
         {#if image !== undefined}
           <img src={image} />
         {:else}
-          <ToSvelte construct={Svg.camera_plus_svg().SetClass("block w-12 h-12 p-1 text-4xl ")} />
+          <Camera_plus class="block w-12 h-12 p-1 text-4xl"/>
         {/if}
         {#if labelText}
           {labelText}

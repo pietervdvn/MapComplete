@@ -19,6 +19,7 @@ import { Paragraph } from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
+import Constants from "../Constants"
 
 export interface Icon {}
 
@@ -362,7 +363,7 @@ export default class TagRenderingConfig {
                 if (stripped.endsWith(".svg")) {
                     stripped = stripped.substring(0, stripped.length - 4)
                 }
-                if (Svg.All[stripped + ".svg"] !== undefined) {
+                if (Constants.defaultPinIcons.indexOf(stripped) >= 0) {
                     icon = "./assets/svg/" + mapping.icon
                     if (!icon.endsWith(".svg")) {
                         icon += ".svg"

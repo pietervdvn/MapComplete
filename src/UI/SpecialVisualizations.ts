@@ -58,7 +58,6 @@ import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz
 import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz"
 import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz"
 import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
-import { OpenJosm } from "./BigComponents/OpenJosm"
 import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
 import FediverseValidator from "./InputElement/Validators/FediverseValidator"
 import SendEmail from "./Popup/SendEmail.svelte"
@@ -78,6 +77,8 @@ import { TagUtils } from "../Logic/Tags/TagUtils"
 import Giggity from "./BigComponents/Giggity.svelte"
 import ThemeViewState from "../Models/ThemeViewState"
 import LanguagePicker from "./InputElement/LanguagePicker.svelte"
+import LogoutButton from "./Base/LogoutButton.svelte"
+import OpenJosm from "./Base/OpenJosm.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -465,11 +466,7 @@ export default class SpecialVisualizations {
                 needsUrls: [Constants.osmAuthConfig.url],
                 docs: "Shows a button where the user can log out",
                 constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
-                        imgSize: "w-6 h-6",
-                    }).onClick(() => {
-                        state.osmConnection.LogOut()
-                    })
+                    return new SvelteUIElement(LogoutButton, { osmConnection: state.osmConnection })
                 },
             },
             new HistogramViz(),
@@ -903,10 +900,10 @@ export default class SpecialVisualizations {
                 funcName: "open_in_josm",
                 docs: "Opens the current view in the JOSM-editor",
                 args: [],
-                needsUrls: OpenJosm.needsUrls,
+                needsUrls: ["http://127.0.0.1:8111/load_and_zoom"],
 
                 constr: (state) => {
-                    return new OpenJosm(state.osmConnection, state.mapProperties.bounds)
+                    return new SvelteUIElement(OpenJosm, { state })
                 },
             },
             {
@@ -1098,12 +1095,6 @@ export default class SpecialVisualizations {
                     }
                     if (maproulette_id_key === "" || maproulette_id_key === undefined) {
                         maproulette_id_key = "mr_taskId"
-                    }
-                    if (Svg.All[image] !== undefined || Svg.All[image + ".svg"] !== undefined) {
-                        if (image.endsWith(".svg")) {
-                            image = image.substring(0, image.length - 4)
-                        }
-                        image = Svg[image + "_svg"]()
                     }
                     const failed = new UIEventSource(false)
 

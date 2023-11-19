@@ -14,6 +14,7 @@ import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
+import { html } from "svelte/types/compiler/utils/namespaces"
 
 export class IconConfig extends WithContextLoader {
     public static readonly defaultIcon = new IconConfig({ icon: "pin", color: "#ff9939" })
@@ -133,71 +134,23 @@ export default class PointRenderingConfig extends WithContextLoader {
             context + ".rotationAlignment"
         )
     }
-
-    /**
-     * Given a single HTML spec (either a single image path OR "image_path_to_known_svg:fill-colour", returns a fixedUIElement containing that
-     * The element will fill 100% and be positioned absolutely with top:0 and left: 0
-     */
-    private static FromHtmlSpec(htmlSpec: string, style: string, isBadge = false): BaseUIElement {
-        if (htmlSpec === undefined) {
-            return undefined
+    private static FromHtmlMulti(multiSpec: string, tags: Store<Record<string, string>>) {
+        const icons: IconConfig[] = []
+        for (const subspec of multiSpec.split(";")) {
+            const [icon, color] = subspec.split(":")
+            icons.push(new IconConfig({ icon, color }))
         }
-        const match = htmlSpec.match(/([a-zA-Z0-9_]*):([^;]*)/)
-        if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
-            const svg = Svg.All[match[1] + ".svg"] as string
-            const targetColor = match[2]
-            const img = new Img(
-                svg.replace(/(rgb\(0%,0%,0%\)|#000000|#000)/g, targetColor),
-                true
-            ).SetStyle(style)
-            if (isBadge) {
-                img.SetClass("badge")
-            }
-            return img
-        } else if (Svg.All[htmlSpec + ".svg"] !== undefined) {
-            const svg = Svg.All[htmlSpec + ".svg"] as string
-            const img = new Img(svg, true).SetStyle(style)
-            if (isBadge) {
-                img.SetClass("badge")
-            }
-            return img
-        } else {
-            return new FixedUiElement(`<img src="${htmlSpec}" style="${style}" />`)
-        }
-    }
-
-    private static FromHtmlMulti(
-        multiSpec: string,
-        rotation: string,
-        isBadge: boolean,
-        defaultElement: BaseUIElement = undefined,
-        options?: {
-            noFullWidth?: boolean
-        }
-    ) {
-        if (multiSpec === undefined) {
-            return defaultElement
-        }
-        const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`
-
-        const htmlDefs = multiSpec.trim()?.split(";") ?? []
-        const elements = Utils.NoEmpty(htmlDefs).map((def) =>
-            PointRenderingConfig.FromHtmlSpec(def, style, isBadge)
+        return new SvelteUIElement(DynamicMarker, { marker: icons, tags }).SetClass(
+            "w-full h-full block absolute top-0 left-0"
         )
-        if (elements.length === 0) {
-            return defaultElement
-        } else {
-            const combine = new Combine(elements).SetClass("relative block")
-            if (options?.noFullWidth) {
-                return combine
-            }
-            combine.SetClass("w-full h-full")
-            return combine
-        }
     }
 
     public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
-        return new SvelteUIElement(DynamicMarker, { config: this, tags: new ImmutableStore(tags) })
+        return new SvelteUIElement(DynamicMarker, {
+            marker: this.marker,
+            rotation: this.rotation,
+            tags: new ImmutableStore(tags),
+        })
     }
 
     public RenderIcon(
@@ -249,9 +202,11 @@ export default class PointRenderingConfig extends WithContextLoader {
             anchorH = -iconH / 2
         }
 
-        const icon = new SvelteUIElement(DynamicMarker, { config: this, tags }).SetClass(
-            "w-full h-full"
-        )
+        const icon = new SvelteUIElement(DynamicMarker, {
+            marker: this.marker,
+            rotation: this.rotation,
+            tags,
+        }).SetClass("w-full h-full")
         let badges = undefined
         if (options?.includeBadges ?? true) {
             badges = this.GetBadges(tags, options?.metatags)
@@ -264,7 +219,6 @@ export default class PointRenderingConfig extends WithContextLoader {
         tags.map((tags) => this.iconSize.GetRenderValue(tags).Subs(tags).txt ?? "[40,40]").map(
             (size) => {
                 const [iconW, iconH] = size.split(",").map((x) => num(x))
-                console.log("Setting size to", iconW, iconH)
                 iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
             }
         )
@@ -307,9 +261,9 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
         return new VariableUiElement(
             tags.map(
-                (tags) => {
+                (tagsData) => {
                     const badgeElements = this.iconBadges.map((badge) => {
-                        if (!badge.if.matchesProperties(tags)) {
+                        if (!badge.if.matchesProperties(tagsData)) {
                             // Doesn't match...
                             return undefined
                         }
@@ -324,19 +278,23 @@ export default class PointRenderingConfig extends WithContextLoader {
                         }
 
                         const htmlDefs = Utils.SubstituteKeys(
-                            badge.then.GetRenderValue(tags)?.txt,
-                            tags
+                            badge.then.GetRenderValue(tagsData)?.txt,
+                            tagsData
                         )
                         if (htmlDefs.startsWith("<") && htmlDefs.endsWith(">")) {
                             // This is probably an HTML-element
-                            return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tags))
+                            return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tagsData))
                                 .SetStyle("width: 1.5rem")
                                 .SetClass("block")
                         }
+
+                        if (!htmlDefs) {
+                            return undefined
+                        }
+
                         const badgeElement = PointRenderingConfig.FromHtmlMulti(
                             htmlDefs,
-                            "0",
-                            true
+                            tags
                         )?.SetClass("block relative")
                         if (badgeElement === undefined) {
                             return undefined

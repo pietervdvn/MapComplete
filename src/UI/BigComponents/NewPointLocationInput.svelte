@@ -16,6 +16,7 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import { Utils } from "../../Utils"
   import { createEventDispatcher } from "svelte"
+  import Move_arrows from "../../assets/svg/Move_arrows.svelte";
 
   /**
    * An advanced location input, which has support to:
@@ -125,6 +126,6 @@
   maxDistanceInMeters="50"
 >
   <slot name="image" slot="image">
-    <img class="h-full max-h-24" src="./assets/svg/move-arrows.svg" />
+    <Move_arrows  class="h-full max-h-24" />
   </slot>
 </LocationInput>

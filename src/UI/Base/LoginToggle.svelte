@@ -6,6 +6,7 @@
   import Tr from "./Tr.svelte"
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
+  import Invalid from "../../assets/svg/Invalid.svelte";
 
   export let state: {
     osmConnection: OsmConnection
@@ -35,7 +36,7 @@
     </slot>
   {:else if $loadingStatus === "error"}
     <div class="alert max-w-64 flex items-center">
-      <img src="./assets/svg/invalid.svg" class="m-2 h-8 w-8 shrink-0" />
+      <Invalid class="m-2 h-8 w-8 shrink-0" />
       <Tr t={offlineModes[$apiState]} />
     </div>
   {:else if $loadingStatus === "logged-in"}
