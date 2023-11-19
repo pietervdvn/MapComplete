@@ -48,13 +48,13 @@
   import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
   import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte";
   import StateIndicator from "./BigComponents/StateIndicator.svelte";
-  import LanguagePicker from "./LanguagePicker";
   import Locale from "./i18n/Locale";
   import ShareScreen from "./BigComponents/ShareScreen.svelte";
   import UploadingImageCounter from "./Image/UploadingImageCounter.svelte";
   import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte";
   import Cross from "../assets/svg/Cross.svelte";
   import Summary from "./BigComponents/Summary.svelte";
+  import LanguagePicker from "./InputElement/LanguagePicker.svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -263,7 +263,7 @@
 </div>
 
 <LoginToggle ignoreLoading={true} {state}>
-  {#if $showCrosshair === "yes" && ($currentZoom >= 17 || $arrowKeysWereUsed !== undefined) }
+  {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $arrowKeysWereUsed !== undefined }
     <div
       class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center justify-center"
     >
@@ -466,7 +466,7 @@
         <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
         <LoginToggle {state}>
           <div class="flex flex-col" slot="not-logged-in">
-            <ToSvelte construct={() => new LanguagePicker(layout.language, Locale.language)} />
+            <LanguagePicker availableLanguages={layout.language} />
             <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
             <LoginButton clss="primary" osmConnection={state.osmConnection} />
           </div>

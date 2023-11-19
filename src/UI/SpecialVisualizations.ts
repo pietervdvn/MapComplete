@@ -45,7 +45,6 @@ import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
-import LanguagePicker from "./LanguagePicker"
 import Link from "./Base/Link"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
@@ -78,6 +77,7 @@ import Questionbox from "./Popup/TagRendering/Questionbox.svelte"
 import { TagUtils } from "../Logic/Tags/TagUtils"
 import Giggity from "./BigComponents/Giggity.svelte"
 import ThemeViewState from "../Models/ThemeViewState"
+import LanguagePicker from "./InputElement/LanguagePicker.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -453,10 +453,10 @@ export default class SpecialVisualizations {
                 needsUrls: [],
                 docs: "A component to set the language of the user interface",
                 constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new LanguagePicker(
-                        state.layout.language,
-                        state.userRelatedState.language
-                    )
+                    return new SvelteUIElement(LanguagePicker, {
+                        assignTo: state.userRelatedState.language,
+                        availableLanguages: state.layout.language,
+                    })
                 },
             },
             {

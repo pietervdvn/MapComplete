@@ -42,6 +42,10 @@ export default class UserRelatedState {
     public readonly showCrosshair: UIEventSource<"yes" | undefined>
     public readonly fixateNorth: UIEventSource<undefined | "yes">
     public readonly homeLocation: FeatureSource
+    /**
+     * The language as saved into the preferences of the user, if logged in.
+     * Note that this is _different_ from the languages a user can set via the osm.org interface here: https://www.openstreetmap.org/preferences
+     */
     public readonly language: UIEventSource<string>
     public readonly preferredBackgroundLayer: UIEventSource<
         string | "photo" | "map" | "osmbasedmap" | undefined
@@ -134,7 +138,7 @@ export default class UserRelatedState {
             return
         }
 
-        this.language.addCallbackAndRunD((language) => Locale.language.setData(language))
+        this.language.syncWith(Locale.language)
     }
 
     private static initUserRelatedState(): LayerConfig {

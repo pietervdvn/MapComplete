@@ -21,6 +21,7 @@ export default class UserDetails {
     public account_created: string
     public tracesCount: number = 0
     public description: string
+    public languages: string[]
 
     constructor(backend: string) {
         this.backend = backend
@@ -89,6 +90,7 @@ export class OsmConnection {
             ud.unreadMessages = 0
             ud.name = "Fake user"
             ud.totalMessages = 42
+            ud.languages = ["en"]
         }
         const self = this
         this.UpdateCapabilities()
@@ -193,7 +195,7 @@ export class OsmConnection {
                 method: "GET",
                 path: "/api/0.6/user/details",
             },
-            function (err, details) {
+            function (err, details: XMLDocument) {
                 if (err != null) {
                     console.log(err)
                     self.loadingStatus.setData("error")
@@ -222,11 +224,14 @@ export class OsmConnection {
                 data.name = userInfo.getAttribute("display_name")
                 data.account_created = userInfo.getAttribute("account_created")
                 data.uid = Number(userInfo.getAttribute("id"))
+                data.languages = Array.from(
+                    userInfo.getElementsByTagName("languages")[0].getElementsByTagName("lang")
+                ).map((l) => l.textContent)
                 data.csCount = Number.parseInt(
-                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0
+                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? "0"
                 )
                 data.tracesCount = Number.parseInt(
-                    userInfo.getElementsByTagName("traces")[0].getAttribute("count") ?? 0
+                    userInfo.getElementsByTagName("traces")[0].getAttribute("count") ?? "0"
                 )
 
                 data.img = undefined

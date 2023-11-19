@@ -1,16 +1,15 @@
 <script lang="ts">
   // Testing grounds
-  import { UIEventSource } from "../Logic/UIEventSource"
-  import TabbedGroup from "./Base/TabbedGroup.svelte"
-
-  let tab = new UIEventSource(1)
-  console.log("Tab control", tab)
+  import LanguagePicker from "./InputElement/LanguagePicker.svelte";
+  import Translations from "./i18n/Translations";
+  import Tr from "./Base/Tr.svelte";
+  import Locale from "./i18n/Locale";
+  let language = Locale.language
 </script>
 
-<TabbedGroup {tab}>
-  <div slot="title0">Title 0</div>
-  <div slot="content0">Content 0 loaded</div>
+<div class="w-full">
+<LanguagePicker preferredLanguages={["nl", "en"]}/>
 
-  <div slot="title1">Title 1</div>
-  <div slot="content1">Content 1</div>
-</TabbedGroup>
+<Tr t={Translations.t.general.download.downloadAsPdf}/>
+  {$language}
+</div>

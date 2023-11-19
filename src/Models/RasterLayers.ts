@@ -9,14 +9,16 @@ import { RasterLayerProperties } from "./RasterLayerProperties"
 export class AvailableRasterLayers {
     public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
         RasterLayerPolygon)[] = <any>editorlayerindex.features
-    public static globalLayers: RasterLayerPolygon[] = globallayers.layers.map(
-        (properties) =>
-            <RasterLayerPolygon>{
-                type: "Feature",
-                properties,
-                geometry: BBox.global.asGeometry(),
-            }
-    )
+    public static globalLayers: RasterLayerPolygon[] = globallayers.layers
+        .filter((properties) => properties.id !== "osm.carto" /*Added separately*/)
+        .map(
+            (properties) =>
+                <RasterLayerPolygon>{
+                    type: "Feature",
+                    properties,
+                    geometry: BBox.global.asGeometry(),
+                }
+        )
     public static readonly osmCartoProperties: RasterLayerProperties = {
         id: "osm",
         name: "OpenStreetMap",
@@ -74,6 +76,7 @@ export class AvailableRasterLayers {
                     }
                     return GeoOperations.inside(lonlat, eliPolygon)
                 })
+                matching.unshift(AvailableRasterLayers.osmCarto)
                 matching.push(AvailableRasterLayers.maptilerDefaultLayer)
                 matching.push(...AvailableRasterLayers.globalLayers)
                 return matching

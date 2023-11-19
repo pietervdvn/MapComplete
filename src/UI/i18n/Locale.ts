@@ -56,6 +56,9 @@ export default class Locale {
             if (typeof navigator !== "undefined") {
                 browserLanguage = navigator.languages?.[0] ?? navigator.language ?? "en"
                 console.log("Browser language is", browserLanguage)
+                if (browserLanguage === "en-US") {
+                    browserLanguage = "en"
+                }
             }
             source = LocalStorageSource.Get("language", browserLanguage)
         }
@@ -75,6 +78,7 @@ export default class Locale {
             Locale.showLinkToWeblate.setData(Locale.showLinkToWeblate.data || tr)
         })
 
+        console.log("Initial language:", source, source.data)
         return source
     }
 }
