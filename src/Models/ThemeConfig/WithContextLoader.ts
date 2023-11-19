@@ -27,11 +27,6 @@ export default class WithContextLoader {
                 `${translationContext ?? this._context}.${key}.default value`
             )
         }
-        if (Object.keys(v).length === 1 && typeof v["render"] === "string") {
-            throw `At ${
-                translationContext ?? "<unknown>"
-            }: use the content directly instead of {${key}: ${JSON.stringify(v)}}`
-        }
 
         return new TagRenderingConfig(
             <QuestionableTagRenderingConfigJson>v,
