@@ -26,7 +26,7 @@ import predifined_filters from "../../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson, { IconConfigJson } from "../Json/PointRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
-import { RenderingSpecification } from "../../../UI/SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
@@ -1207,13 +1207,15 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
             return json
         }
 
-        const specialVis: RenderingSpecification[] = ValidationUtils.getAllSpecialVisualisations(
-            <QuestionableTagRenderingConfigJson[]>json.tagRenderings
+        const specialVis: Exclude<RenderingSpecification, string>[] = <
+            Exclude<RenderingSpecification, string>[]
+        >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
+            (rs) => typeof rs !== "string"
         )
+        const funcs = new Set<string>(specialVis.map((rs) => rs.func.funcName))
 
-        const calledFuncs = new Set<string>(specialVis.map((rs) => rs["func"]))
-        if (calledFuncs.has("list_reviews")) {
-            ;(<(string | TagRenderingConfigJson)[]>json.titleIcons).push("ratings")
+        if (funcs.has("list_reviews")) {
+            ;(<(string | TagRenderingConfigJson)[]>json.titleIcons).push("icons.rating")
         }
         return json
     }
@@ -1244,12 +1246,12 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) => new Each(new PreparePointRendering(state, layer))
             ),
             new SetDefault("titleIcons", ["icons.defaults"]),
+            new AddRatingBadge(),
             new On(
                 "titleIcons",
                 (layer) =>
                     new Concat(new ExpandTagRendering(state, layer, { noHardcodedStrings: true }))
             ),
-            new AddRatingBadge(),
             new ExpandFilter(state)
         )
     }
