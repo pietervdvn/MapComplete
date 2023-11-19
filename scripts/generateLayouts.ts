@@ -275,6 +275,7 @@ async function generateCsp(
         ...Constants.defaultOverpassUrls,
         Constants.countryCoderEndpoint,
         Constants.nominatimEndpoint,
+        "https://www.openstreetmap.org",
         "https://api.openstreetmap.org",
         "https://pietervdvn.goatcounter.com",
     ].concat(...(await eliUrls()))
