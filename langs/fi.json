@@ -1,36 +1,73 @@
 {
+    "advanced": {
+        "title": "Lisäominaisuudet"
+    },
     "centerMessage": {
-        "ready": "Valmis!"
+        "allFilteredAway": "Mikään kohde näkyvällä alueella ei täytä kaikkien suodatinten ehtoja",
+        "loadingData": "Ladataan dataa…",
+        "noData": "Ei relevantteja kohteita näkyvällä alueella",
+        "ready": "Valmis!",
+        "retrying": "Datan lataaminen epäonnistui. Yritetään uudelleen {count} sekunnin kuluttua…",
+        "zoomIn": "Lähennä ensin karttaa, jotta data näytetään ja on muokattavissa"
+    },
+    "communityIndex": {
+        "available": "Tämä yhteisö puhuu kieltä {native}",
+        "intro": "Ole yhteydessä muihin, jotta voit tutustua heihin, oppia heiltä, …",
+        "notAvailable": "Tämä yhteisö ei puhu kieltä {native}",
+        "title": "Ole yhteydessä muihin"
     },
     "delete": {
-        "explanations": {},
-        "reasons": {}
-    },
-    "favourite": {},
-    "general": {
-        "add": {
-            "import": {}
+        "cancel": "Peru",
+        "cannotBeDeleted": "Tätä kohdetta ei voi poistaa",
+        "delete": "Poista",
+        "explanations": {
+            "hardDelete": "Tämä kohde poistetaan OpenStreetMapistä. Kokenut kartoittaja voi palauttaa sen."
         },
-        "apply_button": {},
+        "isDeleted": "Tämä kohde on poistettu",
+        "loginToDelete": "Kohteen poistamiseksi täytyy kirjautua",
+        "notEnoughExperience": "Tämän kohteen loi joku muu.",
+        "onlyEditedByLoggedInUser": "Tätä kohdetta ei ole muokannut kukaan muu kuin sinä, joten sen voi huoletta poistaa."
+    },
+    "flyer": {
+        "callToAction": "Kokeile sitä osoitteessa mapcomplete.org",
+        "tagline": "Kerää paikkatietoa OpenStreetMapillä"
+    },
+    "general": {
         "attribution": {
-            "iconAttribution": {}
+            "followOnMastodon": "Seuraa MapCompletea Mastodonissa"
         },
         "backgroundMap": "Taustakartta",
         "cancel": "Peruuta",
-        "download": {},
-        "histogram": {},
-        "layerSelection": {},
-        "levelSelection": {},
+        "download": {
+            "title": "Lataa"
+        },
+        "error": "Jotain meni vikaan",
+        "example": "Esimerkki",
+        "examples": "Esimerkit",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
-        "morescreen": {},
+        "logout": "Kirjaudu ulos",
+        "menu": {
+            "aboutMapComplete": "Tietoa MapCompletesta"
+        },
+        "morescreen": {
+            "searchForATheme": "Etsi teemaa"
+        },
         "number": "numero",
+        "openTheMap": "Avaa kartta",
+        "openTheMapAtGeolocation": "Zoomaa sijaintiisi",
         "opening_hours": {
+            "loadingCountry": "Määritetään maata…",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
             "ph_open": "avattu"
         },
-        "pdf": {},
         "pickLanguage": "Valitse kieli: ",
+        "questionBox": {
+            "answeredMultiple": "Vastasit {answered} kysymykseen",
+            "answeredOne": "Vastasit yhteen kysymykseen",
+            "skippedMultiple": "Ohitit {skipped} kysymystä",
+            "skippedOne": "Ohitit yhden kysymyksen"
+        },
         "questions": {
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
@@ -42,6 +79,7 @@
             "thanksForSharing": "Kiitos jakamisesta!"
         },
         "skip": "Ohita tämä kysymys",
+        "waitingForLocation": "Etsitään nykyistä sijaintiasi…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Pe",
@@ -60,9 +98,8 @@
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
         },
-        "welcomeExplanation": {},
         "wikipedia": {
-            "previewbox": {}
+            "addEntry": "Lisää toinen Wikipedia-sivu"
         }
     },
     "image": {
@@ -71,40 +108,27 @@
         "dontDelete": "Peruuta",
         "isDeleted": "Poistettu"
     },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "title": "Tervetuloa MapCompleteen"
     },
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
+    "plantDetection": {
+        "tryAgain": "Valitse eri laji"
     },
-    "multi_apply": {},
-    "notes": {},
-    "privacy": {},
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu"
     },
-    "split": {},
-    "translations": {},
+    "split": {
+        "splitAgain": "Katkaise tämä tie uudelleen"
+    },
+    "userinfo": {
+        "editDescription": "Muokkaa profiilin kuvausta",
+        "noDescriptionCallToAction": "Lisää profiilin kuvaus",
+        "notLoggedIn": "Olet kirjautunut ulos"
+    },
     "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
+        "distance": {
+            "description": "Etäisyys metreinä"
+        }
     }
 }
