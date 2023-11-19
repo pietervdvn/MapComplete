@@ -280,6 +280,13 @@ async function generateCsp(
         "https://pietervdvn.goatcounter.com",
     ].concat(...(await eliUrls()))
 
+    SpecialVisualizations.specialVisualizations.forEach(sv => {
+        if(typeof sv.needsUrls === "function"){
+            return
+        }
+        apiUrls.push(...sv.needsUrls)
+    })
+
     const usedSpecialVisualisations = ValidationUtils.getSpecialVisualisationsWithArgs(layoutJson)
     for (const usedSpecialVisualisation of usedSpecialVisualisations) {
         if (typeof usedSpecialVisualisation === "string") {
@@ -288,8 +295,6 @@ async function generateCsp(
         const neededUrls = usedSpecialVisualisation.func.needsUrls
         if (typeof neededUrls === "function") {
             apiUrls.push(...neededUrls(usedSpecialVisualisation.args))
-        } else {
-            apiUrls.push(...neededUrls)
         }
     }
 
