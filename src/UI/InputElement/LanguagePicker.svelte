@@ -18,10 +18,9 @@
    * EventStore to assign to, defaults to 'Locale.langauge'
    */
   export let assignTo: UIEventSource<string> = Locale.language;
-  export let preferredLanguages: UIEventSource<string[]>;
+  export let preferredLanguages: UIEventSource<string[]> = undefined;
   let preferredFiltered: string[] = undefined;
-  preferredLanguages.addCallbackAndRunD(preferredLanguages => {
-
+  preferredLanguages?.addCallbackAndRunD(preferredLanguages => {
     let lng = navigator.language;
     if (lng === "en-US") {
       lng = "en";
