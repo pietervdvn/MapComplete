@@ -2,6 +2,7 @@
   import Svg from "../Svg";
   import Loading from "./Base/Loading.svelte";
   import ToSvelte from "./Base/ToSvelte.svelte";
+  import Community from "../assets/svg/Community.svelte";
 </script>
 
 <div>
@@ -40,16 +41,16 @@
 
     <div class="flex">
       <button class="primary">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Main action
       </button>
       <button class="primary disabled">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Main action (disabled)
       </button>
 
       <button class="small">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Small button
       </button>
 
@@ -59,11 +60,11 @@
     </div>
     <div class="flex">
       <button>
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Secondary action
       </button>
       <button class="disabled">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Secondary action (disabled)
       </button>
     </div>
@@ -82,7 +83,7 @@
       </label>
       <label for="javascript">
         <input id="javascript" name="fav_language" type="radio" value="JavaScript" />
-        <ToSvelte construct={Svg.community_svg().SetClass("w-8 h-8")} />
+        <Community class="w-8 h-8"/>
         JavaScript
       </label>
     </div>
@@ -106,26 +107,26 @@
 
     <div class="flex">
       <button class="primary">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Main action
       </button>
       <button class="primary disabled">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Main action (disabled)
       </button>
       <button class="small">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Small button
       </button>
     </div>
 
     <div class="flex">
       <button>
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Secondary action
       </button>
       <button class="disabled">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6" />
         Secondary action (disabled)
       </button>
     </div>

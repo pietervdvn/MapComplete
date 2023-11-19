@@ -85,8 +85,6 @@
       <Checkmark {color} />
     {:else if icon === "help"}
       <Help {color} />
-    {:else if icon === "clock"}
-      <Clock {color} />
     {:else if icon === "close"}
       <Close {color} />
     {:else if icon === "invalid"}

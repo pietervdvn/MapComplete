@@ -1,21 +1,21 @@
 <script lang="ts">
-  import Translations from "../i18n/Translations"
-  import Svg from "../../Svg"
-  import Tr from "../Base/Tr.svelte"
-  import NextButton from "../Base/NextButton.svelte"
-  import Geosearch from "./Geosearch.svelte"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import ThemeViewState from "../../Models/ThemeViewState"
-  import { UIEventSource } from "../../Logic/UIEventSource"
-  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { twJoin } from "tailwind-merge"
-  import { Utils } from "../../Utils"
-  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
-  import { GeoLocationState } from "../../Logic/State/GeoLocationState"
-  import If from "../Base/If.svelte"
-  import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
-  import type { Readable } from "svelte/store"
+  import Translations from "../i18n/Translations";
+  import Tr from "../Base/Tr.svelte";
+  import NextButton from "../Base/NextButton.svelte";
+  import Geosearch from "./Geosearch.svelte";
+  import ThemeViewState from "../../Models/ThemeViewState";
+  import { UIEventSource } from "../../Logic/UIEventSource";
+  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { twJoin } from "tailwind-merge";
+  import { Utils } from "../../Utils";
+  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState";
+  import { GeoLocationState } from "../../Logic/State/GeoLocationState";
+  import If from "../Base/If.svelte";
+  import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini";
+  import type { Readable } from "svelte/store";
   import Add from "../../assets/svg/Add.svelte";
+  import Location_refused from "../../assets/svg/Location_refused.svelte";
+  import Crosshair from "../../assets/svg/Crosshair.svelte";
 
   /**
    * The theme introduction panel
@@ -71,7 +71,7 @@
       <If condition={state.featureSwitches.featureSwitchGeolocation}>
         {#if $currentGPSLocation !== undefined || $geopermission === "prompt"}
           <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
-            <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8")} />
+            <Crosshair  class="w-8 h-8"/>
             <Tr t={Translations.t.general.openTheMapAtGeolocation} />
           </button>
           <!-- No geolocation granted - we don't show the button -->
@@ -81,25 +81,17 @@
             on:click={jumpToCurrentLocation}
           >
             <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
-            <ToSvelte
-              construct={Svg.crosshair_svg()
-                .SetClass("w-8 h-8")
-                .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
-            />
+            <Crosshair class="w-8 h-8" style="animation: 3s linear 0s infinite normal none running spin;" />
             <Tr t={Translations.t.general.waitingForGeopermission} />
           </button>
         {:else if $geopermission === "denied"}
           <button class="disabled flex w-full items-center gap-x-2">
-            <ToSvelte construct={Svg.location_refused_svg().SetClass("w-8 h-8")} />
+            <Location_refused class="w-8 h-8"/>
             <Tr t={Translations.t.general.geopermissionDenied} />
           </button>
         {:else}
           <button class="disabled flex w-full items-center gap-x-2">
-            <ToSvelte
-              construct={Svg.crosshair_svg()
-                .SetClass("w-8 h-8")
-                .SetStyle("animation: 3s linear 0s infinite normal none running spin;")}
-            />
+            <Crosshair class="w-8 h-8" style="animation: 3s linear 0s infinite normal none running spin;" />
             <Tr t={Translations.t.general.waitingForLocation} />
           </button>
         {/if}

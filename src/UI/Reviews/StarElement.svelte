@@ -2,6 +2,9 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Svg from "../../Svg"
   import { createEventDispatcher } from "svelte"
+  import Star from "../../assets/svg/Star.svelte";
+  import Star_half from "../../assets/svg/Star_half.svelte";
+  import Star_outline from "../../assets/svg/Star_outline.svelte";
 
   export let score: number
   export let cutoff: number
@@ -23,10 +26,10 @@
   on:mousemove={(e) => dispatch("hover", { score: getScore(e) })}
 >
   {#if score >= cutoff}
-    <ToSvelte construct={Svg.star_svg().SetClass(starSize)} />
+    <Star class={starSize}/>
   {:else if score + 10 >= cutoff}
-    <ToSvelte construct={Svg.star_half_svg().SetClass(starSize)} />
+    <Star_half class={starSize}/>
   {:else}
-    <ToSvelte construct={Svg.star_outline_svg().SetClass(starSize)} />
+    <Star_outline class={starSize}/>
   {/if}
 </div>

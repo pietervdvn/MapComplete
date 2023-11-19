@@ -36,7 +36,6 @@
   import LevelSelector from "./BigComponents/LevelSelector.svelte";
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
   import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
-  import Svg from "../Svg";
   import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte";
   import type { RasterLayerPolygon } from "../Models/RasterLayers";
   import { AvailableRasterLayers } from "../Models/RasterLayers";
@@ -62,6 +61,9 @@
   import Filter from "../assets/svg/Filter.svelte";
   import Add from "../assets/svg/Add.svelte";
   import Statistics from "../assets/svg/Statistics.svelte";
+  import Community from "../assets/svg/Community.svelte";
+  import Download from "../assets/svg/Download.svelte";
+  import Share from "../assets/svg/Share.svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -371,7 +373,7 @@
 
       <div class="flex" slot="title2">
         <If condition={state.featureSwitches.featureSwitchEnableExport}>
-          <ToSvelte construct={Svg.download_svg().SetClass("w-4 h-4")} />
+          <Download class="w-4 h-4"/>
           <Tr t={Translations.t.general.download.title} />
         </If>
       </div>
@@ -386,7 +388,7 @@
       <ToSvelte construct={() => new CopyrightPanel(state)} slot="content3" />
 
       <div class="flex" slot="title4">
-        <ToSvelte construct={Svg.share_svg().SetClass("w-4 h-4")} />
+        <Share class="w-4 h-4"/>
         <Tr t={Translations.t.general.sharescreen.title} />
       </div>
       <div class="m-2" slot="content4">
@@ -492,7 +494,7 @@
       </div>
 
       <div class="flex" slot="title2">
-        <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")} />
+        <Community class="w-6 h-6"/>
         <Tr t={Translations.t.communityIndex.title} />
       </div>
       <div class="m-2" slot="content2">
