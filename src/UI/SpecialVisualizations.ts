@@ -457,6 +457,9 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(LanguagePicker, {
                         assignTo: state.userRelatedState.language,
                         availableLanguages: state.layout.language,
+                        preferredLanguages: state.osmConnection.userDetails.map(
+                            (ud) => ud.languages
+                        ),
                     })
                 },
             },
