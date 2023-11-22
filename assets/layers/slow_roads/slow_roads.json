@@ -2,7 +2,8 @@
   "id": "slow_roads",
   "name": {
     "en": "Paths, carfree and slow roads",
-    "nl": "Paadjes, trage wegen en autoluwe straten"
+    "nl": "Paadjes, trage wegen en autoluwe straten",
+    "de": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen"
   },
   "description": {
     "en": "All carfree roads",
@@ -32,7 +33,8 @@
   "title": {
     "render": {
       "en": "Slow road",
-      "nl": "Trage weg"
+      "nl": "Trage weg",
+      "de": "Geschwindigkeitsreduzierte Straße"
     },
     "mappings": [
       {
@@ -46,35 +48,40 @@
         "if": "highway=footway",
         "then": {
           "en": "Footway",
-          "nl": "Voetpad"
+          "nl": "Voetpad",
+          "de": "Fußweg"
         }
       },
       {
         "if": "highway=cycleway",
         "then": {
           "en": "Cycleway",
-          "nl": "Fietspad"
+          "nl": "Fietspad",
+          "de": "Radweg"
         }
       },
       {
         "if": "highway=pedestrian",
         "then": {
           "en": "Pedestrian street",
-          "nl": "Voetgangersstraat"
+          "nl": "Voetgangersstraat",
+          "de": "Fußgängerzone"
         }
       },
       {
         "if": "highway=living_street",
         "then": {
           "en": "Living street",
-          "nl": "Woonerf"
+          "nl": "Woonerf",
+          "de": "Wohnstraße"
         }
       },
       {
         "if": "highway=path",
         "then": {
           "en": "Small path",
-          "nl": "Klein pad"
+          "nl": "Klein pad",
+          "de": "Schmaler Pfad"
         }
       }
     ]
@@ -133,7 +140,8 @@
           "if": "highway=living_street",
           "then": {
             "en": "This is a living street",
-            "nl": "<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>"
+            "nl": "<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>",
+            "de": "Dies ist eine Wohnstraße"
           },
           "icon": {
             "path": "./assets/layers/slow_roads/woonerf.svg",
@@ -144,35 +152,40 @@
           "if": "highway=pedestrian",
           "then": {
             "en": "This is a wide, carfree street",
-            "nl": "Dit is een brede, autovrije straat"
+            "nl": "Dit is een brede, autovrije straat",
+            "de": "Dies ist eine breite, autofreie Straße"
           }
         },
         {
           "if": "highway=footway",
           "then": {
             "en": "This is a footway",
-            "nl": "Dit is een voetpaadje"
+            "nl": "Dit is een voetpaadje",
+            "de": "Dies ist ein Fußweg"
           }
         },
         {
           "if": "highway=path",
           "then": {
             "en": "This is a small path",
-            "nl": "Dit is een wegeltje of bospad"
+            "nl": "Dit is een wegeltje of bospad",
+            "de": "Dies ist ein schmaler Pfad"
           }
         },
         {
           "if": "highway=bridleway",
           "then": {
             "en": "This is a bridleway",
-            "nl": "Dit is een ruiterswegel"
+            "nl": "Dit is een ruiterswegel",
+            "de": "Dies ist ein Reitweg"
           }
         },
         {
           "if": "highway=track",
           "then": {
             "en": "This is a land access road",
-            "nl": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
+            "nl": "Dit is een tractorspoor of weg om landbouwgrond te bereikken",
+            "de": "Dies ist eine Zufahrtsstraße"
           }
         }
       ]
@@ -180,7 +193,8 @@
     {
       "question": {
         "en": "What surface does this road have?",
-        "nl": "Wat is de wegverharding van dit pad?"
+        "nl": "Wat is de wegverharding van dit pad?",
+        "de": "Welche Oberfläche hat diese Straße?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -318,7 +332,8 @@
       "id": "slow_road_is_lit",
       "question": {
         "en": "Is this road lit at night?",
-        "nl": "Is deze weg 's nachts verlicht?"
+        "nl": "Is deze weg 's nachts verlicht?",
+        "de": "Ist diese Straße nachts beleuchtet?"
       },
       "mappings": [
         {
@@ -329,7 +344,8 @@
           "if": "lit=no",
           "then": {
             "en": "Not lit",
-            "nl": "Niet verlicht"
+            "nl": "Niet verlicht",
+            "de": "Nicht beleuchtet"
           }
         }
       ]

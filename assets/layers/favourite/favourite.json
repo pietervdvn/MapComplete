@@ -1,0 +1,71 @@
+{
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "heart",
+            "mappings": [
+              {
+                "if": "_favourite=no",
+                "then": "heart_outline"
+              }
+            ]
+          },
+          "color": "red"
+        }
+      ]
+    }
+  ],
+  "description": {
+    "en": "A generic map layer which shows locations that a contributor marked as favourite",
+    "nl": "Een laag met persoonlijke favourieten"
+  },
+  "name": {
+    "en": "Favourites",
+    "nl": "Favorieten"
+  },
+  "id": "favourite",
+  "source": "special",
+  "isShown": "_favourite=yes",
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "en": "Favourite location",
+      "nl": "Favoriete locatie"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "id": "Explanation",
+      "classes": "thanks",
+      "icon": {
+        "class": "large",
+        "path": "heart"
+      },
+      "render": {
+        "en": "You marked this location as a personal favourite. As such, it is shown on every map you load.",
+        "nl": "Je hebt deze locatie als persoonlijke favoriet aangeduid en worden op alle MapComplete-kaarten getoond."
+      }
+    },
+    {
+      "id": "show_images",
+      "render": {
+        "*": "{image_carousel()}"
+      }
+    },
+    "all_tags"
+  ]
+}

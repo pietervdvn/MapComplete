@@ -50,6 +50,15 @@
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
         "reload": "Reload the data"
     },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "This location is currently marked as favourite and will show up on all thematic maps of MapComplete you visit.",
+            "markAsFavouriteTitle": "Mark this location as favourite location",
+            "markDescription": "Add this location to a personal list of your favourites",
+            "unmark": "Remove from your personal list of favourites",
+            "unmarkNotDeleted": "This point will not be deleted and still be visible on the appropriate map for you and others"
+        }
+    },
     "flyer": {
         "aerial": "This map uses a different background, namely aerial imagery by Agentschap Informatie Vlaanderen",
         "callToAction": "Test it on mapcomplete.org",

@@ -23,6 +23,7 @@ export default class Constants {
         "gps_track",
         "range",
         "last_click",
+        "favourite",
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -131,6 +132,8 @@ export default class Constants {
         "clock",
         "invalid",
         "close",
+        "heart",
+        "heart_outline",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
 

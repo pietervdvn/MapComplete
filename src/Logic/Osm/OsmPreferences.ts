@@ -285,4 +285,13 @@ export class OsmPreferences {
             }
         )
     }
+
+    removeAllWithPrefix(prefix: string) {
+        for (const key in this.preferences.data) {
+            if (key.startsWith(prefix)) {
+                this.GetPreference(key, undefined, { prefix: "" }).setData(undefined)
+                console.log("Clearing preference", key)
+            }
+        }
+    }
 }

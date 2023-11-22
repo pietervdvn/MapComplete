@@ -399,7 +399,8 @@
     {
       "id": "key_cutter",
       "question": {
-        "en": "Does this shop offer key cutting?"
+        "en": "Does this shop offer key cutting?",
+        "de": "Bietet dieser Laden Schlüsselschneiden an?"
       },
       "mappings": [
         {
@@ -408,7 +409,8 @@
           "hideInAnswer": "shop!=shoe_repair",
           "icon": "./assets/layers/id_presets/fas-key.svg",
           "then": {
-            "en": "This shop is also specialized in key cutting"
+            "en": "This shop is also specialized in key cutting",
+            "de": "Dieser Laden ist auch auf das Schlüsselschneiden spezialisiert"
           },
           "addExtraTags": [
             "service:key_cutting=yes"
@@ -418,7 +420,8 @@
           "if": "service:key_cutting=yes",
           "icon": "./assets/layers/id_presets/fas-key.svg",
           "then": {
-            "en": "This shop offers key cutting as a service"
+            "en": "This shop offers key cutting as a service",
+            "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an"
           }
         },
         {
@@ -429,7 +432,8 @@
             ]
           },
           "then": {
-            "en": "This shops does not offer key cutting as a service"
+            "en": "This shops does not offer key cutting as a service",
+            "de": "Dieser Laden bietet kein Schlüsselschneiden als Dienstleistung an"
           }
         }
       ],

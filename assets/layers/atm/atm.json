@@ -544,7 +544,8 @@
             "ca": "Aquest caixer té sortida de veu en {language():font-bold}",
             "cs": "Tento bankomat má řečový výstup v {language():font-bold}",
             "he": "לכספומט הזה יש פלט דיבור ב {language():font-bold}",
-            "pt_BR": "Este caixa eletrônico tem saída de fala em {language():font-bold}"
+            "pt_BR": "Este caixa eletrônico tem saída de fala em {language():font-bold}",
+            "es": "Este cajero automático tiene salida de voz en {language():font-bold}"
           }
         }
       }

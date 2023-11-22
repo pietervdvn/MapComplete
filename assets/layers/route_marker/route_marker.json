@@ -1,10 +1,12 @@
 {
   "id": "route_marker",
   "name": {
-    "en": "Route markers"
+    "en": "Route markers",
+    "de": "Routenmarkierungen"
   },
   "description": {
-    "en": "Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
+    "en": "Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
+    "de": "Routenmarkierungen sind kleine Markierungen, die häufig entlang offizieller Wander-/Rad-/Reit-/Skirouten zu finden sind, um die Richtung der Route anzuzeigen."
   },
   "source": {
     "osmTags": "information=route_marker"
@@ -12,7 +14,8 @@
   "minzoom": 14,
   "title": {
     "render": {
-      "en": "Route marker"
+      "en": "Route marker",
+      "de": "Routenmarker"
     }
   },
   "pointRendering": [
@@ -31,14 +34,16 @@
   "presets": [
     {
       "title": {
-        "en": "a route marker"
+        "en": "a route marker",
+        "de": "ein Routenmarker"
       },
       "tags": [
         "tourism=information",
         "information=route_marker"
       ],
       "description": {
-        "en": "A route marker is a small marker often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
+        "en": "A route marker is a small marker often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
+        "de": "Ein Routenmarker ist ein kleiner Marker, der oft entlang offizieller Wander-/Fahrrad-/Reit-/Skirouten zu finden ist, um die Richtung der Route anzuzeigen."
       },
       "exampleImages": [
         "./assets/layers/route_marker/bicycle_route_marker.jpg",
@@ -51,7 +56,8 @@
     {
       "id": "type",
       "question": {
-        "en": "For what kind of route is this marker?"
+        "en": "For what kind of route is this marker?",
+        "de": "Für welche Art von Route ist dieser Marker?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -59,35 +65,40 @@
           "if": "bicycle=yes",
           "ifnot": "biycle=",
           "then": {
-            "en": "This is a route marker for a bicycle route."
+            "en": "This is a route marker for a bicycle route.",
+            "de": "Dies ist ein Routenmarker für eine Fahrradstrecke."
           }
         },
         {
           "if": "hiking=yes",
           "ifnot": "hiking=",
           "then": {
-            "en": "This is a route marker for a hiking route."
+            "en": "This is a route marker for a hiking route.",
+            "de": "Dies ist ein Routenmarker für eine Wanderroute."
           }
         },
         {
           "if": "mtb=yes",
           "ifnot": "mtb=",
           "then": {
-            "en": "This is a route marker for a mountain bike route."
+            "en": "This is a route marker for a mountain bike route.",
+            "de": "Dies ist ein Routenmarker für eine Mountainbikestrecke."
           }
         },
         {
           "if": "horse=yes",
           "ifnot": "horse=",
           "then": {
-            "en": "This is a route marker for a horse riding route."
+            "en": "This is a route marker for a horse riding route.",
+            "de": "Dies ist ein Routenmarker für eine Reitroute."
           }
         },
         {
           "if": "ski=yes",
           "ifnot": "ski=",
           "then": {
-            "en": "This is a route marker for a ski route."
+            "en": "This is a route marker for a ski route.",
+            "de": "Dies ist ein Routenmarker für eine Skiroute."
           }
         }
       ]

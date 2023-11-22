@@ -108,7 +108,8 @@
         "cs": "pitná voda"
       },
       "description": {
-        "en": "Typically a drinking fountain, water tap, water well or natural spring"
+        "en": "Typically a drinking fountain, water tap, water well or natural spring",
+        "de": "Typischerweise ein Trinkbrunnen, Wasserhahn, Brunnen oder eine natürliche Quelle"
       },
       "tags": [
         "amenity=drinking_water"

@@ -59,7 +59,8 @@
     {
       "id": "type",
       "question": {
-        "en": "What kind of routes are shown on this guidepost?"
+        "en": "What kind of routes are shown on this guidepost?",
+        "de": "Welche Arten von Routen werden auf diesem Wegweiser angezeigt?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -67,35 +68,40 @@
           "if": "bicycle=yes",
           "ifnot": "bicycle=",
           "then": {
-            "en": "This guidepost shows bicycle routes"
+            "en": "This guidepost shows bicycle routes",
+            "de": "Dieser Wegweiser zeigt Fahrradrouten"
           }
         },
         {
           "if": "hiking=yes",
           "ifnot": "hiking=",
           "then": {
-            "en": "This guidepost shows hiking routes"
+            "en": "This guidepost shows hiking routes",
+            "de": "Dieser Wegweiser zeigt Wanderwege"
           }
         },
         {
           "if": "mtb=yes",
           "ifnot": "mtb=",
           "then": {
-            "en": "This guidepost shows mountain bike routes"
+            "en": "This guidepost shows mountain bike routes",
+            "de": "Dieser Wegweiser zeigt Mountainbike-Routen"
           }
         },
         {
           "if": "horse=yes",
           "ifnot": "horse=",
           "then": {
-            "en": "This guidepost shows horse riding routes"
+            "en": "This guidepost shows horse riding routes",
+            "de": "Dieser Wegweiser zeigt Reitwege"
           }
         },
         {
           "if": "ski=yes",
           "ifnot": "ski=",
           "then": {
-            "en": "This guidepost shows ski routes"
+            "en": "This guidepost shows ski routes",
+            "de": "Dieser Wegweiser zeigt Skirouten"
           }
         }
       ]

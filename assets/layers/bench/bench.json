@@ -865,7 +865,8 @@
             "cs": "Zjištěno dnes!",
             "pt": "Pesquisado hoje!",
             "he": "נבדק היום!",
-            "pt_BR": "Pesquisado hoje!"
+            "pt_BR": "Pesquisado hoje!",
+            "es": "¡Encuestado hoy!"
           }
         }
       ],
@@ -887,7 +888,8 @@
         "ca": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>",
         "cs": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>",
         "pt": "Este banco tem a seguinte inscrição:<br/><p><i>{inscription}</i></p>",
-        "pt_BR": "Esse banco tem a seguinte inscrição: <br/><p><i>{inscription}</i></p>"
+        "pt_BR": "Esse banco tem a seguinte inscrição: <br/><p><i>{inscription}</i></p>",
+        "es": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscription}</i></p>"
       },
       "question": {
         "en": "Does this bench have an inscription?",
@@ -897,7 +899,8 @@
         "ca": "Aquest banc té una inscripció?",
         "cs": "Má tato lavička nápis?",
         "pt": "Esse banco tem inscrição?",
-        "pt_BR": "Esse banco tem uma inscrição?"
+        "pt_BR": "Esse banco tem uma inscrição?",
+        "es": "¿Este banco tiene una inscripción?"
       },
       "freeform": {
         "key": "inscription",
@@ -917,7 +920,8 @@
             "ca": "Aquest banc no té cap inscripció",
             "cs": "Tato lavička nemá nápis",
             "pt": "Este banco não tem inscrição",
-            "pt_BR": "Esse banco não tem uma inscrição"
+            "pt_BR": "Esse banco não tem uma inscrição",
+            "es": "Este banco no tiene inscripción"
           },
           "addExtraTags": [
             "inscription="
@@ -946,7 +950,8 @@
         "ca": "P. ex. en una placa, al respatller, …",
         "cs": "Např. na připevněné desce, v opěradle, …",
         "pt": "Por exemplo: em placa montada, no encosto, ...",
-        "pt_BR": "P. ex. em uma placa montada, no encosto, …"
+        "pt_BR": "P. ex. em uma placa montada, no encosto, …",
+        "es": "Por ejemplo, en una placa montada, en el respaldo, …"
       }
     },
     {
@@ -960,7 +965,8 @@
         "he": "האם לספסל הזה יש אלמנט אומנותי?",
         "fr": "Est-ce que ce banc inclut un élément artistique ?",
         "pl": "Czy ta ławka ma wbudowane dzieło sztuki?",
-        "pt_BR": "Esse banco tem um elemento artístico?"
+        "pt_BR": "Esse banco tem um elemento artístico?",
+        "es": "¿Tiene este banco un elemento artístico?"
       },
       "mappings": [
         {
@@ -977,7 +983,8 @@
             "cs": "Tato lavička má integrované umělecké dílo",
             "he": "לספסל זה יצירת אמנות משולבת",
             "pl": "Ta ławka ma wbudowane dzieło sztuki",
-            "pt_BR": "Esse banco tem uma obra de arte integrada"
+            "pt_BR": "Esse banco tem uma obra de arte integrada",
+            "es": "Este banco tiene una obra de arte integrada"
           }
         },
         {
@@ -1006,7 +1013,8 @@
             "ca": "Aquest banc <span class=\"subtle\">probablement</span> no té cap obra d'art integrada",
             "de": "Die Bank hat <span class=\"subtle\">vermutlich</span> kein integriertes Kunstwerk",
             "cs": "Tato lavička <span class=\"subtle\">pravděpodobně</span> nemá integrované umělecké dílo",
-            "pt_BR": "Esse banco <span class=\"subtle\">provavelmente</span> não tem uma obra de arte integrada"
+            "pt_BR": "Esse banco <span class=\"subtle\">provavelmente</span> não tem uma obra de arte integrada",
+            "es": "Este banco <span class=\"subtle\">probablemente</span> no tiene una obra de arte integrada"
           },
           "hideInAnswer": true
         }
@@ -1019,7 +1027,8 @@
         "cs": "Např. má integrovaný obraz, sochu nebo jiné netriviální tvůrčí dílo",
         "fr": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail cratif",
         "pl": "Np. jest na niej coś namalowane, ma rzeźbę lub inną nietrywialną pracę",
-        "pt_BR": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial"
+        "pt_BR": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial",
+        "es": "Por ejemplo, si lleva integrado un cuadro, una estatua u otra obra creativa no trivial"
       }
     },
     {
@@ -1044,7 +1053,8 @@
         "cs": "Slouží tato lavička jako památník někoho nebo něčeho?",
         "pt": "Este banco serve como memorial para alguém ou algo?",
         "pl": "Czy ta ławka służy jako pomnik upamiętniający kogoś lub coś?",
-        "pt_BR": "Esse banco serve como memorial para alguém ou alguma coisa?"
+        "pt_BR": "Esse banco serve como memorial para alguém ou alguma coisa?",
+        "es": "¿Actúa este banco como monumento conmemorativo de alguien o algo?"
       },
       "mappings": [
         {
@@ -1058,7 +1068,8 @@
             "cs": "Tato lavička je pomníkem pro někoho nebo něco",
             "pt": "Este banco é um memorial para alguém ou algo",
             "pl": "Ta ławka jest pomnikiem upamiętniającym kogoś lub coś",
-            "pt_BR": "Esse banco é um memorial para alguém ou alguma coisa"
+            "pt_BR": "Esse banco é um memorial para alguém ou alguma coisa",
+            "es": "Este banco es un memorial para alguien o algo"
           },
           "addExtraTags": [
             "memorial=bench",
@@ -1081,7 +1092,8 @@
             "cs": "Tato lavička <b>není</b> pro někoho nebo něco památníkem",
             "pt": "Este banco <b>não é</b> um memorial para alguém ou algo",
             "pl": "Ta ławka <b>nie</b> jest pomnikiem upamiętniającym kogoś lub coś",
-            "pt_BR": "Esse banco <b>não</b> é um memorial para alguém ou alguma coisa"
+            "pt_BR": "Esse banco <b>não</b> é um memorial para alguém ou alguma coisa",
+            "es": "Este banco es un <b>no</b> memorial para alguien o algo"
           },
           "addExtraTags": [
             "memorial="
@@ -1115,7 +1127,8 @@
             "ca": "és un memorial",
             "cs": "je památník",
             "he": "הוא אנדרטה",
-            "pt_BR": "é um memorial"
+            "pt_BR": "é um memorial",
+            "es": "es un monumento conmemorativo"
           }
         }
       ]
@@ -1133,7 +1146,8 @@
             "cs": "S opěradlem i bez něj",
             "he": "עם ובלי משענת גב",
             "pl": "Z oraz bez oparcia",
-            "pt_BR": "Com e sem encosto"
+            "pt_BR": "Com e sem encosto",
+            "es": "Con y sin respaldo"
           }
         },
         {
@@ -1147,7 +1161,8 @@
             "cs": "Má opěradlo",
             "he": "בעל משענת גב",
             "pl": "Ma oparcie",
-            "pt_BR": "Tem um encosto"
+            "pt_BR": "Tem um encosto",
+            "es": "Tiene respaldo"
           }
         },
         {
@@ -1161,7 +1176,8 @@
             "cs": "Nemá opěradlo",
             "he": "אין משענת גב",
             "pl": "Nie ma oparcia",
-            "pt_BR": "Não tem um encosto"
+            "pt_BR": "Não tem um encosto",
+            "es": "Sin respaldo"
           }
         }
       ]

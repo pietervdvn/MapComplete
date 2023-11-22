@@ -1,11 +1,16 @@
 <script lang="ts">
   // Testing grounds
-  import LanguagePicker from "./InputElement/LanguagePicker.svelte";
-  import Translations from "./i18n/Translations";
-  import Tr from "./Base/Tr.svelte";
-  import Locale from "./i18n/Locale";
   import MarkAsFavourite from "./Popup/MarkAsFavourite.svelte";
-  let language = Locale.language
+  import { UIEventSource } from "../Logic/UIEventSource";
+  import { OsmConnection } from "../Logic/Osm/OsmConnection";
+  
+  const osmConnection = new OsmConnection({attemptLogin: true})
+  function resetFavs(){
+    osmConnection.preferencesHandler.removeAllWithPrefix("mapcomplete-favourite-")
+    console.log("CLEARED!")
+  }
+  
 </script>
 
-<MarkAsFavourite/>
+
+<button on:click={() => resetFavs()} >Clear</button>

@@ -79,6 +79,8 @@ import ThemeViewState from "../Models/ThemeViewState"
 import LanguagePicker from "./InputElement/LanguagePicker.svelte"
 import LogoutButton from "./Base/LogoutButton.svelte"
 import OpenJosm from "./Base/OpenJosm.svelte"
+import MarkAsFavourite from "./Popup/MarkAsFavourite.svelte"
+import MarkAsFavouriteMini from "./Popup/MarkAsFavouriteMini.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1481,11 +1483,51 @@ export default class SpecialVisualizations {
                     const tags = (<ThemeViewState>(
                         state
                     )).geolocation.currentUserLocation.features.map(
-                        (features) => features[0].properties
+                        (features) => features[0]?.properties
                     )
                     return new SvelteUIElement(AllTagsPanel, {
                         state,
                         tags,
+                    })
+                },
+            },
+            {
+                funcName: "favourite_status",
+                needsUrls: [],
+                docs: "A button that allows a (logged in) contributor to mark a location as a favourite location",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(MarkAsFavourite, {
+                        tags: tagSource,
+                        state,
+                        layer,
+                        feature,
+                    })
+                },
+            },
+            {
+                funcName: "favourite_icon",
+                needsUrls: [],
+                docs: "A small button that allows a (logged in) contributor to mark a location as a favourite location, sized to fit a title-icon",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(MarkAsFavouriteMini, {
+                        tags: tagSource,
+                        state,
+                        layer,
+                        feature,
                     })
                 },
             },

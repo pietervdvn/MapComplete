@@ -1,7 +1,7 @@
 {
   "id": "icons",
   "description": {
-    "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
+    "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI or as icon next to the title",
     "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden",
     "ca": "Una capa que actua com a biblioteca per a les icones d'etiquetes, especialment per mostrar-se com a insígnia al costat d'un PDI",
     "cs": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu"
@@ -141,6 +141,15 @@
       "metacondition": "_supports_sharing=yes"
     },
     {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*":"{favourite_icon()}"
+      }
+    },
+    {
       "id": "osmlink",
       "labels": [
         "defaults"
@@ -193,6 +202,14 @@
         "class": "w-20 mx-1 flex items-center"
       },
       "render": "{rating()}"
+    },
+    {
+      "id": "favourite_icon",
+      "description": "Only for rendering",
+      "condition": "_favourite=yes",
+      "icon": "circle:white;heart:red",
+      "metacondition": "__showTimeSensitiveIcons!=no"
+      
     }
   ]
 }

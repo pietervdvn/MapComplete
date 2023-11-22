@@ -259,7 +259,7 @@
             "cs": "Nepřístupné široké veřejnosti (např. přístupné pouze majitelům, zaměstnancům, ...)",
             "da": "Ikke tilgængelig for offentligheden (f.eks. kun tilgængelig for ejere, ansatte, ...)",
             "de": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, …)",
-            "es": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
+            "es": "No accesible al público en general (por ejemplo, sólo accesible a los propietarios, empleados, ...)"
           }
         },
         {
@@ -4343,7 +4343,7 @@
             "cs": "Placené použití, ale zdarma pro zákazníky hotelu/podniku/nemocnice/..., který dobíjecí stanici provozuje",
             "da": "Betalt brug, men gratis for kunder på det hotel/pub/hospital/... der driver ladestationen",
             "de": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, … kostenlos",
-            "es": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga"
+            "es": "Pago por uso, pero gratuito para los clientes del hotel/pub/hospital/... que gestiona la estación de carga"
           }
         },
         {

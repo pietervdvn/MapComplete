@@ -76,7 +76,6 @@
   let showCrosshair = state.userRelatedState.showCrosshair;
   let arrowKeysWereUsed = state.mapProperties.lastKeyNavigation;
   let centerFeatures = state.closestFeatures.features;
-  $: console.log("Centerfeatures are", $centerFeatures)
   const selectedElementView = selectedElement.map(
     (selectedElement) => {
       // Svelte doesn't properly reload some of the legacy UI-elements
@@ -232,7 +231,7 @@
       </div>
     </div>
 
-    {#if $arrowKeysWereUsed !== undefined}
+    {#if $arrowKeysWereUsed !== undefined && $centerFeatures?.length > 0}
       <div class="pointer-events-auto interactive p-1">
         {#each $centerFeatures as feat, i (feat.properties.id)}
           <div class="flex">

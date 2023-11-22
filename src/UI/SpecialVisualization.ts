@@ -17,6 +17,7 @@ import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import { RasterLayerPolygon } from "../Models/RasterLayers"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { OsmTags } from "../Models/OsmFeature"
+import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 
 /**
  * The state needed to render a special Visualisation.
@@ -33,7 +34,6 @@ export interface SpecialVisualizationState {
     }
 
     readonly indexedFeatures: IndexedFeatureSource
-
     /**
      * Some features will create a new element that should be displayed.
      * These can be injected by appending them to this featuresource (and pinging it)
@@ -58,6 +58,8 @@ export interface SpecialVisualizationState {
      */
     readonly selectedLayer: UIEventSource<LayerConfig>
     readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
+
+    readonly favourites: FavouritesFeatureSource
 
     /**
      * If data is currently being fetched from external sources

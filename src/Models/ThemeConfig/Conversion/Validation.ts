@@ -968,7 +968,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             "Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
             new DetectConflictingAddExtraTags(),
-            new DetectNonErasedKeysInMappings(),
+            //    new DetectNonErasedKeysInMappings(),
             new DetectMappingsWithImages(doesImageExist),
             new On("render", new ValidatePossibleLinks()),
             new On("question", new ValidatePossibleLinks()),

@@ -26,7 +26,7 @@ import predifined_filters from "../../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson, { IconConfigJson } from "../Json/PointRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
-import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
+import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
@@ -639,6 +639,13 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
         }
 
+        if (!usedSpecialFunctions.has("favourite_status")) {
+            json.tagRenderings.push({
+                id: "favourite_status",
+                render: { "*": "{favourite_status()}" },
+            })
+        }
+
         if (!usedSpecialFunctions.has("all_tags")) {
             const trc: QuestionableTagRenderingConfigJson = {
                 id: "all-tags",
@@ -1193,6 +1200,31 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 }
 
+class AddFavouriteBadges extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super(
+            "Adds the favourite heart to the title and the rendering badges",
+            [],
+            "AddFavouriteBadges"
+        )
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        if (json.id === "favourite") {
+            return json
+        }
+        const pr = json.pointRendering?.[0]
+        if (pr) {
+            pr.iconBadges ??= []
+            if (!pr.iconBadges.some((ti) => ti.if === "_favourite=yes")) {
+                pr.iconBadges.push({ if: "_favourite=yes", then: "circle:white;heart:red" })
+            }
+        }
+
+        return json
+    }
+}
+
 export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
     constructor() {
         super(
@@ -1204,6 +1236,10 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
 
     convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         if (!json.tagRenderings) {
+            return json
+        }
+        if (json.titleIcons.some((ti) => ti === "icons.rating" || ti["id"] === "rating")) {
+            // already added
             return json
         }
 
@@ -1247,6 +1283,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             ),
             new SetDefault("titleIcons", ["icons.defaults"]),
             new AddRatingBadge(),
+            new AddFavouriteBadges(),
             new On(
                 "titleIcons",
                 (layer) =>

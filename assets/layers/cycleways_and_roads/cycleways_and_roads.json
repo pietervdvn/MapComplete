@@ -13,7 +13,7 @@
     "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
     "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
     "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
-    "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
+    "es": "Todas las infraestructuras sobre las que se puede circular en bicicleta, acompañadas de preguntas sobre las mismas",
     "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
     "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
     "cs": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury"
@@ -91,7 +91,7 @@
           "fr": "Piste cyclable",
           "ca": "Via ciclista",
           "da": "Cykelsti",
-          "es": "Carril compartido",
+          "es": "Carril bici",
           "pa_PK": "سائیکل‌وے",
           "cs": "Cyklostezka"
         }
@@ -121,7 +121,7 @@
           "de": "Gemeinsame Fahrspur",
           "fr": "Voie partagée",
           "ca": "Carril compartit",
-          "es": "Vía ciclista al lado de la carretera",
+          "es": "Carril compartido",
           "cs": "Sdílený jízdní pruh"
         }
       },

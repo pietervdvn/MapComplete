@@ -261,7 +261,8 @@
           "cs": "Na této autobusové zastávce není lavička (nikdy zde nebyla nebo byla odstraněna)",
           "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)",
           "pl": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)",
-          "pt_BR": "Essa parada de ônibus não tem um banco (nunca teve ou ele foi removido)"
+          "pt_BR": "Essa parada de ônibus não tem um banco (nunca teve ou ele foi removido)",
+          "es": "Esta parada de autobús no tiene banco (nunca lo hubo o lo han quitado)"
         }
       }
     ],
@@ -277,7 +278,8 @@
           "cs": "Tato autobusová zastávka se již nepoužívá",
           "pt": "Este ponto de ônibus não é mais usado",
           "pl": "Ten przystanek autobusowy nie jest już używany",
-          "pt_BR": "Essa parada de ônibus não é mais usada"
+          "pt_BR": "Essa parada de ônibus não é mais usada",
+          "es": "Esta parada ya no se usa"
         }
       }
     ],

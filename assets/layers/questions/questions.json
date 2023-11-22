@@ -2564,31 +2564,36 @@
         "diets"
       ],
       "question": {
-        "en": "Does this place offer a vegan option?"
+        "en": "Does this place offer a vegan option?",
+        "de": "Bietet dieser Ort eine vegane Option an?"
       },
       "mappings": [
         {
           "if": "diet:vegan=only",
           "then": {
-            "en": "This place <b>only sells vegan</b> products"
+            "en": "This place <b>only sells vegan</b> products",
+            "de": "Dieser Ort verkauft <b>nur vegane</b> Produkte"
           }
         },
         {
           "if": "diet:vegan=yes",
           "then": {
-            "en": "This shop has a big vegan offering"
+            "en": "This shop has a big vegan offering",
+            "de": "Dieser Laden hat ein großes veganes Angebot"
           }
         },
         {
           "if": "diet:vegan=limited",
           "then": {
-            "en": "This shop has a <b>limited vegan</b> offering"
+            "en": "This shop has a <b>limited vegan</b> offering",
+            "de": "Dieser Laden hat ein <b>begrenztes veganes</b> Angebot"
           }
         },
         {
           "if": "diet:vegan=no",
           "then": {
-            "en": "This shop has no vegan offering"
+            "en": "This shop has no vegan offering",
+            "de": "Dieser Laden bietet keine veganen Produkte an"
           }
         }
       ]

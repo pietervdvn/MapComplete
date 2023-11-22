@@ -58,6 +58,7 @@ import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLay
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { Imgur } from "../Logic/ImageProviders/Imgur"
 import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSource"
+import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 
 /**
  *
@@ -96,10 +97,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly indexedFeatures: IndexedFeatureSource & LayoutSource
     readonly currentView: FeatureSource<Feature<Polygon>>
     readonly featuresInView: FeatureSource
+    readonly favourites: FavouritesFeatureSource
     /**
      * Contains a few (<10) >features that are near the center of the map.
      */
-    readonly closestFeatures: FeatureSource
+    readonly closestFeatures: NearbyFeatureSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
@@ -220,8 +222,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.fullNodeDatabase
             )
 
-            this.indexedFeatures = layoutSource
-
             let currentViewIndex = 0
             const empty = []
             this.currentView = new StaticFeatureSource(
@@ -242,13 +242,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
 
             this.dataIsLoading = layoutSource.isLoading
+            this.indexedFeatures = layoutSource
+            this.featureProperties = new FeaturePropertiesStore(layoutSource)
+            this.favourites = new FavouritesFeatureSource(
+                this.osmConnection,
+                this.featureProperties,
+                layoutSource,
+                layout
+            )
 
-            const indexedElements = this.indexedFeatures
-            this.featureProperties = new FeaturePropertiesStore(indexedElements)
             this.changes = new Changes(
                 {
                     dryRun: this.featureSwitches.featureSwitchIsTesting,
-                    allElements: indexedElements,
+                    allElements: layoutSource,
                     featurePropertiesStore: this.featureProperties,
                     osmConnection: this.osmConnection,
                     historicalUserLocations: this.geolocation.historicalUserLocations,
@@ -258,7 +264,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.historicalUserLocations = this.geolocation.historicalUserLocations
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
                 this.changes,
-                indexedElements,
+                layoutSource,
                 this.featureProperties
             )
             layoutSource.addSource(this.newFeatures)
@@ -627,7 +633,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 )
             ),
             current_view: this.currentView,
+            favourite: this.favourites,
         }
+
+        this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
         if (this.layout?.lockLocation) {
             const bbox = new BBox(this.layout.lockLocation)
             this.mapProperties.maxbounds.setData(bbox)
@@ -663,11 +672,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
             rangeIsDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
         }
 
+        // enumarate all 'normal' layers and match them with the appropriate 'special' layer - if applicable
         this.layerState.filteredLayers.forEach((flayer) => {
             const id = flayer.layerDef.id
             const features: FeatureSource = specialLayers[id]
             if (features === undefined) {
                 return
+            }
+            if (id === "favourite") {
+                console.log("Matching special layer", id, flayer)
             }
 
             this.featureProperties.trackFeatureSource(features)

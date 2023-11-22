@@ -4364,6 +4364,18 @@
             "render": "Brandblussers"
         }
     },
+    "favourite": {
+        "description": "Een laag met persoonlijke favourieten",
+        "name": "Favorieten",
+        "tagRenderings": {
+            "Explanation": {
+                "render": "Je hebt deze locatie als persoonlijke favoriet aangeduid en worden op alle MapComplete-kaarten getoond."
+            }
+        },
+        "title": {
+            "render": "Favoriete locatie"
+        }
+    },
     "filters": {
         "filter": {
             "0": {

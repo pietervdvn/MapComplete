@@ -12,7 +12,8 @@
     "pt": "Máquina de venda automática de tubos de bicicleta",
     "da": "Automat til salg af cykelslanger",
     "cs": "Automat na cyklistické duše",
-    "ca": "Màquina expenedora de tubs de bicicleta"
+    "ca": "Màquina expenedora de tubs de bicicleta",
+    "es": "Máquina expendedora de tubos de bicicleta"
   },
   "description": {
     "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)",
@@ -22,7 +23,8 @@
     "fr": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)",
     "cs": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
     "ca": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)",
-    "pt_BR": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)"
+    "pt_BR": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)",
+    "es": "Una capa que muestra máquinas expendedoras de cámaras de bicicleta (ya sean máquinas expendedoras de cámaras de bicicleta especialmente diseñadas o máquinas expendedoras clásicas con cámaras de bicicleta y, opcionalmente, objetos adicionales relacionados con la bicicleta, como luces, guantes, candados, etc.)"
   },
   "source": {
     "osmTags": {
@@ -57,7 +59,8 @@
           "de": "{name} Fahrradschlauch-Automat",
           "cs": "Automat na cyklistické pláště{name}",
           "nl": "Fietsbanden-verkoopautomaat {name}",
-          "pt_BR": "Máquina de venda de câmara de ar para bicicleta {name}"
+          "pt_BR": "Máquina de venda de câmara de ar para bicicleta {name}",
+          "es": "Máquina expendedora de cámaras de bicicleta {name}"
         }
       }
     ]
@@ -118,7 +121,8 @@
         "pt": "uma máquina de venda automática de tubos de bicicleta",
         "da": "en automat til salg af cykelslanger",
         "cs": "automat na cyklistické duše",
-        "ca": "una màquina expenedora de tubs de bicicleta"
+        "ca": "una màquina expenedora de tubs de bicicleta",
+        "es": "una máquina expendedora de tubos de bicicleta"
       },
       "tags": [
         "amenity=vending_machine",
@@ -233,7 +237,8 @@
         "de": "Wie viel kostet ein Fahrradschlauch?",
         "cs": "Kolik stojí duše na kolo?",
         "nl": "Hoeveel kost een fietsband?",
-        "pt_BR": "Quanto custa uma câmara de ar para bicicleta?"
+        "pt_BR": "Quanto custa uma câmara de ar para bicicleta?",
+        "es": "¿Cuánto cuesta una cámara para la bicicleta?"
       },
       "render": {
         "en": "A bicycle tube costs {charge}",
@@ -241,7 +246,8 @@
         "de": "Ein Fahrradschlauch kostet {charge}",
         "cs": "Cena jedné duše {charge}",
         "nl": "Een fietsband kost {charge}",
-        "pt_BR": "Uma câmara de ar para bicicleta custa {charge}"
+        "pt_BR": "Uma câmara de ar para bicicleta custa {charge}",
+        "es": "Una cámara para bicicletas cuesta {charge}"
       },
       "freeform": {
         "key": "charge"
@@ -256,7 +262,8 @@
         "de": "Welche Fahrradschläuche werden hier verkauft?",
         "cs": "Jaká značka duší je zde prodávána?",
         "nl": "Welk merk banden wordt hier verkocht?",
-        "pt_BR": "Quais marcas de câmara de ar são vendidas aqui?"
+        "pt_BR": "Quais marcas de câmara de ar são vendidas aqui?",
+        "es": "¿Qué cámaras se venden aquí?"
       },
       "freeform": {
         "key": "brand"
@@ -267,7 +274,8 @@
         "de": "Hier werden Fahrradschläuche von {brand} verkauft",
         "cs": "{brand} duše jsou zde prodávány",
         "nl": "{brand} banden worden hier verkocht",
-        "pt_BR": "câmaras de ar {brand} são vendidas aqui"
+        "pt_BR": "câmaras de ar {brand} são vendidas aqui",
+        "es": "Las cámaras {brand} se venden aquí"
       },
       "mappings": [
         {
@@ -278,7 +286,8 @@
             "de": "Hier werden Fahrradschläuche von Continental verkauft",
             "cs": "Continental duše jsou zde prodávány",
             "nl": "Continental banden worden hier verkocht",
-            "pt_BR": "Câmaras de ar Continental são vendidas aqui"
+            "pt_BR": "Câmaras de ar Continental são vendidas aqui",
+            "es": "Las cámaras Continental se venden aquí"
           }
         },
         {
@@ -289,7 +298,8 @@
             "de": "Hier werden Fahrradschläuche von Schwalbe verkauft",
             "cs": "Schwalbe duše jsou zde prodávány",
             "nl": "Schwalbe banden worden hier verkocht",
-            "pt_BR": "Câmaras de ar Schwalbe são vendidas aqui"
+            "pt_BR": "Câmaras de ar Schwalbe são vendidas aqui",
+            "es": "Las cámaras Schwalbe se venden aquí"
           }
         }
       ],
@@ -303,7 +313,8 @@
         "de": "Wer betreibt den Automaten?",
         "cs": "Kdo se stará o tento automat?",
         "nl": "Wie onderhoudt deze verkoopautomaat?",
-        "pt_BR": "Quem mantém essa máquina de venda?"
+        "pt_BR": "Quem mantém essa máquina de venda?",
+        "es": "¿Quién mantiene esta máquina expendedora?"
       },
       "render": "This vending machine is maintained by {operator}",
       "mappings": [
@@ -315,7 +326,8 @@
             "de": "Betrieben von Schwalbe",
             "cs": "Udržuje Schwalbe",
             "nl": "Onderhouden door Schwalbe",
-            "pt_BR": "Mantido pela Schwalbe"
+            "pt_BR": "Mantido pela Schwalbe",
+            "es": "Mantenido por Schwalbe"
           }
         },
         {
@@ -326,7 +338,8 @@
             "de": "Betrieben von Continental",
             "cs": "Udržuje Continental",
             "nl": "Onderhouden door Continental",
-            "pt_BR": "Mantido pela Continental"
+            "pt_BR": "Mantido pela Continental",
+            "es": "Mantenido por Continental"
           }
         }
       ],
@@ -343,7 +356,8 @@
         "de": "Wird weiteres Fahrradzubehör verkauft?",
         "cs": "Prodávají se zde další doplňky na kolo?",
         "nl": "Worden hier andere fietsaccessoires verkocht?",
-        "pt_BR": "Outros acessórios para bicicleta são vendidos aqui?"
+        "pt_BR": "Outros acessórios para bicicleta são vendidos aqui?",
+        "es": "¿Se venden aquí otros accesorios para bicicletas?"
       },
       "mappings": [
         {
@@ -354,7 +368,8 @@
             "ca": "Aquí es venen cambres d'aire de bicicletes",
             "de": "Hier werden Fahrradschläuche verkauft",
             "cs": "Zde se prodávají cyklistické duše",
-            "pt_BR": "Câmaras de ar para bicicletas são vendidas aqui"
+            "pt_BR": "Câmaras de ar para bicicletas são vendidas aqui",
+            "es": "Aquí se venden cámaras de aire para bicicletas"
           }
         },
         {
@@ -365,7 +380,8 @@
             "ca": "Aquí es venen llums per a bicicletes",
             "de": "Hier werden Fahrradlampen verkauft",
             "cs": "Zde se prodávají světla na jízdní kola",
-            "pt_BR": "Luzes para bicicleta são vendidas aqui"
+            "pt_BR": "Luzes para bicicleta são vendidas aqui",
+            "es": "Las luces para bicicletas se venden aquí"
           }
         },
         {
@@ -376,7 +392,8 @@
             "ca": "Aquí es venen guants",
             "de": "Hier werden Fahrradhandschuhe verkauft",
             "cs": "Prodávají se zde rukavice",
-            "pt_BR": "Luvas são vendidas aqui"
+            "pt_BR": "Luvas são vendidas aqui",
+            "es": "Los guantes se venden aquí"
           }
         },
         {
@@ -387,7 +404,8 @@
             "ca": "Aquí es venen kits de reparació de bicicletes",
             "de": "Hier werden Fahrrad-Reparatursets verkauft",
             "cs": "Zde se prodávají sady na opravu jízdních kol",
-            "pt_BR": "Kits para reparo de bicicleta são vendidos aqui"
+            "pt_BR": "Kits para reparo de bicicleta são vendidos aqui",
+            "es": "Los kits de reparación de bicicletas se venden aquí"
           }
         },
         {
@@ -398,7 +416,8 @@
             "ca": "Aquí es venen bombes de bicicletes",
             "de": "Hier werden Fahrradpumpen verkauft",
             "cs": "Prodávají se zde pumpy na kolo",
-            "pt_BR": "Bombas de ar para bicicleta são vendidas aqui"
+            "pt_BR": "Bombas de ar para bicicleta são vendidas aqui",
+            "es": "Las bombas para bicicletas se venden aquí"
           }
         },
         {
@@ -409,7 +428,8 @@
             "ca": "Aquí es venen cadenats per a bicicletes",
             "de": "Hier werden Fahrradschlösser verkauft",
             "cs": "Prodávají se zde zámky na kola",
-            "pt_BR": "Cadeados para bicicleta são vendidos aqui"
+            "pt_BR": "Cadeados para bicicleta são vendidos aqui",
+            "es": "Aquí se venden candados para bicicletas"
           }
         }
       ],

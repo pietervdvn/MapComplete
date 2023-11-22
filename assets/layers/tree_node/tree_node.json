@@ -319,7 +319,7 @@
         "pt_BR": "Qual a altura dessa árvore?",
         "ca": "Quina és l'alçada d'aquest arbre?",
         "cs": "Jaká je výška tohoto stromu?",
-        "es": "¿Cuál es la altura de este árbol?"
+        "es": "¿Qué altura tiene este árbol?"
       },
       "freeform": {
         "key": "height",
@@ -440,7 +440,7 @@
             "en": "The tree is in a residential garden.",
             "it": "L’albero è un giardino residenziale.",
             "fr": "Cet arbre est dans une jardin de résidence.",
-            "es": "El árbol está en un jardín privado o residencial.",
+            "es": "El árbol está en un jardín de una vivienda.",
             "de": "Der Baum steht in einem Wohngarten.",
             "da": "Træet står i en villahave.",
             "ca": "L'arbre està en un jardí residencial.",
@@ -478,7 +478,7 @@
             "en": "The tree is in an urban area.",
             "it": "L’albero si trova in un’area urbana.",
             "fr": "L'arbre est dans une zone urbaine.",
-            "es": "El árbol está en un zona urbana.",
+            "es": "El árbol está en una zona urbana.",
             "de": "Der Baum steht in einem städtischen Gebiet.",
             "da": "Træet står i et byområde.",
             "ca": "L'arbre està en una àrea urbana.",
