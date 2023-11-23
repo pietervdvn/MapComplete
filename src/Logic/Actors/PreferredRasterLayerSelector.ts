@@ -48,6 +48,7 @@ export class PreferredRasterLayerSelector {
         this._preferredBackgroundLayer.addCallbackD((_) => self.updateLayer())
 
         this._availableLayers.addCallbackD((_) => self.updateLayer())
+        self.updateLayer()
     }
 
     /**
@@ -63,6 +64,7 @@ export class PreferredRasterLayerSelector {
         const foundLayer = isCategory
             ? available.find((l) => l.properties.category === targetLayerId)
             : available.find((l) => l.properties.id === targetLayerId)
+        console.debug("Updating background layer to", foundLayer.id,{targetLayerId, queryParam:this._queryParameter.data, preferred: this._preferredBackgroundLayer.data, isCategory})
         if (foundLayer) {
             this._rasterLayerSetting.setData(foundLayer)
             return true
