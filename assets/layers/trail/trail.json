@@ -12,7 +12,8 @@
   },
   "description": {
     "en": "Waymarked trails",
-    "nl": "Aangeduide wandeltochten"
+    "nl": "Aangeduide wandeltochten",
+    "de": "Markierte Wanderwege"
   },
   "source": {
     "osmTags": {
@@ -105,11 +106,13 @@
     {
       "question": {
         "en": "What is the name of this trail?",
-        "nl": "Wat is de naam van deze wandeling?"
+        "nl": "Wat is de naam van deze wandeling?",
+        "de": "Wie heißt dieser Weg?"
       },
       "render": {
         "en": "This trail is called <b>{name}</b>",
-        "nl": "Deze wandeling heet <b>{name}</b>"
+        "nl": "Deze wandeling heet <b>{name}</b>",
+        "de": "Dieser Weg heißt <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -119,11 +122,13 @@
     {
       "render": {
         "en": "This trail is maintained by {operator}",
-        "nl": "Beheer door {operator}"
+        "nl": "Beheer door {operator}",
+        "de": "Dieser Weg wird von {operator} gepflegt"
       },
       "question": {
         "en": "Who maintains this trail?",
-        "nl": "Wie beheert deze wandeltocht?"
+        "nl": "Wie beheert deze wandeltocht?",
+        "de": "Wer pflegt diesen Weg?"
       },
       "freeform": {
         "key": "operator"
@@ -137,7 +142,8 @@
           },
           "then": {
             "en": "This trail is maintained by Natuurpunt",
-            "nl": "Dit gebied wordt beheerd door Natuurpunt"
+            "nl": "Dit gebied wordt beheerd door Natuurpunt",
+            "de": "Dieser Weg wird von Natuurpunt gepflegt"
           },
           "icon": {
             "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
@@ -152,7 +158,8 @@
           },
           "then": {
             "en": "This trail is maintained by {operator}",
-            "nl": "Dit gebied wordt beheerd door {operator}"
+            "nl": "Dit gebied wordt beheerd door {operator}",
+            "de": "Dieser Weg wird von {operator} gepflegt"
           },
           "hideInAnswer": true,
           "icon": {
@@ -166,11 +173,13 @@
     {
       "question": {
         "en": "What is the reference colour of this trail?",
-        "nl": "Welke kleur heeft deze wandeling?"
+        "nl": "Welke kleur heeft deze wandeling?",
+        "de": "Was ist die Referenzfarbe dieses Weges?"
       },
       "render": {
         "en": "The reference colour is {colour}",
-        "nl": "Deze wandeling heeft kleur {colour}"
+        "nl": "Deze wandeling heeft kleur {colour}",
+        "de": "Die Referenzfarbe ist {colour}"
       },
       "freeform": {
         "key": "colour",
@@ -231,20 +240,23 @@
     {
       "question": {
         "en": "Is this trail wheelchair accessible?",
-        "nl": "Is deze wandeling toegankelijk met de rolstoel?"
+        "nl": "Is deze wandeling toegankelijk met de rolstoel?",
+        "de": "Ist dieser Weg rollstuhlgerecht?"
       },
       "mappings": [
         {
           "then": {
             "en": "This trail is wheelchair-accessible",
-            "nl": "deze wandeltocht is toegankelijk met de rolstoel"
+            "nl": "deze wandeltocht is toegankelijk met de rolstoel",
+            "de": "Dieser Weg ist rollstuhlgerecht"
           },
           "if": "wheelchair=yes"
         },
         {
           "then": {
             "en": "This trail is not wheelchair accessible",
-            "nl": "deze wandeltocht is niet toegankelijk met de rolstoel"
+            "nl": "deze wandeltocht is niet toegankelijk met de rolstoel",
+            "de": "Dieser Weg ist nicht rollstuhlgerecht"
           },
           "if": "wheelchair=no"
         }
@@ -254,20 +266,23 @@
     {
       "question": {
         "en": "Is this trail accessible with a pushchair?",
-        "nl": "Is deze wandeltocht toegankelijk met de buggy?"
+        "nl": "Is deze wandeltocht toegankelijk met de buggy?",
+        "de": "Ist dieser Weg mit einem Kinderwagen zugänglich?"
       },
       "mappings": [
         {
           "then": {
             "en": "This trail is accessible with a pushchair",
-            "nl": "deze wandeltocht is toegankelijk met de buggy"
+            "nl": "deze wandeltocht is toegankelijk met de buggy",
+            "de": "Dieser Weg ist mit einem Kinderwagen zugänglich"
           },
           "if": "pushchair=yes"
         },
         {
           "then": {
             "en": "This trail is not accessible with a pushchair",
-            "nl": "deze wandeltocht is niet toegankelijk met de buggy"
+            "nl": "deze wandeltocht is niet toegankelijk met de buggy",
+            "de": "Dieser Weg ist nicht mit einem Kinderwagen zugänglich"
           },
           "if": "pushchair=no"
         }

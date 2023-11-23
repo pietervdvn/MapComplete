@@ -247,7 +247,7 @@
         "nl": "Wat is de naam van deze eetgelegenheid?",
         "en": "What is the name of this business?",
         "de": "Was ist der Name dieses Unternehmens?",
-        "es": "¿Cual es el nombre de este restaurante?",
+        "es": "¿Cuál es el nombre de este negocio?",
         "fr": "Quel est le nom de ce restaurant ?",
         "ca": "Quin és el nom d'aquest negoci?",
         "cs": "Jak se tento podnik jmenuje?"
@@ -256,7 +256,7 @@
         "nl": "De naam van deze eetgelegeheid is {name}",
         "en": "The name of this business is {name}",
         "de": "Dieses Unternehmen heißt {name}",
-        "es": "El nombre de este restaurante es {name}",
+        "es": "El nombre de este negocio es {name}",
         "fr": "Le nom de ce restaurant est {name}",
         "ca": "El nom d'aquest negoci és {name}",
         "cs": "Název tohoto podniku je {name}"
@@ -283,7 +283,7 @@
             "en": "This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.",
             "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel.",
             "de": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional.",
-            "es": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
+            "es": "Se trata de un negocio de comida rápida, centrado en el servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
             "fr": "C'est un fast-food, centrée sur le service rapide. Si des places sont disponibles, elles sont plutôt limitées et fonctionnelles.",
             "hu": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak.",
             "ca": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seràn limitats i funcionals.",
@@ -296,7 +296,7 @@
             "en": "A <b>restaurant</b>, focused on creating a nice experience where one is served at the table",
             "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend",
             "de": "Es handelt sich um ein <b>Restaurant</b>, mit Fokus auf eine nette Atmosphäre und Tischbedienung",
-            "es": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa",
+            "es": "Un <b>restaurante</b>, centrado en crear una experiencia agradable en la que uno se sirve en mesa",
             "fr": "Un <b>restaurant</b>, axé sur la création d'une expérience agréable où l'on est servi à table",
             "ca": "Un <b>restaurant</b>, centrat en crear una bona experiència on es serveix a taula",
             "cs": "<b>Restaurace</b> zaměřená na vytvoření příjemného zážitku, kde se obsluhuje u stolu"
@@ -317,7 +317,7 @@
         "nl": "Welk soort gerechten worden hier geserveerd?",
         "en": "What kind of food is served here?",
         "de": "Was für Essen gibt es hier?",
-        "es": "¿Qué comida se sirve aquí?",
+        "es": "¿Qué tipo de comida sirven aquí?",
         "fr": "Quelle type de nourriture est servie ici ?",
         "ca": "Quin menjar es serveix aquí?",
         "cs": "Jaké jídlo se zde podává?"
@@ -442,7 +442,7 @@
             "en": "This is an Italian restaurant (which serves more than pasta and pizza)",
             "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)",
             "de": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)",
-            "es": "Este es un restaurante italiano (que sirve más que pasta y pizza)",
+            "es": "Este es un restaurante italiano (que sirve algo más que pasta y pizza)",
             "fr": "C'est un Restaurant Italien (qui sert plus que des pâtes et des pizzas)",
             "ca": "Això és un restaurant italià (que serveix més que pasta i pizza)",
             "cs": "Toto je italská restaurace (která nabízí více než těstoviny a pizzu)"
@@ -588,7 +588,7 @@
         "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
         "en": "Does this place offer take-away?",
         "de": "Werden Gerichte zum Mitnehmen angeboten?",
-        "es": "¿Este lugar ofrece para llevar?",
+        "es": "¿Este local ofrece comida para llevar?",
         "fr": "Cet établissement propose-t-il des plats à emporter ?",
         "ca": "Aquest lloc ofereix per a emportar?",
         "cs": "Nabízí toto místo jídlo s sebou?"

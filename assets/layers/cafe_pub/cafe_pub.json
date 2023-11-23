@@ -7,7 +7,7 @@
     "fr": "Cafés et pubs",
     "zh_Hant": "咖啡廳與酒吧",
     "hu": "Kávézók és kocsmák",
-    "es": "Cafeterías y bares",
+    "es": "Cafeterías y pubs",
     "da": "Caféer og pubber",
     "ca": "Cafés i bars",
     "pl": "Kawiarnie i puby",
@@ -73,19 +73,22 @@
       {
         "if": "amenity=bar",
         "then": {
-          "en": "Bar"
+          "en": "Bar",
+          "de": "Bar"
         }
       },
       {
         "if": "amenity=cafe",
         "then": {
-          "en": "Cafe"
+          "en": "Cafe",
+          "de": "Café"
         }
       },
       {
         "if": "amenity=nightclub",
         "then": {
-          "en": "Nightclub"
+          "en": "Nightclub",
+          "de": "Nachtclub"
         }
       }
     ]
@@ -213,7 +216,7 @@
         "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
         "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
         "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
-        "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
+        "es": "Un <b>café</b> para tomar té, café o una bebida alcohólica en un ambiente tranquilo",
         "fr": "Un <b>café</b> pour prendre un thé, un café ou une boisson alcoolisée dans un environnement calme",
         "ca": "Una <b>cafeteria</b> per a a beure té, café o una beguda alcohólica en un ambient tranquil",
         "cs": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj"
@@ -257,7 +260,7 @@
         "fr": "Quel est le nom de ce pub ?",
         "hu": "Mi a neve ennek a kocsmának?",
         "da": "Hvad hedder denne pub?",
-        "es": "¿Cual es el nombre de este pub?",
+        "es": "¿Cuál es el nombre de esta empresa?",
         "ca": "Quin és el nom d'aquest negoci?",
         "cs": "Jak se tento podnik jmenuje?"
       },
@@ -268,7 +271,7 @@
         "fr": "Ce pub se nomme {name}",
         "hu": "A kocsma neve: {name}",
         "da": "Denne pub hedder {name}",
-        "es": "Este pub se llama {name}",
+        "es": "Esta empresa se llama {name}",
         "ca": "Aquest negoci es diu {name}",
         "cs": "Tento podnik se jmenuje {name}"
       },
@@ -337,7 +340,7 @@
             "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt",
             "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann",
             "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid",
-            "es": "Un <b>restaurante</b> donde puedes comer una comida de verdad",
+            "es": "Un <b>restaurante</b> donde se pueda comer como es debido",
             "fr": "Un <b>restaurant</b> où l'on peut prendre un bon repas",
             "ca": "Un <b>restaurant</b> on es pot menjar bé",
             "cs": "<b>Restaurace</b>, kde se dá pořádně najíst"

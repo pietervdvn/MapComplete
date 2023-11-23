@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 6315,
+      "commits": 6385,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -50,11 +50,11 @@
     },
     {
       "commits": 24,
-      "contributor": "Ward"
+      "contributor": "dependabot[bot]"
     },
     {
-      "commits": 23,
-      "contributor": "dependabot[bot]"
+      "commits": 24,
+      "contributor": "Ward"
     },
     {
       "commits": 21,

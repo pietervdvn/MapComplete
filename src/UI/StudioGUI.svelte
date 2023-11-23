@@ -26,9 +26,9 @@
   import EditTheme from "./Studio/EditTheme.svelte"
   import * as meta from "../../package.json"
   import Checkbox from "./Base/Checkbox.svelte"
-  import { Utils } from "../Utils";
-  import Translations from "./i18n/Translations";
-  import Tr from "./Base/Tr.svelte";
+  import { Utils } from "../Utils"
+  import Translations from "./i18n/Translations"
+  import Tr from "./Base/Tr.svelte"
 
   export let studioUrl =
     window.location.hostname === "127.0.0.2"
@@ -154,7 +154,7 @@
         Contact <a href="https://app.element.io/#/room/#MapComplete:matrix.org">
           the MapComplete community via the chat.
         </a>
-         Someone might be able to help you
+        Someone might be able to help you
       </li>
       <li>
         File <a href="https://github.com/pietervdvn/MapComplete/issues">an issue</a>
@@ -196,7 +196,7 @@
             <QuestionMarkCircleIcon class="h-6 w-6" />
             Show the introduction again
           </button>
-          <a class="flex button" href={Utils.HomepageLink()}>
+          <a class="button flex" href={Utils.HomepageLink()}>
             <img class="h-6 w-6" src="./assets/svg/add.svg" />
             <Tr t={Translations.t.general.backToIndex} />
           </a>

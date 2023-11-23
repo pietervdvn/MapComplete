@@ -127,7 +127,7 @@
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} for spam or inappropriate messages</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden voor spam of ongepaste opmerkingen</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle' {_first_user} für Spam oder unangemessene Nachrichten melden</a>",
-        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}",
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user} por spam o mensajes inapropiados</a>",
         "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>",
         "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Nahlásit uživateli {_first_user} spam nebo nevhodné zprávy</ a>"
       },

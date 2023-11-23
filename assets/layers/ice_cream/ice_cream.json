@@ -1,23 +1,27 @@
 {
   "id": "ice_cream",
   "name": {
-    "en": "Ice cream parlors"
+    "en": "Ice cream parlors",
+    "de": "Eisdielen"
   },
   "description": {
-    "en": "A place where ice cream is sold over the counter"
+    "en": "A place where ice cream is sold over the counter",
+    "de": "Ein Ort, an dem Eiscreme an der Theke verkauft wird"
   },
   "source": {
     "osmTags": "amenity=ice_cream"
   },
   "title": {
     "render": {
-      "en": "Ice cream parlor"
+      "en": "Ice cream parlor",
+      "de": "Eisdiele"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
-          "en": "{name}"
+          "en": "{name}",
+          "de": "{name}"
         }
       }
     ]
@@ -48,13 +52,15 @@
   "presets": [
     {
       "title": {
-        "en": "an ice cream parlor"
+        "en": "an ice cream parlor",
+        "de": "eine Eisdiele"
       },
       "tags": [
         "amenity=ice_cream"
       ],
       "description": {
-        "en": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped."
+        "en": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped.",
+        "de": "Ein Geschäft, in dem man nur Eiscreme und damit verbundene Artikel kaufen kann. Normalerweise wird das Eis mit der Hand portioniert."
       }
     }
   ],
@@ -63,7 +69,8 @@
     {
       "question": {
         "en": "What is the name of this ice cream parlor?",
-        "nl": "Wat is de naam van dit ijssalon?"
+        "nl": "Wat is de naam van dit ijssalon?",
+        "de": "Wie heißt diese Eisdiele?"
       },
       "id": "1",
       "freeform": {
@@ -71,7 +78,8 @@
       },
       "render": {
         "en": "This ice cream parlor is named <b>{name}</b>",
-        "nl": "Dit ijssalon heet <b>{name}</b>"
+        "nl": "Dit ijssalon heet <b>{name}</b>",
+        "de": "Diese Eisdiele heißt <b>{name}</b>"
       }
     },
     "opening_hours",

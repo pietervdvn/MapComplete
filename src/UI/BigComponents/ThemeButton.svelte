@@ -87,10 +87,10 @@
 
 {#if theme.id !== personal.id || $unlockedPersonal}
   <SubtleLink href={$href} options={{ extraClasses: "w-full" }}>
-    <img slot="image" src={theme.icon} class="mr-2 m-1 sm:mr-4 sm:m-2 block h-11 w-11" alt="" />
+    <img slot="image" src={theme.icon} class="m-1 mr-2 block h-11 w-11 sm:m-2 sm:mr-4" alt="" />
     <span class="flex flex-col overflow-hidden text-ellipsis">
       <Tr t={title} />
-    
+
       {#if selected}
         <span class="alert">
           <Tr t={Translations.t.general.morescreen.enterToOpen} />

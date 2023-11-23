@@ -15,7 +15,6 @@ Layer showing stairs and escalators
 
 
   - This layer is shown at zoomlevel **17** and higher
-  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
 
@@ -58,9 +57,9 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [string](../SpecialInputElements.md#string) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/conveying#values) [conveying](https://wiki.openstreetmap.org/wiki/Key:conveying) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/handrail#values) [handrail](https://wiki.openstreetmap.org/wiki/Key:handrail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tactile_writing#values) [tactile_writing](https://wiki.openstreetmap.org/wiki/Key:tactile_writing) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/conveying#values) [conveying](https://wiki.openstreetmap.org/wiki/Key:conveying) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno)
 
 
 
@@ -121,6 +120,24 @@ This is rendered with  `These stairs are between the levels {level}`
 
 
 
+### conveying 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *This is an escalator*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes' target='_blank'>yes</a>
+  - *This is not an escalator*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno' target='_blank'>no</a>
+  - *This is not an escalator*  corresponds with  conveying=
+  - _This option cannot be chosen as answer_
+
+
+
+
 ### handrail 
 
 
@@ -151,7 +168,7 @@ The question is  *Do these stairs have tactile writing on the handrail?*
   - *There is no tactile writing on the handrail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a>`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a> & conveying!=yes`
 
 
 
@@ -164,24 +181,6 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>`
-
-
-
-### conveying 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-  - *This is an escalator*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes' target='_blank'>yes</a>
-  - *This is not an escalator*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno' target='_blank'>no</a>
-  - *This is not an escalator*  corresponds with  conveying=
-  - _This option cannot be chosen as answer_
-
 
 
 

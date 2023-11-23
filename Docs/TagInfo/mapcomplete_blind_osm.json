@@ -1141,26 +1141,6 @@
       "value": "-1"
     },
     {
-      "key": "handrail",
-      "description": "Layer 'Stairs' shows handrail=yes with a fixed text, namely 'These stairs have a handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
-      "value": "yes"
-    },
-    {
-      "key": "handrail",
-      "description": "Layer 'Stairs' shows handrail=no with a fixed text, namely 'These stairs do <b>not</b> have a handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
-      "value": "no"
-    },
-    {
-      "key": "tactile_writing",
-      "description": "Layer 'Stairs' shows tactile_writing=yes with a fixed text, namely 'There is tactile writing on the handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if handrail=yes)",
-      "value": "yes"
-    },
-    {
-      "key": "tactile_writing",
-      "description": "Layer 'Stairs' shows tactile_writing=no with a fixed text, namely 'There is no tactile writing on the handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if handrail=yes)",
-      "value": "no"
-    },
-    {
       "key": "conveying",
       "description": "Layer 'Stairs' shows conveying=yes with a fixed text, namely 'This is an escalator' (in the mapcomplete.org theme 'OSM for the blind')",
       "value": "yes"
@@ -1176,28 +1156,48 @@
       "value": ""
     },
     {
+      "key": "handrail",
+      "description": "Layer 'Stairs' shows handrail=yes with a fixed text, namely 'These stairs have a handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "handrail",
+      "description": "Layer 'Stairs' shows handrail=no with a fixed text, namely 'These stairs do <b>not</b> have a handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
+      "value": "no"
+    },
+    {
+      "key": "tactile_writing",
+      "description": "Layer 'Stairs' shows tactile_writing=yes with a fixed text, namely 'There is tactile writing on the handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if handrail=yes & conveying!=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_writing",
+      "description": "Layer 'Stairs' shows tactile_writing=no with a fixed text, namely 'There is no tactile writing on the handrail' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if handrail=yes & conveying!=yes)",
+      "value": "no"
+    },
+    {
       "key": "ramp:bicycle",
-      "description": "Layer 'Stairs' shows ramp:bicycle=yes with a fixed text, namely 'There is a ramp for bicycles here' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows ramp:bicycle=yes with a fixed text, namely 'There is a ramp for bicycles here' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
       "value": "yes"
     },
     {
       "key": "ramp:wheelchair",
-      "description": "Layer 'Stairs' shows ramp:wheelchair=yes with a fixed text, namely 'There is a ramp for wheelchairs here' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows ramp:wheelchair=yes with a fixed text, namely 'There is a ramp for wheelchairs here' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
       "value": "yes"
     },
     {
       "key": "ramp",
-      "description": "Layer 'Stairs' shows ramp=separate with a fixed text, namely 'There is ramp for wheelchairs here, but it is shown separately on the map' (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows ramp=separate with a fixed text, namely 'There is ramp for wheelchairs here, but it is shown separately on the map' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
       "value": "separate"
     },
     {
       "key": "ramp:stroller",
-      "description": "Layer 'Stairs' shows ramp:stroller=yes with a fixed text, namely 'There is a ramp for strollers here' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows ramp:stroller=yes with a fixed text, namely 'There is a ramp for strollers here' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
       "value": "yes"
     },
     {
       "key": "ramp",
-      "description": "Layer 'Stairs' shows ramp=no with a fixed text, namely 'There is no ramp at these stairs' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows ramp=no with a fixed text, namely 'There is no ramp at these stairs' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
       "value": "no"
     }
   ]

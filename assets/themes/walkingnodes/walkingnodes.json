@@ -2,11 +2,13 @@
   "id": "walkingnodes",
   "title": {
     "en": "Walking Node Networks",
-    "nl": "Wandelknooppuntnetwerken"
+    "nl": "Wandelknooppuntnetwerken",
+    "de": "Netzwerke von Wanderknoten"
   },
   "description": {
     "en": "This map shows walking node networks and allows you to add new nodes easily",
-    "nl": "Deze kaart toont wandelknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
+    "nl": "Deze kaart toont wandelknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
+    "de": "Diese Karte zeigt Wandernetzwerke und ermöglicht es Ihnen, einfach neue Knoten hinzuzufügen"
   },
   "icon": "./assets/themes/walkingnodes/logo.svg",
   "startZoom": 11,
@@ -149,7 +151,8 @@
       "title": {
         "render": {
           "en": "Walking node <strong>{rwn_ref}</strong>",
-          "nl": "Wandelknooppunt <strong>{rwn_ref}</strong>"
+          "nl": "Wandelknooppunt <strong>{rwn_ref}</strong>",
+          "de": "Wanderknoten <strong>{rwn_ref}</strong>"
         }
       },
       "tagRenderings": [
@@ -157,19 +160,22 @@
           "id": "node-rwn_ref",
           "question": {
             "en": "What is the reference number of this walking node?",
-            "nl": "Wat is het referentienummer van dit wandelknooppunt?"
+            "nl": "Wat is het referentienummer van dit wandelknooppunt?",
+            "de": "Was ist die Referenznummer dieses Wanderknotens?"
           },
           "freeform": {
             "key": "rwn_ref",
             "type": "int",
             "placeholder": {
               "en": "e.g. 1",
-              "nl": "bijv. 1"
+              "nl": "bijv. 1",
+              "de": "z.B. 1"
             }
           },
           "render": {
             "en": "This walking node has reference number {rwn_ref}",
-            "nl": "Dit wandelknooppunt heeft referentienummer {rwn_ref}"
+            "nl": "Dit wandelknooppunt heeft referentienummer {rwn_ref}",
+            "de": "Dieser Wanderknoten hat die Referenznummer {rwn_ref}"
           }
         },
         {
@@ -177,29 +183,34 @@
           "override": {
             "question": {
               "en": "When was this walking node last surveyed?",
-              "nl": "Wanneer is dit wandelknooppunt het laatst gesurveyed?"
+              "nl": "Wanneer is dit wandelknooppunt het laatst gesurveyed?",
+              "de": "Wann wurde dieser Wanderknoten zuletzt überprüft?"
             },
             "render": {
               "en": "This walking node was last surveyed on {survey:date}",
-              "nl": "Dit wandelknooppunt werd het laatst gesurveyed op {survey:date}"
+              "nl": "Dit wandelknooppunt werd het laatst gesurveyed op {survey:date}",
+              "de": "Dieser Wanderknoten wurde zuletzt am {survey:date} überprüft"
             }
           }
         },
         {
           "question": {
             "en": "How many other walking nodes does this node link to?",
-            "nl": "Met hoeveel andere wandelknooppunten heeft dit knooppunt een verbinding?"
+            "nl": "Met hoeveel andere wandelknooppunten heeft dit knooppunt een verbinding?",
+            "de": "Mit wie vielen anderen Wanderknoten ist dieser Knoten verbunden?"
           },
           "render": {
             "en": "This node links to {expected_rwn_route_relations} other walking nodes.",
-            "nl": "Dit knooppunt verbindt met {expected_rwn_route_relations} andere wandelknooppunten."
+            "nl": "Dit knooppunt verbindt met {expected_rwn_route_relations} andere wandelknooppunten.",
+            "de": "Dieser Knoten ist mit {expected_rwn_route_relations} anderen Wanderknoten verbunden."
           },
           "freeform": {
             "key": "expected_rwn_route_relations",
             "type": "int",
             "placeholder": {
               "en": "e.g. 3",
-              "nl": "bijv. 3"
+              "nl": "bijv. 3",
+              "de": "z.B. 3"
             }
           },
           "id": "node-expected_rwn_route_relations"
@@ -214,7 +225,8 @@
           ],
           "title": {
             "en": "a walking node",
-            "nl": "een wandelknooppunt"
+            "nl": "een wandelknooppunt",
+            "de": "ein Wanderknoten"
           },
           "snapToLayer": [
             "cycleways_and_roads"
@@ -246,11 +258,13 @@
           }
         ],
         "name": {
-          "en": "Hiking guideposts"
+          "en": "Hiking guideposts",
+          "de": "Wanderwegweiser"
         },
         "title": {
           "render": {
-            "en": "Hiking guidepost"
+            "en": "Hiking guidepost",
+            "de": "Wanderwegweiser"
           }
         }
       },
@@ -280,7 +294,8 @@
               "hiking=yes"
             ],
             "title": {
-              "en": "a route marker for a node to node link"
+              "en": "a route marker for a node to node link",
+              "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten"
             },
             "=exampleImages": [
               "./assets/layers/route_marker/walking_route_marker.jpg"

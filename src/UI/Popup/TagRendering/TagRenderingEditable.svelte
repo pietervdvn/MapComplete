@@ -106,7 +106,7 @@
       </div>
     {/if}
   {:else}
-    <div class="w-full h-full overflow-hidden p-2">
+    <div class="h-full w-full overflow-hidden p-2">
       <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
     </div>
   {/if}

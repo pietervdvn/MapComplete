@@ -330,7 +330,7 @@ The position of a signpost can be used by a hiker/biker/rider...
 {{service_item
 |name= [https://mapcomplete.org/icecream icecream]
 |region= Worldwide
-|lang= {{#language:en|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}
 |descr= A MapComplete theme: A map showing ice cream parlors and ice cream vending machines
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

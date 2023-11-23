@@ -500,7 +500,7 @@
         "en": "This door has a width of {canonical(width)}",
         "nl": "Deze deur heeft een breedte van {canonical(width)}",
         "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)}",
-        "es": "Esta puerta tiene una ancho de {canonical(width)} metros",
+        "es": "Esta puerta tiene una ancho de {canonical(width)}",
         "fr": "Cette porte a une largeur de {canonical(width)} mètre",
         "ca": "Aquesta porta té una amplària de {canonical(width)}",
         "cs": "Tyto dveře mají šířku {canonical(width)}"

@@ -1,4 +1,45 @@
 <script>
-export let color = "#000000"
+  export let color = "#000000"
 </script>
- <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">   <g id="surface1">     <path style="fill: none !important;stroke-width:8.16402;stroke-linecap:round;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 9.669812 22.725188 L 42.932875 56.977438 C 42.932875 56.977438 55.27575 71.374687 69.062625 56.977438 C 88.864187 36.300688 103.1225 22.224062 103.1225 22.224062 " transform="matrix(3.289474,0,0,3.289474,0,0)"/>     <path style="fill: none !important;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 9.902563 22.944875 L 102.88975 22.461562 L 102.88975 92.383938 " transform="matrix(3.289474,0,0,3.289474,0,0)"/>     <path style="fill: none !important;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 102.88975 92.383938 L 9.902563 92.866062 L 9.902563 22.944875 " transform="matrix(3.289474,0,0,3.289474,0,0)"/>     <path style="fill: none !important;stroke-width:2.889384;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 15.059875 89.897312 L 52.138375 60.1255 " transform="matrix(3.289474,0,0,3.289474,0,0)"/>     <path style="fill: none !important;stroke-width:2.894905;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 59.644562 61.332 L 98.072063 89.495937 " transform="matrix(3.289474,0,0,3.289474,0,0)"/>   </g> </svg>
+
+<svg
+  {...$$restProps}
+  on:click
+  on:mouseover
+  on:mouseenter
+  on:mouseleave
+  on:keydown
+  xmlns="http://www.w3.org/2000/svg"
+  width="375px"
+  height="375px"
+  viewBox="0 0 375 375"
+  version="1.1"
+>
+  <g id="surface1">
+    <path
+      style="fill: none !important;stroke-width:8.16402;stroke-linecap:round;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 9.669812 22.725188 L 42.932875 56.977438 C 42.932875 56.977438 55.27575 71.374687 69.062625 56.977438 C 88.864187 36.300688 103.1225 22.224062 103.1225 22.224062 "
+      transform="matrix(3.289474,0,0,3.289474,0,0)"
+    />
+    <path
+      style="fill: none !important;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 9.902563 22.944875 L 102.88975 22.461562 L 102.88975 92.383938 "
+      transform="matrix(3.289474,0,0,3.289474,0,0)"
+    />
+    <path
+      style="fill: none !important;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 102.88975 92.383938 L 9.902563 92.866062 L 9.902563 22.944875 "
+      transform="matrix(3.289474,0,0,3.289474,0,0)"
+    />
+    <path
+      style="fill: none !important;stroke-width:2.889384;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 15.059875 89.897312 L 52.138375 60.1255 "
+      transform="matrix(3.289474,0,0,3.289474,0,0)"
+    />
+    <path
+      style="fill: none !important;stroke-width:2.894905;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 59.644562 61.332 L 98.072063 89.495937 "
+      transform="matrix(3.289474,0,0,3.289474,0,0)"
+    />
+  </g>
+</svg>

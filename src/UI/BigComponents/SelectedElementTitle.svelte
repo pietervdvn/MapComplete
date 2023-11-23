@@ -38,7 +38,6 @@
     <div class="flex flex-col">
       <!-- Title element-->
       <h3>
-
         <TagRenderingAnswer config={layer.title} {selectedElement} {state} {tags} {layer} />
       </h3>
       <div

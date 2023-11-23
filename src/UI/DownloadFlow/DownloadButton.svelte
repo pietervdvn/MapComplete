@@ -71,7 +71,6 @@
       gpsLayer.isDisplayed.setData(gpsIsDisplayed)
       state.userRelatedState.preferencesAsTags.data["__showTimeSensitiveIcons"] = "yes"
       state.userRelatedState.preferencesAsTags.ping()
-      
     }
   }
 </script>

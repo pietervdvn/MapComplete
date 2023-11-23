@@ -3,16 +3,16 @@
    * Shows all questions for which the answers are unknown.
    * The questions can either be shown all at once or one at a time (in which case they can be skipped)
    */
-  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
-  import { UIEventSource } from "../../../Logic/UIEventSource";
-  import type { Feature } from "geojson";
-  import type { SpecialVisualizationState } from "../../SpecialVisualization";
-  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-  import If from "../../Base/If.svelte";
-  import TagRenderingQuestion from "./TagRenderingQuestion.svelte";
-  import Tr from "../../Base/Tr.svelte";
-  import Translations from "../../i18n/Translations.js";
-  import { Utils } from "../../../Utils";
+  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
+  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import type { Feature } from "geojson"
+  import type { SpecialVisualizationState } from "../../SpecialVisualization"
+  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+  import If from "../../Base/If.svelte"
+  import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
+  import Tr from "../../Base/Tr.svelte"
+  import Translations from "../../i18n/Translations.js"
+  import { Utils } from "../../../Utils"
 
   export let layer: LayerConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -68,12 +68,12 @@
     },
     [skippedQuestions]
   )
-  let firstQuestion = questionsToAsk.map(qta => qta[0])
+  let firstQuestion = questionsToAsk.map((qta) => qta[0])
 
   let answered: number = 0
   let skipped: number = 0
 
-  function skip(question: {id: string}, didAnswer: boolean = false) {
+  function skip(question: { id: string }, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id)
     skippedQuestions.ping()
     if (didAnswer) {
@@ -146,25 +146,25 @@
         </div>
       {:else}
         <TagRenderingQuestion
-            config={$firstQuestion}
-            {layer}
-            {selectedElement}
-            {state}
-            {tags}
-            on:saved={() => {
-              skip($firstQuestion, true)
+          config={$firstQuestion}
+          {layer}
+          {selectedElement}
+          {state}
+          {tags}
+          on:saved={() => {
+            skip($firstQuestion, true)
+          }}
+        >
+          <button
+            class="secondary"
+            on:click={() => {
+              skip($firstQuestion)
             }}
+            slot="cancel"
           >
-            <button
-              class="secondary"
-              on:click={() => {
-                skip($firstQuestion)
-              }}
-              slot="cancel"
-            >
-              <Tr t={Translations.t.general.skip} />
-            </button>
-          </TagRenderingQuestion>
+            <Tr t={Translations.t.general.skip} />
+          </button>
+        </TagRenderingQuestion>
       {/if}
     </div>
   {/if}

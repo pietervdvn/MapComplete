@@ -62,6 +62,8 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/amenity#values) [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [college](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege) [university](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/isced:2011:level#values) [isced:2011:level](https://wiki.openstreetmap.org/wiki/Key:isced:2011:level) | Multiple choice | [bachelor](https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dbachelor) [master](https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dmaster) [doctorate](https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Ddoctorate)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school:gender#values) [school:gender](https://wiki.openstreetmap.org/wiki/Key:school:gender) | Multiple choice | [mixed](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed) [separated](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated) [male](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale) [female](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
@@ -120,6 +122,38 @@ The question is  *What level of education is given here?*
 
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>`
+
+
+
+### capacity 
+
+
+
+The question is  *How much students can at most enroll in this school?*
+
+This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
+
+This is rendered with  `This school can enroll at most {capacity} students`
+
+
+
+
+
+### gender 
+
+
+
+The question is  *Which genders can enroll at this school?*
+
+
+
+
+
+  - *Both boys and girls can enroll here and have classes together*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed' target='_blank'>mixed</a>
+  - *Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated' target='_blank'>separated</a>
+  - *This is a boys only-school*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale' target='_blank'>male</a>
+  - *This is a girls-only school*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale' target='_blank'>female</a>
+
 
 
 
@@ -204,6 +238,16 @@ This tagrendering has no question and is thus read-only
 
 
 Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
 
 This tagrendering has no question and is thus read-only
 

@@ -15,7 +15,6 @@ This street will become a cyclestreet soon
 
 
   - This layer is shown at zoomlevel **9** and higher
-  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
 

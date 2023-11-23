@@ -191,13 +191,7 @@
     <div class="sticky top-0" style="z-index: 11">
       <div class="interactive sticky top-0 flex justify-between">
         <span class="font-bold">
-          <SpecialTranslation
-            t={question}
-            {tags}
-            {state}
-            {layer}
-            feature={selectedElement}
-          />
+          <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
         </span>
         <slot name="upper-right" />
       </div>

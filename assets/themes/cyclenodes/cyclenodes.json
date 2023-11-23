@@ -329,7 +329,8 @@
               "bicycle=yes"
             ],
             "title": {
-              "en": "a route marker for a node to node link"
+              "en": "a route marker for a node to node link",
+              "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten"
             },
             "=exampleImages": [
               "./assets/layers/route_marker/bicycle_route_marker.jpg"
