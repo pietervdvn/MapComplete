@@ -264,7 +264,6 @@ export default class PointRenderingConfig extends WithContextLoader {
         tags.map((tags) => this.iconSize.GetRenderValue(tags).Subs(tags).txt ?? "[40,40]").map(
             (size) => {
                 const [iconW, iconH] = size.split(",").map((x) => num(x))
-                console.log("Setting size to", iconW, iconH)
                 iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
             }
         )
