@@ -42,7 +42,7 @@
     const key = Object.keys(image.osmTags)[0]
     const url = image.osmTags[key]
     if (isLinked) {
-      const action = new LinkImageAction(currentTags.id, key, url, currentTags, {
+      const action = new LinkImageAction(currentTags.id, key, url, tags, {
         theme: state.layout.id,
         changeType: "link-image",
       })
