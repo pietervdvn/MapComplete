@@ -301,10 +301,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (str === undefined || str === null) {
             return undefined
         }
+        if (typeof str !== "string") {
+            console.error("Not a string:", str)
+            return undefined
+        }
         if (str.length <= l) {
             return str
         }
-        return str.substr(0, l - 3) + "..."
+        return str.substr(0, l - 1) + "…"
     }
 
     /**

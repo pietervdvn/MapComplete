@@ -32,8 +32,8 @@
    */
 
   export let icon: string | undefined;
-  export let color: string | undefined;
-  export let clss: string | undefined
+  export let color: string | undefined = undefined
+  export let clss: string | undefined = undefined
 </script>
 
 {#if icon}

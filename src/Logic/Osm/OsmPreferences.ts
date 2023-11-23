@@ -12,6 +12,10 @@ export class OsmPreferences {
         "all-osm-preferences",
         {}
     )
+    /**
+     * A map containing the individual preference sources
+     * @private
+     */
     private readonly preferenceSources = new Map<string, UIEventSource<string>>()
     private auth: any
     private userDetails: UIEventSource<UserDetails>
@@ -21,7 +25,10 @@ export class OsmPreferences {
         this.auth = auth
         this.userDetails = osmConnection.userDetails
         const self = this
-        osmConnection.OnLoggedIn(() => self.UpdatePreferences())
+        osmConnection.OnLoggedIn(() => {
+            self.UpdatePreferences(true)
+            return true
+        })
     }
 
     /**
@@ -72,8 +79,16 @@ export class OsmPreferences {
             let i = 0
             while (str !== "") {
                 if (str === undefined || str === "undefined") {
+                    source.setData(undefined)
                     throw (
                         "Got 'undefined' or a literal string containing 'undefined' for a long preference with name " +
+                        key
+                    )
+                }
+                if (str === "undefined") {
+                    source.setData(undefined)
+                    throw (
+                        "Got a literal string containing 'undefined' for a long preference with name " +
                         key
                     )
                 }
@@ -197,7 +212,7 @@ export class OsmPreferences {
         })
     }
 
-    private UpdatePreferences() {
+    private UpdatePreferences(forceUpdate?: boolean) {
         const self = this
         this.auth.xhr(
             {
@@ -210,11 +225,22 @@ export class OsmPreferences {
                     return
                 }
                 const prefs = value.getElementsByTagName("preference")
+                const seenKeys = new Set<string>()
                 for (let i = 0; i < prefs.length; i++) {
                     const pref = prefs[i]
                     const k = pref.getAttribute("k")
                     const v = pref.getAttribute("v")
                     self.preferences.data[k] = v
+                    seenKeys.add(k)
+                }
+                if (forceUpdate) {
+                    for (let key in self.preferences.data) {
+                        if (seenKeys.has(key)) {
+                            continue
+                        }
+                        console.log("Deleting key", key, "as we didn't find it upstream")
+                        delete self.preferences.data[key]
+                    }
                 }
 
                 // We merge all the preferences: new keys are uploaded
@@ -289,9 +315,10 @@ export class OsmPreferences {
     removeAllWithPrefix(prefix: string) {
         for (const key in this.preferences.data) {
             if (key.startsWith(prefix)) {
-                this.GetPreference(key, undefined, { prefix: "" }).setData(undefined)
+                this.GetPreference(key, "", { prefix: "" }).setData(undefined)
                 console.log("Clearing preference", key)
             }
         }
+        this.preferences.ping()
     }
 }

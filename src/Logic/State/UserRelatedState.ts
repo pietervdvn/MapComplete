@@ -294,6 +294,9 @@ export default class UserRelatedState {
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
             for (const k in newPrefs) {
                 const v = newPrefs[k]
+                if (v === "undefined" || !v) {
+                    continue
+                }
                 if (k.endsWith("-combined-length")) {
                     const l = Number(v)
                     const key = k.substring(0, k.length - "length".length)
@@ -308,7 +311,6 @@ export default class UserRelatedState {
             }
 
             amendedPrefs.ping()
-            console.log("Amended prefs are:", amendedPrefs.data)
         })
         const translationMode = osmConnection.GetPreference("translation-mode")
 
@@ -395,6 +397,13 @@ export default class UserRelatedState {
                 }
                 if (tags[key + "-combined-0"]) {
                     // A combined value exists
+                    console.log(
+                        "Trying to get a long preference for ",
+                        key,
+                        "with length value",
+                        tags[key],
+                        "as -combined-0 exists"
+                    )
                     this.osmConnection.GetLongPreference(key, "").setData(tags[key])
                 } else {
                     this.osmConnection
