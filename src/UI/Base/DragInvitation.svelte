@@ -5,6 +5,7 @@
    */
   import { Store } from "../../Logic/UIEventSource"
   import { onDestroy } from "svelte"
+  import Hand from "../../assets/svg/Hand.svelte";
 
   let mainElem: HTMLElement
   export let hideSignal: Store<any>
@@ -34,7 +35,7 @@
 
 <div bind:this={mainElem} class="pointer-events-none absolute bottom-0 right-0 h-full w-full">
   <div id="hand-container">
-    <img src="./assets/svg/hand.svg" />
+    <Hand />
   </div>
 </div>
 

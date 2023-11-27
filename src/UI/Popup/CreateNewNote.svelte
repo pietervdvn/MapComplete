@@ -15,6 +15,8 @@
   import NewPointLocationInput from "../BigComponents/NewPointLocationInput.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Svg from "../../Svg"
+  import Layers from "../../assets/svg/Layers.svelte";
+  import AddSmall from "../../assets/svg/AddSmall.svelte";
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
@@ -97,7 +99,7 @@
           <Tr t={Translations.t.notes.noteLayerHasFilters} />
         </div>
         <SubtleButton on:click={() => notelayer.disableAllFilters()}>
-          <img slot="image" src="./assets/svg/filter.svg" class="mr-4 h-8 w-8" />
+          <Layers class="mr-4 h-8 w-8"/>
           <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
         </SubtleButton>
       </div>
@@ -126,7 +128,7 @@
 
           {#if $comment?.length >= 3}
             <SubtleButton on:click={uploadNote}>
-              <img slot="image" src="./assets/svg/addSmall.svg" class="mr-4 h-8 w-8" />
+              <AddSmall slot="image" class="mr-4 h-8 w-8" />
               <Tr slot="message" t={Translations.t.notes.createNote} />
             </SubtleButton>
           {:else}
@@ -143,7 +145,7 @@
         <Tr t={Translations.t.notes.noteLayerNotEnabled} />
       </div>
       <SubtleButton on:click={enableNoteLayer}>
-        <img slot="image" src="./assets/svg/layers.svg" class="mr-4 h-8 w-8" />
+        <Layers slot="image" class="mr-4 h-8 w-8" />
         <Tr slot="message" t={Translations.t.notes.noteLayerDoEnable} />
       </SubtleButton>
     </div>

@@ -12,6 +12,7 @@
   import * as turf from "@turf/turf"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { createEventDispatcher, onDestroy } from "svelte"
+  import Move_arrows from "../../../assets/svg/Move_arrows.svelte";
 
   /**
    * A visualisation to pick a location on a map background
@@ -90,7 +91,7 @@
     class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center p-8 opacity-50"
   >
     <slot name="image">
-      <img class="h-full max-h-24" src="./assets/svg/move-arrows.svg" />
+      <Move_arrows class="h-full max-h-24"/>
     </slot>
   </div>
 

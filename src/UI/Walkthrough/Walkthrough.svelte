@@ -28,6 +28,8 @@
   on:next={() => step(1)}
   isFirst={currentPage === 0}
   islast={currentPage + 1 === pages.length}
+  totalPages={pages.length}
+  pageNumber={currentPage}
 >
   <FromHtml src={nmd(pages[currentPage])} />
 </WalkthroughStep>

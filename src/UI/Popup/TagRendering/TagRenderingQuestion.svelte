@@ -23,6 +23,8 @@
   import UserRelatedState from "../../../Logic/State/UserRelatedState"
   import { twJoin } from "tailwind-merge"
   import { TagUtils } from "../../../Logic/Tags/TagUtils"
+  import Search from "../../../assets/svg/Search.svelte";
+  import Login from "../../../assets/svg/Login.svelte";
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -211,7 +213,7 @@
 
     {#if config.mappings?.length >= 8}
       <div class="sticky flex w-full">
-        <img src="./assets/svg/search.svg" class="h-6 w-6" />
+        <Search class="h-6 w-6"/>
         <input type="text" bind:value={$searchTerm} class="w-full" />
       </div>
     {/if}
@@ -318,7 +320,7 @@
     <LoginToggle {state}>
       <Loading slot="loading" />
       <SubtleButton slot="not-logged-in" on:click={() => state?.osmConnection?.AttemptLogin()}>
-        <img slot="image" src="./assets/svg/login.svg" class="h-8 w-8" />
+        <Login slot="image" class="h-8 w-8" />
         <Tr t={Translations.t.general.loginToStart} slot="message" />
       </SubtleButton>
       {#if $feedback !== undefined}

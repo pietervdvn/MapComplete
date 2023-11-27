@@ -123,6 +123,14 @@ export default class Constants {
         "teardrop",
         "triangle",
         "crosshair",
+        "brick_wall_square",
+        "brick_wall_round",
+        "gps_arrow",
+        "checkmark",
+        "help",
+        "clock",
+        "invalid",
+        "close",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
 

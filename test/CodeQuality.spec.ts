@@ -4,14 +4,16 @@ import { describe, it } from "vitest"
 import { parse as parse_html } from "node-html-parser"
 import { readFileSync } from "fs"
 import ScriptUtils from "../scripts/ScriptUtils"
-
+function detectInCode(forbidden: string, reason: string) {
+    return wrap(detectInCodeUnwrapped(forbidden, reason))
+}
 /**
  *
  * @param forbidden: a GREP-regex. This means that '.' is a wildcard and should be escaped to match a literal dot
  * @param reason
  * @private
  */
-function detectInCode(forbidden: string, reason: string): Promise<void> {
+function detectInCodeUnwrapped(forbidden: string, reason: string): Promise<void> {
     return new Promise<void>((done) => {
         const excludedDirs = [
             ".git",
@@ -24,37 +26,35 @@ function detectInCode(forbidden: string, reason: string): Promise<void> {
             ".idea/",
         ]
 
-        exec(
+        const command =
             'grep -n "' +
-                forbidden +
-                '" -r . ' +
-                excludedDirs.map((d) => "--exclude-dir=" + d).join(" "),
-            (error, stdout, stderr) => {
-                if (error?.message?.startsWith("Command failed: grep")) {
-                    console.warn("Command failed!", error)
-                    return
-                }
-                if (error !== null) {
-                    throw error
-                }
-                if (stderr !== "") {
-                    throw stderr
-                }
-
-                const found = stdout
-                    .split("\n")
-                    .filter((s) => s !== "")
-                    .filter((s) => !s.startsWith("./test/"))
-                if (found.length > 0) {
-                    const msg = `Found a '${forbidden}' at \n    ${found.join(
-                        "\n     "
-                    )}.\n ${reason}`
-                    console.error(msg)
-                    console.error(found.length, "issues found")
-                    throw msg
-                }
+            forbidden +
+            '" -r . ' +
+            excludedDirs.map((d) => "--exclude-dir=" + d).join(" ")
+        console.log(command)
+        exec(command, (error, stdout, stderr) => {
+            if (error?.message?.startsWith("Command failed: grep")) {
+                console.warn("Command failed!", error)
+                throw error
             }
-        )
+            if (error !== null) {
+                throw error
+            }
+            if (stderr !== "") {
+                throw stderr
+            }
+
+            const found = stdout
+                .split("\n")
+                .filter((s) => s !== "")
+                .filter((s) => !s.startsWith("./test/"))
+            if (found.length > 0) {
+                const msg = `Found a '${forbidden}' at \n    ${found.join("\n     ")}.\n ${reason}`
+                console.error(msg)
+                console.error(found.length, "issues found")
+                throw msg
+            }
+        })
     })
 }
 
@@ -62,10 +62,6 @@ function wrap(promise: Promise<void>): (done: () => void) => void {
     return (done) => {
         promise.then(done)
     }
-}
-
-function itAsync(name: string, promise: Promise<void>) {
-    it(name, wrap(promise))
 }
 
 function validateScriptIntegrityOf(path: string) {
@@ -95,7 +91,7 @@ function validateScriptIntegrityOf(path: string) {
 }
 
 describe("Code quality", () => {
-    itAsync(
+    it(
         "should not contain reverse",
         detectInCode(
             "reverse()",
@@ -103,12 +99,12 @@ describe("Code quality", () => {
         )
     )
 
-    itAsync(
+    it(
         "should not contain 'constructor.name'",
         detectInCode("constructor\\.name", "This is not allowed, as minification does erase names.")
     )
 
-    itAsync(
+    it(
         "should not contain 'innerText'",
         detectInCode(
             "innerText",

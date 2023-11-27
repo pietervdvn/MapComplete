@@ -26,7 +26,7 @@ import predifined_filters from "../../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson, { IconConfigJson } from "../Json/PointRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
-import { RenderingSpecification } from "../../../UI/SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
@@ -1193,6 +1193,34 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 }
 
+export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super(
+            "Adds the 'rating'-element if a reviews-element is used in the tagRenderings",
+            ["titleIcons"],
+            "AddRatingBadge"
+        )
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        if (!json.tagRenderings) {
+            return json
+        }
+
+        const specialVis: Exclude<RenderingSpecification, string>[] = <
+            Exclude<RenderingSpecification, string>[]
+        >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
+            (rs) => typeof rs !== "string"
+        )
+        const funcs = new Set<string>(specialVis.map((rs) => rs.func.funcName))
+
+        if (funcs.has("list_reviews")) {
+            ;(<(string | TagRenderingConfigJson)[]>json.titleIcons).push("icons.rating")
+        }
+        return json
+    }
+}
+
 export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
@@ -1218,6 +1246,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) => new Each(new PreparePointRendering(state, layer))
             ),
             new SetDefault("titleIcons", ["icons.defaults"]),
+            new AddRatingBadge(),
             new On(
                 "titleIcons",
                 (layer) =>

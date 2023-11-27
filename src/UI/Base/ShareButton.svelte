@@ -1,6 +1,7 @@
 <script lang="ts">
   import ToSvelte from "./ToSvelte.svelte"
   import Svg from "../../Svg"
+  import Share from "../../assets/svg/Share.svelte";
 
   export let generateShareData: () => {
     text: string
@@ -25,6 +26,6 @@
 
 <button on:click={share} class="secondary m-0 h-8 w-8 p-0">
   <slot name="content">
-    <ToSvelte construct={Svg.share_svg().SetClass("w-7 h-7 p-1")} />
+    <Share class="w-7 h-7 p-1"/>
   </slot>
 </button>

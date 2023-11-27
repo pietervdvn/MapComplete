@@ -11,6 +11,7 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
   import exp from "constants"
+  import Camera_plus from "../../assets/svg/Camera_plus.svelte";
 
   export let tags: Store<OsmTags>
   export let state: SpecialVisualizationState
@@ -42,7 +43,7 @@
       expanded = true
     }}
   >
-    <ToSvelte construct={Svg.camera_plus_svg().SetClass("block w-8 h-8 p-1 mr-2 ")} />
+    <Camera_plus class="block w-8 h-8 p-1 mr-2"/>
     <Tr t={t.seeNearby} />
   </button>
 {/if}

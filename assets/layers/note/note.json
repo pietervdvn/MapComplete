@@ -66,11 +66,11 @@
       "marker": [
         {
           "icon": {
-            "render": "note",
+            "render": "./assets/svg/note.svg",
             "mappings": [
               {
                 "if": "closed_at~*",
-                "then": "resolved"
+                "then": "./assets/svg/resolved.svg"
               }
             ]
           }
@@ -80,11 +80,11 @@
       "iconBadges": [
         {
           "if": "_total_comments>1",
-          "then": "circle:white;speech_bubble"
+          "then": "circle:white;./assets/svg/speech_bubble.svg"
         },
         {
           "if": "_is_import_note~*",
-          "then": "addSmall"
+          "then": "./assets/svg/addSmall.svg"
         }
       ],
       "anchor": "bottom"

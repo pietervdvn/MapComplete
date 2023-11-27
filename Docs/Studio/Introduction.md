@@ -34,7 +34,7 @@ OpenStreetMap data can be reused freely, including for commercial purposes. Howe
 1. Give attribution
 2. Keep the data open - changes to data based on OpenStreetMap must be published under the same license.
 
-You can read the [full copyright notice here](https://osm.org/copyright)
+See the [full copyright notice](https://osm.org/copyright) for details
 
 This also means that we are *not* allowed to copy data from other maps. Do not enter data based on Google Maps!
 
@@ -83,7 +83,7 @@ These features are based on OpenStreetMap. If some data is not known, the user w
 
 <img src="../../public/assets/docs/UIExample.png" class="w-1/2"/>
 
-Data can also be loaded and visualised from external sources. No changes can be made to the data in that case.
+Data can also be loaded and visualised from external sources. No changes can be made to this externally loaded data in that case.
 
 
 

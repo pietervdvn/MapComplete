@@ -189,9 +189,6 @@
     },
     {
       "id": "rating",
-      "labels": [
-        "defaults"
-      ],
       "icon": {
         "class": "w-20 mx-1 flex items-center"
       },

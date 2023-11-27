@@ -1,25 +1,4 @@
 <script>
-  export let color = "#000000"
+export let color = "#000000"
 </script>
-
-<svg
-  {...$$restProps}
-  on:click
-  on:mouseover
-  on:mouseenter
-  on:mouseleave
-  on:keydown
-  xmlns="http://www.w3.org/2000/svg"
-  width="375px"
-  height="375px"
-  viewBox="0 0 375 375"
-  version="1.1"
->
-  <g id="surface1">
-    <path
-      style="fill: none !important;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
-      d="M 95 50 C 95 74.853125 74.853125 95 50 95 C 25.146875 95 5 74.853125 5 50 C 5 25.146875 25.146875 5 50 5 C 74.853125 5 95 25.146875 95 50 Z M 95 50 "
-      transform="matrix(3.75,0,0,3.75,0,0)"
-    />
-  </g>
-</svg>
+ <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">   <g id="surface1">     <path style="fill: none !important;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 95 50 C 95 74.853125 74.853125 95 50 95 C 25.146875 95 5 74.853125 5 50 C 5 25.146875 25.146875 5 50 5 C 74.853125 5 95 25.146875 95 50 Z M 95 50 " transform="matrix(3.75,0,0,3.75,0,0)"/>   </g> </svg>

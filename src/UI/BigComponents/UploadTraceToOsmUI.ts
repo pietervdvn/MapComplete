@@ -12,6 +12,8 @@ import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Translation } from "../i18n/Translation"
 import { LoginToggle } from "../Popup/LoginButton"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import Upload from "../../assets/svg/Upload.svelte"
 
 export default class UploadTraceToOsmUI extends LoginToggle {
     constructor(
@@ -83,7 +85,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                         clicked.setData(false)
                     })
                     .SetClass(""),
-                new SubtleButton(Svg.upload_svg(), t.confirm).OnClickWithLoading(
+                new SubtleButton(new SvelteUIElement(Upload, {}), t.confirm).OnClickWithLoading(
                     t.uploading,
                     async () => {
                         const titleStr = UploadTraceToOsmUI.createDefault(
@@ -119,7 +121,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                     ]).SetClass("flex p-2 rounded-xl border-2 subtle-border items-center"),
                     new Toggle(
                         confirmPanel,
-                        new SubtleButton(Svg.upload_svg(), t.title).onClick(() =>
+                        new SubtleButton(new SvelteUIElement(Upload), t.title).onClick(() =>
                             clicked.setData(true)
                         ),
                         clicked

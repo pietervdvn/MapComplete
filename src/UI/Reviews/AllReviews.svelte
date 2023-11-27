@@ -12,6 +12,7 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Svg from "../../Svg"
+  import Mangrove_logo from "../../assets/svg/Mangrove_logo.svelte";
 
   /**
    * An element showing all reviews
@@ -40,7 +41,7 @@
     <Tr t={Translations.t.reviews.no_reviews_yet} />
   {/if}
   <div class="flex justify-end">
-    <ToSvelte construct={Svg.mangrove_logo_svg().SetClass("w-12 h-12 shrink-0 p-1 ")} />
+    <Mangrove_logo class="w-12 h-12 shrink-0 p-1"/>
     <Tr cls="text-sm subtle" t={Translations.t.reviews.attribution} />
   </div>
 </div>

@@ -9,6 +9,12 @@ export default class ValidationUtils {
         renderingConfigs: (TagRenderingConfigJson | QuestionableTagRenderingConfigJson)[]
     ): RenderingSpecification[] {
         const visualisations: RenderingSpecification[] = []
+        if (!Array.isArray(renderingConfigs)) {
+            throw (
+                "Could not inspect renderingConfigs, not an array: " +
+                JSON.stringify(renderingConfigs)
+            )
+        }
         for (const renderConfig of renderingConfigs) {
             visualisations.push(...ValidationUtils.getSpecialVisualisationsWithArgs(renderConfig))
         }

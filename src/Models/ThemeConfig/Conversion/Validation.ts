@@ -92,7 +92,7 @@ export class DoesImageExist extends DesugaringStep<string> {
             return image
         }
         if (image.match(/[a-z]*/)) {
-            if (Svg.All[image + ".svg"] !== undefined) {
+            if (Constants.defaultPinIcons.indexOf(image) >= 0) {
                 // This is a builtin img, e.g. 'checkmark' or 'crosshair'
                 return image
             }
@@ -110,7 +110,7 @@ export class DoesImageExist extends DesugaringStep<string> {
                 )
             } else if (!this.doesPathExist(image)) {
                 context.err(
-                    `Image with path ${image} does not exist; it is used in ${context}.\n     Check for typo's and missing directories in the path.`
+                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path.`
                 )
             } else {
                 context.err(
@@ -810,6 +810,12 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         if (json["special"] !== undefined) {
             context.err(
                 'Detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
+            )
+        }
+
+        if (Object.keys(json).length === 1 && typeof json["render"] === "string") {
+            context.warn(
+                `use the content directly instead of {render: ${JSON.stringify(json["render"])}}`
             )
         }
 

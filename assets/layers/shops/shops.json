@@ -160,7 +160,7 @@
               "craft=key_cutter"
             ]
           },
-          "then": "./assets/layers/id_presets/fas-key.svg"
+          "then": "circle:white;./assets/layers/id_presets/fas-key.svg"
         }
       ],
       "label": {
