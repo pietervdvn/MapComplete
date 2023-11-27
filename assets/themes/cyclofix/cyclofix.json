@@ -90,8 +90,11 @@
         "=pointRendering": [
           {
             "marker": [
+              {"icon": "pin",
+              "color":"#ba2792"}
+              ,
               {
-                "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg"
+                "icon": "./assets/themes/cyclofix/key.svg"
               }
             ],
             "iconSize": "40,40",
