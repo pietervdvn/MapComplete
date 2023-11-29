@@ -1,6 +1,7 @@
 import { TagsFilter } from "./TagsFilter"
 import { Tag } from "./Tag"
 import { Utils } from "../../Utils"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 
 /**
  * The substituting-tag uses the tags of a feature a variables and replaces them.
@@ -43,6 +44,10 @@ export default class SubstitutingTag implements TagsFilter {
             "=" +
             SubstitutingTag.substituteString(this._value, properties)
         )
+    }
+
+    asJson(): TagConfigJson {
+        return this._key + (this._invert ? "!" : "") + ":=" + this._value
     }
 
     asOverpass(): string[] {

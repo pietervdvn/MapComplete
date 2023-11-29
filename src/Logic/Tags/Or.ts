@@ -1,6 +1,7 @@
 import { TagsFilter } from "./TagsFilter"
 import { TagUtils } from "./TagUtils"
 import { And } from "./And"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 
 export class Or extends TagsFilter {
     public or: TagsFilter[]
@@ -25,6 +26,10 @@ export class Or extends TagsFilter {
         }
 
         return false
+    }
+
+    asJson(): TagConfigJson {
+        return { or: this.or.map((o) => o.asJson()) }
     }
 
     /**
@@ -174,9 +179,9 @@ export class Or extends TagsFilter {
         const newOrs: TagsFilter[] = []
         let containedAnds: And[] = []
         for (const tf of optimized) {
-            if (tf instanceof Or) {
+            if (tf["or"]) {
                 // expand all the nested ors...
-                newOrs.push(...tf.or)
+                newOrs.push(...tf["or"])
             } else if (tf instanceof And) {
                 // partition of all the ands
                 containedAnds.push(tf)
@@ -191,7 +196,7 @@ export class Or extends TagsFilter {
                 const cleanedContainedANds: And[] = []
                 outer: for (let containedAnd of containedAnds) {
                     for (const known of newOrs) {
-                        // input for optimazation: (K=V | (X=Y & K=V))
+                        // input for optimization: (K=V | (X=Y & K=V))
                         // containedAnd: (X=Y & K=V)
                         // newOrs (and thus known): (K=V) --> false
                         const cleaned = containedAnd.removePhraseConsideredKnown(known, false)

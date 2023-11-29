@@ -15,13 +15,14 @@ type Tags = Record<string, string>
 export type UploadableTag = Tag | SubstitutingTag | And
 
 export class TagUtils {
-    public static readonly comparators: ReadonlyArray<[string, (a: number, b: number) => boolean]> =
-        [
-            ["<=", (a, b) => a <= b],
-            [">=", (a, b) => a >= b],
-            ["<", (a, b) => a < b],
-            [">", (a, b) => a > b],
-        ]
+    public static readonly comparators: ReadonlyArray<
+        ["<" | ">" | "<=" | ">=", (a: number, b: number) => boolean]
+    > = [
+        ["<=", (a, b) => a <= b],
+        [">=", (a, b) => a >= b],
+        ["<", (a, b) => a < b],
+        [">", (a, b) => a > b],
+    ]
     public static modeDocumentation: Record<
         string,
         { name: string; docs: string; uploadable?: boolean; overpassSupport: boolean }
@@ -735,11 +736,10 @@ export class TagUtils {
         const tag = json as string
         for (const [operator, comparator] of TagUtils.comparators) {
             if (tag.indexOf(operator) >= 0) {
-                const split = Utils.SplitFirst(tag, operator)
-
-                let val = Number(split[1].trim())
+                const split = Utils.SplitFirst(tag, operator).map((v) => v.trim())
+                let val = Number(split[1])
                 if (isNaN(val)) {
-                    val = new Date(split[1].trim()).getTime()
+                    val = new Date(split[1]).getTime()
                 }
 
                 const f = (value: string | number | undefined) => {
@@ -762,7 +762,7 @@ export class TagUtils {
                     }
                     return comparator(b, val)
                 }
-                return new ComparingTag(split[0], f, operator + val)
+                return new ComparingTag(split[0], f, operator, "" + val)
             }
         }
 

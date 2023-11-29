@@ -3,6 +3,7 @@ import { Or } from "./Or"
 import { TagUtils } from "./TagUtils"
 import { Tag } from "./Tag"
 import { RegexTag } from "./RegexTag"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 
 export class And extends TagsFilter {
     public and: TagsFilter[]
@@ -70,6 +71,10 @@ export class And extends TagsFilter {
             allChoices = newChoices
         }
         return allChoices
+    }
+
+    asJson(): TagConfigJson {
+        return { and: this.and.map((a) => a.asJson()) }
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {

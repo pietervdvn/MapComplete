@@ -1,5 +1,6 @@
 import { Tag } from "./Tag"
 import { TagsFilter } from "./TagsFilter"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 
 export class RegexTag extends TagsFilter {
     public readonly key: RegExp | string
@@ -80,6 +81,10 @@ export class RegexTag extends TagsFilter {
             // Normal key and normal value
             return [`["${this.key}"${inv}="${this.value}"]`]
         }
+    }
+
+    asJson(): TagConfigJson {
+        return this.asHumanString()
     }
 
     isUsableAsAnswer(): boolean {
