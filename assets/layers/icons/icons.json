@@ -27,7 +27,7 @@
         {
           "#": "ignore-image-in-then",
           "if": "wikipedia=",
-          "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
         }
       ]
     },
