@@ -233,6 +233,15 @@ export class And extends TagsFilter {
         return And.construct(newAnds)
     }
 
+    /**
+     * const raw = {"and": [{"or":["leisure=playground","playground!=forest"]},{"or":["leisure=playground","playground!=forest"]}]}
+     * const parsed = TagUtils.Tag(raw)
+     * parsed.optimize().asJson() // => {"or":["leisure=playground","playground!=forest"]}
+     *
+     * const raw = {"and": [{"and":["advertising=screen"]}, {"and":["advertising~*"]}]}]
+     * const parsed = TagUtils.Tag(raw)
+     * parsed.optimize().asJson() // => "advertising=screen"
+     */
     optimize(): TagsFilter | boolean {
         if (this.and.length === 0) {
             return true
@@ -294,9 +303,17 @@ export class And extends TagsFilter {
                             optimized.splice(i, 1)
                             i--
                         }
-                    } else if (v !== opt.value) {
-                        // detected an internal conflict
-                        return false
+                    } else {
+                        if (!v.match(opt.value)) {
+                            // We _know_ that for the key of the RegexTag `opt`, the value will be `v`.
+                            // As such, if `opt.value` cannot match `v`, we detected an internal conflict and can fail
+
+                            return false
+                        } else {
+                            // Another tag already provided a _stricter_ value then this regex, so we can remove this one!
+                            optimized.splice(i, 1)
+                            i--
+                        }
                     }
                 }
             }
@@ -374,10 +391,13 @@ export class And extends TagsFilter {
                     const elements = containedOr.or.filter(
                         (candidate) => !commonValues.some((cv) => cv.shadows(candidate))
                     )
-                    newOrs.push(Or.construct(elements))
+                    if (elements.length > 0) {
+                        newOrs.push(Or.construct(elements))
+                    }
                 }
-
-                commonValues.push(And.construct(newOrs))
+                if (newOrs.length > 0) {
+                    commonValues.push(And.construct(newOrs))
+                }
                 const result = new Or(commonValues).optimize()
                 if (result === false) {
                     return false

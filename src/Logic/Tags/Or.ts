@@ -162,6 +162,12 @@ export class Or extends TagsFilter {
         return Or.construct(newOrs)
     }
 
+    /**
+     * const raw = {"or": [{"and":["leisure=playground","playground!=forest"]},{"and":["leisure=playground","playground!=forest"]}]}
+     * const parsed = TagUtils.Tag(raw)
+     * parsed.optimize().asJson() // => {"and":["leisure=playground","playground!=forest"]}
+     *
+     */
     optimize(): TagsFilter | boolean {
         if (this.or.length === 0) {
             return false
@@ -241,16 +247,21 @@ export class Or extends TagsFilter {
                     const elements = containedAnd.and.filter(
                         (candidate) => !commonValues.some((cv) => cv.shadows(candidate))
                     )
+                    if (elements.length == 0) {
+                        continue
+                    }
                     newAnds.push(And.construct(elements))
                 }
+                if (newAnds.length > 0) {
+                    commonValues.push(Or.construct(newAnds))
+                }
 
-                commonValues.push(Or.construct(newAnds))
                 const result = new And(commonValues).optimize()
                 if (result === true) {
                     return true
                 } else if (result === false) {
                     // neutral element: skip
-                } else {
+                } else if (commonValues.length > 0) {
                     newOrs.push(And.construct(commonValues))
                 }
             }

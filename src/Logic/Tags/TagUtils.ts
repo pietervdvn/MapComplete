@@ -325,6 +325,14 @@ export class TagUtils {
         return tags
     }
 
+    static optimzeJson(json: TagConfigJson): TagConfigJson | boolean {
+        const optimized = TagUtils.Tag(json).optimize()
+        if (optimized === true || optimized === false) {
+            return optimized
+        }
+        return optimized.asJson()
+    }
+
     /**
      * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
      *
