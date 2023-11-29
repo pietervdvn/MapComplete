@@ -62,6 +62,7 @@
       "cs": "Pitná voda"
     }
   },
+  "titleIcons": ["icons.defaults", "auto:type", "auto:seasonal"],
   "pointRendering": [
     {
       "iconBadges": [
@@ -302,6 +303,79 @@
       ]
     },
     {
+      "id": "seasonal",
+      "question": {
+        "en": "Is this drinking water point available all year round?"
+      },
+      "mappings": [
+        {
+          "if": "seasonal=no",
+          "then":{
+            "en":"This drinking water point is available all around the year"
+          }
+        },
+        {
+          "if": "seasonal=summer",
+          "then":{
+            "en":"This drinking water point is only available in summer"
+          }
+        },
+        {
+          "if": "seasonal=spring;summer;autumn",
+          "icon": "./assets/layers/drinking_water/no_winter.svg",
+          "then":{
+            "en":"This drinking water point is closed during the winter"
+          }
+        }
+      ]
+    },
+    {"builtin":["opening_hours_24_7"],
+      "override": {
+        "questionHint":{
+          "en":"These are the opening hours if the drinking water fountain is operational."
+        },
+        "+mappings":[
+          {
+            "if":{
+              "and": [
+                "seasonal!=no",
+                {"or":[
+                  {
+                    "and":[
+                      "seasonal!~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and":[
+                      "seasonal!~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and":[
+                      "seasonal!~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and":[
+                      "seasonal!~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]}
+              ]
+            },
+            "then":{
+              "en": "This drinking water fountain is closed this season."
+            },
+            "hideInAnswer":true
+          }
+        ]
+      }
+    },
+    {
       "id": "render-closest-drinking-water",
       "render": {
         "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meters</a>",
@@ -316,6 +390,7 @@
       },
       "condition": "_closest_other_drinking_water_id~*"
     }
+    
   ],
   "deletion": {
     "softDeletionTags": {

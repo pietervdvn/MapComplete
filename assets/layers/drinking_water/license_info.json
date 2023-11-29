@@ -34,6 +34,14 @@
     ]
   },
   {
+    "path": "no_winter.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "tap.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -42,5 +50,13 @@
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Water_DIN-style.svg"
     ]
+  },
+  {
+    "path": "winter.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
   }
 ]
