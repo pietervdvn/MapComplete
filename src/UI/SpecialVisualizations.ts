@@ -534,6 +534,9 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
+                    if (!layer.deletion) {
+                        return undefined
+                    }
                     return new SvelteUIElement(DeleteWizard, {
                         tags: tagSource,
                         deleteConfig: layer.deletion,
@@ -873,20 +876,22 @@ export default class SpecialVisualizations {
                             t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
                             t.downloadGeoJsonHelper.SetClass("subtle"),
                         ]).SetClass("flex flex-col")
-                    ).onClick(() => {
-                        console.log("Exporting as Geojson")
-                        const tags = tagSource.data
-                        const title =
-                            layer?.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
-                        const data = JSON.stringify(feature, null, "  ")
-                        Utils.offerContentsAsDownloadableFile(
-                            data,
-                            title + "_mapcomplete_export.geojson",
-                            {
-                                mimetype: "application/vnd.geo+json",
-                            }
-                        )
-                    })
+                    )
+                        .onClick(() => {
+                            console.log("Exporting as Geojson")
+                            const tags = tagSource.data
+                            const title =
+                                layer?.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
+                            const data = JSON.stringify(feature, null, "  ")
+                            Utils.offerContentsAsDownloadableFile(
+                                data,
+                                title + "_mapcomplete_export.geojson",
+                                {
+                                    mimetype: "application/vnd.geo+json",
+                                }
+                            )
+                        })
+                        .SetClass("w-full")
                 },
             },
             {

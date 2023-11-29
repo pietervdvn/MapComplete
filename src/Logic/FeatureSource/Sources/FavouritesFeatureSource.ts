@@ -16,6 +16,11 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
     private readonly _osmConnection: OsmConnection
     private readonly _detectedIds: Store<string[]>
 
+    /**
+     * All favourites, including the ones which are filtered away because they are already displayed
+     */
+    public readonly allFavourites: Store<Feature[]>
+
     constructor(
         connection: OsmConnection,
         indexedSource: FeaturePropertiesStore,
@@ -53,6 +58,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
         )
 
         super(featuresWithoutAlreadyPresent)
+        this.allFavourites = features
 
         this._osmConnection = connection
         this._detectedIds = Stores.ListStabilized(
@@ -76,6 +82,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
         const geometry = <[number, number]>JSON.parse(prefs[key])
         const properties = FavouritesFeatureSource.getPropertiesFor(prefs, id)
         properties._orig_layer = prefs[FavouritesFeatureSource.prefix + id + "-layer"]
+        properties._orig_theme = prefs[FavouritesFeatureSource.prefix + id + "-theme"]
 
         properties.id = osmId
         properties._favourite = "yes"

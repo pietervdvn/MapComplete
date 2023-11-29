@@ -15,7 +15,7 @@
   import type { MapProperties } from "../Models/MapProperties";
   import Geosearch from "./BigComponents/Geosearch.svelte";
   import Translations from "./i18n/Translations";
-  import { CogIcon, EyeIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
   import Tr from "./Base/Tr.svelte";
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
   import FloatOver from "./Base/FloatOver.svelte";
@@ -64,6 +64,8 @@
   import Community from "../assets/svg/Community.svelte";
   import Download from "../assets/svg/Download.svelte";
   import Share from "../assets/svg/Share.svelte";
+  import FavouriteSummary from "./Favourites/FavouriteSummary.svelte";
+  import Favourites from "./Favourites/Favourites.svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -493,22 +495,31 @@
       </div>
 
       <div class="flex" slot="title2">
+        <HeartIcon class="h-6 w-6" />
+        Your favourites
+      </div>
+
+      <div class="flex flex-col" slot="content2">
+        <h3>Your favourite locations</h3>
+        <Favourites {state}/>
+      </div>
+      <div class="flex" slot="title3">
         <Community class="w-6 h-6"/>
         <Tr t={Translations.t.communityIndex.title} />
       </div>
-      <div class="m-2" slot="content2">
+      <div class="m-2" slot="content3">
         <CommunityIndexView location={state.mapProperties.location} />
       </div>
-      <div class="flex" slot="title3">
+      <div class="flex" slot="title4">
         <EyeIcon class="w-6" />
         <Tr t={Translations.t.privacy.title} />
       </div>
-      <div class="m-2" slot="content3">
+      <div class="m-2" slot="content4">
         <ToSvelte construct={() => new PrivacyPolicy()} />
       </div>
 
-      <Tr slot="title4" t={Translations.t.advanced.title} />
-      <div class="m-2 flex flex-col" slot="content4">
+      <Tr slot="title5" t={Translations.t.advanced.title} />
+      <div class="m-2 flex flex-col" slot="content5">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
           <OpenIdEditor mapProperties={state.mapProperties} />
           <OpenJosm {state}/>

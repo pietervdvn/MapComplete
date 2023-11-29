@@ -1,4 +1,5 @@
 {
+  "#":"no-translations",
   "pointRendering": [
     {
       "location": [
@@ -37,35 +38,9 @@
     "render": {
       "en": "Favourite location",
       "nl": "Favoriete locatie"
-    },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "*": "{name}"
-        }
-      }
-    ]
+    }
   },
   "tagRenderings": [
-    {
-      "id": "Explanation",
-      "classes": "thanks",
-      "icon": {
-        "class": "large",
-        "path": "heart"
-      },
-      "render": {
-        "en": "You marked this location as a personal favourite. As such, it is shown on every map you load.",
-        "nl": "Je hebt deze locatie als persoonlijke favoriet aangeduid en worden op alle MapComplete-kaarten getoond."
-      }
-    },
-    {
-      "id": "show_images",
-      "render": {
-        "*": "{image_carousel()}"
-      }
-    },
-    "all_tags"
+    
   ]
 }

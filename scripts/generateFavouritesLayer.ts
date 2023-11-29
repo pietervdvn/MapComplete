@@ -2,24 +2,242 @@ import Script from "./Script"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { readFileSync, writeFileSync } from "fs"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
+import { AllKnownLayoutsLazy } from "../src/Customizations/AllKnownLayouts"
+import { Utils } from "../src/Utils"
+import { AddEditingElements } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
+import { TagUtils } from "../src/Logic/Tags/TagUtils"
+import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
+import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
 
-class PrepareFavouritesLayerJson extends Script {
+export class GenerateFavouritesLayer extends Script {
+    private readonly layers: LayerConfigJson[] = []
+
     constructor() {
         super("Prepares the 'favourites'-layer")
+        const allThemes = new AllKnownLayoutsLazy(false).values()
+        for (const theme of allThemes) {
+            if (theme.hideFromOverview) {
+                continue
+            }
+            for (const layer of theme.layers) {
+                if (!layer.source) {
+                    continue
+                }
+                if (layer.source.geojsonSource) {
+                    continue
+                }
+                const layerConfig = AllSharedLayers.getSharedLayersConfigs().get(layer.id)
+                if (!layerConfig) {
+                    continue
+                }
+                this.layers.push(layerConfig)
+            }
+        }
+    }
+
+    private addTagRenderings(proto: LayerConfigJson) {
+        const blacklistedIds = new Set([
+            "images",
+            "questions",
+            "mapillary",
+            "leftover-questions",
+            "last_edit",
+            "minimap",
+            "move-button",
+            "delete-button",
+            "all-tags",
+            ...AddEditingElements.addedElements,
+        ])
+
+        const generateTagRenderings: (string | QuestionableTagRenderingConfigJson)[] = []
+        const trPerId = new Map<
+            string,
+            { conditions: TagConfigJson[]; tr: QuestionableTagRenderingConfigJson }
+        >()
+        for (const layerConfig of this.layers) {
+            if (!layerConfig.tagRenderings) {
+                continue
+            }
+            for (const tagRendering of layerConfig.tagRenderings) {
+                if (typeof tagRendering === "string") {
+                    if (blacklistedIds.has(tagRendering)) {
+                        continue
+                    }
+                    generateTagRenderings.push(tagRendering)
+                    blacklistedIds.add(tagRendering)
+                    continue
+                }
+                if (tagRendering["builtin"]) {
+                    continue
+                }
+                const id = tagRendering.id
+                if (blacklistedIds.has(id)) {
+                    continue
+                }
+                if (trPerId.has(id)) {
+                    const old = trPerId.get(id).tr
+
+                    // We need to figure out if this was a 'recycled' tag rendering or just happens to have the same id
+                    function isSame(fieldName: string) {
+                        return old[fieldName]?.["en"] === tagRendering[fieldName]?.["en"]
+                    }
+
+                    const sameQuestion = isSame("question") && isSame("render")
+                    if (!sameQuestion) {
+                        const newTr = <QuestionableTagRenderingConfigJson>Utils.Clone(tagRendering)
+                        newTr.id = layerConfig.id + "_" + newTr.id
+                        if (blacklistedIds.has(newTr.id)) {
+                            continue
+                        }
+                        newTr.condition = {
+                            and: Utils.NoNull([(newTr.condition, layerConfig.source["osmTags"])]),
+                        }
+                        generateTagRenderings.push(newTr)
+                        blacklistedIds.add(newTr.id)
+                        continue
+                    }
+                }
+                if (!trPerId.has(id)) {
+                    const newTr = <QuestionableTagRenderingConfigJson>Utils.Clone(tagRendering)
+                    generateTagRenderings.push(newTr)
+                    trPerId.set(newTr.id, { tr: newTr, conditions: [] })
+                }
+                const conditions = trPerId.get(id).conditions
+                if (tagRendering["condition"]) {
+                    conditions.push({
+                        and: [tagRendering["condition"], layerConfig.source["osmTags"]],
+                    })
+                } else {
+                    conditions.push(layerConfig.source["osmTags"])
+                }
+            }
+        }
+
+        for (const { tr, conditions } of Array.from(trPerId.values())) {
+            const optimized = TagUtils.optimzeJson({ or: conditions })
+            if (optimized === true) {
+                continue
+            }
+            if (optimized === false) {
+                throw "Optimized into 'false', this is weird..."
+            }
+            tr.condition = optimized
+        }
+
+        const allTags: QuestionableTagRenderingConfigJson = {
+            id: "all-tags",
+            render: { "*": "{all_tags()}" },
+
+            metacondition: {
+                or: [
+                    "__featureSwitchIsDebugging=true",
+                    "mapcomplete-show_tags=full",
+                    "mapcomplete-show_debug=yes",
+                ],
+            },
+        }
+        proto.tagRenderings = [
+            ...generateTagRenderings,
+            ...proto.tagRenderings,
+            "questions",
+            allTags,
+        ]
+    }
+
+    private addTitle(proto: LayerConfigJson) {
+        const mappings: MappingConfigJson[] = []
+        for (const layer of this.layers) {
+            const t = layer.title
+            const tags: TagConfigJson = layer.source["osmTags"]
+            if (!t) {
+                continue
+            }
+            if (typeof t === "string") {
+                mappings.push({ if: tags, then: t })
+            } else if (t["render"] !== undefined || t["mappings"] !== undefined) {
+                const tr = <TagRenderingConfigJson>t
+                for (let i = 0; i < (tr.mappings ?? []).length; i++) {
+                    const mapping = tr.mappings[i]
+                    const optimized = TagUtils.optimzeJson({
+                        and: [mapping.if, tags],
+                    })
+                    if (optimized === false) {
+                        console.warn(
+                            "The following tags yielded 'false':",
+                            JSON.stringify(mapping.if),
+                            JSON.stringify(tags)
+                        )
+                        continue
+                    }
+                    if (optimized === true) {
+                        console.error(
+                            "The following tags yielded 'false':",
+                            JSON.stringify(mapping.if),
+                            JSON.stringify(tags)
+                        )
+                        throw "Tags for title optimized to true"
+                    }
+
+                    if (!mapping.then) {
+                        throw (
+                            "The title has a missing 'then' for mapping " +
+                            i +
+                            " in layer " +
+                            layer.id
+                        )
+                    }
+                    mappings.push({
+                        if: optimized,
+                        then: mapping.then,
+                    })
+                }
+                if (tr.render) {
+                    mappings.push({
+                        if: tags,
+                        then: <Translatable>tr.render,
+                    })
+                }
+            } else {
+                mappings.push({ if: tags, then: <Record<string, string>>t })
+            }
+        }
+
+        if (proto.title["mappings"]) {
+            mappings.unshift(...proto.title["mappings"])
+        }
+        if (proto.title["render"]) {
+            mappings.push({
+                if: "id~*",
+                then: proto.title["render"],
+            })
+        }
+
+        proto.title = {
+            mappings,
+        }
     }
 
     async main(args: string[]): Promise<void> {
-        const allConfigs = AllSharedLayers.getSharedLayersConfigs()
+        console.log("Generating the favourite layer: stealing _all_ tagRenderings")
         const proto = this.readLayer("favourite/favourite.proto.json")
-        const questions = allConfigs.get("questions")
-        proto.tagRenderings.push(...questions.tagRenderings)
-
+        this.addTagRenderings(proto)
+        this.addTitle(proto)
         writeFileSync("./assets/layers/favourite/favourite.json", JSON.stringify(proto, null, "  "))
     }
 
     private readLayer(path: string): LayerConfigJson {
-        return JSON.parse(readFileSync("./assets/layers/" + path, "utf8"))
+        try {
+            return JSON.parse(readFileSync("./assets/layers/" + path, "utf8"))
+        } catch (e) {
+            console.error("Could not read ./assets/layers/" + path)
+            throw e
+        }
     }
 }
 
-new PrepareFavouritesLayerJson().run()
+new GenerateFavouritesLayer().run()

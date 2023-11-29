@@ -6,6 +6,7 @@ scratch
 assets/editor-layer-index.json
 assets/generated/*
 src/assets/generated/
+assets/layers/favourite/favourite.json
 public/*.webmanifest
 /*.html
 !/index.html

@@ -462,6 +462,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * @private
      */
     private selectClosestAtCenter(i: number = 0) {
+        this.mapProperties.lastKeyNavigation.setData(Date.now() / 1000)
         const toSelect = this.closestFeatures.features.data[i]
         if (!toSelect) {
             return
@@ -567,46 +568,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
     }
 
-    private addLastClick(last_click: LastClickFeatureSource) {
-        // The last_click gets a _very_ special treatment as it interacts with various parts
-
-        this.featureProperties.trackFeatureSource(last_click)
-        this.indexedFeatures.addSource(last_click)
-
-        last_click.features.addCallbackAndRunD((features) => {
-            if (this.selectedLayer.data?.id === "last_click") {
-                // The last-click location moved, but we have selected the last click of the previous location
-                // So, we update _after_ clearing the selection to make sure no stray data is sticking around
-                this.selectedElement.setData(undefined)
-                this.selectedElement.setData(features[0])
-            }
-        })
-
-        new ShowDataLayer(this.map, {
-            features: new FilteringFeatureSource(this.newPointDialog, last_click),
-            doShowLayer: this.featureSwitches.featureSwitchEnableLogin,
-            layer: this.newPointDialog.layerDef,
-            selectedElement: this.selectedElement,
-            selectedLayer: this.selectedLayer,
-            metaTags: this.userRelatedState.preferencesAsTags,
-            onClick: (feature: Feature) => {
-                if (this.mapProperties.zoom.data < Constants.minZoomLevelToAddNewPoint) {
-                    this.map.data.flyTo({
-                        zoom: Constants.minZoomLevelToAddNewPoint,
-                        center: this.mapProperties.lastClickLocation.data,
-                    })
-                    return
-                }
-                // We first clear the selection to make sure no weird state is around
-                this.selectedLayer.setData(undefined)
-                this.selectedElement.setData(undefined)
-
-                this.selectedElement.setData(feature)
-                this.selectedLayer.setData(this.newPointDialog.layerDef)
-            },
-        })
-    }
-
     /**
      * Add the special layers to the map
      */
@@ -663,9 +624,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         const rangeFLayer: FilteredLayer = this.layerState.filteredLayers.get("range")
-
         const rangeIsDisplayed = rangeFLayer?.isDisplayed
-
         if (
             !QueryParameters.wasInitialized(FilteredLayer.queryParameterKey(rangeFLayer.layerDef))
         ) {

@@ -173,7 +173,6 @@ export default class GeoLocationHandler {
                     properties[k] = location[k]
                 }
             }
-            console.debug("Current location object:", location)
             properties["_all"] = JSON.stringify(location)
 
             const feature = <Feature>{

@@ -566,6 +566,16 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
 }
 
 export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
+    static addedElements: string[] = [
+        "minimap",
+        "just_created",
+        "split_button",
+        "move_button",
+        "delete_button",
+        "last_edit",
+        "favourite_state",
+        "all_tags",
+    ]
     private readonly _desugaring: DesugaringContext
 
     constructor(desugaring: DesugaringContext) {
@@ -1210,7 +1220,7 @@ class AddFavouriteBadges extends DesugaringStep<LayerConfigJson> {
     }
 
     convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
-        if (json.id === "favourite") {
+        if (json.source === "special" || json.source === "special:library") {
             return json
         }
         const pr = json.pointRendering?.[0]

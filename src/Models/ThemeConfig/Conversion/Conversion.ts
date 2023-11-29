@@ -2,6 +2,7 @@ import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
+import { T } from "vitest/dist/types-aac763a5"
 
 export interface DesugaringContext {
     tagRenderings: Map<string, QuestionableTagRenderingConfigJson>
@@ -81,18 +82,36 @@ export class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
     }
 }
 
+export class Bypass<T> extends DesugaringStep<T> {
+    private readonly _applyIf: (t: T) => boolean
+    private readonly _step: DesugaringStep<T>
+    constructor(applyIf: (t: T) => boolean, step: DesugaringStep<T>) {
+        super("Applies the step on the object, if the object satisfies the predicate", [], "Bypass")
+        this._applyIf = applyIf
+        this._step = step
+    }
+
+    convert(json: T, context: ConversionContext): T {
+        if (!this._applyIf(json)) {
+            return json
+        }
+        return this._step.convert(json, context)
+    }
+}
+
 export class Each<X, Y> extends Conversion<X[], Y[]> {
     private readonly _step: Conversion<X, Y>
     private readonly _msg: string
+    private readonly _filter: (x: X) => boolean
 
-    constructor(step: Conversion<X, Y>, msg?: string) {
+    constructor(step: Conversion<X, Y>, options?: { msg?: string }) {
         super(
             "Applies the given step on every element of the list",
             [],
             "OnEach(" + step.name + ")"
         )
         this._step = step
-        this._msg = msg
+        this._msg = options?.msg
     }
 
     convert(values: X[], context: ConversionContext): Y[] {
