@@ -88,6 +88,9 @@
         // TODO this has _to much_ values
         freeformInput.setData(unseenFreeformValues.join(";"))
         checkedMappings.push(unseenFreeformValues.length > 0)
+        freeformInput.addCallbackAndRun(freeformValue => {
+          checkedMappings[checkedMappings.length - 1] = !!freeformValue
+        })
       }
     }
     if (confg.freeform?.key) {
@@ -168,6 +171,12 @@
       .then((changes) => state.changes.applyChanges(changes))
       .catch(console.error)
   }
+  
+  function onInputKeypress(e: Event){
+      if (e.key === "Enter") {
+        onSave();
+      }
+  } 
 
   let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false)
   let featureSwitchIsDebugging =
@@ -254,9 +263,8 @@
               bind:group={selectedMapping}
               name={"mappings-radio-" + config.id}
               value={i}
-              on:keypress={(e) => {
-                if (e.key === "Enter") onSave()
-              }}
+              on:keypress={onInputKeypress}
+             
             />
           </TagRenderingMappingInput>
         {/each}
@@ -267,6 +275,7 @@
               bind:group={selectedMapping}
               name={"mappings-radio-" + config.id}
               value={config.mappings?.length}
+              on:keypress={onInputKeypress}
             />
             <FreeformInput
               {config}
@@ -298,6 +307,7 @@
               type="checkbox"
               name={"mappings-checkbox-" + config.id + "-" + i}
               bind:checked={checkedMappings[i]}
+              on:keypress={onInputKeypress}
             />
           </TagRenderingMappingInput>
         {/each}
@@ -307,6 +317,7 @@
               type="checkbox"
               name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
               bind:checked={checkedMappings[config.mappings.length]}
+              on:keypress={onInputKeypress}
             />
             <FreeformInput
               {config}
@@ -315,7 +326,6 @@
               {unit}
               feature={selectedElement}
               value={freeformInput}
-              on:selected={() => (checkedMappings[config.mappings.length] = true)}
               on:submit={onSave}
             />
           </label>

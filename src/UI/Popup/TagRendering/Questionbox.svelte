@@ -8,7 +8,6 @@
   import type { Feature } from "geojson";
   import type { SpecialVisualizationState } from "../../SpecialVisualization";
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-  import If from "../../Base/If.svelte";
   import TagRenderingQuestion from "./TagRenderingQuestion.svelte";
   import Tr from "../../Base/Tr.svelte";
   import Translations from "../../i18n/Translations.js";

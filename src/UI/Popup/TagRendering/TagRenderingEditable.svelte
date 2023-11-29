@@ -11,7 +11,7 @@
   import Translations from "../../i18n/Translations.js"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { Utils } from "../../../Utils"
-
+  import { twMerge } from "tailwind-merge"
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
   export let selectedElement: Feature | undefined
@@ -71,7 +71,7 @@
   }
 </script>
 
-<div bind:this={htmlElem} class={clss}>
+<div bind:this={htmlElem} class={twMerge(clss, "tr-"+config.id)}>
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
