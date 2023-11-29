@@ -29,16 +29,16 @@ export default class NearbyFeatureSource implements FeatureSource {
 
         this.features = Stores.ListStabilized(this._result)
 
-        sources.forEach((source, layer) => {})
+        sources.forEach((source, layer) => {
+            this.registerSource(source, layer)
+        })
     }
 
     public registerSource(source: FeatureSource, layerId: string) {
-        let minzoom = 999
         const flayer = this._layerState?.filteredLayers.get(layerId)
         if (!flayer) {
             return
         }
-        minzoom = Math.min(minzoom, flayer.layerDef.minzoom)
         const calcSource = this.createSource(
             source.features,
             flayer.layerDef.minzoom,
