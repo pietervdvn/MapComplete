@@ -1993,7 +1993,7 @@
         "name": "Charging stations",
         "presets": {
             "0": {
-                "title": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
+                "title": "a charging station for electrical bikes"
             },
             "1": {
                 "title": "a charging station for cars"

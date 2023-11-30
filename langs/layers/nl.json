@@ -1842,7 +1842,7 @@
         "name": "Oplaadpunten",
         "presets": {
             "0": {
-                "title": "een oplaadpunt voor elektrische fietsen met een gewoon Europees stopcontact <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (speciaal bedoeld voor fietsen)"
+                "title": "een oplaadpunt voor elektrische fietsen"
             },
             "1": {
                 "title": "een oplaadstation voor elektrische auto's"

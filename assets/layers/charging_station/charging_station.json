@@ -329,7 +329,7 @@
             "class": "medium"
           },
           "hideInAnswer": {
-            "or": [
+            "and": [
               "_country!=af",
               "_country!=al",
               "_country!=dz",
@@ -445,7 +445,7 @@
             "class": "medium"
           },
           "hideInAnswer": {
-            "or": [
+            "and": [
               "_country!=be",
               "_country!=bj",
               "_country!=bf",
@@ -1142,7 +1142,7 @@
                 ]
               },
               {
-                "or": [
+                "and": [
                   "_country!=us"
                 ]
               }
@@ -5213,16 +5213,15 @@
       "tags": [
         "amenity=charging_station",
         "motorcar=no",
-        "bicycle=yes",
-        "socket:typee=1"
+        "bicycle=yes"
       ],
       "title": {
-        "en": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
-        "nl": "een oplaadpunt voor elektrische fietsen met een gewoon Europees stopcontact <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (speciaal bedoeld voor fietsen)",
+        "en": "a charging station for electrical bikes",
+        "nl": "een oplaadpunt voor elektrische fietsen",
         "ca": "una estació de càrrega per a bicicletes elèctriques amb un endoll de paret europeu normal<img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (destinat a carregar bicicletes elèctriques)",
         "cs": "nabíjecí stanice pro elektrokola s běžnou evropskou zástrčkou <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (určeno k nabíjení elektrických kol)",
         "da": "en ladestation til elektriske cykler med et normalt europæisk vægstik <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (beregnet til opladning af elektriske cykler)",
-        "de": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (zum Laden von Elektrofahrrädern)",
+        "de": "eine Ladestation für Elektrofahrräder",
         "es": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)"
       }
     },

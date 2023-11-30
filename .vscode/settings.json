@@ -18,5 +18,8 @@
   "[svelte]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.protojson": "json"
+  }
 }
