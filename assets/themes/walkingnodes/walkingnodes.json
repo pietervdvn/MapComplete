@@ -8,7 +8,8 @@
   "description": {
     "en": "This map shows walking node networks and allows you to add new nodes easily",
     "nl": "Deze kaart toont wandelknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
-    "de": "Diese Karte zeigt Wandernetzwerke und ermöglicht es Ihnen, einfach neue Knoten hinzuzufügen"
+    "de": "Diese Karte zeigt Wandernetzwerke und ermöglicht es Ihnen, einfach neue Knoten hinzuzufügen",
+    "cs": "Tato mapa zobrazuje sítě uzlových bodů a umožňuje snadné přidávání nových uzlů"
   },
   "icon": "./assets/themes/walkingnodes/logo.svg",
   "startZoom": 11,
@@ -161,7 +162,8 @@
           "question": {
             "en": "What is the reference number of this walking node?",
             "nl": "Wat is het referentienummer van dit wandelknooppunt?",
-            "de": "Was ist die Referenznummer dieses Wanderknotens?"
+            "de": "Was ist die Referenznummer dieses Wanderknotens?",
+            "cs": "Jaké je referenční číslo tohoto pěšího uzlu?"
           },
           "freeform": {
             "key": "rwn_ref",
@@ -169,7 +171,8 @@
             "placeholder": {
               "en": "e.g. 1",
               "nl": "bijv. 1",
-              "de": "z.B. 1"
+              "de": "z.B. 1",
+              "cs": "e.g. 1"
             }
           },
           "render": {
@@ -197,7 +200,8 @@
           "question": {
             "en": "How many other walking nodes does this node link to?",
             "nl": "Met hoeveel andere wandelknooppunten heeft dit knooppunt een verbinding?",
-            "de": "Mit wie vielen anderen Wanderknoten ist dieser Knoten verbunden?"
+            "de": "Mit wie vielen anderen Wanderknoten ist dieser Knoten verbunden?",
+            "cs": "S kolika dalšími pěšími uzly je tento uzel propojen?"
           },
           "render": {
             "en": "This node links to {expected_rwn_route_relations} other walking nodes.",
@@ -210,7 +214,8 @@
             "placeholder": {
               "en": "e.g. 3",
               "nl": "bijv. 3",
-              "de": "z.B. 3"
+              "de": "z.B. 3",
+              "cs": "e.g. 3"
             }
           },
           "id": "node-expected_rwn_route_relations"

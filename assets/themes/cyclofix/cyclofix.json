@@ -102,9 +102,10 @@
         "=pointRendering": [
           {
             "marker": [
-              {"icon": "pin",
-              "color":"#ba2792"}
-              ,
+              {
+                "icon": "pin",
+                "color": "#ba2792"
+              },
               {
                 "icon": "./assets/themes/cyclofix/key.svg"
               }

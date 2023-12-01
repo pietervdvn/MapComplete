@@ -6,7 +6,7 @@
   import MaplibreMap from "../../Map/MaplibreMap.svelte"
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import Svg from "../../../Svg.js"
-  import Direction_stroke from "../../../assets/svg/Direction_stroke.svelte";
+  import Direction_stroke from "../../../assets/svg/Direction_stroke.svelte"
 
   /**
    * A visualisation to pick a direction on a map background.
@@ -68,6 +68,6 @@
   </div>
 
   <div bind:this={directionElem} class="absolute top-0 left-0 h-full w-full">
-    <Direction_stroke/>
+    <Direction_stroke />
   </div>
 </div>

@@ -23,8 +23,8 @@
   import UserRelatedState from "../../../Logic/State/UserRelatedState"
   import { twJoin } from "tailwind-merge"
   import { TagUtils } from "../../../Logic/Tags/TagUtils"
-  import Search from "../../../assets/svg/Search.svelte";
-  import Login from "../../../assets/svg/Login.svelte";
+  import Search from "../../../assets/svg/Search.svelte"
+  import Login from "../../../assets/svg/Login.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -213,7 +213,7 @@
 
     {#if config.mappings?.length >= 8}
       <div class="sticky flex w-full">
-        <Search class="h-6 w-6"/>
+        <Search class="h-6 w-6" />
         <input type="text" bind:value={$searchTerm} class="w-full" />
       </div>
     {/if}

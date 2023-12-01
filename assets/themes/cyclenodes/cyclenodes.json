@@ -179,7 +179,8 @@
           "question": {
             "en": "What is the reference number of this cycling node?",
             "nl": "Wat is het referentienummer van dit fietsknooppunt?",
-            "de": "Wie lautet die Nummer des Knotenpunkts im Fahrradknotenpunktnetzwerk?"
+            "de": "Wie lautet die Nummer des Knotenpunkts im Fahrradknotenpunktnetzwerk?",
+            "cs": "Jaké je referenční číslo tohoto cyklistického uzlu?"
           },
           "freeform": {
             "key": "rcn_ref",
@@ -187,13 +188,15 @@
             "placeholder": {
               "en": "e.g. 1",
               "nl": "bijv. 1",
-              "de": "z.B. 1"
+              "de": "z.B. 1",
+              "cs": "e.g. 1"
             }
           },
           "render": {
             "en": "This cycling node has reference number {rcn_ref}",
             "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}",
-            "de": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks"
+            "de": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks",
+            "cs": "Tento cyklistický uzel má referenční číslo {rcn_ref}"
           }
         },
         {
@@ -249,7 +252,8 @@
             "placeholder": {
               "en": "e.g. 3",
               "nl": "bijv. 3",
-              "de": "z.B. 3"
+              "de": "z.B. 3",
+              "cs": "e.g. 3"
             }
           },
           "id": "node-expected_rcn_route_relations"
@@ -298,12 +302,14 @@
         ],
         "name": {
           "en": "Cycling guideposts",
-          "de": "Fahrrad-Wegweiser"
+          "de": "Fahrrad-Wegweiser",
+          "cs": "Cyklistické ukazatele"
         },
         "title": {
           "render": {
             "en": "Cycling guidepost",
-            "de": "Fahrrad-Wegweiser"
+            "de": "Fahrrad-Wegweiser",
+            "cs": "Cyklistický ukazatel"
           }
         }
       },
@@ -330,7 +336,8 @@
             ],
             "title": {
               "en": "a route marker for a node to node link",
-              "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten"
+              "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten",
+              "cs": "značka trasy pro spojení mezi uzlem"
             },
             "=exampleImages": [
               "./assets/layers/route_marker/bicycle_route_marker.jpg"

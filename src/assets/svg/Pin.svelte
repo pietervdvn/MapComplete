@@ -1,4 +1,27 @@
 <script>
-export let color = "#000000"
+  export let color = "#000000"
 </script>
- <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown    width="314px"    height="374px"    viewBox="0 0 314 374"    version="1.1"    id="svg7"    xmlns="http://www.w3.org/2000/svg"    xmlns:svg="http://www.w3.org/2000/svg">   <defs      id="defs11" />   <path      id="path2"      class="selectable"      style="fill:{color};fill-opacity:1;fill-rule:nonzero;stroke:none"      d="M 157 0 C 70.296875 1.8947806e-14 0.01171875 70.121098 0.01171875 156.62109 C 0.01171875 231.01726 52.025471 293.25325 121.74219 309.22266 L 147.24609 364.68359 C 152.95703 377.10547 170.65234 377.10547 176.36719 364.68359 L 203.19922 306.33398 C 267.35183 286.6535 313.98828 227.07489 313.98828 156.62109 C 313.98828 70.121098 243.70312 0 157 0 z " /> </svg> 
+
+<svg
+  {...$$restProps}
+  on:click
+  on:mouseover
+  on:mouseenter
+  on:mouseleave
+  on:keydown
+  width="314px"
+  height="374px"
+  viewBox="0 0 314 374"
+  version="1.1"
+  id="svg7"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+>
+  <defs id="defs11" />
+  <path
+    id="path2"
+    class="selectable"
+    style="fill:{color};fill-opacity:1;fill-rule:nonzero;stroke:none"
+    d="M 157 0 C 70.296875 1.8947806e-14 0.01171875 70.121098 0.01171875 156.62109 C 0.01171875 231.01726 52.025471 293.25325 121.74219 309.22266 L 147.24609 364.68359 C 152.95703 377.10547 170.65234 377.10547 176.36719 364.68359 L 203.19922 306.33398 C 267.35183 286.6535 313.98828 227.07489 313.98828 156.62109 C 313.98828 70.121098 243.70312 0 157 0 z "
+  />
+</svg>

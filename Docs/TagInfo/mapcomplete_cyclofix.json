@@ -415,324 +415,6 @@
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag",
-      "value": "bicycle_rental"
-    },
-    {
-      "key": "bicycle_rental",
-      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag"
-    },
-    {
-      "key": "service:bicycle:rental",
-      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag",
-      "value": "yes"
-    },
-    {
-      "key": "rental",
-      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag"
-    },
-    {
-      "key": "id",
-      "description": "Layer 'Bicycle rental' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "shop",
-      "description": "Layer 'Bicycle rental' shows shop=rental & bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "rental"
-    },
-    {
-      "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows shop=rental & bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "shop"
-    },
-    {
-      "key": "shop",
-      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "rental"
-    },
-    {
-      "key": "service:bicycle:rental",
-      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes & shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "yes"
-    },
-    {
-      "key": "shop",
-      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes & shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "bicycle"
-    },
-    {
-      "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked to a structure' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "docking_station"
-    },
-    {
-      "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=key_dispensing_machine with a fixed text, namely 'A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "key_dispensing_machine"
-    },
-    {
-      "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
-      "value": "dropoff_point"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "contact:website",
-      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "email",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "contact:email",
-      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "phone",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "contact:phone",
-      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+ | opening_hours~.+)"
-    },
-    {
-      "key": "payment:cash",
-      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
-      "value": "yes"
-    },
-    {
-      "key": "payment:cards",
-      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
-      "value": "yes"
-    },
-    {
-      "key": "payment:qr_code",
-      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
-      "value": "yes"
-    },
-    {
-      "key": "payment:cash",
-      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
-      "value": "yes"
-    },
-    {
-      "key": "payment:cards",
-      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
-      "value": "yes"
-    },
-    {
-      "key": "payment:qr_code",
-      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
-      "value": "yes"
-    },
-    {
-      "key": "payment:app",
-      "description": "Layer 'Bicycle rental' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
-      "value": "yes"
-    },
-    {
-      "key": "payment:membership_card",
-      "description": "Layer 'Bicycle rental' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
-      "value": "yes"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'rental' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "city_bike"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "ebike"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "bmx"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "mtb"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "kid_bike"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "tandem"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "racebike"
-    },
-    {
-      "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "bike_helmet"
-    },
-    {
-      "key": "capacity:city_bike",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:city_bike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*city_bike.*)$)"
-    },
-    {
-      "key": "capacity:ebike",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:ebike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*ebike.*)$)"
-    },
-    {
-      "key": "capacity:kid_bike",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:kid_bike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*kid_bike.*)$)"
-    },
-    {
-      "key": "capacity:bmx",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bmx' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*bmx.*)$)"
-    },
-    {
-      "key": "capacity:mtb",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:mtb' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*mtb.*)$)"
-    },
-    {
-      "key": "capacity:bicycle_pannier",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*bicycle_pannier.*)$)"
-    },
-    {
-      "key": "capacity:tandem_bicycle",
-      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*tandem_bicycle.*)$)"
-    },
-    {
-      "key": "amenity",
-      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle library showing features with this tag",
-      "value": "bicycle_library"
-    },
-    {
-      "key": "id",
-      "description": "Layer 'Bicycle library' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "contact:website",
-      "description": "Layer 'Bicycle library' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "phone",
-      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "contact:phone",
-      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "email",
-      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "contact:email",
-      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "charge",
-      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Bicycle library' shows fee=no & charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "no"
-    },
-    {
-      "key": "charge",
-      "description": "Layer 'Bicycle library' shows fee=no & charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key charge.",
-      "value": ""
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Bicycle library' shows fee=yes & charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "yes"
-    },
-    {
-      "key": "charge",
-      "description": "Layer 'Bicycle library' shows fee=yes & charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "€20warranty + €20/year"
-    },
-    {
-      "key": "bicycle_library:for",
-      "description": "Layer 'Bicycle library' shows bicycle_library:for=child with a fixed text, namely 'Bikes for children available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "child"
-    },
-    {
-      "key": "bicycle_library:for",
-      "description": "Layer 'Bicycle library' shows bicycle_library:for=adult with a fixed text, namely 'Bikes for adult available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "adult"
-    },
-    {
-      "key": "bicycle_library:for",
-      "description": "Layer 'Bicycle library' shows bicycle_library:for=disabled with a fixed text, namely 'Bikes for disabled persons available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
-      "value": "disabled"
-    },
-    {
-      "key": "description",
-      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
-    },
-    {
-      "key": "amenity",
       "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle pump and repair showing features with this tag",
       "value": "bicycle_repair_station"
     },
@@ -1311,6 +993,324 @@
     },
     {
       "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle rental' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=rental & bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "rental"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows shop=rental & bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "shop"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "rental"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes & shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "yes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Bicycle rental' shows service:bicycle:rental=yes & shop=bicycle with a fixed text, namely 'This is a shop which sells or repairs bicycles, but also rents out bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "bicycle"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked to a structure' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "docking_station"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=key_dispensing_machine with a fixed text, namely 'A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "key_dispensing_machine"
+    },
+    {
+      "key": "bicycle_rental",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_rental)",
+      "value": "dropoff_point"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+ | opening_hours~.+)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Bicycle rental' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Bicycle rental' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop=)",
+      "value": "yes"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'rental' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "city_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "ebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "bmx"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "mtb"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "kid_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "tandem"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "racebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "bike_helmet"
+    },
+    {
+      "key": "capacity:city_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:city_bike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*city_bike.*)$)"
+    },
+    {
+      "key": "capacity:ebike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:ebike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*ebike.*)$)"
+    },
+    {
+      "key": "capacity:kid_bike",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:kid_bike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*kid_bike.*)$)"
+    },
+    {
+      "key": "capacity:bmx",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bmx' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*bmx.*)$)"
+    },
+    {
+      "key": "capacity:mtb",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:mtb' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*mtb.*)$)"
+    },
+    {
+      "key": "capacity:bicycle_pannier",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*bicycle_pannier.*)$)"
+    },
+    {
+      "key": "capacity:tandem_bicycle",
+      "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*tandem_bicycle.*)$)"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle library showing features with this tag",
+      "value": "bicycle_library"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle library' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bicycle library' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bicycle library' shows fee=no & charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows fee=no & charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bicycle library' shows fee=yes & charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Bicycle library' shows fee=yes & charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "€20warranty + €20/year"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=child with a fixed text, namely 'Bikes for children available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "child"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=adult with a fixed text, namely 'Bikes for adult available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "adult"
+    },
+    {
+      "key": "bicycle_library:for",
+      "description": "Layer 'Bicycle library' shows bicycle_library:for=disabled with a fixed text, namely 'Bikes for disabled persons available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "disabled"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Bicycle library' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "amenity",
       "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike parking showing features with this tag",
       "value": "bicycle_parking"
     },
@@ -1340,12 +1340,12 @@
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Stands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "stands"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheelbenders / rack' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "wall_loops"
     },
     {

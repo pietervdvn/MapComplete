@@ -2,11 +2,13 @@
   "id": "icecream",
   "title": {
     "en": "Icecream",
-    "de": "Eiscreme"
+    "de": "Eiscreme",
+    "cs": "Zmrzlina"
   },
   "description": {
     "en": "A map showing ice cream parlors and ice cream vending machines",
-    "de": "Eine Karte, die Eisdielen und Eisautomaten zeigt"
+    "de": "Eine Karte, die Eisdielen und Eisautomaten zeigt",
+    "cs": "Mapa zobrazující prodej zmrzliny a automaty na zmrzlinu"
   },
   "icon": "./assets/layers/ice_cream/ice_cream.svg",
   "layers": [

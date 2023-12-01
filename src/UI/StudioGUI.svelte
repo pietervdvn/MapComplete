@@ -1,36 +1,36 @@
 <script lang="ts">
-    import NextButton from "./Base/NextButton.svelte"
-    import { Store, UIEventSource } from "../Logic/UIEventSource"
-    import EditLayerState, { EditThemeState } from "./Studio/EditLayerState"
-    import EditLayer from "./Studio/EditLayer.svelte"
-    import Loading from "../assets/svg/Loading.svelte"
-    import StudioServer from "./Studio/StudioServer"
-    import LoginToggle from "./Base/LoginToggle.svelte"
-    import { OsmConnection } from "../Logic/Osm/OsmConnection"
-    import { QueryParameters } from "../Logic/Web/QueryParameters"
+  import NextButton from "./Base/NextButton.svelte"
+  import { Store, UIEventSource } from "../Logic/UIEventSource"
+  import EditLayerState, { EditThemeState } from "./Studio/EditLayerState"
+  import EditLayer from "./Studio/EditLayer.svelte"
+  import Loading from "../assets/svg/Loading.svelte"
+  import StudioServer from "./Studio/StudioServer"
+  import LoginToggle from "./Base/LoginToggle.svelte"
+  import { OsmConnection } from "../Logic/Osm/OsmConnection"
+  import { QueryParameters } from "../Logic/Web/QueryParameters"
 
-    import layerSchemaRaw from "../../src/assets/schemas/layerconfigmeta.json"
-    import layoutSchemaRaw from "../../src/assets/schemas/layoutconfigmeta.json"
+  import layerSchemaRaw from "../../src/assets/schemas/layerconfigmeta.json"
+  import layoutSchemaRaw from "../../src/assets/schemas/layoutconfigmeta.json"
 
-    import If from "./Base/If.svelte"
-    import BackButton from "./Base/BackButton.svelte"
-    import ChooseLayerToEdit from "./Studio/ChooseLayerToEdit.svelte"
-    import FloatOver from "./Base/FloatOver.svelte"
-    import Walkthrough from "./Walkthrough/Walkthrough.svelte"
-    import * as intro from "../assets/studio_introduction.json"
-    import * as intro_tagrenderings from "../assets/studio_tagrenderings_intro.json"
+  import If from "./Base/If.svelte"
+  import BackButton from "./Base/BackButton.svelte"
+  import ChooseLayerToEdit from "./Studio/ChooseLayerToEdit.svelte"
+  import FloatOver from "./Base/FloatOver.svelte"
+  import Walkthrough from "./Walkthrough/Walkthrough.svelte"
+  import * as intro from "../assets/studio_introduction.json"
+  import * as intro_tagrenderings from "../assets/studio_tagrenderings_intro.json"
 
-    import { QuestionMarkCircleIcon } from "@babeard/svelte-heroicons/mini"
-    import type { ConfigMeta } from "./Studio/configMeta"
-    import EditTheme from "./Studio/EditTheme.svelte"
-    import * as meta from "../../package.json"
-    import Checkbox from "./Base/Checkbox.svelte"
-    import { Utils } from "../Utils"
-    import Translations from "./i18n/Translations"
-    import Tr from "./Base/Tr.svelte"
-    import Add from "../assets/svg/Add.svelte"
+  import { QuestionMarkCircleIcon } from "@babeard/svelte-heroicons/mini"
+  import type { ConfigMeta } from "./Studio/configMeta"
+  import EditTheme from "./Studio/EditTheme.svelte"
+  import * as meta from "../../package.json"
+  import Checkbox from "./Base/Checkbox.svelte"
+  import { Utils } from "../Utils"
+  import Translations from "./i18n/Translations"
+  import Tr from "./Base/Tr.svelte"
+  import Add from "../assets/svg/Add.svelte"
 
-    export let studioUrl =
+  export let studioUrl =
     window.location.hostname === "127.0.0.2"
       ? "http://127.0.0.1:1235"
       : "https://studio.mapcomplete.org"
@@ -196,7 +196,7 @@
             <QuestionMarkCircleIcon class="h-6 w-6" />
             Show the introduction again
           </button>
-          <a class="flex button" href={Utils.HomepageLink()}>
+          <a class="button flex" href={Utils.HomepageLink()}>
             <Add class="h-6 w-6" />
             <Tr t={Translations.t.general.backToIndex} />
           </a>

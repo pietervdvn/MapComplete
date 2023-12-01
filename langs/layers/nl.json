@@ -7927,6 +7927,9 @@
                     },
                     "4": {
                         "then": "De ondergrond is <b>beton</b>"
+                    },
+                    "5": {
+                        "then": "De ondergrond bestaat uit <b>grind</b>"
                     }
                 },
                 "question": "Wat is de ondergrond van dit sportveld?",

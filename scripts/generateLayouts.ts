@@ -280,8 +280,8 @@ async function generateCsp(
         "https://pietervdvn.goatcounter.com",
     ].concat(...(await eliUrls()))
 
-    SpecialVisualizations.specialVisualizations.forEach(sv => {
-        if(typeof sv.needsUrls === "function"){
+    SpecialVisualizations.specialVisualizations.forEach((sv) => {
+        if (typeof sv.needsUrls === "function") {
             return
         }
         apiUrls.push(...sv.needsUrls)

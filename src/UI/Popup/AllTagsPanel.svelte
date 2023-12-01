@@ -9,7 +9,7 @@
   import Lazy from "../Base/Lazy"
   import BaseUIElement from "../BaseUIElement"
   import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-  import { VariableUiElement } from "../Base/VariableUIElement";
+  import { VariableUiElement } from "../Base/VariableUIElement"
 
   //Svelte props
   export let tags: UIEventSource<any>
@@ -55,7 +55,11 @@
     return parts
   })
 
-  const tagsTable = new VariableUiElement(allTags.mapD(_allTags => new Table(["Key", "Value"], _allTags).SetClass("zebra-table break-all")))
+  const tagsTable = new VariableUiElement(
+    allTags.mapD((_allTags) =>
+      new Table(["Key", "Value"], _allTags).SetClass("zebra-table break-all")
+    )
+  )
 </script>
 
 <section>

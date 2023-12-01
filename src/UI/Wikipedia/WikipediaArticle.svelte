@@ -9,7 +9,7 @@
   import WikidataPreviewBox from "./WikidataPreviewBox"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
-  import Wikipedia from "../../assets/svg/Wikipedia.svelte";
+  import Wikipedia from "../../assets/svg/Wikipedia.svelte"
 
   /**
    * Shows a wikipedia-article + wikidata preview for the given item
@@ -19,7 +19,7 @@
 
 {#if $wikipediaDetails.articleUrl}
   <a class="flex" href={$wikipediaDetails.articleUrl} rel="noreferrer" target="_blank">
-    <Wikipedia class="h-6 w-6"/>
+    <Wikipedia class="h-6 w-6" />
     <Tr t={Translations.t.general.wikipedia.fromWikipedia} />
   </a>
 {/if}
