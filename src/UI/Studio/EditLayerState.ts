@@ -107,6 +107,9 @@ export abstract class EditJsonState<T> {
         return entry
     }
 
+    public async delete(){
+        await this.server.delete(this.getId().data, this.category)
+    }
     public getStoreFor<T>(path: ReadonlyArray<string | number>): UIEventSource<T | undefined> {
         const key = path.join(".")
 
