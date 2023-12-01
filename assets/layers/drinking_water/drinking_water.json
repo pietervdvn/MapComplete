@@ -341,9 +341,7 @@
       ]
     },
     {
-      "builtin": [
-        "opening_hours_24_7"
-      ],
+      "builtin": "opening_hours_24_7",
       "override": {
         "questionHint": {
           "en": "These are the opening hours if the drinking water fountain is operational."
