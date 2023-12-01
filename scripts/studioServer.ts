@@ -115,7 +115,7 @@ async function handlePost(req: http.IncomingMessage, res: ServerResponse) {
 
 http.createServer(async (req: http.IncomingMessage, res) => {
     try {
-        console.log(req.method + " " + req.url, "from:", req.headers.origin)
+        console.log(req.method + " " + req.url, "from:", req.headers.origin, new Date().toISOString())
         res.setHeader(
             "Access-Control-Allow-Headers",
             "Origin, X-Requested-With, Content-Type, Accept"
