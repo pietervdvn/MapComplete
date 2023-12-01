@@ -118,7 +118,7 @@ export default class MoreScreen extends Combine {
         if (search === undefined) {
             return true
         }
-        search = search.toLocaleLowerCase()
+        search = Utils.RemoveDiacritics(search.toLocaleLowerCase())
         if (search.length > 3 && layout.id.toLowerCase().indexOf(search) >= 0) {
             return true
         }
@@ -131,7 +131,7 @@ export default class MoreScreen extends Combine {
                 continue
             }
             const term = entity["*"] ?? entity[Locale.language.data]
-            if (term?.toLowerCase()?.indexOf(search) >= 0) {
+            if (Utils.RemoveDiacritics(term?.toLowerCase())?.indexOf(search) >= 0) {
                 return true
             }
         }
