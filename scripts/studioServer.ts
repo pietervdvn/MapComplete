@@ -83,6 +83,7 @@ async function handlePost(req: http.IncomingMessage, res: ServerResponse) {
 
     await new Promise((resolve) => req.on("end", resolve))
 
+    console.log(new Date().toISOString())
     let parsed: any
     try {
         parsed = JSON.parse(body)
