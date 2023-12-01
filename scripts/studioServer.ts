@@ -133,6 +133,7 @@ http.createServer(async (req: http.IncomingMessage, res) => {
         }
 
         if(req.method === "DELETE"){
+            console.log("Got a DELETE", new Date())
             await handleDelete(req, res)
             return
         }
