@@ -475,7 +475,15 @@
                     }
                 },
                 "title": {
-                    "render": "Fietsknooppunt <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Fietsknooppunt <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Voorgesteld fietsknooppunt <strong>{proposed:rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "Fietsknooppunt"
                 }
             }
         },
@@ -1156,10 +1164,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Ja, er is een stoep aan deze kant van de weg"
+                                        "then": "Er is een stoep aan deze kant van de weg"
                                     },
                                     "1": {
-                                        "then": "Nee, er is geen stoep om op te lopen"
+                                        "then": "Er is geen stoep om op te lopen"
                                     },
                                     "2": {
                                         "then": "Er is een apart ingetekende stoep om op te lopen"
@@ -1424,7 +1432,15 @@
                     }
                 },
                 "title": {
-                    "render": "Wandelknooppunt <strong>{rwn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Wandelknooppunt <strong>{rwn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Voorgesteld wandelknooppunt <strong>{proposed:rwn_ref}</strong>"
+                        }
+                    },
+                    "render": "Wandelknooppunt"
                 }
             }
         },
