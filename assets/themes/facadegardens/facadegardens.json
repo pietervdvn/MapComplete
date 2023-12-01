@@ -542,7 +542,9 @@
             "leisure=garden",
             "garden:type=facade_garden"
           ],
-          "snapToLayer":["walls_and_buildings"],
+          "snapToLayer": [
+            "walls_and_buildings"
+          ],
           "title": {
             "nl": "een geveltuintje",
             "en": "a facade garden",

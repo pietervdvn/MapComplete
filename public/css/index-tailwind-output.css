@@ -929,6 +929,10 @@ video {
   margin-right: 0.75rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mr-12 {
   margin-right: 3rem;
 }
