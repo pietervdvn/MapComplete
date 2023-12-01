@@ -345,8 +345,7 @@
               "key": "access:description"
             }
           },
-          "questions",
-          "reviews"
+          "questions"
         ]
       }
     },

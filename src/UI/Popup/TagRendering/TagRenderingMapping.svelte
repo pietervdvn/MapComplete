@@ -27,7 +27,7 @@
 </script>
 
 {#if mapping.icon !== undefined}
-  <div class="inline-flex">
+  <div class="inline-flex items-center">
     <img
       class={twJoin(`mapping-icon-${mapping.iconClass}`, "mr-1")}
       src={mapping.icon}

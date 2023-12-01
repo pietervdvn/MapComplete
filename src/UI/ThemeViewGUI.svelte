@@ -66,71 +66,70 @@
     import OpenJosm from "./Base/OpenJosm.svelte"
 
     export let state: ThemeViewState
-  let layout = state.layout
+    let layout = state.layout
 
-  let maplibremap: UIEventSource<MlMap> = state.map
-  let selectedElement: UIEventSource<Feature> = state.selectedElement
-  let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer
+    let maplibremap: UIEventSource<MlMap> = state.map
+    let selectedElement: UIEventSource<Feature> = state.selectedElement
+    let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer
 
-  let currentZoom = state.mapProperties.zoom
-  let showCrosshair = state.userRelatedState.showCrosshair
-  let arrowKeysWereUsed = state.mapProperties.lastKeyNavigation
-  let centerFeatures = state.closestFeatures.features
-  $: console.log("Centerfeatures are", $centerFeatures)
-  const selectedElementView = selectedElement.map(
-    (selectedElement) => {
-      // Svelte doesn't properly reload some of the legacy UI-elements
-      // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
-      // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
-      const layer = selectedLayer.data
-      if (selectedElement === undefined || layer === undefined) {
-        return undefined
-      }
+    let currentZoom = state.mapProperties.zoom
+    let showCrosshair = state.userRelatedState.showCrosshair
+    let arrowKeysWereUsed = state.mapProperties.lastKeyNavigation
+    let centerFeatures = state.closestFeatures.features
+    const selectedElementView = selectedElement.map(
+        (selectedElement) => {
+            // Svelte doesn't properly reload some of the legacy UI-elements
+            // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
+            // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
+            const layer = selectedLayer.data
+            if (selectedElement === undefined || layer === undefined) {
+                return undefined
+            }
 
-      if (!(layer.tagRenderings?.length > 0) || layer.title === undefined) {
-        return undefined
-      }
+            if (!(layer.tagRenderings?.length > 0) || layer.title === undefined) {
+                return undefined
+            }
 
-      const tags = state.featureProperties.getStore(selectedElement.properties.id)
-      return new SvelteUIElement(SelectedElementView, {
-        state,
-        layer,
-        selectedElement,
-        tags,
-      }).SetClass("h-full w-full")
-    },
-    [selectedLayer]
-  )
+            const tags = state.featureProperties.getStore(selectedElement.properties.id)
+            return new SvelteUIElement(SelectedElementView, {
+                state,
+                layer,
+                selectedElement,
+                tags,
+            }).SetClass("h-full w-full")
+        },
+        [selectedLayer],
+    )
 
-  const selectedElementTitle = selectedElement.map(
-    (selectedElement) => {
-      // Svelte doesn't properly reload some of the legacy UI-elements
-      // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
-      // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
-      const layer = selectedLayer.data
-      if (selectedElement === undefined || layer === undefined) {
-        return undefined
-      }
+    const selectedElementTitle = selectedElement.map(
+        (selectedElement) => {
+            // Svelte doesn't properly reload some of the legacy UI-elements
+            // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
+            // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
+            const layer = selectedLayer.data
+            if (selectedElement === undefined || layer === undefined) {
+                return undefined
+            }
 
-      const tags = state.featureProperties.getStore(selectedElement.properties.id)
-      return new SvelteUIElement(SelectedElementTitle, { state, layer, selectedElement, tags })
-    },
-    [selectedLayer]
-  )
+            const tags = state.featureProperties.getStore(selectedElement.properties.id)
+            return new SvelteUIElement(SelectedElementTitle, { state, layer, selectedElement, tags })
+        },
+        [selectedLayer],
+    )
 
-  let mapproperties: MapProperties = state.mapProperties
-  let featureSwitches: FeatureSwitchState = state.featureSwitches
-  let availableLayers = state.availableLayers
-  let userdetails = state.osmConnection.userDetails
-  let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
-  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
-  let rasterLayerName =
-    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maptilerDefaultLayer.properties.name
-  onDestroy(
-    rasterLayer.addCallbackAndRunD((l) => {
-      rasterLayerName = l.properties.name
-    })
-  )
+    let mapproperties: MapProperties = state.mapProperties
+    let featureSwitches: FeatureSwitchState = state.featureSwitches
+    let availableLayers = state.availableLayers
+    let userdetails = state.osmConnection.userDetails
+    let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
+    let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
+    let rasterLayerName =
+        rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maptilerDefaultLayer.properties.name
+    onDestroy(
+        rasterLayer.addCallbackAndRunD((l) => {
+            rasterLayerName = l.properties.name
+        }),
+    )
 </script>
 
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
@@ -214,7 +213,7 @@
         <!-- bottom left elements -->
         <If condition={state.featureSwitches.featureSwitchFilter}>
           <MapControlButton on:click={() => state.guistate.openFilterView()}>
-            <Filter class="h-6 w-6"/>
+            <Filter class="h-6 w-6" />
           </MapControlButton>
         </If>
         <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
@@ -231,16 +230,17 @@
         </a>
       </div>
     </div>
-
     {#if $arrowKeysWereUsed !== undefined}
-      <div class="interactive pointer-events-auto p-1">
-        {#each $centerFeatures as feat, i (feat.properties.id)}
-          <div class="flex">
-            <b>{i + 1}.</b>
-            <Summary {state} feature={feat} />
-          </div>
-        {/each}
-      </div>
+      {#if $centerFeatures.length > 0}
+        <div class="interactive pointer-events-auto p-1">
+          {#each $centerFeatures as feat, i (feat.properties.id)}
+            <div class="flex">
+              <b>{i + 1}.</b>
+              <Summary {state} feature={feat} />
+            </div>
+          {/each}
+        </div>
+      {/if}
     {/if}
     <div class="flex flex-col items-end">
       <!-- bottom right elements -->
@@ -257,7 +257,7 @@
         <Plus class="w-8 h-8" />
       </MapControlButton>
       <MapControlButton on:click={() => mapproperties.zoom.update((z) => z - 1)}>
-        <Min class="w-8 h-8"/>
+        <Min class="w-8 h-8" />
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
         <MapControlButton>
@@ -350,7 +350,7 @@
       </div>
 
       <div class="flex" slot="title1">
-        <Filter class="w-4 h-4"/>
+        <Filter class="w-4 h-4" />
         <Tr t={Translations.t.general.menu.filter} />
       </div>
 
@@ -374,7 +374,7 @@
 
       <div class="flex" slot="title2">
         <If condition={state.featureSwitches.featureSwitchEnableExport}>
-          <Download class="w-4 h-4"/>
+          <Download class="w-4 h-4" />
           <Tr t={Translations.t.general.download.title} />
         </If>
       </div>
@@ -389,7 +389,7 @@
       <ToSvelte construct={() => new CopyrightPanel(state)} slot="content3" />
 
       <div class="flex" slot="title4">
-        <Share class="w-4 h-4"/>
+        <Share class="w-4 h-4" />
         <Tr t={Translations.t.general.sharescreen.title} />
       </div>
       <div class="m-2" slot="content4">
@@ -441,12 +441,12 @@
         <Tr t={Translations.t.general.aboutMapComplete.intro} />
 
         <a class="flex" href={Utils.HomepageLink()}>
-          <Add class="h-6 w-6"/>
+          <Add class="h-6 w-6" />
           <Tr t={Translations.t.general.backToIndex} />
         </a>
 
         <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
-          <Bug class="h-6 w-6"/>
+          <Bug class="h-6 w-6" />
           <Tr t={Translations.t.general.attribution.openIssueTracker} />
         </a>
 
@@ -495,7 +495,7 @@
       </div>
 
       <div class="flex" slot="title2">
-        <Community class="w-6 h-6"/>
+        <Community class="w-6 h-6" />
         <Tr t={Translations.t.communityIndex.title} />
       </div>
       <div class="m-2" slot="content2">
@@ -513,7 +513,7 @@
       <div class="m-2 flex flex-col" slot="content4">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
           <OpenIdEditor mapProperties={state.mapProperties} />
-          <OpenJosm {state}/>
+          <OpenJosm {state} />
           <MapillaryLink mapProperties={state.mapProperties} />
         </If>
 

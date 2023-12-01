@@ -58,7 +58,14 @@ export default class StudioServer {
             return undefined
         }
     }
-
+    async delete(id: string, category: "layers" | "themes") {
+        if (id === undefined || id === "") {
+            return
+        }
+        await fetch(this.urlFor(id, category), {
+            method: "DELETE"
+        })
+    }
     async update(id: string, config: string, category: "layers" | "themes") {
         if (id === undefined || id === "") {
             return

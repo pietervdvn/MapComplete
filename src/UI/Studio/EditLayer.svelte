@@ -9,7 +9,7 @@
   import { Utils } from "../../Utils"
   import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion"
   import ErrorIndicatorForRegion from "./ErrorIndicatorForRegion.svelte"
-  import { ChevronRightIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { ChevronRightIcon, TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import FloatOver from "../Base/FloatOver.svelte"
   import TagRenderingInput from "./TagRenderingInput.svelte"
@@ -21,6 +21,7 @@
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw
 
   export let state: EditLayerState
+  export let backToStudio: () => void
   let messages = state.messages
   let hasErrors = messages.mapD(
     (m: ConversionMessage[]) => m.filter((m) => m.level === "error").length
@@ -72,6 +73,10 @@
   })
 
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
+  function deleteLayer() {
+      state.delete()
+      backToStudio()
+  }
 </script>
 
 <div class="flex h-screen flex-col">
@@ -113,6 +118,12 @@
         </div>
         <div class="flex flex-col" slot="content0">
           <Region {state} configs={perRegion["Basic"]} />
+          <div class="mt-12">
+            
+          <button on:click={() => deleteLayer()} class="small" >
+            <TrashIcon class="h-6 w-6"/> Delete this layer
+          </button>
+          </div>
         </div>
 
         <div slot="title1" class="flex">

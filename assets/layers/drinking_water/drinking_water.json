@@ -62,6 +62,11 @@
       "cs": "Pitná voda"
     }
   },
+  "titleIcons": [
+    "icons.defaults",
+    "auto:type",
+    "auto:seasonal"
+  ],
   "pointRendering": [
     {
       "iconBadges": [
@@ -74,6 +79,10 @@
             ]
           },
           "then": "close:#c33"
+        },
+        {
+          "if": "tourism=artwork",
+          "then": "circle:white;./assets/layers/artwork/artwork.svg"
         }
       ],
       "iconSize": "40,40",
@@ -149,7 +158,10 @@
       "mappings": [
         {
           "if": "operational_status=",
-          "addExtraTags": ["disused:amenity=","amenity=drinking_water"],
+          "addExtraTags": [
+            "disused:amenity=",
+            "amenity=drinking_water"
+          ],
           "then": {
             "en": "This drinking water works",
             "nl": "Deze drinkwaterfontein werkt",
@@ -296,10 +308,133 @@
         {
           "if": "fee=yes",
           "then": {
-            "en":"One needs to pay to use this drinking water point"
+            "en": "One needs to pay to use this drinking water point"
           }
         }
       ]
+    },
+    {
+      "id": "seasonal",
+      "question": {
+        "en": "Is this drinking water point available all year round?"
+      },
+      "mappings": [
+        {
+          "if": "seasonal=no",
+          "then": {
+            "en": "This drinking water point is available all around the year"
+          }
+        },
+        {
+          "if": "seasonal=summer",
+          "then": {
+            "en": "This drinking water point is only available in summer"
+          }
+        },
+        {
+          "if": "seasonal=spring;summer;autumn",
+          "icon": "./assets/layers/drinking_water/no_winter.svg",
+          "then": {
+            "en": "This drinking water point is closed during the winter"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "questionHint": {
+          "en": "These are the opening hours if the drinking water fountain is operational."
+        },
+        "+mappings": [
+          {
+            "if": {
+              "and": [
+                "seasonal!=no",
+                {
+                  "or": [
+                    {
+                      "and": [
+                        "seasonal!~.*winter.*",
+                        "_now:date~....-(12|01|02)-.."
+                      ]
+                    },
+                    {
+                      "and": [
+                        "seasonal!~.*spring.*",
+                        "_now:date~....-(03|04|05)-.."
+                      ]
+                    },
+                    {
+                      "and": [
+                        "seasonal!~.*summer.*",
+                        "_now:date~....-(06|07|08)-.."
+                      ]
+                    },
+                    {
+                      "and": [
+                        "seasonal!~.*autumn.*",
+                        "_now:date~....-(09|10|11)-.."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "then": {
+              "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown."
+            },
+            "hideInAnswer": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bench-artwork",
+      "question": {
+        "en": "Does this drinking water fountain have an artistic element?",
+        "nl": "Heeft dit drinkwaterpunt een geintegreerd kunstwerk?"
+      },
+      "mappings": [
+        {
+          "if": "tourism=artwork",
+          "addExtraTags": [
+            "not:tourism:artwork="
+          ],
+          "then": {
+            "en": "This drinking water point has an integrated artwork",
+            "nl": "Dit drinkwaterpunt heeft een geintegreerd kunstwerk"
+          }
+        },
+        {
+          "if": "not:tourism:artwork=yes",
+          "then": {
+            "en": "This drinking water point does not have an integrated artwork",
+            "nl": "Dit drinkwaterpunt heeft geen geïntegreerd kunstwerk"
+          },
+          "addExtraTags": [
+            "tourism="
+          ]
+        },
+        {
+          "if": "tourism=",
+          "then": {
+            "en": "This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork",
+            "nl": "Dit drinkwaterpunt heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "questionHint": {
+        "en": "E.g. it has an integrated statue or other non-trivial, creative work",
+        "nl": "Bijvoorbeeld een standbeeld of ander, niet-triviaal kunstwerk"
+      }
+    },
+    {
+      "builtin": "artwork.*artwork-question",
+      "override": {
+        "condition": "tourism=artwork"
+      }
     },
     {
       "id": "render-closest-drinking-water",
@@ -368,7 +503,7 @@
           ]
         },
         "then": {
-          "en":"This is a historic, manual water pump where no drinking water can be found"
+          "en": "This is a historic, manual water pump where no drinking water can be found"
         }
       }
     ]
