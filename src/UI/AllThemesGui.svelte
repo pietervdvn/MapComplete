@@ -29,10 +29,8 @@
 </script>
 
 <div class="flex flex-col m-4">
-  <div class="self-end">
-    <LanguagePicker assignTo={state.language} availableLanguages={t.title.SupportedLanguages()}
+  <LanguagePicker clss="self-end" assignTo={state.language} availableLanguages={t.title.SupportedLanguages()}
                     preferredLanguages={userLanguages} />
-  </div>
 
   <div class="flex mt-4">
 

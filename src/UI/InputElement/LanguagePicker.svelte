@@ -8,6 +8,7 @@
   import Locale from "../i18n/Locale";
   import { LanguageIcon } from "@babeard/svelte-heroicons/solid";
   import Dropdown from "../Base/Dropdown.svelte";
+  import { twMerge } from "tailwind-merge"
 
   /**
    * Languages one can choose from
@@ -33,13 +34,14 @@
 
   let current = Locale.language;
 
+  export let clss : string = undefined
 </script>
 
 {#if availableLanguages?.length > 1}
-  <form class="flex items-center">
+  <form class={twMerge("flex items-center max-w-full pr-4", clss)}>
 
-    <LanguageIcon class="h-4 w-4 mr-1" />
-    <Dropdown value={assignTo}>
+    <LanguageIcon class="h-4 w-4 mr-1 shrink-0" />
+    <Dropdown cls="max-w-full" value={assignTo}>
       {#if preferredFiltered}
         {#each preferredFiltered as language}
           <option value={language} class="font-bold">

@@ -637,3 +637,7 @@ a.link-underline {
 .min-h-32 {
     min-height: 8rem;
 }
+
+.max-w-full {
+    max-width: 100%;
+}

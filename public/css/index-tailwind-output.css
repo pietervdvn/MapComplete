@@ -2704,6 +2704,10 @@ a.link-underline {
   min-height: 8rem;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
 .hover\:bg-indigo-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(199 210 254 / var(--tw-bg-opacity));
