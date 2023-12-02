@@ -5,6 +5,7 @@
   import Tr from "../Base/Tr.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Mapillary_black from "../../assets/svg/Mapillary_black.svelte";
+  import { Mapillary } from "../../Logic/ImageProviders/Mapillary"
 
   /*
     A subtleButton which opens mapillary in a new tab at the current location
@@ -16,9 +17,7 @@
   }
   let location = mapProperties.location
   let zoom = mapProperties.zoom
-  let mapillaryLink = `https://www.mapillary.com/app/?focus=map&lat=${$location?.lat ?? 0}&lng=${
-    $location?.lon ?? 0
-  }&z=${Math.max(($zoom ?? 2) - 1, 1)}`
+  let mapillaryLink = Mapillary.createLink($location, $zoom)
 </script>
 
 <a class="button flex items-center" href={mapillaryLink} target="_blank">

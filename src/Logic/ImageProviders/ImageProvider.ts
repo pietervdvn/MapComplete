@@ -6,13 +6,14 @@ import { Utils } from "../../Utils"
 export interface ProvidedImage {
     url: string
     key: string
-    provider: ImageProvider
+    provider: ImageProvider,
+    id: string
 }
 
 export default abstract class ImageProvider {
     public abstract readonly defaultKeyPrefixes: string[]
 
-    public abstract SourceIcon(backlinkSource?: string): BaseUIElement
+    public abstract SourceIcon(id?: string, location?: {lon: number, lat: number}): BaseUIElement
 
     /**
      * Given a properies object, maps it onto _all_ the available pictures for this imageProvider
@@ -28,7 +29,7 @@ export default abstract class ImageProvider {
             throw "No `defaultKeyPrefixes` defined by this image provider"
         }
         const relevantUrls = new UIEventSource<
-            { url: string; key: string; provider: ImageProvider }[]
+            { id: string, url: string; key: string; provider: ImageProvider }[]
         >([])
         const seenValues = new Set<string>()
         allTags.addCallbackAndRunD((tags) => {
@@ -67,4 +68,10 @@ export default abstract class ImageProvider {
     public abstract DownloadAttribution(url: string): Promise<LicenseInfo>
 
     public abstract apiUrls(): string[]
+
+    public backlink(): string | undefined {
+        return undefined
+    }
+
+
 }

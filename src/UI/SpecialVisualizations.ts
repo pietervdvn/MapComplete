@@ -654,7 +654,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 needsUrls: AllImageProviders.apiUrls,
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     let imagePrefixes: string[] = undefined
                     if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
@@ -662,7 +662,8 @@ export default class SpecialVisualizations {
                     return new ImageCarousel(
                         AllImageProviders.LoadImagesFor(tags, imagePrefixes),
                         tags,
-                        state
+                        state,
+                        feature
                     )
                 },
             },
