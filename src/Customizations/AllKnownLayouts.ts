@@ -15,7 +15,7 @@ export class AllKnownLayoutsLazy {
     constructor(includeFavouriteLayer = true) {
         for (const layoutConfigJson of known_themes["themes"]) {
             for (const layerId of Constants.added_by_default) {
-                if (layerId === "favourite") {
+                if (layerId === "favourite" && favourite.id) {
                     if (includeFavouriteLayer) {
                         layoutConfigJson.layers.push(favourite)
                     }

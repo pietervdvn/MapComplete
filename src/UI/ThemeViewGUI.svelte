@@ -64,7 +64,6 @@
   import Community from "../assets/svg/Community.svelte";
   import Download from "../assets/svg/Download.svelte";
   import Share from "../assets/svg/Share.svelte";
-  import FavouriteSummary from "./Favourites/FavouriteSummary.svelte";
   import Favourites from "./Favourites/Favourites.svelte";
 
   export let state: ThemeViewState;
@@ -499,7 +498,7 @@
         Your favourites
       </div>
 
-      <div class="flex flex-col" slot="content2">
+      <div class="flex flex-col m-2" slot="content2">
         <h3>Your favourite locations</h3>
         <Favourites {state}/>
       </div>

@@ -22,7 +22,7 @@ import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 import { Translatable } from "../Json/Translatable"
 import { ConversionContext } from "./ConversionContext"
 
-class ValidateLanguageCompleteness extends DesugaringStep<any> {
+class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
     private readonly _languages: string[]
 
     constructor(...languages: string[]) {
@@ -34,7 +34,9 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         this._languages = languages ?? ["en"]
     }
 
-    convert(obj: any, context: ConversionContext): LayerConfig {
+    convert(obj: LayoutConfig, context: ConversionContext): LayoutConfig {
+        const origLayers = obj.layers
+        obj.layers = [...obj.layers].filter((l) => l["id"] !== "favourite")
         const translations = Translation.ExtractAllTranslationsFrom(obj)
         for (const neededLanguage of this._languages) {
             translations
@@ -56,7 +58,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
                         )
                 })
         }
-
+        obj.layers = origLayers
         return obj
     }
 }
@@ -1369,7 +1371,12 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
     }
 
     convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
-        return this.validator.convert(json, context).raw
+        const prepared = this.validator.convert(json, context)
+        if (!prepared) {
+            context.err("Preparing layer failed")
+            return undefined
+        }
+        return prepared?.raw
     }
 }
 export class ValidateLayer extends Conversion<

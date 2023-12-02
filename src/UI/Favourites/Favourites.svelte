@@ -11,9 +11,9 @@
 
 <div class="flex flex-col">
   You marked {$favourites.length} locations as a favourite location.
-  
+
   This list is only visible to you
-{#each $favourites as f}
-  <FavouriteSummary properties={f.properties} />
-{/each}
+  {#each $favourites as feature (feature.properties.id)}
+    <FavouriteSummary {feature} {state} />
+  {/each}
 </div>
