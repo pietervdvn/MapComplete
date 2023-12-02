@@ -10,7 +10,7 @@ mkdir dist 2> /dev/null
 mkdir dist/assets 2> /dev/null
 
 
-export NODE_OPTIONS="--max-old-space-size=8192"
+export NODE_OPTIONS="--max-old-space-size=16384"
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
@@ -48,7 +48,7 @@ else
   exit 1
 fi
 
-export NODE_OPTIONS=--max-old-space-size=7000
+export NODE_OPTIONS=--max-old-space-size=16000
 which vite
 vite build --sourcemap 
 # Copy the layer files, as these might contain assets (e.g. svgs)
