@@ -1,5 +1,6 @@
 {
   "#":"no-translations",
+  "#dont-translate": "*",
   "pointRendering": [
     {
       "location": [

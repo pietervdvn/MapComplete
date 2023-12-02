@@ -13,7 +13,7 @@ import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
-
+import icons from "../src/assets/generated/layers/icons.json"
 export class GenerateFavouritesLayer extends Script {
     private readonly layers: LayerConfigJson[] = []
 
@@ -51,10 +51,11 @@ export class GenerateFavouritesLayer extends Script {
             "move-button",
             "delete-button",
             "all-tags",
+            "all_tags",
             ...AddEditingElements.addedElements,
         ])
 
-        const generateTagRenderings: (string | QuestionableTagRenderingConfigJson)[] = []
+        const generatedTagRenderings: (string | QuestionableTagRenderingConfigJson)[] = []
         const trPerId = new Map<
             string,
             { conditions: TagConfigJson[]; tr: QuestionableTagRenderingConfigJson }
@@ -68,7 +69,7 @@ export class GenerateFavouritesLayer extends Script {
                     if (blacklistedIds.has(tagRendering)) {
                         continue
                     }
-                    generateTagRenderings.push(tagRendering)
+                    generatedTagRenderings.push(tagRendering)
                     blacklistedIds.add(tagRendering)
                     continue
                 }
@@ -97,14 +98,14 @@ export class GenerateFavouritesLayer extends Script {
                         newTr.condition = {
                             and: Utils.NoNull([(newTr.condition, layerConfig.source["osmTags"])]),
                         }
-                        generateTagRenderings.push(newTr)
+                        generatedTagRenderings.push(newTr)
                         blacklistedIds.add(newTr.id)
                         continue
                     }
                 }
                 if (!trPerId.has(id)) {
                     const newTr = <QuestionableTagRenderingConfigJson>Utils.Clone(tagRendering)
-                    generateTagRenderings.push(newTr)
+                    generatedTagRenderings.push(newTr)
                     trPerId.set(newTr.id, { tr: newTr, conditions: [] })
                 }
                 const conditions = trPerId.get(id).conditions
@@ -142,11 +143,41 @@ export class GenerateFavouritesLayer extends Script {
             },
         }
         proto.tagRenderings = [
-            ...generateTagRenderings,
+            "images",
+            ...generatedTagRenderings,
             ...proto.tagRenderings,
             "questions",
             allTags,
         ]
+    }
+
+    private addTitleIcons(proto: LayerConfigJson) {
+        proto.titleIcons = []
+        const seenTitleIcons = new Set<string>()
+        for (const layer of this.layers) {
+            for (const titleIcon of layer.titleIcons) {
+                if (typeof titleIcon === "string") {
+                    continue
+                }
+                if (titleIcon["labels"]?.indexOf("defaults") >= 0) {
+                    continue
+                }
+                if (titleIcon.id === "rating") {
+                    if (!seenTitleIcons.has("rating")) {
+                        proto.titleIcons.unshift("icons.rating")
+                        seenTitleIcons.add("rating")
+                    }
+                    continue
+                }
+                if (seenTitleIcons.has(titleIcon.id)) {
+                    continue
+                }
+                seenTitleIcons.add(titleIcon.id)
+                console.log("Adding ", titleIcon.id)
+                proto.titleIcons.push(titleIcon)
+            }
+        }
+        proto.titleIcons.push("icons.defaults")
     }
 
     private addTitle(proto: LayerConfigJson) {
@@ -227,6 +258,7 @@ export class GenerateFavouritesLayer extends Script {
         const proto = this.readLayer("favourite/favourite.proto.json")
         this.addTagRenderings(proto)
         this.addTitle(proto)
+        this.addTitleIcons(proto)
         writeFileSync("./assets/layers/favourite/favourite.json", JSON.stringify(proto, null, "  "))
     }
 
