@@ -35,6 +35,7 @@
   )
 
   let images: Store<P4CPicture[]> = imagesProvider.store.map((images) => images.slice(0, 20))
+  let allDone = imagesProvider.allDone
 </script>
 
 <div class="interactive border-interactive rounded-2xl p-2">
@@ -44,8 +45,10 @@
     </h4>
     <slot name="corner" />
   </div>
-  {#if $images.length === 0}
+  {#if !$allDone}
     <Loading />
+  {:else if $images.length === 0}
+    <Tr t={Translations.t.image.nearby.noNearbyImages} cls="alert"/>
   {:else}
     <div class="flex w-full space-x-1 overflow-x-auto" style="scroll-snap-type: x proximity">
       {#each $images as image (image.pictureUrl)}
