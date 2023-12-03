@@ -6,13 +6,21 @@ import { Changes } from "../Osm/Changes"
 import { OsmConnection } from "../Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SimpleMetaTagger from "../SimpleMetaTagger"
-import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import { Feature } from "geojson"
 import { OsmTags } from "../../Models/OsmFeature"
 import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
 import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { Utils } from "../../Utils"
 
+interface TagsUpdaterState {
+    selectedElement: UIEventSource<Feature>
+    featureProperties: { getStore: (id: string) => UIEventSource<Record<string, string>> }
+    changes: Changes
+    osmConnection: OsmConnection
+    layout: LayoutConfig
+    osmObjectDownloader: OsmObjectDownloader
+    indexedFeatures: IndexedFeatureSource
+}
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
         "timestamp",
@@ -23,38 +31,18 @@ export default class SelectedElementTagsUpdater {
         "id",
     ])
 
-    private readonly state: {
-        selectedElement: UIEventSource<Feature>
-        featureProperties: FeaturePropertiesStore
-        changes: Changes
-        osmConnection: OsmConnection
-        layout: LayoutConfig
-        osmObjectDownloader: OsmObjectDownloader
-        indexedFeatures: IndexedFeatureSource
-    }
-
-    constructor(state: {
-        selectedElement: UIEventSource<Feature>
-        featureProperties: FeaturePropertiesStore
-        indexedFeatures: IndexedFeatureSource
-        changes: Changes
-        osmConnection: OsmConnection
-        layout: LayoutConfig
-        osmObjectDownloader: OsmObjectDownloader
-    }) {
-        this.state = state
+    constructor(state: TagsUpdaterState) {
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
             if (!isLoggedIn && !Utils.runningFromConsole) {
                 return
             }
-            this.installCallback()
+            this.installCallback(state)
             // We only have to do this once...
             return true
         })
     }
 
-    private installCallback() {
-        const state = this.state
+    private installCallback(state: TagsUpdaterState) {
         state.selectedElement.addCallbackAndRunD(async (s) => {
             let id = s.properties?.id
             if (!id) {
@@ -94,7 +82,7 @@ export default class SelectedElementTagsUpdater {
                     oldFeature.geometry = newGeometry
                     state.featureProperties.getStore(id)?.ping()
                 }
-                this.applyUpdate(latestTags, id)
+                SelectedElementTagsUpdater.applyUpdate(latestTags, id, state)
 
                 console.log("Updated", id)
             } catch (e) {
@@ -102,8 +90,7 @@ export default class SelectedElementTagsUpdater {
             }
         })
     }
-    private applyUpdate(latestTags: OsmTags, id: string) {
-        const state = this.state
+    public static applyUpdate(latestTags: OsmTags, id: string, state: TagsUpdaterState) {
         try {
             const leftRightSensitive = state.layout.isLeftRightSensitive()
 
@@ -162,11 +149,16 @@ export default class SelectedElementTagsUpdater {
             }
 
             if (somethingChanged) {
-                console.log("Detected upstream changes to the object when opening it, updating...")
+                console.log(
+                    "Detected upstream changes to the object " +
+                        id +
+                        " when opening it, updating..."
+                )
                 currentTagsSource.ping()
             } else {
                 console.debug("Fetched latest tags for ", id, "but detected no changes")
             }
+            return currentTags
         } catch (e) {
             console.error("Updating the tags of selected element ", id, "failed due to", e)
         }

@@ -49,14 +49,14 @@
 
 </script>
 
-<div class="px-1 my-1 border-2 border-dashed border-gray-300 rounded flex justify-between items-center">
-  <h3 on:click={() => select()} class="cursor-pointer ml-1 m-0">
+<div class="px-1 my-1 border-2 border-dashed border-gray-300 rounded grid grid-cols-3 items-center no-weblate">
+  <button on:click={() => select()} class="cursor-pointer ml-1 m-0 link justify-self-start">
     <TagRenderingAnswer extraClasses="underline" config={titleConfig} layer={favConfig} selectedElement={feature} {tags} />
-  </h3>
+  </button>
 
   {$distance}
   
-  <div class="flex items-center">
+  <div class="flex items-center justify-self-end title-icons links-as-button gap-x-0.5 p-1 pt-0.5 sm:pt-1">
     {#each favConfig.titleIcons as titleIconConfig}
       {#if (titleIconBlacklist.indexOf(titleIconConfig.id) < 0) && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...properties, ...state.userRelatedState.preferencesAsTags.data } ) ?? true) && titleIconConfig.IsKnown(properties)}
         <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
@@ -71,6 +71,7 @@
         </div>
       {/if}
     {/each}
+    
     <button on:click={() => center()} class="p-1" ><Center class="w-6 h-6"/></button>
   </div>
 </div>

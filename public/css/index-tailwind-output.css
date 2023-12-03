@@ -841,10 +841,6 @@ video {
   margin-right: 3rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -879,6 +875,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1289,6 +1289,10 @@ video {
           appearance: none;
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -1439,6 +1443,18 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.justify-self-start {
+  justify-self: start;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .overflow-auto {
@@ -2333,6 +2349,16 @@ button.disabled:hover, .button.disabled:hover {
   border: 2px dashed var(--button-background);
   background: unset;
   color: unset;
+}
+
+button.link {
+  border: none;
+  text-decoration: underline;
+  background-color: unset;
+}
+
+button.link:hover {
+  color:unset;
 }
 
 .interactive button.disabled svg path, .interactive .button.disabled svg path {

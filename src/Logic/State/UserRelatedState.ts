@@ -397,13 +397,6 @@ export default class UserRelatedState {
                 }
                 if (tags[key + "-combined-0"]) {
                     // A combined value exists
-                    console.log(
-                        "Trying to get a long preference for ",
-                        key,
-                        "with length value",
-                        tags[key],
-                        "as -combined-0 exists"
-                    )
                     this.osmConnection.GetLongPreference(key, "").setData(tags[key])
                 } else {
                     this.osmConnection

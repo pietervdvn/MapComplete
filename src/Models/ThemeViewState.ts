@@ -244,12 +244,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.dataIsLoading = layoutSource.isLoading
             this.indexedFeatures = layoutSource
             this.featureProperties = new FeaturePropertiesStore(layoutSource)
-            this.favourites = new FavouritesFeatureSource(
-                this.osmConnection,
-                this.featureProperties,
-                layoutSource,
-                layout
-            )
 
             this.changes = new Changes(
                 {
@@ -333,10 +327,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             return sorted
         })
 
-        const lastClick = (this.lastClickObject = new LastClickFeatureSource(
+        this.lastClickObject = new LastClickFeatureSource(
             this.mapProperties.lastClickLocation,
             this.layout
-        ))
+        )
 
         this.osmObjectDownloader = new OsmObjectDownloader(
             this.osmConnection.Backend(),
@@ -359,6 +353,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection,
             this.changes
         )
+        this.favourites = new FavouritesFeatureSource(this)
 
         this.initActors()
         this.drawSpecialLayers()
@@ -472,6 +467,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedLayer.setData(layer)
         this.selectedElement.setData(toSelect)
     }
+
     private initHotkeys() {
         Hotkeys.RegisterHotkey(
             { nomod: "Escape", onUp: true },
@@ -480,6 +476,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.selectedElement.setData(undefined)
                 this.guistate.closeAll()
                 this.focusOnMap()
+            }
+        )
+
+        Hotkeys.RegisterHotkey(
+            { nomod: "f" },
+            Translations.t.hotkeyDocumentation.selectFavourites,
+            () => {
+                this.guistate.menuViewTab.setData("favourites")
+                this.guistate.menuIsOpened.setData(true)
             }
         )
 

@@ -4,9 +4,10 @@ import { Store, Stores, UIEventSource } from "../../UIEventSource"
 import { OsmConnection } from "../../Osm/OsmConnection"
 import { OsmId } from "../../../Models/OsmFeature"
 import { GeoOperations } from "../../GeoOperations"
-import FeaturePropertiesStore from "../Actors/FeaturePropertiesStore"
 import { IndexedFeatureSource } from "../FeatureSource"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import OsmObjectDownloader from "../../Osm/OsmObjectDownloader"
+import { SpecialVisualizationState } from "../../../UI/SpecialVisualization"
+import SelectedElementTagsUpdater from "../../Actors/SelectedElementTagsUpdater"
 
 /**
  * Generates the favourites from the preferences and marks them as favourite
@@ -21,14 +22,9 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
      */
     public readonly allFavourites: Store<Feature[]>
 
-    constructor(
-        connection: OsmConnection,
-        indexedSource: FeaturePropertiesStore,
-        allFeatures: IndexedFeatureSource,
-        layout: LayoutConfig
-    ) {
+    constructor(state: SpecialVisualizationState) {
         const features: Store<Feature[]> = Stores.ListStabilized(
-            connection.preferencesHandler.preferences.map((prefs) => {
+            state.osmConnection.preferencesHandler.preferences.map((prefs) => {
                 const feats: Feature[] = []
                 const allIds = new Set<string>()
                 for (const key in prefs) {
@@ -53,24 +49,49 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
 
         const featuresWithoutAlreadyPresent = features.map((features) =>
             features.filter(
-                (feat) => !layout.layers.some((l) => l.id === feat.properties._orig_layer)
+                (feat) => !state.layout.layers.some((l) => l.id === feat.properties._orig_layer)
             )
         )
 
         super(featuresWithoutAlreadyPresent)
         this.allFavourites = features
 
-        this._osmConnection = connection
+        this._osmConnection = state.osmConnection
         this._detectedIds = Stores.ListStabilized(
             features.map((feats) => feats.map((f) => f.properties.id))
         )
+        let allFeatures = state.indexedFeatures
         this._detectedIds.addCallbackAndRunD((detected) =>
-            this.markFeatures(detected, indexedSource, allFeatures)
+            this.markFeatures(detected, state.featureProperties, allFeatures)
         )
         // We use the indexedFeatureSource as signal to update
         allFeatures.features.map((_) =>
-            this.markFeatures(this._detectedIds.data, indexedSource, allFeatures)
+            this.markFeatures(this._detectedIds.data, state.featureProperties, allFeatures)
         )
+
+        this.allFavourites.addCallbackD((features) => {
+            for (const feature of features) {
+                this.updateFeature(feature, state.osmObjectDownloader, state)
+            }
+
+            return true
+        })
+    }
+
+    private async updateFeature(
+        feature: Feature,
+        osmObjectDownloader: OsmObjectDownloader,
+        state: SpecialVisualizationState
+    ) {
+        const id = feature.properties.id
+        const upstream = await osmObjectDownloader.DownloadObjectAsync(id)
+        if (upstream === "deleted") {
+            this.removeFavourite(feature)
+            return
+        }
+        console.log("Updating metadata due to favourite of", id)
+        const latestTags = SelectedElementTagsUpdater.applyUpdate(upstream.tags, id, state)
+        this.updatePropertiesOfFavourite(latestTags)
     }
 
     private static ExtractFavourite(key: string, prefs: Record<string, string>): Feature {
@@ -115,6 +136,37 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
         return properties
     }
 
+    /**
+     * Sets all the (normal) properties as the feature is updated
+     */
+    private updatePropertiesOfFavourite(properties: Record<string, string>) {
+        const id = properties?.id?.replace("/", "-")
+        if (!id) {
+            return
+        }
+        console.log("Updating store for", id)
+        for (const key in properties) {
+            const pref = this._osmConnection.GetPreference(
+                "favourite-" + id + "-property-" + key.replaceAll(":", "__")
+            )
+            const v = properties[key]
+            if (v === "" || !v) {
+                continue
+            }
+            pref.setData("" + v)
+        }
+    }
+
+    public removeFavourite(feature: Feature, tags?: UIEventSource<Record<string, string>>) {
+        const id = feature.properties.id.replace("/", "-")
+        const pref = this._osmConnection.GetPreference("favourite-" + id)
+        this._osmConnection.preferencesHandler.removeAllWithPrefix("mapcomplete-favourite-" + id)
+        if (tags) {
+            delete tags.data._favourite
+            tags.ping()
+        }
+    }
+
     public markAsFavourite(
         feature: Feature,
         layer: string,
@@ -123,42 +175,25 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
         isFavourite: boolean = true
     ) {
         {
+            if (!isFavourite) {
+                this.removeFavourite(feature, tags)
+                return
+            }
             const id = tags.data.id.replace("/", "-")
             const pref = this._osmConnection.GetPreference("favourite-" + id)
-            if (isFavourite) {
-                const center = GeoOperations.centerpointCoordinates(feature)
-                pref.setData(JSON.stringify(center))
-
-                this._osmConnection.GetPreference("favourite-" + id + "-layer").setData(layer)
-                this._osmConnection.GetPreference("favourite-" + id + "-theme").setData(theme)
-                for (const key in tags.data) {
-                    const pref = this._osmConnection.GetPreference(
-                        "favourite-" + id + "-property-" + key.replaceAll(":", "__")
-                    )
-                    const v = tags.data[key]
-                    if (v === "" || !v) {
-                        continue
-                    }
-                    pref.setData("" + v)
-                }
-            } else {
-                this._osmConnection.preferencesHandler.removeAllWithPrefix(
-                    "mapcomplete-favourite-" + id
-                )
-            }
+            const center = GeoOperations.centerpointCoordinates(feature)
+            pref.setData(JSON.stringify(center))
+            this._osmConnection.GetPreference("favourite-" + id + "-layer").setData(layer)
+            this._osmConnection.GetPreference("favourite-" + id + "-theme").setData(theme)
+            this.updatePropertiesOfFavourite(tags.data)
         }
-        if (isFavourite) {
-            tags.data._favourite = "yes"
-            tags.ping()
-        } else {
-            delete tags.data._favourite
-            tags.ping()
-        }
+        tags.data._favourite = "yes"
+        tags.ping()
     }
 
     private markFeatures(
         detected: string[],
-        featureProperties: FeaturePropertiesStore,
+        featureProperties: { getStore(id: string): UIEventSource<Record<string, string>> },
         allFeatures: IndexedFeatureSource
     ) {
         const feature = allFeatures.features.data
