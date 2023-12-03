@@ -6,6 +6,7 @@
   import { ImmutableStore } from "../../Logic/UIEventSource";
   import { GeoOperations } from "../../Logic/GeoOperations";
   import Center from "../../assets/svg/Center.svelte";
+  import { Utils } from "../../Utils";
 
   export let feature: Feature;
   let properties: Record<string, string> = feature.properties;
@@ -30,15 +31,31 @@
     center()
   }
   
+  const coord = GeoOperations.centerpointCoordinates(feature)
+  const distance = state.mapProperties.location.stabilized(500).mapD(({lon, lat}) => {
+    let meters = Math.round(GeoOperations.distanceBetween(coord, [lon, lat]))
+    
+    if(meters < 1000){
+      return meters +"m"
+    }
+    
+    meters = Math.round(meters / 100)
+    const kmStr = ""+meters
+    
+    
+    return kmStr.substring(0, kmStr.length - 1)+"."+kmStr.substring(kmStr.length-1) +"km"
+  })
   const titleIconBlacklist = ["osmlink","sharelink","favourite_title_icon"]
 
 </script>
 
 <div class="px-1 my-1 border-2 border-dashed border-gray-300 rounded flex justify-between items-center">
   <h3 on:click={() => select()} class="cursor-pointer ml-1 m-0">
-    <TagRenderingAnswer config={titleConfig} layer={favConfig} selectedElement={feature} {tags} />
+    <TagRenderingAnswer extraClasses="underline" config={titleConfig} layer={favConfig} selectedElement={feature} {tags} />
   </h3>
 
+  {$distance}
+  
   <div class="flex items-center">
     {#each favConfig.titleIcons as titleIconConfig}
       {#if (titleIconBlacklist.indexOf(titleIconConfig.id) < 0) && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...properties, ...state.userRelatedState.preferencesAsTags.data } ) ?? true) && titleIconConfig.IsKnown(properties)}

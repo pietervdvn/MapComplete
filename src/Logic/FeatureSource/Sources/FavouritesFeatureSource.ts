@@ -109,7 +109,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
             if (!key.startsWith(FavouritesFeatureSource.prefix + id)) {
                 continue
             }
-            const propertyName = key.substring(minLength)
+            const propertyName = key.substring(minLength).replaceAll("__", ":")
             properties[propertyName] = prefs[key]
         }
         return properties

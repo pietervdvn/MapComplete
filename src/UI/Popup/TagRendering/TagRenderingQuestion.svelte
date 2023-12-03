@@ -140,7 +140,7 @@
       console.log("SelectedTags is undefined, ignoring 'onSave'-event")
       return
     }
-    if (layer === undefined || layer?.source === null) {
+    if (layer === undefined || (layer?.source === null && layer.id !== "favourite")) {
       /**
        * This is a special, priviliged layer.
        * We simply apply the tags onto the records
@@ -159,7 +159,7 @@
 
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
-      theme: state.layout.id,
+      theme: tags.data["_orig_theme"] ??  state.layout.id,
       changeType: "answer",
     })
     freeformInput.setData(undefined)
