@@ -190,13 +190,6 @@
     }
   }
 
-  let dispatch = createEventDispatcher<{
-    saved: {
-      config: TagRenderingConfig
-      applied: TagsFilter
-    }
-  }>();
-
 
   let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false);
   let featureSwitchIsDebugging =
