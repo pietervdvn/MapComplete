@@ -240,6 +240,8 @@ export interface LayerConfigJson {
      * Use an empty array to hide them.
      * Note that "defaults" will insert all the default titleIcons (which are added automatically)
      *
+     * Use `auto:<tagrenderingId>` to automatically create an icon based on a tagRendering which has icons
+     *
      * Type: icon[]
      * group: infobox
      */

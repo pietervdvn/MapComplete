@@ -343,6 +343,7 @@
       },
       "id": "Rock type (crag/rock/cliff only)"
     },
+    "reviews",
     {
       "id": "default_climbing_questions",
       "builtin": [

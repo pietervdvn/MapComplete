@@ -1,4 +1,24 @@
 <script>
-export let color = "#000000"
+  export let color = "#000000"
 </script>
- <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">   <g id="surface1">     <path style=" stroke:none;fill-rule:nonzero;fill:{color};fill-opacity:1;" d="M 356.25 187.5 L 281.25 131.25 L 281.25 168.75 L 206.25 168.75 L 206.25 93.75 L 243.75 93.75 L 187.5 18.75 L 131.25 93.75 L 168.75 93.75 L 168.75 168.75 L 93.75 168.75 L 93.75 131.25 L 18.75 187.5 L 93.75 243.75 L 93.75 206.25 L 168.75 206.25 L 168.75 281.25 L 131.25 281.25 L 187.5 356.25 L 243.75 281.25 L 206.25 281.25 L 206.25 206.25 L 281.25 206.25 L 281.25 243.75 Z M 356.25 187.5 "/>   </g> </svg>
+
+<svg
+  {...$$restProps}
+  on:click
+  on:mouseover
+  on:mouseenter
+  on:mouseleave
+  on:keydown
+  xmlns="http://www.w3.org/2000/svg"
+  width="375px"
+  height="375px"
+  viewBox="0 0 375 375"
+  version="1.1"
+>
+  <g id="surface1">
+    <path
+      style=" stroke:none;fill-rule:nonzero;fill:{color};fill-opacity:1;"
+      d="M 356.25 187.5 L 281.25 131.25 L 281.25 168.75 L 206.25 168.75 L 206.25 93.75 L 243.75 93.75 L 187.5 18.75 L 131.25 93.75 L 168.75 93.75 L 168.75 168.75 L 93.75 168.75 L 93.75 131.25 L 18.75 187.5 L 93.75 243.75 L 93.75 206.25 L 168.75 206.25 L 168.75 281.25 L 131.25 281.25 L 187.5 356.25 L 243.75 281.25 L 206.25 281.25 L 206.25 206.25 L 281.25 206.25 L 281.25 243.75 Z M 356.25 187.5 "
+    />
+  </g>
+</svg>

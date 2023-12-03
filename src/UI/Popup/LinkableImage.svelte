@@ -28,11 +28,13 @@
 
   const t = Translations.t.image.nearby
   const c = [lon, lat]
+  console.log(">>>", image)
   let attributedImage = new AttributedImage({
     url: image.thumbUrl ?? image.pictureUrl,
     provider: AllImageProviders.byName(image.provider),
     date: new Date(image.date),
-  })
+      id: Object.values(image.osmTags)[0]
+  }, feature)
   let distance = Math.round(
     GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c)
   )
@@ -42,7 +44,7 @@
     const key = Object.keys(image.osmTags)[0]
     const url = image.osmTags[key]
     if (isLinked) {
-      const action = new LinkImageAction(currentTags.id, key, url, currentTags, {
+      const action = new LinkImageAction(currentTags.id, key, url, tags, {
         theme: state.layout.id,
         changeType: "link-image",
       })

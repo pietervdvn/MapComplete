@@ -107,6 +107,9 @@ export abstract class EditJsonState<T> {
         return entry
     }
 
+    public async delete(){
+        await this.server.delete(this.getId().data, this.category)
+    }
     public getStoreFor<T>(path: ReadonlyArray<string | number>): UIEventSource<T | undefined> {
         const key = path.join(".")
 
@@ -294,15 +297,38 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
 
         this.addMissingTagRenderingIds()
 
-        this.configuration.addCallbackAndRunD((layer) => {
-            if (layer.tagRenderings) {
+
+        function cleanArray(data: object, key: string): boolean{
+            if(!data){
+                return false
+            }
+            if (data[key]) {
                 // A bit of cleanup
-                const lBefore = layer.tagRenderings.length
-                const cleaned = Utils.NoNull(layer.tagRenderings)
+                const lBefore = data[key].length
+                const cleaned = Utils.NoNull(data[key])
                 if (cleaned.length != lBefore) {
-                    layer.tagRenderings = cleaned
-                    this.configuration.ping()
+                    data[key] = cleaned
+                    return true
                 }
+            }
+            return false
+        }
+
+        this.configuration.addCallbackAndRunD((layer) => {
+            let changed = cleanArray(layer, "tagRenderings") || cleanArray(layer, "pointRenderings")
+            for (const tr of layer.tagRenderings ?? []) {
+                if(typeof tr === "string"){
+                    continue
+                }
+
+                const qtr = (<QuestionableTagRenderingConfigJson> tr)
+                if(qtr.freeform && Object.keys(qtr.freeform ).length === 0){
+                    delete qtr.freeform
+                    changed = true
+                }
+            }
+            if(changed){
+                this.configuration.ping()
             }
         })
     }

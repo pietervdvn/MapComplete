@@ -455,6 +455,13 @@
             "ca": "La superfície és <b>formigó</b>",
             "cs": "Povrch je <b>betonový</b>"
           }
+        },
+        {
+          "if": "surface=fine_gravel",
+          "then": {
+            "en": "The surface is <b>fine gravel</b>",
+            "nl": "De ondergrond bestaat uit <b>grind</b>"
+          }
         }
       ],
       "id": "sport_pitch-surface"

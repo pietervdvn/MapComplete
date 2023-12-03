@@ -814,6 +814,12 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
             )
         }
 
+        if (Object.keys(json).length === 1 && typeof json["render"] === "string") {
+            context.warn(
+                `use the content directly instead of {render: ${JSON.stringify(json["render"])}}`
+            )
+        }
+
         {
             for (const key of ["question", "questionHint", "render"]) {
                 CheckTranslation.allowUndefined.convert(json[key], context.enter(key))

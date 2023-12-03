@@ -137,7 +137,6 @@ export default class GeoLocationHandler {
             }
         }
 
-        console.trace("Moving the map to the GPS-location")
         mapLocation.setData({
             lon: newLocation.longitude,
             lat: newLocation.latitude,
@@ -152,7 +151,6 @@ export default class GeoLocationHandler {
     private CopyGeolocationIntoMapstate() {
         const features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
         this.currentUserLocation = new StaticFeatureSource(features)
-        const keysToCopy = ["speed", "accuracy", "altitude", "altitudeAccuracy", "heading"]
         let i = 0
         this.geolocationState.currentGPSLocation.addCallbackAndRun((location) => {
             if (location === undefined) {
@@ -163,17 +161,14 @@ export default class GeoLocationHandler {
                 id: "gps-" + i,
                 "user:location": "yes",
                 date: new Date().toISOString(),
+                // GeolocationObject behaves really weird when indexing, so copying it one by one is the most stable
+                accuracy: location.accuracy,
+                speed: location.speed,
+                altitude: location.altitude,
+                altitudeAccuracy: location.altitudeAccuracy,
+                heading: location.heading,
             }
             i++
-
-            for (const k in keysToCopy) {
-                // For some weird reason, the 'Object.keys' method doesn't work for the 'location: GeolocationCoordinates'-object and will thus not copy all the properties when using {...location}
-                // As such, they are copied here
-                if (location[k]) {
-                    properties[k] = location[k]
-                }
-            }
-            properties["_all"] = JSON.stringify(location)
 
             const feature = <Feature>{
                 type: "Feature",
@@ -183,7 +178,6 @@ export default class GeoLocationHandler {
                     coordinates: [location.longitude, location.latitude],
                 },
             }
-
             features.setData([feature])
         })
     }

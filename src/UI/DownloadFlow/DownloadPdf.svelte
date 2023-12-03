@@ -11,7 +11,7 @@
   import Locale from "../i18n/Locale"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import DownloadHelper from "./DownloadHelper"
-  import Qr from "../../Utils/Qr";
+  import Qr from "../../Utils/Qr"
 
   export let templateName: string
   export let state: ThemeViewState
@@ -31,11 +31,11 @@
       freeComponentId: "belowmap",
       createImage: (key: string, width: string, height: string) => {
         console.log("Creating an image for key", key)
-        if(key === "qr"){
+        if (key === "qr") {
           const toShare = window.location.href.split("#")[0]
           return new Qr(toShare).toImageElement(parseFloat(width), parseFloat(height))
         }
-        return downloadHelper.createImage(key, width, height);
+        return downloadHelper.createImage(key, width, height)
       },
       textSubstitutions: <Record<string, string>>{
         "layout.title": state.layout.title,
@@ -62,7 +62,10 @@
   extension="pdf"
   helperText={t.downloadAsPdfHelper}
   metaIsIncluded={false}
-  mainText={t.pdf.current_view_generic.Subs({orientation: template.orientation, paper_size: template.format.toUpperCase()})}
+  mainText={t.pdf.current_view_generic.Subs({
+    orientation: template.orientation,
+    paper_size: template.format.toUpperCase(),
+  })}
   mimetype="application/pdf"
   {state}
 />

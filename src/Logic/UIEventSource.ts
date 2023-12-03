@@ -31,7 +31,7 @@ export class Stores {
      * @param promise
      * @constructor
      */
-    public static FromPromise<T>(promise: Promise<T>): Store<T> {
+    public static FromPromise<T>(promise: Promise<T>): Store<T | undefined> {
         const src = new UIEventSource<T>(undefined)
         promise?.then((d) => src.setData(d))
         promise?.catch((err) => console.warn("Promise failed:", err))
@@ -97,7 +97,7 @@ export abstract class Store<T> implements Readable<T> {
     abstract map<J>(f: (t: T) => J): Store<J>
     abstract map<J>(f: (t: T) => J, extraStoresToWatch: Store<any>[]): Store<J>
 
-    public mapD<J>(f: (t: T) => J, extraStoresToWatch?: Store<any>[]): Store<J> {
+    public mapD<J>(f: (t: Exclude<T, undefined | null>) => J, extraStoresToWatch?: Store<any>[]): Store<J> {
         return this.map((t) => {
             if (t === undefined) {
                 return undefined
@@ -105,7 +105,7 @@ export abstract class Store<T> implements Readable<T> {
             if (t === null) {
                 return null
             }
-            return f(t)
+            return f(<Exclude<T, undefined | null>> t)
         }, extraStoresToWatch)
     }
 
@@ -603,7 +603,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      */
     public static FromPromiseWithErr<T>(
         promise: Promise<T>
-    ): UIEventSource<{ success: T } | { error: any }> {
+    ): UIEventSource<{ success: T } | { error: any } | undefined> {
         const src = new UIEventSource<{ success: T } | { error: any }>(undefined)
         promise?.then((d) => src.setData({ success: d }))
         promise?.catch((err) => src.setData({ error: err }))
@@ -771,18 +771,21 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * Monoidal map which results in a read-only store. 'undefined' is passed 'as is'
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
      */
-    public mapD<J>(f: (t: T) => J, extraSources: Store<any>[] = []): Store<J | undefined> {
+    public mapD<J>(f: (t: Exclude<T, undefined | null>) => J, extraSources: Store<any>[] = []): Store<J | undefined> {
         return new MappedStore(
             this,
             (t) => {
                 if (t === undefined) {
                     return undefined
                 }
-                return f(t)
+                if (t === null) {
+                    return null
+                }
+                return f(<Exclude<T, undefined | null>> t)
             },
             extraSources,
             this._callbacks,
-            this.data === undefined ? undefined : f(this.data)
+            (this.data === undefined || this.data === null) ?(<undefined | null> this.data) : f(<any> this.data)
         )
     }
 

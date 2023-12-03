@@ -3,18 +3,15 @@ import TagRenderingConfig from "./TagRenderingConfig"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { Utils } from "../../Utils"
-import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
 import { ImmutableStore, Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
-import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
-import { html } from "svelte/types/compiler/utils/namespaces"
 
 export class IconConfig extends WithContextLoader {
     public static readonly defaultIcon = new IconConfig({ icon: "pin", color: "#ff9939" })

@@ -142,6 +142,155 @@
       "key": "amenity",
       "description": "Layer 'Artworks' shows amenity= with a fixed text, namely 'This artwork does not serve as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') Picking this answer will delete the key amenity.",
       "value": ""
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Artworks' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "two_sided",
+      "description": "Layer 'Artworks' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Artworks' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Artworks' shows backrest=no with a fixed text, namely 'Does <b>not</b> have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
+      "key": "seats",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "seats:separated",
+      "description": "Layer 'Artworks' shows seats:separated=no with a fixed text, namely 'This bench does not have separated seats' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'material' (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "wood"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "metal"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "stone"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "concrete"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "plastic"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "steel"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'colour' (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=brown with a fixed text, namely 'Colour: brown' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "brown"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=green with a fixed text, namely 'Colour: green' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "green"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=gray with a fixed text, namely 'Colour: gray' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "gray"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=white with a fixed text, namely 'Colour: white' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "white"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=red with a fixed text, namely 'Colour: red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "red"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=black with a fixed text, namely 'Colour: black' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "black"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=blue with a fixed text, namely 'Colour: blue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "blue"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=yellow with a fixed text, namely 'Colour: yellow' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "yellow"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'survey:date' (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Artworks' shows survey:date= with a fixed text, namely 'Surveyed today!' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') Picking this answer will delete the key survey:date. (This is only shown if amenity=bench)",
+      "value": ""
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "not:inscription",
+      "description": "Layer 'Artworks' shows not:inscription=yes with a fixed text, namely 'This bench does not have an inscription' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Artworks' shows inscription= with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the mapcomplete.org theme 'Artwork') Picking this answer will delete the key inscription. (This is only shown if amenity=bench)",
+      "value": ""
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "memorial"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') Picking this answer will delete the key historic. (This is only shown if amenity=bench)",
+      "value": ""
+    },
+    {
+      "key": "not:historic",
+      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Artwork') (This is only shown if amenity=bench)",
+      "value": "memorial"
     }
   ]
 }

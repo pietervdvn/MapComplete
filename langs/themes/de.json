@@ -524,7 +524,12 @@
                     }
                 },
                 "title": {
-                    "render": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "Fahrradknotenpunkt"
                 }
             },
             "2": {
@@ -1199,10 +1204,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite"
+                                        "then": "Es gibt einen Bürgersteig auf dieser Straßenseite"
                                     },
                                     "1": {
-                                        "then": "Nein, es gibt keinen Bürgersteig für Fußgänger"
+                                        "then": "Es gibt keinen Bürgersteig für Fußgänger"
                                     },
                                     "2": {
                                         "then": "Es gibt einen separat kartierten Bürgersteig für Fußgänger"
@@ -1422,7 +1427,11 @@
                     }
                 },
                 "title": {
-                    "render": "Wanderknoten <strong>{rwn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Wanderknoten <strong>{rwn_ref}</strong>"
+                        }
+                    }
                 }
             },
             "2": {

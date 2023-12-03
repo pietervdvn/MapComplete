@@ -524,7 +524,15 @@
                     }
                 },
                 "title": {
-                    "render": "Cycle node <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Cycle node <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Proposed cycle node <strong>{proposed:rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "Cycle node"
                 }
             },
             "2": {
@@ -1199,10 +1207,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Yes, there is a sidewalk on this side of the road"
+                                        "then": "There is a sidewalk on this side of the road"
                                     },
                                     "1": {
-                                        "then": "No, there is no sidewalk to walk on"
+                                        "then": "There is no sidewalk to walk on"
                                     },
                                     "2": {
                                         "then": "There is a separately mapped sidewalk to walk on"
@@ -1422,7 +1430,15 @@
                     }
                 },
                 "title": {
-                    "render": "Walking node <strong>{rwn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Walking node <strong>{rwn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Proposed walking node <strong>{proposed:rwn_ref}</strong>"
+                        }
+                    },
+                    "render": "Walking node"
                 }
             },
             "2": {

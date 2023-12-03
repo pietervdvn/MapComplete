@@ -28,6 +28,7 @@ export default class Attribution extends VariableUiElement {
                         title = new Link(title, license.informationLocation.href, true)
                     }
                 }
+
                 return new Combine([
                     icon
                         ?.SetClass("block left")

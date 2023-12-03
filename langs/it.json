@@ -1,5 +1,9 @@
 {
+    "advanced": {
+        "title": "Funzionalità avanzate"
+    },
     "centerMessage": {
+        "allFilteredAway": "Nessun oggetto nella vista attuale rispetta tutti i filtri",
         "loadingData": "Caricamento dei dati…",
         "noData": "Nessuna feature rilevante nella vista corrente",
         "ready": "Finito!",
@@ -45,6 +49,28 @@
         "loginNeeded": "<h3>Accedi</h3>Il layout personale è disponibile soltanto per gli utenti OpenStreetMap",
         "panelIntro": "<h3>Il tuo tema personale</h3>Attiva i tuoi livelli preferiti fra tutti i temi ufficiali",
         "reload": "Ricarica i dati"
+    },
+    "flyer": {
+        "aerial": "Questa mappa usa uno sfondo differente, cioè immagini aeree di Agentschap Informatie Vlaanderen",
+        "callToAction": "Provalo su mapcomplete.org",
+        "cyclofix": "Pompe per biciclette, stazioni di riparazione, fontanelle dell’acqua e negozi di biciclette sono su CycloFix",
+        "description": "Un volantino in formato A4 orizzontale per promuovere MapComplete",
+        "editing": {
+            "ex": "Un esempio semplificato di come appare una riserva naturale è mostrato qua sotto.",
+            "intro": "L’utente è accolto con una cartina con degli oggetti. Selezionandone uno, vengono mostrate le informazioni che riguardano lo riguardano.",
+            "title": "Com’è fatta l’interfaccia grafica?"
+        },
+        "examples": "Sono disponibili molte mappe tematiche, alcune di queste sono mostrate qui.\n\nNe esistono molte altre online: riguardanti la sanità, le indicazioni all’interno degli edifici, l’accessibilità con la carrozzina, le strutture per il trattamento dei rifiuti, gli attraversamenti pedonali con una colorazione arcobaleno, … Scoprili tutti su mapcomplete.org",
+        "fakeui": {
+            "add_images": "Aggiungi immagini con pochi click",
+            "attributes": "Mostra gli attributi in maniera amichevole",
+            "edit": "Informazioni errate od obsolete? Il pulsante modifica è lì per questo.",
+            "question": "Se il valore di un attributo non è ancora conosciuto, MapComplete mostra una domanda",
+            "see_images": "Mostra immagini dei precedenti contributori, Wikipedia, Mapillary, …",
+            "wikipedia": "Vengono mostrati gli articoli collegati di Wikipedia"
+        },
+        "frontParagraph": "MapComplete è un’applicazione web facile da usare che permette di raccogliere dati geografici su OpenStreetMap, permettendo così di ottenere e gestire dati rilevanti in una maniera open, crowdsource e riutilizzabile.\n\nA richiesta possono essere aggiunti nuove categorie e attributi.",
+        "lines_too": "Vengono anche mostrati linee e poligoni. Anche su questi oggetti si possono aggiungere e aggiornare gli attributi e le immagini."
     },
     "general": {
         "about": "Modifica e aggiungi con semplicità OpenStreetMap per un certo tema",

@@ -20,15 +20,20 @@
       _metatags = tags
     })
   )
-  
-  
-  let knownTagRenderings = layer.tagRenderings
-    .filter(config => (config.condition?.matchesProperties($tags) ?? true) && (config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)
-    && config.IsKnown($tags)))
+
+  let knownTagRenderings = layer.tagRenderings.filter(
+    (config) =>
+      (config.condition?.matchesProperties($tags) ?? true) &&
+      config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true) &&
+      config.IsKnown($tags)
+  )
   $: {
-    knownTagRenderings = layer.tagRenderings
-      .filter(config => (config.condition?.matchesProperties($tags) ?? true) && (config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true)
-        && config.IsKnown($tags)))
+    knownTagRenderings = layer.tagRenderings.filter(
+      (config) =>
+        (config.condition?.matchesProperties($tags) ?? true) &&
+        config.metacondition?.matchesProperties({ ...$tags, ..._metatags } ?? true) &&
+        config.IsKnown($tags)
+    )
   }
 </script>
 
@@ -40,15 +45,15 @@
 {:else}
   <div class="flex h-full flex-col gap-y-2 overflow-y-auto p-1 px-2">
     {#each knownTagRenderings as config (config.id)}
-          <TagRenderingEditable
-            {tags}
-            {config}
-            {state}
-            {selectedElement}
-            {layer}
-            {highlightedRendering}
-            clss={knownTagRenderings.length === 1 ? "h-full" : "tr-length-"+knownTagRenderings.length}
-          />
+      <TagRenderingEditable
+        {tags}
+        {config}
+        {state}
+        {selectedElement}
+        {layer}
+        {highlightedRendering}
+        clss={knownTagRenderings.length === 1 ? "h-full" : "tr-length-" + knownTagRenderings.length}
+      />
     {/each}
   </div>
 {/if}

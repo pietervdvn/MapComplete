@@ -5,7 +5,7 @@
    */
   import { Store } from "../../Logic/UIEventSource"
   import { onDestroy } from "svelte"
-  import Hand from "../../assets/svg/Hand.svelte";
+  import Hand from "../../assets/svg/Hand.svelte"
 
   let mainElem: HTMLElement
   export let hideSignal: Store<any>

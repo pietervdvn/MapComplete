@@ -12,7 +12,7 @@
   import { createEventDispatcher } from "svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Svg from "../../Svg"
-  import Plantnet_logo from "../../assets/svg/Plantnet_logo.svelte";
+  import Plantnet_logo from "../../assets/svg/Plantnet_logo.svelte"
 
   /**
    * The main entry point for the plantnet wizard
@@ -143,7 +143,7 @@
     </BackButton>
   {/if}
   <div class="low-interaction flex self-end rounded-xl p-2">
-    <Plantnet_logo class="w-8 h-8 p-1 mr-1 bg-white rounded-full"/>
+    <Plantnet_logo class="mr-1 h-8 w-8 rounded-full bg-white p-1" />
     <Tr t={t.poweredByPlantnet} />
   </div>
 </div>

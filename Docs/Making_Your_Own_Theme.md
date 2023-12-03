@@ -24,6 +24,11 @@ Please, do reach out to the MapComplete community channel
 on [Telegram](https://t.me/MapComplete)
 or [Matrix](https://app.element.io/#/room/#MapComplete:matrix.org).
 
+Get started
+-----------
+
+You can create your own theme at https://mapcomplete.org/studio
+
 
 What is a good theme?
 ---------------------
@@ -227,49 +232,7 @@ The entire tagRendering will thus be:
 ```
 
 
-The template
-------------
-
-[A basic template is available here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json).
-
-The custom theme generator
---------------------------
-
-The custom theme generator is a special page of MapComplete, where one can create their own theme. It makes it easier to
-get started.
-
-However, the custom theme generator is extremely buggy and built before some updates. This means that some features
-are _not_ available through the custom theme generator. The custom theme generator is good to get the basics of the
-theme set up, but you will have to edit the raw JSON file anyway afterwards.
-
-[A quick tutorial for the custom theme generator can be found here](https://www.youtube.com/watch?v=nVbFrNVPxPw).
-
-Loading your theme
-------------------
-
-If you have your JSON file, there are three ways to distribute your theme:
-
-### a. base64 the JSON file
-
-Take the entire JSON file and [base64](https://www.base64encode.org/) encode it.
-
-Then open up the URL `https://mapcomplete.org?userlayout=true#<base64-encoded-json-here>`.
-
-Yes, this URL will be huge; and updates are difficult to distribute as you have to send a new URL to everyone.
-
-This is however excellent to have a 'quick and dirty' test version up and running as these links can be generated from the customThemeGenerator and can be quickly shared with a few other contributors.
-
-You can use the community maintained [ThemeHelper](https://github.com/tordans/MapComplete-ThemeHelper) to make this process easier. This uses `lzString.compressToBase64` which is the counterpart to how MapComplete decompresses the base64 input.
-
-### b. Host the JSON file
-
-Host the JSON file on a publicly accessible webserver (e.g. GitHub) and open up `https://mapcomplete.org?userlayout=<url-to-the-raw.json>`
-
-_Gotcha:_ Make sure the server that hosts your JSON has liberal caching settings. Otherwise one version of the file might get cached in the users' browser cache for a long time and updates are not destributed for this user.
-
-### c. Make it official
-
-Get your theme included into the official MapComplete:
+## Make it official
 
 Did you make an awesome theme that you want to share with the OpenStreetMap community? Have it included in the main
 application. This makes sure that:

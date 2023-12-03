@@ -66,6 +66,7 @@ export class Imgur extends ImageProvider implements ImageUploader {
                     url: value,
                     key: key,
                     provider: this,
+                    id: value
                 }),
             ]
         }

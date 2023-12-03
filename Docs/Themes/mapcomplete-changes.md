@@ -28,11 +28,11 @@ Available languages:
 
   - en
   - ca
+  - cs
   - de
+  - es
   - fr
   - nl
-  - cs
-  - es
   - pl
  
 

@@ -31,11 +31,12 @@ export default class GenericImageProvider extends ImageProvider {
                 key: key,
                 url: value,
                 provider: this,
+                id: value
             }),
         ]
     }
 
-    SourceIcon(backlinkSource?: string) {
+    SourceIcon() {
         return undefined
     }
 

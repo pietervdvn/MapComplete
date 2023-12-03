@@ -659,7 +659,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 needsUrls: AllImageProviders.apiUrls,
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     let imagePrefixes: string[] = undefined
                     if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
@@ -667,7 +667,8 @@ export default class SpecialVisualizations {
                     return new ImageCarousel(
                         AllImageProviders.LoadImagesFor(tags, imagePrefixes),
                         tags,
-                        state
+                        state,
+                        feature
                     )
                 },
             },
@@ -1461,7 +1462,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 docs: "Shows events that are happening based on a Giggity URL",
-                needsUrls: ["*"],
+                needsUrls: (args) => args[0],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,

@@ -103,7 +103,11 @@
           {
             "marker": [
               {
-                "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg"
+                "icon": "pin",
+                "color": "#ba2792"
+              },
+              {
+                "icon": "./assets/themes/cyclofix/key.svg"
               }
             ],
             "iconSize": "40,40",

@@ -129,6 +129,7 @@
     },
     "payment-options",
     "opening_hours",
+    "reviews",
     {
       "id": "shoe_rental",
       "question": {

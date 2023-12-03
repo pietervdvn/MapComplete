@@ -506,7 +506,12 @@
                     }
                 },
                 "title": {
-                    "render": "nœud cycliste <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "nœud cycliste <strong>{rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "nœud cycliste"
                 }
             }
         },
@@ -1102,10 +1107,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Oui, il y a un trottoir de ce côté de la route"
+                                        "then": "Il y a un trottoir de ce côté de la route"
                                     },
                                     "1": {
-                                        "then": "Non, il n'y a pas de trottoir où marcher"
+                                        "then": "Il n'y a pas de trottoir où marcher"
                                     },
                                     "2": {
                                         "then": "Il y a un trottoir où marcher cartographié séparément"

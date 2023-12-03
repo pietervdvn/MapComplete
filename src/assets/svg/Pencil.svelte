@@ -1,4 +1,24 @@
 <script>
-export let color = "#000000"
+  export let color = "#000000"
 </script>
- <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="328px" height="374px" viewBox="0 0 328 374" version="1.1">   <g id="surface1">     <path style=" stroke:none;fill-rule:nonzero;fill:{color};fill-opacity:1;" d="M 257.714844 23.375 L 210.855469 70.125 L 281.144531 140.25 L 328 93.5 Z M 0 280.5 L 0.25 350.832031 L 70.285156 350.625 L 257.714844 163.625 L 187.429688 93.5 Z M 70.285156 327.25 L 23.429688 327.25 L 23.429688 280.5 L 46.855469 280.5 L 46.855469 303.875 L 70.285156 303.875 Z M 70.285156 327.25 "/>   </g> </svg>
+
+<svg
+  {...$$restProps}
+  on:click
+  on:mouseover
+  on:mouseenter
+  on:mouseleave
+  on:keydown
+  xmlns="http://www.w3.org/2000/svg"
+  width="328px"
+  height="374px"
+  viewBox="0 0 328 374"
+  version="1.1"
+>
+  <g id="surface1">
+    <path
+      style=" stroke:none;fill-rule:nonzero;fill:{color};fill-opacity:1;"
+      d="M 257.714844 23.375 L 210.855469 70.125 L 281.144531 140.25 L 328 93.5 Z M 0 280.5 L 0.25 350.832031 L 70.285156 350.625 L 257.714844 163.625 L 187.429688 93.5 Z M 70.285156 327.25 L 23.429688 327.25 L 23.429688 280.5 L 46.855469 280.5 L 46.855469 303.875 L 70.285156 303.875 Z M 70.285156 327.25 "
+    />
+  </g>
+</svg>

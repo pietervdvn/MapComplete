@@ -188,7 +188,9 @@
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist darzustellen</li><li>Jede Änderung muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
             "noDataLoaded": "Noch keine Daten geladen. Download in Kürze verfügbar",
-            "pdf": {},
+            "pdf": {
+                "current_view_generic": "Exportiere eine PDF-Ansicht im aktuellen Modus für {paper_size} im {orientation} Modus"
+            },
             "title": "Download",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
@@ -402,6 +404,7 @@
         "key": "Tastenkombination",
         "openLayersPanel": "Öffnet das Menü für Ebenen und Filter",
         "selectAerial": "Hintergrund als Luftbild oder Satellitenbild einstellen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
+        "selectItem": "Wähle das POI, das dem Kartenmittelpunkt (Fadenkreuz) am nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
         "selectMap": "Karte aus externer Quelle als Hintergrund wählen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
         "selectMapnik": "OpenStreetMap-carto als Hintergrundebene wählen",
         "selectOsmbasedmap": "OpenStreetMap-basierte Karte als Hintergrund auswählen (oder Hintergrundebene deaktivieren)",

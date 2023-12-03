@@ -1,4 +1,38 @@
 <script>
-export let color = "#000000"
+  export let color = "#000000"
 </script>
- <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="303px" height="374px" viewBox="0 0 303 374" version="1.1">   <g id="surface1">     <path style=" stroke:none;fill-rule:nonzero;fill:rgb(43.921569%,77.254903%,28.627452%);fill-opacity:1;" d="M 163.890625 344.988281 C 158.277344 356.675781 141.632812 356.675781 136.019531 344.988281 L 41.4375 148.097656 C 36.507812 137.839844 43.988281 125.953125 55.375 125.953125 L 244.535156 125.953125 C 255.917969 125.953125 263.398438 137.839844 258.46875 148.097656 Z M 163.890625 344.988281 "/>     <path style=" stroke:none;fill-rule:nonzero;fill:rgb(43.921569%,77.254903%,28.627452%);fill-opacity:1;" d="M 303 151.453125 C 303 235.101562 235.171875 302.910156 151.5 302.910156 C 67.828125 302.910156 0 235.101562 0 151.453125 C 0 67.808594 67.828125 0 151.5 0 C 235.171875 0 303 67.808594 303 151.453125 Z M 303 151.453125 "/>     <path style="fill: none !important;stroke-width:7.514114;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;" d="M 22.101015 291.358766 L 5.785842 275.043593 " transform="matrix(4.837809,-4.836357,4.837809,4.836357,-1287.063942,-1153.71106)"/>     <path style="fill: none !important;stroke-width:7.514114;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;" d="M 22.125279 274.965231 L 5.810459 291.28005 " transform="matrix(4.837809,-4.836357,4.837809,4.836357,-1287.063942,-1153.71106)"/>   </g> </svg> 
+
+<svg
+  {...$$restProps}
+  on:click
+  on:mouseover
+  on:mouseenter
+  on:mouseleave
+  on:keydown
+  xmlns="http://www.w3.org/2000/svg"
+  width="303px"
+  height="374px"
+  viewBox="0 0 303 374"
+  version="1.1"
+>
+  <g id="surface1">
+    <path
+      style=" stroke:none;fill-rule:nonzero;fill:rgb(43.921569%,77.254903%,28.627452%);fill-opacity:1;"
+      d="M 163.890625 344.988281 C 158.277344 356.675781 141.632812 356.675781 136.019531 344.988281 L 41.4375 148.097656 C 36.507812 137.839844 43.988281 125.953125 55.375 125.953125 L 244.535156 125.953125 C 255.917969 125.953125 263.398438 137.839844 258.46875 148.097656 Z M 163.890625 344.988281 "
+    />
+    <path
+      style=" stroke:none;fill-rule:nonzero;fill:rgb(43.921569%,77.254903%,28.627452%);fill-opacity:1;"
+      d="M 303 151.453125 C 303 235.101562 235.171875 302.910156 151.5 302.910156 C 67.828125 302.910156 0 235.101562 0 151.453125 C 0 67.808594 67.828125 0 151.5 0 C 235.171875 0 303 67.808594 303 151.453125 Z M 303 151.453125 "
+    />
+    <path
+      style="fill: none !important;stroke-width:7.514114;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 22.101015 291.358766 L 5.785842 275.043593 "
+      transform="matrix(4.837809,-4.836357,4.837809,4.836357,-1287.063942,-1153.71106)"
+    />
+    <path
+      style="fill: none !important;stroke-width:7.514114;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 22.125279 274.965231 L 5.810459 291.28005 "
+      transform="matrix(4.837809,-4.836357,4.837809,4.836357,-1287.063942,-1153.71106)"
+    />
+  </g>
+</svg>

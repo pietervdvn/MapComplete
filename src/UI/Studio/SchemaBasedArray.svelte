@@ -64,7 +64,16 @@
       }
     }
     newPath.push(...toAdd)
-    console.log("Fused path ", path.join("."), "+", i,"+", subpartPath.join("."),"into",newPath.join("."))
+    console.log(
+      "Fused path ",
+      path.join("."),
+      "+",
+      i,
+      "+",
+      subpartPath.join("."),
+      "into",
+      newPath.join(".")
+    )
     return newPath
   }
 

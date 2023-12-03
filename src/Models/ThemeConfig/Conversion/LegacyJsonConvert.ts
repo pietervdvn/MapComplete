@@ -168,8 +168,18 @@ export class UpdateLegacyLayer extends DesugaringStep<
             const pr = rendering
             if (pr["icon"]) {
                 try {
-                    const icon = Utils.NoEmpty(pr["icon"].split(";"))
+                    let iconConfig = pr["icon"]
+                    if (
+                        Object.keys(iconConfig).length === 1 &&
+                        iconConfig["render"] !== undefined
+                    ) {
+                        iconConfig = iconConfig.render
+                    }
+                    const icon = Utils.NoEmpty(iconConfig.split(";"))
                     pr.marker = icon.map((i) => {
+                        if (i.startsWith("http")) {
+                            return { icon: i }
+                        }
                         const [iconPath, color] = i.split(":")
                         return { icon: iconPath, color }
                     })
@@ -241,10 +251,6 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
 
         if (oldThemeConfig.socialImage === "") {
             delete oldThemeConfig.socialImage
-        }
-
-        if (oldThemeConfig.defaultBackgroundId === "osm") {
-            console.log("Removing old background in", json.id)
         }
 
         if (typeof oldThemeConfig.credits === "string") {

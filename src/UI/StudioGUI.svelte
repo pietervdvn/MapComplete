@@ -15,7 +15,6 @@
   import If from "./Base/If.svelte"
   import BackButton from "./Base/BackButton.svelte"
   import ChooseLayerToEdit from "./Studio/ChooseLayerToEdit.svelte"
-  import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
   import FloatOver from "./Base/FloatOver.svelte"
   import Walkthrough from "./Walkthrough/Walkthrough.svelte"
   import * as intro from "../assets/studio_introduction.json"
@@ -26,10 +25,10 @@
   import EditTheme from "./Studio/EditTheme.svelte"
   import * as meta from "../../package.json"
   import Checkbox from "./Base/Checkbox.svelte"
-  import { Utils } from "../Utils";
-  import Translations from "./i18n/Translations";
-  import Tr from "./Base/Tr.svelte";
-  import Add from "../assets/svg/Add.svelte";
+  import { Utils } from "../Utils"
+  import Translations from "./i18n/Translations"
+  import Tr from "./Base/Tr.svelte"
+  import Add from "../assets/svg/Add.svelte"
 
   export let studioUrl =
     window.location.hostname === "127.0.0.2"
@@ -155,7 +154,7 @@
         Contact <a href="https://app.element.io/#/room/#MapComplete:matrix.org">
           the MapComplete community via the chat.
         </a>
-         Someone might be able to help you
+        Someone might be able to help you
       </li>
       <li>
         File <a href="https://github.com/pietervdvn/MapComplete/issues">an issue</a>
@@ -197,7 +196,7 @@
             <QuestionMarkCircleIcon class="h-6 w-6" />
             Show the introduction again
           </button>
-          <a class="flex button" href={Utils.HomepageLink()}>
+          <a class="button flex" href={Utils.HomepageLink()}>
             <Add class="h-6 w-6" />
             <Tr t={Translations.t.general.backToIndex} />
           </a>
@@ -261,7 +260,7 @@
         <Loading />
       </div>
     {:else if state === "editing_layer"}
-      <EditLayer state={editLayerState}>
+      <EditLayer state={editLayerState} backToStudio={() => {state = undefined}}>
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"
@@ -285,22 +284,23 @@
         </BackButton>
       </EditTheme>
     {/if}
-  </LoginToggle>
-</If>
 
-{#if { intro, tagrenderings: intro_tagrenderings }[$showIntro]?.sections}
-  <FloatOver
-    on:close={() => {
+    {#if { intro, tagrenderings: intro_tagrenderings }[$showIntro]?.sections}
+      <FloatOver
+        on:close={() => {
       showIntro.setData("no")
     }}
-  >
-    <div class="flex h-full p-4 pr-12">
-      <Walkthrough
-        pages={{ intro, tagrenderings: intro_tagrenderings }[$showIntro]?.sections}
-        on:done={() => {
+      >
+        <div class="flex h-full p-4 pr-12">
+          <Walkthrough
+            pages={{ intro, tagrenderings: intro_tagrenderings }[$showIntro]?.sections}
+            on:done={() => {
           showIntro.setData("no")
         }}
-      />
-    </div>
-  </FloatOver>
-{/if}
+          />
+        </div>
+      </FloatOver>
+    {/if}
+
+  </LoginToggle>
+</If>

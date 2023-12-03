@@ -806,10 +806,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Ja, der er et fortov på denne side af vejen"
+                                        "then": "Der er et fortov på denne side af vejen"
                                     },
                                     "1": {
-                                        "then": "Nej, der er ikke noget fortov at gå på"
+                                        "then": "Der er ikke noget fortov at gå på"
                                     },
                                     "2": {
                                         "then": "Der er et særskilt kortlagt fortov at gå på"

@@ -1,37 +1,37 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource";
-  import Translations from "../i18n/Translations";
-  import Tr from "./Tr.svelte";
-  import Josm_logo from "../../assets/svg/Josm_logo.svelte";
-  import Constants from "../../Models/Constants";
-  import type { SpecialVisualizationState } from "../SpecialVisualization";
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import Translations from "../i18n/Translations"
+  import Tr from "./Tr.svelte"
+  import Josm_logo from "../../assets/svg/Josm_logo.svelte"
+  import Constants from "../../Models/Constants"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
 
-  export let state : SpecialVisualizationState
-  const t = Translations.t.general.attribution;
-  const josmState = new UIEventSource<"OK" | string>(undefined);
+  export let state: SpecialVisualizationState
+  const t = Translations.t.general.attribution
+  const josmState = new UIEventSource<"OK" | string>(undefined)
   // Reset after 15s
-  josmState.stabilized(15000).addCallbackD(() => josmState.setData(undefined));
+  josmState.stabilized(15000).addCallbackD(() => josmState.setData(undefined))
 
   const showButton = state.osmConnection.userDetails.map(
     (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible
-  );
+  )
 
   function openJosm() {
-    const bbox = state.mapProperties. bounds.data;
+    const bbox = state.mapProperties.bounds.data
     if (bbox === undefined) {
-      return;
+      return
     }
-    const top = bbox.getNorth();
-    const bottom = bbox.getSouth();
-    const right = bbox.getEast();
-    const left = bbox.getWest();
-    const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`;
+    const top = bbox.getNorth()
+    const bottom = bbox.getSouth()
+    const right = bbox.getEast()
+    const left = bbox.getWest()
+    const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
     Utils.download(josmLink)
       .then((answer) => josmState.setData(answer.replace(/\n/g, "").trim()))
-      .catch(() => josmState.setData("ERROR"));
+      .catch(() => josmState.setData("ERROR"))
   }
-
 </script>
+
 {#if $showButton}
   {#if $josmState === undefined}
     <!-- empty -->

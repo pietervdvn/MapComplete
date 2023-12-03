@@ -91,7 +91,7 @@ function run(file, protojson) {
         if (e.countryWhiteList.length > 0) {
             // This is a 'hideInAnswer', thus _reverse_ logic!
             const countries = e.countryWhiteList.map(country => "_country!=" + country) //HideInAnswer if it is in the wrong country
-            json["hideInAnswer"] = {or: countries}
+            json["hideInAnswer"] = {and: countries} // Should be and, as we want to hide if it does not match any of the countries
         } else if (e.countryBlackList.length > 0) {
             const countries = e.countryBlackList.map(country => "_country=" + country) //HideInAnswer if it is in the wrong country
             json["hideInAnswer"] = {or: countries}

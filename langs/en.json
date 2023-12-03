@@ -48,7 +48,8 @@
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
-        "reload": "Reload the data"
+        "reload": "Reload the data",
+
     },
     "favouritePoi": {
         "button": {
@@ -56,7 +57,9 @@
             "markAsFavouriteTitle": "Mark this location as favourite location",
             "markDescription": "Add this location to a personal list of your favourites",
             "unmark": "Remove from your personal list of favourites",
-            "unmarkNotDeleted": "This point will not be deleted and still be visible on the appropriate map for you and others"
+            "unmarkNotDeleted": "This point will not be deleted and still be visible on the appropriate map for you and others",
+            "tab":"Your favourites",
+            "title":"Your favourite locations"
         }
     },
     "flyer": {
@@ -428,6 +431,7 @@
         "isDeleted": "Deleted",
         "nearby": {
             "link": "This picture shows the object",
+            "noNearbyImages": "No nearby images were found",
             "seeNearby": "Browse and link nearby pictures",
             "title": "Nearby streetview imagery"
         },

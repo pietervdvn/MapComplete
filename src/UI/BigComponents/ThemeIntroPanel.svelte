@@ -1,21 +1,21 @@
 <script lang="ts">
-  import Translations from "../i18n/Translations";
-  import Tr from "../Base/Tr.svelte";
-  import NextButton from "../Base/NextButton.svelte";
-  import Geosearch from "./Geosearch.svelte";
-  import ThemeViewState from "../../Models/ThemeViewState";
-  import { UIEventSource } from "../../Logic/UIEventSource";
-  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import { twJoin } from "tailwind-merge";
-  import { Utils } from "../../Utils";
-  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState";
-  import { GeoLocationState } from "../../Logic/State/GeoLocationState";
-  import If from "../Base/If.svelte";
-  import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini";
-  import type { Readable } from "svelte/store";
-  import Add from "../../assets/svg/Add.svelte";
-  import Location_refused from "../../assets/svg/Location_refused.svelte";
-  import Crosshair from "../../assets/svg/Crosshair.svelte";
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
+  import NextButton from "../Base/NextButton.svelte"
+  import Geosearch from "./Geosearch.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { twJoin } from "tailwind-merge"
+  import { Utils } from "../../Utils"
+  import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
+  import { GeoLocationState } from "../../Logic/State/GeoLocationState"
+  import If from "../Base/If.svelte"
+  import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
+  import type { Readable } from "svelte/store"
+  import Add from "../../assets/svg/Add.svelte"
+  import Location_refused from "../../assets/svg/Location_refused.svelte"
+  import Crosshair from "../../assets/svg/Crosshair.svelte"
 
   /**
    * The theme introduction panel
@@ -71,7 +71,7 @@
       <If condition={state.featureSwitches.featureSwitchGeolocation}>
         {#if $currentGPSLocation !== undefined || $geopermission === "prompt"}
           <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
-            <Crosshair  class="w-8 h-8"/>
+            <Crosshair class="h-8 w-8" />
             <Tr t={Translations.t.general.openTheMapAtGeolocation} />
           </button>
           <!-- No geolocation granted - we don't show the button -->
@@ -81,17 +81,23 @@
             on:click={jumpToCurrentLocation}
           >
             <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
-            <Crosshair class="w-8 h-8" style="animation: 3s linear 0s infinite normal none running spin;" />
+            <Crosshair
+              class="h-8 w-8"
+              style="animation: 3s linear 0s infinite normal none running spin;"
+            />
             <Tr t={Translations.t.general.waitingForGeopermission} />
           </button>
         {:else if $geopermission === "denied"}
           <button class="disabled flex w-full items-center gap-x-2">
-            <Location_refused class="w-8 h-8"/>
+            <Location_refused class="h-8 w-8" />
             <Tr t={Translations.t.general.geopermissionDenied} />
           </button>
         {:else}
           <button class="disabled flex w-full items-center gap-x-2">
-            <Crosshair class="w-8 h-8" style="animation: 3s linear 0s infinite normal none running spin;" />
+            <Crosshair
+              class="h-8 w-8"
+              style="animation: 3s linear 0s infinite normal none running spin;"
+            />
             <Tr t={Translations.t.general.waitingForLocation} />
           </button>
         {/if}
@@ -149,7 +155,7 @@
   <div class="links-as-button links-w-full m-2 flex flex-col gap-y-1">
     <!-- bottom buttons, a bit hidden away: switch layout -->
     <a class="flex" href={Utils.HomepageLink()}>
-      <Add  class="h-6 w-6"/>
+      <Add class="h-6 w-6" />
       <Tr t={Translations.t.general.backToIndex} />
     </a>
   </div>

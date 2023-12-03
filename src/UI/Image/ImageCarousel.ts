@@ -9,19 +9,21 @@ import ImageProvider from "../../Logic/ImageProviders/ImageProvider"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import { Feature } from "geojson"
 
 export class ImageCarousel extends Toggle {
     constructor(
-        images: Store<{ key: string; url: string; provider: ImageProvider }[]>,
+        images: Store<{ id:string, key: string; url: string; provider: ImageProvider }[]>,
         tags: Store<any>,
-        state: { osmConnection?: OsmConnection; changes?: Changes; layout: LayoutConfig }
+        state: { osmConnection?: OsmConnection; changes?: Changes; layout: LayoutConfig },
+        feature: Feature
     ) {
         const uiElements = images.map(
-            (imageURLS: { key: string; url: string; provider: ImageProvider }[]) => {
+            (imageURLS: { key: string; url: string; provider: ImageProvider, id: string }[]) => {
                 const uiElements: BaseUIElement[] = []
                 for (const url of imageURLS) {
                     try {
-                        let image = new AttributedImage(url)
+                        let image = new AttributedImage(url, feature)
 
                         if (url.key !== undefined) {
                             image = new Combine([

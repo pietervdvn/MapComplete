@@ -3,104 +3,104 @@
    * Little helper class to deal with choosing a builtin tagRendering or defining one yourself.
    * Breaks the ideology that everything should be schema based
    */
-  import EditLayerState from "./EditLayerState";
-  import type { ConfigMeta } from "./configMeta";
+  import EditLayerState from "./EditLayerState"
+  import type { ConfigMeta } from "./configMeta"
   import type {
     MappingConfigJson,
-    QuestionableTagRenderingConfigJson
-  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
-  import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
-  import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte";
-  import { Store, UIEventSource } from "../../Logic/UIEventSource";
-  import * as questions from "../../assets/generated/layers/questions.json";
-  import MappingInput from "./MappingInput.svelte";
-  import { TrashIcon } from "@rgossiaux/svelte-heroicons/outline";
-  import questionableTagRenderingSchemaRaw from "../../assets/schemas/questionabletagrenderingconfigmeta.json";
-  import SchemaBasedField from "./SchemaBasedField.svelte";
-  import Region from "./Region.svelte";
-  import NextButton from "../Base/NextButton.svelte";
-  import { QuestionMarkCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource";
-  import { onMount } from "svelte";
+    QuestionableTagRenderingConfigJson,
+  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+  import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
+  import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import * as questions from "../../assets/generated/layers/questions.json"
+  import MappingInput from "./MappingInput.svelte"
+  import { TrashIcon } from "@rgossiaux/svelte-heroicons/outline"
+  import questionableTagRenderingSchemaRaw from "../../assets/schemas/questionabletagrenderingconfigmeta.json"
+  import SchemaBasedField from "./SchemaBasedField.svelte"
+  import Region from "./Region.svelte"
+  import NextButton from "../Base/NextButton.svelte"
+  import { QuestionMarkCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
+  import { onMount } from "svelte"
 
-  export let state: EditLayerState;
-  export let schema: ConfigMeta;
-  export let path: (string | number)[];
-  let expertMode = state.expertMode;
-  const store = state.getStoreFor(path);
-  let value = store.data;
+  export let state: EditLayerState
+  export let schema: ConfigMeta
+  export let path: (string | number)[]
+  let expertMode = state.expertMode
+  const store = state.getStoreFor(path)
+  let value = store.data
   let hasSeenIntro = UIEventSource.asBoolean(
     LocalStorageSource.Get("studio-seen-tagrendering-tutorial", "false")
-  );
+  )
   onMount(() => {
     if (!hasSeenIntro.data) {
-      state.showIntro.setData("tagrenderings");
-      hasSeenIntro.setData(true);
+      state.showIntro.setData("tagrenderings")
+      hasSeenIntro.setData(true)
     }
-  });
+  })
   /**
    * Allows the theme builder to create 'writable' themes.
    * Should only be enabled for 'tagrenderings' in the theme, if the source is OSM
    */
   let allowQuestions: Store<boolean> = state.configuration.mapD(
     (config) => path.at(0) === "tagRenderings" && config.source?.geoJson === undefined
-  );
+  )
 
-  let mappingsBuiltin: MappingConfigJson[] = [];
-  let perLabel: Record<string, MappingConfigJson> = {};
+  let mappingsBuiltin: MappingConfigJson[] = []
+  let perLabel: Record<string, MappingConfigJson> = {}
   for (const tr of questions.tagRenderings) {
-    let description = tr["description"] ?? tr["question"] ?? "No description available";
-    description = description["en"] ?? description;
+    let description = tr["description"] ?? tr["question"] ?? "No description available"
+    description = description["en"] ?? description
     if (tr["labels"]) {
-      const labels: string[] = tr["labels"];
+      const labels: string[] = tr["labels"]
       for (const label of labels) {
-        let labelMapping: MappingConfigJson = perLabel[label];
+        let labelMapping: MappingConfigJson = perLabel[label]
 
         if (!labelMapping) {
           labelMapping = {
             if: "value=" + label,
             then: {
-              en: "Builtin collection <b>" + label + "</b>:"
-            }
-          };
-          perLabel[label] = labelMapping;
-          mappingsBuiltin.push(labelMapping);
+              en: "Builtin collection <b>" + label + "</b>:",
+            },
+          }
+          perLabel[label] = labelMapping
+          mappingsBuiltin.push(labelMapping)
         }
-        labelMapping.then.en = labelMapping.then.en + "<div>" + description + "</div>";
+        labelMapping.then.en = labelMapping.then.en + "<div>" + description + "</div>"
       }
     }
 
     mappingsBuiltin.push({
       if: "value=" + tr["id"],
       then: {
-        en: "Builtin <b>" + tr["id"] + "</b> <div class='subtle'>" + description + "</div>"
-      }
-    });
+        en: "Builtin <b>" + tr["id"] + "</b> <div class='subtle'>" + description + "</div>",
+      },
+    })
   }
 
   const configBuiltin = new TagRenderingConfig(<QuestionableTagRenderingConfigJson>{
     question: "Which builtin element should be shown?",
-    mappings: mappingsBuiltin
-  });
+    mappings: mappingsBuiltin,
+  })
 
-  const tags = new UIEventSource({ value });
+  const tags = new UIEventSource({ value })
 
   tags.addCallbackAndRunD((tgs) => {
-    store.setData(tgs["value"]);
-  });
+    store.setData(tgs["value"])
+  })
 
-  let mappings: UIEventSource<MappingConfigJson[]> = state.getStoreFor([...path, "mappings"]);
+  let mappings: UIEventSource<MappingConfigJson[]> = state.getStoreFor([...path, "mappings"])
 
-  const topLevelItems: Record<string, ConfigMeta> = {};
+  const topLevelItems: Record<string, ConfigMeta> = {}
   for (const item of questionableTagRenderingSchemaRaw) {
     if (item.path.length === 1) {
-      topLevelItems[item.path[0]] = <ConfigMeta>item;
+      topLevelItems[item.path[0]] = <ConfigMeta>item
     }
   }
 
   function initMappings() {
     if (mappings.data === undefined) {
-      mappings.setData([]);
+      mappings.setData([])
     }
   }
 
@@ -113,28 +113,25 @@
     "condition",
     "metacondition",
     "mappings",
-    "icon"
-  ]);
-  const ignored = new Set(["labels", "description", "classes"]);
+    "icon",
+  ])
+  const ignored = new Set(["labels", "description", "classes"])
 
   const freeformSchemaAll = <ConfigMeta[]>(
     questionableTagRenderingSchemaRaw.filter(
-      (schema) =>
-        schema.path.length == 2 &&
-        schema.path[0] === "freeform" &&
-        ($allowQuestions)
+      (schema) => schema.path.length == 2 && schema.path[0] === "freeform" && $allowQuestions
     )
-  );
+  )
   let freeformSchema = $expertMode
     ? freeformSchemaAll
-    : freeformSchemaAll.filter((schema) => schema.hints?.group !== "expert");
+    : freeformSchemaAll.filter((schema) => schema.hints?.group !== "expert")
   const missing: string[] = questionableTagRenderingSchemaRaw
     .filter(
       (schema) =>
         schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0])
     )
-    .map((schema) => schema.path.join("."));
-  console.log({ state });
+    .map((schema) => schema.path.join("."))
+  console.log({ state })
 </script>
 
 {#if typeof $store === "string"}

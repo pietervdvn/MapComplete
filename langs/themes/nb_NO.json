@@ -283,7 +283,12 @@
             "1": {
                 "name": "noder",
                 "title": {
-                    "render": "sykkelnode <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "sykkelnode <strong>{rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "sykkelnode"
                 }
             }
         },

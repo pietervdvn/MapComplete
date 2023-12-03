@@ -88,7 +88,7 @@
       "title": {
         "en": "a bike parking",
         "nl": "een fietsparking",
-        "fr": "une parking à vélo",
+        "fr": "un parking à vélo",
         "gl": "Aparcadoiro de bicicletas",
         "de": "einen Fahrrad-Parkplatz",
         "hu": "Kerékpártároló",
@@ -157,7 +157,7 @@
         {
           "if": "bicycle_parking=stands",
           "then": {
-            "en": "Staple racks",
+            "en": "Stands",
             "nl": "Nietjes",
             "fr": "Arceaux",
             "gl": "De roda (Stands)",
@@ -178,7 +178,7 @@
         {
           "if": "bicycle_parking=wall_loops",
           "then": {
-            "en": "Wheel rack/loops",
+            "en": "Wheelbenders / rack",
             "nl": "Wielrek/lussen",
             "fr": "Pinces-roues",
             "gl": "Aros",

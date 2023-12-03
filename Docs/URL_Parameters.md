@@ -112,7 +112,7 @@ This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Loc
 
  If set, will show a translation button next to every string.
 
-This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L70)
+This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L73)
 
  The default value is _false_
 

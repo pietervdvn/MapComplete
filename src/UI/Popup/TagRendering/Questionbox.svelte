@@ -67,12 +67,12 @@
     },
     [skippedQuestions]
   )
-  let firstQuestion = questionsToAsk.map(qta => qta[0])
+  let firstQuestion = questionsToAsk.map((qta) => qta[0])
 
   let answered: number = 0
   let skipped: number = 0
 
-  function skip(question: {id: string}, didAnswer: boolean = false) {
+  function skip(question: { id: string }, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id)
     skippedQuestions.ping()
     if (didAnswer) {
@@ -145,25 +145,25 @@
         </div>
       {:else}
         <TagRenderingQuestion
-            config={$firstQuestion}
-            {layer}
-            {selectedElement}
-            {state}
-            {tags}
-            on:saved={() => {
-              skip($firstQuestion, true)
+          config={$firstQuestion}
+          {layer}
+          {selectedElement}
+          {state}
+          {tags}
+          on:saved={() => {
+            skip($firstQuestion, true)
+          }}
+        >
+          <button
+            class="secondary"
+            on:click={() => {
+              skip($firstQuestion)
             }}
+            slot="cancel"
           >
-            <button
-              class="secondary"
-              on:click={() => {
-                skip($firstQuestion)
-              }}
-              slot="cancel"
-            >
-              <Tr t={Translations.t.general.skip} />
-            </button>
-          </TagRenderingQuestion>
+            <Tr t={Translations.t.general.skip} />
+          </button>
+        </TagRenderingQuestion>
       {/if}
     </div>
   {/if}

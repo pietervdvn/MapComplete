@@ -15,8 +15,8 @@
   import NewPointLocationInput from "../BigComponents/NewPointLocationInput.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Svg from "../../Svg"
-  import Layers from "../../assets/svg/Layers.svelte";
-  import AddSmall from "../../assets/svg/AddSmall.svelte";
+  import Layers from "../../assets/svg/Layers.svelte"
+  import AddSmall from "../../assets/svg/AddSmall.svelte"
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
@@ -99,7 +99,7 @@
           <Tr t={Translations.t.notes.noteLayerHasFilters} />
         </div>
         <SubtleButton on:click={() => notelayer.disableAllFilters()}>
-          <Layers class="mr-4 h-8 w-8"/>
+          <Layers class="mr-4 h-8 w-8" />
           <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
         </SubtleButton>
       </div>

@@ -1,5 +1,25 @@
 [
   {
+    "path": "bottle.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Unkown"
+    ],
+    "sources": [
+      "https://www.svgrepo.com/svg/83123/water-bottle"
+    ]
+  },
+  {
+    "path": "bubbler.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "AIGA"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Drinking_Fountain_-_The_Noun_Project.svg"
+    ]
+  },
+  {
     "path": "drips.svg",
     "license": "CC-BY-SA-4.0",
     "authors": [
@@ -12,5 +32,31 @@
     "sources": [
       "https://osoc.be/editions/2020/cyclofix"
     ]
+  },
+  {
+    "path": "no_winter.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "tap.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Krzysztof Franek"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Water_DIN-style.svg"
+    ]
+  },
+  {
+    "path": "winter.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
   }
 ]
