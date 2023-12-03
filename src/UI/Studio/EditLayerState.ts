@@ -297,15 +297,24 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
 
         this.addMissingTagRenderingIds()
 
-        this.configuration.addCallbackAndRunD((layer) => {
-            if (layer.tagRenderings) {
+
+        function cleanArray(data: object, key: string): boolean{
+            if (data[key]) {
                 // A bit of cleanup
-                const lBefore = layer.tagRenderings.length
-                const cleaned = Utils.NoNull(layer.tagRenderings)
+                const lBefore = data[key].length
+                const cleaned = Utils.NoNull(data[key])
                 if (cleaned.length != lBefore) {
-                    layer.tagRenderings = cleaned
-                    this.configuration.ping()
+                    data[key] = cleaned
+                    return true
                 }
+            }
+            return false
+        }
+
+        this.configuration.addCallbackAndRunD((layer) => {
+            const changed = cleanArray(layer, "tagRenderings") || cleanArray(layer, "pointRenderings")
+            if(changed){
+                this.configuration.ping()
             }
         })
     }
