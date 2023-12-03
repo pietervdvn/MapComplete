@@ -299,6 +299,9 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
 
 
         function cleanArray(data: object, key: string): boolean{
+            if(!data){
+                return false
+            }
             if (data[key]) {
                 // A bit of cleanup
                 const lBefore = data[key].length
@@ -312,7 +315,18 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         }
 
         this.configuration.addCallbackAndRunD((layer) => {
-            const changed = cleanArray(layer, "tagRenderings") || cleanArray(layer, "pointRenderings")
+            let changed = cleanArray(layer, "tagRenderings") || cleanArray(layer, "pointRenderings")
+            for (const tr of layer.tagRenderings ?? []) {
+                if(typeof tr === "string"){
+                    continue
+                }
+
+                const qtr = (<QuestionableTagRenderingConfigJson> tr)
+                if(qtr.freeform && Object.keys(qtr.freeform ).length === 0){
+                    delete qtr.freeform
+                    changed = true
+                }
+            }
             if(changed){
                 this.configuration.ping()
             }
