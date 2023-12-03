@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 318,
+      "commits": 319,
       "contributor": "kjon"
     },
     {
@@ -61,7 +61,7 @@
       "contributor": "Reza Almanda"
     },
     {
-      "commits": 22,
+      "commits": 23,
       "contributor": "Marco"
     },
     {
@@ -74,11 +74,11 @@
     },
     {
       "commits": 15,
-      "contributor": "WaldiS"
+      "contributor": "macpac"
     },
     {
-      "commits": 14,
-      "contributor": "macpac"
+      "commits": 15,
+      "contributor": "WaldiS"
     },
     {
       "commits": 14,
@@ -298,6 +298,10 @@
     },
     {
       "commits": 3,
+      "contributor": "Stéphane De Greef"
+    },
+    {
+      "commits": 3,
       "contributor": "Alexey Lutskyi"
     },
     {
@@ -503,10 +507,6 @@
     {
       "commits": 1,
       "contributor": "Hungarian_user"
-    },
-    {
-      "commits": 1,
-      "contributor": "Stéphane De Greef"
     },
     {
       "commits": 1,

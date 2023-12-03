@@ -19,9 +19,9 @@
   import Teardrop from "../../assets/svg/Teardrop.svelte"
   import Teardrop_with_hole_green from "../../assets/svg/Teardrop_with_hole_green.svelte"
   import Triangle from "../../assets/svg/Triangle.svelte"
-  import Brick_wall_square from "../../assets/svg/Brick_wall_square.svelte";
-  import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte";
-  import Gps_arrow from "../../assets/svg/Gps_arrow.svelte";
+  import Brick_wall_square from "../../assets/svg/Brick_wall_square.svelte"
+  import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte"
+  import Gps_arrow from "../../assets/svg/Gps_arrow.svelte"
 
   /**
    * Renders a single icon.

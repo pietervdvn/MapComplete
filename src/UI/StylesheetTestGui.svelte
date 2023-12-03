@@ -1,8 +1,8 @@
 <script lang="ts">
-    import Svg from "../Svg"
-    import Loading from "./Base/Loading.svelte"
-    import ToSvelte from "./Base/ToSvelte.svelte"
-    import Community from "../assets/svg/Community.svelte"
+  import Svg from "../Svg"
+  import Loading from "./Base/Loading.svelte"
+  import ToSvelte from "./Base/ToSvelte.svelte"
+  import Community from "../assets/svg/Community.svelte"
 </script>
 
 <div>
@@ -41,16 +41,16 @@
 
     <div class="flex">
       <button class="primary">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Main action
       </button>
       <button class="primary disabled">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Main action (disabled)
       </button>
 
       <button class="small">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Small button
       </button>
 
@@ -59,11 +59,11 @@
     </div>
     <div class="flex">
       <button>
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Secondary action
       </button>
       <button class="disabled">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Secondary action (disabled)
       </button>
     </div>
@@ -82,7 +82,7 @@
       </label>
       <label for="javascript">
         <input id="javascript" name="fav_language" type="radio" value="JavaScript" />
-        <Community class="w-8 h-8"/>
+        <Community class="h-8 w-8" />
         JavaScript
       </label>
     </div>
@@ -106,26 +106,26 @@
 
     <div class="flex">
       <button class="primary">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Main action
       </button>
       <button class="primary disabled">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Main action (disabled)
       </button>
       <button class="small">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Small button
       </button>
     </div>
 
     <div class="flex">
       <button>
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Secondary action
       </button>
       <button class="disabled">
-        <Community class="w-6 h-6" />
+        <Community class="h-6 w-6" />
         Secondary action (disabled)
       </button>
     </div>

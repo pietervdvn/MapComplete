@@ -1,4 +1,38 @@
 <script>
-export let color = "#000000"
+  export let color = "#000000"
 </script>
- <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">   <g id="surface1">     <path style=" stroke:none;fill-rule:nonzero;fill:{color};fill-opacity:1;" d="M 356.25 187.5 L 281.25 131.25 L 281.25 168.75 L 206.25 168.75 L 206.25 93.75 L 243.75 93.75 L 187.5 18.75 L 131.25 93.75 L 168.75 93.75 L 168.75 168.75 L 93.75 168.75 L 93.75 131.25 L 18.75 187.5 L 93.75 243.75 L 93.75 206.25 L 168.75 206.25 L 168.75 281.25 L 131.25 281.25 L 187.5 356.25 L 243.75 281.25 L 206.25 281.25 L 206.25 206.25 L 281.25 206.25 L 281.25 243.75 Z M 356.25 187.5 "/>     <path style=" stroke:none;fill-rule:nonzero;fill:rgb(90.588236%,17.254902%,26.666668%);fill-opacity:1;" d="M 363.390625 276.476562 C 363.390625 324.316406 324.613281 363.09375 276.777344 363.09375 C 228.941406 363.09375 190.164062 324.316406 190.164062 276.476562 C 190.164062 228.640625 228.941406 189.863281 276.777344 189.863281 C 324.613281 189.863281 363.390625 228.640625 363.390625 276.476562 Z M 363.390625 276.476562 "/>     <path style="fill: none !important;stroke-width:6.012842;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;" d="M 22.551733 293.603472 L 2.927657 273.978357 " transform="matrix(3.759333,0,0,3.759333,228.247869,-791.737604)"/>     <path style="fill: none !important;stroke-width:6.012842;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(98.823529%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;" d="M 22.581866 273.883801 L 2.956751 293.508916 " transform="matrix(3.759333,0,0,3.759333,228.247869,-791.737604)"/>   </g> </svg>
+
+<svg
+  {...$$restProps}
+  on:click
+  on:mouseover
+  on:mouseenter
+  on:mouseleave
+  on:keydown
+  xmlns="http://www.w3.org/2000/svg"
+  width="375px"
+  height="375px"
+  viewBox="0 0 375 375"
+  version="1.1"
+>
+  <g id="surface1">
+    <path
+      style=" stroke:none;fill-rule:nonzero;fill:{color};fill-opacity:1;"
+      d="M 356.25 187.5 L 281.25 131.25 L 281.25 168.75 L 206.25 168.75 L 206.25 93.75 L 243.75 93.75 L 187.5 18.75 L 131.25 93.75 L 168.75 93.75 L 168.75 168.75 L 93.75 168.75 L 93.75 131.25 L 18.75 187.5 L 93.75 243.75 L 93.75 206.25 L 168.75 206.25 L 168.75 281.25 L 131.25 281.25 L 187.5 356.25 L 243.75 281.25 L 206.25 281.25 L 206.25 206.25 L 281.25 206.25 L 281.25 243.75 Z M 356.25 187.5 "
+    />
+    <path
+      style=" stroke:none;fill-rule:nonzero;fill:rgb(90.588236%,17.254902%,26.666668%);fill-opacity:1;"
+      d="M 363.390625 276.476562 C 363.390625 324.316406 324.613281 363.09375 276.777344 363.09375 C 228.941406 363.09375 190.164062 324.316406 190.164062 276.476562 C 190.164062 228.640625 228.941406 189.863281 276.777344 189.863281 C 324.613281 189.863281 363.390625 228.640625 363.390625 276.476562 Z M 363.390625 276.476562 "
+    />
+    <path
+      style="fill: none !important;stroke-width:6.012842;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 22.551733 293.603472 L 2.927657 273.978357 "
+      transform="matrix(3.759333,0,0,3.759333,228.247869,-791.737604)"
+    />
+    <path
+      style="fill: none !important;stroke-width:6.012842;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(98.823529%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;"
+      d="M 22.581866 273.883801 L 2.956751 293.508916 "
+      transform="matrix(3.759333,0,0,3.759333,228.247869,-791.737604)"
+    />
+  </g>
+</svg>

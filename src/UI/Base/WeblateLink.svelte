@@ -1,7 +1,7 @@
 <script lang="ts">
   import Locale from "../i18n/Locale"
   import LinkToWeblate from "./LinkToWeblate"
-  import Translate from "../../assets/svg/Translate.svelte";
+  import Translate from "../../assets/svg/Translate.svelte"
 
   /**
    * Shows a small icon which will open up weblate; a contributor can translate the item for 'context' there

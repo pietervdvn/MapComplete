@@ -1848,12 +1848,12 @@
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Stands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "stands"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheelbenders / rack' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "wall_loops"
     },
     {
@@ -12975,6 +12975,11 @@
       "key": "surface",
       "description": "Layer 'Sport pitches' shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "concrete"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Sport pitches' shows surface=fine_gravel with a fixed text, namely 'The surface is <b>fine gravel</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "fine_gravel"
     },
     {
       "key": "access",

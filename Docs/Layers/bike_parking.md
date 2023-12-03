@@ -113,8 +113,8 @@ This is rendered with  `This is a bicycle parking of the type: {bicycle_parking}
 
 
 
-  - *Staple racks*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
-  - *Wheel rack/loops*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
+  - *Stands*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
+  - *Wheelbenders / rack*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
   - *Handlebar holder*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder' target='_blank'>handlebar_holder</a>
   - *Rack*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack' target='_blank'>rack</a>
   - *Two-tiered*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier' target='_blank'>two_tier</a>

@@ -123,6 +123,11 @@
       "value": "concrete"
     },
     {
+      "key": "surface",
+      "description": "Layer 'Sport pitches' shows surface=fine_gravel with a fixed text, namely 'The surface is <b>fine gravel</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "fine_gravel"
+    },
+    {
       "key": "access",
       "description": "Layer 'Sport pitches' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
       "value": "yes"

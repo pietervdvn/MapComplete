@@ -1,26 +1,25 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource.js";
+  import { UIEventSource } from "../../Logic/UIEventSource.js"
 
   export let value: UIEventSource<any>
   let i: any = value.data
-  let htmlElement : HTMLSelectElement
-  function selectAppropriateValue(){
-    if(!htmlElement){
-      return;
+  let htmlElement: HTMLSelectElement
+  function selectAppropriateValue() {
+    if (!htmlElement) {
+      return
     }
     const v = value.data
     for (let option of htmlElement.getElementsByTagName("option")) {
-      if(option.value === v){
+      if (option.value === v) {
         option.selected = true
         return
       }
     }
   }
-  
-  
+
   value.addCallbackD(() => selectAppropriateValue())
   $: {
-    if(htmlElement){
+    if (htmlElement) {
       selectAppropriateValue()
     }
   }

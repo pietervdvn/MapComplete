@@ -1267,10 +1267,10 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Staple racks"
+                        "then": "Stands"
                     },
                     "1": {
-                        "then": "Wheel rack/loops"
+                        "then": "Wheelbenders / rack"
                     },
                     "2": {
                         "then": "Handlebar holder"

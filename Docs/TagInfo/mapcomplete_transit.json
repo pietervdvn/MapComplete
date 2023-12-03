@@ -237,12 +237,12 @@
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Staple racks' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Stands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
       "value": "stands"
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheel rack/loops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheelbenders / rack' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
       "value": "wall_loops"
     },
     {

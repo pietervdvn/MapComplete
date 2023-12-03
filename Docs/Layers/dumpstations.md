@@ -14,7 +14,7 @@ Sanitary dump stations
 
 
 
-  - This layer is shown at zoomlevel **10** and higher
+  - This layer is shown at zoomlevel **7** and higher
 
 
 

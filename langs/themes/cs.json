@@ -498,8 +498,18 @@
                 "name": "uzly",
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "e.g. 3"
+                        },
                         "question": "S kolika dalšími uzly cyklu je tento uzel propojen?",
                         "render": "Tento uzel je propojen s {expected_rcn_route_relations} dalšími uzly cyklu."
+                    },
+                    "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "e.g. 1"
+                        },
+                        "question": "Jaké je referenční číslo tohoto cyklistického uzlu?",
+                        "render": "Tento cyklistický uzel má referenční číslo {rcn_ref}"
                     },
                     "node-survey:date": {
                         "override": {
@@ -515,6 +525,23 @@
                         }
                     },
                     "render": "uzel cyklu"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Cyklistické ukazatele",
+                    "title": {
+                        "render": "Cyklistický ukazatel"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "značka trasy pro spojení mezi uzlem"
+                        }
+                    }
                 }
             }
         },
@@ -835,6 +862,10 @@
     "hotels": {
         "description": "Na této mapě najdete hotely ve vašem okolí",
         "title": "Hotely"
+    },
+    "icecream": {
+        "description": "Mapa zobrazující prodej zmrzliny a automaty na zmrzlinu",
+        "title": "Zmrzlina"
     },
     "indoors": {
         "description": "Na této mapě jsou zobrazeny veřejně přístupné vnitřní prostory",
@@ -1340,6 +1371,7 @@
         "title": "Prodejní automaty"
     },
     "walkingnodes": {
+        "description": "Tato mapa zobrazuje sítě uzlových bodů a umožňuje snadné přidávání nových uzlů",
         "layers": {
             "0": {
                 "name": "propojení mezi uzly",
@@ -1361,7 +1393,21 @@
                 }
             },
             "1": {
-                "name": "uzly"
+                "name": "uzly",
+                "tagRenderings": {
+                    "node-expected_rwn_route_relations": {
+                        "freeform": {
+                            "placeholder": "e.g. 3"
+                        },
+                        "question": "S kolika dalšími pěšími uzly je tento uzel propojen?"
+                    },
+                    "node-rwn_ref": {
+                        "freeform": {
+                            "placeholder": "e.g. 1"
+                        },
+                        "question": "Jaké je referenční číslo tohoto pěšího uzlu?"
+                    }
+                }
             }
         }
     },

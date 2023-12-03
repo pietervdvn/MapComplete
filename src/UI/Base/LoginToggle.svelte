@@ -6,7 +6,7 @@
   import Tr from "./Tr.svelte"
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
-  import Invalid from "../../assets/svg/Invalid.svelte";
+  import Invalid from "../../assets/svg/Invalid.svelte"
 
   export let state: {
     osmConnection: OsmConnection
