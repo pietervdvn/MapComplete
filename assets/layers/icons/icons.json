@@ -1,7 +1,7 @@
 {
   "id": "icons",
   "description": {
-    "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI or as icon next to the title",
+    "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
     "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden",
     "ca": "Una capa que actua com a biblioteca per a les icones d'etiquetes, especialment per mostrar-se com a insígnia al costat d'un PDI",
     "cs": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu"
@@ -14,7 +14,8 @@
     {
       "id": "wikipedialink",
       "labels": [
-        "defaults", "in_favourite"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
       "condition": {
@@ -69,7 +70,8 @@
     {
       "id": "phonelink",
       "labels": [
-        "defaults", "in_favourite"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/></a>",
       "mappings": [
@@ -89,7 +91,8 @@
     {
       "id": "emaillink",
       "labels": [
-        "defaults", "in_favourite"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
       "mappings": [
@@ -109,7 +112,8 @@
     {
       "id": "websitelink",
       "labels": [
-        "defaults", "in_favourite"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>",
       "condition": "website~*"
@@ -117,7 +121,8 @@
     {
       "id": "smokingicon",
       "labels": [
-        "defaults", "in_favourite"
+        "defaults",
+        "in_favourite"
       ],
       "mappings": [
         {
@@ -146,7 +151,7 @@
         "defaults"
       ],
       "render": {
-        "*":"{favourite_icon()}"
+        "*": "{favourite_icon()}"
       }
     },
     {
@@ -171,7 +176,8 @@
     {
       "id": "dogicon",
       "labels": [
-        "defaults", "in_favourite"
+        "defaults",
+        "in_favourite"
       ],
       "mappings": [
         {
@@ -209,7 +215,6 @@
       "condition": "_favourite=yes",
       "icon": "circle:white;heart:red",
       "metacondition": "__showTimeSensitiveIcons!=no"
-      
     }
   ]
 }

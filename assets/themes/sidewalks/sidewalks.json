@@ -166,31 +166,31 @@
                 {
                   "if": "sidewalk:left|right=yes",
                   "then": {
-                    "en": "Yes, there is a sidewalk on this side of the road",
-                    "de": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite",
-                    "da": "Ja, der er et fortov på denne side af vejen",
-                    "nl": "Ja, er is een stoep aan deze kant van de weg",
-                    "fr": "Oui, il y a un trottoir de ce côté de la route",
-                    "ca": "Sí, hi ha una vorera a aquest costat del carrer",
-                    "es": "Sí, hay una acera en este lado de la calle",
-                    "cs": "Ano, na této straně silnice je chodník",
-                    "it": "Sì, c'è un marciapiede su questo lato della strada",
-                    "pl": "Tak, jest chodnik z boku drogi"
+                    "en": "There is a sidewalk on this side of the road",
+                    "de": "Es gibt einen Bürgersteig auf dieser Straßenseite",
+                    "da": "Der er et fortov på denne side af vejen",
+                    "nl": "Er is een stoep aan deze kant van de weg",
+                    "fr": "Il y a un trottoir de ce côté de la route",
+                    "ca": "Hi ha una vorera a aquest costat del carrer",
+                    "es": "Hay una acera en este lado de la calle",
+                    "cs": "Na této straně silnice je chodník",
+                    "it": "C'è un marciapiede su questo lato della strada",
+                    "pl": "Jest chodnik z boku drogi"
                   }
                 },
                 {
                   "if": "sidewalk:left|right=no",
                   "then": {
-                    "en": "No, there is no sidewalk to walk on",
-                    "de": "Nein, es gibt keinen Bürgersteig für Fußgänger",
-                    "da": "Nej, der er ikke noget fortov at gå på",
-                    "nl": "Nee, er is geen stoep om op te lopen",
-                    "fr": "Non, il n'y a pas de trottoir où marcher",
-                    "ca": "No, no hi ha vorera per la que caminar",
-                    "es": "No, no hay acera por la que caminar",
-                    "cs": "Ne, není tu žádný chodník",
-                    "it": "No, non c'è un marciapiede su cui camminare",
-                    "pl": "Nie, nie ma chodnika, którym można chodzić"
+                    "en": "There is no sidewalk to walk on",
+                    "de": "Es gibt keinen Bürgersteig für Fußgänger",
+                    "da": "Der er ikke noget fortov at gå på",
+                    "nl": "Er is geen stoep om op te lopen",
+                    "fr": "Il n'y a pas de trottoir où marcher",
+                    "ca": "No hi ha vorera per la que caminar",
+                    "es": "No hay acera por la que caminar",
+                    "cs": "Není tu žádný chodník",
+                    "it": "Non c'è un marciapiede su cui camminare",
+                    "pl": "Nie ma chodnika, którym można chodzić"
                   }
                 },
                 {

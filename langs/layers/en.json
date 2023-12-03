@@ -4729,18 +4729,6 @@
             "render": "Extinguishers"
         }
     },
-    "favourite": {
-        "description": "A generic map layer which shows locations that a contributor marked as favourite",
-        "name": "Favourites",
-        "tagRenderings": {
-            "Explanation": {
-                "render": "You marked this location as a personal favourite. As such, it is shown on every map you load."
-            }
-        },
-        "title": {
-            "render": "Favourite location"
-        }
-    },
     "filters": {
         "filter": {
             "0": {

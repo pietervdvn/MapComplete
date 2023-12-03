@@ -74,7 +74,7 @@
             "condition": "climbing:length~*"
           },
           {
-            "id":"climbing_bolts",
+            "id": "climbing_bolts",
             "mappings": [
               {
                 "if": "__bolts_max~*",
