@@ -9,7 +9,7 @@
 
 <button
   on:click={() => {
-    state.osmConnection.LogOut()
+    osmConnection.LogOut()
   }}
 >
   <Logout class="h-6 w-6" />

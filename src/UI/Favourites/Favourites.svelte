@@ -7,6 +7,8 @@
   import { Utils } from "../../Utils";
   import { GeoOperations } from "../../Logic/GeoOperations";
   import type { Feature, LineString, Point } from "geojson";
+  import LoginToggle from "../Base/LoginToggle.svelte";
+  import LoginButton from "../Base/LoginButton.svelte";
 
   /**
    * A panel showing all your favourites
@@ -37,6 +39,13 @@
   
 </script>
 
+<LoginToggle {state}>
+  <div slot="not-logged-in">
+    <LoginButton osmConnection={state.osmConnection}>
+      <Tr t={Translations.t.favouritePoi.loginToSeeList}/>
+    </LoginButton>
+  </div>
+  
 <div class="flex flex-col" on:keypress={(e) => console.log("Got keypress", e)}>
   <Tr t={Translations.t.favouritePoi.intro.Subs({length: $favourites?.length ?? 0})} />
   <Tr t={Translations.t.favouritePoi.privacy} />
@@ -56,3 +65,4 @@
     </button>
   </div>
 </div>
+</LoginToggle>
