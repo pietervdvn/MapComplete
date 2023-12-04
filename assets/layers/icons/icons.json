@@ -67,9 +67,13 @@
       ],
       "metacondition": "__showTimeSensitiveIcons!=no"
     },
-    {"id":"open_until",
-      "labels": ["defaults","in_favourite"],
-      "#":"Titleicon showing 'open until 17:00'",
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing 'open until 17:00'",
       "icon": {
         "class": "w-20 mx-1 flex items-center"
       },
