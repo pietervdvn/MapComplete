@@ -62,6 +62,7 @@
         "downloadGpx": "Download your favourites as GPX",
         "intro": "You marked {length} locations as a favourite location.",
         "introPrivacy": "This list is only visible to you",
+        "loginToSeeList": "Login to see the list of locations you marked as favourite",
         "tab": "Your favourites",
         "title": "Your favourite locations"
     },

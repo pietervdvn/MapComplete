@@ -298,7 +298,7 @@ export class RegexTag extends TagsFilter {
         if (typeof this.key === "string") {
             return [this.key]
         }
-        throw "Key cannot be determined as it is a regex"
+        return []
     }
 
     usedTags(): { key: string; value: string }[] {

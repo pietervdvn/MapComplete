@@ -13,7 +13,7 @@ import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
-import icons from "../src/assets/generated/layers/icons.json"
+
 export class GenerateFavouritesLayer extends Script {
     private readonly layers: LayerConfigJson[] = []
 
@@ -40,6 +40,19 @@ export class GenerateFavouritesLayer extends Script {
         }
     }
 
+    private sortMappings(mappings: MappingConfigJson[]): MappingConfigJson[] {
+        const sortedMappings: MappingConfigJson[] = [...mappings]
+        sortedMappings.sort((a, b) => {
+            const aTag = TagUtils.Tag(a.if)
+            const bTag = TagUtils.Tag(b.if)
+            const aPop = TagUtils.GetPopularity(aTag)
+            const bPop = TagUtils.GetPopularity(bTag)
+            console.log("Comparing", a.if, "with", b.if, { aPop, bPop })
+            return aPop - bPop
+        })
+
+        return sortedMappings
+    }
     private addTagRenderings(proto: LayerConfigJson) {
         const blacklistedIds = new Set([
             "images",
@@ -96,7 +109,7 @@ export class GenerateFavouritesLayer extends Script {
                             continue
                         }
                         newTr.condition = {
-                            and: Utils.NoNull([(newTr.condition, layerConfig.source["osmTags"])]),
+                            and: Utils.NoNull([newTr.condition, layerConfig.source["osmTags"]]),
                         }
                         generatedTagRenderings.push(newTr)
                         blacklistedIds.add(newTr.id)
@@ -181,7 +194,7 @@ export class GenerateFavouritesLayer extends Script {
     }
 
     private addTitle(proto: LayerConfigJson) {
-        const mappings: MappingConfigJson[] = []
+        let mappings: MappingConfigJson[] = []
         for (const layer of this.layers) {
             const t = layer.title
             const tags: TagConfigJson = layer.source["osmTags"]
@@ -238,6 +251,8 @@ export class GenerateFavouritesLayer extends Script {
             }
         }
 
+        mappings = this.sortMappings(mappings)
+
         if (proto.title["mappings"]) {
             mappings.unshift(...proto.title["mappings"])
         }
@@ -246,6 +261,14 @@ export class GenerateFavouritesLayer extends Script {
                 if: "id~*",
                 then: proto.title["render"],
             })
+        }
+
+        for (const mapping of mappings) {
+            const opt = TagUtils.optimzeJson(mapping.if)
+            if (typeof opt === "boolean") {
+                continue
+            }
+            mapping.if = opt
         }
 
         proto.title = {

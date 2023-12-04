@@ -4,6 +4,8 @@ import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import { Utils } from "../src/Utils"
 import { writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
+import TagRenderingConfig from "../src/Models/ThemeConfig/TagRenderingConfig"
+import { And } from "../src/Logic/Tags/And"
 
 /* Downloads stats on osmSource-tags and keys from tagInfo */
 
@@ -21,7 +23,12 @@ async function main(includeTags = true) {
             continue
         }
 
-        const sources = TagUtils.Tag(layer.source["osmTags"])
+        const sourcesList = [TagUtils.Tag(layer.source["osmTags"])]
+        if (layer?.title) {
+            sourcesList.push(...new TagRenderingConfig(layer.title).usedTags())
+        }
+
+        const sources = new And(sourcesList)
         const allKeys = sources.usedKeys()
         for (const key of allKeys) {
             if (!keysAndTags.has(key)) {
@@ -68,6 +75,8 @@ async function main(includeTags = true) {
         "./src/assets/key_totals.json",
         JSON.stringify(
             {
+                "#": "Generated with generateStats.ts",
+                date: new Date().toISOString(),
                 keys: Utils.MapToObj(keyTotal, (t) => t),
                 tags: Utils.MapToObj(tagTotal, (v) => Utils.MapToObj(v, (t) => t)),
             },

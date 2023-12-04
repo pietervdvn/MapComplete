@@ -869,6 +869,27 @@ export class TagUtils {
         return TagUtils.keyCounts.keys[key]
     }
 
+    public static GetPopularity(tag: TagsFilter): number | undefined {
+        if (tag instanceof And) {
+            return Math.min(...Utils.NoNull(tag.and.map((t) => TagUtils.GetPopularity(t))))
+        }
+        if (tag instanceof Or) {
+            return Math.max(...Utils.NoNull(tag.or.map((t) => TagUtils.GetPopularity(t))))
+        }
+        if (tag instanceof Tag) {
+            return TagUtils.GetCount(tag.key, tag.value)
+        }
+        if (tag instanceof RegexTag) {
+            const key = tag.key
+            if (key instanceof RegExp || tag.invert || tag.isNegative()) {
+                return undefined
+            }
+            return TagUtils.GetCount(key)
+        }
+
+        return undefined
+    }
+
     private static order(a: TagsFilter, b: TagsFilter, usePopularity: boolean): number {
         const rta = a instanceof RegexTag
         const rtb = b instanceof RegexTag
