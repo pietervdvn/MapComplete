@@ -81,6 +81,7 @@ import LogoutButton from "./Base/LogoutButton.svelte"
 import OpenJosm from "./Base/OpenJosm.svelte"
 import MarkAsFavourite from "./Popup/MarkAsFavourite.svelte"
 import MarkAsFavouriteMini from "./Popup/MarkAsFavouriteMini.svelte"
+import NextChangeViz from "./OpeningHours/NextChangeViz.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -825,6 +826,46 @@ export default class SpecialVisualizations {
                         args[1],
                         args[2]
                     )
+                },
+            },
+            {
+                funcName: "opening_hours_state",
+                docs: "A small element, showing if the POI is currently open and when the next change is",
+                args: [
+                    {
+                        name: "key",
+                        defaultValue: "opening_hours",
+                        doc: "The tagkey from which the opening hours are read.",
+                    },
+                    {
+                        name: "prefix",
+                        defaultValue: "",
+                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__",
+                    },
+                    {
+                        name: "postfix",
+                        defaultValue: "",
+                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
+                    },
+                ],
+                needsUrls: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const keyToUse = args[0]
+                    const prefix = args[1]
+                    const postfix = args[2]
+                    return new SvelteUIElement(NextChangeViz, {
+                        state,
+                        keyToUse,
+                        tags,
+                        prefix,
+                        postfix,
+                    })
                 },
             },
             {

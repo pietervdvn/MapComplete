@@ -1,5 +1,6 @@
 import { Utils } from "../../Utils"
 import opening_hours from "opening_hours"
+import { Store } from "../../Logic/UIEventSource"
 
 export interface OpeningHour {
     weekday: number // 0 is monday, 1 is tuesday, ...
@@ -494,10 +495,48 @@ This list will be sorted
 
         return [changeHours, changeHourText]
     }
+    public static CreateOhObjectStore(
+        tags: Store<Record<string, string>>,
+        key: string = "opening_hours",
+        prefixToIgnore?: string,
+        postfixToIgnore?: string
+    ): Store<opening_hours | undefined | "error"> {
+        prefixToIgnore ??= ""
+        postfixToIgnore ??= ""
+        const country = tags.map((tags) => tags._country)
+        return tags
+            .mapD((tags) => {
+                const value: string = tags[key]
+                if (value === undefined) {
+                    return undefined
+                }
 
+                if (
+                    (prefixToIgnore || postfixToIgnore) &&
+                    value.startsWith(prefixToIgnore) &&
+                    value.endsWith(postfixToIgnore)
+                ) {
+                    return value
+                        .substring(prefixToIgnore.length, value.length - postfixToIgnore.length)
+                        .trim()
+                }
+                return value
+            })
+            .mapD(
+                (ohtext) => {
+                    try {
+                        return OH.CreateOhObject(<any>tags.data, ohtext, country.data)
+                    } catch (e) {
+                        return "error"
+                    }
+                },
+                [country]
+            )
+    }
     public static CreateOhObject(
         tags: Record<string, string> & { _lat: number; _lon: number; _country?: string },
-        textToParse: string
+        textToParse: string,
+        country?: string
     ) {
         // noinspection JSPotentiallyInvalidConstructorUsage
         return new opening_hours(
@@ -506,7 +545,7 @@ This list will be sorted
                 lat: tags._lat,
                 lon: tags._lon,
                 address: {
-                    country_code: tags._country?.toLowerCase(),
+                    country_code: country.toLowerCase(),
                     state: undefined,
                 },
             },
