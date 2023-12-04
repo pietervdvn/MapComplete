@@ -871,10 +871,10 @@ export class TagUtils {
 
     public static GetPopularity(tag: TagsFilter): number | undefined {
         if (tag instanceof And) {
-            return Math.min(...Utils.NoNull(tag.and.map((t) => TagUtils.GetPopularity(t))))
+            return Math.min(...Utils.NoNull(tag.and.map((t) => TagUtils.GetPopularity(t)))) - 1
         }
         if (tag instanceof Or) {
-            return Math.max(...Utils.NoNull(tag.or.map((t) => TagUtils.GetPopularity(t))))
+            return Math.max(...Utils.NoNull(tag.or.map((t) => TagUtils.GetPopularity(t)))) + 1
         }
         if (tag instanceof Tag) {
             return TagUtils.GetCount(tag.key, tag.value)

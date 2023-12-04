@@ -12,6 +12,9 @@ export class RegexTag extends TagsFilter {
         super()
         this.key = key
         this.value = value
+        if (this.value instanceof RegExp && ("" + this.value).startsWith("^(^(")) {
+            throw "Detected a duplicate start marker ^(^( in a regextag:" + this.value
+        }
         this.invert = invert
         this.matchesEmpty = RegexTag.doesMatch("", this.value)
     }
@@ -42,11 +45,21 @@ export class RegexTag extends TagsFilter {
         return possibleRegex.test(fromTag)
     }
 
-    private static source(r: string | RegExp) {
+    private static source(r: string | RegExp, includeStartMarker: boolean = true) {
         if (typeof r === "string") {
             return r
         }
-        return r.source
+        if (r === undefined) {
+            return undefined
+        }
+        const src = r.source
+        if (includeStartMarker) {
+            return src
+        }
+        if (src.startsWith("^(") && src.endsWith(")$")) {
+            return src.substring(2, src.length - 2)
+        }
+        return src
     }
 
     /**
@@ -83,8 +96,22 @@ export class RegexTag extends TagsFilter {
         }
     }
 
+    /**
+     * import { TagUtils } from "./TagUtils";
+     *
+     * const t = TagUtils.Tag("a~b")
+     * t.asJson() // => "a~b"
+     *
+     * const t = TagUtils.Tag("a=")
+     * t.asJson() // => "a="
+     */
     asJson(): TagConfigJson {
-        return this.asHumanString()
+        const v = RegexTag.source(this.value, false)
+        if (typeof this.key === "string") {
+            const oper = typeof this.value === "string" ? "=" : "~"
+            return `${this.key}${this.invert ? "!" : ""}${oper}${v}`
+        }
+        return `${this.key.source}${this.invert ? "!" : ""}~~${v}`
     }
 
     isUsableAsAnswer(): boolean {

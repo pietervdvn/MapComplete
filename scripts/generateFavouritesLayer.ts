@@ -1,6 +1,6 @@
 import Script from "./Script"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
-import { readFileSync, writeFileSync } from "fs"
+import { existsSync, readFileSync, writeFileSync } from "fs"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 import { AllKnownLayoutsLazy } from "../src/Customizations/AllKnownLayouts"
 import { Utils } from "../src/Utils"
@@ -47,7 +47,6 @@ export class GenerateFavouritesLayer extends Script {
             const bTag = TagUtils.Tag(b.if)
             const aPop = TagUtils.GetPopularity(aTag)
             const bPop = TagUtils.GetPopularity(bTag)
-            console.log("Comparing", a.if, "with", b.if, { aPop, bPop })
             return aPop - bPop
         })
 
@@ -282,7 +281,14 @@ export class GenerateFavouritesLayer extends Script {
         this.addTagRenderings(proto)
         this.addTitle(proto)
         this.addTitleIcons(proto)
-        writeFileSync("./assets/layers/favourite/favourite.json", JSON.stringify(proto, null, "  "))
+        const targetContent = JSON.stringify(proto, null, "  ")
+        const path = "./assets/layers/favourite/favourite.json"
+        if (existsSync(path)) {
+            if (readFileSync(path, "utf8") === targetContent) {
+                return // No need to actually write the file, it is identical
+            }
+        }
+        writeFileSync(path, targetContent)
     }
 
     private readLayer(path: string): LayerConfigJson {
