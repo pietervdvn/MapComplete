@@ -1115,7 +1115,8 @@
           "hideInAnswer": {
             "and": [
               "advertising!=poster_box",
-              "advertising!=column"
+              "advertising!=column",
+              "advertising!=billboard"
             ]
           }
         },

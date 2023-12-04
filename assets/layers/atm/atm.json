@@ -212,7 +212,7 @@
         "es": "El cajero es de {operator}"
       }
     },
-    "opening_hours",
+    "opening_hours_24_7",
     {
       "id": "cash_out",
       "question": {
