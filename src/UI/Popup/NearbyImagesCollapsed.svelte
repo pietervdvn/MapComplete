@@ -12,6 +12,7 @@
   import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
   import exp from "constants"
   import Camera_plus from "../../assets/svg/Camera_plus.svelte"
+  import LoginToggle from "../Base/LoginToggle.svelte"
 
   export let tags: Store<OsmTags>
   export let state: SpecialVisualizationState
@@ -25,7 +26,8 @@
 
   let expanded = false
 </script>
-
+<LoginToggle {state}>
+  
 {#if expanded}
   <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable}>
     <XCircleIcon
@@ -47,3 +49,4 @@
     <Tr t={t.seeNearby} />
   </button>
 {/if}
+</LoginToggle>

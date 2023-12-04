@@ -1,95 +1,95 @@
 <script lang="ts">
-  import LoginToggle from "../../Base/LoginToggle.svelte"
-  import type { SpecialVisualizationState } from "../../SpecialVisualization"
-  import Translations from "../../i18n/Translations"
-  import Tr from "../../Base/Tr.svelte"
-  import { TrashIcon } from "@babeard/svelte-heroicons/mini"
-  import type { OsmId, OsmTags } from "../../../Models/OsmFeature"
-  import DeleteConfig from "../../../Models/ThemeConfig/DeleteConfig"
-  import TagRenderingQuestion from "../TagRendering/TagRenderingQuestion.svelte"
-  import type { Feature } from "geojson"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
-  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { TagUtils } from "../../../Logic/Tags/TagUtils"
-  import OsmChangeAction from "../../../Logic/Osm/Actions/OsmChangeAction"
-  import DeleteAction from "../../../Logic/Osm/Actions/DeleteAction"
-  import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction"
-  import Loading from "../../Base/Loading.svelte"
-  import { DeleteFlowState } from "./DeleteFlowState"
-  import { twJoin } from "tailwind-merge"
+    import LoginToggle from "../../Base/LoginToggle.svelte"
+    import type { SpecialVisualizationState } from "../../SpecialVisualization"
+    import Translations from "../../i18n/Translations"
+    import Tr from "../../Base/Tr.svelte"
+    import { TrashIcon } from "@babeard/svelte-heroicons/mini"
+    import type { OsmId, OsmTags } from "../../../Models/OsmFeature"
+    import DeleteConfig from "../../../Models/ThemeConfig/DeleteConfig"
+    import TagRenderingQuestion from "../TagRendering/TagRenderingQuestion.svelte"
+    import type { Feature } from "geojson"
+    import { UIEventSource } from "../../../Logic/UIEventSource"
+    import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+    import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
+    import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+    import { TagUtils } from "../../../Logic/Tags/TagUtils"
+    import OsmChangeAction from "../../../Logic/Osm/Actions/OsmChangeAction"
+    import DeleteAction from "../../../Logic/Osm/Actions/DeleteAction"
+    import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction"
+    import Loading from "../../Base/Loading.svelte"
+    import { DeleteFlowState } from "./DeleteFlowState"
+    import { twJoin } from "tailwind-merge"
 
-  export let state: SpecialVisualizationState
-  export let deleteConfig: DeleteConfig
+    export let state: SpecialVisualizationState
+    export let deleteConfig: DeleteConfig
 
-  export let tags: UIEventSource<OsmTags>
+    export let tags: UIEventSource<OsmTags>
 
-  let featureId: OsmId = <OsmId>tags.data.id
+    let featureId: OsmId = <OsmId>tags.data.id
 
-  export let feature: Feature
-  export let layer: LayerConfig
+    export let feature: Feature
+    export let layer: LayerConfig
 
-  const deleteAbility = new DeleteFlowState(featureId, state, deleteConfig.neededChangesets)
+    const deleteAbility = new DeleteFlowState(featureId, state, deleteConfig.neededChangesets)
 
-  const canBeDeleted: UIEventSource<boolean | undefined> = deleteAbility.canBeDeleted
-  const canBeDeletedReason = deleteAbility.canBeDeletedReason
+    const canBeDeleted: UIEventSource<boolean | undefined> = deleteAbility.canBeDeleted
+    const canBeDeletedReason = deleteAbility.canBeDeletedReason
 
-  const hasSoftDeletion = deleteConfig.softDeletionTags !== undefined
-  let currentState: "start" | "confirm" | "applying" | "deleted" = "start"
-  $: {
-    deleteAbility.CheckDeleteability(true)
-  }
-
-  const t = Translations.t.delete
-
-  let selectedTags: TagsFilter
-  let changedProperties = undefined
-  $: changedProperties = TagUtils.changeAsProperties(selectedTags?.asChange(tags?.data ?? {}) ?? [])
-  let isHardDelete = undefined
-  $: isHardDelete = changedProperties[DeleteConfig.deleteReasonKey] !== undefined
-
-  async function onDelete() {
-    if (selectedTags === undefined) {
-      return
-    }
-    currentState = "applying"
-    let actionToTake: OsmChangeAction
-    const changedProperties = TagUtils.changeAsProperties(selectedTags.asChange(tags?.data ?? {}))
-    const deleteReason = changedProperties[DeleteConfig.deleteReasonKey]
-    if (deleteReason) {
-      // This is a proper, hard deletion
-      actionToTake = new DeleteAction(
-        featureId,
-        deleteConfig.softDeletionTags,
-        {
-          theme: state?.layout?.id ?? "unknown",
-          specialMotivation: deleteReason,
-        },
-        canBeDeleted.data
-      )
-    } else {
-      // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping
-      actionToTake = new ChangeTagAction(featureId, selectedTags, tags.data, {
-        theme: state?.layout?.id ?? "unkown",
-        changeType: "special-delete",
-      })
+    const hasSoftDeletion = deleteConfig.softDeletionTags !== undefined
+    let currentState: "start" | "confirm" | "applying" | "deleted" = "start"
+    $: {
+        deleteAbility.CheckDeleteability(true)
     }
 
-    await state.changes?.applyAction(actionToTake)
-    tags.data["_deleted"] = "yes"
-    tags.ping()
-    currentState = "deleted"
-  }
+    const t = Translations.t.delete
+
+    let selectedTags: TagsFilter
+    let changedProperties = undefined
+    $: changedProperties = TagUtils.changeAsProperties(selectedTags?.asChange(tags?.data ?? {}) ?? [])
+    let isHardDelete = undefined
+    $: isHardDelete = changedProperties[DeleteConfig.deleteReasonKey] !== undefined
+
+    async function onDelete() {
+        if (selectedTags === undefined) {
+            return
+        }
+        currentState = "applying"
+        let actionToTake: OsmChangeAction
+        const changedProperties = TagUtils.changeAsProperties(selectedTags.asChange(tags?.data ?? {}))
+        const deleteReason = changedProperties[DeleteConfig.deleteReasonKey]
+        if (deleteReason) {
+            // This is a proper, hard deletion
+            actionToTake = new DeleteAction(
+                featureId,
+                deleteConfig.softDeletionTags,
+                {
+                    theme: state?.layout?.id ?? "unknown",
+                    specialMotivation: deleteReason,
+                },
+                canBeDeleted.data,
+            )
+        } else {
+            // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping
+            actionToTake = new ChangeTagAction(featureId, selectedTags, tags.data, {
+                theme: state?.layout?.id ?? "unkown",
+                changeType: "special-delete",
+            })
+        }
+
+        await state.changes?.applyAction(actionToTake)
+        tags.data["_deleted"] = "yes"
+        tags.ping()
+        currentState = "deleted"
+    }
 </script>
+<LoginToggle ignoreLoading={true} {state}>
 
-{#if $canBeDeleted === false && !hasSoftDeletion}
-  <div class="low-interaction flex flex-col">
-    <Tr t={$canBeDeletedReason} />
-    <Tr cls="subtle" t={t.useSomethingElse} />
-  </div>
-{:else}
-  <LoginToggle ignoreLoading={true} {state}>
+  {#if $canBeDeleted === false && !hasSoftDeletion}
+    <div class="low-interaction flex flex-col">
+      <Tr t={$canBeDeletedReason} />
+      <Tr cls="subtle" t={t.useSomethingElse} />
+    </div>
+  {:else}
     {#if currentState === "start"}
       <button
         class="flex items-center"
@@ -158,5 +158,5 @@
         <Tr t={t.isDeleted} />
       </div>
     {/if}
-  </LoginToggle>
-{/if}
+  {/if}
+</LoginToggle>
