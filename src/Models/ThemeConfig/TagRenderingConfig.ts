@@ -16,10 +16,10 @@ import {
 } from "./Json/QuestionableTagRenderingConfigJson"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import { Paragraph } from "../../UI/Base/Paragraph"
-import Svg from "../../Svg"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import Constants from "../Constants"
+import { RegexTag } from "../../Logic/Tags/RegexTag"
 
 export interface Icon {}
 
@@ -799,5 +799,26 @@ export default class TagRenderingConfig {
             condition,
             labels,
         ]).SetClass("flex flex-col")
+    }
+
+    public usedTags(): TagsFilter[] {
+        const tags: TagsFilter[] = []
+        tags.push(
+            this.metacondition,
+            this.condition,
+            this.freeform?.key ? new RegexTag(this.freeform?.key, /.*/) : undefined,
+            this.invalidValues
+        )
+        for (const m of this.mappings ?? []) {
+            tags.push(m.if)
+            tags.push(m.priorityIf)
+            tags.push(...(m.addExtraTags ?? []))
+            if (typeof m.hideInAnswer !== "boolean") {
+                tags.push(m.hideInAnswer)
+            }
+            tags.push(m.ifnot)
+        }
+
+        return Utils.NoNull(tags)
     }
 }

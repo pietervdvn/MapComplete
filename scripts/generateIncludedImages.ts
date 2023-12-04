@@ -27,7 +27,8 @@ function genImages(dryrun = false) {
         "star_outline",
         "star",
         "osm_logo_us",
-
+        "triangle",
+        "teardrop_with_hole_green",
         "SocialImageForeground",
         "wikipedia",
         "Upload",

@@ -28,7 +28,6 @@
 
   const t = Translations.t.image.nearby
   const c = [lon, lat]
-  console.log(">>>", image)
   let attributedImage = new AttributedImage({
     url: image.thumbUrl ?? image.pictureUrl,
     provider: AllImageProviders.byName(image.provider),
@@ -45,7 +44,7 @@
     const url = image.osmTags[key]
     if (isLinked) {
       const action = new LinkImageAction(currentTags.id, key, url, tags, {
-        theme: state.layout.id,
+        theme: tags.data._orig_theme ??  state.layout.id,
         changeType: "link-image",
       })
       state.changes.applyAction(action)
@@ -54,7 +53,7 @@
         const v = currentTags[k]
         if (v === url) {
           const action = new ChangeTagAction(currentTags.id, new Tag(k, ""), currentTags, {
-            theme: state.layout.id,
+            theme: tags.data._orig_theme ?? state.layout.id,
             changeType: "remove-image",
           })
           state.changes.applyAction(action)

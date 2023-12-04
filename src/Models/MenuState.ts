@@ -24,6 +24,7 @@ export class MenuState {
     public static readonly _menuviewTabs = [
         "about",
         "settings",
+        "favourites",
         "community",
         "privacy",
         "advanced",

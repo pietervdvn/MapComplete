@@ -19,7 +19,7 @@
     ...(state?.layoutToUse?.layers?.map((l) => l.calculatedTags?.map((c) => c[0]) ?? []) ?? [])
   )
 
-  const allTags = tags.map((tags) => {
+  const allTags = tags.mapD((tags) => {
     const parts: (string | BaseUIElement)[][] = []
     for (const key in tags) {
       let v = tags[key]

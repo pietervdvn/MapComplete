@@ -745,6 +745,10 @@ video {
   top: 2.5rem;
 }
 
+.left-1\/4 {
+  left: 25%;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -765,10 +769,6 @@ video {
   float: left;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -779,6 +779,10 @@ video {
 
 .m-0 {
   margin: 0px;
+}
+
+.m-8 {
+  margin: 2rem;
 }
 
 .m-2 {
@@ -841,10 +845,6 @@ video {
   margin-right: 3rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -879,6 +879,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1088,6 +1092,10 @@ video {
   height: 2.75rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -1198,6 +1206,14 @@ video {
   width: 50%;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1287,6 +1303,10 @@ video {
 .appearance-none {
   -webkit-appearance: none;
           appearance: none;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-1 {
@@ -1439,6 +1459,14 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.justify-self-start {
+  justify-self: start;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 .overflow-auto {
@@ -2333,6 +2361,16 @@ button.disabled:hover, .button.disabled:hover {
   border: 2px dashed var(--button-background);
   background: unset;
   color: unset;
+}
+
+button.link {
+  border: none;
+  text-decoration: underline;
+  background-color: unset;
+}
+
+button.link:hover {
+  color:unset;
 }
 
 .interactive button.disabled svg path, .interactive .button.disabled svg path {

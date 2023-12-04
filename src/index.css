@@ -280,6 +280,16 @@ button.disabled:hover, .button.disabled:hover {
     color: unset;
 }
 
+button.link {
+    border: none;
+    text-decoration: underline;
+    background-color: unset;
+}
+
+button.link:hover {
+    color:unset;
+}
+
 .interactive button.disabled svg path, .interactive .button.disabled svg path {
     fill: var(--interactive-foreground) !important;;
 }

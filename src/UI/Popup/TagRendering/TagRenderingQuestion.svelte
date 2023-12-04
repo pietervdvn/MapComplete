@@ -1,188 +1,210 @@
 <script lang="ts">
-    import { ImmutableStore, UIEventSource } from "../../../Logic/UIEventSource"
-    import type { SpecialVisualizationState } from "../../SpecialVisualization"
-    import Tr from "../../Base/Tr.svelte"
-    import type { Feature } from "geojson"
-    import type { Mapping } from "../../../Models/ThemeConfig/TagRenderingConfig"
-    import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-    import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-    import FreeformInput from "./FreeformInput.svelte"
-    import Translations from "../../i18n/Translations.js"
-    import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction"
-    import { createEventDispatcher, onDestroy } from "svelte"
-    import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-    import SpecialTranslation from "./SpecialTranslation.svelte"
-    import TagHint from "../TagHint.svelte"
-    import LoginToggle from "../../Base/LoginToggle.svelte"
-    import SubtleButton from "../../Base/SubtleButton.svelte"
-    import Loading from "../../Base/Loading.svelte"
-    import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte"
-    import { Translation } from "../../i18n/Translation"
-    import Constants from "../../../Models/Constants"
-    import { Unit } from "../../../Models/Unit"
-    import UserRelatedState from "../../../Logic/State/UserRelatedState"
-    import { twJoin } from "tailwind-merge"
-    import { TagUtils } from "../../../Logic/Tags/TagUtils"
-    import Search from "../../../assets/svg/Search.svelte"
-    import Login from "../../../assets/svg/Login.svelte"
+  import { ImmutableStore, UIEventSource } from "../../../Logic/UIEventSource";
+  import type { SpecialVisualizationState } from "../../SpecialVisualization";
+  import Tr from "../../Base/Tr.svelte";
+  import type { Feature } from "geojson";
+  import type { Mapping } from "../../../Models/ThemeConfig/TagRenderingConfig";
+  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
+  import { TagsFilter } from "../../../Logic/Tags/TagsFilter";
+  import FreeformInput from "./FreeformInput.svelte";
+  import Translations from "../../i18n/Translations.js";
+  import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
+  import { createEventDispatcher, onDestroy } from "svelte";
+  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+  import SpecialTranslation from "./SpecialTranslation.svelte";
+  import TagHint from "../TagHint.svelte";
+  import LoginToggle from "../../Base/LoginToggle.svelte";
+  import SubtleButton from "../../Base/SubtleButton.svelte";
+  import Loading from "../../Base/Loading.svelte";
+  import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte";
+  import { Translation } from "../../i18n/Translation";
+  import Constants from "../../../Models/Constants";
+  import { Unit } from "../../../Models/Unit";
+  import UserRelatedState from "../../../Logic/State/UserRelatedState";
+  import { twJoin } from "tailwind-merge";
+  import { TagUtils } from "../../../Logic/Tags/TagUtils";
+  import Search from "../../../assets/svg/Search.svelte";
+  import Login from "../../../assets/svg/Login.svelte";
 
-    export let config: TagRenderingConfig
-    export let tags: UIEventSource<Record<string, string>>
-    export let selectedElement: Feature
-    export let state: SpecialVisualizationState
-    export let layer: LayerConfig | undefined
+  export let config: TagRenderingConfig;
+  export let tags: UIEventSource<Record<string, string>>;
+  export let selectedElement: Feature;
+  export let state: SpecialVisualizationState;
+  export let layer: LayerConfig | undefined;
+  export let selectedTags: TagsFilter = undefined;
 
-    let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
+  let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
 
-    let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
+  let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key));
 
-    // Will be bound if a freeform is available
-    let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key])
-    let selectedMapping: number = undefined
-    let checkedMappings: boolean[]
+  // Will be bound if a freeform is available
+  let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);
+  let selectedMapping: number = undefined;
+  let checkedMappings: boolean[];
 
-    /**
-     * Prepares and fills the checkedMappings
-     */
-    function initialize(tgs: Record<string, string>, confg: TagRenderingConfig) {
-        mappings = confg.mappings?.filter((m) => {
-            if (typeof m.hideInAnswer === "boolean") {
-                return !m.hideInAnswer
-            }
-            return !m.hideInAnswer.matchesProperties(tgs)
+  let mappings: Mapping[] = config?.mappings;
+  let searchTerm: UIEventSource<string> = new UIEventSource("");
+
+  let dispatch = createEventDispatcher<{
+    saved: {
+      config: TagRenderingConfig
+      applied: TagsFilter
+    }
+  }>();
+
+  /**
+   * Prepares and fills the checkedMappings
+   */
+  function initialize(tgs: Record<string, string>, confg: TagRenderingConfig) {
+    mappings = confg.mappings?.filter((m) => {
+      if (typeof m.hideInAnswer === "boolean") {
+        return !m.hideInAnswer;
+      }
+      return !m.hideInAnswer.matchesProperties(tgs);
+    });
+    // We received a new config -> reinit
+    unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key));
+
+    if (
+      confg.mappings?.length > 0 &&
+      confg.multiAnswer &&
+      (checkedMappings === undefined ||
+        checkedMappings?.length < confg.mappings.length + (confg.freeform ? 1 : 0))
+    ) {
+      const seenFreeforms = [];
+      TagUtils.FlattenMultiAnswer();
+      checkedMappings = [
+        ...confg.mappings.map((mapping) => {
+          const matches = TagUtils.MatchesMultiAnswer(mapping.if, tgs);
+          if (matches && confg.freeform) {
+            const newProps = TagUtils.changeAsProperties(mapping.if.asChange());
+            seenFreeforms.push(newProps[confg.freeform.key]);
+          }
+          return matches;
         })
-        // We received a new config -> reinit
-        unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
+      ];
 
-        if (
-            confg.mappings?.length > 0 &&
-            confg.multiAnswer &&
-            (checkedMappings === undefined ||
-                checkedMappings?.length < confg.mappings.length + (confg.freeform ? 1 : 0))
-        ) {
-            const seenFreeforms = []
-            TagUtils.FlattenMultiAnswer()
-            checkedMappings = [
-                ...confg.mappings.map((mapping) => {
-                    const matches = TagUtils.MatchesMultiAnswer(mapping.if, tgs)
-                    if (matches && confg.freeform) {
-                        const newProps = TagUtils.changeAsProperties(mapping.if.asChange())
-                        seenFreeforms.push(newProps[confg.freeform.key])
-                    }
-                    return matches
-                }),
-            ]
-
-            if (tgs !== undefined && confg.freeform) {
-                const unseenFreeformValues = tgs[confg.freeform.key]?.split(";") ?? []
-                for (const seenFreeform of seenFreeforms) {
-                    if (!seenFreeform) {
-                        continue
-                    }
-                    const index = unseenFreeformValues.indexOf(seenFreeform)
-                    if (index < 0) {
-                        continue
-                    }
-                    unseenFreeformValues.splice(index, 1)
-                }
-                // TODO this has _to much_ values
-                freeformInput.setData(unseenFreeformValues.join(";"))
-                checkedMappings.push(unseenFreeformValues.length > 0)
-            }
+      if (tgs !== undefined && confg.freeform) {
+        const unseenFreeformValues = tgs[confg.freeform.key]?.split(";") ?? [];
+        for (const seenFreeform of seenFreeforms) {
+          if (!seenFreeform) {
+            continue;
+          }
+          const index = unseenFreeformValues.indexOf(seenFreeform);
+          if (index < 0) {
+            continue;
+          }
+          unseenFreeformValues.splice(index, 1);
         }
-        if (confg.freeform?.key) {
-            if (!confg.multiAnswer) {
-                // Somehow, setting multi-answer freeform values is broken if this is not set
-                freeformInput.setData(tgs[confg.freeform.key])
-            }
+        // TODO this has _to much_ values
+        freeformInput.setData(unseenFreeformValues.join(";"));
+        checkedMappings.push(unseenFreeformValues.length > 0);
+      }
+    }
+    if (confg.freeform?.key) {
+      if (!confg.multiAnswer) {
+        // Somehow, setting multi-answer freeform values is broken if this is not set
+        freeformInput.setData(tgs[confg.freeform.key]);
+      }
+
+    } else {
+      freeformInput.setData(undefined);
+    }
+    feedback.setData(undefined);
+  }
+
+  $: {
+    // Even though 'config' is not declared as a store, Svelte uses it as one to update the component
+    // We want to (re)-initialize whenever the 'tags' or 'config' change - but not when 'checkedConfig' changes
+    initialize($tags, config);
+  }
+
+  $: {
+    try {
+      selectedTags = config?.constructChangeSpecification(
+        $freeformInput,
+        selectedMapping,
+        checkedMappings,
+        tags.data
+      );
+    } catch (e) {
+      console.error("Could not calculate changeSpecification:", e);
+      selectedTags = undefined;
+    }
+  }
+
+
+  function onSave() {
+    if (selectedTags === undefined) {
+      console.log("SelectedTags is undefined, ignoring 'onSave'-event");
+      return;
+    }
+    if (layer === undefined || (layer?.source === null && layer.id !== "favourite")) {
+      /**
+       * This is a special, priviliged layer.
+       * We simply apply the tags onto the records
+       */
+      const kv = selectedTags.asChange(tags.data);
+      for (const { k, v } of kv) {
+        if (v === undefined || v === "") {
+          delete tags.data[k];
         } else {
-            freeformInput.setData(undefined)
+          freeformInput.setData(undefined);
         }
-        feedback.setData(undefined)
+        feedback.setData(undefined);
+      }
     }
 
-    $: {
-        // Even though 'config' is not declared as a store, Svelte uses it as one to update the component
-        // We want to (re)-initialize whenever the 'tags' or 'config' change - but not when 'checkedConfig' changes
-        initialize($tags, config)
+    dispatch("saved", { config, applied: selectedTags });
+    const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
+      theme: tags.data["_orig_theme"] ?? state.layout.id,
+      changeType: "answer"
+    });
+    freeformInput.setData(undefined);
+    selectedMapping = undefined;
+    selectedTags = undefined;
+
+    change
+      .CreateChangeDescriptions()
+      .then((changes) => state.changes.applyChanges(changes))
+      .catch(console.error);
+  }
+
+  function onInputKeypress(e: Event) {
+    if (e.key === "Enter") {
+      onSave();
     }
-    export let selectedTags: TagsFilter = undefined
+  }
 
-    let mappings: Mapping[] = config?.mappings
-    let searchTerm: UIEventSource<string> = new UIEventSource("")
-
-    $: {
-        try {
-            selectedTags = config?.constructChangeSpecification(
-                $freeformInput,
-                selectedMapping,
-                checkedMappings,
-                tags.data,
-            )
-        } catch (e) {
-            console.error("Could not calculate changeSpecification:", e)
-            selectedTags = undefined
-        }
+  $: {
+    try {
+      selectedTags = config?.constructChangeSpecification(
+        $freeformInput,
+        selectedMapping,
+        checkedMappings,
+        tags.data
+      );
+    } catch (e) {
+      console.error("Could not calculate changeSpecification:", e);
+      selectedTags = undefined;
     }
+  }
 
-    let dispatch = createEventDispatcher<{
-        saved: {
-            config: TagRenderingConfig
-            applied: TagsFilter
-        }
-    }>()
 
-    function onSave() {
-        if (selectedTags === undefined) {
-            console.log("SelectedTags is undefined, ignoring 'onSave'-event")
-            return
-        }
-        if (layer === undefined || layer?.source === null) {
-            /**
-             * This is a special, priviliged layer.
-             * We simply apply the tags onto the records
-             */
-            const kv = selectedTags.asChange(tags.data)
-            for (const { k, v } of kv) {
-                if (v === undefined || v === "") {
-                    delete tags.data[k]
-                } else {
-                    tags.data[k] = v
-                }
-            }
-            tags.ping()
-            return
-        }
-
-        dispatch("saved", { config, applied: selectedTags })
-        const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
-            theme: state.layout.id,
-            changeType: "answer",
-        })
-        freeformInput.setData(undefined)
-        selectedMapping = undefined
-        selectedTags = undefined
-
-        change
-            .CreateChangeDescriptions()
-            .then((changes) => state.changes.applyChanges(changes))
-            .catch(console.error)
-    }
-
-    let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false)
-    let featureSwitchIsDebugging =
-        state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
-    let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined)
-    let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0
-    let question = config.question
-    $: question = config.question
-    if (state?.osmConnection) {
-        onDestroy(
-            state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
-                numberOfCs = ud.csCount
-            }),
-        )
-    }
+  let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false);
+  let featureSwitchIsDebugging =
+    state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false);
+  let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined);
+  let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0;
+  let question = config.question;
+  $: question = config.question;
+  if (state?.osmConnection) {
+    onDestroy(
+      state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
+        numberOfCs = ud.csCount;
+      })
+    );
+  }
 </script>
 
 {#if question !== undefined}
@@ -246,9 +268,8 @@
               bind:group={selectedMapping}
               name={"mappings-radio-" + config.id}
               value={i}
-              on:keypress={(e) => {
-                if (e.key === "Enter") onSave()
-              }}
+              on:keypress={e => onInputKeypress(e)}
+
             />
           </TagRenderingMappingInput>
         {/each}
@@ -259,6 +280,7 @@
               bind:group={selectedMapping}
               name={"mappings-radio-" + config.id}
               value={config.mappings?.length}
+              on:keypress={e => onInputKeypress(e)}
             />
             <FreeformInput
               {config}
@@ -290,6 +312,7 @@
               type="checkbox"
               name={"mappings-checkbox-" + config.id + "-" + i}
               bind:checked={checkedMappings[i]}
+              on:keypress={e => onInputKeypress(e)}
             />
           </TagRenderingMappingInput>
         {/each}
@@ -299,6 +322,7 @@
               type="checkbox"
               name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
               bind:checked={checkedMappings[config.mappings.length]}
+              on:keypress={e => onInputKeypress(e)}
             />
             <FreeformInput
               {config}
@@ -307,7 +331,6 @@
               {unit}
               feature={selectedElement}
               value={freeformInput}
-              on:selected={() => (checkedMappings[config.mappings.length] = true)}
               on:submit={onSave}
             />
           </label>

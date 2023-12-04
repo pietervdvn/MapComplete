@@ -58,6 +58,7 @@ import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLay
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { Imgur } from "../Logic/ImageProviders/Imgur"
 import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSource"
+import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 
 /**
  *
@@ -96,10 +97,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly indexedFeatures: IndexedFeatureSource & LayoutSource
     readonly currentView: FeatureSource<Feature<Polygon>>
     readonly featuresInView: FeatureSource
+    readonly favourites: FavouritesFeatureSource
     /**
      * Contains a few (<10) >features that are near the center of the map.
      */
-    readonly closestFeatures: FeatureSource
+    readonly closestFeatures: NearbyFeatureSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
@@ -220,8 +222,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.fullNodeDatabase
             )
 
-            this.indexedFeatures = layoutSource
-
             let currentViewIndex = 0
             const empty = []
             this.currentView = new StaticFeatureSource(
@@ -242,13 +242,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
 
             this.dataIsLoading = layoutSource.isLoading
+            this.indexedFeatures = layoutSource
+            this.featureProperties = new FeaturePropertiesStore(layoutSource)
 
-            const indexedElements = this.indexedFeatures
-            this.featureProperties = new FeaturePropertiesStore(indexedElements)
             this.changes = new Changes(
                 {
                     dryRun: this.featureSwitches.featureSwitchIsTesting,
-                    allElements: indexedElements,
+                    allElements: layoutSource,
                     featurePropertiesStore: this.featureProperties,
                     osmConnection: this.osmConnection,
                     historicalUserLocations: this.geolocation.historicalUserLocations,
@@ -258,7 +258,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.historicalUserLocations = this.geolocation.historicalUserLocations
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
                 this.changes,
-                indexedElements,
+                layoutSource,
                 this.featureProperties
             )
             layoutSource.addSource(this.newFeatures)
@@ -327,10 +327,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             return sorted
         })
 
-        const lastClick = (this.lastClickObject = new LastClickFeatureSource(
+        this.lastClickObject = new LastClickFeatureSource(
             this.mapProperties.lastClickLocation,
             this.layout
-        ))
+        )
 
         this.osmObjectDownloader = new OsmObjectDownloader(
             this.osmConnection.Backend(),
@@ -353,6 +353,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection,
             this.changes
         )
+        this.favourites = new FavouritesFeatureSource(this)
 
         this.initActors()
         this.drawSpecialLayers()
@@ -456,6 +457,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * @private
      */
     private selectClosestAtCenter(i: number = 0) {
+        this.mapProperties.lastKeyNavigation.setData(Date.now() / 1000)
         const toSelect = this.closestFeatures.features.data[i]
         if (!toSelect) {
             return
@@ -465,6 +467,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedLayer.setData(layer)
         this.selectedElement.setData(toSelect)
     }
+
     private initHotkeys() {
         Hotkeys.RegisterHotkey(
             { nomod: "Escape", onUp: true },
@@ -473,6 +476,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.selectedElement.setData(undefined)
                 this.guistate.closeAll()
                 this.focusOnMap()
+            }
+        )
+
+        Hotkeys.RegisterHotkey(
+            { nomod: "f" },
+            Translations.t.hotkeyDocumentation.selectFavourites,
+            () => {
+                this.guistate.menuViewTab.setData("favourites")
+                this.guistate.menuIsOpened.setData(true)
             }
         )
 
@@ -561,46 +573,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
     }
 
-    private addLastClick(last_click: LastClickFeatureSource) {
-        // The last_click gets a _very_ special treatment as it interacts with various parts
-
-        this.featureProperties.trackFeatureSource(last_click)
-        this.indexedFeatures.addSource(last_click)
-
-        last_click.features.addCallbackAndRunD((features) => {
-            if (this.selectedLayer.data?.id === "last_click") {
-                // The last-click location moved, but we have selected the last click of the previous location
-                // So, we update _after_ clearing the selection to make sure no stray data is sticking around
-                this.selectedElement.setData(undefined)
-                this.selectedElement.setData(features[0])
-            }
-        })
-
-        new ShowDataLayer(this.map, {
-            features: new FilteringFeatureSource(this.newPointDialog, last_click),
-            doShowLayer: this.featureSwitches.featureSwitchEnableLogin,
-            layer: this.newPointDialog.layerDef,
-            selectedElement: this.selectedElement,
-            selectedLayer: this.selectedLayer,
-            metaTags: this.userRelatedState.preferencesAsTags,
-            onClick: (feature: Feature) => {
-                if (this.mapProperties.zoom.data < Constants.minZoomLevelToAddNewPoint) {
-                    this.map.data.flyTo({
-                        zoom: Constants.minZoomLevelToAddNewPoint,
-                        center: this.mapProperties.lastClickLocation.data,
-                    })
-                    return
-                }
-                // We first clear the selection to make sure no weird state is around
-                this.selectedLayer.setData(undefined)
-                this.selectedElement.setData(undefined)
-
-                this.selectedElement.setData(feature)
-                this.selectedLayer.setData(this.newPointDialog.layerDef)
-            },
-        })
-    }
-
     /**
      * Add the special layers to the map
      */
@@ -627,7 +599,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 )
             ),
             current_view: this.currentView,
+            favourite: this.favourites,
         }
+
+        this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
         if (this.layout?.lockLocation) {
             const bbox = new BBox(this.layout.lockLocation)
             this.mapProperties.maxbounds.setData(bbox)
@@ -654,20 +629,22 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         const rangeFLayer: FilteredLayer = this.layerState.filteredLayers.get("range")
-
         const rangeIsDisplayed = rangeFLayer?.isDisplayed
-
         if (
             !QueryParameters.wasInitialized(FilteredLayer.queryParameterKey(rangeFLayer.layerDef))
         ) {
             rangeIsDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
         }
 
+        // enumarate all 'normal' layers and match them with the appropriate 'special' layer - if applicable
         this.layerState.filteredLayers.forEach((flayer) => {
             const id = flayer.layerDef.id
             const features: FeatureSource = specialLayers[id]
             if (features === undefined) {
                 return
+            }
+            if (id === "favourite") {
+                console.log("Matching special layer", id, flayer)
             }
 
             this.featureProperties.trackFeatureSource(features)

@@ -107,7 +107,8 @@ export class ImageUploadManager {
             title,
             description,
             file,
-            targetKey
+            targetKey,
+            tags.data["_orig_theme"]
         )
         if (!isNaN(Number(featureId))) {
             // This is a map note
@@ -126,7 +127,8 @@ export class ImageUploadManager {
         title: string,
         description: string,
         blob: File,
-        targetKey: string | undefined
+        targetKey: string | undefined,
+        theme?: string
     ): Promise<LinkImageAction> {
         this.increaseCountFor(this._uploadStarted, featureId)
         const properties = this._featureProperties.getStore(featureId)
@@ -148,7 +150,7 @@ export class ImageUploadManager {
         console.log("Uploading done, creating action for", featureId)
         key = targetKey ?? key
         const action = new LinkImageAction(featureId, key, value, properties, {
-            theme: this._layout.id,
+            theme: theme ?? this._layout.id,
             changeType: "add-image",
         })
         this.increaseCountFor(this._uploadFinished, featureId)

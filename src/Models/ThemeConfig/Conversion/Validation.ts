@@ -1,4 +1,4 @@
-import { Conversion, DesugaringStep, Each, Fuse, On, Pipe, Pure } from "./Conversion"
+import { Bypass, Conversion, DesugaringStep, Each, Fuse, On } from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
@@ -11,7 +11,6 @@ import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { ExtractImages } from "./FixImages"
 import { And } from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
-import Svg from "../../../Svg"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
@@ -23,7 +22,7 @@ import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 import { Translatable } from "../Json/Translatable"
 import { ConversionContext } from "./ConversionContext"
 
-class ValidateLanguageCompleteness extends DesugaringStep<any> {
+class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
     private readonly _languages: string[]
 
     constructor(...languages: string[]) {
@@ -35,7 +34,9 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
         this._languages = languages ?? ["en"]
     }
 
-    convert(obj: any, context: ConversionContext): LayerConfig {
+    convert(obj: LayoutConfig, context: ConversionContext): LayoutConfig {
+        const origLayers = obj.layers
+        obj.layers = [...obj.layers].filter((l) => l["id"] !== "favourite")
         const translations = Translation.ExtractAllTranslationsFrom(obj)
         for (const neededLanguage of this._languages) {
             translations
@@ -57,7 +58,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
                         )
                 })
         }
-
+        obj.layers = origLayers
         return obj
     }
 }
@@ -276,9 +277,9 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
             new On(
                 "layers",
                 new Each(
-                    new Pipe(
-                        new ValidateLayer(undefined, isBuiltin, doesImageExist, false, true),
-                        new Pure((x) => x?.raw)
+                    new Bypass(
+                        (layer) => Constants.added_by_default.indexOf(<any>layer.id) < 0,
+                        new ValidateLayerConfig(undefined, isBuiltin, doesImageExist, false, true)
                     )
                 )
             )
@@ -974,7 +975,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             "Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
             new DetectConflictingAddExtraTags(),
-            new DetectNonErasedKeysInMappings(),
+            // TODO enable   new DetectNonErasedKeysInMappings(),
             new DetectMappingsWithImages(doesImageExist),
             new On("render", new ValidatePossibleLinks()),
             new On("question", new ValidatePossibleLinks()),
@@ -1356,6 +1357,34 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
     }
 }
 
+export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
+    private readonly validator: ValidateLayer
+    constructor(
+        path: string,
+        isBuiltin: boolean,
+        doesImageExist: DoesImageExist,
+        studioValidations: boolean = false,
+        skipDefaultLayers: boolean = false
+    ) {
+        super("Thin wrapper around 'ValidateLayer", [], "ValidateLayerConfig")
+        this.validator = new ValidateLayer(
+            path,
+            isBuiltin,
+            doesImageExist,
+            studioValidations,
+            skipDefaultLayers
+        )
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        const prepared = this.validator.convert(json, context)
+        if (!prepared) {
+            context.err("Preparing layer failed")
+            return undefined
+        }
+        return prepared?.raw
+    }
+}
 export class ValidateLayer extends Conversion<
     LayerConfigJson,
     { parsed: LayerConfig; raw: LayerConfigJson }

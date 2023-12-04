@@ -161,7 +161,7 @@
       2. What do we want to add?
       3. Are all elements of this category visible? (i.e. there are no filters possibly hiding this, is the data still loading, ...) -->
   <LoginButton osmConnection={state.osmConnection} slot="not-logged-in">
-    <Tr slot="message" t={Translations.t.general.add.pleaseLogin} />
+    <Tr t={Translations.t.general.add.pleaseLogin} />
   </LoginButton>
   <div class="h-full w-full">
     {#if $zoom < Constants.minZoomLevelToAddNewPoint}

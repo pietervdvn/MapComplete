@@ -14,7 +14,8 @@
     {
       "id": "wikipedialink",
       "labels": [
-        "defaults"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
       "condition": {
@@ -67,9 +68,22 @@
       "metacondition": "__showTimeSensitiveIcons!=no"
     },
     {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}"
+    },
+    {
       "id": "phonelink",
       "labels": [
-        "defaults"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/></a>",
       "mappings": [
@@ -89,7 +103,8 @@
     {
       "id": "emaillink",
       "labels": [
-        "defaults"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
       "mappings": [
@@ -109,7 +124,8 @@
     {
       "id": "websitelink",
       "labels": [
-        "defaults"
+        "defaults",
+        "in_favourite"
       ],
       "render": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>",
       "condition": "website~*"
@@ -117,7 +133,8 @@
     {
       "id": "smokingicon",
       "labels": [
-        "defaults"
+        "defaults",
+        "in_favourite"
       ],
       "mappings": [
         {
@@ -141,6 +158,15 @@
       "metacondition": "_supports_sharing=yes"
     },
     {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      }
+    },
+    {
       "id": "osmlink",
       "labels": [
         "defaults"
@@ -162,7 +188,8 @@
     {
       "id": "dogicon",
       "labels": [
-        "defaults"
+        "defaults",
+        "in_favourite"
       ],
       "mappings": [
         {
@@ -193,6 +220,13 @@
         "class": "w-20 mx-1 flex items-center"
       },
       "render": "{rating()}"
+    },
+    {
+      "id": "favourite_icon",
+      "description": "Only for rendering",
+      "condition": "_favourite=yes",
+      "icon": "circle:white;heart:red",
+      "metacondition": "__showTimeSensitiveIcons!=no"
     }
   ]
 }

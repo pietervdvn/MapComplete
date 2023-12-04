@@ -154,6 +154,14 @@
     ]
   },
   {
+    "path": "center.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "checkmark.svg",
     "license": "CC0-1.0",
     "authors": [

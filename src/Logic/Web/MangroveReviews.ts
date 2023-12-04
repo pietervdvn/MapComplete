@@ -14,7 +14,7 @@ export class MangroveIdentity {
         const keypairEventSource = new UIEventSource<CryptoKeyPair>(undefined)
         this.keypair = keypairEventSource
         mangroveIdentity.addCallbackAndRunD(async (data) => {
-            if (data === "") {
+            if (!data) {
                 return
             }
             const keypair = await MangroveReviews.jwkToKeypair(JSON.parse(data))

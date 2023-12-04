@@ -50,6 +50,22 @@
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
         "reload": "Reload the data"
     },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "This location is currently marked as favourite and will show up on all thematic maps of MapComplete you visit.",
+            "markAsFavouriteTitle": "Mark this location as favourite location",
+            "markDescription": "Add this location to a personal list of your favourites",
+            "unmark": "Remove from your personal list of favourites",
+            "unmarkNotDeleted": "This point will not be deleted and still be visible on the appropriate map for you and others"
+        },
+        "downloadGeojson": "Download your favourites as geojson",
+        "downloadGpx": "Download your favourites as GPX",
+        "intro": "You marked {length} locations as a favourite location.",
+        "introPrivacy": "This list is only visible to you",
+        "loginToSeeList": "Login to see the list of locations you marked as favourite",
+        "tab": "Your favourites",
+        "title": "Your favourite locations"
+    },
     "flyer": {
         "aerial": "This map uses a different background, namely aerial imagery by Agentschap Informatie Vlaanderen",
         "callToAction": "Test it on mapcomplete.org",
@@ -404,6 +420,7 @@
         "key": "Key combination",
         "openLayersPanel": "Opens the layers and filters panel",
         "selectAerial": "Set the background to aerial or satellite imagery. Toggles between the two best, available layers",
+        "selectFavourites": "Open the favourites page",
         "selectItem": "Select the POI which is closest to the map center (crosshair). Only when in keyboard navigation is used",
         "selectMap": "Set the background to a map from external sources. Toggles between the two best, available layers",
         "selectMapnik": "Set the background layer to OpenStreetMap-carto",

@@ -1,3 +1,5 @@
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+
 export abstract class TagsFilter {
     abstract asOverpass(): string[]
 
@@ -16,6 +18,8 @@ export abstract class TagsFilter {
         shorten: boolean,
         properties: Record<string, string>
     ): string
+
+    abstract asJson(): TagConfigJson
 
     abstract usedKeys(): string[]
 

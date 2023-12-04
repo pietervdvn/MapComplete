@@ -245,7 +245,7 @@ export interface LayerConfigJson {
      * Type: icon[]
      * group: infobox
      */
-    titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"]
+    titleIcons?: (string | (TagRenderingConfigJson & { id?: string }))[] | ["defaults"]
 
     /**
      * Creates points to render on the map.

@@ -12,11 +12,9 @@ import { Feature, Point } from "geojson"
 import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
 import { Utils } from "../../Utils"
 import * as range_layer from "../../../assets/layers/range/range.json"
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
-import { CLIENT_RENEG_LIMIT } from "tls"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig

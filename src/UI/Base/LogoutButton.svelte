@@ -4,12 +4,12 @@
   import Translations from "../i18n/Translations"
   import Tr from "./Tr.svelte"
 
-  export let osmConnection: OsmConnection
+  export let osmConnection: OsmConnection;
 </script>
 
 <button
   on:click={() => {
-    state.osmConnection.LogOut()
+    osmConnection.LogOut()
   }}
 >
   <Logout class="h-6 w-6" />

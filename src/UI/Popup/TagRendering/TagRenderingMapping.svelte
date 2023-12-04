@@ -6,6 +6,7 @@
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twJoin } from "tailwind-merge"
+  import Icon from "../../Map/Icon.svelte";
 
   export let selectedElement: Feature
   export let tags: UIEventSource<Record<string, string>>
@@ -27,13 +28,8 @@
 </script>
 
 {#if mapping.icon !== undefined}
-  <div class="inline-flex items-center">
-    <img
-      class={twJoin(`mapping-icon-${mapping.iconClass}`, "mr-1")}
-      src={mapping.icon}
-      aria-hidden="true"
-      alt=""
-    />
+  <div class="inline-flex">
+    <Icon icon={mapping.icon} clss={twJoin(`mapping-icon-${mapping.iconClass}`, "mr-1")}/>
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} />
   </div>
 {:else if mapping.then !== undefined}
