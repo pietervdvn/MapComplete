@@ -26,7 +26,6 @@
   onDestroy(
     tags.addCallbackAndRun((tags) => {
       _tags = tags
-      console.log("Getting render value for", _tags,config)
       trs = Utils.NoNull(config?.GetRenderValues(_tags))
     })
   )
