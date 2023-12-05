@@ -9,4 +9,6 @@ export class LicenseInfo {
     credit: string = ""
     description: string = ""
     informationLocation: URL = undefined
+    date?: Date
+    views?: number
 }

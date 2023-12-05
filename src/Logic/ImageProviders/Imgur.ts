@@ -94,6 +94,8 @@ export class Imgur extends ImageProvider implements ImageUploader {
 
         const descr: string = response.data.description ?? ""
         const data: any = {}
+        const imgurData = response.data
+
         for (const tag of descr.split("\n")) {
             const kv = tag.split(":")
             const k = kv[0]
@@ -104,6 +106,8 @@ export class Imgur extends ImageProvider implements ImageUploader {
 
         licenseInfo.licenseShortName = data.license
         licenseInfo.artist = data.author
+        licenseInfo.date = new Date(Number(imgurData.datetime) * 1000)
+        licenseInfo.views  = imgurData.views
 
         return licenseInfo
     }

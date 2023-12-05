@@ -1,91 +1,92 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource";
-  import { Map as MlMap } from "maplibre-gl";
-  import MaplibreMap from "./Map/MaplibreMap.svelte";
-  import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
-  import MapControlButton from "./Base/MapControlButton.svelte";
-  import ToSvelte from "./Base/ToSvelte.svelte";
-  import If from "./Base/If.svelte";
-  import { GeolocationControl } from "./BigComponents/GeolocationControl";
-  import type { Feature } from "geojson";
-  import SelectedElementView from "./BigComponents/SelectedElementView.svelte";
-  import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-  import Filterview from "./BigComponents/Filterview.svelte";
-  import ThemeViewState from "../Models/ThemeViewState";
-  import type { MapProperties } from "../Models/MapProperties";
-  import Geosearch from "./BigComponents/Geosearch.svelte";
-  import Translations from "./i18n/Translations";
-  import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import Tr from "./Base/Tr.svelte";
-  import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
-  import FloatOver from "./Base/FloatOver.svelte";
-  import PrivacyPolicy from "./BigComponents/PrivacyPolicy";
-  import Constants from "../Models/Constants";
-  import TabbedGroup from "./Base/TabbedGroup.svelte";
-  import UserRelatedState from "../Logic/State/UserRelatedState";
-  import LoginToggle from "./Base/LoginToggle.svelte";
-  import LoginButton from "./Base/LoginButton.svelte";
-  import CopyrightPanel from "./BigComponents/CopyrightPanel";
-  import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte";
-  import ModalRight from "./Base/ModalRight.svelte";
-  import { Utils } from "../Utils";
-  import Hotkeys from "./Base/Hotkeys";
-  import { VariableUiElement } from "./Base/VariableUIElement";
-  import SvelteUIElement from "./Base/SvelteUIElement";
-  import OverlayToggle from "./BigComponents/OverlayToggle.svelte";
-  import LevelSelector from "./BigComponents/LevelSelector.svelte";
-  import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
-  import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
-  import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte";
-  import type { RasterLayerPolygon } from "../Models/RasterLayers";
-  import { AvailableRasterLayers } from "../Models/RasterLayers";
-  import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
-  import IfHidden from "./Base/IfHidden.svelte";
-  import { onDestroy } from "svelte";
-  import MapillaryLink from "./BigComponents/MapillaryLink.svelte";
-  import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
-  import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte";
-  import StateIndicator from "./BigComponents/StateIndicator.svelte";
-  import ShareScreen from "./BigComponents/ShareScreen.svelte";
-  import UploadingImageCounter from "./Image/UploadingImageCounter.svelte";
-  import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte";
-  import Cross from "../assets/svg/Cross.svelte";
-  import Summary from "./BigComponents/Summary.svelte";
-  import LanguagePicker from "./InputElement/LanguagePicker.svelte";
-  import Mastodon from "../assets/svg/Mastodon.svelte";
-  import Bug from "../assets/svg/Bug.svelte";
-  import Liberapay from "../assets/svg/Liberapay.svelte";
-  import OpenJosm from "./Base/OpenJosm.svelte";
-  import Min from "../assets/svg/Min.svelte";
-  import Plus from "../assets/svg/Plus.svelte";
-  import Filter from "../assets/svg/Filter.svelte";
-  import Add from "../assets/svg/Add.svelte";
-  import Statistics from "../assets/svg/Statistics.svelte";
-  import Community from "../assets/svg/Community.svelte";
-  import Download from "../assets/svg/Download.svelte";
-  import Share from "../assets/svg/Share.svelte";
-  import Favourites from "./Favourites/Favourites.svelte";
+    import { Store, UIEventSource } from "../Logic/UIEventSource"
+    import { Map as MlMap } from "maplibre-gl"
+    import MaplibreMap from "./Map/MaplibreMap.svelte"
+    import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
+    import MapControlButton from "./Base/MapControlButton.svelte"
+    import ToSvelte from "./Base/ToSvelte.svelte"
+    import If from "./Base/If.svelte"
+    import { GeolocationControl } from "./BigComponents/GeolocationControl"
+    import type { Feature } from "geojson"
+    import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
+    import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+    import Filterview from "./BigComponents/Filterview.svelte"
+    import ThemeViewState from "../Models/ThemeViewState"
+    import type { MapProperties } from "../Models/MapProperties"
+    import Geosearch from "./BigComponents/Geosearch.svelte"
+    import Translations from "./i18n/Translations"
+    import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+    import Tr from "./Base/Tr.svelte"
+    import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
+    import FloatOver from "./Base/FloatOver.svelte"
+    import PrivacyPolicy from "./BigComponents/PrivacyPolicy"
+    import Constants from "../Models/Constants"
+    import TabbedGroup from "./Base/TabbedGroup.svelte"
+    import UserRelatedState from "../Logic/State/UserRelatedState"
+    import LoginToggle from "./Base/LoginToggle.svelte"
+    import LoginButton from "./Base/LoginButton.svelte"
+    import CopyrightPanel from "./BigComponents/CopyrightPanel"
+    import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
+    import ModalRight from "./Base/ModalRight.svelte"
+    import { Utils } from "../Utils"
+    import Hotkeys from "./Base/Hotkeys"
+    import { VariableUiElement } from "./Base/VariableUIElement"
+    import SvelteUIElement from "./Base/SvelteUIElement"
+    import OverlayToggle from "./BigComponents/OverlayToggle.svelte"
+    import LevelSelector from "./BigComponents/LevelSelector.svelte"
+    import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
+    import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
+    import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
+    import type { RasterLayerPolygon } from "../Models/RasterLayers"
+    import { AvailableRasterLayers } from "../Models/RasterLayers"
+    import RasterLayerOverview from "./Map/RasterLayerOverview.svelte"
+    import IfHidden from "./Base/IfHidden.svelte"
+    import { onDestroy } from "svelte"
+    import MapillaryLink from "./BigComponents/MapillaryLink.svelte"
+    import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
+    import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte"
+    import StateIndicator from "./BigComponents/StateIndicator.svelte"
+    import ShareScreen from "./BigComponents/ShareScreen.svelte"
+    import UploadingImageCounter from "./Image/UploadingImageCounter.svelte"
+    import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
+    import Cross from "../assets/svg/Cross.svelte"
+    import Summary from "./BigComponents/Summary.svelte"
+    import LanguagePicker from "./InputElement/LanguagePicker.svelte"
+    import Mastodon from "../assets/svg/Mastodon.svelte"
+    import Bug from "../assets/svg/Bug.svelte"
+    import Liberapay from "../assets/svg/Liberapay.svelte"
+    import OpenJosm from "./Base/OpenJosm.svelte"
+    import Min from "../assets/svg/Min.svelte"
+    import Plus from "../assets/svg/Plus.svelte"
+    import Filter from "../assets/svg/Filter.svelte"
+    import Add from "../assets/svg/Add.svelte"
+    import Statistics from "../assets/svg/Statistics.svelte"
+    import Community from "../assets/svg/Community.svelte"
+    import Download from "../assets/svg/Download.svelte"
+    import Share from "../assets/svg/Share.svelte"
+    import Favourites from "./Favourites/Favourites.svelte"
+    import ImageOperations from "./Image/ImageOperations.svelte"
 
-  export let state: ThemeViewState
+    export let state: ThemeViewState
     let layout = state.layout
 
     let maplibremap: UIEventSource<MlMap> = state.map
     let selectedElement: UIEventSource<Feature> = state.selectedElement
     let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer
 
-  let currentZoom = state.mapProperties.zoom;
-  let showCrosshair = state.userRelatedState.showCrosshair;
-  let arrowKeysWereUsed = state.mapProperties.lastKeyNavigation;
-  let centerFeatures = state.closestFeatures.features;
-  const selectedElementView = selectedElement.map(
-    (selectedElement) => {
-      // Svelte doesn't properly reload some of the legacy UI-elements
-      // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
-      // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
-      const layer = selectedLayer.data;
-      if (selectedElement === undefined || layer === undefined) {
-        return undefined;
-      }
+    let currentZoom = state.mapProperties.zoom
+    let showCrosshair = state.userRelatedState.showCrosshair
+    let arrowKeysWereUsed = state.mapProperties.lastKeyNavigation
+    let centerFeatures = state.closestFeatures.features
+    const selectedElementView = selectedElement.map(
+        (selectedElement) => {
+            // Svelte doesn't properly reload some of the legacy UI-elements
+            // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
+            // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
+            const layer = selectedLayer.data
+            if (selectedElement === undefined || layer === undefined) {
+                return undefined
+            }
 
             if (!(layer.tagRenderings?.length > 0) || layer.title === undefined) {
                 return undefined
@@ -131,6 +132,7 @@
             rasterLayerName = l.properties.name
         }),
     )
+    let previewedImage = state.previewedImage
 </script>
 
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
@@ -236,7 +238,8 @@
       <div class="pointer-events-auto interactive p-1">
         {#each $centerFeatures as feat, i (feat.properties.id)}
           <div class="flex">
-          <b>{i+1}.</b><Summary {state} feature={feat}/>
+            <b>{i + 1}.</b>
+            <Summary {state} feature={feat} />
           </div>
         {/each}
       </div>
@@ -280,6 +283,19 @@
     </div>
   {/if}
 </LoginToggle>
+
+<If condition={state.previewedImage.map(i => i!==undefined)}>
+  <FloatOver on:close={() => state.previewedImage.setData(undefined)} extraClasses="">
+    <div
+      slot="close-button"
+      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded-full hover:bg-white bg-white/50 transition-colors duration-200"
+      on:click={() => previewedImage.setData(undefined)}
+    >
+      <XCircleIcon />
+    </div>
+    <ImageOperations image={$previewedImage} />
+  </FloatOver>
+</If>
 
 <If
   condition={selectedElementView.map(
@@ -495,12 +511,14 @@
 
       <div class="flex" slot="title2">
         <HeartIcon class="h-6 w-6" />
-        <Tr t={Translations.t.favouritePoi.tab}/>
+        <Tr t={Translations.t.favouritePoi.tab} />
       </div>
 
       <div class="flex flex-col m-2" slot="content2">
-        <h3> <Tr t={Translations.t.favouritePoi.title}/></h3>
-        <Favourites {state}/>
+        <h3>
+          <Tr t={Translations.t.favouritePoi.title} />
+        </h3>
+        <Favourites {state} />
       </div>
       <div class="flex" slot="title3">
         <Community class="h-6 w-6" />

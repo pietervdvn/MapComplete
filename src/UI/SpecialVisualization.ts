@@ -18,6 +18,7 @@ import { RasterLayerPolygon } from "../Models/RasterLayers"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { OsmTags } from "../Models/OsmFeature"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
+import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 
 /**
  * The state needed to render a special Visualisation.
@@ -84,6 +85,8 @@ export interface SpecialVisualizationState {
     readonly availableLayers: Store<RasterLayerPolygon[]>
 
     readonly imageUploadManager: ImageUploadManager
+
+    readonly previewedImage: UIEventSource<ProvidedImage>
 }
 
 export interface SpecialVisualization {

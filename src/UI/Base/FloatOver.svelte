@@ -1,15 +1,18 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte"
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { twMerge } from "tailwind-merge"
 
   /**
    * The slotted element will be shown on top, with a lower-opacity border
    */
   const dispatch = createEventDispatcher<{ close }>()
+  
+  export let extraClasses = "p-4 md:p-6"
 </script>
 
 <div
-  class="absolute top-0 right-0 h-screen w-screen p-4 md:p-6"
+  class={twMerge("absolute top-0 right-0 h-screen w-screen", extraClasses)}
   style="background-color: #00000088; z-index: 20"
   on:click={() => {
     dispatch("close")
@@ -33,9 +36,9 @@
 
 <style>
   .content {
-    height: calc(100vh - 2rem);
+    height: 100%;
     border-radius: 0.5rem;
-    overflow-x: auto;
+    overflow-x: hidden;
     box-shadow: 0 0 1rem #00000088;
   }
 </style>

@@ -1,21 +1,22 @@
 import { SlideShow } from "./SlideShow"
-import { Store } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import DeleteImage from "./DeleteImage"
-import { AttributedImage } from "./AttributedImage"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "../Input/Toggle"
-import ImageProvider from "../../Logic/ImageProviders/ImageProvider"
+import ImageProvider, { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Feature } from "geojson"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import AttributedImage from "./AttributedImage.svelte"
 
 export class ImageCarousel extends Toggle {
     constructor(
         images: Store<{ id:string, key: string; url: string; provider: ImageProvider }[]>,
         tags: Store<any>,
-        state: { osmConnection?: OsmConnection; changes?: Changes; layout: LayoutConfig },
+        state: { osmConnection?: OsmConnection; changes?: Changes; layout: LayoutConfig, previewedImage?: UIEventSource<ProvidedImage> },
         feature: Feature
     ) {
         const uiElements = images.map(
@@ -23,7 +24,7 @@ export class ImageCarousel extends Toggle {
                 const uiElements: BaseUIElement[] = []
                 for (const url of imageURLS) {
                     try {
-                        let image = new AttributedImage(url, feature)
+                        let image: BaseUIElement = new SvelteUIElement(AttributedImage, {image: url})
 
                         if (url.key !== undefined) {
                             image = new Combine([
@@ -36,6 +37,7 @@ export class ImageCarousel extends Toggle {
                         image
                             .SetClass("w-full block")
                             .SetStyle("min-width: 50px; background: grey;")
+                            .onClick(() => state.previewedImage.setData(url))
                         uiElements.push(image)
                     } catch (e) {
                         console.error("Could not generate image element for", url.url, "due to", e)

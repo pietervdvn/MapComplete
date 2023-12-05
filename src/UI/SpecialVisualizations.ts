@@ -61,8 +61,6 @@ import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
 import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
 import FediverseValidator from "./InputElement/Validators/FediverseValidator"
 import SendEmail from "./Popup/SendEmail.svelte"
-import NearbyImages from "./Popup/NearbyImages.svelte"
-import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
 import UploadImage from "./Image/UploadImage.svelte"
 import { Imgur } from "../Logic/ImageProviders/Imgur"
 import Constants from "../Models/Constants"
@@ -82,6 +80,8 @@ import OpenJosm from "./Base/OpenJosm.svelte"
 import MarkAsFavourite from "./Popup/MarkAsFavourite.svelte"
 import MarkAsFavouriteMini from "./Popup/MarkAsFavouriteMini.svelte"
 import NextChangeViz from "./OpeningHours/NextChangeViz.svelte"
+import NearbyImages from "./Image/NearbyImages.svelte"
+import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests

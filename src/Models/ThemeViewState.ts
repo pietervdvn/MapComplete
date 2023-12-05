@@ -59,6 +59,7 @@ import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { Imgur } from "../Logic/ImageProviders/Imgur"
 import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
+import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 
 /**
  *
@@ -113,6 +114,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly geolocation: GeoLocationHandler
 
     readonly imageUploadManager: ImageUploadManager
+    readonly previewedImage = new UIEventSource<ProvidedImage>(undefined)
 
     readonly addNewPoint: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
@@ -475,6 +477,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             () => {
                 this.selectedElement.setData(undefined)
                 this.guistate.closeAll()
+                this.previewedImage.setData(undefined)
                 this.focusOnMap()
             }
         )

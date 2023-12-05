@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Store } from "../../Logic/UIEventSource"
-  import type { OsmTags } from "../../Models/OsmFeature"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import type { P4CPicture } from "../../Logic/Web/NearbyImagesSearch"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import { AttributedImage } from "../Image/AttributedImage"
-  import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
-  import LinkImageAction from "../../Logic/Osm/Actions/LinkImageAction"
-  import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
-  import { Tag } from "../../Logic/Tags/Tag"
-  import { GeoOperations } from "../../Logic/GeoOperations"
-  import type { Feature } from "geojson"
-  import Translations from "../i18n/Translations"
-  import SpecialTranslation from "./TagRendering/SpecialTranslation.svelte"
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+    import { Store } from "../../Logic/UIEventSource"
+    import type { OsmTags } from "../../Models/OsmFeature"
+    import type { SpecialVisualizationState } from "../SpecialVisualization"
+    import type { P4CPicture } from "../../Logic/Web/NearbyImagesSearch"
+    import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
+    import LinkImageAction from "../../Logic/Osm/Actions/LinkImageAction"
+    import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
+    import { Tag } from "../../Logic/Tags/Tag"
+    import { GeoOperations } from "../../Logic/GeoOperations"
+    import type { Feature } from "geojson"
+    import Translations from "../i18n/Translations"
+    import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+    import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
+    import AttributedImage from "./AttributedImage.svelte"
+    import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
 
-  export let tags: Store<OsmTags>
+    export let tags: Store<OsmTags>
   export let lon: number
   export let lat: number
   export let state: SpecialVisualizationState
@@ -28,12 +28,12 @@
 
   const t = Translations.t.image.nearby
   const c = [lon, lat]
-  let attributedImage = new AttributedImage({
-    url: image.thumbUrl ?? image.pictureUrl,
-    provider: AllImageProviders.byName(image.provider),
-    date: new Date(image.date),
+  const providedImage: ProvidedImage = {
+      url: image.thumbUrl ?? image.pictureUrl,
+      provider: AllImageProviders.byName(image.provider),
+      date: new Date(image.date),
       id: Object.values(image.osmTags)[0]
-  }, feature)
+  }
   let distance = Math.round(
     GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c)
   )
@@ -64,7 +64,7 @@
 </script>
 
 <div class="flex w-fit shrink-0 flex-col">
-  <ToSvelte construct={attributedImage.SetClass("h-48 w-fit")} />
+  <AttributedImage image={providedImage} />
   {#if linkable}
     <label>
       <input bind:checked={isLinked} type="checkbox" />

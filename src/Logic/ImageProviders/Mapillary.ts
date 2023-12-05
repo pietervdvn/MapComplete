@@ -60,8 +60,8 @@ export class Mapillary extends ImageProvider {
     } = undefined, zoom: number = 17, pKey?: string) {
         const params = {
             focus: pKey === undefined ? "map" : "photo",
-            lat: location.lat,
-            lng: location.lon,
+            lat: location?.lat,
+            lng: location?.lon,
             z: location === undefined ? undefined : Math.max((zoom ?? 2) - 1, 1),
             pKey,
         }
