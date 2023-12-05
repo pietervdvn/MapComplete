@@ -199,11 +199,14 @@ export default class PointRenderingConfig extends WithContextLoader {
             anchorH = -iconH / 2
         }
 
-        const icon = new SvelteUIElement(DynamicMarker, {
-            marker: this.marker,
-            rotation: this.rotation,
-            tags,
-        }).SetClass("w-full h-full")
+        const icon =
+            this.marker?.length > 0
+                ? new SvelteUIElement(DynamicMarker, {
+                      marker: this.marker,
+                      rotation: this.rotation,
+                      tags,
+                  }).SetClass("w-full h-full")
+                : undefined
         let badges = undefined
         if (options?.includeBadges ?? true) {
             badges = this.GetBadges(tags, options?.metatags)
@@ -223,13 +226,13 @@ export default class PointRenderingConfig extends WithContextLoader {
         const css = this.cssDef?.GetRenderValue(tags.data)?.txt
         const cssClasses = this.cssClasses?.GetRenderValue(tags.data)?.txt
 
-        let label = this.GetLabel(tags)
+        let label = this.GetLabel(tags, icon === undefined)
 
         let htmlEl: BaseUIElement
         if (icon === undefined && label === undefined) {
             htmlEl = undefined
         } else if (icon === undefined) {
-            htmlEl = new Combine([label])
+            htmlEl = label
         } else if (label === undefined) {
             htmlEl = new Combine([iconAndBadges])
         } else {
@@ -308,7 +311,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         ).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
     }
 
-    private GetLabel(tags: Store<Record<string, string>>): BaseUIElement {
+    private GetLabel(tags: Store<Record<string, string>>, labelOnly: boolean): BaseUIElement {
         if (this.label === undefined) {
             return undefined
         }
@@ -324,6 +327,8 @@ export default class PointRenderingConfig extends WithContextLoader {
                     ?.SetClass(cssClassesLabel)
                 if (cssLabel) {
                     label.SetStyle(cssLabel)
+                } else if (labelOnly) {
+                    return label.SetStyle("transform: translate(-50%, -50%);")
                 }
                 return new Combine([label]).SetClass("flex flex-col items-center")
             })
