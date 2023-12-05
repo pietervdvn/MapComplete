@@ -149,12 +149,13 @@
         if (v === undefined || v === "") {
           delete tags.data[k];
         } else {
-          freeformInput.setData(undefined);
+          tags.data[k] = v
         }
         feedback.setData(undefined);
       }
+      tags.ping()
+      return;
     }
-
     dispatch("saved", { config, applied: selectedTags });
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
       theme: tags.data["_orig_theme"] ?? state.layout.id,
