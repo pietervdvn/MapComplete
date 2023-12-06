@@ -869,49 +869,49 @@
                             }
                         }
                     },
-                    "1": {
+                    "2": {
                         "options": {
                             "0": {
                                 "question": "Wykonane przez współautora {search}"
                             }
                         }
                     },
-                    "2": {
+                    "3": {
                         "options": {
                             "0": {
                                 "question": "<b>Nie</b> wykonane przez współautora {search}"
                             }
                         }
                     },
-                    "3": {
+                    "4": {
                         "options": {
                             "0": {
                                 "question": "Stworzone przed {search}"
                             }
                         }
                     },
-                    "4": {
+                    "5": {
                         "options": {
                             "0": {
                                 "question": "Stworzone po {search}"
                             }
                         }
                     },
-                    "5": {
+                    "6": {
                         "options": {
                             "0": {
                                 "question": "Język użytkownika (kod iso) {search}"
                             }
                         }
                     },
-                    "6": {
+                    "7": {
                         "options": {
                             "0": {
                                 "question": "Wykonane z hostem {search}"
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "options": {
                             "0": {
                                 "question": "Zestaw zmian dodał co najmniej jedno zdjęcie"

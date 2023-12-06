@@ -900,49 +900,49 @@
                             }
                         }
                     },
-                    "1": {
+                    "2": {
                         "options": {
                             "0": {
                                 "question": "Vytvořil přispěvatel {search}"
                             }
                         }
                     },
-                    "2": {
+                    "3": {
                         "options": {
                             "0": {
                                 "question": "<b>Není</b> vytvořeno přispěvatelem {search}"
                             }
                         }
                     },
-                    "3": {
+                    "4": {
                         "options": {
                             "0": {
                                 "question": "Vytvořeno před {search}"
                             }
                         }
                     },
-                    "4": {
+                    "5": {
                         "options": {
                             "0": {
                                 "question": "Vytvořeno po {search}"
                             }
                         }
                     },
-                    "5": {
+                    "6": {
                         "options": {
                             "0": {
                                 "question": "Jazyk uživatele (iso-kód) {search}"
                             }
                         }
                     },
-                    "6": {
+                    "7": {
                         "options": {
                             "0": {
                                 "question": "Vytvořeno pomocí hostitele {search}"
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "options": {
                             "0": {
                                 "question": "Sada změn přidala alespoň jeden obrázek"

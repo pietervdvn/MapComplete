@@ -869,49 +869,49 @@
                             }
                         }
                     },
-                    "1": {
+                    "2": {
                         "options": {
                             "0": {
                                 "question": "Hecho por el colaborador {search}"
                             }
                         }
                     },
-                    "2": {
+                    "3": {
                         "options": {
                             "0": {
                                 "question": "<b>No</b> hecho por el colaborador {search}"
                             }
                         }
                     },
-                    "3": {
+                    "4": {
                         "options": {
                             "0": {
                                 "question": "Hecho antes de {search}"
                             }
                         }
                     },
-                    "4": {
+                    "5": {
                         "options": {
                             "0": {
                                 "question": "Hecho después de {search}"
                             }
                         }
                     },
-                    "5": {
+                    "6": {
                         "options": {
                             "0": {
                                 "question": "Use idioma (ISO-code) {search}"
                             }
                         }
                     },
-                    "6": {
+                    "7": {
                         "options": {
                             "0": {
                                 "question": "Hecho con el host {search}"
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "options": {
                             "0": {
                                 "question": "El conjunto de cambios ha añadido al menos una imagen"

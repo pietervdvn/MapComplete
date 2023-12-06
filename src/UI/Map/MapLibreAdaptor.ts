@@ -257,13 +257,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const h = map.getContainer().getBoundingClientRect().height
 
         let dpi = map.getPixelRatio()
-        console.log("Sizes:", {
-            dpi,
-            w,
-            h,
-            origSizeW: drawOn.style.width,
-            origSizeH: drawOn.style.height,
-        })
         // The 'css'-size stays constant...
         drawOn.style.width = w + "px"
         drawOn.style.height = h + "px"
@@ -303,12 +296,44 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         map.resize()
     }
 
+    private async drawElement(
+        drawOn: CanvasRenderingContext2D,
+        element: HTMLElement,
+        rescaleIcons: number,
+        pixelRatio: number
+    ) {
+        const marker = element
+        const style = marker.style.transform
+        let x = marker.getBoundingClientRect().x
+        let y = marker.getBoundingClientRect().y
+        marker.style.transform = ""
+        const offset = style.match(/translate\(([-0-9]+)%, ?([-0-9]+)%\)/)
+
+        const w = marker.style.width
+        // Force a wider view for icon badges
+        marker.style.width = marker.getBoundingClientRect().width * 4 + "px"
+        const svgSource = await htmltoimage.toSvg(marker)
+        const img = await MapLibreAdaptor.createImage(svgSource)
+        marker.style.width = w
+        if (offset && rescaleIcons !== 1) {
+            const [_, __, relYStr] = offset
+            const relY = Number(relYStr)
+            y += img.height * (relY / 100)
+        }
+
+        x *= pixelRatio
+        y *= pixelRatio
+
+        try {
+            drawOn.drawImage(img, x, y, img.width * rescaleIcons, img.height * rescaleIcons)
+        } catch (e) {
+            console.log("Could not draw image because of", e)
+        }
+    }
+
     /**
      * Draws the markers of the current map on the specified canvas.
      * The DPIfactor is used to calculate the correct position, whereas 'rescaleIcons' can be used to make the icons smaller
-     * @param drawOn
-     * @param rescaleIcons
-     * @private
      */
     private async drawMarkers(
         drawOn: CanvasRenderingContext2D,
@@ -322,6 +347,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
 
         const container = map.getContainer()
+        const pixelRatio = map.getPixelRatio()
 
         function isDisplayed(el: Element) {
             const r1 = el.getBoundingClientRect()
@@ -337,44 +363,24 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const markers = Array.from(container.getElementsByClassName("marker"))
         for (let i = 0; i < markers.length; i++) {
             const marker = <HTMLElement>markers[i]
-            if (!isDisplayed(marker)) {
-                continue
-            }
-
-            const pixelRatio = map.getPixelRatio()
-            let x = marker.getBoundingClientRect().x
-            let y = marker.getBoundingClientRect().y
+            const labels = Array.from(marker.getElementsByClassName("marker-label"))
             const style = marker.style.transform
-            marker.style.transform = ""
-            const offset = style.match(/translate\(([-0-9]+)%, ?([-0-9]+)%\)/)
 
-            console.log("MARKER", marker)
-            const w = marker.style.width
-            // Force a wider view for icon badges
-            marker.style.width = marker.getBoundingClientRect().width * 4 + "px"
-            const svgSource = await htmltoimage.toSvg(marker)
-            const img = await MapLibreAdaptor.createImage(svgSource)
-            marker.style.width = w
-            if (offset && rescaleIcons !== 1) {
-                const [_, relXStr, relYStr] = offset
-                const relX = Number(relXStr)
-                const relY = Number(relYStr)
-                console.log("Moving icon with", relX, relY, img.width, img.height, x, y)
-                // x += img.width * (relX / 100)
-                y += img.height * (relY / 100)
+            if (isDisplayed(marker)) {
+                await this.drawElement(drawOn, marker, rescaleIcons, pixelRatio)
             }
 
-            x *= pixelRatio
-            y *= pixelRatio
+            for (const label of labels) {
+                if (isDisplayed(label)) {
+                    console.log("Exporting label", label)
+                    await this.drawElement(drawOn, <HTMLElement>label, rescaleIcons, pixelRatio)
+                }
+            }
 
             if (progress) {
                 progress.setData({ current: i, total: markers.length })
             }
-            try {
-                drawOn.drawImage(img, x, y, img.width * rescaleIcons, img.height * rescaleIcons)
-            } catch (e) {
-                console.log("Could not draw image because of", e)
-            }
+
             marker.style.transform = style
         }
     }

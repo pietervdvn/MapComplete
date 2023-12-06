@@ -323,7 +323,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                 const label = self.label
                     ?.GetRenderValue(tags)
                     ?.Subs(tags)
-                    ?.SetClass("block center absolute text-center ")
+                    ?.SetClass("block center absolute text-center marker-label")
                     ?.SetClass(cssClassesLabel)
                 if (cssLabel) {
                     label.SetStyle(cssLabel)
