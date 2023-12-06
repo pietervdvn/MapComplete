@@ -82,6 +82,8 @@ export class Imgur extends ImageProvider implements ImageUploader {
      * const expected = new LicenseInfo()
      * expected.licenseShortName = "CC-BY 4.0"
      * expected.artist = "Pieter Vander Vennet"
+     * expected.date = new Date(1655052078000)
+     * expected.views = 2
      * licenseInfo // => expected
      */
     public async DownloadAttribution(url: string): Promise<LicenseInfo> {
