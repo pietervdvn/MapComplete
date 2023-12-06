@@ -16,7 +16,8 @@ export NODE_OPTIONS="--max-old-space-size=16384"
 npm run generate:editor-layer-index &&
 npm run prep:layeroverview &&
 npm run generate && # includes a single "refresh:layeroverview". Resetting the files is unnecessary as they are not in there in the first place
-npm run refresh:layeroverview # run refresh:layeroverview a second time to propagate all calls
+npm run refresh:layeroverview && # run refresh:layeroverview a second time to propagate all calls
+npm run generate:layouts
 
 if [ $? -ne 0 ]; then
     echo "ERROR - stopping the build"
