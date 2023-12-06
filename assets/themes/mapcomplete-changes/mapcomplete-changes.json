@@ -591,7 +591,6 @@
               ],
               "question": {
                 "en": "Theme name does <b>not</b> contain {search}"
-
               }
             }
           ]
@@ -614,7 +613,6 @@
                 "es": "Hecho por el colaborador {search}",
                 "nl": "Gemaakt door bijdrager {search}",
                 "pl": "Wykonane przez współautora {search}"
-                
               }
             }
           ]
@@ -637,7 +635,6 @@
                 "es": "<b>No</b> hecho por el colaborador {search}",
                 "nl": "<b>Niet</b> gemaakt door bijdrager {search}",
                 "pl": "<b>Nie</b> wykonane przez współautora {search}"
-              
               }
             }
           ]
@@ -661,7 +658,6 @@
                 "es": "Hecho antes de {search}",
                 "nl": "Gemaakt voor {search}",
                 "pl": "Stworzone przed {search}"
-               
               }
             }
           ]
@@ -685,7 +681,6 @@
                 "es": "Hecho después de {search}",
                 "nl": "Gemaakt na {search}",
                 "pl": "Stworzone po {search}"
-              
               }
             }
           ]
@@ -700,7 +695,8 @@
                   "name": "search"
                 }
               ],
-              "question": {  "en": "User language (iso-code) {search}",
+              "question": {
+                "en": "User language (iso-code) {search}",
                 "ca": "Idioma de l'usuari (codi iso) {search}",
                 "cs": "Jazyk uživatele (iso-kód) {search}",
                 "de": "Benutzersprache (ISO-Code) {search}",
@@ -708,7 +704,6 @@
                 "fr": "Langage utilisateur (code-ISO) {search}",
                 "nl": "De taal van de bijdrager is {search}",
                 "pl": "Język użytkownika (kod iso) {search}"
-                
               }
             }
           ]
@@ -724,7 +719,6 @@
                 }
               ],
               "question": {
-
                 "en": "Made with host {search}",
                 "ca": "Fet amb l'amfitrió {search}",
                 "cs": "Vytvořeno pomocí hostitele {search}",
@@ -732,7 +726,6 @@
                 "es": "Hecho con el host {search}",
                 "nl": "Gemaakt met host {search}",
                 "pl": "Wykonane z hostem {search}"
-               
               }
             }
           ]
@@ -751,7 +744,6 @@
                 "fr": "Le groupe de modifications a ajouté au moins une image",
                 "nl": "Changeset bevat minstens één afbeelding",
                 "pl": "Zestaw zmian dodał co najmniej jedno zdjęcie"
-              
               }
             }
           ]
