@@ -56,9 +56,9 @@
       multiple={true}
       on:submit={(e) => handleFiles(e.detail)}
     >
-      <div class="flex items-center">
+      <div class="flex items-center" >
         {#if image !== undefined}
-          <img src={image} />
+          <img src={image} aria-hidden="true" />
         {:else}
           <Camera_plus class="block h-12 w-12 p-1 text-4xl" />
         {/if}
@@ -70,15 +70,15 @@
       </div>
     </FileSelector>
     <div class="text-sm">
-      <Tr t={t.respectPrivacy} />
-      <a
-        class="cursor-pointer"
+      <button
+        class="link small "
         on:click={() => {
           state.guistate.openUsersettings("picture-license")
         }}
       >
         <Tr t={t.currentLicense.Subs({ license: $licenseStore })} />
-      </a>
+      </button>
+        <Tr t={t.respectPrivacy} />
     </div>
   </div>
 </LoginToggle>

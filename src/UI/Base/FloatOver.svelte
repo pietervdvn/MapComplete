@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte"
+  import { createEventDispatcher, onMount } from "svelte";
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { twMerge } from "tailwind-merge"
 
@@ -9,6 +9,12 @@
   const dispatch = createEventDispatcher<{ close }>()
   
   export let extraClasses = "p-4 md:p-6"
+  
+  let mainContent: HTMLElement
+  onMount(() => {
+    console.log("Mounting floatover")
+    mainContent?.focus()
+  })
 </script>
 
 <div
@@ -18,7 +24,7 @@
     dispatch("close")
   }}
 >
-  <div class="content normal-background" on:click|stopPropagation={() => {}}>
+  <div bind:this={mainContent} class="content normal-background" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">
       <slot />
     </div>

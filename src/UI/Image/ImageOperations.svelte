@@ -7,9 +7,10 @@ import ImageAttribution from "./ImageAttribution.svelte"
 import ImagePreview from "./ImagePreview.svelte"
 import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
 import { Utils } from "../../Utils"
+import { twMerge } from "tailwind-merge";
 
 export let image: ProvidedImage
-
+export let clss: string = undefined
 async function download() {
     const response = await fetch(image.url)
     const blob = await response.blob()
@@ -20,7 +21,7 @@ async function download() {
 
 </script>
 
-<div class="w-full h-full relative">
+<div class={twMerge("w-full h-full relative", clss)}>
   <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
     <ImagePreview image={image} />
   </div>

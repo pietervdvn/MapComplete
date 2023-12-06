@@ -97,7 +97,10 @@ export abstract class Store<T> implements Readable<T> {
     abstract map<J>(f: (t: T) => J): Store<J>
     abstract map<J>(f: (t: T) => J, extraStoresToWatch: Store<any>[]): Store<J>
 
-    public mapD<J>(f: (t: Exclude<T, undefined | null>) => J, extraStoresToWatch?: Store<any>[]): Store<J> {
+    public mapD<J>(
+        f: (t: Exclude<T, undefined | null>) => J,
+        extraStoresToWatch?: Store<any>[]
+    ): Store<J> {
         return this.map((t) => {
             if (t === undefined) {
                 return undefined
@@ -105,7 +108,7 @@ export abstract class Store<T> implements Readable<T> {
             if (t === null) {
                 return null
             }
-            return f(<Exclude<T, undefined | null>> t)
+            return f(<Exclude<T, undefined | null>>t)
         }, extraStoresToWatch)
     }
 
@@ -201,24 +204,36 @@ export abstract class Store<T> implements Readable<T> {
         mapped.addCallbackAndRun((newEventSource) => {
             if (newEventSource === null) {
                 sink.setData(null)
-            } else if (newEventSource === undefined) {
+                return
+            }
+            if (newEventSource === undefined) {
                 sink.setData(undefined)
-            } else if (!seenEventSources.has(newEventSource)) {
-                seenEventSources.add(newEventSource)
-                newEventSource.addCallbackAndRun((resultData) => {
-                    if (mapped.data === newEventSource) {
-                        sink.setData(resultData)
-                    }
-                })
-            } else {
+                return
+            }
+            if (seenEventSources.has(newEventSource)) {
                 // Already seen, so we don't have to add a callback, just update the value
                 sink.setData(newEventSource.data)
+                return
             }
+            seenEventSources.add(newEventSource)
+            newEventSource.addCallbackAndRun((resultData) => {
+                if (mapped.data === newEventSource) {
+                    sink.setData(resultData)
+                }
+            })
         })
 
         return sink
     }
 
+    public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>): Store<X> {
+        return this.bind((t) => {
+            if (t === undefined || t === null) {
+                return <undefined | null>t
+            }
+            return f(<Exclude<T, undefined | null>>t)
+        })
+    }
     public stabilized(millisToStabilize): Store<T> {
         if (Utils.runningFromConsole) {
             return this
@@ -771,7 +786,10 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * Monoidal map which results in a read-only store. 'undefined' is passed 'as is'
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
      */
-    public mapD<J>(f: (t: Exclude<T, undefined | null>) => J, extraSources: Store<any>[] = []): Store<J | undefined> {
+    public mapD<J>(
+        f: (t: Exclude<T, undefined | null>) => J,
+        extraSources: Store<any>[] = []
+    ): Store<J | undefined> {
         return new MappedStore(
             this,
             (t) => {
@@ -781,11 +799,13 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
                 if (t === null) {
                     return null
                 }
-                return f(<Exclude<T, undefined | null>> t)
+                return f(<Exclude<T, undefined | null>>t)
             },
             extraSources,
             this._callbacks,
-            (this.data === undefined || this.data === null) ?(<undefined | null> this.data) : f(<any> this.data)
+            this.data === undefined || this.data === null
+                ? <undefined | null>this.data
+                : f(<any>this.data)
         )
     }
 

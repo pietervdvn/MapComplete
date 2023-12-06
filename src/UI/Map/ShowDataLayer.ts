@@ -410,8 +410,13 @@ class LineRenderingLayer {
                 this._listenerInstalledOn.add(id)
                 tags.addCallbackAndRunD((properties) => {
                     // Make sure to use 'getSource' here, the layer names are different!
-                    if (map.getSource(this._layername) === undefined) {
-                        return true
+                    try {
+                        if (map.getSource(this._layername) === undefined) {
+                            return true
+                        }
+                    } catch (e) {
+                        console.debug("Could not fetch source for", this._layername)
+                        return
                     }
                     map.setFeatureState(
                         { source: this._layername, id },

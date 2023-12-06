@@ -23,7 +23,6 @@
   export let state: ThemeViewState
   let layout = state.layout
   let selectedElement = state.selectedElement
-  let selectedLayer = state.selectedLayer
 
   let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   let searchEnabled = false
@@ -116,7 +115,6 @@
               }}
               perLayer={state.perLayer}
               {selectedElement}
-              {selectedLayer}
               {triggerSearch}
             />
           </div>

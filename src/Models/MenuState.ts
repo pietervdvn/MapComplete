@@ -79,6 +79,11 @@ export class MenuState {
                 this.highlightedUserSetting.setData(undefined)
             }
         })
+        this.menuViewTab.addCallbackD((tab) => {
+            if (tab !== "settings") {
+                this.highlightedUserSetting.setData(undefined)
+            }
+        })
         this.themeViewTab.addCallbackAndRun((tab) => {
             if (tab !== "filters") {
                 this.highlightedLayerInFilters.setData(undefined)

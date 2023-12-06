@@ -4,7 +4,7 @@ import { RegexTag } from "../src/Logic/Tags/RegexTag"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import { BBox } from "../src/Logic/BBox"
 import * as fs from "fs"
-import { writeFileSync } from "fs"
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
 import { Feature } from "geojson"
 import ScriptUtils from "./ScriptUtils"
 import { Imgur } from "../src/Logic/ImageProviders/Imgur"
@@ -179,6 +179,32 @@ export default class GenerateImageAnalysis extends Script {
                 f++
             }
         }
+    }
+
+    async downloadViews(datapath: string): Promise<void> {
+        const { allImages, imageSource } = this.loadImageUrls(datapath)
+        console.log("Detected", allImages.size, "images")
+        const results: [string, number][] = []
+        const today = new Date().toISOString().substring(0, "YYYY-MM-DD".length)
+        const viewDir = datapath + "/views_" + today
+        if (!existsSync(viewDir)) {
+            mkdirSync(viewDir)
+        }
+
+        for (const image of Array.from(allImages)) {
+            const cachedView = viewDir + "/" + image.replace(/\\/g, "_")
+            let attribution: LicenseInfo
+            if (existsSync(cachedView)) {
+                attribution = JSON.parse(readFileSync(cachedView, "utf8"))
+            } else {
+                attribution = await Imgur.singleton.DownloadAttribution(image)
+                writeFileSync(cachedView, JSON.stringify(attribution))
+            }
+            results.push([image, attribution.views])
+        }
+        const targetpath = datapath + "/views.csv"
+        console.log("Writing views to", targetpath)
+        fs.writeFileSync(targetpath, results.map((r) => r.join(",")).join("\n"))
     }
 
     async downloadImage(url: string, imagePath: string): Promise<boolean> {
@@ -391,6 +417,7 @@ export default class GenerateImageAnalysis extends Script {
         await this.downloadData(datapath, cached)
 
         await this.downloadMetadata(datapath)
+        await this.downloadViews(datapath)
         await this.downloadAllImages(datapath, imageBackupPath)
         this.analyze(datapath)
     }

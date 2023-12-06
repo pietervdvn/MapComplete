@@ -351,6 +351,7 @@
             "if": {
               "and": [
                 "seasonal!=no",
+                "seasonal~*",
                 {
                   "or": [
                     {

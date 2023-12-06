@@ -777,10 +777,6 @@ video {
   float: left;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -791,6 +787,10 @@ video {
 
 .m-0 {
   margin: 0px;
+}
+
+.m-8 {
+  margin: 2rem;
 }
 
 .m-2 {
@@ -1188,6 +1188,10 @@ video {
   max-height: 6rem;
 }
 
+.max-h-64 {
+  max-height: 16rem;
+}
+
 .max-h-7 {
   max-height: 1.75rem;
 }
@@ -1266,6 +1270,10 @@ video {
   width: 3.5rem;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -1281,10 +1289,6 @@ video {
 
 .w-48 {
   width: 12rem;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .max-w-full {
@@ -1683,6 +1687,10 @@ video {
 
 .border-dotted {
   border-style: dotted;
+}
+
+.border-none {
+  border-style: none;
 }
 
 .border-black {
@@ -2232,6 +2240,11 @@ body {
   background-color: var(--background-color);
   color: var(--foreground-color);
   font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.focusable {
+  /* Not a 'real' class, but rather an indication to FloatOver and ModalRight to, when they open, grab the focus */
+  border: 1px solid red
 }
 
 svg,

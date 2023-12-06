@@ -136,7 +136,6 @@
 
   function onSave() {
     if (selectedTags === undefined) {
-      console.log("SelectedTags is undefined, ignoring 'onSave'-event");
       return;
     }
     if (layer === undefined || (layer?.source === null && layer.id !== "favourite")) {

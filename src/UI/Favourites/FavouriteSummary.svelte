@@ -27,7 +27,6 @@
   }
 
   function select() {
-    state.selectedLayer.setData(favConfig);
     state.selectedElement.setData(feature);
     center();
   }

@@ -13,7 +13,7 @@
     $: {
         if (panzoomEl) {
             panzoomInstance = panzoom(panzoomEl, { bounds: true,
-                boundsPadding: 1,
+                boundsPadding: 0.49,
                 minZoom: 1,
                 maxZoom: 25,
                 initialZoom: 1.2

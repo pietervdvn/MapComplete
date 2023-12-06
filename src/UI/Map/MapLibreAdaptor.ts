@@ -302,19 +302,23 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         rescaleIcons: number,
         pixelRatio: number
     ) {
-        const marker = element
-        const style = marker.style.transform
-        let x = marker.getBoundingClientRect().x
-        let y = marker.getBoundingClientRect().y
-        marker.style.transform = ""
+        const style = element.style.transform
+        let x = element.getBoundingClientRect().x
+        let y = element.getBoundingClientRect().y
+        element.style.transform = ""
         const offset = style.match(/translate\(([-0-9]+)%, ?([-0-9]+)%\)/)
 
-        const w = marker.style.width
+        const w = element.style.width
+        const h = element.style.height
+
         // Force a wider view for icon badges
-        marker.style.width = marker.getBoundingClientRect().width * 4 + "px"
-        const svgSource = await htmltoimage.toSvg(marker)
+        element.style.width = element.getBoundingClientRect().width * 4 + "px"
+        element.style.height = element.getBoundingClientRect().height + "px"
+        const svgSource = await htmltoimage.toSvg(element)
         const img = await MapLibreAdaptor.createImage(svgSource)
-        marker.style.width = w
+        element.style.width = w
+        element.style.height = h
+
         if (offset && rescaleIcons !== 1) {
             const [_, __, relYStr] = offset
             const relY = Number(relYStr)

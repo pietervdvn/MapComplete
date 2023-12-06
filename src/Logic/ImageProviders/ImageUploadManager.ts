@@ -108,7 +108,7 @@ export class ImageUploadManager {
             description,
             file,
             targetKey,
-            tags.data["_orig_theme"]
+            tags?.data?.["_orig_theme"]
         )
         if (!isNaN(Number(featureId))) {
             // This is a map note

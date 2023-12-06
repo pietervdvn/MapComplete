@@ -5,14 +5,13 @@
   import TagRenderingMapping from "./TagRenderingMapping.svelte"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import type { Feature } from "geojson"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../../Logic/UIEventSource";
   import { onDestroy } from "svelte"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twMerge } from "tailwind-merge"
 
   export let tags: UIEventSource<Record<string, string> | undefined>
   let _tags: Record<string, string>
-  let trs: { then: Translation; icon?: string; iconClass?: string }[]
 
   export let state: SpecialVisualizationState
   export let selectedElement: Feature
@@ -23,22 +22,18 @@
   if (config === undefined) {
     throw "Config is undefined in tagRenderingAnswer"
   }
-  onDestroy(
-    tags.addCallbackAndRun((tags) => {
-      _tags = tags
-      trs = Utils.NoNull(config?.GetRenderValues(_tags))
-    })
-  )
+  let trs : Store<{then: Translation, icon?: string, iconClass?: string}[]> = tags.mapD(tags => Utils.NoNull(config?.GetRenderValues(tags)))
+  
 </script>
 
-{#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties(_tags))}
+{#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties($tags))}
   <div class={twMerge("link-underline inline-block w-full", config?.classes, extraClasses)}>
-    {#if trs.length === 1}
-      <TagRenderingMapping mapping={trs[0]} {tags} {state} {selectedElement} {layer} />
+    {#if $trs.length === 1}
+      <TagRenderingMapping mapping={$trs[0]} {tags} {state} {selectedElement} {layer} />
     {/if}
-    {#if trs.length > 1}
+    {#if $trs.length > 1}
       <ul>
-        {#each trs as mapping}
+        {#each $trs as mapping}
           <li>
             <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer} />
           </li>

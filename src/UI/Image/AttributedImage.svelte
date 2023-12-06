@@ -13,11 +13,12 @@
     }
 
     let imgEl: HTMLImageElement
+    export let imgClass: string = undefined
 </script>
 
 
 <div class="relative">
-  <img bind:this={imgEl} src={image.url} on:error={(event) => {
+  <img bind:this={imgEl} src={image.url} class={imgClass ?? ""} on:error={(event) => {
     if(fallbackImage){
       imgEl.src = fallbackImage
     }

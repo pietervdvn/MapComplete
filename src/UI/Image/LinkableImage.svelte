@@ -64,7 +64,9 @@
 </script>
 
 <div class="flex w-fit shrink-0 flex-col">
-  <AttributedImage image={providedImage} />
+  <div on:click={() => state.previewedImage.setData(providedImage)}>
+    <AttributedImage image={providedImage} imgClass="max-h-64 w-auto"/>
+  </div>
   {#if linkable}
     <label>
       <input bind:checked={isLinked} type="checkbox" />

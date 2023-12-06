@@ -21,6 +21,7 @@ interface TagsUpdaterState {
     osmObjectDownloader: OsmObjectDownloader
     indexedFeatures: IndexedFeatureSource
 }
+
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
         "timestamp",
@@ -40,6 +41,84 @@ export default class SelectedElementTagsUpdater {
             // We only have to do this once...
             return true
         })
+    }
+
+    public static applyUpdate(latestTags: OsmTags, id: string, state: TagsUpdaterState) {
+        try {
+            const leftRightSensitive = state.layout.isLeftRightSensitive()
+
+            if (leftRightSensitive) {
+                SimpleMetaTagger.removeBothTagging(latestTags)
+            }
+
+            const pendingChanges = state.changes.pendingChanges.data
+                .filter((change) => change.type + "/" + change.id === id)
+                .filter((change) => change.tags !== undefined)
+
+            for (const pendingChange of pendingChanges) {
+                const tagChanges = pendingChange.tags
+                for (const tagChange of tagChanges) {
+                    const key = tagChange.k
+                    const v = tagChange.v
+                    if (v === undefined || v === "") {
+                        delete latestTags[key]
+                    } else {
+                        latestTags[key] = v
+                    }
+                }
+            }
+
+            // With the changes applied, we merge them onto the upstream object
+            let somethingChanged = false
+            const currentTagsSource = state.featureProperties.getStore(id)
+            if (currentTagsSource === undefined) {
+                console.warn("No tags store found for", id, "cannot update tags")
+                return
+            }
+            const currentTags = currentTagsSource.data
+            for (const key in latestTags) {
+                let osmValue = latestTags[key]
+
+                if (typeof osmValue === "number") {
+                    osmValue = "" + osmValue
+                }
+
+                const localValue = currentTags[key]
+                if (localValue !== osmValue) {
+                    somethingChanged = true
+                    currentTags[key] = osmValue
+                }
+            }
+
+            for (const currentKey in currentTags) {
+                if (currentKey.startsWith("_")) {
+                    continue
+                }
+                if (SelectedElementTagsUpdater.metatags.has(currentKey)) {
+                    continue
+                }
+                if (currentKey in latestTags) {
+                    continue
+                }
+                console.log("Removing key as deleted upstream", currentKey)
+                delete currentTags[currentKey]
+                somethingChanged = true
+            }
+
+            if (somethingChanged) {
+                console.log(
+                    "Detected upstream changes to the object " +
+                        id +
+                        " when opening it, updating..."
+                )
+                currentTagsSource.ping()
+            } else {
+                console.debug("Fetched latest tags for ", id, "but detected no changes")
+            }
+            return currentTags
+        } catch (e) {
+            console.error("Updating the tags of selected element ", id, "failed due to", e)
+        }
     }
 
     private installCallback(state: TagsUpdaterState) {
@@ -89,78 +168,5 @@ export default class SelectedElementTagsUpdater {
                 console.warn("Could not update", id, " due to", e)
             }
         })
-    }
-    public static applyUpdate(latestTags: OsmTags, id: string, state: TagsUpdaterState) {
-        try {
-            const leftRightSensitive = state.layout.isLeftRightSensitive()
-
-            if (leftRightSensitive) {
-                SimpleMetaTagger.removeBothTagging(latestTags)
-            }
-
-            const pendingChanges = state.changes.pendingChanges.data
-                .filter((change) => change.type + "/" + change.id === id)
-                .filter((change) => change.tags !== undefined)
-
-            for (const pendingChange of pendingChanges) {
-                const tagChanges = pendingChange.tags
-                for (const tagChange of tagChanges) {
-                    const key = tagChange.k
-                    const v = tagChange.v
-                    if (v === undefined || v === "") {
-                        delete latestTags[key]
-                    } else {
-                        latestTags[key] = v
-                    }
-                }
-            }
-
-            // With the changes applied, we merge them onto the upstream object
-            let somethingChanged = false
-            const currentTagsSource = state.featureProperties.getStore(id)
-            const currentTags = currentTagsSource.data
-            for (const key in latestTags) {
-                let osmValue = latestTags[key]
-
-                if (typeof osmValue === "number") {
-                    osmValue = "" + osmValue
-                }
-
-                const localValue = currentTags[key]
-                if (localValue !== osmValue) {
-                    somethingChanged = true
-                    currentTags[key] = osmValue
-                }
-            }
-
-            for (const currentKey in currentTags) {
-                if (currentKey.startsWith("_")) {
-                    continue
-                }
-                if (SelectedElementTagsUpdater.metatags.has(currentKey)) {
-                    continue
-                }
-                if (currentKey in latestTags) {
-                    continue
-                }
-                console.log("Removing key as deleted upstream", currentKey)
-                delete currentTags[currentKey]
-                somethingChanged = true
-            }
-
-            if (somethingChanged) {
-                console.log(
-                    "Detected upstream changes to the object " +
-                        id +
-                        " when opening it, updating..."
-                )
-                currentTagsSource.ping()
-            } else {
-                console.debug("Fetched latest tags for ", id, "but detected no changes")
-            }
-            return currentTags
-        } catch (e) {
-            console.error("Updating the tags of selected element ", id, "failed due to", e)
-        }
     }
 }

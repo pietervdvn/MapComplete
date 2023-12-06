@@ -475,9 +475,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
             { nomod: "Escape", onUp: true },
             Translations.t.hotkeyDocumentation.closeSidebar,
             () => {
+                if (this.previewedImage.data !== undefined) {
+                    this.previewedImage.setData(undefined)
+                    return
+                }
                 this.selectedElement.setData(undefined)
                 this.guistate.closeAll()
-                this.previewedImage.setData(undefined)
                 this.focusOnMap()
             }
         )
