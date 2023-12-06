@@ -13,10 +13,10 @@ mkdir dist/assets 2> /dev/null
 export NODE_OPTIONS="--max-old-space-size=16384"
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
-# npm run generate:editor-layer-index &&
-# npm run generate &&
-# npm run refresh:layeroverview && # an extra refersh is needed, as the favourites layer won't have expanded icons otherwise
-# npm run generate:layouts
+npm run generate:editor-layer-index &&
+npm run generate &&
+npm run refresh:layeroverview && # an extra refersh is needed, as the favourites layer won't have expanded icons otherwise
+npm run generate:layouts
 
 if [ $? -ne 0 ]; then
     echo "ERROR - stopping the build"
