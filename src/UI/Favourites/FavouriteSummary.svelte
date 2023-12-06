@@ -51,7 +51,7 @@
 </script>
 
 {#if favLayer !== undefined}
-<div class="px-1 my-1 border-2 border-dashed border-gray-300 rounded grid grid-cols-2 items-center no-weblate">
+<div class="px-1 my-1 border-2 border-dashed border-gray-300 rounded flex justify-between flex-wrap grid-cols-2 items-center no-weblate">
   <button class="cursor-pointer ml-1 m-0 link justify-self-start" on:click={() => select()}>
     <TagRenderingAnswer config={titleConfig} extraClasses="underline" layer={favConfig} selectedElement={feature}
                         {tags} />
