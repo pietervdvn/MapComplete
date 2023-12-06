@@ -126,6 +126,16 @@
               "nl": [
                 "(basis|lagere |middelbare |secondaire| secundaire)?school"
               ],
+              "en": [
+                "east",
+                "north",
+                "northeast",
+                "northwest",
+                "south",
+                "southeast",
+                "southwest",
+                "west"
+              ],
               "fr": [
                 "allée (des |de la |de l'|de |du |d')?",
                 "autoroute (des |de la |de l'|de |du |d')?",
@@ -207,11 +217,22 @@
               "en": [
                 "avenue",
                 "boulevard",
+                "circle",
                 "church",
+                "drive",
+                "expressway",
+                "freeway",
+                "highway",
+                "lane",
+                "parkway",
                 "path",
                 "plaza",
+                "road",
                 "square",
-                "street"
+                "street",
+                "terrace",
+                "trail",
+                "turnpike"
               ]
             }
           }
