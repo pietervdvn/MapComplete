@@ -1,25 +1,4 @@
 <script>
-  export let color = "#000000"
+export let color = "#000000"
 </script>
-
-<svg
-  {...$$restProps}
-  on:click
-  on:mouseover
-  on:mouseenter
-  on:mouseleave
-  on:keydown
-  xmlns="http://www.w3.org/2000/svg"
-  width="375px"
-  height="375px"
-  viewBox="0 0 375 375"
-  version="1.1"
->
-  <g id="surface1">
-    <path
-      style="fill:{color};"
-      class="selectable"
-      d="M 375 187.5 C 375 291.054688 291.054688 375 187.5 375 C 83.945312 375 0 291.054688 0 187.5 C 0 83.945312 83.945312 0 187.5 0 C 291.054688 0 375 83.945312 375 187.5 Z M 375 187.5 "
-    />
-  </g>
-</svg>
+ <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">     <g id="surface1">         <path                 style="fill:{color};"                 class="selectable"               d="M 375 187.5 C 375 291.054688 291.054688 375 187.5 375 C 83.945312 375 0 291.054688 0 187.5 C 0 83.945312 83.945312 0 187.5 0 C 291.054688 0 375 83.945312 375 187.5 Z M 375 187.5 "/>     </g> </svg> 

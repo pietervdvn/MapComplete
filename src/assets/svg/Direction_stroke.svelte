@@ -1,40 +1,4 @@
 <script>
-  export let color = "#000000"
+export let color = "#000000"
 </script>
-
-<svg
-  {...$$restProps}
-  on:click
-  on:mouseover
-  on:mouseenter
-  on:mouseleave
-  on:keydown
-  xmlns="http://www.w3.org/2000/svg"
-  width="375px"
-  height="375px"
-  viewBox="0 0 375 375"
-  version="1.1"
->
-  <g id="surface1">
-    <path
-      style="fill: none !important;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(97.254902%,100%,96.078432%);stroke-opacity:1;stroke-miterlimit:4;"
-      d="M -177.48351 -16.993714 C -177.484166 101.48875 -226.288922 214.739751 -312.411923 296.10684 C -398.528411 377.467771 -514.363074 419.770216 -632.651731 413.060164 "
-      transform="matrix(-0.316636,-0.299423,0.299423,-0.316636,0,0)"
-    />
-    <path
-      style="fill: none !important;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;"
-      d="M 743.478328 134.561833 L 430.253662 430.253662 L 117.002105 134.508051 "
-      transform="matrix(0.435789,0,0,0.435789,0,0)"
-    />
-    <path
-      style="fill: none !important;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
-      d="M -177.48351 -16.993714 C -177.484166 101.48875 -226.288922 214.739751 -312.411923 296.10684 C -398.528411 377.467771 -514.363074 419.770216 -632.651731 413.060164 "
-      transform="matrix(-0.316636,-0.299423,0.299423,-0.316636,0,0)"
-    />
-    <path
-      style="fill: none !important;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
-      d="M 743.478328 134.561833 L 430.253662 430.253662 L 117.002105 134.508051 "
-      transform="matrix(0.435789,0,0,0.435789,0,0)"
-    />
-  </g>
-</svg>
+ <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">   <g id="surface1">     <path style="fill: none !important;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(97.254902%,100%,96.078432%);stroke-opacity:1;stroke-miterlimit:4;" d="M -177.48351 -16.993714 C -177.484166 101.48875 -226.288922 214.739751 -312.411923 296.10684 C -398.528411 377.467771 -514.363074 419.770216 -632.651731 413.060164 " transform="matrix(-0.316636,-0.299423,0.299423,-0.316636,0,0)"/>     <path style="fill: none !important;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:4;" d="M 743.478328 134.561833 L 430.253662 430.253662 L 117.002105 134.508051 " transform="matrix(0.435789,0,0,0.435789,0,0)"/>     <path style="fill: none !important;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M -177.48351 -16.993714 C -177.484166 101.48875 -226.288922 214.739751 -312.411923 296.10684 C -398.528411 377.467771 -514.363074 419.770216 -632.651731 413.060164 " transform="matrix(-0.316636,-0.299423,0.299423,-0.316636,0,0)"/>     <path style="fill: none !important;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 743.478328 134.561833 L 430.253662 430.253662 L 117.002105 134.508051 " transform="matrix(0.435789,0,0,0.435789,0,0)"/>   </g> </svg>
