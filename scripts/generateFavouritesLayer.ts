@@ -13,6 +13,7 @@ import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
+import Icon from "../src/UI/Map/Icon.svelte"
 
 export class GenerateFavouritesLayer extends Script {
     private readonly layers: LayerConfigJson[] = []
@@ -164,6 +165,27 @@ export class GenerateFavouritesLayer extends Script {
     }
 
     private addTitleIcons(proto: LayerConfigJson) {
+        let iconsLibrary: Map<string, TagRenderingConfigJson[]> = new Map<
+            string,
+            TagRenderingConfigJson[]
+        >()
+        const path = "./src/assets/generated/layers/icons.json"
+        if (existsSync(path)) {
+            const config = <LayerConfigJson>JSON.parse(readFileSync(path, "utf8"))
+            for (const tagRendering of config.tagRenderings) {
+                const qtr = <QuestionableTagRenderingConfigJson>tagRendering
+                const id = qtr.id
+                if (id) {
+                    iconsLibrary.set(id, [qtr])
+                }
+                for (const label of tagRendering["labels"] ?? []) {
+                    if (!iconsLibrary.has(label)) {
+                        iconsLibrary.set(label, [])
+                    }
+                    iconsLibrary.get(label).push(qtr)
+                }
+            }
+        }
         proto.titleIcons = []
         const seenTitleIcons = new Set<string>()
         for (const layer of this.layers) {
@@ -176,7 +198,7 @@ export class GenerateFavouritesLayer extends Script {
                 }
                 if (titleIcon.id === "rating") {
                     if (!seenTitleIcons.has("rating")) {
-                        proto.titleIcons.unshift("icons.rating")
+                        proto.titleIcons.unshift(...iconsLibrary.get("rating"))
                         seenTitleIcons.add("rating")
                     }
                     continue
@@ -189,7 +211,7 @@ export class GenerateFavouritesLayer extends Script {
                 proto.titleIcons.push(titleIcon)
             }
         }
-        proto.titleIcons.push("icons.defaults")
+        proto.titleIcons.push(...(iconsLibrary.get("defaults") ?? []))
     }
 
     private addTitle(proto: LayerConfigJson) {

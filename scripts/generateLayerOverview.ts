@@ -722,7 +722,9 @@ class LayerOverviewUtils extends Script {
                 ConversionContext.construct([themePath], ["PrepareLayer"])
             )
             try {
-                themeFile = new PrepareTheme(convertState).convertStrict(
+                themeFile = new PrepareTheme(convertState, {
+                    skipDefaultLayers: true,
+                }).convertStrict(
                     themeFile,
                     ConversionContext.construct([themePath], ["PrepareLayer"])
                 )
