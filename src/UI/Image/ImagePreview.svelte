@@ -15,7 +15,8 @@
             panzoomInstance = panzoom(panzoomEl, { bounds: true,
                 boundsPadding: 1,
                 minZoom: 1,
-                maxZoom: 25
+                maxZoom: 25,
+                initialZoom: 1.2
             })
         } else {
             panzoomInstance?.dispose()
@@ -24,4 +25,4 @@
 
 </script>
 
-<img bind:this={panzoomEl} src={image.url}/>
+<img bind:this={panzoomEl} src={image.url} class="w-fit h-fit"/>

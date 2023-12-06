@@ -24,7 +24,7 @@ async function download() {
   <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
     <ImagePreview image={image} />
   </div>
-  <div class="absolute bottom-0 left-0 w-full pointer-events-none flex justify-between items-end">
+  <div class="absolute bottom-0 left-0 w-full pointer-events-none flex flex-wrap justify-between items-end">
     <div class="pointer-events-auto w-fit opacity-50 hover:opacity-100 transition-colors duration-200">
       <ImageAttribution image={image} />
     </div>
