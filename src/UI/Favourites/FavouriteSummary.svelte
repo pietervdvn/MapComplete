@@ -13,8 +13,8 @@
   let tags = state.featureProperties.getStore(properties.id) ?? new ImmutableStore(properties);
 
   const favLayer = state.layerState.filteredLayers.get("favourite");
-  const favConfig = favLayer.layerDef;
-  const titleConfig = favConfig.title;
+  const favConfig = favLayer?.layerDef;
+  const titleConfig = favConfig?.title;
 
   function center() {
     const [lon, lat] = GeoOperations.centerpointCoordinates(feature);
@@ -50,6 +50,7 @@
 
 </script>
 
+{#if favLayer !== undefined}
 <div class="px-1 my-1 border-2 border-dashed border-gray-300 rounded grid grid-cols-2 items-center no-weblate">
   <button class="cursor-pointer ml-1 m-0 link justify-self-start" on:click={() => select()}>
     <TagRenderingAnswer config={titleConfig} extraClasses="underline" layer={favConfig} selectedElement={feature}
@@ -81,3 +82,4 @@
     </div>
   </div>
 </div>
+{/if}

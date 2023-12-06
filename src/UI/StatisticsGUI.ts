@@ -6,7 +6,7 @@ import { VariableUiElement } from "./Base/VariableUIElement"
 import Loading from "./Base/Loading"
 import { Utils } from "../Utils"
 import Combine from "./Base/Combine"
-import { StackedRenderingChart } from "./BigComponents/TagRenderingChart"
+import TagRenderingChart, { StackedRenderingChart } from "./BigComponents/TagRenderingChart"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { FixedUiElement } from "./Base/FixedUiElement"
@@ -150,11 +150,29 @@ class StatsticsForOverviewFile extends Combine {
                                     new Combine([
                                         new Title(tr.question ?? tr.id).SetClass("p-2"),
                                         total > 1 ? total + " unique value" : undefined,
+                                        new Title("By number of changesets", 4).SetClass("p-2"),
                                         new StackedRenderingChart(tr, <any>overview._meta, {
                                             period: diffInDays <= 367 ? "day" : "month",
                                             groupToOtherCutoff:
                                                 total > 50 ? 25 : total > 10 ? 3 : 0,
-                                        }).SetStyle("width: 100%; height: 600px"),
+                                        }).SetStyle("width: 75%; height: 600px"),
+                                        new TagRenderingChart(<any>overview._meta, tr, {
+                                            groupToOtherCutoff:
+                                                total > 50 ? 25 : total > 10 ? 3 : 0,
+                                            chartType: "doughnut",
+                                            chartclasses: "w-8 h-8",
+                                            sort: true,
+                                        }).SetStyle("width: 25rem"),
+                                        new Title("By number of modifications", 4).SetClass("p-2"),
+                                        new StackedRenderingChart(
+                                            tr,
+                                            <any>Utils.Clone(overview._meta),
+                                            {
+                                                period: diffInDays <= 367 ? "day" : "month",
+                                                groupToOtherCutoff: total > 50 ? 10 : 0,
+                                                sumFields: valuesToSum,
+                                            }
+                                        ).SetStyle("width: 100%; height: 600px"),
                                     ]).SetClass("block border-2 border-subtle p-2 m-2 rounded-xl")
                                 )
                             } catch (e) {

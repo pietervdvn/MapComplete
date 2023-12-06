@@ -392,8 +392,10 @@ class LayerOverviewUtils extends Script {
         const mcChangesPath = "./assets/themes/mapcomplete-changes/mapcomplete-changes.json"
         if (
             (recompiledThemes.length > 0 &&
-                !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes") &&
-                args.indexOf("--generate-change-map") >= 0) ||
+                !(
+                    recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes"
+                )) ||
+            args.indexOf("--generate-change-map") >= 0 ||
             !existsSync(mcChangesPath)
         ) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
