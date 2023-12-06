@@ -634,6 +634,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const rangeFLayer: FilteredLayer = this.layerState.filteredLayers.get("range")
         const rangeIsDisplayed = rangeFLayer?.isDisplayed
         if (
+            rangeFLayer &&
             !QueryParameters.wasInitialized(FilteredLayer.queryParameterKey(rangeFLayer.layerDef))
         ) {
             rangeIsDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
