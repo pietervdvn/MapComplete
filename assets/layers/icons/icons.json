@@ -164,7 +164,8 @@
       ],
       "render": {
         "*": "{favourite_icon()}"
-      }
+      },
+      "metacondition": "_loggedIn=true"
     },
     {
       "id": "osmlink",
