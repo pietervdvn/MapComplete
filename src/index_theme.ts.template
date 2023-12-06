@@ -2,7 +2,7 @@ import ThemeViewState from "./src/Models/ThemeViewState"
 import SvelteUIElement from "./src/UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./src/UI/ThemeViewGUI.svelte"
 import LayoutConfig from "./src/Models/ThemeConfig/LayoutConfig";
-import MetaTagging frobuild.m "./src/Logic/MetaTagging";
+import MetaTagging from "./src/Logic/MetaTagging";
 import { FixedUiElement } from "./src/UI/Base/FixedUiElement";
 
 function webgl_support() {
