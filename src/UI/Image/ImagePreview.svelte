@@ -1,10 +1,9 @@
 <script lang="ts">
-    import { Store } from "../../Logic/UIEventSource"
 
     /**
      * The image preview allows to drag and zoom in to the image
      */
-    import * as panzoom from "panzoom"
+    import panzoom from "panzoom"
     import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
 
     export let image : ProvidedImage
@@ -25,5 +24,4 @@
 
 </script>
 
-<img bind:this={panzoomEl} src={image.url} />
- 
+<img bind:this={panzoomEl} src={image.url}/>
