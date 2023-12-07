@@ -25,4 +25,4 @@
 
 </script>
 
-<img bind:this={panzoomEl} src={image.url} class="w-fit h-fit"/>
+<img bind:this={panzoomEl} src={image.url_hd ?? image.url} class="w-full h-auto"/>

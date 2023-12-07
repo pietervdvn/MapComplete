@@ -54,10 +54,14 @@ export class Mapillary extends ImageProvider {
         return false
     }
 
-    static createLink(location: {
-        lon: number,
-        lat: number
-    } = undefined, zoom: number = 17, pKey?: string) {
+    static createLink(
+        location: {
+            lon: number
+            lat: number
+        } = undefined,
+        zoom: number = 17,
+        pKey?: string
+    ) {
         const params = {
             focus: pKey === undefined ? "map" : "photo",
             lat: location?.lat,
@@ -66,7 +70,11 @@ export class Mapillary extends ImageProvider {
             pKey,
         }
         const baselink = `https://www.mapillary.com/app/?`
-        const paramsStr = Utils.NoNull(Object.keys(params).map(k => params[k] === undefined ? undefined : k + "=" + params[k]))
+        const paramsStr = Utils.NoNull(
+            Object.keys(params).map((k) =>
+                params[k] === undefined ? undefined : k + "=" + params[k]
+            )
+        )
         return baselink + paramsStr.join("&")
     }
 
@@ -97,10 +105,13 @@ export class Mapillary extends ImageProvider {
         return ["https://mapillary.com", "https://www.mapillary.com", "https://graph.mapillary.com"]
     }
 
-    SourceIcon(id: string, location?: {
-        lon: number,
-        lat: number
-    }): BaseUIElement {
+    SourceIcon(
+        id: string,
+        location?: {
+            lon: number
+            lat: number
+        }
+    ): BaseUIElement {
         const icon = Svg.mapillary_svg()
         if (!id) {
             return icon
@@ -130,15 +141,18 @@ export class Mapillary extends ImageProvider {
         const metadataUrl =
             "https://graph.mapillary.com/" +
             mapillaryId +
-            "?fields=thumb_1024_url&&access_token=" +
+            "?fields=thumb_1024_url,thumb_original_url&access_token=" +
             Constants.mapillary_client_token_v4
         const response = await Utils.downloadJsonCached(metadataUrl, 60 * 60)
         const url = <string>response["thumb_1024_url"]
+        console.log(response)
+        const url_hd = <string>response["thumb_original_url"]
         return {
             id: "" + mapillaryId,
-            url: url,
+            url,
+            url_hd,
             provider: this,
-            key: key,
+            key,
         }
     }
 }
