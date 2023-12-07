@@ -1658,7 +1658,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             }
             const child = <HTMLElement>childs.item(0)
             if (child === null) {
-                console.log("Focussing on child element: no child element found for", el)
                 return undefined
             }
             if (
@@ -1668,7 +1667,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             ) {
                 child.setAttribute("tabindex", "-1")
             }
-            console.log("Focussing on", child)
             child?.focus()
         })
     }

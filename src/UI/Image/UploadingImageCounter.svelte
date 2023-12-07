@@ -13,8 +13,11 @@
   import Loading from "../Base/Loading.svelte"
 
   export let state: SpecialVisualizationState
-  export let tags: Store<OsmTags>
-  export let featureId = tags.data.id
+  export let tags: Store<OsmTags> = undefined
+  export let featureId = tags?.data?.id
+  if(featureId === undefined){
+    throw "No tags or featureID given"
+  }
   export let showThankYou: boolean = true
   const { uploadStarted, uploadFinished, retried, failed } =
     state.imageUploadManager.getCountsFor(featureId)

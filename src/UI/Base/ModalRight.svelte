@@ -2,6 +2,7 @@
   import { createEventDispatcher, onMount } from "svelte";
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
   import { Utils } from "../../Utils";
+  import { trapFocus } from 'trap-focus-svelte'
 
   /**
    * The slotted element will be shown on the right side
@@ -13,13 +14,13 @@
   onMount(() => {
     window.setTimeout(
       () => Utils.focusOnFocusableChild(mainContent), 250
-      
-    )
-  })
+    );
+  });
 </script>
 
 <div
   bind:this={mainContent}
+  use:trapFocus
   class="absolute top-0 right-0 h-screen w-full overflow-y-auto drop-shadow-2xl md:w-6/12 lg:w-5/12 xl:w-4/12"
   style="max-width: 100vw; max-height: 100vh"
 >

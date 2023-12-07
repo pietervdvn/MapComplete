@@ -89,7 +89,7 @@
     
   })
   
-  let selectedLayer: UIEventSource<LayerConfig> = state.selectedElement.mapD(element => state.layout.getMatchingLayer(element.properties));
+  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD(element => state.layout.getMatchingLayer(element.properties));
 
   let currentZoom = state.mapProperties.zoom;
   let showCrosshair = state.userRelatedState.showCrosshair;
@@ -125,7 +125,6 @@
         bounds={state.mapProperties.bounds}
         perLayer={state.perLayer}
         selectedElement={state.selectedElement}
-        {selectedLayer}
       />
     </div>
   </If>
@@ -144,7 +143,6 @@
     {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
       <MapControlButton
         on:click={() => {
-          selectedLayer.setData(currentViewLayer)
           selectedElement.setData(state.currentView.features?.data?.[0])
         }}
       >
@@ -269,7 +267,7 @@
     >
       <XCircleIcon />
     </div>
-    <ImageOperations clss="focusable" image={$previewedImage} />
+    <ImageOperations image={$previewedImage} />
   </FloatOver>
 </If>
 

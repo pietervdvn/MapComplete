@@ -12,7 +12,7 @@ import { twMerge } from "tailwind-merge";
 export let image: ProvidedImage
 export let clss: string = undefined
 async function download() {
-    const response = await fetch(image.url)
+    const response = await fetch(image.url_hd ?? image.url )
     const blob = await response.blob()
     Utils.offerContentsAsDownloadableFile(blob, new URL(image.url).pathname.split("/").at(-1), {
         mimetype: "image/jpg",
@@ -22,11 +22,11 @@ async function download() {
 </script>
 
 <div class={twMerge("w-full h-full relative", clss)}>
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden panzoom-container focusable">
     <ImagePreview image={image} />
   </div>
   <div class="absolute bottom-0 left-0 w-full pointer-events-none flex flex-wrap justify-between items-end">
-    <div class="pointer-events-auto w-fit opacity-50 hover:opacity-100 transition-colors duration-200">
+    <div class="pointer-events-auto w-fit opacity-50 hover:opacity-100 transition-colors duration-200 m-1">
       <ImageAttribution image={image} />
     </div>
 

@@ -40,7 +40,7 @@ import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
-import { Feature, Point } from "geojson"
+import { Feature } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
@@ -48,8 +48,7 @@ import UserProfile from "./BigComponents/UserProfile.svelte"
 import Link from "./Base/Link"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import { OsmTags, WayId } from "../Models/OsmFeature"
-import MoveWizard from "./Popup/MoveWizard"
+import { WayId } from "../Models/OsmFeature"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
@@ -82,6 +81,8 @@ import MarkAsFavouriteMini from "./Popup/MarkAsFavouriteMini.svelte"
 import NextChangeViz from "./OpeningHours/NextChangeViz.svelte"
 import NearbyImages from "./Image/NearbyImages.svelte"
 import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
+import { svelte } from "@sveltejs/vite-plugin-svelte"
+import MoveWizard from "./Popup/MoveWizard.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -515,12 +516,11 @@ export default class SpecialVisualizations {
                         return undefined
                     }
 
-                    return new MoveWizard(
-                        <Feature<Point>>feature,
-                        <UIEventSource<OsmTags>>tagSource,
+                    return new SvelteUIElement(MoveWizard, {
                         state,
-                        layer.allowMove
-                    )
+                        featureToMove: feature,
+                        layer,
+                    })
                 },
             },
             {

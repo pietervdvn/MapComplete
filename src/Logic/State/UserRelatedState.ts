@@ -39,7 +39,7 @@ export default class UserRelatedState {
     public readonly installedUserThemes: Store<string[]>
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
     public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
-    public readonly showCrosshair: UIEventSource<"yes" | undefined>
+    public readonly showCrosshair: UIEventSource<"yes" | "always" | "no" | undefined>
     public readonly fixateNorth: UIEventSource<undefined | "yes">
     public readonly homeLocation: FeatureSource
     /**

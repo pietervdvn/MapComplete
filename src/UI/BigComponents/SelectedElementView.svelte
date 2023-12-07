@@ -14,10 +14,8 @@
   export let selectedElement: Feature
   export let highlightedRendering: UIEventSource<string> = undefined
 
-  let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(selectedElement.properties.id)
-  $: {
-    tags = state.featureProperties.getStore(selectedElement.properties.id)
-  }
+  export let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(selectedElement.properties.id)
+
   let _metatags: Record<string, string>
   onDestroy(
     state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
@@ -28,7 +26,7 @@
   let knownTagRenderings: Store<TagRenderingConfig[]> =  tags.mapD(tgs =>  layer.tagRenderings.filter(
     (config) =>
       (config.condition?.matchesProperties(tgs) ?? true) &&
-      config.metacondition?.matchesProperties({ ...tgs, ..._metatags } ?? true) &&
+      (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true) &&
       config.IsKnown(tgs)
   ))
 </script>
@@ -39,7 +37,7 @@
     <Tr t={Translations.t.general.returnToTheMap} />
   </button>
 {:else}
-  <div class="flex h-full flex-col gap-y-2 overflow-y-auto p-1 px-2 focusable" tabindex="-1">
+  <div class="flex h-full w-full flex-col gap-y-2 overflow-y-auto p-1 px-2 focusable" tabindex="-1">
     {#each $knownTagRenderings as config (config.id)}
       <TagRenderingEditable
         {tags}

@@ -190,19 +190,45 @@ export default class GenerateImageAnalysis extends Script {
         if (!existsSync(viewDir)) {
             mkdirSync(viewDir)
         }
+        const targetpath = datapath + "/views.csv"
 
+        const total = allImages.size
+        let dloaded = 0
+        let skipped = 0
+        let err = 0
         for (const image of Array.from(allImages)) {
-            const cachedView = viewDir + "/" + image.replace(/\\/g, "_")
+            const cachedView = viewDir + "/" + image.replace(/\//g, "_")
             let attribution: LicenseInfo
             if (existsSync(cachedView)) {
                 attribution = JSON.parse(readFileSync(cachedView, "utf8"))
+                skipped++
             } else {
-                attribution = await Imgur.singleton.DownloadAttribution(image)
-                writeFileSync(cachedView, JSON.stringify(attribution))
+                try {
+                    attribution = await Imgur.singleton.DownloadAttribution(image)
+                    await ScriptUtils.sleep(500)
+                    writeFileSync(cachedView, JSON.stringify(attribution))
+                    dloaded++
+                } catch (e) {
+                    err++
+                    continue
+                }
             }
             results.push([image, attribution.views])
+            if (dloaded % 50 === 0) {
+                console.log({
+                    dloaded,
+                    skipped,
+                    total,
+                    err,
+                    progress: Math.round(dloaded + skipped + err),
+                })
+            }
+
+            if ((dloaded + skipped + err) % 100 === 0) {
+                console.log("Writing views to", targetpath)
+                fs.writeFileSync(targetpath, results.map((r) => r.join(",")).join("\n"))
+            }
         }
-        const targetpath = datapath + "/views.csv"
         console.log("Writing views to", targetpath)
         fs.writeFileSync(targetpath, results.map((r) => r.join(",")).join("\n"))
     }
@@ -416,8 +442,8 @@ export default class GenerateImageAnalysis extends Script {
         const imageBackupPath = args[0]
         await this.downloadData(datapath, cached)
 
-        await this.downloadMetadata(datapath)
         await this.downloadViews(datapath)
+        await this.downloadMetadata(datapath)
         await this.downloadAllImages(datapath, imageBackupPath)
         this.analyze(datapath)
     }
