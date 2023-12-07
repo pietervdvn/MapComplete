@@ -1,8 +1,8 @@
 <script lang="ts">
 
   import { UIEventSource } from "../../Logic/UIEventSource";
-  import type { MoveReason } from "./MoveWizard";
-  import { MoveWizardState } from "./MoveWizard";
+  import type { MoveReason } from "./MoveWizardState";
+  import { MoveWizardState } from "./MoveWizardState";
 
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
   import ToSvelte from "../Base/ToSvelte.svelte";
