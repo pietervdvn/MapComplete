@@ -11,7 +11,6 @@
   import { twMerge } from "tailwind-merge"
 
   export let tags: UIEventSource<Record<string, string> | undefined>
-  let _tags: Record<string, string>
 
   export let state: SpecialVisualizationState
   export let selectedElement: Feature

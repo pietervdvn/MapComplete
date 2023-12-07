@@ -1089,12 +1089,12 @@ video {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-32 {
@@ -1172,12 +1172,12 @@ video {
   height: 10rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
 .h-64 {
   height: 16rem;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .max-h-12 {
@@ -2987,10 +2987,6 @@ a.link-underline {
 
   .md\:p-6 {
     padding: 1.5rem;
-  }
-
-  .md\:p-4 {
-    padding: 1rem;
   }
 
   .md\:p-3 {

@@ -3,14 +3,14 @@
   import type { SpecialVisualizationState } from "../SpecialVisualization";
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte";
   import type { Feature } from "geojson";
-  import { ImmutableStore } from "../../Logic/UIEventSource";
+  import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource";
   import { GeoOperations } from "../../Logic/GeoOperations";
   import Center from "../../assets/svg/Center.svelte";
 
   export let feature: Feature;
   let properties: Record<string, string> = feature.properties;
   export let state: SpecialVisualizationState;
-  let tags = state.featureProperties.getStore(properties.id) ?? new ImmutableStore(properties);
+  let tags = state.featureProperties.getStore(properties.id) ?? new UIEventSource<Record<string, string>>(properties);
 
   const favLayer = state.layerState.filteredLayers.get("favourite");
   const favConfig = favLayer?.layerDef;
@@ -52,7 +52,7 @@
 {#if favLayer !== undefined}
 <div class="px-1 my-1 border-2 border-dashed border-gray-300 rounded flex justify-between flex-wrap grid-cols-2 items-center no-weblate">
   <button class="cursor-pointer ml-1 m-0 link justify-self-start" on:click={() => select()}>
-    <TagRenderingAnswer config={titleConfig} extraClasses="underline" layer={favConfig} selectedElement={feature}
+    <TagRenderingAnswer {state} config={titleConfig} extraClasses="underline" layer={favConfig} selectedElement={feature}
                         {tags} />
   </button>
 
@@ -66,7 +66,7 @@
             {tags}
             selectedElement={feature}
             {state}
-            layer={favLayer}
+            layer={favLayer.layerDef}
             extraClasses="h-full justify-center"
           />
         </div>

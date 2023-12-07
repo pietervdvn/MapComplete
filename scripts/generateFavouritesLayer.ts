@@ -13,7 +13,6 @@ import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
-import Icon from "../src/UI/Map/Icon.svelte"
 
 export class GenerateFavouritesLayer extends Script {
     private readonly layers: LayerConfigJson[] = []
@@ -53,6 +52,7 @@ export class GenerateFavouritesLayer extends Script {
 
         return sortedMappings
     }
+
     private addTagRenderings(proto: LayerConfigJson) {
         const blacklistedIds = new Set([
             "images",
@@ -164,7 +164,11 @@ export class GenerateFavouritesLayer extends Script {
         ]
     }
 
-    private addTitleIcons(proto: LayerConfigJson) {
+    /**
+     * const titleIcons = new GenerateFavouritesLayer().generateTitleIcons()
+     * JSON.stringify(titleIcons).indexOf("icons.defaults") // => -1
+     * */
+    private generateTitleIcons(): TagRenderingConfigJson[] {
         let iconsLibrary: Map<string, TagRenderingConfigJson[]> = new Map<
             string,
             TagRenderingConfigJson[]
@@ -186,7 +190,7 @@ export class GenerateFavouritesLayer extends Script {
                 }
             }
         }
-        proto.titleIcons = []
+        let titleIcons: TagRenderingConfigJson[] = []
         const seenTitleIcons = new Set<string>()
         for (const layer of this.layers) {
             for (const titleIcon of layer.titleIcons) {
@@ -198,7 +202,7 @@ export class GenerateFavouritesLayer extends Script {
                 }
                 if (titleIcon.id === "rating") {
                     if (!seenTitleIcons.has("rating")) {
-                        proto.titleIcons.unshift(...iconsLibrary.get("rating"))
+                        titleIcons.unshift(...iconsLibrary.get("rating"))
                         seenTitleIcons.add("rating")
                     }
                     continue
@@ -208,10 +212,11 @@ export class GenerateFavouritesLayer extends Script {
                 }
                 seenTitleIcons.add(titleIcon.id)
                 console.log("Adding ", titleIcon.id)
-                proto.titleIcons.push(titleIcon)
+                titleIcons.push(titleIcon)
             }
         }
-        proto.titleIcons.push(...(iconsLibrary.get("defaults") ?? []))
+        titleIcons.push(...(iconsLibrary.get("defaults") ?? []))
+        return titleIcons
     }
 
     private addTitle(proto: LayerConfigJson) {
@@ -302,14 +307,18 @@ export class GenerateFavouritesLayer extends Script {
         const proto = this.readLayer("favourite/favourite.proto.json")
         this.addTagRenderings(proto)
         this.addTitle(proto)
-        this.addTitleIcons(proto)
+        proto.titleIcons = this.generateTitleIcons()
         const targetContent = JSON.stringify(proto, null, "  ")
         const path = "./assets/layers/favourite/favourite.json"
         if (existsSync(path)) {
             if (readFileSync(path, "utf8") === targetContent) {
-                return // No need to actually write the file, it is identical
+                console.log(
+                    "Already existing favourite layer is identical to the generated one, not writing"
+                )
+                return
             }
         }
+        console.log("Written favourite layer to", path)
         writeFileSync(path, targetContent)
     }
 

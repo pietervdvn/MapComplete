@@ -1,4 +1,5 @@
 import {
+    Bypass,
     Concat,
     Conversion,
     DesugaringContext,
@@ -1252,6 +1253,10 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
             // already added
             return json
         }
+        if (json.id === "favourite") {
+            // handled separately
+            return json
+        }
 
         const specialVis: Exclude<RenderingSpecification, string>[] = <
             Exclude<RenderingSpecification, string>[]
@@ -1266,6 +1271,7 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
         return json
     }
 }
+
 export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
     constructor() {
         super(
