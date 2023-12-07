@@ -77,7 +77,41 @@
       "icon": {
         "class": "w-20 mx-1 flex items-center"
       },
-      "render": "{opening_hours_state()}"
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "seasonal=",
+          "seasonal=no",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "phonelink",
