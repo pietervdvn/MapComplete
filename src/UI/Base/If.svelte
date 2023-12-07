@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store } from "../../Logic/UIEventSource";
   import { onDestroy } from "svelte"
 
   /**
    * For some stupid reason, it is very hard to let {#if} work together with UIEventSources, so we wrap then here
    */
-  export let condition: UIEventSource<boolean>
+  export let condition: Store<boolean>
   let _c = condition.data
   onDestroy(
     condition.addCallback((c) => {
