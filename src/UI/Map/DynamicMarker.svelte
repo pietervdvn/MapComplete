@@ -7,9 +7,9 @@
   /**
    * Renders a 'marker', which consists of multiple 'icons'
    */
-  export let marker: IconConfig[] = config?.marker
+  export let marker: IconConfig[] = config?.marker;
   export let tags: Store<Record<string, string>>
-  export let rotation: TagRenderingConfig
+  export let rotation: TagRenderingConfig = undefined;
   let _rotation = rotation
     ? tags.map((tags) => rotation.GetRenderValue(tags).Subs(tags).txt)
     : new ImmutableStore(0)
@@ -18,7 +18,9 @@
 {#if marker && marker}
   <div class="relative h-full w-full" style={`transform: rotate(${$_rotation})`}>
     {#each marker as icon}
-      <DynamicIcon {icon} {tags} />
+      <div class="absolute top-0 left-0 h-full w-full">
+        <DynamicIcon {icon} {tags} />
+      </div>
     {/each}
   </div>
 {/if}

@@ -1,42 +1,4 @@
 <script>
-  export let color = "#000000"
+export let color = "#000000"
 </script>
-
-<svg
-  {...$$restProps}
-  on:click
-  on:mouseover
-  on:mouseenter
-  on:mouseleave
-  on:keydown
-  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-  width="9"
-  height="9"
-  viewBox="0 0 9 9"
-  version="1.1"
-  sodipodi:docname="cross.svg"
-  inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    style="fill: none !important;stroke:{color};stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"
-    d="M 1,4.5 H 8"
-    id="path941"
-  />
-  <path
-    style="fill: none !important;stroke:{color};stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"
-    d="M 4.5,1 V 4"
-    id="path941"
-  />
-  <path
-    style="fill: none !important;stroke:{color};stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"
-    d="M 4.5,5 V 8"
-    id="path941"
-  />
-  <path
-    style="fill: none !important;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"
-    d="M 3.5,5 v 3.5 h 2 v -3 h 3 v -2 h -3 v -3 h -2 v 3 h -3 v 2 h3"
-    id="path941"
-  />
-</svg>
+ <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"         width="9"         height="9"         viewBox="0 0 9 9"         version="1.1"         sodipodi:docname="cross.svg"         inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"         xmlns="http://www.w3.org/2000/svg" >       <path             style="fill: none !important;stroke:{color};stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"             d="M 1,4.5 H 8"             id="path941"/>     <path             style="fill: none !important;stroke:{color};stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"             d="M 4.5,1 V 4"             id="path941"/>     <path             style="fill: none !important;stroke:{color};stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"             d="M 4.5,5 V 8"             id="path941"/>      <path             style="fill: none !important;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50314403"             d="M 3.5,5 v 3.5 h 2 v -3 h 3 v -2 h -3 v -3 h -2 v 3 h -3 v 2 h3"             id="path941"/> </svg> 

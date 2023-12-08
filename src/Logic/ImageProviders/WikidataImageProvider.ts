@@ -15,7 +15,7 @@ export class WikidataImageProvider extends ImageProvider {
         super()
     }
 
-    public SourceIcon(_?: string): BaseUIElement {
+    public SourceIcon(): BaseUIElement {
         return Svg.wikidata_svg()
     }
 

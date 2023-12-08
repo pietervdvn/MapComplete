@@ -15,13 +15,14 @@ type Tags = Record<string, string>
 export type UploadableTag = Tag | SubstitutingTag | And
 
 export class TagUtils {
-    public static readonly comparators: ReadonlyArray<[string, (a: number, b: number) => boolean]> =
-        [
-            ["<=", (a, b) => a <= b],
-            [">=", (a, b) => a >= b],
-            ["<", (a, b) => a < b],
-            [">", (a, b) => a > b],
-        ]
+    public static readonly comparators: ReadonlyArray<
+        ["<" | ">" | "<=" | ">=", (a: number, b: number) => boolean]
+    > = [
+        ["<=", (a, b) => a <= b],
+        [">=", (a, b) => a >= b],
+        ["<", (a, b) => a < b],
+        [">", (a, b) => a > b],
+    ]
     public static modeDocumentation: Record<
         string,
         { name: string; docs: string; uploadable?: boolean; overpassSupport: boolean }
@@ -322,6 +323,14 @@ export class TagUtils {
             }
         })
         return tags
+    }
+
+    static optimzeJson(json: TagConfigJson): TagConfigJson | boolean {
+        const optimized = TagUtils.Tag(json).optimize()
+        if (optimized === true || optimized === false) {
+            return optimized
+        }
+        return optimized.asJson()
     }
 
     /**
@@ -735,11 +744,10 @@ export class TagUtils {
         const tag = json as string
         for (const [operator, comparator] of TagUtils.comparators) {
             if (tag.indexOf(operator) >= 0) {
-                const split = Utils.SplitFirst(tag, operator)
-
-                let val = Number(split[1].trim())
+                const split = Utils.SplitFirst(tag, operator).map((v) => v.trim())
+                let val = Number(split[1])
                 if (isNaN(val)) {
-                    val = new Date(split[1].trim()).getTime()
+                    val = new Date(split[1]).getTime()
                 }
 
                 const f = (value: string | number | undefined) => {
@@ -762,7 +770,7 @@ export class TagUtils {
                     }
                     return comparator(b, val)
                 }
-                return new ComparingTag(split[0], f, operator + val)
+                return new ComparingTag(split[0], f, operator, "" + val)
             }
         }
 
@@ -859,6 +867,27 @@ export class TagUtils {
             return tag[value]
         }
         return TagUtils.keyCounts.keys[key]
+    }
+
+    public static GetPopularity(tag: TagsFilter): number | undefined {
+        if (tag instanceof And) {
+            return Math.min(...Utils.NoNull(tag.and.map((t) => TagUtils.GetPopularity(t)))) - 1
+        }
+        if (tag instanceof Or) {
+            return Math.max(...Utils.NoNull(tag.or.map((t) => TagUtils.GetPopularity(t)))) + 1
+        }
+        if (tag instanceof Tag) {
+            return TagUtils.GetCount(tag.key, tag.value)
+        }
+        if (tag instanceof RegexTag) {
+            const key = tag.key
+            if (key instanceof RegExp || tag.invert || tag.isNegative()) {
+                return undefined
+            }
+            return TagUtils.GetCount(key)
+        }
+
+        return undefined
     }
 
     private static order(a: TagsFilter, b: TagsFilter, usePopularity: boolean): number {

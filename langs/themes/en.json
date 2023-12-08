@@ -524,7 +524,15 @@
                     }
                 },
                 "title": {
-                    "render": "Cycle node <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Cycle node <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Proposed cycle node <strong>{proposed:rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "Cycle node"
                 }
             },
             "2": {
@@ -903,46 +911,67 @@
                     "1": {
                         "options": {
                             "0": {
-                                "question": "Made by contributor {search}"
+                                "question": "Theme name does <b>not</b> contain {search}"
                             }
                         }
                     },
                     "2": {
                         "options": {
                             "0": {
-                                "question": "<b>Not</b> made by contributor {search}"
+                                "question": "Made by contributor {search}"
                             }
                         }
                     },
                     "3": {
                         "options": {
                             "0": {
-                                "question": "Made before {search}"
+                                "question": "<b>Not</b> made by contributor {search}"
                             }
                         }
                     },
                     "4": {
                         "options": {
                             "0": {
-                                "question": "Made after {search}"
+                                "question": "Made before {search}"
                             }
                         }
                     },
                     "5": {
                         "options": {
                             "0": {
-                                "question": "User language (iso-code) {search}"
+                                "question": "Made after {search}"
                             }
                         }
                     },
                     "6": {
                         "options": {
                             "0": {
-                                "question": "Made with host {search}"
+                                "question": "User language (iso-code) {search}"
                             }
                         }
                     },
                     "7": {
+                        "options": {
+                            "0": {
+                                "question": "Made with host {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset added at least one image"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "Made with host {search}"
+                            }
+                        }
+                    },
+                    "10": {
                         "options": {
                             "0": {
                                 "question": "Changeset added at least one image"
@@ -1199,10 +1228,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Yes, there is a sidewalk on this side of the road"
+                                        "then": "There is a sidewalk on this side of the road"
                                     },
                                     "1": {
-                                        "then": "No, there is no sidewalk to walk on"
+                                        "then": "There is no sidewalk to walk on"
                                     },
                                     "2": {
                                         "then": "There is a separately mapped sidewalk to walk on"
@@ -1422,7 +1451,15 @@
                     }
                 },
                 "title": {
-                    "render": "Walking node <strong>{rwn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Walking node <strong>{rwn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Proposed walking node <strong>{proposed:rwn_ref}</strong>"
+                        }
+                    },
+                    "render": "Walking node"
                 }
             },
             "2": {

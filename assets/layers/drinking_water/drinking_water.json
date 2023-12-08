@@ -30,7 +30,8 @@
         {
           "or": [
             "amenity=drinking_water",
-            "drinking_water=yes"
+            "drinking_water=yes",
+            "disused:amenity=drinking_water"
           ]
         },
         "man_made!=reservoir_covered",
@@ -61,6 +62,11 @@
       "cs": "Pitná voda"
     }
   },
+  "titleIcons": [
+    "icons.defaults",
+    "auto:type",
+    "auto:seasonal"
+  ],
   "pointRendering": [
     {
       "iconBadges": [
@@ -68,10 +74,15 @@
           "if": {
             "or": [
               "operational_status=broken",
-              "operational_status=closed"
+              "operational_status=closed",
+              "disused:amenity=drinking_water"
             ]
           },
           "then": "close:#c33"
+        },
+        {
+          "if": "tourism=artwork",
+          "then": "circle:white;./assets/layers/artwork/artwork.svg"
         }
       ],
       "iconSize": "40,40",
@@ -147,6 +158,10 @@
       "mappings": [
         {
           "if": "operational_status=",
+          "addExtraTags": [
+            "disused:amenity=",
+            "amenity=drinking_water"
+          ],
           "then": {
             "en": "This drinking water works",
             "nl": "Deze drinkwaterfontein werkt",
@@ -189,6 +204,46 @@
         }
       ],
       "id": "Still in use?"
+    },
+    {
+      "id": "type",
+      "question": {
+        "en": "What type of drinking water point is this?",
+        "nl": "Wat voor soort drinkwaterpunt is dit?"
+      },
+      "mappings": [
+        {
+          "if": "fountain=bubbler",
+          "icon": "./assets/layers/drinking_water/bubbler.svg",
+          "then": {
+            "en": "This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button."
+          },
+          "addExtraTags": [
+            "man_made="
+          ]
+        },
+        {
+          "if": "fountain=bottle_refill",
+          "icon": "./assets/layers/drinking_water/bottle.svg",
+          "then": {
+            "en": "This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible."
+          },
+          "addExtraTags": [
+            "man_made=",
+            "bottle=yes"
+          ]
+        },
+        {
+          "if": "man_made=water_tap",
+          "icon": "./assets/layers/drinking_water/tap.svg",
+          "then": {
+            "en": "This is a water tap. The water flows downward and the stream is controlled by a valve or push-button."
+          },
+          "addExtraTags": [
+            "fountain="
+          ]
+        }
+      ]
     },
     {
       "question": {
@@ -235,7 +290,152 @@
           }
         }
       ],
+      "condition": "fountain!=bottle_refill",
       "id": "Bottle refill"
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Is this drinking water point free to use?"
+      },
+      "mappings": [
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "Free to use"
+          }
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "One needs to pay to use this drinking water point"
+          }
+        }
+      ]
+    },
+    {
+      "id": "seasonal",
+      "question": {
+        "en": "Is this drinking water point available all year round?"
+      },
+      "mappings": [
+        {
+          "if": "seasonal=no",
+          "then": {
+            "en": "This drinking water point is available all around the year"
+          }
+        },
+        {
+          "if": "seasonal=summer",
+          "then": {
+            "en": "This drinking water point is only available in summer"
+          }
+        },
+        {
+          "if": "seasonal=spring;summer;autumn",
+          "icon": "./assets/layers/drinking_water/no_winter.svg",
+          "then": {
+            "en": "This drinking water point is closed during the winter"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "questionHint": {
+          "en": "These are the opening hours if the drinking water fountain is operational."
+        },
+        "+mappings": [
+          {
+            "if": {
+              "and": [
+                "seasonal!=no",
+                "seasonal~*",
+                {
+                  "or": [
+                    {
+                      "and": [
+                        "seasonal!~.*winter.*",
+                        "_now:date~....-(12|01|02)-.."
+                      ]
+                    },
+                    {
+                      "and": [
+                        "seasonal!~.*spring.*",
+                        "_now:date~....-(03|04|05)-.."
+                      ]
+                    },
+                    {
+                      "and": [
+                        "seasonal!~.*summer.*",
+                        "_now:date~....-(06|07|08)-.."
+                      ]
+                    },
+                    {
+                      "and": [
+                        "seasonal!~.*autumn.*",
+                        "_now:date~....-(09|10|11)-.."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "then": {
+              "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown."
+            },
+            "hideInAnswer": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bench-artwork",
+      "question": {
+        "en": "Does this drinking water fountain have an artistic element?",
+        "nl": "Heeft dit drinkwaterpunt een geintegreerd kunstwerk?"
+      },
+      "mappings": [
+        {
+          "if": "tourism=artwork",
+          "addExtraTags": [
+            "not:tourism:artwork="
+          ],
+          "then": {
+            "en": "This drinking water point has an integrated artwork",
+            "nl": "Dit drinkwaterpunt heeft een geintegreerd kunstwerk"
+          }
+        },
+        {
+          "if": "not:tourism:artwork=yes",
+          "then": {
+            "en": "This drinking water point does not have an integrated artwork",
+            "nl": "Dit drinkwaterpunt heeft geen geïntegreerd kunstwerk"
+          },
+          "addExtraTags": [
+            "tourism="
+          ]
+        },
+        {
+          "if": "tourism=",
+          "then": {
+            "en": "This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork",
+            "nl": "Dit drinkwaterpunt heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "questionHint": {
+        "en": "E.g. it has an integrated statue or other non-trivial, creative work",
+        "nl": "Bijvoorbeeld een standbeeld of ander, niet-triviaal kunstwerk"
+      }
+    },
+    {
+      "builtin": "artwork.*artwork-question",
+      "override": {
+        "condition": "tourism=artwork"
+      }
     },
     {
       "id": "render-closest-drinking-water",
@@ -292,6 +492,19 @@
           "es": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>",
           "ca": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>",
           "cs": "Jedná se o vodovodní kohoutek nebo vodní čerpadlo s nepitnou vodou.<div class='subtle'>Příkladem jsou vodovodní kohoutky s dešťovou vodou pro zalévání rostlin v okolí</div>"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "amenity=",
+            "man_made=pump",
+            "historic=yes",
+            "drinking_water=no"
+          ]
+        },
+        "then": {
+          "en": "This is a historic, manual water pump where no drinking water can be found"
         }
       }
     ]

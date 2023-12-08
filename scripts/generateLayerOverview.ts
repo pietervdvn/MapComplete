@@ -28,6 +28,7 @@ import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Js
 import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
+import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -382,22 +383,19 @@ class LayerOverviewUtils extends Script {
         )
 
         writeFileSync(
-            "./src/assets/generated/known_themes.json",
-            JSON.stringify({
-                themes: Array.from(sharedThemes.values()),
-            })
-        )
-
-        writeFileSync(
             "./src/assets/generated/known_layers.json",
-            JSON.stringify({ layers: Array.from(sharedLayers.values()) })
+            JSON.stringify({
+                layers: Array.from(sharedLayers.values()).filter((l) => l.id !== "favourite"),
+            })
         )
 
         const mcChangesPath = "./assets/themes/mapcomplete-changes/mapcomplete-changes.json"
         if (
             (recompiledThemes.length > 0 &&
-                !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes") &&
-                args.indexOf("--generate-change-map") >= 0) ||
+                !(
+                    recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes"
+                )) ||
+            args.indexOf("--generate-change-map") >= 0 ||
             !existsSync(mcChangesPath)
         ) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
@@ -426,6 +424,19 @@ class LayerOverviewUtils extends Script {
                 themes: ScriptUtils.getThemeFiles().map((f) => f.parsed),
             },
             ConversionContext.construct([], [])
+        )
+
+        for (const [_, theme] of sharedThemes) {
+            theme.layers = theme.layers.filter(
+                (l) => Constants.added_by_default.indexOf(l["id"]) < 0
+            )
+        }
+
+        writeFileSync(
+            "./src/assets/generated/known_themes.json",
+            JSON.stringify({
+                themes: Array.from(sharedThemes.values()),
+            })
         )
 
         const end = new Date()
@@ -711,7 +722,9 @@ class LayerOverviewUtils extends Script {
                 ConversionContext.construct([themePath], ["PrepareLayer"])
             )
             try {
-                themeFile = new PrepareTheme(convertState).convertStrict(
+                themeFile = new PrepareTheme(convertState, {
+                    skipDefaultLayers: true,
+                }).convertStrict(
                     themeFile,
                     ConversionContext.construct([themePath], ["PrepareLayer"])
                 )
@@ -791,4 +804,5 @@ class LayerOverviewUtils extends Script {
     }
 }
 
+new GenerateFavouritesLayer().run()
 new LayerOverviewUtils().run()

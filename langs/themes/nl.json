@@ -475,7 +475,15 @@
                     }
                 },
                 "title": {
-                    "render": "Fietsknooppunt <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Fietsknooppunt <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Voorgesteld fietsknooppunt <strong>{proposed:rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "Fietsknooppunt"
                 }
             }
         },
@@ -875,49 +883,49 @@
                             }
                         }
                     },
-                    "1": {
+                    "2": {
                         "options": {
                             "0": {
                                 "question": "Gemaakt door bijdrager {search}"
                             }
                         }
                     },
-                    "2": {
+                    "3": {
                         "options": {
                             "0": {
                                 "question": "<b>Niet</b> gemaakt door bijdrager {search}"
                             }
                         }
                     },
-                    "3": {
+                    "4": {
                         "options": {
                             "0": {
                                 "question": "Gemaakt voor {search}"
                             }
                         }
                     },
-                    "4": {
+                    "5": {
                         "options": {
                             "0": {
                                 "question": "Gemaakt na {search}"
                             }
                         }
                     },
-                    "5": {
+                    "6": {
                         "options": {
                             "0": {
                                 "question": "De taal van de bijdrager is {search}"
                             }
                         }
                     },
-                    "6": {
+                    "7": {
                         "options": {
                             "0": {
                                 "question": "Gemaakt met host {search}"
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "options": {
                             "0": {
                                 "question": "Changeset bevat minstens één afbeelding"
@@ -1156,10 +1164,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Ja, er is een stoep aan deze kant van de weg"
+                                        "then": "Er is een stoep aan deze kant van de weg"
                                     },
                                     "1": {
-                                        "then": "Nee, er is geen stoep om op te lopen"
+                                        "then": "Er is geen stoep om op te lopen"
                                     },
                                     "2": {
                                         "then": "Er is een apart ingetekende stoep om op te lopen"
@@ -1424,7 +1432,15 @@
                     }
                 },
                 "title": {
-                    "render": "Wandelknooppunt <strong>{rwn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Wandelknooppunt <strong>{rwn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Voorgesteld wandelknooppunt <strong>{proposed:rwn_ref}</strong>"
+                        }
+                    },
+                    "render": "Wandelknooppunt"
                 }
             }
         },

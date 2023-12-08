@@ -1,45 +1,54 @@
 import known_themes from "../assets/generated/known_themes.json"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import favourite from "../assets/generated/layers/favourite.json"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
+import { AllSharedLayers } from "./AllSharedLayers"
+import Constants from "../Models/Constants"
 
 /**
  * Somewhat of a dictionary, which lazily parses needed themes
  */
 export class AllKnownLayoutsLazy {
-    private readonly dict: Map<string, { data: LayoutConfig } | { func: () => LayoutConfig }> =
-        new Map()
-    constructor() {
+    private readonly raw: Map<string, LayoutConfigJson> = new Map()
+    private readonly dict: Map<string, LayoutConfig> = new Map()
+
+    constructor(includeFavouriteLayer = true) {
         for (const layoutConfigJson of known_themes["themes"]) {
-            this.dict.set(layoutConfigJson.id, {
-                func: () => {
-                    const layout = new LayoutConfig(<LayoutConfigJson>layoutConfigJson, true)
-                    for (let i = 0; i < layout.layers.length; i++) {
-                        let layer = layout.layers[i]
-                        if (typeof layer === "string") {
-                            throw "Layer " + layer + " was not expanded in " + layout.id
-                        }
+            for (const layerId of Constants.added_by_default) {
+                if (layerId === "favourite" && favourite.id) {
+                    if (includeFavouriteLayer) {
+                        layoutConfigJson.layers.push(favourite)
                     }
-                    return layout
-                },
-            })
+                    continue
+                }
+                const defaultLayer = AllSharedLayers.getSharedLayersConfigs().get(layerId)
+                if (defaultLayer === undefined) {
+                    console.error("Could not find builtin layer", layerId)
+                    continue
+                }
+                layoutConfigJson.layers.push(defaultLayer)
+            }
+            this.raw.set(layoutConfigJson.id, layoutConfigJson)
         }
     }
 
+    public getConfig(key: string): LayoutConfigJson {
+        return this.raw.get(key)
+    }
+
     public get(key: string): LayoutConfig {
-        const thunk = this.dict.get(key)
-        if (thunk === undefined) {
-            return undefined
+        const cached = this.dict.get(key)
+        if (cached !== undefined) {
+            return cached
         }
-        if (thunk["data"]) {
-            return thunk["data"]
-        }
-        const layout = thunk["func"]()
-        this.dict.set(key, { data: layout })
+
+        const layout = new LayoutConfig(this.getConfig(key))
+        this.dict.set(key, layout)
         return layout
     }
 
     public keys() {
-        return this.dict.keys()
+        return this.raw.keys()
     }
 
     public values() {

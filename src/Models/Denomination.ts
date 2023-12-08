@@ -1,10 +1,11 @@
 import { Translation } from "../UI/i18n/Translation"
 import { DenominationConfigJson } from "./ThemeConfig/Json/UnitConfigJson"
 import Translations from "../UI/i18n/Translations"
-import { Store } from "../Logic/UIEventSource"
-import BaseUIElement from "../UI/BaseUIElement"
-import Toggle from "../UI/Input/Toggle"
 
+/**
+ * A 'denomination' is one way to write a certain quantity.
+ * For example, 'meter', 'kilometer', 'mile' and 'foot' are all possible ways to quantify 'length'
+ */
 export class Denomination {
     public readonly canonical: string
     public readonly _canonicalSingular: string
@@ -53,8 +54,8 @@ export class Denomination {
 
     /**
      * Create a representation of the given value
-     * @param value: the value from OSM
-     * @param actAsDefault: if set and the value can be parsed as number, will be parsed and trimmed
+     * @param value the value from OSM
+     * @param actAsDefault if set and the value can be parsed as number, will be parsed and trimmed
      *
      * const unit = new Denomination({
      *               canonicalDenomination: "m",
@@ -82,6 +83,8 @@ export class Denomination {
      * unit.canonicalValue("42", true) // =>"42"
      * unit.canonicalValue("42 m", true) // =>"42"
      * unit.canonicalValue("42 meter", true) // =>"42"
+     *
+     *
      */
     public canonicalValue(value: string, actAsDefault: boolean): string {
         if (value === undefined) {

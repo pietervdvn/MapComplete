@@ -29,7 +29,8 @@
             "natural=stone"
           ]
         },
-        "climbing="
+        "climbing=",
+        "sport!=climbing"
       ]
     }
   },

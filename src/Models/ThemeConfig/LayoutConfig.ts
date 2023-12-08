@@ -305,6 +305,9 @@ export default class LayoutConfig implements LayoutInformation {
         }
         for (const layer of this.layers) {
             if (!layer.source) {
+                if (layer.isShown?.matchesProperties(tags)) {
+                    return layer
+                }
                 continue
             }
             if (layer.source.osmTags.matchesProperties(tags)) {

@@ -139,9 +139,9 @@ export default class DetermineLayout {
             const layerConfig = <LayerConfigJson>json
             const iconTr: string | TagRenderingConfigJson = <any>(
                 layerConfig.pointRendering
-                    .map((mr) => mr.marker.find((icon) => icon.icon !== undefined).icon)
+                    .map((mr) => mr?.marker?.find((icon) => icon.icon !== undefined)?.icon)
                     .find((i) => i !== undefined)
-            )
+            ) ?? "bug"
             const icon = new TagRenderingConfig(iconTr).render.txt
             json = {
                 id: json.id,

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { UIEventSource } from "../../Logic/UIEventSource"
   import type { Feature } from "geojson"
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Svg from "../../Svg.js"
   import Translations from "../i18n/Translations"
@@ -15,7 +14,6 @@
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
   export let selectedElement: UIEventSource<Feature> | undefined = undefined
-  export let selectedLayer: UIEventSource<LayerConfig> | undefined = undefined
 
   export let clearAfterView: boolean = true
 
@@ -34,8 +32,11 @@
   let feedback: string = undefined
 
   Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
+    feedback = undefined
+    requestAnimationFrame(() => {
     inputElement?.focus()
     inputElement?.select()
+    })
   })
 
   const dispatch = createEventDispatcher<{ searchCompleted; searchIsValid: boolean }>()
@@ -73,8 +74,12 @@
         const layers = Array.from(perLayer?.values() ?? [])
         for (const layer of layers) {
           const found = layer.features.data.find((f) => f.properties.id === id)
-          selectedElement?.setData(found)
-          selectedLayer?.setData(layer.layer.layerDef)
+          if (found === undefined) {
+            continue;
+          }
+          selectedElement?.setData(found);
+          console.log("Found an element that probably matches:", selectedElement?.data);
+          break;
         }
       }
       if (clearAfterView) {

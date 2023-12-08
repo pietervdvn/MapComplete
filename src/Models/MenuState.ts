@@ -24,6 +24,7 @@ export class MenuState {
     public static readonly _menuviewTabs = [
         "about",
         "settings",
+        "favourites",
         "community",
         "privacy",
         "advanced",
@@ -75,6 +76,11 @@ export class MenuState {
         )
         this.menuIsOpened.addCallbackAndRun((isOpen) => {
             if (!isOpen) {
+                this.highlightedUserSetting.setData(undefined)
+            }
+        })
+        this.menuViewTab.addCallbackD((tab) => {
+            if (tab !== "settings") {
                 this.highlightedUserSetting.setData(undefined)
             }
         })

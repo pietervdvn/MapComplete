@@ -69,6 +69,10 @@ body {
     color: var(--foreground-color);
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
+.focusable {
+    /* Not a 'real' class, but rather an indication to FloatOver and ModalRight to, when they open, grab the focus */
+}
+
 
 svg,
 img {
@@ -158,7 +162,6 @@ input[type=text] {
     border: 2px dashed var(--interactive-background);
     border-radius: 0.5rem;
 }
-
 
 /******************* Styling of input elements **********************/
 
@@ -278,6 +281,16 @@ button.disabled:hover, .button.disabled:hover {
     border: 2px dashed var(--button-background);
     background: unset;
     color: unset;
+}
+
+button.link {
+    border: none;
+    text-decoration: underline;
+    background-color: unset;
+}
+
+button.link:hover {
+    color:unset;
 }
 
 .interactive button.disabled svg path, .interactive .button.disabled svg path {
@@ -636,4 +649,8 @@ a.link-underline {
 
 .min-h-32 {
     min-height: 8rem;
+}
+
+.max-w-full {
+    max-width: 100%;
 }

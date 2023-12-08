@@ -1,7 +1,6 @@
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Svg from "../../Svg"
-import Link from "../../UI/Base/Link"
 import { Utils } from "../../Utils"
 import { LicenseInfo } from "./LicenseInfo"
 import Wikimedia from "../Web/Wikimedia"
@@ -70,17 +69,8 @@ export class WikimediaImageProvider extends ImageProvider {
         return WikimediaImageProvider.apiUrls
     }
 
-    SourceIcon(backlink: string): BaseUIElement {
-        const img = Svg.wikimedia_commons_white_svg().SetStyle("width:2em;height: 2em")
-        if (backlink === undefined) {
-            return img
-        }
-
-        return new Link(
-            Svg.wikimedia_commons_white_svg(),
-            `https://commons.wikimedia.org/wiki/${backlink}`,
-            true
-        )
+    SourceIcon(): BaseUIElement {
+        return Svg.wikimedia_commons_white_svg().SetStyle("width:2em;height: 2em")
     }
 
     public PrepUrl(value: string): ProvidedImage {
@@ -173,6 +163,6 @@ export class WikimediaImageProvider extends ImageProvider {
         if (!image.startsWith("File:")) {
             image = "File:" + image
         }
-        return { url: WikimediaImageProvider.PrepareUrl(image), key: undefined, provider: this }
+        return { url: WikimediaImageProvider.PrepareUrl(image), key: undefined, provider: this , id: image}
     }
 }

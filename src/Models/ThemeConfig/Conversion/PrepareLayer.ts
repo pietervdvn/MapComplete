@@ -1,4 +1,5 @@
 import {
+    Bypass,
     Concat,
     Conversion,
     DesugaringContext,
@@ -26,7 +27,7 @@ import predifined_filters from "../../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson, { IconConfigJson } from "../Json/PointRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
-import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
+import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
@@ -566,6 +567,16 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
 }
 
 export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
+    static addedElements: string[] = [
+        "minimap",
+        "just_created",
+        "split_button",
+        "move_button",
+        "delete_button",
+        "last_edit",
+        "favourite_state",
+        "all_tags",
+    ]
     private readonly _desugaring: DesugaringContext
 
     constructor(desugaring: DesugaringContext) {
@@ -637,6 +648,13 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             !json.tagRenderings.some((tr) => tr["id"] === "last_edit")
         ) {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
+        }
+
+        if (!usedSpecialFunctions.has("favourite_status")) {
+            json.tagRenderings.push({
+                id: "favourite_status",
+                render: { "*": "{favourite_status()}" },
+            })
         }
 
         if (!usedSpecialFunctions.has("all_tags")) {
@@ -1193,6 +1211,31 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 }
 
+class AddFavouriteBadges extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super(
+            "Adds the favourite heart to the title and the rendering badges",
+            [],
+            "AddFavouriteBadges"
+        )
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        if (json.source === "special" || json.source === "special:library") {
+            return json
+        }
+        const pr = json.pointRendering?.[0]
+        if (pr) {
+            pr.iconBadges ??= []
+            if (!pr.iconBadges.some((ti) => ti.if === "_favourite=yes")) {
+                pr.iconBadges.push({ if: "_favourite=yes", then: "circle:white;heart:red" })
+            }
+        }
+
+        return json
+    }
+}
+
 export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
     constructor() {
         super(
@@ -1206,6 +1249,14 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
         if (!json.tagRenderings) {
             return json
         }
+        if (json.titleIcons.some((ti) => ti === "icons.rating" || ti["id"] === "rating")) {
+            // already added
+            return json
+        }
+        if (json.id === "favourite") {
+            // handled separately
+            return json
+        }
 
         const specialVis: Exclude<RenderingSpecification, string>[] = <
             Exclude<RenderingSpecification, string>[]
@@ -1216,6 +1267,60 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
 
         if (funcs.has("list_reviews")) {
             ;(<(string | TagRenderingConfigJson)[]>json.titleIcons).push("icons.rating")
+        }
+        return json
+    }
+}
+
+export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super(
+            "The auto-icon creates a (non-clickable) title icon based on a tagRendering which has icons",
+            ["titleIcons"],
+            "AutoTitleIcon"
+        )
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        json = { ...json }
+        json.titleIcons = [...json.titleIcons]
+        for (let i = 0; i < json.titleIcons.length; i++) {
+            const titleIcon = json.titleIcons[i]
+            if (typeof titleIcon !== "string") {
+                continue
+            }
+            if (!titleIcon.startsWith("auto:")) {
+                continue
+            }
+            const trId = titleIcon.substring("auto:".length)
+            const tr = <QuestionableTagRenderingConfigJson>(
+                json.tagRenderings.find((tr) => tr["id"] === trId)
+            )
+            if (tr === undefined) {
+                context.enters("titleIcons", i).err("TagRendering with id " + trId + " not found")
+                continue
+            }
+            const mappings: { if: TagConfigJson; then: string }[] = tr.mappings
+                ?.filter((m) => m.icon !== undefined)
+                .map((m) => {
+                    const path: string = typeof m.icon === "string" ? m.icon : m.icon.path
+                    const img = `<img class="m-1 h-6 w-6 low-interaction rounded" src='${path}'/>`
+                    return { if: m.if, then: img }
+                })
+            if (mappings.length === 0) {
+                context
+                    .enters("titleIcons", i)
+                    .warn(
+                        "TagRendering with id " +
+                            trId +
+                            " does not have any icons, not generating an icon for this"
+                    )
+                continue
+            }
+            json.titleIcons[i] = <TagRenderingConfigJson>{
+                id: "title_icon_auto_" + trId,
+                mappings,
+            }
         }
         return json
     }
@@ -1247,6 +1352,8 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             ),
             new SetDefault("titleIcons", ["icons.defaults"]),
             new AddRatingBadge(),
+            new AddFavouriteBadges(),
+            new AutoTitleIcon(),
             new On(
                 "titleIcons",
                 (layer) =>

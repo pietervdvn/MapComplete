@@ -23,13 +23,9 @@
       selectAppropriateValue()
     }
   }
+  export let cls : string = undefined
 </script>
 
-<select
-  bind:this={htmlElement}
-  on:change={(e) => {
-    value.setData(e.srcElement.value)
-  }}
->
+<select class={cls} bind:this={htmlElement} on:change={(e) => {value.setData(e.srcElement.value)}}>
   <slot />
 </select>

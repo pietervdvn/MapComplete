@@ -35,9 +35,14 @@
       "source": {
         "osmTags": {
           "and": [
+            {
+              "or": [
+                "route=hiking",
+                "route=foot"
+              ]
+            },
             "network=rwn",
-            "network:type=node_network",
-            "route=foot"
+            "network:type=node_network"
           ]
         }
       },
@@ -72,7 +77,15 @@
       "lineRendering": [
         {
           "width": "4",
-          "color": "#452b29"
+          "color": {
+            "render": "#452b29",
+            "mappings": [
+              {
+                "if": "state=proposed",
+                "then": "#f0a513"
+              }
+            ]
+          }
         }
       ],
       "pointRendering": null,
@@ -123,8 +136,9 @@
       },
       "source": {
         "osmTags": {
-          "and": [
-            "rwn_ref~*"
+          "or": [
+            "rwn_ref~*",
+            "proposed:rwn_ref~*"
           ]
         }
       },
@@ -135,14 +149,15 @@
             "centroid"
           ],
           "label": {
+            "render": "<div style='position: absolute; top: -30px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>?</div>",
             "mappings": [
               {
                 "if": "rwn_ref~*",
-                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>{rwn_ref}</div>"
+                "then": "<div style='position: absolute; top: -30px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>{rwn_ref}</div>"
               },
               {
-                "if": "rwn_ref=",
-                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>?</div>"
+                "if": "proposed:rwn_ref~*",
+                "then": "<div style='position: absolute; top: -31px; right: -10px; color: white; background-color: #452b29; width: 22px; height: 22px; border-radius: 100%; border-style:dotted; border-color:white; border-width: 2px'>{proposed:rwn_ref}</div>"
               }
             ]
           }
@@ -151,10 +166,26 @@
       "minzoom": 12,
       "title": {
         "render": {
-          "en": "Walking node <strong>{rwn_ref}</strong>",
-          "nl": "Wandelknooppunt <strong>{rwn_ref}</strong>",
-          "de": "Wanderknoten <strong>{rwn_ref}</strong>"
-        }
+          "en": "Walking node",
+          "nl": "Wandelknooppunt"
+        },
+        "mappings": [
+          {
+            "if": "rwn_ref~*",
+            "then": {
+              "en": "Walking node <strong>{rwn_ref}</strong>",
+              "nl": "Wandelknooppunt <strong>{rwn_ref}</strong>",
+              "de": "Wanderknoten <strong>{rwn_ref}</strong>"
+            }
+          },
+          {
+            "if": "proposed:rwn_ref~*",
+            "then": {
+              "en": "Proposed walking node <strong>{proposed:rwn_ref}</strong>",
+              "nl": "Voorgesteld wandelknooppunt <strong>{proposed:rwn_ref}</strong>"
+            }
+          }
+        ]
       },
       "tagRenderings": [
         {
@@ -179,7 +210,8 @@
             "en": "This walking node has reference number {rwn_ref}",
             "nl": "Dit wandelknooppunt heeft referentienummer {rwn_ref}",
             "de": "Dieser Wanderknoten hat die Referenznummer {rwn_ref}"
-          }
+          },
+          "condition": "rwn_ref~*"
         },
         {
           "builtin": "survey_date",

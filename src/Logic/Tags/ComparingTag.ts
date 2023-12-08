@@ -1,18 +1,23 @@
 import { TagsFilter } from "./TagsFilter"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { Tag } from "./Tag"
 
 export default class ComparingTag implements TagsFilter {
     private readonly _key: string
     private readonly _predicate: (value: string) => boolean
-    private readonly _representation: string
+    private readonly _representation: "<" | ">" | "<=" | ">="
+    private readonly _boundary: string
 
     constructor(
         key: string,
         predicate: (value: string | undefined) => boolean,
-        representation: string = ""
+        representation: "<" | ">" | "<=" | ">=",
+        boundary: string
     ) {
         this._key = key
         this._predicate = predicate
         this._representation = representation
+        this._boundary = boundary
     }
 
     asChange(properties: Record<string, string>): { k: string; v: string }[] {
@@ -20,15 +25,64 @@ export default class ComparingTag implements TagsFilter {
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {
-        return this._key + this._representation
+        return this._key + this._representation + this._boundary
     }
 
     asOverpass(): string[] {
         throw "A comparable tag can not be used as overpass filter"
     }
 
+    /**
+     * const tg = new ComparingTag("key", value => (Number(value) < 42), "<", "42")
+     * const tg0 = new ComparingTag("key", value => (Number(value) < 42), "<", "42")
+     * const tg1 = new ComparingTag("key", value => (Number(value) <= 42), "<=", "42")
+     * const against = new ComparingTag("key", value => (Number(value) > 0), ">", "0")
+     * tg.shadows(new Tag("key", "41")) // => true
+     * tg.shadows(new Tag("key", "0")) // => true
+     * tg.shadows(new Tag("key", "43")) // => false
+     * tg.shadows(new Tag("key", "0")) // => true
+     * tg.shadows(tg) // => true
+     * tg.shadows(tg0) // => true
+     * tg.shadows(against) // => false
+     * tg1.shadows(tg0) // => true
+     * tg0.shadows(tg1) // => false
+     *
+     */
     shadows(other: TagsFilter): boolean {
-        return other === this
+        if (other === this) {
+            return true
+        }
+        if (other instanceof ComparingTag) {
+            if (other._key !== this._key) {
+                return false
+            }
+            const selfDesc = this._representation === "<" || this._representation === "<="
+            const otherDesc = other._representation === "<" || other._representation === "<="
+            if (selfDesc !== otherDesc) {
+                return false
+            }
+            if (
+                this._boundary === other._boundary &&
+                this._representation === other._representation
+            ) {
+                return true
+            }
+            if (this._predicate(other._boundary)) {
+                return true
+            }
+            return false
+        }
+
+        if (other instanceof Tag) {
+            if (other.key !== this._key) {
+                return false
+            }
+            if (this.matchesProperties({ [other.key]: other.value })) {
+                return true
+            }
+        }
+
+        return false
     }
 
     isUsableAsAnswer(): boolean {
@@ -38,7 +92,7 @@ export default class ComparingTag implements TagsFilter {
     /**
      * Checks if the properties match
      *
-     * const t = new ComparingTag("key", (x => Number(x) < 42))
+     * const t = new ComparingTag("key", (x => Number(x) < 42), "<", "42")
      * t.matchesProperties({key: 42}) // => false
      * t.matchesProperties({key: 41}) // => true
      * t.matchesProperties({key: 0}) // => true
@@ -54,6 +108,10 @@ export default class ComparingTag implements TagsFilter {
 
     usedTags(): { key: string; value: string }[] {
         return []
+    }
+
+    asJson(): TagConfigJson {
+        return this._key + this._representation
     }
 
     optimize(): TagsFilter | boolean {

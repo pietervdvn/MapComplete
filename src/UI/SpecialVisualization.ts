@@ -17,6 +17,8 @@ import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import { RasterLayerPolygon } from "../Models/RasterLayers"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { OsmTags } from "../Models/OsmFeature"
+import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
+import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 
 /**
  * The state needed to render a special Visualisation.
@@ -33,7 +35,6 @@ export interface SpecialVisualizationState {
     }
 
     readonly indexedFeatures: IndexedFeatureSource
-
     /**
      * Some features will create a new element that should be displayed.
      * These can be injected by appending them to this featuresource (and pinging it)
@@ -59,6 +60,8 @@ export interface SpecialVisualizationState {
     readonly selectedLayer: UIEventSource<LayerConfig>
     readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
 
+    readonly favourites: FavouritesFeatureSource
+
     /**
      * If data is currently being fetched from external sources
      */
@@ -74,7 +77,7 @@ export interface SpecialVisualizationState {
         readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
         readonly mangroveIdentity: MangroveIdentity
         readonly showAllQuestionsAtOnce: UIEventSource<boolean>
-        readonly preferencesAsTags: Store<Record<string, string>>
+        readonly preferencesAsTags: UIEventSource<Record<string, string>>
         readonly language: UIEventSource<string>
     }
     readonly lastClickObject: WritableFeatureSource
@@ -82,6 +85,8 @@ export interface SpecialVisualizationState {
     readonly availableLayers: Store<RasterLayerPolygon[]>
 
     readonly imageUploadManager: ImageUploadManager
+
+    readonly previewedImage: UIEventSource<ProvidedImage>
 }
 
 export interface SpecialVisualization {

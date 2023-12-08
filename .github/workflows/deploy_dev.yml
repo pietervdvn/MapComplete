@@ -33,16 +33,12 @@ jobs:
         run: npm run generate:translations
         shell: bash
 
-      - name: generate layeroverview
-        run: npm run reset:layeroverview
+      - name: Prepare deploy
+        run: npm run prepare-deploy
         shell: bash
 
       - name: run tests
         run: npm run test
-        shell: bash
-
-      - name: Prepare deploy
-        run: npm run prepare-deploy
         shell: bash
 
       - name: Clone deployment repo

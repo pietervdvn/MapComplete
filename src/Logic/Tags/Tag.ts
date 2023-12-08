@@ -1,5 +1,6 @@
 import { Utils } from "../../Utils"
 import { TagsFilter } from "./TagsFilter"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 
 export class Tag extends TagsFilter {
     public key: string
@@ -65,6 +66,10 @@ export class Tag extends TagsFilter {
             return ['[!"' + this.key + '"]']
         }
         return [`["${this.key}"="${this.value}"]`]
+    }
+
+    asJson(): TagConfigJson {
+        return this.key + "=" + this.value
     }
 
     /**

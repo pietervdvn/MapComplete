@@ -1,15 +1,16 @@
 <script lang="ts">
-  // Languages in the language itself
-  import native from "../../assets/language_native.json"
-  // Translated languages
-  import language_translations from "../../assets/language_translations.json"
+    // Languages in the language itself
+    import native from "../../assets/language_native.json"
+    // Translated languages
+    import language_translations from "../../assets/language_translations.json"
 
-  import { UIEventSource } from "../../Logic/UIEventSource"
-  import Locale from "../i18n/Locale"
-  import { LanguageIcon } from "@babeard/svelte-heroicons/solid"
-  import Dropdown from "../Base/Dropdown.svelte"
+    import { UIEventSource } from "../../Logic/UIEventSource"
+    import Locale from "../i18n/Locale"
+    import { LanguageIcon } from "@babeard/svelte-heroicons/solid"
+    import Dropdown from "../Base/Dropdown.svelte"
+    import { twMerge } from "tailwind-merge"
 
-  /**
+    /**
    * Languages one can choose from
    * Defaults to _all_ languages known by MapComplete
    */
@@ -30,14 +31,14 @@
     }
     preferredFiltered = preferredLanguages?.filter((l) => availableLanguages.indexOf(l) >= 0)
   })
-
+  export let clss : string = undefined
   let current = Locale.language
 </script>
 
 {#if availableLanguages?.length > 1}
-  <form class="flex items-center">
-    <LanguageIcon class="mr-1 h-4 w-4" />
-    <Dropdown value={assignTo}>
+  <form class={twMerge("flex items-center max-w-full pr-4", clss)}>
+    <LanguageIcon class="h-4 w-4 mr-1 shrink-0" />
+    <Dropdown cls="max-w-full" value={assignTo}>
       {#if preferredFiltered}
         {#each preferredFiltered as language}
           <option value={language} class="font-bold">

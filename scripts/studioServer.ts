@@ -44,6 +44,36 @@ async function prepareFile(url: string): Promise<string> {
     }
     return null
 }
+async function handleDelete(req: http.IncomingMessage, res: ServerResponse) {
+    let body = ""
+    req.on("data", (chunk) => {
+        body = body + chunk
+    })
+    const paths = req.url.split("/")
+    console.log("Got a valid delete to:", paths.join("/"))
+    for (let i = 1; i < paths.length; i++) {
+        const p = paths.slice(0, i)
+        const dir = STATIC_PATH + p.join("/")
+        if (!fs.existsSync(dir)) {
+            res.writeHead(304, { "Content-Type": MIME_TYPES.html })
+            res.write("<html><body>No parent directory, nothing deleted</body></html>", "utf8")
+            res.end()
+           return
+        }
+    }
+    const path = STATIC_PATH + paths.join("/")
+    if(!fs.existsSync(path)){
+        res.writeHead(304, { "Content-Type": MIME_TYPES.html })
+        res.write("<html><body>File not found</body></html>", "utf8")
+        res.end()
+        return
+    }
+
+    fs.renameSync(path, path+".bak")
+    res.writeHead(200, { "Content-Type": MIME_TYPES.html })
+    res.write("<html><body>File moved to backup</body></html>", "utf8")
+    res.end()
+}
 
 async function handlePost(req: http.IncomingMessage, res: ServerResponse) {
     let body = ""
@@ -53,6 +83,7 @@ async function handlePost(req: http.IncomingMessage, res: ServerResponse) {
 
     await new Promise((resolve) => req.on("end", resolve))
 
+    console.log(new Date().toISOString())
     let parsed: any
     try {
         parsed = JSON.parse(body)
@@ -84,7 +115,7 @@ async function handlePost(req: http.IncomingMessage, res: ServerResponse) {
 
 http.createServer(async (req: http.IncomingMessage, res) => {
     try {
-        console.log(req.method + " " + req.url, "from:", req.headers.origin)
+        console.log(req.method + " " + req.url, "from:", req.headers.origin, new Date().toISOString())
         res.setHeader(
             "Access-Control-Allow-Headers",
             "Origin, X-Requested-With, Content-Type, Accept"
@@ -98,6 +129,12 @@ http.createServer(async (req: http.IncomingMessage, res) => {
         }
         if (req.method === "POST" || req.method === "UPDATE") {
             await handlePost(req, res)
+            return
+        }
+
+        if(req.method === "DELETE"){
+            console.log("Got a DELETE", new Date())
+            await handleDelete(req, res)
             return
         }
 

@@ -19,7 +19,7 @@ import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtil
 
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
-const codeTemplate = readFileSync("src/index_theme.ts.template", "utf8")
+let codeTemplate = readFileSync("src/index_theme.ts.template", "utf8")
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase())
@@ -487,7 +487,18 @@ async function createIndexFor(theme: LayoutConfig) {
         `import layout from "./src/assets/generated/themes/${theme.id}.json"`,
         `import { ThemeMetaTagging } from "./src/assets/generated/metatagging/${theme.id}"`,
     ]
+    for (const layerName of Constants.added_by_default) {
+        imports.push(`import ${layerName} from "./src/assets/generated/layers/${layerName}.json"`)
+    }
     writeFileSync(filename, imports.join("\n") + "\n")
+
+    const addLayers = []
+
+    for (const layerName of Constants.added_by_default) {
+        addLayers.push(`    layout.layers.push(<any> ${layerName})`)
+    }
+
+    codeTemplate = codeTemplate.replace("    // LAYOUT.ADD_LAYERS", addLayers.join("\n"))
 
     appendFileSync(filename, codeTemplate)
 }

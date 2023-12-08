@@ -40,7 +40,7 @@ import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
-import { Feature, Point } from "geojson"
+import { Feature } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
@@ -48,8 +48,7 @@ import UserProfile from "./BigComponents/UserProfile.svelte"
 import Link from "./Base/Link"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import { OsmTags, WayId } from "../Models/OsmFeature"
-import MoveWizard from "./Popup/MoveWizard"
+import { WayId } from "../Models/OsmFeature"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
@@ -61,8 +60,6 @@ import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
 import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
 import FediverseValidator from "./InputElement/Validators/FediverseValidator"
 import SendEmail from "./Popup/SendEmail.svelte"
-import NearbyImages from "./Popup/NearbyImages.svelte"
-import NearbyImagesCollapsed from "./Popup/NearbyImagesCollapsed.svelte"
 import UploadImage from "./Image/UploadImage.svelte"
 import { Imgur } from "../Logic/ImageProviders/Imgur"
 import Constants from "../Models/Constants"
@@ -79,6 +76,13 @@ import ThemeViewState from "../Models/ThemeViewState"
 import LanguagePicker from "./InputElement/LanguagePicker.svelte"
 import LogoutButton from "./Base/LogoutButton.svelte"
 import OpenJosm from "./Base/OpenJosm.svelte"
+import MarkAsFavourite from "./Popup/MarkAsFavourite.svelte"
+import MarkAsFavouriteMini from "./Popup/MarkAsFavouriteMini.svelte"
+import NextChangeViz from "./OpeningHours/NextChangeViz.svelte"
+import NearbyImages from "./Image/NearbyImages.svelte"
+import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
+import { svelte } from "@sveltejs/vite-plugin-svelte"
+import MoveWizard from "./Popup/MoveWizard.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -512,12 +516,11 @@ export default class SpecialVisualizations {
                         return undefined
                     }
 
-                    return new MoveWizard(
-                        <Feature<Point>>feature,
-                        <UIEventSource<OsmTags>>tagSource,
+                    return new SvelteUIElement(MoveWizard, {
                         state,
-                        layer.allowMove
-                    )
+                        featureToMove: feature,
+                        layer,
+                    })
                 },
             },
             {
@@ -532,6 +535,9 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
+                    if (!layer.deletion) {
+                        return undefined
+                    }
                     return new SvelteUIElement(DeleteWizard, {
                         tags: tagSource,
                         deleteConfig: layer.deletion,
@@ -654,7 +660,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 needsUrls: AllImageProviders.apiUrls,
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     let imagePrefixes: string[] = undefined
                     if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
@@ -662,7 +668,8 @@ export default class SpecialVisualizations {
                     return new ImageCarousel(
                         AllImageProviders.LoadImagesFor(tags, imagePrefixes),
                         tags,
-                        state
+                        state,
+                        feature
                     )
                 },
             },
@@ -822,6 +829,46 @@ export default class SpecialVisualizations {
                 },
             },
             {
+                funcName: "opening_hours_state",
+                docs: "A small element, showing if the POI is currently open and when the next change is",
+                args: [
+                    {
+                        name: "key",
+                        defaultValue: "opening_hours",
+                        doc: "The tagkey from which the opening hours are read.",
+                    },
+                    {
+                        name: "prefix",
+                        defaultValue: "",
+                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__",
+                    },
+                    {
+                        name: "postfix",
+                        defaultValue: "",
+                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
+                    },
+                ],
+                needsUrls: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const keyToUse = args[0]
+                    const prefix = args[1]
+                    const postfix = args[2]
+                    return new SvelteUIElement(NextChangeViz, {
+                        state,
+                        keyToUse,
+                        tags,
+                        prefix,
+                        postfix,
+                    })
+                },
+            },
+            {
                 funcName: "canonical",
                 needsUrls: [],
                 docs: "Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text. ",
@@ -871,20 +918,22 @@ export default class SpecialVisualizations {
                             t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
                             t.downloadGeoJsonHelper.SetClass("subtle"),
                         ]).SetClass("flex flex-col")
-                    ).onClick(() => {
-                        console.log("Exporting as Geojson")
-                        const tags = tagSource.data
-                        const title =
-                            layer?.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
-                        const data = JSON.stringify(feature, null, "  ")
-                        Utils.offerContentsAsDownloadableFile(
-                            data,
-                            title + "_mapcomplete_export.geojson",
-                            {
-                                mimetype: "application/vnd.geo+json",
-                            }
-                        )
-                    })
+                    )
+                        .onClick(() => {
+                            console.log("Exporting as Geojson")
+                            const tags = tagSource.data
+                            const title =
+                                layer?.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
+                            const data = JSON.stringify(feature, null, "  ")
+                            Utils.offerContentsAsDownloadableFile(
+                                data,
+                                title + "_mapcomplete_export.geojson",
+                                {
+                                    mimetype: "application/vnd.geo+json",
+                                }
+                            )
+                        })
+                        .SetClass("w-full")
                 },
             },
             {
@@ -1481,11 +1530,51 @@ export default class SpecialVisualizations {
                     const tags = (<ThemeViewState>(
                         state
                     )).geolocation.currentUserLocation.features.map(
-                        (features) => features[0].properties
+                        (features) => features[0]?.properties
                     )
                     return new SvelteUIElement(AllTagsPanel, {
                         state,
                         tags,
+                    })
+                },
+            },
+            {
+                funcName: "favourite_status",
+                needsUrls: [],
+                docs: "A button that allows a (logged in) contributor to mark a location as a favourite location",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(MarkAsFavourite, {
+                        tags: tagSource,
+                        state,
+                        layer,
+                        feature,
+                    })
+                },
+            },
+            {
+                funcName: "favourite_icon",
+                needsUrls: [],
+                docs: "A small button that allows a (logged in) contributor to mark a location as a favourite location, sized to fit a title-icon",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(MarkAsFavouriteMini, {
+                        tags: tagSource,
+                        state,
+                        layer,
+                        feature,
                     })
                 },
             },

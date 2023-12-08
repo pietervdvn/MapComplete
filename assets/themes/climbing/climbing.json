@@ -69,10 +69,12 @@
         },
         "+titleIcons": [
           {
+            "id": "climbing_length",
             "render": "<div class='flex' style='word-wrap: normal; padding-right: 0.25rem;'><img src='./assets/themes/climbing/height.svg' style='height: 1.75rem;'/>{climbing:length}m</div>",
             "condition": "climbing:length~*"
           },
           {
+            "id": "climbing_bolts",
             "mappings": [
               {
                 "if": "__bolts_max~*",
@@ -95,6 +97,7 @@
             "render": "<div class='w-8 flex justify-center rounded-right-full climbing-{__difficulty_max:char}'> {__difficulty_max}</div>"
           },
           {
+            "id": "difficulty",
             "render": "<div class='flex justify-center rounded-full pl-1 pr-1 climbing-{__difficulty:char}'> {climbing:grade:french}</div>",
             "condition": "__difficulty:char~*"
           }
@@ -345,8 +348,7 @@
               "key": "access:description"
             }
           },
-          "questions",
-          "reviews"
+          "questions"
         ]
       }
     },

@@ -152,6 +152,22 @@
           ]
         },
         {
+          "id": "theme-not-search",
+          "options": [
+            {
+              "osmTags": "theme!~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Themename does <b>not</b> contain {search}"
+              }
+            }
+          ]
+        },
+        {
           "id": "created_by",
           "options": [
             {
@@ -256,6 +272,28 @@
               "osmTags": "add-image>0",
               "question": {
                 "en": "Changeset added at least one image"
+              }
+            }
+          ]
+        },
+        {
+          "id": "exclude_grb",
+          "options": [
+            {
+              "osmTags": "theme!=grb",
+              "question": {
+                "en": "Exclude GRB theme"
+              }
+            }
+          ]
+        },
+        {
+          "id": "exclude_etymology",
+          "options": [
+            {
+              "osmTags": "theme!=etymology",
+              "question": {
+                "en": "Exclude etymology theme"
               }
             }
           ]

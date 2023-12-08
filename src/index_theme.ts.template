@@ -21,6 +21,7 @@ if (!webgl_support()) {
      new FixedUiElement("WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this.").SetClass("block alert").AttachTo("maindiv")
 }else{
     MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
+    // LAYOUT.ADD_LAYERS
     const state = new ThemeViewState(new LayoutConfig(<any> layout))
     const main = new SvelteUIElement(ThemeViewGUI, { state })
     main.AttachTo("maindiv")

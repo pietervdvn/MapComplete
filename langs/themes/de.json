@@ -524,7 +524,12 @@
                     }
                 },
                 "title": {
-                    "render": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "Fahrradknotenpunkt"
                 }
             },
             "2": {
@@ -900,49 +905,49 @@
                             }
                         }
                     },
-                    "1": {
+                    "2": {
                         "options": {
                             "0": {
                                 "question": "Erstellt von {search}"
                             }
                         }
                     },
-                    "2": {
+                    "3": {
                         "options": {
                             "0": {
                                 "question": "<b>Nicht</b> erstellt von {search}"
                             }
                         }
                     },
-                    "3": {
+                    "4": {
                         "options": {
                             "0": {
                                 "question": "Erstellt vor {search}"
                             }
                         }
                     },
-                    "4": {
+                    "5": {
                         "options": {
                             "0": {
                                 "question": "Erstellt nach {search}"
                             }
                         }
                     },
-                    "5": {
+                    "6": {
                         "options": {
                             "0": {
                                 "question": "Benutzersprache (ISO-Code) {search}"
                             }
                         }
                     },
-                    "6": {
+                    "7": {
                         "options": {
                             "0": {
                                 "question": "Erstellt mit Host {search}"
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "options": {
                             "0": {
                                 "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
@@ -1199,10 +1204,10 @@
                             "1": {
                                 "mappings": {
                                     "0": {
-                                        "then": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite"
+                                        "then": "Es gibt einen Bürgersteig auf dieser Straßenseite"
                                     },
                                     "1": {
-                                        "then": "Nein, es gibt keinen Bürgersteig für Fußgänger"
+                                        "then": "Es gibt keinen Bürgersteig für Fußgänger"
                                     },
                                     "2": {
                                         "then": "Es gibt einen separat kartierten Bürgersteig für Fußgänger"
@@ -1422,7 +1427,11 @@
                     }
                 },
                 "title": {
-                    "render": "Wanderknoten <strong>{rwn_ref}</strong>"
+                    "mappings": {
+                        "0": {
+                            "then": "Wanderknoten <strong>{rwn_ref}</strong>"
+                        }
+                    }
                 }
             },
             "2": {

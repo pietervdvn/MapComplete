@@ -735,30 +735,32 @@
         "point",
         "centroid"
       ],
-      "marker": [{
-        "icon": "pin",
-        "color": "#fff"
-      },{
-        "icon": {
-          "render":"./assets/themes/charging_stations/plug.svg",
-          "mappings": [
-            {
-              "if": "bicycle=yes",
-              "then": "./assets/themes/charging_stations/bicycle.svg"
-            },
-            {
-              "if": {
-                "or": [
-                  "car=yes",
-                  "motorcar=yes"
-                ]
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#fff"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/charging_stations/plug.svg",
+            "mappings": [
+              {
+                "if": "bicycle=yes",
+                "then": "./assets/themes/charging_stations/bicycle.svg"
               },
-              "then": "./assets/themes/charging_stations/car.svg"
-            }
-          ]
-          
+              {
+                "if": {
+                  "or": [
+                    "car=yes",
+                    "motorcar=yes"
+                  ]
+                },
+                "then": "./assets/themes/charging_stations/car.svg"
+              }
+            ]
+          }
         }
-      }],
+      ],
       "iconBadges": [
         {
           "if": {
@@ -802,12 +804,11 @@
       "tags": [
         "amenity=charging_station",
         "motorcar=no",
-        "bicycle=yes",
-        "socket:typee=1"
+        "bicycle=yes"
       ],
       "title": {
-        "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' class='w-4 h-4 mx-1 bg-white rounded-full'/>",
-        "nl": "oplaadpunt voor elektrische fietsen met een gewone, europese stekker <img src='./assets/layers/charging_station/TypeE.svg' class='w-4 h-4 mx-1 bg-white rounded-full'/>"
+        "en": "charging station for electrical bikes",
+        "nl": "oplaadpunt voor elektrische fietsen"
       }
     },
     {

@@ -11,7 +11,7 @@
 
 <button class={clss} on:click={() => osmConnection.AttemptLogin()}>
   <ToSvelte construct={Svg.login_svg().SetClass("w-12 m-1")} />
-  <slot name="message">
+  <slot>
     <Tr t={Translations.t.general.loginWithOpenStreetMap} />
   </slot>
 </button>

@@ -1993,7 +1993,7 @@
         "name": "Ladestationen",
         "presets": {
             "0": {
-                "title": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (zum Laden von Elektrofahrrädern)"
+                "title": "eine Ladestation für Elektrofahrräder"
             },
             "1": {
                 "title": "Eine Ladestation für Elektrofahrzeuge"

@@ -1,0 +1,47 @@
+{
+  "#":"no-translations",
+  "#dont-translate": "*",
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "heart",
+            "mappings": [
+              {
+                "if": "_favourite=no",
+                "then": "heart_outline"
+              }
+            ]
+          },
+          "color": "red"
+        }
+      ]
+    }
+  ],
+  "description": {
+    "en": "A generic map layer which shows locations that a contributor marked as favourite",
+    "nl": "Een laag met persoonlijke favourieten"
+  },
+  "name": {
+    "en": "Favourites",
+    "nl": "Favorieten"
+  },
+  "id": "favourite",
+  "source": "special",
+  "isShown": "_favourite=yes",
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "en": "Favourite location",
+      "nl": "Favoriete locatie"
+    }
+  },
+  "tagRenderings": [
+    
+  ]
+}

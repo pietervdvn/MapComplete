@@ -1,30 +1,4 @@
 <script>
-  export let color = "#000000"
+export let color = "#000000"
 </script>
-
-<svg
-  {...$$restProps}
-  on:click
-  on:mouseover
-  on:mouseenter
-  on:mouseleave
-  on:keydown
-  xmlns="http://www.w3.org/2000/svg"
-  width="375px"
-  height="375px"
-  viewBox="0 0 375 375"
-  version="1.1"
->
-  <g id="surface1">
-    <path
-      style="fill: none !important;stroke-width:9;stroke-linecap:round;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
-      d="M 46 55.932292 L 66.551042 55.932292 "
-      transform="matrix(3.75,0,0,3.75,0,0)"
-    />
-    <path
-      style="fill: none !important;stroke-width:9;stroke-linecap:round;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;"
-      d="M 46 55.534375 L 46 27.729167 "
-      transform="matrix(3.75,0,0,3.75,0,0)"
-    />
-  </g>
-</svg>
+ <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">   <g id="surface1">     <path style="fill: none !important;stroke-width:9;stroke-linecap:round;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 46 55.932292 L 66.551042 55.932292 " transform="matrix(3.75,0,0,3.75,0,0)"/>     <path style="fill: none !important;stroke-width:9;stroke-linecap:round;stroke-linejoin:miter;stroke:{color};stroke-opacity:1;stroke-miterlimit:4;" d="M 46 55.534375 L 46 27.729167 " transform="matrix(3.75,0,0,3.75,0,0)"/>   </g> </svg>

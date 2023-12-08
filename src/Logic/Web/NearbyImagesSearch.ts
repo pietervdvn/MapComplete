@@ -40,15 +40,26 @@ export interface P4CPicture {
 export default class NearbyImagesSearch {
     public static readonly services = ["mapillary", "flickr", "kartaview", "wikicommons"] as const
     public static readonly apiUrls = ["https://api.flickr.com"]
-    private readonly individualStores: Store<{ images: P4CPicture[]; beforeFilter: number }>[]
+    private readonly individualStores: Store<{ images: P4CPicture[]; beforeFilter: number } | undefined>[]
     private readonly _store: UIEventSource<P4CPicture[]> = new UIEventSource<P4CPicture[]>([])
     public readonly store: Store<P4CPicture[]> = this._store
+    public readonly allDone: Store<boolean>
     private readonly _options: NearbyImageOptions
 
     constructor(options: NearbyImageOptions, features: IndexedFeatureSource) {
         this.individualStores = NearbyImagesSearch.services.map((s) =>
             NearbyImagesSearch.buildPictureFetcher(options, s)
         )
+
+        const allDone = new UIEventSource(false)
+        this.allDone = allDone
+        const self = this
+        function updateAllDone(){
+            const stillRunning = self.individualStores.some(store => store.data === undefined)
+            allDone.setData(!stillRunning)
+        }
+        self.individualStores.forEach(s => s.addCallback(_ => updateAllDone()))
+
         this._options = options
         if (features !== undefined) {
             const osmImages = new ImagesInLoadedDataFetcher(features).fetchAround({
@@ -93,13 +104,17 @@ export default class NearbyImagesSearch {
     private static buildPictureFetcher(
         options: NearbyImageOptions,
         fetcher: P4CService
-    ): Store<{ images: P4CPicture[]; beforeFilter: number }> {
-        const p4cStore = Stores.FromPromise<P4CPicture[]>(
+    ): Store<{ images: P4CPicture[]; beforeFilter: number } | null | undefined> {
+        const p4cStore = Stores.FromPromiseWithErr<P4CPicture[]>(
             NearbyImagesSearch.fetchImages(options, fetcher)
         )
         const searchRadius = options.searchRadius ?? 100
-        return p4cStore.map(
-            (images) => {
+        return p4cStore.mapD(
+            (imagesState) => {
+                if(imagesState["error"]){
+                    return null
+                }
+                let images = imagesState["success"]
                 if (images === undefined) {
                     return undefined
                 }

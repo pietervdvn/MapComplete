@@ -18,6 +18,8 @@ export class StackedRenderingChart extends ChartJs {
         options?: {
             period: "day" | "month"
             groupToOtherCutoff?: 3 | number
+            // If given, take the sum of these fields to get the feature weight
+            sumFields?: string[]
         }
     ) {
         const { labels, data } = TagRenderingChart.extractDataAndLabels(tr, features, {
@@ -78,7 +80,30 @@ export class StackedRenderingChart extends ChartJs {
             const countsPerDay: number[] = []
             for (let i = 0; i < trimmedDays.length; i++) {
                 const day = trimmedDays[i]
-                countsPerDay[i] = perDay[day]?.length ?? 0
+
+                const featuresForDay = perDay[day]
+                if (!featuresForDay) {
+                    continue
+                }
+                if (options.sumFields !== undefined) {
+                    let sum = 0
+                    for (const featuresForDayElement of featuresForDay) {
+                        const props = featuresForDayElement.properties
+                        for (const key of options.sumFields) {
+                            if (!props[key]) {
+                                continue
+                            }
+                            const v = Number(props[key])
+                            if (isNaN(v)) {
+                                continue
+                            }
+                            sum += v
+                        }
+                    }
+                    countsPerDay[i] = sum
+                } else {
+                    countsPerDay[i] = featuresForDay?.length ?? 0
+                }
             }
             let backgroundColor =
                 TagRenderingChart.borderColors[i % TagRenderingChart.borderColors.length]

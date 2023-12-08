@@ -301,10 +301,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (str === undefined || str === null) {
             return undefined
         }
+        if (typeof str !== "string") {
+            console.error("Not a string:", str)
+            return undefined
+        }
         if (str.length <= l) {
             return str
         }
-        return str.substr(0, l - 3) + "..."
+        return str.substr(0, l - 1) + "…"
     }
 
     /**
@@ -559,38 +563,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return
         }
         target.push(...source)
-    }
-
-    /**
-     * Recursively rewrites all keys from `+key`, `key+` and `=key` into `key
-     *
-     * Utils.CleanMergeObject({"condition":{"and+":["xyz"]}} // => {"condition":{"and":["xyz"]}}
-     * @param obj
-     * @constructor
-     * @private
-     */
-    private static CleanMergeObject(obj: any) {
-        if (Array.isArray(obj)) {
-            const result = []
-            for (const el of obj) {
-                result.push(Utils.CleanMergeObject(el))
-            }
-            return result
-        }
-        if (typeof obj !== "object") {
-            return obj
-        }
-        const newObj = {}
-        for (let objKey in obj) {
-            let cleanKey = objKey
-            if (objKey.startsWith("+") || objKey.startsWith("=")) {
-                cleanKey = objKey.substring(1)
-            } else if (objKey.endsWith("+") || objKey.endsWith("=")) {
-                cleanKey = objKey.substring(0, objKey.length - 1)
-            }
-            newObj[cleanKey] = Utils.CleanMergeObject(obj[objKey])
-        }
-        return newObj
     }
 
     /**
@@ -1491,21 +1463,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         element.scrollIntoView({ behavior: "smooth", block: "nearest" })
     }
 
-    private static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
-        // Check if the element itself has scrolling
-        if (element.scrollHeight > element.clientHeight) {
-            return element
-        }
-
-        // If the element does not have scrolling, check if it has a parent element
-        if (!element.parentElement) {
-            return null
-        }
-
-        // If the element has a parent, repeat the process for the parent element
-        return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement)
-    }
-
     /**
      * Returns true if the contents of `a` are the same (and in the same order) as `b`.
      * Might have false negatives in some cases
@@ -1633,6 +1590,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
+    public static RemoveDiacritics(str?: string): string {
+        if (!str) {
+            return str
+        }
+        return str.normalize("NFD").replace(/\p{Diacritic}/gu, "")
+    }
+
     public static randomString(length: number): string {
         let result = ""
         for (let i = 0; i < length; i++) {
@@ -1641,6 +1605,87 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return result
     }
+
+    /**
+     * Recursively rewrites all keys from `+key`, `key+` and `=key` into `key
+     *
+     * Utils.CleanMergeObject({"condition":{"and+":["xyz"]}} // => {"condition":{"and":["xyz"]}}
+     * @param obj
+     * @constructor
+     * @private
+     */
+    private static CleanMergeObject(obj: any) {
+        if (Array.isArray(obj)) {
+            const result = []
+            for (const el of obj) {
+                result.push(Utils.CleanMergeObject(el))
+            }
+            return result
+        }
+        if (typeof obj !== "object") {
+            return obj
+        }
+        const newObj = {}
+        for (let objKey in obj) {
+            let cleanKey = objKey
+            if (objKey.startsWith("+") || objKey.startsWith("=")) {
+                cleanKey = objKey.substring(1)
+            } else if (objKey.endsWith("+") || objKey.endsWith("=")) {
+                cleanKey = objKey.substring(0, objKey.length - 1)
+            }
+            newObj[cleanKey] = Utils.CleanMergeObject(obj[objKey])
+        }
+        return newObj
+    }
+
+    /**
+     * Searches a child that can be focused on, by first selecting a 'focusable', then a button, then a link
+     *
+     * Returns the focussed element
+     * @param el
+     */
+    public static focusOnFocusableChild(el: HTMLElement): undefined {
+        if (!el) {
+            return
+        }
+        requestAnimationFrame(() => {
+            let childs = el.getElementsByClassName("focusable")
+            if (childs.length == 0) {
+                childs = el.getElementsByTagName("button")
+                if (childs.length === 0) {
+                    childs = el.getElementsByTagName("a")
+                }
+            }
+            const child = <HTMLElement>childs.item(0)
+            if (child === null) {
+                return undefined
+            }
+            if (
+                child.tagName !== "button" &&
+                child.tagName !== "a" &&
+                child.hasAttribute("tabindex")
+            ) {
+                child.setAttribute("tabindex", "-1")
+            }
+            child?.focus()
+        })
+    }
+
+    private static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
+        // Check if the element itself has scrolling
+        if (element.scrollHeight > element.clientHeight) {
+            return element
+        }
+
+        // If the element does not have scrolling, check if it has a parent element
+        if (!element.parentElement) {
+            return null
+        }
+
+        // If the element has a parent, repeat the process for the parent element
+        return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement)
+    }
+
     private static colorDiff(
         c0: { r: number; g: number; b: number },
         c1: { r: number; g: number; b: number }

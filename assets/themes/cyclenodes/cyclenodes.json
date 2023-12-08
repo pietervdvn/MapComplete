@@ -112,7 +112,15 @@
       "lineRendering": [
         {
           "width": "4",
-          "color": "#00a703"
+          "color": {
+            "render": "#00a703",
+            "mappings": [
+              {
+                "if": "state=proposed",
+                "then": "#f0a513"
+              }
+            ]
+          }
         }
       ],
       "pointRendering": null
@@ -134,8 +142,9 @@
       },
       "source": {
         "osmTags": {
-          "and": [
-            "rcn_ref~*"
+          "or": [
+            "rcn_ref~*",
+            "proposed:rcn_ref~*"
           ]
         }
       },
@@ -146,14 +155,15 @@
             "centroid"
           ],
           "label": {
+            "render": "<div style='position: absolute; top: -30px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>",
             "mappings": [
               {
                 "if": "rcn_ref~*",
-                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
+                "then": "<div style='position: absolute; top: -30px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
               },
               {
-                "if": "rcn_ref=",
-                "then": "<div style='position: absolute; top: -10px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
+                "if": "proposed:rcn_ref~*",
+                "then": "<div style='position: absolute; top: -32px; right: -10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%; border-style:dotted; border-color:white; border-width: 2px'>{proposed:rcn_ref}</div>"
               }
             ]
           }
@@ -162,16 +172,39 @@
       "minzoom": 12,
       "title": {
         "render": {
-          "en": "Cycle node <strong>{rcn_ref}</strong>",
-          "de": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>",
-          "es": "nodo ciclista <strong>{rcn_ref}</strong>",
-          "nb_NO": "sykkelnode <strong>{rcn_ref}</strong>",
-          "nl": "Fietsknooppunt <strong>{rcn_ref}</strong>",
-          "fr": "nœud cycliste <strong>{rcn_ref}</strong>",
-          "ca": "node ciclista <strong>{rcn_ref}</strong>",
-          "cs": "uzel cyklu <strong>{rcn_ref}</strong>",
-          "pl": "węzeł rowerowy <strong>{rcn_ref}</strong>"
-        }
+          "en": "Cycle node",
+          "de": "Fahrradknotenpunkt",
+          "es": "nodo ciclista",
+          "nb_NO": "sykkelnode",
+          "nl": "Fietsknooppunt",
+          "fr": "nœud cycliste",
+          "ca": "node ciclista",
+          "cs": "uzel cyklu",
+          "pl": "węzeł rowerowy"
+        },
+        "mappings": [
+          {
+            "if": "rcn_ref~*",
+            "then": {
+              "en": "Cycle node <strong>{rcn_ref}</strong>",
+              "de": "Fahrradknotenpunkt <strong>{rcn_ref}</strong>",
+              "es": "nodo ciclista <strong>{rcn_ref}</strong>",
+              "nb_NO": "sykkelnode <strong>{rcn_ref}</strong>",
+              "nl": "Fietsknooppunt <strong>{rcn_ref}</strong>",
+              "fr": "nœud cycliste <strong>{rcn_ref}</strong>",
+              "ca": "node ciclista <strong>{rcn_ref}</strong>",
+              "cs": "uzel cyklu <strong>{rcn_ref}</strong>",
+              "pl": "węzeł rowerowy <strong>{rcn_ref}</strong>"
+            }
+          },
+          {
+            "if": "proposed:rcn_ref~*",
+            "then": {
+              "en": "Proposed cycle node <strong>{proposed:rcn_ref}</strong>",
+              "nl": "Voorgesteld fietsknooppunt <strong>{proposed:rcn_ref}</strong>"
+            }
+          }
+        ]
       },
       "tagRenderings": [
         {
@@ -197,7 +230,8 @@
             "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}",
             "de": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks",
             "cs": "Tento cyklistický uzel má referenční číslo {rcn_ref}"
-          }
+          },
+          "condition": "rcn_ref~*"
         },
         {
           "builtin": "survey_date",

@@ -1,6 +1,6 @@
 key,image,description:en,countryWhiteList,countryBlackList,commonVoltages,commonCurrents,commonOutputs,description:nl,associatedVehicleTypes,neverAssociatedWith,extraVisualisationCondition
-socket:schuko,CEE7_4F.svg,<b>Schuko wall plug</b> without ground pin (CEE7/4 type F),be;fr;ma;tn;pl;cs;sk;mo,,230,16,3.6 kW,<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F),*,,
-socket:typee,TypeE.svg,<b>European wall plug</b> with ground pin (CEE7/4 type E),,,230,16,3 kW;22 kW;,<b>Europese stekker</b> met aardingspin (CEE7/4 type E),*,,
+socket:schuko,CEE7_4F.svg,<b>Schuko wall plug</b> without ground pin (CEE7/4 type F),af;al;dz;as;ad;ao;am;aw;az;by;bt;ba;bg;cv;td;cl;hr;dk;eg;ee;et;fo;fr;pf;ge;gr;gl;gn;gw;is;id;ir;jo;kz;kg;la;lv;lr;ly;lt;lu;mo;mr;md;mc;mn;me;mz;nl;nc;ne;kp;mk;pt;qa;ro;ru;rw;sm;sk;si;kr;es;sr;tj;th;tl;tr;tm;ua;uy;uz;vn,,230,16,3.6 kW,<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F),*,,
+socket:typee,TypeE.svg,<b>European wall plug</b> with ground pin (CEE7/4 type E),be;bj;bf;bi;cm;cf;td;km;cz;dk;dj;gq;et;fo;fr;gf;pf;gl;gp;gw;la;lr;mg;ml;mq;mr;mu;mc;mn;ma;ne;pl;pt;rw;mf;pm;sn;sk;sy;tl;tn;uz,,230,16,3 kW;22 kW;,<b>Europese stekker</b> met aardingspin (CEE7/4 type E),*,,
 socket:chademo,Chademo_type4.svg,<b>Chademo</b>,,,500,120,50 kW,<b>Chademo</b>,car;motorcar;hgv;bus,bicycle;scooter,
 socket:type1_cable,Type1_J1772.svg,<b>Type 1 with cable</b> (J1772),,,200;240,32,3.7 kW;7 kW,<b>Type 1 met kabel</b> (J1772),car;motorcar;hgv;bus,bicycle;scooter,
 socket:type1,Type1_J1772.svg,<b>Type 1 <i>without</i> cable</b> (J1772),,,200;240,32,3.7 kW;6.6 kW;7 kW;7.2 kW,<b>Type 1 <i>zonder</i> kabel</b> (J1772),car;motorcar;hgv;bus,bicycle;scooter,

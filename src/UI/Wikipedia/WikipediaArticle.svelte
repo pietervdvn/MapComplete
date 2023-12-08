@@ -34,22 +34,20 @@
       <Tr t={Translations.t.general.wikipedia.loading} />
     </Loading>
   {:else}
-    <span class="wikipedia-article">
-      <FromHtml src={$wikipediaDetails.firstParagraph} />
-      <Disclosure let:open>
-        <DisclosureButton>
-          <span class="flex">
-            <ChevronRightIcon
-              style={(open ? "transform: rotate(90deg); " : "") +
-                "  transition: all .25s linear; width: 1.5rem; height: 1.5rem"}
-            />
-            <Tr t={Translations.t.general.wikipedia.readMore} />
-          </span>
-        </DisclosureButton>
-        <DisclosurePanel>
-          <FromHtml src={$wikipediaDetails.restOfArticle} />
-        </DisclosurePanel>
-      </Disclosure>
-    </span>
+    <FromHtml clss="wikipedia-article" src={$wikipediaDetails.firstParagraph} />
+    <Disclosure let:open>
+      <DisclosureButton>
+        <span class="flex">
+          <ChevronRightIcon
+            style={(open ? "transform: rotate(90deg); " : "") +
+              "  transition: all .25s linear; width: 1.5rem; height: 1.5rem"}
+          />
+          <Tr t={Translations.t.general.wikipedia.readMore} />
+        </span>
+      </DisclosureButton>
+      <DisclosurePanel>
+        <FromHtml clss="wikipedia-article"  src={$wikipediaDetails.restOfArticle} />
+      </DisclosurePanel>
+    </Disclosure>
   {/if}
 {/if}

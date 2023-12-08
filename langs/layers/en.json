@@ -1993,7 +1993,7 @@
         "name": "Charging stations",
         "presets": {
             "0": {
-                "title": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)"
+                "title": "a charging station for electrical bikes"
             },
             "1": {
                 "title": "a charging station for cars"
@@ -4218,6 +4218,9 @@
                 },
                 "1": {
                     "then": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>"
+                },
+                "2": {
+                    "then": "This is a historic, manual water pump where no drinking water can be found"
                 }
             }
         },
@@ -4256,8 +4259,72 @@
                 "question": "Is this drinking water spot still operational?",
                 "render": "The operational status is <i>{operational_status}</i>"
             },
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "This drinking water point has an integrated artwork"
+                    },
+                    "1": {
+                        "then": "This drinking water point does not have an integrated artwork"
+                    },
+                    "2": {
+                        "then": "This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork"
+                    }
+                },
+                "question": "Does this drinking water fountain have an artistic element?",
+                "questionHint": "E.g. it has an integrated statue or other non-trivial, creative work"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    },
+                    "1": {
+                        "then": "One needs to pay to use this drinking water point"
+                    }
+                },
+                "question": "Is this drinking water point free to use?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "This drinking water fountain is closed this season. As such, the opening hours are not shown."
+                        }
+                    },
+                    "questionHint": "These are the opening hours if the drinking water fountain is operational."
+                }
+            },
             "render-closest-drinking-water": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meters</a>"
+            },
+            "seasonal": {
+                "mappings": {
+                    "0": {
+                        "then": "This drinking water point is available all around the year"
+                    },
+                    "1": {
+                        "then": "This drinking water point is only available in summer"
+                    },
+                    "2": {
+                        "then": "This drinking water point is closed during the winter"
+                    }
+                },
+                "question": "Is this drinking water point available all year round?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button."
+                    },
+                    "1": {
+                        "then": "This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible."
+                    },
+                    "2": {
+                        "then": "This is a water tap. The water flows downward and the stream is controlled by a valve or push-button."
+                    }
+                },
+                "question": "What type of drinking water point is this?"
             }
         },
         "title": {

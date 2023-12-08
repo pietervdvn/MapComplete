@@ -121,9 +121,9 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                     ]).SetClass("flex p-2 rounded-xl border-2 subtle-border items-center"),
                     new Toggle(
                         confirmPanel,
-                        new SubtleButton(new SvelteUIElement(Upload), t.title).onClick(() =>
-                            clicked.setData(true)
-                        ),
+                        new SubtleButton(new SvelteUIElement(Upload), t.title)
+                            .onClick(() => clicked.setData(true))
+                            .SetClass("w-full"),
                         clicked
                     ),
                     uploadFinished

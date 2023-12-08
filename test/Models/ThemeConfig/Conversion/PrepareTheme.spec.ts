@@ -125,7 +125,21 @@ describe("PrepareTheme", () => {
                 en: "Test layer - please ignore",
             },
             titleIcons: [],
-            pointRendering: [{ location: ["point"], label: "xyz" }],
+            pointRendering: [
+                {
+                    location: ["point"],
+                    label: "xyz",
+                    iconBadges: [
+                        {
+                            if: "_favourite=yes",
+                            then: <any>{
+                                id: "circlewhiteheartred",
+                                render: "circle:white;heart:red",
+                            },
+                        },
+                    ],
+                },
+            ],
             lineRendering: [{ width: 1 }],
         }
         const sharedLayers = constructSharedLayers()
@@ -165,7 +179,21 @@ describe("PrepareTheme", () => {
             id: "layer-example",
             name: null,
             minzoom: 18,
-            pointRendering: [{ location: ["point"], label: "xyz" }],
+            pointRendering: [
+                {
+                    location: ["point"],
+                    label: "xyz",
+                    iconBadges: [
+                        {
+                            if: "_favourite=yes",
+                            then: {
+                                id: "circlewhiteheartred",
+                                render: "circle:white;heart:red",
+                            },
+                        },
+                    ],
+                },
+            ],
             lineRendering: [{ width: 1 }],
             titleIcons: [],
         })

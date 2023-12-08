@@ -10,11 +10,15 @@ mkdir dist 2> /dev/null
 mkdir dist/assets 2> /dev/null
 
 
-export NODE_OPTIONS="--max-old-space-size=8192"
+export NODE_OPTIONS="--max-old-space-size=16384"
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
-npm run generate &&
+npm run prep:layeroverview &&
+npm run generate && # includes a single "refresh:layeroverview". Resetting the files is unnecessary as they are not in there in the first place
+npm run refresh:layeroverview && # run refresh:layeroverview a second time to propagate all calls
+npm run refresh:layeroverview && # run refresh:layeroverview a third time to fix some issues with the favourite layer all calls
+
 npm run generate:layouts
 
 if [ $? -ne 0 ]; then
@@ -48,9 +52,10 @@ else
   exit 1
 fi
 
-export NODE_OPTIONS=--max-old-space-size=7000
+export NODE_OPTIONS=--max-old-space-size=16000
 which vite
-vite build --sourcemap 
+vite --version
+vite build # --sourcemap 
 # Copy the layer files, as these might contain assets (e.g. svgs)
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/

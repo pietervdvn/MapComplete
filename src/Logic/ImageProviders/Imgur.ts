@@ -66,6 +66,7 @@ export class Imgur extends ImageProvider implements ImageUploader {
                     url: value,
                     key: key,
                     provider: this,
+                    id: value
                 }),
             ]
         }
@@ -81,6 +82,8 @@ export class Imgur extends ImageProvider implements ImageUploader {
      * const expected = new LicenseInfo()
      * expected.licenseShortName = "CC-BY 4.0"
      * expected.artist = "Pieter Vander Vennet"
+     * expected.date = new Date(1655052078000)
+     * expected.views = 2
      * licenseInfo // => expected
      */
     public async DownloadAttribution(url: string): Promise<LicenseInfo> {
@@ -93,6 +96,8 @@ export class Imgur extends ImageProvider implements ImageUploader {
 
         const descr: string = response.data.description ?? ""
         const data: any = {}
+        const imgurData = response.data
+
         for (const tag of descr.split("\n")) {
             const kv = tag.split(":")
             const k = kv[0]
@@ -103,6 +108,8 @@ export class Imgur extends ImageProvider implements ImageUploader {
 
         licenseInfo.licenseShortName = data.license
         licenseInfo.artist = data.author
+        licenseInfo.date = new Date(Number(imgurData.datetime) * 1000)
+        licenseInfo.views  = imgurData.views
 
         return licenseInfo
     }

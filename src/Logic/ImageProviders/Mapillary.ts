@@ -4,6 +4,7 @@ import Svg from "../../Svg"
 import { Utils } from "../../Utils"
 import { LicenseInfo } from "./LicenseInfo"
 import Constants from "../../Models/Constants"
+import Link from "../../UI/Base/Link"
 
 export class Mapillary extends ImageProvider {
     public static readonly singleton = new Mapillary()
@@ -16,10 +17,6 @@ export class Mapillary extends ImageProvider {
         "https://www.mapillary.com",
     ]
     defaultKeyPrefixes = ["mapillary", "image"]
-
-    apiUrls(): string[] {
-        return ["https://mapillary.com", "https://www.mapillary.com", "https://graph.mapillary.com"]
-    }
 
     /**
      * Indicates that this is the same URL
@@ -57,6 +54,30 @@ export class Mapillary extends ImageProvider {
         return false
     }
 
+    static createLink(
+        location: {
+            lon: number
+            lat: number
+        } = undefined,
+        zoom: number = 17,
+        pKey?: string
+    ) {
+        const params = {
+            focus: pKey === undefined ? "map" : "photo",
+            lat: location?.lat,
+            lng: location?.lon,
+            z: location === undefined ? undefined : Math.max((zoom ?? 2) - 1, 1),
+            pKey,
+        }
+        const baselink = `https://www.mapillary.com/app/?`
+        const paramsStr = Utils.NoNull(
+            Object.keys(params).map((k) =>
+                params[k] === undefined ? undefined : k + "=" + params[k]
+            )
+        )
+        return baselink + paramsStr.join("&")
+    }
+
     /**
      * Returns the correct key for API v4.0
      */
@@ -80,8 +101,22 @@ export class Mapillary extends ImageProvider {
         return undefined
     }
 
-    SourceIcon(backlinkSource?: string): BaseUIElement {
-        return Svg.mapillary_svg()
+    apiUrls(): string[] {
+        return ["https://mapillary.com", "https://www.mapillary.com", "https://graph.mapillary.com"]
+    }
+
+    SourceIcon(
+        id: string,
+        location?: {
+            lon: number
+            lat: number
+        }
+    ): BaseUIElement {
+        const icon = Svg.mapillary_svg()
+        if (!id) {
+            return icon
+        }
+        return new Link(icon, Mapillary.createLink(location, 16, "" + id), true)
     }
 
     async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
@@ -106,14 +141,18 @@ export class Mapillary extends ImageProvider {
         const metadataUrl =
             "https://graph.mapillary.com/" +
             mapillaryId +
-            "?fields=thumb_1024_url&&access_token=" +
+            "?fields=thumb_1024_url,thumb_original_url&access_token=" +
             Constants.mapillary_client_token_v4
         const response = await Utils.downloadJsonCached(metadataUrl, 60 * 60)
         const url = <string>response["thumb_1024_url"]
+        console.log(response)
+        const url_hd = <string>response["thumb_original_url"]
         return {
-            url: url,
+            id: "" + mapillaryId,
+            url,
+            url_hd,
             provider: this,
-            key: key,
+            key,
         }
     }
 }
