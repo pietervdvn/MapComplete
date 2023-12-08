@@ -57,7 +57,7 @@
   </button>
 
 
-  <div class="flex items-center justify-self-end title-icons links-as-button gap-x-0.5 p-1 pt-0.5 sm:pt-1">
+  <div class="self-end flex items-center flex-wrap justify-self-end title-icons links-as-button gap-x-0.5 p-1 pt-0.5 sm:pt-1">
     {#each favConfig.titleIcons as titleIconConfig}
       {#if (titleIconBlacklist.indexOf(titleIconConfig.id) < 0) && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties({ ...properties, ...state.userRelatedState.preferencesAsTags.data }) ?? true) && titleIconConfig.IsKnown(properties)}
         <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>

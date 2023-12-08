@@ -1452,6 +1452,16 @@ export class ValidateLayer extends Conversion<
             }
         }
 
+        for (let i = 0; i < layerConfig.titleIcons.length; i++) {
+            const titleIcon = layerConfig.titleIcons[i]
+            if (<any> titleIcon.render === "icons.defaults") {
+                context.enters("titleIcons", i).err("Detected a literal 'icons.defaults'")
+            }
+            if (<any> titleIcon.render === "icons.rating") {
+                context.enters("titleIcons", i).err("Detected a literal 'icons.rating'")
+            }
+        }
+
         return { raw: json, parsed: layerConfig }
     }
 }
