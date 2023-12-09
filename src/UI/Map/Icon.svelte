@@ -24,6 +24,9 @@
   import Gps_arrow from "../../assets/svg/Gps_arrow.svelte";
   import { HeartIcon } from "@babeard/svelte-heroicons/solid";
   import { HeartIcon as HeartOutlineIcon } from "@babeard/svelte-heroicons/outline";
+  import Confirm from "../../assets/svg/Confirm.svelte";
+  import Not_found from "../../assets/svg/Not_found.svelte";
+  import { twMerge } from "tailwind-merge";
 
   /**
    * Renders a single icon.
@@ -32,71 +35,75 @@
    */
 
   export let icon: string | undefined;
-  export let color: string | undefined = undefined
-  export let clss: string | undefined = undefined
+  export let color: string | undefined = undefined;
+  export let clss: string | undefined = undefined;
 </script>
 
 {#if icon}
-    {#if icon === "pin"}
-      <Pin {color} class={clss}/>
-    {:else if icon === "square"}
-      <Square {color} class={clss}/>
-    {:else if icon === "circle"}
-      <Circle {color} class={clss}/>
-    {:else if icon === "checkmark"}
-      <Checkmark {color} class={clss}/>
-    {:else if icon === "clock"}
-      <Clock {color} class={clss}/>
-    {:else if icon === "close"}
-      <Close {color} class={clss}/>
-    {:else if icon === "crosshair"}
-      <Crosshair {color} class={clss}/>
-    {:else if icon === "help"}
-      <Help {color} class={clss}/>
-    {:else if icon === "home"}
-      <Home {color} class={clss}/>
-    {:else if icon === "invalid"}
-      <Invalid {color} class={clss}/>
-    {:else if icon === "location"}
-      <Location {color} class={clss}/>
-    {:else if icon === "location_empty"}
-      <Location_empty {color} class={clss}/>
-    {:else if icon === "location_locked"}
-      <Location_locked {color} class={clss}/>
-    {:else if icon === "note"}
-      <Note {color} class={clss}/>
-    {:else if icon === "resolved"}
-      <Resolved {color} class={clss}/>
-    {:else if icon === "ring"}
-      <Ring {color} class={clss}/>
-    {:else if icon === "scissors"}
-      <Scissors {color} class={clss}/>
-    {:else if icon === "teardrop"}
-      <Teardrop {color} class={clss}/>
-    {:else if icon === "teardrop_with_hole_green"}
-      <Teardrop_with_hole_green {color} class={clss}/>
-    {:else if icon === "triangle"}
-      <Triangle {color} class={clss}/>
-    {:else if icon === "brick_wall_square"}
-      <Brick_wall_square {color} class={clss}/>
-    {:else if icon === "brick_wall_round"}
-      <Brick_wall_round {color} class={clss}/>
-    {:else if icon === "gps_arrow"}
-      <Gps_arrow {color} class={clss}/>
-    {:else if icon === "checkmark"}
-      <Checkmark {color} class={clss}/>
-    {:else if icon === "help"}
-      <Help {color} class={clss}/>
-    {:else if icon === "close"}
-      <Close {color} class={clss}/>
-    {:else if icon === "invalid"}
-      <Invalid {color} class={clss}/>
-    {:else if icon === "heart"}
-      <HeartIcon class={clss}/>
-    {:else if icon === "heart_outline"}
-      <HeartOutlineIcon class={clss}/>
-    {:else}
-      <img class={clss ?? "h-full w-full"} src={icon}  aria-hidden="true"
-           alt="" />
-    {/if}
+  {#if icon === "pin"}
+    <Pin {color} class={clss} />
+  {:else if icon === "square"}
+    <Square {color} class={clss} />
+  {:else if icon === "circle"}
+    <Circle {color} class={clss} />
+  {:else if icon === "checkmark"}
+    <Checkmark {color} class={clss} />
+  {:else if icon === "clock"}
+    <Clock {color} class={clss} />
+  {:else if icon === "close"}
+    <Close {color} class={clss} />
+  {:else if icon === "crosshair"}
+    <Crosshair {color} class={clss} />
+  {:else if icon === "help"}
+    <Help {color} class={clss} />
+  {:else if icon === "home"}
+    <Home {color} class={clss} />
+  {:else if icon === "invalid"}
+    <Invalid {color} class={clss} />
+  {:else if icon === "location"}
+    <Location {color} class={clss} />
+  {:else if icon === "location_empty"}
+    <Location_empty {color} class={clss} />
+  {:else if icon === "location_locked"}
+    <Location_locked {color} class={clss} />
+  {:else if icon === "note"}
+    <Note {color} class={clss} />
+  {:else if icon === "resolved"}
+    <Resolved {color} class={clss} />
+  {:else if icon === "ring"}
+    <Ring {color} class={clss} />
+  {:else if icon === "scissors"}
+    <Scissors {color} class={clss} />
+  {:else if icon === "teardrop"}
+    <Teardrop {color} class={clss} />
+  {:else if icon === "teardrop_with_hole_green"}
+    <Teardrop_with_hole_green {color} class={clss} />
+  {:else if icon === "triangle"}
+    <Triangle {color} class={clss} />
+  {:else if icon === "brick_wall_square"}
+    <Brick_wall_square {color} class={clss} />
+  {:else if icon === "brick_wall_round"}
+    <Brick_wall_round {color} class={clss} />
+  {:else if icon === "gps_arrow"}
+    <Gps_arrow {color} class={clss} />
+  {:else if icon === "checkmark"}
+    <Checkmark {color} class={clss} />
+  {:else if icon === "help"}
+    <Help {color} class={clss} />
+  {:else if icon === "close"}
+    <Close {color} class={clss} />
+  {:else if icon === "invalid"}
+    <Invalid {color} class={clss} />
+  {:else if icon === "heart"}
+    <HeartIcon class={clss} />
+  {:else if icon === "heart_outline"}
+    <HeartOutlineIcon class={clss} />
+  {:else if icon === "confirm"}
+    <Confirm class={clss} {color} />
+  {:else if icon === "not_found"}
+    <Not_found class={twMerge(clss, "no-image-background")} {color} />
+  {:else}
+    <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true"
+         alt="" />
+  {/if}
 {/if}

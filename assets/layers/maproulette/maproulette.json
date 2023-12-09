@@ -238,7 +238,7 @@
             "cs": "Označit jako příliš těžké"
           },
           "status": "6",
-          "image": "not_found"
+          "image": "./assets/svg/not_found.svg"
         }
       }
     }

@@ -83,6 +83,7 @@ import NearbyImages from "./Image/NearbyImages.svelte"
 import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
 import { svelte } from "@sveltejs/vite-plugin-svelte"
 import MoveWizard from "./Popup/MoveWizard.svelte"
+import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1141,73 +1142,22 @@ export default class SpecialVisualizations {
                     },
                 ],
                 constr: (state, tagsSource, args) => {
-                    let [message, image, message_closed, status, maproulette_id_key] = args
+                    let [message, image, message_closed, statusToSet, maproulette_id_key] = args
                     if (image === "") {
                         image = "confirm"
                     }
                     if (maproulette_id_key === "" || maproulette_id_key === undefined) {
                         maproulette_id_key = "mr_taskId"
                     }
-                    const failed = new UIEventSource(false)
-
-                    const closeButton = new SubtleButton(image, message).OnClickWithLoading(
-                        Translations.t.general.loading,
-                        async () => {
-                            const maproulette_id =
-                                tagsSource.data[maproulette_id_key] ??
-                                tagsSource.data.mr_taskId ??
-                                tagsSource.data.id
-                            try {
-                                await Maproulette.singleton.closeTask(
-                                    Number(maproulette_id),
-                                    Number(status),
-                                    {
-                                        tags: `MapComplete MapComplete:${state.layout.id}`,
-                                    }
-                                )
-                                tagsSource.data["mr_taskStatus"] =
-                                    Maproulette.STATUS_MEANING[Number(status)]
-                                tagsSource.data.status = status
-                                tagsSource.ping()
-                            } catch (e) {
-                                console.error(e)
-                                failed.setData(true)
-                            }
-                        }
-                    )
-
-                    let message_closed_element = undefined
-                    if (message_closed !== undefined && message_closed !== "") {
-                        message_closed_element = new FixedUiElement(message_closed)
-                    }
-
-                    return new VariableUiElement(
-                        tagsSource
-                            .map((tgs) => {
-                                if (tgs["status"]) {
-                                    return tgs["status"]
-                                }
-                                const code = tgs["mr_taskStatus"]
-                                console.log("Code is", code, Maproulette.codeToIndex(code))
-                                return Maproulette.codeToIndex(code)
-                            })
-                            .map(Number)
-                            .map(
-                                (status) => {
-                                    console.log("Close MR button: status is", status)
-                                    if (failed.data) {
-                                        return new FixedUiElement(
-                                            "ERROR - could not close the MapRoulette task"
-                                        ).SetClass("block alert")
-                                    }
-                                    if (status === Maproulette.STATUS_OPEN) {
-                                        return closeButton
-                                    }
-                                    return message_closed_element ?? "Closed!"
-                                },
-                                [failed]
-                            )
-                    )
+                    return new SvelteUIElement(MaprouletteSetStatus, {
+                        state,
+                        tags: tagsSource,
+                        message,
+                        image,
+                        message_closed,
+                        statusToSet,
+                        maproulette_id_key,
+                    })
                 },
             },
             {
