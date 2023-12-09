@@ -503,14 +503,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 Translations.t.hotkeyDocumentation.selectItem,
                 () => this.selectClosestAtCenter(0)
             )
-            Hotkeys.RegisterHotkey(
-                {
-                    nomod: "Spacebar",
-                    onUp: true,
-                },
-                Translations.t.hotkeyDocumentation.selectItem,
-                () => this.selectClosestAtCenter(0)
-            )
+
             for (let i = 1; i < 9; i++) {
                 let doc = Translations.t.hotkeyDocumentation.selectItemI.Subs({ i })
                 if (i === 1) {
@@ -531,7 +524,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
             return true // unregister
         })
-
         this.featureSwitches.featureSwitchBackgroundSelection.addCallbackAndRun((enable) => {
             if (!enable) {
                 return

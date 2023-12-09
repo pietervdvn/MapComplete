@@ -113,6 +113,9 @@ export default class Hotkeys {
                 if (keycode.length == 1) {
                     keycode = keycode.toUpperCase()
                 }
+                if (keycode === " ") {
+                    keycode = "Spacebar"
+                }
                 modifiers.push(keycode)
                 return <[string, string | Translation]>[modifiers.join("+"), documentation]
             })
