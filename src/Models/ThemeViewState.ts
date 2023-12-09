@@ -512,12 +512,20 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 () => this.selectClosestAtCenter(0)
             )
             for (let i = 1; i < 9; i++) {
+                let doc = Translations.t.hotkeyDocumentation.selectItemI.Subs({ i })
+                if (i === 1) {
+                    doc = Translations.t.hotkeyDocumentation.selectItem
+                } else if (i === 2) {
+                    doc = Translations.t.hotkeyDocumentation.selectItem2
+                } else if (i === 3) {
+                    doc = Translations.t.hotkeyDocumentation.selectItem3
+                }
                 Hotkeys.RegisterHotkey(
                     {
                         nomod: "" + i,
                         onUp: true,
                     },
-                    Translations.t.hotkeyDocumentation.selectItem,
+                    doc,
                     () => this.selectClosestAtCenter(i - 1)
                 )
             }
@@ -533,6 +541,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     nomod: "b",
                 },
                 Translations.t.hotkeyDocumentation.openLayersPanel,
+                () => {
+                    if (this.featureSwitches.featureSwitchBackgroundSelection.data) {
+                        this.guistate.backgroundLayerSelectionIsOpened.setData(true)
+                    }
+                }
+            )
+            Hotkeys.RegisterHotkey(
+                {
+                    nomod: "s",
+                },
+                Translations.t.hotkeyDocumentation.openFilterPanel,
                 () => {
                     if (this.featureSwitches.featureSwitchFilter.data) {
                         this.guistate.openFilterView()

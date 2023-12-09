@@ -460,7 +460,8 @@
           "if": "surface=fine_gravel",
           "then": {
             "en": "The surface is <b>fine gravel</b>",
-            "nl": "De ondergrond bestaat uit <b>grind</b>"
+            "nl": "De ondergrond bestaat uit <b>grind</b>",
+            "de": "Die Oberfläche ist <b>feiner Kies</b>"
           }
         }
       ],
