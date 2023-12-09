@@ -1356,6 +1356,10 @@ video {
   cursor: wait;
 }
 
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
 .resize {
   resize: both;
 }

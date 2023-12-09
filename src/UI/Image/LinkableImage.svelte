@@ -64,7 +64,7 @@
 </script>
 
 <div class="flex w-fit shrink-0 flex-col">
-  <div on:click={() => state.previewedImage.setData(providedImage)}>
+  <div on:click={() => state.previewedImage.setData(providedImage)} class="cursor-zoom-in">
     <AttributedImage image={providedImage} imgClass="max-h-64 w-auto"/>
   </div>
   {#if linkable}
