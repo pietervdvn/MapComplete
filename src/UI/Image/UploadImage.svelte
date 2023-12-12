@@ -4,7 +4,7 @@
      */
 
     import type { SpecialVisualizationState } from "../SpecialVisualization"
-    import { ImmutableStore, Store } from "../../Logic/UIEventSource"
+    import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
     import type { OsmTags } from "../../Models/OsmFeature"
     import LoginToggle from "../Base/LoginToggle.svelte"
     import Translations from "../i18n/Translations"
@@ -16,7 +16,7 @@
 
     export let state: SpecialVisualizationState
 
-    export let tags: Store<OsmTags>
+    export let tags: UIEventSource<OsmTags>
     export let targetKey: string = undefined
     /**
      * Image to show in the button
@@ -45,7 +45,7 @@
 </script>
 
 <LoginToggle {state}>
-  <LoginButton slot="not-logged-in" clss="small w-full">
+  <LoginButton slot="not-logged-in" clss="small w-full" osmConnection={state.osmConnection}>
     <Tr t={Translations.t.image.pleaseLogin} />
   </LoginButton>
   <div class="flex flex-col">
@@ -60,7 +60,7 @@
         {#if image !== undefined}
           <img src={image} aria-hidden="true" />
         {:else}
-          <Camera_plus class="block h-12 w-12 p-1 text-4xl" />
+          <Camera_plus class="block h-12 w-12 p-1 text-4xl" aria-hidden="true" />
         {/if}
         {#if labelText}
           {labelText}
