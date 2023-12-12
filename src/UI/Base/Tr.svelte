@@ -9,12 +9,12 @@
   export let t: Translation
   export let cls: string = ""
   // Text for the current language
-  let txt: Store<string | undefined> = t.current
+  let txt: Store<string | undefined> = t?.current
 
 
 </script>
 
-{#if t}
+{#if txt}
   <span class={cls}>
     {$txt}
     <WeblateLink context={t.context} />
