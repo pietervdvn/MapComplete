@@ -2,7 +2,6 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
 import { Utils } from "../../Utils"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
-import Doc = Mocha.reporters.Doc
 
 export default class Locale {
     public static showLinkToWeblate: UIEventSource<boolean> = new UIEventSource<boolean>(false)
