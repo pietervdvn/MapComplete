@@ -11,6 +11,7 @@
 
 <button
   on:click={(e) => dispatch("click", e)}
+  on:keydown
   class={twJoin("pointer-events-auto m-0.5 h-fit w-fit rounded-full p-0.5 sm:p-1 md:m-1", cls)}
 >
   <slot />

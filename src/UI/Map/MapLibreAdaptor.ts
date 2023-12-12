@@ -574,6 +574,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setAllowMoving(allow: true | boolean | undefined) {
         const map = this._maplibreMap.data
+        console.log("Setting 'allowMoving' to", allow)
         if (!map) {
             return
         }

@@ -112,6 +112,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly selectedLayer: UIEventSource<LayerConfig>
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
+    readonly lastGeolocationRequestMoment: UIEventSource<Date> = new UIEventSource<Date>(undefined)
 
     readonly imageUploadManager: ImageUploadManager
     readonly previewedImage = new UIEventSource<ProvidedImage>(undefined)
