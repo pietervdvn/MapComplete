@@ -88,7 +88,7 @@ export default class ScriptUtils {
                     const parsed = JSON.parse(contents)
                     return { parsed, path }
                 } catch (e) {
-                    console.error("Could not parse file ", "./assets/layers/" + path, "due to ", e)
+                    console.error("Could not parse file ", path, "due to ", e)
                     throw e
                 }
             })
