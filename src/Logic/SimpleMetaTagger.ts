@@ -140,8 +140,30 @@ class CountryTagger extends SimpleMetaTagger {
                 const oldCountry = feature.properties["_country"]
                 const newCountry = countries[0].trim().toLowerCase()
                 if (oldCountry !== newCountry) {
-                    tagsSource.data["_country"] = newCountry
-                    tagsSource?.ping()
+                    if (typeof window === undefined) {
+                        tagsSource.data["_country"] = newCountry
+                        tagsSource?.ping()
+                    } else {
+                        /**
+                         * What is this weird construction?
+                         *
+                         * For a theme with a hundreds of items (e.g. shops)
+                         * the country for all those shops will probably arrive at the same time.
+                         *
+                         * This means that all those stores will be pinged around the same time.
+                         * Now, the country is pivotal in calculating the opening hours (because opening hours need the country to determine e.g. public holidays).
+                         *
+                         * In other words, when the country information becomes available, it'll start calculating the opening hours for hundreds of items at the same time.
+                         * This will choke up the main thread for at least a few seconds, causing a very annoying hang.
+                         *
+                         * As such, we use 'requestIdleCallback' instead to gently spread out these calculations
+                         */
+
+                        window.requestIdleCallback(() => {
+                            tagsSource.data["_country"] = newCountry
+                            tagsSource?.ping()
+                        })
+                    }
                 }
             })
             .catch((e) => {
