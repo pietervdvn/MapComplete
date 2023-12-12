@@ -349,48 +349,27 @@
   ],
   "units": [
     {
-      "appliesToKey": [
-        "door:width",
-        "elevator:width",
-        "elevator:depth"
-      ],
-      "defaultInput": "cm",
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "useIfNoUnitGiven": true,
-          "human": {
-            "en": "meter",
-            "fr": "mètre",
-            "de": "Meter",
-            "nl": "meter",
-            "pa_PK": "میٹر",
-            "pl": "metr",
-            "ca": "metre",
-            "cs": "metr"
-          }
-        },
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "cms"
-          ],
-          "human": {
-            "en": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter",
-            "nl": "centimeter",
-            "pa_PK": "سینٹیمیٹر",
-            "pl": "centymetr",
-            "ca": "centímetre",
-            "cs": "centimetr"
-          }
-        }
-      ]
+      "door:width": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      },
+      "elevator:width": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      },
+      "elevator:depth": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      }
     }
   ]
 }

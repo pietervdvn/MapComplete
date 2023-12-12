@@ -83,6 +83,7 @@ import NearbyImages from "./Image/NearbyImages.svelte"
 import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
 import { svelte } from "@sveltejs/vite-plugin-svelte"
 import MoveWizard from "./Popup/MoveWizard.svelte"
+import { Unit } from "../Models/Unit"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -890,7 +891,7 @@ export default class SpecialVisualizations {
                                 if (value === undefined) {
                                     return undefined
                                 }
-                                const allUnits = [].concat(
+                                const allUnits: Unit[] = [].concat(
                                     ...(state?.layout?.layers?.map((lyr) => lyr.units) ?? [])
                                 )
                                 const unit = allUnits.filter((unit) =>
@@ -899,7 +900,9 @@ export default class SpecialVisualizations {
                                 if (unit === undefined) {
                                     return value
                                 }
-                                return unit.asHumanLongValue(value)
+                                const getCountry = () => tagSource.data._country
+                                const [v, denom] = unit.findDenomination(value, getCountry)
+                                return unit.asHumanLongValue(v, getCountry)
                             })
                     )
                 },

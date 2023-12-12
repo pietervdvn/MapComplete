@@ -480,42 +480,13 @@
   },
   "units": [
     {
-      "appliesToKey": [
-        "toilets:door:width"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": "meter",
-            "nl": "meter",
-            "fr": "mètre",
-            "de": "Meter",
-            "da": "meter",
-            "ca": "metre",
-            "cs": "metr"
-          }
-        },
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "cms"
-          ],
-          "human": {
-            "en": "centimeter",
-            "nl": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter",
-            "da": "centimeter",
-            "ca": "centimetre",
-            "cs": "centimetr"
-          }
-        }
-      ]
+      "toilets:door:width": {
+        "quantity": "distance",
+        "denominations": [
+          "m",
+          "cm"
+        ]
+      }
     }
   ]
 }

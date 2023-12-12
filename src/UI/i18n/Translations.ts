@@ -131,7 +131,7 @@ export default class Translations {
     }
 
     static isProbablyATranslation(transl: any) {
-        if (typeof transl !== "object") {
+        if (!transl || typeof transl !== "object") {
             return false
         }
         if (Object.keys(transl).length == 0) {

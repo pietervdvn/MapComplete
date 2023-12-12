@@ -362,29 +362,12 @@
   },
   "units": [
     {
-      "appliesToKey": [
-        "height"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter",
-            "mtr"
-          ],
-          "human": {
-            "nl": " meter",
-            "en": " meter",
-            "ru": " метр",
-            "de": " Meter",
-            "ca": " metre",
-            "es": " metros",
-            "pl": " metr",
-            "cs": " metr"
-          }
-        }
-      ],
-      "eraseInvalidValues": true
+      "height": {
+        "quantity": "distance",
+        "denominations": [
+          "m"
+        ]
+      }
     }
   ]
 }

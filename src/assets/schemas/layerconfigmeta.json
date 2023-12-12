@@ -1081,7 +1081,19 @@
         "items": {
           "anyOf": [
             {
-              "$ref": "#/definitions/TagRenderingConfigJson"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/TagRenderingConfigJson"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
             },
             {
               "type": "string"
@@ -1103,7 +1115,16 @@
         "maxItems": 1
       }
     ],
-    "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)"
+    "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\nUse `auto:<tagrenderingId>` to automatically create an icon based on a tagRendering which has icons"
+  },
+  {
+    "path": [
+      "titleIcons"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "object",
+    "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one"
   },
   {
     "path": [
@@ -10381,6 +10402,10 @@
           "then": "tree_node - A layer showing trees"
         },
         {
+          "if": "value=unit",
+          "then": "unit - Library layer with all common units"
+        },
+        {
           "if": "value=usersettings",
           "then": "usersettings - A special layer which is not meant to be shown on a map, but which is used to set user settings"
         },
@@ -10447,7 +10472,7 @@
     "hints": {
       "typehint": "tagrendering[]",
       "group": "tagrenderings",
-      "question": "Edit this attribute showing piece/question"
+      "question": "Edit this way this attributed is displayed or queried"
     },
     "type": [
       {
@@ -15969,21 +15994,20 @@
   },
   {
     "path": [
-      "units"
+      "units",
+      "quantity"
     ],
     "required": false,
-    "hints": {
-      "default": "ult: true,"
-    },
-    "type": "object",
-    "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n# Rendering\nTo render a value with long (human) denomination, use {canonical(key)}\n# Usage\nFirst of all, you define which keys have units applied, for example:\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given"
+    "hints": {},
+    "type": "string",
+    "description": "What is quantified? E.g. 'speed', 'length' (including width, diameter, ...), 'electric tension', 'electric current', 'duration'"
   },
   {
     "path": [
       "units",
       "appliesToKey"
     ],
-    "required": true,
+    "required": false,
     "hints": {},
     "type": "array",
     "description": "Every key from this list will be normalized.\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`"
@@ -16108,6 +16132,17 @@
     "hints": {},
     "type": "boolean",
     "description": "If set, then the canonical value will be prefixed instead, e.g. for '€'\nNote that if all values use 'prefix', the dropdown might move to before the text field"
+  },
+  {
+    "path": [
+      "units",
+      "applicableUnits",
+      "addSpace"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "boolean",
+    "description": "If set, add a space between the quantity and the denomination.\nE.g.: `50 mph` instad of `50mph`"
   },
   {
     "path": [

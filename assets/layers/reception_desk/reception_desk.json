@@ -98,44 +98,13 @@
   ],
   "units": [
     {
-      "appliesToKey": [
-        "desk:height"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": "meter",
-            "fr": "mètre",
-            "de": "Meter",
-            "nl": "meter",
-            "pa_PK": "میٹر",
-            "ca": "metre",
-            "pl": "metr",
-            "cs": "metr"
-          }
-        },
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "cms"
-          ],
-          "human": {
-            "en": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter",
-            "nl": "centimeter",
-            "pa_PK": "سینٹیمیٹر",
-            "ca": "centímetre",
-            "pl": "centymetr",
-            "cs": "centimetr"
-          }
-        }
-      ]
+      "desk:height": {
+        "quantity": "distance",
+        "denominations": [
+          "m",
+          "cm"
+        ]
+      }
     }
   ]
 }

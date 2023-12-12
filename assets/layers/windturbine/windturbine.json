@@ -300,130 +300,19 @@
   ],
   "units": [
     {
-      "appliesToKey": [
-        "generator:output:electricity"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "MW",
-          "alternativeDenomination": [
-            "megawatts",
-            "megawatt"
-          ],
-          "human": {
-            "en": " megawatts",
-            "nl": " megawatt",
-            "fr": " megawatts",
-            "de": " Megawatt",
-            "eo": " megavatoj",
-            "it": " megawatt",
-            "ru": " мегаватт",
-            "zh_Hant": " 百萬瓦",
-            "id": " megawat",
-            "hu": " megawatt",
-            "ca": " megavats",
-            "da": " Megawatt",
-            "cs": " megawatty"
-          }
-        },
-        {
-          "canonicalDenomination": "kW",
-          "alternativeDenomination": [
-            "kilowatts",
-            "kilowatt"
-          ],
-          "human": {
-            "en": " kilowatts",
-            "nl": " kilowatt",
-            "fr": " kilowatts",
-            "de": " Kilowatt",
-            "eo": " kilovatoj",
-            "it": " kilowatt",
-            "nb_NO": " kilowatt",
-            "ru": " киловатт",
-            "zh_Hant": " 千瓦",
-            "id": " kilowat",
-            "hu": " kilowatt",
-            "ca": " quilovats",
-            "da": " Kilowatt",
-            "cs": " kilowatty"
-          }
-        },
-        {
-          "canonicalDenomination": "W",
-          "alternativeDenomination": [
-            "watts",
-            "watt"
-          ],
-          "human": {
-            "en": " watts",
-            "nl": " watt",
-            "fr": " watts",
-            "de": " Watt",
-            "eo": " vatoj",
-            "it": " watt",
-            "ru": " ватт",
-            "zh_Hant": " 瓦",
-            "id": " watt",
-            "hu": " watt",
-            "ca": " vats",
-            "da": " Watt",
-            "cs": " watty"
-          }
-        },
-        {
-          "canonicalDenomination": "GW",
-          "alternativeDenomination": [
-            "gigawatts",
-            "gigawatt"
-          ],
-          "human": {
-            "en": " gigawatts",
-            "nl": " gigawatt",
-            "fr": " gigawatts",
-            "de": " Gigawatt",
-            "eo": " gigavatoj",
-            "it": " gigawatt",
-            "ru": " гигаватт",
-            "zh_Hant": " 千兆瓦",
-            "id": " gigawatt",
-            "hu": " gigawatt",
-            "ca": " gigavats",
-            "da": " Gigawatt",
-            "cs": " gigawatty"
-          }
-        }
-      ],
-      "eraseInvalidValues": true
-    },
-    {
-      "appliesToKey": [
-        "height",
-        "rotor:diameter"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": " meter",
-            "nl": " meter",
-            "fr": " mètres",
-            "de": " Meter",
-            "eo": " metro",
-            "it": " metri",
-            "ru": " метр",
-            "zh_Hant": " 公尺",
-            "id": " meter",
-            "hu": " méter",
-            "ca": " metre",
-            "da": " meter",
-            "cs": " metr"
-          }
-        }
-      ]
+      "generator:output:electricity": "power",
+      "height": {
+        "quantity": "distance",
+        "denominations": [
+          "m"
+        ]
+      },
+      "rotor:diamter": {
+        "quantity": "distance",
+        "denominations": [
+          "m"
+        ]
+      }
     }
   ]
 }

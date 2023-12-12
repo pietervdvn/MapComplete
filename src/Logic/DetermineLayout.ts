@@ -137,11 +137,12 @@ export default class DetermineLayout {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             // We got fed a layer instead of a theme
             const layerConfig = <LayerConfigJson>json
-            const iconTr: string | TagRenderingConfigJson = <any>(
-                layerConfig.pointRendering
-                    .map((mr) => mr?.marker?.find((icon) => icon.icon !== undefined)?.icon)
-                    .find((i) => i !== undefined)
-            ) ?? "bug"
+            const iconTr: string | TagRenderingConfigJson =
+                <any>(
+                    layerConfig.pointRendering
+                        .map((mr) => mr?.marker?.find((icon) => icon.icon !== undefined)?.icon)
+                        .find((i) => i !== undefined)
+                ) ?? "bug"
             const icon = new TagRenderingConfig(iconTr).render.txt
             json = {
                 id: json.id,
@@ -156,8 +157,8 @@ export default class DetermineLayout {
         }
 
         const knownLayersDict = new Map<string, LayerConfigJson>()
-        for (const key in known_layers.layers) {
-            const layer = known_layers.layers[key]
+        for (const key in known_layers["layers"]) {
+            const layer = known_layers["layers"][key]
             knownLayersDict.set(layer.id, <LayerConfigJson>layer)
         }
         const convertState: DesugaringContext = {

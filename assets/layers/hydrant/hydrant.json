@@ -549,37 +549,12 @@
   ],
   "units": [
     {
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "",
-          "alternativeDenomination": [
-            "mm",
-            "millimeter",
-            "millimeters"
-          ],
-          "human": {
-            "en": "millimeters",
-            "nl": "millimeter",
-            "de": "Millimeter",
-            "pa_PK": "ملیمیٹر",
-            "ru": "миллиметры",
-            "ca": "mil·límetres",
-            "cs": "milimetry"
-          },
-          "humanSingular": {
-            "en": "millimeter",
-            "nl": "millimeter",
-            "de": "Millimeter",
-            "pa_PK": "ملیمیٹر",
-            "ru": "миллиметр",
-            "ca": "mil·límetre",
-            "cs": "milimetr"
-          }
-        }
-      ],
-      "appliesToKey": [
-        "fire_hydrant:diameter"
-      ]
+      "fire_hydrant:diameter": {
+        "quantity": "distance",
+        "denominations": [
+          "mm"
+        ]
+      }
     }
   ]
 }

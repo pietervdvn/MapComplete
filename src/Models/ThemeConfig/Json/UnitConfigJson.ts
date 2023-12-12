@@ -58,11 +58,15 @@
  */
 export default interface UnitConfigJson {
     /**
+     * What is quantified? E.g. 'speed', 'length' (including width, diameter, ...), 'electric tension', 'electric current', 'duration'
+     */
+    quantity?: string
+    /**
      * Every key from this list will be normalized.
      *
      * To render the value properly (with a human readable denomination), use `{canonical(<key>)}`
      */
-    appliesToKey: string[]
+    appliesToKey?: string[]
     /**
      * If set, invalid values will be erased in the MC application (but not in OSM of course!)
      * Be careful with setting this
@@ -143,4 +147,11 @@ export interface DenominationConfigJson {
      * Note that if all values use 'prefix', the dropdown might move to before the text field
      */
     prefix?: boolean
+
+    /**
+     * If set, add a space between the quantity and the denomination.
+     *
+     * E.g.: `50 mph` instad of `50mph`
+     */
+    addSpace?: boolean
 }

@@ -517,7 +517,10 @@ export interface LayerConfigJson {
      *
      * group: editing
      */
-    units?: UnitConfigJson[]
+    units?: (
+        | UnitConfigJson
+        | Record<string, string | { quantity: string; denominations: string[]; canonical?: string }>
+    )[]
 
     /**
      * If set, synchronizes whether or not this layer is enabled.

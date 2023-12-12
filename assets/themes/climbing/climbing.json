@@ -120,61 +120,27 @@
         ],
         "units+": [
           {
-            "appliesToKey": [
-              "climbing:length",
-              "climbing:length:min",
-              "climbing:length:max"
-            ],
-            "applicableUnits": [
-              {
-                "canonicalDenomination": "",
-                "alternativeDenomination": [
-                  "m",
-                  "meter",
-                  "meters"
-                ],
-                "human": {
-                  "en": " meter",
-                  "nl": " meter",
-                  "fr": " mètres",
-                  "de": " Meter",
-                  "eo": " metro",
-                  "it": " metri",
-                  "ru": " метр",
-                  "ca": " metre",
-                  "nb_NO": " meter",
-                  "es": " metro",
-                  "da": " meter",
-                  "pa_PK": " ؜ میٹر",
-                  "cs": " metr",
-                  "eu": " ·metro",
-                  "pl": " metry"
-                }
-              },
-              {
-                "canonicalDenomination": "ft",
-                "alternativeDenomination": [
-                  "feet",
-                  "voet"
-                ],
-                "human": {
-                  "en": " feet",
-                  "nl": " voet",
-                  "fr": " pieds",
-                  "de": " Fuß",
-                  "eo": " futo",
-                  "it": " piedi",
-                  "ca": " peus",
-                  "nb_NO": " fot",
-                  "es": " pies",
-                  "da": " fod",
-                  "pa_PK": " ؜ فوٹ",
-                  "cs": " stopa",
-                  "eu": " ·hanka",
-                  "pl": " stopy"
-                }
-              }
-            ]
+            "climbing:length": {
+              "quantity": "distance",
+              "canonical": "m",
+              "denominations": [
+                "ft"
+              ]
+            },
+            "climbing:length:min": {
+              "quantity": "distance",
+              "canonical": "m",
+              "denominations": [
+                "ft"
+              ]
+            },
+            "climbing:length:max": {
+              "quantity": "distance",
+              "canonical": "m",
+              "denominations": [
+                "ft"
+              ]
+            }
           }
         ],
         "tagRenderings+": [

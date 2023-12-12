@@ -394,69 +394,13 @@
   ],
   "units": [
     {
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "centimeters"
-          ],
-          "human": {
-            "en": "centimeters",
-            "nl": "centimeter",
-            "de": "Zentimeter",
-            "fr": "centimètres",
-            "pa_PK": "سینٹیمیٹر",
-            "ru": "сантиметры",
-            "ca": "centímetres",
-            "pl": "centymetry",
-            "cs": "centimetry"
-          },
-          "humanSingular": {
-            "en": "centimeter",
-            "nl": "centimeter",
-            "de": "Zentimeter",
-            "fr": "centimètre",
-            "pa_PK": "سینٹیمیٹر",
-            "ru": "сантиметр",
-            "ca": "centímetre",
-            "pl": "centymetr",
-            "cs": "centimetr"
-          }
-        },
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter",
-            "meters"
-          ],
-          "human": {
-            "en": "meters",
-            "nl": "meter",
-            "de": "Meter",
-            "fr": "mètres",
-            "pa_PK": "میٹر",
-            "ru": "метры",
-            "ca": "metres",
-            "pl": "metry",
-            "cs": "metry"
-          },
-          "humanSingular": {
-            "en": "meter",
-            "nl": "meter",
-            "de": "Meter",
-            "fr": "mètre",
-            "pa_PK": "میٹر",
-            "ru": "метр",
-            "ca": "metre",
-            "pl": "metr",
-            "cs": "metr"
-          }
-        }
-      ],
-      "appliesToKey": [
-        "kerb:height"
-      ]
+      "kerb:height": {
+        "quantity": "distance",
+        "denominations": [
+          "cm",
+          "m"
+        ]
+      }
     }
   ]
 }

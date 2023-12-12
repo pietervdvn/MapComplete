@@ -123,45 +123,20 @@
   ],
   "units": [
     {
-      "appliesToKey": [
-        "width",
-        "_biggest_width"
-      ],
-      "defaultUnit": "cm",
-      "applicableUnits": [
-        {
-          "useIfNoUnitGiven": true,
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": "meter",
-            "fr": "mètre",
-            "de": "Meter",
-            "da": "meter",
-            "nl": "meter",
-            "ca": "metre",
-            "cs": "metr"
-          }
-        },
-        {
-          "canonicalDenomination": "cm",
-          "alternativeDenomination": [
-            "centimeter",
-            "cms"
-          ],
-          "human": {
-            "en": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter",
-            "da": "centimeter",
-            "nl": "centimeter",
-            "ca": "centimetre",
-            "cs": "centimetr"
-          }
-        }
-      ]
+      "width": {
+        "quantity": "distance",
+        "denominations": [
+          "m",
+          "cm"
+        ]
+      },
+      "_biggest_width": {
+        "quantity": "distance",
+        "denominations": [
+          "m",
+          "cm"
+        ]
+      }
     }
   ]
 }

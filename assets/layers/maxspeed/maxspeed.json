@@ -155,73 +155,13 @@
   "allowSplit": true,
   "units": [
     {
-      "applicableUnits": [
-        {
-          "#": "km/h is the default for a maxspeed; should be empty string",
-          "canonicalDenomination": "",
-          "alternativeDenomination": [
-            "km/u",
-            "kmh",
-            "kph"
-          ],
-          "human": {
-            "en": "kilometers/hour",
-            "ca": "quilòmetres/hora",
-            "es": "kilómetros/hora",
-            "nl": "kilometers/uur",
-            "de": "Kilometer/Stunde",
-            "pa_PK": "ہر گھنٹہ وچ کیلومیٹر",
-            "fr": "kilomètres/heure",
-            "cs": "km/hod"
-          },
-          "humanShort": {
-            "en": "km/h",
-            "ca": "km/h",
-            "es": "km/h",
-            "nl": "km/u",
-            "de": "km/h",
-            "pa_PK": "ہر گھنٹے وچ کیلومیٹر",
-            "ru": "км/ч",
-            "fr": "km/h",
-            "cs": "km/h"
-          }
-        },
-        {
-          "canonicalDenomination": "mph",
-          "useIfNoUnitGiven": [
-            "gb",
-            "us"
-          ],
-          "alternativeDenomination": [
-            "m/u",
-            "mh",
-            "m/ph"
-          ],
-          "human": {
-            "en": "miles/hour",
-            "ca": "milles/hora",
-            "es": "millas/hora",
-            "nl": "miles/uur",
-            "de": "Meilen/Stunde",
-            "pa_PK": "ہر گھنٹہ وچ میل",
-            "fr": "miles/heure",
-            "cs": "míle/hod"
-          },
-          "humanShort": {
-            "en": "mph",
-            "ca": "mph",
-            "es": "mph",
-            "nl": "mph",
-            "de": "mph",
-            "pa_PK": "ہر گھنٹہ وچ میل",
-            "fr": "mph",
-            "cs": "mph"
-          }
-        }
-      ],
-      "appliesToKey": [
-        "maxspeed"
-      ]
+      "maxspeed": {
+        "quantity": "speed",
+        "canonical": "kmh",
+        "denominations": [
+          "mph"
+        ]
+      }
     }
   ]
 }
