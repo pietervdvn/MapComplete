@@ -301,10 +301,9 @@ export class TagUtils {
             }
 
             console.error("Invalid type to flatten the multiAnswer", tagsFilter)
-            throw (
-                "Invalid type to FlattenMultiAnswer, not one of RegexTag, Tag or And: " +
-                tagsFilter.asHumanString(false, false, {})
-            )
+            throw `Invalid type to FlattenMultiAnswer, not one of ${
+                allowRegex ? "RegexTag, " : ""
+            }Tag or And: ${tagsFilter.asHumanString(false, false, {})}`
         }
         return keyValues
     }
