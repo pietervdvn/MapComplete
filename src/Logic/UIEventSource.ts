@@ -96,7 +96,12 @@ export abstract class Store<T> implements Readable<T> {
 
     abstract map<J>(f: (t: T) => J): Store<J>
     abstract map<J>(f: (t: T) => J, extraStoresToWatch: Store<any>[]): Store<J>
-
+    abstract map<J>(
+        f: (t: T) => J,
+        extraStoresToWatch: Store<any>[],
+        callbackDestroyFunction: (f: () => void) => void
+    ): Store<J>
+    M
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
         extraStoresToWatch?: Store<any>[]
@@ -329,9 +334,13 @@ export class ImmutableStore<T> extends Store<T> {
         return ImmutableStore.pass
     }
 
-    map<J>(f: (t: T) => J, extraStores: Store<any>[] = undefined): ImmutableStore<J> {
+    map<J>(
+        f: (t: T) => J,
+        extraStores: Store<any>[] = undefined,
+        ondestroyCallback?: (f: () => void) => void
+    ): ImmutableStore<J> {
         if (extraStores?.length > 0) {
-            return new MappedStore(this, f, extraStores, undefined, f(this.data))
+            return new MappedStore(this, f, extraStores, undefined, f(this.data), ondestroyCallback)
         }
         return new ImmutableStore<J>(f(this.data))
     }
@@ -463,7 +472,11 @@ class MappedStore<TIn, T> extends Store<T> {
         return this._data
     }
 
-    map<J>(f: (t: T) => J, extraStores: Store<any>[] = undefined): Store<J> {
+    map<J>(
+        f: (t: T) => J,
+        extraStores: Store<any>[] = undefined,
+        ondestroyCallback?: (f: () => void) => void
+    ): Store<J> {
         let stores: Store<any>[] = undefined
         if (extraStores?.length > 0 || this._extraStores?.length > 0) {
             stores = []
@@ -483,7 +496,8 @@ class MappedStore<TIn, T> extends Store<T> {
             f, // we could fuse the functions here (e.g. data => f(this._f(data), but this might result in _f being calculated multiple times, breaking things
             stores,
             this._callbacks,
-            f(this.data)
+            f(this.data),
+            ondestroyCallback
         )
     }
 

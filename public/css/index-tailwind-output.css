@@ -2469,7 +2469,7 @@ button.link:hover {
   fill: var(--foreground-color) !important;
 }
 
-label {
+label:not(.neutral-label) {
   /**
      * Label should _contain_ the input element
      */
@@ -2485,27 +2485,27 @@ label {
   transition: all 250ms;
 }
 
-label:hover {
+label:hover:not(.neutral-label) {
   background-color: var(--catch-detail-color);
   color: var(--catch-detail-foregroundcolor);
   border: 2px solid var(--interactive-contrast)
 }
 
-label:not(.no-image-background) img {
+label:not(.no-image-background):not(.neutral-label) img {
   padding: 0.25rem;
   border-radius: 0.25rem;
   background: var(--low-interaction-background);
 }
 
-label svg path {
+label:not(.neutral-label) svg path {
   transition: all 250ms;
 }
 
-label:hover:not(.no-image-background) svg path {
+label:hover:not(.no-image-background):not(.neutral-label) svg path {
   fill: var(--catch-detail-foregroundcolor) !important;
 }
 
-label.checked {
+label.checked:not(.neutral-label) {
   border: 2px solid var(--foreground-color);
 }
 

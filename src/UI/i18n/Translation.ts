@@ -2,12 +2,16 @@ import Locale from "./Locale"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import LinkToWeblate from "../Base/LinkToWeblate"
+import { Store } from "../../Logic/UIEventSource"
 
 export class Translation extends BaseUIElement {
     public static forcedLanguage = undefined
 
     public readonly translations: Record<string, string>
     public readonly context?: string
+
+    private _current: Store<string>
+    private onDestroy: () => void
 
     constructor(translations: string | Record<string, string>, context?: string) {
         super()
@@ -66,6 +70,18 @@ export class Translation extends BaseUIElement {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
     }
 
+    get current(): Store<string> {
+        if (!this._current) {
+            this._current = Locale.language.map(
+                (l) => this.textFor(l),
+                [],
+                (f) => {
+                    this.onDestroy = f
+                }
+            )
+        }
+        return this._current
+    }
     static ExtractAllTranslationsFrom(
         object: any,
         context = ""
@@ -108,6 +124,7 @@ export class Translation extends BaseUIElement {
 
     Destroy() {
         super.Destroy()
+        this.onDestroy()
         this.isDestroyed = true
     }
 

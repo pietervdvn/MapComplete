@@ -289,7 +289,7 @@
             "generatedWith": "Generated with mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - generated on {date}"
         },
-        "pickLanguage": "Choose a language: ",
+        "pickLanguage": "Select language",
         "poweredByOsm": "Powered by OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "You answered {answered} questions",

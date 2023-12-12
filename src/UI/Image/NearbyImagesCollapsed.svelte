@@ -41,6 +41,7 @@
       on:click={() => {
       expanded = true
     }}
+      aria-expanded={expanded}
     >
       <Camera_plus class="mr-2 block h-8 w-8 p-1" />
       <Tr t={t.seeNearby} />

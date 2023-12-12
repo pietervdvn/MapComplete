@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Svg from "../../Svg.js"
@@ -30,7 +30,20 @@
   let inputElement: HTMLInputElement
 
   let feedback: string = undefined
-
+  
+  let placeholder = Translations.t.general.search.search.current
+  $:{
+    if(inputElement){
+    inputElement.placeholder = placeholder.data
+    }
+  }
+  onDestroy(placeholder.addCallbackAndRunD(placeholder => {
+    if(inputElement){
+      inputElement.placeholder = placeholder
+    }
+  }))
+  
+  
   Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
     feedback = undefined
     requestAnimationFrame(() => {
@@ -111,7 +124,6 @@
         bind:this={inputElement}
         on:keypress={(keypr) => (keypr.key === "Enter" ? performSearch() : undefined)}
         bind:value={searchContents}
-        placeholder={Translations.t.general.search.search}
       />
     {/if}
   </form>

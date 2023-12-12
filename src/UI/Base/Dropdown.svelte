@@ -2,7 +2,6 @@
   import { UIEventSource } from "../../Logic/UIEventSource.js"
 
   export let value: UIEventSource<any>
-  let i: any = value.data
   let htmlElement: HTMLSelectElement
   function selectAppropriateValue() {
     if (!htmlElement) {

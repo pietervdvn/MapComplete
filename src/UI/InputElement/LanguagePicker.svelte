@@ -1,16 +1,17 @@
 <script lang="ts">
-    // Languages in the language itself
-    import native from "../../assets/language_native.json"
-    // Translated languages
-    import language_translations from "../../assets/language_translations.json"
+  // Languages in the language itself
+  import native from "../../assets/language_native.json"
+  // Translated languages
+  import language_translations from "../../assets/language_translations.json"
 
-    import { UIEventSource } from "../../Logic/UIEventSource"
-    import Locale from "../i18n/Locale"
-    import { LanguageIcon } from "@babeard/svelte-heroicons/solid"
-    import Dropdown from "../Base/Dropdown.svelte"
-    import { twMerge } from "tailwind-merge"
-
-    /**
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import Locale from "../i18n/Locale"
+  import { LanguageIcon } from "@babeard/svelte-heroicons/solid"
+  import Dropdown from "../Base/Dropdown.svelte"
+  import { twMerge } from "tailwind-merge"
+  import Translations from "../i18n/Translations"
+import { ariaLabel } from "../../Utils/ariaLabel"
+  /**
    * Languages one can choose from
    * Defaults to _all_ languages known by MapComplete
    */
@@ -19,7 +20,7 @@
    * EventStore to assign to, defaults to 'Locale.langauge'
    */
   export let assignTo: UIEventSource<string> = Locale.language
-  export let preferredLanguages: UIEventSource<string[]> = undefined
+  export let preferredLanguages: Store<string[]> = undefined
   let preferredFiltered: string[] = undefined
   preferredLanguages?.addCallbackAndRunD((preferredLanguages) => {
     let lng = navigator.language
@@ -31,34 +32,40 @@
     }
     preferredFiltered = preferredLanguages?.filter((l) => availableLanguages.indexOf(l) >= 0)
   })
-  export let clss : string = undefined
+  export let clss: string = undefined
   let current = Locale.language
 </script>
 
 {#if availableLanguages?.length > 1}
   <form class={twMerge("flex items-center max-w-full pr-4", clss)}>
-    <LanguageIcon class="h-4 w-4 mr-1 shrink-0" />
-    <Dropdown cls="max-w-full" value={assignTo}>
-      {#if preferredFiltered}
-        {#each preferredFiltered as language}
+    <label class="flex neutral-label" use:ariaLabel={Translations.t.general.pickLanguage}>
+      <LanguageIcon class="h-4 w-4 mr-1 shrink-0" aria-hidden="true" />
+      <Dropdown cls="max-w-full" value={assignTo}>
+        {#if preferredFiltered}
+          {#each preferredFiltered as language}
+            <option value={language} class="font-bold">
+              {native[language] ?? ""}
+              {#if language !== $current}
+                ({language_translations[language]?.[$current] ?? language})
+              {/if}
+            </option>
+          {/each}
+          <option disabled />
+        {/if}
+
+        {#each availableLanguages.filter(l => l !== "_context") as language}
           <option value={language} class="font-bold">
             {native[language] ?? ""}
             {#if language !== $current}
-              ({language_translations[language]?.[$current] ?? language})
+              {#if language_translations[language]?.[$current] !== undefined}
+                ({ language_translations[language]?.[$current] + " - " + language ?? language})
+              {:else}
+                ({language})
+              {/if}
             {/if}
           </option>
         {/each}
-        <option disabled />
-      {/if}
-
-      {#each availableLanguages as language}
-        <option value={language} class="font-bold">
-          {native[language] ?? ""}
-          {#if language !== $current}
-            ({language_translations[language]?.[$current] + " - " + language ?? language})
-          {/if}
-        </option>
-      {/each}
-    </Dropdown>
+      </Dropdown>
+    </label>
   </form>
 {/if}

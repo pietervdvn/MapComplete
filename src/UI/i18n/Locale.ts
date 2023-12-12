@@ -63,6 +63,10 @@ export default class Locale {
             source = LocalStorageSource.Get("language", browserLanguage)
         }
 
+        source.addCallbackAndRun((l) => {
+            document.documentElement.setAttribute("lang", l)
+        })
+
         if (!Utils.runningFromConsole) {
             // @ts-ignore
             window.setLanguage = function (language: string) {
