@@ -1,7 +1,7 @@
 {
   "id": "unit",
   "description": {
-    "en": "Library layer with all (common) units. Units can _only_ be imported from this file"
+    "en": "Library layer with all common units"
   },
   "source": "special:library",
   "units": [

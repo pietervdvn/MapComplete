@@ -9557,7 +9557,7 @@
         }
     },
     "unit": {
-        "description": "Library layer with all common units",
+        "description": "Library layer with all common units.  Units can _only_ be imported from this file.",
         "units": {
             "0": {
                 "applicableUnits": {
