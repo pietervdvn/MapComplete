@@ -98,7 +98,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
-                map.resize()
                 self.MoveMapToCurrentLoc(self.location.data)
                 self.SetZoom(self.zoom.data)
                 self.setMaxBounds(self.maxbounds.data)
@@ -111,7 +110,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setBackground()
                 this.updateStores(true)
             })
-            map.resize()
             self.MoveMapToCurrentLoc(self.location.data)
             self.SetZoom(self.zoom.data)
             self.setMaxBounds(self.maxbounds.data)
@@ -293,7 +291,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
         map.triggerRepaint()
         await promise
-        map.resize()
     }
 
     private async drawElement(

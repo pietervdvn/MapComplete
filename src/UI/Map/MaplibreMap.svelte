@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte"
-  import * as maplibre from "maplibre-gl"
   import type { Map } from "maplibre-gl"
+  import * as maplibre from "maplibre-gl"
   import type { Readable, Writable } from "svelte/store"
   import { get, writable } from "svelte/store"
   import { AvailableRasterLayers } from "../../Models/RasterLayers"
@@ -44,8 +44,10 @@
       interactive: true,
       attributionControl: false,
     })
-
-    _map.on("load", function () {
+    window.requestAnimationFrame(() => {
+      _map.resize()
+    })
+    _map.on("load", function() {
       _map.resize()
     })
     map.set(_map)
@@ -63,11 +65,6 @@
 
 <div
   bind:this={container}
-  class="map"
+  class="map relative top-0 left-0 w-full h-full"
   id="map"
-  style="      position: relative;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;"
 />
