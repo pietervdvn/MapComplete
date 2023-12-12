@@ -394,18 +394,6 @@
                             },
                             "question": "Who can access here?"
                         }
-                    },
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " meter"
-                                },
-                                "1": {
-                                    "human": " feet"
-                                }
-                            }
-                        }
                     }
                 }
             },
@@ -899,19 +887,19 @@
         "description": "This maps shows all the changes made with MapComplete",
         "layers": {
             "0": {
-                "description": "Show all MapComplete changes",
+                "description": "Shows all MapComplete changes",
                 "filter": {
                     "0": {
                         "options": {
                             "0": {
-                                "question": "Theme name contains {search}"
+                                "question": "Themename contains {search}"
                             }
                         }
                     },
                     "1": {
                         "options": {
                             "0": {
-                                "question": "Theme name does <b>not</b> contain {search}"
+                                "question": "Themename does <b>not</b> contain {search}"
                             }
                         }
                     },
@@ -967,14 +955,14 @@
                     "9": {
                         "options": {
                             "0": {
-                                "question": "Made with host {search}"
+                                "question": "Exclude GRB theme"
                             }
                         }
                     },
                     "10": {
                         "options": {
                             "0": {
-                                "question": "Changeset added at least one image"
+                                "question": "Exclude etymology theme"
                             }
                         }
                     }
@@ -982,12 +970,12 @@
                 "name": "Changeset centers",
                 "tagRenderings": {
                     "contributor": {
-                        "question": "Which contributor made this change?",
+                        "question": "What contributor did make this change?",
                         "render": "Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
                     "host": {
                         "question": "What host (website) was this change made with?",
-                        "render": "Change made with <a href='{host}'>{host}</a>"
+                        "render": "Change with with <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "What locale (language) was this change made in?",
@@ -998,7 +986,7 @@
                     },
                     "theme-id": {
                         "question": "What theme was used to make this change?",
-                        "render": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                        "render": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
                     },
                     "version": {
                         "question": "What version of MapComplete was used to make this change?",
@@ -1019,7 +1007,7 @@
                 }
             }
         },
-        "shortDescription": "Show changes made with MapComplete",
+        "shortDescription": "Shows changes made by MapComplete",
         "title": "Changes made with MapComplete"
     },
     "maproulette": {

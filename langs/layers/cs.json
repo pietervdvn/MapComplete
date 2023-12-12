@@ -1861,1000 +1861,17 @@
         }
     },
     "charging_station": {
-        "description": "Nabíjecí stanice",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Všechny typy vozidel"
-                    },
-                    "1": {
-                        "question": "Napájecí stanice pro jízdní kola"
-                    },
-                    "2": {
-                        "question": "Napájecí stanice pro automobily"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Pouze funkční nabíjecí stanice"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Všechny konektory"
-                    },
-                    "1": {
-                        "question": "Má <div style='display: inline-block'><b><b>Schuko nástěnnou zástrčka</b> bez zemního kolíku (CEE7/4 typu F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
-                    },
-                    "2": {
-                        "question": "Má <div style='display: inline-block'><b><b>Evropskou zásuvku</b> se zemnícím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
-                    },
-                    "3": {
-                        "question": "Má <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> konektor"
-                    },
-                    "4": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "5": {
-                        "question": "Má konektor <div style='display: inline-block'><b>Type 1 <i> bez</i> kabelu (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "6": {
-                        "question": "Má konektor <div style='display: inline-block'><b>Type 1 CCS (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-                    },
-                    "7": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "8": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
-                    },
-                    "9": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "11": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "12": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako tesla)</b> <img style='width: 1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "14": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "16": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-                    }
-                }
-            }
-        },
-        "name": "Nabíjecí stanice",
-        "presets": {
-            "0": {
-                "title": "nabíjecí stanice pro elektrokola s běžnou evropskou zástrčkou <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (určeno k nabíjení elektrických kol)"
-            },
-            "1": {
-                "title": "nabíjecí stanice pro automobily"
-            }
-        },
         "tagRenderings": {
-            "Auth phone": {
-                "question": "Jaké je telefonní číslo pro ověřovací hovor nebo SMS?",
-                "render": "Ověření voláním nebo SMS na <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-            },
-            "Authentication": {
-                "mappings": {
+            "rewritten-questions": {
+                "renderings": {
                     "0": {
-                        "then": "Ověření pomocí členské karty"
+                        "question": "Kolik zástrček typu {{description}} je k dispozici?"
                     },
                     "1": {
-                        "then": "Ověření pomocí aplikace"
-                    },
-                    "2": {
-                        "then": "Ověření prostřednictvím telefonního hovoru je k dispozici"
-                    },
-                    "3": {
-                        "then": "Ověření prostřednictvím SMS je k dispozici"
-                    },
-                    "4": {
-                        "then": "Ověření prostřednictvím NFC je k dispozici"
-                    },
-                    "5": {
-                        "then": "Ověřování prostřednictvím karty Money Card je k dispozici"
-                    },
-                    "6": {
-                        "then": "Ověření prostřednictvím debetní karty je k dispozici"
-                    },
-                    "7": {
-                        "then": "Nabíjení je zde možné (i) bez ověření"
-                    }
-                },
-                "question": "Jaký druh ověření je na nabíjecí stanici k dispozici?"
-            },
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typu F)"
-                    },
-                    "1": {
-                        "then": "<b>Schuko nástěnná zástrčka</b> bez zemního kolíku (CEE7/4 typ F)"
-                    },
-                    "2": {
-                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
-                    },
-                    "3": {
-                        "then": "<b>Evropská zástrčka</b> se zemnícím kolíkem (CEE7/4 typ E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i> bez</i> kabelu</b> (J1772)"
-                    },
-                    "10": {
-                        "then": "<b>Type 1 CCS</b> (alias Type 1 Combo)"
-                    },
-                    "11": {
-                        "then": "<b>Type 1 CCS</b> (alias Typ 1 Combo)"
-                    },
-                    "12": {
-                        "then": "<b>Tesla Supercharger</b>"
-                    },
-                    "13": {
-                        "then": "<b>Tesla Supercharger</b>"
-                    },
-                    "14": {
-                        "then": "<b>Type 2</b> (mennekes)"
-                    },
-                    "15": {
-                        "then": "<b>Type 2</b> (mennekes)"
-                    },
-                    "16": {
-                        "then": "<b>Type 2 CCS</b> (mennekes)"
-                    },
-                    "17": {
-                        "then": "<b>Type 2 CCS</b> (mennekes)"
-                    },
-                    "18": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes)"
-                    },
-                    "19": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes)"
-                    },
-                    "20": {
-                        "then": "<b>Tesla Supercharger CCS</b> (brandovaný type2_css)"
-                    },
-                    "21": {
-                        "then": "<b>Tesla Supercharger CCS</b> (brandovaný type2_css)"
-                    },
-                    "22": {
-                        "then": "<b>Tesla Supercharger (destination)</b>"
-                    },
-                    "23": {
-                        "then": "<b>Tesla Supercharger (destination)</b>"
-                    },
-                    "24": {
-                        "then": "<b>Tesla supercharger (destination)</b> (Type 2 s kabelem označeným jako Tesla)"
-                    },
-                    "25": {
-                        "then": "<b>Tesla supercharger (destination)</b> (A Type 2 s kabelem označeným jako Tesla)"
-                    },
-                    "26": {
-                        "then": "<b>USB</b> pro nabíjení telefonů a malé elektroniky"
-                    },
-                    "27": {
-                        "then": "<b>USB</b> pro nabíjení telefonů a malé elektroniky"
-                    },
-                    "28": {
-                        "then": "<b>Bosch Active Connect se 3 kolíky</b> a kabelem"
-                    },
-                    "29": {
-                        "then": "<b>Bosch Active Connect se 3 kolíky</b> a kabelem"
-                    },
-                    "30": {
-                        "then": "<b>Bosch Active Connect s 5 kolíky</b> a kabelem"
-                    },
-                    "31": {
-                        "then": "<b>Bosch Active Connect s 5 kolíky</b> a kabelem"
-                    }
-                },
-                "question": "Jaké nabíjecí přípojky jsou zde k dispozici?"
-            },
-            "Network": {
-                "mappings": {
-                    "0": {
-                        "then": "Není součástí větší sítě, např. proto, že dobíjecí stanici spravuje místní podnik"
-                    },
-                    "1": {
-                        "then": "Není součástí větší sítě"
-                    }
-                },
-                "question": "Je tato nabíjecí stanice součástí sítě?",
-                "render": "Součást sítě <b>{network}</b>"
-            },
-            "OH": {
-                "override": {
-                    "question": "Kdy je tato nabíjecí stanice otevřena?"
-                }
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato nabíjecí stanice je funkční"
-                    },
-                    "1": {
-                        "then": "Tato nabíjecí stanice je rozbitá"
-                    },
-                    "2": {
-                        "then": "Plánuje se zde nabíjecí stanice"
-                    },
-                    "3": {
-                        "then": "Je zde budována nabíjecí stanice"
-                    },
-                    "4": {
-                        "then": "Tato nabíjecí stanice byla trvale vypnuta a již se nepoužívá, ale je stále viditelná"
-                    }
-                },
-                "question": "Je toto nabíjecí místo v provozu?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Aktuálně součástí {operator} sítě"
-                    }
-                },
-                "question": "Kdo je provozovatelem této nabíjecí stanice?",
-                "render": "Tuto nabíjecí stanici provozuje {operator}"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Žádné další náklady na parkování při nabíjení"
-                    },
-                    "1": {
-                        "then": "Při nabíjení by se měl platit dodatečný poplatek za parkování"
-                    }
-                },
-                "question": "Musí se při nabíjení platit parkovné?"
-            },
-            "Type": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Jízdní kola</b> zde lze nabíjet"
-                    },
-                    "1": {
-                        "then": "<b>Vozidla</b> lze zde nabíjet"
-                    },
-                    "2": {
-                        "then": "<b>Koloběžky</b> lze zde nabíjet"
-                    },
-                    "3": {
-                        "then": "<b>Těžká nákladní vozidla</b> (např. nákladní automobily) lze zde nabíjet"
-                    },
-                    "4": {
-                        "then": "<b>Autobusy</b> lze zde nabíjet"
-                    }
-                },
-                "question": "Jaká vozidla je zde povoleno nabíjet?"
-            },
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
-                    },
-                    "1": {
-                        "then": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
-                    },
-                    "2": {
-                        "then": "Tuto nabíjecí stanici mohou používat pouze zákazníci místa, ke kterému tato stanice patří<br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jeho hosté</span>"
-                    },
-                    "3": {
-                        "then": "Pro přístup k této nabíjecí stanici je nutné vyžádat <b>klíč</b><br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jejich hosté, kteří od recepce obdrží klíč k odemknutí nabíjecí stanice</span>"
-                    },
-                    "4": {
-                        "then": "Nepřístupné široké veřejnosti (např. přístupné pouze majitelům, zaměstnancům, ...)"
-                    },
-                    "5": {
-                        "then": "Tato nabíjecí stanice je v určitých hodinách nebo za určitých podmínek přístupná veřejnosti. Mohou zde platit omezení, ale obecné použití je povoleno."
-                    }
-                },
-                "question": "Kdo může tuto nabíjecí stanici používat?",
-                "render": "Přístup je {access}"
-            },
-            "capacity": {
-                "question": "Kolik vozidel zde lze nabíjet najednou?",
-                "render": "{capacity} vozidel zde mohou být současně nabíjena"
-            },
-            "charge": {
-                "question": "Kolik se za použití této nabíjecí stanice platí?",
-                "render": "Použití této nabíjecí stanice stojí <b>{charge}</b>"
-            },
-            "current-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko nástěnná zástrčka</b> bez zemnícího kolíku (CEE7/4 typ F) výstupy maximálně 16 A"
-                    }
-                },
-                "question": "Jaký proud mají zástrčky se <div style='display: inline-block'><b><b>zásuvkou Schuko</b> bez zemnicího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Schuko zásuvka</b> bez zemnícího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> výstupy maximálně {socket:schuko:current}A"
-            },
-            "current-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Evropská zásuvka</b> se zemnícím kolíkem (CEE7/4 typ E) výstupy maximálně 16 A"
-                    }
-                },
-                "question": "Jaký proud má <div style='display: inline-block'><b><b>Evropská nástěnná zástrčka</b> se zemnicím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Evropská zásuvka</b> se zemnícím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> výstupy maximálně {socket:typee:current}A"
-            },
-            "current-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (brandovaný type2_css) výstupní proud maximálně 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger CCS</b> (brandovaný type2_css) výstupní proud maximálně 350 A"
-                    }
-                },
-                "question": "Jaký proud mají zástrčky s <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> výstupní proud {socket:tesla_supercharger_ccs:current}A"
-            },
-            "current-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> výstupní proud maximálně 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> výstupní proud maximálně 350 A"
-                    }
-                },
-                "question": "Jaký proud mají zásuvky <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> výstupní proud maximálně {socket:tesla_destination:current}A"
-            },
-            "current-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla) výstupní proud maximálně 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla) výstupní proud maximálně 32 A"
-                    }
-                },
-                "question": "Jaký proud mají zástrčky <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 s kabelem označeným jako Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> výstupy maximálně {socket:tesla_destination:current}A"
-            },
-            "current-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> pro nabíjení telefonů a drobné elektroniky maximálně 1 A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> pro nabíjení telefonů a drobné elektroniky maximálně 2 A"
-                    }
-                },
-                "question": "Jaký proud mají zástrčky <div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> výstupy maximálně {socket:USB-A:current}A"
-            },
-            "current-14": {
-                "question": "Jaký proud mají zástrčky <div style='display: inline-block'><b><b>Bosch Active Connect se 3 kolíky</b> a kabel</b> <img style='width:1rem; zobrazení: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect se 3 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> výstupy maximálně {socket:bosch_3pin:current}A"
-            },
-            "current-15": {
-                "question": "Jaký proud mají zástrčky <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> maximální výstupy {socket:bosch_5pin:current}A"
-            },
-            "current-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> výstupní proud maximálně 120 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zásuvka <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> maximální výstupy {socket:chademo:current}A"
-            },
-            "current-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772) výstupy maximálně 32 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zástrčka <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> maximální výstupy {socket:type1_cable:current}A"
-            },
-            "current-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 <i>bez</i> kabelu</b> (J1772) výstupy maximálně 32 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zástrčka <div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> maximální výstupy {socket:type1:current}A"
-            },
-            "current-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>CCS type 1</b> (alias Combo type 1) výstup maximálně 50 A"
-                    },
-                    "1": {
-                        "then": "<b>CCS type 1</b> (alias Combo type 1) výstup maximálně 125 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zástrčka <div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> maximální výstupy {socket:type1_combo:current}A"
-            },
-            "current-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> výstupní proud maximálně 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger</b> výstupní proud maximálně 350 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zástrčka <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> maximální výstupy {socket:tesla_supercharger:current}A"
-            },
-            "current-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2</b> (mennekes) výstupy maximálně 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2</b> (mennekes) výstupy maximálně 32 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zástrčka <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> maximální výstupy {socket:type2:current}A"
-            },
-            "current-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>CCS type 2</b> (mennekes) výstupy maximálně 125 A"
-                    },
-                    "1": {
-                        "then": "<b>CCS type 2</b> (mennekes) výstupy maximálně 350 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zástrčka <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> maximální výstupy {socket:type2_combo:current}A"
-            },
-            "current-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes) výstupy maximálně 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes) výstupy maximálně 32 A"
-                    }
-                },
-                "question": "Jaký proud nabízí zástrčka <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> maximální výstupy {socket:type2_cable:current}A"
-            },
-            "email": {
-                "question": "Jaká je e-mailová adresa provozovatele?",
-                "render": "V případě problémů pošlete e-mail na <a href='mailto:{email}'>{email}</a>"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Zdarma k použití (bez ověření)"
-                    },
-                    "1": {
-                        "then": "Používání je zdarma, ale je třeba se ověřit"
-                    },
-                    "2": {
-                        "then": "Použití zdarma"
-                    },
-                    "3": {
-                        "then": "Placené použití, ale zdarma pro zákazníky hotelu/podniku/nemocnice/..., který dobíjecí stanici provozuje"
-                    },
-                    "4": {
-                        "then": "Placené použití"
-                    }
-                },
-                "question": "Musí se za použití této nabíjecí stanice platit?"
-            },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Není zde žádný časový limit na opuštění vozidla"
-                    }
-                },
-                "question": "Jaká je maximální doba, po kterou zde můžete zůstat?",
-                "render": "Jeden může zůstat maximálně <b>{canonical(maxstay)}</b>"
-            },
-            "phone": {
-                "question": "Na jaké číslo lze zavolat, pokud je s touto nabíjecí stanicí problém?",
-                "render": "V případě problémů zavolejte na <a href='tel:{phone}'>{phone}</a>"
-            },
-            "plugs-0": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Schuko</b> bez zemnicího kolíku (CEE7/4 typ F)</b> <img style='width :1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:schuko}</b> zásuvky typu <div style='display: inline-block'><b><b>Schuko zástrčka</b> bez zemnící kolík (CEE7/4 typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
-            },
-            "plugs-1": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Evropská zástrčka</b>se zemnicím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:typee}</b> zásuvky typu <div style='display: inline-block'><b><b>Evropská zástrčka</b>se zemnicím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
-            },
-            "plugs-10": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> je k dispozici?",
-                "render": "K dispozici <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> zásuvky typu <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-            },
-            "plugs-11": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:tesla_destination}</b> zásuvky typu <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-            },
-            "plugs-12": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Type 2 s kabelem označeným jako tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:tesla_destination}</b> zásuvky typu <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Type 2 s kabelem označeným jako tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-            },
-            "plugs-13": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>USB</b> k nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> je k dispozici?",
-                "render": "K dispozici <b class='text-xl'>{socket:USB-A}</b> zásuvky typu <div style='display: inline-block'><b><b>USB</b> k nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-            },
-            "plugs-14": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> je k dispozici?",
-                "render": "K dispozici <b class='text-xl'>{socket:bosch_3pin}</b> zásuvka typu <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-            },
-            "plugs-15": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> je k diospozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:bosch_5pin}</b> zásuvky typu <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-            },
-            "plugs-2": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:chademo}</b> zásuvky typu <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
-            },
-            "plugs-3": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:type1_cable}</b> zásuvky typu <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-            },
-            "plugs-4": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:type1}</b> zásuvky typu <div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-            },
-            "plugs-5": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:type1_combo}</b> zásuvky typu <div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-            },
-            "plugs-6": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:tesla_supercharger}</b> zásuvky typu <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-            },
-            "plugs-7": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:type2}</b> zásuvky typu <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
-            },
-            "plugs-8": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:type2_combo}</b> zásuvky typu <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-            },
-            "plugs-9": {
-                "question": "Kolik zástrček typu <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> je k dispozici?",
-                "render": "K dispozici jsou <b class='text-xl'>{socket:type2_cable}</b> zásuvky typu <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-            },
-            "power-output-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko nástěnná zástrčka</b> bez zemnícího kolíku (CEE7/4 typ F) výstupy maximálně 3,6 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Schuko nástěnná zástrčka</b> bez zemnicího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Schuko zásuvka</b> bez zemnícího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> výstupy maximálně {socket:schuko:output}"
-            },
-            "power-output-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Evropská zásuvka</b> se zemnícím kolíkem (CEE7/4 typ E) výstupy maximálně 3 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Evropská zásuvka</b> se zemnícím kolíkem (CEE7/4 typ E) výstupy maximálně 22 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Evropská nástěnná zásuvka</b> se zemnicím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Evropská nástěnná zásuvka</b> se zemnicím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> výstupy maximálně {socket:typee:output}"
-            },
-            "power-output-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (brandovaný CSS Type 2) výstupní výkon maximálně 50 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> maximální výstupy {socket:tesla_supercharger_ccs:output}"
-            },
-            "power-output-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> výkon maximálně 120 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> výkon maximálně 150 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> výkon maximálně 250 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> maximální výstupy {socket:tesla_destination:output}"
-            },
-            "power-output-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla) maximální výstup 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla) maximální výstup 22 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> výstupy maximálně {socket:tesla_destination:output}"
-            },
-            "power-output-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> pro nabíjení telefonů a drobné elektroniky s výkonem maximálně 5w A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> pro nabíjení telefonů a drobné elektroniky maximálně 10w A"
-                    }
-                },
-                "question": "Jaký výstupní výkon poskytuje jedna zástrčka typu <div style='display: inline-block'><b><b>USB</b> k nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> výstupy maximálně {socket:USB-A:output}"
-            },
-            "power-output-14": {
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> výstupy maximálně {socket:bosch_3pin:output}"
-            },
-            "power-output-15": {
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> výstupy maximálně {socket:bosch_5pin:output}"
-            },
-            "power-output-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> výkon maximálně 50 kw A"
-                    }
-                },
-                "question": "Jaký výkon má jedna zástrčka typu <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> výstup maximálně {socket:chademo:output}"
-            },
-            "power-output-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772) výstupy maximálně 3,7 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772) výstupy maximálně 7 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> výstupy maximálně {socket:type1_cable:output}"
-            },
-            "power-output-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 <i>bez</i> kabelu</b> (J1772) výstupy maximálně 3,7 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 <i>bez</i> kabelu</b> (J1772) výstupy maximálně 6,6 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Type 1 <i>bez</i> kabelu</b> (J1772) výstupy maximálně 7 kw A"
-                    },
-                    "3": {
-                        "then": "<b>Type 1 <i>bez</i> kabelu</b> (J1772) výstupy maximálně 7,2 kw A"
-                    }
-                },
-                "question": "Jaký výstupní výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> výstupy maximálně {socket:type1:output}"
-            },
-            "power-output-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 CCS</b> (neboli Type 1 Combo) výstupní výkon maximálně 50 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 CCS</b> (neboli Type 1 Combo) výstupní výkon maximálně 62,5 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Type 1 CCS</b> (neboli Type 1 Combo) výstupní výkon maximálně 150 kw A"
-                    },
-                    "3": {
-                        "then": "<b>Type 1 CCS</b> (neboli Type 1 Combo) výstupní výkon maximálně 350 kw A"
-                    }
-                },
-                "question": "Jaký výstupní výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> výstupy maximálně {socket:type1_combo:output}"
-            },
-            "power-output-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> výkon maximálně 120 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger</b> výkon maximálně 150 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Tesla Supercharger</b> výstupní výkon maximálně 250 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> maximálně výstupy {socket:tesla_supercharger:output}"
-            },
-            "power-output-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2</b> (mennekes) výkon maximálně 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2</b> (mennekes) výkon maximálně 22 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí edna zástrčka typu <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> výstup maximálně {socket:type2:output}"
-            },
-            "power-output-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) výstupy maximálně 50 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> výstup maximálně {socket:type2_combo:output}"
-            },
-            "power-output-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes) výstupy maximálně 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes) výstupy maximálně 22 kw A"
-                    }
-                },
-                "question": "Jaký výkon nabízí jedna zástrčka typu <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> výstupy maximálně {socket:type2_cable:output}"
-            },
-            "questions-technical": {
-                "render": "<h3>Technické otázky</h3>Níže uvedené otázky jsou velmi technické. Neváhejte je ignorovat<br/>{questions(technical)}"
-            },
-            "ref": {
-                "question": "Jaké je referenční číslo této nabíjecí stanice?",
-                "render": "Referenční číslo je <b>{ref}</b>"
-            },
-            "voltage-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko nástěnná zástrčka</b> bez zemnícího kolíku (CEE7/4 typ F) výstup 230 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky s <div style='display: inline-block'><b><b>zásuvka Schuko</b> bez zemnicího kolíku (CEE7/4 typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Schuko nástěnná zásuvka</b> bez zemnicího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> výstup {socket:schuko:voltage} volt"
-            },
-            "voltage-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Evropská nástěnná zásuvka</b> se zemnicím kolíkem (CEE7/4 typ E) výstup 230 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Evropská nástěnná zásuvka</b> s zemnicím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Evropská nástěnná zásuvka</b> s zemnicím kolíkem (CEE7/4 typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> výstup {socket:typee:voltage} voltů"
-            },
-            "voltage-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (brandovaný Type 2 CSS) výstup 500 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger CCS</b> (brandovaný Type 2 CSS) výstup 920 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zásuvky <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (brandovaný Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> výstup {socket:tesla_supercharger_ccs:voltage} voltů"
-            },
-            "voltage-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> výstup 480 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zásuvky <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> výstup {socket:tesla_destination:voltage} voltů"
-            },
-            "voltage-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla) výstup 230 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla) výstup 400 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Type 2 s kabelem označeným jako Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Type 2 s kabelem označeným jako tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> výstup {socket:tesla_destination:voltage} voltů"
-            },
-            "voltage-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> k nabíjení telefonů a drobné elektroniky výstup 5 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zásuvky <div style='display: inline-block'><b><b>USB</b>k nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> pro nabíjení telefonů a drobné elektroniky</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> výstup {socket:USB-A:voltage} voltů"
-            },
-            "voltage-14": {
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect s 3 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> výstup {socket:bosch_3pin:voltage} voltů"
-            },
-            "voltage-15": {
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect s 5 kolíky</b> a kabelem</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> výstup {socket:bosch_5pin:voltage} voltů"
-            },
-            "voltage-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> výstup 500 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> výstup {socket:chademo:voltage} voltů"
-            },
-            "voltage-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772) výstup 200 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 s kabelem</b> (J1772) výstup 240 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 s kabelem</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> výstup {socket:type1_cable:voltage} voltů"
-            },
-            "voltage-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 <i>bez</i> kabelu</b> (J1772) výstup 200 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 <i>bez</i> kabelu</b> (J1772) výstup 240 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 <i>bez</i> kabelu</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> výstup {socket:type1:voltage} voltů"
-            },
-            "voltage-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 CCS</b> (alias Type 1 Combo) výstup 400 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 CCS</b> (alias Type 1 Combo) výstup 1000 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> výstup {socket:type1_combo:voltage} voltů"
-            },
-            "voltage-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> výstup 480 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> výstup {socket:tesla_supercharger:voltage} voltů"
-            },
-            "voltage-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2</b> (mennekes) výstupní napětí 230 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Type 2</b> (mennekes) výstupní napětí 400 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> výstup {socket:type2:voltage} voltů"
-            },
-            "voltage-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) výstupní napětí 500 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) výstupní napětí 920 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> výstup {socket:type2_combo:voltage} voltů"
-            },
-            "voltage-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes) s výstupem 230 voltů"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 s kabelem</b> (mennekes) s výstupem 400 voltů"
-                    }
-                },
-                "question": "Jaké napětí mají zástrčky <div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> výstup {socket:type2_cable:voltage} voltů"
-            },
-            "website": {
-                "question": "Jaká je webová stránka, kde lze najít další informace o této nabíjecí stanici?",
-                "render": "Více informací na <a href='{website}'>{website}</a>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Nabíjecí stanice pro elektrická jízdní kola"
-                },
-                "1": {
-                    "then": "Nabíjecí stanice pro automobily"
-                }
-            },
-            "render": "Nabíjecí stanice"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " minuty",
-                        "humanSingular": " minut"
-                    },
-                    "1": {
-                        "human": " hodiny",
-                        "humanSingular": " hodin"
-                    },
-                    "2": {
-                        "human": " dny",
-                        "humanSingular": " den"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Volty"
-                    }
-                }
-            },
-            "2": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "A"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilowatt"
-                    },
-                    "1": {
-                        "human": "megawatt"
+                        "mappings": {
+                            "then": "{{description}} výstup {{commonVoltages}} voltů"
+                        },
+                        "question": "Jaké napětí mají zástrčky s {{description}} ?"
                     }
                 }
             }
@@ -4292,18 +3309,6 @@
         },
         "title": {
             "render": "Výtah"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centimetr"
-                    }
-                }
-            }
         }
     },
     "elongated_coin": {
@@ -4529,18 +3534,6 @@
         },
         "title": {
             "render": "Vchod"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centimetr"
-                    }
-                }
-            }
         }
     },
     "etymology": {
@@ -5625,16 +4618,6 @@
         },
         "title": {
             "render": "Hydrant"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "milimetry",
-                        "humanSingular": "milimetr"
-                    }
-                }
-            }
         }
     },
     "icons": {
@@ -5856,20 +4839,6 @@
         },
         "title": {
             "render": "Obrubník"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "centimetry",
-                        "humanSingular": "centimetr"
-                    },
-                    "1": {
-                        "human": "metry",
-                        "humanSingular": "metr"
-                    }
-                }
-            }
         }
     },
     "kindergarten_childcare": {
@@ -6221,20 +5190,6 @@
                     "then": "Silnice bez názvu"
                 }
             }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "km/hod",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "míle/hod",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "memorial": {
@@ -6543,15 +5498,6 @@
                 }
             },
             "render": "Rozhledna"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metr"
-                    }
-                }
-            }
         }
     },
     "osm_community_index": {
@@ -7850,18 +6796,6 @@
         },
         "title": {
             "render": "Recepční pult"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centimetr"
-                    }
-                }
-            }
         }
     },
     "recycling": {
@@ -8487,20 +7421,6 @@
         },
         "title": {
             "render": "Rychlostní radar"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilometry/hodinu",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "míle/hodinu",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "speed_display": {
@@ -8529,20 +7449,6 @@
         },
         "title": {
             "render": "Ukazatel rychlosti"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilometry/hodinu",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "míle/hodinu",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "sport_pitch": {
@@ -9382,18 +8288,6 @@
         },
         "title": {
             "render": "Toaleta"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centimetr"
-                    }
-                }
-            }
         }
     },
     "toilet_at_amenity": {
@@ -9483,18 +8377,6 @@
                 }
             },
             "render": "Toaleta v objektu"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centimetr"
-                    }
-                }
-            }
         }
     },
     "trail": {
@@ -9827,6 +8709,54 @@
         },
         "title": {
             "render": "Strom"
+        }
+    },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} megawatty"
+                    },
+                    "1": {
+                        "human": "{quantity} kilowatty"
+                    },
+                    "2": {
+                        "human": "{quantity} watty"
+                    },
+                    "3": {
+                        "human": "{quantity} gigawatty"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} metr"
+                    },
+                    "1": {
+                        "human": "{quantity} centimetr"
+                    },
+                    "2": {
+                        "human": "{quantity} milimetry"
+                    },
+                    "3": {
+                        "human": "{quantity} stopa"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} kilometry/hodinu",
+                        "humanShort": "{quantity} km/h"
+                    },
+                    "1": {
+                        "human": "{quantity} míle/hodinu",
+                        "humanShort": "{quantity} mph"
+                    }
+                }
+            }
         }
     },
     "usersettings": {
@@ -10337,18 +9267,6 @@
         },
         "title": {
             "render": "Zeď nebo budova"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centimetr"
-                    }
-                }
-            }
         }
     },
     "waste_basket": {
@@ -10547,31 +9465,6 @@
                 }
             },
             "render": "větrná turbína"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " megawatty"
-                    },
-                    "1": {
-                        "human": " kilowatty"
-                    },
-                    "2": {
-                        "human": " watty"
-                    },
-                    "3": {
-                        "human": " gigawatty"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metr"
-                    }
-                }
-            }
         }
     }
 }

@@ -1855,650 +1855,11 @@
         }
     },
     "charging_station": {
-        "description": "Una estació de càrrega",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Tots els tipus de vehicles"
-                    },
-                    "1": {
-                        "question": "Punt de recàrrega per a bicicletes"
-                    },
-                    "2": {
-                        "question": "Estació de càrrega per a cotxes"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Només estacions de recàrrega en funcionament"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Tots els connectors"
-                    },
-                    "1": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
-                    },
-                    "2": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
-                    },
-                    "3": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
-                    },
-                    "4": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "5": {
-                        "question": "Té un connector <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "6": {
-                        "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-                    },
-                    "7": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "8": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
-                    },
-                    "9": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b> CCS Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "11": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>CCS Tesla Supercharger </b> (un cable de la marca Tesla Tipus2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "12": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "14": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>USB</b> per a carregar telèfons i dispositius electrònics petits</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "16": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Bosch Active Connect amb 5 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-                    }
-                }
-            }
-        },
-        "name": "Estacions de càrrega",
-        "presets": {
-            "0": {
-                "title": "una estació de càrrega per a bicicletes elèctriques amb un endoll de paret europeu normal<img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (destinat a carregar bicicletes elèctriques)"
-            },
-            "1": {
-                "title": "una estació de càrrega per a cotxes"
-            }
-        },
         "tagRenderings": {
-            "Auth phone": {
-                "question": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?",
-                "render": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-            },
-            "Authentication": {
-                "mappings": {
+            "rewritten-questions": {
+                "renderings": {
                     "0": {
-                        "then": "Autenticació mitjançant una targeta de soci"
-                    },
-                    "1": {
-                        "then": "Autenticació mitjançant una aplicació"
-                    },
-                    "2": {
-                        "then": "L'autenticació per trucada telefònica està disponible"
-                    },
-                    "3": {
-                        "then": "L'autenticació per SMS està disponible"
-                    },
-                    "4": {
-                        "then": "L'autenticació mitjançant NFC està disponible"
-                    },
-                    "5": {
-                        "then": "L'autenticació mitjançant targeta de pagament està disponible"
-                    },
-                    "6": {
-                        "then": "L'autenticació mitjançant targeta de debit està disponible"
-                    },
-                    "7": {
-                        "then": "Carregar aquí (també) és possible sense autenticació"
-                    }
-                },
-                "question": "Quin tipus d'autenticació hi ha disponible a l'estació de càrrega?"
-            },
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
-                    },
-                    "1": {
-                        "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
-                    },
-                    "2": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
-                    },
-                    "3": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
-                    "10": {
-                        "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
-                    },
-                    "11": {
-                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
-                    },
-                    "12": {
-                        "then": "<b>Supercarregador de Tesla</b>"
-                    },
-                    "13": {
-                        "then": "<b>Supercarregador de Tesla</b>"
-                    },
-                    "14": {
-                        "then": "<b>Tipus 2</b> (mennekes)"
-                    },
-                    "15": {
-                        "then": "<b>Tipus 2</b> (mennekes)"
-                    },
-                    "16": {
-                        "then": "<b>CSS Tipus 2</b> (mennekes)"
-                    },
-                    "17": {
-                        "then": "<b>CSS Tipus 2</b> (mennekes)"
-                    },
-                    "18": {
-                        "then": "<b>Tipus 2 amb cable</b> (mennekes)"
-                    },
-                    "19": {
-                        "then": "<b>Tipus 2 amb cable</b> (mennekes)"
-                    },
-                    "20": {
-                        "then": "<b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css)"
-                    },
-                    "21": {
-                        "then": "<b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css)"
-                    },
-                    "22": {
-                        "then": "<b>Supercarregador Tesla (destí)</b>"
-                    },
-                    "23": {
-                        "then": "<b>Supercarregador Tesla (destí)</b>"
-                    },
-                    "24": {
-                        "then": "<b>Supercarregador Tesla (destí)</b> (Un tipus 2 amb un cable marca tesla)"
-                    },
-                    "25": {
-                        "then": "<b>Supercarregador Tesla (destinació)</b> (Un Tipus 2 amb un cable de marca Tesla)"
-                    },
-                    "26": {
-                        "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
-                    },
-                    "27": {
-                        "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
-                    },
-                    "28": {
-                        "then": "<b>Bosch Active Connect amb 3 pins</b> i cable"
-                    },
-                    "29": {
-                        "then": "<b>Bosch Active Connect amb 3 pins</b> i cable"
-                    },
-                    "30": {
-                        "then": "<b>Bosch Active Connect amb 5 pins</b> i cable"
-                    },
-                    "31": {
-                        "then": "<b>Bosch Active Connect amb 5 pins</b> i cable"
-                    }
-                },
-                "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
-            },
-            "Network": {
-                "mappings": {
-                    "0": {
-                        "then": "No forma part d'una xarxa més gran, p.e. perqué l'estació de càrrega la manté un negoci local"
-                    },
-                    "1": {
-                        "then": "No forma part d'una xarxa major"
-                    }
-                },
-                "question": "Aquesta estació de càrrega forma part d'una xarxa?",
-                "render": "Part de la xarxa <b>{network}</b>"
-            },
-            "OH": {
-                "override": {
-                    "question": "Quan està oberta aquesta estació de càrrega?"
-                }
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta estació de càrrega funciona"
-                    },
-                    "1": {
-                        "then": "Aquesta estació de carrega està trencada"
-                    },
-                    "2": {
-                        "then": "Aquí està prevista una estació de recàrrega"
-                    },
-                    "3": {
-                        "then": "Aquí està construint-se una estació de càrrega"
-                    },
-                    "4": {
-                        "then": "Aquesta estació de recàrrega s'ha desactivat permanentment i ja no s'utilitza, però encara és visible"
-                    }
-                },
-                "question": "Està en ús aquest punt de recàrrega?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "De fet, {operator} és la xarxa"
-                    }
-                },
-                "question": "Qui és l'operadora d'aquesta estació de càrrega?",
-                "render": "Aquesta estació de càrrega l'opera {operator}"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "No cal pagar una taxa addicional mentres es carrega"
-                    },
-                    "1": {
-                        "then": "Cal pagar una taxa addicional d'aparcament mentres es carrega"
-                    }
-                },
-                "question": "Cal pagar una taxa d'aparcament mentre es carrega?"
-            },
-            "Type": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquí es poden carregar <b>bicicletes</b>"
-                    },
-                    "1": {
-                        "then": "Aquí es poden carregar <b>cotxes</b>"
-                    },
-                    "2": {
-                        "then": "Aquí es poden carregar <b>Scooters</b>"
-                    },
-                    "3": {
-                        "then": "Aquí es poden carregar <b>camions o trailers</b>"
-                    },
-                    "4": {
-                        "then": "Aquí es poden carregar <b>busos</b>"
-                    }
-                },
-                "question": "Quins vehicles tenen permesa la carrega aquí?"
-            },
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Qualsevol pot utilitzar aquest punt de càrrega (pot requerir un pagament)"
-                    },
-                    "1": {
-                        "then": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)"
-                    },
-                    "2": {
-                        "then": "Sols clientes del lloc al que pertany aquest punt de càrrega poden utilitzar-lo <br/><span class='subtle'>p.e. un punt de càrrega per un hotel que sols poden utilizar-los els hostes</span>"
-                    },
-                    "3": {
-                        "then": "S'ha de sol·licitar una <b>clau</b> per a utilitzar aquest punt de càrrega<br/><span class='subtle'>p.e un punt de càrrega operat per un hotel nomes utilitzable pel seus hostes, els quals reben una clau des de recepció per a desbloquejar el punt de càrrega</span>"
-                    },
-                    "4": {
-                        "then": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, …)"
-                    },
-                    "5": {
-                        "then": "Aquesta estació de càrrega és accessible al públic durant certes hores o condicions. Es poden aplicar restriccions, però es permet l'ús general."
-                    }
-                },
-                "question": "Qui pot utilitzar aquesta estació de càrrega?",
-                "render": "L'accés està {access}"
-            },
-            "capacity": {
-                "question": "Quants vehicles es poden carregar a la vegada?",
-                "render": "Aquí es poden carregar {capacity} vehicles a l'hora"
-            },
-            "charge": {
-                "question": "Quant cal pagar per utilitzar aquesta estació de càrrega?",
-                "render": "Utilitzar aquesta estació de càrrega costa <b>{charge}</b>"
-            },
-            "current-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Endoll de paret Shuko</b> sense ping de terra (CEE7/4 tipus F) surt com a màxim 16 A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors amb <div style='display: inline-block'><b><b>endolls de paret Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>L'endoll de paret Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> surt com a màxim a {socket:schuko:current}A"
-            },
-            "current-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Endoll de paret europeu</b> amb pin de terra (CEE7/4 type E) surt com a màxim a 16A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors amb <div style='display: inline-block'><b><b> endolls de paret europeu</b> amb pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>L'endoll de paret europeu</b> amb pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>surt com a màxim a {socket:typee:current}A"
-            },
-            "current-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css) surt com a màxim a 125A"
-                    },
-                    "1": {
-                        "then": "<b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css) surt com a màxim a 350A"
-                    }
-                },
-                "question": "Quina corrent ofereixen els connectors <div style='display: inline-block'><b><b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> surt com a màxim a {socket:tesla_supercharger_ccs:current}A"
-            },
-            "current-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Supercarregador Tesla (Destí)</b> surt com a màxim a 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Supercarregdor Tesla (Destinació)</b> surt com a màxim a 350 A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Supercarregador Tesla (Destí)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Supercarregador Tesla (Destí)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> surt com a màxim a {socket:tesla_destination:current}A"
-            },
-            "current-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Supercarregador Tesla (Destí)</b> (Un Tipus 2 amb un cable de marca Tesla) surt com a màxim a 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Supercarregador Tesla (Destí)</b> (Un Tipus 2 amb un cable de marca Tesla) surt com a màxim a 32 A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Supercarregador Tesla (Destí)</b> (un tipus 2 amb cable amb la marca Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Supercarregador Tesla (Destí)</b> (un tipus 2 amb cable amb la marca Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> surt com a màxim a {socket:tesla_destination:current}A"
-            },
-            "current-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> per a carregar telèfons i dispositius petits fins a 1 A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> per a carregar telèfons i dispositius petits fins a 2 A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors amb <div style='display: inline-block'><b><b>USB</b>per a carrega telèfons i dispositius electrònics petits</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b>per a carregar telèfons i petits dispositius electrònics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> com a màxim a {socket:USB-A:current}A"
-            },
-            "current-14": {
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> surt com a màxim a {socket:bosch_3pin:current}A"
-            },
-            "current-15": {
-                "question": "Quina corrent ofereixen els connectors <div style='display: inline-block'><b><b>Bosch Active Connect amb 5 pins</b> i cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect amb 5 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> surt com a màxim a {socket:bosch_5pin:current}A"
-            },
-            "current-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> surt com a màxim a 120 A"
-                    }
-                },
-                "question": "Quin corrent ofereixen els endolls amb <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> surt com a màxim a {socket:chademo:current}A"
-            },
-            "current-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772) surt com a màxim a 32A"
-                    }
-                },
-                "question": "Quina corrent ofereixen els connectors <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> surt com a màxim a {socket:type1_cable:current}A"
-            },
-            "current-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772) surt com a màxim a 32A"
-                    }
-                },
-                "question": "Quina corrent ofereixen els connectors <div style='display: inline-block'><b><b>Tipus 1 <i>sense</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tipus 1 <i>sense</i> cable</b>(J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> surt com a màxim a {socket:type1:current}A"
-            },
-            "current-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 1 CCS</b> (també Tipus 1 Combo) surt com a màxim a 50A"
-                    },
-                    "1": {
-                        "then": "<b>Tipus 1 CCS</b> (també Tipus 1 Combo) surt com a màxim a 125A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Tipus 1 CCS</b> (també Tipus 1 Combo) </b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tipus 1 CCS</b> (també Tipus 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> surt com a màxim a {socket:type1_combo:current}A"
-            },
-            "current-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Supercarregador Tesla</b> surt com a màxim a 125A"
-                    },
-                    "1": {
-                        "then": "<b>Supercarregador Tesla</b> surt com a màxim a 350A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Supercarregador Tesla</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Supercarregador Tesla</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> surt com a màxim a {socket:tesla_supercharger:current}A"
-            },
-            "current-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 2</b> (menneks) surt com a màxim a 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Tipus 2</b> (menneks) surt com a màxim a 32 A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> surt com a màxim a {socket:type2:current}A"
-            },
-            "current-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim a 350 A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tipus 2 CSS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>surt com a màxim a {socket:type2_combo:current}"
-            },
-            "current-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 2 amb cable</b> (mennekes) surt com a màxim a 16A"
-                    },
-                    "1": {
-                        "then": "<b>Tipus 2 amb cable </b> (mennekes) surt com a màxim a 32A"
-                    }
-                },
-                "question": "Quina intensitat ofereixen els connectors <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tipus 2 amb cable </b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> surt com a màxim a {socket:type2_cable:current}A"
-            },
-            "email": {
-                "question": "Quin és el correu electrònic de l'operadora?",
-                "render": "En cas de problemes, envia un email a <a href='mailto:{email}'>{email}</a>"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "ús gratuït (sense autentificació)"
-                    },
-                    "1": {
-                        "then": "Ús gratuït, però un s'ha d'autentificar"
-                    },
-                    "2": {
-                        "then": "Ús gratuït"
-                    },
-                    "3": {
-                        "then": "De pagament, però gratuït per als clients de l'hotel/bar/hospital/… que gestiona l'estació de càrrega"
-                    },
-                    "4": {
-                        "then": "Ús de pagament"
-                    }
-                },
-                "question": "Hi ha que pagar per utilitzar aquest punt de càrrega?"
-            },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "No hi ha límit de temps per a deixar el teu vehicle aquí"
-                    }
-                },
-                "question": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?",
-                "render": "Un pot quedar-se com a màxim <b>{canonical(maxstay)}</b>"
-            },
-            "phone": {
-                "question": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
-                "render": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>"
-            },
-            "plugs-0": {
-                "question": "Quants connectors del tipus <div style='display: inline-block'><b><b>Endoll de paret Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> hi han disponibles aquí?",
-                "render": "Hi ha <b class='text-xl'>{socket:schuko}</b> connectors del tipus <div style='display: inline-block'><b><b> Endoll de paret Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>disponibles aquí"
-            },
-            "plugs-1": {
-                "question": "Quants connectors del tipus <div style='display: inline-block'><b><b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> hi han disponibles aquí?",
-                "render": "Hi ha <b class='text-xl'>{socket:typee}</b> connectors del tipus <div style='display: inline-block'><b><b> Endoll de paret europeu</b> amb pin de terra (CEE7/4 tipus E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>disponibles aquí"
-            },
-            "plugs-10": {
-                "question": "Quants connectors del tipus <div style='display: inline-block'><b><b>CCS Supercarregador Tesla</b> (un cable de la marca Tesla Tipus2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> hi han disponibles aquí?",
-                "render": "Hi ha <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> connectors <div style='display: inline-block'><b><b>Supercarregadro Tesla CCS</b> (un cable de la marca Tesla Tipus2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> disponibles aquí"
-            },
-            "plugs-2": {
-                "render": "Aquí hi ha <b class='text-xl'>{socket:chademo}</b> endolls del tipus <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> disponibles"
-            },
-            "plugs-7": {
-                "question": "Quants endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> hi ha disponibles aquí?",
-                "render": "Hi ha <b class='text-xl'>{socket:type2}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> disponibles aquí"
-            },
-            "plugs-8": {
-                "render": "Aquí hi ha <b class='text-xl'>{socket:type2_combo}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> disponibles"
-            },
-            "power-output-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> surt com a màxim a 50 kw A"
-                    }
-                }
-            },
-            "power-output-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt com a màxim 50 kw A"
-                    }
-                }
-            },
-            "questions-technical": {
-                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. No dubteu a ignorar-les<br/>{questions(technical)}"
-            },
-            "ref": {
-                "question": "Quin és el número de referència d'aquest punt de càrrega?"
-            },
-            "voltage-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>CHAdeMO</b> proporciona 500 volts"
-                    }
-                },
-                "question": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>CHAdeMO</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
-            },
-            "voltage-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt a 500 volts"
-                    },
-                    "1": {
-                        "then": "<b>Tipus 2 CCS</b> (mennekes) surt a 920 volts"
-                    }
-                },
-                "question": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?"
-            },
-            "website": {
-                "question": "Quina és la pàgina web on es pot trobar més informació sobre aquest punt de recàrrega?",
-                "render": "Més info a <a href='{website}'>{website}</a>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Estació de càrrega per a bicicletes elèctriques"
-                },
-                "1": {
-                    "then": "Estació de càrrega per a cotxes"
-                }
-            },
-            "render": "Estació de càrrega"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " minuts",
-                        "humanSingular": " minut"
-                    },
-                    "1": {
-                        "human": " hores",
-                        "humanSingular": " hora"
-                    },
-                    "2": {
-                        "human": " dies",
-                        "humanSingular": " dia"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Volts"
-                    }
-                }
-            },
-            "2": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "A"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "quilovats"
-                    },
-                    "1": {
-                        "human": "megavats"
+                        "question": "Quants connectors del tipus {{description}} hi han disponibles aquí?"
                     }
                 }
             }
@@ -3641,18 +3002,6 @@
         },
         "title": {
             "render": "Ascensor"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metre"
-                    },
-                    "1": {
-                        "human": "centímetre"
-                    }
-                }
-            }
         }
     },
     "elongated_coin": {
@@ -3884,18 +3233,6 @@
         },
         "title": {
             "render": "Entrada"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metre"
-                    },
-                    "1": {
-                        "human": "centimetre"
-                    }
-                }
-            }
         }
     },
     "etymology": {
@@ -4871,16 +4208,6 @@
         },
         "title": {
             "render": "Hidrant"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "mil·límetres",
-                        "humanSingular": "mil·límetre"
-                    }
-                }
-            }
         }
     },
     "icons": {
@@ -5064,20 +4391,6 @@
         },
         "title": {
             "render": "Vorada"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "centímetres",
-                        "humanSingular": "centímetre"
-                    },
-                    "1": {
-                        "human": "metres",
-                        "humanSingular": "metre"
-                    }
-                }
-            }
         }
     },
     "kindergarten_childcare": {
@@ -5408,20 +4721,6 @@
                     "then": "Carretera sense nom"
                 }
             }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "quilòmetres/hora",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "milles/hora",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "memorial": {
@@ -5725,15 +5024,6 @@
                 }
             },
             "render": "Torre d'observació"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metre"
-                    }
-                }
-            }
         }
     },
     "osm_community_index": {
@@ -6972,18 +6262,6 @@
         },
         "title": {
             "render": "Mostrador de recepció"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metre"
-                    },
-                    "1": {
-                        "human": "centímetre"
-                    }
-                }
-            }
         }
     },
     "recycling": {
@@ -7569,20 +6847,6 @@
         },
         "title": {
             "render": "Càmera de velocitat"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "quilòmetres/hora",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "milles/hora",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "speed_display": {
@@ -7603,20 +6867,6 @@
             },
             "maxspeed": {
                 "render": "La velocitat màxima permesa a aquest radar pedagògic és {canonical(maxspeed)}"
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "quilòmetres/hora",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "milles/hora",
-                        "humanShort": "mph"
-                    }
-                }
             }
         }
     },
@@ -8423,18 +7673,6 @@
         },
         "title": {
             "render": "Lavabo"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metre"
-                    },
-                    "1": {
-                        "human": "centimetre"
-                    }
-                }
-            }
         }
     },
     "toilet_at_amenity": {
@@ -8524,18 +7762,6 @@
                 }
             },
             "render": "Lavabo a la instal·lació"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metre"
-                    },
-                    "1": {
-                        "human": "centimetre"
-                    }
-                }
-            }
         }
     },
     "trail": {
@@ -8864,6 +8090,54 @@
         },
         "title": {
             "render": "Arbre"
+        }
+    },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} megavats"
+                    },
+                    "1": {
+                        "human": "{quantity} quilovats"
+                    },
+                    "2": {
+                        "human": "{quantity} vats"
+                    },
+                    "3": {
+                        "human": "{quantity} gigavats"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} metre"
+                    },
+                    "1": {
+                        "human": "{quantity} centimetre"
+                    },
+                    "2": {
+                        "human": "{quantity} mil·límetres"
+                    },
+                    "3": {
+                        "human": "{quantity} peus"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} quilòmetres/hora",
+                        "humanShort": "{quantity} km/h"
+                    },
+                    "1": {
+                        "human": "{quantity} milles/hora",
+                        "humanShort": "{quantity} mph"
+                    }
+                }
+            }
         }
     },
     "usersettings": {
@@ -9334,18 +8608,6 @@
         },
         "title": {
             "render": "Paret o edifici"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metre"
-                    },
-                    "1": {
-                        "human": "centimetre"
-                    }
-                }
-            }
         }
     },
     "waste_basket": {
@@ -9544,31 +8806,6 @@
                 }
             },
             "render": "Turbina eòlica"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " megavats"
-                    },
-                    "1": {
-                        "human": " quilovats"
-                    },
-                    "2": {
-                        "human": " vats"
-                    },
-                    "3": {
-                        "human": " gigavats"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metre"
-                    }
-                }
-            }
         }
     }
 }

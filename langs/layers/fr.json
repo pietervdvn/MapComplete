@@ -1716,87 +1716,6 @@
             "render": "Société de location de véhicules"
         }
     },
-    "charging_station": {
-        "description": "Une station de recharge",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Tout type de véhicule"
-                    },
-                    "1": {
-                        "question": "Station de charge pour vélos"
-                    },
-                    "2": {
-                        "question": "Station de charge pour automobiles"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Stations de recharge en service uniquement"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Tous types de prise"
-                    },
-                    "1": {
-                        "question": "Dispose d’une <div style='display: inline-block'><b><b>prise murale Schuko</b> sans terre (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
-                    },
-                    "6": {
-                        "question": "A un connecteur de   <div style='display: inline-block'><b>Type 1 <i>sans</i> câble (J1772) càd  Type 1 Combo </b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    }
-                }
-            }
-        },
-        "tagRenderings": {
-            "Authentication": {
-                "mappings": {
-                    "0": {
-                        "then": "Authentification par carte de membre"
-                    },
-                    "1": {
-                        "then": "Authentification par une app"
-                    },
-                    "2": {
-                        "then": "Authentification par appel téléphonique est disponible"
-                    },
-                    "3": {
-                        "then": "Authentification par SMS est disponible"
-                    },
-                    "4": {
-                        "then": "Authentification par NFC est disponible"
-                    },
-                    "6": {
-                        "then": "Authentification par carte de débit est disponible"
-                    },
-                    "7": {
-                        "then": "Charger ici est (aussi) possible sans authentification"
-                    }
-                },
-                "question": "Quelle sorte d'authentification est disponible à cette station de charge ?"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Pas de frais de stationnement supplémentaires pendant la recharge"
-                    },
-                    "1": {
-                        "then": "Des frais de stationnement supplémentaires doivent être payés lors de la recharge"
-                    }
-                },
-                "question": "Doit-on payer des frais de stationnement pendant la recharge ?"
-            },
-            "phone": {
-                "question": "Quel numéro peut on appeler s'il y a un problème avec cette station de charge ?",
-                "render": "En cas de problèmes, appelez le <a href='tel:{phone}'>{phone}</a>"
-            }
-        }
-    },
     "climbing": {
         "tagRenderings": {
             "average_length": {
@@ -3055,18 +2974,6 @@
         },
         "title": {
             "render": "Ascenseur"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "mètre"
-                    },
-                    "1": {
-                        "human": "centimètre"
-                    }
-                }
-            }
         }
     },
     "elongated_coin": {
@@ -3193,18 +3100,6 @@
         },
         "title": {
             "render": "Entrée"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "mètre"
-                    },
-                    "1": {
-                        "human": "centimètre"
-                    }
-                }
-            }
         }
     },
     "etymology": {
@@ -3945,20 +3840,6 @@
         },
         "title": {
             "render": "Bordure"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "centimètres",
-                        "humanSingular": "centimètre"
-                    },
-                    "1": {
-                        "human": "mètres",
-                        "humanSingular": "mètre"
-                    }
-                }
-            }
         }
     },
     "last_click": {
@@ -4050,20 +3931,6 @@
             "mappings": {
                 "0": {
                     "then": "Route sans nom"
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilomètres/heure",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "miles/heure",
-                        "humanShort": "mph"
-                    }
                 }
             }
         }
@@ -5053,18 +4920,6 @@
         },
         "title": {
             "render": "Bureau d'accueil"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "mètre"
-                    },
-                    "1": {
-                        "human": "centimètre"
-                    }
-                }
-            }
         }
     },
     "recycling": {
@@ -6083,18 +5938,6 @@
         },
         "title": {
             "render": "Toilettes"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "mètre"
-                    },
-                    "1": {
-                        "human": "centimètre"
-                    }
-                }
-            }
         }
     },
     "toilet_at_amenity": {
@@ -6165,18 +6008,6 @@
             "wheelchair-door-width": {
                 "question": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
                 "render": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(toilets:door:width)}"
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "mètre"
-                    },
-                    "1": {
-                        "human": "centimètre"
-                    }
-                }
             }
         }
     },
@@ -6445,6 +6276,52 @@
         },
         "title": {
             "render": "Arbre"
+        }
+    },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} megawatts"
+                    },
+                    "1": {
+                        "human": "{quantity} kilowatts"
+                    },
+                    "2": {
+                        "human": "{quantity} watts"
+                    },
+                    "3": {
+                        "human": "{quantity} gigawatts"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} mètres",
+                        "humanSingular": "un mètre"
+                    },
+                    "1": {
+                        "human": "{quantity} centimètres"
+                    },
+                    "3": {
+                        "human": "{quantity} pieds"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} kilomètres/heure",
+                        "humanShort": "{quantity} km/h"
+                    },
+                    "1": {
+                        "human": "{quantity} miles/heure",
+                        "humanShort": "{quantity} mph"
+                    }
+                }
+            }
         }
     },
     "usersettings": {
@@ -6723,18 +6600,6 @@
         "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur.",
         "title": {
             "render": "Mur ou bâtiment"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "mètre"
-                    },
-                    "1": {
-                        "human": "centimètre"
-                    }
-                }
-            }
         }
     },
     "waste_basket": {
@@ -6871,31 +6736,6 @@
                 }
             },
             "render": "éolienne"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " megawatts"
-                    },
-                    "1": {
-                        "human": " kilowatts"
-                    },
-                    "2": {
-                        "human": " watts"
-                    },
-                    "3": {
-                        "human": " gigawatts"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " mètres"
-                    }
-                }
-            }
         }
     }
 }

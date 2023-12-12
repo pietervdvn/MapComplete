@@ -1740,422 +1740,6 @@
             "render": "Bar"
         }
     },
-    "charging_station": {
-        "description": "Una estación de carga",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Todo tipo de vehículos"
-                    },
-                    "1": {
-                        "question": "Estación de carga para bicicletas"
-                    },
-                    "2": {
-                        "question": "Estación de carga para coches"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Solo estaciones de carga funcionales"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Todos los conectores"
-                    },
-                    "2": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
-                    },
-                    "3": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
-                    },
-                    "4": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "5": {
-                        "question": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "6": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 1 CCS (Combo Tipo 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-                    },
-                    "7": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "8": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
-                    },
-                    "9": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "11": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipo2_css de marca)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "12": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipo2 A con un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "14": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 3 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "16": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 5 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-                    }
-                }
-            }
-        },
-        "name": "Estaciones de carga",
-        "presets": {
-            "0": {
-                "title": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)"
-            },
-            "1": {
-                "title": "una estación de carga para coches"
-            }
-        },
-        "tagRenderings": {
-            "Auth phone": {
-                "question": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?"
-            },
-            "Authentication": {
-                "mappings": {
-                    "0": {
-                        "then": "Autenticación mediante tarjeta de membresía"
-                    },
-                    "1": {
-                        "then": "Autenticación mediante aplicación"
-                    },
-                    "2": {
-                        "then": "Autenticación mediante llamada telefónica disponible"
-                    },
-                    "3": {
-                        "then": "Autenticación mediante SMS disponible"
-                    },
-                    "4": {
-                        "then": "Autenticación mediante NFC disponible"
-                    },
-                    "5": {
-                        "then": "Autenticación mediante Money Card disponible"
-                    },
-                    "6": {
-                        "then": "Autenticación mediante tarjeta de débito disponible"
-                    },
-                    "7": {
-                        "then": "La carga aquí (también) es posible sin autenticación"
-                    }
-                },
-                "question": "¿Qué tipo de autenticación está disponible en esta estación de carga?"
-            },
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
-                    },
-                    "1": {
-                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
-                    },
-                    "2": {
-                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
-                    },
-                    "3": {
-                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                    },
-                    "10": {
-                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
-                    },
-                    "11": {
-                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
-                    },
-                    "12": {
-                        "then": "<b>Supercargador de Tesla</b>"
-                    },
-                    "13": {
-                        "then": "<b>Supercargador de Tesla</b>"
-                    },
-                    "14": {
-                        "then": "<b>Tipo 2</b> (mennekes)"
-                    },
-                    "15": {
-                        "then": "<b>Tipo 2</b> (mennekes)"
-                    },
-                    "16": {
-                        "then": "<b>CSS Tipo 2</b> (mennekes)"
-                    },
-                    "17": {
-                        "then": "<b>CSS Tipo 2</b> (mennekes)"
-                    },
-                    "18": {
-                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
-                    },
-                    "19": {
-                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
-                    },
-                    "20": {
-                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
-                    },
-                    "21": {
-                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
-                    },
-                    "22": {
-                        "then": "<b>Supercargador Tesla (destino</b>"
-                    },
-                    "23": {
-                        "then": "<b>Supercargador Tesla (destino)</b>"
-                    },
-                    "24": {
-                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
-                    },
-                    "25": {
-                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
-                    },
-                    "26": {
-                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
-                    },
-                    "27": {
-                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
-                    },
-                    "28": {
-                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
-                    },
-                    "29": {
-                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
-                    },
-                    "30": {
-                        "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
-                    },
-                    "31": {
-                        "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
-                    }
-                },
-                "question": "¿Qué tipo de conexiones de carga están disponibles aquí?"
-            },
-            "Network": {
-                "mappings": {
-                    "0": {
-                        "then": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local"
-                    },
-                    "1": {
-                        "then": "No forma parte de una red mayor"
-                    }
-                },
-                "question": "¿Esta estación de carga forma parte de una red?",
-                "render": "Parte de la red <b>{network}</b>"
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta estación de carga funciona"
-                    },
-                    "1": {
-                        "then": "Esta estación de carga está rota"
-                    },
-                    "2": {
-                        "then": "Aquí está planeada una estación de carga"
-                    },
-                    "3": {
-                        "then": "Aquí está construida una estación de carga"
-                    },
-                    "4": {
-                        "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
-                    }
-                },
-                "question": "¿Está en uso este punto de carga?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "De hecho, {operator} es la red"
-                    }
-                },
-                "question": "¿Quien es la operadora de esta estación de carga?",
-                "render": "Esta estación de carga la opera {operator}"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "No hay costes de aparcamiento adicionales mientras se carga"
-                    },
-                    "1": {
-                        "then": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga"
-                    }
-                },
-                "question": "¿Hay que pagar una tasa de aparcamiento mientras se carga?"
-            },
-            "Type": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquí se pueden cargar <b>bicicletas</b>"
-                    },
-                    "1": {
-                        "then": "Aquí se pueden cargar <b>coches</b>"
-                    },
-                    "2": {
-                        "then": "Aquí se pueden cargar <b>scooters</b>"
-                    },
-                    "4": {
-                        "then": "Aquí se pueden cargar <b>buses</b>"
-                    }
-                },
-                "question": "¿A qué vehículos se permite la carga aquí?"
-            },
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
-                    },
-                    "1": {
-                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
-                    },
-                    "2": {
-                        "then": "Solo clientes del lugar al que pertenece esta estación la pueden utilizar <br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes</span>"
-                    },
-                    "3": {
-                        "then": "Se debe de solicitar una <b>llave</b> para utilizar esta estación de carga<br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes, que reciben una llave de la recepción para desbloquear la estación de carga</span>"
-                    },
-                    "4": {
-                        "then": "No accesible al público en general (por ejemplo, sólo accesible a los propietarios, empleados, ...)"
-                    }
-                },
-                "question": "¿A quién se le permite utilizar esta estación de carga?",
-                "render": "El acceso está {access}"
-            },
-            "capacity": {
-                "question": "¿Cuántos vehículos se pueden cargar a la vez aquí?",
-                "render": "Aquí se pueden cargar {capacity} vehículos al mismo tiempo"
-            },
-            "charge": {
-                "question": "¿Cuánto hay que pagar para utilizar esta estación de carga?",
-                "render": "Utilizar esta estación de carga cuesta <b>{charge}</b>"
-            },
-            "current-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A"
-                    }
-                },
-                "question": "¿Qué corriente ofrecen los conectores con <div style='display:i nline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem;display:inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> salida de hasta {socket:USB-A:current}A"
-            },
-            "email": {
-                "question": "¿Cual es la dirección de correo electrónico de esta operadora?",
-                "render": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>"
-            },
-            "fee": {
-                "mappings": {
-                    "3": {
-                        "then": "Pago por uso, pero gratuito para los clientes del hotel/pub/hospital/... que gestiona la estación de carga"
-                    },
-                    "4": {
-                        "then": "Uso de pago"
-                    }
-                },
-                "question": "¿Hay que pagar para utilizar esta estación de carga?"
-            },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "No hay límite de tiempo para dejar tu vehículo aquí"
-                    }
-                },
-                "question": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?",
-                "render": "Se puede estar como máximo <b>{canonical(maxstay)}</b>"
-            },
-            "phone": {
-                "question": "¿A qué número se puede llamar si hay un problema con esta estación de carga?",
-                "render": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>"
-            },
-            "ref": {
-                "question": "¿Cual es el número de referencia de esta estación de carga?",
-                "render": "El número de referencia es <b>{ref}</b>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Estación de carga para bicicletas eléctricas"
-                },
-                "1": {
-                    "then": "Estación de carga para coches"
-                }
-            },
-            "render": "Estación de carga"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " minutos",
-                        "humanSingular": " minuto"
-                    },
-                    "1": {
-                        "human": " horas",
-                        "humanSingular": " hora"
-                    },
-                    "2": {
-                        "human": " días",
-                        "humanSingular": " día"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Voltios"
-                    }
-                }
-            },
-            "2": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "A"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilvatio"
-                    },
-                    "1": {
-                        "human": "megavatio"
-                    }
-                }
-            }
-        }
-    },
     "climbing": {
         "tagRenderings": {
             "average_length": {
@@ -3398,20 +2982,6 @@
             "maxspeed-maxspeed": {
                 "question": "Qué es la velocidad máxima legal uno está permitido conducir en esta carretera?"
             }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilómetros/hora",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "millas/hora",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "nature_reserve": {
@@ -3651,15 +3221,6 @@
                 }
             },
             "render": "Torre de observación"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metros"
-                    }
-                }
-            }
         }
     },
     "parking": {
@@ -4455,36 +4016,6 @@
         },
         "title": {
             "render": "Cámara de velocidad"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilómetros/hora",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "millas/hora",
-                        "humanShort": "mph"
-                    }
-                }
-            }
-        }
-    },
-    "speed_display": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilómetros/hora",
-                        "humanShort": "km/h"
-                    },
-                    "1": {
-                        "human": "millas/hora",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "sport_pitch": {
@@ -5150,6 +4681,32 @@
         },
         "title": {
             "render": "Árbol"
+        }
+    },
+    "unit": {
+        "units": {
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} metros"
+                    },
+                    "3": {
+                        "human": "{quantity} pies"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} kilómetros/hora",
+                        "humanShort": "{quantity} km/h"
+                    },
+                    "1": {
+                        "human": "{quantity} millas/hora",
+                        "humanShort": "{quantity} mph"
+                    }
+                }
+            }
         }
     },
     "usersettings": {

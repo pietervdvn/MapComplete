@@ -384,18 +384,6 @@
                             },
                             "question": "Wie heeft hier toegang toe?"
                         }
-                    },
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " meter"
-                                },
-                                "1": {
-                                    "human": " voet"
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -869,89 +857,6 @@
             }
         },
         "title": "Stoepranden en oversteekplaatsen"
-    },
-    "mapcomplete-changes": {
-        "description": "Deze kaart toont alle wijzigingen die met MapComplete gemaakt werden",
-        "layers": {
-            "0": {
-                "description": "Toon alle MapComplete wijzigingen",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themenaam bevat {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "Gemaakt door bijdrager {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Niet</b> gemaakt door bijdrager {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Gemaakt voor {search}"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Gemaakt na {search}"
-                            }
-                        }
-                    },
-                    "6": {
-                        "options": {
-                            "0": {
-                                "question": "De taal van de bijdrager is {search}"
-                            }
-                        }
-                    },
-                    "7": {
-                        "options": {
-                            "0": {
-                                "question": "Gemaakt met host {search}"
-                            }
-                        }
-                    },
-                    "8": {
-                        "options": {
-                            "0": {
-                                "question": "Changeset bevat minstens één afbeelding"
-                            }
-                        }
-                    }
-                },
-                "name": "Centerpunt van changeset",
-                "tagRenderings": {
-                    "contributor": {
-                        "question": "Welke bijdrager maakte deze wijziging?",
-                        "render": "Wijziging gemaakt door  <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    },
-                    "host": {
-                        "question": "Met welke host (website) werd deze wijziging gemaakt?",
-                        "render": "Wijziging gemaakt met <a href='{host}'>{host}</a>"
-                    },
-                    "locale": {
-                        "question": "In welke locale (taal) werd deze wijziging gemaakt?",
-                        "render": "De gebruikerstaal is {locale}"
-                    }
-                }
-            }
-        },
-        "shortDescription": "Toon wijzigingen gemaakt met MapComplete",
-        "title": "Wijzigingen gemaakt met MapComplete"
     },
     "maproulette": {
         "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen.",

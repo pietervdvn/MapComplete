@@ -327,18 +327,6 @@
                             },
                             "question": "Chi può accedervi?"
                         }
-                    },
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " metri"
-                                },
-                                "1": {
-                                    "human": " piedi"
-                                }
-                            }
-                        }
                     }
                 }
             }

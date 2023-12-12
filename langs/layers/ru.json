@@ -707,43 +707,6 @@
             }
         }
     },
-    "charging_station": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " минут",
-                        "humanSingular": " минута"
-                    },
-                    "1": {
-                        "human": " часов",
-                        "humanSingular": " час"
-                    },
-                    "2": {
-                        "human": " дней",
-                        "humanSingular": " день"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Вольт"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "киловатт"
-                    },
-                    "1": {
-                        "human": "мегаватт"
-                    }
-                }
-            }
-        }
-    },
     "climbing": {
         "tagRenderings": {
             "sportclimbing": {
@@ -1148,16 +1111,6 @@
         },
         "title": {
             "render": "Гидрант"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "миллиметры",
-                        "humanSingular": "миллиметр"
-                    }
-                }
-            }
         }
     },
     "indoors": {
@@ -1247,20 +1200,6 @@
         },
         "title": {
             "render": "Бордюр"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "сантиметры",
-                        "humanSingular": "сантиметр"
-                    },
-                    "1": {
-                        "human": "метры",
-                        "humanSingular": "метр"
-                    }
-                }
-            }
         }
     },
     "kindergarten_childcare": {
@@ -1292,17 +1231,6 @@
             "render": "Карта"
         }
     },
-    "maxspeed": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "humanShort": "км/ч"
-                    }
-                }
-            }
-        }
-    },
     "observation_tower": {
         "name": "Смотровые башни",
         "title": {
@@ -1312,15 +1240,6 @@
                 }
             },
             "render": "Смотровая башня"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " метр"
-                    }
-                }
-            }
         }
     },
     "picnic_table": {
@@ -1942,6 +1861,46 @@
             "render": "Дерево"
         }
     },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} мегаватт"
+                    },
+                    "1": {
+                        "human": "{quantity} киловатт"
+                    },
+                    "2": {
+                        "human": "{quantity} ватт"
+                    },
+                    "3": {
+                        "human": "{quantity} гигаватт"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} метр"
+                    },
+                    "1": {
+                        "human": "{quantity} сантиметры"
+                    },
+                    "2": {
+                        "human": "{quantity} миллиметры"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "humanShort": "{quantity} км/ч"
+                    }
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "picture-license": {
@@ -2000,31 +1959,6 @@
             "mappings": {
                 "0": {
                     "then": "{name}"
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " мегаватт"
-                    },
-                    "1": {
-                        "human": " киловатт"
-                    },
-                    "2": {
-                        "human": " ватт"
-                    },
-                    "3": {
-                        "human": " гигаватт"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " метр"
-                    }
                 }
             }
         }

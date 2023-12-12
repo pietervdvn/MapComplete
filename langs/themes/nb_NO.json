@@ -244,18 +244,6 @@
                                 }
                             }
                         }
-                    },
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " meter"
-                                },
-                                "1": {
-                                    "human": " fot"
-                                }
-                            }
-                        }
                     }
                 }
             }

@@ -867,99 +867,6 @@
             "render": "Wypożyczalnia samochodów"
         }
     },
-    "charging_station": {
-        "description": "Stacja ładowania",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Wszystkie rodzaje pojazdów"
-                    },
-                    "1": {
-                        "question": "Stacja ładowania dla rowerów"
-                    },
-                    "2": {
-                        "question": "Stacja ładowania dla samochodów"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tylko działające stacje ładowania"
-                    }
-                }
-            }
-        },
-        "name": "Stacje ładowania",
-        "presets": {
-            "1": {
-                "title": "stacja ładowania dla samochodów"
-            }
-        },
-        "tagRenderings": {
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "13": {
-                        "then": "<b>Tesla Supercharger</b>"
-                    }
-                }
-            },
-            "Network": {
-                "mappings": {
-                    "1": {
-                        "then": "Nie jest częścią większej sieci"
-                    }
-                },
-                "question": "Czy ta stacja ładowania jest częścią sieci?"
-            },
-            "OH": {
-                "override": {
-                    "question": "Kiedy otwiera się ta stacja ładowania?"
-                }
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Ta stacja ładowania działa"
-                    },
-                    "1": {
-                        "then": "Ta stacja ładowania jest zepsuta"
-                    },
-                    "2": {
-                        "then": "Planowana jest tutaj stacja ładowania"
-                    },
-                    "3": {
-                        "then": "Budowana jest tutaj stacja ładowania"
-                    }
-                }
-            },
-            "Operator": {
-                "render": "Ta stacja ładowania jest obsługiwana przez {operator}"
-            }
-        },
-        "title": {
-            "render": "Stacja ładowania"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " minut",
-                        "humanSingular": " minuta"
-                    },
-                    "1": {
-                        "human": " godzin",
-                        "humanSingular": " godzina"
-                    },
-                    "2": {
-                        "human": " dni",
-                        "humanSingular": " dzień"
-                    }
-                }
-            }
-        }
-    },
     "climbing_gym": {
         "tagRenderings": {
             "shoe_rental": {
@@ -1329,18 +1236,6 @@
         },
         "title": {
             "render": "Winda"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centymetr"
-                    }
-                }
-            }
         }
     },
     "elongated_coin": {
@@ -1403,18 +1298,6 @@
         },
         "title": {
             "render": "Wejście"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centrymetr"
-                    }
-                }
-            }
         }
     },
     "etymology": {
@@ -1810,20 +1693,6 @@
         },
         "title": {
             "render": "Krawężnik"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "centymetry",
-                        "humanSingular": "centymetr"
-                    },
-                    "1": {
-                        "human": "metry",
-                        "humanSingular": "metr"
-                    }
-                }
-            }
         }
     },
     "kindergarten_childcare": {
@@ -2154,15 +2023,6 @@
                 }
             },
             "render": "Wieża obserwacyjna"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metr"
-                    }
-                }
-            }
         }
     },
     "osm_community_index": {
@@ -2725,18 +2585,6 @@
                 "questionHint": "Jest to mierzone od podłogi do najniższej użytecznej części biurka",
                 "render": "Wysokość tego biurka to <b>{canonical(desk:height)}</b>"
             }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "metr"
-                    },
-                    "1": {
-                        "human": "centymetr"
-                    }
-                }
-            }
         }
     },
     "recycling": {
@@ -2783,6 +2631,23 @@
         },
         "title": {
             "render": "Szkoła <i>{name}</i>"
+        }
+    },
+    "unit": {
+        "units": {
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} metr"
+                    },
+                    "1": {
+                        "human": "{quantity} centymetr"
+                    },
+                    "3": {
+                        "human": "{quantity} stopy"
+                    }
+                }
+            }
         }
     },
     "walls_and_buildings": {

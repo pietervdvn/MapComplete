@@ -1282,564 +1282,13 @@
         }
     },
     "charging_station": {
-        "description": "En ladestation",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Alle køretøjstyper"
-                    },
-                    "1": {
-                        "question": "Ladestation til cykler"
-                    },
-                    "2": {
-                        "question": "Ladestation til biler"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Kun fungerende ladestationer"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Alle stik"
-                    },
-                    "1": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Schuko-vægstik</b> uden jordstik (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> stik"
-                    },
-                    "2": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jordstik (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> stik"
-                    },
-                    "3": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> stik"
-                    },
-                    "4": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Type 1 med kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> stik"
-                    },
-                    "5": {
-                        "question": "Har et <div style='display: inline-block'><b>Type 1 <i>uden</i> kabel (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> stik"
-                    },
-                    "6": {
-                        "question": "Har et <div style='display: inline-block'><b>Type 1 CCS-stik (også kendt som Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> stik"
-                    },
-                    "7": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> stik"
-                    },
-                    "8": {
-                        "question": "Har en <div style='display: inline-block'><b><b> Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> connector"
-                    },
-                    "9": {
-                        "question": "Har en <div style='display: inline-block'><b><b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
-                    },
-                    "10": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Type 2 med kabel</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stik"
-                    },
-                    "11": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger CCS-stik</b> (et mærkevarer type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> stik"
-                    },
-                    "12": {
-                        "question": "Har en <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> stik"
-                    },
-                    "13": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger (Destination)</b> (En type 2 med kabel med tesla-mærket kabel)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stik"
-                    },
-                    "14": {
-                        "question": "Har et <div style='display: inline-block'><b><b> USB-stik</b> til opladning af telefoner og mindre elektronik</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> stik"
-                    },
-                    "15": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Bosch Active Connect med 3 pins</b> og et kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> stik"
-                    },
-                    "16": {
-                        "question": "Har et <div style='display: inline-block'><b><b> Bosch Active Connect-stik med 5 pins</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> stik"
-                    }
-                }
-            }
-        },
-        "name": "Ladestationer",
-        "presets": {
-            "0": {
-                "title": "en ladestation til elektriske cykler med et normalt europæisk vægstik <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (beregnet til opladning af elektriske cykler)"
-            },
-            "1": {
-                "title": "en ladestation til biler"
-            }
-        },
         "tagRenderings": {
-            "Auth phone": {
-                "question": "Hvad er telefonnummeret til godkendelsesopkald eller SMS?",
-                "render": "Godkend dig ved at ringe eller sende en sms til <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
-            },
-            "Authentication": {
-                "mappings": {
+            "rewritten-questions": {
+                "renderings": {
                     "0": {
-                        "then": "Godkendelse med et medlemskort"
-                    },
-                    "1": {
-                        "then": "Godkendelse med en app"
-                    },
-                    "2": {
-                        "then": "Godkendelse via telefonopkald er tilgængelig"
-                    },
-                    "3": {
-                        "then": "Godkendelse via SMS er tilgængelig"
-                    },
-                    "4": {
-                        "then": "Godkendelse via NFC er tilgængelig"
-                    },
-                    "5": {
-                        "then": "Godkendelse via Money Card er tilgængelig"
-                    },
-                    "6": {
-                        "then": "Godkendelse via betalingskort er tilgængelig"
-                    },
-                    "7": {
-                        "then": "Opladning her er (også) muligt uden godkendelse"
+                        "question": "Hvor mange stik af typen {{description}} er tilgængelige her?"
                     }
-                },
-                "question": "Hvilken form for godkendelse er tilgængelig ved ladestationen?"
-            },
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F)"
-                    },
-                    "1": {
-                        "then": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F)"
-                    },
-                    "2": {
-                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)"
-                    },
-                    "3": {
-                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 med kabel</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 med kabel</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i>uden</i> kabel</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i>uden</i> kabel</b> (J1772)"
-                    },
-                    "10": {
-                        "then": "<b>Type 1 CCS</b> (også kendt som Type 1 Combo)"
-                    },
-                    "11": {
-                        "then": "<b>Type 1 CCS</b> (også kendt som Type 1 Combo)"
-                    },
-                    "12": {
-                        "then": "<b>Tesla Supercharger</b>"
-                    },
-                    "13": {
-                        "then": "<b>Tesla Supercharger</b>"
-                    },
-                    "14": {
-                        "then": "<b>Type 2</b> (mennekes)"
-                    },
-                    "15": {
-                        "then": "<b> Type 2</b> (mennekes)"
-                    },
-                    "16": {
-                        "then": "<b>Type 2 CCS</b> (mennekes)"
-                    },
-                    "17": {
-                        "then": "<b>Type 2 CCS</b> (mennekes)"
-                    },
-                    "18": {
-                        "then": "<b>Type 2 med kabel</b> (mennekes)"
-                    },
-                    "19": {
-                        "then": "<b>Type 2 med kabel</b> (mennekes)"
-                    },
-                    "20": {
-                        "then": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css)"
-                    },
-                    "21": {
-                        "then": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css)"
-                    },
-                    "22": {
-                        "then": "<b> Tesla Supercharger (destination)</b>"
-                    },
-                    "23": {
-                        "then": "<b> Tesla Supercharger (destination)</b>"
-                    },
-                    "26": {
-                        "then": "<b>USB</b> til opladning af telefoner og mindre elektronik"
-                    },
-                    "27": {
-                        "then": "<b>USB</b> til opladning af telefoner og mindre elektronik"
-                    },
-                    "28": {
-                        "then": "<b> Bosch Active Connect med 3 ben</b> og kabel"
-                    },
-                    "29": {
-                        "then": "<b>Bosch Active Connect med 3 ben</b> og kabel"
-                    },
-                    "30": {
-                        "then": "<b>Bosch Active Connect med 5 ben</b> og kabel"
-                    },
-                    "31": {
-                        "then": "<b>Bosch Active Connect med 5 ben</b> og kabel"
-                    }
-                },
-                "question": "Hvilke ladestik er tilgængelige her?"
-            },
-            "Network": {
-                "mappings": {
-                    "0": {
-                        "then": "Ikke en del af et større netværk, f.eks. fordi ladestationen vedligeholdes af en lokal virksomhed"
-                    },
-                    "1": {
-                        "then": "Ikke en del af et større netværk"
-                    }
-                },
-                "question": "Er denne ladestation en del af et netværk?",
-                "render": "En del af netværket <b>{network}</b>"
-            },
-            "Operational status": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne ladestation fungerer"
-                    },
-                    "1": {
-                        "then": "Denne ladestation er i stykker"
-                    },
-                    "2": {
-                        "then": "Her er der planlagt en ladestation"
-                    },
-                    "3": {
-                        "then": "Her er opført en ladestation"
-                    },
-                    "4": {
-                        "then": "Denne ladestation er blevet permanent deaktiveret og er ikke længere i brug, men er stadig synlig"
-                    }
-                },
-                "question": "Er denne ladestander i brug?"
-            },
-            "Operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Faktisk er {operator} netværket"
-                    }
-                },
-                "question": "Hvem er operatøren af denne ladestation?",
-                "render": "Denne ladestation drives af {operator}"
-            },
-            "Parking:fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Ingen ekstra parkeringsomkostninger under opladning"
-                    },
-                    "1": {
-                        "then": "Der skal betales et ekstra parkeringsgebyr under opladning"
-                    }
-                },
-                "question": "Skal man betale parkeringsafgift, mens man oplader?"
-            },
-            "Type": {
-                "mappings": {
-                    "0": {
-                        "then": "<b> Cykler</b> kan oplades her"
-                    },
-                    "1": {
-                        "then": "<b>Biler</b> kan oplades her"
-                    },
-                    "2": {
-                        "then": "<b>Scootere</b> kan oplades her"
-                    },
-                    "3": {
-                        "then": "<b> Tunge varebiler</b> (f.eks. lastbiler) kan oplades her"
-                    },
-                    "4": {
-                        "then": "<b> Busser</b> kan oplades her"
-                    }
-                },
-                "question": "Hvilke køretøjer må oplades her?"
-            },
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Alle kan bruge denne ladestation (betaling kan være nødvendig)"
-                    },
-                    "1": {
-                        "then": "Alle kan bruge denne ladestation (betaling kan være nødvendig)"
-                    },
-                    "2": {
-                        "then": "Kun kunder på det sted, denne station tilhører, kan bruge denne ladestation<br/><span class='subtle'>F.eks. en ladestation, der drives af hotellet, og som kun kan bruges af deres gæster</span>"
-                    },
-                    "3": {
-                        "then": "Der skal anmodes om en <b>-nøgle</b> for at få adgang til denne ladestation<br/><span class='subtle'>F.eks. en ladestation, der drives af hotellet, og som kun kan bruges af deres gæster, og som modtager en nøgle fra receptionen for at låse ladestationen op</span>"
-                    },
-                    "4": {
-                        "then": "Ikke tilgængelig for offentligheden (f.eks. kun tilgængelig for ejere, ansatte, ...)"
-                    }
-                },
-                "question": "Hvem må bruge denne ladestation?",
-                "render": "Adgang er {access}"
-            },
-            "capacity": {
-                "question": "Hvor mange køretøjer kan oplades her på samme tid?",
-                "render": "{capacity} køretøjer kan oplades her på samme tid"
-            },
-            "charge": {
-                "question": "Hvor meget skal man betale for at bruge denne ladestation?",
-                "render": "Brug af denne ladestation koster <b>{charge}</b>"
-            },
-            "current-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F) yder højst 16 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Schuko-vægstik</b> uden jordstift (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Schuko vægstik</b> uden jord (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> udgange højst {socket:schuko:current}A"
-            },
-            "current-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europæisk vægstik</b> med jord (CEE7/4 type E) yder højst 16 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> udgange på højst {socket:typee:current}A"
-            },
-            "current-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css) yder højst 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css) yder højst 350 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Tesla Supercharger CCS</b> (en type2_css af mærketype2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (en mærkevare type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> udgange højst {socket:tesla_supercharger_ccs:current}A"
-            },
-            "current-11": {
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> med Tesla Supercharger (Destination) ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> udgange højst {socket:tesla_destination:current}A"
-            },
-            "current-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 med kabel mærket som tesla) yder højst 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 med kabel af Tesla-mærket) yder højst 32 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Tesla Supercharger (Destination)</b> (A Type 2 med kabel med Tesla-mærket)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?"
-            },
-            "current-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> til opladning af telefoner og mindre elektronik yder højst 1 A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> til opladning af telefoner og små elektroniske apparater yder højst 2 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> USB</b> til opladning af telefoner og småt elektronikudstyr</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> til opladning af telefoner og småt elektronikudstyr</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> udsender højst {socket:USB-A:current}A"
-            },
-            "current-14": {
-                "question": "Hvilken strøm har stikkene med <div style='display: inline-block'><b><b>Bosch Active Connect med 3 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect med 3 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> udgange højst {socket:bosch_3pin:current}A"
-            },
-            "current-15": {
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Bosch Active Connect med 5 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> med Bosch Active Connect med 5 ben og kabel ?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect med 5 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> udgange højst {socket:bosch_5pin:current}A"
-            },
-            "current-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> yder højst 120 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> ?"
-            },
-            "current-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 med kabel</b> (J1772) yder højst 32 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Type 1 med kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> (J1772)?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 med kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> udgange på højst {socket:type1_cable:current}A"
-            },
-            "current-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b> Type 1 <i>uden</i>-kabel</b> (J1772)-udgange højst 32 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Type 1 <i>uden</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 <i>uden</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> udgange højst {socket:type1:current}A"
-            },
-            "current-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b> Type 1 CCS</b> (også kaldet Type 1 Combo) udgange højst 50 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 CCS</b> (også kendt som Type 1 Combo) udsender højst 125 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke giver stikkene med <div style='display: inline-block'><b><b> Type 1 CCS</b> (også kendt som Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 CCS</b> (alias Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> udgange højst {socket:type1_combo:current}A"
-            },
-            "current-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b> Tesla Supercharger</b> yder højst 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger</b> yder højst 350 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke giver stikkene med <div style='display: inline-block'><b><b> Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> udgange højst {socket:tesla_supercharger:current}A"
-            },
-            "current-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2</b> (mennekes) udgange højst 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2</b> (mennekes) udgange højst 32 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stik med <div style='display: inline-block'><b><b> Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> ?",
-                "render": "<div style='display: inline-block'> <b> <b> Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> udgange højst {socket:type2:current}A"
-            },
-            "current-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) udgange på højst 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) udgange højst 350 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke giver stikkene med <div style='display: inline-block'><b><b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> ?",
-                "render": "<div style='display: inline-block'> <b> <b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> udgange højst {socket:type2_combo:current}A"
-            },
-            "current-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 med kabel</b> (mennekes) udgange på højst 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 med kabel</b> (mennekes) udgange på højst 32 A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Type 2 med kabel</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?"
-            },
-            "email": {
-                "question": "Hvad er operatørens e-mail-adresse?",
-                "render": "I tilfælde af problemer kan du sende en e-mail til <a href='mailto:{email}'>{email}</a>"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Gratis at bruge (uden godkendelse)"
-                    },
-                    "1": {
-                        "then": "Gratis at bruge, men man skal godkende"
-                    },
-                    "2": {
-                        "then": "Gratis at bruge"
-                    },
-                    "3": {
-                        "then": "Betalt brug, men gratis for kunder på det hotel/pub/hospital/... der driver ladestationen"
-                    },
-                    "4": {
-                        "then": "Betalt brug"
-                    }
-                },
-                "question": "Skal man betale for at bruge denne ladestation?"
-            },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Ingen tidsbegrænsning på at forlade dit køretøj her"
-                    }
-                },
-                "question": "Hvad er den maksimale tid, man må opholde sig her?",
-                "render": "Man kan højst blive <b>{canonical(maxstay)}</b>"
-            },
-            "phone": {
-                "question": "Hvilket nummer kan man ringe til, hvis der er et problem med denne ladestation?",
-                "render": "I tilfælde af problemer, ring til <a href='tel:{phone}'>{phone}</a>"
-            },
-            "plugs-0": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b> Schuko vægstik</b> uden jordstift (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> er tilgængelige her?",
-                "render": "Der findes <b class='text-xl'>{socket:schuko}</b> stik af typen <div style='display: inline-block'><b><b> Schuko-vægstik</b> uden jord (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> her"
-            },
-            "plugs-1": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> er tilgængelige her?",
-                "render": "Der findes <b class='text-xl'>{socket:typee}</b> stik af typen <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> her"
-            },
-            "plugs-10": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (en mærkevare type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> er tilgængelige her?"
-            },
-            "plugs-13": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b> USB</b> til opladning af telefoner og småt elektronikudstyr</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> findes der her?",
-                "render": "Der er <b class='text-xl'>{socket:USB-A}</b> stik af typen <div style='display: inline-block'><b><b>USB</b> til opladning af telefoner og lille elektronik</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> tilgængelig her"
-            },
-            "plugs-14": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b>Bosch Active Connect med 3 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> er tilgængelige her?",
-                "render": "Der er <b class='text-xl'>{socket:bosch_3pin}</b> stik af typen <div style='display: inline-block'><b><b>Bosch Active Connect med 3 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> tilgængelig her"
-            },
-            "plugs-15": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b>Bosch Active Connect med 5 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> er tilgængelige her?",
-                "render": "Der er <b class='text-xl'>{socket:bosch_5pin}</b> stik af typen <div style='display: inline-block'><b><b>Bosch Active Connect med 5 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> tilgængelig her"
-            },
-            "plugs-2": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b> Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> er tilgængelige her?",
-                "render": "Der er <b class='text-xl'>{socket:chademo}</b> stik af typen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> tilgængelig her"
-            },
-            "plugs-3": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b>Type 1 med kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> er tilgængelige her?",
-                "render": "Der findes <b class='text-xl'>{socket:type1_cable}</b> stik af typen <div style='display: inline-block'><b><b> Type 1 med kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> her"
-            },
-            "plugs-4": {
-                "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b> Type 1 <i>uden</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> er tilgængelige her?",
-                "render": "Der findes <b class='text-xl'>{socket:type1}</b> stik af typen <div style='display: inline-block'><b><b> Type 1 <i>uden</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> her"
-            },
-            "power-output-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko vægstik</b> uden jordstik (CEE7/4 type F) giver højst 3,6 kw A"
-                    }
-                },
-                "question": "Hvilken effekt har et enkelt stik af typen <div style='display: inline-block'><b><b> Schuko-vægstik</b> uden jordstift (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Schuko vægstik</b> uden jord (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> udgange højst {socket:schuko:output}A"
-            },
-            "power-output-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E) yder højst 3 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E) yder højst 22 kw A"
-                    }
-                },
-                "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> ?"
+                }
             }
         }
     },
@@ -2579,18 +2028,6 @@
         },
         "title": {
             "render": "Toilet"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
         }
     },
     "toilet_at_amenity": {
@@ -2657,18 +2094,6 @@
             "wheelchair-door-width": {
                 "question": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
                 "render": "Døren til det kørestolsvenlige toilet er {canonical(toilets:door:width)} bred"
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
             }
         }
     },
@@ -2935,6 +2360,39 @@
             "render": "Træ"
         }
     },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} Megawatt"
+                    },
+                    "1": {
+                        "human": "{quantity} Kilowatt"
+                    },
+                    "2": {
+                        "human": "{quantity} Watt"
+                    },
+                    "3": {
+                        "human": "{quantity} Gigawatt"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} meter"
+                    },
+                    "1": {
+                        "human": "{quantity} centimeter"
+                    },
+                    "3": {
+                        "human": "{quantity} fod"
+                    }
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "cscount-thanks": {
@@ -3059,18 +2517,6 @@
         },
         "title": {
             "render": "Mur eller bygning"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
         }
     },
     "waste_basket": {
@@ -3254,31 +2700,6 @@
                 }
             },
             "render": "vindmølle"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " Megawatt"
-                    },
-                    "1": {
-                        "human": " Kilowatt"
-                    },
-                    "2": {
-                        "human": " Watt"
-                    },
-                    "3": {
-                        "human": " Gigawatt"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
         }
     }
 }

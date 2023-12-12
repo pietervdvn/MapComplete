@@ -1801,10 +1801,10 @@
                         "question": "Heeft een <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "5": {
-                        "question": "Heeft een <div style='display: inline-block'><b>Type 1 <i>zonder</i> kabel (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
-                        "question": "Heeft een <div style='display: inline-block'><b>Type 1 CCS (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
                     },
                     "7": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
@@ -1825,7 +1825,7 @@
                         "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
                     },
                     "13": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "14": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
@@ -1842,10 +1842,10 @@
         "name": "Oplaadpunten",
         "presets": {
             "0": {
-                "title": "een oplaadpunt voor elektrische fietsen"
+                "title": "oplaadpunt voor elektrische fietsen"
             },
             "1": {
-                "title": "een oplaadstation voor elektrische auto's"
+                "title": "oplaadstation voor elektrische auto's"
             }
         },
         "tagRenderings": {
@@ -1981,7 +1981,7 @@
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
                     }
                 },
-                "question": "Welke laadaansluitingen zijn hier beschikbaar?"
+                "question": "Welke aansluitingen zijn hier beschikbaar?"
             },
             "Network": {
                 "mappings": {
@@ -2075,7 +2075,7 @@
                         "then": "Een <b>sleutel</b> is nodig om dit oplaadpunt te gebruiken<br/><span class='subtle'>Bv. voor klanten van een hotel of een bar, die de sleutel aan de receptie kunnen krijgen</span>"
                     },
                     "4": {
-                        "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers, ...</span>"
+                        "then": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> "
                     },
                     "5": {
                         "then": "Dit oplaadstation is publiek toegankelijk onder voorwaarden (bv. enkel tijdens bepaalde uren). "
@@ -2091,167 +2091,6 @@
             "charge": {
                 "question": "Hoeveel moet men betalen om dit oplaadpunt te gebruiken?",
                 "render": "Dit oplaadpunt gebruiken kost <b>{charge}</b>"
-            },
-            "current-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F) levert een stroom van maximaal 16 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> levert een stroom van maximaal {socket:schuko:current}A"
-            },
-            "current-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E) levert een stroom van maximaal 16 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> levert een stroom van maximaal {socket:typee:current}A"
-            },
-            "current-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo) levert een stroom van maximaal 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo) levert een stroom van maximaal 350 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een stroom van maximaal {socket:tesla_supercharger_ccs:current}A"
-            },
-            "current-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (destination)</b> levert een stroom van maximaal 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (destination)</b> levert een stroom van maximaal 350 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
-            },
-            "current-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 32 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
-            },
-            "current-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> om GSMs en kleine electronica op te laden levert een stroom van maximaal 1 A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> om GSMs en kleine electronica op te laden levert een stroom van maximaal 2 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> levert een stroom van maximaal {socket:USB-A:current}A"
-            },
-            "current-14": {
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> levert een stroom van maximaal {socket:bosch_3pin:current}A"
-            },
-            "current-15": {
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een stroom van maximaal {socket:bosch_5pin:current}A"
-            },
-            "current-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> levert een stroom van maximaal 120 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> levert een stroom van maximaal {socket:chademo:current}A"
-            },
-            "current-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 met kabel</b> (J1772) levert een stroom van maximaal 32 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> levert een stroom van maximaal {socket:type1_cable:current}A"
-            },
-            "current-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772) levert een stroom van maximaal 32 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> levert een stroom van maximaal {socket:type1:current}A"
-            },
-            "current-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) levert een stroom van maximaal 50 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) levert een stroom van maximaal 125 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> levert een stroom van maximaal {socket:type1_combo:current}A"
-            },
-            "current-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> levert een stroom van maximaal 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger</b> levert een stroom van maximaal 350 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> levert een stroom van maximaal {socket:tesla_supercharger:current}A"
-            },
-            "current-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2</b> (mennekes) levert een stroom van maximaal 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2</b> (mennekes) levert een stroom van maximaal 32 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> levert een stroom van maximaal {socket:type2:current}A"
-            },
-            "current-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) levert een stroom van maximaal 125 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) levert een stroom van maximaal 350 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een stroom van maximaal {socket:type2_combo:current}A"
-            },
-            "current-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 met kabel</b> (J1772) levert een stroom van maximaal 16 A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 met kabel</b> (J1772) levert een stroom van maximaal 32 A"
-                    }
-                },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een stroom van maximaal {socket:type2_cable:current}A"
             },
             "email": {
                 "question": "Wat is het email-adres van de operator?",
@@ -2269,7 +2108,7 @@
                         "then": "Gratis te gebruiken"
                     },
                     "3": {
-                        "then": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/…"
+                        "then": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/..."
                     },
                     "4": {
                         "then": "Betalend"
@@ -2290,252 +2129,6 @@
                 "question": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
                 "render": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
             },
-            "plugs-0": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:schuko}</b> stekkers van het type <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
-            },
-            "plugs-1": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:typee}</b> stekkers van het type <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
-            },
-            "plugs-10": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-            },
-            "plugs-11": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-            },
-            "plugs-12": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:tesla_destination}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-            },
-            "plugs-13": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:USB-A}</b> stekkers van het type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-            },
-            "plugs-14": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:bosch_3pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-            },
-            "plugs-15": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:bosch_5pin}</b> stekkers van het type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-            },
-            "plugs-2": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:chademo}</b> stekkers van het type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
-            },
-            "plugs-3": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:type1_cable}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-            },
-            "plugs-4": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:type1}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-            },
-            "plugs-5": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:type1_combo}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-            },
-            "plugs-6": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:tesla_supercharger}</b> stekkers van het type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-            },
-            "plugs-7": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:type2}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
-            },
-            "plugs-8": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:type2_combo}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-            },
-            "plugs-9": {
-                "question": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft dit oplaadpunt?",
-                "render": "Hier zijn <b class='text-xl'>{socket:type2_cable}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-            },
-            "power-output-0": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F) levert een vermogen van maximaal 3.6 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> levert een vermogen van maximaal {socket:schuko:output}"
-            },
-            "power-output-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E) levert een vermogen van maximaal 3 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E) levert een vermogen van maximaal 22 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> levert een vermogen van maximaal {socket:typee:output}"
-            },
-            "power-output-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo) levert een vermogen van maximaal 50 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
-            },
-            "power-output-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (destination)</b> levert een vermogen van maximaal 120 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> levert een vermogen van maximaal 150 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Tesla Supercharger (destination)</b> levert een vermogen van maximaal 250 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
-            },
-            "power-output-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) levert een vermogen van maximaal 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) levert een vermogen van maximaal 22 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
-            },
-            "power-output-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> om GSMs en kleine electronica op te laden levert een vermogen van maximaal 5w A"
-                    },
-                    "1": {
-                        "then": "<b>USB</b> om GSMs en kleine electronica op te laden levert een vermogen van maximaal 10w A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> levert een vermogen van maximaal {socket:USB-A:output}"
-            },
-            "power-output-14": {
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_3pin:output}"
-            },
-            "power-output-15": {
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> levert een vermogen van maximaal {socket:bosch_5pin:output}"
-            },
-            "power-output-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> levert een vermogen van maximaal 50 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> levert een vermogen van maximaal {socket:chademo:output}"
-            },
-            "power-output-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 met kabel</b> (J1772) levert een vermogen van maximaal 3.7 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 met kabel</b> (J1772) levert een vermogen van maximaal 7 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> levert een vermogen van maximaal {socket:type1_cable:output}"
-            },
-            "power-output-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772) levert een vermogen van maximaal 3.7 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772) levert een vermogen van maximaal 6.6 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772) levert een vermogen van maximaal 7 kw A"
-                    },
-                    "3": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772) levert een vermogen van maximaal 7.2 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> levert een vermogen van maximaal {socket:type1:output}"
-            },
-            "power-output-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) levert een vermogen van maximaal 50 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) levert een vermogen van maximaal 62.5 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) levert een vermogen van maximaal 150 kw A"
-                    },
-                    "3": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) levert een vermogen van maximaal 350 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> levert een vermogen van maximaal {socket:type1_combo:output}"
-            },
-            "power-output-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> levert een vermogen van maximaal 120 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Tesla Supercharger</b> levert een vermogen van maximaal 150 kw A"
-                    },
-                    "2": {
-                        "then": "<b>Tesla Supercharger</b> levert een vermogen van maximaal 250 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> levert een vermogen van maximaal {socket:tesla_supercharger:output}"
-            },
-            "power-output-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2</b> (mennekes) levert een vermogen van maximaal 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2</b> (mennekes) levert een vermogen van maximaal 22 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> levert een vermogen van maximaal {socket:type2:output}"
-            },
-            "power-output-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) levert een vermogen van maximaal 50 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een vermogen van maximaal {socket:type2_combo:output}"
-            },
-            "power-output-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 met kabel</b> (J1772) levert een vermogen van maximaal 11 kw A"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 met kabel</b> (J1772) levert een vermogen van maximaal 22 kw A"
-                    }
-                },
-                "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:type2_cable:output}"
-            },
             "questions-technical": {
                 "render": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}"
             },
@@ -2543,163 +2136,86 @@
                 "question": "Wat is het referentienummer van dit oplaadstation?",
                 "render": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>"
             },
-            "voltage-0": {
-                "mappings": {
+            "rewritten-questions": {
+                "renderings": {
                     "0": {
-                        "then": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F) heeft een spanning van 230 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> heeft een spanning van {socket:schuko:voltage} volt"
-            },
-            "voltage-1": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E) heeft een spanning van 230 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> heeft een spanning van {socket:typee:voltage} volt"
-            },
-            "voltage-10": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo) heeft een spanning van 500 volt"
+                        "question": "Hoeveel stekkers van type {{description}} heeft dit oplaadpunt?",
+                        "render": "Hier zijn <b class='text-xl'>{{{key}}}</b> stekkers van het type {{description}}"
                     },
                     "1": {
-                        "then": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo) heeft een spanning van 920 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> heeft een spanning van {socket:tesla_supercharger_ccs:voltage} volt"
-            },
-            "voltage-11": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination)</b> heeft een spanning van 480 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
-            },
-            "voltage-12": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) heeft een spanning van 230 volt"
+                        "mappings": {
+                            "then": "{{description}} heeft een spanning van {{commonVoltages}} volt"
+                        },
+                        "question": "Welke spanning levert de stekker van type {{description}}",
+                        "render": "{{description}} heeft een spanning van {canonical({{key}}:voltage)}"
                     },
-                    "1": {
-                        "then": "<b>Tesla Supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) heeft een spanning van 400 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
-            },
-            "voltage-13": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>USB</b> om GSMs en kleine electronica op te laden heeft een spanning van 5 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> heeft een spanning van {socket:USB-A:voltage} volt"
-            },
-            "voltage-14": {
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> heeft een spanning van {socket:bosch_3pin:voltage} volt"
-            },
-            "voltage-15": {
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> heeft een spanning van {socket:bosch_5pin:voltage} volt"
-            },
-            "voltage-2": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Chademo</b> heeft een spanning van 500 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> heeft een spanning van {socket:chademo:voltage} volt"
-            },
-            "voltage-3": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 met kabel</b> (J1772) heeft een spanning van 200 volt"
+                    "2": {
+                        "mappings": {
+                            "then": "{{description}} levert een stroom van maximaal {{commonCurrent}} A"
+                        },
+                        "question": "Welke stroom levert de stekker van type {{description}}?",
+                        "render": "{{description}} levert een stroom van maximaal {canonical({{key}}:current)}"
                     },
-                    "1": {
-                        "then": "<b>Type 1 met kabel</b> (J1772) heeft een spanning van 240 volt"
+                    "3": {
+                        "mappings": {
+                            "then": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
+                        },
+                        "question": "Welk vermogen levert een enkele stekker van type {{description}}?",
+                        "render": "{{description}} levert een vermogen van maximaal {canonical({{key}}:output)}"
                     }
                 },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> heeft een spanning van {socket:type1_cable:voltage} volt"
-            },
-            "voltage-4": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772) heeft een spanning van 200 volt"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772) heeft een spanning van 240 volt"
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "2": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+                        },
+                        "1": {
+                            "2": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                        },
+                        "2": {
+                            "2": "<b>Chademo</b>"
+                        },
+                        "3": {
+                            "2": "<b>Type 1 met kabel</b> (J1772)"
+                        },
+                        "4": {
+                            "2": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                        },
+                        "5": {
+                            "2": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)"
+                        },
+                        "6": {
+                            "2": "<b>Tesla Supercharger</b>"
+                        },
+                        "7": {
+                            "2": "<b>Type 2</b> (mennekes)"
+                        },
+                        "8": {
+                            "2": "<b>Type 2 CCS</b> (mennekes)"
+                        },
+                        "9": {
+                            "2": "<b>Type 2 met kabel</b> (J1772)"
+                        },
+                        "10": {
+                            "2": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
+                        },
+                        "11": {
+                            "2": "<b>Tesla Supercharger (destination)</b>"
+                        },
+                        "12": {
+                            "2": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)"
+                        },
+                        "13": {
+                            "2": "<b>USB</b> om GSMs en kleine electronica op te laden"
+                        },
+                        "14": {
+                            "2": "<b>Bosch Active Connect met 3 pinnen</b> aan een kabel"
+                        },
+                        "15": {
+                            "2": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+                        }
                     }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> heeft een spanning van {socket:type1:voltage} volt"
-            },
-            "voltage-5": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) heeft een spanning van 400 volt"
-                    },
-                    "1": {
-                        "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo) heeft een spanning van 1000 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> heeft een spanning van {socket:type1_combo:voltage} volt"
-            },
-            "voltage-6": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Tesla Supercharger</b> heeft een spanning van 480 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft een spanning van {socket:tesla_supercharger:voltage} volt"
-            },
-            "voltage-7": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2</b> (mennekes) heeft een spanning van 230 volt"
-                    },
-                    "1": {
-                        "then": "<b>Type 2</b> (mennekes) heeft een spanning van 400 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> heeft een spanning van {socket:type2:voltage} volt"
-            },
-            "voltage-8": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) heeft een spanning van 500 volt"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 CCS</b> (mennekes) heeft een spanning van 920 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> heeft een spanning van {socket:type2_combo:voltage} volt"
-            },
-            "voltage-9": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Type 2 met kabel</b> (J1772) heeft een spanning van 230 volt"
-                    },
-                    "1": {
-                        "then": "<b>Type 2 met kabel</b> (J1772) heeft een spanning van 400 volt"
-                    }
-                },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> heeft een spanning van {socket:type2_cable:voltage} volt"
+                }
             },
             "website": {
                 "question": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
@@ -2716,48 +2232,6 @@
                 }
             },
             "render": "Oplaadpunt"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " minuten",
-                        "humanSingular": " minuut"
-                    },
-                    "1": {
-                        "human": " uren",
-                        "humanSingular": " uur"
-                    },
-                    "2": {
-                        "human": " day",
-                        "humanSingular": " dag"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "volt"
-                    }
-                }
-            },
-            "2": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "A"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilowatt"
-                    },
-                    "1": {
-                        "human": "megawatt"
-                    }
-                }
-            }
         }
     },
     "climbing": {
@@ -4177,18 +3651,6 @@
         },
         "title": {
             "render": "Lift"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
         }
     },
     "entrance": {
@@ -4309,18 +3771,6 @@
         },
         "title": {
             "render": "Ingang"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
         }
     },
     "etymology": {
@@ -5194,16 +4644,6 @@
         },
         "title": {
             "render": "Brandkraan"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "millimeter",
-                        "humanSingular": "millimeter"
-                    }
-                }
-            }
         }
     },
     "ice_cream": {
@@ -5352,20 +4792,6 @@
         },
         "title": {
             "render": "Stoeprand"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "centimeter",
-                        "humanSingular": "centimeter"
-                    },
-                    "1": {
-                        "human": "meter",
-                        "humanSingular": "meter"
-                    }
-                }
-            }
         }
     },
     "kindergarten_childcare": {
@@ -5657,20 +5083,6 @@
             "mappings": {
                 "0": {
                     "then": "Weg zonder een naam"
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilometers/uur",
-                        "humanShort": "km/u"
-                    },
-                    "1": {
-                        "human": "miles/uur",
-                        "humanShort": "mph"
-                    }
                 }
             }
         }
@@ -5975,15 +5387,6 @@
                 }
             },
             "render": "Uitkijktoren"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
         }
     },
     "osm_community_index": {
@@ -7153,20 +6556,6 @@
             "render": "Oversteekplaats"
         }
     },
-    "reception_desk": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
-        }
-    },
     "recycling": {
         "description": "Een laag met recyclagingcontainers en -centrums",
         "filter": {
@@ -7747,20 +7136,6 @@
         },
         "title": {
             "render": "Flitspaal"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilometers/uur",
-                        "humanShort": "km/u"
-                    },
-                    "1": {
-                        "human": "miles/uur",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "speed_display": {
@@ -7789,20 +7164,6 @@
         },
         "title": {
             "render": "Snelheidsdisplay"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilometers/uur",
-                        "humanShort": "km/u"
-                    },
-                    "1": {
-                        "human": "miles/uur",
-                        "humanShort": "mph"
-                    }
-                }
-            }
         }
     },
     "sport_pitch": {
@@ -8563,18 +7924,6 @@
         },
         "title": {
             "render": "Toilet"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
         }
     },
     "toilet_at_amenity": {
@@ -8659,18 +8008,6 @@
                 }
             },
             "render": "Toilet in een voorziening"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
         }
     },
     "trail": {
@@ -8997,6 +8334,87 @@
         },
         "title": {
             "render": "Boom"
+        }
+    },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} megawatt"
+                    },
+                    "1": {
+                        "human": "{quantity} kilowatt"
+                    },
+                    "2": {
+                        "human": "{quantity} watt"
+                    },
+                    "3": {
+                        "human": "{quantity} gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} volt"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} A"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} meter",
+                        "humanSingular": "één meter"
+                    },
+                    "1": {
+                        "human": "{quantity} centimeter",
+                        "humanSingular": "één centimeter"
+                    },
+                    "2": {
+                        "human": "{quantity} millimeter",
+                        "humanSingular": "één millimeter"
+                    },
+                    "3": {
+                        "human": "{quantity} voet"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} kilometers/uur",
+                        "humanShort": "{quantity} km/u"
+                    },
+                    "1": {
+                        "human": "{quantity} miles/uur",
+                        "humanShort": "{quantity} mph"
+                    }
+                }
+            },
+            "5": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} minuten",
+                        "humanSingular": "één minuut"
+                    },
+                    "1": {
+                        "human": "{quantity} uren",
+                        "humanSingular": "één uur"
+                    },
+                    "2": {
+                        "human": "{quantity} day",
+                        "humanSingular": "één dag"
+                    }
+                }
+            }
         }
     },
     "usersettings": {
@@ -9385,18 +8803,6 @@
         },
         "title": {
             "render": "Muur of gebouw"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
         }
     },
     "waste_basket": {
@@ -9584,31 +8990,6 @@
                 }
             },
             "render": "windturbine"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " megawatt"
-                    },
-                    "1": {
-                        "human": " kilowatt"
-                    },
-                    "2": {
-                        "human": " watt"
-                    },
-                    "3": {
-                        "human": " gigawatt"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
         }
     }
 }

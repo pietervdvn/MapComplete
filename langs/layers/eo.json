@@ -212,6 +212,36 @@
             "render": "Arbo"
         }
     },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} megavatoj"
+                    },
+                    "1": {
+                        "human": "{quantity} kilovatoj"
+                    },
+                    "2": {
+                        "human": "{quantity} vatoj"
+                    },
+                    "3": {
+                        "human": "{quantity} gigavatoj"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} metro"
+                    },
+                    "3": {
+                        "human": "{quantity} futo"
+                    }
+                }
+            }
+        }
+    },
     "viewpoint": {
         "name": "Vidpunkto",
         "title": {
@@ -241,31 +271,6 @@
             "mappings": {
                 "0": {
                     "then": "{name}"
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " megavatoj"
-                    },
-                    "1": {
-                        "human": " kilovatoj"
-                    },
-                    "2": {
-                        "human": " vatoj"
-                    },
-                    "3": {
-                        "human": " gigavatoj"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metro"
-                    }
                 }
             }
         }

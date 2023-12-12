@@ -394,18 +394,6 @@
                             },
                             "question": "Kdo sem má přístup?"
                         }
-                    },
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " metr"
-                                },
-                                "1": {
-                                    "human": " stopa"
-                                }
-                            }
-                        }
                     }
                 }
             },
@@ -886,112 +874,6 @@
             }
         },
         "title": "Obrubníky a přechody"
-    },
-    "mapcomplete-changes": {
-        "description": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
-        "layers": {
-            "0": {
-                "description": "Zobrazit všechny změny MapComplete",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Název motivu obsahuje {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "Vytvořil přispěvatel {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Není</b> vytvořeno přispěvatelem {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Vytvořeno před {search}"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Vytvořeno po {search}"
-                            }
-                        }
-                    },
-                    "6": {
-                        "options": {
-                            "0": {
-                                "question": "Jazyk uživatele (iso-kód) {search}"
-                            }
-                        }
-                    },
-                    "7": {
-                        "options": {
-                            "0": {
-                                "question": "Vytvořeno pomocí hostitele {search}"
-                            }
-                        }
-                    },
-                    "8": {
-                        "options": {
-                            "0": {
-                                "question": "Sada změn přidala alespoň jeden obrázek"
-                            }
-                        }
-                    }
-                },
-                "name": "Centrum změn",
-                "tagRenderings": {
-                    "contributor": {
-                        "question": "Který přispěvatel tuto změnu provedl?",
-                        "render": "Změna provedená <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    },
-                    "host": {
-                        "question": "U jakého hostitele (webové stránky) byla tato změna provedena?",
-                        "render": "Změna provedená pomocí <a href='{host}'>{host}</a>"
-                    },
-                    "locale": {
-                        "question": "V jakém národním prostředí (jazyce) byla tato změna provedena?",
-                        "render": "Uživatelské prostředí je {locale}"
-                    },
-                    "show_changeset_id": {
-                        "render": "Změny <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme-id": {
-                        "question": "Jaké téma bylo použito k provedení této změny?",
-                        "render": "Změna s motivem <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    },
-                    "version": {
-                        "question": "Jaká verze aplikace MapComplete byla použita k provedení této změny?",
-                        "render": "Vyrobeno pomocí {editor}"
-                    }
-                },
-                "title": {
-                    "render": "Změna pro {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings+": {
-                        "0": {
-                            "render": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Zobrazení změn provedených pomocí nástroje MapComplete",
-        "title": "Změny provedené pomocí MapComplete"
     },
     "maproulette": {
         "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",

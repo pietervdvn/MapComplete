@@ -738,6 +738,33 @@
             }
         }
     },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} 百萬瓦"
+                    },
+                    "1": {
+                        "human": "{quantity} 千瓦"
+                    },
+                    "2": {
+                        "human": "{quantity} 瓦"
+                    },
+                    "3": {
+                        "human": "{quantity} 千兆瓦"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} 公尺"
+                    }
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "translation-completeness": {
@@ -791,31 +818,6 @@
                 }
             },
             "render": "風機"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " 百萬瓦"
-                    },
-                    "1": {
-                        "human": " 千瓦"
-                    },
-                    "2": {
-                        "human": " 瓦"
-                    },
-                    "3": {
-                        "human": " 千兆瓦"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " 公尺"
-                    }
-                }
-            }
         }
     }
 }

@@ -802,21 +802,31 @@
             }
         }
     },
-    "usersettings": {
-        "tagRenderings": {
-            "translation-completeness": {
-                "render": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt"
-            }
-        }
-    },
-    "windturbine": {
+    "unit": {
         "units": {
             "0": {
                 "applicableUnits": {
                     "1": {
-                        "human": " kilowatt"
+                        "human": "{quantity} kilowatt"
                     }
                 }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} meter"
+                    },
+                    "3": {
+                        "human": "{quantity} fot"
+                    }
+                }
+            }
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt"
             }
         }
     }

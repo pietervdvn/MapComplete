@@ -72,27 +72,6 @@
             "render": "پب"
         }
     },
-    "charging_station": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " منٹ"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "کیلوواٹ"
-                    },
-                    "1": {
-                        "human": "میگاواٹ"
-                    }
-                }
-            }
-        }
-    },
     "climbing_area": {
         "tagRenderings": {
             "Rock type (crag/rock/cliff only)": {
@@ -130,36 +109,12 @@
         "name": "ایلیویٹر",
         "title": {
             "render": "ایلیویٹر"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "میٹر"
-                    },
-                    "1": {
-                        "human": "سینٹیمیٹر"
-                    }
-                }
-            }
         }
     },
     "entrance": {
         "name": "دروازہ",
         "title": {
             "render": "دروازہ"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "میٹر"
-                    },
-                    "1": {
-                        "human": "سینٹیمیٹر"
-                    }
-                }
-            }
         }
     },
     "food": {
@@ -189,16 +144,6 @@
     "hydrant": {
         "title": {
             "render": "ہائڈرنٹ"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "ملیمیٹر",
-                        "humanSingular": "ملیمیٹر"
-                    }
-                }
-            }
         }
     },
     "indoors": {
@@ -208,20 +153,6 @@
         "name": "کرب",
         "title": {
             "render": "کرب"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "سینٹیمیٹر",
-                        "humanSingular": "سینٹیمیٹر"
-                    },
-                    "1": {
-                        "human": "میٹر",
-                        "humanSingular": "میٹر"
-                    }
-                }
-            }
         }
     },
     "map": {
@@ -231,21 +162,7 @@
         }
     },
     "maxspeed": {
-        "name": "حد رفتار",
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "ہر گھنٹہ وچ کیلومیٹر",
-                        "humanShort": "ہر گھنٹے وچ کیلومیٹر"
-                    },
-                    "1": {
-                        "human": "ہر گھنٹہ وچ میل",
-                        "humanShort": "ہر گھنٹہ وچ میل"
-                    }
-                }
-            }
-        }
+        "name": "حد رفتار"
     },
     "note": {
         "title": {
@@ -317,20 +234,6 @@
             "render": "کراسنگ"
         }
     },
-    "reception_desk": {
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "میٹر"
-                    },
-                    "1": {
-                        "human": "سینٹیمیٹر"
-                    }
-                }
-            }
-        }
-    },
     "recycling": {
         "name": "ریسائیکلنگ"
     },
@@ -356,15 +259,35 @@
         "name": "ٹوئیلٹاں",
         "title": {
             "render": "ٹوئیلٹ"
-        },
+        }
+    },
+    "unit": {
         "units": {
-            "0": {
+            "3": {
                 "applicableUnits": {
                     "0": {
-                        "human": "میٹر"
+                        "human": "{quantity}میٹر"
                     },
                     "1": {
-                        "human": "سینٹیمیٹر"
+                        "human": " {quantity}سینٹیمیٹر"
+                    },
+                    "2": {
+                        "human": "{quantity} ملیمیٹر"
+                    },
+                    "3": {
+                        "human": "{quantity} ؜ فوٹ"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity}ہر گھنٹہ وچ کیلومیٹر",
+                        "humanShort": "{quantity}ہر گھنٹے وچ کیلومیٹر"
+                    },
+                    "1": {
+                        "human": "{quantity} ہر گھنٹہ وچ میل",
+                        "humanShort": "{quantity}ہر گھنٹہ وچ میل"
                     }
                 }
             }

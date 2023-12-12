@@ -261,62 +261,6 @@
             "render": "Edaritegia"
         }
     },
-    "charging_station": {
-        "tagRenderings": {
-            "Available_charging_stations (generated)": {
-                "mappings": {
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    }
-                }
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " ·minutu",
-                        "humanSingular": " ·minutu"
-                    },
-                    "1": {
-                        "human": " ·ordu",
-                        "humanSingular": " ·ordu"
-                    },
-                    "2": {
-                        "human": " ·egun",
-                        "humanSingular": " ·egun"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "Voltio"
-                    }
-                }
-            },
-            "2": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "A"
-                    }
-                }
-            },
-            "3": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilovatio"
-                    },
-                    "1": {
-                        "human": "megawatt"
-                    }
-                }
-            }
-        }
-    },
     "climbing_area": {
         "tagRenderings": {
             "Rock type (crag/rock/cliff only)": {
@@ -328,6 +272,20 @@
             },
             "name": {
                 "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "unit": {
+        "units": {
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} ·metro"
+                    },
+                    "3": {
+                        "human": "{quantity} ·hanka"
+                    }
+                }
             }
         }
     }

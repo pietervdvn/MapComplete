@@ -2624,6 +2624,36 @@
             "render": "Albero"
         }
     },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} megawatt"
+                    },
+                    "1": {
+                        "human": "{quantity} kilowatt"
+                    },
+                    "2": {
+                        "human": "{quantity} watt"
+                    },
+                    "3": {
+                        "human": "{quantity} gigawatt"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} metri"
+                    },
+                    "3": {
+                        "human": "{quantity} piedi"
+                    }
+                }
+            }
+        }
+    },
     "viewpoint": {
         "description": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata",
         "name": "Punto panoramico",
@@ -2824,31 +2854,6 @@
                 }
             },
             "render": "pala eolica"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " megawatt"
-                    },
-                    "1": {
-                        "human": " kilowatt"
-                    },
-                    "2": {
-                        "human": " watt"
-                    },
-                    "3": {
-                        "human": " gigawatt"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " metri"
-                    }
-                }
-            }
         }
     }
 }

@@ -391,18 +391,6 @@
                             },
                             "question": "Qui peut y accéder ?"
                         }
-                    },
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " mètres"
-                                },
-                                "1": {
-                                    "human": " pieds"
-                                }
-                            }
-                        }
                     }
                 }
             },
@@ -841,65 +829,6 @@
             }
         },
         "title": "Ressauts et traversées"
-    },
-    "mapcomplete-changes": {
-        "description": "Cette carte montre tous les changements faits avec MapComplete",
-        "layers": {
-            "0": {
-                "filter": {
-                    "6": {
-                        "options": {
-                            "0": {
-                                "question": "Langage utilisateur (code-ISO) {search}"
-                            }
-                        }
-                    },
-                    "8": {
-                        "options": {
-                            "0": {
-                                "question": "Le groupe de modifications a ajouté au moins une image"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "question": "Quel contributeur a fait cette modification ?",
-                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    },
-                    "host": {
-                        "render": "Modification faite avec <a href='{host}'>{host}</a>"
-                    },
-                    "locale": {
-                        "question": "En quelle langue est-ce que ce changement a été fait ?"
-                    },
-                    "show_changeset_id": {
-                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme-id": {
-                        "question": "Quel thème a été utilisé pour faire cette modification ?",
-                        "render": "Modifié avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    },
-                    "version": {
-                        "question": "Quelle version de MapComplete a été utilisée pour faire cette modification ?",
-                        "render": "Fait avec {editor}"
-                    }
-                },
-                "title": {
-                    "render": "Groupe de modifications pour {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings+": {
-                        "0": {
-                            "render": "D'autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "Changements faits avec MapComplete"
     },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",

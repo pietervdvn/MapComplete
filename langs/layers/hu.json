@@ -908,6 +908,33 @@
     "shops": {
         "description": "Egy bolt"
     },
+    "unit": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} megawatt"
+                    },
+                    "1": {
+                        "human": "{quantity} kilowatt"
+                    },
+                    "2": {
+                        "human": "{quantity} watt"
+                    },
+                    "3": {
+                        "human": "{quantity} gigawatt"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} méter"
+                    }
+                }
+            }
+        }
+    },
     "waste_basket": {
         "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
     },
@@ -942,31 +969,6 @@
         },
         "title": {
             "render": "szélerőmű"
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " megawatt"
-                    },
-                    "1": {
-                        "human": " kilowatt"
-                    },
-                    "2": {
-                        "human": " watt"
-                    },
-                    "3": {
-                        "human": " gigawatt"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " méter"
-                    }
-                }
-            }
         }
     }
 }

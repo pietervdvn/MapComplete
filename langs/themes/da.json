@@ -296,18 +296,6 @@
                             },
                             "question": "Hvem kan få adgang her?"
                         }
-                    },
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " meter"
-                                },
-                                "1": {
-                                    "human": " fod"
-                                }
-                            }
-                        }
                     }
                 }
             }

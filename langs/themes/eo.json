@@ -1,24 +1,4 @@
 {
-    "climbing": {
-        "layers": {
-            "0": {
-                "override": {
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " metro"
-                                },
-                                "1": {
-                                    "human": " futo"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
     "cyclestreets": {
         "layers": {
             "2": {
