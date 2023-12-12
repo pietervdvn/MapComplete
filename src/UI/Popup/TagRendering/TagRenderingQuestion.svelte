@@ -40,6 +40,9 @@
   // Will be bound if a freeform is available
   let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);
   let selectedMapping: number = undefined;
+  /**
+   * A list of booleans, used if multiAnswer is set
+   */
   let checkedMappings: boolean[];
 
   let mappings: Mapping[] = config?.mappings;
@@ -72,12 +75,15 @@
         checkedMappings?.length < confg.mappings.length + (confg.freeform ? 1 : 0))
     ) {
       const seenFreeforms = [];
-      TagUtils.FlattenMultiAnswer();
+      // Initial setup of the mappings
       checkedMappings = [
         ...confg.mappings.map((mapping) => {
+          if(mapping.hideInAnswer === true){
+            return false
+          }
           const matches = TagUtils.MatchesMultiAnswer(mapping.if, tgs);
           if (matches && confg.freeform) {
-            const newProps = TagUtils.changeAsProperties(mapping.if.asChange());
+            const newProps = TagUtils.changeAsProperties(mapping.if.asChange({}));
             seenFreeforms.push(newProps[confg.freeform.key]);
           }
           return matches;
