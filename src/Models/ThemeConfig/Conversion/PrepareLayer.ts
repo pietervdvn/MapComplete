@@ -1,5 +1,4 @@
 import {
-    Bypass,
     Concat,
     Conversion,
     DesugaringContext,
@@ -32,6 +31,7 @@ import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRende
 import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
+import { ExpandRewrite } from "./ExpandRewrite"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -674,164 +674,6 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         }
 
         return json
-    }
-}
-
-export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[]> {
-    constructor() {
-        super("Applies a rewrite", [], "ExpandRewrite")
-    }
-
-    /**
-     * Used for left|right group creation and replacement.
-     * Every 'keyToRewrite' will be replaced with 'target' recursively. This substitution will happen in place in the object 'tr'
-     *
-     * // should substitute strings
-     * const spec = {
-     *   "someKey": "somevalue {xyz}"
-     * }
-     * ExpandRewrite.RewriteParts("{xyz}", "rewritten", spec) // => {"someKey": "somevalue rewritten"}
-     *
-     * // should substitute all occurances in strings
-     * const spec = {
-     *   "someKey": "The left|right side has {key:left|right}"
-     * }
-     * ExpandRewrite.RewriteParts("left|right", "left", spec) // => {"someKey": "The left side has {key:left}"}
-     *
-     */
-    public static RewriteParts<T>(keyToRewrite: string, target: string | any, tr: T): T {
-        const targetIsTranslation = Translations.isProbablyATranslation(target)
-
-        function replaceRecursive(obj: string | any, target) {
-            if (obj === keyToRewrite) {
-                return target
-            }
-
-            if (typeof obj === "string") {
-                // This is a simple string - we do a simple replace
-                while (obj.indexOf(keyToRewrite) >= 0) {
-                    obj = obj.replace(keyToRewrite, target)
-                }
-                return obj
-            }
-            if (Array.isArray(obj)) {
-                // This is a list of items
-                return obj.map((o) => replaceRecursive(o, target))
-            }
-
-            if (typeof obj === "object") {
-                obj = { ...obj }
-
-                const isTr = targetIsTranslation && Translations.isProbablyATranslation(obj)
-
-                for (const key in obj) {
-                    let subtarget = target
-                    if (isTr && target[key] !== undefined) {
-                        // The target is a translation AND the current object is a translation
-                        // This means we should recursively replace with the translated value
-                        subtarget = target[key]
-                    }
-
-                    obj[key] = replaceRecursive(obj[key], subtarget)
-                }
-                return obj
-            }
-            return obj
-        }
-
-        return replaceRecursive(tr, target)
-    }
-
-    /**
-     * // should convert simple strings
-     * const spec = <RewritableConfigJson<string>>{
-     *     rewrite: {
-     *         sourceString: ["xyz","abc"],
-     *         into: [
-     *             ["X", "A"],
-     *             ["Y", "B"],
-     *             ["Z", "C"]],
-     *     },
-     *     renderings: "The value of xyz is abc"
-     * }
-     * new ExpandRewrite().convertStrict(spec, ConversionContext.test()) // => ["The value of X is A", "The value of Y is B", "The value of Z is C"]
-     *
-     * // should rewrite with translations
-     * const spec = <RewritableConfigJson<any>>{
-     *     rewrite: {
-     *         sourceString: ["xyz","abc"],
-     *         into: [
-     *             ["X", {en: "value", nl: "waarde"}],
-     *             ["Y", {en: "some other value", nl: "een andere waarde"}],
-     *     },
-     *     renderings: {en: "The value of xyz is abc", nl: "De waarde van xyz is abc"}
-     * }
-     * const expected = [
-     *  {
-     *      en: "The value of X is value",
-     *      nl: "De waarde van X is waarde"
-     *  },
-     *  {
-     *      en: "The value of Y is some other value",
-     *      nl: "De waarde van Y is een andere waarde"
-     *  }
-     * ]
-     * new ExpandRewrite().convertStrict(spec, ConversionContext.test()) // => expected
-     */
-    convert(json: T | RewritableConfigJson<T>, context: ConversionContext): T[] {
-        if (json === null || json === undefined) {
-            return []
-        }
-
-        if (json["rewrite"] === undefined) {
-            // not a rewrite
-            return [<T>json]
-        }
-
-        const rewrite = <RewritableConfigJson<T>>json
-        const keysToRewrite = rewrite.rewrite
-        const ts: T[] = []
-
-        {
-            // sanity check: rewrite: ["xyz", "longer_xyz"] is not allowed as "longer_xyz" will never be triggered
-            for (let i = 0; i < keysToRewrite.sourceString.length; i++) {
-                const guard = keysToRewrite.sourceString[i]
-                for (let j = i + 1; j < keysToRewrite.sourceString.length; j++) {
-                    const toRewrite = keysToRewrite.sourceString[j]
-                    if (toRewrite.indexOf(guard) >= 0) {
-                        context.err(
-                            `sourcestring[${i}] is a substring of sourcestring[${j}]: ${guard} will be substituted away before ${toRewrite} is reached.`
-                        )
-                    }
-                }
-            }
-        }
-
-        {
-            // sanity check: {rewrite: ["a", "b"] should have the right amount of 'intos' in every case
-            for (let i = 0; i < rewrite.rewrite.into.length; i++) {
-                const into = keysToRewrite.into[i]
-                if (into.length !== rewrite.rewrite.sourceString.length) {
-                    context
-                        .enters("into", i)
-                        .err(
-                            `Error in rewrite: there are ${rewrite.rewrite.sourceString.length} keys to rewrite, but entry ${i} has only ${into.length} values`
-                        )
-                }
-            }
-        }
-
-        for (let i = 0; i < keysToRewrite.into.length; i++) {
-            let t = Utils.Clone(rewrite.renderings)
-            for (let j = 0; j < keysToRewrite.sourceString.length; j++) {
-                const key = keysToRewrite.sourceString[j]
-                const target = keysToRewrite.into[i][j]
-                t = ExpandRewrite.RewriteParts(key, target, t)
-            }
-            ts.push(t)
-        }
-
-        return ts
     }
 }
 

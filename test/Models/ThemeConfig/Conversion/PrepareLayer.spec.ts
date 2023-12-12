@@ -1,7 +1,6 @@
 import { LayerConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayerConfigJson"
 import LineRenderingConfigJson from "../../../../src/Models/ThemeConfig/Json/LineRenderingConfigJson"
 import {
-    ExpandRewrite,
     PrepareLayer,
     RewriteSpecial,
 } from "../../../../src/Models/ThemeConfig/Conversion/PrepareLayer"
@@ -10,6 +9,7 @@ import RewritableConfigJson from "../../../../src/Models/ThemeConfig/Json/Rewrit
 import { describe, expect, it } from "vitest"
 
 import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/ConversionContext"
+import { ExpandRewrite } from "../../../../src/Models/ThemeConfig/Conversion/ExpandRewrite"
 
 describe("ExpandRewrite", () => {
     it("should not allow overlapping keys", () => {

@@ -3,6 +3,7 @@ import { Utils } from "../../../Utils"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import { render } from "sass"
 
 export default class ValidationUtils {
     public static getAllSpecialVisualisations(
@@ -42,6 +43,14 @@ export default class ValidationUtils {
         const cacheName = "__specialVisualisationsWithArgs_cache"
         if (renderingConfig[cacheName]) {
             return renderingConfig[cacheName]
+        }
+        if (!Array.isArray(renderingConfig.mappings ?? [])) {
+            throw (
+                "Mappings of renderingconfig " +
+                (renderingConfig["id"] ?? renderingConfig.render ?? "") +
+                " are supposed to be an array but it is: " +
+                JSON.stringify(renderingConfig.mappings)
+            )
         }
         const translations: any[] = Utils.NoNull([
             renderingConfig.render,

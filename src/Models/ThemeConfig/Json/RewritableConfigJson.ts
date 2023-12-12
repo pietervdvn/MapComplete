@@ -47,5 +47,6 @@ export default interface RewritableConfigJson<T> {
         sourceString: string[]
         into: (string | any)[][]
     }
-    renderings: T
+    subexpand?: Record<string, string[]>
+    renderings: T | T[]
 }
