@@ -137,5 +137,8 @@
       ]
     }
   ],
-  "lineRendering": []
+  "lineRendering": [],
+  "deletion": {
+    "softDeletionTags": "amenity="
+  }
 }
