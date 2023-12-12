@@ -1,9 +1,13 @@
-import {readFileSync, writeFileSync} from "fs";
-import {Utils} from "../../../src/Utils";
+import { readFileSync, writeFileSync } from "fs";
+import { Utils } from "../../../src/Utils";
 import ScriptUtils from "../../../scripts/ScriptUtils";
-import {LayerConfigJson} from "../../../src/Models/ThemeConfig/Json/LayerConfigJson";
+import { LayerConfigJson } from "../../../src/Models/ThemeConfig/Json/LayerConfigJson";
 import FilterConfigJson from "../../../src/Models/ThemeConfig/Json/FilterConfigJson";
-import {QuestionableTagRenderingConfigJson} from "../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
+import {
+    QuestionableTagRenderingConfigJson
+} from "../../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
+import RewritableConfigJson from "../../../src/Models/ThemeConfig/Json/RewritableConfigJson";
+import { TagRenderingConfigJson } from "../../../src/Models/ThemeConfig/Json/TagRenderingConfigJson";
 
 
 function colonSplit(value: string): string[] {
@@ -12,6 +16,7 @@ function colonSplit(value: string): string[] {
 
 function loadCsv(file): {
     key: string,
+    id: string,
     image: string,
     description: Map<string, string>,
     countryWhiteList?: string[],
@@ -49,16 +54,18 @@ function loadCsv(file): {
             }
         }
         v["description"] = descriptionTranslations
+        if(v["id"] === ""){
+        v["id"] = v["key"]
+        }
         return <any>v;
     }))
 }
+
 
 // SMall script to output the properties of the types.csv as json to add in the tagRenderingGroup. Should be copied manually
 function run(file, protojson) {
 
     const overview_question_answers = []
-    const questions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
-    const technicalQuestions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
@@ -69,6 +76,24 @@ function run(file, protojson) {
     ]
 
     const entries = loadCsv(file)
+
+    const protoString = readFileSync(protojson, "utf8")
+    const proto = <LayerConfigJson>JSON.parse(protoString)
+
+    {
+        // Add the entities to the 'rewrite-able part'
+        let specificQuestions: RewritableConfigJson<TagRenderingConfigJson> = <any>proto.tagRenderings.find(tr => tr["rewrite"] !== undefined && !(tr["rewrite"]["into"]?.length > 0));
+        specificQuestions.rewrite.into = entries.map(e => [
+            e.id,
+            e.key,
+            Utils.MapToObj(e.description, v => v),
+            e.image,
+            e.commonVoltages,
+            e.commonCurrents,
+            e.commonOutputs
+        ]);
+    }
+
     for (let i = 0; i < entries.length; i++) {
         const e = entries[i];
         const txt = {
@@ -140,126 +165,6 @@ function run(file, protojson) {
         const descrWithImage_en = `<div style='display: inline-block'><b>${e.description.get("en")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
         const descrWithImage_nl = `<div style='display: inline-block'><b>${e.description.get("nl")}</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/${e.image}'/></div>`
 
-        questions.push({
-            "id": "plugs-" + i,
-            question: {
-                en: `How much plugs of type ${descrWithImage_en} are available here?`,
-                nl: `Hoeveel stekkers van type  ${descrWithImage_nl} heeft dit oplaadpunt?`,
-            },
-            render: {
-                en: `There are <b class='text-xl'>{${e.key}}</b> plugs of type ${descrWithImage_en} available here`,
-                nl: `Hier zijn <b class='text-xl'>{${e.key}}</b> stekkers van het type ${descrWithImage_nl}`
-            },
-            freeform: {
-                key: e.key,
-                type: "pnat"
-            },
-            condition: {
-                and: [`${e.key}~*`, `${e.key}!=0`]
-            }
-        })
-
-        technicalQuestions.push({
-            "id": "voltage-" + i,
-            labels: ["technical"],
-            question: {
-                en: `What voltage do the plugs with ${descrWithImage_en} offer?`,
-                nl: `Welke spanning levert de stekker van type ${descrWithImage_nl}`
-            },
-            render: {
-                en: `${descrWithImage_en} outputs {${e.key}:voltage} volt`,
-                nl: `${descrWithImage_nl} heeft een spanning van {${e.key}:voltage} volt`
-            },
-            freeform: {
-                key: `${e.key}:voltage`,
-                type: "pfloat"
-            },
-            mappings: e.commonVoltages.map(voltage => {
-                return {
-                    if: `${e.key}:voltage=${voltage} V`,
-                    then: {
-                        en: `${e.description.get("en")} outputs ${voltage} volt`,
-                        nl: `${e.description.get("nl")} heeft een spanning van ${voltage} volt`
-                    },
-                    icon: {
-                        path: `./assets/layers/charging_station/${e.image}`,
-                        class:"medium"
-                    }
-                }
-            }),
-            condition: {
-                and: [`${e.key}~*`, `${e.key}!=0`]
-            }
-        })
-
-
-        technicalQuestions.push({
-            "id": "current-" + i,
-            labels:["technical"],
-            question: {
-                en: `What current do the plugs with ${descrWithImage_en} offer?`,
-                nl: `Welke stroom levert de stekker van type ${descrWithImage_nl}?`,
-            },
-            render: {
-                en: `${descrWithImage_en} outputs at most {${e.key}:current}A`,
-                nl: `${descrWithImage_nl} levert een stroom van maximaal {${e.key}:current}A`
-            },
-            freeform: {
-                key: `${e.key}:current`,
-                type: "pfloat"
-            },
-            mappings: e.commonCurrents.map(current => {
-                return {
-                    if: `${e.key}:current=${current} A`,
-                    then: {
-                        en: `${e.description.get("en")} outputs at most ${current} A`,
-                        nl: `${e.description.get("nl")} levert een stroom van maximaal ${current} A`
-                    },
-                    icon: {
-                        path: `./assets/layers/charging_station/${e.image}`,
-                        class:"medium"
-                    }
-                }
-            }),
-            condition: {
-                and: [`${e.key}~*`, `${e.key}!=0`]
-            }
-        })
-
-
-        technicalQuestions.push({
-            "id": "power-output-" + i,
-            labels:["technical"],
-            question: {
-                en: `What power output does a single plug of type ${descrWithImage_en} offer?`,
-                nl: `Welk vermogen levert een enkele stekker van type ${descrWithImage_nl}?`,
-            },
-            render: {
-                en: `${descrWithImage_en} outputs at most {${e.key}:output}`,
-                nl: `${descrWithImage_nl} levert een vermogen van maximaal {${e.key}:output}`
-            },
-            freeform: {
-                key: `${e.key}:output`,
-                type: "pfloat"
-            },
-            mappings: e.commonOutputs.map(output => {
-                return {
-                    if: `${e.key}:output=${output}`,
-                    then: {
-                        en: `${e.description.get("en")} outputs at most ${output} A`,
-                        nl: `${e.description.get("nl")} levert een vermogen van maximaal ${output} A`
-                    },
-                    icon: {
-                        path: `./assets/layers/charging_station/${e.image}`,
-                        class:"medium"
-                    }
-                }
-            }),
-            condition: {
-                and: [`${e.key}~*`, `${e.key}!=0`]
-            }
-        })
-
         filterOptions.push({
             question: {
                 en: `Has a ${descrWithImage_en} connector`,
@@ -278,14 +183,11 @@ function run(file, protojson) {
         "multiAnswer": true,
         "mappings": overview_question_answers
     }
-    questions.unshift(toggles)
-    questions.push(...technicalQuestions)
 
-    const stringified = questions.map(q => JSON.stringify(q, null, "  "))
-    let protoString = readFileSync(protojson, "utf8")
 
-    protoString = protoString.replace(/{[ \t\n]*"id"[ \t\n]*:[ \t\n]*"\$\$\$"[ \t\n]*}/, stringified.join(",\n"))
-    const proto = <LayerConfigJson>JSON.parse(protoString)
+    const insertQuestionsAt = proto.tagRenderings.findIndex(tr => tr["id"] === "$$$")
+    proto.tagRenderings.splice(insertQuestionsAt, 1, toggles)
+
     if(typeof proto.filter === "string"){
         throw "Filters of a the protojson should be a list of FilterConfigJsons"
     }
@@ -293,6 +195,9 @@ function run(file, protojson) {
     proto.tagRenderings.forEach(tr => {
         if (typeof tr === "string") {
             return;
+        }
+        if(tr["rewrite"]){
+            return
         }
         if (tr["id"] === undefined || typeof tr["id"] !== "string") {
             console.error(tr)
@@ -305,52 +210,14 @@ function run(file, protojson) {
         options: filterOptions
     })
 
+    const importedUnits = {}
+    for (const entry of entries) {
+        importedUnits[entry.key+":voltage"] = "voltage"
+        importedUnits[entry.key+":current"] = "current"
+        importedUnits[entry.key+":output"] = { quantity: "power", "denominations":["mW","kW"] }
+    }
 
-    const extraUnits = [
-        {
-            appliesToKey: entries.map(e => e.key + ":voltage"),
-            applicableUnits: [{
-                canonicalDenomination: 'V',
-                alternativeDenomination: ["v", "volt", "voltage", 'V', 'Volt'],
-                human: {
-                    en: "Volts",
-                    nl: "volt"
-                }
-            }],
-            eraseInvalidValues: true
-        },
-        {
-            appliesToKey: entries.map(e => e.key + ":current"),
-            applicableUnits: [{
-                canonicalDenomination: 'A',
-                alternativeDenomination: ["a", "amp", "amperage", 'A'],
-                human: {
-                    en: "A",
-                    nl: "A"
-                }
-            }],
-            eraseInvalidValues: true
-        },
-        {
-            appliesToKey: entries.map(e => e.key + ":output"),
-            applicableUnits: [{
-                canonicalDenomination: 'kW',
-                alternativeDenomination: ["kilowatt"],
-                human: {
-                    en: "kilowatt",
-                    nl: "kilowatt"
-                }
-            },
-                {
-                    canonicalDenomination: 'mW',
-                    alternativeDenomination: ["megawatt"],
-                    human: {
-                        en: "megawatt",
-                        nl: "megawatt"
-                    }
-                }],
-            eraseInvalidValues: true
-        },
+    const extraUnits = [importedUnits
     ];
 
     if (proto["units"] == undefined) {
@@ -366,7 +233,6 @@ async function queryTagInfo(file, type, clean: ((s: string) => string)) {
         const value = await ScriptUtils.TagInfoHistogram(e.key + ":" + type)
         const result = value.data
         const counts = new Map<string, number>()
-        //  console.log(result)
         for (const r of result) {
             let key = r.value;
             key = clean(key)
@@ -419,7 +285,7 @@ function mergeTranslations(origPath, newConfig: LayerConfigJson) {
 
 try {
     console.log("Generating the charging_station.json file")
-    run("types.csv", "charging_station.protojson")
+    run("types.csv", "charging_station.proto.json")
     /*/
     queryTagInfo("types.csv","voltage", s => s.trim())
     queryTagInfo("types.csv", "current", s => s.trim())

@@ -200,6 +200,152 @@
       "id": "$$$"
     },
     {
+      "id": "rewritten-questions",
+      "rewrite": {
+        "sourceString": [
+          "{{id}}",
+          "{{key}}",
+          "{{description}}",
+          "{{image}}",
+          "{{commonVoltages}}",
+          "{{commonCurrent}}",
+          "{{commonOutput}}"
+        ]
+      },
+      "subexpand": {
+        "mappings": [
+          "{{commonVoltages}}",
+          "{{commonCurrent}}",
+          "{{commonOutput}}"
+        ]
+      },
+      "renderings": [
+        {
+          "id": "plugs-amount-{{id}}",
+          "question": {
+            "en": "How much plugs of type {{description}} are available here?",
+            "nl": "Hoeveel stekkers van type {{description}} heeft dit oplaadpunt?",
+            "ca": "Quants connectors del tipus {{description}} hi han disponibles aquí?",
+            "cs": "Kolik zástrček typu {{description}} je k dispozici?",
+            "da": "Hvor mange stik af typen {{description}} er tilgængelige her?",
+            "de": "Wie viele Stecker vom Typ {{description}} sind hier vorhanden?"
+          },
+          "render": {
+            "en": "There are <b class='text-xl'>{{{key}}}</b> plugs of type {{description}} available here",
+            "nl": "Hier zijn <b class='text-xl'>{{{key}}}</b> stekkers van het type {{description}}"
+          },
+          "icon": "./assets/layers/charging_station/{{image}}",
+          "freeform": {
+            "key": "{{key}}",
+            "type": "pnat"
+          },
+          "condition": {
+            "and": [
+              "{{key}}~*",
+              "{{key}}!=0"
+            ]
+          }
+        },
+        {
+          "id": "voltage-{{id}}",
+          "labels": [
+            "technical"
+          ],
+          "question": {
+            "en": "What voltage do the plugs with {{description}} offer?",
+            "nl": "Welke spanning levert de stekker van type {{description}}",
+            "cs": "Jaké napětí mají zástrčky s {{description}} ?",
+            "de": "Welche Spannung liefern die {{description}}?"
+          },
+          "render": {
+            "en": "{{description}} outputs {canonical({{key}}:voltage)}",
+            "nl": "{{description}} heeft een spanning van {canonical({{key}}:voltage)}"
+          },
+          "freeform": {
+            "key": "{{key}}:voltage",
+            "type": "pfloat"
+          },
+          "mappings": {
+            "if": "{{key}}:voltage={{commonVoltages}} V",
+            "then": {
+              "en": "{{description}} outputs {{commonVoltages}} volt",
+              "nl": "{{description}} heeft een spanning van {{commonVoltages}} volt",
+              "cs": "{{description}} výstup {{commonVoltages}} voltů",
+              "de": "{{description}} liefert {{commonVoltages}} Volt"
+            }
+          },
+          "condition": {
+            "and": [
+              "{{key}}~*",
+              "{{key}}!=0"
+            ]
+          }
+        },
+        {
+          "id": "current-{{id}}",
+          "labels": [
+            "technical"
+          ],
+          "question": {
+            "en": "What current do the plugs with {{description}} offer?",
+            "nl": "Welke stroom levert de stekker van type {{description}}?"
+          },
+          "render": {
+            "en": "{{description}} outputs at most {canonical({{key}}:current)}",
+            "nl": "{{description}} levert een stroom van maximaal {canonical({{key}}:current)}"
+          },
+          "freeform": {
+            "key": "{{key}}:current",
+            "type": "pfloat"
+          },
+          "mappings": {
+            "if": "{{key}}:current={{commonCurrent}} A",
+            "then": {
+              "en": "{{description}} outputs at most {{commonCurrent}} A",
+              "nl": "{{description}} levert een stroom van maximaal {{commonCurrent}} A"
+            }
+          },
+          "condition": {
+            "and": [
+              "{{key}}~*",
+              "{{key}}!=0"
+            ]
+          }
+        },
+        {
+          "id": "power-output-{{id}}",
+          "labels": [
+            "technical"
+          ],
+          "question": {
+            "en": "What power output does a single plug of type {{description}} offer?",
+            "nl": "Welk vermogen levert een enkele stekker van type {{description}}?"
+          },
+          "render": {
+            "en": "{{description}} outputs at most {canonical({{key}}:output)}",
+            "nl": "{{description}} levert een vermogen van maximaal {canonical({{key}}:output)}"
+          },
+          "freeform": {
+            "key": "{{key}}:output",
+            "type": "pfloat"
+          },
+          "mappings": {
+            "if": "{{key}}:output={{commonOutput}}",
+            "then": {
+              "en": "{{description}} outputs at most {{commonOutput}} A",
+              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
+            }
+          },
+          "condition": {
+            "and": [
+              "{{key}}~*",
+              "{{key}}!=0"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "builtin": "opening_hours_24_7",
       "override": {
         "question": {
@@ -874,67 +1020,14 @@
   ],
   "units": [
     {
-      "appliesToKey": [
-        "maxstay"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "minutes",
-          "canonicalDenominationSingular": "minute",
-          "alternativeDenomination": [
-            "m",
-            "min",
-            "mins",
-            "minuten",
-            "mns"
-          ],
-          "human": {
-            "en": " minutes",
-            "nl": " minuten"
-          },
-          "humanSingular": {
-            "en": " minute",
-            "nl": " minuut"
-          }
-        },
-        {
-          "canonicalDenomination": "hours",
-          "canonicalDenominationSingular": "hour",
-          "alternativeDenomination": [
-            "h",
-            "hrs",
-            "hours",
-            "u",
-            "uur",
-            "uren"
-          ],
-          "human": {
-            "en": " hours",
-            "nl": " uren"
-          },
-          "humanSingular": {
-            "en": " hour",
-            "nl": " uur"
-          }
-        },
-        {
-          "canonicalDenomination": "days",
-          "canonicalDenominationSingular": "day",
-          "alternativeDenomination": [
-            "dys",
-            "dagen",
-            "dag"
-          ],
-          "human": {
-            "en": " days",
-            "nl": " day"
-          },
-          "humanSingular": {
-            "en": " day",
-            "nl": " dag"
-          }
-        }
-      ]
+      "maxstay": {
+        "quantity": "duration",
+        "denominations": [
+          "minutes",
+          "hours",
+          "days"
+        ]
+      }
     }
   ],
   "allowMove": {
