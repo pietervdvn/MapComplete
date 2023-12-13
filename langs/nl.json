@@ -402,7 +402,9 @@
         "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
         "nearby": {
-            "seeNearby": "Bekijk en link foto's van in de buurt"
+            "link": "Deze afbeelding toont het object",
+            "seeNearby": "Bekijk en link foto's van in de buurt",
+            "title": "Straatafbeeldingen uit de buurt"
         },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
         "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
