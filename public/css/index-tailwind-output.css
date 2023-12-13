@@ -2480,7 +2480,6 @@ label:not(.neutral-label) {
   border-radius: 0.5rem;
   background-color: var(--low-interaction-background);
   width: 100%;
-  display: block;
   box-sizing: border-box;
   transition: all 250ms;
 }

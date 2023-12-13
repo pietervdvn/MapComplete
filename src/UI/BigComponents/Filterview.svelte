@@ -7,11 +7,10 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Checkbox from "../Base/Checkbox.svelte"
   import FilterConfig from "../../Models/ThemeConfig/FilterConfig"
-  import type { Writable } from "svelte/store"
   import If from "../Base/If.svelte"
   import Dropdown from "../Base/Dropdown.svelte"
   import { onDestroy } from "svelte"
-  import { ImmutableStore, Store } from "../../Logic/UIEventSource"
+  import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import FilterviewWithFields from "./FilterviewWithFields.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
@@ -20,24 +19,24 @@
   export let highlightedLayer: Store<string | undefined> = new ImmutableStore(undefined)
   export let zoomlevel: Store<number> = new ImmutableStore(22)
   let layer: LayerConfig = filteredLayer.layerDef
-  let isDisplayed: Store<boolean> = filteredLayer.isDisplayed
+  let isDisplayed: UIEventSource<boolean> = filteredLayer.isDisplayed
 
   /**
    * Gets a UIEventSource as boolean for the given option, to be used with a checkbox
    */
-  function getBooleanStateFor(option: FilterConfig): Writable<boolean> {
+  function getBooleanStateFor(option: FilterConfig): UIEventSource<boolean> {
     const state = filteredLayer.appliedFilters.get(option.id)
     return state.sync(
       (f) => f === 0,
       [],
-      (b) => (b ? 0 : undefined)
+      (b) => (b ? 0 : undefined),
     )
   }
 
   /**
    * Gets a UIEventSource as number for the given option, to be used with a dropdown or radiobutton
    */
-  function getStateFor(option: FilterConfig): Writable<number> {
+  function getStateFor(option: FilterConfig): UIEventSource<number | string> {
     return filteredLayer.appliedFilters.get(option.id)
   }
 
@@ -49,7 +48,7 @@
       } else {
         mainElem?.classList?.remove("glowing-shadow")
       }
-    })
+    }),
   )
 </script>
 
