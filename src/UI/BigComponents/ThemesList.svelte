@@ -12,7 +12,6 @@
   export let themes: LayoutInformation[]
   export let state: { osmConnection: OsmConnection }
   export let isCustom: boolean = false
-  export let onMainScreen: boolean = true
   export let hideThemes: boolean = true
 
   // Filter theme based on search value
@@ -25,34 +24,25 @@
 
 <section class="w-full">
   <slot name="title" />
-  {#if onMainScreen}
-    <div class="gap-4 md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
-      {#each filteredThemes as theme (theme.id)}
-        {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
-          <!-- TODO: doesn't work if first theme is hidden -->
-          {#if theme === firstTheme && !isCustom && $search !== "" && $search !== undefined}
-            <ThemeButton
-              {theme}
-              {isCustom}
-              userDetails={state.osmConnection.userDetails}
-              {state}
-              selected={true}
-            />
-          {:else}
-            <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
-          {/if}
-        {/if}
-      {/each}
-    </div>
-  {:else}
-    <div>
-      {#each filteredThemes as theme (theme.id)}
-        {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
+  <div class="gap-4 md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
+    {#each filteredThemes as theme (theme.id)}
+      {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
+        <!-- TODO: doesn't work if first theme is hidden -->
+        {#if theme === firstTheme && !isCustom && $search !== "" && $search !== undefined}
+          <ThemeButton
+            {theme}
+            {isCustom}
+            userDetails={state.osmConnection.userDetails}
+            {state}
+            selected={true}
+          />
+        {:else}
           <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
         {/if}
-      {/each}
-    </div>
-  {/if}
+      {/if}
+    {/each}
+  </div>
+
 
   {#if filteredThemes.length === 0}
     <NoThemeResultButton {search} />

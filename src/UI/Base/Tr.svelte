@@ -5,6 +5,7 @@
   import { Translation } from "../i18n/Translation"
   import WeblateLink from "./WeblateLink.svelte"
   import { Store } from "../../Logic/UIEventSource"
+  import FromHtml from "./FromHtml.svelte"
 
   export let t: Translation
   export let cls: string = ""
@@ -14,9 +15,9 @@
 
 </script>
 
-{#if txt}
+{#if $txt}
   <span class={cls}>
-    {$txt}
+    <FromHtml src={$txt}/>
     <WeblateLink context={t.context} />
   </span>
 {/if}

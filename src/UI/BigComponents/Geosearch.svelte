@@ -10,13 +10,13 @@
   import { BBox } from "../../Logic/BBox"
   import { GeoIndexedStoreForLayer } from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
   import { createEventDispatcher, onDestroy } from "svelte"
+  import { placeholder } from "../../Utils/placeholder"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
   export let selectedElement: UIEventSource<Feature> | undefined = undefined
 
   export let clearAfterView: boolean = true
-
   let searchContents: string = ""
   export let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   onDestroy(
@@ -31,17 +31,6 @@
 
   let feedback: string = undefined
   
-  let placeholder = Translations.t.general.search.search.current
-  $:{
-    if(inputElement){
-    inputElement.placeholder = placeholder.data
-    }
-  }
-  onDestroy(placeholder.addCallbackAndRunD(placeholder => {
-    if(inputElement){
-      inputElement.placeholder = placeholder
-    }
-  }))
   
   
   Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
@@ -124,6 +113,7 @@
         bind:this={inputElement}
         on:keypress={(keypr) => (keypr.key === "Enter" ? performSearch() : undefined)}
         bind:value={searchContents}
+        use:placeholder={Translations.t.general.search.search}
       />
     {/if}
   </form>

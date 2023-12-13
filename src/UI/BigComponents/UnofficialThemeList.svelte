@@ -5,12 +5,12 @@
   import ThemesList from "./ThemesList.svelte"
   import Translations from "../i18n/Translations"
   import UserRelatedState from "../../Logic/State/UserRelatedState"
+  import Tr from "../Base/Tr.svelte"
 
   export let search: UIEventSource<string>
   export let state: UserRelatedState & {
     osmConnection: OsmConnection
   }
-  export let onMainScreen: boolean = true
 
   const t = Translations.t.general
   const currentIds: Store<string[]> = state.installedUserThemes
@@ -24,14 +24,15 @@
   <ThemesList
     {search}
     {state}
-    {onMainScreen}
     themes={customThemes}
     isCustom={true}
     hideThemes={false}
   >
     <svelte:fragment slot="title">
-      <!-- TODO: Change string to exclude html -->
-      {@html t.customThemeIntro.toString()}
+      <h3>
+        <Tr t={t.customThemeTitle} />
+      </h3>
+      <Tr t={t.customThemeIntro} />
     </svelte:fragment>
   </ThemesList>
 {/if}

@@ -182,7 +182,8 @@
         "backgroundSwitch": "Switch background",
         "cancel": "Cancel",
         "confirm": "Confirm",
-        "customThemeIntro": "<h3>Custom themes</h3>These are previously visited user-generated themes.",
+        "customThemeIntro": "These are previously visited user-generated themes.",
+        "customThemeTitle": "Custom themes",
         "download": {
             "downloadAsPdf": "Download a PDF of the current map",
             "downloadAsPdfHelper": "Ideal to print the current map",

@@ -4,7 +4,7 @@
   import NextButton from "../Base/NextButton.svelte"
   import Geosearch from "./Geosearch.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { twJoin } from "tailwind-merge"
   import { Utils } from "../../Utils"
@@ -16,6 +16,7 @@
   import Add from "../../assets/svg/Add.svelte"
   import Location_refused from "../../assets/svg/Location_refused.svelte"
   import Crosshair from "../../assets/svg/Crosshair.svelte"
+  import FromHtml from "../Base/FromHtml.svelte"
 
   /**
    * The theme introduction panel
@@ -27,12 +28,12 @@
   let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   let searchEnabled = false
 
-  let geopermission: Readable<GeolocationPermissionState> =
+  let geopermission: Store<GeolocationPermissionState> =
     state.geolocation.geolocationState.permission
   let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
 
   geopermission.addCallback((perm) => console.log(">>>> Permission", perm))
-
+  
   function jumpToCurrentLocation() {
     const glstate = state.geolocation.geolocationState
     if (glstate.currentGPSLocation.data !== undefined) {
@@ -57,8 +58,8 @@
       <Tr t={Translations.t.general.welcomeExplanation.addNew} />
     {/if}
 
-    <Tr t={layout.descriptionTail} />
-
+    <Tr t={layout.descriptionTail}/>
+  
     <!-- Buttons: open map, go to location, search -->
     <NextButton clss="primary w-full" on:click={() => state.guistate.themeIsOpened.setData(false)}>
       <div class="flex w-full justify-center text-2xl">
@@ -110,8 +111,8 @@
             <Geosearch
               bounds={state.mapProperties.bounds}
               on:searchCompleted={() => state.guistate.themeIsOpened.setData(false)}
-              on:searchIsValid={(isValid) => {
-                searchEnabled = isValid
+              on:searchIsValid={(event) => {
+                searchEnabled = event.detail
               }}
               perLayer={state.perLayer}
               {selectedElement}
