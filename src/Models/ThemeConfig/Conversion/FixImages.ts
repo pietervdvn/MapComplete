@@ -147,11 +147,13 @@ export class ExtractImages extends Conversion<
                                             .warn("Found an emtpy image")
                                     } else if (typeof img.leaf !== "string") {
                                         const c = context.enter(img.path)
-                                        const w = this._isOfficial ? c.err : c.warn
-                                        w(
-                                            "found an image path that is not a string: " +
-                                                JSON.stringify(img.leaf)
-                                        )
+                                        const msg =  "found an image path that is not a string: " +
+                                            JSON.stringify(img.leaf)
+                                        if(this._isOfficial) {
+                                            c.err(msg)
+                                        }else {
+                                            c.warn(msg)
+                                        }
                                     } else {
                                         allFoundImages.push({
                                             path: img.leaf,
