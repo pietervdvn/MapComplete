@@ -838,6 +838,41 @@
       "id": "Cycleway:surface"
     },
     {
+      "id": "incline",
+      "question": {
+        "en": "Does {title()} have an incline?"
+      },
+      "render": {
+        "en": "This road has an slope of {incline}"
+      },
+      "freeform": {
+        "key": "incline",
+        "type": "slope"
+      },
+      "mappings": [
+        {
+          "if": "incline=",
+          "then": {
+            "en": "There is (probably) no incline here"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "or": [
+              "incline=up",
+              "incline=down",
+              "incline=yes"
+            ]
+          },
+          "then": {
+            "en": "This road has a slope"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
       "question": {
         "en": "What is the smoothness of this cycleway?",
         "nl": "Wat is de kwaliteit van dit fietspad?",

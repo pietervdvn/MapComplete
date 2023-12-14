@@ -1,19 +1,12 @@
-import { ValidatorType } from "./Validators"
 import { UIEventSource } from "../../Logic/UIEventSource"
 
 import { MapProperties } from "../../Models/MapProperties"
-import BaseUIElement from "../BaseUIElement"
 import WikidataSearchBox from "../Wikipedia/WikidataSearchBox"
 import Wikidata from "../../Logic/Web/Wikidata"
 import { Utils } from "../../Utils"
 import Locale from "../i18n/Locale"
 import { Feature } from "geojson"
 import { GeoOperations } from "../../Logic/GeoOperations"
-import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
-import SvelteUIElement from "../Base/SvelteUIElement"
-import DirectionInput from "./Helpers/DirectionInput.svelte"
-import DateInput from "./Helpers/DateInput.svelte"
-import ColorInput from "./Helpers/ColorInput.svelte"
 
 export interface InputHelperProperties {
     /**

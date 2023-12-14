@@ -53,6 +53,8 @@
     "favouritePoi": {
         "button": {
             "isFavourite": "This location is currently marked as favourite and will show up on all thematic maps of MapComplete you visit.",
+            "isMarkedShort": "Marked as favourite location",
+            "isNotMarkedShort": "Not marked as favourite",
             "markAsFavouriteTitle": "Mark this location as favourite location",
             "markDescription": "Add this location to a personal list of your favourites",
             "unmark": "Remove from your personal list of favourites",
@@ -172,12 +174,14 @@
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
+            "seeOnMapillary": "See this image on Mapillary",
             "themeBy": "Theme maintained by {author}",
             "title": "Copyright and attribution",
             "translatedBy": "MapComplete has been translated by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "back": "Back",
         "backToIndex": "Go back to the overview with all thematic maps",
+        "backToMap": "Back to the map",
         "backgroundMap": "Select a background layer",
         "backgroundSwitch": "Switch background",
         "cancel": "Cancel",
@@ -223,6 +227,14 @@
         "goToInbox": "Open inbox",
         "histogram": {
             "error_loading": "Could not load the histogram"
+        },
+        "labels": {
+            "background": "Change background",
+            "filter": "Filter data",
+            "jumpToLocation": "Go to your current location",
+            "menu": "Menu",
+            "zoomIn": "Zoom in",
+            "zoomOut": "Zoom out"
         },
         "layerSelection": {
             "title": "Select layers",
@@ -324,6 +336,7 @@
             "searchShort": "Search…",
             "searching": "Searching…"
         },
+        "share": "Share",
         "sharescreen": {
             "copiedToClipboard": "Link copied to clipboard",
             "documentation": "For more information on available URL-parameters, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>consult the documentation</a>",
@@ -678,6 +691,10 @@
         "pnat": {
             "description": "a positive, whole number",
             "noZero": "Zero is not allowed"
+        },
+        "slope": {
+            "inputExplanation": "Place your phone on the ground with the top side of your phone pointing towards the top of the slope.",
+            "inputIncorrect": "For correct measurements, make sure the arrow is within the green area."
         },
         "string": {
             "description": "a piece of text"
