@@ -39,6 +39,7 @@
 
 
   function handleOrientation(event) {
+    console.debug("Got gyro measurement")
     gotMeasurement.setData(true)
     // IF the phone is lying flat, then:
     // alpha is the compass direction (but not absolute)
@@ -56,7 +57,12 @@
     }
   }
 
-  window.addEventListener("deviceorientation", handleOrientation)
+  console.log("Starting device orientation listener")
+  try {
+    window.addEventListener("deviceorientation", e => handleOrientation(e))
+  } catch (e) {
+    console.log("Could not init device orientation api due to", e)
+  }
 
   beta.map(beta => {
     if (-safetyMargin < arrowDirection && arrowDirection < safetyMargin) {
