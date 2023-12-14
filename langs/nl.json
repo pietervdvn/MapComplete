@@ -186,7 +186,6 @@
             "includeMetaData": "Exporteer metadata (zoals laatste aanpassing, berekende waardes, …)",
             "licenseInfo": "<h3>Copyright</h3>De voorziene data is beschikbaar onder de ODbL. Het hergebruiken van deze data is gratis voor elke toepassing, maar <ul><li>de bronvermelding <b>© OpenStreetMap bijdragers</b> is vereist</li><li>Elke wijziging aan deze data moet opnieuw gepubliceerd worden onder dezelfde licentie</li></ul> Gelieve de volledige <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">licentie</a> te lezen voor details",
             "noDataLoaded": "Er is nog geen data ingeladen. Downloaden kan zodra de data geladen is.",
-            "pdf": {},
             "title": "Download",
             "uploadGpx": "Track uploaden naar OpenStreetMap"
         },
@@ -402,6 +401,11 @@
         "doDelete": "Verwijder afbeelding",
         "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
+        "nearby": {
+            "link": "Deze afbeelding toont het object",
+            "seeNearby": "Bekijk en link foto's van in de buurt",
+            "title": "Straatafbeeldingen uit de buurt"
+        },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
         "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
         "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
