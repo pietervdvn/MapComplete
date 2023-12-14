@@ -4721,6 +4721,9 @@
                     },
                     "3": {
                         "then": "All dishes are vegan"
+                    },
+                    "4": {
+                        "then": "Some dishes might be adapted to a vegan version if asked for"
                     }
                 },
                 "question": "Does this business serve vegan meals?"
@@ -4738,6 +4741,9 @@
                     },
                     "3": {
                         "then": "All dishes are vegetarian"
+                    },
+                    "4": {
+                        "then": "Some dishes might be adapted to a vegetarian version, but this should be demanded"
                     }
                 },
                 "question": "Does this restaurant have a vegetarian option?"
@@ -5252,7 +5258,41 @@
         }
     },
     "icons": {
-        "description": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
+        "description": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
+        "tagRenderings": {
+            "osmlink": {
+                "mappings": {
+                    "1": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Open on openstreetmap.org"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "Open on openstreetmap.org"
+                    }
+                }
+            },
+            "phonelink": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "arialabel": "phone"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "phone"
+                    }
+                }
+            }
+        }
     },
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",

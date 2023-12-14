@@ -2,6 +2,8 @@
   import ToSvelte from "./ToSvelte.svelte"
   import Svg from "../../Svg"
   import Share from "../../assets/svg/Share.svelte"
+  import { ariaLabel } from "../../Utils/ariaLabel"
+  import Translations from "../i18n/Translations"
 
   export let generateShareData: () => {
     text: string
@@ -24,7 +26,7 @@
   }
 </script>
 
-<button on:click={share} class="secondary m-0 h-8 w-8 p-0">
+<button on:click={share} class="secondary m-0 h-8 w-8 p-0" use:ariaLabel={Translations.t.general.share}>
   <slot name="content">
     <Share class="h-7 w-7 p-1" />
   </slot>

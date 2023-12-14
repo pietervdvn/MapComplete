@@ -886,16 +886,6 @@ video {
   margin-right: 0.25rem;
 }
 
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
 .mx-12 {
   margin-left: 3rem;
   margin-right: 3rem;
@@ -967,10 +957,6 @@ video {
 
 .ml-4 {
   margin-left: 1rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .mt-8 {
@@ -1529,10 +1515,6 @@ video {
   justify-self: end;
 }
 
-.justify-self-center {
-  justify-self: center;
-}
-
 .overflow-auto {
   overflow: auto;
 }
@@ -1933,6 +1915,11 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .font-extrabold {

@@ -18,6 +18,7 @@
   import DateInput from "./Helpers/DateInput.svelte"
   import ColorInput from "./Helpers/ColorInput.svelte"
   import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
+  import SlopeInput from "./Helpers/SlopeInput.svelte"
 
   export let type: ValidatorType
   export let value: UIEventSource<string | object>
@@ -47,6 +48,8 @@
   <SimpleTagInput {value} {args} on:submit />
 {:else if type === "opening_hours"}
   <OpeningHoursInput {value} />
+{:else if type === "slope"}
+  <SlopeInput {value} />
 {:else if type === "wikidata"}
   <ToSvelte construct={() => InputHelpers.constructWikidataHelper(value, properties)} />
 {/if}

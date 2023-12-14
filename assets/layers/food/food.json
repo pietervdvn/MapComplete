@@ -524,7 +524,7 @@
     },
     {
       "id": "Reservation",
-      "condition": "amenity=restaurant",
+      "condition": "takeaway=only",
       "question": {
         "en": "Is a reservation required for this place?",
         "nl": "Is reserveren verplicht voor deze zaak?",
@@ -581,7 +581,8 @@
             "cs": "Rezervace na tomto místě není možná"
           }
         }
-      ]
+      ],
+      "#condition": "If one can only do takeaway or deliveries, it is nonsensical to ask if a 'reservation' is possible"
     },
     {
       "question": {
@@ -731,6 +732,13 @@
             "pl": "Wszystkie dania są wegetariańskie",
             "cs": "Všechna jídla jsou vegetariánská"
           }
+        },
+        {
+          "if": "diet:vegetarian=on_demand",
+          "then": {
+            "en": "Some dishes might be adapted to a vegetarian version, but this should be demanded",
+            "nl": "Sommige gerechten kunnen op vraag vegetarisch gemaakt worden"
+          }
         }
       ],
       "condition": "cuisine!=friture",
@@ -797,6 +805,13 @@
             "ca": "Tots els plats són vegans",
             "pl": "Wszystkie dania są wegańskie",
             "cs": "Všechna jídla jsou veganská"
+          }
+        },
+        {
+          "if": "diet:vegan=on_demand",
+          "then": {
+            "en": "Some dishes might be adapted to a vegan version if asked for",
+            "nl": "Op vraag kan een veganistische variant van een gerecht gemaakt worden"
           }
         }
       ],

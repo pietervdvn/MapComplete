@@ -1,10 +1,10 @@
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import BaseUIElement from "../../UI/BaseUIElement"
-import Svg from "../../Svg"
 import { Utils } from "../../Utils"
 import { LicenseInfo } from "./LicenseInfo"
 import Constants from "../../Models/Constants"
-import Link from "../../UI/Base/Link"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import MapillaryIcon from "./MapillaryIcon.svelte"
 
 export class Mapillary extends ImageProvider {
     public static readonly singleton = new Mapillary()
@@ -112,11 +112,11 @@ export class Mapillary extends ImageProvider {
             lat: number
         }
     ): BaseUIElement {
-        const icon = Svg.mapillary_svg()
-        if (!id) {
-            return icon
+        let url: string = undefined
+        if (id) {
+            url = Mapillary.createLink(location, 16, "" + id)
         }
-        return new Link(icon, Mapillary.createLink(location, 16, "" + id), true)
+        return new SvelteUIElement(MapillaryIcon, { url })
     }
 
     async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {

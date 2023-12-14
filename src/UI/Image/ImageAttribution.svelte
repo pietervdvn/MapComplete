@@ -26,7 +26,7 @@
     <div class="flex flex-col">
       {#if $license.title}
         {#if $license.informationLocation}
-          <a href={$license.informationLocation} target="_blank" rel="noopener nofollower">{$license.title}</a>
+          <a href={$license.informationLocation.href} target="_blank" rel="noopener nofollower">{$license.title}</a>
         {:else}
           $license.title
         {/if}

@@ -28,7 +28,7 @@
         {
           "#": "ignore-image-in-then",
           "if": "wikipedia=",
-          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
         }
       ]
     },
@@ -119,12 +119,32 @@
         "defaults",
         "in_favourite"
       ],
-      "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/></a>",
+      "render": {
+        "special": {
+          "type": "link",
+          "href": "tel:{phone}",
+          "text": "<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>",
+          "arialabel": {
+            "en": "phone",
+            "nl": "Telefoneer"
+          }
+        }
+      },
       "mappings": [
         {
           "#": "ignore-image-in-then",
           "if": "contact:phone~*",
-          "then": "<a href='tel:{contact:phone}'><img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/></a>"
+          "then": {
+            "special": {
+              "type": "link",
+              "href": "tel:{contact:phone}",
+              "text": "<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>",
+              "arialabel": {
+                "en": "phone",
+                "nl": "Telefoneer"
+              }
+            }
+          }
         }
       ],
       "condition": {
@@ -174,12 +194,12 @@
         {
           "#": "ignore-image-in-then",
           "if": "smoking=no",
-          "then": "<img textmode='🚭️' alt='no-smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
         },
         {
           "#": "ignore-image-in-then",
           "if": "smoking=yes",
-          "then": "<img textmode='🚬️' alt='smoking-allowed' src='./assets/layers/questions/smoking.svg'/>"
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
         }
       ]
     },
@@ -206,7 +226,17 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='https://openstreetmap.org/{id}' target='_blank' rel='noopener'><img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/></a>",
+      "render": {
+        "special": {
+          "type": "link",
+          "text": "<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>",
+          "href": "https://openstreetmap.org/{id}",
+          "arialabel": {
+            "en": "Open on openstreetmap.org",
+            "nl": "Bekijk op openstreetmap.org"
+          }
+        }
+      },
       "mappings": [
         {
           "if": "id~.*/-.*",
@@ -215,7 +245,17 @@
         {
           "#": "ignore-image-in-then",
           "if": "_backend~*",
-          "then": "<a href='{_backend}/{id}' target='_blank' rel='noopener'><img src='./assets/svg/osm-logo-us.svg'/></a>"
+          "then": {
+            "special": {
+              "type": "link",
+              "text": "<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>",
+              "href": "{_backend}/{id}",
+              "arialabel": {
+                "en": "Open on openstreetmap.org",
+                "nl": "Bekijk op openstreetmap.org"
+              }
+            }
+          }
         }
       ],
       "condition": "id~(node|way|relation)/[0-9]*"

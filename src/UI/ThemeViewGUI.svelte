@@ -64,10 +64,10 @@
   import Share from "../assets/svg/Share.svelte"
   import Favourites from "./Favourites/Favourites.svelte"
   import ImageOperations from "./Image/ImageOperations.svelte"
+  import { ariaLabel } from "../Utils/ariaLabel"
 
   export let state: ThemeViewState
   let layout = state.layout
-
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
 
@@ -142,7 +142,8 @@
     </div>
   </If>
   <div class="float-left m-1 flex flex-col sm:mt-2">
-    <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)} on:keydown={forwardEventToMap}>
+    <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)} 
+                      on:keydown={forwardEventToMap}>
       <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
         <img class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8" src={layout.icon} />
         <b class="mr-1">
@@ -150,15 +151,19 @@
         </b>
       </div>
     </MapControlButton>
-    <MapControlButton on:click={() => state.guistate.menuIsOpened.setData(true)} on:keydown={forwardEventToMap}>
+    <MapControlButton
+      on:click={() => state.guistate.menuIsOpened.setData(true)} 
+      on:keydown={forwardEventToMap}
+      arialabel={Translations.t.general.labels.menu}
+    >
       <MenuIcon class="h-8 w-8 cursor-pointer" />
     </MapControlButton>
     {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
       <MapControlButton
         on:click={() => {
           selectedElement.setData(state.currentView.features?.data?.[0])
-        }} on:keydown={forwardEventToMap}
-        
+        }} 
+        on:keydown={forwardEventToMap}
       >
         <ToSvelte
           construct={() => currentViewLayer.defaultIcon().SetClass("w-8 h-8 cursor-pointer")}
@@ -206,7 +211,9 @@
       <div class="flex">
         <!-- bottom left elements -->
         <If condition={state.featureSwitches.featureSwitchFilter}>
-          <MapControlButton on:click={() => state.guistate.openFilterView()} on:keydown={forwardEventToMap}>
+          <MapControlButton on:click={() => state.guistate.openFilterView()} on:keydown={forwardEventToMap}
+                            arialabel={Translations.t.general.labels.filter}
+          >
             <Filter class="h-6 w-6" />
           </MapControlButton>
         </If>
@@ -246,14 +253,21 @@
           />
         </div>
       </If>
-      <MapControlButton on:click={() => mapproperties.zoom.update((z) => z + 1)} on:keydown={forwardEventToMap}>
+      <MapControlButton on:click={() => mapproperties.zoom.update((z) => z + 1)}
+                        on:keydown={forwardEventToMap}
+                        arialabel={Translations.t.general.labels.zoomIn}
+      >
         <Plus class="h-8 w-8" />
       </MapControlButton>
-      <MapControlButton on:click={() => mapproperties.zoom.update((z) => z - 1)} on:keydown={forwardEventToMap}>
+      <MapControlButton on:click={() => mapproperties.zoom.update((z) => z - 1)} on:keydown={forwardEventToMap}
+                        arialabel={Translations.t.general.labels.zoomOut}
+      >
         <Min class="h-8 w-8" />
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
-        <MapControlButton on:keydown={forwardEventToMap} on:click={() => geolocationControl.handleClick()}>
+        <MapControlButton on:keydown={forwardEventToMap} on:click={() => geolocationControl.handleClick()}
+                          arialabel={Translations.t.general.labels.jumpToLocation}
+        >
           <ToSvelte
             construct={geolocationControl.SetClass("block w-8 h-8")}
           />

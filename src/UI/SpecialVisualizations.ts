@@ -45,7 +45,6 @@ import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
-import Link from "./Base/Link"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { WayId } from "../Models/OsmFeature"
@@ -81,9 +80,9 @@ import MarkAsFavouriteMini from "./Popup/MarkAsFavouriteMini.svelte"
 import NextChangeViz from "./OpeningHours/NextChangeViz.svelte"
 import NearbyImages from "./Image/NearbyImages.svelte"
 import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
-import { svelte } from "@sveltejs/vite-plugin-svelte"
 import MoveWizard from "./Popup/MoveWizard.svelte"
 import { Unit } from "../Models/Unit"
+import Link from "./Base/Link.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1288,6 +1287,10 @@ export default class SpecialVisualizations {
                         name: "download",
                         doc: "If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename",
                     },
+                    {
+                        name: "arialabel",
+                        doc: "If set, this text will be used as aria-label",
+                    },
                 ],
                 needsUrls: [],
                 constr(
@@ -1295,15 +1298,19 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
                 ): BaseUIElement {
-                    const [text, href, classnames, download] = args
+                    const [text, href, classnames, download, ariaLabel] = args
+                    const newTab = download === undefined && !href.startsWith("#")
                     return new VariableUiElement(
-                        tagSource.map((tags) =>
-                            new Link(
-                                Utils.SubstituteKeys(text, tags),
-                                Utils.SubstituteKeys(href, tags),
-                                download === undefined && !href.startsWith("#"),
-                                Utils.SubstituteKeys(download, tags)
-                            ).SetClass(classnames)
+                        tagSource.map(
+                            (tags) =>
+                                new SvelteUIElement(Link, {
+                                    text: Utils.SubstituteKeys(text, tags),
+                                    href: Utils.SubstituteKeys(href, tags),
+                                    classnames,
+                                    download: Utils.SubstituteKeys(download, tags),
+                                    ariaLabel: Utils.SubstituteKeys(ariaLabel, tags),
+                                    newTab,
+                                })
                         )
                     )
                 },
@@ -1422,12 +1429,11 @@ export default class SpecialVisualizations {
                                 const [_, username, host] = fediAccount.match(
                                     FediverseValidator.usernameAtServer
                                 )
-
-                                return new Link(
-                                    fediAccount,
-                                    "https://" + host + "/@" + username,
-                                    true
-                                )
+                                return new SvelteUIElement(Link, {
+                                    text: fediAccount,
+                                    url: "https://" + host + "/@" + username,
+                                    newTab: true,
+                                })
                             })
                     )
                 },

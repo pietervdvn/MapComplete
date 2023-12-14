@@ -7,6 +7,7 @@
   import Translations from "../i18n/Translations";
   import Tr from "../Base/Tr.svelte";
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { ariaLabel } from "../../Utils/ariaLabel"
 
   export let state: SpecialVisualizationState;
   export let layer: LayerConfig;
@@ -50,8 +51,10 @@
       </div>
     </div>
 
-    <button on:click={() => state.selectedElement.setData(undefined)} class="border-none p-0">
-      <XCircleIcon class="h-8 w-8" />
+    <button on:click={() => state.selectedElement.setData(undefined)} 
+            use:ariaLabel={Translations.t.general.backToMap}
+            class="border-none p-0">
+      <XCircleIcon aria-hidden={true} class="h-8 w-8" />
     </button>
   </div>
 {/if}
