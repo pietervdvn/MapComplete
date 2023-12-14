@@ -34,12 +34,12 @@
   let gamma = new UIEventSource<number>(45)
   let abs = new UIEventSource<number>(undefined)
 
-  let gotMeasurement = false
+  let gotMeasurement = new UIEventSource(false)
   let arrowDirection: number = undefined
 
 
   function handleOrientation(event) {
-    gotMeasurement = true
+    gotMeasurement.setData(true)
     // IF the phone is lying flat, then:
     // alpha is the compass direction (but not absolute)
     // beta is tilt if you would lift the phone towards you
@@ -78,7 +78,7 @@
   }, [beta])
 
 </script>
-{#if gotMeasurement}
+{#if $gotMeasurement}
   <div class="flex flex-col m-2">
     <div class="flex w-full">
 
