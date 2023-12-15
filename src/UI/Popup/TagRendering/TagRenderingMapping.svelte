@@ -24,6 +24,7 @@
       | "small-height"
       | "medium-height"
       | "large-height"
+      | string
   }
 </script>
 

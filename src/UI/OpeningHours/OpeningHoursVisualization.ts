@@ -1,7 +1,7 @@
 import { UIEventSource } from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import { OH } from "./OpeningHours"
+import { OH, OpeningRange, ToTextualDescription } from "./OpeningHours"
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "../Input/Toggle"
@@ -10,6 +10,7 @@ import Table from "../Base/Table"
 import { Translation } from "../i18n/Translation"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Loading from "../Base/Loading"
+import opening_hours from "opening_hours"
 
 export default class OpeningHoursVisualization extends Toggle {
     private static readonly weekdays: Translation[] = [
@@ -41,7 +42,21 @@ export default class OpeningHoursVisualization extends Toggle {
                 if (opening_hours_obj === "error") {
                     return Translations.t.general.opening_hours.error_loading
                 }
-                return OpeningHoursVisualization.CreateFullVisualisation(opening_hours_obj)
+
+                const applicableWeek = OH.createRangesForApplicableWeek(opening_hours_obj)
+                const textual = ToTextualDescription.createTextualDescriptionFor(
+                    opening_hours_obj,
+                    applicableWeek.ranges
+                )
+                const vis = OpeningHoursVisualization.CreateFullVisualisation(
+                    opening_hours_obj,
+                    applicableWeek.ranges,
+                    applicableWeek.startingMonday
+                )
+                textual.current.addCallbackAndRunD((descr) => {
+                    vis.ConstructElement().ariaLabel = descr
+                })
+                return vis
             })
         )
 
@@ -53,33 +68,11 @@ export default class OpeningHoursVisualization extends Toggle {
         this.SetClass("no-weblate")
     }
 
-    private static CreateFullVisualisation(oh: any): BaseUIElement {
-        /** First, we determine which range of dates we want to visualize: this week or next week?**/
-
-        const today = new Date()
-        today.setHours(0, 0, 0, 0)
-        const lastMonday = OH.getMondayBefore(today)
-        const nextSunday = new Date(lastMonday)
-        nextSunday.setDate(nextSunday.getDate() + 7)
-
-        if (!oh.getState() && !oh.getUnknown()) {
-            // POI is currently closed
-            const nextChange: Date = oh.getNextChange()
-            if (
-                // Shop isn't gonna open anymore in this timerange
-                nextSunday < nextChange &&
-                // And we are already in the weekend to show next week
-                (today.getDay() == 0 || today.getDay() == 6)
-            ) {
-                // We move the range to next week!
-                lastMonday.setDate(lastMonday.getDate() + 7)
-                nextSunday.setDate(nextSunday.getDate() + 7)
-            }
-        }
-
-        /* We calculate the ranges when it is opened! */
-        const ranges = OH.GetRanges(oh, lastMonday, nextSunday)
-
+    private static CreateFullVisualisation(
+        oh: opening_hours,
+        ranges: OpeningRange[][],
+        lastMonday: Date
+    ): BaseUIElement {
         /* First, a small sanity check. The business might be permanently closed, 24/7 opened or something other special
          * So, we have to handle the case that ranges is completely empty*/
         if (ranges.filter((range) => range.length > 0).length === 0) {

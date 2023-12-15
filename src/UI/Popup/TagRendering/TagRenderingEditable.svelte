@@ -102,9 +102,7 @@
       </TagRenderingQuestion>
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">
-        <div id={answerId}>
-          <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
-        </div>
+          <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
         <button
           on:click={() => {
             editMode = true

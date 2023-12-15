@@ -1,6 +1,8 @@
 import { Utils } from "../../Utils"
 import opening_hours from "opening_hours"
 import { Store } from "../../Logic/UIEventSource"
+import { Translation, TypedTranslation } from "../i18n/Translation"
+import Translations from "../i18n/Translations"
 
 export interface OpeningHour {
     weekday: number // 0 is monday, 1 is tuesday, ...
@@ -8,6 +10,14 @@ export interface OpeningHour {
     startMinutes: number
     endHour: number
     endMinutes: number
+}
+
+export interface OpeningRange {
+    isOpen: boolean
+    isSpecial: boolean
+    comment: string
+    startDate: Date
+    endDate: Date
 }
 
 /**
@@ -495,6 +505,7 @@ This list will be sorted
 
         return [changeHours, changeHourText]
     }
+
     public static CreateOhObjectStore(
         tags: Store<Record<string, string>>,
         key: string = "opening_hours",
@@ -533,6 +544,7 @@ This list will be sorted
                 [country]
             )
     }
+
     public static CreateOhObject(
         tags: Record<string, string> & { _lat: number; _lon: number; _country?: string },
         textToParse: string,
@@ -553,21 +565,156 @@ This list will be sorted
         )
     }
 
-    /*
-Calculates when the business is opened (or on holiday) between two dates.
-Returns a matrix of ranges, where [0] is a list of ranges when it is opened on monday, [1] is a list of ranges for tuesday, ...
-*/
-    public static GetRanges(
-        oh: any,
-        from: Date,
-        to: Date
-    ): {
-        isOpen: boolean
-        isSpecial: boolean
-        comment: string
-        startDate: Date
-        endDate: Date
-    }[][] {
+    /**
+     * let ranges = <any> [
+     *   [
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-11T09:00:00.000Z"),
+     *       "endDate": new Date("2023-12-11T12:30:00.000Z")
+     *     },
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-11T13:30:00.000Z"),
+     *       "endDate": new Date("2023-12-11T18:00:00.000Z")
+     *     }
+     *   ],
+     *   [
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-12T09:00:00.000Z"),
+     *       "endDate": new Date("2023-12-12T12:30:00.000Z")
+     *     },
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-12T13:30:00.000Z"),
+     *       "endDate": new Date("2023-12-12T18:00:00.000Z")
+     *     }
+     *   ],
+     *   [
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-13T09:00:00.000Z"),
+     *       "endDate": new Date("2023-12-13T12:30:00.000Z")
+     *     },
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-13T13:30:00.000Z"),
+     *       "endDate": new Date("2023-12-13T18:00:00.000Z")
+     *     }
+     *   ],
+     *   [
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-14T09:00:00.000Z"),
+     *       "endDate": new Date("2023-12-14T12:30:00.000Z")
+     *     },
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-14T13:30:00.000Z"),
+     *       "endDate": new Date("2023-12-14T18:00:00.000Z")
+     *     }
+     *   ],
+     *   [
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-15T09:00:00.000Z"),
+     *       "endDate": new Date("2023-12-15T12:30:00.000Z")
+     *     },
+     *     {
+     *       "isSpecial": false,
+     *       "isOpen": true,
+     *       "startDate": new Date("2023-12-15T13:30:00.000Z"),
+     *       "endDate": new Date("2023-12-15T18:00:00.000Z")
+     *     }
+     *   ],
+     *   [],
+     *   []
+     * ]
+     * OH.weekdaysIdentical(ranges, 0, 1) // => true
+     * OH.weekdaysIdentical(ranges, 0, 4) // => true
+     * OH.weekdaysIdentical(ranges, 4, 5) // => false
+     *
+     */
+
+    /**
+     * Constructs the opening-ranges for either this week, or for next week if there are no more openings this week
+     */
+    public static createRangesForApplicableWeek(oh: opening_hours): {
+        ranges: OpeningRange[][]
+        startingMonday: Date
+    } {
+        const today = new Date()
+        today.setHours(0, 0, 0, 0)
+        const lastMonday = OH.getMondayBefore(today)
+        const nextSunday = new Date(lastMonday)
+        nextSunday.setDate(nextSunday.getDate() + 7)
+
+        if (!oh.getState() && !oh.getUnknown()) {
+            // POI is currently closed
+            const nextChange: Date = oh.getNextChange()
+            if (
+                // Shop isn't gonna open anymore in this timerange
+                nextSunday < nextChange &&
+                // And we are already in the weekend to show next week
+                (today.getDay() == 0 || today.getDay() == 6)
+            ) {
+                // We move the range to next week!
+                lastMonday.setDate(lastMonday.getDate() + 7)
+                nextSunday.setDate(nextSunday.getDate() + 7)
+            }
+        }
+
+        /* We calculate the ranges when it is opened! */
+        return { startingMonday: lastMonday, ranges: OH.GetRanges(oh, lastMonday, nextSunday) }
+    }
+    public static weekdaysIdentical(openingRanges: OpeningRange[][], startday = 0, endday = 4) {
+        console.log("Checking identical:", openingRanges)
+        const monday = openingRanges[startday]
+        for (let i = startday + 1; i <= endday; i++) {
+            let weekday = openingRanges[i]
+            if (weekday.length !== monday.length) {
+                console.log("Mismatched length")
+                return false
+            }
+            for (let j = 0; j < weekday.length; j++) {
+                const openingRange = weekday[j]
+                const mondayRange = monday[j]
+                if (
+                    openingRange.isOpen !== mondayRange.isOpen &&
+                    openingRange.isSpecial !== mondayRange.isSpecial &&
+                    openingRange.comment !== mondayRange.comment
+                ) {
+                    return false
+                }
+                if (
+                    openingRange.startDate.toTimeString() !== mondayRange.startDate.toTimeString()
+                ) {
+                    return false
+                }
+
+                if (openingRange.endDate.toTimeString() !== mondayRange.endDate.toTimeString()) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
+    /**
+     * Calculates when the business is opened (or on holiday) between two dates.
+     * Returns a matrix of ranges, where [0] is a list of ranges when it is opened on monday, [1] is a list of ranges for tuesday, ...
+     */
+    public static GetRanges(oh: opening_hours, from: Date, to: Date): OpeningRange[][] {
         const values = [[], [], [], [], [], [], []]
 
         const start = new Date(from)
@@ -605,6 +752,13 @@ Returns a matrix of ranges, where [0] is a list of ranges when it is opened on m
             values[(value.startDate.getDay() + 6) % 7].push(value)
         }
         return values
+    }
+
+    public static getMondayBefore(d) {
+        d = new Date(d)
+        const day = d.getDay()
+        const diff = d.getDate() - day + (day == 0 ? -6 : 1) // adjust when day is sunday
+        return new Date(d.setDate(diff))
     }
 
     /**
@@ -741,11 +895,104 @@ Returns a matrix of ranges, where [0] is a list of ranges when it is opened on m
         }
         return ohs
     }
+}
 
-    public static getMondayBefore(d) {
-        d = new Date(d)
-        const day = d.getDay()
-        const diff = d.getDate() - day + (day == 0 ? -6 : 1) // adjust when day is sunday
-        return new Date(d.setDate(diff))
+export class ToTextualDescription {
+    public static createTextualDescriptionFor(
+        oh: opening_hours,
+        ranges: OpeningRange[][]
+    ): Translation {
+        const t = Translations.t.general.opening_hours
+
+        if (!ranges?.some((r) => r.length > 0)) {
+            // <!-- No changes to the opening hours in the next week; probably open 24/7, permanently closed, opening far in the future or unkown -->
+            if (oh.getNextChange() === undefined) {
+                // <!-- Permenantly in the same state -->
+                if (oh.getComment() !== undefined) {
+                    return new Translation({ "*": oh.getComment() })
+                }
+
+                if (oh.getUnknown()) {
+                    return t.unknown
+                }
+                if (oh.getState()) {
+                    return t.open_24_7
+                } else {
+                    return t.closed_permanently
+                }
+            }
+        }
+
+        // Opened at a more-or-less normal, weekly rhythm
+        if (OH.weekdaysIdentical(ranges, 0, 6)) {
+            return t.all_days_from.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[0]) })
+        }
+
+        if (OH.weekdaysIdentical(ranges, 0, 4) && OH.weekdaysIdentical(ranges, 5, 6)) {
+            let result = []
+            if (ranges[0].length > 0) {
+                result.push(
+                    t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[0]) })
+                )
+            }
+            if (ranges[6].length > 0) {
+                result.push(
+                    t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[5]) })
+                )
+            }
+            return ToTextualDescription.chain(result)
+        }
+
+        const result: Translation[] = []
+        const weekdays = [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+        ]
+        for (let i = 0; i < weekdays.length; i++) {
+            const day = weekdays[i]
+            console.log(day, "-->", ranges[i])
+            if (ranges[i]?.length > 0) {
+                result.push(
+                    t[day].Subs({ ranges: ToTextualDescription.createRangesFor(ranges[i]) })
+                )
+            }
+        }
+        return ToTextualDescription.chain(result)
+    }
+
+    private static chain(trs: Translation[]): Translation {
+        let chainer = new TypedTranslation<{ a; b }>({ "*": "{a}. {b}" })
+        let tr = trs[0]
+        for (let i = 1; i < trs.length; i++) {
+            tr = chainer.Subs({ a: tr, b: trs[i] })
+        }
+        return tr
+    }
+    private static timeString(date: Date) {
+        return OH.hhmm(date.getHours(), date.getMinutes())
+    }
+
+    private static createRangeFor(range: OpeningRange): Translation {
+        console.log(">>>", range)
+        return Translations.t.general.opening_hours.ranges.Subs({
+            starttime: ToTextualDescription.timeString(range.startDate),
+            endtime: ToTextualDescription.timeString(range.endDate),
+        })
+    }
+
+    private static createRangesFor(ranges: OpeningRange[]): Translation {
+        let tr = ToTextualDescription.createRangeFor(ranges[0])
+        for (let i = 1; i < ranges.length; i++) {
+            tr = Translations.t.general.opening_hours.rangescombined.Subs({
+                range0: tr,
+                range1: ToTextualDescription.createRangeFor(ranges[i]),
+            })
+        }
+        return tr
     }
 }
