@@ -267,7 +267,7 @@ export default class UserRelatedState {
 
     /**
      * Initialize the 'amended preferences'.
-     * This is inherently a dirty and chaotic method, as it shoves many properties into this EventSourcd
+     * This is inherently a dirty and chaotic method, as it shoves many properties into this EventSource
      * */
     private initAmendedPrefs(
         layout?: LayoutConfig,

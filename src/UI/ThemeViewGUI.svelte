@@ -48,7 +48,6 @@
   import UploadingImageCounter from "./Image/UploadingImageCounter.svelte"
   import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
   import Cross from "../assets/svg/Cross.svelte"
-  import Summary from "./BigComponents/Summary.svelte"
   import LanguagePicker from "./InputElement/LanguagePicker.svelte"
   import Mastodon from "../assets/svg/Mastodon.svelte"
   import Bug from "../assets/svg/Bug.svelte"
@@ -64,7 +63,7 @@
   import Share from "../assets/svg/Share.svelte"
   import Favourites from "./Favourites/Favourites.svelte"
   import ImageOperations from "./Image/ImageOperations.svelte"
-  import { ariaLabel } from "../Utils/ariaLabel"
+  import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -92,9 +91,7 @@
 
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
-  let arrowKeysWereUsed = state.mapProperties.lastKeyNavigation
-  let centerFeatures = state.closestFeatures.features
-
+  let arrowKeysWereUsed = state.visualFeedback
 
   let mapproperties: MapProperties = state.mapProperties
   let featureSwitches: FeatureSwitchState = state.featureSwitches
@@ -111,13 +108,13 @@
   let previewedImage = state.previewedImage
 
   let geolocationControl = new GeolocationControl(state.geolocation, mapproperties, state.lastGeolocationRequestMoment)
-  
+
   function forwardEventToMap(e: KeyboardEvent) {
     const mlmap = state.map.data
-    if(!mlmap){
+    if (!mlmap) {
       return
     }
-    if(!mlmap.keyboard.isEnabled()){
+    if (!mlmap.keyboard.isEnabled()) {
       return
     }
     const animation = mlmap.keyboard?.keydown(e)
@@ -135,14 +132,14 @@
     <div class="pointer-events-auto float-right mt-1 px-1 max-[480px]:w-full sm:m-2">
       <Geosearch
         bounds={state.mapProperties.bounds}
+        on:searchCompleted={() => {state.map?.data?.getCanvas()?.focus()}}
         perLayer={state.perLayer}
         selectedElement={state.selectedElement}
-        on:searchCompleted={() => {state.map?.data?.getCanvas()?.focus()}}
       />
     </div>
   </If>
   <div class="float-left m-1 flex flex-col sm:mt-2">
-    <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)} 
+    <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}
                       on:keydown={forwardEventToMap}>
       <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
         <img class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8" src={layout.icon} />
@@ -152,9 +149,9 @@
       </div>
     </MapControlButton>
     <MapControlButton
-      on:click={() => state.guistate.menuIsOpened.setData(true)} 
-      on:keydown={forwardEventToMap}
       arialabel={Translations.t.general.labels.menu}
+      on:click={() => state.guistate.menuIsOpened.setData(true)}
+      on:keydown={forwardEventToMap}
     >
       <MenuIcon class="h-8 w-8 cursor-pointer" />
     </MapControlButton>
@@ -162,7 +159,7 @@
       <MapControlButton
         on:click={() => {
           selectedElement.setData(state.currentView.features?.data?.[0])
-        }} 
+        }}
         on:keydown={forwardEventToMap}
       >
         <ToSvelte
@@ -211,8 +208,9 @@
       <div class="flex">
         <!-- bottom left elements -->
         <If condition={state.featureSwitches.featureSwitchFilter}>
-          <MapControlButton on:click={() => state.guistate.openFilterView()} on:keydown={forwardEventToMap}
-                            arialabel={Translations.t.general.labels.filter}
+          <MapControlButton arialabel={Translations.t.general.labels.filter}
+                            on:click={() => state.guistate.openFilterView()}
+                            on:keydown={forwardEventToMap}
           >
             <Filter class="h-6 w-6" />
           </MapControlButton>
@@ -231,17 +229,11 @@
         </a>
       </div>
     </div>
+    <If condition={state.visualFeedback}>
+      <VisualFeedbackPanel {state} />
+    </If>
 
-    {#if $arrowKeysWereUsed !== undefined && $centerFeatures?.length > 0}
-      <div class="pointer-events-auto interactive p-1">
-        {#each $centerFeatures as feat, i (feat.properties.id)}
-          <div class="flex">
-            <b>{i + 1}.</b>
-            <Summary {state} feature={feat} />
-          </div>
-        {/each}
-      </div>
-    {/if}
+
     <div class="flex flex-col items-end">
       <!-- bottom right elements -->
       <If condition={state.floors.map((f) => f.length > 1)}>
@@ -253,20 +245,22 @@
           />
         </div>
       </If>
-      <MapControlButton on:click={() => mapproperties.zoom.update((z) => z + 1)}
+      <MapControlButton arialabel={Translations.t.general.labels.zoomIn}
+                        on:click={() => mapproperties.zoom.update((z) => z + 1)}
                         on:keydown={forwardEventToMap}
-                        arialabel={Translations.t.general.labels.zoomIn}
       >
         <Plus class="h-8 w-8" />
       </MapControlButton>
-      <MapControlButton on:click={() => mapproperties.zoom.update((z) => z - 1)} on:keydown={forwardEventToMap}
-                        arialabel={Translations.t.general.labels.zoomOut}
+      <MapControlButton arialabel={Translations.t.general.labels.zoomOut}
+                        on:click={() => mapproperties.zoom.update((z) => z - 1)}
+                        on:keydown={forwardEventToMap}
       >
         <Min class="h-8 w-8" />
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
-        <MapControlButton on:keydown={forwardEventToMap} on:click={() => geolocationControl.handleClick()}
-                          arialabel={Translations.t.general.labels.jumpToLocation}
+        <MapControlButton arialabel={Translations.t.general.labels.jumpToLocation}
+                          on:click={() => geolocationControl.handleClick()}
+                          on:keydown={forwardEventToMap}
         >
           <ToSvelte
             construct={geolocationControl.SetClass("block w-8 h-8")}
@@ -277,14 +271,16 @@
   </div>
 </div>
 
+
 <LoginToggle ignoreLoading={true} {state}>
-  {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $arrowKeysWereUsed !== undefined}
+  {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $arrowKeysWereUsed}
     <div
       class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center justify-center"
     >
       <Cross class="h-4 w-4" />
     </div>
   {/if}
+  <svelte:fragment slot="error" /> <!-- Add in an empty container to remove errors -->
 </LoginToggle>
 
 <If condition={state.previewedImage.map(i => i!==undefined)}>
@@ -322,7 +318,7 @@
       selectedElement.setData(undefined)
     }}
   >
-    <div class="h-full w-full flex focusable">
+    <div class="h-full w-full flex">
       <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
     </div>
   </FloatOver>
@@ -410,7 +406,7 @@
       state.guistate.backgroundLayerSelectionIsOpened.setData(false)
     }}
   >
-    <div class="h-full p-2 focusable">
+    <div class="h-full p-2">
       <RasterLayerOverview
         {availableLayers}
         map={state.map}

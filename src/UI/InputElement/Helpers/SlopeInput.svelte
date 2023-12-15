@@ -39,7 +39,6 @@
 
 
   function handleOrientation(event) {
-    console.debug("Got gyro measurement")
     gotMeasurement.setData(true)
     // IF the phone is lying flat, then:
     // alpha is the compass direction (but not absolute)

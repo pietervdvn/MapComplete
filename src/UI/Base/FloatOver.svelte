@@ -11,12 +11,6 @@
 
   export let extraClasses = "p-4 md:p-6";
 
-  let mainContent: HTMLElement;
-  onMount(() => {
-    requestAnimationFrame(() => {
-      Utils.focusOnFocusableChild(mainContent);
-    });
-  });
 
 </script>
 
@@ -31,7 +25,7 @@
   use:trapFocus
   style="z-index: 21"
 >
-  <div bind:this={mainContent} class="content normal-background" on:click|stopPropagation={() => {}}>
+  <div class="content normal-background" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">
       <slot />
     </div>

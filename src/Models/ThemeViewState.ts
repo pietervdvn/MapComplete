@@ -128,6 +128,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * All 'level'-tags that are available with the current features
      */
     readonly floors: Store<string[]>
+    /**
+     * If true, the user interface will toggle some extra aids for people using screenreaders and keyboard navigation
+     * Triggered by navigating the map with arrows or by pressing 'space' or 'enter'
+     */
+    public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly newPointDialog: FilteredLayer
 
     constructor(layout: LayoutConfig) {
@@ -372,6 +377,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public focusOnMap() {
         if (this.map.data) {
             this.map.data.getCanvas().focus()
+            console.log("Focused on map")
             return
         }
         this.map.addCallbackAndRunD((map) => {
@@ -437,6 +443,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Various small methods that need to be called
      */
     private miscSetup() {
+        this.mapProperties.onKeyNavigationEvent((keyEvent) => {
+            if (["north", "east", "south", "west"].indexOf(keyEvent.key) >= 0) {
+                this.visualFeedback.setData(true)
+                return true // Our job is done, unregister
+            }
+        })
+
         this.userRelatedState.markLayoutAsVisited(this.layout)
 
         this.selectedElement.addCallbackAndRunD((feature) => {
@@ -460,7 +473,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * @private
      */
     private selectClosestAtCenter(i: number = 0) {
-        this.mapProperties.lastKeyNavigation.setData(Date.now() / 1000)
+        this.visualFeedback.setData(true)
         const toSelect = this.closestFeatures.features.data[i]
         if (!toSelect) {
             return
@@ -495,35 +508,30 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
         )
 
-        this.mapProperties.lastKeyNavigation.addCallbackAndRunD((_) => {
-            Hotkeys.RegisterHotkey(
-                {
-                    nomod: " ",
-                    onUp: true,
-                },
-                Translations.t.hotkeyDocumentation.selectItem,
-                () => this.selectClosestAtCenter(0)
-            )
-            Hotkeys.RegisterHotkey(
-                {
-                    nomod: "Spacebar",
-                    onUp: true,
-                },
-                Translations.t.hotkeyDocumentation.selectItem,
-                () => this.selectClosestAtCenter(0)
-            )
-            for (let i = 1; i < 9; i++) {
-                Hotkeys.RegisterHotkey(
-                    {
-                        nomod: "" + i,
-                        onUp: true,
-                    },
-                    Translations.t.hotkeyDocumentation.selectItem,
-                    () => this.selectClosestAtCenter(i - 1)
-                )
+        Hotkeys.RegisterHotkey(
+            {
+                nomod: " ",
+                onUp: true,
+            },
+            Translations.t.hotkeyDocumentation.selectItem,
+            () => {
+                if (this.selectedElement.data !== undefined) {
+                    return false
+                }
+                this.selectClosestAtCenter(0)
             }
-            return true // unregister
-        })
+        )
+
+        for (let i = 1; i < 9; i++) {
+            Hotkeys.RegisterHotkey(
+                {
+                    nomod: "" + i,
+                    onUp: true,
+                },
+                Translations.t.hotkeyDocumentation.selectItem,
+                () => this.selectClosestAtCenter(i - 1)
+            )
+        }
 
         this.featureSwitches.featureSwitchBackgroundSelection.addCallbackAndRun((enable) => {
             if (!enable) {

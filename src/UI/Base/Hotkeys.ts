@@ -22,16 +22,13 @@ export default class Hotkeys {
         }[]
     >([])
 
-    private static textElementSelected(event: KeyboardEvent): boolean {
-        if (event.ctrlKey || event.altKey) {
-            // This is an event with a modifier-key, lets not ignore it
-            return false
-        }
-        if (event.key === "Escape") {
-            return false // Another not-printable character that should not be ignored
-        }
-        return ["input", "textarea"].includes(document?.activeElement?.tagName?.toLowerCase())
-    }
+    /**
+     * Register a hotkey
+     * @param key
+     * @param documentation
+     * @param action the function to run. It might return 'false', indicating that it didn't do anything and gives control back to the default flow
+     * @constructor
+     */
     public static RegisterHotkey(
         key: (
             | {
@@ -50,7 +47,7 @@ export default class Hotkeys {
             onUp?: boolean
         },
         documentation: string | Translation,
-        action: () => void
+        action: () => void | false
     ) {
         const type = key["onUp"] ? "keyup" : "keypress"
         let keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
@@ -69,8 +66,9 @@ export default class Hotkeys {
         if (key["ctrl"] !== undefined) {
             document.addEventListener("keydown", function (event) {
                 if (event.ctrlKey && event.key === keycode) {
-                    action()
-                    event.preventDefault()
+                    if (action() !== false) {
+                        event.preventDefault()
+                    }
                 }
             })
         } else if (key["shift"] !== undefined) {
@@ -80,15 +78,17 @@ export default class Hotkeys {
                     return
                 }
                 if (event.shiftKey && event.key === keycode) {
-                    action()
-                    event.preventDefault()
+                    if (action() !== false) {
+                        event.preventDefault()
+                    }
                 }
             })
         } else if (key["alt"] !== undefined) {
             document.addEventListener(type, function (event) {
                 if (event.altKey && event.key === keycode) {
-                    action()
-                    event.preventDefault()
+                    if (action() !== false) {
+                        event.preventDefault()
+                    }
                 }
             })
         } else if (key["nomod"] !== undefined) {
@@ -98,8 +98,10 @@ export default class Hotkeys {
                     return
                 }
                 if (event.key === keycode) {
-                    action()
-                    event.preventDefault()
+                    const result = action()
+                    if (result !== false) {
+                        event.preventDefault()
+                    }
                 }
             })
         }
@@ -112,6 +114,9 @@ export default class Hotkeys {
                 let keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
                 if (keycode.length == 1) {
                     keycode = keycode.toUpperCase()
+                }
+                if (keycode === " ") {
+                    keycode = "Spacebar"
                 }
                 modifiers.push(keycode)
                 return <[string, string | Translation]>[modifiers.join("+"), documentation]
@@ -138,5 +143,16 @@ export default class Hotkeys {
 
     static generateDocumentationDynamic(): BaseUIElement {
         return new VariableUiElement(Hotkeys._docs.map((_) => Hotkeys.generateDocumentation()))
+    }
+
+    private static textElementSelected(event: KeyboardEvent): boolean {
+        if (event.ctrlKey || event.altKey) {
+            // This is an event with a modifier-key, lets not ignore it
+            return false
+        }
+        if (event.key === "Escape") {
+            return false // Another not-printable character that should not be ignored
+        }
+        return ["input", "textarea"].includes(document?.activeElement?.tagName?.toLowerCase())
     }
 }

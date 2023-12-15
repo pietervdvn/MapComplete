@@ -37,7 +37,7 @@
     <!-- THEME-SPECIFIC-END-->
 
 </head>
-<body>
+<body tabindex="-1">
 
 
 <div class="h-screen" id="maindiv">
@@ -62,7 +62,7 @@
             <div class="flex justify-between items-start w-full">
                 
             <!-- IMAGE-START -->
-            <img class="p-8 h-32 w-32 self-start" src="./assets/svg/add.svg">
+            <img aria-hidden="true" class="p-8 h-32 w-32 self-start" src="./assets/svg/add.svg">
             <!-- IMAGE-END -->
                 <div class="h-min subtle"> 
                 Version
@@ -72,7 +72,7 @@
         </div>
     </div>
 </div>
-<div id="belowmap" class="absolute top-0 left-0 -z-10">Below</div>
+<div aria-hidden="true" id="belowmap" class="absolute top-0 left-0 -z-10">Below</div>
 <script src="./src/UI/RemoveOtherLanguages.js"></script>
 <script async src="./src/InstallServiceWorker.ts" type="module"></script>
 <script defer src="./src/index.ts" type="module"></script>

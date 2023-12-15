@@ -3400,6 +3400,18 @@
                 "question": "How wide is the gap between the cycleway and the road?",
                 "render": "The buffer besides this cycleway is {cycleway:buffer} m"
             },
+            "incline": {
+                "mappings": {
+                    "0": {
+                        "then": "There is (probably) no incline here"
+                    },
+                    "1": {
+                        "then": "This road has a slope"
+                    }
+                },
+                "question": "Does {title()} have an incline?",
+                "render": "This road has an slope of {incline}"
+            },
             "is lit?": {
                 "mappings": {
                     "0": {

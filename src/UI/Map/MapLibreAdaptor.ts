@@ -4,11 +4,12 @@ import { Map as MlMap, SourceSpecification } from "maplibre-gl"
 import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
-import { ExportableMap, MapProperties } from "../../Models/MapProperties"
+import { ExportableMap, KeyNavigationEvent, MapProperties } from "../../Models/MapProperties"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
+import { ALL } from "node:dns"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -40,12 +41,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
+
     /**
-     * When was the last navigation by arrow keys?
-     * If set, this is a hint to use arrow compatibility
-     * Number of _seconds_ since epoch
+     * Functions that are called when one of those actions has happened
+     * @private
      */
-    readonly lastKeyNavigation: UIEventSource<number> = new UIEventSource<number>(undefined)
+    private _onKeyNavigation: ((event: KeyNavigationEvent) => void | boolean)[] = []
+
     private readonly _maplibreMap: Store<MLMap>
     /**
      * Used for internal bookkeeping (to remove a rasterLayer when done loading)
@@ -132,13 +134,32 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 handleClick(e)
             })
             map.getContainer().addEventListener("keydown", (event) => {
-                if (
-                    event.key === "ArrowRight" ||
-                    event.key === "ArrowLeft" ||
-                    event.key === "ArrowUp" ||
-                    event.key === "ArrowDown"
-                ) {
-                    this.lastKeyNavigation.setData(Date.now() / 1000)
+                let locked: "islocked" = undefined
+                if (!this.allowMoving.data) {
+                    locked = "islocked"
+                }
+                switch (event.key) {
+                    case "ArrowUp":
+                        this.pingKeycodeEvent(locked ?? "north")
+                        break
+                    case "ArrowRight":
+                        this.pingKeycodeEvent(locked ?? "east")
+                        break
+                    case "ArrowDown":
+                        this.pingKeycodeEvent(locked ?? "south")
+                        break
+                    case "ArrowLeft":
+                        this.pingKeycodeEvent(locked ?? "west")
+                        break
+                    case "+":
+                        this.pingKeycodeEvent("in")
+                        break
+                    case "=":
+                        this.pingKeycodeEvent("in")
+                        break
+                    case "-":
+                        this.pingKeycodeEvent("out")
+                        break
                 }
             })
         })
@@ -154,7 +175,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         })
         this.zoom.addCallbackAndRunD((z) => self.SetZoom(z))
         this.maxbounds.addCallbackAndRun((bbox) => self.setMaxBounds(bbox))
-        this.allowMoving.addCallbackAndRun((allowMoving) => self.setAllowMoving(allowMoving))
+        this.allowMoving.addCallbackAndRun((allowMoving) => {
+            self.setAllowMoving(allowMoving)
+            self.pingKeycodeEvent(allowMoving ? "unlocked" : "locked")
+        })
         this.allowRotating.addCallbackAndRunD((allowRotating) =>
             self.setAllowRotating(allowRotating)
         )
@@ -240,6 +264,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         })
     }
 
+    public onKeyNavigationEvent(f: (event: KeyNavigationEvent) => void | boolean) {
+        this._onKeyNavigation.push(f)
+        return () => {
+            this._onKeyNavigation.splice(this._onKeyNavigation.indexOf(f), 1)
+        }
+    }
+
     public async exportAsPng(
         rescaleIcons: number = 1,
         progress: UIEventSource<{ current: number; total: number }> = undefined
@@ -266,6 +297,24 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         await this.exportBackgroundOnCanvas(ctx)
         await this.drawMarkers(ctx, rescaleIcons, progress)
         return await MapLibreAdaptor.toBlob(drawOn)
+    }
+
+    private pingKeycodeEvent(
+        key: "north" | "east" | "south" | "west" | "in" | "out" | "islocked" | "locked" | "unlocked"
+    ) {
+        const event = {
+            date: new Date(),
+            key: key,
+        }
+
+        for (let i = 0; i < this._onKeyNavigation.length; i++) {
+            const f = this._onKeyNavigation[i]
+            const unregister = f(event)
+            if (unregister === true) {
+                this._onKeyNavigation.splice(i, 1)
+                i--
+            }
+        }
     }
 
     /**
@@ -373,7 +422,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
             for (const label of labels) {
                 if (isDisplayed(label)) {
-                    console.log("Exporting label", label)
                     await this.drawElement(drawOn, <HTMLElement>label, rescaleIcons, pixelRatio)
                 }
             }
@@ -565,16 +613,17 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.rotateTo(0, { duration: 0 })
             map.setPitch(0)
             map.dragRotate.disable()
+            map.keyboard.disableRotation()
             map.touchZoomRotate.disableRotation()
         } else {
             map.dragRotate.enable()
+            map.keyboard.enableRotation()
             map.touchZoomRotate.enableRotation()
         }
     }
 
     private setAllowMoving(allow: true | boolean | undefined) {
         const map = this._maplibreMap.data
-        console.log("Setting 'allowMoving' to", allow)
         if (!map) {
             return
         }

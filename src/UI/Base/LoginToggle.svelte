@@ -1,10 +1,10 @@
 <script lang="ts">
   import Loading from "./Loading.svelte"
   import type { OsmServiceState } from "../../Logic/Osm/OsmConnection"
+  import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import { Translation } from "../i18n/Translation"
   import Translations from "../i18n/Translations"
   import Tr from "./Tr.svelte"
-  import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
   import Invalid from "../../assets/svg/Invalid.svelte"
 
@@ -35,10 +35,12 @@
       <Loading />
     </slot>
   {:else if $loadingStatus === "error"}
-    <div class="alert max-w-64 flex items-center">
-      <Invalid class="m-2 h-8 w-8 shrink-0" />
-      <Tr t={offlineModes[$apiState]} />
-    </div>
+    <slot name="error">
+      <div class="alert max-w-64 flex items-center">
+        <Invalid class="m-2 h-8 w-8 shrink-0" />
+        <Tr t={offlineModes[$apiState]} />
+      </div>
+    </slot>
   {:else if $loadingStatus === "logged-in"}
     <slot />
   {:else if $loadingStatus === "not-attempted"}

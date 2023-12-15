@@ -336,6 +336,7 @@
             "searchShort": "Search…",
             "searching": "Searching…"
         },
+        "searchAnswer": "Search an option…",
         "share": "Share",
         "sharescreen": {
             "copiedToClipboard": "Link copied to clipboard",
@@ -382,6 +383,20 @@
         "uploadingChanges": "Uploading changes…",
         "useSearch": "Use the search above to see presets",
         "useSearchForMore": "Use the search function to search within {total} more values…",
+        "visualFeedback": {
+            "closestFeaturesAre": "Closest features are:",
+            "east": "Moving east",
+            "in": "Zooming in",
+            "islocked": "View locked to your GPS-location, moving disabled. Press the geolocation button to unlock.",
+            "locked": "View is now locked to your GPS-location, moving disabled.",
+            "navigation": "Use arrow keys to move the map, press space to select the closest feature",
+            "noCloseFeatures": "No features in view",
+            "north": "Moving north",
+            "out": "Zooming out",
+            "south": "Moving south",
+            "unlocked": "Moving enabled.",
+            "west": "Moving west"
+        },
         "waitingForGeopermission": "Waiting for your permission to use the geolocation…",
         "waitingForLocation": "Searching your current location…",
         "weekdays": {
@@ -449,6 +464,7 @@
         "dontDelete": "Cancel",
         "isDeleted": "Deleted",
         "nearby": {
+            "close": "Collapse panel with nearby images",
             "link": "This picture shows the object",
             "noNearbyImages": "No nearby images were found",
             "seeNearby": "Browse and link nearby pictures",

@@ -11,6 +11,7 @@
   import { GeoIndexedStoreForLayer } from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
   import { createEventDispatcher, onDestroy } from "svelte"
   import { placeholder } from "../../Utils/placeholder"
+  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
@@ -117,7 +118,5 @@
       />
     {/if}
   </form>
-  <div class="h-6 w-6 self-end" on:click={performSearch}>
-    <ToSvelte construct={Svg.search_svg} />
-  </div>
+  <SearchIcon class="h-6 w-6 self-end" aria-hidden="true" on:click={performSearch}/>
 </div>

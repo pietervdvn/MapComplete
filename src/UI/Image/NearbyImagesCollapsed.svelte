@@ -10,6 +10,7 @@
   import { XCircleIcon } from "@babeard/svelte-heroicons/solid";
   import Camera_plus from "../../assets/svg/Camera_plus.svelte";
   import LoginToggle from "../Base/LoginToggle.svelte";
+  import { ariaLabel } from "../../Utils/ariaLabel"
 
   export let tags: Store<OsmTags>;
   export let state: SpecialVisualizationState;
@@ -26,9 +27,11 @@
 <LoginToggle {state}>
 
   {#if expanded}
-    <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable}>
+    <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
       <button slot="corner"
               class="h-6 w-6 cursor-pointer no-image-background p-0 border-none"
+              use:ariaLabel={t.close}
+              
               on:click={() => {
         expanded = false
         }}>

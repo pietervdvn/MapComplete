@@ -6,6 +6,8 @@
   import { get, writable } from "svelte/store"
   import { AvailableRasterLayers } from "../../Models/RasterLayers"
   import { Utils } from "../../Utils"
+  import { ariaLabel } from "../../Utils/ariaLabel"
+  import Translations from "../i18n/Translations"
 
   /**
    * The 'MaplibreMap' maps various event sources onto MapLibre.
@@ -19,7 +21,6 @@
 
   let container: HTMLElement
 
-  export let attribution = false
   export let center: { lng: number; lat: number } | Readable<{ lng: number; lat: number }> =
     writable({ lng: 0, lat: 0 })
   export let zoom: Readable<number> = writable(1)
@@ -49,6 +50,9 @@
     })
     _map.on("load", function() {
       _map.resize()
+      const canvas = _map.getCanvas()
+      ariaLabel(canvas, Translations.t.general.visualFeedback.navigation)
+      canvas.role="application"
     })
     map.set(_map)
   })
@@ -57,6 +61,8 @@
     if (_map) _map.remove()
     map = null
   })
+
+  
 </script>
 
 <svelte:head>

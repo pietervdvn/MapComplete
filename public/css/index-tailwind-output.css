@@ -1342,6 +1342,10 @@ video {
   resize: both;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .appearance-none {
   -webkit-appearance: none;
           appearance: none;
@@ -2227,10 +2231,6 @@ body {
   background-color: var(--background-color);
   color: var(--foreground-color);
   font-family: "Helvetica Neue", Arial, sans-serif;
-}
-
-.focusable {
-  /* Not a 'real' class, but rather an indication to FloatOver and ModalRight to, when they open, grab the focus */
 }
 
 svg,

@@ -1,7 +1,11 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import { BBox } from "../Logic/BBox"
 import { RasterLayerPolygon } from "./RasterLayers"
-
+import { B } from "vitest/dist/types-aac763a5"
+export interface KeyNavigationEvent {
+    date: Date
+    key: "north" | "east" | "south" | "west" | "in" | "out" | "islocked" | "locked" | "unlocked"
+}
 export interface MapProperties {
     readonly location: UIEventSource<{ lon: number; lat: number }>
     readonly zoom: UIEventSource<number>
@@ -14,7 +18,13 @@ export interface MapProperties {
     readonly allowRotating: UIEventSource<true | boolean>
     readonly lastClickLocation: Store<{ lon: number; lat: number }>
     readonly allowZooming: UIEventSource<true | boolean>
-    readonly lastKeyNavigation: UIEventSource<number>
+
+    /**
+     * Triggered when the user navigated by using the keyboard.
+     * The callback might return 'true' if it wants to be unregistered
+     * @param f
+     */
+    onKeyNavigationEvent(f: (event: KeyNavigationEvent) => void | boolean): () => void
 }
 
 export interface ExportableMap {
