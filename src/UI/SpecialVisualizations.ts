@@ -83,6 +83,7 @@ import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
 import MoveWizard from "./Popup/MoveWizard.svelte"
 import { Unit } from "../Models/Unit"
 import Link from "./Base/Link.svelte"
+import OrientationDebugPanel from "./Debug/OrientationDebugPanel.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1536,10 +1537,13 @@ export default class SpecialVisualizations {
                     )).geolocation.currentUserLocation.features.map(
                         (features) => features[0]?.properties
                     )
-                    return new SvelteUIElement(AllTagsPanel, {
-                        state,
-                        tags,
-                    })
+                    return new Combine([
+                        new SvelteUIElement(OrientationDebugPanel, {}),
+                        new SvelteUIElement(AllTagsPanel, {
+                            state,
+                            tags,
+                        }),
+                    ])
                 },
             },
             {

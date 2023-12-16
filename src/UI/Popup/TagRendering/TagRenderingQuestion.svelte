@@ -254,6 +254,7 @@
         {tags}
         {feedback}
         {unit}
+        {state}
         feature={selectedElement}
         value={freeformInput}
         on:submit={onSave}
@@ -296,6 +297,7 @@
               {tags}
               {feedback}
               {unit}
+              {state}
               feature={selectedElement}
               value={freeformInput}
               on:selected={() => (selectedMapping = config.mappings?.length)}
@@ -338,6 +340,7 @@
               {tags}
               {feedback}
               {unit}
+              {state}
               feature={selectedElement}
               value={freeformInput}
               on:submit={onSave}

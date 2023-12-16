@@ -8,7 +8,7 @@
    * A round button with an icon and possible a small text, which hovers above the map
    */
   const dispatch = createEventDispatcher()
-  export let cls = ""
+  export let cls = "m-0.5 p-0.5 sm:p-1 md:m-1"
   export let arialabel: Translation = undefined 
 </script>
 
@@ -16,7 +16,7 @@
   on:click={(e) => dispatch("click", e)}
   on:keydown
   use:ariaLabel={arialabel}
-  class={twJoin("pointer-events-auto m-0.5 h-fit w-fit rounded-full p-0.5 sm:p-1 md:m-1", cls)}
+  class={twJoin("pointer-events-auto h-fit w-fit rounded-full", cls)}
 >
   <slot />
 </button>

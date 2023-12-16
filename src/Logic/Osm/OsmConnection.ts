@@ -551,6 +551,9 @@ export class OsmConnection {
 
     private UpdateCapabilities(): void {
         const self = this
+        if (this.fakeUser) {
+            return
+        }
         this.FetchCapabilities().then(({ api, gpx }) => {
             self.apiIsOnline.setData(api)
             self.gpxServiceIsOnline.setData(gpx)

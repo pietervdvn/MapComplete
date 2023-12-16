@@ -518,6 +518,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 if (this.selectedElement.data !== undefined) {
                     return false
                 }
+                if (
+                    this.guistate.menuIsOpened.data ||
+                    this.guistate.themeIsOpened.data ||
+                    this.previewedImage.data !== undefined
+                ) {
+                    return
+                }
                 this.selectClosestAtCenter(0)
             }
         )

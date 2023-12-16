@@ -9,12 +9,14 @@
   import type { Feature } from "geojson"
   import { Unit } from "../../../Models/Unit"
   import InputHelpers from "../../InputElement/InputHelpers"
+  import type { SpecialVisualizationState } from "../../SpecialVisualization"
 
   export let value: UIEventSource<string>
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
 
   export let feature: Feature = undefined
+  export let state: SpecialVisualizationState
   export let unit: Unit | undefined
 
   let placeholder = config.freeform?.placeholder
@@ -70,6 +72,7 @@
     {feature}
     type={config.freeform.type}
     {value}
+    {state}
     on:submit
   />
 </div>

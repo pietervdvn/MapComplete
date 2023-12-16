@@ -53,6 +53,7 @@
       const canvas = _map.getCanvas()
       ariaLabel(canvas, Translations.t.general.visualFeedback.navigation)
       canvas.role="application"
+      canvas.tabIndex = 0
     })
     map.set(_map)
   })

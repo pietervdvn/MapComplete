@@ -9,7 +9,6 @@
   import InputHelpers from "./InputHelpers"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import type { Feature } from "geojson"
-  import { createEventDispatcher } from "svelte"
   import ImageHelper from "./Helpers/ImageHelper.svelte"
   import TranslationInput from "./Helpers/TranslationInput.svelte"
   import TagInput from "./Helpers/TagInput.svelte"
@@ -19,17 +18,16 @@
   import ColorInput from "./Helpers/ColorInput.svelte"
   import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
   import SlopeInput from "./Helpers/SlopeInput.svelte"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
 
   export let type: ValidatorType
   export let value: UIEventSource<string | object>
 
   export let feature: Feature
   export let args: (string | number | boolean)[] = undefined
+  export let state: SpecialVisualizationState
 
   let properties = { feature, args: args ?? [] }
-  let dispatch = createEventDispatcher<{
-    selected
-  }>()
 </script>
 
 {#if type === "translation"}
@@ -49,7 +47,7 @@
 {:else if type === "opening_hours"}
   <OpeningHoursInput {value} />
 {:else if type === "slope"}
-  <SlopeInput {value} />
+  <SlopeInput {value} {feature} {state} />
 {:else if type === "wikidata"}
   <ToSvelte construct={() => InputHelpers.constructWikidataHelper(value, properties)} />
 {/if}

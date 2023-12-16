@@ -92,9 +92,9 @@ export class GeolocationControl extends VariableUiElement {
         this._lastClickWithinThreeSecs = lastClickWithinThreeSecs
 
         this.onClick(() => this.handleClick())
-        Hotkeys.RegisterHotkey({ nomod: "L" }, Translations.t.hotkeyDocumentation.geolocate, () =>
+        Hotkeys.RegisterHotkey({ nomod: "L" }, Translations.t.hotkeyDocumentation.geolocate, () => {
             this.handleClick()
-        )
+        })
 
         lastClick.addCallbackAndRunD((_) => {
             window.setTimeout(() => {

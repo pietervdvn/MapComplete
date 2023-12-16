@@ -64,12 +64,15 @@
   import Favourites from "./Favourites/Favourites.svelte"
   import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
+  import { Orientation } from "../Logic/Web/Orientation"
 
   export let state: ThemeViewState
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
 
+  let compass = Orientation.singleton.alpha
+  let compassLoaded = Orientation.singleton.gotMeasurement
   state.selectedElement.addCallback(selected => {
     if (!selected) {
       selectedElement.setData(selected)
@@ -258,15 +261,29 @@
         <Min class="h-8 w-8" />
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
-        <MapControlButton arialabel={Translations.t.general.labels.jumpToLocation}
-                          on:click={() => geolocationControl.handleClick()}
-                          on:keydown={forwardEventToMap}
-        >
-          <ToSvelte
-            construct={geolocationControl.SetClass("block w-8 h-8")}
-          />
-        </MapControlButton>
+        <div class="relative m-0.5 h-12 w-12 p-0 sm:p-1 md:m-1">
+          {#if $compassLoaded}
+            <div class="absolute top-1/2 left-1/2 w-0 h-0">
+              <div class="w-5 h-5"
+                   style={`rotate: calc(${-$compass}deg + 225deg); transform-origin: 0% 0%; background: var(--button-background);`} />
+            </div>
+          {/if}
+          <div class="absolute top-0 left-0 p-0.5 md:p-1">
+
+            <MapControlButton arialabel={Translations.t.general.labels.jumpToLocation}
+                              cls="m-0 p-0.5 sm:p-1"
+                              on:click={() => geolocationControl.handleClick()}
+                              on:keydown={forwardEventToMap}
+            >
+              <ToSvelte
+                construct={geolocationControl.SetClass("block w-8 h-8")}
+              />
+            </MapControlButton>
+          </div>
+
+        </div>
       </If>
+
     </div>
   </div>
 </div>
