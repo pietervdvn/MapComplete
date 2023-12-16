@@ -14,17 +14,25 @@ import AttributedImage from "./AttributedImage.svelte"
 
 export class ImageCarousel extends Toggle {
     constructor(
-        images: Store<{ id:string, key: string; url: string; provider: ImageProvider }[]>,
+        images: Store<{ id: string; key: string; url: string; provider: ImageProvider }[]>,
         tags: Store<any>,
-        state: { osmConnection?: OsmConnection; changes?: Changes; layout: LayoutConfig, previewedImage?: UIEventSource<ProvidedImage> },
+        state: {
+            osmConnection?: OsmConnection
+            changes?: Changes
+            layout: LayoutConfig
+            previewedImage?: UIEventSource<ProvidedImage>
+        },
         feature: Feature
     ) {
         const uiElements = images.map(
-            (imageURLS: { key: string; url: string; provider: ImageProvider, id: string }[]) => {
+            (imageURLS: { key: string; url: string; provider: ImageProvider; id: string }[]) => {
                 const uiElements: BaseUIElement[] = []
                 for (const url of imageURLS) {
                     try {
-                        let image: BaseUIElement = new SvelteUIElement(AttributedImage, {image: url})
+                        let image: BaseUIElement = new SvelteUIElement(AttributedImage, {
+                            image: url,
+                            previewedImage: state.previewedImage,
+                        })
 
                         if (url.key !== undefined) {
                             image = new Combine([
@@ -37,7 +45,6 @@ export class ImageCarousel extends Toggle {
                         image
                             .SetClass("w-full block")
                             .SetStyle("min-width: 50px; background: grey;")
-                            .onClick(() => state.previewedImage.setData(url))
                         uiElements.push(image)
                     } catch (e) {
                         console.error("Could not generate image element for", url.url, "due to", e)

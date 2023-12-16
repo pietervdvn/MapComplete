@@ -34,7 +34,7 @@
 
       {#if $license.artist}
         <div class="font-bold">
-          {$license.artist}
+          {@html $license.artist}
         </div>
       {/if}
 

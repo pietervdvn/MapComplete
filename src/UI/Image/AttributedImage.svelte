@@ -5,6 +5,7 @@
     import ImageAttribution from "./ImageAttribution.svelte"
     import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
     import { Mapillary } from "../../Logic/ImageProviders/Mapillary"
+    import { UIEventSource } from "../../Logic/UIEventSource"
 
     export let image: ProvidedImage
     let fallbackImage: string = undefined
@@ -14,11 +15,14 @@
 
     let imgEl: HTMLImageElement
     export let imgClass: string = undefined
+    export let previewedImage: UIEventSource<string>  = undefined
 </script>
 
 
 <div class="relative">
-  <img bind:this={imgEl} src={image.url} class={imgClass ?? ""} on:error={(event) => {
+  <img bind:this={imgEl} src={image.url} class={imgClass ?? ""} 
+       on:click={() => {previewedImage?.setData(image)}}
+       on:error={(event) => {
     if(fallbackImage){
       imgEl.src = fallbackImage
     }
