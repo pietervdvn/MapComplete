@@ -31,9 +31,7 @@ export class Orientation {
     public arrowDirection: UIEventSource<number> = new UIEventSource(undefined)
     private _measurementsStarted = false
 
-    constructor() {
-        this.fakeMeasurements()
-    }
+    constructor() {}
 
     public fakeMeasurements() {
         this.alpha.setData(45)
