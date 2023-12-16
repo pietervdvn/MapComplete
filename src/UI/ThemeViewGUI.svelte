@@ -73,6 +73,7 @@
 
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
+  Orientation.singleton.startMeasurements()
   state.selectedElement.addCallback(selected => {
     if (!selected) {
       selectedElement.setData(selected)
