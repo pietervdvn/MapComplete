@@ -12,11 +12,9 @@
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
   import If from "../Base/If.svelte"
   import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
-  import type { Readable } from "svelte/store"
   import Add from "../../assets/svg/Add.svelte"
   import Location_refused from "../../assets/svg/Location_refused.svelte"
-  import Crosshair from "../../assets/svg/Crosshair.svelte"
-  import FromHtml from "../Base/FromHtml.svelte"
+  import Location from "../../assets/svg/Location.svelte"
 
   /**
    * The theme introduction panel
@@ -32,8 +30,6 @@
     state.geolocation.geolocationState.permission
   let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
 
-  geopermission.addCallback((perm) => console.log(">>>> Permission", perm))
-  
   function jumpToCurrentLocation() {
     const glstate = state.geolocation.geolocationState
     if (glstate.currentGPSLocation.data !== undefined) {
@@ -58,8 +54,8 @@
       <Tr t={Translations.t.general.welcomeExplanation.addNew} />
     {/if}
 
-    <Tr t={layout.descriptionTail}/>
-  
+    <Tr t={layout.descriptionTail} />
+
     <!-- Buttons: open map, go to location, search -->
     <NextButton clss="primary w-full" on:click={() => state.guistate.themeIsOpened.setData(false)}>
       <div class="flex w-full justify-center text-2xl">
@@ -71,7 +67,7 @@
       <If condition={state.featureSwitches.featureSwitchGeolocation}>
         {#if $currentGPSLocation !== undefined || $geopermission === "prompt"}
           <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
-            <Crosshair class="h-8 w-8" />
+            <Location class="h-8 w-8" />
             <Tr t={Translations.t.general.openTheMapAtGeolocation} />
           </button>
           <!-- No geolocation granted - we don't show the button -->
@@ -81,7 +77,7 @@
             on:click={jumpToCurrentLocation}
           >
             <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
-            <Crosshair
+            <Location
               class="h-8 w-8"
               style="animation: 3s linear 0s infinite normal none running spin;"
             />
@@ -94,7 +90,7 @@
           </button>
         {:else}
           <button class="disabled flex w-full items-center gap-x-2">
-            <Crosshair
+            <Location
               class="h-8 w-8"
               style="animation: 3s linear 0s infinite normal none running spin;"
             />
@@ -105,9 +101,9 @@
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
         <div
-          class=".button low-interaction m-1 flex h-fit w-full items-center gap-x-2 rounded border p-2"
+          class=".button low-interaction m-1 flex flex-wrap h-fit w-full items-center justify-end gap-x-2 gap-y-2 rounded border p-1"
         >
-          <div class="w-full">
+          <div style="min-width: 16rem; " class="grow">
             <Geosearch
               bounds={state.mapProperties.bounds}
               on:searchCompleted={() => state.guistate.themeIsOpened.setData(false)}
@@ -121,7 +117,7 @@
           </div>
           <button
             class={twJoin(
-              "flex items-center justify-between gap-x-2",
+              "flex shrink-0 w-fit items-center justify-between gap-x-2 small",
               !searchEnabled && "disabled"
             )}
             on:click={() => triggerSearch.ping()}
