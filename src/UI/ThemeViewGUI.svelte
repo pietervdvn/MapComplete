@@ -6,7 +6,6 @@
   import MapControlButton from "./Base/MapControlButton.svelte"
   import ToSvelte from "./Base/ToSvelte.svelte"
   import If from "./Base/If.svelte"
-  import { GeolocationControl } from "./BigComponents/GeolocationControl"
   import type { Feature } from "geojson"
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
@@ -65,6 +64,8 @@
   import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
   import { Orientation } from "../Logic/Web/Orientation"
+  import GeolocationControl from "./BigComponents/GeolocationControl.svelte"
+  import Compass_arrow from "../assets/svg/Compass_arrow.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -110,8 +111,6 @@
     }),
   )
   let previewedImage = state.previewedImage
-
-  let geolocationControl = new GeolocationControl(state.geolocation, mapproperties, state.lastGeolocationRequestMoment)
 
   function forwardEventToMap(e: KeyboardEvent) {
     const mlmap = state.map.data
@@ -262,27 +261,20 @@
         <Min class="h-8 w-8" />
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
-        <div class="relative m-0.5 h-12 w-12 p-0 sm:p-1 md:m-1">
+        <div class="relative m-0.5 md:m-1">
+          <MapControlButton arialabel={Translations.t.general.labels.jumpToLocation}
+                            on:click={() => state.geolocationControl.handleClick()}
+                            on:keydown={forwardEventToMap}
+          >
+            <GeolocationControl {state} /> <!-- h-8 w-8 + p-0.5 sm:p-1 + 2px border => 9 sm: 10 in total-->
+          </MapControlButton>
           {#if $compassLoaded}
-            <div class="absolute top-1/2 left-1/2 w-0 h-0">
-              <div class="w-5 h-5"
-                   style={`rotate: calc(${-$compass}deg + 225deg); transform-origin: 0% 0%; background: var(--button-background);`} />
+            <div class="absolute top-0 left-0 w-0 h-0 m-0.5 sm:m-1">
+              <Compass_arrow class="compass_arrow" style={`rotate: calc(${-$compass}deg + 225deg); transform-origin: 50% 50%;`} />
             </div>
           {/if}
-          <div class="absolute top-0 left-0 p-0.5 md:p-1">
-
-            <MapControlButton arialabel={Translations.t.general.labels.jumpToLocation}
-                              cls="m-0 p-0.5 sm:p-1"
-                              on:click={() => geolocationControl.handleClick()}
-                              on:keydown={forwardEventToMap}
-            >
-              <ToSvelte
-                construct={geolocationControl.SetClass("block w-8 h-8")}
-              />
-            </MapControlButton>
-          </div>
-
         </div>
+
       </If>
 
     </div>

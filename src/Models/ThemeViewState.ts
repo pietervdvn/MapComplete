@@ -60,6 +60,7 @@ import { Imgur } from "../Logic/ImageProviders/Imgur"
 import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
+import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 
 /**
  *
@@ -112,6 +113,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly selectedLayer: UIEventSource<LayerConfig>
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
+    readonly geolocationControl: GeolocationControlState
+
     readonly lastGeolocationRequestMoment: UIEventSource<Date> = new UIEventSource<Date>(undefined)
 
     readonly imageUploadManager: ImageUploadManager
@@ -191,6 +194,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties,
             this.userRelatedState.gpsLocationHistoryRetentionTime
         )
+        this.geolocationControl = new GeolocationControlState(this.geolocation, this.mapProperties)
 
         this.availableLayers = AvailableRasterLayers.layersAvailableAt(this.mapProperties.location)
 
@@ -590,6 +594,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 { nomod: "P" },
                 Translations.t.hotkeyDocumentation.selectAerial,
                 () => setLayerCategory("photo")
+            )
+            Hotkeys.RegisterHotkey(
+                { nomod: "L" },
+                Translations.t.hotkeyDocumentation.geolocate,
+                () => {
+                    this.geolocationControl.handleClick()
+                }
             )
             return true
         })

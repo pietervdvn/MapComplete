@@ -1,4 +1,4 @@
-import { UIEventSource } from "../UIEventSource"
+import { Stores, UIEventSource } from "../UIEventSource"
 
 /**
  * Exports the device orientation as UIEventSources and detects 'shakes'
@@ -33,8 +33,19 @@ export class Orientation {
 
     constructor() {}
 
-    public fakeMeasurements() {
+    public fakeMeasurements(rotateAlpha: boolean = true) {
+        console.log("Starting fake measurements of orientation sensors", {
+            alpha: this.alpha,
+            beta: this.beta,
+            gamma: this.gamma,
+            absolute: this.absolute,
+        })
         this.alpha.setData(45)
+        if (rotateAlpha) {
+            Stores.Chronic(25).addCallback((date) =>
+                this.alpha.setData(-(date.getTime() / 10) % 360)
+            )
+        }
         this.beta.setData(20)
         this.gamma.setData(30)
         this.absolute.setData(true)

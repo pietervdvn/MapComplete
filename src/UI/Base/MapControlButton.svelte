@@ -12,11 +12,12 @@
   export let arialabel: Translation = undefined 
 </script>
 
+  
 <button
   on:click={(e) => dispatch("click", e)}
   on:keydown
   use:ariaLabel={arialabel}
-  class={twJoin("pointer-events-auto h-fit w-fit rounded-full", cls)}
+  class={twJoin("relative pointer-events-auto h-fit w-fit rounded-full", cls)}
 >
   <slot />
 </button>

@@ -590,6 +590,21 @@ a.link-underline {
     overflow: visible !important;
 }
 
+.compass_arrow {
+    width: calc( 2.5rem - 1px ) ; 
+    height: calc( 2.5rem - 1px )
+}
+
+@media (min-width: 640px) {
+    .compass_arrow {
+        width: calc( 2.75rem - 1px ) ;
+        height: calc( 2.75rem - 1px )
+    }
+}
+
+
+
+
 @-webkit-keyframes glowing-drop-shadow {
     from {
         filter: drop-shadow(5px 5px 60px rgb(128 128 128 / 0.6));

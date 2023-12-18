@@ -1,9 +1,5 @@
-import { VariableUiElement } from "../Base/VariableUIElement"
-import Svg from "../../Svg"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler"
-import Hotkeys from "../Base/Hotkeys"
-import Translations from "../i18n/Translations"
 import Constants from "../../Models/Constants"
 import { MapProperties } from "../../Models/MapProperties"
 
@@ -11,11 +7,12 @@ import { MapProperties } from "../../Models/MapProperties"
  * Displays an icon depending on the state of the geolocation.
  * Will set the 'lock' if clicked twice
  */
-export class GeolocationControl extends VariableUiElement {
+export class GeolocationControlState {
     public readonly lastClick = new UIEventSource<Date>(undefined)
+    public readonly lastClickWithinThreeSecs: Store<boolean>
     private readonly _geolocationHandler: GeoLocationHandler
     private readonly _mapProperties: MapProperties
-    private readonly _lastClickWithinThreeSecs: Store<boolean>
+
     constructor(
         geolocationHandler: GeoLocationHandler,
         state: MapProperties,
@@ -41,60 +38,12 @@ export class GeolocationControl extends VariableUiElement {
                 return timeDiff <= Constants.zoomToLocationTimeout
             }
         )
-        const geolocationState = geolocationHandler?.geolocationState
-        super(
-            geolocationState?.permission?.map(
-                (permission) => {
-                    if (permission === "denied") {
-                        return Svg.location_refused_svg()
-                    }
-                    if (!geolocationState.allowMoving.data) {
-                        return Svg.location_locked_svg()
-                    }
-
-                    if (geolocationState.currentGPSLocation.data === undefined) {
-                        if (permission === "prompt") {
-                            return Svg.location_empty_svg()
-                        }
-                        // Position not yet found, but permission is either requested or granted: we spin to indicate activity
-                        const icon =
-                            !geolocationHandler.mapHasMoved.data || lastRequestWithinTimeout.data
-                                ? Svg.location_svg()
-                                : Svg.location_empty_svg()
-                        return icon
-                            .SetClass("cursor-wait")
-                            .SetStyle("animation: spin 4s linear infinite;")
-                    }
-
-                    // We have a location, so we show a dot in the center
-
-                    if (lastClickWithinThreeSecs.data) {
-                        return Svg.location_unlocked_svg()
-                    }
-
-                    // We have a location, so we show a dot in the center
-                    return Svg.location_svg()
-                },
-                [
-                    geolocationState.currentGPSLocation,
-                    geolocationState.allowMoving,
-                    geolocationHandler.mapHasMoved,
-                    lastClickWithinThreeSecs,
-                    lastRequestWithinTimeout,
-                ]
-            )
-        )
 
         this._geolocationHandler = geolocationHandler
         this._mapProperties = state
 
         this.lastClick = lastClick
-        this._lastClickWithinThreeSecs = lastClickWithinThreeSecs
-
-        this.onClick(() => this.handleClick())
-        Hotkeys.RegisterHotkey({ nomod: "L" }, Translations.t.hotkeyDocumentation.geolocate, () => {
-            this.handleClick()
-        })
+        this.lastClickWithinThreeSecs = lastClickWithinThreeSecs
 
         lastClick.addCallbackAndRunD((_) => {
             window.setTimeout(() => {
@@ -148,7 +97,7 @@ export class GeolocationControl extends VariableUiElement {
             state.zoom.update((z) => z + 3)
         }
 
-        if (this._lastClickWithinThreeSecs.data) {
+        if (this.lastClickWithinThreeSecs.data) {
             geolocationState.allowMoving.setData(false)
             lastClick.setData(undefined)
             return
