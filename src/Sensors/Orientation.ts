@@ -1,4 +1,4 @@
-import { Stores, UIEventSource } from "../UIEventSource"
+import { UIEventSource, Stores } from "../Logic/UIEventSource"
 
 /**
  * Exports the device orientation as UIEventSources and detects 'shakes'

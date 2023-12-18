@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Orientation } from "../../Logic/Web/Orientation"
+  import { Orientation } from "../../Sensors/Orientation"
 
   const o = Orientation.singleton
   let alpha = o.alpha

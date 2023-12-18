@@ -2,7 +2,7 @@
   import { ImmutableStore, UIEventSource } from "../../../Logic/UIEventSource"
   import Translations from "../../i18n/Translations"
   import Tr from "../../Base/Tr.svelte"
-  import { Orientation } from "../../../Logic/Web/Orientation"
+  import { Orientation } from "../../../Sensors/Orientation"
   import type { Feature } from "geojson"
   import { GeoOperations } from "../../../Logic/GeoOperations"
   import If from "../../Base/If.svelte"

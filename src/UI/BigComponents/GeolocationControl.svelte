@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Crosshair from "../../assets/svg/Crosshair.svelte"
   import Location_refused from "../../assets/svg/Location_refused.svelte"
   import { Store } from "../../Logic/UIEventSource.js"
   import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState.js"

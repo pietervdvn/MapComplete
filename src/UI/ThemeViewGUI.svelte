@@ -63,7 +63,7 @@
   import Favourites from "./Favourites/Favourites.svelte"
   import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
-  import { Orientation } from "../Logic/Web/Orientation"
+  import { Orientation } from "../Sensors/Orientation"
   import GeolocationControl from "./BigComponents/GeolocationControl.svelte"
   import Compass_arrow from "../assets/svg/Compass_arrow.svelte"
 
