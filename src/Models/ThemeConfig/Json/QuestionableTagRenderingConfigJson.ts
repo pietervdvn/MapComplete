@@ -280,6 +280,13 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
     questionHint?: Translatable
 
     /**
+     * When using a screenreader and selecting the 'edit' button, the current rendered value is read aloud in normal circumstances.
+     * In some rare cases, this is not desirable. For example, if the rendered value is a link to a website, this link can be selected (and will be read aloud).
+     * If the user presses _tab_ again, they'll select the button and have the link read aloud a second time.
+     */
+    editButtonAriaLabel?: Translatable
+
+    /**
      * A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer
      */
     labels?: string[]

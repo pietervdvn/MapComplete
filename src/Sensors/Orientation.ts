@@ -30,9 +30,13 @@ export class Orientation {
      */
     public arrowDirection: UIEventSource<number> = new UIEventSource(undefined)
     private _measurementsStarted = false
+    private _animateFakeMeasurements = false
 
-    constructor() {}
+    constructor() {
+        // this.fakeMeasurements(true)
+    }
 
+    // noinspection JSUnusedGlobalSymbols
     public fakeMeasurements(rotateAlpha: boolean = true) {
         console.log("Starting fake measurements of orientation sensors", {
             alpha: this.alpha,
@@ -41,10 +45,15 @@ export class Orientation {
             absolute: this.absolute,
         })
         this.alpha.setData(45)
+
         if (rotateAlpha) {
-            Stores.Chronic(25).addCallback((date) =>
-                this.alpha.setData(-(date.getTime() / 10) % 360)
-            )
+            this._animateFakeMeasurements = true
+            Stores.Chronic(25).addCallback((date) => {
+                this.alpha.setData((date.getTime() / 100) % 360)
+                if (!this._animateFakeMeasurements) {
+                    return true
+                }
+            })
         }
         this.beta.setData(20)
         this.gamma.setData(30)

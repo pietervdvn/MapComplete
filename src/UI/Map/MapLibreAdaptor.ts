@@ -9,7 +9,6 @@ import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
-import { ALL } from "node:dns"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -41,6 +40,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
+    readonly rotation: UIEventSource<number>
+    readonly animationRunning = new UIEventSource(false)
 
     /**
      * Functions that are called when one of those actions has happened
@@ -81,6 +82,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.allowRotating = state?.allowRotating ?? new UIEventSource<boolean>(true)
         this.allowZooming = state?.allowZooming ?? new UIEventSource(true)
         this.bounds = state?.bounds ?? new UIEventSource(undefined)
+        this.rotation = state?.rotation ?? new UIEventSource<number>(0)
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
@@ -121,6 +123,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setMinzoom(self.minzoom.data)
             self.setMaxzoom(self.maxzoom.data)
             self.setBounds(self.bounds.data)
+            self.SetRotation(self.rotation.data)
             self.setBackground()
             this.updateStores(true)
             map.on("moveend", () => this.updateStores())
@@ -132,6 +135,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             })
             map.on("dblclick", (e) => {
                 handleClick(e)
+            })
+            map.on("rotateend", (e) => {
+                this.updateStores()
             })
             map.getContainer().addEventListener("keydown", (event) => {
                 let locked: "islocked" = undefined
@@ -169,12 +175,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 console.error("Could not set background")
             })
         )
-
         this.location.addCallbackAndRunD((loc) => {
             self.MoveMapToCurrentLoc(loc)
         })
         this.zoom.addCallbackAndRunD((z) => self.SetZoom(z))
         this.maxbounds.addCallbackAndRun((bbox) => self.setMaxBounds(bbox))
+        this.rotation.addCallbackAndRunD((bearing) => self.SetRotation(bearing))
         this.allowMoving.addCallbackAndRun((allowMoving) => {
             self.setAllowMoving(allowMoving)
             self.pingKeycodeEvent(allowMoving ? "unlocked" : "locked")
@@ -459,6 +465,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (this.bounds.data === undefined || !isSetup) {
             this.bounds.setData(bbox)
         }
+        this.rotation.setData(map.getBearing())
     }
 
     private SetZoom(z: number): void {
@@ -469,6 +476,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (Math.abs(map.getZoom() - z) > 0.01) {
             map.setZoom(z)
         }
+    }
+
+    private SetRotation(bearing: number): void {
+        const map = this._maplibreMap.data
+        if (!map || bearing === undefined) {
+            return
+        }
+        map.rotateTo(bearing, { duration: 0 })
     }
 
     private MoveMapToCurrentLoc(loc: { lat: number; lon: number }): void {

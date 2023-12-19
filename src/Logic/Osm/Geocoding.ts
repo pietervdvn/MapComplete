@@ -1,6 +1,7 @@
 import { Utils } from "../../Utils"
 import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
+import { FeatureCollection } from "geojson"
 
 export interface GeoCodeResult {
     display_name: string
@@ -20,12 +21,21 @@ export class Geocoding {
 
     static async Search(query: string, bbox: BBox): Promise<GeoCodeResult[]> {
         const b = bbox ?? BBox.global
-        const url =
-            Geocoding.host +
-            "format=json&limit=1&viewbox=" +
-            `${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}` +
-            "&accept-language=nl&q=" +
-            query
+        const url = `${
+            Geocoding.host
+        }search?format=json&limit=1&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=nl&q=${query}`
+        return Utils.downloadJson(url)
+    }
+
+    static async reverse(
+        coordinate: { lon: number; lat: number },
+        zoom: number = 18
+    ): Promise<FeatureCollection> {
+        // https://nominatim.org/release-docs/develop/api/Reverse/
+        // IF the zoom is low, it'll only return a country instead of an address
+        const url = `${Geocoding.host}reverse?format=geojson&lat=${coordinate.lat}&lon=${
+            coordinate.lon
+        }&zoom=${Math.round(zoom)}`
         return Utils.downloadJson(url)
     }
 }

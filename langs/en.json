@@ -306,7 +306,7 @@
             "sunday": "On sunday {ranges}",
             "thursday": "On thursday {ranges}",
             "tuesday": "On tuesday {ranges}",
-            "unknown": "The opening hours are unkown",
+            "unknown": "The opening hours are unknown",
             "wednesday": "On wednesday {ranges}"
         },
         "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
@@ -398,12 +398,12 @@
         "useSearch": "Use the search above to see presets",
         "useSearchForMore": "Use the search function to search within {total} more values…",
         "visualFeedback": {
-            "closestFeaturesAre": "Closest features are:",
+            "closestFeaturesAre": "{n} features within view",
             "east": "Moving east",
             "in": "Zooming in",
             "islocked": "View locked to your GPS-location, moving disabled. Press the geolocation button to unlock.",
             "locked": "View is now locked to your GPS-location, moving disabled.",
-            "navigation": "Use arrow keys to move the map, press space to select the closest feature",
+            "navigation": "Use arrow keys to move the map, press space to select the closest feature. Press a number to select locations further away.",
             "noCloseFeatures": "No features in view",
             "north": "Moving north",
             "out": "Zooming out",

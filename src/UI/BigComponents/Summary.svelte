@@ -30,10 +30,12 @@
   )
 </script>
 
-<button class="cursor-pointer small flex" on:click={() => select()}>
+<div class="cursor-pointer small flex" on:click={() => select()}>
+  <span class="flex">
   {#if i !== undefined}
     <span class="font-bold">{i + 1}.</span>
   {/if}
-  <TagRenderingAnswer config={layer.title} {layer} selectedElement={feature} {state} {tags} />
-  <span class="flex">{$bearingAndDist.dist}m {$bearingAndDist.bearing}°</span>
-</button>
+    <TagRenderingAnswer config={layer.title} {layer} selectedElement={feature} {state} {tags} />
+    {$bearingAndDist.dist}m {$bearingAndDist.bearing}°
+  </span>
+</div>

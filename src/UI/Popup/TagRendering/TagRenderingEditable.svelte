@@ -38,7 +38,7 @@
 
   let htmlElem: HTMLDivElement
   $: {
-    if (editMode && htmlElem !== undefined && config.IsKnown(tags)) {
+    if (editMode && htmlElem !== undefined && config.IsKnown($tags)) {
       // EditMode switched to true yet the answer is already known, so the person wants to make a change
       // Make sure that the question is in the scrollview!
 
@@ -108,7 +108,8 @@
             editMode = true
           }}
           class="secondary h-8 w-8 shrink-0 self-start rounded-full p-1"
-          aria-labelledby={answerId}
+          aria-labelledby={config.editButtonAriaLabel === undefined ? answerId : undefined}
+          use:ariaLabel={config.editButtonAriaLabel}
         >
           <PencilAltIcon />
         </button>

@@ -66,6 +66,8 @@
   import { Orientation } from "../Sensors/Orientation"
   import GeolocationControl from "./BigComponents/GeolocationControl.svelte"
   import Compass_arrow from "../assets/svg/Compass_arrow.svelte"
+  import ReverseGeocoding from "./BigComponents/ReverseGeocoding.svelte"
+  import FilterPanel from "./BigComponents/FilterPanel.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -183,6 +185,7 @@
     <!-- Flex and w-full are needed for the positioning -->
     <!-- Centermessage -->
     <StateIndicator {state} />
+    <ReverseGeocoding mapProperties={mapproperties}/>
   </div>
 </div>
 
@@ -270,7 +273,7 @@
           </MapControlButton>
           {#if $compassLoaded}
             <div class="absolute top-0 left-0 w-0 h-0 m-0.5 sm:m-1">
-              <Compass_arrow class="compass_arrow" style={`rotate: calc(${-$compass}deg + 225deg); transform-origin: 50% 50%;`} />
+              <Compass_arrow class="compass_arrow" style={`rotate: calc(${-$compass}deg + 45deg); transform-origin: 50% 50%;`} />
             </div>
           {/if}
         </div>
@@ -360,54 +363,38 @@
       </div>
 
       <div class="flex" slot="title1">
-        <Filter class="h-4 w-4" />
-        <Tr t={Translations.t.general.menu.filter} />
-      </div>
-
-      <div class="m-2 flex flex-col" slot="content1">
-        {#each layout.layers as layer}
-          <Filterview
-            zoomlevel={state.mapProperties.zoom}
-            filteredLayer={state.layerState.filteredLayers.get(layer.id)}
-            highlightedLayer={state.guistate.highlightedLayerInFilters}
-          />
-        {/each}
-        {#each layout.tileLayerSources as tilesource}
-          <OverlayToggle
-            layerproperties={tilesource}
-            state={state.overlayLayerStates.get(tilesource.id)}
-            highlightedLayer={state.guistate.highlightedLayerInFilters}
-            zoomlevel={state.mapProperties.zoom}
-          />
-        {/each}
-      </div>
-
-      <div class="flex" slot="title2">
         <If condition={state.featureSwitches.featureSwitchEnableExport}>
           <Download class="h-4 w-4" />
           <Tr t={Translations.t.general.download.title} />
         </If>
       </div>
-      <div class="m-4" slot="content2">
+      <div class="m-4" slot="content1">
         <DownloadPanel {state} />
       </div>
 
-      <div slot="title3">
+      <div slot="title2">
         <Tr t={Translations.t.general.attribution.title} />
       </div>
 
-      <ToSvelte construct={() => new CopyrightPanel(state)} slot="content3" />
+      <ToSvelte construct={() => new CopyrightPanel(state)} slot="content2" />
 
-      <div class="flex" slot="title4">
+      <div class="flex" slot="title3">
         <Share class="h-4 w-4" />
         <Tr t={Translations.t.general.sharescreen.title} />
       </div>
-      <div class="m-2" slot="content4">
+      <div class="m-2" slot="content3">
         <ShareScreen {state} />
       </div>
     </TabbedGroup>
   </FloatOver>
 </If>
+
+<If condition={state.guistate.filtersPanelIsOpened}>
+  <FloatOver on:close={() => state.guistate.filtersPanelIsOpened.setData(false)}>
+    <FilterPanel {state}/>
+  </FloatOver>
+</If>
+
 
 <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
   <!-- background layer selector -->

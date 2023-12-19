@@ -14,13 +14,7 @@ export type MenuViewTabStates = (typeof MenuState._menuviewTabs)[number]
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
-    public static readonly _themeviewTabs = [
-        "intro",
-        "filters",
-        "download",
-        "copyright",
-        "share",
-    ] as const
+    public static readonly _themeviewTabs = ["intro", "download", "copyright", "share"] as const
     public static readonly _menuviewTabs = [
         "about",
         "settings",
@@ -38,6 +32,8 @@ export class MenuState {
 
     public readonly backgroundLayerSelectionIsOpened: UIEventSource<boolean> =
         new UIEventSource<boolean>(false)
+
+    public readonly filtersPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
     public readonly allToggles: {
         toggle: UIEventSource<boolean>
@@ -84,8 +80,8 @@ export class MenuState {
                 this.highlightedUserSetting.setData(undefined)
             }
         })
-        this.themeViewTab.addCallbackAndRun((tab) => {
-            if (tab !== "filters") {
+        this.filtersPanelIsOpened.addCallbackAndRun((isOpen) => {
+            if (!isOpen) {
                 this.highlightedLayerInFilters.setData(undefined)
             }
         })
@@ -121,8 +117,7 @@ export class MenuState {
     }
 
     public openFilterView(highlightLayer?: LayerConfig | string) {
-        this.themeIsOpened.setData(true)
-        this.themeViewTab.setData("filters")
+        this.filtersPanelIsOpened.setData(true)
         if (highlightLayer) {
             if (typeof highlightLayer !== "string") {
                 highlightLayer = highlightLayer.id
@@ -159,6 +154,7 @@ export class MenuState {
             this.menuIsOpened,
             this.themeIsOpened,
             this.backgroundLayerSelectionIsOpened,
+            this.filtersPanelIsOpened,
         ]
         const somethingIsOpen = toggles.some((t) => t.data)
         toggles.forEach((t) => t.setData(false))

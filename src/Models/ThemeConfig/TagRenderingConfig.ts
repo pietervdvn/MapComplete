@@ -76,6 +76,7 @@ export default class TagRenderingConfig {
     public readonly multiAnswer: boolean
 
     public readonly mappings?: Mapping[]
+    public readonly editButtonAriaLabel?: Translation
     public readonly labels: string[]
     public readonly classes: string[]
 
@@ -134,6 +135,11 @@ export default class TagRenderingConfig {
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
+        this.editButtonAriaLabel = Translations.T(
+            json.editButtonAriaLabel,
+            translationKey + ".editButtonAriaLabel"
+        )
+
         this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
         this.invalidValues = json["invalidValues"]
             ? TagUtils.Tag(json["invalidValues"], `${context}.invalidValues`)

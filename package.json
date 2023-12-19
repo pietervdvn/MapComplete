@@ -32,7 +32,7 @@
       "https://overpass.openstreetmap.ru/cgi/interpreter"
     ],
     "country_coder_host": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country",
-    "nominatimEndpoint": "https://nominatim.openstreetmap.org/search?"
+    "nominatimEndpoint": "https://nominatim.openstreetmap.org/"
   },
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",

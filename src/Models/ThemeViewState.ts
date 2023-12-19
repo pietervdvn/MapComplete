@@ -61,6 +61,7 @@ import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSou
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
+import { Orientation } from "../Sensors/Orientation"
 
 /**
  *
@@ -114,8 +115,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
     readonly geolocationControl: GeolocationControlState
-
-    readonly lastGeolocationRequestMoment: UIEventSource<Date> = new UIEventSource<Date>(undefined)
 
     readonly imageUploadManager: ImageUploadManager
     readonly previewedImage = new UIEventSource<ProvidedImage>(undefined)

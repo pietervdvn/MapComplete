@@ -16,6 +16,7 @@ export interface MapProperties {
     readonly maxbounds: UIEventSource<undefined | BBox>
     readonly allowMoving: UIEventSource<true | boolean>
     readonly allowRotating: UIEventSource<true | boolean>
+    readonly rotation: UIEventSource<number>
     readonly lastClickLocation: Store<{ lon: number; lat: number }>
     readonly allowZooming: UIEventSource<true | boolean>
 

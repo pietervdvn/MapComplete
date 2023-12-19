@@ -19,7 +19,7 @@
   })
   lastAction.stabilized(750).addCallbackAndRunD(_ => lastAction.setData(undefined))
 </script>
-<div aria-live="assertive" class=" interactive p-1" role="alert">
+<div aria-live="assertive" class="p-1" role="alert">
 
   {#if $lastAction !== undefined}
     <Tr t={Translations.t.general.visualFeedback[$lastAction.key]} />

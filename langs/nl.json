@@ -50,6 +50,12 @@
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas",
         "reload": "Herlaad de data"
     },
+    "favouritePoi": {
+        "button": {
+            "isMarkedShort": "Als favoriet gemarkeerd",
+            "isNotMarkedShort": "Niet als favoriet gemarkeerd"
+        }
+    },
     "flyer": {
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
         "callToAction": "Probeer het uit op mapcomplete.org",
@@ -162,6 +168,7 @@
         },
         "back": "Vorige",
         "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten",
+        "backToMap": "Ga terug naar de kaart",
         "backgroundMap": "Selecteer een achtergrondlaag",
         "backgroundSwitch": "Verander achtergrond",
         "cancel": "Annuleren",
@@ -199,6 +206,14 @@
         "goToInbox": "Ga naar de berichten",
         "histogram": {
             "error_loading": "Kan het histogram niet laden"
+        },
+        "labels": {
+            "background": "Kies achtergrondlaag",
+            "filter": "Filter data",
+            "jumpToLocation": "Ga naar jouw locatie",
+            "menu": "Menu",
+            "zoomIn": "Zoom in",
+            "zoomOut": "Zoom uit"
         },
         "layerSelection": {
             "title": "Selecteer lagen",
@@ -245,11 +260,17 @@
         "openTheMap": "Raadpleeg de kaart",
         "openTheMapAtGeolocation": "Ga naar jouw locatie",
         "opening_hours": {
+            "all_days_from": "Elke dag geopend {ranges}",
             "closed_permanently": "Gesloten voor onbepaalde tijd",
             "closed_until": "Gesloten - open op {date}",
+            "error": "Kan de openingsuren niet inlezen",
             "error_loading": "Sorry, deze openingsuren kunnen niet getoond worden",
+            "friday": "Op vrijdag {ranges}",
             "loadingCountry": "Het land wordt nog bepaald…",
+            "monday": "Op maandag {ranges}",
             "not_all_rules_parsed": "De openingsuren zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:",
+            "on_weekdays": "Op weekdagen {ranges}",
+            "on_weekends": "In het weekend {ranges}",
             "openTill": "tot",
             "open_24_7": "Dag en nacht open",
             "open_during_ph": "Op een feestdag is dit",
@@ -257,7 +278,15 @@
             "ph_closed": "gesloten",
             "ph_not_known": " ",
             "ph_open": "open",
-            "ph_open_as_usual": "geopend zoals gewoonlijk"
+            "ph_open_as_usual": "geopend zoals gewoonlijk",
+            "ranges": "van {starttime} tot {endtime}",
+            "rangescombined": "{range0} en {range1}",
+            "saturday": "Op zaterdag {ranges}",
+            "sunday": "Op zondag {ranges}",
+            "thursday": "Op donderdag {ranges}",
+            "tuesday": "Op dinsdag {ranges}",
+            "unknown": "De openingsuren zijn niet gekend",
+            "wednesday": "Op woensdag {ranges}"
         },
         "osmLinkTooltip": "Bekijk dit object op OpenStreetMap om de geschiedenis te zien en meer te kunnen aanpassen",
         "pdf": {
@@ -300,6 +329,7 @@
             "searchShort": "Zoek…",
             "searching": "Aan het zoeken…"
         },
+        "share": "Deel deze locatie",
         "sharescreen": {
             "copiedToClipboard": "Link gekopieerd naar klembord",
             "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
@@ -340,6 +370,20 @@
         },
         "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
         "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
+        "visualFeedback": {
+            "closestFeaturesAre": "{n} object in in beeld",
+            "east": "Naar het oosten",
+            "in": "Aan het inzoomen",
+            "islocked": "Bewegen vergrendeld rond je huidige locatie. Duw op de geolocatie-knop om te ontgrendelen.",
+            "locked": "Bewegen vergrendeld rond jouw huidige locatie.",
+            "navigation": "Gebruik de pijltjestoetsen om te bewegen. Druk op spatie om het meest centrale punt te selecteren. Druk op een cijfertoets om andere items te selecteren.",
+            "noCloseFeatures": "Niet in beeld",
+            "north": "Naar het noorden",
+            "out": "Aan het uitzoomen",
+            "south": "Naar het zuiden",
+            "unlocked": "Bewegen ontgrendeld",
+            "west": "Naar het westen"
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Vrij",

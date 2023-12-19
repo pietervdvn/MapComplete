@@ -955,7 +955,6 @@ export class ToTextualDescription {
         ]
         for (let i = 0; i < weekdays.length; i++) {
             const day = weekdays[i]
-            console.log(day, "-->", ranges[i])
             if (ranges[i]?.length > 0) {
                 result.push(
                     t[day].Subs({ ranges: ToTextualDescription.createRangesFor(ranges[i]) })
