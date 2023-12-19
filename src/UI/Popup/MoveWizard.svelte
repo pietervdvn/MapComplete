@@ -1,40 +1,39 @@
 <script lang="ts">
 
-  import { UIEventSource } from "../../Logic/UIEventSource";
-  import type { MoveReason } from "./MoveWizardState";
-  import { MoveWizardState } from "./MoveWizardState";
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import type { MoveReason } from "./MoveWizardState"
+  import { MoveWizardState } from "./MoveWizardState"
 
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-  import ToSvelte from "../Base/ToSvelte.svelte";
-  import Tr from "../Base/Tr.svelte";
-  import Translations from "../i18n/Translations";
-  import Move from "../../assets/svg/Move.svelte";
-  import Move_not_allowed from "../../assets/svg/Move_not_allowed.svelte";
-  import type { SpecialVisualizationState } from "../SpecialVisualization";
-  import { XCircleIcon } from "@babeard/svelte-heroicons/solid";
-  import type { MapProperties } from "../../Models/MapProperties";
-  import type { Feature, Point } from "geojson";
-  import { GeoOperations } from "../../Logic/GeoOperations";
-  import LocationInput from "../InputElement/Helpers/LocationInput.svelte";
-  import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte";
-  import Geosearch from "../BigComponents/Geosearch.svelte";
-  import Move_confirm from "../../assets/svg/Move_confirm.svelte";
-  import If from "../Base/If.svelte";
-  import Constants from "../../Models/Constants";
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import ToSvelte from "../Base/ToSvelte.svelte"
+  import Tr from "../Base/Tr.svelte"
+  import Translations from "../i18n/Translations"
+  import Move from "../../assets/svg/Move.svelte"
+  import Move_not_allowed from "../../assets/svg/Move_not_allowed.svelte"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
+  import type { MapProperties } from "../../Models/MapProperties"
+  import type { Feature, Point } from "geojson"
+  import { GeoOperations } from "../../Logic/GeoOperations"
+  import LocationInput from "../InputElement/Helpers/LocationInput.svelte"
+  import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte"
+  import Geosearch from "../BigComponents/Geosearch.svelte"
+  import If from "../Base/If.svelte"
+  import Constants from "../../Models/Constants"
 
 
-  export let state: SpecialVisualizationState;
+  export let state: SpecialVisualizationState
 
-  export let layer: LayerConfig;
-  export let featureToMove: Feature<Point>;
+  export let layer: LayerConfig
+  export let featureToMove: Feature<Point>
 
-  let id: string = featureToMove.properties.id;
-  let currentStep: "start" | "reason" | "pick_location" | "moved" = "start";
-  const t = Translations.t.move;
-  const reason = new UIEventSource<MoveReason>(undefined);
-  let [lon, lat] = GeoOperations.centerpointCoordinates(featureToMove);
+  let id: string = featureToMove.properties.id
+  let currentStep: "start" | "reason" | "pick_location" | "moved" = "start"
+  const t = Translations.t.move
+  const reason = new UIEventSource<MoveReason>(undefined)
+  let [lon, lat] = GeoOperations.centerpointCoordinates(featureToMove)
 
-  let newLocation = new UIEventSource<{ lon: number; lat: number }>(undefined);
+  let newLocation = new UIEventSource<{ lon: number; lat: number }>(undefined)
 
   function initMapProperties() {
     return <any>{
@@ -45,14 +44,14 @@
       location: new UIEventSource({ lon, lat }),
       minzoom: new UIEventSource($reason.minZoom),
       rasterLayer: state.mapProperties.rasterLayer,
-      zoom: new UIEventSource($reason?.startZoom ?? 16)
-    };
+      zoom: new UIEventSource($reason?.startZoom ?? 16),
+    }
   }
 
 
-  let moveWizardState = new MoveWizardState(id, layer.allowMove, state);
-  let notAllowed = moveWizardState.moveDisallowedReason;
-  let currentMapProperties: MapProperties = undefined;
+  let moveWizardState = new MoveWizardState(id, layer.allowMove, state)
+  let notAllowed = moveWizardState.moveDisallowedReason
+  let currentMapProperties: MapProperties = undefined
 </script>
 {#if moveWizardState.reasons.length > 0}
 
@@ -82,8 +81,8 @@
       <Tr cls="text-lg font-bold" t={t.whyMove} />
       {#each moveWizardState.reasons as reasonSpec}
         <button on:click={() => {reason.setData(reasonSpec); currentStep = "pick_location"}}>
-          <ToSvelte  construct={reasonSpec.icon.SetClass("w-16 h-16 pr-2")} />
-          <Tr t={reasonSpec.text} />
+          <ToSvelte construct={reasonSpec.icon.SetClass("w-16 h-16 pr-2")} />
+          <Tr t={Translations.T(reasonSpec.text)} />
         </button>
       {/each}
     </div>
@@ -110,7 +109,10 @@
         <If condition={currentMapProperties.zoom.mapD(zoom => zoom >= Constants.minZoomLevelToAddNewPoint)}>
 
           <button class="flex flex primary w-full"
-                  on:click={() => {moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)}}>
+                  on:click={() => {
+                    moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove);
+                    currentStep = "moved"
+                    }}>
             <Move class="w-6 h-6 mr-2" />
             <Tr t={t.confirmMove} />
           </button>
@@ -135,7 +137,7 @@
     <div class="flex flex-col">
       <Tr cls="thanks" t={t.pointIsMoved} />
       <button on:click={() => {currentStep = "reason"}}>
-        <Move />
+        <Move class="w-6 h-6 pr-2" />
         <Tr t={t.inviteToMoveAgain} />
       </button>
     </div>
