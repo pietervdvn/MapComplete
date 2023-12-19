@@ -118,6 +118,8 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of list_reviews](#example-usage-of-list_reviews)
     + [opening_hours_table](#opening_hours_table)
       * [Example usage of opening_hours_table](#example-usage-of-opening_hours_table)
+    + [opening_hours_state](#opening_hours_state)
+      * [Example usage of opening_hours_state](#example-usage-of-opening_hours_state)
     + [canonical](#canonical)
       * [Example usage of canonical](#example-usage-of-canonical)
     + [export_as_geojson](#export_as_geojson)
@@ -158,6 +160,10 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of giggity](#example-usage-of-giggity)
     + [gps_all_tags](#gps_all_tags)
       * [Example usage of gps_all_tags](#example-usage-of-gps_all_tags)
+    + [favourite_status](#favourite_status)
+      * [Example usage of favourite_status](#example-usage-of-favourite_status)
+    + [favourite_icon](#favourite_icon)
+      * [Example usage of favourite_icon](#example-usage-of-favourite_icon)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -831,6 +837,23 @@ postfix | _empty string_ | Remove this string from the end of the value before p
 
 
 
+### opening_hours_state 
+
+ A small element, showing if the POI is currently open and when the next change is 
+
+name | default | description
+------ | --------- | -------------
+key | opening_hours | The tagkey from which the opening hours are read.
+prefix | _empty string_ | Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__
+postfix | _empty string_ | Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__
+ 
+
+#### Example usage of opening_hours_state 
+
+ `{opening_hours_state(opening_hours,,)}`
+
+
+
 ### canonical 
 
  Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text.  
@@ -1130,6 +1153,26 @@ giggityUrl | _undefined_ | The URL of the giggity-XML
 #### Example usage of gps_all_tags 
 
  `{gps_all_tags()}`
+
+
+
+### favourite_status 
+
+ A button that allows a (logged in) contributor to mark a location as a favourite location 
+
+#### Example usage of favourite_status 
+
+ `{favourite_status()}`
+
+
+
+### favourite_icon 
+
+ A small button that allows a (logged in) contributor to mark a location as a favourite location, sized to fit a title-icon 
+
+#### Example usage of favourite_icon 
+
+ `{favourite_icon()}`
 
 
 

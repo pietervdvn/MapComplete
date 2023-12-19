@@ -30,7 +30,7 @@
   }
 </script>
 
-<div class="tabbedgroup flex h-full w-full focusable">
+<div class="tabbedgroup focusable flex h-full w-full">
   <TabGroup
     class="flex h-full w-full flex-col"
     defaultIndex={1}

@@ -10,8 +10,8 @@
   let id = feature.properties.id
   let tags = state.featureProperties.getStore(id)
   let layer: LayerConfig = state.layout.getMatchingLayer(tags.data)
-  
-  function select(){
+
+  function select() {
     state.selectedElement.setData(undefined)
     state.selectedLayer.setData(layer)
     state.selectedElement.setData(feature)
@@ -19,5 +19,5 @@
 </script>
 
 <div on:click={() => select()} class="cursor-pointer">
-<TagRenderingAnswer config={layer.title} selectedElement={feature} {state} {tags} {layer} />
+  <TagRenderingAnswer config={layer.title} selectedElement={feature} {state} {tags} {layer} />
 </div>

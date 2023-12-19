@@ -40,7 +40,9 @@ export interface P4CPicture {
 export default class NearbyImagesSearch {
     public static readonly services = ["mapillary", "flickr", "kartaview", "wikicommons"] as const
     public static readonly apiUrls = ["https://api.flickr.com"]
-    private readonly individualStores: Store<{ images: P4CPicture[]; beforeFilter: number } | undefined>[]
+    private readonly individualStores: Store<
+        { images: P4CPicture[]; beforeFilter: number } | undefined
+    >[]
     private readonly _store: UIEventSource<P4CPicture[]> = new UIEventSource<P4CPicture[]>([])
     public readonly store: Store<P4CPicture[]> = this._store
     public readonly allDone: Store<boolean>
@@ -54,11 +56,11 @@ export default class NearbyImagesSearch {
         const allDone = new UIEventSource(false)
         this.allDone = allDone
         const self = this
-        function updateAllDone(){
-            const stillRunning = self.individualStores.some(store => store.data === undefined)
+        function updateAllDone() {
+            const stillRunning = self.individualStores.some((store) => store.data === undefined)
             allDone.setData(!stillRunning)
         }
-        self.individualStores.forEach(s => s.addCallback(_ => updateAllDone()))
+        self.individualStores.forEach((s) => s.addCallback((_) => updateAllDone()))
 
         this._options = options
         if (features !== undefined) {
@@ -111,7 +113,7 @@ export default class NearbyImagesSearch {
         const searchRadius = options.searchRadius ?? 100
         return p4cStore.mapD(
             (imagesState) => {
-                if(imagesState["error"]){
+                if (imagesState["error"]) {
                     return null
                 }
                 let images = imagesState["success"]

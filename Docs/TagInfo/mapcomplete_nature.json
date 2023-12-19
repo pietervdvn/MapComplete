@@ -21,6 +21,11 @@
       "value": "yes"
     },
     {
+      "key": "disused:amenity",
+      "description": "The MapComplete theme Into nature has a layer Drinking water showing features with this tag",
+      "value": "drinking_water"
+    },
+    {
       "key": "id",
       "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
@@ -60,14 +65,167 @@
       "value": "closed"
     },
     {
+      "key": "fountain",
+      "description": "Layer 'Drinking water' shows fountain=bubbler with a fixed text, namely 'This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "bubbler"
+    },
+    {
+      "key": "fountain",
+      "description": "Layer 'Drinking water' shows fountain=bottle_refill with a fixed text, namely 'This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "bottle_refill"
+    },
+    {
+      "key": "man_made",
+      "description": "Layer 'Drinking water' shows man_made=water_tap with a fixed text, namely 'This is a water tap. The water flows downward and the stream is controlled by a valve or push-button.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "water_tap"
+    },
+    {
       "key": "bottle",
-      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if fountain!=bottle_refill)",
       "value": "yes"
     },
     {
       "key": "bottle",
-      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if fountain!=bottle_refill)",
       "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "yes"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'This drinking water point is available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "no"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'This drinking water point is only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "summer"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'This drinking water point is closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "spring;summer;autumn"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Into nature')"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal!=no & seasonal~.+ & ((seasonal!~^(.*winter.*)$ & _now:date~^(....-(12|01|02)-..)$) | (seasonal!~^(.*spring.*)$ & _now:date~^(....-(03|04|05)-..)$) | (seasonal!~^(.*summer.*)$ & _now:date~^(....-(06|07|08)-..)$) | (seasonal!~^(.*autumn.*)$ & _now:date~^(....-(09|10|11)-..)$)) with a fixed text, namely 'This drinking water fountain is closed this season. As such, the opening hours are not shown.' (in the mapcomplete.org theme 'Into nature')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "24/7"
+    },
+    {
+      "key": "tourism",
+      "description": "Layer 'Drinking water' shows tourism=artwork with a fixed text, namely 'This drinking water point has an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "artwork"
+    },
+    {
+      "key": "not:tourism:artwork",
+      "description": "Layer 'Drinking water' shows not:tourism:artwork=yes with a fixed text, namely 'This drinking water point does not have an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "yes"
+    },
+    {
+      "key": "tourism",
+      "description": "Layer 'Drinking water' shows tourism= with a fixed text, namely 'This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key tourism.",
+      "value": ""
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "architecture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "mural"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "painting"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "sculpture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "statue"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "bust"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "stone"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "installation"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "graffiti"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "relief"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "azulejo"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "tilework"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artist_name",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "leisure",

@@ -163,6 +163,11 @@ export class WikimediaImageProvider extends ImageProvider {
         if (!image.startsWith("File:")) {
             image = "File:" + image
         }
-        return { url: WikimediaImageProvider.PrepareUrl(image), key: undefined, provider: this , id: image}
+        return {
+            url: WikimediaImageProvider.PrepareUrl(image),
+            key: undefined,
+            provider: this,
+            id: image,
+        }
     }
 }

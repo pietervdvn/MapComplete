@@ -4,7 +4,7 @@
   import Translations from "../i18n/Translations"
   import Tr from "./Tr.svelte"
 
-  export let osmConnection: OsmConnection;
+  export let osmConnection: OsmConnection
 </script>
 
 <button

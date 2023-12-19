@@ -20,7 +20,8 @@
     "pa_PK": "بینچ",
     "cs": "Lavičky",
     "eu": "Eserlekuak",
-    "pl": "Ławki"
+    "pl": "Ławki",
+    "pt": "Bancadas"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters.",
@@ -59,7 +60,8 @@
     "da": "Et kort over bænke",
     "cs": "Mapa laviček",
     "eu": "Eserleku mapa bat",
-    "pl": "Mapa ławek"
+    "pl": "Mapa ławek",
+    "pt": "Um mapa de bancadas"
   },
   "icon": "./assets/themes/benches/bench_poi.svg",
   "credits": [

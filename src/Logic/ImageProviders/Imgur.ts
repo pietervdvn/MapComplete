@@ -66,7 +66,7 @@ export class Imgur extends ImageProvider implements ImageUploader {
                     url: value,
                     key: key,
                     provider: this,
-                    id: value
+                    id: value,
                 }),
             ]
         }
@@ -109,7 +109,7 @@ export class Imgur extends ImageProvider implements ImageUploader {
         licenseInfo.licenseShortName = data.license
         licenseInfo.artist = data.author
         licenseInfo.date = new Date(Number(imgurData.datetime) * 1000)
-        licenseInfo.views  = imgurData.views
+        licenseInfo.views = imgurData.views
 
         return licenseInfo
     }

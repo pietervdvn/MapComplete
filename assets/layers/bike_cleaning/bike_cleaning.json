@@ -24,7 +24,8 @@
     "fr": "Une couche affichant les lieux où l'on peut nettoyer son vélo",
     "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo",
     "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta",
-    "pt_BR": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta"
+    "pt_BR": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta",
+    "pt": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta"
   },
   "source": {
     "osmTags": {
@@ -149,7 +150,8 @@
         "da": "Brug af rengøringsservice koster {service:bicycle:cleaning:charge}",
         "cs": "Využití služby mytí stojí {service:bicycle:cleaning:charge}",
         "ca": "Utilitzar el servei de rentat costa {service:bicycle:cleaning:charge}",
-        "pt_BR": "Usar o serviço de limpeza custa {service:bicycle:cleaning:charge}"
+        "pt_BR": "Usar o serviço de limpeza custa {service:bicycle:cleaning:charge}",
+        "pt": "Usar o serviço de limpeza custa {service:bicycle:cleaning:charge}"
       },
       "condition": {
         "and": [
@@ -176,7 +178,8 @@
             "da": "Rengøringsservicen er gratis at bruge",
             "cs": "Služba mytí je k dispozici zdarma",
             "ca": "El servei de rentat és gratuït",
-            "pt_BR": "O serviço de limpeza é grátis para usar"
+            "pt_BR": "O serviço de limpeza é grátis para usar",
+            "pt": "O serviço de limpeza é grátis para usar"
           },
           "addExtraTags": [
             "service:bicycle:cleaning:charge="
@@ -215,7 +218,8 @@
         "da": "Hvor meget koster det at bruge rengøringsservicen?",
         "cs": "Kolik stojí využívání služby mytí?",
         "ca": "Molt costa utilitzar aquest servei de neteja?",
-        "pt_BR": "Quanto custa para usar esse serviço de limpeza?"
+        "pt_BR": "Quanto custa para usar esse serviço de limpeza?",
+        "pt": "Quanto custa para usar este serviço de limpeza?"
       },
       "render": {
         "en": "Using the cleaning service costs {charge}",
@@ -226,7 +230,8 @@
         "da": "Brug af rengøringsservice koster {charge}",
         "cs": "Využití služby mytí stojí {charge}",
         "ca": "L'ús del servei de neteja costa {charge}",
-        "pt_BR": "Usar o serviço de limpeza custa {charge}"
+        "pt_BR": "Usar o serviço de limpeza custa {charge}",
+        "pt": "Usar o serviço de limpeza custa {charge}"
       },
       "condition": {
         "or": [
@@ -252,7 +257,8 @@
             "da": "Gratis at bruge rengøringsservice",
             "cs": "Tato mycí služba je bezplatná",
             "ca": "Aquest servei de neteja és gratuït",
-            "pt_BR": "Esse serviço de limpeza é grátis para usar"
+            "pt_BR": "Esse serviço de limpeza é grátis para usar",
+            "pt": "Esst serviço de limpeza é grátis para usar"
           },
           "addExtraTags": [
             "charge="
@@ -267,7 +273,8 @@
             "ca": "Hi ha un cost per utilitzar aquest servei de neteja",
             "de": "Dieser Reinigungsservice ist kostenpflichtig",
             "cs": "Využití úklidové služby je zpoplatněno",
-            "pt_BR": "Há uma taxa para utilizar esse serviço de limpeza"
+            "pt_BR": "Há uma taxa para utilizar esse serviço de limpeza",
+            "pt": "Há uma taxa para utilizar este serviço de limpeza"
           }
         }
       ],

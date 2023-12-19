@@ -49,7 +49,8 @@
           "he": "שלט חוצות",
           "pl": "Bilbord",
           "pt_BR": "Outdoor",
-          "zh_Hans": "广告牌"
+          "zh_Hans": "广告牌",
+          "pt": "Outdoor"
         }
       },
       {
@@ -67,7 +68,8 @@
           "fr": "Petit panneau",
           "pl": "Tablica",
           "pt_BR": "Quadro",
-          "zh_Hans": "木板"
+          "zh_Hans": "木板",
+          "pt": "Quadro"
         }
       },
       {
@@ -84,7 +86,8 @@
           "cs": "Skříň na plakáty",
           "pl": "Pudełko plakatowe",
           "pt_BR": "Caixa de pôster",
-          "zh_Hans": "海报盒"
+          "zh_Hans": "海报盒",
+          "pt": "Caixa de pôster"
         }
       },
       {
@@ -104,7 +107,8 @@
           "eu": "Zutabea",
           "pl": "Kolumna",
           "pt_BR": "Coluna",
-          "zh_Hans": "专栏"
+          "zh_Hans": "专栏",
+          "pt": "Coluna"
         }
       },
       {
@@ -124,7 +128,8 @@
           "eu": "Ikurrina",
           "pl": "Flaga",
           "pt_BR": "Bandeira",
-          "zh_Hans": "旗帜"
+          "zh_Hans": "旗帜",
+          "pt": "Bandeira"
         }
       },
       {
@@ -144,7 +149,8 @@
           "eu": "Pantaila",
           "pl": "Ekran",
           "pt_BR": "Tela",
-          "zh_Hans": "屏幕"
+          "zh_Hans": "屏幕",
+          "pt": "Ecrã"
         }
       },
       {
@@ -164,7 +170,8 @@
           "eu": "Eskultura",
           "pl": "Rzeźba",
           "pt_BR": "Escultura",
-          "zh_Hans": "雕像"
+          "zh_Hans": "雕像",
+          "pt": "Escultura"
         }
       },
       {
@@ -183,7 +190,8 @@
           "pt_BR": "Placa",
           "eu": "Kartela",
           "pl": "Znak",
-          "zh_Hans": "标志"
+          "zh_Hans": "标志",
+          "pt": "Placa"
         }
       },
       {
@@ -202,7 +210,8 @@
           "fr": "Bâche",
           "eu": "Olana",
           "pl": "Brezent",
-          "pt_BR": "Lona"
+          "pt_BR": "Lona",
+          "pt": "Lona"
         }
       },
       {
@@ -222,7 +231,8 @@
           "eu": "Totem",
           "pl": "Totem",
           "pt_BR": "Totem",
-          "zh_Hans": "图腾"
+          "zh_Hans": "图腾",
+          "pt": "Totem"
         }
       },
       {
@@ -241,7 +251,8 @@
           "fr": "Peinture murale",
           "pl": "Mural ścienny",
           "pt_BR": "Pintura mural",
-          "zh_Hans": "墙上的画"
+          "zh_Hans": "墙上的画",
+          "pt": "Pintura mural"
         }
       }
     ]
@@ -748,7 +759,8 @@
         "he": "זהו {advertising}",
         "pl": "To jest {advertising}",
         "pt_BR": "Isso é uma {advertising}",
-        "zh_Hans": "这是一个{advertising}"
+        "zh_Hans": "这是一个{advertising}",
+        "pt": "Isto é uma {advertising}"
       },
       "question": {
         "ca": "Quin tipus d'element publicitari és aquest?",
@@ -759,7 +771,8 @@
         "fr": "De quel type de dispositif publicitaire s'agit-il ?",
         "pl": "Jakiego rodzaju jest to obiekt reklamowy?",
         "pt_BR": "Que tipo de recurso de publicitário é este?",
-        "zh_Hans": "这是哪种类型的广告功能？"
+        "zh_Hans": "这是哪种类型的广告功能？",
+        "pt": "Que tipo de recurso de publicitário é este?"
       },
       "freeform": {
         "key": "advertising"
@@ -828,7 +841,8 @@
             "nl": "Dit is een aanplakzuil",
             "pt_BR": "Isto é uma coluna",
             "pl": "To jest kolumna",
-            "zh_Hans": "这是一个专栏"
+            "zh_Hans": "这是一个专栏",
+            "pt": "Isto é uma coluna"
           },
           "icon": {
             "path": "./assets/themes/advertising/column.svg",
@@ -852,7 +866,8 @@
             "pt_BR": "Isto é uma bandeira",
             "he": "זה דגל",
             "pl": "To jest flaga",
-            "zh_Hans": "这是一面旗帜"
+            "zh_Hans": "这是一面旗帜",
+            "pt": "Isto é uma bandeira"
           },
           "icon": {
             "path": "./assets/themes/advertising/flag.svg",
@@ -874,7 +889,8 @@
             "fr": "C'est une sucette (panneau avec affiches)",
             "pl": "To jest pudełko plakatowe",
             "pt_BR": "Isso é um quadro de pôster",
-            "zh_Hans": "这是海报盒"
+            "zh_Hans": "这是海报盒",
+            "pt": "Isto é um quadro de pôster"
           },
           "icon": {
             "path": "./assets/themes/advertising/poster_box.svg",
@@ -896,7 +912,8 @@
             "fr": "C'est un écran",
             "pl": "To jest ekran",
             "pt_BR": "Isso é uma tela",
-            "zh_Hans": "这是一个屏幕"
+            "zh_Hans": "这是一个屏幕",
+            "pt": "Isto é um ecrã"
           },
           "icon": {
             "path": "./assets/themes/advertising/screen.svg",
@@ -918,7 +935,8 @@
             "fr": "C'est une sculpture",
             "pl": "To jest rzeźba",
             "pt_BR": "Isso é uma escultura",
-            "zh_Hans": "这是一个雕塑"
+            "zh_Hans": "这是一个雕塑",
+            "pt": "Isto é uma escultura"
           },
           "icon": {
             "path": "./assets/themes/advertising/sculpture.svg",
@@ -940,7 +958,8 @@
             "fr": "C'est une enseigne (indique le nom du lieu/magasin)",
             "pt_BR": "Isto é uma placa",
             "pl": "To jest znak",
-            "zh_Hans": "这是一个标志"
+            "zh_Hans": "这是一个标志",
+            "pt": "Isto é uma placa"
           },
           "icon": {
             "path": "./assets/themes/advertising/sign.svg",
@@ -962,7 +981,8 @@
             "fr": "C'est une bâche (un morceau de textile résistant aux intempéries avec un message publicitaire)",
             "pl": "To jest plandeka (odporny na warunki atmosferyczne kawałek materiału tekstylnego z przekazem reklamowym)",
             "pt_BR": "Isso é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)",
-            "zh_Hans": "这是防水布（带有广告信息的防风雨纺织品）"
+            "zh_Hans": "这是防水布（带有广告信息的防风雨纺织品）",
+            "pt": "Isto é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)"
           },
           "icon": {
             "path": "./assets/themes/advertising/tarp.svg",
@@ -984,7 +1004,8 @@
             "fr": "C'est un totem",
             "pl": "To jest totem",
             "pt_BR": "Isso é um totem",
-            "zh_Hans": "这是一个图腾"
+            "zh_Hans": "这是一个图腾",
+            "pt": "Isto é um totem"
           },
           "icon": {
             "path": "./assets/themes/advertising/totem.svg",
@@ -1006,7 +1027,8 @@
             "fr": "C'est une peinture murale",
             "pl": "To jest mural ścienny",
             "pt_BR": "Isso é uma pintura mural",
-            "zh_Hans": "这是一幅壁画"
+            "zh_Hans": "这是一幅壁画",
+            "pt": "Isto é uma pintura mural"
           },
           "icon": {
             "path": "./assets/themes/advertising/wall_painting.svg",

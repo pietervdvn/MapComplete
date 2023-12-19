@@ -94,7 +94,7 @@
 {{service_item
 |name= [https://mapcomplete.org/aed aed]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:sv|en}}, {{#language:pl|en}}, {{#language:pt_BR|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:sl|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:fil|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}
+|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:sv|en}}, {{#language:pl|en}}, {{#language:pt_BR|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:sl|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:fil|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}, {{#language:pt|en}}
 |descr= A MapComplete theme: On this map, one can find and mark nearby defibrillators
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -121,7 +121,7 @@
 {{service_item
 |name= [https://mapcomplete.org/artwork artwork]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:es|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:pl|en}}, {{#language:ca|en}}, {{#language:zh_Hans|en}}, {{#language:fil|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}, {{#language:pt_BR|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:es|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:pl|en}}, {{#language:ca|en}}, {{#language:zh_Hans|en}}, {{#language:fil|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:zgh|en}}, {{#language:eu|en}}, {{#language:pt_BR|en}}, {{#language:pt|en}}
 |descr= A MapComplete theme: An open map of statues, busts, graffitis and other artwork all over the world
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -139,7 +139,7 @@
 {{service_item
 |name= [https://mapcomplete.org/benches benches]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:pt_BR|en}}, {{#language:hu|en}}, {{#language:id|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:pt_BR|en}}, {{#language:hu|en}}, {{#language:id|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}, {{#language:pl|en}}, {{#language:pt|en}}
 |descr= A MapComplete theme: A map of benches
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -184,7 +184,7 @@
 {{service_item
 |name= [https://mapcomplete.org/campersite campersite]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:fr|en}}, {{#language:zh_Hant|en}}, {{#language:nl|en}}, {{#language:pt_BR|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:fr|en}}, {{#language:zh_Hant|en}}, {{#language:nl|en}}, {{#language:pt_BR|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:pt|en}}
 |descr= A MapComplete theme: Find sites to spend the night with your camper
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -295,7 +295,7 @@
 |lang= {{#language:en|en}}, {{#language:cs|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations
 
-The position of a signpost can be used by a hiker/biker/rider...
+The position of a signpost can be used by a hiker/biker/rider/s…
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, guideposts

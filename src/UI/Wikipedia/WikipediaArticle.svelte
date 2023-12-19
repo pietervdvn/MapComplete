@@ -46,7 +46,7 @@
         </span>
       </DisclosureButton>
       <DisclosurePanel>
-        <FromHtml clss="wikipedia-article"  src={$wikipediaDetails.restOfArticle} />
+        <FromHtml clss="wikipedia-article" src={$wikipediaDetails.restOfArticle} />
       </DisclosurePanel>
     </Disclosure>
   {/if}

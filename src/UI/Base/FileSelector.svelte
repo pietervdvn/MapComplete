@@ -36,9 +36,15 @@
     dispatcher("submit", e.dataTransfer.files)
   }}
 >
-  <label class={twMerge(cls, drawAttention ? "glowing-shadow" : "")} 
-         tabindex="0" for={"fileinput" + id} 
-         on:click={() => {console.log("Clicked", inputElement); inputElement.click()}}>
+  <label
+    class={twMerge(cls, drawAttention ? "glowing-shadow" : "")}
+    tabindex="0"
+    for={"fileinput" + id}
+    on:click={() => {
+      console.log("Clicked", inputElement)
+      inputElement.click()
+    }}
+  >
     <slot />
   </label>
   <input

@@ -5,7 +5,7 @@
   import TagRenderingMapping from "./TagRenderingMapping.svelte"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import type { Feature } from "geojson"
-  import { Store, UIEventSource } from "../../../Logic/UIEventSource";
+  import { Store, UIEventSource } from "../../../Logic/UIEventSource"
   import { onDestroy } from "svelte"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twMerge } from "tailwind-merge"
@@ -21,8 +21,9 @@
   if (config === undefined) {
     throw "Config is undefined in tagRenderingAnswer"
   }
-  let trs : Store<{then: Translation, icon?: string, iconClass?: string}[]> = tags.mapD(tags => Utils.NoNull(config?.GetRenderValues(tags)))
-  
+  let trs: Store<{ then: Translation; icon?: string; iconClass?: string }[]> = tags.mapD((tags) =>
+    Utils.NoNull(config?.GetRenderValues(tags))
+  )
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties($tags))}

@@ -1,20 +1,22 @@
 <script lang="ts">
   import type { Feature } from "geojson"
-  import { Store, UIEventSource } from "../../Logic/UIEventSource";
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
   import { onDestroy } from "svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
-  import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+  import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
   export let selectedElement: Feature
   export let highlightedRendering: UIEventSource<string> = undefined
 
-  export let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(selectedElement.properties.id)
+  export let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
+    selectedElement.properties.id
+  )
 
   let _metatags: Record<string, string>
   onDestroy(
@@ -23,12 +25,14 @@
     })
   )
 
-  let knownTagRenderings: Store<TagRenderingConfig[]> =  tags.mapD(tgs =>  layer.tagRenderings.filter(
-    (config) =>
-      (config.condition?.matchesProperties(tgs) ?? true) &&
-      (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true) &&
-      config.IsKnown(tgs)
-  ))
+  let knownTagRenderings: Store<TagRenderingConfig[]> = tags.mapD((tgs) =>
+    layer.tagRenderings.filter(
+      (config) =>
+        (config.condition?.matchesProperties(tgs) ?? true) &&
+        (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true) &&
+        config.IsKnown(tgs)
+    )
+  )
 </script>
 
 {#if $tags._deleted === "yes"}
@@ -37,7 +41,7 @@
     <Tr t={Translations.t.general.returnToTheMap} />
   </button>
 {:else}
-  <div class="flex h-full w-full flex-col gap-y-2 overflow-y-auto p-1 px-2 focusable" tabindex="-1">
+  <div class="focusable flex h-full w-full flex-col gap-y-2 overflow-y-auto p-1 px-2" tabindex="-1">
     {#each $knownTagRenderings as config (config.id)}
       <TagRenderingEditable
         {tags}
@@ -46,7 +50,9 @@
         {selectedElement}
         {layer}
         {highlightedRendering}
-        clss={$knownTagRenderings.length === 1 ? "h-full" : "tr-length-" + $knownTagRenderings.length}
+        clss={$knownTagRenderings.length === 1
+          ? "h-full"
+          : "tr-length-" + $knownTagRenderings.length}
       />
     {/each}
   </div>

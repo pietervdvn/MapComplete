@@ -203,6 +203,18 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
+### reviews 
+
+
+
+Shows the reviews module (including the possibility to leave a review)
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### website 
 
 
@@ -215,7 +227,7 @@ This is rendered with  `<a href='{url}' target='_blank' rel='noopener'>{url}</a>
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `club= & office= & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & leisure!~^(sports_centre)$`
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & club= & office= & leisure!~^(sports_centre)$`
 
 
 
@@ -279,6 +291,16 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+
+
+
+### favourite_status 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
 
 
 

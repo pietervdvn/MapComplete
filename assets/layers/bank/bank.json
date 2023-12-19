@@ -9,7 +9,8 @@
     "he": "מוסד פיננסי להפקדת כסף",
     "pl": "Instytucja finansowa pozwalająca wpłacić pieniądze",
     "pt_BR": "Um instituição financeira para depositar dinheiro",
-    "es": "Una institución financiera para depositar dinero"
+    "es": "Una institución financiera para depositar dinero",
+    "pt": "Uma instituição financeira para depositar dinheiro"
   },
   "name": {
     "en": "Banks",
@@ -22,7 +23,8 @@
     "eu": "Bankuak",
     "pl": "Banki",
     "pt_BR": "Bancos",
-    "es": "Bancos"
+    "es": "Bancos",
+    "pt": "Bancos"
   },
   "title": {
     "render": "Bank",
@@ -50,7 +52,8 @@
         "he": "האם לבנק הזה יש כספומט?",
         "pl": "Czy ten bank ma bankomat?",
         "pt_BR": "Esse banco tem caixa eletrônico?",
-        "es": "¿Este banco tiene cajero automático?"
+        "es": "¿Este banco tiene cajero automático?",
+        "pt": "Este banco tem multibanco?"
       },
       "mappings": [
         {
@@ -65,7 +68,8 @@
             "he": "לבנק הזה יש כספומט",
             "pl": "Ten bank ma bankomat",
             "pt_BR": "Este banco tem um caixa eletrônico",
-            "es": "Este banco tiene un cajero automático"
+            "es": "Este banco tiene un cajero automático",
+            "pt": "Este banco tem um multibanco"
           }
         },
         {
@@ -79,7 +83,8 @@
             "cs": "Tato banka <b>nemá bankomat</b>",
             "pl": "Ten bank <b>nie ma</b> bankomatu",
             "pt_BR": "Este banco <b>não</b> tem um caixa eletrônico",
-            "es": "Este banco <b>no tiene</b> cajero automático"
+            "es": "Este banco <b>no tiene</b> cajero automático",
+            "pt": "Este banco <b>não</b> tem um multibanco"
           }
         },
         {
@@ -91,7 +96,8 @@
             "ca": "Aquest banc té un caixer, però està mapejat com a un element diferent",
             "cs": "Tato banka má bankomat, ale je namapován jako jiná ikona",
             "pt_BR": "Este banco tem um caixa eletrônico, mas está mapeado como um ícone diferente",
-            "es": "Este banco tiene un cajero automático, pero aparece con un icono diferente"
+            "es": "Este banco tiene un cajero automático, pero aparece con un icono diferente",
+            "pt": "Este banco tem um multibanco, mas está mapeado como um ícone diferente"
           }
         }
       ]
@@ -113,7 +119,8 @@
             "he": "עם כספומט",
             "pl": "Za pomocą bankomatu",
             "pt_BR": "Com um caixa eletrônico",
-            "es": "Con un cajero automático"
+            "es": "Con un cajero automático",
+            "pt": "Com um multibanco"
           },
           "osmTags": "atm=yes"
         }

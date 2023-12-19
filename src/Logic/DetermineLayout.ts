@@ -137,11 +137,12 @@ export default class DetermineLayout {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             // We got fed a layer instead of a theme
             const layerConfig = <LayerConfigJson>json
-            const iconTr: string | TagRenderingConfigJson = <any>(
-                layerConfig.pointRendering
-                    .map((mr) => mr?.marker?.find((icon) => icon.icon !== undefined)?.icon)
-                    .find((i) => i !== undefined)
-            ) ?? "bug"
+            const iconTr: string | TagRenderingConfigJson =
+                <any>(
+                    layerConfig.pointRendering
+                        .map((mr) => mr?.marker?.find((icon) => icon.icon !== undefined)?.icon)
+                        .find((i) => i !== undefined)
+                ) ?? "bug"
             const icon = new TagRenderingConfig(iconTr).render.txt
             json = {
                 id: json.id,

@@ -78,7 +78,7 @@ The possible hashes are:
 
 
 
-`menu:about`,`menu:settings`,`menu:community`,`menu:privacy`,`menu:advanced`
+`menu:about`,`menu:settings`,`menu:favourites`,`menu:community`,`menu:privacy`,`menu:advanced`
 
 `theme-menu:intro`,`theme-menu:filters`,`theme-menu:download`,`theme-menu:copyright`,`theme-menu:share`
 

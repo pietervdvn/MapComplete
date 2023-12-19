@@ -1,41 +1,41 @@
 <script lang="ts">
-  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
-  import { Store, UIEventSource } from "../../../Logic/UIEventSource";
-  import type { Feature } from "geojson";
-  import type { SpecialVisualizationState } from "../../SpecialVisualization";
-  import TagRenderingAnswer from "./TagRenderingAnswer.svelte";
-  import { PencilAltIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import TagRenderingQuestion from "./TagRenderingQuestion.svelte";
-  import { onDestroy } from "svelte";
-  import Tr from "../../Base/Tr.svelte";
-  import Translations from "../../i18n/Translations.js";
-  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-  import { Utils } from "../../../Utils";
-  import { twMerge } from "tailwind-merge";
+  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
+  import { Store, UIEventSource } from "../../../Logic/UIEventSource"
+  import type { Feature } from "geojson"
+  import type { SpecialVisualizationState } from "../../SpecialVisualization"
+  import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
+  import { PencilAltIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
+  import { onDestroy } from "svelte"
+  import Tr from "../../Base/Tr.svelte"
+  import Translations from "../../i18n/Translations.js"
+  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+  import { Utils } from "../../../Utils"
+  import { twMerge } from "tailwind-merge"
 
-  export let config: TagRenderingConfig;
-  export let tags: UIEventSource<Record<string, string>>;
-  export let selectedElement: Feature | undefined;
-  export let state: SpecialVisualizationState;
-  export let layer: LayerConfig = undefined;
+  export let config: TagRenderingConfig
+  export let tags: UIEventSource<Record<string, string>>
+  export let selectedElement: Feature | undefined
+  export let state: SpecialVisualizationState
+  export let layer: LayerConfig = undefined
 
-  export let editingEnabled: Store<boolean> | undefined = state?.featureSwitchUserbadge;
+  export let editingEnabled: Store<boolean> | undefined = state?.featureSwitchUserbadge
 
-  export let highlightedRendering: UIEventSource<string> = undefined;
-  export let clss;
+  export let highlightedRendering: UIEventSource<string> = undefined
+  export let clss
   /**
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */
-  export let editMode = !config.IsKnown(tags.data); // || showQuestionIfUnknown;
+  export let editMode = !config.IsKnown(tags.data) // || showQuestionIfUnknown;
   if (tags) {
     onDestroy(
       tags.addCallbackD((tags) => {
-        editMode = !config.IsKnown(tags);
+        editMode = !config.IsKnown(tags)
       })
-    );
+    )
   }
 
-  let htmlElem: HTMLDivElement;
+  let htmlElem: HTMLDivElement
   $: {
     if (editMode && htmlElem !== undefined && config.IsKnown(tags)) {
       // EditMode switched to true yet the answer is already known, so the person wants to make a change
@@ -43,40 +43,40 @@
 
       // Some delay is applied to give Svelte the time to render the _question_
       window.setTimeout(() => {
-        Utils.scrollIntoView(<any>htmlElem);
-      }, 50);
+        Utils.scrollIntoView(<any>htmlElem)
+      }, 50)
     }
   }
 
-  const _htmlElement = new UIEventSource<HTMLElement>(undefined);
-  $: _htmlElement.setData(htmlElem);
+  const _htmlElement = new UIEventSource<HTMLElement>(undefined)
+  $: _htmlElement.setData(htmlElem)
 
   function setHighlighting() {
     if (highlightedRendering === undefined) {
-      return;
+      return
     }
     if (htmlElem === undefined) {
-      return;
+      return
     }
-    const highlighted = highlightedRendering.data;
+    const highlighted = highlightedRendering.data
     if (config.id === highlighted) {
-      htmlElem.classList.add("glowing-shadow");
-      htmlElem.tabIndex = "-1";
-      console.log("Scrolling to", htmlElem);
-      htmlElem.scrollIntoView({ behavior: "smooth" });
-      Utils.focusOnFocusableChild(htmlElem);
+      htmlElem.classList.add("glowing-shadow")
+      htmlElem.tabIndex = "-1"
+      console.log("Scrolling to", htmlElem)
+      htmlElem.scrollIntoView({ behavior: "smooth" })
+      Utils.focusOnFocusableChild(htmlElem)
     } else {
-      htmlElem.classList.remove("glowing-shadow");
+      htmlElem.classList.remove("glowing-shadow")
     }
   }
 
   if (highlightedRendering) {
-    onDestroy(highlightedRendering?.addCallbackAndRun(() => setHighlighting()));
-    onDestroy(_htmlElement.addCallbackAndRun(() => setHighlighting()));
+    onDestroy(highlightedRendering?.addCallbackAndRun(() => setHighlighting()))
+    onDestroy(_htmlElement.addCallbackAndRun(() => setHighlighting()))
   }
 </script>
 
-<div bind:this={htmlElem} class={twMerge(clss, "tr-"+config.id)}>
+<div bind:this={htmlElem} class={twMerge(clss, "tr-" + config.id)}>
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
@@ -89,11 +89,13 @@
         >
           <Tr t={Translations.t.general.cancel} />
         </button>
-        <button slot="upper-right"
-                class="h-8 w-8 cursor-pointer border-none p-0"
-                on:click={() => {
+        <button
+          slot="upper-right"
+          class="h-8 w-8 cursor-pointer border-none p-0"
+          on:click={() => {
             editMode = false
-          }}>
+          }}
+        >
           <XCircleIcon />
         </button>
       </TagRenderingQuestion>

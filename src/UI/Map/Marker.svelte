@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Icon from "./Icon.svelte";
+  import Icon from "./Icon.svelte"
 
   /**
    * Renders a 'marker', which consists of multiple 'icons'
    */
-  export let icons: { icon: string; color: string }[];
+  export let icons: { icon: string; color: string }[]
 </script>
 
 {#if icons !== undefined && icons.length > 0}

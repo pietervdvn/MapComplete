@@ -56,7 +56,8 @@
           "nl": "{name}",
           "da": "{name}",
           "pl": "{name}",
-          "cs": "{name}"
+          "cs": "{name}",
+          "pt": "{name}"
         }
       }
     ]

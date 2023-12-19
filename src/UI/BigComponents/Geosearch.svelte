@@ -34,8 +34,8 @@
   Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
     feedback = undefined
     requestAnimationFrame(() => {
-    inputElement?.focus()
-    inputElement?.select()
+      inputElement?.focus()
+      inputElement?.select()
     })
   })
 
@@ -75,11 +75,11 @@
         for (const layer of layers) {
           const found = layer.features.data.find((f) => f.properties.id === id)
           if (found === undefined) {
-            continue;
+            continue
           }
-          selectedElement?.setData(found);
-          console.log("Found an element that probably matches:", selectedElement?.data);
-          break;
+          selectedElement?.setData(found)
+          console.log("Found an element that probably matches:", selectedElement?.data)
+          break
         }
       }
       if (clearAfterView) {

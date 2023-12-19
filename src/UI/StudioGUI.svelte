@@ -260,7 +260,12 @@
         <Loading />
       </div>
     {:else if state === "editing_layer"}
-      <EditLayer state={editLayerState} backToStudio={() => {state = undefined}}>
+      <EditLayer
+        state={editLayerState}
+        backToStudio={() => {
+          state = undefined
+        }}
+      >
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"
@@ -288,19 +293,18 @@
     {#if { intro, tagrenderings: intro_tagrenderings }[$showIntro]?.sections}
       <FloatOver
         on:close={() => {
-      showIntro.setData("no")
-    }}
+          showIntro.setData("no")
+        }}
       >
         <div class="flex h-full p-4 pr-12">
           <Walkthrough
             pages={{ intro, tagrenderings: intro_tagrenderings }[$showIntro]?.sections}
             on:done={() => {
-          showIntro.setData("no")
-        }}
+              showIntro.setData("no")
+            }}
           />
         </div>
       </FloatOver>
     {/if}
-
   </LoginToggle>
 </If>

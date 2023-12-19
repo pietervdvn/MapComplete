@@ -51,7 +51,8 @@
     "da": "Find steder, hvor du kan overnatte med din autocamper",
     "ca": "Troba llocs on passar la nit amb la teua caravana",
     "cs": "Najděte místa, kde můžete strávit noc se svým karavanem",
-    "pl": "Znajdź miejsca, w których możesz spędzić noc w kamperze"
+    "pl": "Znajdź miejsca, w których możesz spędzić noc w kamperze",
+    "pt": "Encontre locais para passar a noite com o seu campista"
   },
   "icon": "./assets/themes/campersite/caravan.svg",
   "socialImage": "./assets/themes/campersite/social_image.jpg",
@@ -109,7 +110,8 @@
           "da": "Camperplads {name}",
           "cs": "Kempovací místo {name}",
           "es": "Sitio de camping {name}",
-          "pl": "Pole kamperowe {name}"
+          "pl": "Pole kamperowe {name}",
+          "pt": "Local de acampamento {name}"
         },
         "mappings": [
           {
@@ -133,7 +135,8 @@
               "pa_PK": "بے نام کیمپ‌سائیٹ",
               "cs": "Nepojmenované kempovací místo",
               "es": "Camping sin nombre",
-              "pl": "Nienazwane miejsce dla kamperów"
+              "pl": "Nienazwane miejsce dla kamperów",
+              "pt": "Locais de acampamento sem nome"
             }
           }
         ]
@@ -177,7 +180,8 @@
             "nb_NO": "Dette stedet heter {name}",
             "ca": "Aquest lloc s'anomena {name}",
             "cs": "Toto místo se jmenuje {name}",
-            "pl": "To miejsce nazywa się {name}"
+            "pl": "To miejsce nazywa się {name}",
+            "pt": "Este lugar é chamado de {name}"
           },
           "question": {
             "en": "What is this place called?",
@@ -195,7 +199,8 @@
             "nb_NO": "Hva heter dette stedet?",
             "ca": "Com es diu aquest lloc?",
             "cs": "Jak se toto místo jmenuje?",
-            "pl": "Jak nazywa się to miejsce?"
+            "pl": "Jak nazywa się to miejsce?",
+            "pt": "Qual o nome deste lugar?"
           },
           "freeform": {
             "key": "name"
@@ -220,7 +225,8 @@
             "da": "Opkræver dette sted et gebyr?",
             "cs": "Účtuje si toto místo poplatek?",
             "eu": "Leku horrek kuota bat kobratzen du?",
-            "pl": "Czy to miejsce pobiera opłatę?"
+            "pl": "Czy to miejsce pobiera opłatę?",
+            "pt": "Este lugar cobra alguma taxa?"
           },
           "mappings": [
             {
@@ -246,7 +252,8 @@
                 "ca": "Heu de pagar per l'ús",
                 "cs": "Použití je zpoplatněno",
                 "eu": "Erabiltzeko ordaindu behar duzu",
-                "pl": "Wymagana jest opłata, aby skorzystać"
+                "pl": "Wymagana jest opłata, aby skorzystać",
+                "pt": "Deve pagar para usar"
               }
             },
             {
@@ -267,7 +274,8 @@
                 "da": "Kan bruges gratis",
                 "ca": "Es pot utilitzar gratuïtament",
                 "cs": "Lze použít zdarma",
-                "pl": "Można skorzystać za darmo"
+                "pl": "Można skorzystać za darmo",
+                "pt": "Pode ser usado de graça"
               },
               "addExtraTags": [
                 "charge="
@@ -292,7 +300,8 @@
             "ca": "Aquest lloc cobra {charge}",
             "cs": "Toto místo si účtuje {charge}",
             "eu": "Leku honek {charge} kobratzen du",
-            "pl": "To miejsce pobiera opłatę w wysokości {charge}"
+            "pl": "To miejsce pobiera opłatę w wysokości {charge}",
+            "pt": "Este lugar cobra {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -310,7 +319,8 @@
             "ca": "Quant cobra aquest lloc?",
             "cs": "Kolik si toto místo účtuje?",
             "eu": "Zenbat kobratzen du leku honek?",
-            "pl": "Ile kosztuje to miejsce?"
+            "pl": "Ile kosztuje to miejsce?",
+            "pt": "Quanto este lugar cobra?"
           },
           "freeform": {
             "key": "charge"
@@ -339,7 +349,8 @@
             "ca": "Aquest lloc té una estació d'abocament sanitari?",
             "da": "Har dette sted en sanitær afleveringsplads?",
             "cs": "Má toto místo sanitární skládku?",
-            "pl": "Czy w tym miejscu znajduje się stacja zrzutu ścieków sanitarnych?"
+            "pl": "Czy w tym miejscu znajduje się stacja zrzutu ścieków sanitarnych?",
+            "pt": "Este local tem uma estação de aterro sanitário?"
           },
           "mappings": [
             {
@@ -363,7 +374,8 @@
                 "ca": "Aquest lloc té una estació d'abocament sanitari",
                 "da": "Dette sted har en sanitær afleveringsplads",
                 "cs": "Toto místo má sanitární skládku",
-                "pl": "W tym miejscu znajduje się stacja zrzutu ścieków sanitarnych"
+                "pl": "W tym miejscu znajduje się stacja zrzutu ścieków sanitarnych",
+                "pt": "Este local tem uma estação de aterro sanitário"
               }
             },
             {
@@ -387,7 +399,8 @@
                 "ca": "Aquest lloc no té una estació d'abocament sanitari",
                 "da": "Dette sted har ikke en sanitær afleveringsplads",
                 "cs": "Toto místo nemá sanitární skládku",
-                "pl": "Miejsce to nie posiada stacji zrzutu ścieków sanitarnych"
+                "pl": "Miejsce to nie posiada stacji zrzutu ścieków sanitarnych",
+                "pt": "Este local não tem uma estação de aterro sanitário"
               }
             }
           ]
@@ -408,7 +421,8 @@
             "ca": "{capacity} els acampadors poden utilitzar aquest lloc al mateix temps",
             "cs": "{capacity} táborníků může toto místo využívat současně",
             "eu": "{capacity} kanpinlariek aldi berean erabil dezakete leku hau",
-            "pl": "{capacity} kamperów może z tego miejsca korzystać jednocześnie"
+            "pl": "{capacity} kamperów może z tego miejsca korzystać jednocześnie",
+            "pt": "{capacity} campistas podem usar este lugar ao mesmo tempo"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
@@ -425,7 +439,8 @@
             "ca": "Quants acampadors poden allotjar-se ací? (ometre si no hi ha un nombre evident de places o vehicles permesos)",
             "cs": "Kolik táborníků zde může zůstat? (přeskočte, pokud není zjevný počet míst nebo povolených vozidel)",
             "eu": "Zenbat kanpinlari gera daitezke hemen? (jauzi egin leku edo ibilgailu kopuru nabaririk ez badago)",
-            "pl": "Ile kamperów może tu przebywać? (pomiń, jeśli nie ma oczywistej liczby miejsc lub dozwolonych pojazdów)"
+            "pl": "Ile kamperów może tu przebywać? (pomiń, jeśli nie ma oczywistej liczby miejsc lub dozwolonych pojazdów)",
+            "pt": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)"
           },
           "freeform": {
             "key": "capacity",
@@ -452,7 +467,8 @@
             "ca": "Aquest lloc proporciona accés a Internet?",
             "cs": "Poskytuje toto místo připojení k internetu?",
             "eu": "Leku honek Interneterako sarbidea eskaintzen du?",
-            "pl": "Czy to miejsce oferuje dostęp do internetu?"
+            "pl": "Czy to miejsce oferuje dostęp do internetu?",
+            "pt": "Este lugar fornece acesso a internet?"
           },
           "mappings": [
             {
@@ -477,7 +493,8 @@
                 "da": "Der er internetadgang",
                 "nb_NO": "Det finnes tilgang til Internett",
                 "cs": "Připojení k internetu je k dispozici",
-                "pl": "Jest dostęp do internetu"
+                "pl": "Jest dostęp do internetu",
+                "pt": "Há acesso à internet"
               }
             },
             {
@@ -503,7 +520,8 @@
                 "nb_NO": "Det finnes tilgang til Internett",
                 "ca": "Hi ha accés a Internet",
                 "cs": "Připojení k internetu je k dispozici",
-                "pl": "Jest dostęp do internetu"
+                "pl": "Jest dostęp do internetu",
+                "pt": "Há acesso à Internet"
               },
               "hideInAnswer": true
             },
@@ -529,7 +547,8 @@
                 "nb_NO": "Det finnes ingen tilgang til Internett",
                 "ca": "No hi ha accés a Internet",
                 "cs": "Připojení k internetu není k dispozici",
-                "pl": "Nie ma dostępu do internetu"
+                "pl": "Nie ma dostępu do internetu",
+                "pt": "Não há acesso à internet"
               }
             }
           ]
@@ -551,7 +570,8 @@
             "nb_NO": "Må man betale for tilgang til Internett?",
             "ca": "Has de pagar per l'accés a Internet?",
             "cs": "Musíte platit za přístup k internetu?",
-            "pl": "Czy trzeba płacić za dostęp do internetu?"
+            "pl": "Czy trzeba płacić za dostęp do internetu?",
+            "pt": "Tem que pagar pelo acesso à internet?"
           },
           "mappings": [
             {
@@ -575,7 +595,8 @@
                 "nb_NO": "Tilgang til Internett koster ekstra",
                 "ca": "Heu de pagar un extra per accedir a Internet",
                 "cs": "Přístup k internetu je možný za poplatek",
-                "pl": "Dostęp do internetu jest dodatkowo płatny"
+                "pl": "Dostęp do internetu jest dodatkowo płatny",
+                "pt": "Deve pagar um suplemento pelo acesso à internet"
               }
             },
             {
@@ -599,7 +620,8 @@
                 "nb_NO": "Man må ikke betale ekstra for tilgang til Internett",
                 "ca": "No cal pagar extra per l'accés a Internet",
                 "cs": "Přístup k internetu je možný bez poplatku",
-                "pl": "Dostęp do internetu nie jest dodatkowo płatny"
+                "pl": "Dostęp do internetu nie jest dodatkowo płatny",
+                "pt": "Não precisa pagar um suplemento pelo acesso à internet"
               }
             }
           ],
@@ -627,7 +649,8 @@
             "es": "¿Este lugar tiene baños?",
             "ca": "Aquest lloc té lavabos?",
             "cs": "Má toto místo toalety?",
-            "pl": "Czy to miejsce ma toalety?"
+            "pl": "Czy to miejsce ma toalety?",
+            "pt": "Este lugar tem casas de banho?"
           },
           "mappings": [
             {
@@ -653,7 +676,8 @@
                 "da": "Dette sted har toiletter",
                 "ca": "Aquest lloc té lavabos",
                 "cs": "Toto místo má toalety",
-                "pl": "To miejsce ma toalety"
+                "pl": "To miejsce ma toalety",
+                "pt": "Este lugar tem casa de banho"
               }
             },
             {
@@ -680,7 +704,8 @@
                 "ca": "Aquest lloc no té lavabos",
                 "cs": "Toto místo nemá toalety",
                 "eu": "Toki honek ez dauka komunik",
-                "pl": "To miejsce nie ma toalet"
+                "pl": "To miejsce nie ma toalet",
+                "pt": "Este lugar não tem casas de banho"
               }
             }
           ]
@@ -702,7 +727,8 @@
             "ca": "Lloc web oficial: <a href='{website}'>{website}</a>",
             "da": "Officiel hjemmeside: <a href='{website}'>{website}</a>",
             "cs": "Oficiální webové stránky: <a href='{website}'>{website}</a>",
-            "pl": "Official website: <a href='{website}'>{website}</a>"
+            "pl": "Official website: <a href='{website}'>{website}</a>",
+            "pt": "Site oficial: <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -725,7 +751,8 @@
             "da": "Har dette sted et websted?",
             "cs": "Má toto místo webové stránky?",
             "eu": "Toki honek webgunerik ba al du?",
-            "pl": "Czy to miejsce ma stronę internetową?"
+            "pl": "Czy to miejsce ma stronę internetową?",
+            "pt": "Este lugar tem um website?"
           },
           "id": "caravansites-website"
         },
@@ -746,7 +773,8 @@
             "nb_NO": "Tilbyr dette stedet plasser for langtidsleie?",
             "ca": "Aquest lloc ofereix llocs de lloguer a llarg termini?",
             "cs": "Nabízí zde místa k dlouhodobému pronájmu?",
-            "pl": "Czy to miejsce oferuje miejsca do wynajęcia długoterminowego?"
+            "pl": "Czy to miejsce oferuje miejsca do wynajęcia długoterminowego?",
+            "pt": "Este lugar oferece vagas para aluguel a longo prazo?"
           },
           "mappings": [
             {
@@ -839,7 +867,8 @@
             "da": "Flere oplysninger om dette sted: {description}",
             "ca": "Més detalls sobre aquest lloc: {description}",
             "cs": "Další podrobnosti o tomto místě: {description}",
-            "pl": "Więcej szczegółów o tym miejscu: {description}"
+            "pl": "Więcej szczegółów o tym miejscu: {description}",
+            "pt": "Mais pormenores sobre este lugar: {description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
@@ -889,7 +918,8 @@
             "pa_PK": "اِک کیمپ‌سائیٹ",
             "cs": "kempovací místa",
             "eu": "Kanpin bat",
-            "pl": "miejsce dla kampera"
+            "pl": "miejsce dla kampera",
+            "pt": "uma local de acampamento"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
@@ -965,7 +995,8 @@
         "da": "Sanitære afleveringspladser",
         "cs": "Sanitární skládky",
         "es": "Estaciones sanitarias",
-        "pl": "Stacje zrzutów sanitarnych"
+        "pl": "Stacje zrzutów sanitarnych",
+        "pt": "Estações de despejo sanitário"
       },
       "minzoom": 7,
       "source": {
@@ -990,7 +1021,8 @@
           "ca": "Estació d'abocament {name}",
           "es": "Vertedero {name}",
           "cs": "Odpadní stanice {name}",
-          "pl": "Stacja zrzutów {name}"
+          "pl": "Stacja zrzutów {name}",
+          "pt": "Estação de despejo {name}"
         },
         "mappings": [
           {
@@ -1012,7 +1044,8 @@
               "ca": "Estació d'abocament",
               "es": "Vertedero",
               "cs": "Odpadní stanice",
-              "pl": "Stacja zrzutowa"
+              "pl": "Stacja zrzutowa",
+              "pt": "Estação de despejo"
             }
           }
         ]
@@ -1032,7 +1065,8 @@
         "da": "Sanitære afleveringspladser",
         "cs": "Sanitární skládky",
         "es": "Vertederos Sanitarios",
-        "pl": "Stacje zrzutów sanitarnych"
+        "pl": "Stacje zrzutów sanitarnych",
+        "pt": "Estações de despejo sanitário"
       },
       "tagRenderings": [
         "images",
@@ -1054,7 +1088,8 @@
             "cs": "Účtuje si toto místo poplatek?",
             "nb_NO": "Krever dette stedet et gebyr?",
             "eu": "Leku horrek tasa bat kobratzen du?",
-            "pl": "Czy to miejsce pobiera opłatę?"
+            "pl": "Czy to miejsce pobiera opłatę?",
+            "pt": "Este lugar cobra alguma taxa?"
           },
           "mappings": [
             {
@@ -1079,7 +1114,8 @@
                 "ca": "Has de pagar per a utilitzar-ho",
                 "cs": "Použití je zpoplatněno",
                 "eu": "Erabiltzeko ordaindu behar duzu",
-                "pl": "Trzeba zapłacić, aby użyć"
+                "pl": "Trzeba zapłacić, aby użyć",
+                "pt": "Deve pagar pelo uso"
               }
             },
             {
@@ -1103,7 +1139,8 @@
                 "da": "Kan bruges gratis",
                 "ca": "Es pot utilitzar gratuïtament",
                 "cs": "Lze použít zdarma",
-                "pl": "Może być użyte za darmo"
+                "pl": "Może być użyte za darmo",
+                "pt": "Pode ser usado gratuitamente"
               }
             }
           ]
@@ -1124,7 +1161,8 @@
             "ca": "Aquest lloc costa {charge}",
             "da": "Dette sted opkræver {charge}",
             "cs": "Toto místo si účtuje {charge}",
-            "pl": "To miejsce pobiera opłatę w wysokości {charge}"
+            "pl": "To miejsce pobiera opłatę w wysokości {charge}",
+            "pt": "Este lugar cobra {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -1142,7 +1180,8 @@
             "cs": "Kolik si toto místo účtuje?",
             "nb_NO": "Hvor mye koster det å bruke dette stedet?",
             "eu": "Zenbat kobratzen dute toki honetan?",
-            "pl": "Ile kosztuje to miejsce?"
+            "pl": "Ile kosztuje to miejsce?",
+            "pt": "Quanto este lugar cobra?"
           },
           "freeform": {
             "key": "charge"
@@ -1171,7 +1210,8 @@
             "ca": "Aquest lloc té un punt d'aigua?",
             "cs": "Má toto místo vodní zdroj?",
             "es": "¿Este lugar tiene toma de agua?",
-            "pl": "Czy to miejsce ma punkt z wodą?"
+            "pl": "Czy to miejsce ma punkt z wodą?",
+            "pt": "Este lugar tem um ponto de água?"
           },
           "mappings": [
             {
@@ -1196,7 +1236,8 @@
                 "nb_NO": "Dette stedet har en vannpost",
                 "es": "Este lugar tiene una toma de agua",
                 "eu": "Leku honek ur-hartune bat du",
-                "pl": "To miejsce ma punkt poboru wody"
+                "pl": "To miejsce ma punkt poboru wody",
+                "pt": "Este lugar tem um ponto de água"
               }
             },
             {
@@ -1220,7 +1261,8 @@
                 "cs": "Toto místo nemá vodní zdroj",
                 "nb_NO": "Dette stedet har ikke en vannpost",
                 "es": "Este lugar no tiene toma de agua",
-                "pl": "To miejsce nie ma punktu poboru wody"
+                "pl": "To miejsce nie ma punktu poboru wody",
+                "pt": "Este lugar não tem um ponto de água"
               }
             }
           ]

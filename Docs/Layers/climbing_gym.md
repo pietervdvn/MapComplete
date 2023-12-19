@@ -248,6 +248,18 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
 
+### reviews 
+
+
+
+Shows the reviews module (including the possibility to leave a review)
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### shoe_rental 
 
 
@@ -555,6 +567,16 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+
+
+
+### favourite_status 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
 
 
 

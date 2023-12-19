@@ -63,7 +63,7 @@ export default class StudioServer {
             return
         }
         await fetch(this.urlFor(id, category), {
-            method: "DELETE"
+            method: "DELETE",
         })
     }
     async update(id: string, config: string, category: "layers" | "themes") {

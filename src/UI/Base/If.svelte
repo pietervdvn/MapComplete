@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store } from "../../Logic/UIEventSource";
+  import { Store } from "../../Logic/UIEventSource"
   import { onDestroy } from "svelte"
 
   /**

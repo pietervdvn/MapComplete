@@ -11,6 +11,7 @@ This theme contains the following layers:
 
 
 
+  - [walls_and_buildings](../Layers/walls_and_buildings.md)
   - [facadegardens](../Layers/facadegardens.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
@@ -19,6 +20,7 @@ This theme contains the following layers:
   - [gps_track](../Layers/gps_track.md)
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
+  - [favourite](../Layers/favourite.md)
 
 
 Available languages:

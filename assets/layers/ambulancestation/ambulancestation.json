@@ -18,7 +18,8 @@
     "nb_NO": "Kart over ambulansestasjoner",
     "he": "מפת תחנות אמבולנסים",
     "pl": "Mapa stacji pogotowia ratunkowego",
-    "pt_BR": "Mapa de estações de ambulância"
+    "pt_BR": "Mapa de estações de ambulância",
+    "pt": "Mapa de estações de ambulância"
   },
   "description": {
     "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
@@ -36,7 +37,8 @@
     "he": "תחנת אמבולנס היא אזור לאחסון רכבי אמבולנס, ציוד רפואי, ציוד מגן אישי וציוד רפואי אחר.",
     "pl": "Stacja pogotowia ratunkowego to miejsce przechowywania pojazdów ambulansów, sprzętu medycznego, środków ochrony osobistej i innych artykułów medycznych.",
     "pt_BR": "Uma estação de ambulância é uma área de armazenamento de veículos de ambulância, equipamentos médicos, equipamentos de proteção pessoal e outros suprimentos médicos.",
-    "zh_Hans": "救护站是存放救护车、医疗设备、个人防护设备和其他医疗用品的区域。"
+    "zh_Hans": "救护站是存放救护车、医疗设备、个人防护设备和其他医疗用品的区域。",
+    "pt": "Uma estação de ambulância é uma área de armazenamento de veículos de ambulância, equipamentos médicos, equipamentos de proteção pessoal e outros suprimentos médicos."
   },
   "source": {
     "osmTags": {
@@ -64,7 +66,8 @@
       "he": "תחנת אמבולנס",
       "pl": "Stacja pogotowia ratunkowego",
       "pt_BR": "Estação de Ambulância",
-      "zh_Hans": "救护站"
+      "zh_Hans": "救护站",
+      "pt": "Estação de Ambulância"
     }
   },
   "pointRendering": [
@@ -110,7 +113,8 @@
         "cs": "stanice rychlé záchranné služby",
         "ca": "una estació d'ambulàncies",
         "pl": "stacja pogotowia ratunkowego",
-        "pt_BR": "uma estação de ambulância"
+        "pt_BR": "uma estação de ambulância",
+        "pt": "uma estação de ambulância"
       },
       "description": {
         "en": "Add an ambulance station to the map",
@@ -130,7 +134,8 @@
         "ca": "Afegeix una estació d'ambulàncies al mapa",
         "he": "הוספת תחנת אמבולנס למפה",
         "pl": "Dodaj stację pogotowia ratunkowego do mapy",
-        "pt_BR": "Adicionar uma estação de ambulância ao mapa"
+        "pt_BR": "Adicionar uma estação de ambulância ao mapa",
+        "pt": "Adicionar uma estação de ambulância ao mapa"
       }
     }
   ],
@@ -157,7 +162,8 @@
         "zh_Hans": "这个救护车站叫什么名字？",
         "he": "איך קוראים לתחנת האמבולנס הזו?",
         "pl": "Jak nazywa się ta stacja pogotowia ratunkowego?",
-        "pt_BR": "Qual o nome dessa estação de ambulância?"
+        "pt_BR": "Qual o nome dessa estação de ambulância?",
+        "pt": "Qual o nome desta estação de ambulância?"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -176,7 +182,8 @@
         "zh_Hans": "这个站点名为 {name}.",
         "he": "תחנה זו נקראת {name}.",
         "pl": "Ta stacja nazywa się {name}.",
-        "pt_BR": "Esta estação é chamada de {name}."
+        "pt_BR": "Esta estação é chamada de {name}.",
+        "pt": "Esta estação é chamada de {name}."
       }
     },
     {
@@ -200,7 +207,8 @@
         "he": "מה שם הרחוב שבו נמצאת התחנה?",
         "pl": "Jak nazywa się ulica, przy której znajduje się stacja?",
         "pt_BR": "Como é o nome da rua em que a estação está localizada?",
-        "zh_Hans": "车站所在的街道名称是什么？"
+        "zh_Hans": "车站所在的街道名称是什么？",
+        "pt": "Como é o nome da rua em que a estação está localizada?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -217,7 +225,8 @@
         "ca": "Aquesta estació es troba al costat d'una via anomenada {addr:street}.",
         "he": "תחנה זו נמצאת לאורך כביש מהיר בשם {addr:street}.",
         "pt_BR": "Essa estação está em uma via chamada {addr:street}.",
-        "zh_Hans": "该站位于一条名为 {addr:street} 的公路沿线。"
+        "zh_Hans": "该站位于一条名为 {addr:street} 的公路沿线。",
+        "pt": "Esta estação está numa autoestrada chamada {addr:street}."
       }
     },
     {
@@ -237,7 +246,8 @@
         "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
         "he": "היכן ממוקמת התחנה? (למשל שם השכונה, הכפר או העיירה)",
         "pt_BR": "Onde está localizada a estação? (por exemplo, nome do bairro, vila ou cidade)",
-        "zh_Hans": "车站位于哪里？ （例如邻里、村庄或城镇的名称）"
+        "zh_Hans": "车站位于哪里？ （例如邻里、村庄或城镇的名称）",
+        "pt": "Onde está a estação localizada ? (por exemplo, nome do bairro, vila ou cidade)"
       },
       "freeform": {
         "key": "addr:place"
@@ -256,7 +266,8 @@
         "ca": "Aquesta estació es troba a {addr:place}.",
         "he": "תחנה זו נמצאת בתוך {addr:place}.",
         "pt_BR": "Essa estação está localizada em {addr:place}.",
-        "zh_Hans": "该站位于{addr:place}内。"
+        "zh_Hans": "该站位于{addr:place}内。",
+        "pt": "Esta estação está localizada em {addr:place}."
       }
     },
     {
@@ -277,7 +288,8 @@
         "zh_Hans": "哪家机构运营这个站点？",
         "he": "איזו סוכנות מפעילה את התחנה הזו?",
         "pl": "Jaka agencja obsługuje tę stację?",
-        "pt_BR": "Qual agência opera essa estação?"
+        "pt_BR": "Qual agência opera essa estação?",
+        "pt": "Qual agência opera esta estação?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -295,7 +307,8 @@
         "zh_Hans": "这个站点由 {operator}运营",
         "he": "תחנה זו מופעלת על ידי {operator}.",
         "pl": "Ta stacja jest obsługiwana przez {operator}.",
-        "pt_BR": "Essa estação é operada pelo(a) {operator}."
+        "pt_BR": "Essa estação é operada pelo(a) {operator}.",
+        "pt": "Esta estação é operada pelo(a) {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -319,7 +332,8 @@
         "he": "כיצד מסווג מפעיל התחנה?",
         "pl": "Jak klasyfikowany jest operator stacji?",
         "pt_BR": "Como essa estação é classificada?",
-        "zh_Hans": "车站运营商如何分类？"
+        "zh_Hans": "车站运营商如何分类？",
+        "pt": "Como esta estação é classificada?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -334,7 +348,8 @@
         "cs": "Operátor je {operator:type} entita.",
         "ca": "L'operadora és una entitat del tipus {operator:type}.",
         "pt_BR": "O operador é uma entidade {operator:type}.",
-        "zh_Hans": "运营者是一个 {operator:type} 实体。"
+        "zh_Hans": "运营者是一个 {operator:type} 实体。",
+        "pt": "O operador é uma entidade {operator:type}."
       },
       "freeform": {
         "key": "operator:type"
@@ -362,7 +377,8 @@
             "zh_Hans": "这个站点由政府运营。",
             "he": "התחנה מופעלת על ידי הממשלה.",
             "pl": "Stacja jest zarządzana przez rząd.",
-            "pt_BR": "A estação é operada pelo governo."
+            "pt_BR": "A estação é operada pelo governo.",
+            "pt": "A estação é operada pelo governo."
           }
         },
         {
@@ -387,7 +403,8 @@
             "he": "התחנה מופעלת על ידי ארגון קהילתי, או לא רשמי.",
             "pl": "Stacja jest obsługiwana przez organizację społeczną lub nieformalną.",
             "pt_BR": "A estação é operada por uma organização comunitária ou informal.",
-            "zh_Hans": "该站由社区或非正式组织运营。"
+            "zh_Hans": "该站由社区或非正式组织运营。",
+            "pt": "A estação é operada por uma organização comunitária ou informal."
           }
         },
         {
@@ -411,7 +428,8 @@
             "he": "התחנה מופעלת על ידי קבוצה רשמית של מתנדבים.",
             "pl": "Stacja obsługiwana jest przez formalną grupę wolontariuszy.",
             "pt_BR": "A estação é operada por um grupo formal de voluntários.",
-            "zh_Hans": "该站由一群正式的志愿者运营。"
+            "zh_Hans": "该站由一群正式的志愿者运营。",
+            "pt": "A estação é operada por um grupo formal de voluntários."
           }
         },
         {
@@ -435,7 +453,8 @@
             "he": "‍התחנה מופעלת באופן פרטי.",
             "pl": "Stacja jest własnością prywatną.",
             "pt_BR": "A estação é operada de forma privada.",
-            "zh_Hans": "该站是私人经营的。"
+            "zh_Hans": "该站是私人经营的。",
+            "pt": "A estação é operada de forma privada."
           }
         }
       ]

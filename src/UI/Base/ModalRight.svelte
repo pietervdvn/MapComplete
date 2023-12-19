@@ -1,21 +1,18 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from "svelte";
-  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import { Utils } from "../../Utils";
-  import { trapFocus } from 'trap-focus-svelte'
+  import { createEventDispatcher, onMount } from "svelte"
+  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { Utils } from "../../Utils"
+  import { trapFocus } from "trap-focus-svelte"
 
   /**
    * The slotted element will be shown on the right side
    */
-  const dispatch = createEventDispatcher<{ close }>();
-  let mainContent: HTMLElement;
-
+  const dispatch = createEventDispatcher<{ close }>()
+  let mainContent: HTMLElement
 
   onMount(() => {
-    window.setTimeout(
-      () => Utils.focusOnFocusableChild(mainContent), 250
-    );
-  });
+    window.setTimeout(() => Utils.focusOnFocusableChild(mainContent), 250)
+  })
 </script>
 
 <div

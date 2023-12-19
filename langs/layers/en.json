@@ -7261,6 +7261,12 @@
                     },
                     "7": {
                         "then": "The surface is <b>paved</b>"
+                    },
+                    "8": {
+                        "then": "The surface is tartan - a synthetic, springy surface typically seen on athletic pistes"
+                    },
+                    "9": {
+                        "then": "The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area"
                     }
                 },
                 "question": "Which is the surface of this playground?",
@@ -9049,6 +9055,9 @@
                     },
                     "5": {
                         "then": "The surface is <b>fine gravel</b>"
+                    },
+                    "6": {
+                        "then": "The surface of this track is Tartan, a synthetic, slightly springy, porous surface"
                     }
                 },
                 "question": "Which is the surface of this sport pitch?",
