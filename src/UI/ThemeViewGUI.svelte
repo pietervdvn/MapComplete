@@ -9,7 +9,6 @@
   import type { Feature } from "geojson"
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-  import Filterview from "./BigComponents/Filterview.svelte"
   import ThemeViewState from "../Models/ThemeViewState"
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
@@ -29,7 +28,6 @@
   import ModalRight from "./Base/ModalRight.svelte"
   import { Utils } from "../Utils"
   import Hotkeys from "./Base/Hotkeys"
-  import OverlayToggle from "./BigComponents/OverlayToggle.svelte"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
   import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
@@ -74,10 +72,14 @@
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
 
+
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
   Orientation.singleton.startMeasurements()
-  state.selectedElement.addCallback(selected => {
+
+
+  state.selectedElement.addCallback((selected) => {
+
     if (!selected) {
       selectedElement.setData(selected)
       return
@@ -91,15 +93,15 @@
       // ... and we force a fresh popup window 
       selectedElement.setData(selected)
     })
-
   })
 
-  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD(element => state.layout.getMatchingLayer(element.properties))
-
+  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) =>
+    state.layout.getMatchingLayer(element.properties),
+  )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
   let arrowKeysWereUsed = state.visualFeedback
-
+  let centerFeatures = state.closestFeatures.features
   let mapproperties: MapProperties = state.mapProperties
   let featureSwitches: FeatureSwitchState = state.featureSwitches
   let availableLayers = state.availableLayers
@@ -185,7 +187,7 @@
     <!-- Flex and w-full are needed for the positioning -->
     <!-- Centermessage -->
     <StateIndicator {state} />
-    <ReverseGeocoding mapProperties={mapproperties}/>
+    <ReverseGeocoding mapProperties={mapproperties} />
   </div>
 </div>
 
@@ -239,7 +241,6 @@
       <VisualFeedbackPanel {state} />
     </If>
 
-
     <div class="flex flex-col items-end">
       <!-- bottom right elements -->
       <If condition={state.floors.map((f) => f.length > 1)}>
@@ -273,7 +274,8 @@
           </MapControlButton>
           {#if $compassLoaded}
             <div class="absolute top-0 left-0 w-0 h-0 m-0.5 sm:m-1">
-              <Compass_arrow class="compass_arrow" style={`rotate: calc(${-$compass}deg + 45deg); transform-origin: 50% 50%;`} />
+              <Compass_arrow class="compass_arrow"
+                             style={`rotate: calc(${-$compass}deg + 45deg); transform-origin: 50% 50%;`} />
             </div>
           {/if}
         </div>
@@ -296,10 +298,10 @@
   <svelte:fragment slot="error" /> <!-- Add in an empty container to remove errors -->
 </LoginToggle>
 
-<If condition={state.previewedImage.map(i => i!==undefined)}>
+<If condition={state.previewedImage.map((i) => i !== undefined)}>
   <FloatOver extraClasses="p-1" on:close={() => state.previewedImage.setData(undefined)}>
     <div
-      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded-full hover:bg-white bg-white/50 transition-colors duration-200"
+      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded-full bg-white/50 transition-colors duration-200 hover:bg-white"
       on:click={() => previewedImage.setData(undefined)}
       slot="close-button"
     >
@@ -309,7 +311,7 @@
   </FloatOver>
 </If>
 
-{#if $selectedElement !== undefined && $selectedLayer !== undefined && !($selectedLayer.popupInFloatover)}
+{#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
   <!-- right modal with the selected element view -->
   <ModalRight
     on:close={() => {
@@ -342,7 +344,6 @@
   <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
     <span slot="close-button"><!-- Disable the close button --></span>
     <TabbedGroup
-
       condition1={state.featureSwitches.featureSwitchFilter}
       tab={state.guistate.themeViewTabIndex}
     >
@@ -391,7 +392,7 @@
 
 <If condition={state.guistate.filtersPanelIsOpened}>
   <FloatOver on:close={() => state.guistate.filtersPanelIsOpened.setData(false)}>
-    <FilterPanel {state}/>
+    <FilterPanel {state} />
   </FloatOver>
 </If>
 
@@ -496,7 +497,7 @@
         <Tr t={Translations.t.favouritePoi.tab} />
       </div>
 
-      <div class="flex flex-col m-2" slot="content2">
+      <div class="m-2 flex flex-col" slot="content2">
         <h3>
           <Tr t={Translations.t.favouritePoi.title} />
         </h3>

@@ -10,7 +10,8 @@
   import Dropdown from "../Base/Dropdown.svelte"
   import { twMerge } from "tailwind-merge"
   import Translations from "../i18n/Translations"
-import { ariaLabel } from "../../Utils/ariaLabel"
+  import { ariaLabel } from "../../Utils/ariaLabel"
+
   /**
    * Languages one can choose from
    * Defaults to _all_ languages known by MapComplete
@@ -37,7 +38,7 @@ import { ariaLabel } from "../../Utils/ariaLabel"
 </script>
 
 {#if availableLanguages?.length > 1}
-  <form class={twMerge("flex items-center max-w-full pr-4", clss)}>
+  <form class={twMerge("flex max-w-full items-center pr-4", clss)}>
     <label class="flex neutral-label" use:ariaLabel={Translations.t.general.pickLanguage}>
       <LanguageIcon class="h-4 w-4 mr-1 shrink-0" aria-hidden="true" />
       <Dropdown cls="max-w-full" value={assignTo}>

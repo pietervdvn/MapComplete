@@ -63,8 +63,12 @@
 </script>
 
 <div class="m-4 flex flex-col">
-  <LanguagePicker assignTo={state.language} availableLanguages={t.title.SupportedLanguages()} clss="self-end"
-                  preferredLanguages={userLanguages} />
+  <LanguagePicker
+    clss="self-end"
+    assignTo={state.language}
+    availableLanguages={t.title.SupportedLanguages()}
+    preferredLanguages={userLanguages}
+  />
 
   <div class="mt-4 flex">
     <div class="m-3 flex-none">

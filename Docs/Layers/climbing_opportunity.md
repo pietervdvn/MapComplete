@@ -41,8 +41,9 @@ Elements must match **all** of the following expressions:
 
 0. climbing=
 1. <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dwall' target='_blank'>wall</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dretaining_wall' target='_blank'>retaining_wall</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dsports_centre' target='_blank'>sports_centre</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dcliff' target='_blank'>cliff</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Drock' target='_blank'>rock</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dstone' target='_blank'>stone</a>
+2. sport!=climbing
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22barrier%22%3D%22wall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22barrier%22%3D%22retaining_wall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22leisure%22%3D%22sports_centre%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22natural%22%3D%22cliff%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22natural%22%3D%22rock%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22natural%22%3D%22stone%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22barrier%22%3D%22wall%22%5D%5B%22sport%22!%3D%22climbing%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22barrier%22%3D%22retaining_wall%22%5D%5B%22sport%22!%3D%22climbing%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22leisure%22%3D%22sports_centre%22%5D%5B%22sport%22!%3D%22climbing%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22natural%22%3D%22cliff%22%5D%5B%22sport%22!%3D%22climbing%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22natural%22%3D%22rock%22%5D%5B%22sport%22!%3D%22climbing%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B!%22climbing%22%5D%5B%22natural%22%3D%22stone%22%5D%5B%22sport%22!%3D%22climbing%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -146,6 +147,16 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+
+
+
+### favourite_status 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
 
 
 

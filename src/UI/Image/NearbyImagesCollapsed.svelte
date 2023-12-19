@@ -1,37 +1,37 @@
 <script lang="ts">
-  import { Store } from "../../Logic/UIEventSource";
-  import type { OsmTags } from "../../Models/OsmFeature";
-  import type { SpecialVisualizationState } from "../SpecialVisualization";
-  import type { Feature } from "geojson";
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-  import Translations from "../i18n/Translations";
-  import Tr from "../Base/Tr.svelte";
-  import NearbyImages from "./NearbyImages.svelte";
-  import { XCircleIcon } from "@babeard/svelte-heroicons/solid";
-  import Camera_plus from "../../assets/svg/Camera_plus.svelte";
-  import LoginToggle from "../Base/LoginToggle.svelte";
+  import { Store } from "../../Logic/UIEventSource"
+  import type { OsmTags } from "../../Models/OsmFeature"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import type { Feature } from "geojson"
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
+  import NearbyImages from "./NearbyImages.svelte"
+  import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
+  import Camera_plus from "../../assets/svg/Camera_plus.svelte"
+  import LoginToggle from "../Base/LoginToggle.svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
 
-  export let tags: Store<OsmTags>;
-  export let state: SpecialVisualizationState;
-  export let lon: number;
-  export let lat: number;
-  export let feature: Feature;
+  export let tags: Store<OsmTags>
+  export let state: SpecialVisualizationState
+  export let lon: number
+  export let lat: number
+  export let feature: Feature
 
-  export let linkable: boolean = true;
-  export let layer: LayerConfig;
-  const t = Translations.t.image.nearby;
+  export let linkable: boolean = true
+  export let layer: LayerConfig
+  const t = Translations.t.image.nearby
 
-  let expanded = false;
+  let expanded = false
 </script>
-<LoginToggle {state}>
 
+<LoginToggle {state}>
   {#if expanded}
     <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
       <button slot="corner"
               class="h-6 w-6 cursor-pointer no-image-background p-0 border-none"
               use:ariaLabel={t.close}
-              
+
               on:click={() => {
         expanded = false
         }}>

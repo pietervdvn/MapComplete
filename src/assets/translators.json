@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 319,
+      "commits": 320,
       "contributor": "kjon"
     },
     {
-      "commits": 296,
+      "commits": 298,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -298,6 +298,10 @@
     },
     {
       "commits": 3,
+      "contributor": "ssantos"
+    },
+    {
+      "commits": 3,
       "contributor": "Stéphane De Greef"
     },
     {
@@ -539,10 +543,6 @@
     {
       "commits": 1,
       "contributor": "Janina Ellinghaus"
-    },
-    {
-      "commits": 1,
-      "contributor": "ssantos"
     },
     {
       "commits": 1,

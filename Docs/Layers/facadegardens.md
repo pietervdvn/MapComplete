@@ -15,6 +15,7 @@ Facade gardens
 
 
   - This layer is shown at zoomlevel **12** and higher
+  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
 
 
 
@@ -262,6 +263,16 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+
+
+
+### favourite_status 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
 
 
 

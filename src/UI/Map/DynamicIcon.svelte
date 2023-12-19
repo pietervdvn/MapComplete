@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { IconConfig } from "../../Models/ThemeConfig/PointRenderingConfig";
-  import { Store } from "../../Logic/UIEventSource";
-  import Icon from "./Icon.svelte";
+  import { IconConfig } from "../../Models/ThemeConfig/PointRenderingConfig"
+  import { Store } from "../../Logic/UIEventSource"
+  import Icon from "./Icon.svelte"
 
   /**
    * Renders a single icon.

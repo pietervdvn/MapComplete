@@ -61,7 +61,6 @@ import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSou
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
-import { Orientation } from "../Sensors/Orientation"
 
 /**
  *
@@ -552,6 +551,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     nomod: "b",
                 },
                 Translations.t.hotkeyDocumentation.openLayersPanel,
+                () => {
+                    if (this.featureSwitches.featureSwitchBackgroundSelection.data) {
+                        this.guistate.backgroundLayerSelectionIsOpened.setData(true)
+                    }
+                }
+            )
+            Hotkeys.RegisterHotkey(
+                {
+                    nomod: "s",
+                },
+                Translations.t.hotkeyDocumentation.openFilterPanel,
                 () => {
                     if (this.featureSwitches.featureSwitchFilter.data) {
                         this.guistate.openFilterView()

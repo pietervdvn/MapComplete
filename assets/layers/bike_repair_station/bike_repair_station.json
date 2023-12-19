@@ -12,7 +12,8 @@
     "es": "Bomba y reparación de bicicletas",
     "da": "Cykelpumpe og reparation",
     "cs": "Vzduchový kompresor a opravy jízdních kol",
-    "ca": "Manxa i reparació de bicicletes"
+    "ca": "Manxa i reparació de bicicletes",
+    "pt": "Estações de bicicletas (reparo, bomba ou ambos)"
   },
   "description": {
     "en": "A layer showing bicycle pumps and bicycle repair tool stands",
@@ -23,7 +24,8 @@
     "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
     "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
     "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
-    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
+    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas",
+    "pt": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
   },
   "source": {
     "osmTags": {
@@ -46,7 +48,8 @@
       "es": "Estación de bicis (bomba y reparación)",
       "da": "Cykelstation (pumpe og reparation)",
       "ca": "Estació de bicicletes (bomba i reparació)",
-      "cs": "Cyklistická stanice (pumpa a opravna)"
+      "cs": "Cyklistická stanice (pumpa a opravna)",
+      "pt": "Estação de bicicletas (bomba e reparo)"
     },
     "mappings": [
       {
@@ -122,7 +125,8 @@
           "es": "Bomba rota",
           "da": "Defekt pumpe",
           "cs": "Rozbitý vzduchový kompresor",
-          "pl": "Zepsuta pompka"
+          "pl": "Zepsuta pompka",
+          "pt": "Bomba quebrada"
         }
       },
       {
@@ -146,7 +150,8 @@
           "da": "Cykelpumpe <i>{name}</i>",
           "cs": "Vzduchový kompresor <i>{name}</i>",
           "ca": "Bomba per a bicicletes <i>{name}</i>",
-          "pl": "Pompka do rowerów <i>{name}</i>"
+          "pl": "Pompka do rowerów <i>{name}</i>",
+          "pt": "Bomba de bicicleta <i>{name}</i>"
         }
       },
       {
@@ -169,7 +174,8 @@
           "es": "Bomba para bicicletas",
           "da": "Cykelpumpe",
           "cs": "Vzduchový kompresor",
-          "pl": "Pompka do rowerów"
+          "pl": "Pompka do rowerów",
+          "pt": "Bomba de bicicleta"
         }
       }
     ]
@@ -324,7 +330,8 @@
         "es": "una bomba de bicicletas",
         "da": "en cykelpumpe",
         "cs": "pumpa na kolo",
-        "ca": "una manxa per a bicicletes"
+        "ca": "una manxa per a bicicletes",
+        "pt": "uma bomba de bicicleta"
       },
       "tags": [
         "amenity=bicycle_repair_station",
@@ -380,7 +387,8 @@
         "da": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri.",
         "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
         "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris.",
-        "pt_BR": "Uma bomba de ar para bicicletas e ferramentas para reparar sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
+        "pt_BR": "Uma bomba de ar para bicicletas e ferramentas para reparar sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos.",
+        "pt": "Uma bomba de ar para bicicletas e ferramentas para reparar a sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
       },
       "exampleImages": [
         "./assets/layers/bike_repair_station/repair_station_example_2.jpg",

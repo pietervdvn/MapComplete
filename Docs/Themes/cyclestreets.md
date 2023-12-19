@@ -21,6 +21,7 @@ This theme contains the following layers:
   - [gps_track](../Layers/gps_track.md)
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
+  - [favourite](../Layers/favourite.md)
 
 
 Available languages:

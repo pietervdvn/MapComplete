@@ -43,7 +43,7 @@ export class ImageCarousel extends Toggle {
                             ]).SetClass("relative")
                         }
                         image
-                            .SetClass("w-full block")
+                            .SetClass("w-full block cursor-zoom-in")
                             .SetStyle("min-width: 50px; background: grey;")
                         uiElements.push(image)
                     } catch (e) {

@@ -395,7 +395,8 @@
         "de": "Betrieben von {operator}",
         "ca": "Operat per {operator}",
         "es": "Operado por {operator}",
-        "cs": "Provozuje {operator}"
+        "cs": "Provozuje {operator}",
+        "pt": "Operado por {operator}"
       },
       "id": "Operator"
     },

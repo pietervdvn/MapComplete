@@ -128,6 +128,11 @@
       "value": "fine_gravel"
     },
     {
+      "key": "surface",
+      "description": "Layer 'Sport pitches' shows surface=tartan with a fixed text, namely 'The surface of this track is Tartan, a synthetic, slightly springy, porous surface' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "tartan"
+    },
+    {
       "key": "access",
       "description": "Layer 'Sport pitches' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
       "value": "yes"

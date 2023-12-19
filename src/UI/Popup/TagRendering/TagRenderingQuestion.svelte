@@ -84,7 +84,7 @@
           }
           const matches = TagUtils.MatchesMultiAnswer(mapping.if, tgs)
           if (matches && confg.freeform) {
-            const newProps = TagUtils.changeAsProperties(mapping.if.asChange({}))
+            const newProps = TagUtils.changeAsProperties(mapping.if.asChange(tgs))
             seenFreeforms.push(newProps[confg.freeform.key])
           }
           return matches
@@ -113,7 +113,6 @@
         // Somehow, setting multi-answer freeform values is broken if this is not set
         freeformInput.setData(tgs[confg.freeform.key])
       }
-
     } else {
       freeformInput.setData(undefined)
     }
@@ -132,14 +131,13 @@
         $freeformInput,
         selectedMapping,
         checkedMappings,
-        tags.data,
+        tags.data
       )
     } catch (e) {
       console.error("Could not calculate changeSpecification:", e)
       selectedTags = undefined
     }
   }
-
 
   function onSave() {
     if (selectedTags === undefined) {
@@ -190,14 +188,13 @@
         $freeformInput,
         selectedMapping,
         checkedMappings,
-        tags.data,
+        tags.data
       )
     } catch (e) {
       console.error("Could not calculate changeSpecification:", e)
       selectedTags = undefined
     }
   }
-
 
   let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false)
   let featureSwitchIsDebugging =
@@ -210,7 +207,7 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      }),
+      })
     )
   }
 </script>
@@ -220,10 +217,10 @@
     class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
     style="max-height: 75vh"
   >
-    <div class="sticky top-0 interactive pt-1 flex justify-between" style="z-index: 11">
-        <span class="font-bold" aria-live="assertive">
-          <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
-        </span>
+    <div class="interactive sticky top-0 flex justify-between pt-1" style="z-index: 11">
+      <span class="font-bold">
+        <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
+      </span>
       <slot name="upper-right" />
     </div>
 
@@ -278,8 +275,7 @@
               bind:group={selectedMapping}
               name={"mappings-radio-" + config.id}
               value={i}
-              on:keypress={e => onInputKeypress(e)}
-
+              on:keypress={(e) => onInputKeypress(e)}
             />
           </TagRenderingMappingInput>
         {/each}
@@ -290,7 +286,7 @@
               bind:group={selectedMapping}
               name={"mappings-radio-" + config.id}
               value={config.mappings?.length}
-              on:keypress={e => onInputKeypress(e)}
+              on:keypress={(e) => onInputKeypress(e)}
             />
             <FreeformInput
               {config}
@@ -323,7 +319,7 @@
               type="checkbox"
               name={"mappings-checkbox-" + config.id + "-" + i}
               bind:checked={checkedMappings[i]}
-              on:keypress={e => onInputKeypress(e)}
+              on:keypress={(e) => onInputKeypress(e)}
             />
           </TagRenderingMappingInput>
         {/each}
@@ -333,7 +329,7 @@
               type="checkbox"
               name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
               bind:checked={checkedMappings[config.mappings.length]}
-              on:keypress={e => onInputKeypress(e)}
+              on:keypress={(e) => onInputKeypress(e)}
             />
             <FreeformInput
               {config}

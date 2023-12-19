@@ -150,7 +150,8 @@
         "hu": "Működési állapota: <i>{operational_status}</i>",
         "es": "El estado operacional es <i>{operational_status}</i>",
         "ca": "L'estat operatiu és <i>{operational_status}</i>",
-        "cs": "Provozní stav je <i>{operational_status}</i>"
+        "cs": "Provozní stav je <i>{operational_status}</i>",
+        "pt": "O estado operacional é: <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"

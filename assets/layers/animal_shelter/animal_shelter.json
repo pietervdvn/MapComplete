@@ -4,7 +4,8 @@
     "en": "Animal shelters",
     "de": "Tierheime",
     "es": "Centros de acogida de animales",
-    "zh_Hans": "动物收容所"
+    "zh_Hans": "动物收容所",
+    "pt": "Abrigo para animais"
   },
   "description": {
     "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
@@ -20,7 +21,8 @@
       "en": "Animal shelter",
       "de": "Tierheim",
       "es": "Centro de acogida de animales",
-      "zh_Hans": "动物收容所"
+      "zh_Hans": "动物收容所",
+      "pt": "Abrigo para animais"
     },
     "mappings": [
       {
@@ -64,7 +66,8 @@
         "en": "an animal shelter",
         "de": "ein Tierheim",
         "es": "una protectora de animales",
-        "zh_Hans": "动物收容所"
+        "zh_Hans": "动物收容所",
+        "pt": "um abrigo para animais"
       },
       "tags": [
         "amenity=animal_shelter"

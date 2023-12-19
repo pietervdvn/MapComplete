@@ -74,8 +74,8 @@
 
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
   function deleteLayer() {
-      state.delete()
-      backToStudio()
+    state.delete()
+    backToStudio()
   }
 </script>
 
@@ -119,10 +119,9 @@
         <div class="flex flex-col" slot="content0">
           <Region {state} configs={perRegion["Basic"]} />
           <div class="mt-12">
-            
-          <button on:click={() => deleteLayer()} class="small" >
-            <TrashIcon class="h-6 w-6"/> Delete this layer
-          </button>
+            <button on:click={() => deleteLayer()} class="small">
+              <TrashIcon class="h-6 w-6" /> Delete this layer
+            </button>
           </div>
         </div>
 

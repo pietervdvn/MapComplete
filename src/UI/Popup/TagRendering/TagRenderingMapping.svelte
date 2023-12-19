@@ -6,7 +6,7 @@
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twJoin } from "tailwind-merge"
-  import Icon from "../../Map/Icon.svelte";
+  import Icon from "../../Map/Icon.svelte"
 
   export let selectedElement: Feature
   export let tags: UIEventSource<Record<string, string>>

@@ -48,7 +48,8 @@
     "fil": "Sa mapang ito, maaring makahapan o mag-mapa ng mga defibrillators",
     "cs": "Na této mapě lze najít a označit defibrilátory v okolí",
     "zgh": "ⴳ ⵜⴽⴰⵕⴹⴰ ⴰⴷ, ⵉⵣⵎⵔⵏ ⵓⴼⴳⴰⵏ ⴰⴷ ⵢⴰⴼ ⵓⵎⵍⴰⵏ ⵅⴼ ⵡⴰⵍⵍⴰⵍⵏ ⵏ ⵜⵓⴽⴽⵙⴰ ⵏ ⵜⵔⴳⴰⴳⴰⵢⵜ",
-    "eu": "Mapa honetan, hurbileko desfibriladoreak aurkitu eta marka daitezke"
+    "eu": "Mapa honetan, hurbileko desfibriladoreak aurkitu eta marka daitezke",
+    "pt": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos"
   },
   "icon": "./assets/themes/aed/aed.svg",
   "startZoom": 12,

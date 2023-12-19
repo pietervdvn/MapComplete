@@ -19,7 +19,8 @@
     "pa_PK": "رُکھ",
     "cs": "Stromy",
     "pt_BR": "Árvores",
-    "eu": "Zuhaitzak"
+    "eu": "Zuhaitzak",
+    "pt": "Árvores"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -37,7 +38,8 @@
     "da": "Kortlæg alle træerne!",
     "cs": "Zmapujte všechny stromy!",
     "pt_BR": "Mapeie todas as árvores!",
-    "pl": "Zmapuj wszystkie drzewa!"
+    "pl": "Zmapuj wszystkie drzewa!",
+    "pt": "Mapeie todas as árvores!"
   },
   "shortDescription": {
     "en": "Map all the trees",

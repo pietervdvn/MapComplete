@@ -80,6 +80,16 @@
       "value": "paved"
     },
     {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=tartan with a fixed text, namely 'The surface is tartan - a synthetic, springy surface typically seen on athletic pistes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "tartan"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=rubber with a fixed text, namely 'The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "rubber"
+    },
+    {
       "key": "lit",
       "description": "Layer 'Playgrounds' shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
@@ -175,6 +185,15 @@
       "key": "opening_hours",
       "description": "Layer 'Playgrounds' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "24/7"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Playgrounds' shows and asks freeform values for key 'check_date' (in the mapcomplete.org theme 'Playgrounds')"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Playgrounds' shows check_date= with a fixed text, namely 'This object was last checked today' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key check_date.",
+      "value": ""
     },
     {
       "key": "amenity",

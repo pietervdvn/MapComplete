@@ -1,23 +1,25 @@
 <script lang="ts">
-  import type { Feature } from "geojson";
-  import { Store, UIEventSource } from "../../Logic/UIEventSource";
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-  import type { SpecialVisualizationState } from "../SpecialVisualization";
-  import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte";
-  import Translations from "../i18n/Translations";
-  import Tr from "../Base/Tr.svelte";
-  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import type { Feature } from "geojson"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
+  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { ariaLabel } from "../../Utils/ariaLabel"
 
-  export let state: SpecialVisualizationState;
-  export let layer: LayerConfig;
-  export let selectedElement: Feature;
-  let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(selectedElement.properties.id);
+  export let state: SpecialVisualizationState
+  export let layer: LayerConfig
+  export let selectedElement: Feature
+  let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
+    selectedElement.properties.id,
+  )
   $: {
-    tags = state.featureProperties.getStore(selectedElement.properties.id);
+    tags = state.featureProperties.getStore(selectedElement.properties.id)
   }
 
-  let metatags: Store<Record<string, string>> = state.userRelatedState.preferencesAsTags;
+  let metatags: Store<Record<string, string>> = state.userRelatedState.preferencesAsTags
 </script>
 
 {#if $tags._deleted === "yes"}
@@ -51,7 +53,7 @@
       </div>
     </div>
 
-    <button on:click={() => state.selectedElement.setData(undefined)} 
+    <button on:click={() => state.selectedElement.setData(undefined)}
             use:ariaLabel={Translations.t.general.backToMap}
             class="border-none p-0">
       <XCircleIcon aria-hidden={true} class="h-8 w-8" />

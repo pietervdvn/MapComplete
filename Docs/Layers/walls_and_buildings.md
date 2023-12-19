@@ -26,6 +26,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - This layer is needed as dependency for layer [defibrillator](#defibrillator)
   - This layer is needed as dependency for layer [entrance](#entrance)
   - This layer is needed as dependency for layer [surveillance_camera](#surveillance_camera)
+  - This layer is needed as dependency for layer [facadegardens](#facadegardens)
 
 
 
@@ -40,6 +41,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [aed](https://mapcomplete.org/aed)
   - [artwork](https://mapcomplete.org/artwork)
   - [clock](https://mapcomplete.org/clock)
+  - [facadegardens](https://mapcomplete.org/facadegardens)
   - [indoors](https://mapcomplete.org/indoors)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
@@ -160,6 +162,16 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+
+
+
+### favourite_status 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
 
 
 

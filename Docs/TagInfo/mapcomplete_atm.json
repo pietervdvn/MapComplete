@@ -48,6 +48,11 @@
       "description": "Layer 'ATMs' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'ATM Machines')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'ATMs' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
+      "value": "24/7"
+    },
+    {
       "key": "cash_out",
       "description": "Layer 'ATMs' shows cash_out= with a fixed text, namely 'You can withdraw cash from this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_out.",
       "value": ""

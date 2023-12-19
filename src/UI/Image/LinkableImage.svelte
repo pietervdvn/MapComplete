@@ -7,7 +7,6 @@
   import LinkImageAction from "../../Logic/Osm/Actions/LinkImageAction"
   import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
   import { Tag } from "../../Logic/Tags/Tag"
-  import { GeoOperations } from "../../Logic/GeoOperations"
   import type { Feature } from "geojson"
   import Translations from "../i18n/Translations"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
@@ -30,13 +29,11 @@
   const c = [lon, lat]
   const providedImage: ProvidedImage = {
     url: image.thumbUrl ?? image.pictureUrl,
+    key: undefined,
     provider: AllImageProviders.byName(image.provider),
     date: new Date(image.date),
     id: Object.values(image.osmTags)[0],
   }
-  let distance = Math.round(
-    GeoOperations.distanceBetween([image.coordinates.lng, image.coordinates.lat], c),
-  )
 
   $: {
     const currentTags = tags.data
@@ -64,8 +61,8 @@
 </script>
 
 <div class="flex w-fit shrink-0 flex-col">
-  <div on:click={() => state.previewedImage.setData(providedImage)}>
-    <AttributedImage image={providedImage} imgClass="max-h-64 w-auto" />
+  <div class="cursor-zoom-in" on:click={() => state.previewedImage.setData(providedImage)}>
+    <AttributedImage image={providedImage} imgClass="max-h-64 w-auto" previewedImage="{state.previewedImage}"/>
   </div>
   {#if linkable}
     <label>

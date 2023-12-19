@@ -15,7 +15,7 @@
   export let state: SpecialVisualizationState
   export let tags: Store<OsmTags> = undefined
   export let featureId = tags?.data?.id
-  if(featureId === undefined){
+  if (featureId === undefined) {
     throw "No tags or featureID given"
   }
   export let showThankYou: boolean = true

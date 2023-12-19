@@ -2107,6 +2107,16 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
+### favourite_status 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### all-tags 
 
 

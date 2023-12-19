@@ -9,6 +9,7 @@ export interface ProvidedImage {
     key: string
     provider: ImageProvider
     id: string
+    date?: Date
 }
 
 export default abstract class ImageProvider {

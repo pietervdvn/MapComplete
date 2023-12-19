@@ -7,9 +7,9 @@
   /**
    * Renders a 'marker', which consists of multiple 'icons'
    */
-  export let marker: IconConfig[] = config?.marker;
+  export let marker: IconConfig[] = config?.marker
   export let tags: Store<Record<string, string>>
-  export let rotation: TagRenderingConfig = undefined;
+  export let rotation: TagRenderingConfig = undefined
   let _rotation = rotation
     ? tags.map((tags) => rotation.GetRenderValue(tags).Subs(tags).txt)
     : new ImmutableStore(0)

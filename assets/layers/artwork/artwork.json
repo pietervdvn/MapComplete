@@ -35,7 +35,7 @@
     "ja": "多様な作品",
     "zh_Hant": "顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品的地圖",
     "id": "Peta terbuka patung, grafiti, dan karya seni lainnya di seluruh dunia",
-    "pt": "Diversas obras de arte",
+    "pt": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
     "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
     "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
     "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
@@ -178,7 +178,8 @@
         "fr": "une œuvre sur un mur",
         "pl": "Dzieło sztuki na ścianie",
         "pt_BR": "uma obra de arte em uma parede",
-        "zh_Hans": "一个墙上的艺术品"
+        "zh_Hans": "一个墙上的艺术品",
+        "pt": "uma obra de arte numa parede"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -790,7 +791,8 @@
         "he": "האם היצירה הזו משמשת כספסל?",
         "pl": "Czy to dzieło sztuki pełni funkcję ławki?",
         "pt_BR": "Essa obra de arte serve como banco?",
-        "es": "¿Sirve esta obra de arte como banco?"
+        "es": "¿Sirve esta obra de arte como banco?",
+        "pt": "Esta obra de arte serve como banco?"
       },
       "mappings": [
         {
@@ -805,7 +807,8 @@
             "he": "יצירה זו משמשת גם כספסל",
             "pl": "To dzieło sztuki pełni również funkcję ławki",
             "pt_BR": "Essa obra de arte também serve como banco",
-            "es": "Esta obra de arte también sirve de banco"
+            "es": "Esta obra de arte también sirve de banco",
+            "pt": "Esta obra de arte também serve como banco"
           }
         },
         {
@@ -821,7 +824,8 @@
             "he": "יצירה זו אינה משמשת כספסל",
             "pl": "To dzieło sztuki nie pełni funkcji ławki",
             "pt_BR": "Essa obra de arte não serve como banco",
-            "es": "Esta obra no sirve de banco"
+            "es": "Esta obra no sirve de banco",
+            "pt": "Esta obra de arte não serve como banco"
           }
         },
         {
@@ -837,7 +841,8 @@
             "he": "יצירה זו אינה משמשת כספסל",
             "pl": "To dzieło sztuki nie pełni funkcji ławki",
             "pt_BR": "Essa obra de arte não serve como banco",
-            "es": "Esta obra no sirve de banco"
+            "es": "Esta obra no sirve de banco",
+            "pt": "Esta obra de arte não serve como banco"
           },
           "hideInAnswer": true
         }

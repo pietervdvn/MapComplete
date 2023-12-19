@@ -463,6 +463,13 @@
             "nl": "De ondergrond bestaat uit <b>grind</b>",
             "de": "Die Oberfläche ist <b>feiner Kies</b>"
           }
+        },
+        {
+          "if": "surface=tartan",
+          "then": {
+            "en": "The surface of this track is Tartan, a synthetic, slightly springy, porous surface",
+            "nl": "De ondergrond is Tartan, een synthetisch, licht verende en poreuze ondergrond"
+          }
         }
       ],
       "id": "sport_pitch-surface"
@@ -727,7 +734,8 @@
             "nl": "Publiek toegankelijk",
             "de": "Öffentlich zugänglich",
             "ca": "Accés lliure",
-            "cs": "Veřejně přístupné"
+            "cs": "Veřejně přístupné",
+            "pt": "Acessível ao público"
           },
           "osmTags": {
             "or": [

@@ -62,6 +62,7 @@ function genImages(dryrun = false) {
         "brick_wall_round",
         "bug",
         "back",
+        "person",
     ].map((s) => s.toLowerCase())
     const dir = fs.readdirSync("./assets/svg")
 

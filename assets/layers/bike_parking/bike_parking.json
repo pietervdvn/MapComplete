@@ -28,7 +28,8 @@
     "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
     "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
     "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
-    "pt_BR": "Uma camada mostrado onde você pode estacionar sua bicicleta"
+    "pt_BR": "Uma camada mostrado onde você pode estacionar sua bicicleta",
+    "pt": "Uma camada que mostra onde pode estacionar a sua bicicleta"
   },
   "source": {
     "osmTags": {
@@ -209,7 +210,8 @@
             "ca": "Suport de manillar",
             "da": "Styrholder",
             "cs": "Držák na řídítka",
-            "pt_BR": "Suporte para guidão"
+            "pt_BR": "Suporte para guidão",
+            "pt": "Suporte para guidão"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/handlebar_holder.svg",
@@ -231,7 +233,8 @@
             "da": "Stativ",
             "cs": "Stojan",
             "eu": "Rack-a",
-            "pt_BR": "Suporte"
+            "pt_BR": "Suporte",
+            "pt": "Suporte"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/rack.svg",
@@ -253,7 +256,8 @@
             "ca": "De dos nivells",
             "da": "To-lags",
             "cs": "Dvouúrovňové",
-            "pt_BR": "De dois níveis"
+            "pt_BR": "De dois níveis",
+            "pt": "De dois níveis"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/two_tier.svg",
@@ -278,7 +282,8 @@
             "pa_PK": "شیڈ",
             "ca": "cobert",
             "eu": "Etxola",
-            "pt_BR": "Cabana"
+            "pt_BR": "Cabana",
+            "pt": "Cabana"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/shed.svg",
@@ -300,7 +305,8 @@
             "cs": "Sloupek",
             "pa_PK": "بولارڈ",
             "eu": "Bolardo",
-            "pt_BR": "Pilar"
+            "pt_BR": "Pilar",
+            "pt": "Pilar"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/bollard.svg",
@@ -320,7 +326,8 @@
             "da": "Et område på gulvet, der er markeret til cykelparkering",
             "cs": "Plocha na zemi označená pro parkování jízdních kol",
             "ca": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes",
-            "pt_BR": "Uma área no chão que é marcada para o estacionamento de bicicletas"
+            "pt_BR": "Uma área no chão que é marcada para o estacionamento de bicicletas",
+            "pt": "Uma área no chão que é marcada para o estacionamento de bicicletas"
           }
         }
       ],
@@ -502,7 +509,8 @@
         "da": "Hvor mange cykler er der plads til på denne cykelparkering (inklusive mulige ladcykler)?",
         "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
         "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
-        "pt_BR": "Quantas bicicletas cabem nesse estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?"
+        "pt_BR": "Quantas bicicletas cabem nesse estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
+        "pt": "Quantas bicicletas cabem neste estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?"
       },
       "render": {
         "en": "Place for {capacity} bikes",

@@ -34,7 +34,8 @@
     "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
     "ca": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
     "he": "ספסל הוא משטח עץ, מתכת, אבן, ... בו אדם יכול לשבת. השכבות הללו מדמות אותן ושואלות עליהן מספר שאלות.",
-    "pt_BR": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Essa camada os visualiza e faz algumas perguntas sobre eles."
+    "pt_BR": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Essa camada os visualiza e faz algumas perguntas sobre eles.",
+    "pt": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Esta camada os visualiza e faz algumas perguntas sobre eles."
   },
   "source": {
     "osmTags": "amenity=bench"
@@ -143,7 +144,8 @@
             "he": "ספסל זה דו צדדי וחולק את משענת הגב",
             "fr": "Ce banc a deux côtés avec un dossier partagé",
             "pl": "Ta ławka jest dwustronna ze wspólnym oparciem",
-            "pt_BR": "Esse banco é de dois lados e compartilha o encosto"
+            "pt_BR": "Esse banco é de dois lados e compartilha o encosto",
+            "pt": "Esse banco é de dois lados e partilha o encosto"
           },
           "icon": {
             "path": "./assets/layers/bench/two_sided.svg",
@@ -937,7 +939,8 @@
             "es": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción",
             "ca": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció",
             "cs": "Tato lavička <span class='subtle'>(pravděpodobně)</span> nemá nápis",
-            "pt_BR": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição"
+            "pt_BR": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição",
+            "pt": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição"
           },
           "hideInAnswer": true
         }
@@ -966,7 +969,8 @@
         "fr": "Est-ce que ce banc inclut un élément artistique ?",
         "pl": "Czy ta ławka ma wbudowane dzieło sztuki?",
         "pt_BR": "Esse banco tem um elemento artístico?",
-        "es": "¿Tiene este banco un elemento artístico?"
+        "es": "¿Tiene este banco un elemento artístico?",
+        "pt": "Este banco tem um elemento artístico?"
       },
       "mappings": [
         {
@@ -984,7 +988,8 @@
             "he": "לספסל זה יצירת אמנות משולבת",
             "pl": "Ta ławka ma wbudowane dzieło sztuki",
             "pt_BR": "Esse banco tem uma obra de arte integrada",
-            "es": "Este banco tiene una obra de arte integrada"
+            "es": "Este banco tiene una obra de arte integrada",
+            "pt": "Este banco tem uma obra de arte integrada"
           }
         },
         {
@@ -999,7 +1004,8 @@
             "cs": "Tato lavička nemá integrované umělecké dílo",
             "he": "לספסל זה אין יצירת אמנות משולבת",
             "pl": "Ta ławka nie ma wbudowanego dzieła sztuki",
-            "pt_BR": "Esse banco não tem uma obra de arte integrada"
+            "pt_BR": "Esse banco não tem uma obra de arte integrada",
+            "pt": "Este banco não tem uma obra de arte integrada"
           },
           "addExtraTags": [
             "tourism="
@@ -1014,7 +1020,8 @@
             "de": "Die Bank hat <span class=\"subtle\">vermutlich</span> kein integriertes Kunstwerk",
             "cs": "Tato lavička <span class=\"subtle\">pravděpodobně</span> nemá integrované umělecké dílo",
             "pt_BR": "Esse banco <span class=\"subtle\">provavelmente</span> não tem uma obra de arte integrada",
-            "es": "Este banco <span class=\"subtle\">probablemente</span> no tiene una obra de arte integrada"
+            "es": "Este banco <span class=\"subtle\">probablemente</span> no tiene una obra de arte integrada",
+            "pt": "Este banco <span class=\"subtle\">provavelmente</span> não tem uma obra de arte integrada"
           },
           "hideInAnswer": true
         }
@@ -1028,7 +1035,8 @@
         "fr": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail cratif",
         "pl": "Np. jest na niej coś namalowane, ma rzeźbę lub inną nietrywialną pracę",
         "pt_BR": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial",
-        "es": "Por ejemplo, si lleva integrado un cuadro, una estatua u otra obra creativa no trivial"
+        "es": "Por ejemplo, si lleva integrado un cuadro, una estatua u otra obra creativa no trivial",
+        "pt": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial"
       }
     },
     {
@@ -1128,7 +1136,8 @@
             "cs": "je památník",
             "he": "הוא אנדרטה",
             "pt_BR": "é um memorial",
-            "es": "es un monumento conmemorativo"
+            "es": "es un monumento conmemorativo",
+            "pt": "é um memorial"
           }
         }
       ]
@@ -1147,7 +1156,8 @@
             "he": "עם ובלי משענת גב",
             "pl": "Z oraz bez oparcia",
             "pt_BR": "Com e sem encosto",
-            "es": "Con y sin respaldo"
+            "es": "Con y sin respaldo",
+            "pt": "Com e sem encosto"
           }
         },
         {
@@ -1162,7 +1172,8 @@
             "he": "בעל משענת גב",
             "pl": "Ma oparcie",
             "pt_BR": "Tem um encosto",
-            "es": "Tiene respaldo"
+            "es": "Tiene respaldo",
+            "pt": "Tem um encosto"
           }
         },
         {
@@ -1177,7 +1188,8 @@
             "he": "אין משענת גב",
             "pl": "Nie ma oparcia",
             "pt_BR": "Não tem um encosto",
-            "es": "Sin respaldo"
+            "es": "Sin respaldo",
+            "pt": "Não tem um encosto"
           }
         }
       ]

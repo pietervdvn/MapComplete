@@ -12,7 +12,8 @@
     "eu": "kutxazainak",
     "pl": "Bankomaty",
     "pt_BR": "Caixas eletrônicos",
-    "es": "Cajeros automáticos"
+    "es": "Cajeros automáticos",
+    "pt": "Multibancos"
   },
   "description": {
     "en": "ATMs to withdraw money",
@@ -25,7 +26,8 @@
     "es": "Cajeros automáticos para retirar dinero",
     "he": "כספומטים למשיכת כסף",
     "pl": "Bankomaty do wypłacania pieniędzy",
-    "pt_BR": "Caixas eletrônicos para sacar dinheiro"
+    "pt_BR": "Caixas eletrônicos para sacar dinheiro",
+    "pt": "Multibancos para levantar dinheiro"
   },
   "source": {
     "osmTags": "amenity=atm"
@@ -44,7 +46,8 @@
       "eu": "Kutxazaina",
       "pl": "Bankomat",
       "pt_BR": "Caixa eletrônico",
-      "es": "Cajero automático"
+      "es": "Cajero automático",
+      "pt": "Multibanco"
     },
     "mappings": [
       {
@@ -60,7 +63,8 @@
           "he": "כספומט {brand}",
           "pl": "Bankomat {brand}",
           "pt_BR": "Caixa eletrônico {brand}",
-          "es": "Cajero automático de {brand}"
+          "es": "Cajero automático de {brand}",
+          "pt": "Multibanco {brand}"
         }
       }
     ]
@@ -98,7 +102,8 @@
         "cs": "bankomat",
         "pl": "bankomat",
         "pt_BR": "um caixa eletrônico",
-        "es": "Un cajero automático"
+        "es": "Un cajero automático",
+        "pt": "um multibanco"
       }
     }
   ],
@@ -117,7 +122,8 @@
         "he": "שמו של כספומט זה הוא {name}",
         "pl": "Nazwa tego bankomatu to {name}",
         "pt_BR": "O nome desse caixa eletrônico é {name}",
-        "es": "El nombre del banco de este cajero automático es {name}"
+        "es": "El nombre del banco de este cajero automático es {name}",
+        "pt": "O nome deste multibanco é {name}"
       },
       "condition": "name~*"
     },
@@ -134,7 +140,8 @@
         "he": "איזה מותג הכספומט הזה?",
         "pl": "Jakiej marki jest ten bankomat?",
         "pt_BR": "De qual marca é esse caixa eletrônico?",
-        "es": "¿De qué banco es este cajero?"
+        "es": "¿De qué banco es este cajero?",
+        "pt": "De qual marca é este multibanco?"
       },
       "freeform": {
         "key": "brand",
@@ -150,7 +157,8 @@
           "he": "שם מותג",
           "pl": "Nazwa handlowa",
           "pt_BR": "Nome da marca",
-          "es": "Marca"
+          "es": "Marca",
+          "pt": "Nome da marca"
         }
       },
       "render": {
@@ -163,7 +171,8 @@
         "cs": "Značka tohoto bankomatu je {brand}",
         "he": "המותג של כספומט זה הוא {brand}",
         "pt_BR": "A marca desse caixa eletrônico é {brand}",
-        "es": "El banco de este cajero automático es {brand}"
+        "es": "El banco de este cajero automático es {brand}",
+        "pt": "A marca deste multibanco é {brand}"
       }
     },
     {
@@ -180,7 +189,8 @@
         "he": "איזו חברה מפעילה את הכספומט הזה?",
         "pl": "Jaka firma obsługuje ten bankomat?",
         "pt_BR": "Qual companhia opera esse caixa eletrônico?",
-        "es": "¿De qué banco es este cajero automático?"
+        "es": "¿De qué banco es este cajero automático?",
+        "pt": "Qual companhia opera este multibanco?"
       },
       "freeform": {
         "key": "operator",
@@ -195,7 +205,8 @@
           "he": "מפעיל",
           "eu": "Operadorea",
           "pt_BR": "Operador",
-          "es": "Operador"
+          "es": "Operador",
+          "pt": "Operador"
         }
       },
       "render": {
@@ -209,7 +220,8 @@
         "he": "הכספומט מופעל על ידי {operator}",
         "pl": "Ten bankomat jest obsługiwany przez {operator}",
         "pt_BR": "O caixa eletrônico é operado por {operator}",
-        "es": "El cajero es de {operator}"
+        "es": "El cajero es de {operator}",
+        "pt": "O multibanco é operado por {operator}"
       }
     },
     "opening_hours_24_7",
@@ -224,7 +236,8 @@
         "cs": "Lze z tohoto bankomatu vybírat hotovost?",
         "he": "האם אתה יכול למשוך מזומן מהכספומט הזה?",
         "pt_BR": "Você pode sacar dinheiro nesse caixa eletrônico?",
-        "es": "¿Se puede sacar dinero de este cajero?"
+        "es": "¿Se puede sacar dinero de este cajero?",
+        "pt": "Pode levantar dinheiro neste multibanco?"
       },
       "mappings": [
         {
@@ -239,7 +252,8 @@
             "he": "אתה יכול למשוך מזומן מהכספומט הזה",
             "pl": "Z tego bankomatu można wypłacić pieniądze",
             "pt_BR": "Você pode sacar dinheiro nesse caixa eletrônico",
-            "es": "Puede retirar dinero de este cajero automático"
+            "es": "Puede retirar dinero de este cajero automático",
+            "pt": "Pode levantar dinheiro neste multibanco"
           },
           "hideInAnswer": true
         },
@@ -253,7 +267,8 @@
             "cs": "Z tohoto bankomatu můžete vybírat hotovost",
             "he": "אתה יכול למשוך מזומן מהכספומט הזה",
             "pt_BR": "Você pode sacar dinheiro nesse caixa eletrônico",
-            "es": "Puede retirar dinero de este cajero automático"
+            "es": "Puede retirar dinero de este cajero automático",
+            "pt": "Pode levantar dinheiro neste multibanco"
           }
         },
         {
@@ -266,7 +281,8 @@
             "cs": "Z tohoto bankomatu nelze vybírat hotovost",
             "he": "לא ניתן למשוך מזומן מכספומט זה",
             "pt_BR": "Você não pode sacar dinheiro nesse caixa eletrônico",
-            "es": "No puede retirar dinero de este cajero automático"
+            "es": "No puede retirar dinero de este cajero automático",
+            "pt": "Não pode levantar dinheiro neste multibanco"
           }
         }
       ]
@@ -283,7 +299,8 @@
         "he": "האם אתה יכול להפקיד מזומן בכספומט הזה?",
         "pl": "Czy ten bankomat pozwala wpłacać pieniądze?",
         "pt_BR": "Você pode depositar dinheiro nesse caixa eletrônico?",
-        "es": "¿Se puede ingresar dinero en efectivo en este cajero?"
+        "es": "¿Se puede ingresar dinero en efectivo en este cajero?",
+        "pt": "Pode depositar dinheiro neste multibanco?"
       },
       "mappings": [
         {
@@ -299,7 +316,8 @@
             "he": "כנראה שלא תוכל להפקיד מזומן בכספומט הזה",
             "pl": "Prawdopodobnie ten bankomat nie pozwala wpłacać pieniędzy",
             "pt_BR": "Você provavelmente não pode depositar dinheiro nesse caixa eletrônico",
-            "es": "Es probable que no pueda ingresar dinero en efectivo en este cajero automático"
+            "es": "Es probable que no pueda ingresar dinero en efectivo en este cajero automático",
+            "pt": "Provavelmente não pode depositar dinheiro neste multibanco"
           },
           "hideInAnswer": true
         },
@@ -316,7 +334,8 @@
             "he": "אתה יכול להפקיד מזומן לכספומט זה",
             "pl": "Ten bankomat pozwala wpłacać pieniądze",
             "pt_BR": "Você pode depositar dinheiro nesse caixa eletrônico",
-            "es": "Puede ingresar dinero en efectivo en este cajero automático"
+            "es": "Puede ingresar dinero en efectivo en este cajero automático",
+            "pt": "Pode depositar dinheiro neste mutibanco"
           }
         },
         {
@@ -332,7 +351,8 @@
             "he": "לא ניתן להפקיד מזומן לכספומט זה",
             "pl": "Ten bankomat nie pozwala wpłacać pieniędzy",
             "pt_BR": "Você não pode depositar dinheiro nesse caixa eletrônico",
-            "es": "No se puede ingresar dinero en efectivo en este cajero automático"
+            "es": "No se puede ingresar dinero en efectivo en este cajero automático",
+            "pt": "Não pode depositar dinheiro neste multibanco"
           }
         }
       ]
@@ -365,7 +385,8 @@
         "ca": "Quins bitllets pots retirar aquí?",
         "pl": "Jakie banknoty można tutaj wypłacić?",
         "pt_BR": "Quais notas você pode sacar aqui?",
-        "es": "¿Qué billetes puede retirar aquí?"
+        "es": "¿Qué billetes puede retirar aquí?",
+        "pt": "Quais notas pode levantar aqui?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -380,7 +401,8 @@
             "ca": "es poden retirar bitllets de 5 euros",
             "fr": "On peut retirer des billets de 5 euros",
             "pt_BR": "Notas de 5 euros podem ser sacadas",
-            "es": "Se pueden retirar billetes de 5 euros"
+            "es": "Se pueden retirar billetes de 5 euros",
+            "pt": "Notas de 5 euros podem ser levantadas"
           }
         },
         {
@@ -394,7 +416,8 @@
             "ca": "es poden retirar bitllets de 10 euros",
             "fr": "On peut retirer des billets de 10 euros",
             "pt_BR": "Notas de 10 euros podem ser sacadas",
-            "es": "Se pueden retirar billetes de 10 euros"
+            "es": "Se pueden retirar billetes de 10 euros",
+            "pt": "Notas de 10 euros podem ser levantadas"
           }
         },
         {
@@ -408,7 +431,8 @@
             "ca": "es poden retirar bitllets de 20 euros",
             "fr": "On peut retirer des billets de 20 euros",
             "pt_BR": "Notas de 20 euros podem ser sacadas",
-            "es": "Se pueden retirar billetes de 20 euros"
+            "es": "Se pueden retirar billetes de 20 euros",
+            "pt": "Notas de 20 euros podem ser levantadas"
           }
         },
         {
@@ -422,7 +446,8 @@
             "ca": "es poden retirar bitllets de 50 euros",
             "fr": "On peut retirer des billets de 50 euros",
             "pt_BR": "Notas de 50 euros podem ser sacadas",
-            "es": "Se pueden retirar billetes de 50 euros"
+            "es": "Se pueden retirar billetes de 50 euros",
+            "pt": "Notas de 50 euros podem ser levantadas"
           }
         },
         {
@@ -436,7 +461,8 @@
             "ca": "es poden retirar bitllets de 100 euros",
             "fr": "On peut retirer des billets de 100 euros",
             "pt_BR": "Notas de 100 euros podem ser sacadas",
-            "es": "Se pueden retirar billetes de 100 euros"
+            "es": "Se pueden retirar billetes de 100 euros",
+            "pt": "Notas de 100 euros podem ser levantadas"
           }
         },
         {
@@ -450,7 +476,8 @@
             "ca": "es poden retirar bitllets de 200 euros",
             "fr": "On peut retirer des billets de 200 euros",
             "pt_BR": "Notas de 200 euros podem ser sacadas",
-            "es": "Se pueden retirar billetes de 200 euros"
+            "es": "Se pueden retirar billetes de 200 euros",
+            "pt": "Notas de 200 euros podem ser levantadas"
           }
         },
         {
@@ -464,7 +491,8 @@
             "ca": "es poden retirar bitllets de 500 euros",
             "fr": "On peut retirer des billets de 500 euros",
             "pt_BR": "Notas de 500 euros podem ser sacadas",
-            "es": "Se pueden retirar billetes de 500 euros"
+            "es": "Se pueden retirar billetes de 500 euros",
+            "pt": "Notas de 500 euros podem ser levantadas"
           }
         }
       ]
@@ -479,7 +507,8 @@
         "cs": "Má tento bankomat hlasový výstup pro zrakově postižené uživatele?",
         "he": "האם לכספומט הזה יש פלט דיבור למשתמשים לקויי ראייה?",
         "pt_BR": "Esse caixa eletrônico tem saída de fala para usuários com deficiência visual?",
-        "es": "¿Dispone este cajero automático de salida de voz para usuarios con discapacidad visual?"
+        "es": "¿Dispone este cajero automático de salida de voz para usuarios con discapacidad visual?",
+        "pt": "Este multibanco tem saída de fala para utilizadores com deficiência visual?"
       },
       "mappings": [
         {
@@ -492,7 +521,8 @@
             "cs": "Tento bankomat má řečový výstup, který je obvykle dostupný přes konektor pro sluchátka",
             "he": "לכספומט זה יש פלט דיבור, זמין בדרך כלל דרך שקע אוזניות",
             "pt_BR": "Este caixa eletrônico possui saída de fala, geralmente disponível por meio de um plug de fone de ouvido",
-            "es": "Este cajero automático tiene salida de voz, normalmente disponible a través de una toma de auriculares"
+            "es": "Este cajero automático tiene salida de voz, normalmente disponible a través de una toma de auriculares",
+            "pt": "Este multibanco tem saída de fala, geralmente disponível por meio de um plug de auscultadores"
           }
         },
         {
@@ -505,7 +535,8 @@
             "cs": "Tento bankomat nemá hlasový výstup",
             "he": "לכספומט זה אין פלט דיבור",
             "pt_BR": "Esse caixa eletrônico não possui saída de fala",
-            "es": "Este cajero no tiene salida de voz"
+            "es": "Este cajero no tiene salida de voz",
+            "pt": "Este multibanco não possui saída de fala"
           }
         }
       ]
@@ -525,7 +556,8 @@
             "cs": "V jakých jazycích má tento bankomat řečový výstup?",
             "he": "באילו שפות יש לכספומט הזה פלט דיבור?",
             "pt_BR": "Em quais línguas esse caixa eletrônico tem saída de fala?",
-            "es": "¿En qué idiomas tiene salida de voz este cajero automático?"
+            "es": "¿En qué idiomas tiene salida de voz este cajero automático?",
+            "pt": "Em que línguas este multibanco tem saída de fala?"
           },
           "render_list_item": {
             "en": "This ATM has speech output in {language():font-bold}",
@@ -535,7 +567,8 @@
             "cs": "Tento bankomat má řečový výstup v {language():font-bold}",
             "he": "לכספומט הזה יש פלט דיבור ב {language():font-bold}",
             "pt_BR": "Este caixa eletrônico tem saída de fala em {language():font-bold}",
-            "es": "Este cajero automático tiene salida de voz en {language():font-bold}"
+            "es": "Este cajero automático tiene salida de voz en {language():font-bold}",
+            "pt": "Este multibanco tem saída de fala em {language():font-bold}"
           },
           "render_single_language": {
             "en": "This ATM has speech output in {language():font-bold}",
@@ -565,7 +598,8 @@
             "cs": "S hlasovým výstupem",
             "he": "עם פלט דיבור",
             "pt_BR": "Com saída de fala",
-            "es": "Con salida de audio"
+            "es": "Con salida de audio",
+            "pt": "Com saída de fala"
           },
           "osmTags": "speech_output=yes"
         }

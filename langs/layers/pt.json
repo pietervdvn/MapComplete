@@ -164,17 +164,146 @@
                     },
                     "1": {
                         "then": "Isso é uma placa"
+                    },
+                    "2": {
+                        "then": "Isto é uma coluna"
+                    },
+                    "3": {
+                        "then": "Isto é uma bandeira"
+                    },
+                    "4": {
+                        "then": "Isto é um quadro de pôster"
+                    },
+                    "5": {
+                        "then": "Isto é um ecrã"
+                    },
+                    "6": {
+                        "then": "Isto é uma escultura"
+                    },
+                    "7": {
+                        "then": "Isto é uma placa"
+                    },
+                    "8": {
+                        "then": "Isto é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)"
+                    },
+                    "9": {
+                        "then": "Isto é um totem"
+                    },
+                    "10": {
+                        "then": "Isto é uma pintura mural"
                     }
+                },
+                "question": "Que tipo de recurso de publicitário é este?",
+                "render": "Isto é uma {advertising}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Outdoor"
+                },
+                "1": {
+                    "then": "Quadro"
+                },
+                "2": {
+                    "then": "Caixa de pôster"
+                },
+                "3": {
+                    "then": "Coluna"
+                },
+                "4": {
+                    "then": "Bandeira"
+                },
+                "5": {
+                    "then": "Ecrã"
+                },
+                "6": {
+                    "then": "Escultura"
+                },
+                "7": {
+                    "then": "Placa"
+                },
+                "8": {
+                    "then": "Lona"
+                },
+                "9": {
+                    "then": "Totem"
+                },
+                "10": {
+                    "then": "Pintura mural"
                 }
             }
         }
     },
+    "ambulancestation": {
+        "description": "Uma estação de ambulância é uma área de armazenamento de veículos de ambulância, equipamentos médicos, equipamentos de proteção pessoal e outros suprimentos médicos.",
+        "name": "Mapa de estações de ambulância",
+        "presets": {
+            "0": {
+                "description": "Adicionar uma estação de ambulância ao mapa",
+                "title": "uma estação de ambulância"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "Qual agência opera esta estação?",
+                "render": "Esta estação é operada pelo(a) {operator}."
+            },
+            "ambulance-name": {
+                "question": "Qual o nome desta estação de ambulância?",
+                "render": "Esta estação é chamada de {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "A estação é operada pelo governo."
+                    },
+                    "1": {
+                        "then": "A estação é operada por uma organização comunitária ou informal."
+                    },
+                    "2": {
+                        "then": "A estação é operada por um grupo formal de voluntários."
+                    },
+                    "3": {
+                        "then": "A estação é operada de forma privada."
+                    }
+                },
+                "question": "Como esta estação é classificada?",
+                "render": "O operador é uma entidade {operator:type}."
+            },
+            "ambulance-place": {
+                "question": "Onde está a estação localizada ? (por exemplo, nome do bairro, vila ou cidade)",
+                "render": "Esta estação está localizada em {addr:place}."
+            },
+            "ambulance-street": {
+                "question": "Como é o nome da rua em que a estação está localizada?",
+                "render": "Esta estação está numa autoestrada chamada {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Estação de Ambulância"
+        }
+    },
+    "animal_shelter": {
+        "name": "Abrigo para animais",
+        "presets": {
+            "0": {
+                "title": "um abrigo para animais"
+            }
+        },
+        "title": {
+            "render": "Abrigo para animais"
+        }
+    },
     "artwork": {
-        "description": "Diversas obras de arte",
+        "description": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
         "name": "Obras de arte",
         "presets": {
             "0": {
                 "title": "uma obra de arte"
+            },
+            "1": {
+                "title": "uma obra de arte numa parede"
             }
         },
         "tagRenderings": {
@@ -242,6 +371,20 @@
             "artwork_subject": {
                 "question": "O que esta obra de arte representa?",
                 "render": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta obra de arte também serve como banco"
+                    },
+                    "1": {
+                        "then": "Esta obra de arte não serve como banco"
+                    },
+                    "2": {
+                        "then": "Esta obra de arte não serve como banco"
+                    }
+                },
+                "question": "Esta obra de arte serve como banco?"
             }
         },
         "title": {
@@ -253,14 +396,278 @@
             "render": "Obra de arte"
         }
     },
-    "barrier": {
+    "atm": {
+        "description": "Multibancos para levantar dinheiro",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Com saída de fala"
+                    }
+                }
+            }
+        },
+        "name": "Multibancos",
+        "presets": {
+            "0": {
+                "title": "um multibanco"
+            }
+        },
         "tagRenderings": {
-            "MaxWidth": {
-                "render": "Largura máxima: {maxwidth:physical} m"
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nome da marca"
+                },
+                "question": "De qual marca é este multibanco?",
+                "render": "A marca deste multibanco é {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Provavelmente não pode depositar dinheiro neste multibanco"
+                    },
+                    "1": {
+                        "then": "Pode depositar dinheiro neste mutibanco"
+                    },
+                    "2": {
+                        "then": "Não pode depositar dinheiro neste multibanco"
+                    }
+                },
+                "question": "Pode depositar dinheiro neste multibanco?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Pode levantar dinheiro neste multibanco"
+                    },
+                    "1": {
+                        "then": "Pode levantar dinheiro neste multibanco"
+                    },
+                    "2": {
+                        "then": "Não pode levantar dinheiro neste multibanco"
+                    }
+                },
+                "question": "Pode levantar dinheiro neste multibanco?"
+            },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Notas de 5 euros podem ser levantadas"
+                    },
+                    "1": {
+                        "then": "Notas de 10 euros podem ser levantadas"
+                    },
+                    "2": {
+                        "then": "Notas de 20 euros podem ser levantadas"
+                    },
+                    "3": {
+                        "then": "Notas de 50 euros podem ser levantadas"
+                    },
+                    "4": {
+                        "then": "Notas de 100 euros podem ser levantadas"
+                    },
+                    "5": {
+                        "then": "Notas de 200 euros podem ser levantadas"
+                    },
+                    "6": {
+                        "then": "Notas de 500 euros podem ser levantadas"
+                    }
+                },
+                "question": "Quais notas pode levantar aqui?"
+            },
+            "name": {
+                "render": "O nome deste multibanco é {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operador"
+                },
+                "question": "Qual companhia opera este multibanco?",
+                "render": "O multibanco é operado por {operator}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Este multibanco tem saída de fala, geralmente disponível por meio de um plug de auscultadores"
+                    },
+                    "1": {
+                        "then": "Este multibanco não possui saída de fala"
+                    }
+                },
+                "question": "Este multibanco tem saída de fala para utilizadores com deficiência visual?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "Em que línguas este multibanco tem saída de fala?",
+                        "render_list_item": "Este multibanco tem saída de fala em {language():font-bold}"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Multibanco {brand}"
+                }
+            },
+            "render": "Multibanco"
+        }
+    },
+    "bank": {
+        "description": "Uma instituição financeira para depositar dinheiro",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Com um multibanco"
+                    }
+                }
+            }
+        },
+        "name": "Bancos",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco tem um multibanco"
+                    },
+                    "1": {
+                        "then": "Este banco <b>não</b> tem um multibanco"
+                    },
+                    "2": {
+                        "then": "Este banco tem um multibanco, mas está mapeado como um ícone diferente"
+                    }
+                },
+                "question": "Este banco tem multibanco?"
             }
         }
     },
+    "barrier": {
+        "description": "Obstáculos ao pedalar, como pilares e barreiras para ciclistas",
+        "name": "Barreiras",
+        "presets": {
+            "0": {
+                "description": "Um pilar na rua",
+                "title": "um pilar"
+            },
+            "1": {
+                "description": "Barreira para ciclistas, que reduz a velocidade dos ciclistas",
+                "title": "um barreira para ciclistas"
+            }
+        },
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "0": {
+                        "then": "Pilar removível"
+                    },
+                    "1": {
+                        "then": "Pilar fixo"
+                    },
+                    "2": {
+                        "then": "Pilar retrátil"
+                    },
+                    "3": {
+                        "then": "Pilar flexível, geralmente plástico"
+                    },
+                    "4": {
+                        "then": "Pilar elevatório"
+                    }
+                },
+                "question": "Que tipo de pilar é esse?"
+            },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Simples, apenas duas barreiras com um espaço no meio"
+                    },
+                    "1": {
+                        "then": "Duplo, duas barreiras uma atrás da outra"
+                    },
+                    "2": {
+                        "then": "Triplo, três barreiras uma atrás da outra"
+                    },
+                    "3": {
+                        "then": "Portão estreito, a abertura é menor na parte superior do que na parte inferior"
+                    }
+                },
+                "question": "Que tipo de barreira para ciclistas é esta?"
+            },
+            "MaxWidth": {
+                "question": "Qual é a largura da abertura deixada ao lado da barreira?",
+                "render": "Largura máxima: {maxwidth:physical} m"
+            },
+            "Overlap (cyclebarrier)": {
+                "question": "Quanto as barreiras se sobrepõem?",
+                "render": "Sobreposição: {overlap} m"
+            },
+            "Space between barrier (cyclebarrier)": {
+                "question": "Quanto espaço há entre as barreiras (ao longo do comprimento da estrada)?",
+                "render": "Espaço entre as barreiras (ao longo do comprimento da estrada): {width:separation} m"
+            },
+            "Width of opening (cyclebarrier)": {
+                "question": "Qual é a largura da menor abertura ao lado das barreiras?",
+                "render": "Largura da abertura: {width:opening} m"
+            },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Esse é um único pilar na estrada"
+                    },
+                    "1": {
+                        "then": "Isto é uma barreira para ciclistas que reduz a velocidade dos ciclistas"
+                    }
+                }
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": "Um ciclista pode passar por isto."
+                    },
+                    "1": {
+                        "then": "Um ciclista não pode passar por isst."
+                    }
+                },
+                "question": "Uma bicicleta pode passar por esta barreira?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pilar"
+                },
+                "1": {
+                    "then": "Barreira para ciclistas"
+                }
+            },
+            "render": "Barreira"
+        }
+    },
     "bench": {
+        "description": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Esta camada os visualiza e faz algumas perguntas sobre eles.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "é um memorial"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Com e sem encosto"
+                    },
+                    "1": {
+                        "question": "Tem um encosto"
+                    },
+                    "2": {
+                        "question": "Não tem um encosto"
+                    }
+                }
+            }
+        },
         "name": "Bancos",
         "presets": {
             "0": {
@@ -268,8 +675,26 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco tem uma obra de arte integrada"
+                    },
+                    "1": {
+                        "then": "Este banco não tem uma obra de arte integrada"
+                    },
+                    "2": {
+                        "then": "Este banco <span class=\"subtle\">provavelmente</span> não tem uma obra de arte integrada"
+                    }
+                },
+                "question": "Este banco tem um elemento artístico?",
+                "questionHint": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial"
+            },
             "bench-backrest": {
                 "mappings": {
+                    "0": {
+                        "then": "Esse banco é de dois lados e partilha o encosto"
+                    },
                     "1": {
                         "then": "Encosto: Sim"
                     },
@@ -317,6 +742,9 @@
                 "mappings": {
                     "0": {
                         "then": "Este banco não tem inscrição"
+                    },
+                    "1": {
+                        "then": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição"
                     }
                 },
                 "question": "Esse banco tem inscrição?",
@@ -399,6 +827,9 @@
         "tagRenderings": {
             "bench_at_pt-bench_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Há um banco comum, para sentar, aqui"
+                    },
                     "1": {
                         "then": "banco de pé"
                     },
@@ -469,7 +900,129 @@
             "render": "Biblioteca de bicicleta"
         }
     },
+    "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} fechou permanentemente"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Esta loja de bicicletas costumava alugar bicicletas, mas ja não as aluga"
+                }
+            }
+        },
+        "description": "Estações de aluguel de bicicletas",
+        "name": "Aluguel de bicicletas",
+        "presets": {
+            "0": {
+                "description": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas",
+                "title": "uma loja de aluguel de bicicletas"
+            },
+            "1": {
+                "title": "um aluguel de bicicletas"
+            }
+        },
+        "tagRenderings": {
+            "bicycle-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Bicicletas urbanas comuns podem ser alugadas aqui"
+                    },
+                    "1": {
+                        "then": "Bicicletas elétricas podem ser alugadas aqui"
+                    },
+                    "2": {
+                        "then": "Bicicletas BMX podem ser alugadas aqui"
+                    },
+                    "3": {
+                        "then": "Bicicletas de montanha podem ser alugadas aqui"
+                    },
+                    "4": {
+                        "then": "Bicicletas para crianças podem ser alugadas aqui"
+                    },
+                    "5": {
+                        "then": "Bicicletas tandem podem ser alugadas aqui"
+                    },
+                    "6": {
+                        "then": "Bicicletas de estrada podem ser alugadas aqui"
+                    },
+                    "7": {
+                        "then": "Capacetes de ciclismo podem ser alugados aqui"
+                    }
+                },
+                "question": "Quais tipos de bicicleta e acessórios podem ser alugados aqui?",
+                "render": "{rental} é alugado aqui"
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta é uma loja cujo foco principal é o aluguel de bicicletas"
+                    },
+                    "1": {
+                        "then": "Esse é um negócio de aluguel que aluga variados objetos e/ou veículos. Eles também alugam bicicletas, mas esse não é o foco principal"
+                    },
+                    "2": {
+                        "then": "Esta é uma loja que vende ou conserta bicicletas, mas também aluga elas"
+                    },
+                    "3": {
+                        "then": "Esta é uma estação de ancoragem automatizada, onde uma bicicleta é travada mecanicamente a uma estrutura"
+                    },
+                    "4": {
+                        "then": "Uma máquina que dispensa e aceita chaves está presente, geralmente após autenticação e/ou pagamento. As bicicletas estão estacionadas nas proximidades"
+                    },
+                    "5": {
+                        "then": "Este é um ponto de devolução, p. ex. um estacionamento reservado para pôr as bicicletas claramente marcadas como ser apenas para o serviço de aluguel"
+                    }
+                },
+                "question": "Qual tipo de aluguel de bicicletas é este?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "Quantos type_plural podem ser alugados aqui?",
+                        "render": "{capacity:bicycle_type} type_plural podem ser alugados aqui"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "bicicletas urbanas"
+                        },
+                        "1": {
+                            "1": "bicicletas elétricas"
+                        },
+                        "2": {
+                            "1": "bicicletas para crianças"
+                        },
+                        "3": {
+                            "1": "bicicletas BMX"
+                        },
+                        "4": {
+                            "1": "bicicletas de montanha"
+                        },
+                        "5": {
+                            "1": "alforjes de bicicleta"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Aluguel de bicicleta"
+        }
+    },
     "bicycle_tube_vending_machine": {
+        "description": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)",
         "name": "Máquina de venda automática de tubos de bicicleta",
         "presets": {
             "0": {
@@ -491,13 +1044,69 @@
                 },
                 "question": "Esta máquina de venda automática ainda está operacional?",
                 "render": "O estado operacional é: <i>{operational_status}</i>"
+            },
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Câmaras de ar Continental são vendidas aqui"
+                    },
+                    "1": {
+                        "then": "Câmaras de ar Schwalbe são vendidas aqui"
+                    }
+                },
+                "question": "Quais marcas de câmara de ar são vendidas aqui?",
+                "render": "câmaras de ar {brand} são vendidas aqui"
+            },
+            "bicycle_tube_vending_machine-charge": {
+                "question": "Quanto custa uma câmara de ar para bicicleta?",
+                "render": "Uma câmara de ar para bicicleta custa {charge}"
+            },
+            "bicycle_tube_vending_machine-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Mantido pela Schwalbe"
+                    },
+                    "1": {
+                        "then": "Mantido pela Continental"
+                    }
+                },
+                "question": "Quem mantém esta máquina de venda?"
+            },
+            "other-items-vending": {
+                "mappings": {
+                    "0": {
+                        "then": "Câmaras de ar para bicicletas são vendidas aqui"
+                    },
+                    "1": {
+                        "then": "Luzes para bicicleta são vendidas aqui"
+                    },
+                    "2": {
+                        "then": "Luvas são vendidas aqui"
+                    },
+                    "3": {
+                        "then": "Kits para reparo de bicicleta são vendidos aqui"
+                    },
+                    "4": {
+                        "then": "Bombas de ar para bicicleta são vendidas aqui"
+                    },
+                    "5": {
+                        "then": "Cadeados para bicicleta são vendidos aqui"
+                    }
+                },
+                "question": "Outros acessórios para bicicleta são vendidos aqui?"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Máquina de venda de câmara de ar para bicicleta {name}"
+                }
+            },
             "render": "Máquina de venda automática de tubos de bicicleta"
         }
     },
     "bike_cafe": {
+        "description": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …",
         "name": "Café de bicicletas",
         "presets": {
             "0": {
@@ -505,6 +1114,17 @@
             }
         },
         "tagRenderings": {
+            "bike_cafe-bike-pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Este café para ciclistas oferece uma bomba de ar para todos"
+                    },
+                    "1": {
+                        "then": "Este café para ciclistas não oferece uma bomba de ar para ninguém"
+                    }
+                },
+                "question": "Este café para ciclistas oferece uma bomba de ar para qualquer um usar?"
+            },
             "bike_cafe-name": {
                 "question": "Qual o nome deste café de bicicleta?",
                 "render": "Este café de bicicleta se chama {name}"
@@ -547,10 +1167,33 @@
         }
     },
     "bike_cleaning": {
+        "description": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta",
         "name": "Serviço de limpeza de bicicletas",
         "presets": {
             "0": {
                 "title": "uma serviço de limpeza de bicicletas"
+            }
+        },
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Esst serviço de limpeza é grátis para usar"
+                    },
+                    "1": {
+                        "then": "Há uma taxa para utilizar este serviço de limpeza"
+                    }
+                },
+                "question": "Quanto custa para usar este serviço de limpeza?",
+                "render": "Usar o serviço de limpeza custa {charge}"
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "0": {
+                        "then": "O serviço de limpeza é grátis para usar"
+                    }
+                },
+                "render": "Usar o serviço de limpeza custa {service:bicycle:cleaning:charge}"
             }
         },
         "title": {
@@ -563,6 +1206,7 @@
         }
     },
     "bike_parking": {
+        "description": "Uma camada que mostra onde pode estacionar a sua bicicleta",
         "name": "Estacionamento de bicicletas",
         "presets": {
             "0": {
@@ -586,10 +1230,31 @@
                 "render": "{access}"
             },
             "Bicycle parking type": {
+                "mappings": {
+                    "2": {
+                        "then": "Suporte para guidão"
+                    },
+                    "3": {
+                        "then": "Suporte"
+                    },
+                    "4": {
+                        "then": "De dois níveis"
+                    },
+                    "5": {
+                        "then": "Cabana"
+                    },
+                    "6": {
+                        "then": "Pilar"
+                    },
+                    "7": {
+                        "then": "Uma área no chão que é marcada para o estacionamento de bicicletas"
+                    }
+                },
                 "question": "Qual o tipo deste estacionamento de bicicletas?",
                 "render": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}"
             },
             "Capacity": {
+                "question": "Quantas bicicletas cabem neste estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
                 "render": "Lugar para {capacity} bicicletas"
             },
             "Cargo bike capacity?": {
@@ -644,9 +1309,15 @@
         }
     },
     "bike_repair_station": {
+        "description": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas",
+        "name": "Estações de bicicletas (reparo, bomba ou ambos)",
         "presets": {
             "0": {
-                "description": "Um aparelho para encher os seus pneus num local fixa no espaço público."
+                "description": "Um aparelho para encher os seus pneus num local fixa no espaço público.",
+                "title": "uma bomba de bicicleta"
+            },
+            "1": {
+                "description": "Uma bomba de ar para bicicletas e ferramentas para reparar a sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
             }
         },
         "tagRenderings": {
@@ -719,8 +1390,18 @@
                 },
                 "1": {
                     "then": "Estação de reparo de bicicletas"
+                },
+                "2": {
+                    "then": "Bomba quebrada"
+                },
+                "3": {
+                    "then": "Bomba de bicicleta <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Bomba de bicicleta"
                 }
-            }
+            },
+            "render": "Estação de bicicletas (bomba e reparo)"
         }
     },
     "bike_shop": {
@@ -793,6 +1474,13 @@
                 }
             },
             "render": "Reparo/loja de bicicletas"
+        }
+    },
+    "drinking_water": {
+        "tagRenderings": {
+            "Still in use?": {
+                "render": "O estado operacional é: <i>{operational_status}</i>"
+            }
         }
     },
     "ghost_bike": {
@@ -1003,7 +1691,37 @@
             }
         }
     },
+    "sport_pitch": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Acessível ao público"
+                    }
+                }
+            }
+        }
+    },
+    "surveillance_camera": {
+        "tagRenderings": {
+            "Operator": {
+                "render": "Operado por {operator}"
+            }
+        }
+    },
+    "toilet_at_amenity": {
+        "tagRenderings": {
+            "toilets-fee": {
+                "mappings": {
+                    "1": {
+                        "then": "Grátis para usar"
+                    }
+                }
+            }
+        }
+    },
     "tree_node": {
+        "name": "Árvore",
         "presets": {
             "0": {
                 "description": "Uma árvore de uma espécie com folhas, como carvalho ou populus.",
@@ -1019,6 +1737,7 @@
         "tagRenderings": {
             "circumference": {
                 "question": "Qual é a circunferência do tronco da árvore?",
+                "questionHint": "Isto é medido a uma altura de 1,30m",
                 "render": "O tronco da árvore tem uma circunferência de <b>{circumference}</b> metros"
             },
             "height": {
@@ -1197,6 +1916,15 @@
                     "0": {
                         "then": "Você contribuiu para a tradução do MapComplete! Fantástico!"
                     }
+                }
+            }
+        }
+    },
+    "windturbine": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
                 }
             }
         }

@@ -1,42 +1,45 @@
-<script lang="ts">/**
- * The 'imageOperations' previews an image and offers some extra tools (e.g. download)
- */
+<script lang="ts">
+  /**
+   * The 'imageOperations' previews an image and offers some extra tools (e.g. download)
+   */
 
-import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
-import ImageAttribution from "./ImageAttribution.svelte"
-import ImagePreview from "./ImagePreview.svelte"
-import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
-import { Utils } from "../../Utils"
-import { twMerge } from "tailwind-merge";
+  import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
+  import ImageAttribution from "./ImageAttribution.svelte"
+  import ImagePreview from "./ImagePreview.svelte"
+  import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { Utils } from "../../Utils"
+  import { twMerge } from "tailwind-merge"
 
-export let image: ProvidedImage
-export let clss: string = undefined
-async function download() {
-    const response = await fetch(image.url_hd ?? image.url )
+  export let image: ProvidedImage
+  export let clss: string = undefined
+  async function download() {
+    const response = await fetch(image.url_hd ?? image.url)
     const blob = await response.blob()
     Utils.offerContentsAsDownloadableFile(blob, new URL(image.url).pathname.split("/").at(-1), {
-        mimetype: "image/jpg",
+      mimetype: "image/jpg",
     })
-}
-
+  }
 </script>
 
-<div class={twMerge("w-full h-full relative", clss)}>
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden panzoom-container focusable">
-    <ImagePreview image={image} />
+<div class={twMerge("relative h-full w-full", clss)}>
+  <div class="panzoom-container focusable absolute top-0 left-0 h-full w-full overflow-hidden">
+    <ImagePreview {image} />
   </div>
-  <div class="absolute bottom-0 left-0 w-full pointer-events-none flex flex-wrap justify-between items-end">
-    <div class="pointer-events-auto w-fit opacity-50 hover:opacity-100 transition-colors duration-200 m-1">
-      <ImageAttribution image={image} />
+  <div
+    class="pointer-events-none absolute bottom-0 left-0 flex w-full flex-wrap items-end justify-between"
+  >
+    <div
+      class="pointer-events-auto m-1 w-fit opacity-50 transition-colors duration-200 hover:opacity-100"
+    >
+      <ImageAttribution {image} />
     </div>
 
     <button
-      class="no-image-background flex items-center pointer-events-auto bg-black opacity-50 hover:opacity-100 text-white transition-colors duration-200"
-      on:click={() => download()}>
-      <DownloadIcon class="w-6 h-6 px-2 opacity-100" />
+      class="no-image-background pointer-events-auto flex items-center bg-black text-white opacity-50 transition-colors duration-200 hover:opacity-100"
+      on:click={() => download()}
+    >
+      <DownloadIcon class="h-6 w-6 px-2 opacity-100" />
       Download
     </button>
   </div>
-
-
 </div>

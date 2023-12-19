@@ -268,6 +268,20 @@
             "cs": "Povrch je <b>zpevněný</b>"
           },
           "hideInAnswer": true
+        },
+        {
+          "if": "surface=tartan",
+          "then": {
+            "en": "The surface is tartan - a synthetic, springy surface typically seen on athletic pistes",
+            "nl": "De ondergrond bestaat uit Tartan - een synthetisch, elastisch en poreus materiaal dat je ook vindt op atletiekpistes"
+          }
+        },
+        {
+          "if": "surface=rubber",
+          "then": {
+            "en": "The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area",
+            "nl": "De ondergrond bestaat uit rubber, zoals rubberen tegels, rubber snippers of een groot rubberen oppervlak"
+          }
         }
       ],
       "id": "playground-surface",
@@ -670,6 +684,7 @@
       ],
       "id": "playground-opening_hours"
     },
+    "check_date",
     "questions",
     {
       "id": "playground-reviews",

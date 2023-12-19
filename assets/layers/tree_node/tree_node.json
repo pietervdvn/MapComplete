@@ -11,7 +11,8 @@
     "es": "Árbol",
     "da": "Træ",
     "pt_BR": "Árvore",
-    "cs": "Strom"
+    "cs": "Strom",
+    "pt": "Árvore"
   },
   "description": {
     "en": "A layer showing trees",
@@ -305,7 +306,8 @@
         "es": "Se mide a una altura de 1,30 m",
         "ca": "Es mesura a una alçada d'1,30 m",
         "pt_BR": "Isso é medido a uma altura de 1,30m",
-        "cs": "Měří se ve výšce 1,30 m"
+        "cs": "Měří se ve výšce 1,30 m",
+        "pt": "Isto é medido a uma altura de 1,30m"
       }
     },
     {

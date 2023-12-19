@@ -32,7 +32,7 @@
     onDestroy(
       tags.addCallbackD((tags) => {
         editMode = !config.IsKnown(tags)
-      }),
+      })
     )
   }
 
@@ -78,7 +78,7 @@
   let answerId = "answer-"+Utils.randomString(5)
 </script>
 
-<div bind:this={htmlElem} class={twMerge(clss, "tr-"+config.id)}>
+<div bind:this={htmlElem} class={twMerge(clss, "tr-" + config.id)}>
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer} on:saved={() => editMode = false}>
@@ -91,12 +91,14 @@
         >
           <Tr t={Translations.t.general.cancel} />
         </button>
-        <button slot="upper-right"
-                class="h-8 w-8 cursor-pointer border-none p-0"
-                use:ariaLabel={Translations.t.general.cancel}
-                on:click={() => {
+        <button
+          slot="upper-right"
+          class="h-8 w-8 cursor-pointer border-none p-0"
+          use:ariaLabel={Translations.t.general.cancel}
+          on:click={() => {
             editMode = false
-          }}>
+          }}
+        >
           <XCircleIcon />
         </button>
       </TagRenderingQuestion>

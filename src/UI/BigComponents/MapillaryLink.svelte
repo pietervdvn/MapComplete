@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Translations from "../i18n/Translations"
-    import { Store } from "../../Logic/UIEventSource"
-    import Tr from "../Base/Tr.svelte"
-    import Mapillary_black from "../../assets/svg/Mapillary_black.svelte"
-    import { Mapillary } from "../../Logic/ImageProviders/Mapillary"
+  import Translations from "../i18n/Translations"
+  import { Store } from "../../Logic/UIEventSource"
+  import Tr from "../Base/Tr.svelte"
+  import Mapillary_black from "../../assets/svg/Mapillary_black.svelte"
+  import { Mapillary } from "../../Logic/ImageProviders/Mapillary"
 
-    /*
+  /*
       A subtleButton which opens mapillary in a new tab at the current location
        */
 

@@ -17,13 +17,13 @@
     + [email](#email)
     + [wikipedia](#wikipedia)
     + [bench.*bench-questions](#bench*bench-questions)
-    + [opening_hours](#opening_hours)
+    + [opening_hours_24_7](#opening_hours_24_7)
     + [artwork.*artwork-question](#artwork*artwork-question)
+    + [opening_hours](#opening_hours)
     + [description](#description)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
     + [payment-options-split](#payment-options-split)
-    + [opening_hours_24_7](#opening_hours_24_7)
     + [level](#level)
     + [bicycle_rental.*bicycle_rental](#bicycle_rental*bicycle_rental)
     + [bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaningbike_cleaning-service:bicycle:cleaning:charge)
@@ -127,6 +127,7 @@
   - elongated_coin
   - entrance
   - extinguisher
+  - favourite
   - fire_station
   - fitness_centre
   - fitness_station
@@ -204,12 +205,15 @@
 
   - animal_shelter
   - cafe_pub
+  - climbing_area
+  - climbing_gym
   - dogpark
   - fitness_centre
   - food
   - hackerspace
   - hotel
   - pharmacy
+  - playground
   - shops
   - veterinary
 
@@ -353,13 +357,46 @@
 
 
 
-### opening_hours 
+### opening_hours_24_7 
 
 
 
 
 
   - atm
+  - bike_repair_station
+  - charging_station
+  - defibrillator
+  - drinking_water
+  - elongated_coin
+  - fitness_station
+  - hackerspace
+  - parcel_lockers
+  - recycling
+  - toilet
+  - vending_machine
+
+
+
+
+### artwork.*artwork-question 
+
+
+
+
+
+  - bench
+  - drinking_water
+
+
+
+
+### opening_hours 
+
+
+
+
+
   - bicycle_library
   - bicycle_rental
   - bike_cafe
@@ -383,17 +420,6 @@
   - sports_centre
   - toilet_at_amenity
   - veterinary
-
-
-
-
-### artwork.*artwork-question 
-
-
-
-
-
-  - bench
 
 
 
@@ -457,26 +483,6 @@
   - parking_ticket_machine
   - shower
   - ticket_machine
-  - toilet
-  - vending_machine
-
-
-
-
-### opening_hours_24_7 
-
-
-
-
-
-  - bike_repair_station
-  - charging_station
-  - defibrillator
-  - elongated_coin
-  - fitness_station
-  - hackerspace
-  - parcel_lockers
-  - recycling
   - toilet
   - vending_machine
 
@@ -643,6 +649,7 @@
 
   - charging_station
   - etymology
+  - favourite
   - hackerspace
   - play_forest
   - playground
@@ -810,6 +817,7 @@
 
 
   - elongated_coin
+  - playground
 
 
 

@@ -297,7 +297,8 @@
             "es": "El edificio fue construido en <b>{_bag_obj:start_date}</b>",
             "cs": "Tato budova byla postavena v <b>{_bag_obj:start_date}</b>",
             "nb_NO": "Bygning oppført <b>{_bag_obj:start_date}</b>",
-            "pl": "Ten budynek zbudowano w <b>{_bag_obj:start_date}</b>"
+            "pl": "Ten budynek zbudowano w <b>{_bag_obj:start_date}</b>",
+            "pt": "Esta construção é de <b>{_bag_obj:start_date}</b>"
           },
           "mappings": [
             {

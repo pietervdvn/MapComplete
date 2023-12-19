@@ -24,7 +24,8 @@
     "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
     "cs": "Cyklokavárna je kavárna zaměřená na cyklisty, například se službami, jako je pumpa, se spoustou výzdoby související s jízdními koly, …",
     "ca": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …",
-    "pt_BR": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …"
+    "pt_BR": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …",
+    "pt": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …"
   },
   "source": {
     "osmTags": {
@@ -194,7 +195,8 @@
         "da": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?",
         "cs": "Nabízí tato cyklistická kavárna vzduchový kompresor na kolo k použití pro kohokoli?",
         "ca": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona?",
-        "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para qualquer um usar?"
+        "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para qualquer um usar?",
+        "pt": "Este café para ciclistas oferece uma bomba de ar para qualquer um usar?"
       },
       "mappings": [
         {
@@ -212,7 +214,8 @@
             "da": "Denne cykelcafé tilbyder en cykelpumpe til enhver",
             "cs": "Tato cyklistická kavárna nabízí vzduchový kompresor na kolo pro každého",
             "ca": "Aquest cafè ciclista ofereix una bomba per a bicicletes per a qualsevol persona",
-            "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para todos"
+            "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para todos",
+            "pt": "Este café para ciclistas oferece uma bomba de ar para todos"
           }
         },
         {
@@ -230,7 +233,8 @@
             "da": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen",
             "cs": "Tato cyklistická kavárna nenabízí vzduchový kompresor na kolo",
             "ca": "Aquest cafè ciclista no ofereix una bomba per a bicicletes per a qualsevol persona",
-            "pt_BR": "Esse café para ciclistas não oferece uma bomba de ar para ninguém"
+            "pt_BR": "Esse café para ciclistas não oferece uma bomba de ar para ninguém",
+            "pt": "Este café para ciclistas não oferece uma bomba de ar para ninguém"
           }
         }
       ]

@@ -16,7 +16,7 @@
   export let feature: Feature
   export let tags: UIEventSource<Record<string, string>>
   export let layer: LayerConfig
-  let isFavourite = tags?.map(tags => tags._favourite === "yes")
+  let isFavourite = tags?.map((tags) => tags._favourite === "yes")
   const t = Translations.t.favouritePoi
 
   function markFavourite(isFavourite: boolean) {

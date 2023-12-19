@@ -31,7 +31,7 @@ export default class GenericImageProvider extends ImageProvider {
                 key: key,
                 url: value,
                 provider: this,
-                id: value
+                id: value,
             }),
         ]
     }
