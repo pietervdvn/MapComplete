@@ -1294,7 +1294,10 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
                 ): BaseUIElement {
-                    const [text, href, classnames, download, ariaLabel] = args
+                    let [text, href, classnames, download, ariaLabel] = args
+                    if (download === "") {
+                        download = undefined
+                    }
                     const newTab = download === undefined && !href.startsWith("#")
                     return new VariableUiElement(
                         tagSource.map(
