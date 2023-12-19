@@ -10,7 +10,8 @@
     },
     "communityIndex": {
         "available": "Dette brugerfællesskab taler {native}",
-        "intro": "Få kontakt med andre personer for at lære mere fra dem …"
+        "intro": "Få kontakt med andre personer for at lære mere fra dem …",
+        "title": "Kom i kontakt med andre"
     },
     "delete": {
         "cancel": "Afbryd",
@@ -46,13 +47,57 @@
         "panelIntro": "<h3>Dit personlige tema</h3>Aktiver dit favoritlag fra et af alle de officelle temaer",
         "reload": "Genindlæs data"
     },
+    "favouritePoi": {
+        "button": {
+            "markAsFavouriteTitle": "Markér dette sted som favoritsted",
+            "markDescription": "Føj dette sted til en personlig liste over favoritter",
+            "unmark": "Fjern fra din personlige liste over favoritter",
+            "unmarkNotDeleted": "Dette punkt vil ikke blive slettet og vil fortsat være synligt på det passende kort for dig og andre"
+        },
+        "downloadGeojson": "Download dine favoritter som geojson",
+        "downloadGpx": "Download dine favoritter som GPX",
+        "intro": "Du markerede {length} steder som favoritsteder.",
+        "introPrivacy": "Denne oversigt er kun synlig for dig",
+        "loginToSeeList": "Log ind for at se oversigten med steder, du har markeret som favorit",
+        "tab": "Dine favoritter",
+        "title": "Dine favoritsteder"
+    },
+    "flyer": {
+        "callToAction": "Test det på mapcomplete.org",
+        "fakeui": {
+            "add_images": "Tilføj billeder med få klik",
+            "attributes": "Viser attributter på en venlig måde",
+            "edit": "Forkert eller forældet information? Redigér-knappen er lige dér.",
+            "question": "Hvis en attribut endnu ikke er kendt, viser MapComplete et spørgsmål",
+            "see_images": "Viser billeder fra tidligere bidragsydere, Wikipedia, Mapillary, …",
+            "wikipedia": "Forbundne Wikipedia-artikler er vist"
+        },
+        "mapcomplete": {
+            "intro": "MapComplete er et website, som har {mapCount} interaktive kort. Hvert eneste kort giver mulighed for at tilføje eller opdatere oplysninger. Det har mange egenskaber:",
+            "li0": "Vis hvor POI er",
+            "li1": "Tilføj nye punkter og opdatér informationer for de eksisterende",
+            "li2": "Tilføj let kontaktoplysninger og åbningstider",
+            "li3": "Kan blive placeret på andre websites som iFrame",
+            "li4": "Indlejret i OpenStreetMap-økosystemet, som har mange værktøjer tilgængelige",
+            "li5": "Funktionalitet for at importere eksisterende datasæt",
+            "title": "Hvad er MapComplete?"
+        },
+        "tagline": "Indsaml geodata med OpenStreetMap",
+        "title": "mapcomplete.org",
+        "whatIsOsm": "Hvad er OpenStreetMap?"
+    },
     "general": {
+        "404": "Denne side findes ikke",
         "about": "Ret og tilføj nemt til Openstreetmap for et bestemt tema",
         "add": {
             "addNew": "Tilføj {category}",
+            "backToSelect": "Vælg en anden kategori",
             "confirmButton": "Tilføj en {category}<br><div class=\"alert\">Din tilføjelse er synlig for alle</div>",
+            "confirmLocation": "Bekræft dette sted",
+            "confirmTitle": "Tilføj en {titel}?",
             "disableFilters": "Slå alle filtre fra",
             "disableFiltersExplanation": "Nogle elementer kan være skjult af et filter",
+            "enableLayer": "Aktivér lag {navn}",
             "hasBeenImported": "Punktet er allerede importeret",
             "import": {
                 "hasBeenImported": "Objektet blev importeret",
@@ -80,6 +125,8 @@
             "isApplied": "Ændringerne er anvendt"
         },
         "attribution": {
+            "attributionBackgroundLayer": "Det nuværende baggrundslag er {navn}",
+            "attributionBackgroundLayerWithCopyright": "Det nuværende baggrundslag er [navn}: {copyright}",
             "attributionContent": "<p>Alle data leveres af <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frit genanvendelige under <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase Licensen</a>.</p>",
             "attributionTitle": "Meddelelse om tilskrivning",
             "codeContributionsBy": "MapComplete er lavet af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>",
@@ -94,6 +141,7 @@
             "josmOpened": "JOSM er åbnet",
             "mapContributionsBy": "Aktult synligt data har rettelser lavet af {contributors}",
             "mapContributionsByAndHidden": "De aktuelt synlige rettelser er lavet af {contributors} og {hiddenCount} flere bidragsydere",
+            "mapDataByOsm": "Kortdata: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> er en onlinetjeneste, som samler billeder på gadeplan og tilbyder dem under en gratis licens. Bidragydere har lov til at bruge disse billeder til at forbedre OpenStreetMap",
             "openIssueTracker": "Rapporter en fejl",
             "openMapillary": "Åbn Mapillary her",
@@ -104,14 +152,17 @@
         "back": "Tilbage",
         "backToIndex": "Gå tilbage til oversigten med alle tema-kort",
         "backgroundMap": "Baggrundskort",
+        "backgroundSwitch": "Skift baggrund",
         "cancel": "Afbryd",
         "confirm": "Bekræft",
         "customThemeIntro": "<h3>Brugergeneredede temaer</h3>Disse er tidligere sete bruger-genererede temaer.",
         "download": {
             "downloadAsPdf": "Hent en PDF med det aktuelle kort",
             "downloadAsPdfHelper": "Ideelt til at udskrive det aktuelle kort",
+            "downloadAsPng": "Download som billede",
             "downloadAsSvg": "Hent en SVG med det aktuelle kort",
             "downloadAsSvgHelper": "Kompatibel Inkscape eller Adobe Illustrator; skal behandles yderligere  ",
+            "downloadAsSvgLinesOnly": "Hent en SVG af det nuværende kort, kun indeholdende linjer",
             "downloadCSV": "Hent synligt data som CSV",
             "downloadCSVHelper": "Kompatibel med LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Hent som GeoJSON-fil",
@@ -127,10 +178,12 @@
             "title": "Hent synligt data",
             "uploadGpx": "Upload dit spor til OpenStreetMap"
         },
+        "enableGeolocationForSafari": "Fik du ikke en popup for at anmode om geotilladelse?",
         "error": "Noget gik galt",
         "example": "Eksempel",
         "examples": "Eksempler",
         "fewChangesBefore": "Besvar venligst nogle få spørgsmål om eksisterende punkter før du tilføjer et nyt punkt.",
+        "geopermissionDenied": "Brug af geolokalitet var nægtet",
         "getStartedLogin": "Log in med OpenStreetMap for at komme i gang",
         "getStartedNewAccount": " eller <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">lav en ny konto</a>",
         "goToInbox": "Åbn indboks",
@@ -141,9 +194,13 @@
             "title": "Vælg lag",
             "zoomInToSeeThisLayer": "Zoom ind for at se dette lag"
         },
+        "levelSelection": {
+            "addNewOnLevel": "Er det nye punkt på niveau {level}?"
+        },
         "loading": "Indlæser...",
         "loadingTheme": "Indlæser {theme}...",
         "loginFailed": "Det mislykkedes at logge ind på OpenStreetMap",
+        "loginFailedOfflineMode": "OpenStreetMap.org er i øjeblikket ikke tilgængelig på grund af vedligeholdelse. Redigeringer vil snart igen være mulige",
         "loginOnlyNeededToEdit": "hvis du vil redigere kortet",
         "loginToStart": "Log ind for at besvare dette spørgsmål",
         "loginWithOpenStreetMap": "Logind med OpenStreetMap",
@@ -170,6 +227,7 @@
         "number": "tal",
         "openStreetMapIntro": "<h3>At Åbent kort</h3><p>Et som alle kan bruge og redigere frit. Eet sted at gemme al geo-information. Forskellige, små, inkompatible og forældede kort er der ikke brug for nogen steder.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> er ikke fjendens kort. Kortet kan bruges frit (med <a href=\"https://osm.org/copyright\" target=\"_blank\">kreditering og publicering af ændringer af data</a>). Alle kan tilføje mere data og rette fejl. Denne website bruger OpenStreetMap. Al data kommer derfra, og dine svar og rettelser vil blive bruge alle vegne.</p><p>Mange folk og apps bruger allerede OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, men også kortene på Facebook, Instagram, Apple-maps and Bing-maps er (delvist) drevet af OpenStreetMap.</p>",
         "openTheMap": "Åbn kortet",
+        "openTheMapAtGeolocation": "Zoom til din position",
         "opening_hours": {
             "closed_permanently": "Lukket med en ukendt varighed",
             "closed_until": "Lukket indtil {date}",
@@ -195,8 +253,16 @@
         "pickLanguage": "Vælg et sprog: ",
         "poweredByOsm": "Drevet af OpenStreetMap",
         "questionBox": {
+            "answeredMultiple": "Du besvarede [answered} spørgsmål",
+            "answeredMultipleSkippedMultiple": "Du besvarede {answered} spørgsmål og sprang over {skipped} spørgsmål",
+            "answeredMultipleSkippedOne": "Du besvarede {answered} spørgsmål og sprang over ét spørgsmål",
             "answeredOne": "Du besvarede ét spørgsmål",
-            "done": "Ikke flere spørgsmål! Mange tak!"
+            "answeredOneSkippedMultiple": "Du besvarede ét spørgsmål og sprang over {skipped} spørgsmål",
+            "answeredOneSkippedOne": "Du besvarede ét spørgsmål og sprang over et andet",
+            "done": "Ikke flere spørgsmål! Mange tak!",
+            "reactivate": "Genaktivér oversprungne spørgsmål",
+            "skippedMultiple": "Du sprang over {skipped} spørgsmål",
+            "skippedOne": "Du sprang over ét spørgsmål"
         },
         "questions": {
             "emailIs": "Emailadressen på denne {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
@@ -215,6 +281,7 @@
             "error": "Noget gik galt…",
             "nothing": "Intet fundet…",
             "search": "Vælg en sted",
+            "searchShort": "Søg …",
             "searching": "Søger…"
         },
         "sharescreen": {
@@ -223,10 +290,39 @@
             "fsUserbadge": "Slå loginknappen til",
             "fsWelcomeMessage": "Vis velkomstbeskeden og tilknyttede faner",
             "intro": "<h3>Del dette kort</h3>Del dette kort ved at kopiere linket nedenunder og send det til venner og familie:",
-            "thanksForSharing": "Tak for at dele!"
+            "thanksForSharing": "Tak for at dele!",
+            "title": "Del dette kort"
         },
         "skip": "Spring over dette spørgsmål",
         "testing": "Testing - ingen ændringer vil blive gemt",
+        "uploadError": "Fejl ved upload af ændringer: {error}",
+        "uploadGpx": {
+            "choosePermission": "Vælg herunder om dit spor skal deles:",
+            "confirm": "Bekræft upload",
+            "gpxServiceOffline": "GPX-tjenesten er i øjeblikket offline - upload er ikke muligt lige nu. Prøv igen senere.",
+            "intro1": "Du har mulighed for at downloade dit spor igen og læse det ind i OpenStreetMap-redigeringsprogrammer",
+            "meta": {
+                "descriptionPlaceHolder": "Tilføj en beskrivelse af dit spor",
+                "intro": "Tilføj en titel for dit spor:",
+                "title": "Titel og beskrivelse"
+            },
+            "modes": {
+                "private": {
+                    "name": "Anonym"
+                },
+                "public": {
+                    "name": "Offentlig"
+                }
+            },
+            "title": "Upload dit spor til OpenStreetMap.org",
+            "uploadFinished": "Dit spor er uploadet!",
+            "uploading": "Uploader dit spor …"
+        },
+        "uploadPending": "{count} ændringer i kø",
+        "uploadPendingSingle": "Én ændring i kø",
+        "uploadingChanges": "Uploader ændringer …",
+        "waitingForGeopermission": "Venter på din godkendelse til at bruge geolokalitet …",
+        "waitingForLocation": "Finder din nuværende position …",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fre",
@@ -263,6 +359,7 @@
                 "born": "Født: {value}",
                 "died": "Død: {value}"
             },
+            "readMore": "Læs resten af artiklen",
             "searchToShort": "Din søgeforespørgsel er for kort. Indtast en længere tekst",
             "searchWikidata": "Søg på Wikidata",
             "wikipediaboxTitle": "Wikipedia"
@@ -270,6 +367,7 @@
     },
     "hotkeyDocumentation": {
         "action": "Handling",
+        "closeSidebar": "Luk sidemenuen",
         "intro": "MapComplete understøtter følgende genvejstaster:",
         "key": "Tastekombination"
     },
