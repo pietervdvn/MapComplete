@@ -525,12 +525,20 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
 
         for (let i = 1; i < 9; i++) {
+            let doc = docs.selectItemI.Subs({ i })
+            if (i === 1) {
+                doc = docs.selectItem
+            } else if (i === 2) {
+                doc = docs.selectItem2
+            } else if (i === 3) {
+                doc = docs.selectItem3
+            }
             Hotkeys.RegisterHotkey(
                 {
                     nomod: "" + i,
                     onUp: true,
                 },
-                docs.selectItem,
+                doc,
                 () => this.selectClosestAtCenter(i - 1)
             )
         }

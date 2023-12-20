@@ -1834,10 +1834,6 @@ video {
   padding-left: 0.5rem;
 }
 
-.pr-4 {
-  padding-right: 1rem;
-}
-
 .pt-0\.5 {
   padding-top: 0.125rem;
 }
@@ -1856,6 +1852,10 @@ video {
 
 .pl-4 {
   padding-left: 1rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .pl-3 {
@@ -2385,7 +2385,7 @@ button.selected svg path, .button.selected svg path {
   fill: var(--catch-detail-foregroundcolor) !important;
 }
 
-button:not(.no-image-background) svg path, .button:not(.no-image-background) svg path {
+button:not(.no-image-background):not(.soft) svg path, .button:not(.no-image-background):not(.soft) svg path {
   fill: var(--interactive-foreground) !important;
   transition: all 250ms;
 }
@@ -2514,6 +2514,11 @@ button.soft, .button.soft {
   margin: 0;
 }
 
+button.soft:hover, .button.soft:hover {
+  background-color: var(--interactive-background);
+  color: var(--interactive-foreground);
+}
+
 .links-as-button a {
   /*
     * Let a 'link' mimick a button, but not entirely
@@ -2528,7 +2533,7 @@ button.soft, .button.soft {
 
 .links-as-button a:hover {
   background-color: var(--interactive-background);
-  color: var(--catch-detail-foregroundcolor);
+  color: var(--interactive-foregroundcolor);
   border-color: var(--catch-detail-color-contrast);
 }
 
