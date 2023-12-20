@@ -85,7 +85,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             description: trs(t.description, { title: layer.title.render }),
             source: {
                 osmTags: {
-                    and: ["id~[0-9]+", "comment_url~.*notes/[0-9]*g.json"],
+                    and: ["id~[0-9]+", "comment_url~.*notes/[0-9]*/comment.json"],
                 },
                 geoJson:
                     "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=" +
