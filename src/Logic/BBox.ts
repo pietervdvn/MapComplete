@@ -17,7 +17,7 @@ export class BBox {
      * Coordinates should be [[lon, lat],[lon, lat]]
      * @param coordinates
      */
-    constructor(coordinates) {
+    constructor(coordinates: [number,number][]) {
         this.maxLat = -90
         this.maxLon = -180
         this.minLat = 90

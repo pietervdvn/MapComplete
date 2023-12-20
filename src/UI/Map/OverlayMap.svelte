@@ -41,7 +41,6 @@
       return
     }
     altmap.data.resize()
-    const { lon, lat } = placedOverMapProperties.location.data
     const altMapCenter = pixelCenterOf(altmap)
     const c = placedOverMap.data.unproject(altMapCenter)
     altproperties.location.setData({ lon: c.lng, lat: c.lat })

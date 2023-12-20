@@ -4,6 +4,9 @@
 import Motion from "../../Sensors/Motion"
 import { Geocoding } from "../../Logic/Osm/Geocoding"
 import type { MapProperties } from "../../Models/MapProperties"
+import Hotkeys from "../Base/Hotkeys"
+import Translations from "../i18n/Translations"
+import Locale from "../i18n/Locale"
 
 export let mapProperties: MapProperties
 let lastDisplayed: Date = undefined
@@ -14,32 +17,36 @@ async function displayLocation() {
   let result = await Geocoding.reverse(
     mapProperties.location.data,
     mapProperties.zoom.data,
+    Locale.language.data
   )
-  console.log("Got result", result)
   let properties = result.features[0].properties
   currentLocation = properties.display_name
   window.setTimeout(() => {
+    if(properties.display_name !== currentLocation){
+      return
+    }
     currentLocation = undefined
   }, 5000)
 }
 
 Motion.singleton.lastShakeEvent.addCallbackD(shaken => {
-  console.log("Got a shaken event")
-  if (shaken.getTime() - lastDisplayed.getTime() < 1000) {
-    console.log("To soon:",shaken.getTime() - lastDisplayed.getTime())
-   // return
+  if (lastDisplayed !== undefined && shaken.getTime() - lastDisplayed.getTime() < 2000) {
+    return
   }
   displayLocation()
 })
+Hotkeys.RegisterHotkey({ nomod: "q" },
+  Translations.t.hotkeyDocumentation.queryCurrentLocation,
+  () => {
+    displayLocation()
+  })
+
 
 Motion.singleton.startListening()
-mapProperties.location.stabilized(500).addCallbackAndRun(loc => {
-  displayLocation()
-})
 </script>
 
 {#if currentLocation}
-  <div role="alert" aria-live="assertive" class="normal-background">
+  <div role="alert" aria-live="assertive" class="normal-background rounded-full border-interactive px-2">
     {currentLocation}
   </div>
 {/if}

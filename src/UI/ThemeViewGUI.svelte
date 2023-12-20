@@ -17,7 +17,6 @@
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
-  import PrivacyPolicy from "./BigComponents/PrivacyPolicy"
   import Constants from "../Models/Constants"
   import TabbedGroup from "./Base/TabbedGroup.svelte"
   import UserRelatedState from "../Logic/State/UserRelatedState"
@@ -54,7 +53,6 @@
   import Plus from "../assets/svg/Plus.svelte"
   import Filter from "../assets/svg/Filter.svelte"
   import Add from "../assets/svg/Add.svelte"
-  import Statistics from "../assets/svg/Statistics.svelte"
   import Community from "../assets/svg/Community.svelte"
   import Download from "../assets/svg/Download.svelte"
   import Share from "../assets/svg/Share.svelte"
@@ -66,6 +64,11 @@
   import Compass_arrow from "../assets/svg/Compass_arrow.svelte"
   import ReverseGeocoding from "./BigComponents/ReverseGeocoding.svelte"
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
+  import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
+  import { BBox } from "../Logic/BBox"
+  import { GeoOperations } from "../Logic/GeoOperations"
+  import ShowDataLayer from "./Map/ShowDataLayer"
+  import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -100,8 +103,30 @@
   )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
-  let arrowKeysWereUsed = state.visualFeedback
-  let centerFeatures = state.closestFeatures.features
+  let visualFeedback = state.visualFeedback
+  let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
+  let featuresInViewPort: UIEventSource<Feature[]> = new UIEventSource<Feature[]>(undefined)
+  viewport.addCallbackAndRunD(viewport => {
+    state.featuresInView.features.addCallbackAndRunD((features: Feature[]) => {
+      const rect = viewport.getBoundingClientRect()
+      const mlmap = state.map.data
+      if (!mlmap) {
+        return undefined
+      }
+      const topLeft = mlmap.unproject([rect.left, rect.top])
+      const bottomRight = mlmap.unproject([rect.right, rect.bottom])
+      const bbox = new BBox([[topLeft.lng, topLeft.lat], [bottomRight.lng, bottomRight.lat]])
+      const bboxGeo = bbox.asGeoJson({})
+      console.log("BBOX:", bboxGeo)
+      
+      const filtered = features.filter((f: Feature) => {
+        console.log(f, bboxGeo)
+        return GeoOperations.calculateOverlap(bboxGeo, [f]).length > 0
+      })
+      featuresInViewPort.setData(filtered)
+    })
+
+  })
   let mapproperties: MapProperties = state.mapProperties
   let featureSwitches: FeatureSwitchState = state.featureSwitches
   let availableLayers = state.availableLayers
@@ -132,6 +157,13 @@
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
   <MaplibreMap map={maplibremap} />
 </div>
+
+{#if $visualFeedback}
+  <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden flex items-center justify-center">
+
+    <div bind:this={$viewport} style="border: 2px solid #ff000044; width: 300px; height: 300px"></div>
+  </div>
+{/if}
 
 <div class="pointer-events-none absolute top-0 left-0 w-full">
   <!-- Top components -->
@@ -183,7 +215,7 @@
       <div class="alert w-fit">Testmode</div>
     </If>
   </div>
-  <div class="flex w-full justify-center">
+  <div class="flex flex-col w-full justify-center items-center">
     <!-- Flex and w-full are needed for the positioning -->
     <!-- Centermessage -->
     <StateIndicator {state} />
@@ -238,7 +270,7 @@
       </div>
     </div>
     <If condition={state.visualFeedback}>
-      <VisualFeedbackPanel {state} />
+      <VisualFeedbackPanel {state} {featuresInViewPort} />
     </If>
 
     <div class="flex flex-col items-end">
@@ -265,7 +297,7 @@
         <Min class="h-8 w-8" />
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
-        <div class="relative m-0.5 md:m-1">
+        <div class="relative m-0">
           <MapControlButton arialabel={Translations.t.general.labels.jumpToLocation}
                             on:click={() => state.geolocationControl.handleClick()}
                             on:keydown={forwardEventToMap}
@@ -288,7 +320,7 @@
 
 
 <LoginToggle ignoreLoading={true} {state}>
-  {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $arrowKeysWereUsed}
+  {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
     <div
       class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center justify-center"
     >
@@ -416,6 +448,7 @@
   </FloatOver>
 </IfHidden>
 
+
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
   <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
@@ -458,10 +491,27 @@
           <Tr t={Translations.t.general.attribution.donate} />
         </a>
 
-        <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
-          <Statistics class="h-6 w-6" />
-          <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: "MapComplete" })} />
-        </a>
+        <button class="small soft flex" on:click={() => state.guistate.communityIndexPanelIsOpened.setData(true)}>
+          <Community class="h-6 w-6" />
+          <Tr t={Translations.t.communityIndex.title} />
+        </button>
+
+
+        <If condition={featureSwitches.featureSwitchEnableLogin}>
+          <OpenIdEditor mapProperties={state.mapProperties} />
+          <OpenJosm {state} />
+          <MapillaryLink large={false} mapProperties={state.mapProperties} />
+        </If>
+
+        <button class="small soft flex"
+                on:click={() => state.guistate.privacyPanelIsOpened.setData(true)}
+        >
+          <EyeIcon class="w-6 h-6 pr-1" />
+          <Tr t={Translations.t.privacy.title} />
+        </button>
+        <div class="m-2 flex flex-col">
+          <ToSvelte construct={Hotkeys.generateDocumentationDynamic} />
+        </div>
         {Constants.vNumber}
       </div>
 
@@ -503,31 +553,40 @@
         </h3>
         <Favourites {state} />
       </div>
-      <div class="flex" slot="title3">
-        <Community class="h-6 w-6" />
-        <Tr t={Translations.t.communityIndex.title} />
-      </div>
-      <div class="m-2" slot="content3">
-        <CommunityIndexView location={state.mapProperties.location} />
-      </div>
-      <div class="flex" slot="title4">
-        <EyeIcon class="w-6" />
-        <Tr t={Translations.t.privacy.title} />
-      </div>
-      <div class="m-2" slot="content4">
-        <ToSvelte construct={() => new PrivacyPolicy()} />
-      </div>
 
-      <Tr slot="title5" t={Translations.t.advanced.title} />
-      <div class="m-2 flex flex-col" slot="content5">
-        <If condition={featureSwitches.featureSwitchEnableLogin}>
-          <OpenIdEditor mapProperties={state.mapProperties} />
-          <OpenJosm {state} />
-          <MapillaryLink mapProperties={state.mapProperties} />
-        </If>
 
-        <ToSvelte construct={Hotkeys.generateDocumentationDynamic} />
-      </div>
     </TabbedGroup>
   </FloatOver>
 </If>
+
+<If condition={state.guistate.privacyPanelIsOpened}>
+  <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
+    <div class="h-full flex flex-col overflow-hidden">
+      <h2 class="flex items-center low-interaction p-4 m-0">
+        <EyeIcon class="w-6 pr-2" />
+        <Tr t={Translations.t.privacy.title} />
+      </h2>
+      <div class="overflow-auto p-4">
+        <PrivacyPolicy />
+      </div>
+    </div>
+  </FloatOver>
+</If>
+
+
+<If condition={state.guistate.communityIndexPanelIsOpened}>
+  <FloatOver on:close={() => state.guistate.communityIndexPanelIsOpened.setData(false)}>
+    <div class="h-full flex flex-col overflow-hidden">
+      <h2 class="flex items-center low-interaction p-4 m-0">
+        <Community class="h-6 w-6" />
+        <Tr t={Translations.t.communityIndex.title} />
+      </h2>
+      <div class="overflow-auto p-4">
+        <CommunityIndexView location={state.mapProperties.location} />
+      </div>
+    </div>
+
+
+  </FloatOver>
+</If>
+

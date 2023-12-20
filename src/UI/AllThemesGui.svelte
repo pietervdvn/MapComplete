@@ -19,6 +19,7 @@
   import { LayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
   import * as themeOverview from "../assets/generated/theme_overview.json"
   import UnofficialThemeList from "./BigComponents/UnofficialThemeList.svelte"
+  import Eye from "@babeard/svelte-heroicons/mini/Eye"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -134,6 +135,14 @@
     >
       <Pencil class="mr-2 h-6 w-6" />
       <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
+    </a>
+
+    <a
+      class="button h-fit w-full"
+      href={window.location.protocol + "//" + window.location.host + "/privacy.html"}
+    >
+      <Eye class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.privacy.title} />
     </a>
 
 

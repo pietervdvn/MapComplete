@@ -5,6 +5,7 @@
   import Josm_logo from "../../assets/svg/Josm_logo.svelte"
   import Constants from "../../Models/Constants"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import { Utils } from "../../Utils"
 
   export let state: SpecialVisualizationState
   const t = Translations.t.general.attribution
@@ -13,7 +14,7 @@
   josmState.stabilized(15000).addCallbackD(() => josmState.setData(undefined))
 
   const showButton = state.osmConnection.userDetails.map(
-    (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible
+    (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible,
   )
 
   function openJosm() {
@@ -33,16 +34,20 @@
 </script>
 
 {#if $showButton}
-  {#if $josmState === undefined}
-    <!-- empty -->
-  {:else if state === "OK"}
-    <Tr cls="thanks" t={t.josmOpened} />
-  {:else}
-    <Tr cls="alert" t={t.josmNotOpened} />
-  {/if}
+  <div class="flex">
 
-  <button class="flex items-center" on:click={openJosm}>
-    <Josm_logo class="h-12 w-12 p-2 pr-4" />
-    <Tr t={t.editJosm} />
-  </button>
+    <button class="flex items-center small soft grow" on:click={openJosm}>
+      <Josm_logo class="h-6 w-6 pr-2" />
+      <Tr t={t.editJosm} />
+    </button>
+
+    {#if $josmState === undefined}
+      <!-- empty -->
+    {:else if $josmState === "OK"}
+      <Tr cls="thanks shrink-0 w-fit" t={t.josmOpened} />
+    {:else}
+      <Tr cls="alert shrink-0 w-fit" t={t.josmNotOpened} />
+    {/if}
+  </div>
+
 {/if}

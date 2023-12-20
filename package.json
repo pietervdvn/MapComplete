@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.36.6",
+  "version": "0.36.7",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -32,7 +32,7 @@
       "https://overpass.openstreetmap.ru/cgi/interpreter"
     ],
     "country_coder_host": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country",
-    "nominatimEndpoint": "https://nominatim.openstreetmap.org/"
+    "nominatimEndpoint": "https://geocoding.geofabrik.de/b75350b1cfc34962ac49824fe5b582dc/"
   },
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",
@@ -75,7 +75,7 @@
     "lint:prettier": "prettier  --check '**/*.ts' '**/*.svelte'",
     "format": "prettier --write '**/*.ts' '**/*.svelte'",
     "clean:tests": "find . -type f -name \"*.doctest.ts\" | xargs -r rm",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|test\\|studio\\|theme\\|style_test\\|statistics\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
     "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",

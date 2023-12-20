@@ -350,6 +350,11 @@ label.checked:not(.neutral-label) {
     width: 100%;
 }
 
+button.soft, .button.soft {
+    border: 2px solid var(--interactive-background);
+    margin: 0;
+}
+
 .links-as-button a {
     /*
     * Let a 'link' mimick a button, but not entirely

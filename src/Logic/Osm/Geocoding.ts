@@ -29,13 +29,14 @@ export class Geocoding {
 
     static async reverse(
         coordinate: { lon: number; lat: number },
-        zoom: number = 18
+        zoom: number = 17,
+        language?: string
     ): Promise<FeatureCollection> {
         // https://nominatim.org/release-docs/develop/api/Reverse/
         // IF the zoom is low, it'll only return a country instead of an address
         const url = `${Geocoding.host}reverse?format=geojson&lat=${coordinate.lat}&lon=${
             coordinate.lon
-        }&zoom=${Math.round(zoom)}`
+        }&zoom=${Math.ceil(zoom) + 1}&accept-language=${language}`
         return Utils.downloadJson(url)
     }
 }

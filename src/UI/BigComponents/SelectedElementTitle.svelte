@@ -55,7 +55,7 @@
 
     <button on:click={() => state.selectedElement.setData(undefined)}
             use:ariaLabel={Translations.t.general.backToMap}
-            class="border-none p-0">
+            class="border-none p-0 rounded-full">
       <XCircleIcon aria-hidden={true} class="h-8 w-8" />
     </button>
   </div>

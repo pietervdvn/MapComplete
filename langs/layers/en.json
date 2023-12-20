@@ -7154,6 +7154,7 @@
                 "question": "Are dogs allowed in this business?"
             },
             "email": {
+                "editButtonAriaLabel": "Edit email address",
                 "question": "What is the email address of {title()}?"
             },
             "gluten_free": {
@@ -7352,6 +7353,7 @@
                 }
             },
             "phone": {
+                "editButtonAriaLabel": "Edit phone number",
                 "question": "What is the phone number of {title()}?"
             },
             "repeated": {
@@ -7454,6 +7456,7 @@
                 "question": "Does this place offer a vegan option?"
             },
             "website": {
+                "editButtonAriaLabel": "Edit website",
                 "question": "What is the website of {title()}?"
             },
             "wheelchair-access": {

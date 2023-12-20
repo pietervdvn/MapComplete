@@ -37,7 +37,7 @@
     <slot name="close-button">
       <!-- The close button is placed _after_ the default slot in order to always paint it on top -->
       <button
-        class="absolute right-10 top-10 h-8 w-8 cursor-pointer border-none bg-white p-0"
+        class="absolute right-10 top-10 h-8 w-8 cursor-pointer border-none bg-white rounded-full p-0"
         on:click={() => dispatch("close")}
       >
         <XCircleIcon />

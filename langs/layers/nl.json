@@ -6338,6 +6338,7 @@
                 "question": "Zijn honden toegelaten in deze zaak?"
             },
             "email": {
+                "editButtonAriaLabel": "Pas emailadres aan",
                 "question": "Wat is het e-mailadres van {title()}?"
             },
             "induction-loop": {
@@ -6482,6 +6483,7 @@
                 }
             },
             "phone": {
+                "editButtonAriaLabel": "Pas telefoonnummer aan",
                 "question": "Wat is het telefoonnummer van {title()}?"
             },
             "repeated": {
@@ -6540,6 +6542,7 @@
                 "question": "Is roken toegestaan bij {title()}?"
             },
             "website": {
+                "editButtonAriaLabel": "Pas website aan",
                 "question": "Wat is de website van {title()}?"
             },
             "wheelchair-access": {

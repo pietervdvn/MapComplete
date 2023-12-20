@@ -34,7 +34,8 @@ export class MenuState {
         new UIEventSource<boolean>(false)
 
     public readonly filtersPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-
+    public readonly privacyPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly communityIndexPanelIsOpened: UIEventSource<boolean> = new UIEventSource(false)
     public readonly allToggles: {
         toggle: UIEventSource<boolean>
         name: string
@@ -151,13 +152,21 @@ export class MenuState {
      */
     public closeAll(): boolean {
         const toggles = [
-            this.menuIsOpened,
-            this.themeIsOpened,
+            this.communityIndexPanelIsOpened,
+            this.privacyPanelIsOpened,
             this.backgroundLayerSelectionIsOpened,
             this.filtersPanelIsOpened,
+            this.menuIsOpened,
+            this.themeIsOpened,
         ]
-        const somethingIsOpen = toggles.some((t) => t.data)
-        toggles.forEach((t) => t.setData(false))
+        let somethingIsOpen = false
+        for (const t of toggles) {
+            somethingIsOpen = t.data
+            t.setData(false)
+            if (somethingIsOpen) {
+                break
+            }
+        }
         return somethingIsOpen
     }
 }

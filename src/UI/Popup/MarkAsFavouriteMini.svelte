@@ -31,7 +31,7 @@
       <HeartSolidIcon aria-hidden={true} />
     </button>
   {:else}
-    <button class="p-0 m-0 h-8 w-8 no-image-background" on:click={() => markFavourite(true)}
+    <button class="p-0 m-0 h-8 w-8 no-image-background soft" on:click={() => markFavourite(true)}
             use:ariaLabel={Translations.t.favouritePoi.button.isNotMarkedShort}>
       <HeartOutlineIcon aria-hidden={true} />
     </button>

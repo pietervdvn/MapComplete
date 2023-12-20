@@ -20,7 +20,7 @@
 >
   <slot name="close-button">
     <button
-      class="absolute right-10 top-10 h-8 w-8 cursor-pointer"
+      class="absolute right-10 top-10 h-8 w-8 cursor-pointer rounded-full"
       on:click={() => dispatch("close")}
     >
       <XCircleIcon />

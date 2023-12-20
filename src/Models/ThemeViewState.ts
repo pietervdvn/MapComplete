@@ -487,35 +487,28 @@ export default class ThemeViewState implements SpecialVisualizationState {
     }
 
     private initHotkeys() {
-        Hotkeys.RegisterHotkey(
-            { nomod: "Escape", onUp: true },
-            Translations.t.hotkeyDocumentation.closeSidebar,
-            () => {
-                if (this.previewedImage.data !== undefined) {
-                    this.previewedImage.setData(undefined)
-                    return
-                }
-                this.selectedElement.setData(undefined)
-                this.guistate.closeAll()
-                this.focusOnMap()
+        const docs = Translations.t.hotkeyDocumentation
+        Hotkeys.RegisterHotkey({ nomod: "Escape", onUp: true }, docs.closeSidebar, () => {
+            if (this.previewedImage.data !== undefined) {
+                this.previewedImage.setData(undefined)
+                return
             }
-        )
+            this.selectedElement.setData(undefined)
+            this.guistate.closeAll()
+            this.focusOnMap()
+        })
 
-        Hotkeys.RegisterHotkey(
-            { nomod: "f" },
-            Translations.t.hotkeyDocumentation.selectFavourites,
-            () => {
-                this.guistate.menuViewTab.setData("favourites")
-                this.guistate.menuIsOpened.setData(true)
-            }
-        )
+        Hotkeys.RegisterHotkey({ nomod: "f" }, docs.selectFavourites, () => {
+            this.guistate.menuViewTab.setData("favourites")
+            this.guistate.menuIsOpened.setData(true)
+        })
 
         Hotkeys.RegisterHotkey(
             {
                 nomod: " ",
                 onUp: true,
             },
-            Translations.t.hotkeyDocumentation.selectItem,
+            docs.selectItem,
             () => {
                 if (this.selectedElement.data !== undefined) {
                     return false
@@ -537,7 +530,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     nomod: "" + i,
                     onUp: true,
                 },
-                Translations.t.hotkeyDocumentation.selectItem,
+                docs.selectItem,
                 () => this.selectClosestAtCenter(i - 1)
             )
         }
@@ -550,7 +543,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 {
                     nomod: "b",
                 },
-                Translations.t.hotkeyDocumentation.openLayersPanel,
+                docs.openLayersPanel,
                 () => {
                     if (this.featureSwitches.featureSwitchBackgroundSelection.data) {
                         this.guistate.backgroundLayerSelectionIsOpened.setData(true)
@@ -563,6 +556,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 },
                 Translations.t.hotkeyDocumentation.openFilterPanel,
                 () => {
+                    console.log("S pressed")
                     if (this.featureSwitches.featureSwitchFilter.data) {
                         this.guistate.openFilterView()
                     }
@@ -646,7 +640,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
         if (this.layout?.lockLocation) {
-            const bbox = new BBox(this.layout.lockLocation)
+            const bbox = new BBox(<any>this.layout.lockLocation)
             this.mapProperties.maxbounds.setData(bbox)
             ShowDataLayer.showRange(
                 this.map,

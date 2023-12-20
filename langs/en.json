@@ -463,6 +463,7 @@
         "key": "Key combination",
         "openFilterPanel": "Opens the POI-layers and filter panel",
         "openLayersPanel": "Opens the background layers panel",
+        "queryCurrentLocation": "Display the address which is nearest the map center",
         "selectAerial": "Set the background to aerial or satellite imagery. Toggles between the two best, available layers",
         "selectFavourites": "Open the favourites page",
         "selectItem": "Select the POI which is closest to the map center (crosshair). Only when in keyboard navigation is used",

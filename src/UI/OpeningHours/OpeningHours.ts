@@ -677,6 +677,7 @@ This list will be sorted
         /* We calculate the ranges when it is opened! */
         return { startingMonday: lastMonday, ranges: OH.GetRanges(oh, lastMonday, nextSunday) }
     }
+
     public static weekdaysIdentical(openingRanges: OpeningRange[][], startday = 0, endday = 4) {
         console.log("Checking identical:", openingRanges)
         const monday = openingRanges[startday]
@@ -928,21 +929,6 @@ export class ToTextualDescription {
             return t.all_days_from.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[0]) })
         }
 
-        if (OH.weekdaysIdentical(ranges, 0, 4) && OH.weekdaysIdentical(ranges, 5, 6)) {
-            let result = []
-            if (ranges[0].length > 0) {
-                result.push(
-                    t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[0]) })
-                )
-            }
-            if (ranges[6].length > 0) {
-                result.push(
-                    t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[5]) })
-                )
-            }
-            return ToTextualDescription.chain(result)
-        }
-
         const result: Translation[] = []
         const weekdays = [
             "monday",
@@ -953,13 +939,32 @@ export class ToTextualDescription {
             "saturday",
             "sunday",
         ]
-        for (let i = 0; i < weekdays.length; i++) {
-            const day = weekdays[i]
-            if (ranges[i]?.length > 0) {
-                result.push(
-                    t[day].Subs({ ranges: ToTextualDescription.createRangesFor(ranges[i]) })
-                )
+
+        function addRange(start: number, end: number) {
+            for (let i = start; i <= end; i++) {
+                const day = weekdays[i]
+                if (ranges[i]?.length > 0) {
+                    result.push(
+                        t[day].Subs({ ranges: ToTextualDescription.createRangesFor(ranges[i]) })
+                    )
+                }
             }
+        }
+
+        if (OH.weekdaysIdentical(ranges, 0, 4)) {
+            result.push(
+                t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[0]) })
+            )
+        } else {
+            addRange(0, 4)
+        }
+
+        if (OH.weekdaysIdentical(ranges, 5, 6)) {
+            result.push(
+                t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[5]) })
+            )
+        } else {
+            addRange(5, 6)
         }
         return ToTextualDescription.chain(result)
     }
@@ -972,6 +977,7 @@ export class ToTextualDescription {
         }
         return tr
     }
+
     private static timeString(date: Date) {
         return OH.hhmm(date.getHours(), date.getMinutes())
     }
