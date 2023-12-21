@@ -156,7 +156,9 @@
       "condition": {
         "and": [
           "amenity!=bike_wash",
-          "amenity!=bicycle_wash"
+          "amenity!=bicycle_wash",
+          "service:bicycle:cleaning!=no",
+          "service:bicycle:cleaning!="
         ]
       },
       "freeform": {
