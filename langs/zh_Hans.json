@@ -1,6 +1,11 @@
 {
+    "advanced": {
+        "title": "高级功能"
+    },
     "centerMessage": {
+        "allFilteredAway": "当前视图中没有满足过滤条件的要素",
         "loadingData": "加载数据中……",
+        "noData": "当前视图中没有相关的要素",
         "ready": "完成！",
         "retrying": "加载数据失败。将在 {count} 秒后重试……",
         "zoomIn": "放大以查看或编辑数据"
