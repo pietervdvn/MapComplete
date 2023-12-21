@@ -165,7 +165,7 @@
 
 {#if $visualFeedback}
   <div
-    class="absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden"
+    class="absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden pointer-events-none"
   >
     <div bind:this={$viewport} style="border: 2px solid #ff000044; width: 300px; height: 300px" />
   </div>

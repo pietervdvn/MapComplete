@@ -2517,6 +2517,7 @@ button.soft, .button.soft {
 button.soft:hover, .button.soft:hover {
   background-color: var(--interactive-background);
   color: var(--interactive-foreground);
+  border: 2px solid var(--catch-detail-color-contrast);
 }
 
 .links-as-button a {
