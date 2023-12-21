@@ -3,8 +3,7 @@
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
-  import { GeoOperations } from "../../Logic/GeoOperations"
-  import { Store } from "../../Logic/UIEventSource"
+  import DirectionIndicator from "../Base/DirectionIndicator.svelte"
 
   export let state: SpecialVisualizationState
   export let feature: Feature
@@ -13,30 +12,13 @@
   let tags = state.featureProperties.getStore(id)
   let layer: LayerConfig = state.layout.getMatchingLayer(tags.data)
 
-  function select() {
-    state.selectedElement.setData(undefined)
-    state.selectedLayer.setData(layer)
-    state.selectedElement.setData(feature)
-  }
-
-  let bearingAndDist: Store<{ bearing: number; dist: number }> = state.mapProperties.location.map(
-    (l) => {
-      let fcenter = GeoOperations.centerpointCoordinates(feature)
-      let mapCenter = [l.lon, l.lat]
-
-      let bearing = Math.round(GeoOperations.bearing(fcenter, mapCenter))
-      let dist = Math.round(GeoOperations.distanceBetween(fcenter, mapCenter))
-      return { bearing, dist }
-    }
-  )
 </script>
 
-<div class="small flex cursor-pointer" on:click={() => select()}>
-  <span class="flex">
-    {#if i !== undefined}
-      <span class="font-bold">{i + 1}.</span>
-    {/if}
-    <TagRenderingAnswer config={layer.title} {layer} selectedElement={feature} {state} {tags} />
-    {$bearingAndDist.dist}m {$bearingAndDist.bearing}°
-  </span>
-</div>
+<a class="small flex space-x-1 cursor-pointer w-fit" href={`#${feature.properties.id}`}>
+  {#if i !== undefined}
+    <span class="font-bold">{i + 1} &nbsp; </span>
+  {/if}
+  <TagRenderingAnswer config={layer.title} extraClasses="inline-flex w-fit" {layer} selectedElement={feature} {state}
+                      {tags} />
+  <DirectionIndicator {feature} {state} />
+</a>

@@ -47,7 +47,8 @@ export default class Hotkeys {
             onUp?: boolean
         },
         documentation: string | Translation,
-        action: () => void | false
+        action: () => void | false,
+        alsoTriggeredOn?: Translation[]
     ) {
         const type = key["onUp"] ? "keyup" : "keypress"
         let keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]

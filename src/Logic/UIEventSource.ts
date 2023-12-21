@@ -10,6 +10,9 @@ export class Stores {
 
         function run() {
             source.setData(new Date())
+            if (Utils.runningFromConsole) {
+                return
+            }
             if (asLong === undefined || asLong()) {
                 window.setTimeout(run, millis)
             }
@@ -104,7 +107,8 @@ export abstract class Store<T> implements Readable<T> {
     M
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
-        extraStoresToWatch?: Store<any>[]
+        extraStoresToWatch?: Store<any>[],
+        callbackDestroyFunction?: (f: () => void) => void
     ): Store<J> {
         return this.map((t) => {
             if (t === undefined) {
@@ -263,7 +267,7 @@ export abstract class Store<T> implements Readable<T> {
     /**
      * Converts the uiEventSource into a promise.
      * The promise will return the value of the store if the given condition evaluates to true
-     * @param condition: an optional condition, default to 'store.value !== undefined'
+     * @param condition an optional condition, default to 'store.value !== undefined'
      * @constructor
      */
     public AsPromise(condition?: (t: T) => boolean): Promise<T> {
@@ -482,7 +486,7 @@ class MappedStore<TIn, T> extends Store<T> {
             stores = []
         }
         if (extraStores?.length > 0) {
-            stores.push(...extraStores)
+            stores?.push(...extraStores)
         }
         if (this._extraStores?.length > 0) {
             this._extraStores?.forEach((store) => {
@@ -767,9 +771,9 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     /**
      * Monoidal map which results in a read-only store
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
-     * @param f: The transforming function
-     * @param extraSources: also trigger the update if one of these sources change
-     * @param onDestroy: a callback that can trigger the destroy function
+     * @param f The transforming function
+     * @param extraSources also trigger the update if one of these sources change
+     * @param onDestroy a callback that can trigger the destroy function
      *
      * const src = new UIEventSource<number>(10)
      * const store = src.map(i => i * 2)
@@ -802,7 +806,8 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      */
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
-        extraSources: Store<any>[] = []
+        extraSources: Store<any>[] = [],
+        callbackDestroyFunction?: (f: () => void) => void
     ): Store<J | undefined> {
         return new MappedStore(
             this,
@@ -819,17 +824,18 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
             this._callbacks,
             this.data === undefined || this.data === null
                 ? <undefined | null>this.data
-                : f(<any>this.data)
+                : f(<any>this.data),
+            callbackDestroyFunction
         )
     }
 
     /**
      * Two way sync with functions in both directions
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
-     * @param f: The transforming function
-     * @param extraSources: also trigger the update if one of these sources change
-     * @param g: a 'backfunction to let the sync run in two directions. (data of the new UIEVEntSource, currentData) => newData
-     * @param allowUnregister: if set, the update will be halted if no listeners are registered
+     * @param f The transforming function
+     * @param extraSources also trigger the update if one of these sources change
+     * @param g a 'backfunction to let the sync run in two directions. (data of the new UIEVEntSource, currentData) => newData
+     * @param allowUnregister if set, the update will be halted if no listeners are registered
      */
     public sync<J>(
         f: (t: T) => J,

@@ -106,6 +106,12 @@ export interface MappingConfigJson {
     hideInAnswer?: boolean | TagConfigJson
 
     /**
+     * Also show this 'then'-option if the feature matches these tags.
+     * Ideal for outdated tags.
+     */
+    alsoShowIf?: TagConfigJson
+
+    /**
      * question: What tags should be applied if this mapping is _not_ chosen?
      *
      * Only applicable if 'multiAnswer' is set.

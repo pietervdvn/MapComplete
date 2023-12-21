@@ -13,13 +13,7 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import {
-    CogIcon,
-    EyeIcon,
-    HeartIcon,
-    MenuIcon,
-    XCircleIcon,
-  } from "@rgossiaux/svelte-heroicons/solid"
+  import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
@@ -72,9 +66,6 @@
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
-  import { GeoOperations } from "../Logic/GeoOperations"
-  import ShowDataLayer from "./Map/ShowDataLayer"
-  import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -102,37 +93,38 @@
   })
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) =>
-    state.layout.getMatchingLayer(element.properties)
+    state.layout.getMatchingLayer(element.properties),
   )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
-  let featuresInViewPort: UIEventSource<Feature[]> = new UIEventSource<Feature[]>(undefined)
-  viewport.addCallbackAndRunD((viewport) => {
-    state.featuresInView.features.addCallbackAndRunD((features: Feature[]) => {
-      const rect = viewport.getBoundingClientRect()
-      const mlmap = state.map.data
-      if (!mlmap) {
-        return undefined
-      }
-      const topLeft = mlmap.unproject([rect.left, rect.top])
-      const bottomRight = mlmap.unproject([rect.right, rect.bottom])
-      const bbox = new BBox([
-        [topLeft.lng, topLeft.lat],
-        [bottomRight.lng, bottomRight.lat],
-      ])
-      const bboxGeo = bbox.asGeoJson({})
-      console.log("BBOX:", bboxGeo)
-
-      const filtered = features.filter((f: Feature) => {
-        console.log(f, bboxGeo)
-        return GeoOperations.calculateOverlap(bboxGeo, [f]).length > 0
-      })
-      featuresInViewPort.setData(filtered)
-    })
-  })
   let mapproperties: MapProperties = state.mapProperties
+
+  function updateViewport() {
+    const rect = viewport.data?.getBoundingClientRect()
+    if (!rect) {
+      return
+    }
+    const mlmap = state.map.data
+    if (!mlmap) {
+      return undefined
+    }
+    const topLeft = mlmap.unproject([rect.left, rect.top])
+    const bottomRight = mlmap.unproject([rect.right, rect.bottom])
+    const bbox = new BBox([
+      [topLeft.lng, topLeft.lat],
+      [bottomRight.lng, bottomRight.lat],
+    ])
+    state.visualFeedbackViewportBounds.setData(bbox)
+  }
+
+  viewport.addCallbackAndRunD(_ => {
+    updateViewport()
+  })
+  mapproperties.bounds.addCallbackAndRunD(_ => {
+    updateViewport()
+  })
   let featureSwitches: FeatureSwitchState = state.featureSwitches
   let availableLayers = state.availableLayers
   let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
@@ -142,7 +134,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
   let previewedImage = state.previewedImage
 
@@ -173,8 +165,14 @@
 
 <div class="pointer-events-none absolute top-0 left-0 w-full">
   <!-- Top components -->
-  <If condition={state.featureSwitches.featureSwitchSearch}>
-    <div class="pointer-events-auto float-right mt-1 px-1 max-[480px]:w-full sm:m-2">
+
+  <div class="pointer-events-auto float-right mt-1 px-1 max-[480px]:w-full sm:m-2 flex flex-col">
+    <If condition={state.visualFeedback}>
+      <div class="w-fit">
+        <VisualFeedbackPanel {state} />
+      </div>
+    </If>
+    <If condition={state.featureSwitches.featureSwitchSearch}>
       <Geosearch
         bounds={state.mapProperties.bounds}
         on:searchCompleted={() => {
@@ -183,8 +181,8 @@
         perLayer={state.perLayer}
         selectedElement={state.selectedElement}
       />
-    </div>
-  </If>
+    </If>
+  </div>
   <div class="float-left m-1 flex flex-col sm:mt-2">
     <MapControlButton
       on:click={() => state.guistate.themeIsOpened.setData(true)}
@@ -229,7 +227,7 @@
     <!-- Flex and w-full are needed for the positioning -->
     <!-- Centermessage -->
     <StateIndicator {state} />
-    <ReverseGeocoding mapProperties={mapproperties} />
+    <ReverseGeocoding {state} />
   </div>
 </div>
 
@@ -280,9 +278,6 @@
         </a>
       </div>
     </div>
-    <If condition={state.visualFeedback}>
-      <VisualFeedbackPanel {state} {featuresInViewPort} />
-    </If>
 
     <div class="flex flex-col items-end">
       <!-- bottom right elements -->

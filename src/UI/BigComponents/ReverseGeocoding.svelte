@@ -8,8 +8,11 @@
   import Hotkeys from "../Base/Hotkeys"
   import Translations from "../i18n/Translations"
   import Locale from "../i18n/Locale"
+  import MapCenterDetails from "./MapCenterDetails.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
-  export let mapProperties: MapProperties
+  export let state: ThemeViewState
+  let mapProperties = state.mapProperties
   let lastDisplayed: Date = undefined
   let currentLocation: string = undefined
 
@@ -51,8 +54,9 @@
   <div
     role="alert"
     aria-live="assertive"
-    class="normal-background border-interactive rounded-full px-2"
+    class="normal-background border-interactive rounded-full px-2 flex flex-col items-center"
   >
     {currentLocation}
+    <MapCenterDetails {state}/>
   </div>
 {/if}

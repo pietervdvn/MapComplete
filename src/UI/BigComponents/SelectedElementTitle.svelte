@@ -31,8 +31,11 @@
     <div class="flex flex-col">
       <!-- Title element-->
       <h3>
+        <a href={`#${$tags.id}`}>
         <TagRenderingAnswer config={layer.title} {selectedElement} {state} {tags} {layer} />
+        </a>
       </h3>
+      
       <div
         class="no-weblate title-icons links-as-button mr-2 flex flex-row flex-wrap items-center gap-x-0.5 p-1 pt-0.5 sm:pt-1"
       >

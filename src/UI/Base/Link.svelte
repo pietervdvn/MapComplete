@@ -11,6 +11,7 @@
 <a
   {href}
   aria-label={ariaLabel}
+  title={ariaLabel}
   target={newTab ? "_blank" : undefined}
   {download}
   class={classnames}

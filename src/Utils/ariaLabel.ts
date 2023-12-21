@@ -1,28 +1,21 @@
 import { Translation } from "../UI/i18n/Translation"
-import Locale from "../UI/i18n/Locale"
+import { Store } from "../Logic/UIEventSource"
 
 export function ariaLabel(htmlElement: Element, t: Translation) {
+    ariaLabelStore(htmlElement, t?.current)
+}
+
+export function ariaLabelStore(htmlElement: Element, t: Store<string>) {
     if (!t) {
         return
     }
     let destroy: () => void = undefined
 
-    Locale.language.map((language) => {
-        if (!t.translations[language]) {
-            console.log(
-                "No aria label in",
-                language,
-                "for",
-                t.context,
-                "; en is",
-                t.translations["en"]
-            )
-        }
-    })
-
-    t.current.map(
+    t?.mapD(
         (label) => {
             htmlElement.setAttribute("aria-label", label)
+            // Set the tooltip, which is the 'title' attribute of an html-element
+            htmlElement.setAttribute("title", label)
         },
         [],
         (f) => {

@@ -94,10 +94,10 @@
             "backToSelect": "Vælg en anden kategori",
             "confirmButton": "Tilføj en {category}<br><div class=\"alert\">Din tilføjelse er synlig for alle</div>",
             "confirmLocation": "Bekræft dette sted",
-            "confirmTitle": "Tilføj en {titel}?",
+            "confirmTitle": "Tilføj en {title}?",
             "disableFilters": "Slå alle filtre fra",
             "disableFiltersExplanation": "Nogle elementer kan være skjult af et filter",
-            "enableLayer": "Aktivér lag {navn}",
+            "enableLayer": "Aktivér lag {name}",
             "hasBeenImported": "Punktet er allerede importeret",
             "import": {
                 "hasBeenImported": "Objektet blev importeret",
@@ -125,8 +125,8 @@
             "isApplied": "Ændringerne er anvendt"
         },
         "attribution": {
-            "attributionBackgroundLayer": "Det nuværende baggrundslag er {navn}",
-            "attributionBackgroundLayerWithCopyright": "Det nuværende baggrundslag er [navn}: {copyright}",
+            "attributionBackgroundLayer": "Det nuværende baggrundslag er {name}",
+            "attributionBackgroundLayerWithCopyright": "Det nuværende baggrundslag er {name}: {copyright}",
             "attributionContent": "<p>Alle data leveres af <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frit genanvendelige under <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase Licensen</a>.</p>",
             "attributionTitle": "Meddelelse om tilskrivning",
             "codeContributionsBy": "MapComplete er lavet af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>",
@@ -253,7 +253,7 @@
         "pickLanguage": "Vælg et sprog: ",
         "poweredByOsm": "Drevet af OpenStreetMap",
         "questionBox": {
-            "answeredMultiple": "Du besvarede [answered} spørgsmål",
+            "answeredMultiple": "Du besvarede {answered} spørgsmål",
             "answeredMultipleSkippedMultiple": "Du besvarede {answered} spørgsmål og sprang over {skipped} spørgsmål",
             "answeredMultipleSkippedOne": "Du besvarede {answered} spørgsmål og sprang over ét spørgsmål",
             "answeredOne": "Du besvarede ét spørgsmål",

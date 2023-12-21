@@ -139,7 +139,8 @@
       "condition": "_theme:backgroundLayer=",
       "mappings": [
         {
-          "if": "mapcomplete-preferred-background-layer=",
+          "if": "mapcomplete-preferred-background-layer=default",
+          "alsoShowIf": "mapcomplete-preferred-background-layer=",
           "then": {
             "en": "Use the default background layer",
             "ca": "Utilitzeu la capa de fons predeterminada",

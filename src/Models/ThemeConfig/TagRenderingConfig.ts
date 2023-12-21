@@ -25,6 +25,7 @@ export interface Icon {}
 
 export interface Mapping {
     readonly if: UploadableTag
+    readonly alsoShowIf: Tag | undefined
     readonly ifnot?: UploadableTag
     readonly then: TypedTranslation<object>
     readonly icon: string
@@ -383,7 +384,9 @@ export default class TagRenderingConfig {
             }
         }
         const prioritySearch =
-            mapping.priorityIf !== undefined ? TagUtils.Tag(mapping.priorityIf) : undefined
+            mapping.priorityIf !== undefined
+                ? TagUtils.Tag(mapping.priorityIf, `${ctx}.priorityIf`)
+                : undefined
         const mp = <Mapping>{
             if: TagUtils.Tag(mapping.if, `${ctx}.if`),
             ifnot:
@@ -391,6 +394,10 @@ export default class TagRenderingConfig {
                     ? TagUtils.Tag(mapping.ifnot, `${ctx}.ifnot`)
                     : undefined,
             then: Translations.T(mapping.then, `${ctx}.then`),
+            alsoShowIf:
+                mapping.alsoShowIf !== undefined
+                    ? TagUtils.Tag(mapping.alsoShowIf, `${ctx}.alsoShowIf`)
+                    : undefined,
             hideInAnswer,
             icon,
             iconClass,
@@ -528,6 +535,9 @@ export default class TagRenderingConfig {
                     return mapping
                 }
                 if (mapping.if.matchesProperties(tags)) {
+                    return mapping
+                }
+                if (mapping.alsoShowIf?.matchesProperties(tags)) {
                     return mapping
                 }
             }
@@ -818,6 +828,7 @@ export default class TagRenderingConfig {
         for (const m of this.mappings ?? []) {
             tags.push(m.if)
             tags.push(m.priorityIf)
+            tags.push(m.alsoShowIf)
             tags.push(...(m.addExtraTags ?? []))
             if (typeof m.hideInAnswer !== "boolean") {
                 tags.push(m.hideInAnswer)

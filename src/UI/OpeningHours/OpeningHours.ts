@@ -952,17 +952,21 @@ export class ToTextualDescription {
         }
 
         if (OH.weekdaysIdentical(ranges, 0, 4)) {
-            result.push(
-                t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[0]) })
-            )
+            if (ranges[0].length > 0) {
+                result.push(
+                    t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[0]) })
+                )
+            }
         } else {
             addRange(0, 4)
         }
 
         if (OH.weekdaysIdentical(ranges, 5, 6)) {
-            result.push(
-                t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[5]) })
-            )
+            if (ranges[5].length > 0) {
+                result.push(
+                    t.on_weekdays.Subs({ ranges: ToTextualDescription.createRangesFor(ranges[5]) })
+                )
+            }
         } else {
             addRange(5, 6)
         }
@@ -983,7 +987,6 @@ export class ToTextualDescription {
     }
 
     private static createRangeFor(range: OpeningRange): Translation {
-        console.log(">>>", range)
         return Translations.t.general.opening_hours.ranges.Subs({
             starttime: ToTextualDescription.timeString(range.startDate),
             endtime: ToTextualDescription.timeString(range.endDate),
@@ -991,6 +994,9 @@ export class ToTextualDescription {
     }
 
     private static createRangesFor(ranges: OpeningRange[]): Translation {
+        if (ranges.length === 0) {
+            //    return undefined
+        }
         let tr = ToTextualDescription.createRangeFor(ranges[0])
         for (let i = 1; i < ranges.length; i++) {
             tr = Translations.t.general.opening_hours.rangescombined.Subs({

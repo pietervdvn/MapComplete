@@ -9,8 +9,9 @@
   export let score: number
   export let cutoff: number
   export let starSize = "w-h h-4"
+  export let i: number
 
-  let dispatch = createEventDispatcher<{ hover: { score: number } }>()
+  let dispatch = createEventDispatcher<{ hover: { score: number },  click: { score: number } }>()
   let container: HTMLElement
 
   function getScore(e: MouseEvent): number {

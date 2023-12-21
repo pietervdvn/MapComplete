@@ -172,7 +172,7 @@ export class GeoOperations {
     }
 
     /**
-     * Detect wether or not the given point is located in the feature
+     * Detect whether or not the given point is located in the feature
      *
      * // Should work with a normal polygon
      * const polygon = {"type": "Feature","properties": {},"geometry": {"type": "Polygon","coordinates": [[[1.8017578124999998,50.401515322782366],[-3.1640625,46.255846818480315],[5.185546875,44.74673324024678],[1.8017578124999998,50.401515322782366]]]}};
@@ -984,5 +984,88 @@ export class GeoOperations {
         }
 
         return result
+    }
+
+    /**
+     * GeoOperations.distanceToHuman(52.8) // => "53m"
+     * GeoOperations.distanceToHuman(2800) // => "2.8km"
+     * GeoOperations.distanceToHuman(12800) // => "13km"
+     *
+     * @param meters
+     */
+    public static distanceToHuman(meters: number): string {
+        meters = Math.round(meters)
+        if (meters < 1000) {
+            return meters + "m"
+        }
+
+        if (meters >= 10000) {
+            const km = Math.round(meters / 1000)
+            return km + "km"
+        }
+
+        meters = Math.round(meters / 100)
+        const kmStr = "" + meters
+
+        return kmStr.substring(0, kmStr.length - 1) + "." + kmStr.substring(kmStr.length - 1) + "km"
+    }
+
+    private static readonly directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] as const
+    private static readonly directionsRelative = [
+        "straight",
+        "slight_right",
+        "right",
+        "sharp_right",
+        "behind",
+        "sharp_left",
+        "left",
+        "slight_left",
+    ] as const
+
+    /**
+     * GeoOperations.bearingToHuman(0) // => "N"
+     * GeoOperations.bearingToHuman(-9) // => "N"
+     * GeoOperations.bearingToHuman(-10) // => "N"
+     * GeoOperations.bearingToHuman(-180) // => "S"
+     * GeoOperations.bearingToHuman(181) // => "S"
+     * GeoOperations.bearingToHuman(46) // => "NE"
+     */
+    public static bearingToHuman(
+        bearing: number
+    ): "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW" {
+        while (bearing < 0) {
+            bearing += 360
+        }
+        bearing %= 360
+        bearing += 22.5
+        const segment = Math.floor(bearing / 45) % GeoOperations.directions.length
+        return GeoOperations.directions[segment]
+    }
+
+    /**
+     * GeoOperations.bearingToHuman(0) // => "N"
+     * GeoOperations.bearingToHuman(-10) // => "N"
+     * GeoOperations.bearingToHuman(-180) // => "S"
+     * GeoOperations.bearingToHuman(181) // => "S"
+     * GeoOperations.bearingToHuman(46) // => "NE"
+     */
+    public static bearingToHumanRelative(
+        bearing: number
+    ):
+        | "straight"
+        | "slight_right"
+        | "right"
+        | "sharp_right"
+        | "behind"
+        | "sharp_left"
+        | "left"
+        | "slight_left" {
+        while (bearing < 0) {
+            bearing += 360
+        }
+        bearing %= 360
+        bearing += 22.5
+        const segment = Math.floor(bearing / 45) % GeoOperations.directionsRelative.length
+        return GeoOperations.directionsRelative[segment]
     }
 }

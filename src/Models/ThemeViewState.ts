@@ -119,6 +119,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly previewedImage = new UIEventSource<ProvidedImage>(undefined)
 
     readonly addNewPoint: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    /**
+     * When using arrow keys to move, the accessibility mode is activated, which has a small rectangle set.
+     * This is the 'viewport' which 'closestFeatures' uses to filter wilt
+     */
+    readonly visualFeedbackViewportBounds: UIEventSource<BBox> = new UIEventSource<BBox>(undefined)
 
     readonly lastClickObject: LastClickFeatureSource
     readonly overlayLayerStates: ReadonlyMap<
@@ -351,9 +356,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.closestFeatures = new NearbyFeatureSource(
             this.mapProperties.location,
             this.perLayerFiltered,
-            3,
-            this.layerState,
-            this.mapProperties.zoom
+            {
+                currentZoom: this.mapProperties.zoom,
+                layerState: this.layerState,
+                bounds: this.visualFeedbackViewportBounds,
+            }
         )
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
@@ -476,8 +483,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     private selectClosestAtCenter(i: number = 0) {
         this.visualFeedback.setData(true)
-        const toSelect = this.closestFeatures.features.data[i]
+        const toSelect = this.closestFeatures.features?.data?.[i]
         if (!toSelect) {
+            window.requestAnimationFrame(() => {
+                const toSelect = this.closestFeatures.features?.data?.[i]
+                if (!toSelect) {
+                    return
+                }
+                const layer = this.layout.getMatchingLayer(toSelect.properties)
+                this.selectedElement.setData(undefined)
+                this.selectedLayer.setData(layer)
+                this.selectedElement.setData(toSelect)
+            })
             return
         }
         const layer = this.layout.getMatchingLayer(toSelect.properties)

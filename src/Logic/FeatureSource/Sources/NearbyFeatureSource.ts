@@ -4,28 +4,32 @@ import { Feature } from "geojson"
 import { GeoOperations } from "../../GeoOperations"
 import FilteringFeatureSource from "./FilteringFeatureSource"
 import LayerState from "../../State/LayerState"
+import { BBox } from "../../BBox"
 
 export default class NearbyFeatureSource implements FeatureSource {
-    private readonly _result = new UIEventSource<Feature[]>(undefined)
-
     public readonly features: Store<Feature[]>
+    private readonly _result = new UIEventSource<Feature[]>(undefined)
     private readonly _targetPoint: Store<{ lon: number; lat: number }>
     private readonly _numberOfNeededFeatures: number
     private readonly _layerState?: LayerState
     private readonly _currentZoom: Store<number>
     private readonly _allSources: Store<{ feat: Feature; d: number }[]>[] = []
-
+    private readonly _bounds: Store<BBox> | undefined
     constructor(
         targetPoint: Store<{ lon: number; lat: number }>,
         sources: ReadonlyMap<string, FilteringFeatureSource>,
-        numberOfNeededFeatures?: number,
-        layerState?: LayerState,
-        currentZoom?: Store<number>
+        options?: {
+            bounds?: Store<BBox>
+            numberOfNeededFeatures?: number
+            layerState?: LayerState
+            currentZoom?: Store<number>
+        }
     ) {
-        this._layerState = layerState
+        this._layerState = options?.layerState
         this._targetPoint = targetPoint.stabilized(100)
-        this._numberOfNeededFeatures = numberOfNeededFeatures
-        this._currentZoom = currentZoom.stabilized(500)
+        this._numberOfNeededFeatures = options?.numberOfNeededFeatures
+        this._currentZoom = options?.currentZoom.stabilized(500)
+        this._bounds = options?.bounds
 
         this.features = Stores.ListStabilized(this._result)
 
@@ -53,6 +57,10 @@ export default class NearbyFeatureSource implements FeatureSource {
     private update() {
         let features: { feat: Feature; d: number }[] = []
         for (const src of this._allSources) {
+            if (src.data === undefined) {
+                this._result.setData(undefined)
+                return // We cannot yet calculate all the features
+            }
             features.push(...src.data)
         }
         features.sort((a, b) => a.d - b.d)
@@ -80,6 +88,15 @@ export default class NearbyFeatureSource implements FeatureSource {
                 if (this._currentZoom.data < minZoom) {
                     return empty
                 }
+                if (this._bounds) {
+                    const bbox = this._bounds.data
+                    if (!bbox) {
+                        // We have a 'bounds' store, but the bounds store itself is still empty
+                        // As such, we cannot yet calculate which features are within the store
+                        return undefined
+                    }
+                    feats = feats.filter((f) => bbox.overlapsWithFeature(f))
+                }
                 const point = this._targetPoint.data
                 const lonLat = <[number, number]>[point.lon, point.lat]
                 const withDistance = feats.map((feat) => ({
@@ -95,7 +112,7 @@ export default class NearbyFeatureSource implements FeatureSource {
                 }
                 return withDistance
             },
-            [this._targetPoint, isActive, this._currentZoom]
+            [this._targetPoint, isActive, this._currentZoom, this._bounds]
         )
     }
 }

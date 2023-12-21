@@ -33,15 +33,7 @@
   const coord = GeoOperations.centerpointCoordinates(feature)
   const distance = state.mapProperties.location.stabilized(500).mapD(({ lon, lat }) => {
     let meters = Math.round(GeoOperations.distanceBetween(coord, [lon, lat]))
-
-    if (meters < 1000) {
-      return meters + "m"
-    }
-
-    meters = Math.round(meters / 100)
-    const kmStr = "" + meters
-
-    return kmStr.substring(0, kmStr.length - 1) + "." + kmStr.substring(kmStr.length - 1) + "km"
+    return GeoOperations.distanceToHuman(meters)
   })
   const titleIconBlacklist = ["osmlink", "sharelink", "favourite_title_icon"]
 </script>

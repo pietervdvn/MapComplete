@@ -7,18 +7,24 @@
   import ThemeViewState from "../../Models/ThemeViewState"
   import Summary from "./Summary.svelte"
   import Tr from "../Base/Tr.svelte"
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { UIEventSource } from "../../Logic/UIEventSource"
   import type { KeyNavigationEvent } from "../../Models/MapProperties"
-  import type { Feature } from "geojson"
+  import MapCenterDetails from "./MapCenterDetails.svelte"
 
   export let state: ThemeViewState
-  export let featuresInViewPort: Store<Feature[]>
-  console.log("Visual feedback panel:", featuresInViewPort)
   const t = Translations.t.general.visualFeedback
+  let map = state.mapProperties
   let centerFeatures = state.closestFeatures.features
+  let translationWithLength = centerFeatures.mapD(cf => cf.length).mapD(n => {
+    if (n === 1) {
+      return t.oneFeatureInView
+    }
+    return t.closestFeaturesAre.Subs({ n })
+  })
+
 
   let lastAction: UIEventSource<KeyNavigationEvent> = new UIEventSource<KeyNavigationEvent>(
-    undefined
+    undefined,
   )
   state.mapProperties.onKeyNavigationEvent((event) => {
     lastAction.setData(event)
@@ -26,17 +32,23 @@
   lastAction.stabilized(750).addCallbackAndRunD((_) => lastAction.setData(undefined))
 </script>
 
-<div aria-live="assertive" class="p-1" role="alert">
-  {#if $lastAction !== undefined}
+<div aria-live="assertive" class="p-1 interactive" role="alert">
+  {#if $lastAction?.key === "out"}
+    <Tr t={t.out.Subs({z: map.zoom.data - 1})} />
+  {:else if $lastAction?.key === "in"}
+    <Tr t={t.out.Subs({z: map.zoom.data + 1})} />
+  {:else if $lastAction !== undefined}
     <Tr t={t[$lastAction.key]} />
-  {:else if $centerFeatures.length === 0}
+  {:else if $centerFeatures?.length === 0}
     <Tr t={t.noCloseFeatures} />
-  {:else}
+    <MapCenterDetails {state} />
+  {:else if $centerFeatures !== undefined}
     <div class="pointer-events-auto">
-      <Tr t={t.closestFeaturesAre.Subs({ n: $featuresInViewPort?.length })} />
-      <ol class="list-none">
-        {#each $centerFeatures as feat, i (feat.properties.id)}
-          <li class="flex">
+      <Tr t={$translationWithLength} />
+      <MapCenterDetails {state} />
+      <ol>
+        {#each $centerFeatures.slice(0, 9) as feat, i (feat.properties.id)}
+          <li>
             <Summary {state} feature={feat} {i} />
           </li>
         {/each}

@@ -168,6 +168,7 @@ export interface TagRenderingConfigJson {
          * This can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}
          */
         if: TagConfigJson
+
         /**
          * question: What text should be shown?
          *

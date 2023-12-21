@@ -288,4 +288,8 @@ export class BBox {
             throw "BBOX has NAN"
         }
     }
+
+    public overlapsWithFeature(f: Feature) {
+        return GeoOperations.calculateOverlap(this.asGeoJson({}), [f]).length > 0
+    }
 }
