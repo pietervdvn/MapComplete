@@ -26,13 +26,19 @@
 
 <LoginToggle ignoreLoading={true} {state}>
   {#if $isFavourite}
-    <button class="p-0 m-0 h-8 w-8" on:click={() => markFavourite(false)}
-            use:ariaLabel={Translations.t.favouritePoi.button.isMarkedShort}>
+    <button
+      class="m-0 h-8 w-8 p-0"
+      on:click={() => markFavourite(false)}
+      use:ariaLabel={Translations.t.favouritePoi.button.isMarkedShort}
+    >
       <HeartSolidIcon aria-hidden={true} />
     </button>
   {:else}
-    <button class="p-0 m-0 h-8 w-8 no-image-background soft" on:click={() => markFavourite(true)}
-            use:ariaLabel={Translations.t.favouritePoi.button.isNotMarkedShort}>
+    <button
+      class="no-image-background soft m-0 h-8 w-8 p-0"
+      on:click={() => markFavourite(true)}
+      use:ariaLabel={Translations.t.favouritePoi.button.isNotMarkedShort}
+    >
       <HeartOutlineIcon aria-hidden={true} />
     </button>
   {/if}

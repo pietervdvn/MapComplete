@@ -17,8 +17,8 @@
   export let layer: LayerConfig
   export let config: TagRenderingConfig
   export let extraClasses: string | undefined = undefined
-  
-  export let id : string = undefined
+
+  export let id: string = undefined
 
   if (config === undefined) {
     throw "Config is undefined in tagRenderingAnswer"

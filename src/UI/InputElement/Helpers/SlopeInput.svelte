@@ -17,18 +17,16 @@
   let featureBearing: number = 45
   if (feature?.geometry?.type === "LineString") {
     /* Bearing between -180 and + 180, positive is clockwise*/
-    featureBearing = Math.round(GeoOperations.bearing(
-      feature.geometry.coordinates[0],
-      feature.geometry.coordinates.at(-1),
-    ))
+    featureBearing = Math.round(
+      GeoOperations.bearing(feature.geometry.coordinates[0], feature.geometry.coordinates.at(-1))
+    )
   }
 
   let previewDegrees: UIEventSource<string> = new UIEventSource<string>(undefined)
   let previewPercentage: UIEventSource<string> = new UIEventSource<string>(undefined)
 
-
   function degreesToPercentage(beta: number): string {
-    const perc = Math.tan(beta * Math.PI / 180) * 100
+    const perc = Math.tan((beta * Math.PI) / 180) * 100
     const rounded = Math.round(perc / 2.5) * 2.5
     return rounded + "%"
   }
@@ -40,7 +38,7 @@
 
   let gotMeasurement = orientation.gotMeasurement
 
-  let valuesign = alpha.map(phoneBearing => {
+  let valuesign = alpha.map((phoneBearing) => {
     if (featureBearing === undefined) {
       return 1
     }
@@ -56,31 +54,30 @@
     } else {
       return -1
     }
-
-
   })
 
-  beta.map(beta => {
-    // As one moves forward on a way, a positive incline gets higher, and a negative incline gets lower. 
-    let valueSign = valuesign.data
+  beta.map(
+    (beta) => {
+      // As one moves forward on a way, a positive incline gets higher, and a negative incline gets lower.
+      let valueSign = valuesign.data
 
-    if (mode === "degrees") {
-      value.setData(valueSign * beta + "°")
-    } else {
-      value.setData(degreesToPercentage(valueSign * beta))
-    }
+      if (mode === "degrees") {
+        value.setData(valueSign * beta + "°")
+      } else {
+        value.setData(degreesToPercentage(valueSign * beta))
+      }
 
-    previewDegrees.setData(beta + "°")
-    previewPercentage.setData(degreesToPercentage(beta))
-
-  }, [valuesign, beta])
-
+      previewDegrees.setData(beta + "°")
+      previewPercentage.setData(degreesToPercentage(beta))
+    },
+    [valuesign, beta]
+  )
 </script>
-{#if $gotMeasurement}
-  <div class="flex flex-col m-2">
-    <div class="flex w-full">
 
-      <div class="font-bold w-full flex justify-around items-center text-5xl">
+{#if $gotMeasurement}
+  <div class="m-2 flex flex-col">
+    <div class="flex w-full">
+      <div class="flex w-full items-center justify-around text-5xl font-bold">
         <div>
           {$previewDegrees}
         </div>
@@ -88,7 +85,6 @@
           {$previewPercentage}
         </div>
       </div>
-
     </div>
 
     <div>
@@ -96,14 +92,14 @@
     </div>
 
     <If condition={state?.featureSwitchIsTesting ?? new ImmutableStore(true)}>
-    <span class="subtle">
-      Way: {featureBearing}°, compass: {$alpha}°, diff: {(featureBearing - $alpha)}
-      {#if $valuesign === 1}
-      Forward
-    {:else}
-      Backward
-    {/if}
-    </span>
+      <span class="subtle">
+        Way: {featureBearing}°, compass: {$alpha}°, diff: {featureBearing - $alpha}
+        {#if $valuesign === 1}
+          Forward
+        {:else}
+          Backward
+        {/if}
+      </span>
     </If>
   </div>
 {/if}

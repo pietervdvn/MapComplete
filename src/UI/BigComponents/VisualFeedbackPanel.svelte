@@ -17,26 +17,27 @@
   const t = Translations.t.general.visualFeedback
   let centerFeatures = state.closestFeatures.features
 
-  let lastAction: UIEventSource<KeyNavigationEvent> = new UIEventSource<KeyNavigationEvent>(undefined)
+  let lastAction: UIEventSource<KeyNavigationEvent> = new UIEventSource<KeyNavigationEvent>(
+    undefined
+  )
   state.mapProperties.onKeyNavigationEvent((event) => {
     lastAction.setData(event)
   })
-  lastAction.stabilized(750).addCallbackAndRunD(_ => lastAction.setData(undefined))
+  lastAction.stabilized(750).addCallbackAndRunD((_) => lastAction.setData(undefined))
 </script>
-<div aria-live="assertive" class="p-1" role="alert">
 
+<div aria-live="assertive" class="p-1" role="alert">
   {#if $lastAction !== undefined}
     <Tr t={t[$lastAction.key]} />
   {:else if $centerFeatures.length === 0}
     <Tr t={t.noCloseFeatures} />
   {:else}
     <div class="pointer-events-auto">
-      <Tr t={t.closestFeaturesAre.Subs({n: $featuresInViewPort?.length})} />
+      <Tr t={t.closestFeaturesAre.Subs({ n: $featuresInViewPort?.length })} />
       <ol class="list-none">
         {#each $centerFeatures as feat, i (feat.properties.id)}
           <li class="flex">
-            
-            <Summary {state} feature={feat} {i}/>
+            <Summary {state} feature={feat} {i} />
           </li>
         {/each}
       </ol>

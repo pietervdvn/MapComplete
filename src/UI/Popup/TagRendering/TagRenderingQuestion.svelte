@@ -239,8 +239,12 @@
     {#if config.mappings?.length >= 8}
       <div class="sticky flex w-full" aria-hidden="true">
         <Search class="h-6 w-6" />
-        <input type="text" bind:value={$searchTerm} class="w-full"
-               use:placeholder={Translations.t.general.searchAnswer} />
+        <input
+          type="text"
+          bind:value={$searchTerm}
+          class="w-full"
+          use:placeholder={Translations.t.general.searchAnswer}
+        />
       </div>
     {/if}
 

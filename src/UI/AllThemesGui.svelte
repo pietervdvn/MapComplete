@@ -27,7 +27,7 @@
     oauth_token: QueryParameters.GetQueryParameter(
       "oauth_token",
       undefined,
-      "Used to complete the login",
+      "Used to complete the login"
     ),
   })
   const state = new UserRelatedState(osmConnection)
@@ -37,7 +37,7 @@
   let userLanguages = osmConnection.userDetails.map((ud) => ud.languages)
   let themeSearchText: UIEventSource<string | undefined> = new UIEventSource<string>(undefined)
 
-  document.addEventListener("keydown", function(event) {
+  document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && event.code === "KeyF") {
       document.getElementById("theme-search")?.focus()
       event.preventDefault()
@@ -50,17 +50,15 @@
   {
     const prefix = "mapcomplete-hidden-theme-"
     const userPreferences = state.osmConnection.preferencesHandler.preferences
-    visitedHiddenThemes = userPreferences.map(preferences => {
+    visitedHiddenThemes = userPreferences.map((preferences) => {
       const knownIds = new Set<string>(
         Object.keys(preferences)
           .filter((key) => key.startsWith(prefix))
-          .map((key) => key.substring(prefix.length, key.length - "-enabled".length)),
+          .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
       )
       return hiddenThemes.filter((theme) => knownIds.has(theme.id))
     })
   }
-
-
 </script>
 
 <div class="m-4 flex flex-col">
@@ -87,14 +85,22 @@
     </div>
   </div>
 
-
-  <form class="flex justify-center" on:submit|preventDefault={_ => MoreScreen.applySearch(themeSearchText.data)}>
+  <form
+    class="flex justify-center"
+    on:submit|preventDefault={(_) => MoreScreen.applySearch(themeSearchText.data)}
+  >
     <label
-      class="flex rounded-full border-2 border-black items-center my-2 w-full sm:w-1/2 neutral-label">
-      <SearchIcon aria-hidden="true" class="w-8 h-8" />
-      <input autofocus bind:value={$themeSearchText} class="mr-4 w-full" id="theme-search"
-             type="search"
-             use:placeholder={tr.searchForATheme}>
+      class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"
+    >
+      <SearchIcon aria-hidden="true" class="h-8 w-8" />
+      <input
+        autofocus
+        bind:value={$themeSearchText}
+        class="mr-4 w-full"
+        id="theme-search"
+        type="search"
+        use:placeholder={tr.searchForATheme}
+      />
     </label>
   </form>
 
@@ -113,10 +119,12 @@
           <Tr t={tr.previouslyHiddenTitle} />
         </h3>
         <p>
-          <Tr t={tr.hiddenExplanation.Subs({
-            hidden_discovered: $visitedHiddenThemes.length.toString(),
-            total_hidden: hiddenThemes.length.toString(),
-          })} />
+          <Tr
+            t={tr.hiddenExplanation.Subs({
+              hidden_discovered: $visitedHiddenThemes.length.toString(),
+              total_hidden: hiddenThemes.length.toString(),
+            })}
+          />
         </p>
       </svelte:fragment>
     </ThemesList>
@@ -144,8 +152,6 @@
       <Eye class="mr-2 h-6 w-6" />
       <Tr t={Translations.t.privacy.title} />
     </a>
-
-
   </LoginToggle>
 
   <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />

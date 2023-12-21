@@ -15,7 +15,6 @@
 </script>
 
 <div class="m-2 flex flex-col">
-
   <h2 class="flex items-center">
     <Filter class="h-6 w-6 pr-2" />
     <Tr t={Translations.t.general.menu.filter} />

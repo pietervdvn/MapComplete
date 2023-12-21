@@ -30,7 +30,7 @@
 
 {#if mapping.icon !== undefined}
   <div class="inline-flex items-center">
-    <Icon icon={mapping.icon} clss={twJoin(`mapping-icon-${mapping.iconClass}`, "mx-2")}/>
+    <Icon icon={mapping.icon} clss={twJoin(`mapping-icon-${mapping.iconClass}`, "mx-2")} />
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} />
   </div>
 {:else if mapping.then !== undefined}

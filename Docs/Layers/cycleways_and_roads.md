@@ -88,6 +88,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cyclestreet#values) [cyclestreet](https://wiki.openstreetmap.org/wiki/Key:cyclestreet) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes) [](https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3D)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxspeed#values) [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [nat](../SpecialInputElements.md#nat) | [20](https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D20) [30](https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30) [50](https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D50) [70](https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D70) [90](https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D90)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cycleway:surface#values) [cycleway:surface](https://wiki.openstreetmap.org/wiki/Key:cycleway:surface) | [string](../SpecialInputElements.md#string) | [asphalt](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dasphalt) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpaving_stones) [concrete](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dconcrete) [unhewn_cobblestone](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dunhewn_cobblestone) [sett](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dsett) [wood](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dwood) [gravel](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dgravel) [fine_gravel](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dfine_gravel) [pebblestone](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpebblestone) [ground](https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dground)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/incline#values) [incline](https://wiki.openstreetmap.org/wiki/Key:incline) | [slope](../SpecialInputElements.md#slope) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cycleway:smoothness#values) [cycleway:smoothness](https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness) | Multiple choice | [excellent](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dexcellent) [good](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dgood) [intermediate](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dintermediate) [bad](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dbad) [very_bad](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dvery_bad) [horrible](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dhorrible) [very_horrible](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dvery_horrible) [impassable](https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dimpassable)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surface#values) [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) [unhewn_cobblestone](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunhewn_cobblestone) [sett](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett) [wood](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwood) [gravel](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgravel) [fine_gravel](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel) [pebblestone](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpebblestone) [ground](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dground)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/smoothness#values) [smoothness](https://wiki.openstreetmap.org/wiki/Key:smoothness) | Multiple choice | [excellent](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dexcellent) [good](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dgood) [intermediate](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dintermediate) [bad](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dbad) [very_bad](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dvery_bad) [horrible](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dhorrible) [very_horrible](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dvery_horrible) [impassable](https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dimpassable)
@@ -232,6 +233,28 @@ This is rendered with  `This cyleway is made of {cycleway:surface}`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>`
+
+
+
+### incline 
+
+
+
+The question is  *Does {title()} have an incline?*
+
+This rendering asks information about the property  [incline](https://wiki.openstreetmap.org/wiki/Key:incline) 
+
+This is rendered with  `This road has an slope of {incline}`
+
+
+
+
+
+  - *There is (probably) no incline here*  corresponds with  incline=
+  - _This option cannot be chosen as answer_
+  - *This road has a slope*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dup' target='_blank'>up</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Ddown' target='_blank'>down</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dyes' target='_blank'>yes</a>
+  - _This option cannot be chosen as answer_
+
 
 
 

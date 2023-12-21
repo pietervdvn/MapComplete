@@ -101,7 +101,7 @@
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
         <div
-          class=".button low-interaction m-1 flex flex-wrap h-fit w-full items-center justify-end gap-x-2 gap-y-2 rounded border p-1"
+          class=".button low-interaction m-1 flex h-fit w-full flex-wrap items-center justify-end gap-x-2 gap-y-2 rounded border p-1"
         >
           <div style="min-width: 16rem; " class="grow">
             <Geosearch
@@ -117,7 +117,7 @@
           </div>
           <button
             class={twJoin(
-              "flex shrink-0 w-fit items-center justify-between gap-x-2 small",
+              "small flex w-fit shrink-0 items-center justify-between gap-x-2",
               !searchEnabled && "disabled"
             )}
             on:click={() => triggerSearch.ping()}

@@ -48,11 +48,11 @@
     window.requestAnimationFrame(() => {
       _map.resize()
     })
-    _map.on("load", function() {
+    _map.on("load", function () {
       _map.resize()
       const canvas = _map.getCanvas()
       ariaLabel(canvas, Translations.t.general.visualFeedback.navigation)
-      canvas.role="application"
+      canvas.role = "application"
       canvas.tabIndex = 0
     })
     map.set(_map)
@@ -62,16 +62,10 @@
     if (_map) _map.remove()
     map = null
   })
-
-  
 </script>
 
 <svelte:head>
   <link href="./maplibre-gl.css" rel="stylesheet" />
 </svelte:head>
 
-<div
-  bind:this={container}
-  class="map relative top-0 left-0 w-full h-full"
-  id="map"
-/>
+<div bind:this={container} class="map relative top-0 left-0 h-full w-full" id="map" />

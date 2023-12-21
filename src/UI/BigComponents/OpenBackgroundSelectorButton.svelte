@@ -13,8 +13,10 @@
   export let hideTooltip = false
 </script>
 
-<MapControlButton arialabel={Translations.t.general.labels.background}
-                  on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}>
+<MapControlButton
+  arialabel={Translations.t.general.labels.background}
+  on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
+>
   <Square3Stack3dIcon class="h-6 w-6" />
   {#if !hideTooltip}
     <Tr cls="mx-2" t={Translations.t.general.backgroundSwitch} />

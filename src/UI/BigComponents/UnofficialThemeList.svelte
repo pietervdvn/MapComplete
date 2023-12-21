@@ -21,13 +21,7 @@
 </script>
 
 {#if customThemes.length > 0}
-  <ThemesList
-    {search}
-    {state}
-    themes={customThemes}
-    isCustom={true}
-    hideThemes={false}
-  >
+  <ThemesList {search} {state} themes={customThemes} isCustom={true} hideThemes={false}>
     <svelte:fragment slot="title">
       <h3>
         <Tr t={t.customThemeTitle} />

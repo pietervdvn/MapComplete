@@ -301,22 +301,22 @@
     },
     {
       "key": "reservation",
-      "description": "Layer 'Dog friendly eateries' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "description": "Layer 'Dog friendly eateries' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if takeaway=only)",
       "value": "required"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Dog friendly eateries' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "description": "Layer 'Dog friendly eateries' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if takeaway=only)",
       "value": "recommended"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Dog friendly eateries' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "description": "Layer 'Dog friendly eateries' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if takeaway=only)",
       "value": "yes"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Dog friendly eateries' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "description": "Layer 'Dog friendly eateries' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if takeaway=only)",
       "value": "no"
     },
     {
@@ -365,6 +365,11 @@
       "value": "only"
     },
     {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=on_demand with a fixed text, namely 'Some dishes might be adapted to a vegetarian version, but this should be demanded' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine!=friture)",
+      "value": "on_demand"
+    },
+    {
       "key": "diet:vegan",
       "description": "Layer 'Dog friendly eateries' shows diet:vegan=no with a fixed text, namely 'No vegan options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine!=friture)",
       "value": "no"
@@ -383,6 +388,11 @@
       "key": "diet:vegan",
       "description": "Layer 'Dog friendly eateries' shows diet:vegan=only with a fixed text, namely 'All dishes are vegan' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine!=friture)",
       "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=on_demand with a fixed text, namely 'Some dishes might be adapted to a vegan version if asked for' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine!=friture)",
+      "value": "on_demand"
     },
     {
       "key": "diet:halal",

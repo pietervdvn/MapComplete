@@ -39,8 +39,8 @@
 
 {#if availableLanguages?.length > 1}
   <form class={twMerge("flex max-w-full items-center pr-4", clss)}>
-    <label class="flex neutral-label" use:ariaLabel={Translations.t.general.pickLanguage}>
-      <LanguageIcon class="h-4 w-4 mr-1 shrink-0" aria-hidden="true" />
+    <label class="neutral-label flex" use:ariaLabel={Translations.t.general.pickLanguage}>
+      <LanguageIcon class="mr-1 h-4 w-4 shrink-0" aria-hidden="true" />
       <Dropdown cls="max-w-full" value={assignTo}>
         {#if preferredFiltered}
           {#each preferredFiltered as language}
@@ -54,12 +54,12 @@
           <option disabled />
         {/if}
 
-        {#each availableLanguages.filter(l => l !== "_context") as language}
+        {#each availableLanguages.filter((l) => l !== "_context") as language}
           <option value={language} class="font-bold">
             {native[language] ?? ""}
             {#if language !== $current}
               {#if language_translations[language]?.[$current] !== undefined}
-                ({ language_translations[language]?.[$current] + " - " + language ?? language})
+                ({language_translations[language]?.[$current] + " - " + language ?? language})
               {:else}
                 ({language})
               {/if}

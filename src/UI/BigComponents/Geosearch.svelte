@@ -21,7 +21,7 @@
   onDestroy(
     triggerSearch.addCallback((_) => {
       performSearch()
-    }),
+    })
   )
 
   let isRunning: boolean = false
@@ -71,7 +71,7 @@
         new BBox([
           [lon0, lat0],
           [lon1, lat1],
-        ]).pad(0.01),
+        ]).pad(0.01)
       )
       if (perLayer !== undefined) {
         const id = poi.osm_type + "/" + poi.osm_id
@@ -102,7 +102,7 @@
 </script>
 
 <div class="normal-background flex justify-between rounded-full pl-2">
-  <form class="w-full flex flex-wrap">
+  <form class="flex w-full flex-wrap">
     {#if isRunning}
       <Loading>{Translations.t.general.search.searching}</Loading>
     {:else}
@@ -110,13 +110,16 @@
         type="search"
         class="w-full"
         bind:this={inputElement}
-        on:keypress={(keypr) =>{  feedback = undefined; return (keypr.key === "Enter" ? performSearch() : undefined); }}
+        on:keypress={(keypr) => {
+          feedback = undefined
+          return keypr.key === "Enter" ? performSearch() : undefined
+        }}
         bind:value={searchContents}
         use:placeholder={Translations.t.general.search.search}
       />
       {#if feedback !== undefined}
         <!-- The feedback is _always_ shown for screenreaders and to make sure that the searchfield can still be selected by tabbing-->
-        <div class="alert " role="alert" aria-live="assertive">
+        <div class="alert" role="alert" aria-live="assertive">
           {feedback}
         </div>
       {/if}

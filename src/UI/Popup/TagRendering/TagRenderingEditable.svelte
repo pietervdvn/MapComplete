@@ -75,13 +75,20 @@
     onDestroy(highlightedRendering?.addCallbackAndRun(() => setHighlighting()))
     onDestroy(_htmlElement.addCallbackAndRun(() => setHighlighting()))
   }
-  let answerId = "answer-"+Utils.randomString(5)
+  let answerId = "answer-" + Utils.randomString(5)
 </script>
 
 <div bind:this={htmlElem} class={twMerge(clss, "tr-" + config.id)}>
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
-      <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer} on:saved={() => editMode = false}>
+      <TagRenderingQuestion
+        {config}
+        {tags}
+        {selectedElement}
+        {state}
+        {layer}
+        on:saved={() => (editMode = false)}
+      >
         <button
           slot="cancel"
           class="secondary"
@@ -104,7 +111,7 @@
       </TagRenderingQuestion>
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">
-          <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
+        <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
         <button
           on:click={() => {
             editMode = true

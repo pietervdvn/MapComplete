@@ -12,7 +12,7 @@
 <div
   aria-modal="true"
   autofocus
-  class="absolute top-0 right-0 h-screen w-full overflow-y-auto drop-shadow-2xl md:w-6/12 lg:w-5/12 xl:w-4/12 normal-background flex flex-col"
+  class="normal-background absolute top-0 right-0 flex h-screen w-full flex-col overflow-y-auto drop-shadow-2xl md:w-6/12 lg:w-5/12 xl:w-4/12"
   role="dialog"
   style="max-width: 100vw; max-height: 100vh"
   tabindex="-1"

@@ -43,7 +43,6 @@
     {/each}
   </div>
 
-
   {#if filteredThemes.length === 0}
     <NoThemeResultButton {search} />
   {/if}

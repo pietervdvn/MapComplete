@@ -119,12 +119,18 @@
       {/if}
 
       <div class="flex flex-wrap">
-        <If condition={currentMapProperties.zoom.mapD(zoom => zoom >= Constants.minZoomLevelToAddNewPoint)}>
-          <button class="flex primary w-full"
-                  on:click={() => {
-                    moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove);
-                    currentStep = "moved"
-                    }}>
+        <If
+          condition={currentMapProperties.zoom.mapD(
+            (zoom) => zoom >= Constants.minZoomLevelToAddNewPoint
+          )}
+        >
+          <button
+            class="primary flex w-full"
+            on:click={() => {
+              moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)
+              currentStep = "moved"
+            }}
+          >
             <Move class="mr-2 h-6 w-6" />
             <Tr t={t.confirmMove} />
           </button>
@@ -148,8 +154,12 @@
   {:else if currentStep === "moved"}
     <div class="flex flex-col">
       <Tr cls="thanks" t={t.pointIsMoved} />
-      <button on:click={() => {currentStep = "reason"}}>
-        <Move class="w-6 h-6 pr-2" />
+      <button
+        on:click={() => {
+          currentStep = "reason"
+        }}
+      >
+        <Move class="h-6 w-6 pr-2" />
         <Tr t={t.inviteToMoveAgain} />
       </button>
     </div>

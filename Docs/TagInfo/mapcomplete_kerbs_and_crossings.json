@@ -273,6 +273,30 @@
       "value": "ground"
     },
     {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'incline' (in the mapcomplete.org theme 'Kerbs and crossings')"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline= with a fixed text, namely 'There is (probably) no incline here' (in the mapcomplete.org theme 'Kerbs and crossings') Picking this answer will delete the key incline.",
+      "value": ""
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline=up | incline=down | incline=yes with a fixed text, namely 'This road has a slope' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "up"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline=up | incline=down | incline=yes with a fixed text, namely 'This road has a slope' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "down"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline=up | incline=down | incline=yes with a fixed text, namely 'This road has a slope' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
       "key": "cycleway:smoothness",
       "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=excellent with a fixed text, namely 'Usable for thin rollers: rollerblade, skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
       "value": "excellent"

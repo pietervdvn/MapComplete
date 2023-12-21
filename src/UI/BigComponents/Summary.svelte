@@ -19,22 +19,23 @@
     state.selectedElement.setData(feature)
   }
 
-  let bearingAndDist: Store<{ bearing: number, dist: number }> = state.mapProperties.location.map(l => {
+  let bearingAndDist: Store<{ bearing: number; dist: number }> = state.mapProperties.location.map(
+    (l) => {
       let fcenter = GeoOperations.centerpointCoordinates(feature)
       let mapCenter = [l.lon, l.lat]
 
       let bearing = Math.round(GeoOperations.bearing(fcenter, mapCenter))
       let dist = Math.round(GeoOperations.distanceBetween(fcenter, mapCenter))
       return { bearing, dist }
-    },
+    }
   )
 </script>
 
-<div class="cursor-pointer small flex" on:click={() => select()}>
+<div class="small flex cursor-pointer" on:click={() => select()}>
   <span class="flex">
-  {#if i !== undefined}
-    <span class="font-bold">{i + 1}.</span>
-  {/if}
+    {#if i !== undefined}
+      <span class="font-bold">{i + 1}.</span>
+    {/if}
     <TagRenderingAnswer config={layer.title} {layer} selectedElement={feature} {state} {tags} />
     {$bearingAndDist.dist}m {$bearingAndDist.bearing}°
   </span>

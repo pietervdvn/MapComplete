@@ -10,7 +10,6 @@
   const dispatch = createEventDispatcher<{ close }>()
 
   export let extraClasses = "p-4 md:p-6"
-
 </script>
 
 <!-- Draw the background over the total screen -->
@@ -27,17 +26,14 @@
   style="z-index: 21"
   use:trapFocus
 >
-  <div
-    class="content normal-background"
-    on:click|stopPropagation={() => {}}
-  >
+  <div class="content normal-background" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">
       <slot />
     </div>
     <slot name="close-button">
       <!-- The close button is placed _after_ the default slot in order to always paint it on top -->
       <button
-        class="absolute right-10 top-10 h-8 w-8 cursor-pointer border-none bg-white rounded-full p-0"
+        class="absolute right-10 top-10 h-8 w-8 cursor-pointer rounded-full border-none bg-white p-0"
         on:click={() => dispatch("close")}
       >
         <XCircleIcon />
@@ -47,10 +43,10 @@
 </div>
 
 <style>
-    .content {
-        height: 100%;
-        border-radius: 0.5rem;
-        overflow-x: hidden;
-        box-shadow: 0 0 1rem #00000088;
-    }
+  .content {
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow-x: hidden;
+    box-shadow: 0 0 1rem #00000088;
+  }
 </style>

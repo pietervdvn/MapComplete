@@ -13,7 +13,13 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import {
+    CogIcon,
+    EyeIcon,
+    HeartIcon,
+    MenuIcon,
+    XCircleIcon,
+  } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
@@ -75,14 +81,11 @@
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
 
-
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
   Orientation.singleton.startMeasurements()
 
-
   state.selectedElement.addCallback((selected) => {
-
     if (!selected) {
       selectedElement.setData(selected)
       return
@@ -93,20 +96,20 @@
     }
     // ... we give svelte some time to update with requestAnimationFrame ...
     window.requestAnimationFrame(() => {
-      // ... and we force a fresh popup window 
+      // ... and we force a fresh popup window
       selectedElement.setData(selected)
     })
   })
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) =>
-    state.layout.getMatchingLayer(element.properties),
+    state.layout.getMatchingLayer(element.properties)
   )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let featuresInViewPort: UIEventSource<Feature[]> = new UIEventSource<Feature[]>(undefined)
-  viewport.addCallbackAndRunD(viewport => {
+  viewport.addCallbackAndRunD((viewport) => {
     state.featuresInView.features.addCallbackAndRunD((features: Feature[]) => {
       const rect = viewport.getBoundingClientRect()
       const mlmap = state.map.data
@@ -115,17 +118,19 @@
       }
       const topLeft = mlmap.unproject([rect.left, rect.top])
       const bottomRight = mlmap.unproject([rect.right, rect.bottom])
-      const bbox = new BBox([[topLeft.lng, topLeft.lat], [bottomRight.lng, bottomRight.lat]])
+      const bbox = new BBox([
+        [topLeft.lng, topLeft.lat],
+        [bottomRight.lng, bottomRight.lat],
+      ])
       const bboxGeo = bbox.asGeoJson({})
       console.log("BBOX:", bboxGeo)
-      
+
       const filtered = features.filter((f: Feature) => {
         console.log(f, bboxGeo)
         return GeoOperations.calculateOverlap(bboxGeo, [f]).length > 0
       })
       featuresInViewPort.setData(filtered)
     })
-
   })
   let mapproperties: MapProperties = state.mapProperties
   let featureSwitches: FeatureSwitchState = state.featureSwitches
@@ -137,7 +142,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    }),
+    })
   )
   let previewedImage = state.previewedImage
 
@@ -159,9 +164,10 @@
 </div>
 
 {#if $visualFeedback}
-  <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden flex items-center justify-center">
-
-    <div bind:this={$viewport} style="border: 2px solid #ff000044; width: 300px; height: 300px"></div>
+  <div
+    class="absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden"
+  >
+    <div bind:this={$viewport} style="border: 2px solid #ff000044; width: 300px; height: 300px" />
   </div>
 {/if}
 
@@ -171,15 +177,19 @@
     <div class="pointer-events-auto float-right mt-1 px-1 max-[480px]:w-full sm:m-2">
       <Geosearch
         bounds={state.mapProperties.bounds}
-        on:searchCompleted={() => {state.map?.data?.getCanvas()?.focus()}}
+        on:searchCompleted={() => {
+          state.map?.data?.getCanvas()?.focus()
+        }}
         perLayer={state.perLayer}
         selectedElement={state.selectedElement}
       />
     </div>
   </If>
   <div class="float-left m-1 flex flex-col sm:mt-2">
-    <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}
-                      on:keydown={forwardEventToMap}>
+    <MapControlButton
+      on:click={() => state.guistate.themeIsOpened.setData(true)}
+      on:keydown={forwardEventToMap}
+    >
       <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
         <img class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8" src={layout.icon} />
         <b class="mr-1">
@@ -215,7 +225,7 @@
       <div class="alert w-fit">Testmode</div>
     </If>
   </div>
-  <div class="flex flex-col w-full justify-center items-center">
+  <div class="flex w-full flex-col items-center justify-center">
     <!-- Flex and w-full are needed for the positioning -->
     <!-- Centermessage -->
     <StateIndicator {state} />
@@ -248,9 +258,10 @@
       <div class="flex">
         <!-- bottom left elements -->
         <If condition={state.featureSwitches.featureSwitchFilter}>
-          <MapControlButton arialabel={Translations.t.general.labels.filter}
-                            on:click={() => state.guistate.openFilterView()}
-                            on:keydown={forwardEventToMap}
+          <MapControlButton
+            arialabel={Translations.t.general.labels.filter}
+            on:click={() => state.guistate.openFilterView()}
+            on:keydown={forwardEventToMap}
           >
             <Filter class="h-6 w-6" />
           </MapControlButton>
@@ -284,40 +295,43 @@
           />
         </div>
       </If>
-      <MapControlButton arialabel={Translations.t.general.labels.zoomIn}
-                        on:click={() => mapproperties.zoom.update((z) => z + 1)}
-                        on:keydown={forwardEventToMap}
+      <MapControlButton
+        arialabel={Translations.t.general.labels.zoomIn}
+        on:click={() => mapproperties.zoom.update((z) => z + 1)}
+        on:keydown={forwardEventToMap}
       >
         <Plus class="h-8 w-8" />
       </MapControlButton>
-      <MapControlButton arialabel={Translations.t.general.labels.zoomOut}
-                        on:click={() => mapproperties.zoom.update((z) => z - 1)}
-                        on:keydown={forwardEventToMap}
+      <MapControlButton
+        arialabel={Translations.t.general.labels.zoomOut}
+        on:click={() => mapproperties.zoom.update((z) => z - 1)}
+        on:keydown={forwardEventToMap}
       >
         <Min class="h-8 w-8" />
       </MapControlButton>
       <If condition={featureSwitches.featureSwitchGeolocation}>
         <div class="relative m-0">
-          <MapControlButton arialabel={Translations.t.general.labels.jumpToLocation}
-                            on:click={() => state.geolocationControl.handleClick()}
-                            on:keydown={forwardEventToMap}
+          <MapControlButton
+            arialabel={Translations.t.general.labels.jumpToLocation}
+            on:click={() => state.geolocationControl.handleClick()}
+            on:keydown={forwardEventToMap}
           >
-            <GeolocationControl {state} /> <!-- h-8 w-8 + p-0.5 sm:p-1 + 2px border => 9 sm: 10 in total-->
+            <GeolocationControl {state} />
+            <!-- h-8 w-8 + p-0.5 sm:p-1 + 2px border => 9 sm: 10 in total-->
           </MapControlButton>
           {#if $compassLoaded}
-            <div class="absolute top-0 left-0 w-0 h-0 m-0.5 sm:m-1">
-              <Compass_arrow class="compass_arrow"
-                             style={`rotate: calc(${-$compass}deg + 45deg); transform-origin: 50% 50%;`} />
+            <div class="absolute top-0 left-0 m-0.5 h-0 w-0 sm:m-1">
+              <Compass_arrow
+                class="compass_arrow"
+                style={`rotate: calc(${-$compass}deg + 45deg); transform-origin: 50% 50%;`}
+              />
             </div>
           {/if}
         </div>
-
       </If>
-
     </div>
   </div>
 </div>
-
 
 <LoginToggle ignoreLoading={true} {state}>
   {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
@@ -327,7 +341,8 @@
       <Cross class="h-4 w-4" />
     </div>
   {/if}
-  <svelte:fragment slot="error" /> <!-- Add in an empty container to remove errors -->
+  <svelte:fragment slot="error" />
+  <!-- Add in an empty container to remove errors -->
 </LoginToggle>
 
 <If condition={state.previewedImage.map((i) => i !== undefined)}>
@@ -365,7 +380,7 @@
       selectedElement.setData(undefined)
     }}
   >
-    <div class="h-full w-full flex">
+    <div class="flex h-full w-full">
       <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
     </div>
   </FloatOver>
@@ -428,7 +443,6 @@
   </FloatOver>
 </If>
 
-
 <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
   <!-- background layer selector -->
   <FloatOver
@@ -447,7 +461,6 @@
     </div>
   </FloatOver>
 </IfHidden>
-
 
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
@@ -491,11 +504,13 @@
           <Tr t={Translations.t.general.attribution.donate} />
         </a>
 
-        <button class="small soft flex" on:click={() => state.guistate.communityIndexPanelIsOpened.setData(true)}>
+        <button
+          class="small soft flex"
+          on:click={() => state.guistate.communityIndexPanelIsOpened.setData(true)}
+        >
           <Community class="h-6 w-6" />
           <Tr t={Translations.t.communityIndex.title} />
         </button>
-
 
         <If condition={featureSwitches.featureSwitchEnableLogin}>
           <OpenIdEditor mapProperties={state.mapProperties} />
@@ -503,10 +518,11 @@
           <MapillaryLink large={false} mapProperties={state.mapProperties} />
         </If>
 
-        <button class="small soft flex"
-                on:click={() => state.guistate.privacyPanelIsOpened.setData(true)}
+        <button
+          class="small soft flex"
+          on:click={() => state.guistate.privacyPanelIsOpened.setData(true)}
         >
-          <EyeIcon class="w-6 h-6 pr-1" />
+          <EyeIcon class="h-6 w-6 pr-1" />
           <Tr t={Translations.t.privacy.title} />
         </button>
         <div class="m-2 flex flex-col">
@@ -553,16 +569,14 @@
         </h3>
         <Favourites {state} />
       </div>
-
-
     </TabbedGroup>
   </FloatOver>
 </If>
 
 <If condition={state.guistate.privacyPanelIsOpened}>
   <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
-    <div class="h-full flex flex-col overflow-hidden">
-      <h2 class="flex items-center low-interaction p-4 m-0">
+    <div class="flex h-full flex-col overflow-hidden">
+      <h2 class="low-interaction m-0 flex items-center p-4">
         <EyeIcon class="w-6 pr-2" />
         <Tr t={Translations.t.privacy.title} />
       </h2>
@@ -573,11 +587,10 @@
   </FloatOver>
 </If>
 
-
 <If condition={state.guistate.communityIndexPanelIsOpened}>
   <FloatOver on:close={() => state.guistate.communityIndexPanelIsOpened.setData(false)}>
-    <div class="h-full flex flex-col overflow-hidden">
-      <h2 class="flex items-center low-interaction p-4 m-0">
+    <div class="flex h-full flex-col overflow-hidden">
+      <h2 class="low-interaction m-0 flex items-center p-4">
         <Community class="h-6 w-6" />
         <Tr t={Translations.t.communityIndex.title} />
       </h2>
@@ -585,8 +598,5 @@
         <CommunityIndexView location={state.mapProperties.location} />
       </div>
     </div>
-
-
   </FloatOver>
 </If>
-

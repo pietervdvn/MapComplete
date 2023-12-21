@@ -180,7 +180,7 @@ The question is  *Is there a website with more information about this artwork?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  `{link(More information on this website,&LBRACEwebsite&RBRACE,,)}`
+This is rendered with  `{link(More information on this website,&LBRACEwebsite&RBRACE,,,)}`
 
 
 

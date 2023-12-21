@@ -10,11 +10,13 @@
 </script>
 
 {#if url}
-  <a href={url} 
-     use:ariaLabel={Translations.t.general.attribution.seeOnMapillary}
-     target="_blank"
-     rel="noopener nofollower" >
-  <Mapillary />
+  <a
+    href={url}
+    use:ariaLabel={Translations.t.general.attribution.seeOnMapillary}
+    target="_blank"
+    rel="noopener nofollower"
+  >
+    <Mapillary />
   </a>
 {:else}
   <Mapillary />

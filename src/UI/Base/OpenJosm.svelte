@@ -14,7 +14,7 @@
   josmState.stabilized(15000).addCallbackD(() => josmState.setData(undefined))
 
   const showButton = state.osmConnection.userDetails.map(
-    (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible,
+    (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible
   )
 
   function openJosm() {
@@ -35,8 +35,7 @@
 
 {#if $showButton}
   <div class="flex">
-
-    <button class="flex items-center small soft grow" on:click={openJosm}>
+    <button class="small soft flex grow items-center" on:click={openJosm}>
       <Josm_logo class="h-6 w-6 pr-2" />
       <Tr t={t.editJosm} />
     </button>
@@ -49,5 +48,4 @@
       <Tr cls="alert shrink-0 w-fit" t={t.josmNotOpened} />
     {/if}
   </div>
-
 {/if}

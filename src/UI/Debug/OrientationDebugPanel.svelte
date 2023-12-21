@@ -9,6 +9,7 @@
   let gotMeasurement = o.gotMeasurement
   o.startMeasurements()
 </script>
+
 {#if !$gotMeasurement}
   No device orientation data available
 {:else}

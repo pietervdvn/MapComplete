@@ -29,7 +29,7 @@
     return state.sync(
       (f) => f === 0,
       [],
-      (b) => (b ? 0 : undefined),
+      (b) => (b ? 0 : undefined)
     )
   }
 
@@ -48,7 +48,7 @@
       } else {
         mainElem?.classList?.remove("glowing-shadow")
       }
-    }),
+    })
   )
 </script>
 

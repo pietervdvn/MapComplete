@@ -31,6 +31,17 @@
   - [overpassMaxZoom](#overpassmaxzoom)
   - [osmApiTileSize](#osmapitilesize)
   - [background](#background)
+  - [z](#z)
+  - [lat](#lat)
+  - [lon](#lon)
+  - [oauth_token](#oauth_token)
+  - [layer-public_bookcase](#layer-public_bookcase)
+  - [filter-public_bookcase-kid-books](#filter-public_bookcase-kid-books)
+  - [filter-public_bookcase-adult-books](#filter-public_bookcase-adult-books)
+  - [filter-public_bookcase-inside](#filter-public_bookcase-inside)
+  - [filter-public_bookcase-has_image](#filter-public_bookcase-has_image)
+  - [layer-note_import_public_bookcase](#layer-note_import_public_bookcase)
+  - [mode](#mode)
   - [layer-&lt;layer-id&gt;](#layer-&ltlayer-id&gt;)
 
 
@@ -80,7 +91,7 @@ The possible hashes are:
 
 `menu:about`,`menu:settings`,`menu:favourites`,`menu:community`,`menu:privacy`,`menu:advanced`
 
-`theme-menu:intro`,`theme-menu:filters`,`theme-menu:download`,`theme-menu:copyright`,`theme-menu:share`
+`theme-menu:intro`,`theme-menu:download`,`theme-menu:copyright`,`theme-menu:share`
 
 
 
@@ -112,7 +123,7 @@ This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Loc
 
  If set, will show a translation button next to every string.
 
-This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L73)
+This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L79)
 
  The default value is _false_
 
@@ -335,6 +346,127 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L201)
 
  No default value set
+
+
+
+ z 
+---
+
+ The initial/current zoom level
+
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L27)
+
+ The default value is _1_
+
+
+
+ lat 
+-----
+
+ The initial/current latitude
+
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L27)
+
+ The default value is _0_
+
+
+
+ lon 
+-----
+
+ The initial/current longitude of the app
+
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L27)
+
+ The default value is _0_
+
+
+
+ oauth_token 
+-------------
+
+ Used to complete the login
+
+This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L159)
+
+ No default value set
+
+
+
+ layer-public_bookcase 
+-----------------------
+
+ Whether or not layer public_bookcase is shown
+
+This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L106)
+
+ The default value is _true_
+
+
+
+ filter-public_bookcase-kid-books 
+----------------------------------
+
+ State of filter kid-books
+
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L161)
+
+ The default value is _false_
+
+
+
+ filter-public_bookcase-adult-books 
+------------------------------------
+
+ State of filter adult-books
+
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L161)
+
+ The default value is _false_
+
+
+
+ filter-public_bookcase-inside 
+-------------------------------
+
+ State of filter inside
+
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L161)
+
+ The default value is _0_
+
+
+
+ filter-public_bookcase-has_image 
+----------------------------------
+
+ State of filter has_image
+
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L161)
+
+ The default value is _0_
+
+
+
+ layer-note_import_public_bookcase 
+-----------------------------------
+
+ Whether or not layer note_import_public_bookcase is shown
+
+This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L106)
+
+ The default value is _true_
+
+
+
+ mode 
+------
+
+ The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
+
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L420)
+
+ The default value is _map_
 
 
 

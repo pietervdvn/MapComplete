@@ -9,15 +9,14 @@
    */
   const dispatch = createEventDispatcher()
   export let cls = "m-0.5 p-0.5 sm:p-1 md:m-1"
-  export let arialabel: Translation = undefined 
+  export let arialabel: Translation = undefined
 </script>
 
-  
 <button
   on:click={(e) => dispatch("click", e)}
   on:keydown
   use:ariaLabel={arialabel}
-  class={twJoin("relative pointer-events-auto h-fit w-fit rounded-full", cls)}
+  class={twJoin("pointer-events-auto relative h-fit w-fit rounded-full", cls)}
 >
   <slot />
 </button>

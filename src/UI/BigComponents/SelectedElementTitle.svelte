@@ -13,7 +13,7 @@
   export let layer: LayerConfig
   export let selectedElement: Feature
   let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
-    selectedElement.properties.id,
+    selectedElement.properties.id
   )
   $: {
     tags = state.featureProperties.getStore(selectedElement.properties.id)
@@ -37,7 +37,7 @@
         class="no-weblate title-icons links-as-button mr-2 flex flex-row flex-wrap items-center gap-x-0.5 p-1 pt-0.5 sm:pt-1"
       >
         {#each layer.titleIcons as titleIconConfig}
-          {#if (titleIconConfig.condition?.matchesProperties($tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties({ ...$metatags, ...$tags }) ?? true) && titleIconConfig.IsKnown($tags)}
+          {#if (titleIconConfig.condition?.matchesProperties($tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...$metatags, ...$tags } ) ?? true) && titleIconConfig.IsKnown($tags)}
             <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
               <TagRenderingAnswer
                 config={titleIconConfig}
@@ -53,16 +53,18 @@
       </div>
     </div>
 
-    <button on:click={() => state.selectedElement.setData(undefined)}
-            use:ariaLabel={Translations.t.general.backToMap}
-            class="border-none p-0 rounded-full">
+    <button
+      on:click={() => state.selectedElement.setData(undefined)}
+      use:ariaLabel={Translations.t.general.backToMap}
+      class="rounded-full border-none p-0"
+    >
       <XCircleIcon aria-hidden={true} class="h-8 w-8" />
     </button>
   </div>
 {/if}
 
 <style>
-    :global(.title-icons a) {
-        display: block !important;
-    }
+  :global(.title-icons a) {
+    display: block !important;
+  }
 </style>

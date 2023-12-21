@@ -1035,11 +1035,12 @@ text | _undefined_ | Text to be shown
 href | _undefined_ | The URL to link to
 class | _undefined_ | CSS-classes to add to the element
 download | _undefined_ | If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename
+arialabel | _undefined_ | If set, this text will be used as aria-label
  
 
 #### Example usage of link 
 
- `{link(,,,)}`
+ `{link(,,,,)}`
 
 
 

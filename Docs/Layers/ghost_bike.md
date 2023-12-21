@@ -134,7 +134,7 @@ The question is  *On what webpage can one find more info about the ghost bike or
 
 This rendering asks information about the property  [source](https://wiki.openstreetmap.org/wiki/Key:source) 
 
-This is rendered with  `{link(More info available,&LBRACEsource&RBRACE,,)}`
+This is rendered with  `{link(More info available,&LBRACEsource&RBRACE,,,)}`
 
 
 

@@ -11,13 +11,11 @@
   export let cls: string = ""
   // Text for the current language
   let txt: Store<string | undefined> = t?.current
-
-
 </script>
 
 {#if $txt}
   <span class={cls}>
-    <FromHtml src={$txt}/>
+    <FromHtml src={$txt} />
     <WeblateLink context={t.context} />
   </span>
 {/if}

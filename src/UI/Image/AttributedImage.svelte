@@ -19,16 +19,20 @@
 </script>
 
 <div class="relative">
-  <img bind:this={imgEl}
-       class={imgClass ?? ""}
-       class:cursor-pointer={previewedImage !== undefined}
-       on:click={() => {previewedImage?.setData(image)}}
-       on:error={(event) => {
-    if(fallbackImage){
-      imgEl.src = fallbackImage
-    }
-  }}
-       src={image.url}>
+  <img
+    bind:this={imgEl}
+    class={imgClass ?? ""}
+    class:cursor-pointer={previewedImage !== undefined}
+    on:click={() => {
+      previewedImage?.setData(image)
+    }}
+    on:error={(event) => {
+      if (fallbackImage) {
+        imgEl.src = fallbackImage
+      }
+    }}
+    src={image.url}
+  />
 
   <div class="absolute bottom-0 left-0">
     <ImageAttribution {image} />

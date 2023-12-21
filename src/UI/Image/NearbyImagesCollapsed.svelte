@@ -28,13 +28,14 @@
 <LoginToggle {state}>
   {#if expanded}
     <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
-      <button slot="corner"
-              class="h-6 w-6 cursor-pointer no-image-background p-0 border-none"
-              use:ariaLabel={t.close}
-
-              on:click={() => {
-        expanded = false
-        }}>
+      <button
+        slot="corner"
+        class="no-image-background h-6 w-6 cursor-pointer border-none p-0"
+        use:ariaLabel={t.close}
+        on:click={() => {
+          expanded = false
+        }}
+      >
         <XCircleIcon />
       </button>
     </NearbyImages>
@@ -42,8 +43,8 @@
     <button
       class="flex w-full items-center"
       on:click={() => {
-      expanded = true
-    }}
+        expanded = true
+      }}
       aria-expanded={expanded}
     >
       <Camera_plus class="mr-2 block h-8 w-8 p-1" />
