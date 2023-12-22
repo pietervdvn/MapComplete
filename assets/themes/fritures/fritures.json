@@ -56,7 +56,32 @@
               }
             ]
           }
-        }
+        },
+        "filter+": [
+          {
+            "id": "oil-type",
+            "options": [
+              {
+                "question": {
+                  "en": "No oil type preference"
+                }
+              },
+              {
+                "question": {
+                  "en": "Only show fritures using vegetable oil"
+                },
+                "osmTags": "friture:oil=vegetable"
+              },
+              {
+                "question": {
+                  "en": "Only show fritures using animal oil"
+                },
+                "osmTags": "friture:oil=animal"
+                
+              }
+            ]
+          }
+        ]
       }
     },
     {
