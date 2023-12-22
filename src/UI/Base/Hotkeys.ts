@@ -10,17 +10,13 @@ import { FixedUiElement } from "./FixedUiElement"
 import Translations from "../i18n/Translations"
 
 export default class Hotkeys {
-    private static readonly _docs: UIEventSource<
+    public static readonly _docs: UIEventSource<
         {
             key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
             documentation: string | Translation
+            alsoTriggeredBy: Translation[]
         }[]
-    > = new UIEventSource<
-        {
-            key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
-            documentation: string | Translation
-        }[]
-    >([])
+    > = new UIEventSource([])
 
     /**
      * Register a hotkey
@@ -48,7 +44,7 @@ export default class Hotkeys {
         },
         documentation: string | Translation,
         action: () => void | false,
-        alsoTriggeredOn?: Translation[]
+        alsoTriggeredBy?: Translation[]
     ) {
         const type = key["onUp"] ? "keyup" : "keypress"
         let keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
@@ -59,7 +55,7 @@ export default class Hotkeys {
             }
         }
 
-        this._docs.data.push({ key, documentation })
+        this._docs.data.push({ key, documentation, alsoTriggeredBy })
         this._docs.ping()
         if (Utils.runningFromConsole) {
             return
@@ -109,37 +105,56 @@ export default class Hotkeys {
     }
 
     static generateDocumentation(): BaseUIElement {
-        let byKey: [string, string | Translation][] = Hotkeys._docs.data
-            .map(({ key, documentation }) => {
-                const modifiers = Object.keys(key).filter((k) => k !== "nomod" && k !== "onUp")
-                let keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
-                if (keycode.length == 1) {
-                    keycode = keycode.toUpperCase()
+        return new VariableUiElement(
+            Hotkeys._docs.mapD((docs) => {
+                let byKey: [string, string | Translation, Translation[] | undefined][] = docs
+                    .map(({ key, documentation, alsoTriggeredBy }) => {
+                        const modifiers = Object.keys(key).filter(
+                            (k) => k !== "nomod" && k !== "onUp"
+                        )
+                        let keycode: string =
+                            key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
+                        if (keycode.length == 1) {
+                            keycode = keycode.toUpperCase()
+                        }
+                        if (keycode === " ") {
+                            keycode = "Spacebar"
+                        }
+                        modifiers.push(keycode)
+                        return <[string, string | Translation, Translation[] | undefined]>[
+                            modifiers.join("+"),
+                            documentation,
+                            alsoTriggeredBy,
+                        ]
+                    })
+                    .sort()
+                byKey = Utils.NoNull(byKey)
+                for (let i = byKey.length - 1; i > 0; i--) {
+                    if (byKey[i - 1][0] === byKey[i][0]) {
+                        byKey.splice(i, 1)
+                    }
                 }
-                if (keycode === " ") {
-                    keycode = "Spacebar"
-                }
-                modifiers.push(keycode)
-                return <[string, string | Translation]>[modifiers.join("+"), documentation]
+                const t = Translations.t.hotkeyDocumentation
+                return new Combine([
+                    new Title(t.title, 1),
+                    t.intro,
+                    new Table(
+                        [t.key, t.action],
+                        byKey.map(([key, doc, alsoTriggeredBy]) => {
+                            let keyEl: BaseUIElement = new FixedUiElement(key).SetClass(
+                                "literal-code w-fit h-fit"
+                            )
+                            if (alsoTriggeredBy?.length > 0) {
+                                keyEl = new Combine([keyEl, ...alsoTriggeredBy]).SetClass(
+                                    "flex gap-x-4 items-center"
+                                )
+                            }
+                            return [keyEl, doc]
+                        })
+                    ),
+                ])
             })
-            .sort()
-        byKey = Utils.NoNull(byKey)
-        for (let i = byKey.length - 1; i > 0; i--) {
-            if (byKey[i - 1][0] === byKey[i][0]) {
-                byKey.splice(i, 1)
-            }
-        }
-        const t = Translations.t.hotkeyDocumentation
-        return new Combine([
-            new Title(t.title, 1),
-            t.intro,
-            new Table(
-                [t.key, t.action],
-                byKey.map(([key, doc]) => {
-                    return [new FixedUiElement(key).SetClass("literal-code"), doc]
-                })
-            ),
-        ])
+        )
     }
 
     static generateDocumentationDynamic(): BaseUIElement {

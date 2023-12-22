@@ -66,6 +66,7 @@
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
+  import { MapLibreAdaptor } from "./Map/MapLibreAdaptor.js"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -100,7 +101,7 @@
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
-
+  state.mapProperties.installCustomKeyboardHandler(viewport)
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
     if (!rect) {
@@ -159,7 +160,7 @@
   <div
     class="absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden pointer-events-none"
   >
-    <div bind:this={$viewport} style="border: 2px solid #ff000044; width: 300px; height: 300px" />
+    <div bind:this={$viewport} class:border={$visualFeedback} style="border: 2px solid #ff000044; width: 300px; height: 300px" />
   </div>
 {/if}
 

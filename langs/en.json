@@ -477,6 +477,7 @@
         "selectMapnik": "Set the background layer to OpenStreetMap-carto",
         "selectOsmbasedmap": "Set the background layer to on OpenStreetMap-based map (or disable the background raster layer)",
         "selectSearch": "Select the search bar to search locations",
+        "shakePhone": "Shaking your phone",
         "title": "Hotkeys"
     },
     "image": {

@@ -1431,6 +1431,11 @@ video {
   row-gap: 0.25rem;
 }
 
+.gap-x-4 {
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
 .gap-x-0\.5 {
   -webkit-column-gap: 0.125rem;
           column-gap: 0.125rem;
@@ -1688,6 +1693,11 @@ video {
 .border-subtle {
   --tw-border-opacity: 1;
   border-color: rgb(219 234 254 / var(--tw-border-opacity));
+}
+
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .border-gray-300 {

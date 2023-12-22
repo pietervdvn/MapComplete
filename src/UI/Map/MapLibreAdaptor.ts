@@ -511,7 +511,19 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             await Utils.waitFor(250)
         }
     }
-
+    public installCustomKeyboardHandler(viewport: Store<HTMLDivElement>) {
+        viewport.mapD(
+            (viewport) => {
+                const map = this._maplibreMap.data
+                if (!map) {
+                    return
+                }
+                const oldKeyboard = map.keyboard
+                oldKeyboard._panStep = viewport.getBoundingClientRect().width
+            },
+            [this._maplibreMap]
+        )
+    }
     private removeCurrentLayer(map: MLMap): void {
         if (this._currentRasterLayer) {
             // hide the previous layer

@@ -44,7 +44,10 @@
     Translations.t.hotkeyDocumentation.queryCurrentLocation,
     () => {
       displayLocation()
-    }
+    },
+    [
+    Translations.t.hotkeyDocumentation.shakePhone
+    ]
   )
 
   Motion.singleton.startListening()

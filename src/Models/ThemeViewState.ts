@@ -83,7 +83,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly osmConnection: OsmConnection
     readonly selectedElement: UIEventSource<Feature>
     readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
-    readonly mapProperties: MapProperties & ExportableMap
+    readonly mapProperties: MapLibreAdaptor & MapProperties & ExportableMap
     readonly osmObjectDownloader: OsmObjectDownloader
 
     readonly dataIsLoading: Store<boolean>
