@@ -63,7 +63,7 @@
 
 <div class="m-4 flex flex-col">
   <LanguagePicker
-    clss="self-end"
+    clss="self-end max-w-full"
     assignTo={state.language}
     availableLanguages={t.title.SupportedLanguages()}
     preferredLanguages={userLanguages}

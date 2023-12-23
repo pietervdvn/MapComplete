@@ -39,7 +39,7 @@
 
 {#if availableLanguages?.length > 1}
   <form class={twMerge("flex max-w-full items-center pr-4", clss)}>
-    <label class="neutral-label flex" use:ariaLabel={Translations.t.general.pickLanguage}>
+    <label class="neutral-label flex max-w-full" use:ariaLabel={Translations.t.general.pickLanguage}>
       <LanguageIcon class="mr-1 h-4 w-4 shrink-0" aria-hidden="true" />
       <Dropdown cls="max-w-full" value={assignTo}>
         {#if preferredFiltered}
