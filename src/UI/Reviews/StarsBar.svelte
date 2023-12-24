@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte"
   import StarElement from "./StarElement.svelte"
 
   /**
@@ -9,12 +8,13 @@
 
   let cutoffs = [20, 40, 60, 80, 100]
   export let starSize = "w-h h-4"
+  export let readonly = false
 </script>
 
 {#if score !== undefined}
   <div class="flex" on:mouseout>
     {#each cutoffs as cutoff, i}
-      <StarElement {score} {i} {cutoff} {starSize} on:hover on:click />
+      <StarElement {readonly} {score} {i} {cutoff} {starSize} on:hover on:click />
     {/each}
   </div>
 {/if}

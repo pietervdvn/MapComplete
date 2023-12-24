@@ -4,12 +4,16 @@
   import ThemeViewState from "../../Models/ThemeViewState"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
+  import { Orientation } from "../../Sensors/Orientation"
+  import { Translation } from "../i18n/Translation"
+  import Constants from "../../Models/Constants"
 
   /**
    * Indicates how far away the viewport center is from the current user location
    */
   export let state: ThemeViewState
   const t = Translations.t.general.visualFeedback
+  const relativeDir = t.directionsRelative
   let map = state.mapProperties
 
   let currentLocation = state.geolocation.geolocationState.currentGPSLocation
@@ -23,14 +27,29 @@
     const distanceInMeters = Math.round(GeoOperations.distanceBetween(gps, mapCenter))
     const distance = GeoOperations.distanceToHuman(distanceInMeters)
     const bearing = Math.round(GeoOperations.bearing(gps, mapCenter))
-    return { distance, bearing, distanceInMeters }
+    const bearingDirection = GeoOperations.bearingToHuman(bearing)
+    return { distance, bearing, distanceInMeters, bearingDirection }
   }, [currentLocation])
+  let hasCompass = Orientation.singleton.gotMeasurement
+  let compass = Orientation.singleton.alpha
+  let relativeBearing: Store<{distance: string, bearing: Translation}> =
+    compass.mapD(compass => {
+      const bearing: Translation = relativeDir[GeoOperations.bearingToHumanRelative(distanceToCurrentLocation.data.bearing - compass)]
+      return {bearing, distance: distanceToCurrentLocation.data.distance}
+    }, [distanceToCurrentLocation])
+  let viewportCenterDetails = Translations.DynamicSubstitute(t.viewportCenterDetails, relativeBearing)
+  let viewportCenterDetailsAbsolute = Translations.DynamicSubstitute(t.viewportCenterDetails, distanceToCurrentLocation.map(({distance, bearing}) => {
+    return {distance, bearing: t.directionsAbsolute[GeoOperations.bearingToHuman(bearing)]}
+  }))
+  
 </script>
 
 {#if $currentLocation !== undefined}
-  {#if $distanceToCurrentLocation.distanceInMeters < 20}
+  {#if $distanceToCurrentLocation.distanceInMeters < Constants.viewportCenterCloseToGpsCutoff}
     <Tr t={t.viewportCenterCloseToGps} />
+  {:else if $hasCompass}
+    {$viewportCenterDetails}
   {:else}
-    <Tr t={t.viewportCenterDetails.Subs($distanceToCurrentLocation)} />
+    {$viewportCenterDetailsAbsolute}
   {/if}
 {/if}

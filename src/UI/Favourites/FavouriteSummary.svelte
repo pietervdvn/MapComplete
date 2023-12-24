@@ -2,9 +2,9 @@
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
   import type { Feature } from "geojson"
-  import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
+  import { UIEventSource } from "../../Logic/UIEventSource"
   import { GeoOperations } from "../../Logic/GeoOperations"
-  import Center from "../../assets/svg/Center.svelte"
+  import DirectionIndicator from "../Base/DirectionIndicator.svelte"
 
   export let feature: Feature
   let properties: Record<string, string> = feature.properties
@@ -30,11 +30,6 @@
     center()
   }
 
-  const coord = GeoOperations.centerpointCoordinates(feature)
-  const distance = state.mapProperties.location.stabilized(500).mapD(({ lon, lat }) => {
-    let meters = Math.round(GeoOperations.distanceBetween(coord, [lon, lat]))
-    return GeoOperations.distanceToHuman(meters)
-  })
   const titleIconBlacklist = ["osmlink", "sharelink", "favourite_title_icon"]
 </script>
 
@@ -57,7 +52,7 @@
       class="title-icons links-as-button flex flex-wrap items-center gap-x-0.5 self-end justify-self-end p-1 pt-0.5 sm:pt-1"
     >
       {#each favConfig.titleIcons as titleIconConfig}
-        {#if titleIconBlacklist.indexOf(titleIconConfig.id) < 0 && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...properties, ...state.userRelatedState.preferencesAsTags.data } ) ?? true) && titleIconConfig.IsKnown(properties)}
+        {#if titleIconBlacklist.indexOf(titleIconConfig.id) < 0 && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties({ ...properties, ...state.userRelatedState.preferencesAsTags.data }) ?? true) && titleIconConfig.IsKnown(properties)}
           <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
             <TagRenderingAnswer
               config={titleIconConfig}
@@ -71,12 +66,7 @@
         {/if}
       {/each}
 
-      <button class="p-1" on:click={() => center()}>
-        <Center class="h-6 w-6" />
-      </button>
-      <div class="w-14">
-        {$distance}
-      </div>
+      <DirectionIndicator {state} {feature} />
     </div>
   </div>
 {/if}

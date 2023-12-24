@@ -27,6 +27,7 @@
   import Confirm from "../../assets/svg/Confirm.svelte"
   import Not_found from "../../assets/svg/Not_found.svelte"
   import { twMerge } from "tailwind-merge"
+  import Direction_gradient from "../../assets/svg/Direction_gradient.svelte"
 
   /**
    * Renders a single icon.
@@ -100,6 +101,8 @@
     <HeartOutlineIcon class={clss} />
   {:else if icon === "confirm"}
     <Confirm class={clss} {color} />
+  {:else if icon === "direction"}
+    <Direction_gradient class={clss} {color} />
   {:else if icon === "not_found"}
     <Not_found class={twMerge(clss, "no-image-background")} {color} />
   {:else}

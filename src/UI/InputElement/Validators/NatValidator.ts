@@ -16,15 +16,22 @@ export default class NatValidator extends IntValidator {
         return str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
     }
 
+    /**
+     *
+     * const validator = new NatValidator()
+     * validator.getFeedback(-4).textFor("en") // => "This number should be positive"
+     */
     getFeedback(s: string): Translation {
+        console.log("Getting feedback for", s)
+        const n = Number(s)
+        if (!isNaN(n) && n < 0) {
+            return Translations.t.validation.nat.mustBePositive
+        }
         const spr = super.getFeedback(s)
         if (spr !== undefined) {
             return spr
         }
-        const n = Number(s)
-        if (n < 0) {
-            return Translations.t.validation.nat.mustBePositive
-        }
+
         return undefined
     }
 }

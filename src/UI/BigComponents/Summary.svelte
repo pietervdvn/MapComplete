@@ -4,6 +4,7 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
   import DirectionIndicator from "../Base/DirectionIndicator.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
   export let state: SpecialVisualizationState
   export let feature: Feature
@@ -14,11 +15,14 @@
 
 </script>
 
-<a class="small flex space-x-1 cursor-pointer w-fit" href={`#${feature.properties.id}`}>
+<span class="inline-flex gap-x-1">
+  
+<a class="small flex space-x-0.5 cursor-pointer w-fit items-center" href={`#${feature.properties.id}`}>
   {#if i !== undefined}
     <span class="font-bold">{i + 1} &nbsp; </span>
   {/if}
   <TagRenderingAnswer config={layer.title} extraClasses="inline-flex w-fit" {layer} selectedElement={feature} {state}
                       {tags} />
-  <DirectionIndicator {feature} {state} />
 </a>
+  <DirectionIndicator {feature} {state} />
+</span>

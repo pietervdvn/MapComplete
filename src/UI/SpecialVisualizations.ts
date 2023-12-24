@@ -85,6 +85,9 @@ import { Unit } from "../Models/Unit"
 import Link from "./Base/Link.svelte"
 import OrientationDebugPanel from "./Debug/OrientationDebugPanel.svelte"
 import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
+import DirectionIndicator from "./Base/DirectionIndicator.svelte"
+import Img from "./Base/Img"
+import Qr from "../Utils/Qr"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1537,6 +1540,43 @@ export default class SpecialVisualizations {
                         layer,
                         feature,
                     })
+                },
+            },
+            {
+                funcName: "direction_indicator",
+                args: [],
+                needsUrls: [],
+                docs: "Gives a distance indicator and a compass pointing towards the location from your GPS-location. If clicked, centers the map on the object",
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(DirectionIndicator, { state, feature })
+                },
+            },
+            {
+                funcName: "qr_code",
+                args: [],
+                needsUrls: [],
+                docs: "Generates a QR-code to share the selected object",
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const url =
+                        window.location.protocol +
+                        "//" +
+                        window.location.host +
+                        window.location.pathname +
+                        "#" +
+                        feature.properties.id
+                    return new Img(new Qr(url).toImageElement(75)).SetStyle("width: 75px")
                 },
             },
         ]

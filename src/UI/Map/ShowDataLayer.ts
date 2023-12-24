@@ -171,6 +171,7 @@ class PointRenderingLayer {
         store
             .map((tags) => this._config.rotationAlignment.GetRenderValue(tags).Subs(tags).txt)
             .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<any>pitchAligment))
+
         if (feature.geometry.type === "Point") {
             // When the tags get 'pinged', check that the location didn't change
             store.addCallbackAndRunD(() => {

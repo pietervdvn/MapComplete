@@ -631,6 +631,10 @@ export default class TagRenderingConfig {
      * , "testcase")
      * config.constructChangeSpecification(undefined, undefined, [false, true, false], {amenity: "public_bookcase"}) // => new And([new Tag("books","adults")])
      *
+     * const config = new TagRenderingConfig({"id":"capacity", "render": "Fits {capcity} books",freeform: {"key":"capacity",type:"pnat"} })
+     * config.constructChangeSpecification("", undefined, undefined, {}) // => undefined
+     * config.constructChangeSpecification("5", undefined, undefined, {}).optimize() // => new Tag("capacity", "5")
+     *
      * @param freeformValue The freeform value which will be applied as 'freeform.key'. Ignored if 'freeform.key' is not set
      *
      * @param singleSelectedMapping (Only used if multiAnswer == false): the single mapping to apply. Use (mappings.length) for the freeform

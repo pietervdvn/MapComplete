@@ -4,13 +4,11 @@
   import StarsBar from "./StarsBar.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import { ariaLabel } from "../../Utils/ariaLabel"
 
-  export let review: Review & { madeByLoggedInUser: Store<boolean> }
+  export let review: Review & { kid: string,signature: string, madeByLoggedInUser: Store<boolean> }
   let name = review.metadata.nickname
-  name ??= (review.metadata.given_name ?? "") + " " + (review.metadata.family_name ?? "").trim()
-  if (name.length === 0) {
-    name = "Anonymous"
-  }
+  name ??= ((review.metadata.given_name ?? "") + " " + (review.metadata.family_name ?? "")).trim()
   let d = new Date()
   d.setTime(review.iat * 1000)
   let date = d.toDateString()
@@ -19,18 +17,32 @@
 
 <div class={"low-interaction rounded-lg p-1 px-2 " + ($byLoggedInUser ? "border-interactive" : "")}>
   <div class="flex items-center justify-between">
-    <StarsBar score={review.rating} />
+    <div tabindex="0" use:ariaLabel={Translations.t.reviews.rated.Subs({n: ""+(Math.round(review.rating / 10)/2)})}>
+      <StarsBar readonly={true} score={review.rating} />
+    </div>
     <div class="flex flex-wrap space-x-2">
-      <div class="font-bold">
-        {name}
-      </div>
+      <a href={`https://mangrove.reviews/list?kid=${encodeURIComponent(review.kid)}`} rel="noopener"
+         target="_blank">
+        {#if !name}
+          <i>Anonymous</i>
+        {:else}
+          <span class="font-bold">
+              {name}
+          </span>
+        {/if}
+      </a>
       <span class="subtle">
         {date}
       </span>
     </div>
   </div>
   {#if review.opinion}
-    {review.opinion}
+    <div class="link-no-underline">
+    <a target="_blank" rel="noopener nofollow"
+       href={`https://mangrove.reviews/list?signature=${encodeURIComponent(review.signature)}`}>
+      {review.opinion}
+    </a>
+    </div>
   {/if}
   {#if review.metadata.is_affiliated}
     <Tr t={Translations.t.reviews.affiliated_reviewer_warning} />

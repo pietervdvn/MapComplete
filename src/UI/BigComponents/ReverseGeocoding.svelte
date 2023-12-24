@@ -55,11 +55,10 @@
 
 {#if currentLocation}
   <div
-    role="alert"
     aria-live="assertive"
     class="normal-background border-interactive rounded-full px-2 flex flex-col items-center"
   >
-    {currentLocation}
+    {currentLocation}.
     <MapCenterDetails {state}/>
   </div>
 {/if}

@@ -99,6 +99,7 @@ export default class Constants {
      * In seconds
      */
     static zoomToLocationTimeout = 15
+    public static readonly viewportCenterCloseToGpsCutoff: number = 20
     private static readonly config = (() => {
         const defaultConfig = packagefile.config
         return { ...defaultConfig, ...extraconfig }

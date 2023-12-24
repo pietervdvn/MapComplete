@@ -32,7 +32,7 @@
   lastAction.stabilized(750).addCallbackAndRunD((_) => lastAction.setData(undefined))
 </script>
 
-<div aria-live="assertive" class="p-1 interactive" role="alert">
+<div aria-live="assertive" class="p-1 bg-white m-1 rounded">
   {#if $lastAction?.key === "out"}
     <Tr t={t.out.Subs({z: map.zoom.data - 1})} />
   {:else if $lastAction?.key === "in"}
@@ -46,13 +46,11 @@
     <div class="pointer-events-auto">
       <Tr t={$translationWithLength} />
       <MapCenterDetails {state} />
-      <ol>
+      <div class="grid grid-cols-3 space-x-1 space-y-0.5">
         {#each $centerFeatures.slice(0, 9) as feat, i (feat.properties.id)}
-          <li>
-            <Summary {state} feature={feat} {i} />
-          </li>
+          <Summary {state} feature={feat} {i} />
         {/each}
-      </ol>
+      </div>
     </div>
   {/if}
 </div>

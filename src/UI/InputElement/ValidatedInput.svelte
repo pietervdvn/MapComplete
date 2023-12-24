@@ -57,7 +57,11 @@
     validator = Validators.get(type ?? "string")
 
     _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
-    feedback?.setData(validator?.getFeedback(_value.data, getCountry))
+    if(_value.data?.length > 0){
+      feedback?.setData(validator?.getFeedback(_value.data, getCountry))
+    }else{
+      feedback?.setData(undefined)
+    }
 
     initValueAndDenom()
   }
@@ -65,9 +69,14 @@
   function setValues() {
     // Update the value stores
     const v = _value.data
-    if (!validator?.isValid(v, getCountry) || v === "") {
+    if(v === ""){
+      value.setData(undefined)
+      feedback.setData(undefined)
+      return
+    }
+    if (!validator?.isValid(v, getCountry)) {
       feedback?.setData(validator?.getFeedback(v, getCountry))
-      value.setData("")
+      value.setData(undefined)
       return
     }
 

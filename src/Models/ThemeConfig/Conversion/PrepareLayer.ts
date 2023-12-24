@@ -576,6 +576,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         "last_edit",
         "favourite_state",
         "all_tags",
+        "qr_code",
     ]
     private readonly _desugaring: DesugaringContext
 
@@ -654,6 +655,13 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             json.tagRenderings.push({
                 id: "favourite_status",
                 render: { "*": "{favourite_status()}" },
+            })
+        }
+
+        if (!usedSpecialFunctions.has("qr_code")) {
+            json.tagRenderings.push({
+                id: "qr_code",
+                render: { "*": "{qr_code()}" },
             })
         }
 

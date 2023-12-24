@@ -302,6 +302,14 @@
       "condition": "_favourite=yes",
       "icon": "circle:white;heart:red",
       "metacondition": "__showTimeSensitiveIcons!=no"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
     }
   ]
 }

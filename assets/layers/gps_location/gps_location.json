@@ -40,6 +40,30 @@
         "centroid"
       ],
       "anchor": "center"
+    },
+    {
+      "marker": [
+        {
+          "color": "--catch-detail-color",
+          "icon": "direction"
+        }
+      ],
+      "iconSize": {
+        "render": "0,0",
+        "mappings": [
+          {
+            "if": "alpha~*",
+            "then": "40,40"
+          }
+        ]
+      },
+      "pitchAlignment": "map",
+      "rotation": "{alpha}deg",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center"
     }
   ],
   "lineRendering": []

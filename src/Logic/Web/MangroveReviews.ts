@@ -55,8 +55,9 @@ export default class FeatureReviews {
     private static readonly _featureReviewsCache: Record<string, FeatureReviews> = {}
     public readonly subjectUri: Store<string>
     public readonly average: Store<number | null>
-    private readonly _reviews: UIEventSource<(Review & { madeByLoggedInUser: Store<boolean> })[]> =
-        new UIEventSource([])
+    private readonly _reviews: UIEventSource<
+        (Review & { kid: string; signature: string; madeByLoggedInUser: Store<boolean> })[]
+    > = new UIEventSource([])
     public readonly reviews: Store<(Review & { madeByLoggedInUser: Store<boolean> })[]> =
         this._reviews
     private readonly _lat: number
@@ -176,11 +177,15 @@ export default class FeatureReviews {
             ...review,
         }
         const keypair: CryptoKeyPair = this._identity.keypair.data
-        console.log(r)
         const jwt = await MangroveReviews.signReview(keypair, r)
-        console.log("Signed:", jwt)
+        const kid = await MangroveReviews.publicToPem(keypair.publicKey)
         await MangroveReviews.submitReview(jwt)
-        this._reviews.data.push({ ...r, madeByLoggedInUser: new ImmutableStore(true) })
+        this._reviews.data.push({
+            ...r,
+            kid,
+            signature: jwt,
+            madeByLoggedInUser: new ImmutableStore(true),
+        })
         this._reviews.ping()
     }
 
@@ -189,7 +194,7 @@ export default class FeatureReviews {
      * @param reviews
      * @private
      */
-    private addReviews(reviews: { payload: Review; kid: string }[]) {
+    private addReviews(reviews: { payload: Review; kid: string; signature: string }[]) {
         const self = this
         const alreadyKnown = new Set(self._reviews.data.map((r) => r.rating + " " + r.opinion))
 
@@ -199,7 +204,6 @@ export default class FeatureReviews {
 
             try {
                 const url = new URL(review.sub)
-                console.log("URL is", url)
                 if (url.protocol === "geo:") {
                     const coordinate = <[number, number]>(
                         url.pathname.split(",").map((n) => Number(n))
@@ -222,6 +226,8 @@ export default class FeatureReviews {
             }
             self._reviews.data.push({
                 ...review,
+                kid: reviewData.kid,
+                signature: reviewData.signature,
                 madeByLoggedInUser: this._identity.key_id.map((user_key_id) => {
                     return reviewData.kid === user_key_id
                 }),

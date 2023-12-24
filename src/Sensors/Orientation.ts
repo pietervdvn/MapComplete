@@ -49,7 +49,7 @@ export class Orientation {
         if (rotateAlpha) {
             this._animateFakeMeasurements = true
             Stores.Chronic(25).addCallback((date) => {
-                this.alpha.setData((date.getTime() / 100) % 360)
+                this.alpha.setData((date.getTime() / 50) % 360)
                 if (!this._animateFakeMeasurements) {
                     return true
                 }

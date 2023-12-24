@@ -366,7 +366,7 @@
       },
       "freeform": {
         "key": "min_age",
-        "type": "pnat"
+        "type": "nat"
       },
       "id": "playground-min_age"
     },

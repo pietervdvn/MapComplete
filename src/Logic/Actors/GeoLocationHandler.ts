@@ -10,6 +10,7 @@ import { GeoOperations } from "../GeoOperations"
 import { OsmTags } from "../../Models/OsmFeature"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
 import { MapProperties } from "../../Models/MapProperties"
+import { Orientation } from "../../Sensors/Orientation"
 
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
@@ -128,10 +129,10 @@ export default class GeoLocationHandler {
         }
 
         // We check that the GPS location is not out of bounds
-        const bounds = this.mapProperties.maxbounds.data
+        const bounds: BBox = this.mapProperties.maxbounds.data
         if (bounds !== undefined) {
             // B is an array with our lock-location
-            const inRange = new BBox(bounds).contains([newLocation.longitude, newLocation.latitude])
+            const inRange = bounds.contains([newLocation.longitude, newLocation.latitude])
             if (!inRange) {
                 return
             }
@@ -167,6 +168,9 @@ export default class GeoLocationHandler {
                 altitude: location.altitude,
                 altitudeAccuracy: location.altitudeAccuracy,
                 heading: location.heading,
+                alpha: Orientation.singleton.gotMeasurement.data
+                    ? "" + Orientation.singleton.alpha.data
+                    : undefined,
             }
             i++
 
