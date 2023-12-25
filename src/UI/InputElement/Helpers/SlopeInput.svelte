@@ -8,7 +8,14 @@
   import If from "../../Base/If.svelte"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
 
+  /**
+   * The value exported to outside, saved only when the button is pressed
+   */
   export let value: UIEventSource<string> = new UIEventSource<string>(undefined)
+  /**
+   * The continuously updated value
+   */
+  let _value: UIEventSource<string> = new UIEventSource<string>(undefined)
   export let mode: "degrees" | "percentage" = "percentage"
 
   export let feature: Feature = undefined
@@ -62,9 +69,9 @@
       let valueSign = valuesign.data
 
       if (mode === "degrees") {
-        value.setData(valueSign * beta + "°")
+        _value.setData(valueSign * beta + "°")
       } else {
-        value.setData(degreesToPercentage(valueSign * beta))
+        _value.setData(degreesToPercentage(valueSign * beta))
       }
 
       previewDegrees.setData(beta + "°")
@@ -72,6 +79,12 @@
     },
     [valuesign, beta]
   )
+  
+  function onSave(){
+    if(_value.data){
+      value.setData(_value.data)
+    }
+  }
 </script>
 
 {#if $gotMeasurement}
@@ -87,6 +100,10 @@
       </div>
     </div>
 
+    <button class="primary" on:click={() => onSave()}>
+      Select this incline
+    </button>
+    
     <div>
       <Tr t={Translations.t.validation.slope.inputExplanation} />
     </div>
