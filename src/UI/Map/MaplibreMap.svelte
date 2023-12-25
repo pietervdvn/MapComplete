@@ -19,6 +19,8 @@
    */
   export let map: Writable<Map>
 
+  export let interactive: boolean = true
+
   let container: HTMLElement
 
   export let center: { lng: number; lat: number } | Readable<{ lng: number; lat: number }> =
@@ -48,12 +50,17 @@
     window.requestAnimationFrame(() => {
       _map.resize()
     })
-    _map.on("load", function () {
+    _map.on("load", function() {
       _map.resize()
-      const canvas = _map.getCanvas()
-      ariaLabel(canvas, Translations.t.general.visualFeedback.navigation)
-      canvas.role = "application"
-      canvas.tabIndex = 0
+        const canvas = _map.getCanvas()
+      if (interactive) {
+        ariaLabel(canvas, Translations.t.general.visualFeedback.navigation)
+        canvas.role = "application"
+        canvas.tabIndex = 0
+      }else{
+        canvas.tabIndex = -1
+        _map.getContainer().tabIndex = -1
+      }
     })
     map.set(_map)
   })

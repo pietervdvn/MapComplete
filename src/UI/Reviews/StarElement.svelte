@@ -17,6 +17,7 @@
 
   function getScore(e: MouseEvent): number {
     if (e.clientX === 0 && e.clientY === 0) {
+      console.log("Keyboard rated", cutoff)
       // Keyboard triggered 'click' -> return max value
       return cutoff
     }
@@ -41,8 +42,9 @@
     class="small soft rounded-full no-image-background"
     style="padding: 0; border: none;"
     bind:this={container}
-    on:click={(e) => dispatch("click", { score: getScore(e) })}
-    on:mousemove={(e) => dispatch("hover", { score: getScore(e) })}
+    on:click={(e) =>{ console.log("Dispatching click", e); return dispatch("click", { score: getScore(e) }); }}
+    on:mousemove={(e) => dispatch("hover", { score: getScore(e) }
+    )}
   >
     {#if score >= cutoff}
       <Star class={starSize} />

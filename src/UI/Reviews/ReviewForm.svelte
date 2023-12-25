@@ -71,6 +71,8 @@
     <StarsBar
       on:click={(e) => {
         confirmedScore = e.detail.score
+        score=confirmedScore
+        console.log("Confirmed score is:", confirmedScore)
       }}
       on:hover={(e) => {
         score = e.detail.score

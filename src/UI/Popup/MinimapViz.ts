@@ -111,7 +111,7 @@ export class MinimapViz implements SpecialVisualization {
             state.layout.layers
         )
 
-        return new SvelteUIElement(MaplibreMap, { map: mlmap })
+        return new SvelteUIElement(MaplibreMap, { interactive: false, map: mlmap })
             .SetClass("h-40 rounded")
             .SetStyle("overflow: hidden; pointer-events: none;")
     }
