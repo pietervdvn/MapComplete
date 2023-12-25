@@ -36,7 +36,9 @@
 </script>
 
 {#if $tags._deleted === "yes"}
-  <Tr t={Translations.t.delete.isDeleted} />
+  <div aria-live="assertive">
+    <Tr t={Translations.t.delete.isDeleted} />
+  </div>
   <button class="w-full" on:click={() => state.selectedElement.setData(undefined)}>
     <Tr t={Translations.t.general.returnToTheMap} />
   </button>

@@ -13,6 +13,7 @@
   import Loading from "../Base/Loading.svelte"
   import { Review } from "mangrove-reviews-typescript"
   import { Utils } from "../../Utils"
+  import { placeholder } from "../../Utils/placeholder"
 
   export let state: SpecialVisualizationState
   export let tags: UIEventSource<Record<string, string>>
@@ -83,7 +84,8 @@
 
     {#if confirmedScore !== undefined}
       <Tr cls="font-bold mt-2" t={t.question_opinion} />
-      <textarea bind:value={$opinion} inputmode="text" rows="3" class="mb-1 w-full" />
+      <textarea autofocus bind:value={$opinion} inputmode="text" rows="3" class="mb-1 w-full" 
+      use:placeholder={t.reviewPlaceholder}/>
       <Checkbox selected={isAffiliated}>
         <div class="flex flex-col">
           <Tr t={t.i_am_affiliated} />

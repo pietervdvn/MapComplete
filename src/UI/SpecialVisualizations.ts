@@ -1569,14 +1569,23 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
-                    const url =
-                        window.location.protocol +
-                        "//" +
-                        window.location.host +
-                        window.location.pathname +
-                        "#" +
-                        feature.properties.id
-                    return new Img(new Qr(url).toImageElement(75)).SetStyle("width: 75px")
+                    return new VariableUiElement(
+                        tagSource
+                            .map((tags) => tags.id)
+                            .map((id) => {
+                                if (id.startsWith("node/-")) {
+                                    // Not yet uploaded
+                                    return undefined
+                                }
+                                const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                                const url =
+                                    `${window.location.protocol}//${window.location.host}${window.location.pathname}?lat=${lat}&lon=${lon}&z=15` +
+                                    `#${id}`
+                                return new Img(new Qr(url).toImageElement(75)).SetStyle(
+                                    "width: 75px"
+                                )
+                            })
+                    )
                 },
             },
         ]

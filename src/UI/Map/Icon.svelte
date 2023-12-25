@@ -28,6 +28,8 @@
   import Not_found from "../../assets/svg/Not_found.svelte"
   import { twMerge } from "tailwind-merge"
   import Direction_gradient from "../../assets/svg/Direction_gradient.svelte"
+  import Mastodon from "../../assets/svg/Mastodon.svelte"
+  import Party from "../../assets/svg/Party.svelte"
 
   /**
    * Renders a single icon.
@@ -105,6 +107,10 @@
     <Direction_gradient class={clss} {color} />
   {:else if icon === "not_found"}
     <Not_found class={twMerge(clss, "no-image-background")} {color} />
+  {:else if icon === "mastodon"}
+    <Mastodon {color} class={clss} />
+  {:else if icon === "party"}
+    <Party {color} class={clss} />
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}

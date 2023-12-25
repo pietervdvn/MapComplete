@@ -110,11 +110,6 @@
               "render": "./assets/layers/id_presets/maki-shop.svg",
               "+mappings": [
                 {
-                  "#": "Layer icon rendering",
-                  "if": "id=",
-                  "then": "./assets/layers/id_presets/maki-shop.svg"
-                },
-                {
                   "if": {
                     "or": [
                       "shop=vacant",
@@ -133,6 +128,11 @@
                 {
                   "if": "craft=key_cutter",
                   "then": "./assets/layers/id_presets/fas-key.svg"
+                },
+                {
+                  "#": "Layer icon rendering",
+                  "if": "id=",
+                  "then": "./assets/layers/id_presets/maki-shop.svg"
                 }
               ]
             }
@@ -204,15 +204,15 @@
       },
       "description": {
         "en": "Add a new shop",
-        "fr": "Ajouter un nouveau magasin",
-        "ru": "Добавить новый магазин",
-        "ja": "新しい店を追加する",
-        "nl": "Voeg een nieuwe winkel toe",
+        "ca": "Afegir una botiga nova",
+        "cs": "Přidat nový obchod",
         "de": "Ein neues Geschäft hinzufügen",
         "eo": "Enmeti novan butikon",
         "es": "Añadir una nueva tienda",
-        "ca": "Afegir una botiga nova",
-        "cs": "Přidat nový obchod"
+        "fr": "Ajouter un nouveau magasin",
+        "ja": "新しい店を追加する",
+        "nl": "Voeg een nieuwe winkel toe",
+        "ru": "Добавить новый магазин"
       }
     }
   ],
