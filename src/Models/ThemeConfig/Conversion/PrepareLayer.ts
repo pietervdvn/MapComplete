@@ -601,6 +601,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         }
         json = { ...json }
         json.tagRenderings = [...(json.tagRenderings ?? [])]
+        const allIds = new Set<string>(json.tagRenderings.map((tr) => tr["id"]))
         const specialVisualisations = ValidationUtils.getAllSpecialVisualisations(
             <any>json.tagRenderings
         )
@@ -658,11 +659,12 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             })
         }
 
-        if (!usedSpecialFunctions.has("qr_code")) {
-            json.tagRenderings.push({
-                id: "qr_code",
-                render: { "*": "{qr_code()}" },
-            })
+        if (!allIds.has("qr_code")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("qr_code"))
+        }
+
+        if (!allIds.has("share")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("share"))
         }
 
         if (!usedSpecialFunctions.has("all_tags")) {

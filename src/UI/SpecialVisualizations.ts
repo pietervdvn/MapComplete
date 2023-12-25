@@ -1578,8 +1578,15 @@ export default class SpecialVisualizations {
                                     return undefined
                                 }
                                 const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                                const includeLayout = window.location.pathname
+                                    .split("/")
+                                    .at(-1)
+                                    .startsWith("theme")
+                                const layout = includeLayout
+                                    ? "layout=" + state.layout.id + "&"
+                                    : ""
                                 const url =
-                                    `${window.location.protocol}//${window.location.host}${window.location.pathname}?lat=${lat}&lon=${lon}&z=15` +
+                                    `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
                                     `#${id}`
                                 return new Img(new Qr(url).toImageElement(75)).SetStyle(
                                     "width: 75px"
