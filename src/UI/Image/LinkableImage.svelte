@@ -29,6 +29,7 @@
   const c = [lon, lat]
   const providedImage: ProvidedImage = {
     url: image.thumbUrl ?? image.pictureUrl,
+    url_hd: image.pictureUrl,
     key: undefined,
     provider: AllImageProviders.byName(image.provider),
     date: new Date(image.date),

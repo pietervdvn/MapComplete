@@ -9,9 +9,13 @@
   import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Utils } from "../../Utils"
   import { twMerge } from "tailwind-merge"
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import Loading from "../Base/Loading.svelte"
 
   export let image: ProvidedImage
   export let clss: string = undefined
+  
+  let isLoaded = new UIEventSource(false)
   async function download() {
     const response = await fetch(image.url_hd ?? image.url)
     const blob = await response.blob()
@@ -23,7 +27,12 @@
 
 <div class={twMerge("relative h-full w-full", clss)}>
   <div class="panzoom-container focusable absolute top-0 left-0 h-full w-full overflow-hidden">
-    <ImagePreview {image} />
+    {#if !$isLoaded}
+      <div class="w-full h-full flex items-center justify-center">
+        <Loading/>
+      </div>
+      {/if}
+    <ImagePreview {image} {isLoaded}/>
   </div>
   <div
     class="pointer-events-none absolute bottom-0 left-0 flex w-full flex-wrap items-end justify-between"
