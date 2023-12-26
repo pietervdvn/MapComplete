@@ -245,7 +245,7 @@ export default class LayoutConfig implements LayoutInformation {
         return this.layers.some((l) => l.isLeftRightSensitive())
     }
 
-    public missingTranslations(): {
+    public missingTranslations(extraInspection: any): {
         untranslated: Map<string, string[]>
         total: number
     } {
@@ -254,7 +254,7 @@ export default class LayoutConfig implements LayoutInformation {
         const untranslated = new Map<string, string[]>()
 
         Utils.WalkObject(
-            layout,
+            [layout, extraInspection],
             (o) => {
                 const translation = <Translation>(<any>o)
                 if (translation.translations["*"] !== undefined) {

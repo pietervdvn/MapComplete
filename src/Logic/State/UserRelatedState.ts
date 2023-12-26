@@ -24,7 +24,7 @@ import { MapProperties } from "../../Models/MapProperties"
  * which layers they enabled, ...
  */
 export default class UserRelatedState {
-    public static readonly usersettingsConfig = UserRelatedState.initUserRelatedState()
+    public static readonly usersettingsConfig = UserRelatedState.initUserSettingsState()
     public static readonly availableUserSettingsIds: string[] =
         UserRelatedState.usersettingsConfig?.tagRenderings?.map((tr) => tr.id) ?? []
     public static readonly SHOW_TAGS_VALUES = ["always", "yes", "full"] as const
@@ -141,7 +141,7 @@ export default class UserRelatedState {
         this.language.syncWith(Locale.language)
     }
 
-    private static initUserRelatedState(): LayerConfig {
+    private static initUserSettingsState(): LayerConfig {
         try {
             return new LayerConfig(<LayerConfigJson>usersettings, "userinformationpanel")
         } catch (e) {
@@ -319,7 +319,8 @@ export default class UserRelatedState {
                 amendedPrefs.data["_language"] = language
                 const trmode = translationMode.data
                 if ((trmode === "true" || trmode === "mobile") && layout !== undefined) {
-                    const missing = layout.missingTranslations()
+                    const extraInspection = UserRelatedState.usersettingsConfig
+                    const missing = layout.missingTranslations(extraInspection)
                     const total = missing.total
 
                     const untranslated = missing.untranslated.get(language) ?? []
