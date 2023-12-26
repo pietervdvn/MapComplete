@@ -65,8 +65,6 @@
           </div>
         {/if}
       {/each}
-
-      <DirectionIndicator {state} {feature} />
     </div>
   </div>
 {/if}
