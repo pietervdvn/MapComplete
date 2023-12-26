@@ -7,7 +7,7 @@
 </script>
 
 <div class={twMerge("flex p-1 pl-2", cls)}>
-  <div class="min-w-6 h-6 w-6 animate-spin self-center">
+  <div class="min-w-6 h-6 w-6 animate-spin self-center shrink-0">
     <ToSvelte construct={Svg.loading_svg()} />
   </div>
   <div class="ml-2">
