@@ -994,6 +994,9 @@ export class GeoOperations {
      * @param meters
      */
     public static distanceToHuman(meters: number): string {
+        if (meters === undefined) {
+            return ""
+        }
         meters = Math.round(meters)
         if (meters < 1000) {
             return meters + "m"

@@ -109,7 +109,7 @@
 
 <button class={twMerge("relative rounded-full soft", size)} use:ariaLabelStore={label} on:click={() => focusMap()}>
   <div class={twMerge("absolute top-0 left-0 flex items-center justify-center text-sm break-words",size)}>
-    {GeoOperations.distanceToHuman($bearingAndDistGps.dist)}
+    {GeoOperations.distanceToHuman($bearingAndDistGps?.dist)}
   </div>
   {#if $bearingFromGps !== undefined}
     <div class={twMerge("absolute top-0 left-0 rounded-full", size)}>
