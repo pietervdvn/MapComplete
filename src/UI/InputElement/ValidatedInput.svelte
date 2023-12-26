@@ -14,8 +14,9 @@
   export let type: ValidatorType
   export let feedback: UIEventSource<Translation> | undefined = undefined
   export let cls: string = undefined
-  export let getCountry: () => string | undefined
-  export let placeholder: string | Translation | undefined
+  export let getCountry: () => string | undefined = undefined
+  export let placeholder: string | Translation | undefined = undefined
+  export let autofocus: boolean = false
   export let unit: Unit = undefined
   /**
    * Valid state, exported to the calling component
@@ -57,9 +58,9 @@
     validator = Validators.get(type ?? "string")
 
     _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
-    if(_value.data?.length > 0){
+    if (_value.data?.length > 0) {
       feedback?.setData(validator?.getFeedback(_value.data, getCountry))
-    }else{
+    } else {
       feedback?.setData(undefined)
     }
 
@@ -69,7 +70,7 @@
   function setValues() {
     // Update the value stores
     const v = _value.data
-    if(v === ""){
+    if (v === "") {
       value.setData(undefined)
       feedback?.setData(undefined)
       return
@@ -100,7 +101,7 @@
         if (_value.data !== fromUpstream && fromUpstream !== "") {
           _value.setData(fromUpstream)
         }
-      })
+      }),
     )
   } else {
     // Handled by the UnitInput
@@ -114,7 +115,7 @@
       Utils.sortedByLevenshteinDistance(
         type,
         Validators.AllValidators.map((v) => v.name),
-        (v) => v
+        (v) => v,
       )
         .slice(0, 5)
         .join(", ")
@@ -123,37 +124,30 @@
 
   const isValid = _value.map((v) => validator?.isValid(v, getCountry) ?? true)
 
-  let htmlElem: HTMLInputElement
+  let htmlElem: HTMLInputElement | HTMLTextAreaElement
 
-  let dispatch = createEventDispatcher<{ selected; submit }>()
+  let dispatch = createEventDispatcher<{ selected }>()
   $: {
     if (htmlElem !== undefined) {
       htmlElem.onfocus = () => dispatch("selected")
+      if (autofocus) {
+        Utils.focusOn(htmlElem)
+      }
     }
   }
 
-  /**
-   * Dispatches the submit, but only if the value is valid
-   */
-  function sendSubmit() {
-    if (feedback?.data) {
-      console.log("Not sending a submit as there is feedback")
-    }
-    dispatch("submit")
-  }
 </script>
 
 {#if validator?.textArea}
-  <form on:submit|preventDefault={() => sendSubmit()}>
     <textarea
       class="w-full"
       bind:value={$_value}
       inputmode={validator?.inputmode ?? "text"}
       placeholder={_placeholder}
+      bind:this={htmlElem}
     />
-  </form>
 {:else}
-  <form class={twMerge("inline-flex", cls)} on:submit|preventDefault={() => sendSubmit()}>
+  <div class={twMerge("inline-flex", cls)}>
     <input
       bind:this={htmlElem}
       bind:value={$_value}
@@ -168,5 +162,5 @@
     {#if unit !== undefined}
       <UnitInput {unit} {selectedUnit} textValue={_value} upstreamValue={value} {getCountry} />
     {/if}
-  </form>
+  </div>
 {/if}

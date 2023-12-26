@@ -1638,13 +1638,22 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newObj
     }
 
+    public static focusOn(el: HTMLElement): void {
+        if (!el) {
+            return
+        }
+        requestAnimationFrame(() => {
+            el.focus()
+        })
+    }
+
     /**
      * Searches a child that can be focused on, by first selecting a 'focusable', then a button, then a link
      *
      * Returns the focussed element
      * @param el
      */
-    public static focusOnFocusableChild(el: HTMLElement): undefined {
+    public static focusOnFocusableChild(el: HTMLElement): void {
         if (!el) {
             return
         }

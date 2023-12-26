@@ -38,7 +38,7 @@
       return {bearing, distance: distanceToCurrentLocation.data.distance}
     }, [distanceToCurrentLocation])
   let viewportCenterDetails = Translations.DynamicSubstitute(t.viewportCenterDetails, relativeBearing)
-  let viewportCenterDetailsAbsolute = Translations.DynamicSubstitute(t.viewportCenterDetails, distanceToCurrentLocation.map(({distance, bearing}) => {
+  let viewportCenterDetailsAbsolute = Translations.DynamicSubstitute(t.viewportCenterDetails, distanceToCurrentLocation.mapD(({distance, bearing}) => {
     return {distance, bearing: t.directionsAbsolute[GeoOperations.bearingToHuman(bearing)]}
   }))
   

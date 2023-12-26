@@ -647,6 +647,12 @@ export default class TagRenderingConfig {
         multiSelectedMapping: boolean[] | undefined,
         currentProperties: Record<string, string>
     ): UploadableTag {
+        console.log("Constructing change spec", {
+            freeformValue,
+            singleSelectedMapping,
+            multiSelectedMapping,
+            currentProperties,
+        })
         if (typeof freeformValue === "string") {
             freeformValue = freeformValue?.trim()
         }

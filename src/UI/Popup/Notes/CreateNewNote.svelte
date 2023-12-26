@@ -2,21 +2,23 @@
   /**
    * UIcomponent to create a new note at the given location
    */
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import { UIEventSource } from "../../Logic/UIEventSource"
-  import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
-  import ValidatedInput from "../InputElement/ValidatedInput.svelte"
-  import SubtleButton from "../Base/SubtleButton.svelte"
-  import Tr from "../Base/Tr.svelte"
-  import Translations from "../i18n/Translations.js"
+  import type { SpecialVisualizationState } from "../../SpecialVisualization"
+  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import { LocalStorageSource } from "../../../Logic/Web/LocalStorageSource"
+  import ValidatedInput from "../../InputElement/ValidatedInput.svelte"
+  import SubtleButton from "../../Base/SubtleButton.svelte"
+  import Tr from "../../Base/Tr.svelte"
+  import Translations from "../../i18n/Translations.js"
   import type { Feature, Point } from "geojson"
-  import LoginToggle from "../Base/LoginToggle.svelte"
-  import FilteredLayer from "../../Models/FilteredLayer"
-  import NewPointLocationInput from "../BigComponents/NewPointLocationInput.svelte"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import Svg from "../../Svg"
-  import Layers from "../../assets/svg/Layers.svelte"
-  import AddSmall from "../../assets/svg/AddSmall.svelte"
+  import LoginToggle from "../../Base/LoginToggle.svelte"
+  import FilteredLayer from "../../../Models/FilteredLayer"
+  import NewPointLocationInput from "../../BigComponents/NewPointLocationInput.svelte"
+  import ToSvelte from "../../Base/ToSvelte.svelte"
+  import Svg from "../../../Svg"
+  import Layers from "../../../assets/svg/Layers.svelte"
+  import AddSmall from "../../../assets/svg/AddSmall.svelte"
+  import type { OsmTags } from "../../../Models/OsmFeature"
+  import Loading from "../../Base/Loading.svelte"
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
@@ -29,12 +31,14 @@
   let hasFilter = notelayer?.hasFilter
   let isDisplayed = notelayer?.isDisplayed
 
+  let submitted = false
   function enableNoteLayer() {
     state.guistate.closeAll()
     isDisplayed.setData(true)
   }
 
   async function uploadNote() {
+    submitted = true
     let txt = comment.data
     if (txt === undefined || txt === "") {
       return
@@ -43,7 +47,7 @@
     txt += "\n\n #MapComplete #" + state?.layout?.id
     const id = await state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
     console.log("Created a note, got id", id)
-    const feature = <Feature<Point>>{
+    const feature = <Feature<Point, OsmTags>>{
       type: "Feature",
       geometry: {
         type: "Point",
@@ -73,7 +77,6 @@
     comment.setData("")
     created = true
     state.selectedElement.setData(feature)
-    state.selectedLayer.setData(state.layerState.filteredLayers.get("note"))
   }
 </script>
 
@@ -81,6 +84,8 @@
   <div class="alert">
     This theme does not include the layer 'note'. As a result, no nodes can be created
   </div>
+{:else if submitted}
+  <Loading/>
 {:else if created}
   <div class="thanks">
     <Tr t={Translations.t.notes.isCreated} />
@@ -104,40 +109,41 @@
         </SubtleButton>
       </div>
     {:else}
-      <div>
-        <Tr t={Translations.t.notes.createNoteIntro} />
-        <div class="border-grey-500 rounded-sm border">
+      <form class="border-grey-500 rounded-sm border" on:submit|preventDefault={uploadNote}>
+        <label class="neutral-label">
+
+          <Tr t={Translations.t.notes.createNoteIntro} />
           <div class="w-full p-1">
-            <ValidatedInput type="text" value={comment} />
+            <ValidatedInput autofocus={true} type="text" value={comment} />
           </div>
+        </label>
 
-          <div class="h-56 w-full">
-            <NewPointLocationInput value={coordinate} {state}>
-              <div class="h-20 w-full pb-10" slot="image">
-                <ToSvelte construct={Svg.note_svg().SetClass("h-10 w-full")} />
-              </div>
-            </NewPointLocationInput>
-          </div>
-
-          <LoginToggle {state}>
-            <span slot="loading"><!--empty: don't show a loading message--></span>
-            <div slot="not-logged-in" class="alert">
-              <Tr t={Translations.t.notes.warnAnonymous} />
+        <div class="h-56 w-full">
+          <NewPointLocationInput value={coordinate} {state}>
+            <div class="h-20 w-full pb-10" slot="image">
+              <ToSvelte construct={Svg.note_svg().SetClass("h-10 w-full")} />
             </div>
-          </LoginToggle>
-
-          {#if $comment?.length >= 3}
-            <SubtleButton on:click={uploadNote}>
-              <AddSmall slot="image" class="mr-4 h-8 w-8" />
-              <Tr slot="message" t={Translations.t.notes.createNote} />
-            </SubtleButton>
-          {:else}
-            <div class="alert">
-              <Tr t={Translations.t.notes.textNeeded} />
-            </div>
-          {/if}
+          </NewPointLocationInput>
         </div>
-      </div>
+
+        <LoginToggle {state}>
+          <span slot="loading"><!--empty: don't show a loading message--></span>
+          <div slot="not-logged-in" class="alert">
+            <Tr t={Translations.t.notes.warnAnonymous} />
+          </div>
+        </LoginToggle>
+
+        {#if $comment?.length >= 3}
+          <SubtleButton on:click={uploadNote}>
+            <AddSmall slot="image" class="mr-4 h-8 w-8" />
+            <Tr slot="message" t={Translations.t.notes.createNote} />
+          </SubtleButton>
+        {:else}
+          <div class="alert">
+            <Tr t={Translations.t.notes.textNeeded} />
+          </div>
+        {/if}
+      </form>
     {/if}
   {:else}
     <div class="flex flex-col">

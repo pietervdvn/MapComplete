@@ -67,6 +67,7 @@
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
   import { MapLibreAdaptor } from "./Map/MapLibreAdaptor.js"
+  import { QueryParameters } from "../Logic/Web/QueryParameters"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -138,6 +139,15 @@
     }),
   )
   let previewedImage = state.previewedImage
+  
+  let debug = state.featureSwitches.featureSwitchIsDebugging
+  debug.addCallbackAndRun(dbg => {
+    if(dbg){
+      document.body.classList.add("debug")
+    }else{
+      document.body.classList.remove("debug")
+    }
+  })
 
   function forwardEventToMap(e: KeyboardEvent) {
     const mlmap = state.map.data

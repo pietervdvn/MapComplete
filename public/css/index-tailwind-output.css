@@ -1118,12 +1118,12 @@ video {
   height: 50%;
 }
 
-.h-3 {
-  height: 0.75rem;
-}
-
 .h-7 {
   height: 1.75rem;
+}
+
+.h-3 {
+  height: 0.75rem;
 }
 
 .h-11 {
@@ -1142,18 +1142,6 @@ video {
   height: 12rem;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-40 {
   height: 10rem;
 }
@@ -1162,8 +1150,20 @@ video {
   height: 16rem;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-80 {
   height: 20rem;
+}
+
+.h-56 {
+  height: 14rem;
+}
+
+.h-20 {
+  height: 5rem;
 }
 
 .max-h-12 {
@@ -1176,10 +1176,6 @@ video {
 
 .max-h-64 {
   max-height: 16rem;
-}
-
-.max-h-7 {
-  max-height: 1.75rem;
 }
 
 .max-h-60 {
@@ -1228,12 +1224,12 @@ video {
   width: 1rem;
 }
 
-.w-3 {
-  width: 0.75rem;
-}
-
 .w-7 {
   width: 1.75rem;
+}
+
+.w-3 {
+  width: 0.75rem;
 }
 
 .w-11 {
@@ -1614,11 +1610,6 @@ video {
   border-radius: 0.125rem;
 }
 
-.rounded-l {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
 .rounded-t {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -1631,6 +1622,11 @@ video {
 
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.rounded-l {
+  border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
 
@@ -1841,6 +1837,11 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .pr-2 {
@@ -2317,6 +2318,14 @@ input[type=text] {
   width: 100%;
 }
 
+.debug input, .debug textarea {
+  border: 6px solid red
+}
+
+.debug label input, .debug label textarea {
+  border: 1px solid grey;
+}
+
 /************************* BIG CATEGORIES ********************************/
 
 /**
@@ -2488,6 +2497,12 @@ button.link:hover {
 
 .normal-background button.disabled svg path, .normal-background .button.disabled svg path {
   fill: var(--foreground-color) !important;
+}
+
+.neutral-label{
+  /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
+     * Placed here for autocompletion
+     */
 }
 
 label:not(.neutral-label) {
@@ -2924,14 +2939,6 @@ a.link-underline {
     margin-right: 1rem;
   }
 
-  .sm\:mr-2 {
-    margin-right: 0.5rem;
-  }
-
-  .sm\:flex {
-    display: flex;
-  }
-
   .sm\:h-24 {
     height: 6rem;
   }
@@ -2946,14 +2953,6 @@ a.link-underline {
 
   .sm\:flex-nowrap {
     flex-wrap: nowrap;
-  }
-
-  .sm\:items-stretch {
-    align-items: stretch;
-  }
-
-  .sm\:justify-between {
-    justify-content: space-between;
   }
 
   .sm\:border-4 {

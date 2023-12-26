@@ -13,10 +13,10 @@ import { MinimapViz } from "./Popup/MinimapViz"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
-import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
+import { AddNoteCommentViz } from "./Popup/Notes/AddNoteCommentViz"
 import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
-import { CloseNoteButton } from "./Popup/CloseNoteButton"
+import { CloseNoteButton } from "./Popup/Notes/CloseNoteButton"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
@@ -30,7 +30,7 @@ import Translations from "./i18n/Translations"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import { SubtleButton } from "./Base/SubtleButton"
 import Svg from "../Svg"
-import NoteCommentElement from "./Popup/NoteCommentElement"
+import NoteCommentElement from "./Popup/Notes/NoteCommentElement"
 import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
@@ -42,7 +42,7 @@ import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import { Feature } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
-import CreateNewNote from "./Popup/CreateNewNote.svelte"
+import CreateNewNote from "./Popup/Notes/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
@@ -1004,7 +1004,10 @@ export default class SpecialVisualizations {
                                 return new Combine(
                                     comments
                                         .filter((c) => c.text !== "")
-                                        .map((c) => new NoteCommentElement(c))
+                                        .map(
+                                            (c, i) =>
+                                                new NoteCommentElement(c, state, i, comments.length)
+                                        )
                                 ).SetClass("flex flex-col")
                             })
                     ),

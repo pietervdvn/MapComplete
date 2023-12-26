@@ -1,26 +1,33 @@
-import Combine from "../Base/Combine"
-import BaseUIElement from "../BaseUIElement"
-import Svg from "../../Svg"
-import Link from "../Base/Link"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import Translations from "../i18n/Translations"
-import { Utils } from "../../Utils"
-import Img from "../Base/Img"
-import { SlideShow } from "../Image/SlideShow"
-import { Stores, UIEventSource } from "../../Logic/UIEventSource"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import { VariableUiElement } from "../Base/VariableUIElement"
+import Combine from "../../Base/Combine"
+import BaseUIElement from "../../BaseUIElement"
+import Svg from "../../../Svg"
+import Link from "../../Base/Link"
+import { FixedUiElement } from "../../Base/FixedUiElement"
+import Translations from "../../i18n/Translations"
+import { Utils } from "../../../Utils"
+import Img from "../../Base/Img"
+import { SlideShow } from "../../Image/SlideShow"
+import { Stores, UIEventSource } from "../../../Logic/UIEventSource"
+import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
+import { VariableUiElement } from "../../Base/VariableUIElement"
+import { SpecialVisualizationState } from "../../SpecialVisualization"
 
 export default class NoteCommentElement extends Combine {
-    constructor(comment: {
-        date: string
-        uid: number
-        user: string
-        user_url: string
-        action: "closed" | "opened" | "reopened" | "commented"
-        text: string
-        html: string
-    }) {
+    constructor(
+        comment: {
+            date: string
+            uid: number
+            user: string
+            user_url: string
+            action: "closed" | "opened" | "reopened" | "commented"
+            text: string
+            html: string
+            highlighted: boolean
+        },
+        state?: SpecialVisualizationState,
+        index?: number,
+        totalNumberOfComments?: number
+    ) {
         const t = Translations.t.notes
 
         let actionIcon: BaseUIElement
@@ -68,7 +75,15 @@ export default class NoteCommentElement extends Combine {
         let imagesEl: BaseUIElement = undefined
         if (images.length > 0) {
             const imageEls = images.map((i) =>
-                new Img(i).SetClass("w-full block").SetStyle("min-width: 50px; background: grey;")
+                new Img(i)
+                    .SetClass("w-full block cursor-pointer")
+                    .onClick(() =>
+                        state?.previewedImage?.setData(<any>{
+                            url_hd: i,
+                            url: i,
+                        })
+                    )
+                    .SetStyle("min-width: 50px; background: grey;")
             )
             imagesEl = new SlideShow(new UIEventSource<BaseUIElement[]>(imageEls)).SetClass("mb-1")
         }
@@ -84,6 +99,16 @@ export default class NoteCommentElement extends Combine {
             ),
         ])
         this.SetClass("flex flex-col pb-2 mb-2 border-gray-500 border-b")
+        if (comment.highlighted) {
+            this.SetClass("glowing-shadow")
+            console.log(">>>", index, totalNumberOfComments)
+            if (index + 2 === totalNumberOfComments) {
+                console.log("Scrolling into view")
+                requestAnimationFrame(() => {
+                    this.ScrollIntoView()
+                })
+            }
+        }
     }
 
     public static addCommentTo(
@@ -107,6 +132,7 @@ export default class NoteCommentElement extends Combine {
             action: "commented",
             text: txt,
             html: html,
+            highlighted: true,
         })
         tags.data["comments"] = JSON.stringify(comments)
         tags.ping()

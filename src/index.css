@@ -121,6 +121,16 @@ input[type=text] {
     width: 100%;
 }
 
+.debug input, .debug textarea {
+    border: 6px solid red
+}
+
+
+.debug label input, .debug label textarea {
+    border: 1px solid grey;
+}
+
+
 /************************* BIG CATEGORIES ********************************/
 
 /**
@@ -302,6 +312,11 @@ button.link:hover {
     fill: var(--foreground-color) !important;
 }
 
+.neutral-label{
+    /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
+     * Placed here for autocompletion
+     */
+}
 
 label:not(.neutral-label) {
     /**

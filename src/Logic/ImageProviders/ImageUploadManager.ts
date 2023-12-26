@@ -7,7 +7,7 @@ import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { Changes } from "../Osm/Changes"
 import Translations from "../../UI/i18n/Translations"
-import NoteCommentElement from "../../UI/Popup/NoteCommentElement"
+import NoteCommentElement from "../../UI/Popup/Notes/NoteCommentElement"
 
 /**
  * The ImageUploadManager has a

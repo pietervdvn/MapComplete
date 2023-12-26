@@ -3,6 +3,8 @@
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { twMerge } from "tailwind-merge"
   import { trapFocus } from "trap-focus-svelte"
+  import { ariaLabel } from "../../Utils/ariaLabel"
+  import Translations from "../i18n/Translations"
 
   /**
    * The slotted element will be shown on top, with a lower-opacity border
@@ -35,6 +37,7 @@
       <button
         class="absolute right-10 top-10 h-8 w-8 cursor-pointer rounded-full border-none bg-white p-0"
         on:click={() => dispatch("close")}
+        use:ariaLabel={Translations.t.general.backToMap}
       >
         <XCircleIcon />
       </button>

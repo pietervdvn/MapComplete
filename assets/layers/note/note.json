@@ -54,6 +54,10 @@
   },
   "titleIcons": [
     {
+      "ariaLabel": {
+        "en": "See on OpenStreetMap.org",
+        "nl": "Bekijk op OpenStreetMap.org"
+      },
       "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
     }
   ],
@@ -94,6 +98,7 @@
   "tagRenderings": [
     {
       "id": "conversation",
+      "classes": "p-0",
       "render": "{visualize_note_comments()}"
     },
     {

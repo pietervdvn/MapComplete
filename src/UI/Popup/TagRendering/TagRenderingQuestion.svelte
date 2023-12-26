@@ -105,7 +105,9 @@
         }
         // TODO this has _to much_ values
         freeformInput.setData(unseenFreeformValues.join(";"))
-        checkedMappings.push(unseenFreeformValues.length > 0)
+        if(checkedMappings.length + 1 < mappings.length ){
+          checkedMappings.push(unseenFreeformValues.length > 0)
+        }
       }
     }
     if (confg.freeform?.key) {
@@ -125,13 +127,31 @@
     initialize($tags, config)
   }
 
+  freeformInput.addCallbackAndRun(freeformValue => {
+    console.log("FreeformValue:", freeformValue)
+    if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
+      return
+    }
+    // If a freeform value is given, mark the 'mapping' as marked
+    if (config.multiAnswer) {
+      if (checkedMappings === undefined) {
+        // Initialization didn't yet run
+        return
+      }
+      checkedMappings[mappings.length] = freeformValue?.length > 0
+      return
+    }
+    if (freeformValue?.length > 0) {
+      selectedMapping = mappings.length
+    }
+  })
   $: {
     try {
       selectedTags = config?.constructChangeSpecification(
         $freeformInput,
         selectedMapping,
         checkedMappings,
-        tags.data
+        tags.data,
       )
     } catch (e) {
       console.error("Could not calculate changeSpecification:", e)
@@ -182,19 +202,6 @@
     }
   }
 
-  $: {
-    try {
-      selectedTags = config?.constructChangeSpecification(
-        $freeformInput,
-        selectedMapping,
-        checkedMappings,
-        tags.data
-      )
-    } catch (e) {
-      console.error("Could not calculate changeSpecification:", e)
-      selectedTags = undefined
-    }
-  }
 
   let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false)
   let featureSwitchIsDebugging =
@@ -207,148 +214,151 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      })
+      }),
     )
   }
 </script>
 
 {#if question !== undefined}
-  <div
+  <form
     class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
     style="max-height: 75vh"
+    on:submit|preventDefault={() => onSave()}
   >
-    <div class="interactive sticky top-0 flex justify-between pt-1" style="z-index: 11">
+    <label class="neutral-label">
+      <div class="interactive sticky top-0 flex justify-between pt-1" style="z-index: 11">
       <span class="font-bold">
         <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
       </span>
-      <slot name="upper-right" />
-    </div>
+        <slot name="upper-right" />
+      </div>
 
-    {#if config.questionhint}
-      <div class="max-h-60 overflow-y-auto">
-        <SpecialTranslation
-          t={config.questionhint}
+      {#if config.questionhint}
+        <div class="max-h-60 overflow-y-auto">
+          <SpecialTranslation
+            t={config.questionhint}
+            {tags}
+            {state}
+            {layer}
+            feature={selectedElement}
+          />
+        </div>
+      {/if}
+
+      {#if config.mappings?.length >= 8}
+        <div class="sticky flex w-full" aria-hidden="true">
+          <Search class="h-6 w-6" />
+          <input
+            type="text"
+            bind:value={$searchTerm}
+            class="w-full"
+            use:placeholder={Translations.t.general.searchAnswer}
+          />
+        </div>
+      {/if}
+
+      {#if config.freeform?.key && !(mappings?.length > 0)}
+        <!-- There are no options to choose from, simply show the input element: fill out the text field -->
+        <FreeformInput
+          {config}
           {tags}
+          {feedback}
+          {unit}
           {state}
-          {layer}
           feature={selectedElement}
+          value={freeformInput}
+          on:submit={onSave}
         />
-      </div>
-    {/if}
-
-    {#if config.mappings?.length >= 8}
-      <div class="sticky flex w-full" aria-hidden="true">
-        <Search class="h-6 w-6" />
-        <input
-          type="text"
-          bind:value={$searchTerm}
-          class="w-full"
-          use:placeholder={Translations.t.general.searchAnswer}
-        />
-      </div>
-    {/if}
-
-    {#if config.freeform?.key && !(mappings?.length > 0)}
-      <!-- There are no options to choose from, simply show the input element: fill out the text field -->
-      <FreeformInput
-        {config}
-        {tags}
-        {feedback}
-        {unit}
-        {state}
-        feature={selectedElement}
-        value={freeformInput}
-        on:submit={onSave}
-      />
-    {:else if mappings !== undefined && !config.multiAnswer}
-      <!-- Simple radiobuttons as mapping -->
-      <div class="flex flex-col">
-        {#each config.mappings as mapping, i (mapping.then)}
-          <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
-          <TagRenderingMappingInput
-            {mapping}
-            {tags}
-            {state}
-            {selectedElement}
-            {layer}
-            {searchTerm}
-            mappingIsSelected={selectedMapping === i}
-          >
-            <input
-              type="radio"
-              bind:group={selectedMapping}
-              name={"mappings-radio-" + config.id}
-              value={i}
-              on:keypress={(e) => onInputKeypress(e)}
-            />
-          </TagRenderingMappingInput>
-        {/each}
-        {#if config.freeform?.key}
-          <label class="flex">
-            <input
-              type="radio"
-              bind:group={selectedMapping}
-              name={"mappings-radio-" + config.id}
-              value={config.mappings?.length}
-              on:keypress={(e) => onInputKeypress(e)}
-            />
-            <FreeformInput
-              {config}
+      {:else if mappings !== undefined && !config.multiAnswer}
+        <!-- Simple radiobuttons as mapping -->
+        <div class="flex flex-col">
+          {#each config.mappings as mapping, i (mapping.then)}
+            <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
+            <TagRenderingMappingInput
+              {mapping}
               {tags}
-              {feedback}
-              {unit}
               {state}
-              feature={selectedElement}
-              value={freeformInput}
-              on:selected={() => (selectedMapping = config.mappings?.length)}
-              on:submit={onSave}
-            />
-          </label>
-        {/if}
-      </div>
-    {:else if mappings !== undefined && config.multiAnswer}
-      <!-- Multiple answers can be chosen: checkboxes -->
-      <div class="flex flex-col">
-        {#each config.mappings as mapping, i (mapping.then)}
-          <TagRenderingMappingInput
-            {mapping}
-            {tags}
-            {state}
-            {selectedElement}
-            {layer}
-            {searchTerm}
-            mappingIsSelected={checkedMappings[i]}
-          >
-            <input
-              type="checkbox"
-              name={"mappings-checkbox-" + config.id + "-" + i}
-              bind:checked={checkedMappings[i]}
-              on:keypress={(e) => onInputKeypress(e)}
-            />
-          </TagRenderingMappingInput>
-        {/each}
-        {#if config.freeform?.key}
-          <label class="flex">
-            <input
-              type="checkbox"
-              name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
-              bind:checked={checkedMappings[config.mappings.length]}
-              on:keypress={(e) => onInputKeypress(e)}
-            />
-            <FreeformInput
-              {config}
+              {selectedElement}
+              {layer}
+              {searchTerm}
+              mappingIsSelected={selectedMapping === i}
+            >
+              <input
+                type="radio"
+                bind:group={selectedMapping}
+                name={"mappings-radio-" + config.id}
+                value={i}
+                on:keypress={(e) => onInputKeypress(e)}
+              />
+            </TagRenderingMappingInput>
+          {/each}
+          {#if config.freeform?.key}
+            <label class="flex">
+              <input
+                type="radio"
+                bind:group={selectedMapping}
+                name={"mappings-radio-" + config.id}
+                value={config.mappings?.length}
+                on:keypress={(e) => onInputKeypress(e)}
+              />
+              <FreeformInput
+                {config}
+                {tags}
+                {feedback}
+                {unit}
+                {state}
+                feature={selectedElement}
+                value={freeformInput}
+                on:selected={() => (selectedMapping = config.mappings?.length)}
+                on:submit={onSave}
+              />
+            </label>
+          {/if}
+        </div>
+      {:else if mappings !== undefined && config.multiAnswer}
+        <!-- Multiple answers can be chosen: checkboxes -->
+        <div class="flex flex-col">
+          {#each config.mappings as mapping, i (mapping.then)}
+            <TagRenderingMappingInput
+              {mapping}
               {tags}
-              {feedback}
-              {unit}
               {state}
-              feature={selectedElement}
-              value={freeformInput}
-              on:submit={onSave}
-            />
-          </label>
-        {/if}
-      </div>
-    {/if}
+              {selectedElement}
+              {layer}
+              {searchTerm}
+              mappingIsSelected={checkedMappings[i]}
+            >
+              <input
+                type="checkbox"
+                name={"mappings-checkbox-" + config.id + "-" + i}
+                bind:checked={checkedMappings[i]}
+                on:keypress={(e) => onInputKeypress(e)}
+              />
+            </TagRenderingMappingInput>
+          {/each}
+          {#if config.freeform?.key}
+            <label class="flex">
+              <input
+                type="checkbox"
+                name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
+                bind:checked={checkedMappings[config.mappings.length]}
+                on:keypress={(e) => onInputKeypress(e)}
+              />
+              <FreeformInput
+                {config}
+                {tags}
+                {feedback}
+                {unit}
+                {state}
+                feature={selectedElement}
+                value={freeformInput}
+                on:submit={onSave}
+              />
+            </label>
+          {/if}
+        </div>
+      {/if}
+    </label>
 
     <LoginToggle {state}>
       <Loading slot="loading" />
@@ -391,5 +401,5 @@
       {/if}
       <slot name="under-buttons" />
     </LoginToggle>
-  </div>
+  </form>
 {/if}

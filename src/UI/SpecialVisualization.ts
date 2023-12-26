@@ -57,6 +57,9 @@ export interface SpecialVisualizationState {
     readonly selectedElement: UIEventSource<Feature>
     /**
      * Works together with 'selectedElement' to indicate what properties should be displayed
+     * @deprecated
+     *
+     * No need to set this anymore
      */
     readonly selectedLayer: UIEventSource<LayerConfig>
     readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
