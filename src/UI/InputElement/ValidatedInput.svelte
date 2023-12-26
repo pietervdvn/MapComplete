@@ -71,7 +71,7 @@
     const v = _value.data
     if(v === ""){
       value.setData(undefined)
-      feedback.setData(undefined)
+      feedback?.setData(undefined)
       return
     }
     if (!validator?.isValid(v, getCountry)) {
