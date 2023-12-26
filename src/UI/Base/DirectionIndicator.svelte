@@ -16,6 +16,7 @@
   import Locale from "../i18n/Locale"
   import { ariaLabelStore } from "../../Utils/ariaLabel"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import Center from "../../assets/svg/Center.svelte"
 
   export let state: SpecialVisualizationState
   export let feature: Feature
@@ -95,26 +96,34 @@
 
   let label = labelFromCenter.map(labelFromCenter => {
     if (labelFromGps.data !== undefined) {
-      if(closeToCurrentLocation.data){
+      if (closeToCurrentLocation.data) {
         return labelFromGps.data
       }
       return labelFromCenter + ", " + labelFromGps.data
     }
     return labelFromCenter
   }, [labelFromGps])
-  function focusMap(){
+
+  function focusMap() {
     state.mapProperties.location.setData({ lon: fcenter[0], lat: fcenter[1] })
   }
 </script>
 
-<button class={twMerge("relative rounded-full soft", size)} use:ariaLabelStore={label} on:click={() => focusMap()}>
-  <div class={twMerge("absolute top-0 left-0 flex items-center justify-center text-sm break-words",size)}>
-    {GeoOperations.distanceToHuman($bearingAndDistGps?.dist)}
-  </div>
-  {#if $bearingFromGps !== undefined}
-    <div class={twMerge("absolute top-0 left-0 rounded-full", size)}>
-      <Compass_arrow class={size}
-                     style={`transform: rotate( calc( 45deg + ${$bearingFromGps - ($compass ?? 0)}deg) );`} />
+{#if $bearingAndDistGps === undefined}
+  <button class={twMerge("relative rounded-full soft p-1", size)} on:click={() => focusMap()}
+          use:ariaLabelStore={label}>
+    <Center class="w-7 h-7"/>
+  </button>
+{:else}
+  <button class={twMerge("relative rounded-full soft", size)} on:click={() => focusMap()} use:ariaLabelStore={label}>
+    <div class={twMerge("absolute top-0 left-0 flex items-center justify-center text-sm break-words",size)}>
+      {GeoOperations.distanceToHuman($bearingAndDistGps?.dist)}
     </div>
-  {/if}
-</button>
+    {#if $bearingFromGps !== undefined}
+      <div class={twMerge("absolute top-0 left-0 rounded-full", size)}>
+        <Compass_arrow class={size}
+                       style={`transform: rotate( calc( 45deg + ${$bearingFromGps - ($compass ?? 0)}deg) );`} />
+      </div>
+    {/if}
+  </button>
+{/if}
