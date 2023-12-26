@@ -50,6 +50,15 @@
         "panelIntro": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen",
         "reload": "Daten neu laden"
     },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "Der Standort ist derzeit als Favorit markiert und wird auf allen thematischen Karten von MapComplete angezeigt, die Sie besuchen.",
+            "isMarkedShort": "Als bevorzugter Standort markiert",
+            "markAsFavouriteTitle": "Diesen Standort als bevorzugten Standort markieren",
+            "markDescription": "Diesen Standort zur persönlichen Liste bevorzugter Standorte hinzufügen",
+            "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen"
+        }
+    },
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
         "callToAction": "Testen Sie es auf mapcomplete.org",
