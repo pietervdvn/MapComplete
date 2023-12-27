@@ -56,8 +56,15 @@
             "isMarkedShort": "Als bevorzugter Standort markiert",
             "markAsFavouriteTitle": "Diesen Standort als bevorzugten Standort markieren",
             "markDescription": "Diesen Standort zur persönlichen Liste bevorzugter Standorte hinzufügen",
-            "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen"
-        }
+            "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen",
+            "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
+        },
+        "downloadGeojson": "Lade deine Favoriten als geojson herunter",
+        "downloadGpx": "Lade deine Favoriten als GPX herunter",
+        "intro": "Du hast {length} Orte als Lieblingsort markiert.",
+        "introPrivacy": "Diese Liste ist nur für dich sichtbar",
+        "loginToSeeList": "Melde dich an, um die Liste der Orte zu sehen, die du als Favoriten markiert hast",
+        "tab": "Deine Favoriten"
     },
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
