@@ -110,10 +110,10 @@
             "pleaseLogin": "Por favor inicia sesión para añadir un nuevo elemento",
             "presetInfo": "El nuevo POI tendrá {tags}",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir una nueva función.",
-            "title": "Quieres añadir un elemento?",
+            "title": "¿Quieres añadir un elemento?",
             "warnVisibleForEveryone": "Su adición será visible para todos",
             "wrongType": "Este elemento no es un nodo o una vía y no puede ser importado",
-            "zoomInFurther": "Acercate mas para añadir un elemento.",
+            "zoomInFurther": "Acércate más para añadir un elemento.",
             "zoomInMore": "Aumente el zoom para importar este elemento"
         },
         "apply_button": {
@@ -189,6 +189,9 @@
         "loginToStart": "Entra para contestar esta pregunta",
         "loginWithOpenStreetMap": "Acceder con OpenStreetMap",
         "logout": "Cerrar la sesión",
+        "menu": {
+            "filter": "Filtrar datos"
+        },
         "morescreen": {
             "createYourOwnTheme": "Crea tu propia petición completa de MapComplete desde cero",
             "hiddenExplanation": "Estos temas solo son visibles para aquellos con el enlace. Has descubierto {hidden_discovered} de {total_hidden} temas ocultos.",
@@ -256,7 +259,8 @@
             "fsUserbadge": "Activar el botón de entrada",
             "fsWelcomeMessage": "Muestra el mensaje emergente de bienvenida y pestañas asociadas",
             "intro": "<h3>Comparte este mapa</h3> Comparte este mapa copiando el enlace de debajo y enviándolo a amigos y familia:",
-            "thanksForSharing": "Gracias por compartir!"
+            "thanksForSharing": "Gracias por compartir!",
+            "title": "Comparte este mapa"
         },
         "skip": "Saltar esta pregunta",
         "testing": "Probando - los cambios no se guardarán",
@@ -310,6 +314,9 @@
         "doDelete": "Borrar imagen",
         "dontDelete": "Cancelar",
         "isDeleted": "Borrada",
+        "nearby": {
+            "seeNearby": "Buscar y enlazar fotos cercanas"
+        },
         "pleaseLogin": "Acceda para cargar una imagen",
         "respectPrivacy": "No fotografíe personas ni matrículas. No cargue datos de Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
         "toBig": "Tu imagen es demasiado grande, ya que pesa {actual_size}. Por favor utiliza imágenes de como máximo {max_size}",
