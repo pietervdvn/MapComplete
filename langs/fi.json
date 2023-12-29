@@ -21,21 +21,76 @@
         "cannotBeDeleted": "Tätä kohdetta ei voi poistaa",
         "delete": "Poista",
         "explanations": {
-            "hardDelete": "Tämä kohde poistetaan OpenStreetMapistä. Kokenut kartoittaja voi palauttaa sen."
+            "hardDelete": "Tämä kohde poistetaan OpenStreetMapistä. Kokenut kartoittaja voi palauttaa sen.",
+            "selectReason": "Valitse, miksi tämä kohde pitäisi poistaa",
+            "softDelete": "Tämä kohde päivitetään ja piilotetaan tässä sovelluksessa. <span class='subtle'>{reason}</span>"
         },
         "isDeleted": "Tämä kohde on poistettu",
         "loginToDelete": "Kohteen poistamiseksi täytyy kirjautua",
         "notEnoughExperience": "Tämän kohteen loi joku muu.",
-        "onlyEditedByLoggedInUser": "Tätä kohdetta ei ole muokannut kukaan muu kuin sinä, joten sen voi huoletta poistaa."
+        "onlyEditedByLoggedInUser": "Tätä kohdetta ei ole muokannut kukaan muu kuin sinä, joten sen voi huoletta poistaa.",
+        "readMessages": "Sinulle on lukemattomia viestejä. Lue ne ennen kuin poistat kohteen – joku on saattanut lähettää palautetta",
+        "reasons": {
+            "disused": "Tämä kohde on poistettu käytöstä tai poistettu",
+            "duplicate": "Tämä kohde on toisen kohteen kaksoiskappale",
+            "notFound": "Tätä kohdetta ei löytynyt",
+            "test": "Tämä oli testikohde – kohdetta ei ollut ikinä olemassa"
+        },
+        "safeDelete": "Tämä kohde voidaan turvallisesti poistaa.",
+        "whyDelete": "Miksi tämä kohde pitäisi poistaa?"
+    },
+    "favourite": {
+        "reload": "Lataa data uudelleen"
+    },
+    "favouritePoi": {
+        "button": {
+            "isMarkedShort": "Merkitty suosikkisijainniksi",
+            "isNotMarkedShort": "Ei merkitty suosikiksi",
+            "markAsFavouriteTitle": "Merkitse tämä paikka suosikkisijainniksi",
+            "markDescription": "Lisää tämä paikka henkilökohtaiselle suosikkilistalle",
+            "unmark": "Poista henkilökohtaiselta suosikkilistalta"
+        },
+        "downloadGeojson": "Lataa suosikkisi geojson-muodossa",
+        "downloadGpx": "Lataa suosikkisi GPX-muodossa",
+        "intro": "Olet merkinnyt {length} sijaintia suosikkeihisi.",
+        "introPrivacy": "Tämä lista näkyy vain sinulle",
+        "loginToSeeList": "Kirjaudu sisään, jotta näet listan sijainneista, jotka olet merkinnyt suosikiksi",
+        "tab": "Omat suosikit",
+        "title": "Suosikkisijaintisi"
     },
     "flyer": {
         "callToAction": "Kokeile sitä osoitteessa mapcomplete.org",
-        "tagline": "Kerää paikkatietoa OpenStreetMapillä"
+        "editing": {
+            "title": "Miltä käyttöliittymä näyttää?"
+        },
+        "fakeui": {
+            "add_images": "Lisää kuvia muutamalla napsautuksella"
+        },
+        "mapcomplete": {
+            "title": "Mikä MapComplete on?"
+        },
+        "tagline": "Kerää paikkatietoa OpenStreetMapillä",
+        "title": "mapcomplete.org",
+        "whatIsOsm": "Mikä OpenStreetMap on?"
     },
     "general": {
-        "attribution": {
-            "followOnMastodon": "Seuraa MapCompletea Mastodonissa"
+        "404": "Tätä sivua ei ole olemassa",
+        "add": {
+            "addNew": "Lisää {category}",
+            "confirmLocation": "Vahvista tämä sijainti",
+            "confirmTitle": "Lisätäänkö {title}?",
+            "title": "Lisää uusi kohde"
         },
+        "attribution": {
+            "donate": "Tue MapCompletea rahallisesti",
+            "editId": "Avaa OpenStreetMap-verkkoeditori tänne",
+            "editJosm": "Muokkaa täällä JOSM:illa",
+            "followOnMastodon": "Seuraa MapCompletea Mastodonissa",
+            "josmOpened": "JOSM on avattu",
+            "openIssueTracker": "Ilmoita ohjelmavirheestä",
+            "openMapillary": "Avaa Mapillary tänne"
+        },
+        "backToIndex": "Palaa kaikkien teemakarttojen yleiskuvaan",
         "backgroundMap": "Taustakartta",
         "cancel": "Peruuta",
         "download": {
@@ -44,15 +99,28 @@
         "error": "Jotain meni vikaan",
         "example": "Esimerkki",
         "examples": "Esimerkit",
+        "labels": {
+            "background": "Vaihda taustakarttaa",
+            "filter": "Suodata dataa",
+            "jumpToLocation": "Siirry nykyiseen sijaintiisi",
+            "zoomIn": "Lähennä",
+            "zoomOut": "Loitonna"
+        },
+        "loading": "Ladataan…",
+        "loadingTheme": "Loading teemaa {theme}…",
+        "loginToStart": "Kirjaudu sisään, jotta voit vastata tähän kysymykseen",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
         "logout": "Kirjaudu ulos",
         "menu": {
             "aboutMapComplete": "Tietoa MapCompletesta"
         },
         "morescreen": {
-            "searchForATheme": "Etsi teemaa"
+            "noSearch": "Näytä kaikki teemat",
+            "searchForATheme": "Etsi teemaa",
+            "streetcomplete": "Toinen, samanlainen sovellus on <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "number": "numero",
+        "openStreetMapIntro": "",
         "openTheMap": "Avaa kartta",
         "openTheMapAtGeolocation": "Zoomaa sijaintiisi",
         "opening_hours": {
@@ -65,6 +133,7 @@
         "questionBox": {
             "answeredMultiple": "Vastasit {answered} kysymykseen",
             "answeredOne": "Vastasit yhteen kysymykseen",
+            "done": "Ei enempää kysymyksiä. Kiitos!",
             "skippedMultiple": "Ohitit {skipped} kysymystä",
             "skippedOne": "Ohitit yhden kysymyksen"
         },
@@ -73,12 +142,19 @@
         },
         "save": "Tallenna",
         "search": {
+            "nothing": "Mitään ei löytynyt…",
+            "search": "Etsi paikkaa",
             "searching": "Etsitään…"
         },
         "sharescreen": {
-            "thanksForSharing": "Kiitos jakamisesta!"
+            "thanksForSharing": "Kiitos jakamisesta!",
+            "title": "Jaa tämä kartta"
         },
         "skip": "Ohita tämä kysymys",
+        "uploadError": "Virhe muutosten lähettämisessä: {error}",
+        "visualFeedback": {
+            "out": "Loitonnetaan tasolle {z}"
+        },
         "waitingForLocation": "Etsitään nykyistä sijaintiasi…",
         "weekdays": {
             "abbreviations": {
@@ -98,21 +174,36 @@
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
         },
+        "welcomeBack": "Tervetuloa takaisin!",
         "wikipedia": {
             "addEntry": "Lisää toinen Wikipedia-sivu"
         }
+    },
+    "hotkeyDocumentation": {
+        "action": "Toiminto",
+        "key": "Näppäinyhdistelmä"
     },
     "image": {
         "addPicture": "Lisää kuva",
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
-        "isDeleted": "Poistettu"
+        "isDeleted": "Poistettu",
+        "pleaseLogin": "Kirjaudu sisään, jotta voit lisätä kuvan",
+        "respectPrivacy": "Älä valokuvaa ihmisiä tai rekisterikilpiä. Älä lähetä kuvia Google Mapsistä, Google Streetview’stä tai muista tekijänoikeuden alaisista lähteistä.",
+        "uploadDone": "Kuvasi on lisätty. Kiitoksia avusta!",
+        "uploadingMultiple": "Lähetetään {count} kuvaa…",
+        "uploadingPicture": "Lähetetään kuvaa…"
     },
     "index": {
+        "intro": "MapComplete on OpenStreetMap-katselin ja -editori, joka näyttää tietoja tiettyyn teeman liittyvistä kohteista ja antaa muokata niitä.",
+        "pickTheme": "Aloita valitsemalla teema alta.",
         "title": "Tervetuloa MapCompleteen"
     },
     "plantDetection": {
         "tryAgain": "Valitse eri laji"
+    },
+    "privacy": {
+        "title": "Tietosuojakäytäntö"
     },
     "reviews": {
         "title": "{count} arvostelua",
