@@ -138,7 +138,7 @@
   {:else}
     <div>
       {#if $showAllQuestionsAtOnce}
-        <div>
+        <div class="flex flex-col gap-y-1">
           {#each $questionsToAsk as question (question.id)}
             <TagRenderingQuestion config={question} {tags} {selectedElement} {state} {layer} />
           {/each}

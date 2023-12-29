@@ -16,8 +16,9 @@
       "id": "images",
       "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
       "render": {
-        "*": "{image_carousel()}{image_upload()}{nearby_images()}"
-      }
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
     },
     {
       "id": "mapillary",

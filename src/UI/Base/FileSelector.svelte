@@ -38,6 +38,7 @@
 >
   <label
     class={twMerge(cls, drawAttention ? "glowing-shadow" : "")}
+    style="margin-left:0"
     tabindex="0"
     for={"fileinput" + id}
     on:click={() => {

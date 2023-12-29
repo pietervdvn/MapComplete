@@ -72,12 +72,14 @@
     <div class="text-sm">
       <button
         class="link small"
+        style="margin: 0; padding: 0"
         on:click={() => {
           state.guistate.openUsersettings("picture-license")
         }}
       >
         <Tr t={t.currentLicense.Subs({ license: $licenseStore })} />
       </button>
+      <br/>
       <Tr t={t.respectPrivacy} />
     </div>
   </div>

@@ -312,50 +312,6 @@ button.link:hover {
     fill: var(--foreground-color) !important;
 }
 
-.neutral-label{
-    /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
-     * Placed here for autocompletion
-     */
-}
-
-label:not(.neutral-label) {
-    /**
-     * Label should _contain_ the input element
-     */
-    border: 2px solid var(--interactive-background);
-    padding: 0.25rem;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: var(--low-interaction-background);
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 250ms;
-}
-
-label:hover:not(.neutral-label) {
-    background-color: var(--catch-detail-color);
-    color: var(--catch-detail-foregroundcolor);
-    border: 2px solid var(--interactive-contrast)
-}
-
-label:not(.no-image-background):not(.neutral-label) img {
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    background: var(--low-interaction-background);
-}
-
-label:not(.neutral-label) svg path {
-    transition: all 250ms;
-}
-
-label:hover:not(.no-image-background):not(.neutral-label) svg path {
-    fill: var(--catch-detail-foregroundcolor) !important;
-}
-
-label.checked:not(.neutral-label) {
-    border: 2px solid var(--foreground-color);
-}
 
 .links-w-full a:not(.weblate-link) {
     display: flex;
@@ -404,6 +360,56 @@ select {
 
 select:hover {
     border-color: var(--catch-detail-color-contrast);
+}
+
+
+.neutral-label{
+    /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
+     * Placed here for autocompletion
+     */
+}
+
+label:not(.neutral-label):not(.button) {
+    /**
+     * Label should _contain_ the input element
+     */
+    border: 2px solid var(--interactive-background);
+    padding: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--low-interaction-background);
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 250ms;
+}
+
+label.button {
+    width: 100%;
+}
+
+label:hover:not(.neutral-label) {
+    background-color: var(--catch-detail-color);
+    color: var(--catch-detail-foregroundcolor);
+    border: 2px solid var(--interactive-contrast)
+}
+
+label:not(.no-image-background):not(.neutral-label) img {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    background: var(--low-interaction-background);
+}
+
+label:not(.neutral-label) svg path {
+    transition: all 250ms;
+}
+
+label:hover:not(.no-image-background):not(.neutral-label) svg path {
+    fill: var(--catch-detail-foregroundcolor) !important;
+}
+
+label.checked:not(.neutral-label) {
+    border: 2px solid var(--foreground-color);
 }
 
 /************************* OTHER CATEGORIES ********************************/

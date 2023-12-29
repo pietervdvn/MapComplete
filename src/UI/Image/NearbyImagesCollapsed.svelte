@@ -26,6 +26,7 @@
 </script>
 
 <LoginToggle {state}>
+  <div class="my-4">
   {#if expanded}
     <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
       <button
@@ -42,6 +43,7 @@
   {:else}
     <button
       class="flex w-full items-center"
+      style="margin-left: 0; margin-right: 0"
       on:click={() => {
         expanded = true
       }}
@@ -51,4 +53,5 @@
       <Tr t={t.seeNearby} />
     </button>
   {/if}
+  </div>
 </LoginToggle>
