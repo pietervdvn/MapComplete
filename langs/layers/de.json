@@ -35,6 +35,16 @@
             "1": {
                 "title": "eine freistehende Posterbox"
             },
+            "10": {
+                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+                "title": "ein Schild"
+            },
+            "11": {
+                "title": "eine Skulptur"
+            },
+            "12": {
+                "title": "eine Wandmalerei"
+            },
             "2": {
                 "title": "eine wandmontierte Posterbox"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "ein Totem"
-            },
-            "10": {
-                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
-                "title": "ein Schild"
-            },
-            "11": {
-                "title": "eine Skulptur"
-            },
-            "12": {
-                "title": "eine Wandmalerei"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Dies ist ein Brett"
                     },
+                    "10": {
+                        "then": "Dies ist eine Wandmalerei"
+                    },
                     "2": {
                         "then": "Dies ist eine Litfaßsäule"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Dies ist ein Totem"
-                    },
-                    "10": {
-                        "then": "Dies ist eine Wandmalerei"
                     }
                 },
                 "question": "Welche Art von Werbung ist das?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Brett"
+                },
+                "10": {
+                    "then": "Wandmalerei"
                 },
                 "2": {
                     "then": "Posterbox"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Wandmalerei"
                 }
             }
         }
@@ -353,6 +353,15 @@
                     "1": {
                         "then": "Wandbild"
                     },
+                    "10": {
+                        "then": "Azulejo (spanische dekorative Fliesenarbeit)"
+                    },
+                    "11": {
+                        "then": "Fliesenarbeit"
+                    },
+                    "12": {
+                        "then": "Holzschnitzerei"
+                    },
                     "2": {
                         "then": "Malerei"
                     },
@@ -376,15 +385,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (spanische dekorative Fliesenarbeit)"
-                    },
-                    "11": {
-                        "then": "Fliesenarbeit"
-                    },
-                    "12": {
-                        "then": "Holzschnitzerei"
                     }
                 },
                 "question": "Um welche Art Kunstwerk handelt es sich?",
@@ -1942,30 +1942,6 @@
                     "1": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     },
-                    "2": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
-                    },
-                    "3": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
-                    },
-                    "4": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
-                    },
-                    "5": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel<img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "6": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
-                    },
-                    "7": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
-                    },
-                    "8": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss"
-                    },
-                    "9": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
-                    },
                     "10": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
                     },
@@ -1986,6 +1962,30 @@
                     },
                     "16": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 5 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> und Kabel"
+                    },
+                    "2": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
+                    },
+                    "3": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
+                    },
+                    "4": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
+                    },
+                    "5": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
+                    },
+                    "7": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
+                    },
+                    "8": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss"
+                    },
+                    "9": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
                     }
                 }
             }
@@ -1993,15 +1993,22 @@
         "name": "Ladestationen",
         "presets": {
             "0": {
-                "title": "eine Ladestation für Elektrofahrräder"
+                "title": "Ladestation für Elektrofahrräder"
             },
             "1": {
-                "title": "Eine Ladestation für Elektrofahrzeuge"
+                "title": "Ladestation für Elektrofahrräder"
             }
         },
         "tagRenderings": {
+            "Auth phone": {
+                "question": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
+                "render": "Authentifiziere dich, indem du anrufst oder eine SMS sendest an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
             "Authentication": {
                 "mappings": {
+                    "0": {
+                        "then": "Authentifizierung durch eine Mitgliedskarte"
+                    },
                     "1": {
                         "then": "Authentifizierung per App"
                     },
@@ -2034,30 +2041,6 @@
                     "1": {
                         "then": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)"
                     },
-                    "2": {
-                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
-                    },
-                    "3": {
-                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo-Anschluss</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo-Anschluss</b>"
-                    },
-                    "6": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>Typ 1 CCS</b> (Typ 1 Combo)"
                     },
@@ -2087,6 +2070,9 @@
                     },
                     "19": {
                         "then": "<b>Typ 2 mit Kabel</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)"
@@ -2118,11 +2104,32 @@
                     "29": {
                         "then": "<b> Bosch Active Connect mit 3 Pins </b> und Kabel"
                     },
+                    "3": {
+                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect mit 5 Pins</b> und Kabel"
                     },
                     "31": {
                         "then": "<b> Bosch Active Connect mit 5 Pins </b> und Kabel"
+                    },
+                    "4": {
+                        "then": "<b>Chademo-Anschluss</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo-Anschluss</b>"
+                    },
+                    "6": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
                     }
                 },
                 "question": "Welche Ladeanschlüsse gibt es hier?"
@@ -2283,13 +2290,21 @@
             "rewritten-questions": {
                 "renderings": {
                     "0": {
-                        "question": "Wie viele Stecker vom Typ {{description}} sind hier vorhanden?"
+                        "question": "Wie viele Stecker vom Typ {{description}} sind hier vorhanden?",
+                        "render": "Hier sind <b class='text-xl'>{{{key}}}</b> Stecker vom Typ {{description}} verfügbar"
                     },
                     "1": {
                         "mappings": {
                             "then": "{{description}} liefert {{commonVoltages}} Volt"
                         },
-                        "question": "Welche Spannung liefern die {{description}}?"
+                        "question": "Welche Spannung liefern die {{description}}?",
+                        "render": "{{description}} liefert {canonical({{key}}:voltage)}"
+                    },
+                    "2": {
+                        "mappings": {
+                            "then": "{{description}} liefert maximal {{commonCurrent}} A"
+                        },
+                        "question": "Welchen Strom bieten die Stecker mit {{description}}?"
                     }
                 }
             },
@@ -3066,6 +3081,15 @@
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
+                    "10": {
+                        "then": "Dieser Radweg besteht aus feinem Schotter"
+                    },
+                    "11": {
+                        "then": "Der Radweg ist aus Kies"
+                    },
+                    "12": {
+                        "then": "Dieser Radweg besteht aus Rohboden"
+                    },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
@@ -3089,15 +3113,6 @@
                     },
                     "9": {
                         "then": "Der Radweg ist aus Schotter"
-                    },
-                    "10": {
-                        "then": "Dieser Radweg besteht aus feinem Schotter"
-                    },
-                    "11": {
-                        "then": "Der Radweg ist aus Kies"
-                    },
-                    "12": {
-                        "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
                 "question": "Was ist der Belag dieses Radwegs?",
@@ -3146,6 +3161,15 @@
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
+                    "10": {
+                        "then": "Dieser Radweg besteht aus feinem Schotter"
+                    },
+                    "11": {
+                        "then": "Der Radweg ist aus Kies"
+                    },
+                    "12": {
+                        "then": "Dieser Radweg besteht aus Rohboden"
+                    },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
@@ -3169,15 +3193,6 @@
                     },
                     "9": {
                         "then": "Der Radweg ist aus Schotter"
-                    },
-                    "10": {
-                        "then": "Dieser Radweg besteht aus feinem Schotter"
-                    },
-                    "11": {
-                        "then": "Der Radweg ist aus Kies"
-                    },
-                    "12": {
-                        "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
                 "question": "Was ist der Belag dieser Straße?",
@@ -4053,6 +4068,54 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Keine Bevorzugung von Hunden"
+                    },
+                    "1": {
+                        "question": "Hunde erlaubt"
+                    },
+                    "2": {
+                        "question": "Keine Hunde erlaubt"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Internetzugang vorhanden"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Stromanschluss vorhanden"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Hat zuckerfreie Angebote"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Hat glutenfreie Angebote"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Hat laktosefreie Angebote"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -4121,54 +4184,6 @@
                 "options": {
                     "0": {
                         "question": "Nutzung kostenlos"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Keine Bevorzugung von Hunden"
-                    },
-                    "1": {
-                        "question": "Hunde erlaubt"
-                    },
-                    "2": {
-                        "question": "Keine Hunde erlaubt"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Internetzugang vorhanden"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Stromanschluss vorhanden"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Hat zuckerfreie Angebote"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Hat glutenfreie Angebote"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Hat laktosefreie Angebote"
                     }
                 }
             }
@@ -4290,30 +4305,6 @@
                     "1": {
                         "then": "Die Fitness-Station hat ein Schild mit Anweisungen für eine bestimmte Übung."
                     },
-                    "2": {
-                        "then": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
-                    },
-                    "3": {
-                        "then": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
-                    },
-                    "4": {
-                        "then": "Die Fitness-Station hat Stangen zum Dehnen."
-                    },
-                    "5": {
-                        "then": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
-                    },
-                    "6": {
-                        "then": "Die Fitness-Station hat Ringe für Gymnastikübungen."
-                    },
-                    "7": {
-                        "then": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
-                    },
-                    "8": {
-                        "then": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
-                    },
-                    "9": {
-                        "then": "Die Fitness-Station hat Pfosten für Slalomübungen."
-                    },
                     "10": {
                         "then": "Die Fitness-Station hat Trittsteine."
                     },
@@ -4344,6 +4335,9 @@
                     "19": {
                         "then": "Die Fitness-Station hat Kampfseile (battle ropes)."
                     },
+                    "2": {
+                        "then": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
+                    },
                     "20": {
                         "then": "Die Fitness-Station hat ein Fahrradergometer."
                     },
@@ -4358,6 +4352,27 @@
                     },
                     "24": {
                         "then": "Die Fitness-Station hat eine Slackline."
+                    },
+                    "3": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
+                    },
+                    "4": {
+                        "then": "Die Fitness-Station hat Stangen zum Dehnen."
+                    },
+                    "5": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
+                    },
+                    "6": {
+                        "then": "Die Fitness-Station hat Ringe für Gymnastikübungen."
+                    },
+                    "7": {
+                        "then": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
+                    },
+                    "8": {
+                        "then": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
+                    },
+                    "9": {
+                        "then": "Die Fitness-Station hat Pfosten für Slalomübungen."
                     }
                 },
                 "question": "Welche Übungsgeräte gibt es an dieser Fitness-Station?"
@@ -4477,6 +4492,21 @@
                     "1": {
                         "then": "Dies ist eine Pommesbude"
                     },
+                    "10": {
+                        "then": "Hier werden chinesische Gerichte serviert"
+                    },
+                    "11": {
+                        "then": "Hier werden griechische Gerichte serviert"
+                    },
+                    "12": {
+                        "then": "Hier werden indische Gerichte serviert"
+                    },
+                    "13": {
+                        "then": "Hier werden türkische Gerichte serviert"
+                    },
+                    "14": {
+                        "then": "Hier werden thailändische Gerichte serviert"
+                    },
                     "2": {
                         "then": "Bietet vorwiegend Pastagerichte an"
                     },
@@ -4500,21 +4530,6 @@
                     },
                     "9": {
                         "then": "Hier werden französische Gerichte serviert"
-                    },
-                    "10": {
-                        "then": "Hier werden chinesische Gerichte serviert"
-                    },
-                    "11": {
-                        "then": "Hier werden griechische Gerichte serviert"
-                    },
-                    "12": {
-                        "then": "Hier werden indische Gerichte serviert"
-                    },
-                    "13": {
-                        "then": "Hier werden türkische Gerichte serviert"
-                    },
-                    "14": {
-                        "then": "Hier werden thailändische Gerichte serviert"
                     }
                 },
                 "question": "Was für Essen gibt es hier?",
@@ -5142,30 +5157,6 @@
                     "1": {
                         "then": "Dies ist ein Auditorium"
                     },
-                    "2": {
-                        "then": "Dies ist ein Schlafzimmer"
-                    },
-                    "3": {
-                        "then": "Dies ist eine Kapelle"
-                    },
-                    "4": {
-                        "then": "Dies ist ein Klassenzimmer"
-                    },
-                    "5": {
-                        "then": "Dies ist ein Klassenzimmer"
-                    },
-                    "6": {
-                        "then": "Dies ist ein Computerraum"
-                    },
-                    "7": {
-                        "then": "Dies ist ein Konferenzraum"
-                    },
-                    "8": {
-                        "then": "Dies ist eine Krypta"
-                    },
-                    "9": {
-                        "then": "Dies ist eine Küche"
-                    },
                     "10": {
                         "then": "Dies ist ein Labor"
                     },
@@ -5196,6 +5187,9 @@
                     "19": {
                         "then": "Dies ist ein Lagerraum"
                     },
+                    "2": {
+                        "then": "Dies ist ein Schlafzimmer"
+                    },
                     "20": {
                         "then": "Dies ist ein Technikraum"
                     },
@@ -5204,6 +5198,27 @@
                     },
                     "22": {
                         "then": "Dies ist ein Wartezimmer"
+                    },
+                    "3": {
+                        "then": "Dies ist eine Kapelle"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Klassenzimmer"
+                    },
+                    "5": {
+                        "then": "Dies ist ein Klassenzimmer"
+                    },
+                    "6": {
+                        "then": "Dies ist ein Computerraum"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Konferenzraum"
+                    },
+                    "8": {
+                        "then": "Dies ist eine Krypta"
+                    },
+                    "9": {
+                        "then": "Dies ist eine Küche"
                     }
                 },
                 "question": "Wie wird dieser Raum genutzt?"
@@ -5830,6 +5845,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Alle Notizen"
+                    },
+                    "1": {
+                        "question": "Importnotizen ausblenden"
+                    },
+                    "2": {
+                        "question": "Nur Importnotizen anzeigen"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5883,19 +5911,6 @@
                 "options": {
                     "0": {
                         "question": "Nur offene Notizen anzeigen"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Alle Notizen"
-                    },
-                    "1": {
-                        "question": "Importnotizen ausblenden"
-                    },
-                    "2": {
-                        "question": "Nur Importnotizen anzeigen"
                     }
                 }
             }
@@ -6217,6 +6232,21 @@
                     "1": {
                         "then": "Dies ist ein normaler Stellplatz."
                     },
+                    "10": {
+                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
+                    },
+                    "11": {
+                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
+                    },
+                    "12": {
+                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
+                    },
+                    "13": {
+                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
+                    },
+                    "14": {
+                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
+                    },
                     "2": {
                         "then": "Dies ist ein Behindertenstellplatz."
                     },
@@ -6240,21 +6270,6 @@
                     },
                     "9": {
                         "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
-                    },
-                    "10": {
-                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
-                    },
-                    "11": {
-                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
-                    },
-                    "12": {
-                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
-                    },
-                    "13": {
-                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
-                    },
-                    "14": {
-                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
                     }
                 },
                 "question": "Welche Art von Stellplatz ist dies?"
@@ -6846,6 +6861,21 @@
                     "1": {
                         "then": "2-Cent-Münzen werden akzeptiert"
                     },
+                    "10": {
+                        "then": "20-Centime-Münzen werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "½-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "13": {
+                        "then": "2-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "14": {
+                        "then": "5-Schweizer Franken-Münzen werden akzeptiert"
+                    },
                     "2": {
                         "then": "5-Cent-Münzen werden akzeptiert"
                     },
@@ -6869,21 +6899,6 @@
                     },
                     "9": {
                         "then": "10-Centime-Münzen werden akzeptiert"
-                    },
-                    "10": {
-                        "then": "20-Centime-Münzen werden akzeptiert"
-                    },
-                    "11": {
-                        "then": "½-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "12": {
-                        "then": "1-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "13": {
-                        "then": "2-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "14": {
-                        "then": "5-Schweizer Franken-Münzen werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Münzen kann man hier bezahlen?"
@@ -6895,6 +6910,15 @@
                     },
                     "1": {
                         "then": "10-Euro-Scheine werden angenommen"
+                    },
+                    "10": {
+                        "then": "100-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "200-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1000-Schweizer Franken-Scheine werden akzeptiert"
                     },
                     "2": {
                         "then": "20-Euro-Scheine werden angenommen"
@@ -6919,15 +6943,6 @@
                     },
                     "9": {
                         "then": "50-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "10": {
-                        "then": "100-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "11": {
-                        "then": "200-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "12": {
-                        "then": "1000-Schweizer Franken-Scheine werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Banknoten kann man hier bezahlen?"
@@ -7366,30 +7381,6 @@
                     "1": {
                         "question": "Recycling von Batterien"
                     },
-                    "2": {
-                        "question": "Recycling von Getränkekartons"
-                    },
-                    "3": {
-                        "question": "Recycling von Dosen"
-                    },
-                    "4": {
-                        "question": "Recycling von Kleidung"
-                    },
-                    "5": {
-                        "question": "Recycling von Speiseöl"
-                    },
-                    "6": {
-                        "question": "Recycling von Motoröl"
-                    },
-                    "7": {
-                        "question": "Recycling von Leuchtstoffröhren"
-                    },
-                    "8": {
-                        "question": "Recycling von Grünabfällen"
-                    },
-                    "9": {
-                        "question": "Recycling von Glasflaschen"
-                    },
                     "10": {
                         "question": "Recycling von Glas"
                     },
@@ -7420,11 +7411,35 @@
                     "19": {
                         "question": "Recycling von Restabfällen"
                     },
+                    "2": {
+                        "question": "Recycling von Getränkekartons"
+                    },
                     "20": {
                         "question": "Recycling von Druckerpatronen"
                     },
                     "21": {
                         "question": "Recycling von Fahrrädern"
+                    },
+                    "3": {
+                        "question": "Recycling von Dosen"
+                    },
+                    "4": {
+                        "question": "Recycling von Kleidung"
+                    },
+                    "5": {
+                        "question": "Recycling von Speiseöl"
+                    },
+                    "6": {
+                        "question": "Recycling von Motoröl"
+                    },
+                    "7": {
+                        "question": "Recycling von Leuchtstoffröhren"
+                    },
+                    "8": {
+                        "question": "Recycling von Grünabfällen"
+                    },
+                    "9": {
+                        "question": "Recycling von Glasflaschen"
                     }
                 }
             },
@@ -7492,30 +7507,6 @@
                     "1": {
                         "then": "Getränkekartons können hier recycelt werden"
                     },
-                    "2": {
-                        "then": "Dosen können hier recycelt werden"
-                    },
-                    "3": {
-                        "then": "Kleidung kann hier recycelt werden"
-                    },
-                    "4": {
-                        "then": "Speiseöl kann hier recycelt werden"
-                    },
-                    "5": {
-                        "then": "Motoröl kann hier recycelt werden"
-                    },
-                    "6": {
-                        "then": "Hier können Leuchtstoffröhren recycelt werden"
-                    },
-                    "7": {
-                        "then": "Grünabfälle können hier recycelt werden"
-                    },
-                    "8": {
-                        "then": "Bio-Abfall kann hier recycelt werden"
-                    },
-                    "9": {
-                        "then": "Glasflaschen können hier recycelt werden"
-                    },
                     "10": {
                         "then": "Glas kann hier recycelt werden"
                     },
@@ -7546,6 +7537,9 @@
                     "19": {
                         "then": "Schuhe können hier recycelt werden"
                     },
+                    "2": {
+                        "then": "Dosen können hier recycelt werden"
+                    },
                     "20": {
                         "then": "Elektrokleingeräte können hier recycelt werden"
                     },
@@ -7560,6 +7554,27 @@
                     },
                     "24": {
                         "then": "Fahrräder können hier recycelt werden"
+                    },
+                    "3": {
+                        "then": "Kleidung kann hier recycelt werden"
+                    },
+                    "4": {
+                        "then": "Speiseöl kann hier recycelt werden"
+                    },
+                    "5": {
+                        "then": "Motoröl kann hier recycelt werden"
+                    },
+                    "6": {
+                        "then": "Hier können Leuchtstoffröhren recycelt werden"
+                    },
+                    "7": {
+                        "then": "Grünabfälle können hier recycelt werden"
+                    },
+                    "8": {
+                        "then": "Bio-Abfall kann hier recycelt werden"
+                    },
+                    "9": {
+                        "then": "Glasflaschen können hier recycelt werden"
                     }
                 },
                 "question": "Was kann hier recycelt werden?"
@@ -8452,6 +8467,12 @@
                     "1": {
                         "then": "Diese Straßenlaterne verwendet LEDs"
                     },
+                    "10": {
+                        "then": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)"
+                    },
+                    "11": {
+                        "then": "Diese Straßenlaterne wird mit Gas beleuchtet"
+                    },
                     "2": {
                         "then": "Diese Straßenlaterne verwendet Glühlampenlicht"
                     },
@@ -8475,12 +8496,6 @@
                     },
                     "9": {
                         "then": "Diese Straßenlaterne verwendet Niederdruck-Natriumdampflampen (einfarbig orange)"
-                    },
-                    "10": {
-                        "then": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)"
-                    },
-                    "11": {
-                        "then": "Diese Straßenlaterne wird mit Gas beleuchtet"
                     }
                 },
                 "question": "Mit welcher Art von Beleuchtung arbeitet diese Straßenlaterne?"
@@ -9684,30 +9699,6 @@
                     "1": {
                         "question": "Verkauf von Getränken"
                     },
-                    "2": {
-                        "question": "Verkauf von Süßigkeiten"
-                    },
-                    "3": {
-                        "question": "Verkauf von Lebensmitteln"
-                    },
-                    "4": {
-                        "question": "Verkauf von Zigaretten"
-                    },
-                    "5": {
-                        "question": "Verkauf von Kondomen"
-                    },
-                    "6": {
-                        "question": "Verkauf von Kaffee"
-                    },
-                    "7": {
-                        "question": "Verkauf von Trinkwasser"
-                    },
-                    "8": {
-                        "question": "Verkauf von Zeitungen"
-                    },
-                    "9": {
-                        "question": "Verkauf von Fahrradschläuchen"
-                    },
                     "10": {
                         "question": "Verkauf von Milch"
                     },
@@ -9738,6 +9729,9 @@
                     "19": {
                         "question": "Verkauf von Blumen"
                     },
+                    "2": {
+                        "question": "Verkauf von Süßigkeiten"
+                    },
                     "20": {
                         "question": "Verkauf von Parkscheinen"
                     },
@@ -9761,6 +9755,27 @@
                     },
                     "27": {
                         "question": "Verkauf von Fahrradschlössern"
+                    },
+                    "3": {
+                        "question": "Verkauf von Lebensmitteln"
+                    },
+                    "4": {
+                        "question": "Verkauf von Zigaretten"
+                    },
+                    "5": {
+                        "question": "Verkauf von Kondomen"
+                    },
+                    "6": {
+                        "question": "Verkauf von Kaffee"
+                    },
+                    "7": {
+                        "question": "Verkauf von Trinkwasser"
+                    },
+                    "8": {
+                        "question": "Verkauf von Zeitungen"
+                    },
+                    "9": {
+                        "question": "Verkauf von Fahrradschläuchen"
                     }
                 }
             }
@@ -9807,30 +9822,6 @@
                     "1": {
                         "then": "Süßigkeiten werden verkauft"
                     },
-                    "2": {
-                        "then": "Lebensmittel werden verkauft"
-                    },
-                    "3": {
-                        "then": "Zigaretten werden verkauft"
-                    },
-                    "4": {
-                        "then": "Kondome werden verkauft"
-                    },
-                    "5": {
-                        "then": "Kaffee wird verkauft"
-                    },
-                    "6": {
-                        "then": "Trinkwasser wird verkauft"
-                    },
-                    "7": {
-                        "then": "Zeitungen werden verkauft"
-                    },
-                    "8": {
-                        "then": "Fahrradschläuche werden verkauft"
-                    },
-                    "9": {
-                        "then": "Milch wird verkauft"
-                    },
                     "10": {
                         "then": "Brot wird verkauft"
                     },
@@ -9861,6 +9852,9 @@
                     "19": {
                         "then": "Parkscheine werden verkauft"
                     },
+                    "2": {
+                        "then": "Lebensmittel werden verkauft"
+                    },
                     "20": {
                         "then": "Souvenirmünzen werden verkauft"
                     },
@@ -9881,6 +9875,27 @@
                     },
                     "26": {
                         "then": "Fahrradschlösser werden verkauft"
+                    },
+                    "3": {
+                        "then": "Zigaretten werden verkauft"
+                    },
+                    "4": {
+                        "then": "Kondome werden verkauft"
+                    },
+                    "5": {
+                        "then": "Kaffee wird verkauft"
+                    },
+                    "6": {
+                        "then": "Trinkwasser wird verkauft"
+                    },
+                    "7": {
+                        "then": "Zeitungen werden verkauft"
+                    },
+                    "8": {
+                        "then": "Fahrradschläuche werden verkauft"
+                    },
+                    "9": {
+                        "then": "Milch wird verkauft"
                     }
                 },
                 "question": "Was wird in diesem Automaten verkauft?",
