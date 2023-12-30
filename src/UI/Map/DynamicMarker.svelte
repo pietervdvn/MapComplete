@@ -14,8 +14,8 @@
   let _rotation: Store<string> = rotation
     ? tags.map((tags) => rotation.GetRenderValue(tags).Subs(tags).txt)
     : new ImmutableStore("0deg")
-  if(rotation?.render?.txt === "{alpha}deg"){
-    _rotation = Orientation.singleton.alpha.map(alpha => alpha ? (alpha)+"deg" : "0deg  ")
+  if (rotation?.render?.txt === "{alpha}deg") {
+    _rotation = Orientation.singleton.alpha.map((alpha) => (alpha ? alpha + "deg" : "0deg  "))
   }
 </script>
 

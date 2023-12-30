@@ -52,7 +52,7 @@
   if (maxDistanceInMeters) {
     onDestroy(
       mla.location.addCallbackD((newLocation) => {
-        const l : [number, number] = [newLocation.lon, newLocation.lat]
+        const l: [number, number] = [newLocation.lon, newLocation.lat]
         const c: [number, number] = [initialCoordinate.lon, initialCoordinate.lat]
         const d = GeoOperations.distanceBetween(l, c)
         if (d <= maxDistanceInMeters) {

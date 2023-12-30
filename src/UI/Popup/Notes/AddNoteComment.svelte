@@ -19,7 +19,7 @@
 
   let txt = new UIEventSource(undefined)
   let _txt: string = undefined
-  txt.addCallbackD(t => {
+  txt.addCallbackD((t) => {
     _txt = t
   })
   $: {
@@ -60,15 +60,21 @@
 <LoginToggle ignoreLoading={true} {state}>
   <Tr slot="not-logged-in" t={t.loginToAddComment} />
 
-  <form class="m-0 px-2 py-1 flex flex-col border-2 border-black rounded-xl interactive border-interactive" on:submit|preventDefault={() => addComment()}>
+  <form
+    class="interactive border-interactive m-0 flex flex-col rounded-xl border-2 border-black px-2 py-1"
+    on:submit|preventDefault={() => addComment()}
+  >
     <label class="neutral-label font-bold">
       <Tr t={t.addAComment} />
-      <textarea bind:value={_txt} class="w-full h-24 rounded-l border border-grey" rows="3"
-                use:placeholder={t.addCommentPlaceholder} />
+      <textarea
+        bind:value={_txt}
+        class="border-grey h-24 w-full rounded-l border"
+        rows="3"
+        use:placeholder={t.addCommentPlaceholder}
+      />
     </label>
 
     <div class="flex flex-col">
-
       {#if $txt?.length > 0}
         <button class="primary flex" on:click={() => addComment()}>
           <!-- Add a comment -->
@@ -80,7 +86,6 @@
           <Tr t={t.typeText} />
         </div>
       {/if}
-
 
       {#if !$isClosed}
         <button class="flex items-center" on:click={() => closeNote()}>
@@ -102,10 +107,7 @@
             <Tr t={t.reopenNoteAndComment} />
           {/if}
         </button>
-
       {/if}
     </div>
-
   </form>
-
 </LoginToggle>

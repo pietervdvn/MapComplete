@@ -6,7 +6,7 @@
   import Tr from "../Base/Tr.svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
 
-  export let review: Review & { kid: string,signature: string, madeByLoggedInUser: Store<boolean> }
+  export let review: Review & { kid: string; signature: string; madeByLoggedInUser: Store<boolean> }
   let name = review.metadata.nickname
   name ??= ((review.metadata.given_name ?? "") + " " + (review.metadata.family_name ?? "")).trim()
   let d = new Date()
@@ -17,17 +17,25 @@
 
 <div class={"low-interaction rounded-lg p-1 px-2 " + ($byLoggedInUser ? "border-interactive" : "")}>
   <div class="flex items-center justify-between">
-    <div tabindex="0" use:ariaLabel={Translations.t.reviews.rated.Subs({n: ""+(Math.round(review.rating / 10)/2)})}>
+    <div
+      tabindex="0"
+      use:ariaLabel={Translations.t.reviews.rated.Subs({
+        n: "" + Math.round(review.rating / 10) / 2,
+      })}
+    >
       <StarsBar readonly={true} score={review.rating} />
     </div>
     <div class="flex flex-wrap space-x-2">
-      <a href={`https://mangrove.reviews/list?kid=${encodeURIComponent(review.kid)}`} rel="noopener"
-         target="_blank">
+      <a
+        href={`https://mangrove.reviews/list?kid=${encodeURIComponent(review.kid)}`}
+        rel="noopener"
+        target="_blank"
+      >
         {#if !name}
           <i>Anonymous</i>
         {:else}
           <span class="font-bold">
-              {name}
+            {name}
           </span>
         {/if}
       </a>
@@ -38,10 +46,13 @@
   </div>
   {#if review.opinion}
     <div class="link-no-underline">
-    <a target="_blank" rel="noopener nofollow"
-       href={`https://mangrove.reviews/list?signature=${encodeURIComponent(review.signature)}`}>
-      {review.opinion}
-    </a>
+      <a
+        target="_blank"
+        rel="noopener nofollow"
+        href={`https://mangrove.reviews/list?signature=${encodeURIComponent(review.signature)}`}
+      >
+        {review.opinion}
+      </a>
     </div>
   {/if}
   {#if review.metadata.is_affiliated}

@@ -105,7 +105,7 @@
         }
         // TODO this has _to much_ values
         freeformInput.setData(unseenFreeformValues.join(";"))
-        if(checkedMappings.length + 1 < mappings.length ){
+        if (checkedMappings.length + 1 < mappings.length) {
           checkedMappings.push(unseenFreeformValues.length > 0)
         }
       }
@@ -127,7 +127,7 @@
     initialize($tags, config)
   }
 
-  freeformInput.addCallbackAndRun(freeformValue => {
+  freeformInput.addCallbackAndRun((freeformValue) => {
     console.log("FreeformValue:", freeformValue)
     if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
       return
@@ -151,7 +151,7 @@
         $freeformInput,
         selectedMapping,
         checkedMappings,
-        tags.data,
+        tags.data
       )
     } catch (e) {
       console.error("Could not calculate changeSpecification:", e)
@@ -202,7 +202,6 @@
     }
   }
 
-
   let featureSwitchIsTesting = state?.featureSwitchIsTesting ?? new ImmutableStore(false)
   let featureSwitchIsDebugging =
     state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
@@ -214,7 +213,7 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      }),
+      })
     )
   }
 </script>
@@ -227,9 +226,9 @@
   >
     <label class="neutral-label">
       <div class="interactive sticky top-0 flex justify-between pt-1" style="z-index: 11">
-      <span class="font-bold">
-        <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
-      </span>
+        <span class="font-bold">
+          <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
+        </span>
         <slot name="upper-right" />
       </div>
 

@@ -45,9 +45,7 @@
     () => {
       displayLocation()
     },
-    [
-    Translations.t.hotkeyDocumentation.shakePhone
-    ]
+    [Translations.t.hotkeyDocumentation.shakePhone]
   )
 
   Motion.singleton.startListening()
@@ -56,9 +54,9 @@
 {#if currentLocation}
   <div
     aria-live="assertive"
-    class="normal-background border-interactive rounded-full px-2 flex flex-col items-center"
+    class="normal-background border-interactive flex flex-col items-center rounded-full px-2"
   >
     {currentLocation}.
-    <MapCenterDetails {state}/>
+    <MapCenterDetails {state} />
   </div>
 {/if}

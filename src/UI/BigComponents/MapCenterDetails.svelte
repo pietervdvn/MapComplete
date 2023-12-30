@@ -17,31 +17,48 @@
   let map = state.mapProperties
 
   let currentLocation = state.geolocation.geolocationState.currentGPSLocation
-  let distanceToCurrentLocation: Store<{ distance: string, distanceInMeters: number, bearing: number }> = map.location.mapD(({ lon, lat }) => {
-    const current = currentLocation.data
-    if (!current) {
-      return undefined
-    }
-    const gps: [number, number] = [current.longitude, current.latitude]
-    const mapCenter: [number, number] = [lon, lat]
-    const distanceInMeters = Math.round(GeoOperations.distanceBetween(gps, mapCenter))
-    const distance = GeoOperations.distanceToHuman(distanceInMeters)
-    const bearing = Math.round(GeoOperations.bearing(gps, mapCenter))
-    const bearingDirection = GeoOperations.bearingToHuman(bearing)
-    return { distance, bearing, distanceInMeters, bearingDirection }
-  }, [currentLocation])
+  let distanceToCurrentLocation: Store<{
+    distance: string
+    distanceInMeters: number
+    bearing: number
+  }> = map.location.mapD(
+    ({ lon, lat }) => {
+      const current = currentLocation.data
+      if (!current) {
+        return undefined
+      }
+      const gps: [number, number] = [current.longitude, current.latitude]
+      const mapCenter: [number, number] = [lon, lat]
+      const distanceInMeters = Math.round(GeoOperations.distanceBetween(gps, mapCenter))
+      const distance = GeoOperations.distanceToHuman(distanceInMeters)
+      const bearing = Math.round(GeoOperations.bearing(gps, mapCenter))
+      const bearingDirection = GeoOperations.bearingToHuman(bearing)
+      return { distance, bearing, distanceInMeters, bearingDirection }
+    },
+    [currentLocation]
+  )
   let hasCompass = Orientation.singleton.gotMeasurement
   let compass = Orientation.singleton.alpha
-  let relativeBearing: Store<{distance: string, bearing: Translation}> =
-    compass.mapD(compass => {
-      const bearing: Translation = relativeDir[GeoOperations.bearingToHumanRelative(distanceToCurrentLocation.data.bearing - compass)]
-      return {bearing, distance: distanceToCurrentLocation.data.distance}
-    }, [distanceToCurrentLocation])
-  let viewportCenterDetails = Translations.DynamicSubstitute(t.viewportCenterDetails, relativeBearing)
-  let viewportCenterDetailsAbsolute = Translations.DynamicSubstitute(t.viewportCenterDetails, distanceToCurrentLocation.mapD(({distance, bearing}) => {
-    return {distance, bearing: t.directionsAbsolute[GeoOperations.bearingToHuman(bearing)]}
-  }))
-  
+  let relativeBearing: Store<{ distance: string; bearing: Translation }> = compass.mapD(
+    (compass) => {
+      const bearing: Translation =
+        relativeDir[
+          GeoOperations.bearingToHumanRelative(distanceToCurrentLocation.data.bearing - compass)
+        ]
+      return { bearing, distance: distanceToCurrentLocation.data.distance }
+    },
+    [distanceToCurrentLocation]
+  )
+  let viewportCenterDetails = Translations.DynamicSubstitute(
+    t.viewportCenterDetails,
+    relativeBearing
+  )
+  let viewportCenterDetailsAbsolute = Translations.DynamicSubstitute(
+    t.viewportCenterDetails,
+    distanceToCurrentLocation.mapD(({ distance, bearing }) => {
+      return { distance, bearing: t.directionsAbsolute[GeoOperations.bearingToHuman(bearing)] }
+    })
+  )
 </script>
 
 {#if $currentLocation !== undefined}

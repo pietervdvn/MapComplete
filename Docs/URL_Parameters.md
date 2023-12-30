@@ -387,7 +387,7 @@ This documentation is defined in the source code at [InitialMapPositioning.ts](/
 
  Used to complete the login
 
-This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L159)
+This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L164)
 
  No default value set
 

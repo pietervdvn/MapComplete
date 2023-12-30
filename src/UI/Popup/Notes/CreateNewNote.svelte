@@ -85,7 +85,7 @@
     This theme does not include the layer 'note'. As a result, no nodes can be created
   </div>
 {:else if submitted}
-  <Loading/>
+  <Loading />
 {:else if created}
   <div class="thanks">
     <Tr t={Translations.t.notes.isCreated} />
@@ -111,7 +111,6 @@
     {:else}
       <form class="border-grey-500 rounded-sm border" on:submit|preventDefault={uploadNote}>
         <label class="neutral-label">
-
           <Tr t={Translations.t.notes.createNoteIntro} />
           <div class="w-full p-1">
             <ValidatedInput autofocus={true} type="text" value={comment} />

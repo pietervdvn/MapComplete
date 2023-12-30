@@ -25,7 +25,8 @@
       "fr": "Paramètres",
       "da": "Indstillinger",
       "ca": "Configuració",
-      "cs": "Nastavení"
+      "cs": "Nastavení",
+      "fi": "Asetukset"
     }
   },
   "pointRendering": null,
@@ -47,7 +48,7 @@
           "if": "__url_parameter_initialized:language=yes",
           "icon": "./assets/layers/usersettings/translate_disabled.svg",
           "then": {
-            "en": "The language was set via an URL-parameter and cannot be set by the user.²",
+            "en": "The language was set via an URL-parameter and cannot be set by the user.",
             "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.²",
             "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.²",
             "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²"
@@ -80,7 +81,7 @@
             "special": {
               "type": "link",
               "text": {
-                "en": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox",
+                "en": "<b class='alert'>You have {_unreadMessages} messages</b><br/>Open your inbox",
                 "de": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang",
                 "ca": "<b class='alert'>Tens {_unreadMessages}</b><br/>Open your inbox",
                 "cs": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku"
@@ -125,7 +126,8 @@
         "en": "This thematic map has a predefined background layer set. Your default theme setting does not apply",
         "ca": "Aquest mapa temàtic té un conjunt de capes de fons predefinides. La configuració predeterminada del tema no s'aplica",
         "de": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet",
-        "cs": "Tato tematická mapa má předdefinovanou sadu podkladových vrstev. Vaše výchozí nastavení tématu se nepoužije"
+        "cs": "Tato tematická mapa má předdefinovanou sadu podkladových vrstev. Vaše výchozí nastavení tématu se nepoužije",
+        "nl": "Deze kaart heeft een achtegrondlaag instgesteld. Je instellingen worden niet gebruikt"
       }
     },
     {
@@ -134,7 +136,8 @@
         "en": "What background layer should be shown by default?",
         "ca": "Quina capa de fons s'ha de mostrar per defecte?",
         "de": "Welche Hintergrundebene soll als Standard verwendet werden?",
-        "cs": "Jaká vrstva pozadí by se měla zobrazovat ve výchozím nastavení?"
+        "cs": "Jaká vrstva pozadí by se měla zobrazovat ve výchozím nastavení?",
+        "nl": "Welke achtergrondlaag moet altijd gebruikt worden?"
       },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
@@ -145,7 +148,8 @@
             "en": "Use the default background layer",
             "ca": "Utilitzeu la capa de fons predeterminada",
             "de": "Standardhintergrund verwenden",
-            "cs": "Použití výchozí vrstvu pozadí"
+            "cs": "Použití výchozí vrstvu pozadí",
+            "nl": "Gebruik de standaard achtergrondlaag"
           }
         },
         {
@@ -154,7 +158,8 @@
             "en": "Use OpenStreetMap-carto as default layer",
             "ca": "Utilitzeu OpenStreetMap-carto com a capa predeterminada",
             "de": "OpenStreetMap-carto als Standardhintergrund verwenden",
-            "cs": "Použít OpenStreetMap-carto jako výchozí vrstvu"
+            "cs": "Použít OpenStreetMap-carto jako výchozí vrstvu",
+            "nl": "Gebruik OpenStreetMap-carto altijd als achtergrondlaag"
           }
         },
         {
@@ -163,7 +168,8 @@
             "en": "Use aerial imagery as default background",
             "ca": "Utilitzeu imatges aèries com a fons predeterminat",
             "de": "Satellitenbilder als Standardhintergrund verwenden",
-            "cs": "Použít letecké snímky jako výchozí pozadí"
+            "cs": "Použít letecké snímky jako výchozí pozadí",
+            "nl": "Gebruik luchtfoto's als standaard achtergrondlaag"
           }
         },
         {
@@ -172,7 +178,8 @@
             "en": "Use a non-openstreetmap based map as default background",
             "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat",
             "de": "Eine eigene Karte als Standardhintergrund verwenden",
-            "cs": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí"
+            "cs": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí",
+            "nl": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond"
           }
         },
         {
@@ -181,7 +188,8 @@
             "en": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background",
             "ca": "Utilitzeu la capa de fons actual (<span class='code'>{__current_background}</span>) com a fons predeterminat",
             "de": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden",
-            "cs": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí"
+            "cs": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí",
+            "nl": "Gebruik altijd <span class='code'>{__current_background}</span>) als achtergrondlaag. Dit is de huidige achtergrond."
           },
           "hideInAnswer": {
             "or": [
@@ -197,7 +205,8 @@
             "en": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background",
             "ca": "Utilitza la capa de fons <span class='code'>{mapcomplete-preferred-background-layer}</span> com a fons predeterminat",
             "de": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden",
-            "cs": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí"
+            "cs": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí",
+            "nl": "Gebruik <span class='code'>{mapcomplete-preferred-background-layer}</span> altijd als achtergrondlaag"
           },
           "hideInAnswer": true
         }
@@ -273,13 +282,15 @@
         "de": "Rohe OpenStreetMap-Tags anzeigen?",
         "fr": "Afficher les attributs OpenStreetMap bruts ?",
         "ca": "Mostra les etiquetes d'OpenStreetMap en brut?",
-        "cs": "Zobrazit nezpracované/raw tagy OpenStreetMap?"
+        "cs": "Zobrazit nezpracované/raw tagy OpenStreetMap?",
+        "nl": "Moeten de data-attributen getoond worden?"
       },
       "questionHint": {
         "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
         "de": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen.",
         "ca": "Les <b>etiquetes</b> són atributs que té cada element. Aquestes són les dades tècniques que s'emmagatzemen a la base de dades. No necessiteu aquesta informació per editar amb MapComplete, però és possible que els usuaris avançats la vulguin fer servir com a referència.",
-        "cs": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci."
+        "cs": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci.",
+        "nl": "<b>Data-attributen</b> zijn stukjes data die elk element in OpenStreetMap heeft. Dit is technische data die in de databank komt. Je hoeft deze informatie niet te kennen om aanpassingen te maken met MapComplete, maar geavanceerde gebruikers kunnen dit als referentie gebruiken."
       },
       "mappings": [
         {
@@ -288,7 +299,8 @@
             "en": "Never show the tags.",
             "de": "Tags nie anzeigen.",
             "ca": "No mostris mai les etiquetes.",
-            "cs": "Nikdy nezobrazovat tagy."
+            "cs": "Nikdy nezobrazovat tagy.",
+            "nl": "Verberg data-attributen"
           }
         },
         {
@@ -297,7 +309,8 @@
             "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets",
             "de": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe",
             "ca": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis",
-            "cs": "Zobrazit tagy, které budou použity, jakmile provedu {__userjourney_tagsVisibleAt} sady změn"
+            "cs": "Zobrazit tagy, které budou použity, jakmile provedu {__userjourney_tagsVisibleAt} sady změn",
+            "nl": "Toon data-attributen bij wijzigingen indien je meer dan {__userjourney_tagsVisibleAt} changesets hebt gemaakt"
           }
         },
         {
@@ -306,7 +319,8 @@
             "en": "Show the tags that will be applied when making a change",
             "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden",
             "ca": "Mostra les etiquetes que s'aplicaran en fer un canvi",
-            "cs": "Zobrazení tagů, které budou použity při provádění změny"
+            "cs": "Zobrazení tagů, které budou použity při provádění změny",
+            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen"
           }
         },
         {
@@ -315,7 +329,8 @@
             "en": "Show the tags that will be applied when making a change and show the tags table on every feature",
             "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen",
             "ca": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element",
-            "cs": "Zobrazení tagů, které se použijí při provádění změny, a zobrazení tabulky tagů u každé funkce"
+            "cs": "Zobrazení tagů, které se použijí při provádění změny, a zobrazení tabulky tagů u každé funkce",
+            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen en toon een tabel met alle data-attributen bij elk object."
           }
         }
       ]
@@ -368,7 +383,8 @@
       "questionHint": {
         "en": "This can help to accurately position a new element",
         "cs": "To může pomoci přesněji umístit nový prvek",
-        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren"
+        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren",
+        "nl": "Dit kan helpen om nieuwe elementen accuraat te plaatsen"
       },
       "mappings": [
         {
@@ -407,7 +423,8 @@
             "ca": "Permet girar el mapa",
             "fr": "Autoriser la rotation de la carte",
             "da": "Tillad rotation af kortet",
-            "cs": "Umožnit otáčení mapy"
+            "cs": "Umožnit otáčení mapy",
+            "nl": "Sta kaartrotatie toe"
           }
         },
         {
@@ -442,7 +459,8 @@
           "de": "Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
           "da": "Enhver, der har denne fil, kan lave ændringer med din identitet",
           "ca": "Qualsevol persona que tingui aquest fitxer pot fer ressenyes amb la vostra identitat",
-          "cs": "Kdokoli, kdo má tento soubor, může provádět recenze s vaší identitou"
+          "cs": "Kdokoli, kdo má tento soubor, může provádět recenze s vaší identitou",
+          "nl": "Iedereen die dit bestand bezit, kan met jouw identiteit wijzigingen maken"
         }
       }
     },
@@ -464,7 +482,8 @@
         "cs": "Chcete pomoci s překladem MapComplete?",
         "ca": "Vols ajudar a traduir MapComplete?",
         "fr": "Voulez-vous aider à traduire MapComplete ?",
-        "pt": "Quer ajudar na tradução do MapComplete?"
+        "pt": "Quer ajudar na tradução do MapComplete?",
+        "nl": "Wil je MapComplete helpen vertalen?"
       },
       "mappings": [
         {
@@ -476,7 +495,8 @@
             "ca": "No mostris cap botó per a canviar ràpidament les traduccions",
             "fr": "Ne pas afficher de bouton pour modifier les traductions rapidement",
             "pt": "Não mostrar um botão para alterar as traduções rapidamente",
-            "cs": "Nezobrazovat tlačítko pro rychlou změnu překladů"
+            "cs": "Nezobrazovat tlačítko pro rychlou změnu překladů",
+            "nl": "Verberg de knoppen om een vertaling in te voeren."
           }
         },
         {
@@ -489,7 +509,8 @@
             "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran",
             "pt": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande",
             "da": "Vis en knap for hurtigt at åbne oversættelser, når du bruger MapComplete på en stor skærm",
-            "cs": "Zobrazit tlačítko pro rychlé otevření překladů při použití MapComplete na velké obrazovce"
+            "cs": "Zobrazit tlačítko pro rychlé otevření překladů při použití MapComplete na velké obrazovce",
+            "nl": "Toon een knopje om snel vertalingen te maken indien MapComplete op een groot scherm is geopend"
           }
         },
         {
@@ -501,7 +522,8 @@
             "ca": "Mostra sempre els botons de traducció, fins i tot al mòbil",
             "fr": "Toujours afficher les boutons de traduction, même sur mobile",
             "pt": "Mostrar sempre os botões de tradução, inclusive no celular",
-            "cs": "Vždy zobrazovat tlačítka překladu, a to i na mobilu"
+            "cs": "Vždy zobrazovat tlačítka překladu, a to i na mobilu",
+            "nl": "Toon een knopje om snel vertalingen te maken op mobiel en op grote schermen"
           }
         }
       ]
@@ -688,7 +710,8 @@
         "de": "Debug-Informationen zu den Benutzereinstellungen anzeigen?",
         "cs": "Zobrazit informace o ladění v nastavení?",
         "ca": "Vols mostrar la informació de depuració de la configuració de l'usuari?",
-        "pt": "Mostrar informações de depuração das configurações do usuário?"
+        "pt": "Mostrar informações de depuração das configurações do usuário?",
+        "nl": "Moet debug-informatie getoond worden?"
       },
       "mappings": [
         {
@@ -699,7 +722,8 @@
             "de": "Debug-Informationen anzeigen",
             "cs": "Zobrazit informace o ladění",
             "ca": "Mostra la informació de depuració",
-            "pt": "Mostrar informações de depuração"
+            "pt": "Mostrar informações de depuração",
+            "nl": "Toon debug-informatie"
           }
         },
         {
@@ -709,7 +733,8 @@
             "de": "Keine Debug-Informationen anzeigen",
             "cs": "Nezobrazovat informace o ladění",
             "ca": "No mostris informació de depuració",
-            "pt": "Não mostrar informações de depuração"
+            "pt": "Não mostrar informações de depuração",
+            "nl": "Verberg debug-informatie"
           }
         },
         {
@@ -720,7 +745,8 @@
             "cs": "Nezobrazovat informace o ladění",
             "pt": "Não mostrar informações de depuração",
             "da": "Vis ikke debug-informationer",
-            "ca": "No mostris informació de depuració"
+            "ca": "No mostris informació de depuració",
+            "nl": "Verberg debug-informatie"
           },
           "hideInAnswer": true
         }

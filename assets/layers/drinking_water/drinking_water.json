@@ -120,7 +120,8 @@
       },
       "description": {
         "en": "Typically a drinking fountain, water tap, water well or natural spring",
-        "de": "Typischerweise ein Trinkbrunnen, Wasserhahn, Brunnen oder eine natürliche Quelle"
+        "de": "Typischerweise ein Trinkbrunnen, Wasserhahn, Brunnen oder eine natürliche Quelle",
+        "nl": "Meestal een drinkwaterfonteintje, waterkraan, waterput of natuurlijke bron"
       },
       "tags": [
         "amenity=drinking_water"
@@ -217,7 +218,8 @@
           "if": "fountain=bubbler",
           "icon": "./assets/layers/drinking_water/bubbler.svg",
           "then": {
-            "en": "This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button."
+            "en": "This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.",
+            "nl": "Dit is een waterhappertje - een drinkwaterfonteintje waarbij een waterstraaltje omhoog spuit. Dit kan permanent werken of door op een drukknop te duwen."
           },
           "addExtraTags": [
             "man_made="
@@ -227,7 +229,8 @@
           "if": "fountain=bottle_refill",
           "icon": "./assets/layers/drinking_water/bottle.svg",
           "then": {
-            "en": "This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible."
+            "en": "This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible.",
+            "nl": "Dit is een hervulpunt voor drinkwaterflessen. De waterstraal wordt omlaag gestuurd wanneer op een drukknop geduwd wordt of wanneer er beweging gedetecteerd wordt. Rechtstreeks van de waterstraal drinking kan moeilijk of zelfs onmogelijk zijn."
           },
           "addExtraTags": [
             "man_made=",
@@ -238,7 +241,8 @@
           "if": "man_made=water_tap",
           "icon": "./assets/layers/drinking_water/tap.svg",
           "then": {
-            "en": "This is a water tap. The water flows downward and the stream is controlled by a valve or push-button."
+            "en": "This is a water tap. The water flows downward and the stream is controlled by a valve or push-button.",
+            "nl": "Dit is een waterkraan. Het water strooomt naar beneden en het volume wordt door een knop of draaimechanisme geregeld."
           },
           "addExtraTags": [
             "fountain="
@@ -297,19 +301,22 @@
     {
       "id": "fee",
       "question": {
-        "en": "Is this drinking water point free to use?"
+        "en": "Is this drinking water point free to use?",
+        "nl": "Is dit drinkwaterpunt gratis te gebruiken?"
       },
       "mappings": [
         {
           "if": "fee=no",
           "then": {
-            "en": "Free to use"
+            "en": "Free to use",
+            "nl": "Gratis te gebruiken"
           }
         },
         {
           "if": "fee=yes",
           "then": {
-            "en": "One needs to pay to use this drinking water point"
+            "en": "One needs to pay to use this drinking water point",
+            "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken"
           }
         }
       ]
@@ -317,26 +324,30 @@
     {
       "id": "seasonal",
       "question": {
-        "en": "Is this drinking water point available all year round?"
+        "en": "Is this drinking water point available all year round?",
+        "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
       },
       "mappings": [
         {
           "if": "seasonal=no",
           "then": {
-            "en": "This drinking water point is available all around the year"
+            "en": "This drinking water point is available all around the year",
+            "nl": "Dit drinkwaterpunt is heel het jaar door beschikbaar"
           }
         },
         {
           "if": "seasonal=summer",
           "then": {
-            "en": "This drinking water point is only available in summer"
+            "en": "This drinking water point is only available in summer",
+            "nl": "Dit drinkwaterpunt is enkel in de zomer beschikbaar"
           }
         },
         {
           "if": "seasonal=spring;summer;autumn",
           "icon": "./assets/layers/drinking_water/no_winter.svg",
           "then": {
-            "en": "This drinking water point is closed during the winter"
+            "en": "This drinking water point is closed during the winter",
+            "nl": "Dit drinkwaterpunt is gesloten in de winter"
           }
         }
       ]
@@ -345,7 +356,8 @@
       "builtin": "opening_hours_24_7",
       "override": {
         "questionHint": {
-          "en": "These are the opening hours if the drinking water fountain is operational."
+          "en": "These are the opening hours if the drinking water fountain is operational.",
+          "nl": "Tijdens deze openingsuren is dit drinkwaterpunt bruikbaar."
         },
         "+mappings": [
           {
@@ -384,7 +396,8 @@
               ]
             },
             "then": {
-              "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown."
+              "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown.",
+              "nl": "Dit drinkwaterpunt is dit seizoen gesloten. De openingsuren worden dus niet weergegeven."
             },
             "hideInAnswer": true
           }
@@ -505,7 +518,8 @@
           ]
         },
         "then": {
-          "en": "This is a historic, manual water pump where no drinking water can be found"
+          "en": "This is a historic, manual water pump where no drinking water can be found",
+          "nl": "Dit is een historische, manuele waterpomp waar geen drinkwater uitkomt"
         }
       }
     ]

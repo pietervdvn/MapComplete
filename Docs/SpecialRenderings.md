@@ -164,6 +164,10 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of favourite_status](#example-usage-of-favourite_status)
     + [favourite_icon](#favourite_icon)
       * [Example usage of favourite_icon](#example-usage-of-favourite_icon)
+    + [direction_indicator](#direction_indicator)
+      * [Example usage of direction_indicator](#example-usage-of-direction_indicator)
+    + [qr_code](#qr_code)
+      * [Example usage of qr_code](#example-usage-of-qr_code)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -314,6 +318,7 @@ idKey | id | (Matches all resting arguments) This argument should be the key of 
 name | default | description
 ------ | --------- | -------------
 url | _undefined_ | The url to share (default: current URL)
+text | _undefined_ | The text to show on the button. If none is given, will act as a titleIcon
  
 
 #### Example usage of share_link 
@@ -1174,6 +1179,26 @@ giggityUrl | _undefined_ | The URL of the giggity-XML
 #### Example usage of favourite_icon 
 
  `{favourite_icon()}`
+
+
+
+### direction_indicator 
+
+ Gives a distance indicator and a compass pointing towards the location from your GPS-location. If clicked, centers the map on the object 
+
+#### Example usage of direction_indicator 
+
+ `{direction_indicator()}`
+
+
+
+### qr_code 
+
+ Generates a QR-code to share the selected object 
+
+#### Example usage of qr_code 
+
+ `{qr_code()}`
 
 
 

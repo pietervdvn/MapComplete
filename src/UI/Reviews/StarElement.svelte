@@ -12,7 +12,7 @@
   export let i: number
   export let readonly = false
 
-  let dispatch = createEventDispatcher<{ hover: { score: number }, click: { score: number } }>()
+  let dispatch = createEventDispatcher<{ hover: { score: number }; click: { score: number } }>()
   let container: HTMLElement
 
   function getScore(e: MouseEvent): number {
@@ -35,16 +35,17 @@
   {:else}
     <Star_outline class={starSize} />
   {/if}
-
 {:else}
   <button
-    use:ariaLabel={Translations.t.reviews.rate.Subs({n: i+1})}
-    class="small soft rounded-full no-image-background"
+    use:ariaLabel={Translations.t.reviews.rate.Subs({ n: i + 1 })}
+    class="small soft no-image-background rounded-full"
     style="padding: 0; border: none;"
     bind:this={container}
-    on:click={(e) =>{ console.log("Dispatching click", e); return dispatch("click", { score: getScore(e) }); }}
-    on:mousemove={(e) => dispatch("hover", { score: getScore(e) }
-    )}
+    on:click={(e) => {
+      console.log("Dispatching click", e)
+      return dispatch("click", { score: getScore(e) })
+    }}
+    on:mousemove={(e) => dispatch("hover", { score: getScore(e) })}
   >
     {#if score >= cutoff}
       <Star class={starSize} />

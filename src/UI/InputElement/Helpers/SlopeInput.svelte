@@ -79,9 +79,9 @@
     },
     [valuesign, beta]
   )
-  
-  function onSave(){
-    if(_value.data){
+
+  function onSave() {
+    if (_value.data) {
       value.setData(_value.data)
     }
   }
@@ -100,10 +100,8 @@
       </div>
     </div>
 
-    <button class="primary" on:click={() => onSave()}>
-      Select this incline
-    </button>
-    
+    <button class="primary" on:click={() => onSave()}>Select this incline</button>
+
     <div>
       <Tr t={Translations.t.validation.slope.inputExplanation} />
     </div>

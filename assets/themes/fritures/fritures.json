@@ -63,21 +63,23 @@
             "options": [
               {
                 "question": {
-                  "en": "No oil type preference"
+                  "en": "No oil type preference",
+                  "de": "Kein Öltyp bevorzugt"
                 }
               },
               {
                 "question": {
-                  "en": "Only show fritures using vegetable oil"
+                  "en": "Only show fritures using vegetable oil",
+                  "de": "Nur Friteusen mit Pflanzenöl anzeigen"
                 },
                 "osmTags": "friture:oil=vegetable"
               },
               {
                 "question": {
-                  "en": "Only show fritures using animal oil"
+                  "en": "Only show fritures using animal oil",
+                  "de": "Nur Friteusen mit tierischem Öl anzeigen"
                 },
                 "osmTags": "friture:oil=animal"
-                
               }
             ]
           }

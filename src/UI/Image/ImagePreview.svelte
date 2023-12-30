@@ -26,5 +26,11 @@
   }
 </script>
 
-<img bind:this={panzoomEl} class="panzoom-image h-fit w-fit" on:load={() => {isLoaded?.setData(true)}}
-     src={image.url_hd ?? image.url} />
+<img
+  bind:this={panzoomEl}
+  class="panzoom-image h-fit w-fit"
+  on:load={() => {
+    isLoaded?.setData(true)
+  }}
+  src={image.url_hd ?? image.url}
+/>

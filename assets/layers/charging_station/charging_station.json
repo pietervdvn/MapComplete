@@ -1533,7 +1533,8 @@
           },
           "render": {
             "en": "There are <b class='text-xl'>{{{key}}}</b> plugs of type {{description}} available here",
-            "nl": "Hier zijn <b class='text-xl'>{{{key}}}</b> stekkers van het type {{description}}"
+            "nl": "Hier zijn <b class='text-xl'>{{{key}}}</b> stekkers van het type {{description}}",
+            "de": "Hier sind <b class='text-xl'>{{{key}}}</b> Stecker vom Typ {{description}} verfügbar"
           },
           "icon": "./assets/layers/charging_station/{{image}}",
           "freeform": {
@@ -1560,7 +1561,8 @@
           },
           "render": {
             "en": "{{description}} outputs {canonical({{key}}:voltage)}",
-            "nl": "{{description}} heeft een spanning van {canonical({{key}}:voltage)}"
+            "nl": "{{description}} heeft een spanning van {canonical({{key}}:voltage)}",
+            "de": "{{description}} liefert {canonical({{key}}:voltage)}"
           },
           "freeform": {
             "key": "{{key}}:voltage",
@@ -1589,7 +1591,8 @@
           ],
           "question": {
             "en": "What current do the plugs with {{description}} offer?",
-            "nl": "Welke stroom levert de stekker van type {{description}}?"
+            "nl": "Welke stroom levert de stekker van type {{description}}?",
+            "de": "Welchen Strom bieten die Stecker mit {{description}}?"
           },
           "render": {
             "en": "{{description}} outputs at most {canonical({{key}}:current)}",
@@ -1603,7 +1606,8 @@
             "if": "{{key}}:current={{commonCurrent}} A",
             "then": {
               "en": "{{description}} outputs at most {{commonCurrent}} A",
-              "nl": "{{description}} levert een stroom van maximaal {{commonCurrent}} A"
+              "nl": "{{description}} levert een stroom van maximaal {{commonCurrent}} A",
+              "de": "{{description}} liefert maximal {{commonCurrent}} A"
             }
           },
           "condition": {
@@ -1780,7 +1784,8 @@
           "ifnot": "authentication:membership_card=no",
           "then": {
             "en": "Authentication by a membership card",
-            "nl": "Aanmelden met een lidkaart is mogelijk"
+            "nl": "Aanmelden met een lidkaart is mogelijk",
+            "de": "Authentifizierung durch eine Mitgliedskarte"
           }
         },
         {
@@ -1858,11 +1863,13 @@
       "id": "Auth phone",
       "render": {
         "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-        "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+        "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+        "de": "Authentifiziere dich, indem du anrufst oder eine SMS sendest an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
       },
       "question": {
         "en": "What's the phone number for authentication call or SMS?",
-        "nl": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?"
+        "nl": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?",
+        "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?"
       },
       "freeform": {
         "key": "authentication:phone_call:number",
@@ -2301,7 +2308,7 @@
       "title": {
         "en": "charging station for electrical bikes",
         "nl": "oplaadpunt voor elektrische fietsen",
-        "de": "eine Ladestation für Elektrofahrräder"
+        "de": "Ladestation für Elektrofahrräder"
       }
     },
     {
@@ -2313,7 +2320,7 @@
       "title": {
         "en": "charging station for cars",
         "nl": "oplaadstation voor elektrische auto's",
-        "de": "Eine Ladestation für Elektrofahrzeuge"
+        "de": "Ladestation für Elektrofahrräder"
       }
     }
   ],
@@ -2415,7 +2422,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
-            "de": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel<img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
           },
           "osmTags": "socket:type1~*"
         },

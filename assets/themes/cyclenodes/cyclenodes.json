@@ -201,7 +201,8 @@
             "if": "proposed:rcn_ref~*",
             "then": {
               "en": "Proposed cycle node <strong>{proposed:rcn_ref}</strong>",
-              "nl": "Voorgesteld fietsknooppunt <strong>{proposed:rcn_ref}</strong>"
+              "nl": "Voorgesteld fietsknooppunt <strong>{proposed:rcn_ref}</strong>",
+              "de": "Vorgeschlagener Radknoten <strong>{proposed:rcn_ref}</strong>"
             }
           }
         ]

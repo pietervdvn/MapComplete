@@ -50,14 +50,14 @@
     window.requestAnimationFrame(() => {
       _map.resize()
     })
-    _map.on("load", function() {
+    _map.on("load", function () {
       _map.resize()
-        const canvas = _map.getCanvas()
+      const canvas = _map.getCanvas()
       if (interactive) {
         ariaLabel(canvas, Translations.t.general.visualFeedback.navigation)
         canvas.role = "application"
         canvas.tabIndex = 0
-      }else{
+      } else {
         canvas.tabIndex = -1
         _map.getContainer().tabIndex = -1
       }

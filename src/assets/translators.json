@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 320,
+      "commits": 321,
       "contributor": "kjon"
     },
     {
-      "commits": 298,
+      "commits": 300,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 178,
+      "commits": 179,
       "contributor": "paunofu"
     },
     {
@@ -50,11 +50,11 @@
     },
     {
       "commits": 29,
-      "contributor": "Artem"
+      "contributor": "mcliquid"
     },
     {
-      "commits": 25,
-      "contributor": "mcliquid"
+      "commits": 29,
+      "contributor": "Artem"
     },
     {
       "commits": 25,
@@ -118,6 +118,10 @@
     },
     {
       "commits": 10,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 10,
       "contributor": "brunnerpaul"
     },
     {
@@ -143,10 +147,6 @@
     {
       "commits": 9,
       "contributor": "快乐的老鼠宝宝"
-    },
-    {
-      "commits": 9,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 9,
@@ -298,6 +298,10 @@
     },
     {
       "commits": 3,
+      "contributor": "Lasse Liehu"
+    },
+    {
+      "commits": 3,
       "contributor": "Peter Brodersen"
     },
     {
@@ -363,6 +367,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "larusalka"
     },
     {
       "commits": 2,
@@ -467,10 +475,6 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
-    },
-    {
-      "commits": 1,
-      "contributor": "Lasse Liehu"
     },
     {
       "commits": 1,

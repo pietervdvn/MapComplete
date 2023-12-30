@@ -79,7 +79,7 @@
       >
         <Tr t={t.currentLicense.Subs({ license: $licenseStore })} />
       </button>
-      <br/>
+      <br />
       <Tr t={t.respectPrivacy} />
     </div>
   </div>

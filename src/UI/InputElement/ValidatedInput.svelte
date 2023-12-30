@@ -101,7 +101,7 @@
         if (_value.data !== fromUpstream && fromUpstream !== "") {
           _value.setData(fromUpstream)
         }
-      }),
+      })
     )
   } else {
     // Handled by the UnitInput
@@ -115,7 +115,7 @@
       Utils.sortedByLevenshteinDistance(
         type,
         Validators.AllValidators.map((v) => v.name),
-        (v) => v,
+        (v) => v
       )
         .slice(0, 5)
         .join(", ")
@@ -135,17 +135,16 @@
       }
     }
   }
-
 </script>
 
 {#if validator?.textArea}
-    <textarea
-      class="w-full"
-      bind:value={$_value}
-      inputmode={validator?.inputmode ?? "text"}
-      placeholder={_placeholder}
-      bind:this={htmlElem}
-    />
+  <textarea
+    class="w-full"
+    bind:value={$_value}
+    inputmode={validator?.inputmode ?? "text"}
+    placeholder={_placeholder}
+    bind:this={htmlElem}
+  />
 {:else}
   <div class={twMerge("inline-flex", cls)}>
     <input

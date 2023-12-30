@@ -71,7 +71,7 @@
     <StarsBar
       on:click={(e) => {
         confirmedScore = e.detail.score
-        score=confirmedScore
+        score = confirmedScore
         console.log("Confirmed score is:", confirmedScore)
       }}
       on:hover={(e) => {
@@ -86,11 +86,17 @@
 
     {#if confirmedScore !== undefined}
       <label class="neutral-label">
-      <Tr cls="font-bold mt-2" t={t.question_opinion} />
-      <textarea autofocus bind:value={$opinion} inputmode="text" rows="3" class="mb-1 w-full" 
-      use:placeholder={t.reviewPlaceholder}/>
+        <Tr cls="font-bold mt-2" t={t.question_opinion} />
+        <textarea
+          autofocus
+          bind:value={$opinion}
+          inputmode="text"
+          rows="3"
+          class="mb-1 w-full"
+          use:placeholder={t.reviewPlaceholder}
+        />
       </label>
-        
+
       <Checkbox selected={isAffiliated}>
         <div class="flex flex-col">
           <Tr t={t.i_am_affiliated} />

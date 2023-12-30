@@ -167,7 +167,8 @@
       "title": {
         "render": {
           "en": "Walking node",
-          "nl": "Wandelknooppunt"
+          "nl": "Wandelknooppunt",
+          "de": "Wanderknoten"
         },
         "mappings": [
           {
@@ -182,7 +183,8 @@
             "if": "proposed:rwn_ref~*",
             "then": {
               "en": "Proposed walking node <strong>{proposed:rwn_ref}</strong>",
-              "nl": "Voorgesteld wandelknooppunt <strong>{proposed:rwn_ref}</strong>"
+              "nl": "Voorgesteld wandelknooppunt <strong>{proposed:rwn_ref}</strong>",
+              "de": "Vorgeschlagener Wanderknoten <strong>{proposed:rwn_ref}</strong>"
             }
           }
         ]

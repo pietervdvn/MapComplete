@@ -27,7 +27,7 @@
 <LoginToggle ignoreLoading={true} {state}>
   {#if $isFavourite}
     <button
-      class="m-0 h-8 w-8 p-0 soft no-image-background"
+      class="soft no-image-background m-0 h-8 w-8 p-0"
       on:click={() => markFavourite(false)}
       use:ariaLabel={Translations.t.favouritePoi.button.isMarkedShort}
     >

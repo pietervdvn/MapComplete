@@ -61,7 +61,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/surface#values) [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [woodchips](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwoodchips) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) [tartan](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan) [rubber](https://wiki.openstreetmap.org/wiki/Tag:surface%3Drubber)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/lit#values) [lit](https://wiki.openstreetmap.org/wiki/Key:lit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/min_age#values) [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/min_age#values) [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) | [nat](../SpecialInputElements.md#nat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/max_age#values) [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) | [pnat](../SpecialInputElements.md#pnat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
@@ -90,6 +90,8 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
+
+This tagrendering has labels  `added_by_default`
 
 
 
@@ -394,6 +396,8 @@ This tagrendering has no question and is thus read-only
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
+This tagrendering has labels  `added_by_default`
+
 
 
 ### favourite_status 
@@ -403,6 +407,30 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### qr_code 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
+
+
+
+### share 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

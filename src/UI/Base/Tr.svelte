@@ -11,7 +11,9 @@
   export let cls: string = ""
   // Text for the current language
   let txt: Store<string | undefined> = t?.current
-  $: {txt = t?.current}
+  $: {
+    txt = t?.current
+  }
 </script>
 
 {#if $txt}

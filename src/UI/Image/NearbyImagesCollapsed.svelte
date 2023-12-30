@@ -27,31 +27,31 @@
 
 <LoginToggle {state}>
   <div class="my-4">
-  {#if expanded}
-    <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
+    {#if expanded}
+      <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
+        <button
+          slot="corner"
+          class="no-image-background h-6 w-6 cursor-pointer border-none p-0"
+          use:ariaLabel={t.close}
+          on:click={() => {
+            expanded = false
+          }}
+        >
+          <XCircleIcon />
+        </button>
+      </NearbyImages>
+    {:else}
       <button
-        slot="corner"
-        class="no-image-background h-6 w-6 cursor-pointer border-none p-0"
-        use:ariaLabel={t.close}
+        class="flex w-full items-center"
+        style="margin-left: 0; margin-right: 0"
         on:click={() => {
-          expanded = false
+          expanded = true
         }}
+        aria-expanded={expanded}
       >
-        <XCircleIcon />
+        <Camera_plus class="mr-2 block h-8 w-8 p-1" />
+        <Tr t={t.seeNearby} />
       </button>
-    </NearbyImages>
-  {:else}
-    <button
-      class="flex w-full items-center"
-      style="margin-left: 0; margin-right: 0"
-      on:click={() => {
-        expanded = true
-      }}
-      aria-expanded={expanded}
-    >
-      <Camera_plus class="mr-2 block h-8 w-8 p-1" />
-      <Tr t={t.seeNearby} />
-    </button>
-  {/if}
+    {/if}
   </div>
 </LoginToggle>

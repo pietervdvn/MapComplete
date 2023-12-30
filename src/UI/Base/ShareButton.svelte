@@ -28,8 +28,11 @@
 </script>
 
 {#if isIcon}
-  <button on:click={share} class="soft no-image-background m-0 h-8 w-8 p-0"
-          use:ariaLabel={Translations.t.general.share}>
+  <button
+    on:click={share}
+    class="soft no-image-background m-0 h-8 w-8 p-0"
+    use:ariaLabel={Translations.t.general.share}
+  >
     <slot name="content">
       <Share class="h-7 w-7 p-1" />
     </slot>

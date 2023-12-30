@@ -203,7 +203,7 @@
         "cs": "obchod"
       },
       "description": {
-        "en": "Add a new shop",
+        "en": "You can specify later on what this shop sells.",
         "ca": "Afegir una botiga nova",
         "cs": "Přidat nový obchod",
         "de": "Ein neues Geschäft hinzufügen",

@@ -119,6 +119,8 @@ This tagrendering has no question and is thus read-only
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
+This tagrendering has labels  `added_by_default`
+
 
 
 ### Cycleway type for a road 
@@ -524,6 +526,8 @@ This tagrendering has no question and is thus read-only
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
 
+This tagrendering has labels  `added_by_default`
+
 
 
 ### favourite_status 
@@ -533,6 +537,30 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### qr_code 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
+
+
+
+### share 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

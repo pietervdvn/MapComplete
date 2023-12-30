@@ -3,17 +3,7 @@
  Hotkeys 
 =========
 
-
-
-## Table of contents
-
-1. [Hotkeys](#)
-
-
-
-MapComplete supports the following keys:
-
-
+ MapComplete supports the following keys: 
 
 Key combination | Action
 ----------------- | --------

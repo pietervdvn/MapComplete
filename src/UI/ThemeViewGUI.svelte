@@ -13,7 +13,13 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import {
+    CogIcon,
+    EyeIcon,
+    HeartIcon,
+    MenuIcon,
+    XCircleIcon,
+  } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
@@ -95,7 +101,7 @@
   })
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) =>
-    state.layout.getMatchingLayer(element.properties),
+    state.layout.getMatchingLayer(element.properties)
   )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
@@ -121,10 +127,10 @@
     state.visualFeedbackViewportBounds.setData(bbox)
   }
 
-  viewport.addCallbackAndRunD(_ => {
+  viewport.addCallbackAndRunD((_) => {
     updateViewport()
   })
-  mapproperties.bounds.addCallbackAndRunD(_ => {
+  mapproperties.bounds.addCallbackAndRunD((_) => {
     updateViewport()
   })
   let featureSwitches: FeatureSwitchState = state.featureSwitches
@@ -136,15 +142,15 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    }),
+    })
   )
   let previewedImage = state.previewedImage
-  
+
   let debug = state.featureSwitches.featureSwitchIsDebugging
-  debug.addCallbackAndRun(dbg => {
-    if(dbg){
+  debug.addCallbackAndRun((dbg) => {
+    if (dbg) {
       document.body.classList.add("debug")
-    }else{
+    } else {
       document.body.classList.remove("debug")
     }
   })
@@ -168,16 +174,20 @@
 
 {#if $visualFeedback}
   <div
-    class="absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden pointer-events-none"
+    class="pointer-events-none absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden"
   >
-    <div bind:this={$viewport} class:border={$visualFeedback} style="border: 2px solid #ff000044; width: 300px; height: 300px" />
+    <div
+      bind:this={$viewport}
+      class:border={$visualFeedback}
+      style="border: 2px solid #ff000044; width: 300px; height: 300px"
+    />
   </div>
 {/if}
 
 <div class="pointer-events-none absolute top-0 left-0 w-full">
   <!-- Top components -->
 
-  <div class="pointer-events-auto float-right mt-1 px-1 max-[480px]:w-full sm:m-2 flex flex-col">
+  <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
     <If condition={state.visualFeedback}>
       <div class="w-fit">
         <VisualFeedbackPanel {state} />

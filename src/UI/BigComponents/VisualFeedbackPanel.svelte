@@ -15,16 +15,17 @@
   const t = Translations.t.general.visualFeedback
   let map = state.mapProperties
   let centerFeatures = state.closestFeatures.features
-  let translationWithLength = centerFeatures.mapD(cf => cf.length).mapD(n => {
-    if (n === 1) {
-      return t.oneFeatureInView
-    }
-    return t.closestFeaturesAre.Subs({ n })
-  })
-
+  let translationWithLength = centerFeatures
+    .mapD((cf) => cf.length)
+    .mapD((n) => {
+      if (n === 1) {
+        return t.oneFeatureInView
+      }
+      return t.closestFeaturesAre.Subs({ n })
+    })
 
   let lastAction: UIEventSource<KeyNavigationEvent> = new UIEventSource<KeyNavigationEvent>(
-    undefined,
+    undefined
   )
   state.mapProperties.onKeyNavigationEvent((event) => {
     lastAction.setData(event)
@@ -32,11 +33,11 @@
   lastAction.stabilized(750).addCallbackAndRunD((_) => lastAction.setData(undefined))
 </script>
 
-<div aria-live="assertive" class="p-1 bg-white m-1 rounded">
+<div aria-live="assertive" class="m-1 rounded bg-white p-1">
   {#if $lastAction?.key === "out"}
-    <Tr t={t.out.Subs({z: map.zoom.data - 1})} />
+    <Tr t={t.out.Subs({ z: map.zoom.data - 1 })} />
   {:else if $lastAction?.key === "in"}
-    <Tr t={t.out.Subs({z: map.zoom.data + 1})} />
+    <Tr t={t.out.Subs({ z: map.zoom.data + 1 })} />
   {:else if $lastAction !== undefined}
     <Tr t={t[$lastAction.key]} />
   {:else if $centerFeatures?.length === 0}

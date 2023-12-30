@@ -900,7 +900,8 @@
             "it": "Vende biciclette usate",
             "ca": "Ven bicicletes de segona mà",
             "cs": "Prodává použitá jízdní kola",
-            "fr": "Vend des vélos usagés"
+            "fr": "Vend des vélos usagés",
+            "es": "Vende bicicletas de segunda mano"
           },
           "osmTags": {
             "or": [
@@ -922,7 +923,8 @@
             "it": "Offre riparazioni fai da te",
             "cs": "Nabízí opravy kol \"Udělej si sám\"",
             "fr": "Offre des services DIY",
-            "ca": "Ofereix reparar un mateix la bici"
+            "ca": "Ofereix reparar un mateix la bici",
+            "es": "Ofrece herramientas para autorreparación de bicis"
           },
           "osmTags": {
             "or": [
