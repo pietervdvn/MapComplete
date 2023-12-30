@@ -921,42 +921,42 @@
                     "2": {
                         "options": {
                             "0": {
-                                "question": "<b>Nicht</b> erstellt von {search}"
+                                "question": "Der Name enthält <b>nicht</b> {search}"
                             }
                         }
                     },
                     "3": {
                         "options": {
                             "0": {
-                                "question": "Erstellt vor {search}"
+                                "question": "<b>Nicht</b> erstellt von {search}"
                             }
                         }
                     },
                     "4": {
                         "options": {
                             "0": {
-                                "question": "Erstellt nach {search}"
+                                "question": "Erstellt vor {search}"
                             }
                         }
                     },
                     "5": {
                         "options": {
                             "0": {
-                                "question": "Benutzersprache (ISO-Code) {search}"
+                                "question": "Erstellt nach {search}"
                             }
                         }
                     },
                     "6": {
                         "options": {
                             "0": {
-                                "question": "Erstellt mit Host {search}"
+                                "question": "Benutzersprache (ISO-Code) {search}"
                             }
                         }
                     },
                     "7": {
                         "options": {
                             "0": {
-                                "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
+                                "question": "Erstellt mit Host {search}"
                             }
                         }
                     },

@@ -18,6 +18,7 @@ npm run prep:layeroverview &&
 npm run generate && # includes a single "refresh:layeroverview". Resetting the files is unnecessary as they are not in there in the first place
 npm run refresh:layeroverview && # run refresh:layeroverview a second time to propagate all calls
 npm run refresh:layeroverview && # run refresh:layeroverview a third time to fix some issues with the favourite layer all calls
+npm run generate:mapcomplete-changes-theme  &&
 
 npm run generate:layouts
 
