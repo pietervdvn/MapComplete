@@ -120,7 +120,6 @@
             "streetcomplete": "Toinen, samanlainen sovellus on <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "number": "numero",
-        "openStreetMapIntro": "",
         "openTheMap": "Avaa kartta",
         "openTheMapAtGeolocation": "Zoomaa sijaintiisi",
         "opening_hours": {
