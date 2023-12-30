@@ -781,6 +781,21 @@
         "layers": {
             "0": {
                 "override": {
+                    "filter+": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "No oil type preference"
+                                },
+                                "1": {
+                                    "question": "Only show fritures using vegetable oil"
+                                },
+                                "2": {
+                                    "question": "Only show fritures using animal oil"
+                                }
+                            }
+                        }
+                    },
                     "name": "Fries shop"
                 }
             }

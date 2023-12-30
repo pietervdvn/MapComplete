@@ -30,7 +30,8 @@
   },
   "icon": "./assets/layers/food/restaurant.svg",
   "layers": [
-    "food"
+    "food",
+    "ice_cream"
   ],
   "widenFactor": 3
 }
