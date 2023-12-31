@@ -4,6 +4,10 @@ import { Review } from "mangrove-reviews-typescript"
 import { parse } from "csv-parse"
 import { Feature, FeatureCollection, Point } from "geojson"
 
+/**
+ * To be run from the repository root, e.g.
+ *  vite-node scripts/generateReviewsAnalysis.ts -- ~/Downloads/mangrove.reviews_1704031255.csv
+ */
 export default class GenerateReviewsAnalysis extends Script {
     constructor() {
         super("Analyses a CSV-file with Mangrove reviews")
@@ -104,6 +108,11 @@ export default class GenerateReviewsAnalysis extends Script {
     }
 
     async main(args: string[]): Promise<void> {
+        if (args.length === 0) {
+            console.log(
+                "Usage: enter file path of mangrove.reviews_timestamp.csv as first argument"
+            )
+        }
         const datapath = args[0] ?? "../MapComplete-data/mangrove.reviews_1674234503.csv"
         await this.analyze(datapath)
     }
