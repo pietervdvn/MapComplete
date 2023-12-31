@@ -4,7 +4,7 @@ import * as http from "node:http"
  * Redirect people from
  * "mapcomplete.osm.be/path?query=parameter#id" to "mapcomplete.org/path?query=parameter#id"
  */
-const PORT = 8080
+const PORT = 1236
 const CORS = "http://localhost:1234,https://mapcomplete.org,https://dev.mapcomplete.org"
 
 async function redirect(req: http.IncomingMessage, res: http.ServerResponse) {
