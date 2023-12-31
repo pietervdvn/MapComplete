@@ -897,11 +897,15 @@ export class GeoOperations {
     /**
      * GeoOperations.parseBearing("N") // => 0
      * GeoOperations.parseBearing("E") // => 90
-     * GeoOperations.parseBearing("NE") // => 22.5
+     * GeoOperations.parseBearing("NE") // => 45
+     * GeoOperations.parseBearing("NNE") // => 22.5
      *
      * GeoOperations.parseBearing("90") // => 90
      * GeoOperations.parseBearing("-90°") // => 270
      * GeoOperations.parseBearing("180 °") // => 180
+     *
+     * GeoOperations.parseBearing(180) // => 180
+     * GeoOperations.parseBearing(-270) // => 90
      *
      */
     public static parseBearing(str: string | number) {
