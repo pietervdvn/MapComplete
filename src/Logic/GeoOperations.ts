@@ -19,6 +19,35 @@ import { Utils } from "../Utils"
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
     private static readonly _originShift = (2 * Math.PI * GeoOperations._earthRadius) / 2
+    private static readonly directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] as const
+    private static readonly directionsRelative = [
+        "straight",
+        "slight_right",
+        "right",
+        "sharp_right",
+        "behind",
+        "sharp_left",
+        "left",
+        "slight_left",
+    ] as const
+    private static reverseBearing = {
+        N: 0,
+        NNE: 22.5,
+        NE: 45,
+        ENE: 67.5,
+        E: 90,
+        ESE: 112.5,
+        SE: 135,
+        SSE: 157.5,
+        S: 180,
+        SSW: 202.5,
+        SW: 225,
+        WSW: 247.5,
+        W: 270,
+        WNW: 292.5,
+        NW: 315,
+        NNW: 337.5,
+    }
 
     /**
      * Create a union between two features
@@ -261,16 +290,16 @@ export class GeoOperations {
     }
 
     /**
-   * Generates the closest point on a way from a given point.
-   * If the passed-in geojson object is a polygon, the outer ring will be used as linestring
-   *
-   *  The properties object will contain three values:
-   // - `index`: closest point was found on nth line part,
-   // - `dist`: distance between pt and the closest point (in kilometer),
-   // `location`: distance along the line between start (of the line) and the closest point.
-   * @param way The road on which you want to find a point
-   * @param point Point defined as [lon, lat]
-   */
+     * Generates the closest point on a way from a given point.
+     * If the passed-in geojson object is a polygon, the outer ring will be used as linestring
+     *
+     *  The properties object will contain three values:
+     // - `index`: closest point was found on nth line part,
+     // - `dist`: distance between pt and the closest point (in kilometer),
+     // `location`: distance along the line between start (of the line) and the closest point.
+     * @param way The road on which you want to find a point
+     * @param point Point defined as [lon, lat]
+     */
     public static nearestPoint(
         way: Feature<LineString>,
         point: [number, number]
@@ -293,9 +322,11 @@ export class GeoOperations {
      * @param way
      */
     public static forceLineString(way: Feature<LineString | Polygon>): Feature<LineString>
+
     public static forceLineString(
         way: Feature<MultiLineString | MultiPolygon>
     ): Feature<MultiLineString>
+
     public static forceLineString(
         way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>
     ): Feature<LineString | MultiLineString> {
@@ -800,6 +831,146 @@ export class GeoOperations {
         return { lon, lat }
     }
 
+    public static SplitSelfIntersectingWays(features: Feature[]): Feature[] {
+        const result: Feature[] = []
+
+        for (const feature of features) {
+            if (feature.geometry.type === "LineString") {
+                let coors = feature.geometry.coordinates
+                for (let i = coors.length - 1; i >= 0; i--) {
+                    // Go back, to nick of the back when needed
+                    const ci = coors[i]
+                    for (let j = i + 1; j < coors.length; j++) {
+                        const cj = coors[j]
+                        if (
+                            Math.abs(ci[0] - cj[0]) <= 0.000001 &&
+                            Math.abs(ci[1] - cj[1]) <= 0.0000001
+                        ) {
+                            // Found a self-intersecting way!
+                            console.debug("SPlitting way", feature.properties.id)
+                            result.push({
+                                ...feature,
+                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) },
+                            })
+                            coors = coors.slice(0, i + 1)
+                            break
+                        }
+                    }
+                }
+                result.push({
+                    ...feature,
+                    geometry: { ...feature.geometry, coordinates: coors },
+                })
+            }
+        }
+
+        return result
+    }
+
+    /**
+     * GeoOperations.distanceToHuman(52.8) // => "53m"
+     * GeoOperations.distanceToHuman(2800) // => "2.8km"
+     * GeoOperations.distanceToHuman(12800) // => "13km"
+     *
+     * @param meters
+     */
+    public static distanceToHuman(meters: number): string {
+        if (meters === undefined) {
+            return ""
+        }
+        meters = Math.round(meters)
+        if (meters < 1000) {
+            return meters + "m"
+        }
+
+        if (meters >= 10000) {
+            const km = Math.round(meters / 1000)
+            return km + "km"
+        }
+
+        meters = Math.round(meters / 100)
+        const kmStr = "" + meters
+
+        return kmStr.substring(0, kmStr.length - 1) + "." + kmStr.substring(kmStr.length - 1) + "km"
+    }
+
+    /**
+     * GeoOperations.parseBearing("N") // => 0
+     * GeoOperations.parseBearing("E") // => 90
+     * GeoOperations.parseBearing("NE") // => 22.5
+     *
+     * GeoOperations.parseBearing("90") // => 90
+     * GeoOperations.parseBearing("-90°") // => 270
+     * GeoOperations.parseBearing("180 °") // => 180
+     *
+     */
+    public static parseBearing(str: string | number) {
+        let n: number
+        if (typeof str === "string") {
+            str = str.trim()
+            if (str.endsWith("°")) {
+                str = str.substring(0, str.length - 1).trim()
+            }
+            n = Number(str)
+        } else {
+            n = str
+        }
+        if (!isNaN(n)) {
+            while (n < 0) {
+                n += 360
+            }
+            return n % 360
+        }
+        return GeoOperations.reverseBearing[str]
+    }
+
+    /**
+     * GeoOperations.bearingToHuman(0) // => "N"
+     * GeoOperations.bearingToHuman(-9) // => "N"
+     * GeoOperations.bearingToHuman(-10) // => "N"
+     * GeoOperations.bearingToHuman(-180) // => "S"
+     * GeoOperations.bearingToHuman(181) // => "S"
+     * GeoOperations.bearingToHuman(46) // => "NE"
+     */
+    public static bearingToHuman(
+        bearing: number
+    ): "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW" {
+        while (bearing < 0) {
+            bearing += 360
+        }
+        bearing %= 360
+        bearing += 22.5
+        const segment = Math.floor(bearing / 45) % GeoOperations.directions.length
+        return GeoOperations.directions[segment]
+    }
+
+    /**
+     * GeoOperations.bearingToHuman(0) // => "N"
+     * GeoOperations.bearingToHuman(-10) // => "N"
+     * GeoOperations.bearingToHuman(-180) // => "S"
+     * GeoOperations.bearingToHuman(181) // => "S"
+     * GeoOperations.bearingToHuman(46) // => "NE"
+     */
+    public static bearingToHumanRelative(
+        bearing: number
+    ):
+        | "straight"
+        | "slight_right"
+        | "right"
+        | "sharp_right"
+        | "behind"
+        | "sharp_left"
+        | "left"
+        | "slight_left" {
+        while (bearing < 0) {
+            bearing += 360
+        }
+        bearing %= 360
+        bearing += 22.5
+        const segment = Math.floor(bearing / 45) % GeoOperations.directionsRelative.length
+        return GeoOperations.directionsRelative[segment]
+    }
+
     /**
      * Helper function which does the heavy lifting for 'inside'
      */
@@ -948,127 +1119,5 @@ export class GeoOperations {
             }
         }
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
-    }
-
-    public static SplitSelfIntersectingWays(features: Feature[]): Feature[] {
-        const result: Feature[] = []
-
-        for (const feature of features) {
-            if (feature.geometry.type === "LineString") {
-                let coors = feature.geometry.coordinates
-                for (let i = coors.length - 1; i >= 0; i--) {
-                    // Go back, to nick of the back when needed
-                    const ci = coors[i]
-                    for (let j = i + 1; j < coors.length; j++) {
-                        const cj = coors[j]
-                        if (
-                            Math.abs(ci[0] - cj[0]) <= 0.000001 &&
-                            Math.abs(ci[1] - cj[1]) <= 0.0000001
-                        ) {
-                            // Found a self-intersecting way!
-                            console.debug("SPlitting way", feature.properties.id)
-                            result.push({
-                                ...feature,
-                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) },
-                            })
-                            coors = coors.slice(0, i + 1)
-                            break
-                        }
-                    }
-                }
-                result.push({
-                    ...feature,
-                    geometry: { ...feature.geometry, coordinates: coors },
-                })
-            }
-        }
-
-        return result
-    }
-
-    /**
-     * GeoOperations.distanceToHuman(52.8) // => "53m"
-     * GeoOperations.distanceToHuman(2800) // => "2.8km"
-     * GeoOperations.distanceToHuman(12800) // => "13km"
-     *
-     * @param meters
-     */
-    public static distanceToHuman(meters: number): string {
-        if (meters === undefined) {
-            return ""
-        }
-        meters = Math.round(meters)
-        if (meters < 1000) {
-            return meters + "m"
-        }
-
-        if (meters >= 10000) {
-            const km = Math.round(meters / 1000)
-            return km + "km"
-        }
-
-        meters = Math.round(meters / 100)
-        const kmStr = "" + meters
-
-        return kmStr.substring(0, kmStr.length - 1) + "." + kmStr.substring(kmStr.length - 1) + "km"
-    }
-
-    private static readonly directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] as const
-    private static readonly directionsRelative = [
-        "straight",
-        "slight_right",
-        "right",
-        "sharp_right",
-        "behind",
-        "sharp_left",
-        "left",
-        "slight_left",
-    ] as const
-
-    /**
-     * GeoOperations.bearingToHuman(0) // => "N"
-     * GeoOperations.bearingToHuman(-9) // => "N"
-     * GeoOperations.bearingToHuman(-10) // => "N"
-     * GeoOperations.bearingToHuman(-180) // => "S"
-     * GeoOperations.bearingToHuman(181) // => "S"
-     * GeoOperations.bearingToHuman(46) // => "NE"
-     */
-    public static bearingToHuman(
-        bearing: number
-    ): "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW" {
-        while (bearing < 0) {
-            bearing += 360
-        }
-        bearing %= 360
-        bearing += 22.5
-        const segment = Math.floor(bearing / 45) % GeoOperations.directions.length
-        return GeoOperations.directions[segment]
-    }
-
-    /**
-     * GeoOperations.bearingToHuman(0) // => "N"
-     * GeoOperations.bearingToHuman(-10) // => "N"
-     * GeoOperations.bearingToHuman(-180) // => "S"
-     * GeoOperations.bearingToHuman(181) // => "S"
-     * GeoOperations.bearingToHuman(46) // => "NE"
-     */
-    public static bearingToHumanRelative(
-        bearing: number
-    ):
-        | "straight"
-        | "slight_right"
-        | "right"
-        | "sharp_right"
-        | "behind"
-        | "sharp_left"
-        | "left"
-        | "slight_left" {
-        while (bearing < 0) {
-            bearing += 360
-        }
-        bearing %= 360
-        bearing += 22.5
-        const segment = Math.floor(bearing / 45) % GeoOperations.directionsRelative.length
-        return GeoOperations.directionsRelative[segment]
     }
 }

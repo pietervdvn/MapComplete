@@ -1598,6 +1598,41 @@ export default class SpecialVisualizations {
                     )
                 },
             },
+            {
+                funcName: "direction_absolute",
+                docs: "Converts compass degrees (with 0° being north, 90° being east, ...) into a human readable, translated direction such as 'north', 'northeast'",
+                args: [
+                    {
+                        name: "key",
+                        doc: "The attribute containing the degrees",
+                        defaultValue: "_direction:centerpoint",
+                    },
+                ],
+                needsUrls: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const key = args[0] === "" ? "_direction:centerpoint" : args[0]
+                    return new VariableUiElement(
+                        tagSource
+                            .map((tags) => {
+                                console.log("Direction value", tags[key], key)
+                                return tags[key]
+                            })
+                            .mapD((value) => {
+                                const dir = GeoOperations.bearingToHuman(
+                                    GeoOperations.parseBearing(value)
+                                )
+                                console.log("Human dir", dir)
+                                return Translations.t.general.visualFeedback.directionsAbsolute[dir]
+                            })
+                    )
+                },
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
