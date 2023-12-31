@@ -41,7 +41,7 @@
   }
 
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>())
-  let questionboxElem: HTMLBaseElement
+  let questionboxElem: HTMLDivElement
   let questionsToAsk = tags.map(
     (tags) => {
       const baseQuestions = (layer.tagRenderings ?? [])?.filter(
@@ -49,7 +49,7 @@
       )
       const questionsToAsk: TagRenderingConfig[] = []
       for (const baseQuestion of baseQuestions) {
-        if (skippedQuestions.data.has(baseQuestion.id) > 0) {
+        if (skippedQuestions.data.has(baseQuestion.id)) {
           continue
         }
         if (
@@ -88,6 +88,7 @@
 
 <div
   bind:this={questionboxElem}
+  aria-live="polite"
   class="marker-questionbox-root"
   class:hidden={$questionsToAsk.length === 0 && skipped === 0 && answered === 0}
 >

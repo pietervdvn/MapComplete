@@ -79,7 +79,7 @@ export default class TagRenderingConfig {
     public readonly mappings?: Mapping[]
     public readonly editButtonAriaLabel?: Translation
     public readonly labels: string[]
-    public readonly classes: string[]
+    public readonly classes: string[] | undefined
 
     constructor(
         config: string | TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
@@ -131,6 +131,9 @@ export default class TagRenderingConfig {
             this.classes = json.classes ?? []
         }
         this.classes = [].concat(...this.classes.map((cl) => cl.split(" ")))
+        if (this.classes.length === 0) {
+            this.classes = undefined
+        }
 
         this.render = Translations.T(<any>json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")

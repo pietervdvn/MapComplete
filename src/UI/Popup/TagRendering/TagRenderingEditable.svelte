@@ -98,16 +98,6 @@
         >
           <Tr t={Translations.t.general.cancel} />
         </button>
-        <button
-          slot="upper-right"
-          class="h-8 w-8 cursor-pointer border-none p-0"
-          use:ariaLabel={Translations.t.general.cancel}
-          on:click={() => {
-            editMode = false
-          }}
-        >
-          <XCircleIcon />
-        </button>
       </TagRenderingQuestion>
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">

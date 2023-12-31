@@ -102,6 +102,7 @@ class NearbyImageVis implements SpecialVisualization {
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
     needsUrls = NearbyImagesSearch.apiUrls
+    svelteBased = true
 
     constr(
         state: SpecialVisualizationState,
@@ -141,6 +142,7 @@ class StealViz implements SpecialVisualization {
         },
     ]
     needsUrls = []
+    svelteBased = true
 
     constr(state: SpecialVisualizationState, featureTags, args) {
         const [featureIdKey, layerAndtagRenderingIds] = args
@@ -213,6 +215,7 @@ export class QuestionViz implements SpecialVisualization {
             doc: "One or more ';'-separated labels of questions which should _not_ be included",
         },
     ]
+    svelteBased = true
 
     constr(
         state: SpecialVisualizationState,
@@ -236,7 +239,7 @@ export class QuestionViz implements SpecialVisualization {
             state,
             onlyForLabels: labels,
             notForLabels: blacklist,
-        })
+        }).SetClass("w-full")
     }
 }
 
@@ -437,7 +440,7 @@ export default class SpecialVisualizations {
                 funcName: "add_new_point",
                 docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
                 args: [],
-                needsUrls: [],
+
                 constr(state: SpecialVisualizationState, _, __, feature): BaseUIElement {
                     let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
@@ -449,7 +452,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "user_profile",
                 args: [],
-                needsUrls: [],
+
                 docs: "A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'",
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(UserProfile, {
@@ -460,7 +463,6 @@ export default class SpecialVisualizations {
             {
                 funcName: "language_picker",
                 args: [],
-                needsUrls: [],
                 docs: "A component to set the language of the user interface",
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(LanguagePicker, {
@@ -477,6 +479,7 @@ export default class SpecialVisualizations {
                 args: [],
                 needsUrls: [Constants.osmAuthConfig.url],
                 docs: "Shows a button where the user can log out",
+
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(LogoutButton, { osmConnection: state.osmConnection })
                 },
@@ -488,7 +491,7 @@ export default class SpecialVisualizations {
                 funcName: "split_button",
                 docs: "Adds a button which allows to split a way",
                 args: [],
-                needsUrls: [],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>
@@ -509,7 +512,7 @@ export default class SpecialVisualizations {
                 funcName: "move_button",
                 docs: "Adds a button which allows to move the object to another location. The config will be read from the layer config",
                 args: [],
-                needsUrls: [],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -532,7 +535,7 @@ export default class SpecialVisualizations {
                 funcName: "delete_button",
                 docs: "Adds a button which allows to delete the object at this location. The config will be read from the layer config",
                 args: [],
-                needsUrls: [],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -597,6 +600,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 needsUrls: [...Wikidata.neededUrls, ...Wikipedia.neededUrls],
+
                 example:
                     "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
                 constr: (_, tagsSource, args) => {
@@ -650,7 +654,6 @@ export default class SpecialVisualizations {
                 funcName: "all_tags",
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
-                needsUrls: [],
                 constr: (state, tags: UIEventSource<any>) =>
                     new SvelteUIElement(AllTagsPanel, { tags, state }),
             },
@@ -820,7 +823,7 @@ export default class SpecialVisualizations {
                         doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
                     },
                 ],
-                needsUrls: [],
+
                 example:
                     "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state, tagSource: UIEventSource<any>, args) => {
@@ -848,14 +851,13 @@ export default class SpecialVisualizations {
                         doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
                     },
                 ],
-                needsUrls: [],
                 constr(
                     state: SpecialVisualizationState,
                     tags: UIEventSource<Record<string, string>>,
                     args: string[],
                     feature: Feature,
                     layer: LayerConfig
-                ): BaseUIElement {
+                ): SvelteUIElement {
                     const keyToUse = args[0]
                     const prefix = args[1]
                     const postfix = args[2]
@@ -870,7 +872,7 @@ export default class SpecialVisualizations {
             },
             {
                 funcName: "canonical",
-                needsUrls: [],
+
                 docs: "Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text. ",
                 example:
                     "If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...",
@@ -910,7 +912,7 @@ export default class SpecialVisualizations {
                 funcName: "export_as_geojson",
                 docs: "Exports the selected feature as GeoJson-file",
                 args: [],
-                needsUrls: [],
+
                 constr: (state, tagSource, tagsSource, feature, layer) => {
                     const t = Translations.t.general.download
 
@@ -942,7 +944,7 @@ export default class SpecialVisualizations {
                 funcName: "open_in_iD",
                 docs: "Opens the current view in the iD-editor",
                 args: [],
-                needsUrls: [],
+
                 constr: (state, feature) => {
                     return new SvelteUIElement(OpenIdEditor, {
                         mapProperties: state.mapProperties,
@@ -964,7 +966,7 @@ export default class SpecialVisualizations {
                 funcName: "clear_location_history",
                 docs: "A button to remove the travelled track information from the device",
                 args: [],
-                needsUrls: [],
+
                 constr: (state) => {
                     return new SubtleButton(
                         Svg.delete_icon_svg().SetStyle("height: 1.5rem"),
@@ -1023,6 +1025,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 needsUrls: [Imgur.apiUrl],
+
                 constr: (state, tags, args) => {
                     const id = tags.data[args[0] ?? "id"]
                     tags = state.featureProperties.getStore(id)
@@ -1033,7 +1036,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "title",
                 args: [],
-                needsUrls: [],
+
                 docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                 example:
                     "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
@@ -1145,6 +1148,7 @@ export default class SpecialVisualizations {
                         defaultValue: "mr_taskId",
                     },
                 ],
+
                 constr: (state, tagsSource, args) => {
                     let [message, image, message_closed, statusToSet, maproulette_id_key] = args
                     if (image === "") {
@@ -1168,7 +1172,7 @@ export default class SpecialVisualizations {
                 funcName: "statistics",
                 docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
                 args: [],
-                needsUrls: [],
+
                 constr: (state) => {
                     return new Combine(
                         state.layout.layers
@@ -1211,7 +1215,6 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
-                needsUrls: [],
 
                 constr(__, tags, args) {
                     return new SvelteUIElement(SendEmail, { args, tags })
@@ -1244,7 +1247,7 @@ export default class SpecialVisualizations {
                         doc: "If set, this text will be used as aria-label",
                     },
                 ],
-                needsUrls: [],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -1273,7 +1276,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "multi",
                 docs: "Given an embedded tagRendering (read only) and a key, will read the keyname as a JSON-list. Every element of this list will be considered as tags and rendered with the tagRendering",
-                needsUrls: [],
+
                 example:
                     "```json\n" +
                     JSON.stringify(
@@ -1327,7 +1330,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "translated",
                 docs: "If the given key can be interpreted as a JSON, only show the key containing the current language (or 'en'). This specialRendering is meant to be used by MapComplete studio and is not useful in map themes",
-                needsUrls: [],
+
                 args: [
                     {
                         name: "key",
@@ -1366,7 +1369,7 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
-                needsUrls: [],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -1396,7 +1399,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "braced",
                 docs: "Show a literal text within braces",
-                needsUrls: [],
+
                 args: [
                     {
                         name: "text",
@@ -1417,7 +1420,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "tags",
                 docs: "Shows a (json of) tags in a human-readable way + links to the wiki",
-                needsUrls: [],
+
                 args: [
                     {
                         name: "key",
@@ -1468,6 +1471,7 @@ export default class SpecialVisualizations {
                 ],
                 docs: "Shows events that are happening based on a Giggity URL",
                 needsUrls: (args) => args[0],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -1481,7 +1485,7 @@ export default class SpecialVisualizations {
             },
             {
                 funcName: "gps_all_tags",
-                needsUrls: [],
+
                 docs: "Shows the current tags of the GPS-representing object, used for debugging",
                 args: [],
                 constr(
@@ -1507,9 +1511,10 @@ export default class SpecialVisualizations {
             },
             {
                 funcName: "favourite_status",
-                needsUrls: [],
+
                 docs: "A button that allows a (logged in) contributor to mark a location as a favourite location",
                 args: [],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -1527,7 +1532,7 @@ export default class SpecialVisualizations {
             },
             {
                 funcName: "favourite_icon",
-                needsUrls: [],
+
                 docs: "A small button that allows a (logged in) contributor to mark a location as a favourite location, sized to fit a title-icon",
                 args: [],
                 constr(
@@ -1542,13 +1547,13 @@ export default class SpecialVisualizations {
                         state,
                         layer,
                         feature,
-                    })
+                    }).SetClass("w-full h-full")
                 },
             },
             {
                 funcName: "direction_indicator",
                 args: [],
-                needsUrls: [],
+
                 docs: "Gives a distance indicator and a compass pointing towards the location from your GPS-location. If clicked, centers the map on the object",
                 constr(
                     state: SpecialVisualizationState,
@@ -1563,7 +1568,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "qr_code",
                 args: [],
-                needsUrls: [],
+
                 docs: "Generates a QR-code to share the selected object",
                 constr(
                     state: SpecialVisualizationState,
@@ -1608,7 +1613,7 @@ export default class SpecialVisualizations {
                         defaultValue: "_direction:centerpoint",
                     },
                 ],
-                needsUrls: [],
+
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,

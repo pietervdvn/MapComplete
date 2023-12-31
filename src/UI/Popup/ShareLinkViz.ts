@@ -20,6 +20,7 @@ export class ShareLinkViz implements SpecialVisualization {
         },
     ]
     needsUrls = []
+    svelteBased = true
 
     public constr(
         state: SpecialVisualizationState,
@@ -52,6 +53,8 @@ export class ShareLinkViz implements SpecialVisualization {
             }
         }
 
-        return new SvelteUIElement(ShareButton, { generateShareData, text })
+        return new SvelteUIElement(ShareButton, { generateShareData, text }).SetClass(
+            "w-full h-full"
+        )
     }
 }

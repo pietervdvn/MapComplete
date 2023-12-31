@@ -8543,6 +8543,18 @@
                 },
                 "question": "Does this stair have a handrail?"
             },
+            "incline": {
+                "mappings": {
+                    "0": {
+                        "then": "The upward direction is {direction_absolute()}"
+                    },
+                    "1": {
+                        "then": "The downward direction is {direction_absolute()}"
+                    }
+                },
+                "question": "What is the incline of these stairs?",
+                "render": "These stairs have an incline of {incline}"
+            },
             "multilevels": {
                 "override": {
                     "question": "Between which levels are these stairs?",
