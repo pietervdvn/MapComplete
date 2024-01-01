@@ -79,7 +79,7 @@
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
-
+  selectedElement.addCallbackAndRun(se => console.log("Selected element", se))
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
   Orientation.singleton.startMeasurements()
@@ -189,9 +189,11 @@
 
   <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
     <If condition={state.visualFeedback}>
+    {#if $selectedElement === undefined}
       <div class="w-fit">
         <VisualFeedbackPanel {state} />
       </div>
+      {/if}
     </If>
     <If condition={state.featureSwitches.featureSwitchSearch}>
       <Geosearch

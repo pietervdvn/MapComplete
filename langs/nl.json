@@ -376,7 +376,7 @@
             "islocked": "Bewegen vergrendeld rond je huidige locatie. Duw op de geolocatie-knop om te ontgrendelen.",
             "locked": "Bewegen vergrendeld rond jouw huidige locatie.",
             "navigation": "Gebruik de pijltjestoetsen om te bewegen. Druk op spatie om het meest centrale punt te selecteren. Druk op een cijfertoets om andere items te selecteren.",
-            "noCloseFeatures": "Niet in beeld",
+            "noCloseFeatures": "Geen objecten in beeld",
             "north": "Naar het noorden",
             "oneFeatureInView": "Eén object in beeld.",
             "out": "Aan het uitzoomen naar zoomlevel {z}",

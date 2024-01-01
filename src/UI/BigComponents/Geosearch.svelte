@@ -10,6 +10,7 @@
   import { createEventDispatcher, onDestroy } from "svelte"
   import { placeholder } from "../../Utils/placeholder"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { ariaLabel } from "../../Utils/ariaLabel"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
@@ -116,6 +117,7 @@
         }}
         bind:value={searchContents}
         use:placeholder={Translations.t.general.search.search}
+        use:ariaLabel={Translations.t.general.search.search}
       />
       {#if feedback !== undefined}
         <!-- The feedback is _always_ shown for screenreaders and to make sure that the searchfield can still be selected by tabbing-->

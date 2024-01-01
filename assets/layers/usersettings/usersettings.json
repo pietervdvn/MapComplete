@@ -114,6 +114,33 @@
       }
     },
     {
+      "id": "a11y-features",
+      "question": {
+        "en": "What accessibility features should be applied?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-a11y=default",
+          "alsoShowIf": "mapcomplete-a11y=",
+          "then": {
+            "en": "Enable accessibility features when arrow keys are used to navigate the map"
+          }
+        },
+        {
+          "if": "mapcomplete-a11y=always",
+          "then": {
+            "en": "Always enable accessibility features"
+          }
+        },
+        {
+          "if": "mapcomplete-a11y=never",
+          "then": {
+            "en": "Never enable accessibility features"
+          }
+        }
+      ]
+    },
+    {
       "id": "background-layer-readonly",
       "condition": {
         "and": [
