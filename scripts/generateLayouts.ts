@@ -284,7 +284,7 @@ async function generateCsp(
         if (typeof sv.needsUrls === "function") {
             return
         }
-        apiUrls.push(...sv.needsUrls)
+        apiUrls.push(...(sv.needsUrls ?? []))
     })
 
     const usedSpecialVisualisations = ValidationUtils.getSpecialVisualisationsWithArgs(layoutJson)
@@ -292,7 +292,7 @@ async function generateCsp(
         if (typeof usedSpecialVisualisation === "string") {
             continue
         }
-        const neededUrls = usedSpecialVisualisation.func.needsUrls
+        const neededUrls = usedSpecialVisualisation.func.needsUrls ?? []
         if (typeof neededUrls === "function") {
             apiUrls.push(...neededUrls(usedSpecialVisualisation.args))
         }
