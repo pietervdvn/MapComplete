@@ -243,7 +243,8 @@
         "sourceString": [
           "device-key",
           "{device-name}",
-          "{negative-name}"
+          "{negative-name}",
+          "{icon}"
         ],
         "into": [
           [
@@ -261,7 +262,8 @@
               "de": "3D-Drucker",
               "ca": "Impressora 3D",
               "cs": "3D-tiskárna"
-            }
+            },
+            "./assets/layers/hackerspace/3d_printer.svg"
           ],
           [
             "lasercutter",
@@ -278,7 +280,8 @@
               "de": "Laserschneider",
               "ca": "tallador laser",
               "cs": "laserová řezačka"
-            }
+            },
+            "./assets/layers/hackerspace/lasercutter.svg"
           ],
           [
             "cnc_drilling_machine",
@@ -295,7 +298,58 @@
               "de": "CNC-Fräse",
               "ca": "trepant CNC",
               "cs": "CNC vrtačka"
-            }
+            },
+            "./assets/layers/hackerspace/cnc.svg"
+          ],
+          [
+            "media_studio",
+            {
+              "en": "a multimedia studio"
+            },
+            {
+              "en": "multimedia studio"
+            },
+            "./assets/layers/hackerspace/media_studio.svg"
+          ],
+          [
+            "sewing_machine",
+            {
+              "en": "a sewing machine"
+            },
+            {
+              "en": "sewing machine"
+            },
+            "./assets/layers/hackerspace/sewing_machine.svg"
+          ],
+          [
+            "workshop:wood",
+            {
+              "en": "a woodworking workshop"
+            },
+            {
+              "en": "woodworking workshop"
+            },
+            "./assets/layers/hackerspace/woodworking.svg"
+          ],
+          [
+            "workshop:metal",
+            {
+              "en": "a metal workshop"
+            },
+            {
+              "en": "meta workshop"
+            },
+            "./assets/layers/hackerspace/metal.svg"
+          ],
+          [
+            "bicycle:diy",
+            {
+              "en": "a bicycle repair workshop"
+            },
+            {
+              "en": "bicycle repair workshop"
+            },
+            "./assets/layers/hackerspace/bicycle.svg"
           ]
         ]
       },
@@ -308,9 +362,11 @@
             "ca": "Hi ha {device-name} disponible a aquest espai hacker?",
             "cs": "Je {device-name} dostupné v tomto hackerspace?"
           },
+          "#iconsize": "large",
           "mappings": [
             {
               "if": "service:device-key=yes",
+              "icon": "{icon}",
               "then": {
                 "en": "There is {device-name} available at this hackerspace",
                 "nl": "Er is {device-name} beschikbaar in deze hackerspace",

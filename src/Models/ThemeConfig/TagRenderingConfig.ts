@@ -236,8 +236,10 @@ export default class TagRenderingConfig {
 
             const commonIconSize =
                 Utils.NoNull(
-                    json.mappings.map((m) => (m.icon !== undefined ? m.icon["class"] : undefined))
-                )[0] ?? "small"
+                    json.mappings.map((m) => (!!m.icon ? m.icon["class"] : undefined))
+                )[0] ??
+                json["#iconsize"] ??
+                "small"
             this.mappings = json.mappings.map((m, i) =>
                 TagRenderingConfig.ExtractMapping(
                     m,
@@ -367,7 +369,7 @@ export default class TagRenderingConfig {
 
         let icon = undefined
         let iconClass = commonSize
-        if (mapping.icon !== undefined) {
+        if (!!mapping.icon) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
                 let stripped = mapping.icon
                 if (stripped.endsWith(".svg")) {
@@ -381,7 +383,7 @@ export default class TagRenderingConfig {
                 } else {
                     icon = mapping.icon
                 }
-            } else {
+            } else if (mapping.icon["path"]) {
                 icon = mapping.icon["path"]
                 iconClass = mapping.icon["class"] ?? iconClass
             }

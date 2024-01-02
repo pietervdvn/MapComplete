@@ -229,7 +229,7 @@
       <fieldset>
 
         <legend>
-            <div class="interactive sticky top-0 flex justify-between pt-1 font-bold" style="z-index: 11">
+            <div class="interactive sticky top-0 justify-between pt-1 font-bold" style="z-index: 11">
                 <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
             </div>
 

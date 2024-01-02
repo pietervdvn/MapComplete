@@ -32,6 +32,7 @@ import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { ExpandRewrite } from "./ExpandRewrite"
+import { ALL } from "node:dns"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -1133,9 +1134,43 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
         )
     }
 
+    private createTitleIconsBasedOn(
+        tr: QuestionableTagRenderingConfigJson
+    ): TagRenderingConfigJson | undefined {
+        const mappings: { if: TagConfigJson; then: string }[] = tr.mappings
+            ?.filter((m) => m.icon !== undefined)
+            .map((m) => {
+                const path: string = typeof m.icon === "string" ? m.icon : m.icon.path
+                const img = `<img class="m-1 h-6 w-6 low-interaction rounded" src='${path}'/>`
+                return { if: m.if, then: img }
+            })
+        if (!mappings || mappings.length === 0) {
+            return undefined
+        }
+        return <TagRenderingConfigJson>{
+            id: "title_icon_auto_" + tr.id,
+            mappings,
+        }
+    }
+
     convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         json = { ...json }
         json.titleIcons = [...json.titleIcons]
+
+        const allAutoIndex = json.titleIcons.indexOf(<any>"auto:*")
+        if (allAutoIndex >= 0) {
+            const generated = Utils.NoNull(
+                json.tagRenderings.map((tr) => {
+                    if (typeof tr === "string") {
+                        return undefined
+                    }
+                    return this.createTitleIconsBasedOn(<any>tr)
+                })
+            )
+            json.titleIcons.splice(allAutoIndex, 1, ...generated)
+            return json
+        }
+
         for (let i = 0; i < json.titleIcons.length; i++) {
             const titleIcon = json.titleIcons[i]
             if (typeof titleIcon !== "string") {
@@ -1152,14 +1187,9 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
                 context.enters("titleIcons", i).err("TagRendering with id " + trId + " not found")
                 continue
             }
-            const mappings: { if: TagConfigJson; then: string }[] = tr.mappings
-                ?.filter((m) => m.icon !== undefined)
-                .map((m) => {
-                    const path: string = typeof m.icon === "string" ? m.icon : m.icon.path
-                    const img = `<img class="m-1 h-6 w-6 low-interaction rounded" src='${path}'/>`
-                    return { if: m.if, then: img }
-                })
-            if (mappings.length === 0) {
+            const generated = this.createTitleIconsBasedOn(tr)
+
+            if (!generated) {
                 context
                     .enters("titleIcons", i)
                     .warn(
@@ -1169,10 +1199,7 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
                     )
                 continue
             }
-            json.titleIcons[i] = <TagRenderingConfigJson>{
-                id: "title_icon_auto_" + trId,
-                mappings,
-            }
+            json.titleIcons[i] = generated
         }
         return json
     }
