@@ -9734,6 +9734,20 @@
     "usersettings": {
         "description": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
         "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Enable accessibility features when arrow keys are used to navigate the map"
+                    },
+                    "1": {
+                        "then": "Always enable accessibility features"
+                    },
+                    "2": {
+                        "then": "Never enable accessibility features"
+                    }
+                },
+                "question": "What accessibility features should be applied?"
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {
