@@ -20,6 +20,16 @@
     ]
   },
   {
+    "path": "ceramics.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
     "path": "cnc.svg",
     "license": "CC-By-SA",
     "authors": [
