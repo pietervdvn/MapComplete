@@ -421,6 +421,7 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
             // No need to check the writable tags, as this cannot write
             return json
         }
+
         function addAll(keys: { forEach: (f: (s: string) => void) => void }, addTo: Set<string>) {
             keys?.forEach((k) => addTo.add(k))
         }
@@ -1359,6 +1360,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
 
 export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
     private readonly validator: ValidateLayer
+
     constructor(
         path: string,
         isBuiltin: boolean,
@@ -1385,6 +1387,7 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
         return prepared?.raw
     }
 }
+
 export class ValidateLayer extends Conversion<
     LayerConfigJson,
     { parsed: LayerConfig; raw: LayerConfigJson }
@@ -1459,6 +1462,19 @@ export class ValidateLayer extends Conversion<
             }
             if (<any>titleIcon.render === "icons.rating") {
                 context.enters("titleIcons", i).err("Detected a literal 'icons.rating'")
+            }
+        }
+
+        for (let i = 0; i < json.presets.length; i++) {
+            const preset = json.presets[i]
+            if (
+                preset.snapToLayer === undefined &&
+                preset.maxSnapDistance !== undefined &&
+                preset.maxSnapDistance !== null
+            ) {
+                context
+                    .enters("presets", i, "maxSnapDistance")
+                    .err("A maxSnapDistance is given, but there is no layer given to snap to")
             }
         }
 

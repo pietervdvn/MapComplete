@@ -158,7 +158,7 @@
             }
           }
           if (schema.type === "number") {
-            if (v === "") {
+            if (v === "" || v === null || isNaN(Number(v))) {
               return undefined
             }
             return Number(v)
