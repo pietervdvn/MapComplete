@@ -23,7 +23,7 @@
   export let editingEnabled: Store<boolean> | undefined = state?.featureSwitchUserbadge
 
   export let highlightedRendering: UIEventSource<string> = undefined
-  export let clss
+  export let clss = undefined
   /**
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */

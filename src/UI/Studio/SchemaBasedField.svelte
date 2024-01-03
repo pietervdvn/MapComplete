@@ -8,15 +8,14 @@
   import EditLayerState from "./EditLayerState"
   import { onDestroy } from "svelte"
   import type { JsonSchemaType } from "./jsonSchema"
-  import { ConfigMetaUtils } from "./configMeta.ts"
+  import { ConfigMetaUtils } from "./configMeta"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
 
   export let state: EditLayerState
   export let path: (string | number)[] = []
   export let schema: ConfigMeta
   export let startInEditModeIfUnset: boolean = schema.hints && !schema.hints.ifunset
-  let value = new UIEventSource<string | any>(undefined)
-
+  
   const isTranslation =
     schema.hints?.typehint === "translation" ||
     schema.hints?.typehint === "rendered" ||
@@ -144,10 +143,10 @@
         path,
         tags.map((tgs) => {
           const v = tgs["value"]
-          if (typeof v !== "string") {
-            return { ...v }
+          if (typeof v === "object") {
+            return { ...<object>v }
           }
-          if (schema.type === "boolan") {
+          if (schema.type === "boolean") {
             return v === "true" || v === "yes" || v === "1"
           }
           if (mightBeBoolean(schema.type)) {
