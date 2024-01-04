@@ -82,6 +82,8 @@
             "title": "Lisää uusi kohde"
         },
         "attribution": {
+            "attributionBackgroundLayer": "Nykyinen taustataso on {name}",
+            "attributionBackgroundLayerWithCopyright": "Nykyinen taustataso on {name}: {copyright}",
             "donate": "Tue MapCompletea rahallisesti",
             "editId": "Avaa OpenStreetMap-verkkoeditori tänne",
             "editJosm": "Muokkaa täällä JOSM:illa",
@@ -91,7 +93,7 @@
             "openMapillary": "Avaa Mapillary tänne"
         },
         "backToIndex": "Palaa kaikkien teemakarttojen yleiskuvaan",
-        "backgroundMap": "Taustakartta",
+        "backgroundMap": "Valitse taustataso",
         "cancel": "Peruuta",
         "download": {
             "title": "Lataa"
@@ -112,12 +114,14 @@
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
         "logout": "Kirjaudu ulos",
         "menu": {
-            "aboutMapComplete": "Tietoa MapCompletesta"
+            "aboutMapComplete": "Tietoa MapCompletesta",
+            "filter": "Suodata dataa"
         },
         "morescreen": {
+            "createYourOwnTheme": "Luo oma MapComplete-teema alusta asti",
             "noSearch": "Näytä kaikki teemat",
             "searchForATheme": "Etsi teemaa",
-            "streetcomplete": "Toinen, samanlainen sovellus on <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
+            "streetcomplete": "Toinen, samankaltainen sovellus on <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "number": "numero",
         "openTheMap": "Avaa kartta",
@@ -127,6 +131,9 @@
             "ph_closed": "suljettu",
             "ph_not_known": " ",
             "ph_open": "avattu"
+        },
+        "pdf": {
+            "attrBackground": "Taustataso: {background}"
         },
         "pickLanguage": "Valitse kieli: ",
         "questionBox": {
@@ -143,6 +150,7 @@
         "search": {
             "nothing": "Mitään ei löytynyt…",
             "search": "Etsi paikkaa",
+            "searchShort": "Etsi…",
             "searching": "Etsitään…"
         },
         "sharescreen": {
@@ -180,7 +188,12 @@
     },
     "hotkeyDocumentation": {
         "action": "Toiminto",
-        "key": "Näppäinyhdistelmä"
+        "key": "Näppäinyhdistelmä",
+        "openLayersPanel": "Avaa taustatasojen paneelin",
+        "selectAerial": "Asettaa taustaksi joko ilma- tai satelliittikuvan. Vaihtaa kahden parhaimman, saatavilla olevan tason välillä",
+        "selectMap": "Asettaa taustaksi kartan ulkoisesta lähteestä. Vaihtaa kahden parhaimman, saatavilla olevan tason välillä",
+        "selectMapnik": "Aseta taustatasoksi OpenStreetMap-carto",
+        "selectOsmbasedmap": "Aseta taustatasoksi OpenStreetMap-pohjainen kartta (tai poista käytöstä rasterimuotoinen taustataso)"
     },
     "image": {
         "addPicture": "Lisää kuva",

@@ -464,7 +464,7 @@
         "description": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir-ne de nous de manera senzilla",
         "layers": {
             "0": {
-                "name": "enllaços node a node",
+                "name": "Enllaços node a node",
                 "tagRenderings": {
                     "node2node-survey:date": {
                         "override": {
@@ -483,7 +483,12 @@
                 }
             },
             "1": {
-                "name": "nodes",
+                "name": "Nodes",
+                "presets": {
+                    "0": {
+                        "title": "un node ciclista"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
                         "question": "A quants altes nodes ciclistes enllaça aquest node?",
@@ -871,6 +876,33 @@
     "onwheels": {
         "description": "En aquest mapa, es mostren llocs públics accessibles per a cadira de rodes i es poden afegir fàcilment",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estadístiques"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Afegiu totes les etiquetes suggerides"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -912,33 +944,6 @@
             "8": {
                 "override": {
                     "name": "Places d'aparcament per a minusvàlids"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Estadístiques"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Afegiu totes les etiquetes suggerides"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1100,10 +1105,6 @@
     "stations": {
         "description": "Veure, editar i afegir detalls a una estació de tren",
         "layers": {
-            "3": {
-                "description": "Capa que mostra les estacions de tren",
-                "name": "Estació de tren"
-            },
             "16": {
                 "description": "Pantalles que mostren els trens que sortiran de l'estació",
                 "name": "Taulers de sortides",
@@ -1135,6 +1136,10 @@
                 "title": {
                     "render": "Tauler de sortides"
                 }
+            },
+            "3": {
+                "description": "Capa que mostra les estacions de tren",
+                "name": "Estació de tren"
             }
         },
         "title": "Estacions de tren"
