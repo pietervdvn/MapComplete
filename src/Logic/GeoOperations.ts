@@ -153,7 +153,7 @@ export class GeoOperations {
                     continue
                 }
 
-                const intersection = GeoOperations.calculateInstersection(
+                const intersection = GeoOperations.calculateIntersection(
                     feature,
                     otherFeature,
                     featureBBox
@@ -184,7 +184,7 @@ export class GeoOperations {
 
                 // Calculate the surface area of the intersection
 
-                const intersection = this.calculateInstersection(feature, otherFeature, featureBBox)
+                const intersection = this.calculateIntersection(feature, otherFeature, featureBBox)
                 if (intersection === null) {
                     continue
                 }
@@ -1029,7 +1029,7 @@ export class GeoOperations {
      * Returns 0 if both are linestrings
      * Returns null if the features are not intersecting
      */
-    private static calculateInstersection(
+    private static calculateIntersection(
         feature,
         otherFeature,
         featureBBox: BBox,
@@ -1099,7 +1099,7 @@ export class GeoOperations {
                 return null
             }
             if (otherFeature.geometry.type === "LineString") {
-                return this.calculateInstersection(
+                return this.calculateIntersection(
                     otherFeature,
                     feature,
                     otherFeatureBBox,
@@ -1119,6 +1119,19 @@ export class GeoOperations {
                     // See https://github.com/Turfjs/turf/pull/2238
                     return null
                 }
+                if (e.message.indexOf("SweepLine tree") >= 0) {
+                    console.log("Applying fallback intersection...")
+                    const intersection = turf.intersect(
+                        turf.truncate(feature),
+                        turf.truncate(otherFeature)
+                    )
+                    if (intersection == null) {
+                        return null
+                    }
+                    return turf.area(intersection) // in m²
+                    // Another workaround: https://github.com/Turfjs/turf/issues/2258
+                }
+
                 throw e
             }
         }

@@ -103,6 +103,7 @@
     "@turf/boolean-intersects": "^6.5.0",
     "@turf/buffer": "^6.5.0",
     "@turf/collect": "^6.5.0",
+    "@turf/difference": "^6.5.0",
     "@turf/distance": "^6.5.0",
     "@turf/length": "^6.5.0",
     "@turf/turf": "^6.5.0",
