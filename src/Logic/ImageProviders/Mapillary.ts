@@ -84,10 +84,20 @@ export class Mapillary extends ImageProvider {
     private static ExtractKeyFromURL(value: string): number {
         let key: string
 
-        const newApiFormat = value.match(/https?:\/\/www.mapillary.com\/app\/\?pKey=([0-9]*)/)
-        if (newApiFormat !== null) {
-            key = newApiFormat[1]
-        } else if (value.startsWith(Mapillary.valuePrefix)) {
+        if (value.startsWith("http")) {
+            try {
+                const url = new URL(value.toLowerCase())
+                if (url.searchParams.has("pkey")) {
+                    const pkey = Number(url.searchParams.get("pkey"))
+                    if (!isNaN(pkey)) {
+                        return pkey
+                    }
+                }
+            } catch (e) {
+                console.log("Could not parse value for mapillary:", value)
+            }
+        }
+        if (value.startsWith(Mapillary.valuePrefix)) {
             key = value.substring(0, value.lastIndexOf("?")).substring(value.lastIndexOf("/") + 1)
         } else if (value.match("[0-9]*")) {
             key = value

@@ -9,7 +9,7 @@
   export let clss: string | undefined = undefined
 </script>
 
-<button class={clss} on:click={() => osmConnection.AttemptLogin()}>
+<button class={clss} on:click={() => osmConnection.AttemptLogin()} style="margin-left: 0">
   <ToSvelte construct={Svg.login_svg().SetClass("w-12 m-1")} />
   <slot>
     <Tr t={Translations.t.general.loginWithOpenStreetMap} />

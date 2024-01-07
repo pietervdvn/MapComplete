@@ -1071,12 +1071,12 @@ video {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-32 {
@@ -2316,14 +2316,6 @@ input {
 
 input[type=text] {
   width: 100%;
-}
-
-.debug input, .debug textarea {
-  border: 6px solid red
-}
-
-.debug label input, .debug label textarea {
-  border: 1px solid grey;
 }
 
 /************************* BIG CATEGORIES ********************************/

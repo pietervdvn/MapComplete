@@ -39,8 +39,8 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
         })
     }
 
-    protected addData(featuress: Feature[][]) {
-        featuress = Utils.NoNull(featuress)
+    protected addData(sources: Feature[][]) {
+        sources = Utils.NoNull(sources)
         let somethingChanged = false
         const all: Map<string, Feature> = new Map()
         const unseen = new Set<string>()
@@ -51,7 +51,7 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
             unseen.add(oldValue.properties.id)
         }
 
-        for (const features of featuress) {
+        for (const features of sources) {
             for (const f of features) {
                 const id = f.properties.id
                 unseen.delete(id)

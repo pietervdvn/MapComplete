@@ -25,6 +25,8 @@ index_*.ts
 *.doctest.ts
 service-worker.js
 .env
+src/assets/editor-layer-index.json
+
 
 .vscode/*
 !.vscode/settings.json

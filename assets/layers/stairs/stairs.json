@@ -289,6 +289,35 @@
         }
       ],
       "condition": "conveying!=yes"
+    },
+    {
+      "id": "incline",
+      "render": {
+        "en": "These stairs have an incline of {incline}"
+      },
+      "freeform": {
+        "key": "incline",
+        "type": "slope"
+      },
+      "question": {
+        "en": "What is the incline of these stairs?"
+      },
+      "mappings": [
+        {
+          "if": "incline=up",
+          "then": {
+            "en": "The upward direction is {direction_absolute()}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "incline=down",
+          "then": {
+            "en": "The downward direction is {direction_absolute()}"
+          },
+          "hideInAnswer": true
+        }
+      ]
     }
   ]
 }

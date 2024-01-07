@@ -274,17 +274,20 @@ export default class MetaTagging {
                     console.warn(
                         "Could not calculate a " +
                             (isStrict ? "strict " : "") +
-                            " calculated tag for key " +
-                            key +
-                            " defined by " +
-                            code +
-                            " (in layer" +
-                            layerId +
+                            "calculated tag for key",
+                        key,
+                        "for feature",
+                        feat.properties.id,
+                        " defined by",
+                        code,
+                        "(in layer",
+                        layerId +
                             ") due to \n" +
                             e +
                             "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
                         e,
-                        e.stack
+                        e.stack,
+                        { feat }
                     )
                     MetaTagging.errorPrintCount++
                     if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {

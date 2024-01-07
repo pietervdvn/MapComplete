@@ -452,7 +452,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Various small methods that need to be called
      */
     private miscSetup() {
+        this.userRelatedState.a11y.addCallbackAndRunD((a11y) => {
+            if (a11y === "always") {
+                this.visualFeedback.setData(true)
+            } else if (a11y === "never") {
+                this.visualFeedback.setData(false)
+            }
+        })
         this.mapProperties.onKeyNavigationEvent((keyEvent) => {
+            if (this.userRelatedState.a11y.data === "never") {
+                return
+            }
             if (["north", "east", "south", "west"].indexOf(keyEvent.key) >= 0) {
                 this.visualFeedback.setData(true)
                 return true // Our job is done, unregister
@@ -482,7 +492,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * @private
      */
     private selectClosestAtCenter(i: number = 0) {
-        this.visualFeedback.setData(true)
+        if (this.userRelatedState.a11y.data !== "never") {
+            this.visualFeedback.setData(true)
+        }
         const toSelect = this.closestFeatures.features?.data?.[i]
         if (!toSelect) {
             window.requestAnimationFrame(() => {

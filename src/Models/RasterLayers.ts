@@ -83,6 +83,15 @@ export class AvailableRasterLayers {
             })
         )
     }
+
+    public static allIds(): Set<string> {
+        const all: string[] = []
+        all.push(...AvailableRasterLayers.globalLayers.map((l) => l.properties.id))
+        all.push(...AvailableRasterLayers.EditorLayerIndex.map((l) => l.properties.id))
+        all.push(this.osmCarto.properties.id)
+        all.push(this.maptilerDefaultLayer.properties.id)
+        return new Set<string>(all)
+    }
 }
 
 export class RasterLayerUtils {

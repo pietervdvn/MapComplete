@@ -145,7 +145,7 @@ export interface LayerConfigJson {
      * There are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information
      * The functions will be run in order, e.g.
      * [
- Not found...    *  "_max_overlap_m2=Math.max(...feat.overlapsWith("someOtherLayer").map(o => o.overlap))
+     *  "_max_overlap_m2=Math.max(...feat.overlapsWith("someOtherLayer").map(o => o.overlap))
      *  "_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area
      * ]
      *

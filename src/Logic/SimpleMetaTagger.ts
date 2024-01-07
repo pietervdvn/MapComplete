@@ -144,6 +144,9 @@ class CountryTagger extends SimpleMetaTagger {
                         tagsSource.data["_country"] = newCountry
                         tagsSource?.ping()
                     } else {
+                        // We set, be we don't ping... this is for later
+                        tagsSource.data["_country"] = newCountry
+
                         /**
                          * What is this weird construction?
                          *
@@ -160,7 +163,6 @@ class CountryTagger extends SimpleMetaTagger {
                          */
 
                         window.requestIdleCallback(() => {
-                            tagsSource.data["_country"] = newCountry
                             tagsSource?.ping()
                         })
                     }
@@ -478,10 +480,19 @@ export default class SimpleMetaTaggers {
                 // isOpen is irrelevant
                 return false
             }
+            if (feature.properties.opening_hours === undefined) {
+                return false
+            }
             if (feature.properties.opening_hours === "24/7") {
                 feature.properties._isOpen = "yes"
                 return true
             }
+            console.log(
+                "Calculating opening hours for",
+                feature.properties.name,
+                ":",
+                feature.properties.opening_hours
+            )
 
             // _isOpen is calculated dynamically on every call
             Object.defineProperty(feature.properties, "_isOpen", {
@@ -492,7 +503,8 @@ export default class SimpleMetaTaggers {
                     if (tags.opening_hours === undefined) {
                         return
                     }
-                    if (tags._country === undefined) {
+                    const country = tags._country
+                    if (country === undefined) {
                         return
                     }
 

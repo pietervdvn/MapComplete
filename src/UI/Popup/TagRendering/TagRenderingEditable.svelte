@@ -23,7 +23,7 @@
   export let editingEnabled: Store<boolean> | undefined = state?.featureSwitchUserbadge
 
   export let highlightedRendering: UIEventSource<string> = undefined
-  export let clss
+  export let clss = undefined
   /**
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */
@@ -97,16 +97,6 @@
           }}
         >
           <Tr t={Translations.t.general.cancel} />
-        </button>
-        <button
-          slot="upper-right"
-          class="h-8 w-8 cursor-pointer border-none p-0"
-          use:ariaLabel={Translations.t.general.cancel}
-          on:click={() => {
-            editMode = false
-          }}
-        >
-          <XCircleIcon />
         </button>
       </TagRenderingQuestion>
     {:else}

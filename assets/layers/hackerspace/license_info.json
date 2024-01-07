@@ -1,0 +1,92 @@
+[
+  {
+    "path": "3d_printer.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "bicycle.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "ceramics.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "cnc.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "lasercutter.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "media_studio.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "metal.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "sewing_machine.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  },
+  {
+    "path": "woodworking.svg",
+    "license": "CC-By-SA",
+    "authors": [
+      "Verbund Offener Werkstätten"
+    ],
+    "sources": [
+      "https://www.offene-werkstaetten.org/de/werkstatt-suche"
+    ]
+  }
+]

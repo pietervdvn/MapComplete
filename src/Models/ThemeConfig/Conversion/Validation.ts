@@ -21,6 +21,9 @@ import PresetConfig from "../PresetConfig"
 import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 import { Translatable } from "../Json/Translatable"
 import { ConversionContext } from "./ConversionContext"
+import * as eli from "../../../assets/editor-layer-index.json"
+import { AvailableRasterLayers } from "../../RasterLayers"
+import Back from "../../../assets/svg/Back.svelte"
 
 class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
     private readonly _languages: string[]
@@ -124,6 +127,7 @@ export class DoesImageExist extends DesugaringStep<string> {
 }
 
 export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
+    private static readonly _availableLayers = AvailableRasterLayers.allIds()
     /**
      * The paths where this layer is originally saved. Triggers some extra checks
      * @private
@@ -258,6 +262,19 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             context
                 .enter("overpassUrl")
                 .err("The overpassURL is a string, use a list of strings instead. Wrap it with [ ]")
+        }
+
+        if (json.defaultBackgroundId) {
+            const backgroundId = json.defaultBackgroundId
+
+            const isCategory =
+                backgroundId === "photo" || backgroundId === "map" || backgroundId === "osmbasedmap"
+
+            if (!isCategory && !ValidateTheme._availableLayers.has(backgroundId)) {
+                context
+                    .enter("defaultBackgroundId")
+                    .err("This layer ID is not known: " + backgroundId)
+            }
         }
 
         return json
@@ -421,6 +438,7 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
             // No need to check the writable tags, as this cannot write
             return json
         }
+
         function addAll(keys: { forEach: (f: (s: string) => void) => void }, addTo: Set<string>) {
             keys?.forEach((k) => addTo.add(k))
         }
@@ -1359,6 +1377,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
 
 export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
     private readonly validator: ValidateLayer
+
     constructor(
         path: string,
         isBuiltin: boolean,
@@ -1385,6 +1404,7 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
         return prepared?.raw
     }
 }
+
 export class ValidateLayer extends Conversion<
     LayerConfigJson,
     { parsed: LayerConfig; raw: LayerConfigJson }
@@ -1459,6 +1479,19 @@ export class ValidateLayer extends Conversion<
             }
             if (<any>titleIcon.render === "icons.rating") {
                 context.enters("titleIcons", i).err("Detected a literal 'icons.rating'")
+            }
+        }
+
+        for (let i = 0; i < json.presets?.length; i++) {
+            const preset = json.presets[i]
+            if (
+                preset.snapToLayer === undefined &&
+                preset.maxSnapDistance !== undefined &&
+                preset.maxSnapDistance !== null
+            ) {
+                context
+                    .enters("presets", i, "maxSnapDistance")
+                    .err("A maxSnapDistance is given, but there is no layer given to snap to")
             }
         }
 

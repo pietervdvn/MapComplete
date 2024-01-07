@@ -79,7 +79,7 @@ export default class TagRenderingConfig {
     public readonly mappings?: Mapping[]
     public readonly editButtonAriaLabel?: Translation
     public readonly labels: string[]
-    public readonly classes: string[]
+    public readonly classes: string[] | undefined
 
     constructor(
         config: string | TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
@@ -131,6 +131,9 @@ export default class TagRenderingConfig {
             this.classes = json.classes ?? []
         }
         this.classes = [].concat(...this.classes.map((cl) => cl.split(" ")))
+        if (this.classes.length === 0) {
+            this.classes = undefined
+        }
 
         this.render = Translations.T(<any>json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
@@ -233,8 +236,10 @@ export default class TagRenderingConfig {
 
             const commonIconSize =
                 Utils.NoNull(
-                    json.mappings.map((m) => (m.icon !== undefined ? m.icon["class"] : undefined))
-                )[0] ?? "small"
+                    json.mappings.map((m) => (!!m.icon ? m.icon["class"] : undefined))
+                )[0] ??
+                json["#iconsize"] ??
+                "small"
             this.mappings = json.mappings.map((m, i) =>
                 TagRenderingConfig.ExtractMapping(
                     m,
@@ -364,7 +369,7 @@ export default class TagRenderingConfig {
 
         let icon = undefined
         let iconClass = commonSize
-        if (mapping.icon !== undefined) {
+        if (!!mapping.icon) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
                 let stripped = mapping.icon
                 if (stripped.endsWith(".svg")) {
@@ -378,7 +383,7 @@ export default class TagRenderingConfig {
                 } else {
                     icon = mapping.icon
                 }
-            } else {
+            } else if (mapping.icon["path"]) {
                 icon = mapping.icon["path"]
                 iconClass = mapping.icon["class"] ?? iconClass
             }
@@ -647,12 +652,6 @@ export default class TagRenderingConfig {
         multiSelectedMapping: boolean[] | undefined,
         currentProperties: Record<string, string>
     ): UploadableTag {
-        console.log("Constructing change spec", {
-            freeformValue,
-            singleSelectedMapping,
-            multiSelectedMapping,
-            currentProperties,
-        })
         if (typeof freeformValue === "string") {
             freeformValue = freeformValue?.trim()
         }

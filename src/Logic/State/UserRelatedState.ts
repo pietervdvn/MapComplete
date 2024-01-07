@@ -41,6 +41,7 @@ export default class UserRelatedState {
     public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
     public readonly showCrosshair: UIEventSource<"yes" | "always" | "no" | undefined>
     public readonly fixateNorth: UIEventSource<undefined | "yes">
+    public readonly a11y: UIEventSource<undefined | "always" | "never" | "default">
     public readonly homeLocation: FeatureSource
     /**
      * The language as saved into the preferences of the user, if logged in.
@@ -109,6 +110,10 @@ export default class UserRelatedState {
         this.showTags = <UIEventSource<any>>this.osmConnection.GetPreference("show_tags")
         this.showCrosshair = <UIEventSource<any>>this.osmConnection.GetPreference("show_crosshair")
         this.fixateNorth = <UIEventSource<"yes">>this.osmConnection.GetPreference("fixate-north")
+        this.a11y = <UIEventSource<"always" | "never" | "default">>(
+            this.osmConnection.GetPreference("a11y")
+        )
+
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         )

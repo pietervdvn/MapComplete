@@ -55,12 +55,19 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
 
                 for (const key in obj) {
                     let subtarget = target
-                    if (isTr && target[key] !== undefined) {
+                    if (isTr) {
                         // The target is a translation AND the current object is a translation
                         // This means we should recursively replace with the translated value
-                        subtarget = target[key]
+                        if (target[key]) {
+                            // A translation is available!
+                            subtarget = target[key]
+                        } else if (target["en"]) {
+                            subtarget = target["en"]
+                        } else {
+                            // Take the first
+                            subtarget = target[Object.keys(target)[0]]
+                        }
                     }
-
                     obj[key] = replaceRecursive(obj[key], subtarget)
                 }
                 return obj

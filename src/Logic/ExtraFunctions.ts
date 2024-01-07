@@ -264,7 +264,8 @@ class ClosestNObjectFunc implements ExtraFunction {
             const bbox = GeoOperations.bbox(
                 GeoOperations.buffer(GeoOperations.bbox(feature), maxDistance)
             )
-            allFeatures = params.getFeaturesWithin(name, new BBox(bbox.geometry.coordinates))
+            const coors = <[number, number][]>bbox.geometry.coordinates
+            allFeatures = params.getFeaturesWithin(name, new BBox(coors))
         } else {
             allFeatures = [features]
         }

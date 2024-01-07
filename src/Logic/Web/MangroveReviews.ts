@@ -252,7 +252,7 @@ export default class FeatureReviews {
         // `u` stands for `uncertainty`, https://www.rfc-editor.org/rfc/rfc5870#section-3.4.3
         const self = this
         return this._name.map(function (name) {
-            let uri = `geo:${self._lat},${self._lon}?u=${self._uncertainty}`
+            let uri = `geo:${self._lat},${self._lon}?u=${Math.round(self._uncertainty)}`
             if (name) {
                 uri += "&q=" + (dontEncodeName ? name : encodeURIComponent(name))
             }

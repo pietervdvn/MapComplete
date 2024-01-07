@@ -159,7 +159,7 @@ class ApplyButton extends UIElement {
     private async Run() {
         try {
             console.log("Applying auto-action on " + this.target_feature_ids.length + " features")
-
+            const appliedOn: string[] = []
             for (let i = 0; i < this.target_feature_ids.length; i++) {
                 const targetFeatureId = this.target_feature_ids[i]
                 const feature = this.state.indexedFeatures.featuresById.data.get(targetFeatureId)
@@ -190,6 +190,7 @@ class ApplyButton extends UIElement {
                         specialRendering.args
                     )
                 }
+                appliedOn.push(targetFeatureId)
                 if (i % 50 === 0) {
                     await this.state.changes.flushChanges("Auto button: intermediate save")
                 }
@@ -198,6 +199,12 @@ class ApplyButton extends UIElement {
             console.log("Flushing changes...")
             await this.state.changes.flushChanges("Auto button: done")
             this.buttonState.setData("done")
+            console.log(
+                "Applied changes onto",
+                appliedOn.length,
+                "items, unique IDs:",
+                new Set(appliedOn).size
+            )
         } catch (e) {
             console.error("Error while running autoApply: ", e)
             this.buttonState.setData({ error: e })

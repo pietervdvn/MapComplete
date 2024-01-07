@@ -83,7 +83,7 @@
 </script>
 
 {#if $matchesTerm && !$mappingIsHidden}
-  <label class={twJoin("flex", mappingIsSelected && "checked")}>
+  <label class={twJoin("flex gap-x-1", mappingIsSelected && "checked")}>
     <slot />
     <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer} />
   </label>

@@ -511,15 +511,25 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             await Utils.waitFor(250)
         }
     }
-    public installCustomKeyboardHandler(viewport: Store<HTMLDivElement>) {
-        viewport.mapD(
+    public installCustomKeyboardHandler(viewportStore: UIEventSource<HTMLDivElement>) {
+        viewportStore.mapD(
             (viewport) => {
                 const map = this._maplibreMap.data
                 if (!map) {
                     return
                 }
                 const oldKeyboard = map.keyboard
-                oldKeyboard._panStep = viewport.getBoundingClientRect().width
+                const w = viewport.getBoundingClientRect().width
+                if (w < 10) {
+                    /// this is weird, but definitively wrong!
+                    console.log("Got a very small bound", w, viewport)
+                    // We try again later on
+                    window.requestAnimationFrame(() => {
+                        viewportStore.ping()
+                    })
+                    return
+                }
+                oldKeyboard._panStep = w
             },
             [this._maplibreMap]
         )

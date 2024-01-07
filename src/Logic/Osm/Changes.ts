@@ -148,7 +148,6 @@ export class Changes {
     }
 
     public applyChanges(changes: ChangeDescription[]) {
-        console.log("Received changes:", changes)
         this.pendingChanges.data.push(...changes)
         this.pendingChanges.ping()
         this.allChanges.data.push(...changes)
@@ -191,7 +190,6 @@ export class Changes {
                 }
                 // This is a new object that should be created
                 states.set(id, "created")
-                console.log("Creating object for changeDescription", change)
                 let osmObj: OsmObject = undefined
                 switch (change.type) {
                     case "node":
@@ -255,7 +253,6 @@ export class Changes {
                         const nlon = Utils.Round7(change.changes.lon)
                         const n = <OsmNode>obj
                         if (n.lat !== nlat || n.lon !== nlon) {
-                            console.log("Node moved:", n.lat, nlat, n.lon, nlon)
                             n.lat = nlat
                             n.lon = nlon
                             changed = true
@@ -443,7 +440,6 @@ export class Changes {
             objects.forEach((obj) => SimpleMetaTagger.removeBothTagging(obj.tags))
         }
 
-        console.log("Got the fresh objects!", objects, "pending: ", pending)
         if (pending.length == 0) {
             console.log("No pending changes...")
             return true
@@ -528,9 +524,7 @@ export class Changes {
         await this._changesetHandler.UploadChangeset(
             (csId, remappings) => {
                 if (remappings.size > 0) {
-                    console.log("Rewriting pending changes from", pending, "with", remappings)
                     pending = pending.map((ch) => ChangeDescriptionTools.rewriteIds(ch, remappings))
-                    console.log("Result is", pending)
                 }
 
                 const changes: {

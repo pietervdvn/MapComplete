@@ -24,7 +24,7 @@
   export let backToStudio: () => void
   let messages = state.messages
   let hasErrors = messages.mapD(
-    (m: ConversionMessage[]) => m.filter((m) => m.level === "error").length
+    (m: ConversionMessage[]) => m.filter((m) => m.level === "error").length,
   )
   const configuration = state.configuration
 
@@ -73,6 +73,7 @@
   })
 
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
+
   function deleteLayer() {
     state.delete()
     backToStudio()
@@ -93,15 +94,32 @@
     {:else if $hasErrors > 0}
       <div class="alert">{$hasErrors} errors detected</div>
     {:else}
-      <a
-        class="primary button"
-        href={baseUrl + state.server.layerUrl(title.data)}
-        target="_blank"
-        rel="noopener"
-      >
-        Try it out
-        <ChevronRightIcon class="h-6 w-6 shrink-0" />
-      </a>
+      <div class="flex">
+        <a
+          class="button small"
+          href={baseUrl + state.server.layerUrl(title.data) + "&test=true"}
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="flex flex-col">
+
+            <b>
+              Test in safe mode
+            </b>
+            <div>No changes are recoded to OSM</div>
+          </div>
+          <ChevronRightIcon class="h-6 w-6 shrink-0" />
+        </a>
+        <a
+          class="primary button"
+          href={baseUrl + state.server.layerUrl(title.data)}
+          target="_blank"
+          rel="noopener"
+        >
+          Try it out
+          <ChevronRightIcon class="h-6 w-6 shrink-0" />
+        </a>
+      </div>
     {/if}
   </div>
 
@@ -120,7 +138,8 @@
           <Region {state} configs={perRegion["Basic"]} />
           <div class="mt-12">
             <button on:click={() => deleteLayer()} class="small">
-              <TrashIcon class="h-6 w-6" /> Delete this layer
+              <TrashIcon class="h-6 w-6" />
+              Delete this layer
             </button>
           </div>
         </div>

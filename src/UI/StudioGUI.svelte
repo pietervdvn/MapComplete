@@ -95,7 +95,7 @@
   const version = meta.version
 
   async function editLayer(event: Event) {
-    const layerId: { owner: number; id: string } = event.detail
+    const layerId: { owner: number; id: string } = event["detail"]
     state = "loading"
     editLayerState.startSavingUpdates(false)
     editLayerState.configuration.setData(await studio.fetch(layerId.id, "layers", layerId.owner))
@@ -104,7 +104,7 @@
   }
 
   async function editTheme(event: Event) {
-    const id: { id: string; owner: number } = event.detail
+    const id: { id: string; owner: number } = event["detail"]
     state = "loading"
     editThemeState.startSavingUpdates(false)
     editThemeState.configuration.setData(await studio.fetch(id.id, "themes", id.owner))

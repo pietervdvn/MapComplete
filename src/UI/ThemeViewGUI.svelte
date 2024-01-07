@@ -13,13 +13,7 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import {
-    CogIcon,
-    EyeIcon,
-    HeartIcon,
-    MenuIcon,
-    XCircleIcon,
-  } from "@rgossiaux/svelte-heroicons/solid"
+  import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
@@ -72,14 +66,12 @@
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
-  import { MapLibreAdaptor } from "./Map/MapLibreAdaptor.js"
-  import { QueryParameters } from "../Logic/Web/QueryParameters"
 
   export let state: ThemeViewState
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
-
+  selectedElement.addCallbackAndRun(se => console.log("Selected element", se))
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
   Orientation.singleton.startMeasurements()
@@ -100,8 +92,12 @@
     })
   })
 
-  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) =>
-    state.layout.getMatchingLayer(element.properties)
+  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
+      if (element.properties.id.startsWith("current_view")) {
+        return currentViewLayer
+      }
+      return state.layout.getMatchingLayer(element.properties)
+    },
   )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
@@ -109,6 +105,7 @@
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
   state.mapProperties.installCustomKeyboardHandler(viewport)
+
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
     if (!rect) {
@@ -142,7 +139,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
   let previewedImage = state.previewedImage
 
@@ -189,9 +186,11 @@
 
   <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
     <If condition={state.visualFeedback}>
-      <div class="w-fit">
-        <VisualFeedbackPanel {state} />
-      </div>
+      {#if $selectedElement === undefined}
+        <div class="w-fit">
+          <VisualFeedbackPanel {state} />
+        </div>
+      {/if}
     </If>
     <If condition={state.featureSwitches.featureSwitchSearch}>
       <Geosearch
@@ -226,7 +225,7 @@
     {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
       <MapControlButton
         on:click={() => {
-          selectedElement.setData(state.currentView.features?.data?.[0])
+          state.selectedElement.setData(state.currentView.features?.data?.[0])
         }}
         on:keydown={forwardEventToMap}
       >

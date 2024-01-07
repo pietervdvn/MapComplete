@@ -151,7 +151,7 @@
         $freeformInput,
         selectedMapping,
         checkedMappings,
-        tags.data
+        tags.data,
       )
     } catch (e) {
       console.error("Could not calculate changeSpecification:", e)
@@ -213,136 +213,53 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      })
+      }),
     )
   }
 </script>
 
 {#if question !== undefined}
-  <form
-    class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
-    style="max-height: 75vh"
-    on:submit|preventDefault={() => onSave()}
-  >
-    <label class="neutral-label">
-      <div class="interactive sticky top-0 flex justify-between pt-1" style="z-index: 11">
-        <span class="font-bold">
-          <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
-        </span>
-        <slot name="upper-right" />
-      </div>
+  <div class="relative">
 
-      {#if config.questionhint}
-        <div class="max-h-60 overflow-y-auto">
-          <SpecialTranslation
-            t={config.questionhint}
-            {tags}
-            {state}
-            {layer}
-            feature={selectedElement}
-          />
-        </div>
-      {/if}
+    <form
+      class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
+      style="max-height: 75vh"
+      on:submit|preventDefault={() => onSave()}
+    >
+      <fieldset>
 
-      {#if config.mappings?.length >= 8}
-        <div class="sticky flex w-full" aria-hidden="true">
-          <Search class="h-6 w-6" />
-          <input
-            type="text"
-            bind:value={$searchTerm}
-            class="w-full"
-            use:placeholder={Translations.t.general.searchAnswer}
-          />
-        </div>
-      {/if}
+        <legend>
+            <div class="interactive sticky top-0 justify-between pt-1 font-bold" style="z-index: 11">
+                <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
+            </div>
 
-      {#if config.freeform?.key && !(mappings?.length > 0)}
-        <!-- There are no options to choose from, simply show the input element: fill out the text field -->
-        <FreeformInput
-          {config}
-          {tags}
-          {feedback}
-          {unit}
-          {state}
-          feature={selectedElement}
-          value={freeformInput}
-          on:submit={onSave}
-        />
-      {:else if mappings !== undefined && !config.multiAnswer}
-        <!-- Simple radiobuttons as mapping -->
-        <div class="flex flex-col">
-          {#each config.mappings as mapping, i (mapping.then)}
-            <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
-            <TagRenderingMappingInput
-              {mapping}
-              {tags}
-              {state}
-              {selectedElement}
-              {layer}
-              {searchTerm}
-              mappingIsSelected={selectedMapping === i}
-            >
-              <input
-                type="radio"
-                bind:group={selectedMapping}
-                name={"mappings-radio-" + config.id}
-                value={i}
-                on:keypress={(e) => onInputKeypress(e)}
-              />
-            </TagRenderingMappingInput>
-          {/each}
-          {#if config.freeform?.key}
-            <label class="flex">
-              <input
-                type="radio"
-                bind:group={selectedMapping}
-                name={"mappings-radio-" + config.id}
-                value={config.mappings?.length}
-                on:keypress={(e) => onInputKeypress(e)}
-              />
-              <FreeformInput
-                {config}
-                {tags}
-                {feedback}
-                {unit}
-                {state}
-                feature={selectedElement}
-                value={freeformInput}
-                on:selected={() => (selectedMapping = config.mappings?.length)}
-                on:submit={onSave}
-              />
-            </label>
-          {/if}
-        </div>
-      {:else if mappings !== undefined && config.multiAnswer}
-        <!-- Multiple answers can be chosen: checkboxes -->
-        <div class="flex flex-col">
-          {#each config.mappings as mapping, i (mapping.then)}
-            <TagRenderingMappingInput
-              {mapping}
-              {tags}
-              {state}
-              {selectedElement}
-              {layer}
-              {searchTerm}
-              mappingIsSelected={checkedMappings[i]}
-            >
-              <input
-                type="checkbox"
-                name={"mappings-checkbox-" + config.id + "-" + i}
-                bind:checked={checkedMappings[i]}
-                on:keypress={(e) => onInputKeypress(e)}
-              />
-            </TagRenderingMappingInput>
-          {/each}
-          {#if config.freeform?.key}
-            <label class="flex">
-              <input
-                type="checkbox"
-                name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
-                bind:checked={checkedMappings[config.mappings.length]}
-                on:keypress={(e) => onInputKeypress(e)}
-              />
+            {#if config.questionhint}
+              <div class="max-h-60 overflow-y-auto">
+                <SpecialTranslation
+                  t={config.questionhint}
+                  {tags}
+                  {state}
+                  {layer}
+                  feature={selectedElement}
+                />
+              </div>
+            {/if}
+        </legend>
+
+            {#if config.mappings?.length >= 8}
+              <div class="sticky flex w-full" aria-hidden="true">
+                <Search class="h-6 w-6" />
+                <input
+                  type="text"
+                  bind:value={$searchTerm}
+                  class="w-full"
+                  use:placeholder={Translations.t.general.searchAnswer}
+                />
+              </div>
+            {/if}
+
+            {#if config.freeform?.key && !(mappings?.length > 0)}
+              <!-- There are no options to choose from, simply show the input element: fill out the text field -->
               <FreeformInput
                 {config}
                 {tags}
@@ -353,39 +270,122 @@
                 value={freeformInput}
                 on:submit={onSave}
               />
-            </label>
+            {:else if mappings !== undefined && !config.multiAnswer}
+              <!-- Simple radiobuttons as mapping -->
+              <div class="flex flex-col">
+                {#each config.mappings as mapping, i (mapping.then)}
+                  <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
+                  <TagRenderingMappingInput
+                    {mapping}
+                    {tags}
+                    {state}
+                    {selectedElement}
+                    {layer}
+                    {searchTerm}
+                    mappingIsSelected={selectedMapping === i}
+                  >
+                    <input
+                      type="radio"
+                      bind:group={selectedMapping}
+                      name={"mappings-radio-" + config.id}
+                      value={i}
+                      on:keypress={(e) => onInputKeypress(e)}
+                    />
+                  </TagRenderingMappingInput>
+                {/each}
+                {#if config.freeform?.key}
+                  <label class="flex gap-x-1">
+                    <input
+                      type="radio"
+                      bind:group={selectedMapping}
+                      name={"mappings-radio-" + config.id}
+                      value={config.mappings?.length}
+                      on:keypress={(e) => onInputKeypress(e)}
+                    />
+                    <FreeformInput
+                      {config}
+                      {tags}
+                      {feedback}
+                      {unit}
+                      {state}
+                      feature={selectedElement}
+                      value={freeformInput}
+                      on:selected={() => (selectedMapping = config.mappings?.length)}
+                      on:submit={onSave}
+                    />
+                  </label>
+                {/if}
+              </div>
+            {:else if mappings !== undefined && config.multiAnswer}
+              <!-- Multiple answers can be chosen: checkboxes -->
+              <div class="flex flex-col">
+                {#each config.mappings as mapping, i (mapping.then)}
+                  <TagRenderingMappingInput
+                    {mapping}
+                    {tags}
+                    {state}
+                    {selectedElement}
+                    {layer}
+                    {searchTerm}
+                    mappingIsSelected={checkedMappings[i]}
+                  >
+                    <input
+                      type="checkbox"
+                      name={"mappings-checkbox-" + config.id + "-" + i}
+                      bind:checked={checkedMappings[i]}
+                      on:keypress={(e) => onInputKeypress(e)}
+                    />
+                  </TagRenderingMappingInput>
+                {/each}
+                {#if config.freeform?.key}
+                  <label class="flex gap-x-1">
+                    <input
+                      type="checkbox"
+                      name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
+                      bind:checked={checkedMappings[config.mappings.length]}
+                      on:keypress={(e) => onInputKeypress(e)}
+                    />
+                    <FreeformInput
+                      {config}
+                      {tags}
+                      {feedback}
+                      {unit}
+                      {state}
+                      feature={selectedElement}
+                      value={freeformInput}
+                      on:submit={onSave}
+                    />
+                  </label>
+                {/if}
+              </div>
+            {/if}
+        <LoginToggle {state}>
+          <Loading slot="loading" />
+          <SubtleButton slot="not-logged-in" on:click={() => state?.osmConnection?.AttemptLogin()}>
+            <Login slot="image" class="h-8 w-8" />
+            <Tr t={Translations.t.general.loginToStart} slot="message" />
+          </SubtleButton>
+          {#if $feedback !== undefined}
+            <div class="alert" aria-live="assertive" role="alert">
+              <Tr t={$feedback} />
+            </div>
           {/if}
-        </div>
-      {/if}
-    </label>
-
-    <LoginToggle {state}>
-      <Loading slot="loading" />
-      <SubtleButton slot="not-logged-in" on:click={() => state?.osmConnection?.AttemptLogin()}>
-        <Login slot="image" class="h-8 w-8" />
-        <Tr t={Translations.t.general.loginToStart} slot="message" />
-      </SubtleButton>
-      {#if $feedback !== undefined}
-        <div class="alert" aria-live="assertive" role="alert">
-          <Tr t={$feedback} />
-        </div>
-      {/if}
-      <div
-        class="interactive sticky bottom-0 flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap"
-        style="z-index: 11"
-      >
-        <!-- TagRenderingQuestion-buttons -->
-        <slot name="cancel" />
-        <slot name="save-button" {selectedTags}>
-          <button
-            on:click={onSave}
-            class={twJoin(selectedTags === undefined ? "disabled" : "button-shadow", "primary")}
+          <div
+            class="interactive sticky bottom-0 flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap"
+            style="z-index: 11"
           >
-            <Tr t={Translations.t.general.save} />
-          </button>
-        </slot>
-      </div>
-      {#if UserRelatedState.SHOW_TAGS_VALUES.indexOf($showTags) >= 0 || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
+            <!-- TagRenderingQuestion-buttons -->
+            <slot name="cancel" />
+            <slot name="save-button" {selectedTags}>
+              <button
+                on:click={onSave}
+                class={twJoin(selectedTags === undefined ? "disabled" : "button-shadow", "primary")}
+              >
+                <Tr t={Translations.t.general.save} />
+              </button>
+            </slot>
+          </div>
+          {#if UserRelatedState.SHOW_TAGS_VALUES.indexOf($showTags) >= 0 || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
         <span class="flex flex-wrap justify-between">
           <TagHint {state} tags={selectedTags} currentProperties={$tags} />
           <span class="flex flex-wrap">
@@ -397,8 +397,12 @@
             {/if}
           </span>
         </span>
-      {/if}
-      <slot name="under-buttons" />
-    </LoginToggle>
-  </form>
+          {/if}
+          <slot name="under-buttons" />
+        </LoginToggle>
+      </fieldset>
+
+    </form>
+  </div>
+
 {/if}

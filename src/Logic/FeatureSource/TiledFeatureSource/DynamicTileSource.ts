@@ -6,7 +6,7 @@ import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
 
 /***
  * A tiled source which dynamically loads the required tiles at a fixed zoom level.
- * A single featureSource will be initiliased for every tile in view; which will alter be merged into this featureSource
+ * A single featureSource will be initialized for every tile in view; which will later be merged into this featureSource
  */
 export default class DynamicTileSource extends FeatureSourceMerger {
     constructor(

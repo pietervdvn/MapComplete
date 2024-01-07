@@ -1,15 +1,17 @@
 import { exec } from "child_process"
-import { describe, it } from "vitest"
-
+import { describe, expect, it, test } from "vitest"
+import { webcrypto } from "node:crypto"
 import { parse as parse_html } from "node-html-parser"
 import { readFileSync } from "fs"
 import ScriptUtils from "../scripts/ScriptUtils"
+
 function detectInCode(forbidden: string, reason: string) {
     return wrap(detectInCodeUnwrapped(forbidden, reason))
 }
+
 /**
  *
- * @param forbidden: a GREP-regex. This means that '.' is a wildcard and should be escaped to match a literal dot
+ * @param forbidden a GREP-regex. This means that '.' is a wildcard and should be escaped to match a literal dot
  * @param reason
  * @private
  */
@@ -64,13 +66,23 @@ function wrap(promise: Promise<void>): (done: () => void) => void {
     }
 }
 
-function validateScriptIntegrityOf(path: string) {
+function _arrayBufferToBase64(buffer) {
+    var binary = ""
+    var bytes = new Uint8Array(buffer)
+    var len = bytes.byteLength
+    for (var i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i])
+    }
+    return btoa(binary)
+}
+
+async function validateScriptIntegrityOf(path: string): Promise<void> {
     const htmlContents = readFileSync(path, "utf8")
     const doc = parse_html(htmlContents)
     // @ts-ignore
     const scripts = Array.from(doc.getElementsByTagName("script"))
     for (const script of scripts) {
-        const src = script.getAttribute("src")
+        let src = script.getAttribute("src")
         if (src === undefined) {
             continue
         }
@@ -87,6 +99,18 @@ function validateScriptIntegrityOf(path: string) {
         if (crossorigin !== "anonymous") {
             throw new Error(ctx + " has crossorigin missing or not set to 'anonymous'")
         }
+        if (src.startsWith("//")) {
+            src = "https:" + src
+        }
+        // Using 'scriptUtils' actually fetches data from the internet, it is not prohibited by the testHooks
+        const data: string = (await ScriptUtils.Download(src))["content"]
+        const hashed = await webcrypto.subtle.digest("SHA-384", new TextEncoder().encode(data))
+        const hashedStr = _arrayBufferToBase64(hashed)
+        console.log(src, hashedStr, integrity)
+        expect(integrity).to.equal(
+            "sha384-" + hashedStr,
+            "Loading a script from '" + src + "' in the file " + path + " has a mismatched checksum"
+        )
     }
 }
 
@@ -112,10 +136,10 @@ describe("Code quality", () => {
         )
     )
 
-    it("scripts with external sources should have an integrity hash", () => {
+    test("scripts with external sources should have an integrity hash", async () => {
         const htmlFiles = ScriptUtils.readDirRecSync(".", 1).filter((f) => f.endsWith(".html"))
         for (const htmlFile of htmlFiles) {
-            validateScriptIntegrityOf(htmlFile)
+            await validateScriptIntegrityOf(htmlFile)
         }
     })
     /*

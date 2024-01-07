@@ -127,13 +127,6 @@
       <button slot="cancel" class="items-center" on:click={() => (currentState = "start")}>
         <Tr t={t.cancel} />
       </button>
-      <XCircleIcon
-        slot="upper-right"
-        class="h-8 w-8 cursor-pointer"
-        on:click={() => {
-          currentState = "start"
-        }}
-      />
 
       <div slot="under-buttons">
         {#if selectedTags !== undefined}

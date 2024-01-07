@@ -184,14 +184,6 @@ export default class LayerConfig extends WithContextLoader {
                     snapToLayers,
                     maxSnapDistance: pr.maxSnapDistance ?? 10,
                 }
-            } else if (pr.maxSnapDistance !== undefined) {
-                throw (
-                    "Layer " +
-                    this.id +
-                    " defines a maxSnapDistance, but does not include a `snapToLayer` (at " +
-                    context +
-                    ")"
-                )
             }
 
             const config: PresetConfig = {
