@@ -4,13 +4,14 @@ import { webcrypto } from "node:crypto"
 import { parse as parse_html } from "node-html-parser"
 import { readFileSync } from "fs"
 import ScriptUtils from "../scripts/ScriptUtils"
-import hash from "svelte/types/compiler/compile/utils/hash"
+
 function detectInCode(forbidden: string, reason: string) {
     return wrap(detectInCodeUnwrapped(forbidden, reason))
 }
+
 /**
  *
- * @param forbidden: a GREP-regex. This means that '.' is a wildcard and should be escaped to match a literal dot
+ * @param forbidden a GREP-regex. This means that '.' is a wildcard and should be escaped to match a literal dot
  * @param reason
  * @private
  */
@@ -64,6 +65,7 @@ function wrap(promise: Promise<void>): (done: () => void) => void {
         promise.then(done)
     }
 }
+
 function _arrayBufferToBase64(buffer) {
     var binary = ""
     var bytes = new Uint8Array(buffer)
@@ -73,6 +75,7 @@ function _arrayBufferToBase64(buffer) {
     }
     return btoa(binary)
 }
+
 async function validateScriptIntegrityOf(path: string): Promise<void> {
     const htmlContents = readFileSync(path, "utf8")
     const doc = parse_html(htmlContents)
@@ -99,9 +102,9 @@ async function validateScriptIntegrityOf(path: string): Promise<void> {
         if (src.startsWith("//")) {
             src = "https:" + src
         }
-        const request = await fetch(src)
-        const data: ArrayBuffer = await request.arrayBuffer()
-        const hashed = await webcrypto.subtle.digest("SHA-384", data)
+        // Using 'scriptUtils' actually fetches data from the internet, it is not prohibited by the testHooks
+        const data: string = (await ScriptUtils.Download(src))["content"]
+        const hashed = await webcrypto.subtle.digest("SHA-384", new TextEncoder().encode(data))
         const hashedStr = _arrayBufferToBase64(hashed)
         console.log(src, hashedStr, integrity)
         expect(integrity).to.equal(
