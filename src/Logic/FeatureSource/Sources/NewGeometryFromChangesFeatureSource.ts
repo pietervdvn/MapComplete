@@ -62,7 +62,6 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
         }
 
         const allElementStorage = this._allElementStorage
-        console.log("Handling pending change", change)
         if (change.id > 0) {
             // This is an already existing object
             // In _most_ of the cases, this means that this _isn't_ a new object
