@@ -679,12 +679,10 @@ This list will be sorted
     }
 
     public static weekdaysIdentical(openingRanges: OpeningRange[][], startday = 0, endday = 4) {
-        console.log("Checking identical:", openingRanges)
         const monday = openingRanges[startday]
         for (let i = startday + 1; i <= endday; i++) {
             let weekday = openingRanges[i]
             if (weekday.length !== monday.length) {
-                console.log("Mismatched length")
                 return false
             }
             for (let j = 0; j < weekday.length; j++) {
