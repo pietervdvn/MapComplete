@@ -39,7 +39,7 @@
         "es": "enlaces nodo a nodo",
         "nl": "Verbindingen van node naar node",
         "fr": "liens noeud à noeud",
-        "ca": "enllaços node a node",
+        "ca": "Enllaços node a node",
         "cs": "propojení mezi uzly",
         "pl": "łącza węzeł do węzła"
       },
@@ -130,7 +130,7 @@
       "name": {
         "en": "Nodes",
         "de": "Knotenpunkte",
-        "ca": "nodes",
+        "ca": "Nodes",
         "es": "nodos",
         "nb_NO": "noder",
         "nl": "Knooppunten",
@@ -304,7 +304,8 @@
           "title": {
             "en": "a cycling node",
             "nl": "een fietsknooppunt",
-            "de": "ein Knoten eines Fahrradknotenpunktnetzwerks"
+            "de": "ein Knoten eines Fahrradknotenpunktnetzwerks",
+            "ca": "un node ciclista"
           },
           "snapToLayer": [
             "cycleways_and_roads"

@@ -5042,6 +5042,30 @@
                         "2": {
                             "1": "a CNC drill",
                             "2": "CNC drill"
+                        },
+                        "3": {
+                            "1": "a multimedia studio",
+                            "2": "multimedia studio"
+                        },
+                        "4": {
+                            "1": "a sewing machine",
+                            "2": "sewing machine"
+                        },
+                        "5": {
+                            "1": "a woodworking workshop",
+                            "2": "woodworking workshop"
+                        },
+                        "6": {
+                            "1": "a ceramics workshop",
+                            "2": "ceramics workshop"
+                        },
+                        "7": {
+                            "1": "a metal workshop",
+                            "2": "metal workshop"
+                        },
+                        "8": {
+                            "1": "a bicycle repair workshop",
+                            "2": "bicycle repair workshop"
                         }
                     }
                 }

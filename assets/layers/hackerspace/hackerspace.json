@@ -330,7 +330,8 @@
               "en": "woodworking workshop"
             },
             "./assets/layers/hackerspace/woodworking.svg"
-          ], [
+          ],
+          [
             "workshop:ceramics",
             {
               "en": "a ceramics workshop"
@@ -346,7 +347,7 @@
               "en": "a metal workshop"
             },
             {
-              "en": "meta workshop"
+              "en": "metal workshop"
             },
             "./assets/layers/hackerspace/metal.svg"
           ],

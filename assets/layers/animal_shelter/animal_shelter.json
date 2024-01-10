@@ -5,7 +5,8 @@
     "de": "Tierheime",
     "es": "Centros de acogida de animales",
     "zh_Hans": "动物收容所",
-    "pt": "Abrigo para animais"
+    "pt": "Abrigo para animais",
+    "ca": "Refugi d'animals"
   },
   "description": {
     "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
@@ -67,7 +68,8 @@
         "de": "ein Tierheim",
         "es": "una protectora de animales",
         "zh_Hans": "动物收容所",
-        "pt": "um abrigo para animais"
+        "pt": "um abrigo para animais",
+        "ca": "un refugi d'animals"
       },
       "tags": [
         "amenity=animal_shelter"
@@ -86,7 +88,8 @@
         "en": "What is the name of this animal shelter?",
         "de": "Wie lautet der Name des Tierheims?",
         "es": "¿Cómo se llama este refugio de animales?",
-        "zh_Hans": "这个动物收容所叫什么名字？"
+        "zh_Hans": "这个动物收容所叫什么名字？",
+        "ca": "Quin nom té aquest refugi d'animals?"
       },
       "render": {
         "en": "This animal shelter is named <b>{name}</b>",
@@ -112,7 +115,8 @@
             "en": "Animals are kept here until adopted by a new owner",
             "de": "Tiere werden hier bis zur Abgabe an einen neuen Besitzer untergebracht",
             "es": "Los animales permanecen aquí hasta que son adoptados por un nuevo propietario",
-            "zh_Hans": "动物被饲养在这里直到被新主人收养"
+            "zh_Hans": "动物被饲养在这里直到被新主人收养",
+            "ca": "Els animals romanen ací fins que son adoptats per un nou propietari"
           },
           "if": "purpose=adoption"
         },
