@@ -26,7 +26,9 @@ export default class LinkToWeblate extends VariableUiElement {
                     if (availableTranslations[ln] === undefined) {
                         icon.SetClass("bg-red-400")
                     }
-                    return new Link(icon, LinkToWeblate.hrefToWeblate(ln, context), true)
+                    return new Link(icon, LinkToWeblate.hrefToWeblate(ln, context), true).SetClass(
+                        "weblate-link"
+                    )
                 },
                 [Locale.showLinkToWeblate]
             )
