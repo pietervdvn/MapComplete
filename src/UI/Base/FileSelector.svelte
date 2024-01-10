@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte"
+  import { createEventDispatcher, onDestroy } from "svelte"
   import { twMerge } from "tailwind-merge"
 
   export let accept: string
@@ -9,42 +9,62 @@
   export let cls: string = ""
   let drawAttention = false
   let inputElement: HTMLInputElement
-  let id = Math.random() * 1000000000 + ""
+  let formElement: HTMLFormElement
+  let id = "fileinput_" + Math.round(Math.random() * 1000000000000)
+
+  function handleDragEvent(e: DragEvent) {
+    if (e.target["id"] == id) {
+      return
+    }
+    if(formElement.contains(e.target) || document.getElementsByClassName("selected-element-view")[0]?.contains(e.target)){
+      e.preventDefault()
+      
+      if(e.type === "drop"){
+        console.log("Got a 'drop'", e)
+        drawAttention = false
+        dispatcher("submit", e.dataTransfer.files)
+        return
+      }
+      
+      drawAttention = true
+      e.dataTransfer.dropEffect = "copy"
+      
+      return
+      /*
+      drawAttention = false
+      dispatcher("submit", e.dataTransfer.files)
+      console.log("Committing")*/
+    }
+    drawAttention = false
+    e.preventDefault()
+    e.dataTransfer.effectAllowed = "none"
+    e.dataTransfer.dropEffect = "none"
+  }
+
+  window.addEventListener("dragenter", handleDragEvent)
+  window.addEventListener("dragover", handleDragEvent)
+  window.addEventListener("drop", handleDragEvent)
+
+  onDestroy(() => {
+    window.removeEventListener("dragenter", handleDragEvent)
+    window.removeEventListener("dragover", handleDragEvent)
+    window.removeEventListener("drop", handleDragEvent)
+  })
+
+
 </script>
 
 <form
-  on:change|preventDefault={() => {
-    drawAttention = false
-    dispatcher("submit", inputElement.files)
-  }}
-  on:dragend={() => {
-    console.log("Drag end")
-    drawAttention = false
-  }}
-  on:dragenter|preventDefault|stopPropagation={(e) => {
-    console.log("Dragging enter")
-    drawAttention = true
-    e.dataTransfer.drop = "copy"
-  }}
-  on:dragstart={() => {
-    console.log("DragStart")
-    drawAttention = false
-  }}
-  on:drop|preventDefault|stopPropagation={(e) => {
-    console.log("Got a 'drop'")
-    drawAttention = false
-    dispatcher("submit", e.dataTransfer.files)
-  }}
+  bind:this={formElement}
 >
   <label
     class={twMerge(cls, drawAttention ? "glowing-shadow" : "")}
-    style="margin-left:0"
-    tabindex="0"
-    for={"fileinput" + id}
+    for={id}
     on:click={() => {
-      console.log("Clicked", inputElement)
       inputElement.click()
     }}
+    style="margin-left:0"
+    tabindex="0"
   >
     <slot />
   </label>
@@ -52,7 +72,7 @@
     {accept}
     bind:this={inputElement}
     class="hidden"
-    id={"fileinput" + id}
+    {id}
     {multiple}
     name="file-input"
     type="file"
