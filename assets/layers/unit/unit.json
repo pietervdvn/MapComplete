@@ -132,7 +132,8 @@
           ],
           "human": {
             "en": "{quantity} A",
-            "nl": "{quantity} A"
+            "nl": "{quantity} A",
+            "ca": "{quantity} A"
           }
         }
       ],
@@ -173,7 +174,8 @@
             "en": "one meter",
             "fr": "un mètre",
             "nl": "één meter",
-            "de": "ein Meter"
+            "de": "ein Meter",
+            "ca": "un metre"
           }
         },
         {
@@ -197,7 +199,8 @@
           },
           "humanSingular": {
             "en": "one centimeter",
-            "nl": "één centimeter"
+            "nl": "één centimeter",
+            "ca": "un centímetre"
           }
         },
         {
@@ -218,7 +221,8 @@
           "humanSingular": {
             "en": "one millimeter",
             "nl": "één millimeter",
-            "de": "ein Millimeter"
+            "de": "ein Millimeter",
+            "ca": "un mil·límetre"
           }
         },
         {
@@ -330,11 +334,13 @@
           ],
           "human": {
             "en": "{quantity} minutes",
-            "nl": "{quantity} minuten"
+            "nl": "{quantity} minuten",
+            "ca": "{quantity} minuts"
           },
           "humanSingular": {
             "en": "one minute",
-            "nl": "één minuut"
+            "nl": "één minuut",
+            "ca": "un minut"
           }
         },
         {
@@ -351,11 +357,13 @@
           ],
           "human": {
             "en": "{quantity} hours",
-            "nl": "{quantity} uren"
+            "nl": "{quantity} uren",
+            "ca": "{quantity} hores"
           },
           "humanSingular": {
             "en": "one hour",
-            "nl": "één uur"
+            "nl": "één uur",
+            "ca": "una hora"
           }
         },
         {
@@ -369,7 +377,8 @@
           ],
           "human": {
             "en": "{quantity} days",
-            "nl": "{quantity} day"
+            "nl": "{quantity} day",
+            "ca": "{quantity} dies"
           },
           "humanSingular": {
             "en": "one day",

@@ -285,7 +285,7 @@
         }
     },
     "animal_shelter": {
-        "name": "Refugi d'animals",
+        "name": "Refugis d'animals",
         "presets": {
             "0": {
                 "title": "un refugi d'animals"
@@ -299,9 +299,28 @@
                 "mappings": {
                     "0": {
                         "then": "Els animals romanen ací fins que son adoptats per un nou propietari"
+                    },
+                    "1": {
+                        "then": "Els animals reben cures per a la resta de la seva vida"
+                    },
+                    "2": {
+                        "then": "Els animals ferits es rehabiliten aquí fins que puguen ser alliberats de nou a la natura "
                     }
-                }
+                },
+                "question": "Quina és la finalitat del refugi d'animals?"
+            },
+            "7": {
+                "question": "Quan està obert aquest refugi d'animals?",
+                "render": "{opening_hours_table()}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Refugi d'animals"
         }
     },
     "artwork": {
@@ -1246,7 +1265,7 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "Bastidors de grapes"
+                        "then": "Bastidors"
                     },
                     "1": {
                         "then": "Portarodes/bucles"
@@ -1876,6 +1895,216 @@
     },
     "charging_station": {
         "tagRenderings": {
+            "Authentication": {
+                "mappings": {
+                    "4": {
+                        "then": "L'autenticació mitjançant NFC està disponible"
+                    },
+                    "5": {
+                        "then": "L'autenticació mitjançant targeta de pagament està disponible"
+                    },
+                    "6": {
+                        "then": "L'autenticació mitjançant targeta de debit està disponible"
+                    },
+                    "7": {
+                        "then": "Carregar aquí (també) és possible sense autenticació"
+                    }
+                },
+                "question": "Quin tipus d'autenticació hi ha disponible a l'estació de càrrega?"
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
+                    },
+                    "1": {
+                        "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
+                    },
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
+                    "3": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
+                    "4": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "5": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b>"
+                    },
+                    "7": {
+                        "then": "<b>Tipus 1 amb cable</b>"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b>"
+                    },
+                    "9": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b>(J1772)"
+                    },
+                    "10": {
+                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
+                    },
+                    "11": {
+                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
+                    },
+                    "12": {
+                        "then": "<b>Supercarregador de Tesla"
+                    },
+                    "13": {
+                        "then": "<b>Supercarregador de Tesla</b>"
+                    },
+                    "14": {
+                        "then": "<b>Tipus 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<b>Tipus 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<b>CSS Tipus 2</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<b>CSS Tipus 2</b> (mennekes)"
+                    }
+                }
+            },
+            "Network": {
+                "question": "Aquesta estació de càrrega forma part d'una xarxa?",
+                "render": "Part de la xarxa <b>{network}</b>"
+            },
+            "OH": {
+                "override": {
+                    "question": "Quan està oberta aquesta estació de càrrega?"
+                }
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta estació de càrrega funciona"
+                    },
+                    "1": {
+                        "then": "Aquesta estació de carrega està trencada"
+                    },
+                    "2": {
+                        "then": "Aquí està prevista una estació de recàrrega"
+                    },
+                    "4": {
+                        "then": "Aquesta estació de recàrrega s'ha desactivat permanentment i ja no s'utilitza, però encara és visible"
+                    }
+                },
+                "question": "Està en ús aquest punt de càrrega?"
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "De fet, {operator} és la xarxa"
+                    }
+                },
+                "question": "Qui és l'operadora d'aquesta estació de càrrega?",
+                "render": "Aquesta estació de càrrega l'opera {operator}"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": "No cal pagar una taxa addicional mentres carrega"
+                    },
+                    "1": {
+                        "then": "Cal pagar una taxa addicional d'aparcament mentres carrega"
+                    }
+                },
+                "question": "Cal pagar una taxa d'aparcament mentre es carrega?"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí es poden carregar <b>bicicletes</b>"
+                    },
+                    "1": {
+                        "then": "Aquí es poden carregar <b>cotxes</b>"
+                    },
+                    "2": {
+                        "then": "Aquí es poden carregar <b>Scooters</b>"
+                    },
+                    "3": {
+                        "then": "Aquí es poden carregar <b>camions o trailers</b>"
+                    },
+                    "4": {
+                        "then": "Aquí es poden carregar <b>autobusos</b>"
+                    }
+                },
+                "question": "Quins vehicles tenen permesa la càrrega aquí?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)"
+                    },
+                    "1": {
+                        "then": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)"
+                    },
+                    "2": {
+                        "then": "Sols clientes del lloc al que pertany aquest punt de càrrega poden utilitzar-lo <br/><span class='subtle'>p.e. un punt de càrrega d'un hotel que sols poden utilizar-los els hostes</span>"
+                    },
+                    "3": {
+                        "then": "S'ha de sol·licitar una <b>clau</b> per a utilitzar aquest punt de càrrega<br/><span class='subtle'>p.e un punt de càrrega operat per un hotel nomes utilitzable pel seus hostes, els quals reben una clau des de recepció per a desbloquejar el punt de càrrega</span>"
+                    },
+                    "4": {
+                        "then": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, ...)"
+                    },
+                    "5": {
+                        "then": "Aquesta estació de càrrega és accessible al públic durant certes hores o condicions. Es poden aplicar restriccions, però es permet l'ús general."
+                    }
+                },
+                "question": "Qui pot utilitzar aquesta estació de càrrega?",
+                "render": "L'accés està {access}"
+            },
+            "capacity": {
+                "question": "Quants vehicles poden carregar a la vegada?",
+                "render": "Aquí poden carregar {capacity} vehicles a l'hora"
+            },
+            "charge": {
+                "question": "Quant cal pagar per utilitzar aquesta estació de càrrega?",
+                "render": "Utilitzar aquesta estació de càrrega costa <b>{charge}</b>"
+            },
+            "email": {
+                "question": "Quin és el correu electrònic de l'operadora?",
+                "render": "En cas de problemes, envia un email a <a href='mailto:{email}'>{email}</a>"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Ús gratuït (sense autentificació)"
+                    },
+                    "1": {
+                        "then": "Ús gratuït, però un s'ha d'autentificar"
+                    },
+                    "2": {
+                        "then": "Ús gratuït"
+                    },
+                    "3": {
+                        "then": "De pagament, però gratuït per als clients de l'hotel/bar/hospital/... que gestiona l'estació de càrrega"
+                    },
+                    "4": {
+                        "then": "Ús de pagament"
+                    }
+                },
+                "question": "Hi ha que pagar per utilitzar aquest punt de càrrega?"
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha límit de temps per a deixar el teu vehicle aquí"
+                    }
+                },
+                "question": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?",
+                "render": "Un pot quedar-se com a màxim <b>{canonical(maxstay)}</b>"
+            },
+            "phone": {
+                "question": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
+                "render": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>"
+            },
             "rewritten-questions": {
                 "renderings": {
                     "0": {
@@ -3673,7 +3902,7 @@
                         "then": "Aquesta és una botiga de kebabs"
                     },
                     "4": {
-                        "then": "Això és un sandvitxeria"
+                        "then": "Això és una botiga d'entrepans"
                     },
                     "5": {
                         "then": "Aquí es serveixen hamburgueses"
@@ -3706,13 +3935,13 @@
                         "then": "Aquí es serveixen plats tailandesos"
                     }
                 },
-                "question": "Quin menjar es serveix aquí?",
+                "question": "Quin tipus de menjar es serveix aquí?",
                 "render": "Aquest lloc serveix principalment {cuisine}"
             },
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seràn limitats i funcionals."
+                        "then": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seran limitats i funcionals."
                     },
                     "1": {
                         "then": "Un <b>restaurant</b>, centrat en crear una bona experiència on es serveix a taula"
@@ -6685,7 +6914,7 @@
         "name": "Botiga",
         "presets": {
             "0": {
-                "description": "Afegir una botiga nova",
+                "description": "Podeu especificar més endavant el que ven aquesta botiga.",
                 "title": "una botiga"
             }
         },
@@ -6926,6 +7155,20 @@
             }
         },
         "tagRenderings": {
+            "basketball-hoops": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquest camp de bàsquet té dos cèrcols"
+                    },
+                    "2": {
+                        "then": "Aquest camp de bàsquet té quatre cèrcols"
+                    },
+                    "3": {
+                        "then": "Aquest camp de bàsquet té {hoops} cèrcols"
+                    }
+                },
+                "question": "Quants cèrcols té aquesta pista?"
+            },
             "sport-pitch-access": {
                 "mappings": {
                     "0": {
@@ -6939,6 +7182,9 @@
                     },
                     "3": {
                         "then": "Privat - no accessible al públic"
+                    },
+                    "4": {
+                        "then": "Accés públic"
                     }
                 },
                 "question": "Aquesta pista d'esports és accessible públicament?"
@@ -6967,6 +7213,9 @@
                 "mappings": {
                     "0": {
                         "then": "Sempre accesible"
+                    },
+                    "1": {
+                        "then": "Sempre accesible"
                     }
                 }
             },
@@ -6989,6 +7238,9 @@
                     },
                     "4": {
                         "then": "Aquí es juga al corfbol"
+                    },
+                    "5": {
+                        "then": "Aquí es juga bàsquet"
                     },
                     "6": {
                         "then": "Açò és un skatepark"
@@ -7013,6 +7265,12 @@
                     },
                     "4": {
                         "then": "La superfície és <b>formigó</b>"
+                    },
+                    "5": {
+                        "then": "La superfície és <b> grava fina</b>"
+                    },
+                    "6": {
+                        "then": "La superfície d'aquesta pista és Tartan, una superfície sintètica, lleugerament molla i porosa"
                     }
                 },
                 "question": "Quina és la superfície d'aquest camp esportiu?",
@@ -7062,6 +7320,18 @@
                     }
                 },
                 "question": "Aquestes escales tenen un passamà?"
+            },
+            "incline": {
+                "mappings": {
+                    "0": {
+                        "then": "La direcció ascendent és {direction_absolute()}"
+                    },
+                    "1": {
+                        "then": "La direcció descendent és {direction_absolute()}"
+                    }
+                },
+                "question": "Quina és la inclinació d'aquestes escales?",
+                "render": "Aquestes escales tenen una inclinació de {incline}"
             },
             "multilevels": {
                 "override": {
@@ -7785,6 +8055,7 @@
         }
     },
     "trail": {
+        "description": "Rutes marcades",
         "name": "Camins",
         "tagRenderings": {
             "Color": {
@@ -7800,6 +8071,19 @@
                     },
                     "3": {
                         "then": "Ruta groga"
+                    }
+                },
+                "question": "Quin és el color de referència d'aquest sender?",
+                "render": "El color de referència és {colour}"
+            },
+            "Name": {
+                "question": "Quin és el nom d'aquest sender?",
+                "render": "Aquest sender s'anomena <b>{name}</b>"
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest sender és mantingut per Natuurpunt"
                     }
                 }
             },
@@ -8130,16 +8414,26 @@
                     }
                 }
             },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} A"
+                    }
+                }
+            },
             "3": {
                 "applicableUnits": {
                     "0": {
-                        "human": "{quantity} metre"
+                        "human": "{quantity} metre",
+                        "humanSingular": "un metre"
                     },
                     "1": {
-                        "human": "{quantity} centimetre"
+                        "human": "{quantity} centimetre",
+                        "humanSingular": "un centímetre"
                     },
                     "2": {
-                        "human": "{quantity} mil·límetres"
+                        "human": "{quantity} mil·límetres",
+                        "humanSingular": "un mil·límetre"
                     },
                     "3": {
                         "human": "{quantity} peus"
@@ -8157,12 +8451,37 @@
                         "humanShort": "{quantity} mph"
                     }
                 }
+            },
+            "5": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} minuts",
+                        "humanSingular": "un minut"
+                    },
+                    "1": {
+                        "human": "{quantity} hores",
+                        "humanSingular": "una hora"
+                    },
+                    "2": {
+                        "human": "{quantity} dies"
+                    }
+                }
             }
         }
     },
     "usersettings": {
         "description": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari",
         "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Activar les funcions d'accessibilitat quan s'utilitzen les tecles de fletxa per navegar pel mapa"
+                    },
+                    "1": {
+                        "then": "Sempre habilita les característiques d'accessibilitat"
+                    }
+                }
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {
@@ -8237,7 +8556,7 @@
                     "1": {
                         "then": {
                             "special": {
-                                "text": "<b class='alert'>Tens {_unreadMessages}</b><br/>Open your inbox"
+                                "text": "<b class='alert'>Tens {_unreadMessages} missatges </b><br/>Obri la safata d'entrada"
                             }
                         }
                     }
@@ -8246,7 +8565,7 @@
             "language_picker": {
                 "mappings": {
                     "0": {
-                        "then": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.²"
+                        "then": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo."
                     }
                 }
             },
@@ -8281,6 +8600,9 @@
                         "text": "Obriu la vostra configuració a OpenStreetMap.org"
                     }
                 }
+            },
+            "show_crosshair": {
+                "questionHint": "Això pot ajudar a posicionar amb precisió un nou element"
             },
             "show_debug": {
                 "mappings": {
@@ -8422,22 +8744,37 @@
                         "question": "Venda de productes carnis"
                     },
                     "17": {
-                        "question": "Venda de flors"
+                        "question": "Venda de fruites"
                     },
                     "18": {
-                        "question": "Venda de tiquets d'aparcament"
+                        "question": "Venda de maduixes"
                     },
                     "19": {
                         "question": "Venda de flors"
                     },
                     "20": {
-                        "question": "Venda de bitllets de transport públic"
+                        "question": "Venda de tiquets d'aparcament"
                     },
                     "21": {
                         "question": "Venda de monedes premsades"
                     },
                     "22": {
                         "question": "Venda de bitllets de transport públic"
+                    },
+                    "23": {
+                        "question": "Venda de llums de bicicletes"
+                    },
+                    "24": {
+                        "question": "Venda de guants"
+                    },
+                    "25": {
+                        "question": "Venda de kits de reparació de bicicletes"
+                    },
+                    "26": {
+                        "question": "Venda de bombes de bicicletes"
+                    },
+                    "27": {
+                        "question": "Venda de cadenat per a bicicletes"
                     }
                 }
             }
@@ -8526,6 +8863,12 @@
                     "15": {
                         "then": "Es venen productes carnis"
                     },
+                    "16": {
+                        "then": "Es ven fruita"
+                    },
+                    "17": {
+                        "then": "Es venen maduixes"
+                    },
                     "18": {
                         "then": "Es venen flors"
                     },
@@ -8537,6 +8880,21 @@
                     },
                     "21": {
                         "then": "Es venen bitllets de transport públic"
+                    },
+                    "22": {
+                        "then": "Es venen llums per a bicicletes"
+                    },
+                    "23": {
+                        "then": "Es venen guants"
+                    },
+                    "24": {
+                        "then": "Es venen kits de reparació de bicicletes"
+                    },
+                    "25": {
+                        "then": "Es venen bombes de bicicletes"
+                    },
+                    "26": {
+                        "then": "Es venen cadenats per a bicicletes"
                     }
                 },
                 "question": "Que ven aquesta màquina expenedora?",

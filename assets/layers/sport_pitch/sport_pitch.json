@@ -298,7 +298,8 @@
             "ru": "Здесь можно играть в баскетбол",
             "de": "Hier wird Basketball gespielt",
             "es": "Aquí se juega al baloncesto",
-            "cs": "Zde se hraje basketbal"
+            "cs": "Zde se hraje basketbal",
+            "ca": "Aquí es juga bàsquet"
           },
           "hideInAnswer": true
         },
@@ -320,7 +321,8 @@
       "question": {
         "en": "How much basketball hoops does this pitch have?",
         "de": "Wie viele Basketballkörbe hat das Spielfeld?",
-        "cs": "Kolik má toto hřiště basketbalových košů?"
+        "cs": "Kolik má toto hřiště basketbalových košů?",
+        "ca": "Quants cèrcols té aquesta pista?"
       },
       "mappings": [
         {
@@ -336,7 +338,8 @@
           "then": {
             "en": "This basketball pitch has two hoops",
             "de": "Dieses Basketballfeld hat zwei Körbe",
-            "cs": "Toto basketbalové hřiště má dva koše"
+            "cs": "Toto basketbalové hřiště má dva koše",
+            "ca": "Aquest camp de bàsquet té dos cèrcols"
           }
         },
         {
@@ -344,7 +347,8 @@
           "then": {
             "en": "This basketball pitch has four hoops",
             "de": "Dieses Basketballfeld hat vier Körbe",
-            "cs": "Toto basketbalové hřiště má čtyři koše"
+            "cs": "Toto basketbalové hřiště má čtyři koše",
+            "ca": "Aquest camp de bàsquet té quatre cèrcols"
           }
         },
         {
@@ -352,7 +356,8 @@
           "then": {
             "en": "This basketball pitch has {hoops} hoops",
             "de": "Dieses Basketballfeld hat {hoops} Körbe",
-            "cs": "Toto basketbalové hřiště má {hoops} koše"
+            "cs": "Toto basketbalové hřiště má {hoops} koše",
+            "ca": "Aquest camp de bàsquet té {hoops} cèrcols"
           },
           "hideInAnswer": true
         }
@@ -461,14 +466,16 @@
           "then": {
             "en": "The surface is <b>fine gravel</b>",
             "nl": "De ondergrond bestaat uit <b>grind</b>",
-            "de": "Die Oberfläche ist <b>feiner Kies</b>"
+            "de": "Die Oberfläche ist <b>feiner Kies</b>",
+            "ca": "La superfície és <b> grava fina</b>"
           }
         },
         {
           "if": "surface=tartan",
           "then": {
             "en": "The surface of this track is Tartan, a synthetic, slightly springy, porous surface",
-            "nl": "De ondergrond is Tartan, een synthetisch, licht verende en poreuze ondergrond"
+            "nl": "De ondergrond is Tartan, een synthetisch, licht verende en poreuze ondergrond",
+            "ca": "La superfície d'aquesta pista és Tartan, una superfície sintètica, lleugerament molla i porosa"
           }
         }
       ],
@@ -553,7 +560,8 @@
             "ru": "Свободный доступ",
             "de": "Der Sportplatz ist öffentlich zugänglich",
             "es": "Acceso público",
-            "cs": "Veřejný přístup"
+            "cs": "Veřejný přístup",
+            "ca": "Accés públic"
           },
           "hideInAnswer": true
         }
@@ -711,7 +719,8 @@
             "it": "Sempre aperto",
             "de": "Immer zugänglich",
             "es": "Siempre accesible",
-            "cs": "Vždy přístupné"
+            "cs": "Vždy přístupné",
+            "ca": "Sempre accesible"
           }
         }
       ],

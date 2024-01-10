@@ -6,7 +6,7 @@
     "es": "Centros de acogida de animales",
     "zh_Hans": "动物收容所",
     "pt": "Abrigo para animais",
-    "ca": "Refugi d'animals"
+    "ca": "Refugis d'animals"
   },
   "description": {
     "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
@@ -23,7 +23,8 @@
       "de": "Tierheim",
       "es": "Centro de acogida de animales",
       "zh_Hans": "动物收容所",
-      "pt": "Abrigo para animais"
+      "pt": "Abrigo para animais",
+      "ca": "Refugi d'animals"
     },
     "mappings": [
       {
@@ -32,7 +33,8 @@
           "en": "{name}",
           "de": "{name}",
           "es": "{name}",
-          "zh_Hans": "{name}"
+          "zh_Hans": "{name}",
+          "ca": "{name}"
         }
       }
     ]
@@ -107,7 +109,8 @@
         "en": "What is the purpose of the animal shelter?",
         "de": "Was ist der Zweck des Tierheims?",
         "es": "¿Cuál es la finalidad del refugio de animales?",
-        "zh_Hans": "动物收容所的目的是什么？"
+        "zh_Hans": "动物收容所的目的是什么？",
+        "ca": "Quina és la finalitat del refugi d'animals?"
       },
       "mappings": [
         {
@@ -125,7 +128,8 @@
             "en": "Animals are taken care of for the rest of their lives",
             "de": "Tiere werden hier bis zum Ende Ihres Lebens untergebracht",
             "es": "Los animales reciben cuidados para el resto de su vida",
-            "zh_Hans": "动物的余生都得到照顾"
+            "zh_Hans": "动物的余生都得到照顾",
+            "ca": "Els animals reben cures per a la resta de la seva vida"
           },
           "if": "purpose=sanctuary"
         },
@@ -134,7 +138,8 @@
             "en": "Injured animals are rehabilitated here until they can be released in nature again ",
             "de": "Tiere werden hier untergebracht und gepflegt bis sie wieder in freier Natur ausgesetzt werden können ",
             "es": "Los animales heridos se rehabilitan aquí hasta que pueden ser liberados de nuevo en la naturaleza ",
-            "zh_Hans": "受伤的动物在这里康复，直到它们可以再次被释放到大自然中 "
+            "zh_Hans": "受伤的动物在这里康复，直到它们可以再次被释放到大自然中 ",
+            "ca": "Els animals ferits es rehabiliten aquí fins que puguen ser alliberats de nou a la natura "
           },
           "if": "purpose=release"
         }
@@ -146,14 +151,16 @@
         "en": "When is this animal shelter opened?",
         "de": "Wann ist das Tierheim geöffnet?",
         "es": "¿Cuándo se abre este refugio de animales?",
-        "zh_Hans": "这个动物收容所什么时候开放？"
+        "zh_Hans": "这个动物收容所什么时候开放？",
+        "ca": "Quan està obert aquest refugi d'animals?"
       },
       "id": "7",
       "render": {
         "en": "{opening_hours_table()}",
         "de": "{opening_hours_table()}",
         "es": "{opening_hours_table()}",
-        "zh_Hans": "{opening_hours_table()}"
+        "zh_Hans": "{opening_hours_table()}",
+        "ca": "{opening_hours_table()}"
       },
       "freeform": {
         "key": "opening_hours",
