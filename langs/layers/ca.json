@@ -1967,6 +1967,30 @@
                     },
                     "17": {
                         "then": "<b>CSS Tipus 2</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
+                    "3": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
+                    "4": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "5": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b>"
+                    },
+                    "7": {
+                        "then": "<b>Tipus 1 amb cable</b>"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b>"
+                    },
+                    "9": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b>(J1772)"
                     }
                 }
             },
@@ -3894,6 +3918,21 @@
                     },
                     "1": {
                         "then": "Això és una fregiduria"
+                    },
+                    "2": {
+                        "then": "Principalment serveix pasta"
+                    },
+                    "3": {
+                        "then": "Aquesta és una botiga de kebabs"
+                    },
+                    "12": {
+                        "then": "Aquí es serveixen plats indis"
+                    },
+                    "13": {
+                        "then": "Aquí es serveixen plats turcs"
+                    },
+                    "14": {
+                        "then": "Aquí es serveixen plats tailandesos"
                     },
                     "2": {
                         "then": "Principalment serveix pasta"
@@ -8775,6 +8814,27 @@
                     },
                     "27": {
                         "question": "Venda de cadenat per a bicicletes"
+                    },
+                    "3": {
+                        "question": "Venda de menjar"
+                    },
+                    "4": {
+                        "question": "Venda de tabaco"
+                    },
+                    "5": {
+                        "question": "Venda de preservatius"
+                    },
+                    "24": {
+                        "question": "Venda de guants"
+                    },
+                    "25": {
+                        "question": "Venda de kits de reparació de bicicletes"
+                    },
+                    "26": {
+                        "question": "Venda de bombes de bicicletes"
+                    },
+                    "27": {
+                        "question": "Venda de cadenat per a bicicletes"
                     }
                 }
             }
@@ -8883,6 +8943,27 @@
                     },
                     "22": {
                         "then": "Es venen llums per a bicicletes"
+                    },
+                    "23": {
+                        "then": "Es venen guants"
+                    },
+                    "24": {
+                        "then": "Es venen kits de reparació de bicicletes"
+                    },
+                    "25": {
+                        "then": "Es venen bombes de bicicletes"
+                    },
+                    "26": {
+                        "then": "Es venen cadenats per a bicicletes"
+                    },
+                    "3": {
+                        "then": "Es ven tabaco"
+                    },
+                    "4": {
+                        "then": "Es venen preservatius"
+                    },
+                    "5": {
+                        "then": "Es ven cafè"
                     },
                     "23": {
                         "then": "Es venen guants"
