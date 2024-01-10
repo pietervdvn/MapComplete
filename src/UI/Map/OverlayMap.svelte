@@ -13,7 +13,9 @@
   import type { RasterLayerPolygon } from "../../Models/RasterLayers"
 
   export let placedOverMapProperties: MapProperties
-  export let placedOverMap: UIEventSource<MlMap>
+  export let placedOverMap: Store<MlMap>
+  
+  export let interactive: boolean = undefined
 
   export let rasterLayer: UIEventSource<RasterLayerPolygon>
 
@@ -65,4 +67,4 @@
   }
 </script>
 
-<MaplibreMap map={altmap} />
+<MaplibreMap {interactive} map={altmap} />
