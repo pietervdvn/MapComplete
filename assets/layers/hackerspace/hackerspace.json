@@ -244,7 +244,8 @@
           "device-key",
           "{device-name}",
           "{negative-name}",
-          "{icon}"
+          "{icon}",
+          "{hide_limited}"
         ],
         "into": [
           [
@@ -263,7 +264,8 @@
               "ca": "Impressora 3D",
               "cs": "3D-tiskárna"
             },
-            "./assets/layers/hackerspace/3d_printer.svg"
+            "./assets/layers/hackerspace/3d_printer.svg",
+            true
           ],
           [
             "lasercutter",
@@ -281,7 +283,8 @@
               "ca": "tallador laser",
               "cs": "laserová řezačka"
             },
-            "./assets/layers/hackerspace/lasercutter.svg"
+            "./assets/layers/hackerspace/lasercutter.svg",
+            true
           ],
           [
             "cnc_drilling_machine",
@@ -299,7 +302,8 @@
               "ca": "trepant CNC",
               "cs": "CNC vrtačka"
             },
-            "./assets/layers/hackerspace/cnc.svg"
+            "./assets/layers/hackerspace/cnc.svg",
+            true
           ],
           [
             "media_studio",
@@ -309,7 +313,8 @@
             {
               "en": "multimedia studio"
             },
-            "./assets/layers/hackerspace/media_studio.svg"
+            "./assets/layers/hackerspace/media_studio.svg",
+            false
           ],
           [
             "sewing_machine",
@@ -319,7 +324,8 @@
             {
               "en": "sewing machine"
             },
-            "./assets/layers/hackerspace/sewing_machine.svg"
+            "./assets/layers/hackerspace/sewing_machine.svg",
+            true
           ],
           [
             "workshop:wood",
@@ -329,8 +335,10 @@
             {
               "en": "woodworking workshop"
             },
-            "./assets/layers/hackerspace/woodworking.svg"
-          ], [
+            "./assets/layers/hackerspace/woodworking.svg",
+            false
+          ],
+          [
             "workshop:ceramics",
             {
               "en": "a ceramics workshop"
@@ -338,7 +346,8 @@
             {
               "en": "ceramics workshop"
             },
-            "./assets/layers/hackerspace/ceramics.svg"
+            "./assets/layers/hackerspace/ceramics.svg",
+            false
           ],
           [
             "workshop:metal",
@@ -348,7 +357,8 @@
             {
               "en": "meta workshop"
             },
-            "./assets/layers/hackerspace/metal.svg"
+            "./assets/layers/hackerspace/metal.svg",
+            false
           ],
           [
             "bicycle:diy",
@@ -358,7 +368,8 @@
             {
               "en": "bicycle repair workshop"
             },
-            "./assets/layers/hackerspace/bicycle.svg"
+            "./assets/layers/hackerspace/bicycle.svg",
+            false
           ]
         ]
       },
@@ -393,6 +404,14 @@
                 "ca": "No hi ha {negative-name} disponible a aquest espai hacker",
                 "cs": "V tomto prostoru hackerů není k dispozici žádný {negative-name}"
               }
+            },
+            {
+              "if": "service:device-key=limited",
+              "then": {
+                "en": "There is a limited {negative-name} available at this hackerspace",
+                "nl": "Er is een beperkte {negative-name} beschikbaar in deze hackerspace"
+              },
+              "hideInAnswer": "{hide_limited}"
             }
           ],
           "id": "hackerspaces-service-device-key"
