@@ -7,13 +7,15 @@ import { TextField } from "../Input/TextField"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Title from "../Base/Title"
 import { SubtleButton } from "../Base/SubtleButton"
-import Svg from "../../Svg"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Translation } from "../i18n/Translation"
 import { LoginToggle } from "../Popup/LoginButton"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import Upload from "../../assets/svg/Upload.svelte"
+import Close from "../../assets/svg/Close.svelte"
+import Confirm from "../../assets/svg/Confirm.svelte"
+import Invalid from "../../assets/svg/Invalid.svelte"
 
 export default class UploadTraceToOsmUI extends LoginToggle {
     constructor(
@@ -80,7 +82,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
             t.meta.descriptionIntro,
             description,
             new Combine([
-                new SubtleButton(Svg.close_svg(), Translations.t.general.cancel)
+                new SubtleButton(new SvelteUIElement(Close), Translations.t.general.cancel)
                     .onClick(() => {
                         clicked.setData(false)
                     })
@@ -116,7 +118,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
             new Toggle(
                 new Toggle(
                     new Combine([
-                        Svg.confirm_svg().SetClass("w-12 h-12 mr-2"),
+                        new SvelteUIElement(Confirm).SetClass("w-12 h-12 mr-2"),
                         t.uploadFinished,
                     ]).SetClass("flex p-2 rounded-xl border-2 subtle-border items-center"),
                     new Toggle(
@@ -129,7 +131,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                     uploadFinished
                 ),
                 new Combine([
-                    Svg.invalid_svg().SetClass("w-8 h-8 m-2"),
+                    new SvelteUIElement(Invalid).SetClass("w-8 h-8 m-2"),
                     t.gpxServiceOffline.SetClass("p-2"),
                 ]).SetClass("flex border alert items-center"),
                 state.osmConnection.gpxServiceIsOnline.map(

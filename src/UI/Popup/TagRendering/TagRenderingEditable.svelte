@@ -4,7 +4,7 @@
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
-  import { PencilAltIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { PencilAltIcon } from "@rgossiaux/svelte-heroicons/solid"
   import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import { onDestroy } from "svelte"
   import Tr from "../../Base/Tr.svelte"
@@ -32,7 +32,7 @@
     onDestroy(
       tags.addCallbackD((tags) => {
         editMode = !config.IsKnown(tags)
-      })
+      }),
     )
   }
 

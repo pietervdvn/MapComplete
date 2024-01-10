@@ -9,6 +9,8 @@ import { LoginToggle } from ".././LoginButton"
 import { SpecialVisualization, SpecialVisualizationState } from "../../SpecialVisualization"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import Constants from "../../../Models/Constants"
+import SvelteUIElement from "../../Base/SvelteUIElement"
+import Checkmark from "../../../assets/svg/Checkmark.svelte"
 
 export class CloseNoteButton implements SpecialVisualization {
     public readonly funcName = "close_note"
@@ -61,7 +63,7 @@ export class CloseNoteButton implements SpecialVisualization {
             zoomButton: string
         } = <any>Utils.ParseVisArgs(this.args, args)
 
-        let icon = Svg.checkmark_svg()
+        let icon: BaseUIElement = new SvelteUIElement(Checkmark)
         if (params.icon !== "checkmark.svg" && (args[2] ?? "") !== "") {
             icon = new Img(args[1])
         }

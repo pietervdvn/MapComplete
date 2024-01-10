@@ -1,4 +1,3 @@
-import Svg from "../../Svg"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
 import { Translation } from "../i18n/Translation"
@@ -10,6 +9,9 @@ import { And } from "../../Logic/Tags/And"
 import { Tag } from "../../Logic/Tags/Tag"
 import { SpecialVisualizationState } from "../SpecialVisualization"
 import { Feature, Point } from "geojson"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import Confirm from "../../assets/svg/Confirm.svelte"
+import Relocation from "../../assets/svg/Relocation.svelte"
 
 export interface MoveReason {
     text: Translation | string
@@ -32,10 +34,7 @@ export class MoveWizardState {
 
     constructor(id: string, options: MoveConfig, state: SpecialVisualizationState) {
         this._state = state
-        const t = Translations.t.move
-
         this.reasons = MoveWizardState.initReasons(options)
-
         if (this.reasons.length > 0) {
             this.checkIsAllowed(id)
         }
@@ -49,7 +48,7 @@ export class MoveWizardState {
             reasons.push({
                 text: t.reasons.reasonRelocation,
                 invitingText: t.inviteToMove.reasonRelocation,
-                icon: Svg.relocation_svg(),
+                icon: new SvelteUIElement(Relocation),
                 changesetCommentValue: "relocated",
                 lockBounds: false,
                 background: undefined,
@@ -63,7 +62,7 @@ export class MoveWizardState {
             reasons.push({
                 text: t.reasons.reasonInaccurate,
                 invitingText: t.inviteToMove.reasonInaccurate,
-                icon: Svg.crosshair_svg(),
+                icon: new SvelteUIElement(Confirm),
                 changesetCommentValue: "improve_accuracy",
                 lockBounds: true,
                 includeSearch: false,

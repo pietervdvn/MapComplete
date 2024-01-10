@@ -18,6 +18,7 @@
   import Svg from "../../../Svg"
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import { EyeIcon, EyeOffIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import Confirm from "../../../assets/svg/Confirm.svelte"
 
   export let importFlow: ImportFlow
   let state = importFlow.state
@@ -143,7 +144,7 @@
             {#if importFlow.args.icon}
               <img src={importFlow.args.icon} />
             {:else}
-              <ToSvelte construct={Svg.confirm_svg().SetClass("w-8 h-8 pr-4")} />
+              <Confirm class="w-8 h-8 pr-4"/>
             {/if}
           </span>
           <slot name="confirm-text">
