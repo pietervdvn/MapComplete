@@ -15,7 +15,6 @@ import {
     QuestionableTagRenderingConfigJson,
 } from "./Json/QuestionableTagRenderingConfigJson"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
-import { Paragraph } from "../../UI/Base/Paragraph"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import Constants from "../Constants"
@@ -754,12 +753,10 @@ export default class TagRenderingConfig {
             withRender = [
                 `This rendering asks information about the property `,
                 Link.OsmWiki(this.freeform.key),
-                new Paragraph(
-                    new Combine([
-                        "This is rendered with ",
-                        new FixedUiElement(this.render.txt).SetClass("code font-bold"),
-                    ])
-                ),
+                new Combine([
+                    "This is rendered with ",
+                    new FixedUiElement(this.render.txt).SetClass("code font-bold"),
+                ]),
             ]
         }
 
