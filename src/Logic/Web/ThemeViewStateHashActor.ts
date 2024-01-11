@@ -50,6 +50,11 @@ export default class ThemeViewStateHashActor {
             if (!!hash) {
                 // There is still a hash
                 // We _only_ have to (at most) close the overlays in this case
+                if (state.previewedImage.data) {
+                    state.previewedImage.setData(undefined)
+                    return
+                }
+
                 const parts = hash.split(";")
                 if (parts.indexOf("background") < 0) {
                     state.guistate.backgroundLayerSelectionIsOpened.setData(false)
@@ -176,6 +181,10 @@ export default class ThemeViewStateHashActor {
 
     private back() {
         const state = this._state
+        if (state.previewedImage.data) {
+            state.previewedImage.setData(undefined)
+            return
+        }
         // history.pushState(null, null, window.location.pathname);
         if (state.selectedElement.data) {
             state.selectedElement.setData(undefined)

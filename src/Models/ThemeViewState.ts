@@ -61,6 +61,7 @@ import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSou
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
+import Zoomcontrol from "../UI/Zoomcontrol"
 
 /**
  *
@@ -481,6 +482,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.lastClickObject.features.setData([])
         })
 
+        this.selectedElement.addCallback((selected) => {
+            if (selected === undefined) {
+                Zoomcontrol.resetzoom()
+            }
+        })
+
         if (this.layout.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
             Utils.LoadCustomCss(this.layout.customCss)
         }
@@ -524,7 +531,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
             this.selectedElement.setData(undefined)
             this.guistate.closeAll()
-            this.focusOnMap()
+            if (!this.guistate.isSomethingOpen()) {
+                Zoomcontrol.resetzoom()
+                this.focusOnMap()
+            }
         })
 
         Hotkeys.RegisterHotkey({ nomod: "f" }, docs.selectFavourites, () => {

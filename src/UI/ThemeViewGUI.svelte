@@ -395,7 +395,7 @@
   <!-- Floatover with the selected element, if applicable -->
   <FloatOver
     on:close={() => {
-      selectedElement.setData(undefined)
+      state.selectedElement.setData(undefined)
     }}
   >
     <div class="flex h-full w-full">
