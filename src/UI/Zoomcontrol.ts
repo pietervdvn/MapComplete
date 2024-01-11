@@ -1,4 +1,5 @@
 import { Stores, UIEventSource } from "../Logic/UIEventSource"
+import { Utils } from "../Utils"
 
 /**
  * Utilities to (re)set user zoom (this is when the user enlarges HTML-elements by pinching out a non-map element).
@@ -17,6 +18,9 @@ export default class Zoomcontrol {
     private readonly _lockTokens: Set<any> = new Set<any>()
 
     private constructor() {
+        if (Utils.runningFromConsole) {
+            return
+        }
         const metaElems = document.getElementsByTagName("head")[0].getElementsByTagName("meta")
         this.viewportElement = Array.from(metaElems).find(
             (meta) => meta.getAttribute("name") === "viewport"
@@ -39,7 +43,7 @@ export default class Zoomcontrol {
     }
 
     private apply(fullSpec: string) {
-        this.viewportElement.setAttribute("content", fullSpec)
+        this.viewportElement?.setAttribute("content", fullSpec)
     }
 
     public static createLock(): () => void {
