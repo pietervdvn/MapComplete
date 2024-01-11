@@ -1,0 +1,102 @@
+{
+  "id": "velopark",
+  "title": {
+    "nl": "Velopark naar OpenStreetMap sync tool"
+  },
+  "description": "A commisioned theme",
+  "hideFromOverview": true,
+  "icon": "./assets/themes/velopark/velopark.svg",
+  "mustHaveLanguage": [
+    "nl"
+  ],
+  "lockLocation": [
+    [
+      2.51357303225,
+      49.5294835476
+    ],
+    [
+      6.15665815596,
+      51.4750237087
+    ]
+  ],
+  "startLat": 51.03753,
+  "startLon": 3.71025,
+  "startZoom": 18,
+  "layers": [
+    {
+      "builtin": [
+        "bike_parking"
+      ],
+      "override": {
+        "id": "bike_parking_with_velopark_ref",
+        "=presets": [],
+        "=name": {
+          "en": "Bicycle parkings with velopark ID",
+          "nl": "Fietsparking met Velopark-referentie"
+        },
+        "source": {
+          "osmTags": {
+            "and+": [
+              "ref:velopark~*"
+            ]
+          }
+        },
+        "calculatedTags": [
+          "_velopark:id=feat.properties['ref:velopark'].substr(feat.properties['ref:velopark'].lastIndexOf('/') + 1)"
+        ],
+        "pointRendering": [
+          {
+            "marker": [
+              {
+                "color": "#0088ff"
+              }
+            ]
+          }
+        ],
+        "=titleIcons": [
+          {
+            "condition": "_velopark:id~*",
+            "render": "<a href='https://www.velopark.be/static/data/{_velopark:id}' target='_blank'><img src='./assets/themes/velopark/velopark.svg'></a>"
+          },
+          "icons.defaults"
+        ],
+        "minzoom": 8
+      }
+    },
+    "bike_parking",
+    {
+      "builtin": ["toilet","bike_repair_station","bicycle_rental"],
+      "override": {
+        "minzoom": 18
+      }
+    }
+  ],
+  "overrideAll": {
+    "+tagRenderings": [
+      {
+        "id": "velopark-ref",
+        "condition": "amenity=bicycle_parking",
+        "freeform": {
+          "key": "ref:velopark",
+          "inline": false,
+          "type": "velopark"
+        },
+        "question": {
+          "en": "What is the URL of the data path within Velopark?",
+          "nl": "Wat is de data-url van deze fietsenstalling in Velopark.be?"
+        },
+        "icon": {
+          "path": "./assets/themes/velopark/velopark.svg",
+          "class": "medium"
+        },
+        "render": {
+          "special": {
+            "type": "link",
+            "href": "{ref:velopark}",
+            "text": "{ref:velopark}"
+          }
+        }
+      }
+    ]
+  }
+}

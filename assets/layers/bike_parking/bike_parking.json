@@ -635,6 +635,40 @@
       "id": "Access"
     },
     {
+      "id": "fee",
+      "question": {
+        "en": "Are these bicycle parkings free to use?",
+        "nl": "Is deze fietsenstalling gratis te gebruiken?"
+      },
+      "mappings": [
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "One has to <b>pay</b> to use this bicycle parking",
+            "nl": "<b>Betalende</b> fietsparking"
+          }
+        },
+        {
+          "if": "fee=no",
+          "alsoShowIf": "fee=",
+          "then": {
+            "en": "Free to use",
+            "nl": "Gratis te gebruiken"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "mappings": [
+          {
+            "alsoShowIf": "opening_hours="
+          }
+        ]
+      }
+    },
+    {
       "question": {
         "en": "Does this bicycle parking have spots for cargo bikes?",
         "nl": "Heeft deze fietsparking plaats voor bakfietsen?",

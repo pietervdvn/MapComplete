@@ -413,6 +413,10 @@
                     "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
                   },
                   {
+                    "if": "theme=velopark",
+                    "then": "./assets/themes/velopark/velopark.svg"
+                  },
+                  {
                     "if": "theme=vending_machine",
                     "then": "./assets/layers/vending_machine/vending_machine.svg"
                   },

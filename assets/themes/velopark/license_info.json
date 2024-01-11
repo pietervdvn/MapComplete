@@ -1,0 +1,22 @@
+[
+  {
+    "path": "velopark.png",
+    "license": "LOGO",
+    "authors": [
+      "Velopark.be"
+    ],
+    "sources": [
+      "https://velopark.be"
+    ]
+  },
+  {
+    "path": "velopark.svg",
+    "license": "LOGO",
+    "authors": [
+      "Velopark.be"
+    ],
+    "sources": [
+      "https://velopark.be"
+    ]
+  }
+]
