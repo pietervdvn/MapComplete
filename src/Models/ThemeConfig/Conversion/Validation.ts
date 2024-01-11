@@ -882,6 +882,10 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                 )
         }
 
+        if(json.icon?.["size"]){
+            context.enters("icon","size").err("size is not a valid attribute. Did you mean 'class'? Class can be one of `small`, `medium` or `large`")
+        }
+
         if (json.freeform) {
             if (json.render === undefined) {
                 context

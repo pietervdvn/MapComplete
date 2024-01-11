@@ -153,7 +153,7 @@ export default class TagRenderingConfig {
             this.renderIconClass = "small"
         } else if (typeof json.icon === "object") {
             this.renderIcon = json.icon.path
-            this.renderIconClass = json.icon.class
+            this.renderIconClass = json.icon.class ?? "small"
         }
         this.metacondition = TagUtils.Tag(
             json.metacondition ?? { and: [] },

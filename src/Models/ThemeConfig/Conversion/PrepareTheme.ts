@@ -535,7 +535,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             // We expand all tagrenderings first...
             new On("layers", new Each(new PrepareLayer(state))),
-            // Then we apply the override all
+            // Then we apply the override all. We must first expand everything in case that we override something in an expanded tag
             new ApplyOverrideAll(),
             // And then we prepare all the layers _again_ in case that an override all contained unexpanded tagrenderings!
             new On("layers", new Each(new PrepareLayer(state))),
