@@ -442,7 +442,7 @@ export default class GenerateImageAnalysis extends Script {
         const imageBackupPath = args[0]
         await this.downloadData(datapath, cached)
 
-        await this.downloadViews(datapath)
+        // await this.downloadViews(datapath)
         await this.downloadMetadata(datapath)
         await this.downloadAllImages(datapath, imageBackupPath)
         this.analyze(datapath)
