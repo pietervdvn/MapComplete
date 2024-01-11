@@ -81,6 +81,8 @@ async function validateScriptIntegrityOf(path: string): Promise<void> {
     const doc = parse_html(htmlContents)
     // @ts-ignore
     const scripts = Array.from(doc.getElementsByTagName("script"))
+    // Maps source URL onto hash
+    const cachedHashes: Record<string, string> = {}
     for (const script of scripts) {
         let src = script.getAttribute("src")
         if (src === undefined) {
@@ -102,13 +104,15 @@ async function validateScriptIntegrityOf(path: string): Promise<void> {
         if (src.startsWith("//")) {
             src = "https:" + src
         }
-        // Using 'scriptUtils' actually fetches data from the internet, it is not prohibited by the testHooks
-        const data: string = (await ScriptUtils.Download(src))["content"]
-        const hashed = await webcrypto.subtle.digest("SHA-384", new TextEncoder().encode(data))
-        const hashedStr = _arrayBufferToBase64(hashed)
-        console.log(src, hashedStr, integrity)
+        if (cachedHashes[src] === undefined) {
+            // Using 'scriptUtils' actually fetches data from the internet, it is not prohibited by the testHooks
+            const data: string = (await ScriptUtils.Download(src))["content"]
+            const hashed = await webcrypto.subtle.digest("SHA-384", new TextEncoder().encode(data))
+            cachedHashes[src] = _arrayBufferToBase64(hashed)
+        }
+        console.log(src, cachedHashes[src], integrity)
         expect(integrity).to.equal(
-            "sha384-" + hashedStr,
+            "sha384-" + cachedHashes[src],
             "Loading a script from '" + src + "' in the file " + path + " has a mismatched checksum"
         )
     }
