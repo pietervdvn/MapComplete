@@ -16,10 +16,17 @@
       "Alternatively, you can override the `osm` credentials using the environment variables `VITE_OSM_OAUTH_CLIENT_ID` and `VITE_OSM_OAUTH_SECRET`"
     ],
     "oauth_credentials": {
-      "#": "This client-id is registered by 'MapComplete' on osm.org",
+      "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org"
+    },
+    "disabled:oauth_credentials": {
+      "##": "DEV",
+      "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
+      "oauth_client_id": "BAPPMRuojjFsY__0APmScr1hbebYj1GlDbV6S5TsUbo",
+      "oauth_secret": "Lq1UKYAySRfQfwgFctGvlGrfxbGHQwggheE52HIGrO8",
+      "url": "https://master.apis.dev.openstreetmap.org"
     },
     "api_keys": {
       "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
