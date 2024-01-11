@@ -153,11 +153,7 @@ export default class GeoLocationHandler {
         const features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
         this.currentUserLocation = new StaticFeatureSource(features)
         let i = 0
-        this.geolocationState.currentGPSLocation.addCallbackAndRun((location) => {
-            if (location === undefined) {
-                return
-            }
-
+        this.geolocationState.currentGPSLocation.addCallbackAndRunD((location) => {
             const properties = {
                 id: "gps-" + i,
                 "user:location": "yes",
@@ -200,7 +196,6 @@ export default class GeoLocationHandler {
             )
         })
         features.ping()
-        let i = 0
         this.currentUserLocation?.features?.addCallbackAndRunD(([location]: [Feature<Point>]) => {
             if (location === undefined) {
                 return
@@ -231,7 +226,6 @@ export default class GeoLocationHandler {
 
             const feature = JSON.parse(JSON.stringify(location))
             feature.properties.id = "gps/" + features.data.length
-            i++
             features.data.push(feature)
             features.ping()
         })

@@ -96,6 +96,9 @@
       if (element.properties.id.startsWith("current_view")) {
         return currentViewLayer
       }
+      if(element.properties.id === "location_track"){
+        return layout.layers.find(l => l.id === "gps_track")
+      }
       return state.layout.getMatchingLayer(element.properties)
     },
   )
