@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store } from "../../Logic/UIEventSource"
+  import { UIEventSource } from "../../Logic/UIEventSource"
   import type { OsmTags } from "../../Models/OsmFeature"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import type { Feature } from "geojson"
@@ -12,7 +12,7 @@
   import LoginToggle from "../Base/LoginToggle.svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
 
-  export let tags: Store<OsmTags>
+  export let tags: UIEventSource<OsmTags>
   export let state: SpecialVisualizationState
   export let lon: number
   export let lat: number
