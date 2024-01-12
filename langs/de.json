@@ -60,12 +60,13 @@
             "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen",
             "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
         },
-        "downloadGeojson": "Lade deine Favoriten als geojson herunter",
-        "downloadGpx": "Lade deine Favoriten als GPX herunter",
-        "intro": "Du hast {length} Orte als Lieblingsort markiert.",
+        "downloadGeojson": "Favoriten als geojson herunterladen",
+        "downloadGpx": "Favoriten als GPX herunterladen",
+        "intro": "Du hast {length} Orte als Favorit markiert.",
         "introPrivacy": "Diese Liste ist nur für dich sichtbar",
         "loginToSeeList": "Melde dich an, um die Liste der Orte zu sehen, die du als Favoriten markiert hast",
-        "tab": "Deine Favoriten"
+        "tab": "Deine Favoriten",
+        "title": "Ausgewählte Orte"
     },
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
@@ -416,12 +417,16 @@
     "hotkeyDocumentation": {
         "action": "Aktion",
         "closeSidebar": "Seitenleiste schließen",
-        "geolocate": "Verschieben Sie die Karte auf den aktuellen Standort oder zoomen Sie die Karte auf den aktuellen Standort. Beantragt Standortberechtigung",
+        "geolocate": "Karte auf den aktuellen Standort verschieben oder zoomen. Erfordert Standortberechtigung",
         "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
         "key": "Tastenkombination",
-        "openLayersPanel": "Öffnet das Menü für Ebenen und Filter",
+        "openLayersPanel": "Auswahl für Hintergrundebenen öffnen",
         "selectAerial": "Hintergrund als Luftbild oder Satellitenbild einstellen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
-        "selectItem": "Wähle das POI, das dem Kartenmittelpunkt (Fadenkreuz) am nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectFavourites": "Favoriten anzeigen",
+        "selectItem": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectItem2": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am zweitnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectItem3": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am drittnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectItemI": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am viertnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
         "selectMap": "Karte aus externer Quelle als Hintergrund wählen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
         "selectMapnik": "OpenStreetMap-carto als Hintergrundebene wählen",
         "selectOsmbasedmap": "OpenStreetMap-basierte Karte als Hintergrund auswählen (oder Hintergrundebene deaktivieren)",
