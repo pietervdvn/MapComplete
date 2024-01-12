@@ -4,6 +4,8 @@
     "en": "Library layer with all common units.  Units can _only_ be imported from this file."
   },
   "source": "special:library",
+  "pointRendering": null,
+  "lineRendering": null,
   "units": [
     {
       "quantity": "power",
@@ -378,7 +380,5 @@
         }
       ]
     }
-  ],
-  "pointRendering": null,
-  "lineRendering": null
+  ]
 }

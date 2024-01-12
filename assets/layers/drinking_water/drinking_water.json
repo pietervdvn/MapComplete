@@ -40,12 +40,12 @@
       ]
     }
   },
-  "minzoom": 12,
   "calculatedTags": [
     "_closest_other_drinking_water=closestn(feat)('drinking_water', 1, undefined, 5000).map(f => ({id: f.feat.id, distance: ''+f.distance}))[0]",
     "_closest_other_drinking_water_id=get(feat)('_closest_other_drinking_water')?.id",
     "_closest_other_drinking_water_distance=Math.floor(Number(get(feat)('_closest_other_drinking_water')?.distance))"
   ],
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Drinking water",
