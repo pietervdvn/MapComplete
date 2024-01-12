@@ -228,6 +228,94 @@
   {
     "path": [
       "mappings",
+      "alsoShowIf"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "$ref": "#/definitions/{or:TagConfigJson[];}"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+  },
+  {
+    "path": [
+      "mappings",
+      "alsoShowIf",
+      "and"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "mappings",
+      "alsoShowIf",
+      "or"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "mappings",
       "ifnot"
     ],
     "required": false,
@@ -565,6 +653,10 @@
         {
           "if": "value=id",
           "then": "<b>id</b> Checks for valid identifiers for layers, will automatically replace spaces and uppercase"
+        },
+        {
+          "if": "value=slope",
+          "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
         }
       ]
     },
@@ -774,6 +866,22 @@
       }
     ],
     "description": "This hint is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
+  },
+  {
+    "path": [
+      "editButtonAriaLabel"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "When using a screenreader and selecting the 'edit' button, the current rendered value is read aloud in normal circumstances.\nIn some rare cases, this is not desirable. For example, if the rendered value is a link to a website, this link can be selected (and will be read aloud).\nIf the user presses _tab_ again, they'll select the button and have the link read aloud a second time."
   },
   {
     "path": [

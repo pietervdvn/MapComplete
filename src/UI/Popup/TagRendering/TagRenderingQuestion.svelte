@@ -159,7 +159,7 @@
     }
   }
 
-  function onSave() {
+  function onSave(e) {
     if (selectedTags === undefined) {
       return
     }

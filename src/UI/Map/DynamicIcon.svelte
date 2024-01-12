@@ -13,7 +13,7 @@
 
   let iconItem = icon.icon?.GetRenderValue($tags)?.Subs($tags)?.txt
   $: iconItem = icon.icon?.GetRenderValue($tags)?.Subs($tags)?.txt
-  let color = icon.color?.GetRenderValue(tags)?.txt ?? "#000000"
+  let color = icon.color?.GetRenderValue($tags)?.txt ?? "#000000"
   $: color = icon.color?.GetRenderValue($tags)?.txt ?? "#000000"
 </script>
 

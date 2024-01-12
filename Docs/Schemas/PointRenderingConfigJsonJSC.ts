@@ -283,6 +283,10 @@ export default {
         "prefix": {
           "description": "If set, then the canonical value will be prefixed instead, e.g. for '€'\nNote that if all values use 'prefix', the dropdown might move to before the text field",
           "type": "boolean"
+        },
+        "addSpace": {
+          "description": "If set, add a space between the quantity and the denomination.\n\nE.g.: `50 mph` instad of `50mph`",
+          "type": "boolean"
         }
       },
       "required": [
@@ -324,7 +328,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return [\"pin\",\"square\",\"circle\",\"checkmark\",\"clock\",\"close\",\"crosshair\",\"help\",\"home\",\"invalid\",\"location\",\"location_empty\",\"location_locked\",\"note\",\"resolved\",\"ring\",\"scissors\",\"teardrop\",\"teardrop_with_hole_green\",\"triangle\"].map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"

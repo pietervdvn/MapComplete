@@ -85,7 +85,7 @@ export default {
       ]
     },
     "calculatedTags": {
-      "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\nNot found...    *  \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]\n\nThe specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),\nthe expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.\n\nIf a tag has to be evaluated strictly, use ':=' instead:\n\n[\n\"_some_key:=some_javascript_expression\"\n]\n\nSee the full documentation on [https://github.com/pietervdvn/MapComplete/blob/master/Docs/CalculatedTags.md]\n\ngroup: expert\nquestion: What extra attributes should be calculated with javascript?",
+      "description": "A list of extra tags to calculate, specified as \"keyToAssignTo=javascript-expression\".\nThere are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information\nThe functions will be run in order, e.g.\n[\n \"_max_overlap_m2=Math.max(...feat.overlapsWith(\"someOtherLayer\").map(o => o.overlap))\n \"_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area\n]\n\nThe specified tags are evaluated lazily. E.g. if a calculated tag is only used in the popup (e.g. the number of nearby features),\nthe expensive calculation will only be performed then for that feature. This avoids clogging up the contributors PC when all features are loaded.\n\nIf a tag has to be evaluated strictly, use ':=' instead:\n\n[\n\"_some_key:=some_javascript_expression\"\n]\n\nSee the full documentation on [https://github.com/pietervdvn/MapComplete/blob/master/Docs/CalculatedTags.md]\n\ngroup: expert\nquestion: What extra attributes should be calculated with javascript?",
       "type": "array",
       "items": {
         "type": "string"
@@ -136,14 +136,26 @@ export default {
       "type": "boolean"
     },
     "titleIcons": {
-      "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nType: icon[]\ngroup: infobox",
+      "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nUse `auto:<tagrenderingId>` to automatically create an icon based on a tagRendering which has icons\n\nType: icon[]\ngroup: infobox",
       "anyOf": [
         {
           "type": "array",
           "items": {
             "anyOf": [
               {
-                "$ref": "#/definitions/TagRenderingConfigJson"
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/TagRenderingConfigJson"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "type": "string"
@@ -253,7 +265,7 @@ export default {
       }
     },
     "tagRenderings": {
-      "description": "question: Edit this attribute showing piece/question\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
+      "description": "question: Edit this way this attributed is displayed or queried\n\nA tag rendering is a block that either shows the known value or asks a question.\n\nRefer to the class `TagRenderingConfigJson` to see the possibilities.\n\nNote that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,\nwhere a few very general questions are defined e.g. website, phone number, ...\nFurthermore, _all_ the questions of another layer can be reused with `otherlayer.*`\nIf you need only a single of the tagRenderings, use `otherlayer.tagrenderingId`\nIf one or more questions have a 'group' or 'label' set, select all the entries with the corresponding group or label with `otherlayer.*group`\nRemark: if a tagRendering is 'lent' from another layer, the 'source'-tags are copied and added as condition.\nIf they are not wanted, remove them with an override\n\nA special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.\n\nAt last, one can define a group of renderings where parts of all strings will be replaced by multiple other strings.\nThis is mainly create questions for a 'left' and a 'right' side of the road.\nThese will be grouped and questions will be asked together\n\ntype: tagrendering[]\ngroup: tagrenderings",
       "type": "array",
       "items": {
         "anyOf": [
@@ -370,7 +382,14 @@ export default {
     "units": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/default_2"
+        "anyOf": [
+          {
+            "$ref": "#/definitions/default_2"
+          },
+          {
+            "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
+          }
+        ]
       }
     },
     "syncSelection": {
@@ -514,6 +533,10 @@ export default {
         "prefix": {
           "description": "If set, then the canonical value will be prefixed instead, e.g. for '€'\nNote that if all values use 'prefix', the dropdown might move to before the text field",
           "type": "boolean"
+        },
+        "addSpace": {
+          "description": "If set, add a space between the quantity and the denomination.\n\nE.g.: `50 mph` instad of `50mph`",
+          "type": "boolean"
         }
       },
       "required": [
@@ -555,7 +578,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return [\"pin\",\"square\",\"circle\",\"checkmark\",\"clock\",\"close\",\"crosshair\",\"help\",\"home\",\"invalid\",\"location\",\"location_empty\",\"location_locked\",\"note\",\"resolved\",\"ring\",\"scissors\",\"teardrop\",\"teardrop_with_hole_green\",\"triangle\"].map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -838,6 +861,20 @@ export default {
                 "string",
                 "boolean"
               ]
+            }
+          ]
+        },
+        "alsoShowIf": {
+          "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
+            },
+            {
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -1229,6 +1266,17 @@ export default {
             }
           ]
         },
+        "editButtonAriaLabel": {
+          "description": "When using a screenreader and selecting the 'edit' button, the current rendered value is read aloud in normal circumstances.\nIn some rare cases, this is not desirable. For example, if the rendered value is a link to a website, this link can be selected (and will be read aloud).\nIf the user presses _tab_ again, they'll select the button and have the link read aloud a second time.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "labels": {
           "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
           "type": "array",
@@ -1443,6 +1491,17 @@ export default {
             }
           ]
         },
+        "editButtonAriaLabel": {
+          "description": "When using a screenreader and selecting the 'edit' button, the current rendered value is read aloud in normal circumstances.\nIn some rare cases, this is not desirable. For example, if the rendered value is a link to a website, this link can be selected (and will be read aloud).\nIf the user presses _tab_ again, they'll select the button and have the link read aloud a second time.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "labels": {
           "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
           "type": "array",
@@ -1582,33 +1641,71 @@ export default {
             "sourceString"
           ]
         },
+        "subexpand": {
+          "$ref": "#/definitions/Record<string,string[]>"
+        },
         "renderings": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/QuestionableTagRenderingConfigJson"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "builtin": {
-                    "type": "string"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/QuestionableTagRenderingConfigJson"
                   },
-                  "override": {
-                    "$ref": "#/definitions/Partial<QuestionableTagRenderingConfigJson>"
+                  {
+                    "type": "object",
+                    "properties": {
+                      "builtin": {
+                        "type": "string"
+                      },
+                      "override": {
+                        "$ref": "#/definitions/Partial<QuestionableTagRenderingConfigJson>"
+                      }
+                    },
+                    "required": [
+                      "builtin",
+                      "override"
+                    ]
+                  },
+                  {
+                    "type": "string"
                   }
-                },
-                "required": [
-                  "builtin",
-                  "override"
                 ]
-              },
-              {
-                "type": "string"
               }
-            ]
-          }
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/QuestionableTagRenderingConfigJson"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "builtin": {
+                          "type": "string"
+                        },
+                        "override": {
+                          "$ref": "#/definitions/Partial<QuestionableTagRenderingConfigJson>"
+                        }
+                      },
+                      "required": [
+                        "builtin",
+                        "override"
+                      ]
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
         }
       },
       "required": [
@@ -1765,6 +1862,10 @@ export default {
       "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
       "type": "object",
       "properties": {
+        "quantity": {
+          "description": "What is quantified? E.g. 'speed', 'length' (including width, diameter, ...), 'electric tension', 'electric current', 'duration'",
+          "type": "string"
+        },
         "appliesToKey": {
           "description": "Every key from this list will be normalized.\n\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`",
           "type": "array",
@@ -1789,9 +1890,11 @@ export default {
         }
       },
       "required": [
-        "applicableUnits",
-        "appliesToKey"
+        "applicableUnits"
       ]
+    },
+    "Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>": {
+      "type": "object"
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#"

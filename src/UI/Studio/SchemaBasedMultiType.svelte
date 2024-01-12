@@ -215,7 +215,6 @@
       <TagRenderingEditable
         {config}
         selectedElement={undefined}
-        showQuestionIfUnknown={!schema.hints?.ifunset}
         {state}
         {tags}
       />

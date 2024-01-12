@@ -187,7 +187,6 @@
       editMode={startInEditMode}
       {config}
       selectedElement={undefined}
-      showQuestionIfUnknown={true}
       {state}
       {tags}
     />

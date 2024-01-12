@@ -41,7 +41,6 @@
   <TagRenderingEditable
     {config}
     selectedElement={undefined}
-    showQuestionIfUnknown={true}
     {state}
     {tags}
   />
