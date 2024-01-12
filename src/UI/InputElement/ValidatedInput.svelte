@@ -51,6 +51,15 @@
     }
   }
 
+  
+  
+  function onKeyPress(e: KeyboardEvent){
+      if(e.key === "Enter"){
+          e.stopPropagation()
+          e.preventDefault()
+          dispatch("submit")
+      }
+  }
   initValueAndDenom()
 
   $: {
@@ -126,7 +135,7 @@
 
   let htmlElem: HTMLInputElement | HTMLTextAreaElement
 
-  let dispatch = createEventDispatcher<{ selected }>()
+  let dispatch = createEventDispatcher<{ selected, submit }>()
   $: {
     if (htmlElem !== undefined) {
       htmlElem.onfocus = () => dispatch("selected")
@@ -144,6 +153,7 @@
     inputmode={validator?.inputmode ?? "text"}
     placeholder={_placeholder}
     bind:this={htmlElem}
+    on:keypress={onKeyPress}
   />
 {:else}
   <div class={twMerge("inline-flex", cls)}>
@@ -153,6 +163,7 @@
       class="w-full"
       inputmode={validator?.inputmode ?? "text"}
       placeholder={_placeholder}
+      on:keypress={onKeyPress}
     />
     {#if !$isValid}
       <ExclamationIcon class="-ml-6 h-6 w-6" />
