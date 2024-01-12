@@ -1450,7 +1450,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     public static scrollIntoView(element: HTMLBaseElement | HTMLDivElement) {
         // Is the element completely in the view?
-        const parentRect = Utils.findParentWithScrolling(element).getBoundingClientRect()
+        const parentRect = Utils.findParentWithScrolling(element)?.getBoundingClientRect()
+        if(!parentRect){
+            return
+        }
         const elementRect = element.getBoundingClientRect()
 
         // Check if the element is within the vertical bounds of the parent element
