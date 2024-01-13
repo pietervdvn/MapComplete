@@ -1,0 +1,209 @@
+{
+  "id": "openlovemap",
+  "title": {
+    "en": "Open Love Map"
+  },
+  "description": {
+    "en": "<p><i>Love in the palm of your hand</i></p>Open Love Map lists various adult entries, such as brothels, erotic stores and stripclubs."
+  },
+  "icon": "./assets/layers/stripclub/stripclub.svg",
+  "layers": [
+    "brothel",
+    "stripclub",
+    {
+      "builtin": "shops",
+      "override": {
+        "id": "erotic-shop",
+        "source": {
+          "osmTags": "shop=erotic"
+        },
+        "minzoom": 6,
+        "=filter": [
+          "open_now"
+        ],
+        "=presets": [
+          {
+            "title": {
+              "en": "an erotic shop"
+            },
+            "tags": [
+              "shop=erotic"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "shops",
+      "override": {
+        "minzoom": 18,
+        "=presets": [],
+        "=name": null
+      }
+    },
+    {
+      "builtin": "vending_machine",
+      "override": {
+        "id": "condom_vending_machine",
+        "pointRendering": [
+          {
+            "marker": [
+              {
+                "icon": "circle",
+                "color": "white"
+              },
+              {
+                "icon": "ring",
+                "color": "black"
+              }
+            ],
+            "location": [
+              "centroid",
+              "point"
+            ],
+            "iconSize": "40,40",
+            "anchor": "center"
+          },
+          {
+            "marker": [
+              {
+                "icon": "./assets/layers/vending_machine/condom.svg"
+              }
+            ],
+            "location": [
+              "centroid",
+              "point"
+            ],
+            "iconSize": "26,26",
+            "anchor": "center"
+          }
+        ],
+        "=filter": [
+          "open_now"
+        ],
+        "source": {
+          "osmTags": {
+            "=and": [
+              "amenity=vending_machine",
+              "vending=condoms"
+            ]
+          }
+        },
+        "minzoom": 6,
+        "=presets": [
+          {
+            "title": {
+              "en": "a condom vending machine"
+            },
+            "tags": [
+              "amenity=vending_machine",
+              "vending=condoms"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "vending_machine",
+      "override": {
+        "minzoom": 18,
+        "=presets": [],
+      "=name": null
+      }
+    },
+
+    {
+      "builtin": "cinema",
+      "hideTagRenderingsWithLabels": ["wikipedia"],
+      "override": {
+        "id": "erotic_cinema",
+        "pointRendering": [
+          {
+            "marker": [
+              {
+                "icon": "circle",
+                "color": "white"
+              },
+              {
+                "icon": "ring",
+                "color": "#734a08"
+              }
+            ],
+            "location": [
+              "centroid",
+              "point"
+            ],
+            "iconSize": "40,40",
+            "anchor": "center"
+          },
+          {
+            "marker": [
+              {
+                "icon": "./assets/layers/cinema/cinema.svg"
+              }
+            ],
+            "location": [
+              "centroid",
+              "point"
+            ],
+            "iconSize": "26,26",
+            "anchor": "center"
+          }
+        ],
+        "=filter": [
+          "open_now"
+        ],
+        "tagRenderings+": ["opening_hours"],
+        "source": {
+          "osmTags": {
+            "=and": [
+              "amenity=cinema",
+              "cinema=erotic"
+            ]
+          }
+        },
+        "minzoom": 6,
+        "=presets": [
+          {
+            "title": {
+              "en": "an erotic cinema"
+            },
+            "tags": [
+              "amenity=cinema",
+              "cinema=erotic"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "cinema",
+      "override": {
+        "minzoom": 18,
+        "=presets": [],
+       "=name": null
+      }
+    }
+  ],
+  "overrideAll": {
+    "tagRenderings+": [{
+      "id": "has_video_booth",
+      "question": {"en": 
+        "Does {title()} have a private video booth?"
+      },
+      "questionHint": {
+        "en": "This is for use by a single person."
+      },
+      "mappings": [
+        {
+          "if": "service:private_video_booth=yes",
+          "then": "Private video booths are available"
+        },
+        {
+          "if": "service:private_video_booth=no",
+          "then": "No private video booths"
+        }
+      ]
+    }]
+  }
+}

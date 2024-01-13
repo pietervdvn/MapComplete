@@ -1,0 +1,70 @@
+{
+  "id": "cinema",
+  "name": {
+    "en": "Cinema"
+  },
+  "description": {
+    "en": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
+  },
+  "source": {
+    "osmTags": "amenity=cinema"
+  },
+  "minzoom": 10,
+  "title": {
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      }
+    ],
+    "render": {
+      "en": "Cinema"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/cinema/cinema.svg"
+        }
+      ],
+      "iconBadges": []
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    "contact",
+    "wikipedia",
+    {
+      "id": "cinema_type",
+      "question": {
+        "en": "What type of cinema is this?"
+      },
+      "mappings": [
+        {
+          "if": "cinema=",
+          "then": {
+            "en": "This is a normal cinema showing movies for all ages"
+          }
+        },
+        {
+          "if": "cinema=erotic",
+          "then": {
+            "en": "This is an erotic cinema showing adult movies"
+          }
+        }
+      ]
+    }
+  ]
+}

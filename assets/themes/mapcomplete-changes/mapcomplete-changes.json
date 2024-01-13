@@ -3,14 +3,19 @@
   "title": {
     "en": "Changes made with MapComplete"
   },
-  "description": {
-    "en": "This maps shows all the changes made with MapComplete"
-  },
   "shortDescription": {
     "en": "Shows changes made by MapComplete"
   },
+  "description": {
+    "en": "This maps shows all the changes made with MapComplete"
+  },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "clustering": false,
   "layers": [
     {
       "id": "mapcomplete-changes",
@@ -310,6 +315,10 @@
                   {
                     "if": "theme=onwheels",
                     "then": "./assets/themes/onwheels/crest.svg"
+                  },
+                  {
+                    "if": "theme=openlovemap",
+                    "then": "./assets/layers/stripclub/stripclub.svg"
                   },
                   {
                     "if": "theme=openwindpowermap",
@@ -650,7 +659,5 @@
         ]
       }
     }
-  ],
-  "widenFactor": 0.05,
-  "clustering": false
+  ]
 }
