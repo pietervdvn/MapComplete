@@ -487,12 +487,6 @@ export default class SimpleMetaTaggers {
                 feature.properties._isOpen = "yes"
                 return true
             }
-            console.log(
-                "Calculating opening hours for",
-                feature.properties.name,
-                ":",
-                feature.properties.opening_hours
-            )
 
             // _isOpen is calculated dynamically on every call
             Object.defineProperty(feature.properties, "_isOpen", {
