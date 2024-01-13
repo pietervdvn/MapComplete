@@ -139,7 +139,6 @@
     <TagRenderingEditable
       config={configBuiltin}
       selectedElement={undefined}
-      showQuestionIfUnknown={true}
       {state}
       {tags}
     />

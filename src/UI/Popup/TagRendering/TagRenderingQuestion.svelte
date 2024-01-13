@@ -159,7 +159,7 @@
     }
   }
 
-  function onSave() {
+  function onSave(e) {
     if (selectedTags === undefined) {
       return
     }
@@ -198,7 +198,9 @@
 
   function onInputKeypress(e: KeyboardEvent) {
     if (e.key === "Enter") {
-      onSave()
+        e.preventDefault()
+        e.stopPropagation()
+        onSave(e)
     }
   }
 

@@ -13,7 +13,8 @@
   "description": {
     "en": "Waymarked trails",
     "nl": "Aangeduide wandeltochten",
-    "de": "Markierte Wanderwege"
+    "de": "Markierte Wanderwege",
+    "ca": "Rutes marcades"
   },
   "source": {
     "osmTags": {
@@ -107,12 +108,14 @@
       "question": {
         "en": "What is the name of this trail?",
         "nl": "Wat is de naam van deze wandeling?",
-        "de": "Wie heißt dieser Weg?"
+        "de": "Wie heißt dieser Weg?",
+        "ca": "Quin és el nom d'aquest sender?"
       },
       "render": {
         "en": "This trail is called <b>{name}</b>",
         "nl": "Deze wandeling heet <b>{name}</b>",
-        "de": "Dieser Weg heißt <b>{name}</b>"
+        "de": "Dieser Weg heißt <b>{name}</b>",
+        "ca": "Aquest sender s'anomena <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -143,7 +146,8 @@
           "then": {
             "en": "This trail is maintained by Natuurpunt",
             "nl": "Dit gebied wordt beheerd door Natuurpunt",
-            "de": "Dieser Weg wird von Natuurpunt gepflegt"
+            "de": "Dieser Weg wird von Natuurpunt gepflegt",
+            "ca": "Aquest sender és mantingut per Natuurpunt"
           },
           "icon": {
             "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
@@ -174,12 +178,14 @@
       "question": {
         "en": "What is the reference colour of this trail?",
         "nl": "Welke kleur heeft deze wandeling?",
-        "de": "Was ist die Referenzfarbe dieses Weges?"
+        "de": "Was ist die Referenzfarbe dieses Weges?",
+        "ca": "Quin és el color de referència d'aquest sender?"
       },
       "render": {
         "en": "The reference colour is {colour}",
         "nl": "Deze wandeling heeft kleur {colour}",
-        "de": "Die Referenzfarbe ist {colour}"
+        "de": "Die Referenzfarbe ist {colour}",
+        "ca": "El color de referència és {colour}"
       },
       "freeform": {
         "key": "colour",

@@ -39,7 +39,7 @@
         "es": "enlaces nodo a nodo",
         "nl": "Verbindingen van node naar node",
         "fr": "liens noeud à noeud",
-        "ca": "enllaços node a node",
+        "ca": "Enllaços node a node",
         "cs": "propojení mezi uzly",
         "pl": "łącza węzeł do węzła"
       },
@@ -130,7 +130,7 @@
       "name": {
         "en": "Nodes",
         "de": "Knotenpunkte",
-        "ca": "nodes",
+        "ca": "Nodes",
         "es": "nodos",
         "nb_NO": "noder",
         "nl": "Knooppunten",
@@ -214,7 +214,8 @@
             "en": "What is the reference number of this cycling node?",
             "nl": "Wat is het referentienummer van dit fietsknooppunt?",
             "de": "Wie lautet die Nummer des Knotenpunkts im Fahrradknotenpunktnetzwerk?",
-            "cs": "Jaké je referenční číslo tohoto cyklistického uzlu?"
+            "cs": "Jaké je referenční číslo tohoto cyklistického uzlu?",
+            "ca": "Quin és el número de referència d'aquest node ciclista?"
           },
           "freeform": {
             "key": "rcn_ref",
@@ -230,7 +231,8 @@
             "en": "This cycling node has reference number {rcn_ref}",
             "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}",
             "de": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks",
-            "cs": "Tento cyklistický uzel má referenční číslo {rcn_ref}"
+            "cs": "Tento cyklistický uzel má referenční číslo {rcn_ref}",
+            "ca": "Aquest node ciclista té la referència número {rcn_ref}"
           },
           "condition": "rcn_ref~*"
         },
@@ -304,7 +306,8 @@
           "title": {
             "en": "a cycling node",
             "nl": "een fietsknooppunt",
-            "de": "ein Knoten eines Fahrradknotenpunktnetzwerks"
+            "de": "ein Knoten eines Fahrradknotenpunktnetzwerks",
+            "ca": "un node ciclista"
           },
           "snapToLayer": [
             "cycleways_and_roads"

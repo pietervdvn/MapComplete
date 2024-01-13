@@ -53,6 +53,9 @@
 
     --image-carousel-height: 350px;
 
+    /** Technical value, used by icon.svelte
+     */
+    --svg-color: #000000;
 }
 
 /***********************************************************************\
@@ -610,6 +613,10 @@ a.link-underline {
     /* A marker on the map gets the 'selected' class when it's properties are displayed
     */
     overflow: visible !important;
+}
+
+svg.apply-fill path {
+    fill: var(--svg-color)
 }
 
 .compass_arrow {

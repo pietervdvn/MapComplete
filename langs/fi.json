@@ -22,13 +22,18 @@
         "delete": "Poista",
         "explanations": {
             "hardDelete": "Tämä kohde poistetaan OpenStreetMapistä. Kokenut kartoittaja voi palauttaa sen.",
+            "retagNoOtherThemes": "Tämä kohde luokitellaan uudelleen ja piilotetaan tältä sovellukselta",
+            "retagOtherThemes": "Tämän kohteen ominaisuustietoja muutetaan, ja se ilmestyy näkyviin teemoissa {otherThemes}",
             "selectReason": "Valitse, miksi tämä kohde pitäisi poistaa",
             "softDelete": "Tämä kohde päivitetään ja piilotetaan tässä sovelluksessa. <span class='subtle'>{reason}</span>"
         },
         "isDeleted": "Tämä kohde on poistettu",
+        "isntAPoint": "Vain pisteitä voi poistaa. Valittu kohde on viiva, alue tai relaatio.",
+        "loading": "Tutkitaan ominaisuuksista, voiko tämän kohteen poistaa.",
         "loginToDelete": "Kohteen poistamiseksi täytyy kirjautua",
         "notEnoughExperience": "Tämän kohteen loi joku muu.",
         "onlyEditedByLoggedInUser": "Tätä kohdetta ei ole muokannut kukaan muu kuin sinä, joten sen voi huoletta poistaa.",
+        "partOfOthers": "Tämä piste on osa viivaa tai relaatiota eikä sitä voi poistaa suoraan.",
         "readMessages": "Sinulle on lukemattomia viestejä. Lue ne ennen kuin poistat kohteen – joku on saattanut lähettää palautetta",
         "reasons": {
             "disused": "Tämä kohde on poistettu käytöstä tai poistettu",
@@ -37,18 +42,23 @@
             "test": "Tämä oli testikohde – kohdetta ei ollut ikinä olemassa"
         },
         "safeDelete": "Tämä kohde voidaan turvallisesti poistaa.",
+        "useSomethingElse": "Poista se toisella OpenStreetMap-editorilla",
         "whyDelete": "Miksi tämä kohde pitäisi poistaa?"
     },
     "favourite": {
+        "loginNeeded": "<h3>Kirjaudu sisään</h3>Oma asettelu on saatavilla vain OpenStreetMap-käyttäjille",
+        "panelIntro": "<h3>Oma teema</h3>Käytä suosikkitasojasi kaikista virallisista teemoista",
         "reload": "Lataa data uudelleen"
     },
     "favouritePoi": {
         "button": {
+            "isFavourite": "Tämä paikka on merkitty suosikiksi ja näkyy kaikilla MapCompleten teemakartoilla, joita katselet.",
             "isMarkedShort": "Merkitty suosikkisijainniksi",
             "isNotMarkedShort": "Ei merkitty suosikiksi",
             "markAsFavouriteTitle": "Merkitse tämä paikka suosikkisijainniksi",
-            "markDescription": "Lisää tämä paikka henkilökohtaiselle suosikkilistalle",
-            "unmark": "Poista henkilökohtaiselta suosikkilistalta"
+            "markDescription": "Lisää tämä paikka omalle suosikkilistalle",
+            "unmark": "Poista omalta suosikkilistalta",
+            "unmarkNotDeleted": "Tätä pistettä ei poisteta ja se pysyy näkyvissä kartoilla sinulle ja muille"
         },
         "downloadGeojson": "Lataa suosikkisi geojson-muodossa",
         "downloadGpx": "Lataa suosikkisi GPX-muodossa",
@@ -59,39 +69,109 @@
         "title": "Suosikkisijaintisi"
     },
     "flyer": {
+        "aerial": "Tämä kartta käyttää eri taustaa, joka on ilmakuva taholta Agentschap Informatie Vlaanderen",
         "callToAction": "Kokeile sitä osoitteessa mapcomplete.org",
+        "cyclofix": "Pyöränpumput, korjausasemat, juomavesi ja pyöräkaupat ovat CycloFixissä",
+        "description": "Vaakasuuntainen A4-lentolehtinen MapCompleten mainostamiseen",
         "editing": {
+            "ex": "Alla on yksinkertainen esimerkki siitä, miltä tämä näyttää luonnonsuojelualueella.",
+            "intro": "Käyttäjää tervehtii kartta, jolla on kohteita. Kun kohde valitaan, sen tiedot näytetään.",
             "title": "Miltä käyttöliittymä näyttää?"
         },
+        "examples": "MapCompletessa on paljon teemakarttoja. Muutamia niistä näkyy tässä.\n\nVerkossa on vielä lisää teemakarttoja aiheista: terveydenhuolto, sisänavigointi, esteettömyydes pyörätuolilla, jätteenkäsittelylaitokset, julkiset kirjahyllyt, sateenkaaren väreissä olevat suojatiet, … Löydä ne kaikki mapcomplete.org-sivustolta",
         "fakeui": {
-            "add_images": "Lisää kuvia muutamalla napsautuksella"
+            "add_images": "Lisää kuvia muutamalla napsautuksella",
+            "attributes": "Näyttää ominaisuudet ystävällisellä tavalla",
+            "edit": "Väärää tai vanhentunutta tietoa? Muokkauspainike on käden ulottuvilla.",
+            "question": "Jos ominaisuus ei ole vielä tiedossa, MapComplete esittää kysymyksen",
+            "see_images": "Näyttää kuvia aiemmilta tekijöiltä, Wikipediasta, Mapillarystä, …",
+            "wikipedia": "Linkitetyt Wikipedia-artikkelit näytetään"
         },
+        "frontParagraph": "MapComplete on helppokäyttöinen verkkosovellus, jolla voi kerätä paikkatietoa OpenStreetMapiin. Sen avulla voi kerätä ja hallita olennaista tietoa avoimella, joukkoistetulla ja uudelleenkäytettävällä tavalla.\n\nUusia luokkia ja ominaisuuksia voi lisätä pyydettäessä.",
+        "lines_too": "Viivat ja monikulmiot näytetään myös. Lisäksi niiden ominaisuuksia ja kuvia voi muokata ja päivittää.",
         "mapcomplete": {
+            "customize": "MapCompleten voi räätälöidä tarpeisiisi. Siihen voi lisätä uusia karttatasoja, uutta toiminnallisuutta tai sen voi tyylitellä käyttämään organisaatiosi väerjä ja fontteja.\nMeillä on myös kokemusta paikkatiedon joukkoistamiskampanjoiden aloittamisesta.\nPyydä tarjous ottamalla yhteyttä osoitteeseen pietervdvn@posteo.net.",
+            "intro": "MapComplete on sivusto, jolla on {mapCount} vuorovaikutteista karttaa. Jokaiselle kartalle voi lisätä ja päivittää tietoja. Siinä on paljon ominaisuuksia:",
+            "li0": "Näytä, missä on kiinnostavia paikkoja",
+            "li1": "Lisää uusia pisteitä ja päivitä nykyisten tietoja",
+            "li2": "Lisää yhteystietoja ja aukioloaikoja helposti",
+            "li3": "Voidaan lisätä muille verkkosivuille iFramen muodossa",
+            "li4": "Osa OpenStreetMap-ekosysteemiä, johon kuuluu paljon työkaluja",
+            "li5": "Mahdollisuus tuota olemassa olevia aineistoja",
+            "li6": "Paljon kehittyneitä ominaisuuksia, kuten puiden tunnistus ja kehittyneet syöttömenetelmät",
+            "li7": "Avoimen lähdekoodin ohjelmisto (GPL-lisenssillä) ja ilmainen käyttää",
             "title": "Mikä MapComplete on?"
         },
+        "onwheels": "Myös sisätilakartat pyörätuolillä liikkuville on käytettävissä.",
+        "osm": "OpenStreetMap on verkkokartta, jota voi muokata ja uudelleenkäyttää kuka tahansa mihin tahansa tarkoitukseen, kunhan lähde nimetään asianmukaisesti sekä data pidetään avoimena.\n\nSe on maailman suurin paikkatietokanta, ja sitä käytetään tuhansissa sovelluksissa ja verkkosivustoissa.",
         "tagline": "Kerää paikkatietoa OpenStreetMapillä",
         "title": "mapcomplete.org",
+        "toerisme_vlaanderen": "”Pin your point” -hanke tehtiin yhteistyössä Visit Flandersin kanssa. Yli 160 kartoittajaa lisäsi muutama tuhat penkkiä ja piknikpöytää sekä löysi 100 latausasemaa polkupyörille.",
         "whatIsOsm": "Mikä OpenStreetMap on?"
     },
     "general": {
         "404": "Tätä sivua ei ole olemassa",
+        "about": "Muokkaa ja lisää tiettyyn teemaan liittyviä tietoja OpenStreetMapiin helposti",
+        "aboutMapComplete": {
+            "intro": "MapCompletea voi käyttää lisäämään tietoja OpenStreetMapiin <b>yhdestä teemasta.</b> Vastaa kysymyksiin, niin muutoksesi ovat käytettävissä kaikkialla minuuttien kuluessa. Useimmissa teemoissa voi lisätä kuvia tai jopa jättää arvostelun. <b>Teeman ylläpitäjä</b> määrittelee teeman kohteet, kysymykset ja kielet."
+        },
         "add": {
             "addNew": "Lisää {category}",
+            "backToSelect": "Valitse toinen luokka",
+            "confirmButton": "Lisää {category}<br/><div class='alert'>Lisäyksesi näkyy kaikille</div>",
             "confirmLocation": "Vahvista tämä sijainti",
             "confirmTitle": "Lisätäänkö {title}?",
-            "title": "Lisää uusi kohde"
+            "confirmWarning": "Täällä luomasi kohde <b>näkyy kaikille</b>. Ole hyvä ja lisää kartalle vain kohteita, jotka ovat oikeasti olemassa. Monet sovellukset käyttävät tätä tietoa.",
+            "disableFilters": "Poista käytöstä kaikki suodattimet",
+            "disableFiltersExplanation": "Jotkin kohteet saattavat olla piilossa suodattimen takia",
+            "enableLayer": "Ota käyttöön taso {name}",
+            "hasBeenImported": "Tämä kohde on jo tuotu",
+            "import": {
+                "hasBeenImported": "Tämä kohde on tuotu",
+                "howToTest": "Testaa lisäämällä <b>test=true</b> tai <b>backend=osm-test</b> URL-osoitteeseen. Muutoskokoelma tulostetaan konsoliin. Ole hyvä ja avaa pull request, jotta tämä teema voidaan virallistaa ja tuontipainike ottaa käyttöön.",
+                "importTags": "Kohteelle kirjataan {tags}",
+                "officialThemesOnly": "Tuontipainike ei ole käytössä epävirallisille teemoille vahinkojen välttämiseksi",
+                "wrongType": "Tämä kohde ei ole piste eikä viiva eikä sitä voida tuoda",
+                "wrongTypeToConflate": "Tämä kohde ei ole piste eikä viiva eikä sitä voida yhdistää",
+                "zoomInMore": "Lähennä karttaa lisää, jotta tämän kohteen voi tuoda"
+            },
+            "importTags": "Kohteelle kirjataan {tags}",
+            "intro": "Painoit kohtaa, jolle ei ole vielä tietoa.<br/>",
+            "layerNotEnabled": "Taso {layer} ei ole käytössä. Ota taso käyttöön, jotta voit lisätä kohteen",
+            "openLayerControl": "Avaa tason hallintaikkuna",
+            "pleaseLogin": "Kirjaudu sisään, jotta voit lisätä uuden kohteen",
+            "presetInfo": "Uudelle pisteelle kirjataan {tags}",
+            "stillLoading": "Data latautuu vielä. Odota hetki ennen kuin lisäät uuden kohteen.",
+            "title": "Lisää uusi kohde",
+            "warnVisibleForEveryone": "Lisäyksesi näkyy kaikille",
+            "wrongType": "Tämä kohde ei ole piste eikä viiva eikä sitä voida tuoda",
+            "zoomInFurther": "Lähennä karttaa lisää, jotta kohteen voi lisätä.",
+            "zoomInMore": "Lähennä karttaa lisää, jotta voit tuoda tämän kohteen"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "Kohteelle {id} kirjataan {tags}",
+            "isApplied": "Muutokset otetaan käyttöön"
         },
         "attribution": {
+            "attributionBackgroundLayer": "Nykyinen taustataso on {name}",
+            "attributionBackgroundLayerWithCopyright": "Nykyinen taustataso on {name}: {copyright}",
+            "attributionContent": "<p>Kaiken datan tarjoaa <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, vapaasti uudelleenkäytettävissä <a href='https://osm.org/copyright' target='_blank'>Open Database Licensen</a> mukaisesti.</p>",
+            "attributionTitle": "Kiitokset",
             "donate": "Tue MapCompletea rahallisesti",
             "editId": "Avaa OpenStreetMap-verkkoeditori tänne",
             "editJosm": "Muokkaa täällä JOSM:illa",
             "followOnMastodon": "Seuraa MapCompletea Mastodonissa",
+            "iconAttribution": {
+                "title": "Käytetyt kuvakkeet"
+            },
             "josmOpened": "JOSM on avattu",
             "openIssueTracker": "Ilmoita ohjelmavirheestä",
-            "openMapillary": "Avaa Mapillary tänne"
+            "openMapillary": "Avaa Mapillary tänne",
+            "title": "Tekijänoikeudet ja alkuperä"
         },
         "backToIndex": "Palaa kaikkien teemakarttojen yleiskuvaan",
-        "backgroundMap": "Taustakartta",
+        "backgroundMap": "Valitse taustataso",
+        "backgroundSwitch": "Vaihda taustaa",
         "cancel": "Peruuta",
         "download": {
             "title": "Lataa"
@@ -112,12 +192,14 @@
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
         "logout": "Kirjaudu ulos",
         "menu": {
-            "aboutMapComplete": "Tietoa MapCompletesta"
+            "aboutMapComplete": "Tietoa MapCompletesta",
+            "filter": "Suodata dataa"
         },
         "morescreen": {
+            "createYourOwnTheme": "Luo oma MapComplete-teema alusta asti",
             "noSearch": "Näytä kaikki teemat",
             "searchForATheme": "Etsi teemaa",
-            "streetcomplete": "Toinen, samanlainen sovellus on <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
+            "streetcomplete": "Toinen, samankaltainen sovellus on <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "number": "numero",
         "openTheMap": "Avaa kartta",
@@ -126,9 +208,12 @@
             "loadingCountry": "Määritetään maata…",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
-            "ph_open": "avattu"
+            "ph_open": "auki"
         },
-        "pickLanguage": "Valitse kieli: ",
+        "pdf": {
+            "attrBackground": "Taustataso: {background}"
+        },
+        "pickLanguage": "Valitse kieli",
         "questionBox": {
             "answeredMultiple": "Vastasit {answered} kysymykseen",
             "answeredOne": "Vastasit yhteen kysymykseen",
@@ -143,6 +228,7 @@
         "search": {
             "nothing": "Mitään ei löytynyt…",
             "search": "Etsi paikkaa",
+            "searchShort": "Etsi…",
             "searching": "Etsitään…"
         },
         "sharescreen": {
@@ -180,13 +266,24 @@
     },
     "hotkeyDocumentation": {
         "action": "Toiminto",
-        "key": "Näppäinyhdistelmä"
+        "key": "Näppäinyhdistelmä",
+        "openLayersPanel": "Avaa taustatasojen paneelin",
+        "selectAerial": "Asettaa taustaksi joko ilma- tai satelliittikuvan. Vaihtaa kahden parhaimman, saatavilla olevan tason välillä",
+        "selectMap": "Asettaa taustaksi kartan ulkoisesta lähteestä. Vaihtaa kahden parhaimman, saatavilla olevan tason välillä",
+        "selectMapnik": "Aseta taustatasoksi OpenStreetMap-carto",
+        "selectOsmbasedmap": "Aseta taustatasoksi OpenStreetMap-pohjainen kartta (tai poista käytöstä rasterimuotoinen taustataso)"
     },
     "image": {
         "addPicture": "Lisää kuva",
+        "currentLicense": "Kuvasi julkaistaan lisenssillä {license}",
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
         "isDeleted": "Poistettu",
+        "nearby": {
+            "link": "Tämä kuva näyttää kohteen",
+            "seeNearby": "Selaa ja linkitä läheisiä kuvia",
+            "title": "Läheiset katukuvat"
+        },
         "pleaseLogin": "Kirjaudu sisään, jotta voit lisätä kuvan",
         "respectPrivacy": "Älä valokuvaa ihmisiä tai rekisterikilpiä. Älä lähetä kuvia Google Mapsistä, Google Streetview’stä tai muista tekijänoikeuden alaisista lähteistä.",
         "uploadDone": "Kuvasi on lisätty. Kiitoksia avusta!",
@@ -197,6 +294,15 @@
         "intro": "MapComplete on OpenStreetMap-katselin ja -editori, joka näyttää tietoja tiettyyn teeman liittyvistä kohteista ja antaa muokata niitä.",
         "pickTheme": "Aloita valitsemalla teema alta.",
         "title": "Tervetuloa MapCompleteen"
+    },
+    "move": {
+        "inviteToMove": {
+            "generic": "Siirrä tätä pistettä"
+        },
+        "whyMove": "Miksi haluat siirtää tätä pistettä?"
+    },
+    "multi_apply": {
+        "autoApply": "Kun ominaisuuksia {attr_names} muutetaan, nämä ominaisuudet muuttuvat automaattisesti myös {count} muussa kohteessa"
     },
     "plantDetection": {
         "tryAgain": "Valitse eri laji"

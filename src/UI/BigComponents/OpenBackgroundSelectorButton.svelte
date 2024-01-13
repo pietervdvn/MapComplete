@@ -1,7 +1,7 @@
 <script lang="ts">
   /**
    * A mapcontrol button which allows the user to select a different background.
-   * Even though the componenet is very small, it gets it's own class as it is often reused
+   * Even though the component is very small, it gets it's own class as it is often reused
    */
   import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
   import type { SpecialVisualizationState } from "../SpecialVisualization"

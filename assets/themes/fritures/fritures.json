@@ -70,14 +70,16 @@
               {
                 "question": {
                   "en": "Only show fritures using vegetable oil",
-                  "de": "Nur Friteusen mit Pflanzenöl anzeigen"
+                  "de": "Nur Friteusen mit Pflanzenöl anzeigen",
+                  "ca": "Només mostra freiduries que utilitzen oli vegetal"
                 },
                 "osmTags": "friture:oil=vegetable"
               },
               {
                 "question": {
                   "en": "Only show fritures using animal oil",
-                  "de": "Nur Friteusen mit tierischem Öl anzeigen"
+                  "de": "Nur Friteusen mit tierischem Öl anzeigen",
+                  "ca": "Només mostra freiduries que utilitzen oli animal"
                 },
                 "osmTags": "friture:oil=animal"
               }

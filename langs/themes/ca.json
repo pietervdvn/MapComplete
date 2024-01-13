@@ -464,7 +464,7 @@
         "description": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir-ne de nous de manera senzilla",
         "layers": {
             "0": {
-                "name": "enllaços node a node",
+                "name": "Enllaços node a node",
                 "tagRenderings": {
                     "node2node-survey:date": {
                         "override": {
@@ -483,11 +483,20 @@
                 }
             },
             "1": {
-                "name": "nodes",
+                "name": "Nodes",
+                "presets": {
+                    "0": {
+                        "title": "un node ciclista"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
                         "question": "A quants altes nodes ciclistes enllaça aquest node?",
                         "render": "Aquest node enllaça a {expected_rcn_route_relations} altres nodes ciclistes."
+                    },
+                    "node-rxn_ref": {
+                        "question": "Quin és el número de referència d'aquest node ciclista?",
+                        "render": "Aquest node ciclista té la referència número {rcn_ref}"
                     },
                     "node-survey:date": {
                         "override": {
@@ -746,6 +755,18 @@
         "layers": {
             "0": {
                 "override": {
+                    "filter+": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Només mostra freiduries que utilitzen oli vegetal"
+                                },
+                                "2": {
+                                    "question": "Només mostra freiduries que utilitzen oli animal"
+                                }
+                            }
+                        }
+                    },
                     "name": "Botigues de patates"
                 }
             }
@@ -785,6 +806,9 @@
             }
         }
     },
+    "guideposts": {
+        "title": "Pal guia"
+    },
     "hackerspaces": {
         "description": "En aquest mapa podeu veure els hackerspaces, afegir un nou hackerspace o actualitzar les dades directament",
         "shortDescription": "Un mapa dels hackerspaces",
@@ -820,6 +844,10 @@
         "description": "En aquest mapa trobareu hotels a la vostra zona",
         "title": "Hotels"
     },
+    "icecream": {
+        "description": "Un mapa que mostra les gelateries i les màquines expenedores de gelats",
+        "title": "Gelat"
+    },
     "indoors": {
         "description": "En aquest mapa es mostren els llocs interiors accessibles al públic",
         "title": "Interiors"
@@ -839,6 +867,111 @@
             }
         },
         "title": "Vorals i encreuaments"
+    },
+    "mapcomplete-changes": {
+        "description": "Aquest mapa mostra tots els canvis fets amb MapComplete",
+        "layers": {
+            "0": {
+                "description": "Mostra tots els canvis de MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "El nom del tema conté {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Fet pel col·laborador {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>No</b> fet pel col·laborador {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Fet abans de {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Fet després de {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Idioma de l'usuari (codi iso) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Fet amb l'amfitrió {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "El conjunt de canvis ha afegit almenys una imatge"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Quin col·laborador va fer aquest canvi?",
+                        "render": "Canvi fet per <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Amb quin amfitrió (lloc web) es va fer aquest canvi?",
+                        "render": "Canviat amb <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "Amb quina configuració regional (idioma) s'ha fet aquest canvi?",
+                        "render": "La configuració regional de l'usuari és {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Conjunt de canvi <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Quin tema es va utilitzar per fer aquest canvi?",
+                        "render": "Canvi amb el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "Quina versió de MapComplete es va utilitzar per fer aquest canvi?",
+                        "render": "Fet amb {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Conjunt de canvis per a {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Es pot trobar més estadística <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Mostra els canvis fets amb MapComplete",
+        "title": "Canvis fets amb MapComplete"
     },
     "maproulette": {
         "description": "Tema que mostra les tasques de MapRoulette, que us permet cercar-les, filtrar-les i solucionar-les.",

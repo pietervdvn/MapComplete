@@ -777,6 +777,10 @@ video {
   float: left;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -787,10 +791,6 @@ video {
 
 .m-0 {
   margin: 0px;
-}
-
-.m-8 {
-  margin: 2rem;
 }
 
 .m-2 {
@@ -1111,6 +1111,10 @@ video {
   height: fit-content;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-0 {
   height: 0px;
 }
@@ -1137,10 +1141,6 @@ video {
 
 .h-5 {
   height: 1.25rem;
-}
-
-.h-16 {
-  height: 4rem;
 }
 
 .h-48 {
@@ -1207,6 +1207,10 @@ video {
   width: 1.5rem;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -1239,10 +1243,6 @@ video {
 
 .w-11 {
   width: 2.75rem;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .w-64 {
@@ -2254,6 +2254,9 @@ video {
   --catch-detail-foregroundcolor: white;
   --catch-detail-color-contrast: #fb3afb;
   --image-carousel-height: 350px;
+  /** Technical value, used by icon.svelte
+     */
+  --svg-color: #000000;
 }
 
 /***********************************************************************\
@@ -2797,6 +2800,10 @@ a.link-underline {
   /* A marker on the map gets the 'selected' class when it's properties are displayed
     */
   overflow: visible !important;
+}
+
+svg.apply-fill path {
+  fill: var(--svg-color)
 }
 
 .compass_arrow {

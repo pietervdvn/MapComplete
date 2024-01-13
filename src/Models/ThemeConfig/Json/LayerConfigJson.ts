@@ -506,7 +506,7 @@ export interface LayerConfigJson {
      * If the way is part of a relation, MapComplete will attempt to update this relation as well
      * question: Should the contributor be able to split ways using this layer?
      * iftrue: enable the 'split-roads'-component
-     * iffalse: don't enable the split-roads componenet
+     * iffalse: don't enable the split-roads component
      * ifunset: don't enable the split-roads component
      * group: editing
      */
