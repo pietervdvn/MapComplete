@@ -15,8 +15,6 @@
   import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
 
   export let tags: UIEventSource<OsmTags>
-  export let lon: number
-  export let lat: number
   export let state: SpecialVisualizationState
   export let image: P4CPicture
   export let feature: Feature
@@ -26,7 +24,6 @@
   let isLinked = Object.values(tags.data).some((v) => image.pictureUrl === v)
 
   const t = Translations.t.image.nearby
-  const c = [lon, lat]
   const providedImage: ProvidedImage = {
     url: image.thumbUrl ?? image.pictureUrl,
     url_hd: image.pictureUrl,

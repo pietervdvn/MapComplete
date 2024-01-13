@@ -63,7 +63,12 @@
         "minzoom": 8
       }
     },
-    "bike_parking",
+    {
+      "builtin": ["bike_parking"],
+      "override": {
+        "minzoom": 14
+      }
+    },
     {
       "builtin": ["toilet","bike_repair_station","bicycle_rental"],
       "override": {
@@ -94,6 +99,17 @@
             "type": "link",
             "href": "{ref:velopark}",
             "text": "{ref:velopark}"
+          }
+        }
+      },
+      {
+        "id": "comparison_tool",
+        "condition": "ref:velopark~https://data.velopark.be/data/.*" ,
+        "render": {
+          "special": {
+            "type": "compare_data",
+            "url": "ref:velopark",
+            "postprocessing": "velopark"
           }
         }
       }

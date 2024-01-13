@@ -669,6 +669,45 @@
       }
     },
     {
+      "id": "operator_phone",
+      "question": {
+        "en": "What is the phone number of the operator of this bicycle parking?",
+        "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?"
+      },
+      "questionHint": {
+        "en": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles",
+        "nl": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "freeform": {
+        "key": "operator:phone",
+        "type": "phone",
+        "addExtraTags": [
+          "phone=",
+          "contact:phone="
+        ]
+      },
+      "render": "<a href='tel:{operator:phone}'>{operator:phone}</a>",
+      "mappings": [
+        {
+          "if": "phone~*",
+          "hideInAnswer": true,
+          "then": {
+            "*": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg"
+        },
+        {
+          "if": "contact:phone~*",
+          "hideInAnswer": true,
+          "then": {
+            "*": "<a href='tel:{contact:phone}'>{contact:phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ]
+    },
+    {
       "question": {
         "en": "Does this bicycle parking have spots for cargo bikes?",
         "nl": "Heeft deze fietsparking plaats voor bakfietsen?",

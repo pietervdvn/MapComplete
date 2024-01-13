@@ -88,6 +88,7 @@ import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import Img from "./Base/Img"
 import Qr from "../Utils/Qr"
+import ComparisonTool from "./Comparison/ComparisonTool.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1638,6 +1639,28 @@ export default class SpecialVisualizations {
                     )
                 },
             },
+            {
+                funcName: "compare_data",
+                needsUrls: (args) => args[0],
+                args:[
+                    {
+                        name: "url",
+                        required: true,
+                        doc: "The attribute containing the url where to fetch more data"
+                    },
+                    {
+                        name: "postprocessing",
+                        required: false,
+                        doc: "Apply some postprocessing. Currently, only 'velopark' is allowed as value"
+                    }
+                ],
+                docs: "Gives an interactive element which shows a tag comparison between the OSM-object and the upstream object. This allows to copy some or all tags into OSM",
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, args: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    const url = args[0]
+                    const postprocessVelopark = args[1] === "velopark"
+                    return new SvelteUIElement(ComparisonTool, {url, postprocessVelopark, state, tags: tagSource, layer, feature})
+                }
+            }
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
