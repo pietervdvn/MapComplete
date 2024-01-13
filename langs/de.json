@@ -174,12 +174,14 @@
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Neueste Bearbeitungen mit {theme} ansehen",
+            "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
             "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",
         "backToIndex": "Zur Übersicht aller Themenkarten",
+        "backToMap": "Zurück zur Karte",
         "backgroundMap": "Hintergrundkarte auswählen",
         "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
@@ -224,6 +226,13 @@
         "goToInbox": "Posteingang öffnen",
         "histogram": {
             "error_loading": "Das Histogramm konnte nicht geladen werden"
+        },
+        "labels": {
+            "background": "Hintergrund ändern",
+            "filter": "Daten filtern",
+            "menu": "Menü",
+            "zoomIn": "Hineinzoomen",
+            "zoomOut": "Herauszoomen"
         },
         "layerSelection": {
             "title": "Ebenen auswählen",
@@ -273,7 +282,9 @@
             "closed_permanently": "Geschlossen auf unbestimmte Zeit",
             "closed_until": "Geschlossen bis {date}",
             "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden.",
+            "friday": "Am Freitag {ranges}",
             "loadingCountry": "Land ermitteln…",
+            "monday": "Am Montag {ranges}",
             "not_all_rules_parsed": "Die Öffnungszeiten sind kompliziert. Folgenden Regeln werden im Eingabefenster ignoriert:",
             "openTill": "bis",
             "open_24_7": "Durchgehend geöffnet",
@@ -282,7 +293,15 @@
             "ph_closed": "geschlossen",
             "ph_not_known": " ",
             "ph_open": "geöffnet",
-            "ph_open_as_usual": "geöffnet wie üblich"
+            "ph_open_as_usual": "geöffnet wie üblich",
+            "ranges": "von {starttime} bis {endtime}",
+            "rangescombined": "{range0} und {range1}",
+            "saturday": "Am Samstag {ranges}",
+            "sunday": "Am Sonntag {ranges}",
+            "thursday": "Am Donnerstag {ranges}",
+            "tuesday": "Am Dienstag {ranges}",
+            "unknown": "Die Öffnungszeiten sind unbekannt",
+            "wednesday": "Am Mittwoch {ranges}"
         },
         "osmLinkTooltip": "Dieses Element auf OpenStreetMap öffnen, um Verlauf und Bearbeitungsmöglichkeiten anzuzeigen",
         "pdf": {
@@ -291,7 +310,7 @@
             "generatedWith": "Erstellt mit mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - erstellt am {date}"
         },
-        "pickLanguage": "Sprache auswählen: ",
+        "pickLanguage": "Sprache auswählen",
         "poweredByOsm": "Unterstützt von OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Du hast {answered} Fragen beantwortet",
@@ -325,6 +344,7 @@
             "searchShort": "Suche…",
             "searching": "Suchen …"
         },
+        "share": "Teilen",
         "sharescreen": {
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
             "documentation": "Für weitere Informationen über verfügbare URL-Parameter, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>siehe Dokumentation</a>",
@@ -370,6 +390,27 @@
         "uploadingChanges": "Änderungen werden hochgeladen…",
         "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
         "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
+        "visualFeedback": {
+            "directionsAbsolute": {
+                "E": "Ost",
+                "N": "Nord",
+                "NE": "Nordost",
+                "NW": "Nordwest",
+                "S": "Süd",
+                "SE": "Südost",
+                "SW": "Südwest",
+                "W": "West"
+            },
+            "directionsRelative": {
+                "left": "links",
+                "right": "rechts",
+                "sharp_left": "scharf links",
+                "sharp_right": "scharf rechts",
+                "slight_left": "leicht links",
+                "slight_right": "leicht rechts",
+                "straight": "geradeaus"
+            }
+        },
         "waitingForGeopermission": "Warten auf Ihre Erlaubnis, Standortdaten zu verwenden…",
         "waitingForLocation": "Ihr Standort wird gesucht…",
         "weekdays": {
