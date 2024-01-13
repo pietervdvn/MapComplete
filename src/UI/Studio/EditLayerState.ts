@@ -172,6 +172,7 @@ export abstract class EditJsonState<T> {
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         let entry = this.configuration.data
+        console.trace("Setting value at", path,"to",v)
         const isUndefined =
             v === undefined ||
             v === null ||

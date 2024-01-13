@@ -177,6 +177,9 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         if (!json.title) {
             context.enter("title").err(`The theme ${json.id} does not have a title defined.`)
         }
+        if(!json.icon){
+            context.enter("icon").err("A theme should have an icon")
+        }
         if (this._isBuiltin && this._extractImages !== undefined) {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
             const images = this._extractImages.convert(json, context.inOperation("ValidateTheme"))
@@ -243,7 +246,8 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 new ValidateLanguageCompleteness("en").convert(theme, context)
             }
         } catch (e) {
-            context.err(e)
+            console.error(e)
+            context.err("Could not validate the theme due to: " + e)
         }
 
         if (theme.id !== "personal") {
@@ -411,7 +415,7 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
 
             return json
         } catch (e) {
-            context.err(e)
+            context.err("Could not check for conflicting extra tags due to: " + e)
             return undefined
         }
     }

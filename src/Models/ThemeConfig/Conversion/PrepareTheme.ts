@@ -95,6 +95,9 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
             }
 
             if (json["hideTagRenderingsWithLabels"]) {
+                if(typeof json["hideTagRenderingsWithLabels"] === "string"){
+                    throw "At "+context+".hideTagRenderingsWithLabels should be a list containing strings, you specified a string"
+                }
                 const hideLabels: Set<string> = new Set(json["hideTagRenderingsWithLabels"])
                 // These labels caused at least one deletion
                 const usedLabels: Set<string> = new Set<string>()

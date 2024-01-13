@@ -106,8 +106,12 @@ export interface MappingConfigJson {
     hideInAnswer?: boolean | TagConfigJson
 
     /**
+     * question: In what other cases should this item be rendered?
+     *
      * Also show this 'then'-option if the feature matches these tags.
-     * Ideal for outdated tags.
+     * Ideal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!
+     *
+     * ifunset: No other cases when this text is shown
      */
     alsoShowIf?: TagConfigJson
 
