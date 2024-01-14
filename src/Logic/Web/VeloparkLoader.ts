@@ -44,7 +44,7 @@ export default class VeloparkLoader {
             properties["operator:phone"] = VeloparkLoader.phoneValidator.reformat(veloparkData.contactPoint?.telephone, () => "be")
         }
 
-        veloparkData.photos.forEach((p, i) => {
+        veloparkData.photos?.forEach((p, i) => {
             if (i === 0) {
                 properties["image"] = p.image
             } else {
