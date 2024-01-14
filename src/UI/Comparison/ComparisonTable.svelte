@@ -4,7 +4,6 @@
     import { UIEventSource } from "../../Logic/UIEventSource"
     import type { OsmTags } from "../../Models/OsmFeature"
     import type { SpecialVisualizationState } from "../SpecialVisualization"
-    import type { P4CPicture } from "../../Logic/Web/NearbyImagesSearch"
     import type { Feature } from "geojson"
     import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
     import ComparisonAction from "./ComparisonAction.svelte"
@@ -19,7 +18,6 @@
 
     export let tags: UIEventSource<OsmTags>
     export let state: SpecialVisualizationState
-    export let image: P4CPicture
     export let feature: Feature
     export let layer: LayerConfig
 
@@ -114,7 +112,6 @@
       {feature}
       {layer} />
   {/each}
-
 
 {/if}
 

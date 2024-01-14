@@ -11,11 +11,12 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import ComparisonTable from "./ComparisonTable.svelte"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import type { Feature } from "geojson"
+import type { OsmTags } from "../../Models/OsmFeature"
 
 export let url: string
 export let postprocessVelopark: boolean
 export let state: SpecialVisualizationState
-export let tags: UIEventSource<Record<string, string>>
+export let tags: UIEventSource<OsmTags>
 export let layer: LayerConfig
 export let feature: Feature
 let data: any = undefined
@@ -56,6 +57,6 @@ onMount(async () => {
   <Loading>
     Loading {$tags[url]}
   </Loading>
-{:else}
-  <ComparisonTable externalProperties={data.properties} osmProperties={$tags} {state} {feature} {layer} {tags}/>
+{:else if data.properties !== undefined}
+  <ComparisonTable externalProperties={data.properties} osmProperties={$tags} {state} {feature} {layer} {tags} />
 {/if}

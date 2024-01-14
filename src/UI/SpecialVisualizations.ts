@@ -1641,12 +1641,17 @@ export default class SpecialVisualizations {
             },
             {
                 funcName: "compare_data",
-                needsUrls: (args) => args[0],
+                needsUrls: (args) => args[1].split(";"),
                 args:[
                     {
                         name: "url",
                         required: true,
                         doc: "The attribute containing the url where to fetch more data"
+                    },
+                    {
+                        name:"host",
+                        required:true,
+                        doc: "The domain name(s) where data might be fetched from - this is needed to set the CSP. A domain must include 'https', e.g. 'https://example.com'. For multiple domains, separate them with ';'. If you don't know the possible domains, use '*'. "
                     },
                     {
                         name: "postprocessing",
@@ -1657,7 +1662,7 @@ export default class SpecialVisualizations {
                 docs: "Gives an interactive element which shows a tag comparison between the OSM-object and the upstream object. This allows to copy some or all tags into OSM",
                 constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, args: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
                     const url = args[0]
-                    const postprocessVelopark = args[1] === "velopark"
+                    const postprocessVelopark = args[2] === "velopark"
                     return new SvelteUIElement(ComparisonTool, {url, postprocessVelopark, state, tags: tagSource, layer, feature})
                 }
             }

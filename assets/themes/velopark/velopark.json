@@ -109,6 +109,7 @@
           "special": {
             "type": "compare_data",
             "url": "ref:velopark",
+            "host":"https://data.velopark.be", 
             "postprocessing": "velopark"
           }
         }

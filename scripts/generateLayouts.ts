@@ -16,6 +16,8 @@ import * as crypto from "crypto"
 import * as eli from "../src/assets/editor-layer-index.json"
 import * as eli_global from "../src/assets/global-raster-layers.json"
 import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtils"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 const sharp = require("sharp")
 const template = readFileSync("theme.html", "utf8")
@@ -282,19 +284,24 @@ async function generateCsp(
 
     SpecialVisualizations.specialVisualizations.forEach((sv) => {
         if (typeof sv.needsUrls === "function") {
+            // Handled below
             return
         }
         apiUrls.push(...(sv.needsUrls ?? []))
     })
 
-    const usedSpecialVisualisations = ValidationUtils.getSpecialVisualisationsWithArgs(layoutJson)
+    const usedSpecialVisualisations = [].concat(...layoutJson.layers.map(l => ValidationUtils.getAllSpecialVisualisations(<QuestionableTagRenderingConfigJson[]> (<LayerConfigJson>l).tagRenderings ?? [])))
     for (const usedSpecialVisualisation of usedSpecialVisualisations) {
         if (typeof usedSpecialVisualisation === "string") {
             continue
         }
         const neededUrls = usedSpecialVisualisation.func.needsUrls ?? []
         if (typeof neededUrls === "function") {
-            apiUrls.push(...neededUrls(usedSpecialVisualisation.args))
+            let needed: string | string[]  = neededUrls(usedSpecialVisualisation.args)
+            if(typeof needed === "string"){
+                needed = [needed]
+            }
+            apiUrls.push(...needed)
         }
     }
 
@@ -306,11 +313,14 @@ async function generateCsp(
     const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
     const vectorSources = vectorLayers.map((l) => l.properties.url)
     apiUrls.push(...vectorSources)
-    for (const connectSource of apiUrls.concat(geojsonSources)) {
+    for (let connectSource of apiUrls.concat(geojsonSources)) {
         if (!connectSource) {
             continue
         }
         try {
+            if(!connectSource.startsWith("http")){
+            connectSource = "https://"+connectSource
+            }
             const url = new URL(connectSource)
             hosts.add("https://" + url.host)
         } catch (e) {
