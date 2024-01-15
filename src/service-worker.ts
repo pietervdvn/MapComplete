@@ -58,6 +58,7 @@ self.addEventListener("fetch", async (e) => {
             origin.host === requestUrl.host &&
             origin.hostname !== "127.0.0.1" &&
             origin.hostname !== "localhost" &&
+            !origin.hostname.endsWith(".local") &&
             !origin.host.endsWith(".gitpod.io")
         if (!shouldBeCached) {
             console.log("Not intercepting ", requestUrl.toString(), origin.host, requestUrl.host)
