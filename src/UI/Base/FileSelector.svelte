@@ -51,11 +51,30 @@
     window.removeEventListener("drop", handleDragEvent)
   })
 
-
 </script>
 
 <form
   bind:this={formElement}
+  on:change|preventDefault={() => {
+    drawAttention = false
+    dispatcher("submit", inputElement.files)
+  }}
+  on:dragend={() => {
+    console.log("Drag end")
+    drawAttention = false
+  }}
+  on:dragenter|preventDefault|stopPropagation={(e) => {
+    console.log("Dragging enter")
+    drawAttention = true
+    e.dataTransfer.dropEffect = "copy"
+  }}
+  on:dragstart={() => {
+    drawAttention = false
+  }}
+  on:drop|preventDefault|stopPropagation={(e) => {
+    drawAttention = false
+    dispatcher("submit", e.dataTransfer.files)
+  }}
 >
   <label
     class={twMerge(cls, drawAttention ? "glowing-shadow" : "")}
