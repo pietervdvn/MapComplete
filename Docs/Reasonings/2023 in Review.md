@@ -37,7 +37,7 @@ Back then, it was as if they used some arcane magic to get it all working ;) Luc
 A designer from FixMyCity Berlin had a look to MapComplete as well; they worked out a conceptual framework to design mapcomplete against.
 The calmer, cleaner, gray-based design is thanks to them.
 
-Furthermore, they gave quite some feedback on various flows, which made the app more consistent and easier to use.
+Furthermore, they gave some feedback on various flows, which made the app more consistent and easier to use.
 
 ### MapLibre (June)
 
@@ -49,7 +49,7 @@ it also paves the way for more optimalisations later on (which I've just begun w
 ### Move of domain name (August)
 
 In august, I've finally made the switch to a proper domain name: mapcomplete.org. This change had quite some fallout, 
-as MapComplete relies on quite some external services which suddenly need to be updated.
+as MapComplete relies on several external services which suddenly need to be updated.
 
 ### Studio
 
@@ -71,9 +71,9 @@ As such, many people were a bit worried and we started backing up all pictures o
 
 This collection of around 30K images has several copies now with various people.
 
-And, as it turned out, only 6 of them became dead. It seems that Imgur's policy was mostly applied on a specific kind of indecent pictures...
+And, as it turned out, only 6 of them became dead. It seems that Imgur's policy was mostly applied on a specific kind of pictures, namely [the indecent type](https://piped.video/watch?v=zBDCq6Q8k2E)...
 
-## New themes and translations
+## New themes and theme improvements
 
 Of course, various improvements to the map themes were made. There are too much improvements to sum them all, but I'd like to give an overview of themes that have been officially added to MapComplete this year:
 
@@ -85,14 +85,18 @@ Of course, various improvements to the map themes were made. There are too much 
 - [vending_machine](https://mapcomplete.org/vending_machine)
 - [walkingnodes](https://mapcomplete.org/walkingnodes)
 
-This is quite a small amount of themes, especially compared to 2022 when 25 new themes were added.
-This is partly because I focused on improving the system and partly because there was no Open Summer of Code this year,
+This is a small amount of themes, especially compared to 2022 when 25 new themes were added.
+This is partly because I focused on improving the system itself (and not on creating new themes) and partly because there was no Open Summer of Code this year,
 which traditionally meant the addition of many new themes and layers.
 
-Another reason is that quite a few topical maps already exist by now - especially the broadly applicable ones.
+Another reason is that many topical maps already exist by now - especially the broadly applicable ones. As such, there is less need to create new ones.
 
 And maybe I should improve Studio further and officialize a few of those themes. In either case, if you have a thematic map or layer lying around,
 let me know and we'll add it to official mapcomplete!
+
+And even though there weren't many new themes added, quite some improvements were made to the already existing themes.
+For example, drinking water was improved with more specific questions, one can indicate what services a hackerspace offers, 
+...
 
 ### Accessibility
 
@@ -109,13 +113,15 @@ In the first 6 months, there were biweekly community calls. They were mostly bet
 or people passing by once to tell about their project.
 
 After the summer holiday, the community calls waned and weren't restarted - I was to busy and neglected them a bit.
-But - rejoice: we will restart them! The next one is [on friday the 26th of january](https://mobilizon.openstreetmap.fr/events/568afd3a-d18a-4ff0-acc4-626d6d09d6d5). 
+But - rejoice: we will restart them! The next one is [on friday the 26th of january, 14:00 CET](https://mobilizon.openstreetmap.fr/events/568afd3a-d18a-4ff0-acc4-626d6d09d6d5). 
 
 ### Patrons
 
 Another nice milestone is that two more patrons started pledging a small amount for the development of MapComplete.
 
 I'm now [receiving €1.03 per week via Liberapay](https://liberapay.com/pietervdvn). I'd like to thank my three patrons for the trust and small financial contribution!
+
+If you feel like becoming a patron too, [head over to Liberapay](https://liberapay.com/pietervdvn).
 
 ### Mastodon-accounts
 
@@ -127,14 +133,14 @@ with a few new followers daily.
 Another success is the [automated account](https://botsin.space/@mapcomplete/) which posts a small, daily overview of changes made with MapComplete,
 including up to 12 pictures which were made the day before. 133 people follow this account, and there was some interaction every day (e.g. a star, a boost or a small message)
 
-Another fun fact: the automated account was registered on the 12th of january, so it is a year old now!
+Another fun fact: the automated account was registered on the 12th of january 2023, so it is a year old now!
 
 ## Change Metrics
 
 But of course, the most interesting statistics are how MapComplete was used in the past year.
 
 Some basic logging is done with [goatcounter](https://pietervdvn.goatcounter.com), which shows around 200 up to 300 visitors per day on average.
-That is quite some, but also not very much. On the other hand, I suspect that goat counter misses quite a few visitors.
+That isn't a neglectable amount, but it is not very big either. On the other hand, I suspect that goat counter misses quite a few visitors.
 OSM-people tend to be privacy-aware and run scriptblocker, which'll also block goatcounter.
 
 Also, there is a big gap in December. The script was not properly configured and thus not counting visitors.
@@ -273,8 +279,11 @@ There is, in settings, also an option to enable 'translation mode' in MapComplet
 Many pieces of text in the interface will gain a small 'translate'-button which you can click to immediately translate or correct that piece of text.
 If you enable translate mode, you'll also have a button to quickly translate all strings of the specific theme.
 
-Translations are pulled in regularly (about once week) so you'll see your translations quite fast.
+Translations are pulled in regularly (about once week) so you'll see your translations quite fast. As of january 2024, 
+the translation completeness for English and German is (near) 100%, where as translations for Polish, Dutch, Czech and Catalan are
+quite complete as well.
 
+![2024-01-15 TranslationCompleteness.svg](2023_in_review%2F2024-01-15%20TranslationCompleteness.svg)
 
 # Wrapping up 2023
 
