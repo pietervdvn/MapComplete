@@ -43,8 +43,9 @@
   },
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",
+    "#strt:https": "Start in HTTPS mode. Makes a few things a bit harder, but allows to debug on Android with logging in",
+    "strt:https": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
     "strt": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
-    "strttest": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve test.html assets/templates/*.svg assets/templates/fonts/*.ttf",
     "watch:css": "tailwindcss -i src/index.css -o public/css/index-tailwind-output.css --watch",
     "generate:css": "tailwindcss -i src/index.css -o public/css/index-tailwind-output.css",
     "generate:doctests": "doctest-ts-improved . --ignore .*.spec.ts --ignore .*ConfigJson.ts",
@@ -179,6 +180,7 @@
     "@types/xml2js": "^0.4.9",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
+    "@vitejs/plugin-basic-ssl": "^1.0.2",
     "assert": "^2.0.0",
     "chai": "^4.3.6",
     "dependency-cruiser": "^10.4.0",
