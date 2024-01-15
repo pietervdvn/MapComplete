@@ -891,11 +891,6 @@ video {
   margin-right: 3rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1062,6 +1057,10 @@ video {
 
 .contents {
   display: contents;
+}
+
+.\!contents {
+  display: contents !important;
 }
 
 .list-item {
@@ -1247,6 +1246,10 @@ video {
 
 .w-64 {
   width: 16rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-auto {
