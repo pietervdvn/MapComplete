@@ -699,7 +699,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         )
     }
 
-    private static escapeStr(v: string): string{
+    private static escapeStr(v: string): string {
         return v
             .replace(/,/g, "&COMMA")
             .replace(/\{/g, "&LBRACE")
@@ -770,9 +770,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      *     "special":{
      *          "type": "multi",
      *          "key": "_nearby_bicycle_parkings:props",
-     *          "tagrendering": {
-     *            "*": "<b>{id}</b> ({distance}m) {tagApply(a,b,c)}"
-     *          }
+     *          "tagrendering": "<b>{id}</b> ({distance}m) {tagApply(a,b,c)}"
      *         }}
      * const context = ConversionContext.test()
      * RewriteSpecial.convertIfNeeded(special, context) // => {"*": "{multi(_nearby_bicycle_parkings:props,<b>&LBRACEid&RBRACE</b> &LPARENS&LBRACEdistance&RBRACEm&RPARENS &LBRACEtagApply&LPARENSa&COMMAb&COMMAc&RPARENS&RBRACE)}"}
@@ -877,7 +875,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         }
 
         if (foundLanguages.size === 0) {
-            const args = argNamesList.map((nm) => RewriteSpecial.escapeStr(special[nm] ?? "")).join(",")
+            const args = argNamesList
+                .map((nm) => RewriteSpecial.escapeStr(special[nm] ?? ""))
+                .join(",")
             return {
                 "*": `{${type}(${args})}`,
             }

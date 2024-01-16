@@ -52,7 +52,7 @@ export class Overpass {
         return `${this._interpreterUrl}?data=${encodeURIComponent(query)}`
     }
 
-    public async ExecuteQuery(query: string): Promise<[FeatureCollection, Date]> {
+    private async ExecuteQuery(query: string): Promise<[FeatureCollection, Date]> {
         const json = await Utils.downloadJson(this.buildUrl(query))
 
         if (json.elements.length === 0 && json.remark !== undefined) {

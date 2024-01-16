@@ -130,7 +130,7 @@
         "minzoom": 15,
         "pointRendering": [
           {
-            "marker": [
+            "=marker": [
               {
                 "icon": "./assets/themes/onwheels/restaurant.svg"
               }
@@ -231,7 +231,7 @@
         ],
         "pointRendering": [
           {
-            "marker": [
+            "=marker": [
               {
                 "icon": "./assets/themes/onwheels/parking.svg"
               }
@@ -465,7 +465,7 @@
               "point",
               "centroid"
             ],
-            "marker": [
+            "=marker": [
               {
                 "icon": "./assets/svg/statistics.svg"
               }
