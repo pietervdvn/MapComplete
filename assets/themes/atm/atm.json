@@ -132,7 +132,7 @@
                   "cs": "Přidání všech navrhovaných značek do nejbližšího bankomatu"
                 },
                 "image": "./assets/svg/addSmall.svg",
-                "maproulette_task_id": "mr_taskId"
+                "maproulette_id": "mr_taskId"
               }
             }
           },
