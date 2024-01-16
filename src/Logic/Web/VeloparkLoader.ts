@@ -1,4 +1,4 @@
-import { Feature, Point } from "geojson"
+import { Feature, Geometry, Point } from "geojson"
 import { OH } from "../../UI/OpeningHours/OpeningHours"
 import EmailValidator from "../../UI/InputElement/Validators/EmailValidator"
 import PhoneValidator from "../../UI/InputElement/Validators/PhoneValidator"
@@ -18,12 +18,13 @@ export default class VeloparkLoader {
 
     private static readonly coder = new CountryCoder(
         Constants.countryCoderEndpoint,
-        Utils.downloadJson
+        Utils.downloadJson,
     )
 
-    public static convert(veloparkData: VeloparkData): Feature<Point> {
+    public static convert(veloparkData: VeloparkData): Feature {
 
         const properties: {
+            "ref:velopark":string,
             "operator:email"?: string,
             "operator:phone"?: string,
             fee?: string,
@@ -31,7 +32,9 @@ export default class VeloparkLoader {
             access?: string
             maxstay?: string
             operator?: string
-        } = {}
+        } = {
+            "ref:velopark": veloparkData["id"] ?? veloparkData["@id"]
+        }
 
         properties.operator = veloparkData.operatedBy?.companyName
 
@@ -53,36 +56,39 @@ export default class VeloparkLoader {
             }
         })
 
-        let coordinates: [number, number] = undefined
+        let geometry = veloparkData.geometry
         for (const g of veloparkData["@graph"]) {
-            coordinates = [g.geo[0].longitude, g.geo[0].latitude]
+            if (g.geo[0]) {
+                geometry = { type: "Point", coordinates: [g.geo[0].longitude, g.geo[0].latitude] }
+            }
             if (g.maximumParkingDuration?.endsWith("D") && g.maximumParkingDuration?.startsWith("P")) {
                 const duration = g.maximumParkingDuration.substring(1, g.maximumParkingDuration.length - 1)
                 properties.maxstay = duration + " days"
             }
             properties.access = g.publicAccess ? "yes" : "no"
             const prefix = "http://schema.org/"
-            const oh = OH.simplify(g.openingHoursSpecification.map(spec => {
-                const dayOfWeek = spec.dayOfWeek.substring(prefix.length, prefix.length + 2).toLowerCase()
-                const startHour = spec.opens
-                const endHour = spec.closes === "23:59" ? "24:00" : spec.closes
-                const merged = OH.MergeTimes(OH.ParseRule(dayOfWeek + " " + startHour + "-" + endHour))
-                return OH.ToString(merged)
-            }).join("; "))
-            properties.opening_hours = oh
-
-            if (g.priceSpecification[0]) {
+            if (g.openingHoursSpecification) {
+                const oh = OH.simplify(g.openingHoursSpecification.map(spec => {
+                    const dayOfWeek = spec.dayOfWeek.substring(prefix.length, prefix.length + 2).toLowerCase()
+                    const startHour = spec.opens
+                    const endHour = spec.closes === "23:59" ? "24:00" : spec.closes
+                    const merged = OH.MergeTimes(OH.ParseRule(dayOfWeek + " " + startHour + "-" + endHour))
+                    return OH.ToString(merged)
+                }).join("; "))
+                properties.opening_hours = oh
+            }
+            if (g.priceSpecification?.[0]) {
                 properties.fee = g.priceSpecification[0].freeOfCharge ? "no" : "yes"
             }
         }
 
-
-        return { type: "Feature", properties, geometry: { type: "Point", coordinates } }
+        return { type: "Feature", properties, geometry }
     }
 
 }
 
-interface VeloparkData {
+export interface VeloparkData {
+    geometry?: Geometry
     "@context": any,
     "@id": string // "https://data.velopark.be/data/NMBS_541",
     "@type": "BicycleParkingStation",
