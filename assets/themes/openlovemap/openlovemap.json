@@ -1,5 +1,6 @@
 {
   "id": "openlovemap",
+  "hideFromOverview": true,
   "title": {
     "en": "Open Love Map"
   },
