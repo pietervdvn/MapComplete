@@ -576,7 +576,8 @@
             "ca": "Hi ha un canviador per a nadons",
             "cs": "Přebalovací pult je k dispozici"
           },
-          "if": "changing_table=yes"
+          "if": "changing_table=yes",
+          "icon": "./assets/layers/toilet/baby.svg"
         },
         {
           "if": "changing_table=no",
