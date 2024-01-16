@@ -5,11 +5,12 @@ import ThemeViewGUI from "./UI/ThemeViewGUI.svelte"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import Combine from "./UI/Base/Combine"
 import { SubtleButton } from "./UI/Base/SubtleButton"
-import Svg from "./Svg"
 import { Utils } from "./Utils"
+import Download from "./assets/svg/Download.svelte"
+
 function webgl_support() {
     try {
-        var canvas = document.createElement("canvas")
+        const canvas = document.createElement("canvas")
         return (
             !!window.WebGLRenderingContext &&
             (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
@@ -18,6 +19,7 @@ function webgl_support() {
         return false
     }
 }
+
 // @ts-ignore
 try {
     if (!webgl_support()) {
@@ -31,16 +33,22 @@ try {
         })
         .catch((err) => {
             console.error("Error while initializing: ", err, err.stack)
+            const customDefinition = DetermineLayout.getCustomDefinition()
             new Combine([
                 new FixedUiElement(err).SetClass("block alert"),
 
-                new SubtleButton(Svg.download_svg(), "Download the raw file").onClick(() =>
-                    Utils.offerContentsAsDownloadableFile(
-                        DetermineLayout.getCustomDefinition(),
-                        "mapcomplete-theme.json",
-                        { mimetype: "application/json" }
-                    )
-                ),
+                customDefinition?.length > 0
+                    ? new SubtleButton(
+                          new SvelteUIElement(Download),
+                          "Download the raw file"
+                      ).onClick(() =>
+                          Utils.offerContentsAsDownloadableFile(
+                              DetermineLayout.getCustomDefinition(),
+                              "mapcomplete-theme.json",
+                              { mimetype: "application/json" }
+                          )
+                      )
+                    : undefined,
             ]).AttachTo("maindiv")
         })
 } catch (err) {
