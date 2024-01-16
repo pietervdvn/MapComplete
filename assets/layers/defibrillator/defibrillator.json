@@ -752,7 +752,7 @@
   "deletion": {
     "softDeletionTags": {
       "and": [
-        "disused:emergency:=defibrillator}",
+        "disused:emergency:=defibrillator",
         "emergency="
       ]
     },

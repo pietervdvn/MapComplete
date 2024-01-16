@@ -366,7 +366,7 @@
         "testing": "Testing - changes won't be saved",
         "uploadError": "Error while uploading changes: {error}",
         "uploadGpx": {
-            "choosePermission": "Choose below if your track should be shared:",
+            "choosePermission": "Choose below how your track should be shared:",
             "confirm": "Confirm upload",
             "gpxServiceOffline": "The GPX-service is currently offline - uploading is currently not possible. Try again later.",
             "intro0": "By uploading your track, OpenStreetMap.org will retain a full copy of the track.",

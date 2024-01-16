@@ -842,7 +842,7 @@
     "hackerspaces": {
         "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
         "shortDescription": "A map of hackerspaces",
-        "title": "Hackerspaces"
+        "title": "Hackerspaces and makerspaces"
     },
     "hailhydrant": {
         "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.",
@@ -918,6 +918,13 @@
                             }
                         }
                     },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Exclude etymology theme"
+                            }
+                        }
+                    },
                     "2": {
                         "options": {
                             "0": {
@@ -971,13 +978,6 @@
                         "options": {
                             "0": {
                                 "question": "Exclude GRB theme"
-                            }
-                        }
-                    },
-                    "10": {
-                        "options": {
-                            "0": {
-                                "question": "Exclude etymology theme"
                             }
                         }
                     }
@@ -1056,6 +1056,33 @@
     "onwheels": {
         "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistics"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1097,33 +1124,6 @@
             "8": {
                 "override": {
                     "name": "Disabled parking spaces"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistics"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Add all the suggested tags"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1285,10 +1285,6 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
-            "3": {
-                "description": "Layer showing train stations",
-                "name": "Train Stations"
-            },
             "16": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
@@ -1320,6 +1316,10 @@
                 "title": {
                     "render": "Departures board"
                 }
+            },
+            "3": {
+                "description": "Layer showing train stations",
+                "name": "Train Stations"
             }
         },
         "title": "Train Stations"

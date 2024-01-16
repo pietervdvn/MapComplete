@@ -26,7 +26,7 @@
   "source": {
     "osmTags": "amenity=toilets"
   },
-  "minzoom": 12,
+  "minzoom": 10,
   "title": {
     "render": {
       "en": "Toilet",
@@ -683,6 +683,7 @@
           }
         }
       ],
+      "multiAnswer": true,
       "id": "toilet-changing_table:location"
     },
     {
