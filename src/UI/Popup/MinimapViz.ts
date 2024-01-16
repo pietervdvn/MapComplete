@@ -33,9 +33,8 @@ export class MinimapViz implements SpecialVisualization {
         tagSource: UIEventSource<Record<string, string>>,
         args: string[],
         feature: Feature,
-        layer: LayerConfig
     ) {
-        if (state === undefined || feature === undefined || layer.source === undefined) {
+        if (state === undefined || feature === undefined) {
             return undefined
         }
         const keys = [...args]
