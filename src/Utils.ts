@@ -610,6 +610,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * const target = {"id":"test"}
      * const result = Utils.Merge(source, target)
      * result // =>  {"id":"test","condition":{"and":["xyz"]}}
+     *
+     * const source = {"=name": {"en": "XYZ"}}
+     * const target = {"name":null, "x":"y"}
+     * const result = Utils.Merge(source, target)
+     * result // => {"name": {"en": "XYZ"}, "x": "y"}
      */
     static Merge<T, S>(source: Readonly<S>, target: T): T & S {
         if (target === null) {
@@ -1451,7 +1456,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static scrollIntoView(element: HTMLBaseElement | HTMLDivElement) {
         // Is the element completely in the view?
         const parentRect = Utils.findParentWithScrolling(element)?.getBoundingClientRect()
-        if(!parentRect){
+        if (!parentRect) {
             return
         }
         const elementRect = element.getBoundingClientRect()
