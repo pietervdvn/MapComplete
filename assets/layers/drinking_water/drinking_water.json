@@ -302,21 +302,24 @@
       "id": "fee",
       "question": {
         "en": "Is this drinking water point free to use?",
-        "nl": "Is dit drinkwaterpunt gratis te gebruiken?"
+        "nl": "Is dit drinkwaterpunt gratis te gebruiken?",
+        "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?"
       },
       "mappings": [
         {
           "if": "fee=no",
           "then": {
             "en": "Free to use",
-            "nl": "Gratis te gebruiken"
+            "nl": "Gratis te gebruiken",
+            "de": "Die Nutzung ist kostenlos"
           }
         },
         {
           "if": "fee=yes",
           "then": {
             "en": "One needs to pay to use this drinking water point",
-            "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken"
+            "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken",
+            "de": "Die Nutzung ist kostenpflichtig"
           }
         }
       ]
@@ -325,21 +328,24 @@
       "id": "seasonal",
       "question": {
         "en": "Is this drinking water point available all year round?",
-        "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
+        "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?",
+        "de": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
       },
       "mappings": [
         {
           "if": "seasonal=no",
           "then": {
             "en": "This drinking water point is available all around the year",
-            "nl": "Dit drinkwaterpunt is heel het jaar door beschikbaar"
+            "nl": "Dit drinkwaterpunt is heel het jaar door beschikbaar",
+            "de": "Die Trinkwasserstelle ist ganzjährig in Betrieb"
           }
         },
         {
           "if": "seasonal=summer",
           "then": {
             "en": "This drinking water point is only available in summer",
-            "nl": "Dit drinkwaterpunt is enkel in de zomer beschikbaar"
+            "nl": "Dit drinkwaterpunt is enkel in de zomer beschikbaar",
+            "de": "Die Trinkwasserstelle ist nur im Sommer in Betrieb"
           }
         },
         {
@@ -347,7 +353,8 @@
           "icon": "./assets/layers/drinking_water/no_winter.svg",
           "then": {
             "en": "This drinking water point is closed during the winter",
-            "nl": "Dit drinkwaterpunt is gesloten in de winter"
+            "nl": "Dit drinkwaterpunt is gesloten in de winter",
+            "de": "Die Trinkwasserstelle ist im Winter nicht in Betrieb"
           }
         }
       ]
@@ -357,7 +364,8 @@
       "override": {
         "questionHint": {
           "en": "These are the opening hours if the drinking water fountain is operational.",
-          "nl": "Tijdens deze openingsuren is dit drinkwaterpunt bruikbaar."
+          "nl": "Tijdens deze openingsuren is dit drinkwaterpunt bruikbaar.",
+          "de": "Dies sind die Öffnungszeiten des Trinkwasserbrunnens, wenn dieser in Betrieb ist."
         },
         "+mappings": [
           {
@@ -397,7 +405,8 @@
             },
             "then": {
               "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown.",
-              "nl": "Dit drinkwaterpunt is dit seizoen gesloten. De openingsuren worden dus niet weergegeven."
+              "nl": "Dit drinkwaterpunt is dit seizoen gesloten. De openingsuren worden dus niet weergegeven.",
+              "de": "Der Trinkwasserbrunnen ist derzeit nicht in Betrieb. Deshalb werden keine Öffnungszeiten angezeigt."
             },
             "hideInAnswer": true
           }
@@ -408,7 +417,8 @@
       "id": "bench-artwork",
       "question": {
         "en": "Does this drinking water fountain have an artistic element?",
-        "nl": "Heeft dit drinkwaterpunt een geintegreerd kunstwerk?"
+        "nl": "Heeft dit drinkwaterpunt een geintegreerd kunstwerk?",
+        "de": "Verfügt der Trinkwasserbrunnen über ein künstlerisches Element?"
       },
       "mappings": [
         {
@@ -418,14 +428,16 @@
           ],
           "then": {
             "en": "This drinking water point has an integrated artwork",
-            "nl": "Dit drinkwaterpunt heeft een geintegreerd kunstwerk"
+            "nl": "Dit drinkwaterpunt heeft een geintegreerd kunstwerk",
+            "de": "Die Trinkwasserstelle hat ein integriertes Kunstwerk"
           }
         },
         {
           "if": "not:tourism:artwork=yes",
           "then": {
             "en": "This drinking water point does not have an integrated artwork",
-            "nl": "Dit drinkwaterpunt heeft geen geïntegreerd kunstwerk"
+            "nl": "Dit drinkwaterpunt heeft geen geïntegreerd kunstwerk",
+            "de": "Die Trinkwasserstelle hat kein integriertes Kunstwerk"
           },
           "addExtraTags": [
             "tourism="
@@ -435,14 +447,16 @@
           "if": "tourism=",
           "then": {
             "en": "This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork",
-            "nl": "Dit drinkwaterpunt heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk"
+            "nl": "Dit drinkwaterpunt heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk",
+            "de": "Die Trinkwasserstelle hat <span class=\"subtle\">wahrscheinlich</span> kein integriertes Kunstwerk"
           },
           "hideInAnswer": true
         }
       ],
       "questionHint": {
         "en": "E.g. it has an integrated statue or other non-trivial, creative work",
-        "nl": "Bijvoorbeeld een standbeeld of ander, niet-triviaal kunstwerk"
+        "nl": "Bijvoorbeeld een standbeeld of ander, niet-triviaal kunstwerk",
+        "de": "Z.B. eine integrierte Statue oder andere künstlerische Werke"
       }
     },
     {
@@ -519,7 +533,8 @@
         },
         "then": {
           "en": "This is a historic, manual water pump where no drinking water can be found",
-          "nl": "Dit is een historische, manuele waterpomp waar geen drinkwater uitkomt"
+          "nl": "Dit is een historische, manuele waterpomp waar geen drinkwater uitkomt",
+          "de": "Dies ist eine historische, manuelle Wasserpumpe, an der kein Trinkwasser zu finden ist"
         }
       }
     ]

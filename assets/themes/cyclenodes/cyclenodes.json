@@ -36,7 +36,7 @@
       "name": {
         "en": "Node to node links",
         "de": "Knotenpunktverbindungen",
-        "es": "enlaces nodo a nodo",
+        "es": "Vínculos entre nodos",
         "nl": "Verbindingen van node naar node",
         "fr": "liens noeud à noeud",
         "ca": "Enllaços node a node",
@@ -57,7 +57,7 @@
         "render": {
           "en": "Node to node link",
           "de": "Knotenpunktverbindung",
-          "es": "enlace nodo a nodo",
+          "es": "Vínculos entre nodos",
           "nl": "Node-naar-node verbinding",
           "fr": "lien noeud à noeud",
           "ca": "Enllaç node a node",
@@ -70,7 +70,7 @@
             "then": {
               "en": "Node to node link <strong>{ref}</strong>",
               "de": "Knotenpunktverbindung <strong>{ref}</strong>",
-              "es": "enlace nodo a nodo <strong>{ref}</strong>",
+              "es": "Vínculos entre nodos <strong>{ref}</strong>",
               "nl": "Node-naar-node verbinding <strong>{ref}</strong>",
               "fr": "lien noeud à noeud <strong>{ref}</strong>",
               "ca": "Enllaç node a node <strong>{ref}</strong>",
@@ -131,7 +131,7 @@
         "en": "Nodes",
         "de": "Knotenpunkte",
         "ca": "Nodes",
-        "es": "nodos",
+        "es": "Nodos",
         "nb_NO": "noder",
         "nl": "Knooppunten",
         "fr": "noeuds",
@@ -202,7 +202,8 @@
             "then": {
               "en": "Proposed cycle node <strong>{proposed:rcn_ref}</strong>",
               "nl": "Voorgesteld fietsknooppunt <strong>{proposed:rcn_ref}</strong>",
-              "de": "Vorgeschlagener Radknoten <strong>{proposed:rcn_ref}</strong>"
+              "de": "Vorgeschlagener Radknoten <strong>{proposed:rcn_ref}</strong>",
+              "es": "Nodo de ciclo propuesto <strong>{proposed:rcn_ref}</strong>"
             }
           }
         ]
@@ -215,7 +216,8 @@
             "nl": "Wat is het referentienummer van dit fietsknooppunt?",
             "de": "Wie lautet die Nummer des Knotenpunkts im Fahrradknotenpunktnetzwerk?",
             "cs": "Jaké je referenční číslo tohoto cyklistického uzlu?",
-            "ca": "Quin és el número de referència d'aquest node ciclista?"
+            "ca": "Quin és el número de referència d'aquest node ciclista?",
+            "es": "¿Cuál es el número de referencia de este nodo cíclico?"
           },
           "freeform": {
             "key": "rcn_ref",
@@ -224,7 +226,8 @@
               "en": "e.g. 1",
               "nl": "bijv. 1",
               "de": "z.B. 1",
-              "cs": "e.g. 1"
+              "cs": "e.g. 1",
+              "es": "Por ejemplo, 1"
             }
           },
           "render": {
@@ -232,7 +235,8 @@
             "nl": "Dit fietsknooppunt heeft referentienummer {rcn_ref}",
             "de": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks",
             "cs": "Tento cyklistický uzel má referenční číslo {rcn_ref}",
-            "ca": "Aquest node ciclista té la referència número {rcn_ref}"
+            "ca": "Aquest node ciclista té la referència número {rcn_ref}",
+            "es": "Este nodo cíclico tiene el número de referencia {rcn_ref}"
           },
           "condition": "rcn_ref~*"
         },
@@ -290,7 +294,8 @@
               "en": "e.g. 3",
               "nl": "bijv. 3",
               "de": "z.B. 3",
-              "cs": "e.g. 3"
+              "cs": "e.g. 3",
+              "es": "Por ejemplo, 3"
             }
           },
           "id": "node-expected_rcn_route_relations"
@@ -307,7 +312,8 @@
             "en": "a cycling node",
             "nl": "een fietsknooppunt",
             "de": "ein Knoten eines Fahrradknotenpunktnetzwerks",
-            "ca": "un node ciclista"
+            "ca": "un node ciclista",
+            "es": "un nodo cíclico"
           },
           "snapToLayer": [
             "cycleways_and_roads"
@@ -341,13 +347,15 @@
         "name": {
           "en": "Cycling guideposts",
           "de": "Fahrrad-Wegweiser",
-          "cs": "Cyklistické ukazatele"
+          "cs": "Cyklistické ukazatele",
+          "es": "Indicadores de ciclismo"
         },
         "title": {
           "render": {
             "en": "Cycling guidepost",
             "de": "Fahrrad-Wegweiser",
-            "cs": "Cyklistický ukazatel"
+            "cs": "Cyklistický ukazatel",
+            "es": "Hito ciclista"
           }
         }
       },
@@ -375,7 +383,8 @@
             "title": {
               "en": "a route marker for a node to node link",
               "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten",
-              "cs": "značka trasy pro spojení mezi uzlem"
+              "cs": "značka trasy pro spojení mezi uzlem",
+              "es": "Un marcador de ruta para un enlace de nodo a nodo"
             },
             "=exampleImages": [
               "./assets/layers/route_marker/bicycle_route_marker.jpg"

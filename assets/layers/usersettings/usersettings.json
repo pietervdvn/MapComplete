@@ -51,7 +51,8 @@
             "en": "The language was set via an URL-parameter and cannot be set by the user.",
             "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.²",
             "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.",
-            "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²"
+            "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²",
+            "nl": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden."
           }
         }
       ]
@@ -84,7 +85,8 @@
                 "en": "<b class='alert'>You have {_unreadMessages} messages</b><br/>Open your inbox",
                 "de": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang",
                 "ca": "<b class='alert'>Tens {_unreadMessages} missatges </b><br/>Obri la safata d'entrada",
-                "cs": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku"
+                "cs": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku",
+                "nl": "<b class='alert'>Je hebt {_unreadMessages} ongelezen berichten</b><br/>Ga naar je inbox"
               },
               "href": "{_backend}/messages/inbox"
             }
@@ -101,7 +103,8 @@
             "en": "Open your settings on OpenStreetMap.org",
             "de": "Öffne Deine Einstellungen auf OpenStreetMap.org",
             "ca": "Obriu la vostra configuració a OpenStreetMap.org",
-            "cs": "Otevřít vaše nastavení na OpenStreetMap.org"
+            "cs": "Otevřít vaše nastavení na OpenStreetMap.org",
+            "nl": "Open je instellingen op OpenStreetMap.org"
           },
           "href": "{_backend}/account/edit"
         }
@@ -116,7 +119,8 @@
     {
       "id": "a11y-features",
       "question": {
-        "en": "What accessibility features should be applied?"
+        "en": "What accessibility features should be applied?",
+        "nl": "Wanneer moet de toegankelijkheidsmode ingeschakeld worden?"
       },
       "mappings": [
         {
@@ -124,20 +128,23 @@
           "alsoShowIf": "mapcomplete-a11y=",
           "then": {
             "en": "Enable accessibility features when arrow keys are used to navigate the map",
-            "ca": "Activar les funcions d'accessibilitat quan s'utilitzen les tecles de fletxa per navegar pel mapa"
+            "ca": "Activar les funcions d'accessibilitat quan s'utilitzen les tecles de fletxa per navegar pel mapa",
+            "nl": "Schakel toegankelijkheidsmode aan wanneer op de pijltjestoetsen wordt geduwd om de kaart te bewegen"
           }
         },
         {
           "if": "mapcomplete-a11y=always",
           "then": {
             "en": "Always enable accessibility features",
-            "ca": "Sempre habilita les característiques d'accessibilitat"
+            "ca": "Sempre habilita les característiques d'accessibilitat",
+            "nl": "Schakel de toegankelijkheidsmode altijd aan"
           }
         },
         {
           "if": "mapcomplete-a11y=never",
           "then": {
-            "en": "Never enable accessibility features"
+            "en": "Never enable accessibility features",
+            "nl": "Gebruik geen toegankelijkheidsmode"
           }
         }
       ]
@@ -407,7 +414,8 @@
       "question": {
         "en": "Should a crosshair be shown in the center of the display?",
         "cs": "Měl by se uprostřed displeje zobrazovat kříž?",
-        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?"
+        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
+        "nl": "Moet er een kruisje getoond worden in het centrum van je display?"
       },
       "questionHint": {
         "en": "This can help to accurately position a new element",
@@ -442,7 +450,8 @@
         "en": "Should north always be up?",
         "de": "Soll Norden immer oben sein?",
         "ca": "El nord hauria d'estar sempre amunt?",
-        "cs": "Měl by být sever vždy nahoře?"
+        "cs": "Měl by být sever vždy nahoře?",
+        "nl": "Moet het noorden altijd naar boven getoond worden?"
       },
       "mappings": [
         {
@@ -464,7 +473,8 @@
             "de": "Norden immer nach oben zeigen lassen",
             "fr": "Toujours garder le nord en haut",
             "ca": "Mantingueu sempre el nord apuntant cap amunt",
-            "cs": "Sever vždy směřujte nahoru"
+            "cs": "Sever vždy směřujte nahoru",
+            "nl": "Hou het noorden altijd naar boven"
           }
         }
       ]
@@ -481,7 +491,8 @@
             "de": "Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter",
             "da": "Hent den private nøgle til din Mangrove-konto",
             "ca": "Baixeu la clau privada del vostre compte de Mangrove",
-            "cs": "Stáhnout soukromý klíč pro Mangrove účet"
+            "cs": "Stáhnout soukromý klíč pro Mangrove účet",
+            "nl": "Download de private sleutel van je Mangrove-account"
           }
         },
         "after": {

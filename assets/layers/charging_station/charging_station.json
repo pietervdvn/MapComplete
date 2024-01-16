@@ -199,7 +199,7 @@
           "then": {
             "en": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)",
             "nl": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> ",
-            "de": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, …)",
+            "de": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, ...)",
             "ca": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, ...)"
           }
         },
@@ -1241,7 +1241,8 @@
             "socket:schuko",
             {
               "en": "<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
-              "nl": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
+              "nl": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)",
+              "de": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)"
             },
             "CEE7_4F.svg",
             [
@@ -1259,7 +1260,8 @@
             "socket:typee",
             {
               "en": "<b>European wall plug</b> with ground pin (CEE7/4 type E)",
-              "nl": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+              "nl": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)",
+              "de": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
             },
             "TypeE.svg",
             [
@@ -1278,7 +1280,8 @@
             "socket:chademo",
             {
               "en": "<b>Chademo</b>",
-              "nl": "<b>Chademo</b>"
+              "nl": "<b>Chademo</b>",
+              "de": "<b>Chademo-Stecker</b>"
             },
             "Chademo_type4.svg",
             [
@@ -1296,7 +1299,8 @@
             "socket:type1_cable",
             {
               "en": "<b>Type 1 with cable</b> (J1772)",
-              "nl": "<b>Type 1 met kabel</b> (J1772)"
+              "nl": "<b>Type 1 met kabel</b> (J1772)",
+              "de": "<b>Typ 1 mit Kabel</b> (J1772)"
             },
             "Type1_J1772.svg",
             [
@@ -1316,7 +1320,8 @@
             "socket:type1",
             {
               "en": "<b>Type 1 <i>without</i> cable</b> (J1772)",
-              "nl": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+              "nl": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)",
+              "de": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
             },
             "Type1_J1772.svg",
             [
@@ -1338,7 +1343,8 @@
             "socket:type1_combo",
             {
               "en": "<b>Type 1 CCS</b> (aka Type 1 Combo)",
-              "nl": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)"
+              "nl": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)",
+              "de": "<b>Typ 1 CCS</b> (Typ 1 Combo)"
             },
             "Type1-ccs.svg",
             [
@@ -1361,7 +1367,8 @@
             "socket:tesla_supercharger",
             {
               "en": "<b>Tesla Supercharger</b>",
-              "nl": "<b>Tesla Supercharger</b>"
+              "nl": "<b>Tesla Supercharger</b>",
+              "de": "<b>Tesla Supercharger</b>"
             },
             "Tesla-hpwc-model-s.svg",
             [
@@ -1382,7 +1389,8 @@
             "socket:type2",
             {
               "en": "<b>Type 2</b> (mennekes)",
-              "nl": "<b>Type 2</b> (mennekes)"
+              "nl": "<b>Type 2</b> (mennekes)",
+              "de": "<b>Typ 2</b> (Mennekes)"
             },
             "Type2_socket.svg",
             [
@@ -1403,7 +1411,8 @@
             "socket:type2_combo",
             {
               "en": "<b>Type 2 CCS</b> (mennekes)",
-              "nl": "<b>Type 2 CCS</b> (mennekes)"
+              "nl": "<b>Type 2 CCS</b> (mennekes)",
+              "de": "<b>Typ 2 CCS</b> (Mennekes)"
             },
             "Type2_CCS.svg",
             [
@@ -1423,7 +1432,8 @@
             "socket:type2_cable",
             {
               "en": "<b>Type 2 with cable</b> (mennekes)",
-              "nl": "<b>Type 2 met kabel</b> (J1772)"
+              "nl": "<b>Type 2 met kabel</b> (J1772)",
+              "de": "<b>Typ 2 mit Kabel</b> (Mennekes)"
             },
             "Type2_tethered.svg",
             [
@@ -1444,7 +1454,8 @@
             "socket:tesla_supercharger_ccs",
             {
               "en": "<b>Tesla Supercharger CCS</b> (a branded type2_css)",
-              "nl": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
+              "nl": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)",
+              "de": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)"
             },
             "Type2_CCS.svg",
             [
@@ -1464,7 +1475,8 @@
             "socket:tesla_destination",
             {
               "en": "<b>Tesla Supercharger (destination)</b>",
-              "nl": "<b>Tesla Supercharger (destination)</b>"
+              "nl": "<b>Tesla Supercharger (destination)</b>",
+              "de": "<b>Tesla Supercharger (Destination)</b>"
             },
             "Tesla-hpwc-model-s.svg",
             [
@@ -1485,7 +1497,8 @@
             "socket:tesla_destination",
             {
               "en": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)",
-              "nl": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)"
+              "nl": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)",
+              "de": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)"
             },
             "Type2_tethered.svg",
             [
@@ -1506,7 +1519,8 @@
             "socket:USB-A",
             {
               "en": "<b>USB</b> to charge phones and small electronics",
-              "nl": "<b>USB</b> om GSMs en kleine electronica op te laden"
+              "nl": "<b>USB</b> om GSMs en kleine electronica op te laden",
+              "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten"
             },
             "usb_port.svg",
             [
@@ -1526,7 +1540,8 @@
             "socket:bosch_3pin",
             {
               "en": "<b>Bosch Active Connect with 3 pins</b> and cable",
-              "nl": "<b>Bosch Active Connect met 3 pinnen</b> aan een kabel"
+              "nl": "<b>Bosch Active Connect met 3 pinnen</b> aan een kabel",
+              "de": "<b> Bosch Active Connect mit 3 Pins </b> und Kabel"
             },
             "bosch-3pin.svg",
             [],
@@ -1538,7 +1553,8 @@
             "socket:bosch_5pin",
             {
               "en": "<b>Bosch Active Connect with 5 pins</b> and cable",
-              "nl": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+              "nl": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel",
+              "de": "<b> Bosch Active Connect mit 5 Pins </b> und Kabel"
             },
             "bosch-5pin.svg",
             [],
@@ -1630,7 +1646,8 @@
           },
           "render": {
             "en": "{{description}} outputs at most {canonical({{key}}:current)}",
-            "nl": "{{description}} levert een stroom van maximaal {canonical({{key}}:current)}"
+            "nl": "{{description}} levert een stroom van maximaal {canonical({{key}}:current)}",
+            "de": "{{description}} liefert maximal {canonical({{key}}:current)}"
           },
           "freeform": {
             "key": "{{key}}:current",
@@ -1658,11 +1675,13 @@
           ],
           "question": {
             "en": "What power output does a single plug of type {{description}} offer?",
-            "nl": "Welk vermogen levert een enkele stekker van type {{description}}?"
+            "nl": "Welk vermogen levert een enkele stekker van type {{description}}?",
+            "de": "Welche Leistung liefert ein einzelner Stecker des Typs {{description}}?"
           },
           "render": {
             "en": "{{description}} outputs at most {canonical({{key}}:output)}",
-            "nl": "{{description}} levert een vermogen van maximaal {canonical({{key}}:output)}"
+            "nl": "{{description}} levert een vermogen van maximaal {canonical({{key}}:output)}",
+            "de": "{{description}} liefert maximal {canonical({{key}}:output)}"
           },
           "freeform": {
             "key": "{{key}}:output",
@@ -1672,7 +1691,8 @@
             "if": "{{key}}:output={{commonOutput}}",
             "then": {
               "en": "{{description}} outputs at most {{commonOutput}} A",
-              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
+              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} A",
+              "de": "{{description}} liefert maximal {{commonOutput}} A"
             }
           },
           "condition": {
@@ -1761,7 +1781,7 @@
           "then": {
             "nl": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/...",
             "en": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station",
-            "de": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, … kostenlos",
+            "de": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, ... kostenlos",
             "ca": "De pagament, però gratuït per als clients de l'hotel/bar/hospital/... que gestiona l'estació de càrrega"
           }
         },
@@ -2498,7 +2518,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>",
-            "de": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
           },
           "osmTags": "socket:type1_combo~*"
         },

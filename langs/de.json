@@ -467,7 +467,7 @@
         "selectItem": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
         "selectItem2": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am zweitnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
         "selectItem3": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am drittnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
-        "selectItemI": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am viertnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectItemI": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am {i} nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
         "selectMap": "Karte aus externer Quelle als Hintergrund wählen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
         "selectMapnik": "OpenStreetMap-carto als Hintergrundebene wählen",
         "selectOsmbasedmap": "OpenStreetMap-basierte Karte als Hintergrund auswählen (oder Hintergrundebene deaktivieren)",
