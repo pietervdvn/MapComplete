@@ -32,7 +32,6 @@ import { ConfigMeta } from "../../../UI/Studio/configMeta"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { ExpandRewrite } from "./ExpandRewrite"
-import { ALL } from "node:dns"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -700,6 +699,15 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         )
     }
 
+    private static escapeStr(v: string): string{
+        return v
+            .replace(/,/g, "&COMMA")
+            .replace(/\{/g, "&LBRACE")
+            .replace(/}/g, "&RBRACE")
+            .replace(/\(/g, "&LPARENS")
+            .replace(/\)/g, "&RPARENS")
+    }
+
     /**
      * Does the heavy lifting and conversion
      *
@@ -755,6 +763,19 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      *         }}
      * const context = ConversionContext.test()
      * RewriteSpecial.convertIfNeeded(special, context) // => {"en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE)}{_entrances_count_without_width_count} entrances don't have width information yet"}
+     * context.getAll("error") // => []
+     *
+     * // another actual test
+     * const special = {
+     *     "special":{
+     *          "type": "multi",
+     *          "key": "_nearby_bicycle_parkings:props",
+     *          "tagrendering": {
+     *            "*": "<b>{id}</b> ({distance}m) {tagApply(a,b,c)}"
+     *          }
+     *         }}
+     * const context = ConversionContext.test()
+     * RewriteSpecial.convertIfNeeded(special, context) // => {"*": "{multi(_nearby_bicycle_parkings:props,<b>&LBRACEid&RBRACE</b> &LPARENS&LBRACEdistance&RBRACEm&RPARENS &LBRACEtagApply&LPARENSa&COMMAb&COMMAc&RPARENS&RBRACE)}"}
      * context.getAll("error") // => []
      */
     private static convertIfNeeded(
@@ -838,7 +859,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         const translatedArgs = argNamesList
             .map((nm) => special[nm])
             .filter((v) => v !== undefined)
-            .filter((v) => Translations.isProbablyATranslation(v))
+            .filter((v) => Translations.isProbablyATranslation(v) || v["*"] !== undefined)
         for (const translatedArg of translatedArgs) {
             for (const ln of Object.keys(translatedArg)) {
                 foundLanguages.add(ln)
@@ -856,7 +877,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         }
 
         if (foundLanguages.size === 0) {
-            const args = argNamesList.map((nm) => special[nm] ?? "").join(",")
+            const args = argNamesList.map((nm) => RewriteSpecial.escapeStr(special[nm] ?? "")).join(",")
             return {
                 "*": `{${type}(${args})}`,
             }
@@ -874,13 +895,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 }
 
                 if (typeof v === "string") {
-                    const txt = v
-                        .replace(/,/g, "&COMMA")
-                        .replace(/\{/g, "&LBRACE")
-                        .replace(/}/g, "&RBRACE")
-                        .replace(/\(/g, "&LPARENS")
-                        .replace(/\)/g, "&RPARENS")
-                    args.push(txt)
+                    args.push(RewriteSpecial.escapeStr(v))
                 } else if (typeof v === "object") {
                     args.push(JSON.stringify(v))
                 } else {

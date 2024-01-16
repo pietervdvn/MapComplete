@@ -35,6 +35,8 @@ export default class Constants {
         "current_view",
         "import_candidate",
         "usersettings",
+        "icons",
+        "filters"
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks
