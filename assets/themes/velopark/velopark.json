@@ -22,7 +22,139 @@
   "startLat": 51.03753,
   "startLon": 3.71025,
   "startZoom": 18,
+  "defaultBackgroundId": "photo",
   "layers": [
+    {
+      "builtin": "maproulette_challenge",
+      "override": {
+        "=name": {
+          "en": "Velopark data",
+          "nl": "Velopark data"
+        },
+        "=filter": [
+          {
+            "id": "created-only",
+            "options": [
+              {
+                "question": {
+                  "en": "Only unfinished tasks",
+                  "nl": "Enkel onafgewerkte taken"
+                },
+                "osmTags": "mr_taskStatus=Created",
+                "default": true
+              }
+            ]
+          }
+        ],
+        "calculatedTags+": [
+          "mr_velopark_id=feat.properties['ref:velopark']?.split('/')?.at(-1)",
+          "_nearby_bicycle_parkings=closestn(feat)(['bike_parking','bike_parking_with_velopark_ref'], 100, undefined, 25)",
+          "_nearby_bicycle_parkings:count=get(feat)('_nearby_bicycle_parkings').length",
+          "_nearby_bicycle_parkings:props=get(feat)('_nearby_bicycle_parkings').map(f => ({_distance: Math.round(f.distance), _ref: feat.properties['ref:velopark'], _mr_id: feat.properties.id, '_velopark:id': (f.feat.properties['_velopark:id'] ?? 'unlinked') /*Explicit copy to trigger lazy loading*/, ...f.feat.properties}))"
+        ],
+        "=title": {
+          "render": "Velopark parking <b>{mr_velopark_id}</b>"
+        },
+        "source": {
+          "geoJson": "https://maproulette.org/api/v2/challenge/view/43282"
+        },
+        "=tagRenderings": [
+          {
+            "id": "velopark-link",
+            "render": {
+              "special": {
+                "type": "link",
+                "href": "https://www.velopark.be/static/data/{mr_velopark_id}",
+                "text": {
+                  "en": "See on velopark (webpage)",
+                  "nl": "Bekijk op Velopark (webpagina)"
+                }
+              }
+            }
+          },
+          {
+            "id": "velopark-data-link",
+            "render": {
+              "special": {
+                "type": "link",
+                "href": "{ref:velopark}",
+                "text": "Inspect raw data on velopark.be"
+              }
+            }
+          },
+          {
+            "id": "show-data-velopark",
+            "render": {
+              "special": {
+                "type": "compare_data",
+                "url": "ref:velopark",
+                "host": "https://data.velopark.be",
+                "postprocessing": "velopark",
+                "readonly": "yes"
+              }
+            }
+          },
+          {
+            "id": "closest_parkings",
+            "render": {
+              "*": "There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap. "
+            }
+          },
+          {
+            "id": "list_nearby_bike_parkings",
+            "render": {
+              "special": {
+                "type": "multi",
+                "key": "_nearby_bicycle_parkings:props",
+                "tagrendering": "<span class='p-2 m-1 border-2 border-dashed border-gray'><b><a href='#{id}'>{id}</a></b> ({_distance}m, {_velopark:id}) </span>{minimap(20)} {tag_apply(ref:velopark=$_ref,Link,link,id,_mr_id)}"
+              }
+            }
+          },
+          {
+            "id": "import_point",
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "bike_parking_with_velopark_ref bike_parking",
+                "tags": "amenity=bicycle_parking;ref:velopark=$ref:velopark",
+                "text": {
+                  "en": "Create a new bicycle parking in OSM",
+                  "nl": "Maak een nieuwe parking aan in OSM"
+                },
+                "maproulette_id": "mr_taskId"
+              }
+            }
+          },
+          {
+            "id": "close_mr",
+            "render": {
+              "special": {
+                "type": "maproulette_set_status",
+                "message": {
+                  "en": "Mark this item as linked",
+                  "nl": "Markeer als gelinkt"
+                }
+              }
+            }
+          },
+          {
+            "id": "close_mr_incorrect",
+            "render": {
+              "special": {
+                "type": "maproulette_set_status",
+                "message": {
+                  "en": "Mark this item as incorrect (duplicate, does not exist anymore, contradictory data)",
+                  "nl": "Markeer dit object als incorrect (duplicaatin, incorrect of tegenstrijdige data, ...)"
+                },
+                "image": "bug",
+                "status": 6
+              }
+            }
+          },
+          "{nearby_images()}"
+        ]
+      }
+    },
     {
       "builtin": [
         "bike_parking"
@@ -64,13 +196,19 @@
       }
     },
     {
-      "builtin": ["bike_parking"],
+      "builtin": [
+        "bike_parking"
+      ],
       "override": {
         "minzoom": 14
       }
     },
     {
-      "builtin": ["toilet","bike_repair_station","bicycle_rental"],
+      "builtin": [
+        "toilet",
+        "bike_repair_station",
+        "bicycle_rental"
+      ],
       "override": {
         "minzoom": 18
       }
@@ -80,7 +218,11 @@
     "+tagRenderings": [
       {
         "id": "velopark-ref",
-        "condition": "amenity=bicycle_parking",
+        "condition": {
+          "and": [
+            "amenity=bicycle_parking"
+          ]
+        },
         "freeform": {
           "key": "ref:velopark",
           "inline": false,
@@ -104,12 +246,17 @@
       },
       {
         "id": "comparison_tool",
-        "condition": "ref:velopark~https://data.velopark.be/data/.*" ,
+        "condition": {
+          "and": [
+            "ref:velopark~https://data.velopark.be/data/.*",
+            "id!~.*maproulette.org/.*"
+          ]
+        },
         "render": {
           "special": {
             "type": "compare_data",
             "url": "ref:velopark",
-            "host":"https://data.velopark.be", 
+            "host": "https://data.velopark.be",
             "postprocessing": "velopark"
           }
         }
