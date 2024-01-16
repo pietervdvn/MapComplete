@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="465" height="320" xml:lang="en"><script xmlns="">{
+            document.currentScript.dataset.injected = true;
+            const o = JSON.parse(decodeURIComponent(escape(atob('eyJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoWDExOyBMaW51eCB4ODZfNjQ7IHJ2OjEwOS4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94LzExNC4wIiwiYXBwVmVyc2lvbiI6IjUuMCAoWDExKSIsInBsYXRmb3JtIjoiTGludXgiLCJ2ZW5kb3IiOiIiLCJwcm9kdWN0IjoiR2Vja28iLCJ1c2VyQWdlbnREYXRhIjoiW2RlbGV0ZV0iLCJvc2NwdSI6IkxpbnV4IHg4Nl82NCIsInByb2R1Y3RTdWIiOiIyMDEwMDEwMSIsImJ1aWxkSUQiOiIyMDE4MTAwMTAwMDAwMCJ9'))));
+
+            if (o.userAgentDataBuilder) {
+              const v = new class NavigatorUAData {
+                #p;
+
+                constructor({p, ua}) {
+                  this.#p = p;
+
+                  const version = p.browser.major;
+                  const name = p.browser.name === 'Chrome' ? 'Google Chrome' : p.browser.name;
+
+                  this.brands = [{
+                    brand: name,
+                    version
+                  }, {
+                    brand: 'Chromium',
+                    version
+                  }, {
+                    brand: 'Not=A?Brand',
+                    version: '24'
+                  }];
+
+                  this.mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+
+                  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Platform
+                  this.platform = 'Unknown';
+                  if (p.os &amp;&amp; p.os.name) {
+                    const name = p.os.name.toLowerCase();
+                    if (name.includes('mac')) {
+                      this.platform = 'macOS';
+                    }
+                    else if (name.includes('debian')) {
+                      this.platform = 'Linux';
+                    }
+                    else {
+                      this.platform = p.os.name;
+                    }
+                  }
+                }
+                toJSON() {
+                  return {
+                    brands: this.brands,
+                    mobile: this.mobile,
+                    platform: this.platform
+                  };
+                }
+                getHighEntropyValues(hints) {
+                  if (!hints || Array.isArray(hints) === false) {
+                    return Promise.reject(Error("Failed to execute 'getHighEntropyValues' on 'NavigatorUAData'"));
+                  }
+
+                  const r = this.toJSON();
+
+                  if (hints.includes('architecture')) {
+                    r.architecture = this.#p?.cpu?.architecture || 'x86';
+                  }
+                  if (hints.includes('bitness')) {
+                    r.bitness = '64';
+                  }
+                  if (hints.includes('model')) {
+                    r.model = '';
+                  }
+                  if (hints.includes('platformVersion')) {
+                    r.platformVersion = this.#p?.os?.version || '10.0.0';
+                  }
+                  if (hints.includes('uaFullVersion')) {
+                    r.uaFullVersion = this.brands[0].version;
+                  }
+                  if (hints.includes('fullVersionList')) {
+                    r.fullVersionList = this.brands;
+                  }
+                  return Promise.resolve(r);
+                }
+              }(o.userAgentDataBuilder);
+
+              navigator.__defineGetter__('userAgentData', () =&gt; {
+                return v;
+              });
+            }
+            delete o.userAgentDataBuilder;
+
+            for (const key of Object.keys(o)) {
+              if (o[key] === '[delete]') {
+                delete Object.getPrototypeOf(window.navigator)[key];
+              }
+              else {
+                navigator.__defineGetter__(key, () =&gt; {
+                  if (o[key] === 'empty') {
+                    return '';
+                  }
+                  return o[key];
+                });
+              }
+            }
+          }</script>
+<defs>
+
+
+  <style type="text/css">@import url(https://s.weblate.org/cdn/font-source/source-sans-3.css);</style>
+
+
+</defs>
+<g id="layer1">
+
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/eu/" xlink:title="Basque">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="20" transform="rotate(-90)" id="text20">Basque</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect20" height="3" width="6" rx="2" y="156" x="14"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/ca/" xlink:title="Catalan">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="35" transform="rotate(-90)" id="text35">Catalan</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect35" height="126" width="6" rx="2" y="33" x="29"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/nan/" xlink:title="Chinese (Min Nan) (nan)">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="50" transform="rotate(-90)" id="text50">Chinese (Min Nan) (nan)</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect50" height="0" width="6" rx="2" y="159" x="44"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/zh_Hans/" xlink:title="Chinese (Simplified)">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="65" transform="rotate(-90)" id="text65">Chinese (Simplified)</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect65" height="7" width="6" rx="2" y="152" x="59"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/zh_Hant/" xlink:title="Chinese (Traditional)">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="80" transform="rotate(-90)" id="text80">Chinese (Traditional)</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect80" height="81" width="6" rx="2" y="78" x="74"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/cs/" xlink:title="Czech">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="95" transform="rotate(-90)" id="text95">Czech</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect95" height="124" width="6" rx="2" y="35" x="89"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/da/" xlink:title="Danish">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="110" transform="rotate(-90)" id="text110">Danish</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect110" height="93" width="6" rx="2" y="66" x="104"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/nl/" xlink:title="Dutch">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="125" transform="rotate(-90)" id="text125">Dutch</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect125" height="126" width="6" rx="2" y="33" x="119"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/en/" xlink:title="English">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="140" transform="rotate(-90)" id="text140">English</text>
+<rect style="fill:#2eccaa;fill-opacity:1;stroke:none" id="rect140" height="150" width="6" rx="2" y="10" x="134"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/eo/" xlink:title="Esperanto">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="155" transform="rotate(-90)" id="text155">Esperanto</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect155" height="13" width="6" rx="2" y="146" x="149"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/fil/" xlink:title="Filipino">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="170" transform="rotate(-90)" id="text170">Filipino</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect170" height="7" width="6" rx="2" y="152" x="164"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/fi/" xlink:title="Finnish">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="185" transform="rotate(-90)" id="text185">Finnish</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect185" height="57" width="6" rx="2" y="102" x="179"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/fr/" xlink:title="French">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="200" transform="rotate(-90)" id="text200">French</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect200" height="82" width="6" rx="2" y="77" x="194"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/gl/" xlink:title="Galician">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="215" transform="rotate(-90)" id="text215">Galician</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect215" height="24" width="6" rx="2" y="135" x="209"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/de/" xlink:title="German">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="230" transform="rotate(-90)" id="text230">German</text>
+<rect style="fill:#2eccaa;fill-opacity:1;stroke:none" id="rect230" height="149" width="6" rx="2" y="10" x="224"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/he/" xlink:title="Hebrew">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="245" transform="rotate(-90)" id="text245">Hebrew</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect245" height="3" width="6" rx="2" y="156" x="239"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/hu/" xlink:title="Hungarian">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="260" transform="rotate(-90)" id="text260">Hungarian</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect260" height="58" width="6" rx="2" y="101" x="254"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/id/" xlink:title="Indonesian">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="275" transform="rotate(-90)" id="text275">Indonesian</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect275" height="31" width="6" rx="2" y="128" x="269"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/it/" xlink:title="Italian">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="290" transform="rotate(-90)" id="text290">Italian</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect290" height="66" width="6" rx="2" y="94" x="284"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/ja/" xlink:title="Japanese">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="305" transform="rotate(-90)" id="text305">Japanese</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect305" height="25" width="6" rx="2" y="134" x="299"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/nb_NO/" xlink:title="Norwegian Bokmål">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="320" transform="rotate(-90)" id="text320">Norwegian Bokmål</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect320" height="74" width="6" rx="2" y="85" x="314"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/pl/" xlink:title="Polish">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="335" transform="rotate(-90)" id="text335">Polish</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect335" height="124" width="6" rx="2" y="35" x="329"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/pt/" xlink:title="Portuguese">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="350" transform="rotate(-90)" id="text350">Portuguese</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect350" height="68" width="6" rx="2" y="91" x="344"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/pt_BR/" xlink:title="Portuguese (Brazil)">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="365" transform="rotate(-90)" id="text365">Portuguese (Brazil)</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect365" height="27" width="6" rx="2" y="132" x="359"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/pa_PK/" xlink:title="Punjabi (Pakistan)">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="380" transform="rotate(-90)" id="text380">Punjabi (Pakistan)</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect380" height="17" width="6" rx="2" y="142" x="374"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/ru/" xlink:title="Russian">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="395" transform="rotate(-90)" id="text395">Russian</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect395" height="32" width="6" rx="2" y="127" x="389"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/sl/" xlink:title="Slovenian">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="410" transform="rotate(-90)" id="text410">Slovenian</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect410" height="8" width="6" rx="2" y="151" x="404"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/es/" xlink:title="Spanish">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="425" transform="rotate(-90)" id="text425">Spanish</text>
+<rect style="fill:#38f;fill-opacity:1;stroke:none" id="rect425" height="91" width="6" rx="2" y="68" x="419"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/sv/" xlink:title="Swedish">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="440" transform="rotate(-90)" id="text440">Swedish</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect440" height="11" width="6" rx="2" y="148" x="434"/>
+</a>
+
+<a xlink:href="https://hosted.weblate.org/projects/mapcomplete/core/-/zgh/" xlink:title="Tamazight (Standard Moroccan)">
+<text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:11px;font-family:'Source Sans 3',sans-serif;fill:#808080;text-anchor:end;" x="-170" y="455" transform="rotate(-90)" id="text455">Tamazight (Standard Moroccan)</text>
+<rect style="fill:#f6664c;fill-opacity:1;stroke:none" id="rect455" height="1" width="6" rx="2" y="158" x="449"/>
+</a>
+
+
+</g>
+</svg>

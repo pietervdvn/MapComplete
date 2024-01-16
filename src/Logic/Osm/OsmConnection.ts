@@ -399,11 +399,12 @@ export class OsmConnection {
         return id
     }
 
+    public static GpxTrackVisibility = ["private", "public", "trackable", "identifiable"] as const
     public async uploadGpxTrack(
         gpx: string,
         options: {
             description: string
-            visibility: "private" | "public" | "trackable" | "identifiable"
+            visibility: (typeof OsmConnection.GpxTrackVisibility)[number]
             filename?: string
             /**
              * Some words to give some properties;
@@ -425,11 +426,14 @@ export class OsmConnection {
 
         const contents = {
             file: gpx,
-            description: options.description ?? "",
+            description: options.description,
             tags: options.labels?.join(",") ?? "",
             visibility: options.visibility,
         }
 
+        if (!contents.description) {
+            throw "The description of a GPS-trace cannot be the empty string, undefined or null"
+        }
         const extras = {
             file:
                 '; filename="' +

@@ -4,6 +4,8 @@ import Svg from "../../Svg"
 import { Utils } from "../../Utils"
 import { LicenseInfo } from "./LicenseInfo"
 import Wikimedia from "../Web/Wikimedia"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import Wikimedia_commons_white from "../../assets/svg/Wikimedia_commons_white.svelte"
 
 /**
  * This module provides endpoints for wikimedia and others
@@ -70,7 +72,7 @@ export class WikimediaImageProvider extends ImageProvider {
     }
 
     SourceIcon(): BaseUIElement {
-        return Svg.wikimedia_commons_white_svg().SetStyle("width:2em;height: 2em")
+        return new SvelteUIElement(Wikimedia_commons_white).SetStyle("width:2em;height: 2em")
     }
 
     public PrepUrl(value: string): ProvidedImage {

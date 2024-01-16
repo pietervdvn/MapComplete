@@ -23,7 +23,22 @@
       "cs": "Ujetá cesta"
     }
   },
-  "pointRendering": [],
+  "pointRendering": [
+    {
+      "location": [
+        "start"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#bb000077"
+        }
+      ],
+      "iconSize": "10,10",
+      "pitchAlignment": "map",
+      "rotationAlignment": "map"
+    }
+  ],
   "lineRendering": [
     {
       "width": 3,

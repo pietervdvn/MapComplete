@@ -5,7 +5,7 @@ export interface IconConfigJson {
     /**
      * question: What icon should be used?
      * type: icon
-     * suggestions: return ["pin","square","circle","checkmark","clock","close","crosshair","help","home","invalid","location","location_empty","location_locked","note","resolved","ring","scissors","teardrop","teardrop_with_hole_green","triangle"].map(i => ({if: "value="+i, then: i, icon: i}))
+     * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
      */
     icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
     /**

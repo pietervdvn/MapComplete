@@ -147,6 +147,9 @@
             return { ...<object>v }
           }
           if (schema.type === "boolean") {
+              if(v === null || v === undefined){
+                  return v
+              }
             return v === "true" || v === "yes" || v === "1"
           }
           if (mightBeBoolean(schema.type)) {
@@ -187,7 +190,6 @@
       editMode={startInEditMode}
       {config}
       selectedElement={undefined}
-      showQuestionIfUnknown={true}
       {state}
       {tags}
     />

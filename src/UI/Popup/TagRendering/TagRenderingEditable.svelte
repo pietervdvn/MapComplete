@@ -4,7 +4,7 @@
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
-  import { PencilAltIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { PencilAltIcon } from "@rgossiaux/svelte-heroicons/solid"
   import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import { onDestroy } from "svelte"
   import Tr from "../../Base/Tr.svelte"
@@ -27,12 +27,12 @@
   /**
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */
-  export let editMode = !config.IsKnown(tags.data) // || showQuestionIfUnknown;
+  export let editMode = !config.IsKnown(tags.data)
   if (tags) {
     onDestroy(
       tags.addCallbackD((tags) => {
         editMode = !config.IsKnown(tags)
-      })
+      }),
     )
   }
 

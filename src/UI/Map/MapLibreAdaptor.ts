@@ -551,7 +551,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    private async setBackground(): Promise<void> {
+    private async setBackground(retryAttempts: number = 3): Promise<void> {
         const map = this._maplibreMap.data
         if (!map) {
             return
@@ -585,11 +585,22 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         } else {
             // Make sure that the default maptiler style is loaded as it gives an overlay with roads
             const maptiler = AvailableRasterLayers.maptilerDefaultLayer.properties
+            try {
+
+                await this.awaitStyleIsLoaded()
             if (!map.getSource(maptiler.id)) {
                 this.removeCurrentLayer(map)
                 map.addSource(maptiler.id, MapLibreAdaptor.prepareWmsSource(maptiler))
                 map.setStyle(maptiler.url)
                 await this.awaitStyleIsLoaded()
+            }
+            }catch (e) {
+                if(retryAttempts > 0){
+                window.requestAnimationFrame(() => {
+                    console.log("Retrying to set the background ("+retryAttempts+" attempts remaining)... Failed because",e)
+                    this.setBackground(retryAttempts-1)
+                })
+                }
             }
         }
 

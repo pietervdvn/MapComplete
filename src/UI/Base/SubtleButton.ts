@@ -66,32 +66,4 @@ export class SubtleButton extends UIElement {
         this.SetClass(classes)
         return button
     }
-
-    public OnClickWithLoading(
-        loadingText: BaseUIElement | string,
-        action: () => Promise<void>
-    ): BaseUIElement {
-        const state = new UIEventSource<"idle" | "running">("idle")
-        const button = this
-
-        button.onClick(async () => {
-            state.setData("running")
-            try {
-                await action()
-            } catch (e) {
-                console.error(e)
-            } finally {
-                state.setData("idle")
-            }
-        })
-        const loading = new Lazy(() => new Loading(loadingText))
-        return new VariableUiElement(
-            state.map((st) => {
-                if (st === "idle") {
-                    return button
-                }
-                return loading
-            })
-        )
-    }
 }

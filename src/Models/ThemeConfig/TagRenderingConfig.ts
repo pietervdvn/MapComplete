@@ -15,7 +15,6 @@ import {
     QuestionableTagRenderingConfigJson,
 } from "./Json/QuestionableTagRenderingConfigJson"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
-import { Paragraph } from "../../UI/Base/Paragraph"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import Constants from "../Constants"
@@ -371,20 +370,9 @@ export default class TagRenderingConfig {
         let iconClass = commonSize
         if (!!mapping.icon) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
-                let stripped = mapping.icon
-                if (stripped.endsWith(".svg")) {
-                    stripped = stripped.substring(0, stripped.length - 4)
-                }
-                if (Constants.defaultPinIcons.indexOf(stripped) >= 0) {
-                    icon = "./assets/svg/" + mapping.icon
-                    if (!icon.endsWith(".svg")) {
-                        icon += ".svg"
-                    }
-                } else {
-                    icon = mapping.icon
-                }
+                icon = mapping.icon.trim()
             } else if (mapping.icon["path"]) {
-                icon = mapping.icon["path"]
+                icon = mapping.icon["path"].trim()
                 iconClass = mapping.icon["class"] ?? iconClass
             }
         }
@@ -754,12 +742,10 @@ export default class TagRenderingConfig {
             withRender = [
                 `This rendering asks information about the property `,
                 Link.OsmWiki(this.freeform.key),
-                new Paragraph(
-                    new Combine([
-                        "This is rendered with ",
-                        new FixedUiElement(this.render.txt).SetClass("code font-bold"),
-                    ])
-                ),
+                new Combine([
+                    "This is rendered with ",
+                    new FixedUiElement(this.render.txt).SetClass("code font-bold"),
+                ]),
             ]
         }
 

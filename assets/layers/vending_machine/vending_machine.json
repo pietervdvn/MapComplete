@@ -579,7 +579,8 @@
             "en": "Fruit is sold",
             "nl": "Fruit wordt verkocht",
             "de": "Obst wird verkauft",
-            "cs": "Prodává ovoce"
+            "cs": "Prodává ovoce",
+            "ca": "Es ven fruita"
           },
           "icon": "./assets/layers/vending_machine/fruits.svg"
         },
@@ -589,7 +590,8 @@
             "en": "Strawberries are sold",
             "nl": "Aardbeien worden verkocht",
             "de": "Erdbeeren werden verkauft",
-            "cs": "Prodává jahody"
+            "cs": "Prodává jahody",
+            "ca": "Es venen maduixes"
           },
           "icon": "./assets/layers/vending_machine/strawberry.svg"
         },
@@ -643,7 +645,8 @@
             "en": "Bicycle lights are sold",
             "nl": "Fietslampjes worden verkocht",
             "de": "Fahrradlampen werden verkauft",
-            "cs": "Prodává světla na kolo"
+            "cs": "Prodává světla na kolo",
+            "ca": "Es venen llums per a bicicletes"
           }
         },
         {
@@ -652,7 +655,8 @@
             "en": "Gloves are sold",
             "nl": "Handschoenen worden verkocht",
             "de": "Fahrradhandschuhe werden verkauft",
-            "cs": "Prodává rukavice"
+            "cs": "Prodává rukavice",
+            "ca": "Es venen guants"
           }
         },
         {
@@ -661,7 +665,8 @@
             "en": "Bicycle repair kits are sold",
             "nl": "Fietsreparatiesets worden verkocht",
             "de": "Fahrrad-Reparaturset werden verkauft",
-            "cs": "Prodává sady na opravu jízdních kol"
+            "cs": "Prodává sady na opravu jízdních kol",
+            "ca": "Es venen kits de reparació de bicicletes"
           }
         },
         {
@@ -670,7 +675,8 @@
             "en": "Bicycle pumps are sold",
             "nl": "Fietspompen worden verkocht",
             "de": "Fahrradpumpen werden verkauft",
-            "cs": "Prodává pumpy na kolo"
+            "cs": "Prodává pumpy na kolo",
+            "ca": "Es venen bombes de bicicletes"
           }
         },
         {
@@ -679,7 +685,8 @@
             "en": "Bicycle locks are sold",
             "nl": "Fietssloten worden verkocht",
             "de": "Fahrradschlösser werden verkauft",
-            "cs": "Prodává zámky na kolo"
+            "cs": "Prodává zámky na kolo",
+            "ca": "Es venen cadenats per a bicicletes"
           }
         }
       ],
@@ -980,7 +987,7 @@
           "question": {
             "en": "Sale of fruit",
             "nl": "Verkoop van fruit",
-            "ca": "Venda de flors",
+            "ca": "Venda de fruites",
             "de": "Verkauf von Obst",
             "cs": "Prodej ovoce"
           },
@@ -990,7 +997,7 @@
           "question": {
             "en": "Sale of strawberries",
             "nl": "Verkoop van aardbeien",
-            "ca": "Venda de tiquets d'aparcament",
+            "ca": "Venda de maduixes",
             "de": "Verkauf von Erdbeeren",
             "cs": "Prodej jahod"
           },
@@ -1011,7 +1018,7 @@
           "osmTags": "vending~i~.*parking_tickets.*",
           "question": {
             "en": "Sale of parking tickets",
-            "ca": "Venda de bitllets de transport públic",
+            "ca": "Venda de tiquets d'aparcament",
             "de": "Verkauf von Parkscheinen",
             "cs": "Prodej parkovacích lístků"
           }
@@ -1040,7 +1047,8 @@
             "en": "Sale of bicycle lights",
             "nl": "Verkoop van fietslampjes",
             "de": "Verkauf von Fahrradlampen",
-            "cs": "Prodej světel na kolo"
+            "cs": "Prodej světel na kolo",
+            "ca": "Venda de llums de bicicletes"
           }
         },
         {
@@ -1049,7 +1057,8 @@
             "en": "Sale of gloves",
             "nl": "Verkoop van handschoenen",
             "de": "Verkauf von Fahrradhandschuhen",
-            "cs": "Prodej rukavic"
+            "cs": "Prodej rukavic",
+            "ca": "Venda de guants"
           }
         },
         {
@@ -1058,7 +1067,8 @@
             "en": "Sale of bicycle repair kits",
             "nl": "Verkoop van fietsreparatiesets",
             "de": "Verkauf von Fahrrad-Reparatursets",
-            "cs": "Prodej sad na opravu jízdních kol"
+            "cs": "Prodej sad na opravu jízdních kol",
+            "ca": "Venda de kits de reparació de bicicletes"
           }
         },
         {
@@ -1067,7 +1077,8 @@
             "en": "Sale of bicycle pumps",
             "nl": "Verkoop van fietspompen",
             "de": "Verkauf von Fahrradpumpen",
-            "cs": "Prodej pump na kolo"
+            "cs": "Prodej pump na kolo",
+            "ca": "Venda de bombes de bicicletes"
           }
         },
         {
@@ -1076,7 +1087,8 @@
             "en": "Sale of bicycle locks",
             "nl": "Verkoop van fietssloten",
             "de": "Verkauf von Fahrradschlössern",
-            "cs": "Prodej zámků na kola"
+            "cs": "Prodej zámků na kola",
+            "ca": "Venda de cadenat per a bicicletes"
           }
         }
       ]

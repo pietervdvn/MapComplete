@@ -286,7 +286,7 @@
             "es": "Se trata de un negocio de comida rápida, centrado en el servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
             "fr": "C'est un fast-food, centrée sur le service rapide. Si des places sont disponibles, elles sont plutôt limitées et fonctionnelles.",
             "hu": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak.",
-            "ca": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seràn limitats i funcionals.",
+            "ca": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seran limitats i funcionals.",
             "cs": "Jedná se o podnik s rychlým občerstvením, zaměřený na rychlou obsluhu. Pokud je k dispozici místo k sezení, je spíše omezené a funkční."
           }
         },
@@ -319,7 +319,7 @@
         "de": "Was für Essen gibt es hier?",
         "es": "¿Qué tipo de comida sirven aquí?",
         "fr": "Quelle type de nourriture est servie ici ?",
-        "ca": "Quin menjar es serveix aquí?",
+        "ca": "Quin tipus de menjar es serveix aquí?",
         "cs": "Jaké jídlo se zde podává?"
       },
       "render": {
@@ -395,7 +395,7 @@
             "nl": "Dit is een broodjeszaak",
             "de": "Dies ist ein Sandwichladen",
             "fr": "C'est une sandwicherie",
-            "ca": "Això és un sandvitxeria",
+            "ca": "Això és una botiga d'entrepans",
             "cs": "Toto je obchod se sendviči"
           }
         },

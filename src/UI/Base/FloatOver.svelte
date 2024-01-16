@@ -28,7 +28,7 @@
   style="z-index: 21"
   use:trapFocus
 >
-  <div class="content normal-background" on:click|stopPropagation={() => {}}>
+  <div class="h-full content normal-background" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">
       <slot />
     </div>
@@ -47,7 +47,6 @@
 
 <style>
   .content {
-    height: 100%;
     border-radius: 0.5rem;
     overflow-x: hidden;
     box-shadow: 0 0 1rem #00000088;

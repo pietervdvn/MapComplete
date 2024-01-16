@@ -76,11 +76,14 @@ function _arrayBufferToBase64(buffer) {
     return btoa(binary)
 }
 
+const cachedHashes: Record<string, string> = {}
+
 async function validateScriptIntegrityOf(path: string): Promise<void> {
     const htmlContents = readFileSync(path, "utf8")
     const doc = parse_html(htmlContents)
     // @ts-ignore
     const scripts = Array.from(doc.getElementsByTagName("script"))
+    // Maps source URL onto hash
     const failed = new Set<string>()
     for (const script of scripts) {
         let src = script.getAttribute("src")
@@ -103,10 +106,13 @@ async function validateScriptIntegrityOf(path: string): Promise<void> {
         if (src.startsWith("//")) {
             src = "https:" + src
         }
-        // Using 'scriptUtils' actually fetches data from the internet, it is not prohibited by the testHooks
-        const data: string = (await ScriptUtils.Download(src))["content"]
-        const hashed = await webcrypto.subtle.digest("SHA-384", new TextEncoder().encode(data))
-        const hashedStr = _arrayBufferToBase64(hashed)
+        if (cachedHashes[src] === undefined) {
+            // Using 'scriptUtils' actually fetches data from the internet, it is not prohibited by the testHooks
+            const data: string = (await ScriptUtils.Download(src))["content"]
+            const hashed = await webcrypto.subtle.digest("SHA-384", new TextEncoder().encode(data))
+            cachedHashes[src] = _arrayBufferToBase64(hashed)
+        }
+        const hashedStr = cachedHashes[src]
 
         const expected = "sha384-" + hashedStr
         if (expected !== integrity) {

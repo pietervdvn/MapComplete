@@ -43,7 +43,7 @@
     <Tr t={Translations.t.general.returnToTheMap} />
   </button>
 {:else}
-  <div class="flex h-full w-full flex-col gap-y-2 overflow-y-auto p-1 px-4" tabindex="-1">
+  <div class="flex h-full flex-col gap-y-2 overflow-y-auto p-1 px-4 w-full selected-element-view" tabindex="-1">
     {#each $knownTagRenderings as config (config.id)}
       <TagRenderingEditable
         {tags}

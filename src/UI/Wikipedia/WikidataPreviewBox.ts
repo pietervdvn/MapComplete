@@ -9,9 +9,15 @@ import Combine from "../Base/Combine"
 import Img from "../Base/Img"
 import { WikimediaImageProvider } from "../../Logic/ImageProviders/WikimediaImageProvider"
 import Link from "../Base/Link"
-import Svg from "../../Svg"
 import BaseUIElement from "../BaseUIElement"
 import { Utils } from "../../Utils"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import * as Wikidata_icon from "../../assets/svg/Wikidata.svelte"
+import Gender_male from "../../assets/svg/Gender_male.svelte"
+import Gender_female from "../../assets/svg/Gender_female.svelte"
+import Gender_inter from "../../assets/svg/Gender_inter.svelte"
+import Gender_trans from "../../assets/svg/Gender_trans.svelte"
+import Gender_queer from "../../assets/svg/Gender_queer.svelte"
 
 export default class WikidataPreviewBox extends VariableUiElement {
     private static isHuman = [{ p: 31 /*is a*/, q: 5 /* human */ }]
@@ -28,22 +34,36 @@ export default class WikidataPreviewBox extends VariableUiElement {
             requires: WikidataPreviewBox.isHuman,
             property: "P21",
             display: new Map([
-                ["Q6581097", () => Svg.gender_male_svg().SetStyle("width: 1rem; height: auto")],
-                ["Q6581072", () => Svg.gender_female_svg().SetStyle("width: 1rem; height: auto")],
-                ["Q1097630", () => Svg.gender_inter_svg().SetStyle("width: 1rem; height: auto")],
+                [
+                    "Q6581097",
+                    () => new SvelteUIElement(Gender_male).SetStyle("width: 1rem; height: auto"),
+                ],
+                [
+                    "Q6581072",
+                    () => new SvelteUIElement(Gender_female).SetStyle("width: 1rem; height: auto"),
+                ],
+                [
+                    "Q1097630",
+                    () => new SvelteUIElement(Gender_inter).SetStyle("width: 1rem; height: auto"),
+                ],
                 [
                     "Q1052281",
                     () =>
-                        Svg.gender_trans_svg().SetStyle(
+                        new SvelteUIElement(Gender_trans).SetStyle(
                             "width: 1rem; height: auto"
                         ) /*'transwomen'*/,
                 ],
                 [
                     "Q2449503",
                     () =>
-                        Svg.gender_trans_svg().SetStyle("width: 1rem; height: auto") /*'transmen'*/,
+                        new SvelteUIElement(Gender_trans).SetStyle(
+                            "width: 1rem; height: auto"
+                        ) /*'transmen'*/,
                 ],
-                ["Q48270", () => Svg.gender_queer_svg().SetStyle("width: 1rem; height: auto")],
+                [
+                    "Q48270",
+                    () => new SvelteUIElement(Gender_queer).SetStyle("width: 1rem; height: auto"),
+                ],
             ]),
             textMode: new Map([
                 ["Q6581097", "♂️"],
@@ -116,7 +136,9 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 wikidata.id,
                 options?.noImages
                     ? wikidata.id
-                    : Svg.wikidata_svg().SetStyle("width: 2.5rem").SetClass("block"),
+                    : new SvelteUIElement(Wikidata_icon)
+                          .SetStyle("width: 2.5rem")
+                          .SetClass("block"),
             ]).SetClass("flex"),
             Wikidata.IdToArticle(wikidata.id),
             true

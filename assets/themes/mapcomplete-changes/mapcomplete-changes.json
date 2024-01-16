@@ -317,6 +317,10 @@
                     "then": "./assets/themes/onwheels/crest.svg"
                   },
                   {
+                    "if": "theme=openlovemap",
+                    "then": "./assets/layers/stripclub/stripclub.svg"
+                  },
+                  {
                     "if": "theme=openwindpowermap",
                     "then": "./assets/themes/openwindpowermap/logo.svg"
                   },

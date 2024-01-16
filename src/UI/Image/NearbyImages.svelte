@@ -16,7 +16,7 @@
   import Translations from "../i18n/Translations"
   import LoginToggle from "../Base/LoginToggle.svelte"
 
-  export let tags: Store<OsmTags>
+  export let tags: UIEventSource<OsmTags>
   export let state: SpecialVisualizationState
   export let lon: number
   export let lat: number

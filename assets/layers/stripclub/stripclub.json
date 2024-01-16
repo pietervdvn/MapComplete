@@ -1,0 +1,86 @@
+{
+  "id": "stripclub",
+  "name": {
+    "en": "Stripclubs"
+  },
+  "description": {
+    "en": "A venue where erotic dance, striptease, or lap dances are performed commercially. "
+  },
+  "source": {
+    "osmTags": "amenity=stripclub",
+    "isOsmCache": false
+  },
+  "minzoom": 6,
+  "title": {
+    "render": {
+      "en": "Stripclub"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "ring",
+          "color": "#be57b4ff"
+        }
+      ]
+    },
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/stripclub/stripclub.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a stripclub"
+      },
+      "tags": [
+        "amenity=stripclub"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "multiAnswer": false,
+      "id": "name",
+      "freeform": {
+        "inline": false,
+        "key": "name"
+      },
+      "question": {
+        "en": "What is the name of this stripclub?"
+      },
+      "render": {
+        "en": "This stripclub is named <b>{name}</b>"
+      }
+    },
+    "opening_hours",
+    "contact"
+  ]
+}

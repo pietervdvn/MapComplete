@@ -3,6 +3,7 @@ import { UIEventSource } from "../Logic/UIEventSource"
 import UserRelatedState from "../Logic/State/UserRelatedState"
 import { Utils } from "../Utils"
 import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
+import Zoomcontrol from "../UI/Zoomcontrol"
 
 export type ThemeViewTabStates = (typeof MenuState._themeviewTabs)[number]
 export type MenuViewTabStates = (typeof MenuState._menuviewTabs)[number]
@@ -114,7 +115,36 @@ export class MenuState {
                 name: "background",
                 showOverOthers: true,
             },
+            {
+                toggle: this.communityIndexPanelIsOpened,
+                name: "community",
+                showOverOthers: true,
+            },
+            {
+                toggle: this.privacyPanelIsOpened,
+                name: "privacy",
+                showOverOthers: true,
+            },
+            {
+                toggle: this.filtersPanelIsOpened,
+                name: "filters",
+                showOverOthers: true,
+            },
         ]
+        for (const toggle of this.allToggles) {
+            toggle.toggle.addCallback((isOpen) => {
+                if (!isOpen) {
+                    this.resetZoomIfAllClosed()
+                }
+            })
+        }
+    }
+
+    private resetZoomIfAllClosed() {
+        if (this.isSomethingOpen()) {
+            return
+        }
+        Zoomcontrol.resetzoom()
     }
 
     public openFilterView(highlightLayer?: LayerConfig | string) {
@@ -146,27 +176,23 @@ export class MenuState {
         this.highlightedUserSetting.setData(highlightTagRendering)
     }
 
+    public isSomethingOpen(): boolean {
+        return this.allToggles.some((t) => t.toggle.data)
+    }
+
     /**
      * Close all floatOvers.
      * Returns 'true' if at least one menu was opened
      */
     public closeAll(): boolean {
-        const toggles = [
-            this.communityIndexPanelIsOpened,
-            this.privacyPanelIsOpened,
-            this.backgroundLayerSelectionIsOpened,
-            this.filtersPanelIsOpened,
-            this.menuIsOpened,
-            this.themeIsOpened,
-        ]
-        let somethingIsOpen = false
-        for (const t of toggles) {
-            somethingIsOpen = t.data
-            t.setData(false)
-            if (somethingIsOpen) {
+        let somethingWasOpen = false
+        for (const t of this.allToggles) {
+            somethingWasOpen = t.toggle.data
+            t.toggle.setData(false)
+            if (somethingWasOpen) {
                 break
             }
         }
-        return somethingIsOpen
+        return somethingWasOpen
     }
 }

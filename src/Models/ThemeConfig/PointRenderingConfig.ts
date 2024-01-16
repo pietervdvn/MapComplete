@@ -79,23 +79,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         })
 
-        if (json.marker === undefined && json.label === undefined) {
-            throw `At ${context}: A point rendering should define at least an marker or a label`
-        }
 
-        if (json["markers"]) {
-            throw `At ${context}.markers: detected a field 'markerS' in pointRendering. It is written as a singular case`
-        }
-        if (json.marker && !Array.isArray(json.marker)) {
-            throw `At ${context}.marker: the marker in a pointRendering should be an array`
-        }
-        if (this.location.size == 0) {
-            throw (
-                "A pointRendering should have at least one 'location' to defined where it should be rendered. (At " +
-                context +
-                ".location)"
-            )
-        }
         this.marker = (json.marker ?? []).map((m) => new IconConfig(<any>m))
         if (json.css !== undefined) {
             this.cssDef = this.tr("css", undefined)

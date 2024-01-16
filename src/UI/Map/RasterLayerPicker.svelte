@@ -76,7 +76,7 @@
 </script>
 
 {#if hasLayers}
-  <form class="flex h-full w-full flex-col">
+  <form class="flex h-full w-full flex-col" on:submit|preventDefault={() => {}}>
     <button
       tabindex="-1"
       on:click={() => apply()}

@@ -2,6 +2,8 @@ import { VariableUiElement } from "./VariableUIElement"
 import Locale from "../i18n/Locale"
 import Link from "./Link"
 import Svg from "../../Svg"
+import SvelteUIElement from "./SvelteUIElement"
+import Translate from "../../assets/svg/Translate.svelte"
 
 /**
  * The little 'translate'-icon next to every icon + some static helper functions
@@ -20,7 +22,7 @@ export default class LinkToWeblate extends VariableUiElement {
                     if (context === undefined || context.indexOf(":") < 0) {
                         return undefined
                     }
-                    const icon = Svg.translate_svg().SetClass(
+                    const icon = new SvelteUIElement(Translate).SetClass(
                         "rounded-full inline-block w-3 h-3 ml-1 weblate-link self-center"
                     )
                     if (availableTranslations[ln] === undefined) {

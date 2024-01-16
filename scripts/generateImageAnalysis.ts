@@ -13,6 +13,11 @@ import { Utils } from "../src/Utils"
 import Constants from "../src/Models/Constants"
 
 export default class GenerateImageAnalysis extends Script {
+    /**
+     * Max N in `image:N`-keys and `imageN` keys
+     * @private
+     */
+    private static readonly maxImageIndex = 31
     constructor() {
         super(
             [
@@ -57,8 +62,9 @@ export default class GenerateImageAnalysis extends Script {
         }
         await this.fetchImages("image", datapath, refresh)
         await this.fetchImages("image:streetsign", datapath, refresh)
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < GenerateImageAnalysis.maxImageIndex; i++) {
             await this.fetchImages("image:" + i, datapath, refresh)
+            await this.fetchImages("image" + i, datapath, refresh)
         }
     }
 
@@ -120,11 +126,16 @@ export default class GenerateImageAnalysis extends Script {
             imageSource[feature.properties["image:streetsign"]] =
                 feature.properties.id + " (streetsign)"
 
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < GenerateImageAnalysis.maxImageIndex; i++) {
                 allImages.add(feature.properties["image:" + i])
                 imageSource[
                     feature.properties["image:" + i]
                 ] = `${feature.properties.id} (image:${i})`
+
+                allImages.add(feature.properties["image" + i])
+                imageSource[
+                    feature.properties["image" + i]
+                ] = `${feature.properties.id} (image${i})`
             }
         }
         allImages.delete(undefined)
@@ -442,7 +453,7 @@ export default class GenerateImageAnalysis extends Script {
         const imageBackupPath = args[0]
         await this.downloadData(datapath, cached)
 
-        await this.downloadViews(datapath)
+        // await this.downloadViews(datapath)
         await this.downloadMetadata(datapath)
         await this.downloadAllImages(datapath, imageBackupPath)
         this.analyze(datapath)

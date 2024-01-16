@@ -6,6 +6,7 @@ import { Utils } from "../src/Utils"
 import Validators from "../src/UI/InputElement/Validators"
 import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
+import Constants from "../src/Models/Constants"
 
 const metainfo = {
     type: "One of the inputValidator types",
@@ -199,11 +200,12 @@ function extractHintsFrom(
 
     if (hints["suggestions"]) {
         const suggestions = hints["suggestions"]
-        const f = new Function("{ layers, themes, validators  }", suggestions)
+        const f = new Function("{ layers, themes, validators, Constants  }", suggestions)
         hints["suggestions"] = f({
             layers: AllSharedLayers.sharedLayers,
             themes: AllKnownLayouts.allKnownLayouts,
             validators: Validators,
+            Constants: Constants
         })
     }
     return hints

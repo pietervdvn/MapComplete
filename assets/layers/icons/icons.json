@@ -73,13 +73,14 @@
         "defaults",
         "in_favourite"
       ],
-      "#": "Titleicon showing 'open until 17:00'",
+      "#": "Titleicon showing e.g. 'open until 17:00'",
       "icon": {
         "class": "w-20 mx-1 flex items-center"
       },
       "render": "{opening_hours_state()}",
       "condition": {
         "or": [
+          "opening_hours~*",
           "seasonal=",
           "seasonal=no",
           {

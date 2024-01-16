@@ -24,6 +24,7 @@ import { ConversionContext } from "./ConversionContext"
 import * as eli from "../../../assets/editor-layer-index.json"
 import { AvailableRasterLayers } from "../../RasterLayers"
 import Back from "../../../assets/svg/Back.svelte"
+import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 
 class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
     private readonly _languages: string[]
@@ -177,6 +178,9 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         if (!json.title) {
             context.enter("title").err(`The theme ${json.id} does not have a title defined.`)
         }
+        if(!json.icon){
+            context.enter("icon").err("A theme should have an icon")
+        }
         if (this._isBuiltin && this._extractImages !== undefined) {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
             const images = this._extractImages.convert(json, context.inOperation("ValidateTheme"))
@@ -243,7 +247,8 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 new ValidateLanguageCompleteness("en").convert(theme, context)
             }
         } catch (e) {
-            context.err(e)
+            console.error(e)
+            context.err("Could not validate the theme due to: " + e)
         }
 
         if (theme.id !== "personal") {
@@ -411,7 +416,7 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
 
             return json
         } catch (e) {
-            context.err(e)
+            context.err("Could not check for conflicting extra tags due to: " + e)
             return undefined
         }
     }
@@ -1016,6 +1021,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
      */
     private readonly _path: string
     private readonly _studioValidations: boolean
+    private readonly _validatePointRendering = new ValidatePointRendering()
 
     constructor(path: string, isBuiltin, doesImageExist, studioValidations) {
         super("Runs various checks against common mistakes for a layer", [], "PrevalidateLayer")
@@ -1104,6 +1110,8 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         ) {
             context.enter("pointRendering").err("There are no pointRenderings at all...")
         }
+
+        json.pointRendering?.forEach((pr,i) => this._validatePointRendering.convert(pr, context.enters("pointeRendering", i)))
 
         if (json["mapRendering"]) {
             context.enter("mapRendering").err("This layer has a legacy 'mapRendering'")
@@ -1409,13 +1417,40 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
     }
 }
 
+class ValidatePointRendering extends DesugaringStep<PointRenderingConfigJson> {
+    constructor() {
+        super("Various checks for pointRenderings", [], "ValidatePOintRendering")
+    }
+
+    convert(json: PointRenderingConfigJson, context: ConversionContext): PointRenderingConfigJson {
+        if (json.marker === undefined && json.label === undefined) {
+            context.err(`A point rendering should define at least an marker or a label`)
+        }
+
+        if (json["markers"]) {
+            context.enter("markers").err(`Detected a field 'markerS' in pointRendering. It is written as a singular case`)
+        }
+        if (json.marker && !Array.isArray(json.marker)) {
+            context.enter("marker").err(
+                "The marker in a pointRendering should be an array"
+            )
+        }
+        if (json.location.length == 0) {
+            context.enter("location").err (
+                "A pointRendering should have at least one 'location' to defined where it should be rendered. "
+            )
+        }
+        return json
+
+
+    }
+}
 export class ValidateLayer extends Conversion<
     LayerConfigJson,
     { parsed: LayerConfig; raw: LayerConfigJson }
 > {
     private readonly _skipDefaultLayers: boolean
     private readonly _prevalidation: PrevalidateLayer
-
     constructor(
         path: string,
         isBuiltin: boolean,

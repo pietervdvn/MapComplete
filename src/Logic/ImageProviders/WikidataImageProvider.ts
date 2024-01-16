@@ -1,13 +1,11 @@
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import BaseUIElement from "../../UI/BaseUIElement"
-import Svg from "../../Svg"
 import { WikimediaImageProvider } from "./WikimediaImageProvider"
 import Wikidata from "../Web/Wikidata"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import * as Wikidata_icon from "../../assets/svg/Wikidata.svelte"
 
 export class WikidataImageProvider extends ImageProvider {
-    public apiUrls(): string[] {
-        return Wikidata.neededUrls
-    }
     public static readonly singleton = new WikidataImageProvider()
     public readonly defaultKeyPrefixes = ["wikidata"]
 
@@ -15,8 +13,12 @@ export class WikidataImageProvider extends ImageProvider {
         super()
     }
 
+    public apiUrls(): string[] {
+        return Wikidata.neededUrls
+    }
+
     public SourceIcon(): BaseUIElement {
-        return Svg.wikidata_svg()
+        return new SvelteUIElement(Wikidata_icon)
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {

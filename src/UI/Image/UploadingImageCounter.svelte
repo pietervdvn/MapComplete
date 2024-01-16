@@ -65,7 +65,7 @@
   {/if}
   {#if $failed > 0}
     <div class="alert flex flex-col">
-      {#if failed === 1}
+      {#if $failed === 1}
         <Tr cls="self-center" t={t.upload.one.failed} />
       {:else}
         <Tr cls="self-center" t={t.upload.multiple.someFailed.Subs({ count: $failed })} />

@@ -117,7 +117,6 @@
           selectedElement={state.exampleFeature}
           {config}
           editingEnabled={new ImmutableStore(true)}
-          showQuestionIfUnknown={true}
           {state}
           {tags}
         />

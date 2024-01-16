@@ -50,6 +50,13 @@
         "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
         "reload": "Recarregar dades"
     },
+    "favouritePoi": {
+        "button": {
+            "isMarkedShort": "Marcat com a ubicació favorita",
+            "isNotMarkedShort": "No marcat com a favorit",
+            "markAsFavouriteTitle": "Marca aquesta ubicació com a preferida"
+        }
+    },
     "flyer": {
         "aerial": "Aquest mapa utilitza un fons diferent, és a dir, imatges aèries de Agentschap Informatie Vlaanderen",
         "callToAction": "Prova'l a mapcomplete.org",
@@ -124,7 +131,7 @@
             "pleaseLogin": "Entra per afegir un nou element",
             "presetInfo": "El nou PDI tindrà les etiquetes {tags}",
             "stillLoading": "Les dades es segueixen carregant. Espera una mica abans d'afegir cap element.",
-            "title": "Vols afegir un element?",
+            "title": "Afegeix un element nou",
             "warnVisibleForEveryone": "La teva contribució serà vista per tothom",
             "wrongType": "Aquest element no és un punt o una via i no pot ser importat",
             "zoomInFurther": "Apropa per afegir un element.",
@@ -166,7 +173,7 @@
         "backgroundSwitch": "Canvia el fons",
         "cancel": "Cancel·lar",
         "confirm": "Confirmar",
-        "customThemeIntro": "<h3>Peticions personalitzades</h3>Aquestes són les peticions generades pels usuaris que has visitat abans.",
+        "customThemeIntro": "Aquestes són les peticions generades pels usuaris que has visitat abans.",
         "download": {
             "downloadAsPdf": "Baixar un PDF del mapa actual",
             "downloadAsPdfHelper": "Ideal per imprimir el mapa actual",
@@ -186,7 +193,6 @@
             "includeMetaData": "Incloure metadades (darrer editor, valors calculats, ...)",
             "licenseInfo": "<h3>Avís de drets de còpia</h3>Les dades proveïdes estan sota ODbL. Es poden reutilitzar de forma gratuïta, però <ul><li>l'atribució a <b>© Contribuïdors d'OpenStreetMap</b> s'ha de mostrar</li><li> Qualsevol canvi s'ha de publicar sota la mateixa llicència</li></ul> Llegeix sencer <ahref=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">l'avís de drets de còpia</a> per més detalls.",
             "noDataLoaded": "No s'han carregat dades. La baixada estarà disponible aviat",
-            "pdf": {},
             "title": "Descarrega",
             "uploadGpx": "Pujar la teva traça a OpenStreetMap"
         },
@@ -342,6 +348,13 @@
         },
         "useSearch": "Utilitzeu la cerca de dalt per veure els valors predefinits",
         "useSearchForMore": "Utilitzeu la funció de cerca per cercar dins de {total} valors més…",
+        "visualFeedback": {
+            "directionsRelative": {
+                "left": "esquerra",
+                "right": "dreta"
+            },
+            "fromGps": "{distance} {direction} de la seva ubicació"
+        },
         "waitingForGeopermission": "Esperant al vostre permís per a utilitzar la geolocalització…",
         "waitingForLocation": "Buscant la vostra ubicació actual…",
         "weekdays": {
@@ -620,6 +633,11 @@
             "description": "un número",
             "feedback": "No és un nombre"
         },
+        "id": {
+            "description": "un identificador",
+            "invalidCharacter": "Un identificador només pot contenir lletres, dígits i guions baixos",
+            "shouldBeLonger": "Un identificador ha de tenir almenys 3 caràcters"
+        },
         "int": {
             "description": "un número sencer"
         },
@@ -643,6 +661,10 @@
         "pnat": {
             "description": "un número sencer, positiu",
             "noZero": "No es permet el zero"
+        },
+        "slope": {
+            "inputExplanation": "Poseu el telèfon a terra amb la part superior del telèfon apuntant cap a la part superior del pendent.",
+            "inputIncorrect": "Per a les mesures correctes, assegureu-vos que la fletxa està dins de la zona verda."
         },
         "string": {
             "description": "un tros de text"
