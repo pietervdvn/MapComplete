@@ -20,7 +20,7 @@
       panzoomInstance = panzoom(panzoomEl, {
         bounds: true,
         boundsPadding: 0.49,
-        minZoom: 1,
+        minZoom: 0.1,
         maxZoom: 25,
         initialZoom: 1.0,
       })
@@ -32,7 +32,7 @@
 
 <img
   bind:this={panzoomEl}
-  class="panzoom-image h-fit w-fit"
+  class="panzoom-image h-fit max-w-fit"
   on:load={() => {
     isLoaded?.setData(true)
   }}

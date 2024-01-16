@@ -18,7 +18,7 @@
   export let previewedImage: UIEventSource<ProvidedImage> = undefined
 </script>
 
-<div class="relative">
+<div class="relative shrink-0">
   <img
     bind:this={imgEl}
     class={imgClass ?? ""}
