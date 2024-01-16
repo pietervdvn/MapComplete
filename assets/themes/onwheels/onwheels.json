@@ -465,7 +465,7 @@
               "point",
               "centroid"
             ],
-            "=marker": [
+            "marker": [
               {
                 "icon": "./assets/svg/statistics.svg"
               }
