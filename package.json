@@ -54,6 +54,7 @@
     "generate:cache:speelplekken": "npm run generate:layeroverview && vite-node scripts/generateCache.ts -- speelplekken 14 ../MapComplete-data/speelplekken_cache/ 51.20 4.35 51.09 4.56",
     "generate:cache:natuurpunt": "npm run generate:layeroverview && vite-node scripts/generateCache.ts -- natuurpunt 12 ../MapComplete-data/natuurpunt_cache/ 50.40 2.1 51.54 6.4 --generate-point-overview nature_reserve,visitor_information_centre",
     "generate:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts",
+    "generate:layeroverview:velopark": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --force --themes=velopark --layers=bike_parking,maproulette_challenge",
     "generate:mapcomplete-changes-theme": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --generate-change-map",
     "refresh:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --force",
     "generate:licenses": "vite-node scripts/generateLicenseInfo.ts -- --no-fail",
