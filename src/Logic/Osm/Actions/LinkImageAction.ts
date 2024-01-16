@@ -1,7 +1,6 @@
 import ChangeTagAction from "./ChangeTagAction"
 import { Tag } from "../../Tags/Tag"
 import OsmChangeAction from "./OsmChangeAction"
-import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
 import { Store } from "../../UIEventSource"
 
@@ -40,7 +39,7 @@ export default class LinkImageAction extends OsmChangeAction {
     protected CreateChangeDescriptions(): Promise<ChangeDescription[]> {
         let key = this._proposedKey
         let i = 0
-        const currentTags = this._currentTags.data
+        const currentTags: Record<string, string> = this._currentTags.data
         const url = this._url
         while (currentTags[key] !== undefined && currentTags[key] !== url) {
             key = this._proposedKey + ":" + i

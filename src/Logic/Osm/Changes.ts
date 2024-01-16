@@ -539,7 +539,7 @@ export class Changes {
             openChangeset
         )
 
-        console.log("Upload successfull!")
+        console.log("Upload successful!")
         return true
     }
 
