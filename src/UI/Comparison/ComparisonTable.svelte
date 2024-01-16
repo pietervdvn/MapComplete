@@ -12,6 +12,7 @@
     import { Tag } from "../../Logic/Tags/Tag"
     import { And } from "../../Logic/Tags/And"
     import Loading from "../Base/Loading.svelte"
+    import AttributedImage from "../Image/AttributedImage.svelte"
 
     export let osmProperties: Record<string, string>
     export let externalProperties: Record<string, string>
@@ -20,6 +21,8 @@
     export let state: SpecialVisualizationState
     export let feature: Feature
     export let layer: LayerConfig
+
+    export let readonly = false
 
     let externalKeys: string[] = (Object.keys(externalProperties))
         .sort()
@@ -59,12 +62,23 @@
 
 {#if different.length > 0}
   <h3>Conflicting items</h3>
-  {JSON.stringify(different)}
+  <table>
+    <tr>
+      <th>Key</th>
+      <th>OSM</th>
+      <th>External</th>
+    </tr>
+    {#each different as key}
+      <tr>
+        <td>{key}</td>
+        <td>{osmProperties[key]}</td>
+        <td>{externalProperties[key]}</td>
+      </tr>
+    {/each}
+  </table>
 {/if}
 
 {#if missing.length > 0}
-  <h3>Missing items</h3>
-
   {#if currentStep === "init"}
     <table class="w-full">
       <tr>
@@ -73,11 +87,13 @@
       </tr>
 
       {#each missing as key}
-        <ComparisonAction {key} {state} {tags} {externalProperties} {layer} {feature} />
+        <ComparisonAction {key} {state} {tags} {externalProperties} {layer} {feature} {readonly} />
       {/each}
 
     </table>
-    <button on:click={() => applyAllMissing()}>Apply all missing values</button>
+    {#if !readonly}
+      <button on:click={() => applyAllMissing()}>Apply all missing values</button>
+    {/if}
   {:else if currentStep === "applying_all"}
     <Loading>Applying all missing values</Loading>
   {:else if currentStep === "all_applied"}
@@ -96,12 +112,22 @@
 {/if}
 
 {#if unknownImages.length > 0}
-  <h3>Missing pictures</h3>
-  {#each unknownImages as image}
-    <LinkableImage
-      {tags}
-      {state}
-      image={{
+  {#if readonly}
+    <div class="w-full overflow-x-auto">
+
+      <div class="flex w-max gap-x-2 h-32">
+        {#each unknownImages as image}
+          <AttributedImage imgClass="h-32 w-max shrink-0" image={{url:image}} previewedImage={state.previewedImage}/>
+        {/each}
+      </div>
+    </div>
+  {:else}
+    {#each unknownImages as image}
+
+      <LinkableImage
+        {tags}
+        {state}
+        image={{
       pictureUrl: image,
       provider: "Velopark",
       thumbUrl: image,
@@ -109,9 +135,10 @@
       coordinates: undefined,
       osmTags : {image}
     }      }
-      {feature}
-      {layer} />
-  {/each}
+        {feature}
+        {layer} />
+    {/each}
+  {/if}
 
 {/if}
 

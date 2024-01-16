@@ -16,6 +16,8 @@
     export let feature: Feature
     export let layer: LayerConfig
 
+    export let readonly = false
+
     let currentStep: "init" | "applying" | "done" = "init"
 
     /**
@@ -49,17 +51,19 @@
       {externalProperties[key]}
     {/if}
   </td>
-  <td>
-    {#if currentStep === "init"}
-      <button class="small" on:click={() => apply(key)}>
-        Apply
-      </button>
-    {:else if currentStep === "applying"}
-      <Loading />
-    {:else if currentStep === "done"}
-      <div class="thanks">Done</div>
-    {:else }
-      <div class="alert">Error</div>
-    {/if}
-  </td>
+  {#if !readonly}
+    <td>
+      {#if currentStep === "init"}
+        <button class="small" on:click={() => apply(key)}>
+          Apply
+        </button>
+      {:else if currentStep === "applying"}
+        <Loading />
+      {:else if currentStep === "done"}
+        <div class="thanks">Done</div>
+      {:else }
+        <div class="alert">Error</div>
+      {/if}
+    </td>
+  {/if}
 </tr>

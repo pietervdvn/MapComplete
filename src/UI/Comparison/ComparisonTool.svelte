@@ -19,6 +19,7 @@ export let state: SpecialVisualizationState
 export let tags: UIEventSource<OsmTags>
 export let layer: LayerConfig
 export let feature: Feature
+export let readonly = false
 let data: any = undefined
 let error: any = undefined
 
@@ -58,5 +59,5 @@ onMount(async () => {
     Loading {$tags[url]}
   </Loading>
 {:else if data.properties !== undefined}
-  <ComparisonTable externalProperties={data.properties} osmProperties={$tags} {state} {feature} {layer} {tags} />
+  <ComparisonTable externalProperties={data.properties} osmProperties={$tags} {state} {feature} {layer} {tags} {readonly} />
 {/if}
