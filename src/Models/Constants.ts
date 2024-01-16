@@ -137,6 +137,7 @@ export default class Constants {
         "close",
         "heart",
         "heart_outline",
+        "link",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
 

@@ -31,6 +31,7 @@
   import Mastodon from "../../assets/svg/Mastodon.svelte"
   import Party from "../../assets/svg/Party.svelte"
   import AddSmall from "../../assets/svg/AddSmall.svelte"
+  import { LinkIcon } from "@babeard/svelte-heroicons/mini"
 
   /**
    * Renders a single icon.
@@ -114,6 +115,8 @@
     <Party {color} class={clss} />
   {:else if icon === "addSmall"}
     <AddSmall {color} class={clss} />
+    {:else if icon === "link"}
+    <LinkIcon class={clss}/>
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}
