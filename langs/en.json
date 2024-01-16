@@ -500,7 +500,8 @@
         "selectOsmbasedmap": "Set the background layer to on OpenStreetMap-based map (or disable the background raster layer)",
         "selectSearch": "Select the search bar to search locations",
         "shakePhone": "Shaking your phone",
-        "title": "Hotkeys"
+        "title": "Hotkeys",
+        "translationMode": "Toggle translation mode on or off"
     },
     "image": {
         "addPicture": "Add picture",

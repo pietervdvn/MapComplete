@@ -6,7 +6,6 @@
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import type { Feature } from "geojson"
   import { Store, UIEventSource } from "../../../Logic/UIEventSource"
-  import { onDestroy } from "svelte"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twMerge } from "tailwind-merge"
 
@@ -24,7 +23,7 @@
     throw "Config is undefined in tagRenderingAnswer"
   }
   let trs: Store<{ then: Translation; icon?: string; iconClass?: string }[]> = tags.mapD((tags) =>
-    Utils.NoNull(config?.GetRenderValues(tags))
+    Utils.NoNull(config?.GetRenderValues(tags)),
   )
 </script>
 
