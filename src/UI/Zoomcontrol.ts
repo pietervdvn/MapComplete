@@ -29,9 +29,6 @@ export default class Zoomcontrol {
         this._allowZooming.addCallback((allowed) => {
             this.apply(allowed ? Zoomcontrol.initialValue : Zoomcontrol.noZoom)
         })
-        Stores.Chronic(1000).addCallback((_) =>
-            console.log(this.viewportElement.getAttribute("content"))
-        )
     }
 
     private _resetZoom() {
