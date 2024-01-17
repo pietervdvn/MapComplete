@@ -36,6 +36,26 @@
         },
       )
 
+        map.addSource("toilet", {
+            "type": "vector",
+            "tiles": ["http://127.0.0.2:7800/public.toilet/{z}/{x}/{y}.pbf"] // http://127.0.0.2:7800/public.drinking_water.json",
+        })
+
+        map.addLayer(
+            {
+                "id": "toilet_layer",
+                "type": "circle",
+                "source": "toilet",
+                "source-layer": "public.toilet",
+                "paint": {
+                    "circle-radius": 5,
+                    "circle-color": "#0000ff",
+                    "circle-stroke-width": 2,
+                    "circle-stroke-color": "#000000",
+                },
+            },
+        )
+
       map.on('click', 'drinking_water_layer', (e) => {
 // Copy coordinates array.
         console.log(e)
