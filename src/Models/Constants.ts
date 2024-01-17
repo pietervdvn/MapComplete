@@ -36,7 +36,7 @@ export default class Constants {
         "import_candidate",
         "usersettings",
         "icons",
-        "filters"
+        "filters",
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks
@@ -117,7 +117,9 @@ export default class Constants {
      */
     private static readonly _defaultPinIcons = [
         "pin",
+        "bug",
         "square",
+        "square_rounded",
         "circle",
         "checkmark",
         "clock",

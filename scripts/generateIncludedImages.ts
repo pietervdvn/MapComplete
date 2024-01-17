@@ -82,6 +82,7 @@ function genImages(dryrun = false) {
         "SocialImageForeground",
         "speech_bubble_black_outline",
         "square",
+        "square_rounded",
         "star",
         "star_half",
         "star_outline",

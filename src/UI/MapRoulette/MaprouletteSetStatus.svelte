@@ -54,7 +54,7 @@
     <Tr t={Translations.t.general.loading} />
   </Loading>
 {:else if $status === Maproulette.STATUS_OPEN}
-  <button class="no-image-background w-full p-4" on:click={() => apply()}>
+  <button class="no-image-background w-full p-4 m-0" on:click={() => apply()}>
     <Icon clss="w-8 h-8 mr-2" icon={image} />
     {message}
   </button>

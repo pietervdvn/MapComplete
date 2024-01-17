@@ -55,7 +55,7 @@
       <div class="flex w-full space-x-1 overflow-x-auto" style="scroll-snap-type: x proximity">
         {#each $images as image (image.pictureUrl)}
           <span class="w-fit shrink-0" style="scroll-snap-align: start">
-            <LinkableImage {tags} {image} {state} {lon} {lat} {feature} {layer} {linkable} />
+            <LinkableImage {tags} {image} {state} {feature} {layer} {linkable} />
           </span>
         {/each}
       </div>
