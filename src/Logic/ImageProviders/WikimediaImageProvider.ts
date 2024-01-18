@@ -1,6 +1,5 @@
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import BaseUIElement from "../../UI/BaseUIElement"
-import Svg from "../../Svg"
 import { Utils } from "../../Utils"
 import { LicenseInfo } from "./LicenseInfo"
 import Wikimedia from "../Web/Wikimedia"

@@ -155,7 +155,6 @@ export class Mapillary extends ImageProvider {
             Constants.mapillary_client_token_v4
         const response = await Utils.downloadJsonCached(metadataUrl, 60 * 60)
         const url = <string>response["thumb_1024_url"]
-        console.log(response)
         const url_hd = <string>response["thumb_original_url"]
         return {
             id: "" + mapillaryId,

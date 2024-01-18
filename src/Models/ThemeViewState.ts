@@ -62,6 +62,7 @@ import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFe
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
+import Locale from "../UI/i18n/Locale"
 
 /**
  *
@@ -654,6 +655,16 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             return true
         })
+
+        Hotkeys.RegisterHotkey(
+            {
+                shift: "T",
+            },
+            Translations.t.hotkeyDocumentation.translationMode,
+            () => {
+                Locale.showLinkToWeblate.setData(!Locale.showLinkToWeblate.data)
+            }
+        )
     }
 
     /**

@@ -80,6 +80,7 @@ function genImages(dryrun = false) {
         "ring",
         "robot",
         "SocialImageForeground",
+        "speech_bubble",
         "speech_bubble_black_outline",
         "square",
         "square_rounded",

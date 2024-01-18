@@ -18,7 +18,7 @@
               }
             ]
           },
-          "color": "red"
+          "color": "black"
         }
       ]
     }
@@ -43,5 +43,6 @@
   },
   "tagRenderings": [
     
-  ]
+  ],
+  "syncSelection": "global"
 }

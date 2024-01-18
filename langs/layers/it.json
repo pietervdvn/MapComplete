@@ -69,6 +69,15 @@
                     "1": {
                         "then": "Murale"
                     },
+                    "10": {
+                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
+                    },
+                    "11": {
+                        "then": "Mosaico di piastrelle"
+                    },
+                    "12": {
+                        "then": "Scultura in legno"
+                    },
                     "2": {
                         "then": "Dipinto"
                     },
@@ -92,12 +101,6 @@
                     },
                     "9": {
                         "then": "Rilievo"
-                    },
-                    "10": {
-                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
-                    },
-                    "11": {
-                        "then": "Mosaico di piastrelle"
                     }
                 },
                 "question": "Che tipo di opera d’arte è questo?",
@@ -110,6 +113,24 @@
                         "text": "Ulteriori informazioni su questo sito web"
                     }
                 }
+            },
+            "artwork_subject": {
+                "question": "Che cosa rappresenta quest'opera d'arte?",
+                "render": "Quest'opera d'arte rappresenta {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Quest'opera d'arte funge anche da panchina"
+                    },
+                    "1": {
+                        "then": "Quest'opera d'arte non funge anche da panchina"
+                    },
+                    "2": {
+                        "then": "Quest'opera d'arte non funge anche da panchina"
+                    }
+                },
+                "question": "Quest'opera d'arte funge da panchina?"
             }
         },
         "title": {
@@ -119,6 +140,79 @@
                 }
             },
             "render": "Opera d’arte"
+        }
+    },
+    "atm": {
+        "description": "Sportello Bancomat per prelevare denaro",
+        "name": "Sportelli Bancomat",
+        "presets": {
+            "0": {
+                "title": "Uno sportello bancomat"
+            }
+        },
+        "tagRenderings": {
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Probabilmente non puoi depositare dei contanti in questo sportello bancomat"
+                    },
+                    "1": {
+                        "then": "Puoi depositare dei contanti in questo sportello bancomat"
+                    },
+                    "2": {
+                        "then": "Non puoi depositare dei contanti in questo sportello bancomat"
+                    }
+                },
+                "question": "Puoi depositare dei contanti in questo sportello bancomat?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Puoi prelevare dei contanti da questo sportello bancomat"
+                    },
+                    "1": {
+                        "then": "Puoi prelevare dei contanti da questo sportello bancomat"
+                    },
+                    "2": {
+                        "then": "Non puoi prelevare dei contanti da questo sportello bancomat"
+                    }
+                },
+                "question": "Puoi prelevare dei contanti da questo sportello bancomat?"
+            },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Si possono prelevare banconote da 5 euro"
+                    },
+                    "1": {
+                        "then": "Si possono prelevare banconote da 10 euro"
+                    },
+                    "2": {
+                        "then": "Si possono prelevare banconote da 20 euro"
+                    },
+                    "3": {
+                        "then": "Si possono prelevare banconote da 50 euro"
+                    },
+                    "4": {
+                        "then": "Si possono prelevare banconote da 100 euro"
+                    },
+                    "5": {
+                        "then": "Non si possono prelevare banconote da 200 euro"
+                    },
+                    "6": {
+                        "then": "Non si possono prelevare banconote da 500 euro"
+                    }
+                },
+                "question": "Quali banconote si possono ritirare qui?"
+            },
+            "name": {
+                "render": "Il nome di questo sportello bancomat è {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operatore"
+                }
+            }
         }
     },
     "bench": {
@@ -1898,27 +1992,6 @@
                     "1": {
                         "question": "Riciclo di batterie"
                     },
-                    "2": {
-                        "question": "Riciclo di confezioni per bevande"
-                    },
-                    "3": {
-                        "question": "Riciclo di lattine"
-                    },
-                    "4": {
-                        "question": "Riciclo di abiti"
-                    },
-                    "5": {
-                        "question": "Riciclo di olio da cucina"
-                    },
-                    "6": {
-                        "question": "Riciclo di olio da motore"
-                    },
-                    "8": {
-                        "question": "Riciclo di umido"
-                    },
-                    "9": {
-                        "question": "Riciclo di bottiglie di vetro"
-                    },
                     "10": {
                         "question": "Riciclo di vetro"
                     },
@@ -1946,8 +2019,29 @@
                     "19": {
                         "question": "Riciclo di secco"
                     },
+                    "2": {
+                        "question": "Riciclo di confezioni per bevande"
+                    },
                     "20": {
                         "question": "Riciclo di secco"
+                    },
+                    "3": {
+                        "question": "Riciclo di lattine"
+                    },
+                    "4": {
+                        "question": "Riciclo di abiti"
+                    },
+                    "5": {
+                        "question": "Riciclo di olio da cucina"
+                    },
+                    "6": {
+                        "question": "Riciclo di olio da motore"
+                    },
+                    "8": {
+                        "question": "Riciclo di umido"
+                    },
+                    "9": {
+                        "question": "Riciclo di bottiglie di vetro"
                     }
                 }
             },
@@ -2000,27 +2094,6 @@
                     "1": {
                         "then": "Cartoni per bevande"
                     },
-                    "2": {
-                        "then": "Lattine"
-                    },
-                    "3": {
-                        "then": "Abiti"
-                    },
-                    "4": {
-                        "then": "Olio da cucina"
-                    },
-                    "5": {
-                        "then": "Olio di motore"
-                    },
-                    "7": {
-                        "then": "Verde"
-                    },
-                    "8": {
-                        "then": "Umido"
-                    },
-                    "9": {
-                        "then": "Bottiglie di vetro"
-                    },
                     "10": {
                         "then": "Vetro"
                     },
@@ -2045,6 +2118,9 @@
                     "19": {
                         "then": "Scarpe"
                     },
+                    "2": {
+                        "then": "Lattine"
+                    },
                     "20": {
                         "then": "Piccoli elettrodomestici"
                     },
@@ -2056,6 +2132,24 @@
                     },
                     "23": {
                         "then": "Secco"
+                    },
+                    "3": {
+                        "then": "Abiti"
+                    },
+                    "4": {
+                        "then": "Olio da cucina"
+                    },
+                    "5": {
+                        "then": "Olio di motore"
+                    },
+                    "7": {
+                        "then": "Verde"
+                    },
+                    "8": {
+                        "then": "Umido"
+                    },
+                    "9": {
+                        "then": "Bottiglie di vetro"
                     }
                 },
                 "question": "Cosa si può riciclare qui?"

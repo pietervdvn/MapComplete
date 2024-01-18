@@ -1,6 +1,5 @@
 import Combine from "../../Base/Combine"
 import BaseUIElement from "../../BaseUIElement"
-import Svg from "../../../Svg"
 import Link from "../../Base/Link"
 import { FixedUiElement } from "../../Base/FixedUiElement"
 import Translations from "../../i18n/Translations"
@@ -11,6 +10,10 @@ import { Stores, UIEventSource } from "../../../Logic/UIEventSource"
 import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
 import { VariableUiElement } from "../../Base/VariableUIElement"
 import { SpecialVisualizationState } from "../../SpecialVisualization"
+import SvelteUIElement from "../../Base/SvelteUIElement"
+import Note from "../../../assets/svg/Note.svelte"
+import Resolved from "../../../assets/svg/Resolved.svelte"
+import Speech_bubble from "../../../assets/svg/Speech_bubble.svelte"
 
 export default class NoteCommentElement extends Combine {
     constructor(
@@ -32,11 +35,11 @@ export default class NoteCommentElement extends Combine {
 
         let actionIcon: BaseUIElement
         if (comment.action === "opened" || comment.action === "reopened") {
-            actionIcon = Svg.note_svg()
+            actionIcon = new SvelteUIElement(Note)
         } else if (comment.action === "closed") {
-            actionIcon = Svg.resolved_svg()
+            actionIcon = new SvelteUIElement(Resolved)
         } else {
-            actionIcon = Svg.speech_bubble_svg()
+            actionIcon = new SvelteUIElement(Speech_bubble)
         }
 
         let user: BaseUIElement

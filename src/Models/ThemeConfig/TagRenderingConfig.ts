@@ -496,7 +496,8 @@ export default class TagRenderingConfig {
             for (const leftover of leftovers) {
                 applicableMappings.push({
                     then: new TypedTranslation<object>(
-                        this.render.replace("{" + this.freeform.key + "}", leftover).translations
+                        this.render.replace("{" + this.freeform.key + "}", leftover).translations,
+                        this.render.context
                     ),
                 })
             }
