@@ -180,7 +180,7 @@
 
         <div slot="title4" class="flex">
           Advanced functionality
-          <ErrorIndicatorForRegion firstPaths={firstPathsFor("advanced", "expert")} {state} />
+          <ErrorIndicatorForRegion firstPaths={firstPathsFor("advanced")} {state} />
         </div>
         <div slot="content4">
           <Region configs={perRegion["advanced"]} {state} />

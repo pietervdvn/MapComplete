@@ -1,4 +1,5 @@
 import { ConversionMessage, ConversionMsgLevel } from "./Conversion"
+import { Context } from "maplibre-gl"
 
 export class ConversionContext {
     /**
@@ -40,6 +41,31 @@ export class ConversionContext {
 
     public static test(msg?: string) {
         return new ConversionContext([], msg ? [msg] : [], ["test"])
+    }
+
+    /**
+     * Does an inline edit of the messages for which a new path is defined
+     * This is a slight hack
+     * @param rewritePath
+     */
+    public rewriteMessages(
+        rewritePath: (
+            p: ReadonlyArray<number | string>
+        ) => undefined | ReadonlyArray<number | string>
+    ): void {
+        for (let i = 0; i < this.messages.length; i++) {
+            const m = this.messages[i]
+            const newPath = rewritePath(m.context.path)
+            if (!newPath) {
+                continue
+            }
+            const rewrittenContext = new ConversionContext(
+                this.messages,
+                newPath,
+                m.context.operation
+            )
+            this.messages[i] = <ConversionMessage>{ ...m, context: rewrittenContext }
+        }
     }
 
     static print(msg: ConversionMessage) {

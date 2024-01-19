@@ -13,7 +13,10 @@ import { And } from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
-import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "../Json/QuestionableTagRenderingConfigJson"
 import Validators from "../../../UI/InputElement/Validators"
 import TagRenderingConfig from "../TagRenderingConfig"
 import { parse as parse_html } from "node-html-parser"
@@ -21,9 +24,7 @@ import PresetConfig from "../PresetConfig"
 import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 import { Translatable } from "../Json/Translatable"
 import { ConversionContext } from "./ConversionContext"
-import * as eli from "../../../assets/editor-layer-index.json"
 import { AvailableRasterLayers } from "../../RasterLayers"
-import Back from "../../../assets/svg/Back.svelte"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 
 class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
@@ -178,7 +179,7 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         if (!json.title) {
             context.enter("title").err(`The theme ${json.id} does not have a title defined.`)
         }
-        if(!json.icon){
+        if (!json.icon) {
             context.enter("icon").err("A theme should have an icon")
         }
         if (this._isBuiltin && this._extractImages !== undefined) {
@@ -831,6 +832,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         json: TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
         context: ConversionContext
     ): TagRenderingConfigJson {
+        console.log(">>> Validating TR", context.path.join("."), json)
         if (json["special"] !== undefined) {
             context.err(
                 'Detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
@@ -848,13 +850,32 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                 CheckTranslation.allowUndefined.convert(json[key], context.enter(key))
             }
             for (let i = 0; i < json.mappings?.length ?? 0; i++) {
-                const mapping = json.mappings[i]
+                const mapping: MappingConfigJson = json.mappings[i]
                 CheckTranslation.noUndefined.convert(
                     mapping.then,
                     context.enters("mappings", i, "then")
                 )
                 if (!mapping.if) {
-                    context.enters("mappings", i).err("No `if` is defined")
+                    console.log(
+                        "Checking mappings",
+                        i,
+                        "if",
+                        mapping.if,
+                        context.path.join("."),
+                        mapping.then
+                    )
+                    context.enters("mappings", i, "if").err("No `if` is defined")
+                }
+                if (mapping.addExtraTags) {
+                    for (let j = 0; j < mapping.addExtraTags.length; j++) {
+                        if (!mapping.addExtraTags[j]) {
+                            context
+                                .enters("mappings", i, "addExtraTags", j)
+                                .err(
+                                    "Detected a 'null' or 'undefined' value. Either specify a tag or delete this item"
+                                )
+                        }
+                    }
                 }
                 const en = mapping?.then?.["en"]
                 if (en && this.detectYesOrNo(en)) {
@@ -977,6 +998,9 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
             }
         }
 
+        if (context.hasErrors()) {
+            return undefined
+        }
         return json
     }
 
@@ -996,6 +1020,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
     constructor(layerConfig?: LayerConfigJson, doesImageExist?: DoesImageExist) {
         super(
             "Various validation on tagRenderingConfigs",
+            new MiscTagRenderingChecks(),
             new DetectShadowedMappings(layerConfig),
             new DetectConflictingAddExtraTags(),
             // TODO enable   new DetectNonErasedKeysInMappings(),
@@ -1003,8 +1028,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             new On("render", new ValidatePossibleLinks()),
             new On("question", new ValidatePossibleLinks()),
             new On("questionHint", new ValidatePossibleLinks()),
-            new On("mappings", new Each(new On("then", new ValidatePossibleLinks()))),
-            new MiscTagRenderingChecks()
+            new On("mappings", new Each(new On("then", new ValidatePossibleLinks())))
         )
     }
 }
@@ -1107,7 +1131,9 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             context.enter("pointRendering").err("There are no pointRenderings at all...")
         }
 
-        json.pointRendering?.forEach((pr,i) => this._validatePointRendering.convert(pr, context.enters("pointeRendering", i)))
+        json.pointRendering?.forEach((pr, i) =>
+            this._validatePointRendering.convert(pr, context.enters("pointeRendering", i))
+        )
 
         if (json["mapRendering"]) {
             context.enter("mapRendering").err("This layer has a legacy 'mapRendering'")
@@ -1134,7 +1160,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         }
 
         if (json.tagRenderings !== undefined && json.tagRenderings.length > 0) {
-            new On("tagRendering", new Each(new ValidateTagRenderings(json)))
+            new On("tagRenderings", new Each(new ValidateTagRenderings(json)))
             if (json.title === undefined && json.source !== "special:library") {
                 context
                     .enter("title")
@@ -1424,29 +1450,33 @@ class ValidatePointRendering extends DesugaringStep<PointRenderingConfigJson> {
         }
 
         if (json["markers"]) {
-            context.enter("markers").err(`Detected a field 'markerS' in pointRendering. It is written as a singular case`)
+            context
+                .enter("markers")
+                .err(
+                    `Detected a field 'markerS' in pointRendering. It is written as a singular case`
+                )
         }
         if (json.marker && !Array.isArray(json.marker)) {
-            context.enter("marker").err(
-                "The marker in a pointRendering should be an array"
-            )
+            context.enter("marker").err("The marker in a pointRendering should be an array")
         }
         if (json.location.length == 0) {
-            context.enter("location").err (
-                "A pointRendering should have at least one 'location' to defined where it should be rendered. "
-            )
+            context
+                .enter("location")
+                .err(
+                    "A pointRendering should have at least one 'location' to defined where it should be rendered. "
+                )
         }
         return json
-
-
     }
 }
+
 export class ValidateLayer extends Conversion<
     LayerConfigJson,
     { parsed: LayerConfig; raw: LayerConfigJson }
 > {
     private readonly _skipDefaultLayers: boolean
     private readonly _prevalidation: PrevalidateLayer
+
     constructor(
         path: string,
         isBuiltin: boolean,
