@@ -1,5 +1,15 @@
 [
   {
+    "path": "baby.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Bianca Teixeira"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Baby_(75158)_-_The_Noun_Project.svg"
+    ]
+  },
+  {
     "path": "toilets.svg",
     "license": "CC0-1.0",
     "authors": [],

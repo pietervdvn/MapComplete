@@ -9105,20 +9105,20 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "The changing table is in the toilet for women. "
+                        "then": "A changing table is in the toilet for women"
                     },
                     "1": {
-                        "then": "The changing table is in the toilet for men. "
+                        "then": "A changing table is in the toilet for men"
                     },
                     "2": {
-                        "then": "The changing table is in the toilet for wheelchair users. "
+                        "then": "A changing table is in the toilet for wheelchair users"
                     },
                     "3": {
-                        "then": "The changing table is in a dedicated room. "
+                        "then": "A changing table is in a dedicated room"
                     }
                 },
                 "question": "Where is the changing table located?",
-                "render": "The changing table is located at {changing_table:location}"
+                "render": "A changing table is located at {changing_table:location}"
             },
             "toilet-charge": {
                 "freeform": {

@@ -576,7 +576,8 @@
             "ca": "Hi ha un canviador per a nadons",
             "cs": "Přebalovací pult je k dispozici"
           },
-          "if": "changing_table=yes"
+          "if": "changing_table=yes",
+          "icon": "./assets/layers/toilet/baby.svg"
         },
         {
           "if": "changing_table=no",
@@ -610,10 +611,10 @@
         "cs": "Kde je umístěn přebalovací pult?"
       },
       "render": {
-        "en": "The changing table is located at {changing_table:location}",
-        "de": "Die Wickeltabelle befindet sich in {changing_table:location}",
+        "en": "A changing table is located at {changing_table:location}",
+        "de": "Ein Wickeltisch befindet sich in {changing_table:location}",
         "fr": "Emplacement de la table à langer : {changing_table:location}",
-        "nl": "De luiertafel bevindt zich in {changing_table:location}",
+        "nl": "Er bevindt zich een luiertafel in {changing_table:location}",
         "it": "Il fasciatoio si trova presso {changing_table:location}",
         "es": "El cambiador está en {changing_table:location}",
         "da": "Puslebordet er placeret på {changing_table:location}",
@@ -632,10 +633,10 @@
       "mappings": [
         {
           "then": {
-            "en": "The changing table is in the toilet for women. ",
-            "de": "Der Wickeltisch befindet sich in der Damentoilette. ",
+            "en": "A changing table is in the toilet for women",
+            "de": "Ein Wickeltisch ist in der Damentoilette vorhanden",
             "fr": "La table à langer est dans les toilettes pour femmes. ",
-            "nl": "De luiertafel bevindt zich in de vrouwentoiletten ",
+            "nl": "Er bevindt zich een luiertafel in de vrouwentoiletten ",
             "it": "Il fasciatoio è nei servizi igienici femminili. ",
             "da": "Puslebordet er på toilettet til kvinder. ",
             "ca": "El canviador està al lavabo per a dones. ",
@@ -645,10 +646,10 @@
         },
         {
           "then": {
-            "en": "The changing table is in the toilet for men. ",
-            "de": "Der Wickeltisch befindet sich in der Herrentoilette. ",
+            "en": "A changing table is in the toilet for men",
+            "de": "Ein Wickeltisch ist in der Herrentoilette vorhanden",
             "fr": "La table à langer est dans les toilettes pour hommes. ",
-            "nl": "De luiertafel bevindt zich in de herentoiletten ",
+            "nl": "Er bevindt zich een luiertafel in de herentoiletten ",
             "it": "Il fasciatoio è nei servizi igienici maschili. ",
             "ca": "El canviador està al lavabo per a homes. ",
             "cs": "Přebalovací pult je na pánské toaletě. "
@@ -658,10 +659,10 @@
         {
           "if": "changing_table:location=wheelchair_toilet",
           "then": {
-            "en": "The changing table is in the toilet for wheelchair users. ",
-            "de": "Der Wickeltisch befindet sich in der Toilette für Rollstuhlfahrer. ",
+            "en": "A changing table is in the toilet for wheelchair users",
+            "de": "Ein Wickeltisch ist in der barrierefreien Toilette vorhanden",
             "fr": "La table à langer est dans les toilettes pour personnes à mobilité réduite. ",
-            "nl": "De luiertafel bevindt zich in de rolstoeltoegankelijke toilet ",
+            "nl": "Er bevindt zich een luiertafel in de rolstoeltoegankelijke toilet ",
             "it": "Il fasciatoio è nei servizi igienici per persone in sedia a rotelle. ",
             "da": "Puslebordet er på toilettet for kørestolsbrugere. ",
             "ca": "El canviador està al lavabo per a usuaris de cadira de rodes. ",
@@ -671,10 +672,10 @@
         {
           "if": "changing_table:location=dedicated_room",
           "then": {
-            "en": "The changing table is in a dedicated room. ",
-            "de": "Der Wickeltisch befindet sich in einem eigenen Raum. ",
+            "en": "A changing table is in a dedicated room",
+            "de": "Ein Wickeltisch befindet sich in einem eigenen Raum",
             "fr": "La table à langer est dans un espace dédié. ",
-            "nl": "De luiertafel bevindt zich in een daartoe voorziene kamer ",
+            "nl": "Er bevindt zich een luiertafel in een daartoe voorziene kamer ",
             "it": "Il fasciatoio è in una stanza dedicata. ",
             "es": "El cambiador está en una habitación dedicada ",
             "da": "Vuggestuen står i et særligt rum. ",

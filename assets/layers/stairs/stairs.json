@@ -294,7 +294,8 @@
       "id": "incline",
       "render": {
         "en": "These stairs have an incline of {incline}",
-        "ca": "Aquestes escales tenen una inclinació de {incline}"
+        "ca": "Aquestes escales tenen una inclinació de {incline}",
+        "de": "Die Treppe hat eine Steigung von {incline}"
       },
       "freeform": {
         "key": "incline",
@@ -302,14 +303,16 @@
       },
       "question": {
         "en": "What is the incline of these stairs?",
-        "ca": "Quina és la inclinació d'aquestes escales?"
+        "ca": "Quina és la inclinació d'aquestes escales?",
+        "de": "Welche Steigung hat die Treppe?"
       },
       "mappings": [
         {
           "if": "incline=up",
           "then": {
             "en": "The upward direction is {direction_absolute()}",
-            "ca": "La direcció ascendent és {direction_absolute()}"
+            "ca": "La direcció ascendent és {direction_absolute()}",
+            "de": "Die Aufwärtsrichtung ist {direction_absolute()}"
           },
           "hideInAnswer": true
         },
@@ -317,7 +320,8 @@
           "if": "incline=down",
           "then": {
             "en": "The downward direction is {direction_absolute()}",
-            "ca": "La direcció descendent és {direction_absolute()}"
+            "ca": "La direcció descendent és {direction_absolute()}",
+            "de": "Die Abwärtsrichtung ist {direction_absolute()}"
           },
           "hideInAnswer": true
         }

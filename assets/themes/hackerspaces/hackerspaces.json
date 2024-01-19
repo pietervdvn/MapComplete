@@ -1,8 +1,8 @@
 {
   "id": "hackerspaces",
   "title": {
-    "en": "Hackerspaces",
-    "de": "Hackerspaces",
+    "en": "Hackerspaces and makerspaces",
+    "de": "Hackerspaces und Makerspaces",
     "it": "Hackerspace",
     "ru": "Хакерспейсы",
     "zh_Hant": "駭客空間",
@@ -13,7 +13,7 @@
     "ca": "Espai per a hackers",
     "pa_PK": "ہیکر دے تھاں",
     "cs": "Hackerspaces",
-    "es": "Hackerspaces",
+    "es": "Hackerspaces and makerspaces",
     "eu": "Hackerspace",
     "pl": "Hackerspace'y"
   },

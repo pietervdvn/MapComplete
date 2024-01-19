@@ -56,7 +56,8 @@
     {
       "ariaLabel": {
         "en": "See on OpenStreetMap.org",
-        "nl": "Bekijk op OpenStreetMap.org"
+        "nl": "Bekijk op OpenStreetMap.org",
+        "de": "Auf OpenStreetMap.org ansehen"
       },
       "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
     }
