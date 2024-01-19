@@ -22,6 +22,7 @@ import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson
 import { PrepareTheme } from "../../Models/ThemeConfig/Conversion/PrepareTheme"
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
 import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
+import { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 
 export interface HighlightedTagRendering {
     path: ReadonlyArray<string | number>
@@ -66,7 +67,6 @@ export abstract class EditJsonState<T> {
         this.messages = this.setupErrorsForLayers()
 
         const layerId = this.getId()
-        this.highlightedItem.addCallbackD((hl) => console.log("Highlighted item is", hl))
         this.configuration
             .mapD((config) => {
                 if (!this.sendingUpdates) {
@@ -110,6 +110,7 @@ export abstract class EditJsonState<T> {
     public async delete() {
         await this.server.delete(this.getId().data, this.category)
     }
+
     public getStoreFor<T>(path: ReadonlyArray<string | number>): UIEventSource<T | undefined> {
         const key = path.join(".")
 
@@ -172,7 +173,6 @@ export abstract class EditJsonState<T> {
 
     public setValueAt(path: ReadonlyArray<string | number>, v: any) {
         let entry = this.configuration.data
-        console.trace("Setting value at", path,"to",v)
         const isUndefined =
             v === undefined ||
             v === null ||
@@ -246,6 +246,62 @@ export abstract class EditJsonState<T> {
             }
             return context.messages
         })
+    }
+}
+
+class ContextRewritingStep<T> extends Conversion<LayerConfigJson, T> {
+    private readonly _step: Conversion<LayerConfigJson, T>
+    private readonly _state: DesugaringContext
+    private readonly _getTagRenderings: (t: T) => TagRenderingConfigJson[]
+
+    constructor(
+        state: DesugaringContext,
+        step: Conversion<LayerConfigJson, T>,
+        getTagRenderings: (t: T) => TagRenderingConfigJson[]
+    ) {
+        super(
+            "When validating a layer, the tagRenderings are first expanded. Some builtin tagRendering-calls (e.g. `contact`) will introduce _multiple_ tagRenderings, causing the count to be off. This class rewrites the error messages to fix this",
+            [],
+            "ContextRewritingStep"
+        )
+        this._state = state
+        this._step = step
+        this._getTagRenderings = getTagRenderings
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): T {
+        const converted = this._step.convert(json, context)
+        const originalIds = json.tagRenderings?.map(
+            (tr) => (<QuestionableTagRenderingConfigJson>tr)["id"]
+        )
+        if (!originalIds) {
+            return converted
+        }
+
+        let newTagRenderings: TagRenderingConfigJson[]
+        if (converted === undefined) {
+            const prepared = new PrepareLayer(this._state)
+            newTagRenderings = <TagRenderingConfigJson[]>(
+                prepared.convert(json, context).tagRenderings
+            )
+        } else {
+            newTagRenderings = this._getTagRenderings(converted)
+        }
+        context.rewriteMessages((path) => {
+            if (path[0] !== "tagRenderings") {
+                return undefined
+            }
+            const newPath = [...path]
+            const idToSearch = newTagRenderings[newPath[1]].id
+            const oldIndex = originalIds.indexOf(idToSearch)
+            if (oldIndex < 0) {
+                console.warn("Original ID was not found: ", idToSearch)
+                return undefined // We don't modify the message
+            }
+            newPath[1] = oldIndex
+            return newPath
+        })
+        return converted
     }
 }
 
@@ -334,9 +390,10 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
     }
 
     protected buildValidation(state: DesugaringContext) {
-        return new Pipe(
-            new PrepareLayer(state),
-            new ValidateLayer("dynamic", false, undefined, true)
+        return new ContextRewritingStep(
+            state,
+            new Pipe(new PrepareLayer(state), new ValidateLayer("dynamic", false, undefined, true)),
+            (t) => <TagRenderingConfigJson[]>t.raw.tagRenderings
         )
     }
 

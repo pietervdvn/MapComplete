@@ -2,7 +2,7 @@
   import EditLayerState from "./EditLayerState"
   import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid"
 
-  export let firstPaths: Set<string>
+  export let firstPaths: Set<string | number>
   export let state: EditLayerState
   let messagesCount = state.messages.map(
     (msgs) =>

@@ -2,7 +2,6 @@ import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
-import { T } from "vitest/dist/types-aac763a5"
 
 export interface DesugaringContext {
     tagRenderings: Map<string, QuestionableTagRenderingConfigJson>
@@ -11,10 +10,11 @@ export interface DesugaringContext {
 }
 
 export type ConversionMsgLevel = "debug" | "information" | "warning" | "error"
+
 export interface ConversionMessage {
-    context: ConversionContext
-    message: string
-    level: ConversionMsgLevel
+    readonly context: ConversionContext
+    readonly message: string
+    readonly level: ConversionMsgLevel
 }
 
 export abstract class Conversion<TIn, TOut> {
@@ -85,6 +85,7 @@ export class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
 export class Bypass<T> extends DesugaringStep<T> {
     private readonly _applyIf: (t: T) => boolean
     private readonly _step: DesugaringStep<T>
+
     constructor(applyIf: (t: T) => boolean, step: DesugaringStep<T>) {
         super("Applies the step on the object, if the object satisfies the predicate", [], "Bypass")
         this._applyIf = applyIf
@@ -102,7 +103,6 @@ export class Bypass<T> extends DesugaringStep<T> {
 export class Each<X, Y> extends Conversion<X[], Y[]> {
     private readonly _step: Conversion<X, Y>
     private readonly _msg: string
-    private readonly _filter: (x: X) => boolean
 
     constructor(step: Conversion<X, Y>, options?: { msg?: string }) {
         super(
@@ -224,6 +224,7 @@ export class FirstOf<T, X> extends Conversion<T, X> {
 export class Cached<TIn, TOut> extends Conversion<TIn, TOut> {
     private _step: Conversion<TIn, TOut>
     private readonly key: string
+
     constructor(step: Conversion<TIn, TOut>) {
         super("Secretly caches the output for the given input", [], "cached")
         this._step = step
@@ -242,9 +243,11 @@ export class Cached<TIn, TOut> extends Conversion<TIn, TOut> {
         return converted
     }
 }
+
 export class Fuse<T> extends DesugaringStep<T> {
-    private readonly steps: DesugaringStep<T>[]
     protected debug = false
+    private readonly steps: DesugaringStep<T>[]
+
     constructor(doc: string, ...steps: DesugaringStep<T>[]) {
         super(
             (doc ?? "") +

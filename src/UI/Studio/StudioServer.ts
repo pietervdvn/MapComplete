@@ -2,6 +2,7 @@ import { Utils } from "../../Utils"
 import Constants from "../../Models/Constants"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import { Store } from "../../Logic/UIEventSource"
+import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
 
 export default class StudioServer {
     private readonly url: string
@@ -47,11 +48,13 @@ export default class StudioServer {
         return layerOverview
     }
 
+    async fetch(layerId: string, category: "layers", uid?: number): Promise<LayerConfigJson>
+    async fetch(layerId: string, category: "themes", uid?: number): Promise<LayoutConfigJson>
     async fetch(
         layerId: string,
         category: "layers" | "themes",
         uid?: number
-    ): Promise<LayerConfigJson> {
+    ): Promise<LayerConfigJson | LayoutConfigJson> {
         try {
             return await Utils.downloadJson(this.urlFor(layerId, category, uid))
         } catch (e) {
