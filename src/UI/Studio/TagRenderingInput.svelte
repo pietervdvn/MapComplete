@@ -25,7 +25,6 @@
 
   export let state: EditLayerState
   export let path: ReadonlyArray<string | number>
-  let messages = state.messagesFor(path)
   let expertMode = state.expertMode
   const store = state.getStoreFor(path)
   let value = store.data
