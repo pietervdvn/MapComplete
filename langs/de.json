@@ -500,7 +500,8 @@
         "selectOsmbasedmap": "OpenStreetMap-basierte Karte als Hintergrund auswählen (oder Hintergrundebene deaktivieren)",
         "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
         "shakePhone": "Telefon schütteln",
-        "title": "Tastaturbefehle"
+        "title": "Tastaturbefehle",
+        "translationMode": "Übersetzungsmodus ein- oder ausschalten"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -683,7 +684,7 @@
         "hasBeenSplit": "Dieser Weg wurde geteilt",
         "inviteToSplit": "Die Straße in Abschnitte teilen. Dadurch können je Abschnitt unterschiedliche Eigenschaften angegeben werden.",
         "loginToSplit": "Anmeldung erforderlich, um Straßen zu teilen",
-        "split": "Teilen",
+        "split": "Aufteilen",
         "splitAgain": "Diese Straße erneut teilen",
         "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern"
     },
