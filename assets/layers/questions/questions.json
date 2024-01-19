@@ -193,7 +193,8 @@
       },
       "editButtonAriaLabel": {
         "en": "Edit phone number",
-        "nl": "Pas telefoonnummer aan"
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
       }
     },
     {
@@ -276,7 +277,8 @@
       },
       "editButtonAriaLabel": {
         "en": "Edit email address",
-        "nl": "Pas emailadres aan"
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
       }
     },
     {
@@ -330,7 +332,8 @@
       ],
       "editButtonAriaLabel": {
         "en": "Edit website",
-        "nl": "Pas website aan"
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
       }
     },
     {
@@ -2629,7 +2632,8 @@
         },
         "after": {
           "en": "Scan this code to open this location on another device",
-          "nl": "Scan deze code om deze locatie op een ander apparaat te zien"
+          "nl": "Scan deze code om deze locatie op een ander apparaat te zien",
+          "de": "Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen"
         }
       }
     },
@@ -2644,7 +2648,8 @@
           "type": "share_link",
           "text": {
             "en": "Share this location",
-            "nl": "Deel deze locatie"
+            "nl": "Deel deze locatie",
+            "de": "Standort teilen"
           }
         }
       }

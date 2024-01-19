@@ -49,7 +49,7 @@
           "icon": "./assets/layers/usersettings/translate_disabled.svg",
           "then": {
             "en": "The language was set via an URL-parameter and cannot be set by the user.",
-            "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.²",
+            "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.",
             "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.",
             "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²",
             "nl": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden."
@@ -83,7 +83,7 @@
               "type": "link",
               "text": {
                 "en": "<b class='alert'>You have {_unreadMessages} messages</b><br/>Open your inbox",
-                "de": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang",
+                "de": "<b class='alert'>Sie haben {_unreadMessages} Nachrichten</b><br/>Posteingang öffnen",
                 "ca": "<b class='alert'>Tens {_unreadMessages} missatges </b><br/>Obri la safata d'entrada",
                 "cs": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku",
                 "nl": "<b class='alert'>Je hebt {_unreadMessages} ongelezen berichten</b><br/>Ga naar je inbox"
@@ -120,7 +120,8 @@
       "id": "a11y-features",
       "question": {
         "en": "What accessibility features should be applied?",
-        "nl": "Wanneer moet de toegankelijkheidsmode ingeschakeld worden?"
+        "nl": "Wanneer moet de toegankelijkheidsmode ingeschakeld worden?",
+        "de": "Welche Barrierefrei-Funktionen sollen angewendet werden?"
       },
       "mappings": [
         {
@@ -129,7 +130,8 @@
           "then": {
             "en": "Enable accessibility features when arrow keys are used to navigate the map",
             "ca": "Activar les funcions d'accessibilitat quan s'utilitzen les tecles de fletxa per navegar pel mapa",
-            "nl": "Schakel toegankelijkheidsmode aan wanneer op de pijltjestoetsen wordt geduwd om de kaart te bewegen"
+            "nl": "Schakel toegankelijkheidsmode aan wanneer op de pijltjestoetsen wordt geduwd om de kaart te bewegen",
+            "de": "Barrierefrei-Modus aktivieren, wenn Pfeiltasten zum Navigieren in der Karte verwendet werden"
           }
         },
         {
@@ -137,14 +139,16 @@
           "then": {
             "en": "Always enable accessibility features",
             "ca": "Sempre habilita les característiques d'accessibilitat",
-            "nl": "Schakel de toegankelijkheidsmode altijd aan"
+            "nl": "Schakel de toegankelijkheidsmode altijd aan",
+            "de": "Barrierefrei-Modus immer aktivieren"
           }
         },
         {
           "if": "mapcomplete-a11y=never",
           "then": {
             "en": "Never enable accessibility features",
-            "nl": "Gebruik geen toegankelijkheidsmode"
+            "nl": "Gebruik geen toegankelijkheidsmode",
+            "de": "Barrierefrei-Modus niemals aktivieren"
           }
         }
       ]

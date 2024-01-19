@@ -126,7 +126,8 @@
           "text": "<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>",
           "arialabel": {
             "en": "phone",
-            "nl": "Telefoneer"
+            "nl": "Telefoneer",
+            "de": "Telefon"
           }
         }
       },
@@ -141,7 +142,8 @@
               "text": "<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>",
               "arialabel": {
                 "en": "phone",
-                "nl": "Telefoneer"
+                "nl": "Telefoneer",
+                "de": "Telefon"
               }
             }
           }
@@ -233,7 +235,8 @@
           "href": "https://openstreetmap.org/{id}",
           "arialabel": {
             "en": "Open on openstreetmap.org",
-            "nl": "Bekijk op openstreetmap.org"
+            "nl": "Bekijk op openstreetmap.org",
+            "de": "Auf openstreetmap.org öffnen"
           }
         }
       },
@@ -252,7 +255,8 @@
               "href": "{_backend}/{id}",
               "arialabel": {
                 "en": "Open on openstreetmap.org",
-                "nl": "Bekijk op openstreetmap.org"
+                "nl": "Bekijk op openstreetmap.org",
+                "de": "Auf openstreetmap.org öffnen"
               }
             }
           }

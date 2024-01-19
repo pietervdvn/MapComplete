@@ -1,7 +1,8 @@
 {
   "id": "unit",
   "description": {
-    "en": "Library layer with all common units.  Units can _only_ be imported from this file."
+    "en": "Library layer with all common units.  Units can _only_ be imported from this file.",
+    "de": "Bibliotheksebene mit allen gängigen Einrichtungen.  Einrichtungen können _nur_ aus dieser Datei importiert werden."
   },
   "source": "special:library",
   "units": [
@@ -113,7 +114,8 @@
           ],
           "human": {
             "en": "{quantity} Volt",
-            "nl": "{quantity} volt"
+            "nl": "{quantity} volt",
+            "de": "{quantity} Volt"
           }
         }
       ],
@@ -133,7 +135,8 @@
           "human": {
             "en": "{quantity} A",
             "nl": "{quantity} A",
-            "ca": "{quantity} A"
+            "ca": "{quantity} A",
+            "de": "{quantity} A"
           }
         }
       ],
@@ -200,7 +203,8 @@
           "humanSingular": {
             "en": "one centimeter",
             "nl": "één centimeter",
-            "ca": "un centímetre"
+            "ca": "un centímetre",
+            "de": "ein Zentimeter"
           }
         },
         {
@@ -335,12 +339,14 @@
           "human": {
             "en": "{quantity} minutes",
             "nl": "{quantity} minuten",
-            "ca": "{quantity} minuts"
+            "ca": "{quantity} minuts",
+            "de": "{quantity} Minuten"
           },
           "humanSingular": {
             "en": "one minute",
             "nl": "één minuut",
-            "ca": "un minut"
+            "ca": "un minut",
+            "de": "eine Minute"
           }
         },
         {
@@ -358,12 +364,14 @@
           "human": {
             "en": "{quantity} hours",
             "nl": "{quantity} uren",
-            "ca": "{quantity} hores"
+            "ca": "{quantity} hores",
+            "de": "{quantity} Stunden"
           },
           "humanSingular": {
             "en": "one hour",
             "nl": "één uur",
-            "ca": "una hora"
+            "ca": "una hora",
+            "de": "eine Stunde"
           }
         },
         {
@@ -378,11 +386,13 @@
           "human": {
             "en": "{quantity} days",
             "nl": "{quantity} day",
-            "ca": "{quantity} dies"
+            "ca": "{quantity} dies",
+            "de": "{quantity} Tage"
           },
           "humanSingular": {
             "en": "one day",
-            "nl": "één dag"
+            "nl": "één dag",
+            "de": "ein Tag"
           }
         }
       ]

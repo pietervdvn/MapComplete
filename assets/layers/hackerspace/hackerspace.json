@@ -305,11 +305,13 @@
             "media_studio",
             {
               "en": "a multimedia studio",
-              "nl": "een multimedia-studio"
+              "nl": "een multimedia-studio",
+              "de": "ein Multimediastudio"
             },
             {
               "en": "multimedia studio",
-              "nl": "multimedia-studio"
+              "nl": "multimedia-studio",
+              "de": "Multimediastudio"
             },
             "./assets/layers/hackerspace/media_studio.svg"
           ],
@@ -331,11 +333,13 @@
             "workshop:wood",
             {
               "en": "a woodworking workshop",
-              "nl": "een houtbewerkingsatelier"
+              "nl": "een houtbewerkingsatelier",
+              "de": "eine Holzwerkstatt"
             },
             {
               "en": "woodworking workshop",
-              "nl": "houtbewerkingsatelier"
+              "nl": "houtbewerkingsatelier",
+              "de": "Holzwerkstatt"
             },
             "./assets/layers/hackerspace/woodworking.svg"
           ],
@@ -343,11 +347,13 @@
             "workshop:ceramics",
             {
               "en": "a ceramics workshop",
-              "nl": "een keramiekatelier"
+              "nl": "een keramiekatelier",
+              "de": "eine Keramikwerkstatt"
             },
             {
               "en": "ceramics workshop",
-              "nl": "keramiekatelier"
+              "nl": "keramiekatelier",
+              "de": "Keramikwerkstatt"
             },
             "./assets/layers/hackerspace/ceramics.svg"
           ],
@@ -355,11 +361,13 @@
             "workshop:metal",
             {
               "en": "a metal workshop",
-              "nl": "een metaalatelier"
+              "nl": "een metaalatelier",
+              "de": "eine Metallwerkstatt"
             },
             {
               "en": "metal workshop",
-              "nl": "metaalatelier"
+              "nl": "metaalatelier",
+              "de": "Metallwerkstatt"
             },
             "./assets/layers/hackerspace/metal.svg"
           ],
@@ -367,11 +375,13 @@
             "bicycle:diy",
             {
               "en": "a bicycle repair workshop",
-              "nl": "een fietsherstelplaats"
+              "nl": "een fietsherstelplaats",
+              "de": "eine Fahrradwerkstatt"
             },
             {
               "en": "bicycle repair workshop",
-              "nl": "fietsherstelplaats"
+              "nl": "fietsherstelplaats",
+              "de": "Fahrradwerkstatt"
             },
             "./assets/layers/hackerspace/bicycle.svg"
           ]

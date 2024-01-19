@@ -737,7 +737,8 @@
           "if": "diet:vegetarian=on_demand",
           "then": {
             "en": "Some dishes might be adapted to a vegetarian version, but this should be demanded",
-            "nl": "Sommige gerechten kunnen op vraag vegetarisch gemaakt worden"
+            "nl": "Sommige gerechten kunnen op vraag vegetarisch gemaakt worden",
+            "de": "Einige Gerichte können auf Nachfrage in eine vegetarische Version umgewandelt werden"
           }
         }
       ],
@@ -811,7 +812,8 @@
           "if": "diet:vegan=on_demand",
           "then": {
             "en": "Some dishes might be adapted to a vegan version if asked for",
-            "nl": "Op vraag kan een veganistische variant van een gerecht gemaakt worden"
+            "nl": "Op vraag kan een veganistische variant van een gerecht gemaakt worden",
+            "de": "Einige Gerichte können auf Nachfrage in eine vegane Version umgewandelt werden"
           }
         }
       ],
