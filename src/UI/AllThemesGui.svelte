@@ -56,7 +56,7 @@
           .filter((key) => key.startsWith(prefix))
           .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
       )
-      return hiddenThemes.filter((theme) => knownIds.has(theme.id))
+      return hiddenThemes.filter((theme) => knownIds.has(theme.id) || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet")
     })
   }
 </script>
