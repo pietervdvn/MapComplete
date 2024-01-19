@@ -186,7 +186,8 @@
         "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
         "confirm": "Bestätigen",
-        "customThemeIntro": "<h3>Benutzerdefinierte Themen</h3>Dies sind zuvor angesehene nutzergenerierte Themen.",
+        "customThemeIntro": "Bereits angesehene nutzergenerierte Themen.",
+        "customThemeTitle": "Benutzerdefinierte Themen",
         "download": {
             "downloadAsPdf": "Aktuelle Karte als PDF herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
@@ -230,6 +231,7 @@
         "labels": {
             "background": "Hintergrund ändern",
             "filter": "Daten filtern",
+            "jumpToLocation": "Eigenen Standort anzeigen",
             "menu": "Menü",
             "zoomIn": "Hineinzoomen",
             "zoomOut": "Herauszoomen"
@@ -279,13 +281,17 @@
         "openTheMap": "Karte öffnen",
         "openTheMapAtGeolocation": "Zum eigenen Standort zoomen",
         "opening_hours": {
+            "all_days_from": "Geöffnet täglich {ranges}",
             "closed_permanently": "Geschlossen auf unbestimmte Zeit",
             "closed_until": "Geschlossen bis {date}",
+            "error": "Öffnungszeiten können nicht ausgewertet werden",
             "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden.",
             "friday": "Am Freitag {ranges}",
             "loadingCountry": "Land ermitteln…",
             "monday": "Am Montag {ranges}",
             "not_all_rules_parsed": "Die Öffnungszeiten sind kompliziert. Folgenden Regeln werden im Eingabefenster ignoriert:",
+            "on_weekdays": "Geöffnet werktags {ranges}",
+            "on_weekends": "Geöffnet am Wochenende {ranges}",
             "openTill": "bis",
             "open_24_7": "Durchgehend geöffnet",
             "open_during_ph": "An Feiertagen ist hier",
@@ -344,6 +350,7 @@
             "searchShort": "Suche…",
             "searching": "Suchen …"
         },
+        "searchAnswer": "Option suchen…",
         "share": "Teilen",
         "sharescreen": {
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
@@ -359,7 +366,7 @@
         "testing": "Testen - Änderungen werden nicht gespeichert",
         "uploadError": "Fehler beim Hochladen von Änderungen: {error}",
         "uploadGpx": {
-            "choosePermission": "Wählen Sie unten, ob Ihre Strecke geteilt werden soll:",
+            "choosePermission": "Wählen Sie unten, wie Ihre Strecke geteilt werden soll:",
             "confirm": "Hochladen bestätigen",
             "gpxServiceOffline": "Der GPX-Dienst ist derzeit offline - ein Hochladen ist derzeit nicht möglich. Versuchen Sie es später noch einmal.",
             "intro0": "Wenn Sie Ihre Strecke hochladen, behält OpenStreetMap.org eine vollständige Kopie der Strecke.",
@@ -391,6 +398,7 @@
         "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
         "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
         "visualFeedback": {
+            "closestFeaturesAre": "{n} Objekte im Anzeigebereich.",
             "directionsAbsolute": {
                 "E": "Ost",
                 "N": "Nord",
@@ -402,6 +410,7 @@
                 "W": "West"
             },
             "directionsRelative": {
+                "behind": "in deinem Rücken",
                 "left": "links",
                 "right": "rechts",
                 "sharp_left": "scharf links",
@@ -409,7 +418,23 @@
                 "slight_left": "leicht links",
                 "slight_right": "leicht rechts",
                 "straight": "geradeaus"
-            }
+            },
+            "east": "Nach Osten bewegen",
+            "fromGps": "{distance} {direction} von deinem Standort",
+            "fromMapCenter": "{distance} {direction} von der Kartenmitte",
+            "in": "Hineinzoomen auf Stufe {z}",
+            "islocked": "Die Ansicht ist an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert. Drücken Sie zum Entsperren die Geolocation-Taste.",
+            "locked": "Die Ansicht ist jetzt an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert.",
+            "navigation": "Verwenden Sie die Pfeiltasten, um die Karte zu bewegen, drücken Sie die Leertaste, um das nächstgelegene Objekt auszuwählen. Drücken Sie eine Zahl, um weiter entfernte Objekte auszuwählen.",
+            "noCloseFeatures": "Keine Objekte im Anzeigebereich.",
+            "north": "Nach Norden bewegen",
+            "oneFeatureInView": "Ein Objekt im Anzeigebereich.",
+            "out": "Herauszoomen auf Stufe {z}",
+            "south": "Nach Süden bewegen",
+            "unlocked": "Bewegen aktiviert.",
+            "viewportCenterCloseToGps": "Die Karte wird um Ihren Standort zentriert.",
+            "viewportCenterDetails": "Die Kartenmitte ist {distance} und {bearing} von Ihrem Standort entfernt.",
+            "west": "Nach Westen bewegen"
         },
         "waitingForGeopermission": "Warten auf Ihre Erlaubnis, Standortdaten zu verwenden…",
         "waitingForLocation": "Ihr Standort wird gesucht…",
@@ -461,7 +486,9 @@
         "geolocate": "Karte auf den aktuellen Standort verschieben oder zoomen. Erfordert Standortberechtigung",
         "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
         "key": "Tastenkombination",
+        "openFilterPanel": "Öffnet das Panel für POI-Ebenen und Filter",
         "openLayersPanel": "Auswahl für Hintergrundebenen öffnen",
+        "queryCurrentLocation": "Adresse anzeigen, die der Kartenmitte am nächsten liegt",
         "selectAerial": "Hintergrund als Luftbild oder Satellitenbild einstellen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
         "selectFavourites": "Favoriten anzeigen",
         "selectItem": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
@@ -472,6 +499,7 @@
         "selectMapnik": "OpenStreetMap-carto als Hintergrundebene wählen",
         "selectOsmbasedmap": "OpenStreetMap-basierte Karte als Hintergrund auswählen (oder Hintergrundebene deaktivieren)",
         "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
+        "shakePhone": "Telefon schütteln",
         "title": "Tastaturbefehle"
     },
     "image": {
@@ -481,7 +509,9 @@
         "dontDelete": "Abbrechen",
         "isDeleted": "Gelöscht",
         "nearby": {
+            "close": "Übersicht mit nahegelegenen Bildern ausklappen",
             "link": "Dieses Bild zeigt das Objekt",
+            "noNearbyImages": "Keine nahegelegenen Bilder gefunden",
             "seeNearby": "Bilder in der Nähe durchsuchen und verlinken",
             "title": "Straßenbilder in der Nähe"
         },
@@ -628,15 +658,19 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
+        "averageRating": "Mittlere Bewertung von {n} Sternen",
         "i_am_affiliated": "Ich bin mit diesem Objekt vertraut",
         "i_am_affiliated_explanation": "Prüfung, ob Sie der Eigentümer, Ersteller, Angestellter, … sind",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
         "question": "Wie bewerten Sie {title()}?",
         "question_opinion": "Wie war Ihre Erfahrung?",
+        "rate": "Mit {n} Sternen bewerten",
+        "rated": "Mit {n} Sternen bewertet",
+        "reviewPlaceholder": "Beschreibe deine Erfahrung…",
         "reviewing_as": "Als {nickname} bewerten",
         "reviewing_as_anonymous": "Anonym bewerten",
-        "save": "Speichern",
+        "save": "Bewertung speichern",
         "saved": "Bewertung gespeichert. Danke fürs Teilen!",
         "saving_review": "Speichern…",
         "title": "{count} Rezensionen",
@@ -722,6 +756,10 @@
         "pnat": {
             "description": "eine positive, ganze Zahl",
             "noZero": "Null ist nicht erlaubt"
+        },
+        "slope": {
+            "inputExplanation": "Legen Sie Ihr Telefon so auf den Boden, dass die Oberseite des Telefons zum oberen Ende des Hangs zeigt.",
+            "inputIncorrect": "Für korrekte Messungen achten Sie darauf, dass sich der Pfeil in der grünen Fläche befindet."
         },
         "string": {
             "description": "ein Stück Text"
