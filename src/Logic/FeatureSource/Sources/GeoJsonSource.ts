@@ -103,7 +103,6 @@ export default class GeoJsonSource implements FeatureSource {
         const time = new Date()
         const newFeatures: Feature[] = []
         let i = 0
-        let skipped = 0
         for (const feature of json.features) {
             if (feature.geometry.type === "Point") {
                 // See https://github.com/maproulette/maproulette-backend/issues/242
@@ -131,16 +130,9 @@ export default class GeoJsonSource implements FeatureSource {
                 i++
             }
             if (self.seenids.has(props.id)) {
-                skipped++
                 continue
             }
             self.seenids.add(props.id)
-
-            let freshness: Date = time
-            if (feature.properties["_last_edit:timestamp"] !== undefined) {
-                freshness = new Date(props["_last_edit:timestamp"])
-            }
-
             newFeatures.push(feature)
         }
 
