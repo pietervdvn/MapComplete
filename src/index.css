@@ -405,6 +405,10 @@ label.checked:not(.neutral-label) {
     border: 2px solid var(--foreground-color);
 }
 
+textarea {
+    color: black;
+}
+
 /************************* OTHER CATEGORIES ********************************/
 
 /**
