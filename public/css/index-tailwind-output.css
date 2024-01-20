@@ -777,10 +777,6 @@ video {
   float: left;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -791,6 +787,10 @@ video {
 
 .m-0 {
   margin: 0px;
+}
+
+.m-8 {
+  margin: 2rem;
 }
 
 .m-2 {
@@ -891,10 +891,6 @@ video {
   margin-right: 3rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -925,6 +921,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1275,6 +1275,12 @@ video {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .flex-none {
@@ -2598,6 +2604,10 @@ label:hover:not(.no-image-background):not(.neutral-label) svg path {
 
 label.checked:not(.neutral-label) {
   border: 2px solid var(--foreground-color);
+}
+
+textarea {
+  color: black;
 }
 
 /************************* OTHER CATEGORIES ********************************/
