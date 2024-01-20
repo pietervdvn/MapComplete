@@ -202,6 +202,6 @@
     "ts2json-schema": "^1.4.0",
     "tslib": "^2.5.0",
     "typescript": "^4.7.4",
-    "vite": "^4.0.5"
+    "vite": "^4.5.2"
   }
 }
