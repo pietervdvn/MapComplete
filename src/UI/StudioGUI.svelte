@@ -173,7 +173,12 @@
         <div class="flex w-full flex-col">
           <h1>MapComplete Studio</h1>
 
-          <NextButton on:click={() => (state = "edit_layer")}>Edit an existing layer</NextButton>
+          <NextButton on:click={() => (state = "edit_layer")}>
+            <div class="flex flex-col items-start">
+            <div>Edit an existing layer</div>
+              <div class="font-normal">Edit layers you created, others created or from the official MapComplete</div>
+            </div>
+          </NextButton>
           <NextButton on:click={() => createNewLayer()}>Create a new layer</NextButton>
           <NextButton on:click={() => (state = "edit_theme")}>Edit a theme</NextButton>
           <NextButton
@@ -220,9 +225,11 @@
           <h3 slot="title">Your layers</h3>
         </ChooseLayerToEdit>
         <h3>Layers by other contributors</h3>
+        <div>Selecting a layer will create a copy in your account that you edit. You will not change the version of the other contributor</div>
         <ChooseLayerToEdit {osmConnection} layerIds={$otherLayers} on:layerSelected={editLayer} />
 
         <h3>Official layers by MapComplete</h3>
+        <div>Selecting a layer will create a copy in your account. You will not change the version that is in MapComplete</div>
         <ChooseLayerToEdit
           {osmConnection}
           layerIds={$officialLayers}
