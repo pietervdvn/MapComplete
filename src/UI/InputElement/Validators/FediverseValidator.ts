@@ -3,7 +3,7 @@ import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
 
 export default class FediverseValidator extends Validator {
-    public static readonly usernameAtServer: RegExp = /^@?(\w+)@((\w|\.)+)$/
+    public static readonly usernameAtServer: RegExp = /^@?(\w+)@((\w|-|\.)+)$/
 
     constructor() {
         super(
