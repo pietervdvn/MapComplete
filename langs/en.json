@@ -723,7 +723,8 @@
         "fediverse": {
             "description": "A fediverse handle, often @username@server.tld",
             "feedback": "A fediverse handle consists of @username@server.tld or is a link to a profile",
-            "invalidHost": "{host} is not a valid hostname"
+            "invalidHost": "{host} is not a valid hostname",
+            "onYourServer": "See and follow on your server"
         },
         "float": {
             "description": "a number",

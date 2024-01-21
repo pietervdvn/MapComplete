@@ -88,6 +88,7 @@ import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import Img from "./Base/Img"
 import Qr from "../Utils/Qr"
+import { log } from "node:util"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1387,11 +1388,35 @@ export default class SpecialVisualizations {
                                 const [_, username, host] = fediAccount.match(
                                     FediverseValidator.usernameAtServer
                                 )
-                                return new SvelteUIElement(Link, {
+
+                                const normalLink = new SvelteUIElement(Link, {
                                     text: fediAccount,
-                                    url: "https://" + host + "/@" + username,
+                                    href: "https://" + host + "/@" + username,
                                     newTab: true,
                                 })
+
+                                const loggedInContributorMastodon =
+                                    state.userRelatedState?.preferencesAsTags?.data?.[
+                                        "_mastodon_link"
+                                    ]
+                                console.log(
+                                    "LoggedinContributorMastodon",
+                                    loggedInContributorMastodon
+                                )
+                                if (!loggedInContributorMastodon) {
+                                    return normalLink
+                                }
+                                const homeUrl = new URL(loggedInContributorMastodon)
+                                const homeHost = homeUrl.protocol + "//" + homeUrl.hostname
+
+                                return new Combine([
+                                    normalLink,
+                                    new SvelteUIElement(Link, {
+                                        href: homeHost + "/" + fediAccount,
+                                        text: Translations.t.validation.fediverse.onYourServer,
+                                        newTab: true,
+                                    }).SetClass("button"),
+                                ])
                             })
                     )
                 },
