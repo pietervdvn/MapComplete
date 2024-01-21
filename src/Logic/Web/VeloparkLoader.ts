@@ -82,7 +82,7 @@ export default class VeloparkLoader {
                 )
                 properties.maxstay = duration + " days"
             }
-            properties.access = g.publicAccess ? "yes" : "no"
+            properties.access = g.publicAccess ?? "yes" ? "yes" : "no"
             const prefix = "http://schema.org/"
             if (g.openingHoursSpecification) {
                 const oh = OH.simplify(
