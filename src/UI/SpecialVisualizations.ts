@@ -88,7 +88,6 @@ import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import Img from "./Base/Img"
 import Qr from "../Utils/Qr"
-import { log } from "node:util"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
