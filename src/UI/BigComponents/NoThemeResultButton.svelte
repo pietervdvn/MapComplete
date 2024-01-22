@@ -17,6 +17,7 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import Search_disable from "../../assets/svg/Search_disable.svelte"
 
   export let search: UIEventSource<string>
 
@@ -27,8 +28,8 @@
   <h5>{t.noMatchingThemes.toString()}</h5>
   <div class="flex justify-center">
     <button on:click={() => search.setData("")}>
-      <ToSvelte construct={Svg.search_disable_svg().SetClass("w-6 mr-2")} />
-      <Tr slot="message" t={t.noSearch} />
+      <Search_disable class="w-6 mr-2" />
+      <Tr t={t.noSearch} />
     </button>
   </div>
 </div>
