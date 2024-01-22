@@ -14,6 +14,7 @@
   import Svg from "../../Svg"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import { DocumentDuplicateIcon } from "@rgossiaux/svelte-heroicons/outline"
+  import Share from "../../assets/svg/Share.svelte"
 
   export let state: ThemeViewState
   const tr = Translations.t.general.sharescreen
@@ -73,7 +74,7 @@
   <div class="flex">
     {#if typeof navigator?.share === "function"}
       <button class="h-8 w-8 shrink-0 p-1" on:click={shareCurrentLink}>
-        <ToSvelte construct={Svg.share_svg()} />
+        <Share/>
       </button>
     {/if}
     {#if navigator.clipboard !== undefined}

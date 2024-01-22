@@ -1,8 +1,7 @@
 <script lang="ts">
-  import Svg from "../Svg"
   import Loading from "./Base/Loading.svelte"
-  import ToSvelte from "./Base/ToSvelte.svelte"
   import Community from "../assets/svg/Community.svelte"
+  import Login from "../assets/svg/Login.svelte"
 </script>
 
 <div>
@@ -23,7 +22,7 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-    <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
+    <Login class="w-12 h-12" />
     <Loading>Loading...</Loading>
   </div>
 
@@ -92,7 +91,7 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-    <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
+    <Login class="w-12 h-12" />
     <Loading>Loading...</Loading>
   </div>
 
@@ -134,7 +133,7 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-    <ToSvelte construct={Svg.login_svg().SetClass("w-12 h-12")} />
+    <Login class="w-12 h-12" />
     <Loading>Loading...</Loading>
     <div>
       <label for="html0">
