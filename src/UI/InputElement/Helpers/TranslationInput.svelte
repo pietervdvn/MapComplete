@@ -35,7 +35,6 @@
 
   onDestroy(
     currentLang.addCallbackAndRunD((currentLang) => {
-      console.log("Applying current lang:", currentLang)
       if (!translations.data) {
         translations.data = {}
       }
