@@ -2,7 +2,6 @@ import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import Histogram from "../BigComponents/Histogram"
 import { Feature } from "geojson"
-import Constants from "../../Models/Constants"
 
 export class HistogramViz implements SpecialVisualization {
     funcName = "histogram"

@@ -1,7 +1,6 @@
 import { VariableUiElement } from "./VariableUIElement"
 import Locale from "../i18n/Locale"
 import Link from "./Link"
-import Svg from "../../Svg"
 import SvelteUIElement from "./SvelteUIElement"
 import Translate from "../../assets/svg/Translate.svelte"
 

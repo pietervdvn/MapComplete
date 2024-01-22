@@ -3,7 +3,6 @@ import { Utils } from "../../../Utils"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
-import { render } from "sass"
 
 export default class ValidationUtils {
     public static getAllSpecialVisualisations(

@@ -832,7 +832,6 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         json: TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
         context: ConversionContext
     ): TagRenderingConfigJson {
-        console.log(">>> Validating TR", context.path.join("."), json)
         if (json["special"] !== undefined) {
             context.err(
                 'Detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
@@ -1043,7 +1042,12 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
     private readonly _studioValidations: boolean
     private readonly _validatePointRendering = new ValidatePointRendering()
 
-    constructor(path: string, isBuiltin, doesImageExist, studioValidations) {
+    constructor(
+        path: string,
+        isBuiltin: boolean,
+        doesImageExist: DoesImageExist,
+        studioValidations: boolean
+    ) {
         super("Runs various checks against common mistakes for a layer", [], "PrevalidateLayer")
         this._path = path
         this._isBuiltin = isBuiltin

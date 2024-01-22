@@ -1,4 +1,4 @@
-import { Stores, UIEventSource } from "../Logic/UIEventSource"
+import { UIEventSource } from "../Logic/UIEventSource"
 import { Utils } from "../Utils"
 
 /**
@@ -31,6 +31,14 @@ export default class Zoomcontrol {
         })
     }
 
+    public static createLock(): () => void {
+        return Zoomcontrol.singleton._createLock()
+    }
+
+    public static resetzoom() {
+        this.singleton._resetZoom()
+    }
+
     private _resetZoom() {
         this.apply(Zoomcontrol.noZoom)
         requestAnimationFrame(() => {
@@ -41,10 +49,6 @@ export default class Zoomcontrol {
 
     private apply(fullSpec: string) {
         this.viewportElement?.setAttribute("content", fullSpec)
-    }
-
-    public static createLock(): () => void {
-        return Zoomcontrol.singleton._createLock()
     }
 
     private allowZoomIfUnlocked() {
@@ -63,9 +67,5 @@ export default class Zoomcontrol {
             lockTokens.delete(token)
             this.allowZoomIfUnlocked()
         }
-    }
-
-    public static resetzoom() {
-        this.singleton._resetZoom()
     }
 }

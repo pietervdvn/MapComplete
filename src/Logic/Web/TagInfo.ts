@@ -1,4 +1,3 @@
-import exp from "constants"
 import { Utils } from "../../Utils"
 
 export interface TagInfoStats {
@@ -16,9 +15,8 @@ export interface TagInfoStats {
 }
 
 export default class TagInfo {
-    private readonly _backend: string
-
     public static readonly global = new TagInfo()
+    private readonly _backend: string
 
     constructor(backend = "https://taginfo.openstreetmap.org/") {
         this._backend = backend
