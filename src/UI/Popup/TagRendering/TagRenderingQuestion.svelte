@@ -128,7 +128,6 @@
   }
 
   freeformInput.addCallbackAndRun((freeformValue) => {
-    console.log("FreeformValue:", freeformValue)
     if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
       return
     }

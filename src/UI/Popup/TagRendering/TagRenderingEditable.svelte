@@ -63,7 +63,6 @@
     if (config.id === highlighted) {
       htmlElem.classList.add("glowing-shadow")
       htmlElem.tabIndex = -1
-      console.log("Scrolling to", htmlElem)
       htmlElem.scrollIntoView({ behavior: "smooth" })
       Utils.focusOnFocusableChild(htmlElem)
     } else {
