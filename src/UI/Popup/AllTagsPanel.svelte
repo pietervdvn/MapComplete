@@ -12,7 +12,11 @@
    * The names (keys) of the calculated tags. Each will normally start with an underscore (but in rare cases not)
    */
   let calculatedTags: string[] = []
-  for (const [name, _, __] of layer.calculatedTags ?? []) {
+  for (const calculated of layer.calculatedTags ?? []) {
+    if(calculated){
+      continue
+    }
+    const name = calculated[0]
     calculatedTags.push(name)
   }
   let knownValues: Store<string[]> = tags.map(tags => Object.keys(tags))
