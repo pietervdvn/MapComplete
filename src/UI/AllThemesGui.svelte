@@ -19,7 +19,6 @@
   import { LayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
   import * as themeOverview from "../assets/generated/theme_overview.json"
   import UnofficialThemeList from "./BigComponents/UnofficialThemeList.svelte"
-  import Eye from "@babeard/svelte-heroicons/mini/Eye"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({

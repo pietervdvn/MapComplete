@@ -1,6 +1,4 @@
 import BaseUIElement from "../UI/BaseUIElement"
-import { FixedUiElement } from "../UI/Base/FixedUiElement"
-import Combine from "../UI/Base/Combine"
 import { Denomination } from "./Denomination"
 import UnitConfigJson from "./ThemeConfig/Json/UnitConfigJson"
 import unit from "../../assets/layers/unit/unit.json"
@@ -198,6 +196,7 @@ export class Unit {
 
             const loaded = this.getFromLibrary(toLoad.quantity, ctx)
             const quantity = toLoad.quantity
+
             function fetchDenom(d: string): Denomination {
                 const found = loaded.denominations.find(
                     (denom) => denom.canonical.toLowerCase() === d

@@ -654,8 +654,13 @@ export default class SpecialVisualizations {
                 funcName: "all_tags",
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
-                constr: (state, tags: UIEventSource<any>) =>
-                    new SvelteUIElement(AllTagsPanel, { tags, state }),
+                constr: (
+                    state,
+                    tags: UIEventSource<Record<string, string>>,
+                    _,
+                    __,
+                    layer: LayerConfig
+                ) => new SvelteUIElement(AllTagsPanel, { tags, layer }),
             },
             {
                 funcName: "image_carousel",

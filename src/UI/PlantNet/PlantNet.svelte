@@ -10,8 +10,6 @@
   import NextButton from "../Base/NextButton.svelte"
   import WikipediaPanel from "../Wikipedia/WikipediaPanel.svelte"
   import { createEventDispatcher } from "svelte"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import Svg from "../../Svg"
   import Plantnet_logo from "../../assets/svg/Plantnet_logo.svelte"
 
   /**
@@ -28,7 +26,7 @@
   const dispatch = createEventDispatcher<{ selected: string }>()
   let collapsedMode = true
   let options: UIEventSource<PlantNetSpeciesMatch[]> = new UIEventSource<PlantNetSpeciesMatch[]>(
-    undefined
+    undefined,
   )
 
   let error: string = undefined

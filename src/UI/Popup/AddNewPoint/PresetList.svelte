@@ -9,9 +9,7 @@
   import { ImmutableStore } from "../../../Logic/UIEventSource"
   import { TagUtils } from "../../../Logic/Tags/TagUtils"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import FromHtml from "../../Base/FromHtml.svelte"
   import NextButton from "../../Base/NextButton.svelte"
-  import { UIElement } from "../../UIElement"
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import BaseUIElement from "../../BaseUIElement"
 
@@ -37,7 +35,7 @@
           "Not showing presets for layer",
           flayer.layerDef.id,
           "as not displayed and featureSwitchFilter.data is set",
-          state.featureSwitches.featureSwitchFilter.data
+          state.featureSwitches.featureSwitchFilter.data,
         )
         // ...and we cannot enable the layer control -> we skip, as these presets can never be shown anyway
         continue
@@ -66,7 +64,7 @@
         tags,
         text: Translations.t.general.add.addNew.Subs(
           { category: preset.title },
-          preset.title["context"]
+          preset.title["context"],
         ),
       }
       presets.push(simplified)

@@ -10,7 +10,6 @@
   import { Utils } from "../../Utils"
   import Circle from "../../assets/svg/Circle.svelte"
   import Ring from "../../assets/svg/Ring.svelte"
-  import { twMerge } from "tailwind-merge"
 
   export let state: SpecialVisualizationState
   export let tags: Store<Record<string, string>>
@@ -21,7 +20,7 @@
     tags,
     keyToUse,
     prefix,
-    postfix
+    postfix,
   )
 
   let currentState = oh.mapD((oh) => (typeof oh === "string" ? undefined : oh.getState()))
@@ -30,12 +29,12 @@
   let nextChange = oh
     .mapD(
       (oh) => (typeof oh === "string" ? undefined : oh.getNextChange(new Date(), tomorrow)),
-      [Stores.Chronic(5 * 60 * 1000)]
+      [Stores.Chronic(5 * 60 * 1000)],
     )
     .mapD((date) => Utils.TwoDigits(date.getHours()) + ":" + Utils.TwoDigits(date.getMinutes()))
 
   let size = nextChange.map((change) =>
-    change === undefined ? "absolute h-7 w-7" : "absolute h-5 w-5 top-0 left-1/4"
+    change === undefined ? "absolute h-7 w-7" : "absolute h-5 w-5 top-0 left-1/4",
   )
 </script>
 

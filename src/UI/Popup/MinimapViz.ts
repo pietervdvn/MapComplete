@@ -6,7 +6,6 @@ import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "../Map/MaplibreMap.svelte"
 import ShowDataLayer from "../Map/ShowDataLayer"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { BBox } from "../../Logic/BBox"
 
@@ -32,7 +31,7 @@ export class MinimapViz implements SpecialVisualization {
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,
         args: string[],
-        feature: Feature,
+        feature: Feature
     ) {
         if (state === undefined || feature === undefined) {
             return undefined
