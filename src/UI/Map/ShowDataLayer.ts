@@ -303,6 +303,7 @@ class LineRenderingLayer {
                         type: "FeatureCollection",
                         features,
                     },
+                    cluster: true,
                     promoteId: "id",
                 })
                 const linelayer = this._layername + "_line"

@@ -154,6 +154,11 @@ export default class Constants {
 
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
+    /**
+     * The location that the MVT-layer is hosted.
+     * This is a MapLibre/MapBox vector tile server which hosts vector tiles for every (official) layer
+     */
+    public static VectorTileServer: string | undefined = Constants.config.mvt_layer_server
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

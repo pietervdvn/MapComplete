@@ -25,13 +25,13 @@ Use scripts/osm2pgsl
 To seed the database:
 
 ````
-osm2pgsql -O flex -S drinking_water.lua -s  --flat-nodes=import-help-file -d postgresql://user:none@localhost:5444/osm-poi andorra-latest.osm.pbf 
+osm2pgsql -O flex -E 4326 -S build_db.lua -s  --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi andorra-latest.osm.pbf 
 ````
 
 ## Deploying a tile server
 
 ````
-export DATABASE_URL=postgresql://user:none@localhost:5444/osm-poi
+export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi
 ./pg_tileserv
 ````
 

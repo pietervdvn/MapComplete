@@ -21,6 +21,7 @@
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org"
     },
+    "mvt_layer_server": "http://127.0.0.1:7800/public.{layer}/{z}/{x}/{y}.pbf",
     "disabled:oauth_credentials": {
       "##": "DEV",
       "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
@@ -118,6 +119,7 @@
     "@turf/length": "^6.5.0",
     "@turf/turf": "^6.5.0",
     "@types/dompurify": "^3.0.2",
+    "@types/pg": "^8.10.9",
     "@types/qrcode-generator": "^1.0.6",
     "@types/showdown": "^2.0.0",
     "chart.js": "^3.8.0",
@@ -148,6 +150,8 @@
     "osmtogeojson": "^3.0.0-beta.5",
     "panzoom": "^9.4.3",
     "papaparse": "^5.3.1",
+    "pbf": "^3.2.1",
+    "pg": "^8.11.3",
     "pic4carto": "^2.1.15",
     "prompt-sync": "^4.2.0",
     "qrcode-generator": "^1.4.4",

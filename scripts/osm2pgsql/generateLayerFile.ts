@@ -7,6 +7,7 @@ import { AllSharedLayers } from "../../src/Customizations/AllSharedLayers"
 import fs from "fs"
 import { Or } from "../../src/Logic/Tags/Or"
 import { RegexTag } from "../../src/Logic/Tags/RegexTag"
+import { Utils } from "../../src/Utils"
 
 class LuaSnippets{
     /**
@@ -40,18 +41,24 @@ class GenerateLayerLua {
     }
     public functionName(){
         const l = this._layer
+        if(!l.source?.osmTags){
+            return undefined
+        }
         return `process_poi_${l.id}`
     }
 
     public generateFunction(): string {
         const l = this._layer
+        if(!l.source?.osmTags){
+            return undefined
+        }
         return [
             `local pois_${l.id} = osm2pgsql.define_table({`,
             `  name = '${l.id}',`,
             "  ids = { type = 'any', type_column = 'osm_type', id_column = 'osm_id' },",
             "  columns = {",
             "    { column = 'tags', type = 'jsonb' },",
-            "    { column = 'geom', type = 'point', not_null = true },",
+            "    { column = 'geom', type = 'point', projection = 4326, not_null = true },",
             "  }" +
             "})",
             "",
@@ -117,14 +124,13 @@ class GenerateLayerFile extends Script {
     }
 
     async main(args: string[]) {
-        let dw = AllSharedLayers.sharedLayers.get("drinking_water")
-        let t = AllSharedLayers.sharedLayers.get("toilet")
+        const layerNames = Array.from(AllSharedLayers.sharedLayers.values())
 
-        const generators = [dw, t].map(l => new GenerateLayerLua(l))
+        const generators = layerNames.map(l => new GenerateLayerLua(l))
 
         const script = [
             ...generators.map(g => g.generateFunction()),
-            LuaSnippets.combine(generators.map(g => g.functionName())),
+            LuaSnippets.combine(Utils.NoNull(generators.map(g => g.functionName()))),
             LuaSnippets.tail
         ].join("\n\n\n")
         const path = "build_db.lua"

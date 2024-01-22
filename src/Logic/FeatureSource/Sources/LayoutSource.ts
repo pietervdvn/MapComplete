@@ -11,6 +11,9 @@ import DynamicGeoJsonTileSource from "../TiledFeatureSource/DynamicGeoJsonTileSo
 import { BBox } from "../../BBox"
 import LocalStorageFeatureSource from "../TiledFeatureSource/LocalStorageFeatureSource"
 import FullNodeDatabaseSource from "../TiledFeatureSource/FullNodeDatabaseSource"
+import { Features } from "@rgossiaux/svelte-headlessui/types"
+import DynamicMvtileSource from "../TiledFeatureSource/DynamicMvtTileSource"
+import { layouts } from "chart.js"
 
 /**
  * This source will fetch the needed data from various sources for the given layout.
@@ -44,14 +47,18 @@ export default class LayoutSource extends FeatureSourceMerger {
                     maxAge: l.maxAgeOfCache,
                 })
         )
+        console.log(mapProperties)
+        const mvtSources: FeatureSource[] = osmLayers.map(l => LayoutSource.setupMvtSource(l, mapProperties, isDisplayed(l.id)))
 
+
+        /*
         const overpassSource = LayoutSource.setupOverpass(
             backend,
             osmLayers,
             bounds,
             zoom,
             featureSwitches
-        )
+        )//*/
 
         const osmApiSource = LayoutSource.setupOsmApiSource(
             osmLayers,
@@ -61,22 +68,27 @@ export default class LayoutSource extends FeatureSourceMerger {
             featureSwitches,
             fullNodeDatabaseSource
         )
+
         const geojsonSources: FeatureSource[] = geojsonlayers.map((l) =>
             LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
-        super(overpassSource, osmApiSource, ...geojsonSources, ...fromCache)
+
+        super(osmApiSource, ...geojsonSources, ...fromCache, ...mvtSources)
 
         const self = this
         function setIsLoading() {
-            const loading = overpassSource?.runningQuery?.data || osmApiSource?.isRunning?.data
-            self._isLoading.setData(loading)
+           // const loading = overpassSource?.runningQuery?.data || osmApiSource?.isRunning?.data
+           // self._isLoading.setData(loading)
         }
 
-        overpassSource?.runningQuery?.addCallbackAndRun((_) => setIsLoading())
+        // overpassSource?.runningQuery?.addCallbackAndRun((_) => setIsLoading())
         osmApiSource?.isRunning?.addCallbackAndRun((_) => setIsLoading())
     }
 
+    private static setupMvtSource(layer: LayerConfig, mapProperties:  { zoom: Store<number>; bounds: Store<BBox> },    isActive?: Store<boolean>): FeatureSource{
+        return new DynamicMvtileSource(layer, mapProperties, { isActive })
+    }
     private static setupGeojsonSource(
         layer: LayerConfig,
         mapProperties: { zoom: Store<number>; bounds: Store<BBox> },
