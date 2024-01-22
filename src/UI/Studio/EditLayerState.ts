@@ -209,6 +209,9 @@ export abstract class EditJsonState<T> {
                 return []
             }
             return msgs.filter((msg) => {
+                if (msg.level === "debug" || msg.level === "information") {
+                    return false
+                }
                 const pth = msg.context.path
                 for (let i = 0; i < Math.min(pth.length, path.length); i++) {
                     if (pth[i] !== path[i]) {
