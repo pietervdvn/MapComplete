@@ -217,6 +217,7 @@
         },
         "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
         "enableGeolocationForSafariLink": "Learn how to enable the geolocation permission in settings",
+        "eraseValue": "Erase this value",
         "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",

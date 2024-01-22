@@ -87,6 +87,7 @@
         {state}
         {layer}
         on:saved={() => (editMode = false)}
+        allowDeleteOfFreeform={true}
       >
         <button
           slot="cancel"
