@@ -28,8 +28,12 @@
    * This is only copied to 'value' when appropriate so that no invalid values leak outside;
    * Additionally, the unit is added when copying
    */
-  let _value = new UIEventSource(value.data ?? "")
+  export let unvalidatedText = new UIEventSource(value.data ?? "")
 
+  
+  if(unvalidatedText == /*Compare by reference!*/ value){
+    throw "Value and unvalidatedText may not be the same store!"
+  }
   let validator: Validator = Validators.get(type ?? "string")
   if (validator === undefined) {
     console.warn("Didn't find a validator for type", type)
@@ -41,13 +45,13 @@
     if (unit && value.data) {
       const [v, denom] = unit?.findDenomination(value.data, getCountry)
       if (denom) {
-        _value.setData(v)
+        unvalidatedText.setData(v)
         selectedUnit.setData(denom.canonical)
       } else {
-        _value.setData(value.data ?? "")
+        unvalidatedText.setData(value.data ?? "")
       }
     } else {
-      _value.setData(value.data ?? "")
+      unvalidatedText.setData(value.data ?? "")
     }
   }
 
@@ -67,8 +71,8 @@
     validator = Validators.get(type ?? "string")
 
     _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
-    if (_value.data?.length > 0) {
-      feedback?.setData(validator?.getFeedback(_value.data, getCountry))
+    if (unvalidatedText.data?.length > 0) {
+      feedback?.setData(validator?.getFeedback(unvalidatedText.data, getCountry))
     } else {
       feedback?.setData(undefined)
     }
@@ -78,7 +82,7 @@
 
   function setValues() {
     // Update the value stores
-    const v = _value.data
+    const v = unvalidatedText.data
     if (v === "") {
       value.setData(undefined)
       feedback?.setData(undefined)
@@ -103,12 +107,12 @@
     }
   }
 
-  onDestroy(_value.addCallbackAndRun((_) => setValues()))
+  onDestroy(unvalidatedText.addCallbackAndRun((_) => setValues()))
   if (unit === undefined) {
     onDestroy(
       value.addCallbackAndRunD((fromUpstream) => {
-        if (_value.data !== fromUpstream && fromUpstream !== "") {
-          _value.setData(fromUpstream)
+        if (unvalidatedText.data !== fromUpstream && fromUpstream !== "") {
+          unvalidatedText.setData(fromUpstream)
         }
       })
     )
@@ -131,7 +135,7 @@
     )
   }
 
-  const isValid = _value.map((v) => validator?.isValid(v, getCountry) ?? true)
+  const isValid = unvalidatedText.map((v) => validator?.isValid(v, getCountry) ?? true)
 
   let htmlElem: HTMLInputElement | HTMLTextAreaElement
 
@@ -149,7 +153,7 @@
 {#if validator?.textArea}
   <textarea
     class="w-full"
-    bind:value={$_value}
+    bind:value={$unvalidatedText}
     inputmode={validator?.inputmode ?? "text"}
     placeholder={_placeholder}
     bind:this={htmlElem}
@@ -159,7 +163,7 @@
   <div class={twMerge("inline-flex", cls)}>
     <input
       bind:this={htmlElem}
-      bind:value={$_value}
+      bind:value={$unvalidatedText}
       class="w-full"
       inputmode={validator?.inputmode ?? "text"}
       placeholder={_placeholder}
@@ -170,7 +174,7 @@
     {/if}
 
     {#if unit !== undefined}
-      <UnitInput {unit} {selectedUnit} textValue={_value} upstreamValue={value} {getCountry} />
+      <UnitInput {unit} {selectedUnit} textValue={unvalidatedText} upstreamValue={value} {getCountry} />
     {/if}
   </div>
 {/if}
