@@ -22,6 +22,9 @@
         "=filter": [
           "open_now"
         ],
+        "name": {
+          "en": "Erotic shops"
+        },
         "=presets": [
           {
             "title": {
@@ -39,7 +42,10 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
-        "=name": null
+        "=name": null,
+        "=filter": {
+          "sameAs": "erotic-shop"
+        }
       }
     },
     {
@@ -112,7 +118,6 @@
       "=name": null
       }
     },
-
     {
       "builtin": "cinema",
       "hideTagRenderingsWithLabels": ["wikipedia"],
@@ -183,6 +188,33 @@
         "minzoom": 18,
         "=presets": [],
        "=name": null
+      }
+    },
+    "love_hotel",
+    {
+      "builtin": "hotel",
+      "override": {
+      "minzoom": 17,
+        "+tagRenderings": [
+          {
+            "id": "hotel-type",
+            "question": {
+              "en": "What type of hotel is this?"
+            },
+            "mappings": [
+              {
+                "if": "tourism=hotel",
+                "then": "This is a regular, tourist hotel where people stay multiple days",
+                "addExtraTags": ["amenity="]
+              },
+              {
+                "if": "amenity=love_hotel",
+                "then": "This is a love hotel where people rent rooms for sexual activity. The hotel rent rooms for a few days",
+                "addExtraTags": ["tourism="]
+              }
+            ]
+          }],
+        "=presets": []
       }
     }
   ],
