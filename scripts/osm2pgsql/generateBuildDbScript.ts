@@ -1,13 +1,13 @@
-import LayerConfig from "../../src/Models/ThemeConfig/LayerConfig"
 import { TagsFilter } from "../../src/Logic/Tags/TagsFilter"
 import { Tag } from "../../src/Logic/Tags/Tag"
 import { And } from "../../src/Logic/Tags/And"
 import Script from "../Script"
-import { AllSharedLayers } from "../../src/Customizations/AllSharedLayers"
 import fs from "fs"
 import { Or } from "../../src/Logic/Tags/Or"
 import { RegexTag } from "../../src/Logic/Tags/RegexTag"
 import { Utils } from "../../src/Utils"
+import { ValidateThemeEnsemble } from "../../src/Models/ThemeConfig/Conversion/Validation"
+import { AllKnownLayouts } from "../../src/Customizations/AllKnownLayouts"
 
 class LuaSnippets {
     /**
@@ -35,28 +35,31 @@ class LuaSnippets {
 }
 
 class GenerateLayerLua {
-    private readonly _layer: LayerConfig
+    private readonly _id: string
+    private readonly _tags: TagsFilter
+    private readonly _foundInThemes: string[]
 
-    constructor(layer: LayerConfig) {
-        this._layer = layer
+    constructor(id: string, tags: TagsFilter, foundInThemes: string[] = []) {
+        this._tags = tags
+        this._id = id
+        this._foundInThemes = foundInThemes
     }
 
     public functionName() {
-        const l = this._layer
-        if (!l.source?.osmTags) {
+        if (!this._tags) {
             return undefined
         }
-        return `process_poi_${l.id}`
+        return `process_poi_${this._id}`
     }
 
     public generateFunction(): string {
-        const l = this._layer
-        if (!l.source?.osmTags) {
+        if (!this._tags) {
             return undefined
         }
         return [
-            `local pois_${l.id} = osm2pgsql.define_table({`,
-            `  name = '${l.id}',`,
+            `local pois_${this._id} = osm2pgsql.define_table({`,
+            this._foundInThemes ? "-- used in themes: " + this._foundInThemes.join(", ") : "",
+            `  name = '${this._id}',`,
             "  ids = { type = 'any', type_column = 'osm_type', id_column = 'osm_id' },",
             "  columns = {",
             "    { column = 'tags', type = 'jsonb' },",
@@ -66,7 +69,7 @@ class GenerateLayerLua {
             "",
             "",
             `function ${this.functionName()}(object, geom)`,
-            "  local matches_filter = " + this.toLuaFilter(l.source.osmTags),
+            "  local matches_filter = " + this.toLuaFilter(this._tags),
             "  if( not matches_filter) then",
             "    return",
             "  end",
@@ -75,7 +78,7 @@ class GenerateLayerLua {
             "    tags = object.tags",
             "  }",
             "  ",
-            `  pois_${l.id}:insert(a)`,
+            `  pois_${this._id}:insert(a)`,
             "end",
             "",
         ].join("\n")
@@ -85,6 +88,8 @@ class GenerateLayerLua {
         if (typeof tag.value === "string" && tag.invert) {
             return `object.tags["${tag.key}"] ~= "${tag.value}"`
         }
+
+        const v = (<RegExp> tag.value).source.replace(/\\\//g, "/")
 
         if ("" + tag.value === "/.+/is" && !tag.invert) {
             return `object.tags["${tag.key}"] ~= nil`
@@ -104,10 +109,10 @@ class GenerateLayerLua {
         }
 
         if (tag.invert) {
-            return `object.tags["${tag.key}"] == nil or not string.find(object.tags["${tag.key}"], "${tag.value}")`
+            return `object.tags["${tag.key}"] == nil or not string.find(object.tags["${tag.key}"], "${v}")`
         }
 
-        return `(object.tags["${tag.key}"] ~= nil and string.find(object.tags["${tag.key}"], "${tag.value}"))`
+        return `(object.tags["${tag.key}"] ~= nil and string.find(object.tags["${tag.key}"], "${v}"))`
     }
 
     private toLuaFilter(tag: TagsFilter, useParens: boolean = false): string {
@@ -141,15 +146,21 @@ class GenerateLayerLua {
     }
 }
 
-class GenerateLayerFile extends Script {
+class GenerateBuildDbScript extends Script {
     constructor() {
         super("Generates a .lua-file to use with osm2pgsql")
     }
 
     async main(args: string[]) {
-        const layers = Array.from(AllSharedLayers.sharedLayers.values())
+        const allNeededLayers = new ValidateThemeEnsemble().convertStrict(
+            AllKnownLayouts.allKnownLayouts.values(),
+        )
 
-        const generators = layers.filter(l => l.source.geojsonSource === undefined).map(l => new GenerateLayerLua(l))
+        const generators: GenerateLayerLua[] = []
+
+        allNeededLayers.forEach(({ tags, foundInTheme }, layerId) => {
+            generators.push(new GenerateLayerLua(layerId, tags, foundInTheme))
+        })
 
         const script = [
             ...generators.map(g => g.generateFunction()),
@@ -159,7 +170,8 @@ class GenerateLayerFile extends Script {
         const path = "build_db.lua"
         fs.writeFileSync(path, script, "utf-8")
         console.log("Written", path)
+        console.log(allNeededLayers.size+" layers will be created. Make sure to set 'max_connections' to at least  "+(10 + allNeededLayers.size) )
     }
 }
 
-new GenerateLayerFile().run()
+new GenerateBuildDbScript().run()

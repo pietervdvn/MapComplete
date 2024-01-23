@@ -9,7 +9,7 @@ import {
     DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
-    ValidateThemeAndLayers,
+    ValidateThemeAndLayers, ValidateThemeEnsemble,
 } from "../src/Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../src/UI/i18n/Translation"
 import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
@@ -25,6 +25,8 @@ import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
+import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import { TagsFilter } from "../src/Logic/Tags/TagsFilter"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -122,6 +124,7 @@ class AddIconSummary extends DesugaringStep<{ raw: LayerConfigJson; parsed: Laye
         return { raw: fixed, parsed: layerConfig }
     }
 }
+
 
 class LayerOverviewUtils extends Script {
     public static readonly layerPath = "./src/assets/generated/layers/"
@@ -355,7 +358,6 @@ class LayerOverviewUtils extends Script {
         const layerWhitelist = new Set(args.find(a => a.startsWith("--layers="))
             ?.substring("--layers=".length)?.split(",") ?? [])
 
-        const start = new Date()
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -382,17 +384,21 @@ class LayerOverviewUtils extends Script {
             sharedLayers,
             recompiledThemes,
             forceReload,
-            themeWhitelist
+            themeWhitelist,
         )
 
-        if (recompiledThemes.length > 0){
+        new ValidateThemeEnsemble().convertStrict(
+            Array.from(sharedThemes.values()).map(th => new LayoutConfig(th, true)))
+
+
+        if (recompiledThemes.length > 0) {
             writeFileSync(
                 "./src/assets/generated/known_layers.json",
                 JSON.stringify({
                     layers: Array.from(sharedLayers.values()).filter((l) => l.id !== "favourite"),
                 }),
             )
-         }
+        }
 
         const mcChangesPath = "./assets/themes/mapcomplete-changes/mapcomplete-changes.json"
         if (
@@ -437,7 +443,7 @@ class LayerOverviewUtils extends Script {
             )
         }
 
-        if(recompiledThemes.length > 0) {
+        if (recompiledThemes.length > 0) {
             writeFileSync(
                 "./src/assets/generated/known_themes.json",
                 JSON.stringify({
@@ -446,17 +452,10 @@ class LayerOverviewUtils extends Script {
             )
         }
 
-        const end = new Date()
-        const millisNeeded = end.getTime() - start.getTime()
         if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
             console.error(
-                "This was a bootstrapping-run. Run generate layeroverview again!(" +
-                millisNeeded +
-                " ms)",
+                "This was a bootstrapping-run. Run generate layeroverview again!"
             )
-        } else {
-            const green = (s) => "\x1b[92m" + s + "\x1b[0m"
-            console.log(green("All done! (" + millisNeeded + " ms)"))
         }
     }
 
@@ -482,7 +481,7 @@ class LayerOverviewUtils extends Script {
     private buildLayerIndex(
         doesImageExist: DoesImageExist,
         forceReload: boolean,
-        whitelist: Set<string>
+        whitelist: Set<string>,
     ): Map<string, LayerConfigJson> {
         // First, we expand and validate all builtin layers. These are written to src/assets/generated/layers
         // At the same time, an index of available layers is built.
@@ -500,9 +499,9 @@ class LayerOverviewUtils extends Script {
         const recompiledLayers: string[] = []
         let warningCount = 0
         for (const sharedLayerPath of ScriptUtils.getLayerPaths()) {
-            if(whitelist.size > 0){
-            const idByPath = sharedLayerPath.split("/").at(-1).split(".")[0]
-                if(Constants.priviliged_layers.indexOf(<any> idByPath) < 0 && !whitelist.has(idByPath)){
+            if (whitelist.size > 0) {
+                const idByPath = sharedLayerPath.split("/").at(-1).split(".")[0]
+                if (Constants.priviliged_layers.indexOf(<any>idByPath) < 0 && !whitelist.has(idByPath)) {
                     continue
                 }
             }
@@ -672,7 +671,7 @@ class LayerOverviewUtils extends Script {
         sharedLayers: Map<string, LayerConfigJson>,
         recompiledThemes: string[],
         forceReload: boolean,
-        whitelist: Set<string>
+        whitelist: Set<string>,
     ): Map<string, LayoutConfigJson> {
         console.log("   ---------- VALIDATING BUILTIN THEMES ---------")
         const themeFiles = ScriptUtils.getThemeFiles()
@@ -710,7 +709,7 @@ class LayerOverviewUtils extends Script {
             const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
-            if(whitelist.size > 0 && !whitelist.has(themeFile.id)){
+            if (whitelist.size > 0 && !whitelist.has(themeFile.id)) {
                 continue
             }
 
@@ -795,21 +794,21 @@ class LayerOverviewUtils extends Script {
             }
         }
 
-        if(whitelist.size == 0){
-        this.writeSmallOverview(
-            Array.from(fixed.values()).map((t) => {
-                return {
-                    ...t,
-                    hideFromOverview: t.hideFromOverview ?? false,
-                    shortDescription:
-                        t.shortDescription ??
-                        new Translation(t.description)
-                            .FirstSentence()
-                            .OnEveryLanguage((s) => parse_html(s).textContent).translations,
-                    mustHaveLanguage: t.mustHaveLanguage?.length > 0,
-                }
-            }),
-        )
+        if (whitelist.size == 0) {
+            this.writeSmallOverview(
+                Array.from(fixed.values()).map((t) => {
+                    return {
+                        ...t,
+                        hideFromOverview: t.hideFromOverview ?? false,
+                        shortDescription:
+                            t.shortDescription ??
+                            new Translation(t.description)
+                                .FirstSentence()
+                                .OnEveryLanguage((s) => parse_html(s).textContent).translations,
+                        mustHaveLanguage: t.mustHaveLanguage?.length > 0,
+                    }
+                }),
+            )
         }
 
         console.log(

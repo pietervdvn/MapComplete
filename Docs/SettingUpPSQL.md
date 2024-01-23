@@ -10,25 +10,36 @@ Then activate following extensions for this database (right click > Create > Ext
 - Postgis activeren (rechtsklikken > Create > extension)
 - HStore activeren
 
-Install osm2pgsql (hint: compile from source is painless)
+Increase the max number of connections. osm2pgsql needs connection one per table (and a few more), and since we are making one table per layer in MapComplete, this amounts to a lot.
 
-pg_tileserv kan hier gedownload worden: https://github.com/CrunchyData/pg_tileserv
-
-DATABASE_URL=postgresql://user:none@localhost:5444/osm-poi ./pg_tileserv 
+- Open PGAdmin, open the PGSQL-tool (CLI-button at the top)
+- Run `max_connections = 2000;` and `show config_file;` to get the config file location (in docker). This is probably `/var/lib/postgresql/data/postgresql.conf`
+- In a terminal, run `sudo docker exec -i <docker-container-id> bash` (run `sudo docker ps` to get the container id)
+- `sed -i "s/max_connections = 100/max_connections = 5000/" /var/lib/postgresql/data/postgresql.conf`
+- Validate with `cat /var/lib/postgresql/data/postgresql.conf | grep "max_connections"`
+- `sudo docker restart <ID>`
 
 ## Create export scripts for every layer
 
-Use scripts/osm2pgsl
+Use `vite-node ./scripts/osm2pgsql/generateBuildDbScript.ts`
 
 ## Importing data
 
+Install osm2pgsql (hint: compile from source is painless)
 To seed the database:
 
 ````
-osm2pgsql -O flex -E 4326 -S build_db.lua -s  --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi andorra-latest.osm.pbf 
+osm2pgsql -O flex -E 4326 -S build_db.lua -s  --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi <file>.osm.pbf 
 ````
+Storing properties to table '"public"."osm2pgsql_properties" takes about 25 minutes with planet.osm
+
+Belgium (~555mb) takes 15m
+World (80GB) should take 15m*160 = 2400m = 40hr
+
 
 ## Deploying a tile server
+
+pg_tileserv kan hier gedownload worden: https://github.com/CrunchyData/pg_tileserv
 
 ````
 export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi
