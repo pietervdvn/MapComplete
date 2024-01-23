@@ -32,7 +32,7 @@
   "hideFromOverview": true,
   "layers": [
     {
-      "id": "node2node",
+      "id": "node2node_bicycle",
       "name": {
         "en": "Node to node links",
         "de": "Knotenpunktverbindungen",
@@ -126,7 +126,7 @@
       "pointRendering": null
     },
     {
-      "id": "node",
+      "id": "node_bicycle",
       "name": {
         "en": "Nodes",
         "de": "Knotenpunkte",
@@ -321,6 +321,7 @@
       ],
       "override": {
         "minzoom": 16,
+        "id": "bicycle_guidepost",
         "source": {
           "osmTags": {
             "and": [

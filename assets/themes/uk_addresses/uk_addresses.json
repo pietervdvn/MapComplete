@@ -185,7 +185,7 @@
       ]
     },
     {
-      "id": "address",
+      "id": "uk_address",
       "name": {
         "en": "Known addresses in OSM"
       },

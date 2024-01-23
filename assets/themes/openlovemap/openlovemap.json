@@ -14,7 +14,7 @@
     {
       "builtin": "shops",
       "override": {
-        "id": "erotic-shop",
+        "id": "erotic_shop",
         "source": {
           "osmTags": "shop=erotic"
         },

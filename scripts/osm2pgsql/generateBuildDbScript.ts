@@ -9,7 +9,7 @@ import { Or } from "../../src/Logic/Tags/Or"
 import { RegexTag } from "../../src/Logic/Tags/RegexTag"
 import { Utils } from "../../src/Utils"
 
-class LuaSnippets{
+class LuaSnippets {
     /**
      * The main piece of code that calls `process_poi`
      */
@@ -25,23 +25,25 @@ class LuaSnippets{
         "end",
         ""].join("\n")
 
-    public static combine(calls: string[]): string{
+    public static combine(calls: string[]): string {
         return [
             `function process_poi(object, geom)`,
-            ...calls.map(c => "  "+c+"(object, geom)"),
+            ...calls.map(c => "  " + c + "(object, geom)"),
             `end`,
         ].join("\n")
     }
 }
+
 class GenerateLayerLua {
     private readonly _layer: LayerConfig
 
     constructor(layer: LayerConfig) {
         this._layer = layer
     }
-    public functionName(){
+
+    public functionName() {
         const l = this._layer
-        if(!l.source?.osmTags){
+        if (!l.source?.osmTags) {
             return undefined
         }
         return `process_poi_${l.id}`
@@ -49,7 +51,7 @@ class GenerateLayerLua {
 
     public generateFunction(): string {
         const l = this._layer
-        if(!l.source?.osmTags){
+        if (!l.source?.osmTags) {
             return undefined
         }
         return [
@@ -75,10 +77,38 @@ class GenerateLayerLua {
             "  ",
             `  pois_${l.id}:insert(a)`,
             "end",
-            ""
+            "",
         ].join("\n")
     }
 
+    private regexTagToLua(tag: RegexTag) {
+        if (typeof tag.value === "string" && tag.invert) {
+            return `object.tags["${tag.key}"] ~= "${tag.value}"`
+        }
+
+        if ("" + tag.value === "/.+/is" && !tag.invert) {
+            return `object.tags["${tag.key}"] ~= nil`
+        }
+
+        if ("" + tag.value === "/.+/is" && tag.invert) {
+            return `object.tags["${tag.key}"] == nil`
+        }
+
+        if (tag.matchesEmpty && !tag.invert) {
+            return `object.tags["${tag.key}"] == nil or object.tags["${tag.key}"] == ""`
+        }
+
+
+        if (tag.matchesEmpty && tag.invert) {
+            return `object.tags["${tag.key}"] ~= nil or object.tags["${tag.key}"] ~= ""`
+        }
+
+        if (tag.invert) {
+            return `object.tags["${tag.key}"] == nil or not string.find(object.tags["${tag.key}"], "${tag.value}")`
+        }
+
+        return `(object.tags["${tag.key}"] ~= nil and string.find(object.tags["${tag.key}"], "${tag.value}"))`
+    }
 
     private toLuaFilter(tag: TagsFilter, useParens: boolean = false): string {
         if (tag instanceof Tag) {
@@ -99,14 +129,7 @@ class GenerateLayerLua {
             return expr
         }
         if (tag instanceof RegexTag) {
-            if(typeof tag.value === "string" && tag.invert){
-                return `object.tags["${tag.key}"] ~= "${tag.value}"`
-            }
-
-            let expr = `not string.find(object.tags["${tag.key}"], "${tag.value}")`
-            if (!tag.invert) {
-                expr = "not " + expr
-            }
+            let expr = this.regexTagToLua(tag)
             if (useParens) {
                 expr = "(" + expr + ")"
             }
@@ -124,17 +147,17 @@ class GenerateLayerFile extends Script {
     }
 
     async main(args: string[]) {
-        const layerNames = Array.from(AllSharedLayers.sharedLayers.values())
+        const layers = Array.from(AllSharedLayers.sharedLayers.values())
 
-        const generators = layerNames.map(l => new GenerateLayerLua(l))
+        const generators = layers.filter(l => l.source.geojsonSource === undefined).map(l => new GenerateLayerLua(l))
 
         const script = [
             ...generators.map(g => g.generateFunction()),
             LuaSnippets.combine(Utils.NoNull(generators.map(g => g.functionName()))),
-            LuaSnippets.tail
+            LuaSnippets.tail,
         ].join("\n\n\n")
         const path = "build_db.lua"
-        fs.writeFileSync(path,script, "utf-8")
+        fs.writeFileSync(path, script, "utf-8")
         console.log("Written", path)
     }
 }

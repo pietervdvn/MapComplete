@@ -53,6 +53,7 @@
       "builtin": "shelter",
       "override": {
         "minzoom": 18,
+        "id": "pt_shelter",
         "source": {
           "osmTags": {
             "and": [

@@ -290,7 +290,7 @@
       ]
     },
     {
-      "id": "all_streets",
+      "id": "not_cyclestreets",
       "name": {
         "nl": "Alle straten",
         "en": "All streets",

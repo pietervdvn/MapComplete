@@ -258,6 +258,7 @@
     {
       "builtin": "parking_spaces",
       "override": {
+        "id": "parking_spaces_disabled",
         "source": {
           "osmTags": "parking_space=disabled"
         },
