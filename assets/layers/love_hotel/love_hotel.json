@@ -1,6 +1,20 @@
 {
-  "credits": "Asteliks",
+  "id": "love_hotel",
+  "name": {
+    "en": "Love hotels"
+  },
+  "description": {
+    "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
+  },
+  "source": {
+    "osmTags": "amenity=love_hotel"
+  },
   "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Love Hotel <i>{name}</i>"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -31,6 +45,20 @@
       "iconSize": "27,27"
     }
   ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a love hotel"
+      },
+      "description": {
+        "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities."
+      },
+      "tags": [
+        "amenity=love_hotel"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     "reviews",
@@ -48,33 +76,5 @@
     },
     "contact"
   ],
-  "lineRendering": [],
-  "id": "love_hotel",
-  "name": {
-    "en": "Love hotels"
-  },
-  "description": {
-    "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
-  },
-  "source": {
-    "osmTags": "amenity=love_hotel"
-  },
-  "title": {
-    "render": {
-      "en": "Love Hotel <i>{name}</i>"
-    }
-  },
-  "presets": [
-    {
-      "title": {
-        "en": "a love hotel"
-      },
-      "description": {
-        "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities."
-      },
-      "tags": [
-        "amenity=love_hotel"
-      ]
-    }
-  ]
+  "credits": "Asteliks"
 }

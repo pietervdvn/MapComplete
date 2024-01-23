@@ -112,10 +112,15 @@
                 {
                   "#": "Layer icon rendering",
                   "if": {
-                    "or":["shop=yes", {"and": [
-                      "shop!=yes",
-                      "id="
-                    ]}]
+                    "or": [
+                      "shop=yes",
+                      {
+                        "and": [
+                          "shop!=yes",
+                          "id="
+                        ]
+                      }
+                    ]
                   },
                   "then": "./assets/layers/id_presets/maki-shop.svg"
                 },
