@@ -54,7 +54,7 @@
    */
   let checkedMappings: boolean[]
 
-  let mappings: Mapping[] = config?.mappings
+  let mappings: Mapping[] = config?.mappings ?? []
   let searchTerm: UIEventSource<string> = new UIEventSource("")
 
   let dispatch = createEventDispatcher<{
