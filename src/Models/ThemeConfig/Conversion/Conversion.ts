@@ -173,7 +173,7 @@ export class Pass<T> extends Conversion<T, T> {
         super(message ?? "Does nothing, often to swap out steps in testing", [], "Pass")
     }
 
-    convert(json: T, context: ConversionContext): T {
+    convert(json: T, _: ConversionContext): T {
         return json
     }
 }
@@ -304,7 +304,7 @@ export class SetDefault<T> extends DesugaringStep<T> {
         this._overrideEmptyString = overrideEmptyString
     }
 
-    convert(json: T, context: ConversionContext): T {
+    convert(json: T, _: ConversionContext): T {
         if (json === undefined) {
             return undefined
         }

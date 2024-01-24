@@ -26,7 +26,7 @@
     on:click={() => {
       previewedImage?.setData(image)
     }}
-    on:error={(event) => {
+    on:error={() => {
       if (fallbackImage) {
         imgEl.src = fallbackImage
       }

@@ -39,7 +39,7 @@ export default class ScriptUtils {
 
     public static DownloadFileTo(url, targetFilePath: string): Promise<void> {
         ScriptUtils.erasableLog("Downloading", url, "to", targetFilePath)
-        return new Promise<void>((resolve, err) => {
+        return new Promise<void>((resolve) => {
             https.get(url, (res) => {
                 const filePath = fs.createWriteStream(targetFilePath)
                 res.pipe(filePath)

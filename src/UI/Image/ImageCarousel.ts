@@ -21,8 +21,7 @@ export class ImageCarousel extends Toggle {
             changes?: Changes
             layout: LayoutConfig
             previewedImage?: UIEventSource<ProvidedImage>
-        },
-        feature: Feature
+        }
     ) {
         const uiElements = images.map(
             (imageURLS: { key: string; url: string; provider: ImageProvider; id: string }[]) => {

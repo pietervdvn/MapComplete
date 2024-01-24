@@ -23,7 +23,7 @@
   function update() {
     const v = currentVal.data
     const l = currentLang.data
-    if (translations.data === "" || translations.data === undefined) {
+    if (<any> translations.data === "" || translations.data === undefined) {
       translations.data = {}
     }
     if (translations.data[l] === v) {
@@ -44,7 +44,7 @@
   )
 
   onDestroy(
-    currentVal.addCallbackAndRunD((v) => {
+    currentVal.addCallbackAndRunD(() => {
       update()
     })
   )

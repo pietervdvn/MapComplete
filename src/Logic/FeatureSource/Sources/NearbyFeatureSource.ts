@@ -48,7 +48,7 @@ export default class NearbyFeatureSource implements FeatureSource {
             flayer.layerDef.minzoom,
             flayer.isDisplayed
         )
-        calcSource.addCallbackAndRunD((features) => {
+        calcSource.addCallbackAndRunD(() => {
             this.update()
         })
         this._allSources.push(calcSource)

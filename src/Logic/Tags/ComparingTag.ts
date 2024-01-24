@@ -20,11 +20,11 @@ export default class ComparingTag implements TagsFilter {
         this._boundary = boundary
     }
 
-    asChange(properties: Record<string, string>): { k: string; v: string }[] {
+    asChange(_: Record<string, string>): { k: string; v: string }[] {
         throw "A comparable tag can not be used to be uploaded to OSM"
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {
+    asHumanString() {
         return this._key + this._representation + this._boundary
     }
 

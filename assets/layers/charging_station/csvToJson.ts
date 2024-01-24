@@ -225,6 +225,7 @@ function run(file, protojson) {
 }
 
 
+// noinspection JSUnusedLocalSymbols
 async function queryTagInfo(file, type, clean: ((s: string) => string)) {
     for (const e of loadCsv(file)) {
         const value = await ScriptUtils.TagInfoHistogram(e.key + ":" + type)
@@ -252,6 +253,7 @@ async function queryTagInfo(file, type, clean: ((s: string) => string)) {
     }
 }
 
+// noinspection JSUnusedLocalSymbols
 /**
  * Adds the translations into the 'newConfig' object
  * @param origPath

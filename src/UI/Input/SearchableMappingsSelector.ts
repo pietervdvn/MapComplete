@@ -98,7 +98,7 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
         return this._selected
     }
 
-    IsValid(t: boolean): boolean {
+    IsValid(_: boolean): boolean {
         return true
     }
 
@@ -298,7 +298,7 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
         return this.selectedElements
     }
 
-    IsValid(t: T[]): boolean {
+    IsValid(_: T[]): boolean {
         return true
     }
 }

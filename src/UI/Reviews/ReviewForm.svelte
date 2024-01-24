@@ -77,7 +77,7 @@
       on:hover={(e) => {
         score = e.detail.score
       }}
-      on:mouseout={(e) => {
+      on:mouseout={() => {
         score = null
       }}
       score={score ?? confirmedScore ?? 0}

@@ -416,7 +416,7 @@ export class OsmConnection {
     ): Promise<{ id: number }> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually uploading GPX ", gpx)
-            return new Promise<{ id: number }>((ok, error) => {
+            return new Promise<{ id: number }>((ok) => {
                 window.setTimeout(
                     () => ok({ id: Math.floor(Math.random() * 1000) }),
                     Math.random() * 5000

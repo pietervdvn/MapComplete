@@ -17,7 +17,7 @@ import { EditButton, SaveButton } from "./SaveButton"
 import Translations from "../i18n/Translations"
 import Toggle from "../Input/Toggle"
 import { Feature } from "geojson"
-
+class xyz {}
 export class LanguageElement implements SpecialVisualization {
     funcName: string = "language_chooser"
     needsUrls = []

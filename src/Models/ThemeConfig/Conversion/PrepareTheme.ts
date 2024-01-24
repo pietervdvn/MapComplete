@@ -301,7 +301,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         )
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: LayoutConfigJson, _: ConversionContext): LayoutConfigJson {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
             return json

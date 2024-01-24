@@ -171,7 +171,7 @@
     }
   }
 
-  function onSave(e = undefined, deleteFreeform = false) {
+  function onSave(_ = undefined) {
     if (selectedTags === undefined) {
       return
     }
@@ -395,7 +395,7 @@
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
               {#if allowDeleteOfFreeform && mappings?.length === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
-                <button class="primary flex" on:click|stopPropagation|preventDefault={_ => onSave(_, true)}>
+                <button class="primary flex" on:click|stopPropagation|preventDefault={onSave}>
                   <TrashIcon class="w-6 h-6 text-red-500" />
                   <Tr t={Translations.t.general.eraseValue}/>
                 </button>

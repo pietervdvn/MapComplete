@@ -20,7 +20,6 @@ export default class StudioServer {
             category: "layers" | "themes"
         }[]
     > {
-        const uid = this._userId.data
         const { allFiles } = <{ allFiles: string[] }>(
             await Utils.downloadJson(this.url + "/overview")
         )

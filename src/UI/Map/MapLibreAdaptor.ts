@@ -136,7 +136,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.on("dblclick", (e) => {
                 handleClick(e)
             })
-            map.on("rotateend", (e) => {
+            map.on("rotateend", (_) => {
                 this.updateStores()
             })
             map.getContainer().addEventListener("keydown", (event) => {

@@ -119,7 +119,7 @@ export abstract class EditJsonState<T> {
             this.setValueAt(path, v)
         })
         this._stores.set(key, store)
-        this.configuration.addCallbackD((config) => {
+        this.configuration.addCallbackD(() => {
             store.setData(this.getCurrentValueFor(path))
         })
         return store

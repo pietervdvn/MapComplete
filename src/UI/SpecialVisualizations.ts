@@ -681,8 +681,7 @@ export default class SpecialVisualizations {
                     return new ImageCarousel(
                         AllImageProviders.LoadImagesFor(tags, imagePrefixes),
                         tags,
-                        state,
-                        feature
+                        state
                     )
                 },
             },

@@ -6,13 +6,11 @@
 
   export let state: EditLayerState
   export let path: (string | number)[] = []
-  export let schema: ConfigMeta
-
-  let value = new UIEventSource<string>({})
+  let value = new UIEventSource<Record<string,string>>({})
   console.log("Registering translation to path", path)
   state.register(
     path,
-    value.mapD((v) => JSON.parse(value.data))
+    value.mapD(() => JSON.parse(value.data))
   )
 </script>
 
