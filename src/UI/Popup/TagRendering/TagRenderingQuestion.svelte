@@ -54,7 +54,7 @@
    */
   let checkedMappings: boolean[]
 
-  let mappings: Mapping[] = config?.mappings
+  let mappings: Mapping[] = config?.mappings ?? []
   let searchTerm: UIEventSource<string> = new UIEventSource("")
 
   let dispatch = createEventDispatcher<{
@@ -153,7 +153,7 @@
     }
   })
   $: {
-    if (allowDeleteOfFreeform && $freeformInput === undefined && $freeformInputUnvalidated === "" && mappings.length === 0) {
+    if (allowDeleteOfFreeform && $freeformInput === undefined && $freeformInputUnvalidated === "" && mappings?.length === 0) {
       selectedTags = new Tag(config.freeform.key, "")
     } else {
 
@@ -172,8 +172,6 @@
   }
 
   function onSave(e = undefined, deleteFreeform = false) {
-    console.log("On click", deleteFreeform, ">>>", selectedTags)
-
     if (selectedTags === undefined) {
       return
     }
@@ -396,7 +394,7 @@
             <!-- TagRenderingQuestion-buttons -->
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
-              {#if allowDeleteOfFreeform && mappings.length === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
+              {#if allowDeleteOfFreeform && mappings?.length === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
                 <button class="primary flex" on:click|stopPropagation|preventDefault={_ => onSave(_, true)}>
                   <TrashIcon class="w-6 h-6 text-red-500" />
                   <Tr t={Translations.t.general.eraseValue}/>
