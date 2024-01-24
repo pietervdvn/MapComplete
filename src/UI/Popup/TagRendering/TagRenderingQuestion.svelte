@@ -153,7 +153,7 @@
     }
   })
   $: {
-    if (allowDeleteOfFreeform && $freeformInput === undefined && $freeformInputUnvalidated === "" && mappings.length === 0) {
+    if (allowDeleteOfFreeform && $freeformInput === undefined && $freeformInputUnvalidated === "" && mappings?.length === 0) {
       selectedTags = new Tag(config.freeform.key, "")
     } else {
 
@@ -172,8 +172,6 @@
   }
 
   function onSave(e = undefined, deleteFreeform = false) {
-    console.log("On click", deleteFreeform, ">>>", selectedTags)
-
     if (selectedTags === undefined) {
       return
     }
