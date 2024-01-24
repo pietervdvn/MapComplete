@@ -396,7 +396,7 @@
             <!-- TagRenderingQuestion-buttons -->
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
-              {#if allowDeleteOfFreeform && mappings.length === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
+              {#if allowDeleteOfFreeform && mappings?.length === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
                 <button class="primary flex" on:click|stopPropagation|preventDefault={_ => onSave(_, true)}>
                   <TrashIcon class="w-6 h-6 text-red-500" />
                   <Tr t={Translations.t.general.eraseValue}/>
