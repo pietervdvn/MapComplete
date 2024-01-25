@@ -396,7 +396,6 @@
         "uploadPendingSingle": "Eine Änderung ausstehend",
         "uploadingChanges": "Änderungen werden hochgeladen…",
         "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
-        "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
         "visualFeedback": {
             "closestFeaturesAre": "{n} Objekte im Anzeigebereich.",
             "directionsAbsolute": {

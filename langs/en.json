@@ -396,8 +396,7 @@
         "uploadPending": "{count} changes pending",
         "uploadPendingSingle": "One change pending",
         "uploadingChanges": "Uploading changes…",
-        "useSearch": "Use the search above to see presets",
-        "useSearchForMore": "Use the search function to search within {total} more values…",
+        "useSearch": "Use the search above to see more options",
         "visualFeedback": {
             "closestFeaturesAre": "{n} features within viewport.",
             "directionsAbsolute": {
