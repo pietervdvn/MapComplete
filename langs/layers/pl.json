@@ -2604,7 +2604,7 @@
                 "render": {
                     "special": {
                         "render_all": "Następujące języki są używane w tej szkole:{list()}",
-                        "render_single_language": "Język {language():font-bold} jest głównym językiem używanym w tej szkole"
+                        "render_single_language": "Język {language()} jest głównym językiem używanym w tej szkole"
                     }
                 }
             },

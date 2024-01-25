@@ -530,8 +530,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?",
-                        "render_list_item": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
-                        "render_single_language": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
+                        "render_list_item": "Dieser Geldautomat hat eine Sprachausgabe in {language()}",
+                        "render_single_language": "Dieser Geldautomat hat eine Sprachausgabe in {language()}"
                     }
                 }
             }
@@ -3859,8 +3859,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen verfügt der Aufzug über eine Sprachausgabe?",
-                        "render_list_item": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}",
-                        "render_single_language": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}"
+                        "render_list_item": "Der Aufzug hat eine Sprachausgabe in {language()}",
+                        "render_single_language": "Der Aufzug hat eine Sprachausgabe in {language()}"
                     }
                 }
             },
@@ -3891,8 +3891,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen hat der Aufzug taktile Schrift (Braille)?",
-                        "render_list_item": "Der Aufzug hat taktile Schrift in {language():font-bold}",
-                        "render_single_language": "Der Aufzug hat taktile Schrift in {language():font-bold}"
+                        "render_list_item": "Der Aufzug hat taktile Schrift in {language()}",
+                        "render_single_language": "Der Aufzug hat taktile Schrift in {language()}"
                     }
                 }
             }
@@ -7949,7 +7949,7 @@
                         "no_known_languages": "Die Unterrichtssprache der Schule ist unbekannt",
                         "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
                         "render_all": "Folgende Sprachen werden in der Schule verwendet:{list()}",
-                        "render_single_language": "{language():font-bold} ist die Hauptsprache der Schule"
+                        "render_single_language": "{language()} ist die Hauptsprache der Schule"
                     }
                 }
             },
@@ -8620,8 +8620,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-                        "render_list_item": "Die Treppe hat taktile Schrift in {language():font-bold}",
-                        "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
+                        "render_list_item": "Die Treppe hat taktile Schrift in {language()}",
+                        "render_single_language": "Die Treppe hat taktile Schrift in {language()}"
                     }
                 }
             }

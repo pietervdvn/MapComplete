@@ -1129,6 +1129,57 @@
         },
         "title": "OnWheels"
     },
+    "openlovemap": {
+        "description": "<p><i>Love in the palm of your hand</i></p>Open Love Map lists various adult entries, such as brothels, erotic stores and stripclubs.",
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "an erotic shop"
+                        }
+                    },
+                    "name": "Erotic shops"
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "a condom vending machine"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "an erotic cinema"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "What type of hotel is this?"
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Does {title()} have a private video booth?",
+                    "questionHint": "This is for use by a single person."
+                }
+            }
+        },
+        "title": "Open Love Map"
+    },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
         "title": "Wind power generators"

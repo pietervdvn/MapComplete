@@ -898,23 +898,6 @@
         },
         "title": "Bordillos y cruces"
     },
-    "mapcomplete-changes": {
-        "description": "Este mapa muestra todos los cambios realizados con MapComplete",
-        "layers": {
-            "0": {
-                "description": "Muestra todos los cambios de MapComplete",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "El nombre del tema contiene {search}"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
         "title": "Tareas de MapRoulette"

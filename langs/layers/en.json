@@ -530,8 +530,8 @@
                 "render": {
                     "special": {
                         "question": "In which languages does this ATM have speech output?",
-                        "render_list_item": "This ATM has speech output in {language():font-bold}",
-                        "render_single_language": "This ATM has speech output in {language():font-bold}"
+                        "render_list_item": "This ATM has speech output in {language()}",
+                        "render_single_language": "This ATM has speech output in {language()}"
                     }
                 }
             }
@@ -1809,6 +1809,24 @@
             "render": "Bird watching place"
         }
     },
+    "brothel": {
+        "description": "An establishment specifically dedicated to prostitution. ",
+        "name": "Brothels",
+        "presets": {
+            "0": {
+                "title": "a brothel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this brothel?",
+                "render": "This brothel is named <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Brothel"
+        }
+    },
     "cafe_pub": {
         "deletion": {
             "extraDeleteReasons": {
@@ -2383,6 +2401,26 @@
                 }
             },
             "render": "Charging station"
+        }
+    },
+    "cinema": {
+        "description": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US",
+        "name": "Cinema",
+        "tagRenderings": {
+            "cinema_type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a normal cinema showing movies for all ages"
+                    },
+                    "1": {
+                        "then": "This is an erotic cinema showing adult movies"
+                    }
+                },
+                "question": "What type of cinema is this?"
+            }
+        },
+        "title": {
+            "render": "Cinema"
         }
     },
     "climbing": {
@@ -3859,8 +3897,8 @@
                 "render": {
                     "special": {
                         "question": "In which languages does this elevator have speech output?",
-                        "render_list_item": "This elevator has speech output in {language():font-bold}",
-                        "render_single_language": "This elevator has speech output in {language():font-bold}"
+                        "render_list_item": "This elevator has speech output in {language()}",
+                        "render_single_language": "This elevator has speech output in {language()}"
                     }
                 }
             },
@@ -3891,8 +3929,8 @@
                 "render": {
                     "special": {
                         "question": "In which languages does this elevator have tactile writing (braille)?",
-                        "render_list_item": "This elevator has tactile writing in {language():font-bold}",
-                        "render_single_language": "This elevator has tactile writing in {language():font-bold}"
+                        "render_list_item": "This elevator has tactile writing in {language()}",
+                        "render_single_language": "This elevator has tactile writing in {language()}"
                     }
                 }
             }
@@ -5024,6 +5062,9 @@
                             },
                             "1": {
                                 "then": "There is no {negative-name} available at this hackerspace"
+                            },
+                            "2": {
+                                "then": "There is a limited {negative-name} available at this hackerspace"
                             }
                         },
                         "question": "Is {device-name} available at this hackerspace?"
@@ -5620,6 +5661,25 @@
                     "then": "Add a new point"
                 }
             }
+        }
+    },
+    "love_hotel": {
+        "description": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities",
+        "name": "Love hotels",
+        "presets": {
+            "0": {
+                "description": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities.",
+                "title": "a love hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this love hotel?",
+                "render": "This love hotel is named <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Love Hotel <i>{name}</i>"
         }
     },
     "map": {
@@ -7949,7 +8009,7 @@
                         "no_known_languages": "The main language of this school is unknown",
                         "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
                         "render_all": "The following languages are used in this school:{list()}",
-                        "render_single_language": "{language():font-bold} is the main language of this school"
+                        "render_single_language": "{language()} is the main language of this school"
                     }
                 }
             },
@@ -8620,8 +8680,8 @@
                 "render": {
                     "special": {
                         "question": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-                        "render_list_item": "These stairs have tactile writing in {language():font-bold}",
-                        "render_single_language": "These stairs have tactile writing in {language():font-bold}"
+                        "render_list_item": "These stairs have tactile writing in {language()}",
+                        "render_single_language": "These stairs have tactile writing in {language()}"
                     }
                 }
             }
@@ -8782,6 +8842,24 @@
                 }
             },
             "render": "Street Lamp"
+        }
+    },
+    "stripclub": {
+        "description": "A venue where erotic dance, striptease, or lap dances are performed commercially. ",
+        "name": "Stripclubs",
+        "presets": {
+            "0": {
+                "title": "a stripclub"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this stripclub?",
+                "render": "This stripclub is named <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Stripclub"
         }
     },
     "surveillance_camera": {

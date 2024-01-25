@@ -103,7 +103,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (!result) {
             return
         }
-        const [bounds, _, _] = result
+        const [bounds, _, __] = result
         this._lastQueryBBox = bounds
     }
 

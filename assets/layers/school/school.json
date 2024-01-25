@@ -435,12 +435,12 @@
             "cs": "V této škole se používají následující jazyky:{list()}"
           },
           "render_single_language": {
-            "en": "{language():font-bold} is the main language of this school",
-            "de": "{language():font-bold} ist die Hauptsprache der Schule",
-            "ca": "{language():font-bold} és la llengua principal d'aquesta escola",
-            "fr": "{language():font-bold} est la langue principale dans cette école",
-            "pl": "Język {language():font-bold} jest głównym językiem używanym w tej szkole",
-            "cs": "{language():font-bold} je hlavním jazykem této školy"
+            "en": "{language()} is the main language of this school",
+            "de": "{language()} ist die Hauptsprache der Schule",
+            "ca": "{language()} és la llengua principal d'aquesta escola",
+            "fr": "{language()} est la langue principale dans cette école",
+            "pl": "Język {language()} jest głównym językiem używanym w tej szkole",
+            "cs": "{language()} je hlavním jazykem této školy"
           },
           "question": {
             "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",

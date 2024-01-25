@@ -581,25 +581,25 @@
             "pt": "Em que línguas este multibanco tem saída de fala?"
           },
           "render_list_item": {
-            "en": "This ATM has speech output in {language():font-bold}",
-            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
-            "nl": "Deze geldautomaat heeft spraak in {language():font-bold}",
-            "ca": "Aquest caixer té sortida de veu en {language():font-bold}",
-            "cs": "Tento bankomat má řečový výstup v {language():font-bold}",
-            "he": "לכספומט הזה יש פלט דיבור ב {language():font-bold}",
-            "pt_BR": "Este caixa eletrônico tem saída de fala em {language():font-bold}",
-            "es": "Este cajero automático tiene salida de voz en {language():font-bold}",
-            "pt": "Este multibanco tem saída de fala em {language():font-bold}"
+            "en": "This ATM has speech output in {language()}",
+            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language()}",
+            "nl": "Deze geldautomaat heeft spraak in {language()}",
+            "ca": "Aquest caixer té sortida de veu en {language()}",
+            "cs": "Tento bankomat má řečový výstup v {language()}",
+            "he": "לכספומט הזה יש פלט דיבור ב {language()}",
+            "pt_BR": "Este caixa eletrônico tem saída de fala em {language()}",
+            "es": "Este cajero automático tiene salida de voz en {language()}",
+            "pt": "Este multibanco tem saída de fala em {language()}"
           },
           "render_single_language": {
-            "en": "This ATM has speech output in {language():font-bold}",
-            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
-            "nl": "Deze automaat heeft spraak in {language():font-bold}",
-            "ca": "Aquest caixer té sortida de veu en {language():font-bold}",
-            "cs": "Tento bankomat má řečový výstup v {language():font-bold}",
-            "he": "לכספומט הזה יש פלט דיבור ב {language():font-bold}",
-            "pt_BR": "Este caixa eletrônico tem saída de fala em {language():font-bold}",
-            "es": "Este cajero automático tiene salida de voz en {language():font-bold}"
+            "en": "This ATM has speech output in {language()}",
+            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language()}",
+            "nl": "Deze automaat heeft spraak in {language()}",
+            "ca": "Aquest caixer té sortida de veu en {language()}",
+            "cs": "Tento bankomat má řečový výstup v {language()}",
+            "he": "לכספומט הזה יש פלט דיבור ב {language()}",
+            "pt_BR": "Este caixa eletrônico tem saída de fala em {language()}",
+            "es": "Este cajero automático tiene salida de voz en {language()}"
           }
         }
       }

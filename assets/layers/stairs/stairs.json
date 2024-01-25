@@ -205,18 +205,18 @@
             "cs": "Ve kterých jazycích existuje hmatové písmo (braillské písmo) pro navigaci? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
           },
           "render_list_item": {
-            "en": "These stairs have tactile writing in {language():font-bold}",
-            "de": "Die Treppe hat taktile Schrift in {language():font-bold}",
-            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}",
-            "ca": "Aquestes escales tenen escriptura tàctil en {language():font-bold}",
-            "cs": "Tyto schody mají hmatové písmo v {language():font-bold}"
+            "en": "These stairs have tactile writing in {language()}",
+            "de": "Die Treppe hat taktile Schrift in {language()}",
+            "nl": "Deze trap heeft voelbaar schrijft in {language()}",
+            "ca": "Aquestes escales tenen escriptura tàctil en {language()}",
+            "cs": "Tyto schody mají hmatové písmo v {language()}"
           },
           "render_single_language": {
-            "en": "These stairs have tactile writing in {language():font-bold}",
-            "de": "Die Treppe hat taktile Schrift in {language():font-bold}",
-            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}",
-            "ca": "Aquestes escales tenen escriptura tàctil en {language():font-bold}",
-            "cs": "Tyto schody mají hmatové písmo v {language():font-bold}"
+            "en": "These stairs have tactile writing in {language()}",
+            "de": "Die Treppe hat taktile Schrift in {language()}",
+            "nl": "Deze trap heeft voelbaar schrijft in {language()}",
+            "ca": "Aquestes escales tenen escriptura tàctil en {language()}",
+            "cs": "Tyto schody mají hmatové písmo v {language()}"
           }
         }
       }

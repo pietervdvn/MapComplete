@@ -267,18 +267,18 @@
             "cs": "Ve kterých jazycích má tento výtah hmatové písmo (braillovo písmo)?"
           },
           "render_list_item": {
-            "en": "This elevator has tactile writing in {language():font-bold}",
-            "de": "Der Aufzug hat taktile Schrift in {language():font-bold}",
-            "nl": "Deze lift heeft voelbaar schrift in het {language():font-bold}",
-            "ca": "Aquest ascensor té l'escriptura tàctil en {language():font-bold}",
-            "cs": "Tento výtah má hmatové písmo v {language():font-bold}"
+            "en": "This elevator has tactile writing in {language()}",
+            "de": "Der Aufzug hat taktile Schrift in {language()}",
+            "nl": "Deze lift heeft voelbaar schrift in het {language()}",
+            "ca": "Aquest ascensor té l'escriptura tàctil en {language()}",
+            "cs": "Tento výtah má hmatové písmo v {language()}"
           },
           "render_single_language": {
-            "en": "This elevator has tactile writing in {language():font-bold}",
-            "de": "Der Aufzug hat taktile Schrift in {language():font-bold}",
-            "nl": "Deze lift heeft voelbaar schrift in het {language():font-bold}",
-            "ca": "Aquest ascensor té l'escriptura tàctil en {language():font-bold}",
-            "cs": "Tento výtah má hmatové písmo v {language():font-bold}"
+            "en": "This elevator has tactile writing in {language()}",
+            "de": "Der Aufzug hat taktile Schrift in {language()}",
+            "nl": "Deze lift heeft voelbaar schrift in het {language()}",
+            "ca": "Aquest ascensor té l'escriptura tàctil en {language()}",
+            "cs": "Tento výtah má hmatové písmo v {language()}"
           }
         }
       }
@@ -330,18 +330,18 @@
             "cs": "Ve kterých jazycích má tento výtah hlasový výstup?"
           },
           "render_list_item": {
-            "en": "This elevator has speech output in {language():font-bold}",
-            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}",
-            "de": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}",
-            "ca": "Aquest ascensor té sortida de veu en {language():font-bold}",
-            "cs": "Tento výtah má hlasový výstup v {language():font-bold}"
+            "en": "This elevator has speech output in {language()}",
+            "nl": "Deze lift heeft gesproken tekst in het {language()}",
+            "de": "Der Aufzug hat eine Sprachausgabe in {language()}",
+            "ca": "Aquest ascensor té sortida de veu en {language()}",
+            "cs": "Tento výtah má hlasový výstup v {language()}"
           },
           "render_single_language": {
-            "en": "This elevator has speech output in {language():font-bold}",
-            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}",
-            "de": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}",
-            "ca": "Aquest ascensor té sortida de veu en {language():font-bold}",
-            "cs": "Tento výtah má hlasový výstup v {language():font-bold}"
+            "en": "This elevator has speech output in {language()}",
+            "nl": "Deze lift heeft gesproken tekst in het {language()}",
+            "de": "Der Aufzug hat eine Sprachausgabe in {language()}",
+            "ca": "Aquest ascensor té sortida de veu en {language()}",
+            "cs": "Tento výtah má hlasový výstup v {language()}"
           }
         }
       }

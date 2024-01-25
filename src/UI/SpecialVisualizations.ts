@@ -31,11 +31,10 @@ import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import { SubtleButton } from "./Base/SubtleButton"
 import Svg from "../Svg"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement"
-import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
-import { LanguageElement } from "./Popup/LanguageElement"
+import { LanguageElement } from "./Popup/LanguageElement/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
@@ -88,6 +87,7 @@ import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import Img from "./Base/Img"
 import Qr from "../Utils/Qr"
+import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1044,20 +1044,28 @@ export default class SpecialVisualizations {
                 docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                 example:
                     "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
-                constr: (state, tagsSource) =>
+                constr: (
+                    state: SpecialVisualizationState,
+                    tagsSource: UIEventSource<Record<string, string>>,
+                    _: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
                             if (state.layout === undefined) {
                                 return "<feature title>"
                             }
-                            const layer = state.layout?.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
                             if (title === undefined) {
                                 return undefined
                             }
-                            return new SubstitutedTranslation(title, tagsSource, state).SetClass(
-                                "px-1"
-                            )
+                            return new SvelteUIElement(SpecialTranslation, {
+                                tags: tagsSource,
+                                state,
+                                feature,
+                                layer,
+                            }).SetClass("px-1")
                         })
                     ),
             },
@@ -1311,7 +1319,13 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
-                constr(state, featureTags, args) {
+                constr(
+                    state: SpecialVisualizationState,
+                    featureTags: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ) {
                     const [key, tr] = args
                     const translation = new Translation({ "*": tr })
                     return new VariableUiElement(
@@ -1319,11 +1333,13 @@ export default class SpecialVisualizations {
                             const properties: object[] = JSON.parse(tags[key])
                             const elements = []
                             for (const property of properties) {
-                                const subsTr = new SubstitutedTranslation(
-                                    translation,
-                                    new UIEventSource<any>(property),
-                                    state
-                                )
+                                const subsTr = new SvelteUIElement(SpecialTranslation, {
+                                    t: translation,
+                                    tags: properties,
+                                    state,
+                                    feature,
+                                    layer,
+                                })
                                 elements.push(subsTr)
                             }
                             return new List(elements)

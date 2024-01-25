@@ -489,8 +489,8 @@
                 "render": {
                     "special": {
                         "question": "V jakých jazycích má tento bankomat řečový výstup?",
-                        "render_list_item": "Tento bankomat má řečový výstup v {language():font-bold}",
-                        "render_single_language": "Tento bankomat má řečový výstup v {language():font-bold}"
+                        "render_list_item": "Tento bankomat má řečový výstup v {language()}",
+                        "render_single_language": "Tento bankomat má řečový výstup v {language()}"
                     }
                 }
             }
@@ -3269,8 +3269,8 @@
                 "render": {
                     "special": {
                         "question": "Ve kterých jazycích má tento výtah hlasový výstup?",
-                        "render_list_item": "Tento výtah má hlasový výstup v {language():font-bold}",
-                        "render_single_language": "Tento výtah má hlasový výstup v {language():font-bold}"
+                        "render_list_item": "Tento výtah má hlasový výstup v {language()}",
+                        "render_single_language": "Tento výtah má hlasový výstup v {language()}"
                     }
                 }
             },
@@ -3301,8 +3301,8 @@
                 "render": {
                     "special": {
                         "question": "Ve kterých jazycích má tento výtah hmatové písmo (braillovo písmo)?",
-                        "render_list_item": "Tento výtah má hmatové písmo v {language():font-bold}",
-                        "render_single_language": "Tento výtah má hmatové písmo v {language():font-bold}"
+                        "render_list_item": "Tento výtah má hmatové písmo v {language()}",
+                        "render_single_language": "Tento výtah má hmatové písmo v {language()}"
                     }
                 }
             }
@@ -7113,7 +7113,7 @@
                         "no_known_languages": "Hlavní jazyk této školy není znám",
                         "question": "Jaký je hlavní jazyk této školy?<div class='subtle'>Jakým jazykem se mluví se studenty v nejazykových kurzech a administrativou?</div>",
                         "render_all": "V této škole se používají následující jazyky:{list()}",
-                        "render_single_language": "{language():font-bold} je hlavním jazykem této školy"
+                        "render_single_language": "{language()} je hlavním jazykem této školy"
                     }
                 }
             },
@@ -7699,8 +7699,8 @@
                 "render": {
                     "special": {
                         "question": "Ve kterých jazycích existuje hmatové písmo (braillské písmo) pro navigaci? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-                        "render_list_item": "Tyto schody mají hmatové písmo v {language():font-bold}",
-                        "render_single_language": "Tyto schody mají hmatové písmo v {language():font-bold}"
+                        "render_list_item": "Tyto schody mají hmatové písmo v {language()}",
+                        "render_single_language": "Tyto schody mají hmatové písmo v {language()}"
                     }
                 }
             }

@@ -13,6 +13,8 @@
   import { Utils } from "../../../Utils"
   import { twMerge } from "tailwind-merge"
   import { ariaLabel } from "../../../Utils/ariaLabel"
+  import EditButton from "./EditButton.svelte"
+  import EditItemButton from "../../Studio/EditItemButton.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -102,16 +104,12 @@
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">
         <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
-        <button
+        <EditButton 
+          arialabel={config.editButtonAriaLabel}
+          ariaLabelledBy={answerId}
           on:click={() => {
-            editMode = true
-          }}
-          class="secondary h-8 w-8 shrink-0 self-start rounded-full p-1"
-          aria-labelledby={config.editButtonAriaLabel === undefined ? answerId : undefined}
-          use:ariaLabel={config.editButtonAriaLabel}
-        >
-          <PencilAltIcon />
-        </button>
+          editMode = true
+        }}/>
       </div>
     {/if}
   {:else}

@@ -530,8 +530,8 @@
                 "render": {
                     "special": {
                         "question": "¿En qué idiomas tiene salida de voz este cajero automático?",
-                        "render_list_item": "Este cajero automático tiene salida de voz en {language():font-bold}",
-                        "render_single_language": "Este cajero automático tiene salida de voz en {language():font-bold}"
+                        "render_list_item": "Este cajero automático tiene salida de voz en {language()}",
+                        "render_single_language": "Este cajero automático tiene salida de voz en {language()}"
                     }
                 }
             }
