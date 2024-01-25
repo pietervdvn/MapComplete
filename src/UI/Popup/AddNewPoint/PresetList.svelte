@@ -22,6 +22,10 @@
     preset: PresetConfig
     layer: LayerConfig
     text: Translation
+    /**
+     * Same as `this.preset.description.firstSentence()`
+     */
+    description: Translation,
     icon: BaseUIElement
     tags: Record<string, string>
   }[] = []
@@ -72,7 +76,13 @@
   }
 
   const dispatch = createEventDispatcher<{
-    select: { preset: PresetConfig; layer: LayerConfig; icon: string; tags: Record<string, string> }
+    select: {
+      preset: PresetConfig;
+      layer: LayerConfig;
+      icon: BaseUIElement;
+      tags: Record<string, string>,
+      text: Translation
+    }
   }>()
 </script>
 

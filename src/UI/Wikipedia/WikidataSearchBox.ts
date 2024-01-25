@@ -11,6 +11,8 @@ import Title from "../Base/Title"
 import Svg from "../../Svg"
 import Loading from "../Base/Loading"
 import Table from "../Base/Table"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import Search from "../../assets/svg/Search.svelte"
 
 export default class WikidataSearchBox extends InputElement<string> {
     public static docs = new Combine([
@@ -207,7 +209,7 @@ Another example is to search for species and trees:
         return new Combine([
             new Title(Translations.t.general.wikipedia.searchWikidata, 3).SetClass("m-2"),
             new Combine([
-                Svg.search_svg().SetStyle("width: 1.5rem"),
+                new SvelteUIElement(Search).SetClass("w-6"),
                 searchField.SetClass("m-2 w-full"),
             ]).SetClass("flex"),
             previews,
