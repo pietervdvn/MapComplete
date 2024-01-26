@@ -29,7 +29,7 @@ Install osm2pgsql (hint: compile from source is painless)
 To seed the database:
 
 ````
-osm2pgsql -O flex -E 4326 -S build_db.lua -s  --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi <file>.osm.pbf 
+osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi <file>.osm.pbf 
 ````
 Storing properties to table '"public"."osm2pgsql_properties" takes about 25 minutes with planet.osm
 

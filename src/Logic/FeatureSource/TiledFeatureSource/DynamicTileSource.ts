@@ -1,25 +1,37 @@
 import { Store, Stores } from "../../UIEventSource"
 import { Tiles } from "../../../Models/TileRange"
 import { BBox } from "../../BBox"
-import { FeatureSource } from "../FeatureSource"
+import { FeatureSource, FeatureSourceForTile } from "../FeatureSource"
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
+import { Feature } from "geojson"
+import { Utils } from "../../../Utils"
+import { GeoOperations } from "../../GeoOperations"
+
 
 /***
  * A tiled source which dynamically loads the required tiles at a fixed zoom level.
  * A single featureSource will be initialized for every tile in view; which will later be merged into this featureSource
  */
-export default class DynamicTileSource extends FeatureSourceMerger {
+export default class DynamicTileSource<Src extends FeatureSource = FeatureSource> extends FeatureSourceMerger<Src> {
+    /**
+     *
+     * @param zoomlevel If {z} is specified in the source, the 'zoomlevel' will be used as zoomlevel to download from
+     * @param minzoom Only activate this feature source if zoomed in further then this
+     * @param constructSource
+     * @param mapProperties
+     * @param options
+     */
     constructor(
         zoomlevel: Store<number>,
         minzoom: number,
-        constructSource: (tileIndex: number) => FeatureSource,
+        constructSource: (tileIndex: number) => Src,
         mapProperties: {
             bounds: Store<BBox>
             zoom: Store<number>
         },
         options?: {
             isActive?: Store<boolean>
-        }
+        },
     ) {
         super()
         const loadedTiles = new Set<number>()
@@ -34,32 +46,32 @@ export default class DynamicTileSource extends FeatureSourceMerger {
                         if (mapProperties.zoom.data < minzoom) {
                             return undefined
                         }
-                        const z = Math.round(zoomlevel.data)
+                        const z = Math.floor(zoomlevel.data)
                         const tileRange = Tiles.TileRangeBetween(
                             z,
                             bounds.getNorth(),
                             bounds.getEast(),
                             bounds.getSouth(),
-                            bounds.getWest()
+                            bounds.getWest(),
                         )
                         if (tileRange.total > 500) {
                             console.warn(
-                                "Got a really big tilerange, bounds and location might be out of sync"
+                                "Got a really big tilerange, bounds and location might be out of sync",
                             )
                             return undefined
                         }
 
                         const needed = Tiles.MapRange(tileRange, (x, y) =>
-                            Tiles.tile_index(z, x, y)
+                            Tiles.tile_index(z, x, y),
                         ).filter((i) => !loadedTiles.has(i))
                         if (needed.length === 0) {
                             return undefined
                         }
                         return needed
                     },
-                    [options?.isActive, mapProperties.zoom]
+                    [options?.isActive, mapProperties.zoom],
                 )
-                .stabilized(250)
+                .stabilized(250),
         )
 
         neededTiles.addCallbackAndRunD((neededIndexes) => {
@@ -69,4 +81,71 @@ export default class DynamicTileSource extends FeatureSourceMerger {
             }
         })
     }
+}
+
+
+/**
+ * The PolygonSourceMerger receives various small pieces of bigger polygons and stitches them together.
+ * This is used to reconstruct polygons of vector tiles
+ */
+export class PolygonSourceMerger extends DynamicTileSource<FeatureSourceForTile> {
+    constructor(
+        zoomlevel: Store<number>,
+        minzoom: number,
+        constructSource: (tileIndex: number) => FeatureSourceForTile,
+        mapProperties: {
+            bounds: Store<BBox>
+            zoom: Store<number>
+        },
+        options?: {
+            isActive?: Store<boolean>
+        },
+    ) {
+        super(zoomlevel, minzoom, constructSource, mapProperties, options)
+    }
+
+    protected addDataFromSources(sources: FeatureSourceForTile[]) {
+        sources = Utils.NoNull(sources)
+        const all: Map<string, Feature> = new Map()
+        const zooms: Map<string, number> = new Map()
+
+        for (const source of sources) {
+            let z = source.z
+            for (const f of source.features.data) {
+                const id = f.properties.id
+                if(id.endsWith("146616907")){
+                    console.log("Horeca totaal")
+                }
+                if (!all.has(id)) {
+                    // No other parts of this polygon have been seen before, simply add it
+                    all.set(id, f)
+                    zooms.set(id, z)
+                    continue
+                }
+
+                // A part of this object has been seen before, eventually from a different zoom level
+                const oldV = all.get(id)
+                const oldZ = zooms.get(id)
+                if (oldZ > z) {
+                    // The store contains more detailed information, so we ignore this part which has a lower accuraccy
+                    continue
+                }
+                if (oldZ < z) {
+                    // The old value has worse accuracy then what we receive now, we throw it away
+                    all.set(id, f)
+                    zooms.set(id, z)
+                    continue
+                }
+                const merged = GeoOperations.union(f, oldV)
+                merged.properties = oldV.properties
+                all.set(id, merged)
+                zooms.set(id, z)
+            }
+        }
+
+        const newList = Array.from(all.values())
+        this.features.setData(newList)
+        this._featuresById.setData(all)
+    }
+
 }

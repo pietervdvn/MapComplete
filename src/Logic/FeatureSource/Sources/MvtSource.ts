@@ -1,6 +1,6 @@
 import { Feature, Geometry } from "geojson"
 import { Store, UIEventSource } from "../../UIEventSource"
-import { FeatureSource } from "../FeatureSource"
+import { FeatureSourceForTile } from "../FeatureSource"
 import Pbf from "pbf"
 import * as pbfCompile from "pbf/compile"
 import * as PbfSchema from "protocol-buffers-schema"
@@ -19,8 +19,67 @@ class MvtFeatureBuilder {
         this._y0 = extent * y
     }
 
-    public toGeoJson(geometry, typeIndex, properties): Feature {
-        let coords: [number, number] | Coords | Coords[] = this.encodeGeometry(geometry)
+    private static signedArea(ring: Coords): number {
+        let sum = 0
+        const len = ring.length
+        // J is basically (i - 1) % len
+        let j = len - 1
+        let p1
+        let p2
+        for (let i = 0; i < len; i++) {
+            p1 = ring[i]
+            p2 = ring[j]
+            sum += (p2.x - p1.x) * (p1.y + p2.y)
+            j = i
+        }
+        return sum
+    }
+
+    /**
+     *
+     * const rings = [   [     [       3.208361864089966,       51.186908820014736     ],     [       3.2084155082702637,       51.18689537073311     ],     [       3.208436965942383,       51.186888646090836     ],     [       3.2084155082702637,       51.18686174751187     ],     [       3.2084155082702637,       51.18685502286465     ],     [       3.2083725929260254,       51.18686847215807     ],     [       3.2083404064178467,       51.18687519680333     ],     [       3.208361864089966,       51.186908820014736     ]   ] ]
+     * MvtFeatureBuilder.classifyRings(rings) // => [rings]
+     */
+    private static classifyRings(rings: Coords[]): Coords[][] {
+        if (rings.length <= 0) {
+            throw "Now rings in polygon found"
+        }
+        if (rings.length == 1) {
+            return [rings]
+        }
+
+        const polygons: Coords[][] = []
+        let currentPolygon: Coords[]
+
+        for (let i = 0; i < rings.length; i++) {
+            let ring = rings[i]
+            const area = this.signedArea(ring)
+            if (area === 0) {
+                // Weird, degenerate ring
+                continue
+            }
+            const ccw = area < 0
+
+            if (ccw === (area < 0)) {
+                if (currentPolygon) {
+                    polygons.push(currentPolygon)
+                }
+                currentPolygon = [ring]
+
+            } else {
+                currentPolygon.push(ring)
+            }
+        }
+        if (currentPolygon) {
+            polygons.push(currentPolygon)
+        }
+
+        return polygons
+    }
+
+    public toGeoJson(geometry: number[], typeIndex: 1 | 2 | 3, properties: any): Feature {
+        let coords: Coords[] = this.encodeGeometry(geometry)
+        let classified = undefined
         switch (typeIndex) {
             case 1:
                 const points = []
@@ -38,9 +97,9 @@ class MvtFeatureBuilder {
                 break
 
             case 3:
-                let classified = this.classifyRings(coords)
-                for (let i = 0; i < coords.length; i++) {
-                    for (let j = 0; j < coords[i].length; j++) {
+                classified = MvtFeatureBuilder.classifyRings(coords)
+                for (let i = 0; i < classified.length; i++) {
+                    for (let j = 0; j < classified[i].length; j++) {
                         this.project(classified[i][j])
                     }
                 }
@@ -48,9 +107,11 @@ class MvtFeatureBuilder {
         }
 
         let type: string = MvtFeatureBuilder.geom_types[typeIndex]
+        let polygonCoords: Coords | Coords[] | Coords[][]
         if (coords.length === 1) {
-            coords = coords[0]
+            polygonCoords = (classified ?? coords)[0]
         } else {
+            polygonCoords = classified ?? coords
             type = "Multi" + type
         }
 
@@ -58,13 +119,22 @@ class MvtFeatureBuilder {
             type: "Feature",
             geometry: {
                 type: <any>type,
-                coordinates: <any>coords,
+                coordinates: <any>polygonCoords,
             },
             properties,
         }
     }
 
-    private encodeGeometry(geometry: number[]) {
+    /**
+     *
+     * const geometry = [9,233,8704,130,438,1455,270,653,248,423,368,493,362,381,330,267,408,301,406,221,402,157,1078,429,1002,449,1036,577,800,545,1586,1165,164,79,40]
+     * const builder = new MvtFeatureBuilder(4096, 66705, 43755, 17)
+     * const expected = [[3.2106759399175644,51.213658395282124],[3.2108227908611298,51.21396418776169],[3.2109133154153824,51.21410154168976],[3.210996463894844,51.214190590500664],[3.211119845509529,51.214294340548975],[3.211241215467453,51.2143745681588],[3.2113518565893173,51.21443085341426],[3.211488649249077,51.21449427925393],[3.2116247713565826,51.214540903490956],[3.211759552359581,51.21457408647774],[3.2121209800243378,51.214664394485254],[3.212456926703453,51.21475890267553],[3.2128042727708817,51.214880292910834],[3.213072493672371,51.214994962285544],[3.2136042416095734,51.21523984134939],[3.2136592268943787,51.21525664260963],[3.213672637939453,51.21525664260963]]
+     * builder.project(builder.encodeGeometry(geometry)[0]) // => expected
+     * @param geometry
+     * @private
+     */
+    private encodeGeometry(geometry: number[]): Coords[] {
         let cX = 0
         let cY = 0
         let coordss: Coords[] = []
@@ -86,7 +156,7 @@ class MvtFeatureBuilder {
                     currentRing = []
                 }
             }
-            if (commandId === 1 || commandId === 2){
+            if (commandId === 1 || commandId === 2) {
                 for (let j = 0; j < commandCount; j++) {
                     const dx = geometry[i + j * 2 + 1]
                     cX += ((dx >> 1) ^ (-(dx & 1)))
@@ -94,10 +164,11 @@ class MvtFeatureBuilder {
                     cY += ((dy >> 1) ^ (-(dy & 1)))
                     currentRing.push([cX, cY])
                 }
-                i = commandCount * 2
+                i += commandCount * 2
             }
-            if(commandId === 7){
+            if (commandId === 7) {
                 currentRing.push([...currentRing[0]])
+                i++
             }
 
         }
@@ -107,62 +178,12 @@ class MvtFeatureBuilder {
         return coordss
     }
 
-    private signedArea(ring: Coords): number {
-        let sum = 0
-        const len = ring.length
-        // J is basically (i - 1) % len
-        let j = len - 1
-        let p1
-        let p2
-        for (let i = 0; i < len; i++) {
-            p1 = ring[i]
-            p2 = ring[j]
-            sum += (p2.x - p1.x) * (p1.y + p2.y)
-            j = i
-        }
-        return sum
-    }
-
-    private classifyRings(rings: Coords[]): Coords[][] {
-        const len = rings.length
-
-        if (len <= 1) return [rings]
-
-        const polygons = []
-        let polygon
-        // CounterClockWise
-        let ccw: boolean
-
-        for (let i = 0; i < len; i++) {
-            const area = this.signedArea(rings[i])
-            if (area === 0) continue
-
-            if (ccw === undefined) {
-                ccw = area < 0
-            }
-            if (ccw === (area < 0)) {
-                if (polygon) {
-                    polygons.push(polygon)
-                }
-                polygon = [rings[i]]
-
-            } else {
-                polygon.push(rings[i])
-            }
-        }
-        if (polygon) {
-            polygons.push(polygon)
-        }
-
-        return polygons
-    }
-
     /**
      * Inline replacement of the location by projecting
-     * @param line
-     * @private
+     * @param line the line which will be rewritten inline
+     * @return line
      */
-    private project(line: [number, number][]) {
+    private project(line: Coords) {
         const y0 = this._y0
         const x0 = this._x0
         const size = this._size
@@ -174,12 +195,13 @@ class MvtFeatureBuilder {
                 360 / Math.PI * Math.atan(Math.exp(y2 * Math.PI / 180)) - 90,
             ]
         }
+        return line
     }
 }
 
-export default class MvtSource implements FeatureSource {
+export default class MvtSource implements FeatureSourceForTile {
 
-    private static readonly schemaSpec = `
+    private static readonly schemaSpec21 = `
     package vector_tile;
 
 option optimize_for = LITE_RUNTIME;
@@ -259,26 +281,30 @@ message Tile {
         extensions 16 to 8191;
 }
 `
-    private static readonly tile_schema = pbfCompile(PbfSchema.parse(MvtSource.schemaSpec)).Tile
-
-
+    private static readonly tile_schema = (pbfCompile.default ?? pbfCompile)(PbfSchema.parse(MvtSource.schemaSpec21)).Tile
+    public readonly features: Store<Feature<Geometry, { [name: string]: any }>[]>
     private readonly _url: string
     private readonly _layerName: string
     private readonly _features: UIEventSource<Feature<Geometry, {
         [name: string]: any
     }>[]> = new UIEventSource<Feature<Geometry, { [p: string]: any }>[]>([])
-    public readonly features: Store<Feature<Geometry, { [name: string]: any }>[]> = this._features
-    private readonly x: number
-    private readonly y: number
-    private readonly z: number
+    public readonly x: number
+    public readonly y: number
+    public readonly z: number
 
-    constructor(url: string, x: number, y: number, z: number, layerName?: string) {
+    constructor(url: string, x: number, y: number, z: number, layerName?: string, isActive?: Store<boolean>) {
         this._url = url
         this._layerName = layerName
         this.x = x
         this.y = y
         this.z = z
         this.downloadSync()
+        this.features = this._features.map(fs => {
+            if (fs === undefined || isActive?.data === false) {
+                return []
+            }
+            return fs
+        }, [isActive])
     }
 
     private getValue(v: {
@@ -316,16 +342,23 @@ message Tile {
 
     }
 
-    private downloadSync(){
+    private downloadSync() {
         this.download().then(d => {
-            if(d.length === 0){
+            if (d.length === 0) {
                 return
             }
             return this._features.setData(d)
-        }).catch(e => {console.error(e)})
+        }).catch(e => {
+            console.error(e)
+        })
     }
+
     private async download(): Promise<Feature[]> {
         const result = await fetch(this._url)
+        if (result.status !== 200) {
+            console.error("Could not download tile " + this._url)
+            return []
+        }
         const buffer = await result.arrayBuffer()
         const data = MvtSource.tile_schema.read(new Pbf(buffer))
         const layers = data.layers
@@ -336,7 +369,7 @@ message Tile {
             }
             layer = layers.find(l => l.name === this._layerName)
         }
-        if(!layer){
+        if (!layer) {
             return []
         }
         const builder = new MvtFeatureBuilder(layer.extent, this.x, this.y, this.z)

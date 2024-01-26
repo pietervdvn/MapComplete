@@ -1,4 +1,4 @@
-import { Store } from "../../UIEventSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
 import DynamicTileSource from "./DynamicTileSource"
 import { Utils } from "../../../Utils"
 import GeoJsonSource from "../Sources/GeoJsonSource"
@@ -65,7 +65,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
 
         const blackList = new Set<string>()
         super(
-            source.geojsonZoomLevel,
+           new ImmutableStore(source.geojsonZoomLevel),
             layer.minzoom,
             (zxy) => {
                 if (whitelist !== undefined) {

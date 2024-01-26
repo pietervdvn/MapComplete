@@ -16,6 +16,12 @@ export interface FeatureSourceForLayer<T extends Feature = Feature> extends Feat
     readonly layer: FilteredLayer
 }
 
+export interface FeatureSourceForTile <T extends Feature = Feature> extends FeatureSource<T> {
+    readonly x: number
+    readonly y: number
+    readonly z: number
+
+}
 /**
  * A feature source which is aware of the indexes it contains
  */

@@ -21,7 +21,7 @@
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org"
     },
-    "mvt_layer_server": "http://127.0.0.1:7800/public.{layer}/{z}/{x}/{y}.pbf",
+    "mvt_layer_server": "http://127.0.0.1:7800/public.{type}_{layer}/{z}/{x}/{y}.pbf",
     "disabled:oauth_credentials": {
       "##": "DEV",
       "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
