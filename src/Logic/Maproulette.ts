@@ -15,11 +15,11 @@ export default class Maproulette {
     public static readonly STATUS_MEANING = {
         0: "Open",
         1: "Fixed",
-        2: "False positive",
+        2: "False_positive",
         3: "Skipped",
         4: "Deleted",
         5: "Already fixed",
-        6: "Too hard",
+        6: "Too_hard",
         9: "Disabled",
     }
     public static singleton = new Maproulette()
