@@ -1,6 +1,7 @@
 import { ConversionMessage, ConversionMsgLevel } from "./Conversion"
 
 export class ConversionContext {
+    private static reported = false
     /**
      *  The path within the data structure where we are currently operating
      */
@@ -10,7 +11,6 @@ export class ConversionContext {
      */
     readonly operation: ReadonlyArray<string>
     readonly messages: ConversionMessage[]
-
     private _hasErrors: boolean = false
 
     private constructor(
@@ -32,7 +32,6 @@ export class ConversionContext {
             }
         }
     }
-    private static reported = false
 
     public static construct(path: (string | number)[], operation: string[]) {
         return new ConversionContext([], [...path], [...operation])
@@ -74,6 +73,31 @@ export class ConversionContext {
 
     private static red(s) {
         return "\x1b[31m" + s + "\x1b[0m"
+    }
+
+    /**
+     * Does an inline edit of the messages for which a new path is defined
+     * This is a slight hack
+     * @param rewritePath
+     */
+    public rewriteMessages(
+        rewritePath: (
+            p: ReadonlyArray<number | string>
+        ) => undefined | ReadonlyArray<number | string>
+    ): void {
+        for (let i = 0; i < this.messages.length; i++) {
+            const m = this.messages[i]
+            const newPath = rewritePath(m.context.path)
+            if (!newPath) {
+                continue
+            }
+            const rewrittenContext = new ConversionContext(
+                this.messages,
+                newPath,
+                m.context.operation
+            )
+            this.messages[i] = <ConversionMessage>{ ...m, context: rewrittenContext }
+        }
     }
 
     public enter(key: string | number | (string | number)[]) {

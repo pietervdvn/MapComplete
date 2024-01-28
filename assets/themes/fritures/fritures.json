@@ -64,14 +64,16 @@
               {
                 "question": {
                   "en": "No oil type preference",
-                  "de": "Kein Öltyp bevorzugt"
+                  "de": "Kein Öltyp bevorzugt",
+                  "es": "No se prefiere ningún tipo de aceite"
                 }
               },
               {
                 "question": {
                   "en": "Only show fritures using vegetable oil",
                   "de": "Nur Friteusen mit Pflanzenöl anzeigen",
-                  "ca": "Només mostra freiduries que utilitzen oli vegetal"
+                  "ca": "Només mostra freiduries que utilitzen oli vegetal",
+                  "es": "Solo muestra freiduras que utilizan aceite vegetal"
                 },
                 "osmTags": "friture:oil=vegetable"
               },
@@ -79,7 +81,8 @@
                 "question": {
                   "en": "Only show fritures using animal oil",
                   "de": "Nur Friteusen mit tierischem Öl anzeigen",
-                  "ca": "Només mostra freiduries que utilitzen oli animal"
+                  "ca": "Només mostra freiduries que utilitzen oli animal",
+                  "es": "Solo muestra freiduras que utilizan aceite animal"
                 },
                 "osmTags": "friture:oil=animal"
               }

@@ -31,11 +31,10 @@ import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import { SubtleButton } from "./Base/SubtleButton"
 import Svg from "../Svg"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement"
-import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
-import { LanguageElement } from "./Popup/LanguageElement"
+import { LanguageElement } from "./Popup/LanguageElement/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
@@ -89,6 +88,8 @@ import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import Img from "./Base/Img"
 import Qr from "../Utils/Qr"
 import ComparisonTool from "./Comparison/ComparisonTool.svelte"
+import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
+import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -254,96 +255,6 @@ export class QuestionViz implements SpecialVisualization {
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
 
-    static undoEncoding(str: string) {
-        return str
-            .trim()
-            .replace(/&LPARENS/g, "(")
-            .replace(/&RPARENS/g, ")")
-            .replace(/&LBRACE/g, "{")
-            .replace(/&RBRACE/g, "}")
-            .replace(/&COMMA/g, ",")
-    }
-
-    /**
-     *
-     * For a given string, returns a specification what parts are fixed and what parts are special renderings.
-     * Note that _normal_ substitutions are ignored.
-     *
-     * // Return empty list on empty input
-     * SpecialVisualizations.constructSpecification("") // => []
-     *
-     * // Simple case
-     * const oh = SpecialVisualizations.constructSpecification("The opening hours with value {opening_hours} can be seen in the following table: <br/> {opening_hours_table()}")
-     * oh[0] // => "The opening hours with value {opening_hours} can be seen in the following table: <br/> "
-     * oh[1].func.funcName // => "opening_hours_table"
-     *
-     * // Advanced cases with commas, braces and newlines should be handled without problem
-     * const templates = SpecialVisualizations.constructSpecification("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
-     * const templ = <Exclude<RenderingSpecification, string>> templates[0]
-     * templ.func.funcName // => "send_email"
-     * templ.args[0] = "{email}"
-     */
-    public static constructSpecification(
-        template:
-            | string
-            | { special: Record<string, string | Record<string, string>> & { type: string } },
-        extraMappings: SpecialVisualization[] = []
-    ): RenderingSpecification[] {
-        if (template === "") {
-            return []
-        }
-
-        if (typeof template !== "string") {
-            console.trace(
-                "Got a non-expanded template while constructing the specification, it still has a 'special-key':",
-                template
-            )
-            throw "Got a non-expanded template while constructing the specification"
-        }
-        const allKnownSpecials = extraMappings.concat(SpecialVisualizations.specialVisualizations)
-        for (const knownSpecial of allKnownSpecials) {
-            // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
-            const matched = template.match(
-                new RegExp(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`, "s")
-            )
-            if (matched != null) {
-                // We found a special component that should be brought to live
-                const partBefore = SpecialVisualizations.constructSpecification(
-                    matched[1],
-                    extraMappings
-                )
-                const argument =
-                    matched[2] /* .trim()  // We don't trim, as spaces might be relevant, e.g. "what is ... of {title()}"*/
-                const style = matched[3]?.substring(1) ?? ""
-                const partAfter = SpecialVisualizations.constructSpecification(
-                    matched[4],
-                    extraMappings
-                )
-                const args = knownSpecial.args.map((arg) => arg.defaultValue ?? "")
-                if (argument.length > 0) {
-                    const realArgs = argument.split(",").map((str) => this.undoEncoding(str))
-                    for (let i = 0; i < realArgs.length; i++) {
-                        if (args.length <= i) {
-                            args.push(realArgs[i])
-                        } else {
-                            args[i] = realArgs[i]
-                        }
-                    }
-                }
-
-                const element: RenderingSpecification = {
-                    args: args,
-                    style: style,
-                    func: knownSpecial,
-                }
-                return [...partBefore, element, ...partAfter]
-            }
-        }
-
-        // IF we end up here, no changes have to be made - except to remove any resting {}
-        return [template]
-    }
-
     public static DocumentationFor(viz: string | SpecialVisualization): BaseUIElement | undefined {
         if (typeof viz === "string") {
             viz = SpecialVisualizations.specialVisualizations.find((sv) => sv.funcName === viz)
@@ -378,6 +289,12 @@ export default class SpecialVisualizations {
         ])
     }
 
+    public static constructSpecification(
+        template: string,
+        extraMappings: SpecialVisualization[] = []
+    ): RenderingSpecification[] {
+        return SpecialVisualisationUtils.constructSpecification(template, extraMappings)
+    }
     public static HelpMessage() {
         const helpTexts = SpecialVisualizations.specialVisualizations.map((viz) =>
             SpecialVisualizations.DocumentationFor(viz)
@@ -664,8 +581,13 @@ export default class SpecialVisualizations {
                 funcName: "all_tags",
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
-                constr: (state, tags: UIEventSource<any>) =>
-                    new SvelteUIElement(AllTagsPanel, { tags, state }),
+                constr: (
+                    state,
+                    tags: UIEventSource<Record<string, string>>,
+                    _,
+                    __,
+                    layer: LayerConfig
+                ) => new SvelteUIElement(AllTagsPanel, { tags, layer }),
             },
             {
                 funcName: "image_carousel",
@@ -686,8 +608,7 @@ export default class SpecialVisualizations {
                     return new ImageCarousel(
                         AllImageProviders.LoadImagesFor(tags, imagePrefixes),
                         tags,
-                        state,
-                        feature
+                        state
                     )
                 },
             },
@@ -1050,20 +971,28 @@ export default class SpecialVisualizations {
                 docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                 example:
                     "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
-                constr: (state, tagsSource) =>
+                constr: (
+                    state: SpecialVisualizationState,
+                    tagsSource: UIEventSource<Record<string, string>>,
+                    _: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
                             if (state.layout === undefined) {
                                 return "<feature title>"
                             }
-                            const layer = state.layout?.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
                             if (title === undefined) {
                                 return undefined
                             }
-                            return new SubstitutedTranslation(title, tagsSource, state).SetClass(
-                                "px-1"
-                            )
+                            return new SvelteUIElement(SpecialTranslation, {
+                                tags: tagsSource,
+                                state,
+                                feature,
+                                layer,
+                            }).SetClass("px-1")
                         })
                     ),
             },
@@ -1316,36 +1245,30 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
-                constr(state, featureTags, args) {
+                constr(
+                    state: SpecialVisualizationState,
+                    featureTags: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ) {
                     const [key, tr] = args
                     const translation = new Translation({ "*": tr })
                     return new VariableUiElement(
                         featureTags.map((tags) => {
-                            try {
-                                const data = tags[key]
-                                const properties: object[] =
-                                    typeof data === "string" ? JSON.parse(tags[key]) : data
-                                const elements = []
-                                for (const property of properties) {
-                                    const subsTr = new SubstitutedTranslation(
-                                        translation,
-                                        new UIEventSource<any>(property),
-                                        state
-                                    )
-                                    elements.push(subsTr)
-                                }
-                                return new List(elements)
-                            } catch (e) {
-                                console.log(
-                                    "Something went wrong while generating the elements for a multi",
-                                    {
-                                        e,
-                                        tags,
-                                        key,
-                                        loaded: tags[key],
-                                    }
-                                )
+                            const properties: object[] = JSON.parse(tags[key])
+                            const elements = []
+                            for (const property of properties) {
+                                const subsTr = new SvelteUIElement(SpecialTranslation, {
+                                    t: translation,
+                                    tags: properties,
+                                    state,
+                                    feature,
+                                    layer,
+                                })
+                                elements.push(subsTr)
                             }
+                            return elements
                         })
                     )
                 },
@@ -1410,11 +1333,35 @@ export default class SpecialVisualizations {
                                 const [_, username, host] = fediAccount.match(
                                     FediverseValidator.usernameAtServer
                                 )
-                                return new SvelteUIElement(Link, {
+
+                                const normalLink = new SvelteUIElement(Link, {
                                     text: fediAccount,
-                                    url: "https://" + host + "/@" + username,
+                                    href: "https://" + host + "/@" + username,
                                     newTab: true,
                                 })
+
+                                const loggedInContributorMastodon =
+                                    state.userRelatedState?.preferencesAsTags?.data?.[
+                                        "_mastodon_link"
+                                    ]
+                                console.log(
+                                    "LoggedinContributorMastodon",
+                                    loggedInContributorMastodon
+                                )
+                                if (!loggedInContributorMastodon) {
+                                    return normalLink
+                                }
+                                const homeUrl = new URL(loggedInContributorMastodon)
+                                const homeHost = homeUrl.protocol + "//" + homeUrl.hostname
+
+                                return new Combine([
+                                    normalLink,
+                                    new SvelteUIElement(Link, {
+                                        href: homeHost + "/" + fediAccount,
+                                        text: Translations.t.validation.fediverse.onYourServer,
+                                        newTab: true,
+                                    }).SetClass("button"),
+                                ])
                             })
                     )
                 },
@@ -1723,6 +1670,7 @@ export default class SpecialVisualizations {
             )
         }
 
+        SpecialVisualisationUtils.specialVisualizations = Utils.NoNull(specialVisualizations)
         return specialVisualizations
     }
 }

@@ -10,7 +10,6 @@ import { Tag } from "../../Logic/Tags/Tag"
 import { SpecialVisualizationState } from "../SpecialVisualization"
 import { Feature, Point } from "geojson"
 import SvelteUIElement from "../Base/SvelteUIElement"
-import Confirm from "../../assets/svg/Confirm.svelte"
 import Relocation from "../../assets/svg/Relocation.svelte"
 import Location from "../../assets/svg/Location.svelte"
 

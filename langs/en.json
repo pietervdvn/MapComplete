@@ -217,6 +217,7 @@
         },
         "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
         "enableGeolocationForSafariLink": "Learn how to enable the geolocation permission in settings",
+        "eraseValue": "Erase this value",
         "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
@@ -395,8 +396,7 @@
         "uploadPending": "{count} changes pending",
         "uploadPendingSingle": "One change pending",
         "uploadingChanges": "Uploading changes…",
-        "useSearch": "Use the search above to see presets",
-        "useSearchForMore": "Use the search function to search within {total} more values…",
+        "useSearch": "Use the search above to see more options",
         "visualFeedback": {
             "closestFeaturesAre": "{n} features within viewport.",
             "directionsAbsolute": {
@@ -723,7 +723,8 @@
         "fediverse": {
             "description": "A fediverse handle, often @username@server.tld",
             "feedback": "A fediverse handle consists of @username@server.tld or is a link to a profile",
-            "invalidHost": "{host} is not a valid hostname"
+            "invalidHost": "{host} is not a valid hostname",
+            "onYourServer": "See and follow on your server"
         },
         "float": {
             "description": "a number",

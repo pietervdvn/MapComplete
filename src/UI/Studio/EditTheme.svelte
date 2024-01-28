@@ -20,6 +20,9 @@
 
   const perRegion: Record<string, ConfigMeta[]> = {}
   for (const schemaElement of schema) {
+    if(schemaElement.path.length > 1 && schemaElement.path[0] === "layers"){
+      continue
+    }
     const key = schemaElement.hints.group ?? "no-group"
     const list = perRegion[key] ?? (perRegion[key] = [])
     list.push(schemaElement)

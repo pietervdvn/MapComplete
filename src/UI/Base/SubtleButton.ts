@@ -1,5 +1,5 @@
 import BaseUIElement from "../BaseUIElement"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import { UIElement } from "../UIElement"
 import SvelteUIElement from "./SvelteUIElement"
 import SubtleLink from "./SubtleLink.svelte"

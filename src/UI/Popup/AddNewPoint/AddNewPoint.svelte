@@ -28,12 +28,14 @@
   import { onDestroy } from "svelte"
   import NextButton from "../../Base/NextButton.svelte"
   import BackButton from "../../Base/BackButton.svelte"
-  import ToSvelte from "../../Base/ToSvelte.svelte"
-  import Svg from "../../../Svg"
   import OpenBackgroundSelectorButton from "../../BigComponents/OpenBackgroundSelectorButton.svelte"
   import { twJoin } from "tailwind-merge"
   import Confirm from "../../../assets/svg/Confirm.svelte"
   import Close from "../../../assets/svg/Close.svelte"
+  import Layers from "../../../assets/svg/Layers.svelte"
+  import { Translation } from "../../i18n/Translation"
+  import ToSvelte from "../../Base/ToSvelte.svelte"
+  import BaseUIElement from "../../BaseUIElement"
 
   export let coordinate: { lon: number; lat: number }
   export let state: SpecialVisualizationState
@@ -41,8 +43,9 @@
   let selectedPreset: {
     preset: PresetConfig
     layer: LayerConfig
-    icon: string
-    tags: Record<string, string>
+    icon: BaseUIElement
+    tags: Record<string, string>,
+    text: Translation
   } = undefined
   let checkedOfGlobalFilters: number = 0
   let confirmedCategory = false
@@ -143,7 +146,6 @@
     const feature = state.indexedFeatures.featuresById.data.get(newId)
     console.log("Selecting feature", feature, "and opening their popup")
     abort()
-    state.selectedLayer.setData(selectedPreset.layer)
     state.selectedElement.setData(feature)
     tagsStore.ping()
   }
@@ -199,7 +201,7 @@
             state.guistate.openFilterView(selectedPreset.layer)
           }}
         >
-          <ToSvelte construct={Svg.layers_svg().SetClass("w-12")} />
+          <Layers class="w-12"/>
           <Tr t={Translations.t.general.add.openLayerControl} />
         </button>
 
@@ -240,7 +242,7 @@
             state.guistate.openFilterView(selectedPreset.layer)
           }}
         >
-          <ToSvelte construct={Svg.layers_svg().SetClass("w-12")} />
+          <Layers class="w-12"/>
           <Tr t={Translations.t.general.add.openLayerControl} />
         </button>
       </div>
@@ -251,8 +253,6 @@
           t={Translations.t.general.add.confirmTitle.Subs({ title: selectedPreset.preset.title })}
         />
       </h2>
-
-      <Tr t={Translations.t.general.add.confirmIntro} />
 
       {#if selectedPreset.preset.description}
         <Tr t={selectedPreset.preset.description} />
@@ -285,7 +285,7 @@
 
         <NextButton on:click={() => (confirmedCategory = true)} clss="primary w-full">
           <div slot="image" class="relative">
-            <ToSvelte construct={selectedPreset.icon} />
+            <ToSvelte construct={selectedPreset.icon}/>
             <Confirm class="absolute bottom-0 right-0 h-4 w-4" />
           </div>
           <div class="w-full">
@@ -304,7 +304,7 @@
         <Tr
           slot="message"
           t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.confirmAddNew.Subs({
-            preset: selectedPreset.preset,
+            preset: selectedPreset.text
           })}
         />
       </SubtleButton>

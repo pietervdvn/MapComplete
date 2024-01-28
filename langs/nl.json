@@ -368,7 +368,6 @@
             "uploading": "Traject uploaden…"
         },
         "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
-        "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
         "visualFeedback": {
             "closestFeaturesAre": "{n} objecten in beeld.",
             "east": "Naar het oosten",

@@ -18,6 +18,7 @@
   import Geosearch from "../BigComponents/Geosearch.svelte"
   import If from "../Base/If.svelte"
   import Constants from "../../Models/Constants"
+  import LoginToggle from "../Base/LoginToggle.svelte"
 
   export let state: SpecialVisualizationState
 
@@ -49,7 +50,7 @@
   let notAllowed = moveWizardState.moveDisallowedReason
   let currentMapProperties: MapProperties = undefined
 </script>
-
+<LoginToggle {state}>
 {#if moveWizardState.reasons.length > 0}
   {#if $notAllowed}
     <div class="m-2 flex rounded-lg bg-gray-200 p-2">
@@ -165,3 +166,4 @@
     </div>
   {/if}
 {/if}
+</LoginToggle>

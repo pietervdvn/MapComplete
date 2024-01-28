@@ -547,6 +547,10 @@
     },
     "images"
   ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
   "units": [
     {
       "fire_hydrant:diameter": {
@@ -556,9 +560,5 @@
         ]
       }
     }
-  ],
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuracy": true
-  }
+  ]
 }

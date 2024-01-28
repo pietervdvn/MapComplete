@@ -560,7 +560,8 @@
             "he": "גילוף בעץ",
             "eu": "Egur taila",
             "pl": "Rzeźbienie w drewnie",
-            "pt_BR": "Entalhe"
+            "pt_BR": "Entalhe",
+            "it": "Scultura in legno"
           }
         }
       ],
@@ -755,7 +756,8 @@
         "ca": "Què representa aquesta obra d'art?",
         "he": "מה מתארת היצירה הזו?",
         "pl": "Co przedstawia to dzieło sztuki?",
-        "pt_BR": "O que esta obra de arte representa?"
+        "pt_BR": "O que esta obra de arte representa?",
+        "it": "Che cosa rappresenta quest'opera d'arte?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -772,7 +774,8 @@
         "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "fr": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "pl": "To dzieło sztuki przedstawia {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
-        "pt_BR": "Essa arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        "pt_BR": "Essa arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "it": "Quest'opera d'arte rappresenta {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       },
       "labels": [
         "artwork-question"
@@ -792,7 +795,8 @@
         "pl": "Czy to dzieło sztuki pełni funkcję ławki?",
         "pt_BR": "Essa obra de arte serve como banco?",
         "es": "¿Sirve esta obra de arte como banco?",
-        "pt": "Esta obra de arte serve como banco?"
+        "pt": "Esta obra de arte serve como banco?",
+        "it": "Quest'opera d'arte funge da panchina?"
       },
       "mappings": [
         {
@@ -808,7 +812,8 @@
             "pl": "To dzieło sztuki pełni również funkcję ławki",
             "pt_BR": "Essa obra de arte também serve como banco",
             "es": "Esta obra de arte también sirve de banco",
-            "pt": "Esta obra de arte também serve como banco"
+            "pt": "Esta obra de arte também serve como banco",
+            "it": "Quest'opera d'arte funge anche da panchina"
           }
         },
         {
@@ -825,7 +830,8 @@
             "pl": "To dzieło sztuki nie pełni funkcji ławki",
             "pt_BR": "Essa obra de arte não serve como banco",
             "es": "Esta obra no sirve de banco",
-            "pt": "Esta obra de arte não serve como banco"
+            "pt": "Esta obra de arte não serve como banco",
+            "it": "Quest'opera d'arte non funge anche da panchina"
           }
         },
         {
@@ -842,7 +848,8 @@
             "pl": "To dzieło sztuki nie pełni funkcji ławki",
             "pt_BR": "Essa obra de arte não serve como banco",
             "es": "Esta obra no sirve de banco",
-            "pt": "Esta obra de arte não serve como banco"
+            "pt": "Esta obra de arte não serve como banco",
+            "it": "Quest'opera d'arte non funge anche da panchina"
           },
           "hideInAnswer": true
         }

@@ -6,7 +6,7 @@
   import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Utils } from "../../Utils"
   import { GeoOperations } from "../../Logic/GeoOperations"
-  import type { Feature, LineString, Point } from "geojson"
+  import type { Feature, Point } from "geojson"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import LoginButton from "../Base/LoginButton.svelte"
 
@@ -23,7 +23,7 @@
       "mapcomplete-favourites-" + new Date().toISOString() + ".geojson",
       {
         mimetype: "application/vnd.geo+json",
-      }
+      },
     )
   }
 
@@ -34,7 +34,7 @@
       "mapcomplete-favourites-" + new Date().toISOString() + ".gpx",
       {
         mimetype: "{gpx=application/gpx+xml}",
-      }
+      },
     )
   }
 </script>

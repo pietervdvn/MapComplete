@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.36.13",
+  "version": "0.37.1",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -202,6 +202,6 @@
     "ts2json-schema": "^1.4.0",
     "tslib": "^2.5.0",
     "typescript": "^4.7.4",
-    "vite": "^4.0.5"
+    "vite": "^4.5.2"
   }
 }

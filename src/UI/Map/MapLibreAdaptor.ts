@@ -9,6 +9,7 @@ import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
+import RasterLayerHandler from "./RasterLayerHandler"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -41,7 +42,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
     readonly rotation: UIEventSource<number>
-    readonly animationRunning = new UIEventSource(false)
 
     /**
      * Functions that are called when one of those actions has happened
@@ -50,11 +50,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     private _onKeyNavigation: ((event: KeyNavigationEvent) => void | boolean)[] = []
 
     private readonly _maplibreMap: Store<MLMap>
-    /**
-     * Used for internal bookkeeping (to remove a rasterLayer when done loading)
-     * @private
-     */
-    private _currentRasterLayer: string
 
     constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>) {
         this._maplibreMap = maplibreMap
@@ -90,6 +85,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.lastClickLocation = lastClickLocation
         const self = this
 
+        const rasterLayerHandler = new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
+
         function handleClick(e) {
             if (e.originalEvent["consumed"]) {
                 // Workaround, 'ShowPointLayer' sets this flag
@@ -111,7 +108,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setMinzoom(self.minzoom.data)
                 self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
-                self.setBackground()
+                rasterLayerHandler.setBackground()
                 this.updateStores(true)
             })
             self.MoveMapToCurrentLoc(self.location.data)
@@ -124,7 +121,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setMaxzoom(self.maxzoom.data)
             self.setBounds(self.bounds.data)
             self.SetRotation(self.rotation.data)
-            self.setBackground()
+            rasterLayerHandler.setBackground()
             this.updateStores(true)
             map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
@@ -136,7 +133,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.on("dblclick", (e) => {
                 handleClick(e)
             })
-            map.on("rotateend", (e) => {
+            map.on("rotateend", (_) => {
                 this.updateStores()
             })
             map.getContainer().addEventListener("keydown", (event) => {
@@ -170,11 +167,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             })
         })
 
-        this.rasterLayer.addCallbackAndRun((_) =>
-            self.setBackground().catch((_) => {
-                console.error("Could not set background")
-            })
-        )
+        this.rasterLayer.addCallbackAndRun((_) => rasterLayerHandler.setBackground())
         this.location.addCallbackAndRunD((loc) => {
             self.MoveMapToCurrentLoc(loc)
         })
@@ -211,48 +204,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     }
 
     public static prepareWmsSource(layer: RasterLayerProperties): SourceSpecification {
-        return {
-            type: "raster",
-            // use the tiles option to specify a 256WMS tile source URL
-            // https://maplibre.org/maplibre-gl-js-docs/style-spec/sources/
-            tiles: [MapLibreAdaptor.prepareWmsURL(layer.url, layer["tile-size"] ?? 256)],
-            tileSize: layer["tile-size"] ?? 256,
-            minzoom: layer["min_zoom"] ?? 1,
-            maxzoom: layer["max_zoom"] ?? 25,
-            // Bit of a hack, but seems to work
-            scheme: layer.url.includes("{-y}") ? "tms" : "xyz",
-        }
+        return RasterLayerHandler.prepareWmsSource(layer)
     }
 
     /**
      * Prepares an ELI-URL to be compatible with mapbox
      */
-    private static prepareWmsURL(url: string, size: number = 256): string {
-        // ELI:  LAYERS=OGWRGB13_15VL&STYLES=&FORMAT=image/jpeg&CRS={proj}&WIDTH={width}&HEIGHT={height}&BBOX={bbox}&VERSION=1.3.0&SERVICE=WMS&REQUEST=GetMap
-        // PROD: SERVICE=WMS&REQUEST=GetMap&LAYERS=OGWRGB13_15VL&STYLES=&FORMAT=image/jpeg&TRANSPARENT=false&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG:3857&BBOX=488585.4847988467,6590094.830634755,489196.9810251281,6590706.32686104
-
-        const toReplace = {
-            "{bbox}": "{bbox-epsg-3857}",
-            "{proj}": "EPSG:3857",
-            "{width}": "" + size,
-            "{height}": "" + size,
-            "{zoom}": "{z}",
-            "{-y}": "{y}",
-        }
-
-        for (const key in toReplace) {
-            url = url.replace(new RegExp(key), toReplace[key])
-        }
-
-        const subdomains = url.match(/\{switch:([a-zA-Z0-9,]*)}/)
-        if (subdomains !== null) {
-            const options = subdomains[1].split(",")
-            const option = options[Math.floor(Math.random() * options.length)]
-            url = url.replace(subdomains[0], option)
-        }
-
-        return url
-    }
 
     private static async toBlob(canvas: HTMLCanvasElement): Promise<Blob> {
         return await new Promise<Blob>((resolve) => canvas.toBlob((blob) => resolve(blob)))
@@ -502,15 +459,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    private async awaitStyleIsLoaded(): Promise<void> {
-        const map = this._maplibreMap.data
-        if (!map) {
-            return
-        }
-        while (!map?.isStyleLoaded()) {
-            await Utils.waitFor(250)
-        }
-    }
     public installCustomKeyboardHandler(viewportStore: UIEventSource<HTMLDivElement>) {
         viewportStore.mapD(
             (viewport) => {
@@ -533,111 +481,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             },
             [this._maplibreMap]
         )
-    }
-    private removeCurrentLayer(map: MLMap): void {
-        if (this._currentRasterLayer) {
-            // hide the previous layer
-            try {
-                if (map.getLayer(this._currentRasterLayer)) {
-                    map.removeLayer(this._currentRasterLayer)
-                }
-                if (map.getSource(this._currentRasterLayer)) {
-                    map.removeSource(this._currentRasterLayer)
-                }
-                this._currentRasterLayer = undefined
-            } catch (e) {
-                console.warn("Could not remove the previous layer")
-            }
-        }
-    }
-
-    private async setBackground(retryAttempts: number = 3): Promise<void> {
-        const map = this._maplibreMap.data
-        if (!map) {
-            return
-        }
-        const background: RasterLayerProperties = this.rasterLayer?.data?.properties
-        if (!background) {
-            return
-        }
-        if (this._currentRasterLayer === background.id) {
-            // already the correct background layer, nothing to do
-            return
-        }
-
-        if (!background?.url) {
-            // no background to set
-            this.removeCurrentLayer(map)
-            return
-        }
-
-        if (background.type === "vector") {
-            this.removeCurrentLayer(map)
-            map.setStyle(background.url)
-            return
-        }
-
-        let addLayerBeforeId = "aeroway_fill" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
-        if (background.category === "osmbasedmap" || background.category === "map") {
-            // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
-            addLayerBeforeId = undefined
-            this.removeCurrentLayer(map)
-        } else {
-            // Make sure that the default maptiler style is loaded as it gives an overlay with roads
-            const maptiler = AvailableRasterLayers.maptilerDefaultLayer.properties
-            try {
-
-                await this.awaitStyleIsLoaded()
-            if (!map.getSource(maptiler.id)) {
-                this.removeCurrentLayer(map)
-                map.addSource(maptiler.id, MapLibreAdaptor.prepareWmsSource(maptiler))
-                map.setStyle(maptiler.url)
-                await this.awaitStyleIsLoaded()
-            }
-            }catch (e) {
-                if(retryAttempts > 0){
-                window.requestAnimationFrame(() => {
-                    console.log("Retrying to set the background ("+retryAttempts+" attempts remaining)... Failed because",e)
-                    this.setBackground(retryAttempts-1)
-                })
-                }
-            }
-        }
-
-        if (!map.getLayer(addLayerBeforeId)) {
-            addLayerBeforeId = undefined
-        }
-        await this.awaitStyleIsLoaded()
-        if (!map.getSource(background.id)) {
-            map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
-        }
-        if (!map.getLayer(background.id)) {
-            addLayerBeforeId ??= map
-                .getStyle()
-                .layers.find((l) => l.id.startsWith("mapcomplete_"))?.id
-            console.log(
-                "Adding background layer",
-                background.id,
-                "beforeId",
-                addLayerBeforeId,
-                "; all layers are",
-                map.getStyle().layers.map((l) => l.id)
-            )
-            map.addLayer(
-                {
-                    id: background.id,
-                    type: "raster",
-                    source: background.id,
-                    paint: {},
-                },
-                addLayerBeforeId
-            )
-        }
-        await this.awaitStyleIsLoaded()
-        if (this._currentRasterLayer !== background?.id) {
-            this.removeCurrentLayer(map)
-        }
-        this._currentRasterLayer = background?.id
     }
 
     private setMaxBounds(bbox: undefined | BBox) {

@@ -5,7 +5,9 @@ import Combine from "../Base/Combine"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
-import Svg from "../../Svg"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import Up from "../../assets/svg/Up.svelte"
+import Circle from "../../assets/svg/Circle.svelte"
 
 export default class Histogram<T> extends VariableUiElement {
     private static defaultPalette = [
@@ -34,11 +36,11 @@ export default class Histogram<T> extends VariableUiElement {
             sortMode.map((m) => {
                 switch (m) {
                     case "name":
-                        return Svg.up_svg()
+                        return new SvelteUIElement(Up)
                     case "name-rev":
-                        return Svg.up_svg().SetStyle("transform: rotate(180deg)")
+                        return new SvelteUIElement(Up).SetStyle("transform: rotate(180deg)")
                     default:
-                        return Svg.circle_svg()
+                        return new SvelteUIElement(Circle)
                 }
             })
         )
@@ -56,11 +58,11 @@ export default class Histogram<T> extends VariableUiElement {
             sortMode.map((m) => {
                 switch (m) {
                     case "count":
-                        return Svg.up_svg()
+                        return new SvelteUIElement(Up)
                     case "count-rev":
-                        return Svg.up_svg().SetStyle("transform: rotate(180deg)")
+                        return new SvelteUIElement(Up).SetStyle("transform: rotate(180deg)")
                     default:
-                        return Svg.circle_svg()
+                        return new SvelteUIElement(Circle)
                 }
             })
         )

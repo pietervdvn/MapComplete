@@ -21,7 +21,7 @@ export default class PublicHolidayInput extends InputElement<string> {
         return this._value
     }
 
-    IsValid(t: string): boolean {
+    IsValid(_: string): boolean {
         return true
     }
 

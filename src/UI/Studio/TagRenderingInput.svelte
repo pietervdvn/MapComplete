@@ -24,13 +24,12 @@
   import { onMount } from "svelte"
 
   export let state: EditLayerState
-  export let schema: ConfigMeta
-  export let path: (string | number)[]
+  export let path: ReadonlyArray<string | number>
   let expertMode = state.expertMode
   const store = state.getStoreFor(path)
   let value = store.data
   let hasSeenIntro = UIEventSource.asBoolean(
-    LocalStorageSource.Get("studio-seen-tagrendering-tutorial", "false")
+    LocalStorageSource.Get("studio-seen-tagrendering-tutorial", "false"),
   )
   onMount(() => {
     if (!hasSeenIntro.data) {
@@ -43,7 +42,7 @@
    * Should only be enabled for 'tagrenderings' in the theme, if the source is OSM
    */
   let allowQuestions: Store<boolean> = state.configuration.mapD(
-    (config) => path.at(0) === "tagRenderings" && config.source?.geoJson === undefined
+    (config) => path.at(0) === "tagRenderings" && config.source?.["geoJson"] === undefined,
   )
 
   let mappingsBuiltin: MappingConfigJson[] = []
@@ -119,7 +118,7 @@
 
   const freeformSchemaAll = <ConfigMeta[]>(
     questionableTagRenderingSchemaRaw.filter(
-      (schema) => schema.path.length == 2 && schema.path[0] === "freeform" && $allowQuestions
+      (schema) => schema.path.length == 2 && schema.path[0] === "freeform" && $allowQuestions,
     )
   )
   let freeformSchema = $expertMode
@@ -128,7 +127,7 @@
   const missing: string[] = questionableTagRenderingSchemaRaw
     .filter(
       (schema) =>
-        schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0])
+        schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0]),
     )
     .map((schema) => schema.path.join("."))
   console.log({ state })
@@ -164,7 +163,7 @@
     {/if}
     {#each $mappings ?? [] as mapping, i (mapping)}
       <div class="interactive flex w-full">
-        <MappingInput {state} path={path.concat(["mappings", i])}>
+        <MappingInput {state} path={[...path, "mappings", i]}>
           <button
             slot="delete"
             class="no-image-background rounded-full"
@@ -178,6 +177,7 @@
           </button>
         </MappingInput>
       </div>
+
     {/each}
 
     <button

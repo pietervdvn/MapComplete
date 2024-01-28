@@ -528,8 +528,8 @@
                 "render": {
                     "special": {
                         "question": "En quins idiomes té sortida de veu aquest caixer?",
-                        "render_list_item": "Aquest caixer té sortida de veu en {language():font-bold}",
-                        "render_single_language": "Aquest caixer té sortida de veu en {language():font-bold}"
+                        "render_list_item": "Aquest caixer té sortida de veu en {language()}",
+                        "render_single_language": "Aquest caixer té sortida de veu en {language()}"
                     }
                 }
             }
@@ -3220,8 +3220,8 @@
                 "render": {
                     "special": {
                         "question": "Aquest ascensor en quins idiomes té sortida de veu?",
-                        "render_list_item": "Aquest ascensor té sortida de veu en {language():font-bold}",
-                        "render_single_language": "Aquest ascensor té sortida de veu en {language():font-bold}"
+                        "render_list_item": "Aquest ascensor té sortida de veu en {language()}",
+                        "render_single_language": "Aquest ascensor té sortida de veu en {language()}"
                     }
                 }
             },
@@ -3243,8 +3243,8 @@
                 "render": {
                     "special": {
                         "question": "Aquest ascensor en quins idiomes té l'escriptura tàctil (braille)?",
-                        "render_list_item": "Aquest ascensor té l'escriptura tàctil en {language():font-bold}",
-                        "render_single_language": "Aquest ascensor té l'escriptura tàctil en {language():font-bold}"
+                        "render_list_item": "Aquest ascensor té l'escriptura tàctil en {language()}",
+                        "render_single_language": "Aquest ascensor té l'escriptura tàctil en {language()}"
                     }
                 }
             }
@@ -6828,7 +6828,7 @@
                         "no_known_languages": "La llengua principal d'aquesta escola és desconeguda",
                         "question": "Quina és la llengua principal d'aquesta escola?<div class='subtle'>Quina llengua es parla amb els estudiants en classes no relacionades amb la llengua i l'administració?</div>",
                         "render_all": "En aquesta escola s'utilitzen els idiomes següents:{list()}",
-                        "render_single_language": "{language():font-bold} és la llengua principal d'aquesta escola"
+                        "render_single_language": "{language()} és la llengua principal d'aquesta escola"
                     }
                 }
             },
@@ -7374,8 +7374,8 @@
                 "render": {
                     "special": {
                         "question": "En quins idiomes hi ha escriptura tàctil (braille) per a la navegació? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-                        "render_list_item": "Aquestes escales tenen escriptura tàctil en {language():font-bold}",
-                        "render_single_language": "Aquestes escales tenen escriptura tàctil en {language():font-bold}"
+                        "render_list_item": "Aquestes escales tenen escriptura tàctil en {language()}",
+                        "render_single_language": "Aquestes escales tenen escriptura tàctil en {language()}"
                     }
                 }
             }

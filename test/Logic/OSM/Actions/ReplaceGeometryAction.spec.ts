@@ -884,7 +884,6 @@ describe("ReplaceGeometryAction", () => {
     )
 
     it("should move nodes accordingly", async () => {
-        const layout = new LayoutConfig(<any>grbStripped)
 
         const bbox = new BBox([
             [3.2166673243045807, 51.21467321525788],

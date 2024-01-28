@@ -1,5 +1,4 @@
 import Toggle from "../Input/Toggle"
-import Svg from "../../Svg"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
@@ -19,6 +18,7 @@ import { Changes } from "../../Logic/Osm/Changes"
 import { IndexedFeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import OsmObjectDownloader from "../../Logic/Osm/OsmObjectDownloader"
+import Scissors from "../../assets/svg/Scissors.svelte"
 
 export default class SplitRoadWizard extends Combine {
     public dialogIsOpened: UIEventSource<boolean>
@@ -26,8 +26,8 @@ export default class SplitRoadWizard extends Combine {
     /**
      * A UI Element used for splitting roads
      *
-     * @param id: The id of the road to remove
-     * @param state: the state of the application
+     * @param id The id of the road to remove
+     * @param state the state of the application
      */
     constructor(
         id: WayId,
@@ -68,7 +68,7 @@ export default class SplitRoadWizard extends Combine {
 
         // Toggle between splitmap
         const splitButton = new SubtleButton(
-            Svg.scissors_svg().SetStyle("height: 1.5rem; width: auto"),
+            new SvelteUIElement(Scissors).SetClass("h-6 w-6"),
             new Toggle(
                 t.splitAgain.Clone().SetClass("text-lg font-bold"),
                 t.inviteToSplit.Clone().SetClass("text-lg font-bold"),

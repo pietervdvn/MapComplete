@@ -122,7 +122,7 @@ export default class ThemeViewStateHashActor {
     private loadStateFromHash(hash: string) {
         const state = this._state
         const parts = hash.split(":")
-        outer: for (const { toggle, name, showOverOthers, submenu } of state.guistate.allToggles) {
+        outer: for (const { toggle, name, submenu } of state.guistate.allToggles) {
             for (const part of parts) {
                 if (part === name) {
                     toggle.setData(true)

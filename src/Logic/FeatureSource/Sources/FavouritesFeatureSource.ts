@@ -159,7 +159,6 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
 
     public removeFavourite(feature: Feature, tags?: UIEventSource<Record<string, string>>) {
         const id = feature.properties.id.replace("/", "-")
-        const pref = this._osmConnection.GetPreference("favourite-" + id)
         this._osmConnection.preferencesHandler.removeAllWithPrefix("mapcomplete-favourite-" + id)
         if (tags) {
             delete tags.data._favourite

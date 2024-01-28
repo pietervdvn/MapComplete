@@ -4,7 +4,6 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
   import DirectionIndicator from "../Base/DirectionIndicator.svelte"
-  import ThemeViewState from "../../Models/ThemeViewState"
 
   export let state: SpecialVisualizationState
   export let feature: Feature

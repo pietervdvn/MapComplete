@@ -1,7 +1,6 @@
 import BaseUIElement from "../../BaseUIElement"
 import Translations from "../../i18n/Translations"
 import { Utils } from "../../../Utils"
-import Svg from "../../../Svg"
 import Img from "../../Base/Img"
 import { SubtleButton } from "../../Base/SubtleButton"
 import Toggle from "../../Input/Toggle"

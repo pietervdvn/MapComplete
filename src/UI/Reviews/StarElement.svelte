@@ -3,7 +3,7 @@
   import Star from "../../assets/svg/Star.svelte"
   import Star_half from "../../assets/svg/Star_half.svelte"
   import Star_outline from "../../assets/svg/Star_outline.svelte"
-  import { ariaLabel, ariaLabelStore } from "../../Utils/ariaLabel"
+  import { ariaLabel } from "../../Utils/ariaLabel"
   import Translations from "../i18n/Translations"
 
   export let score: number

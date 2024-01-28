@@ -500,7 +500,7 @@
                 "render": {
                     "special": {
                         "question": "Em que línguas este multibanco tem saída de fala?",
-                        "render_list_item": "Este multibanco tem saída de fala em {language():font-bold}"
+                        "render_list_item": "Este multibanco tem saída de fala em {language()}"
                     }
                 }
             }

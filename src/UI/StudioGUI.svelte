@@ -35,19 +35,18 @@
       ? "http://127.0.0.1:1235"
       : "https://studio.mapcomplete.org"
 
-  let osmConnection = new OsmConnection(
-    new OsmConnection({
-      oauth_token: QueryParameters.GetQueryParameter(
-        "oauth_token",
-        undefined,
-        "Used to complete the login"
-      ),
-    })
+  const oauth_token = QueryParameters.GetQueryParameter(
+    "oauth_token",
+    undefined,
+    "Used to complete the login",
   )
+  let osmConnection = new OsmConnection({
+    oauth_token,
+  })
   const expertMode = UIEventSource.asBoolean(
     osmConnection.GetPreference("studio-expert-mode", "false", {
       documentation: "Indicates if more options are shown in mapcomplete studio",
-    })
+    }),
   )
   expertMode.addCallbackAndRunD((expert) => console.log("Expert mode is", expert))
   const createdBy = osmConnection.userDetails.data.name
@@ -55,23 +54,23 @@
   const studio = new StudioServer(studioUrl, uid)
 
   let layersWithErr = UIEventSource.FromPromiseWithErr(studio.fetchOverview())
-  let layers: Store<{ owner: number }[]> = layersWithErr.mapD((l) =>
-    l.success?.filter((l) => l.category === "layers")
+  let layers: Store<{ owner: number, id: string }[]> = layersWithErr.mapD((l) =>
+    l["success"]?.filter((l) => l.category === "layers"),
   )
   let selfLayers = layers.mapD((ls) => ls.filter((l) => l.owner === uid.data), [uid])
   let otherLayers = layers.mapD(
     (ls) => ls.filter((l) => l.owner !== undefined && l.owner !== uid.data),
-    [uid]
+    [uid],
   )
   let officialLayers = layers.mapD((ls) => ls.filter((l) => l.owner === undefined), [uid])
 
-  let themes: Store<{ owner: number }[]> = layersWithErr.mapD((l) =>
-    l.success?.filter((l) => l.category === "themes")
+  let themes: Store<{ owner: number, id: string }[]> = layersWithErr.mapD((l) =>
+    l["success"]?.filter((l) => l.category === "themes"),
   )
   let selfThemes = themes.mapD((ls) => ls.filter((l) => l.owner === uid.data), [uid])
   let otherThemes = themes.mapD(
     (ls) => ls.filter((l) => l.owner !== undefined && l.owner !== uid.data),
-    [uid]
+    [uid],
   )
   let officialThemes = themes.mapD((ls) => ls.filter((l) => l.owner === undefined), [uid])
 
@@ -90,8 +89,6 @@
   const layoutSchema: ConfigMeta[] = <any>layoutSchemaRaw
   let editThemeState = new EditThemeState(layoutSchema, studio, { expertMode })
 
-  let layerId = editLayerState.configuration.map((layerConfig) => layerConfig.id)
-
   const version = meta.version
 
   async function editLayer(event: Event) {
@@ -107,7 +104,8 @@
     const id: { id: string; owner: number } = event["detail"]
     state = "loading"
     editThemeState.startSavingUpdates(false)
-    editThemeState.configuration.setData(await studio.fetch(id.id, "themes", id.owner))
+    const layout = await studio.fetch(id.id, "themes", id.owner)
+    editThemeState.configuration.setData(layout)
     editThemeState.startSavingUpdates()
     state = "editing_theme"
   }
@@ -142,7 +140,7 @@
   }
 </script>
 
-<If condition={layersWithErr.map((d) => d?.error !== undefined)}>
+<If condition={layersWithErr.map((d) => d?.["error"] !== undefined) }>
   <div>
     <div class="alert">
       Something went wrong while contacting the MapComplete Studio Server: {$layersWithErr["error"]}
@@ -152,8 +150,8 @@
       <li>Try again in a few minutes</li>
       <li>
         Contact <a href="https://app.element.io/#/room/#MapComplete:matrix.org">
-          the MapComplete community via the chat.
-        </a>
+        the MapComplete community via the chat.
+      </a>
         Someone might be able to help you
       </li>
       <li>
@@ -175,7 +173,12 @@
         <div class="flex w-full flex-col">
           <h1>MapComplete Studio</h1>
 
-          <NextButton on:click={() => (state = "edit_layer")}>Edit an existing layer</NextButton>
+          <NextButton on:click={() => (state = "edit_layer")}>
+            <div class="flex flex-col items-start">
+            <div>Edit an existing layer</div>
+              <div class="font-normal">Edit layers you created, others created or from the official MapComplete</div>
+            </div>
+          </NextButton>
           <NextButton on:click={() => createNewLayer()}>Create a new layer</NextButton>
           <NextButton on:click={() => (state = "edit_theme")}>Edit a theme</NextButton>
           <NextButton
@@ -222,9 +225,11 @@
           <h3 slot="title">Your layers</h3>
         </ChooseLayerToEdit>
         <h3>Layers by other contributors</h3>
+        <div>Selecting a layer will create a copy in your account that you edit. You will not change the version of the other contributor</div>
         <ChooseLayerToEdit {osmConnection} layerIds={$otherLayers} on:layerSelected={editLayer} />
 
         <h3>Official layers by MapComplete</h3>
+        <div>Selecting a layer will create a copy in your account. You will not change the version that is in MapComplete</div>
         <ChooseLayerToEdit
           {osmConnection}
           layerIds={$officialLayers}

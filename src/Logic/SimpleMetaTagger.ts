@@ -615,7 +615,7 @@ export default class SimpleMetaTaggers {
             isLazy: true,
             includesDates: true,
         },
-        (feature, layer, tagsStore) => {
+        (feature) => {
             Utils.AddLazyProperty(feature.properties, "_last_edit:passed_time", () => {
                 const lastEditTimestamp = new Date(
                     feature.properties["_last_edit:timestamp"]

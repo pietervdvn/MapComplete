@@ -112,7 +112,7 @@ export class Conflate extends Script {
 
         const changedObjects: OsmObject[] = []
         for (const { match, replayed } of bestMatches) {
-            const { external_feature, d, osm_feature } = match
+            const { d, osm_feature } = match
             const { possibly_imported, certainly_imported, resting_properties } = replayed
             const status = resting_properties["status"]
             delete resting_properties["status"]

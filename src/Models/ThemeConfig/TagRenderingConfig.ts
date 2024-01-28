@@ -17,7 +17,6 @@ import {
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
-import Constants from "../Constants"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
 
 export interface Icon {}

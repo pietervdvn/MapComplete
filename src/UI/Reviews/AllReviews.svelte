@@ -3,15 +3,12 @@
   import SingleReview from "./SingleReview.svelte"
   import { Utils } from "../../Utils"
   import StarsBar from "./StarsBar.svelte"
-  import ReviewForm from "./ReviewForm.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import Svg from "../../Svg"
   import Mangrove_logo from "../../assets/svg/Mangrove_logo.svelte"
 
   /**

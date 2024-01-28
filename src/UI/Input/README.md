@@ -1,1 +1,1 @@
-This is the old, deprecated directory. New, SVelte-based items go into `InputElement`
+This is the old, deprecated directory. New, Svelte-based items go into `InputElement`

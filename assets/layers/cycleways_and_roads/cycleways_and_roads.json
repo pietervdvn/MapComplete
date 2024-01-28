@@ -840,10 +840,12 @@
     {
       "id": "incline",
       "question": {
-        "en": "Does {title()} have an incline?"
+        "en": "Does {title()} have an incline?",
+        "de": "Hat {title()} eine Steigung?"
       },
       "render": {
-        "en": "This road has an slope of {incline}"
+        "en": "This road has an slope of {incline}",
+        "de": "Die Straße hat {incline} Steigung"
       },
       "freeform": {
         "key": "incline",
@@ -853,7 +855,8 @@
         {
           "if": "incline=",
           "then": {
-            "en": "There is (probably) no incline here"
+            "en": "There is (probably) no incline here",
+            "de": "Hier gibt es (wahrscheinlich) keine Steigung"
           },
           "hideInAnswer": true
         },
@@ -866,7 +869,8 @@
             ]
           },
           "then": {
-            "en": "This road has a slope"
+            "en": "This road has a slope",
+            "de": "Die Straße hat eine Steigung"
           },
           "hideInAnswer": true
         }

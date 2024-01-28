@@ -589,7 +589,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         this._desugaring = desugaring
     }
 
-    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+    convert(json: LayerConfigJson, _: ConversionContext): LayerConfigJson {
         if (this._desugaring.tagRenderings === null) {
             return json
         }
@@ -1088,7 +1088,7 @@ class AddFavouriteBadges extends DesugaringStep<LayerConfigJson> {
         )
     }
 
-    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+    convert(json: LayerConfigJson, _: ConversionContext): LayerConfigJson {
         if (json.source === "special" || json.source === "special:library") {
             return json
         }
@@ -1113,7 +1113,7 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
         )
     }
 
-    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+    convert(json: LayerConfigJson, _: ConversionContext): LayerConfigJson {
         if (!json.tagRenderings) {
             return json
         }

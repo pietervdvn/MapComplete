@@ -133,7 +133,7 @@ export class Mapillary extends ImageProvider {
         return [this.PrepareUrlAsync(key, value)]
     }
 
-    public async DownloadAttribution(url: string): Promise<LicenseInfo> {
+    public async DownloadAttribution(_: string): Promise<LicenseInfo> {
         const license = new LicenseInfo()
         license.artist = undefined
         license.license = "CC BY-SA 4.0"

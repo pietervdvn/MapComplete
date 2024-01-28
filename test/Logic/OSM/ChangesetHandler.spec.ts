@@ -6,7 +6,7 @@ import { Changes } from "../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
 
 function elstorage() {
-    return { addAlias: (a, b) => {} }
+    return { addAlias: (_, __) => {} }
 }
 
 describe("ChangesetHanlder", () => {

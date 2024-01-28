@@ -698,7 +698,7 @@ class SvgToPdfPage {
         }
 
         for (const mapSpec of mapSpecs) {
-            await this.prepareMap(mapSpec, !this.options?.disableDataLoading)
+            await this.prepareMap(mapSpec)
         }
     }
 
@@ -840,7 +840,7 @@ class SvgToPdfPage {
     /**
      * Replaces a mapSpec with the appropriate map
      */
-    private async prepareMap(mapSpec: SVGTSpanElement, loadData: boolean): Promise<void> {
+    private async prepareMap(mapSpec: SVGTSpanElement): Promise<void> {
         if (this.options.disableMaps) {
             return
         }
