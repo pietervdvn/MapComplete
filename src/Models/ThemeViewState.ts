@@ -201,7 +201,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         this.geolocationControl = new GeolocationControlState(this.geolocation, this.mapProperties)
 
-        this.availableLayers = AvailableRasterLayers.layersAvailableAt(this.mapProperties.location)
+        this.availableLayers = AvailableRasterLayers.layersAvailableAt(
+            this.mapProperties.location,
+            this.osmConnection.isLoggedIn
+        )
 
         const self = this
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)

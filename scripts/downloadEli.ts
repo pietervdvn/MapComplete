@@ -2,11 +2,13 @@ import Script from "./Script"
 import { Utils } from "../src/Utils"
 import { Eli, EliEntry } from "./@types/eli"
 import fs from "fs"
+import { BingRasterLayer } from "../src/UI/Map/BingRasterLayer"
 
 class DownloadEli extends Script {
     constructor() {
         super("Downloads a fresh copy of the editor layer index, removes all unnecessary data.")
     }
+
     async main(args: string[]): Promise<void> {
         const url = "https://osmlab.github.io/editor-layer-index/imagery.geojson"
         // Target should use '.json' instead of '.geojson', as the latter cannot be imported by the build systems
@@ -20,7 +22,18 @@ class DownloadEli extends Script {
 
             if (props.type === "bing") {
                 // A lot of work to implement - see https://github.com/pietervdvn/MapComplete/issues/648
-                continue
+                try {
+                    const bing = await BingRasterLayer.get()
+                    if (bing === "error") {
+                        continue
+                    }
+                    delete props.default
+                    props.category = "photo"
+                    props.url = bing.properties.url.replace("%7Bquadkey%7D", "{quadkey}")
+                } catch (e) {
+                    console.error("Could not fetch URL for bing", e)
+                    continue
+                }
             }
 
             if (props.id === "MAPNIK") {
