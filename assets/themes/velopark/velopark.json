@@ -176,7 +176,8 @@
                 "en": "Only too-hard tasks",
                 "nl": "Enkel foutieve taken"
               },
-              "osmTags": "mr_taskStatus=Too_hard"            }
+              "osmTags": "mr_taskStatus=Too_hard"
+            }
           ]
         }
       ],
@@ -203,13 +204,16 @@
           ],
           "iconSize": "40,40",
           "anchor": "bottom",
-          "iconBadges": [{
-            "if": "mr_taskStatus=Too_Hard",
-            "then": "invalid"
-          },{
-            "if": "mr_taskStatus=Fixed",
-            "then": "confirm"
-          }]
+          "iconBadges": [
+            {
+              "if": "mr_taskStatus=Too_Hard",
+              "then": "invalid"
+            },
+            {
+              "if": "mr_taskStatus=Fixed",
+              "then": "confirm"
+            }
+          ]
         }
       ]
     },

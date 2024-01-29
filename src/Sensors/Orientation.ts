@@ -33,7 +33,7 @@ export class Orientation {
     private _animateFakeMeasurements = false
 
     constructor() {
-        // this.fakeMeasurements(true)
+        this.fakeMeasurements(false)
     }
 
     // noinspection JSUnusedGlobalSymbols

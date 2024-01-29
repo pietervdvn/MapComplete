@@ -29,6 +29,6 @@
       {state}
       {tags}
     />
+    <DirectionIndicator {feature} {state} />
   </a>
-  <DirectionIndicator {feature} {state} />
 </span>

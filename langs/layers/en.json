@@ -1343,6 +1343,21 @@
                     }
                 },
                 "question": "What is the relative location of this bicycle parking?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "One has to <b>pay</b> to use this bicycle parking"
+                    },
+                    "1": {
+                        "then": "Free to use"
+                    }
+                },
+                "question": "Are these bicycle parkings free to use?"
+            },
+            "operator_phone": {
+                "question": "What is the phone number of the operator of this bicycle parking?",
+                "questionHint": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles"
             }
         },
         "title": {

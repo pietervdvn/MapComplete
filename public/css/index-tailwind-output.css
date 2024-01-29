@@ -891,6 +891,11 @@ video {
   margin-right: 3rem;
 }
 
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1110,10 +1115,6 @@ video {
   height: fit-content;
 }
 
-.h-16 {
-  height: 4rem;
-}
-
 .h-0 {
   height: 0px;
 }
@@ -1142,6 +1143,10 @@ video {
   height: 1.25rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -1154,10 +1159,6 @@ video {
   height: 16rem;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-80 {
   height: 20rem;
 }
@@ -1168,6 +1169,10 @@ video {
 
 .h-20 {
   height: 5rem;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .max-h-12 {
@@ -1206,10 +1211,6 @@ video {
   width: 1.5rem;
 }
 
-.w-16 {
-  width: 4rem;
-}
-
 .w-screen {
   width: 100vw;
 }
@@ -1244,12 +1245,13 @@ video {
   width: 2.75rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
 .w-1\/2 {
   width: 50%;
+}
+
+.w-max {
+  width: -webkit-max-content;
+  width: max-content;
 }
 
 .w-auto {
@@ -1260,8 +1262,8 @@ video {
   width: 1.25rem;
 }
 
-.w-10 {
-  width: 2.5rem;
+.w-16 {
+  width: 4rem;
 }
 
 .w-min {
@@ -1387,10 +1389,6 @@ video {
 
 .flex-wrap-reverse {
   flex-wrap: wrap-reverse;
-}
-
-.content-start {
-  align-content: flex-start;
 }
 
 .items-start {
@@ -1672,10 +1670,6 @@ video {
   border-width: 2px;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
 .border-x {
   border-left-width: 1px;
   border-right-width: 1px;
@@ -1842,14 +1836,14 @@ video {
   padding-right: 0.5rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .px-3 {
@@ -1914,16 +1908,16 @@ video {
   padding-right: 0px;
 }
 
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
 
 .pb-2 {
   padding-bottom: 0.5rem;
-}
-
-.pt-1 {
-  padding-top: 0.25rem;
 }
 
 .text-center {
@@ -1949,9 +1943,9 @@ video {
   line-height: 1.75rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-3xl {
@@ -1962,6 +1956,11 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-4xl {
@@ -2060,6 +2059,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3023,20 +3027,12 @@ svg.apply-fill path {
     height: 2rem;
   }
 
-  .md\:h-16 {
-    height: 4rem;
-  }
-
   .md\:w-8 {
     width: 2rem;
   }
 
   .md\:w-6\/12 {
     width: 50%;
-  }
-
-  .md\:w-16 {
-    width: 4rem;
   }
 
   .md\:grid-flow-row {

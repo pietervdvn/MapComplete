@@ -1198,6 +1198,21 @@
                     }
                 },
                 "question": "Wat is de relatieve locatie van deze parking??"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Betalende</b> fietsparking"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Is deze fietsenstalling gratis te gebruiken?"
+            },
+            "operator_phone": {
+                "question": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
+                "questionHint": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden"
             }
         },
         "title": {

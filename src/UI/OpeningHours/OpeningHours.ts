@@ -910,6 +910,19 @@ This list will be sorted
 }
 
 export class ToTextualDescription {
+    /**
+     * const oh = new opening_hours("mon 12:00-16:00")
+     * const ranges = OH.createRangesForApplicableWeek(oh)
+     * const tr = ToTextualDescription.createTextualDescriptionFor(oh, ranges.ranges)
+     * tr.textFor("en") // => "On monday from 12:00 till 16:00"
+     * tr.textFor("nl") // => "Op maandag van 12:00 tot 16:00"
+     *
+     * const oh = new opening_hours("mon 12:00-16:00; tu 13:00-14:00")
+     * const ranges = OH.createRangesForApplicableWeek(oh)
+     * const tr = ToTextualDescription.createTextualDescriptionFor(oh, ranges.ranges)
+     * tr.textFor("en") // => "On monday from 12:00 till 16:00. On tuesday from 13:00 till 14:00"
+     * tr.textFor("nl") // => "Op maandag van 12:00 tot 16:00. Op dinsdag van 13:00 tot 14:00"
+     */
     public static createTextualDescriptionFor(
         oh: opening_hours,
         ranges: OpeningRange[][]
@@ -985,10 +998,16 @@ export class ToTextualDescription {
     }
 
     private static chain(trs: Translation[]): Translation {
-        let chainer = new TypedTranslation<{ a; b }>({ "*": "{a}. {b}" })
+        const languages: Record<string, string> = {}
+        for (const tr1 of trs) {
+            for (const supportedLanguage of tr1.SupportedLanguages()) {
+                languages[supportedLanguage] = "{a}. {b}"
+            }
+        }
+        let chainer = new TypedTranslation<{ a; b }>(languages)
         let tr = trs[0]
         for (let i = 1; i < trs.length; i++) {
-            tr = chainer.Subs({ a: tr, b: trs[i] })
+            tr = chainer.PartialSubsTr("a", tr).PartialSubsTr("b", trs[i])
         }
         return tr
     }

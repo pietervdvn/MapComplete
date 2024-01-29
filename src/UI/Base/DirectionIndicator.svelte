@@ -84,8 +84,8 @@
       const lang = Locale.language.data
       let bearingHuman: string
       if (compass.data !== undefined) {
-        console.log("compass:", compass.data)
         const bearingRelative = bearing - compass.data
+        console.log(feature.properties.id, "compass:", compass.data, "relative:", bearingRelative)
         const t = relativeDirections[GeoOperations.bearingToHumanRelative(bearingRelative)]
         bearingHuman = t.textFor(lang)
       } else {
@@ -119,22 +119,27 @@
 </script>
 
 {#if $bearingAndDistGps === undefined}
-  <button
-    class={twMerge("soft relative rounded-full p-1", size)}
+  <!-- 
+  Important: one would expect this to be a button - it certainly behaves as one
+  However, this breaks the live-reading functionality (at least with Orca+FF),
+  so we use a 'div' and add on:click manually
+  -->
+  <div
+    class={twMerge("soft relative rounded-full p-1 cursor-pointer border border-black", size)}
     on:click={() => focusMap()}
     use:ariaLabelStore={label}
   >
     <Center class="h-7 w-7" />
-  </button>
+  </div>
 {:else}
-  <button
-    class={twMerge("soft relative rounded-full", size)}
+  <div
+    class={twMerge("soft relative rounded-full border-black border", size)}
     on:click={() => focusMap()}
     use:ariaLabelStore={label}
   >
     <div
       class={twMerge(
-        "absolute top-0 left-0 flex items-center justify-center break-words text-sm",
+        "absolute top-0 left-0 flex items-center justify-center break-words text-xs cursor-pointer",
         size
       )}
     >
@@ -148,5 +153,5 @@
         />
       </div>
     {/if}
-  </button>
+  </div>
 {/if}

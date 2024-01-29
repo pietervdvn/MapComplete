@@ -98,7 +98,12 @@ class SingleBackgroundHandler {
             addLayerBeforeId = undefined
         }
         if (!map.getSource(background.id)) {
-            map.addSource(background.id, RasterLayerHandler.prepareWmsSource(background))
+            try {
+                map.addSource(background.id, RasterLayerHandler.prepareWmsSource(background))
+            } catch (e) {
+                console.error("Could not add source", e)
+                return
+            }
         }
         if (!map.getLayer(background.id)) {
             addLayerBeforeId ??= map
@@ -202,14 +207,5 @@ export default class RasterLayerHandler {
     /**
      * Performs all necessary updates
      */
-    public setBackground() {
-        this.update().catch((e) => console.error(e))
-    }
-
-    private async update() {
-        const map = this._map.data
-        if (!map) {
-            return
-        }
-    }
+    public setBackground() {}
 }

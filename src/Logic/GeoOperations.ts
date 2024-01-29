@@ -949,11 +949,18 @@ export class GeoOperations {
     }
 
     /**
-     * GeoOperations.bearingToHuman(0) // => "N"
-     * GeoOperations.bearingToHuman(-10) // => "N"
-     * GeoOperations.bearingToHuman(-180) // => "S"
-     * GeoOperations.bearingToHuman(181) // => "S"
-     * GeoOperations.bearingToHuman(46) // => "NE"
+     * GeoOperations.bearingToHumanRelative(-207) // => "sharp_right"
+     * GeoOperations.bearingToHumanRelative(-199) // => "behind"
+     * GeoOperations.bearingToHumanRelative(-180) // => "behind"
+     * GeoOperations.bearingToHumanRelative(-10) // => "straight"
+     * GeoOperations.bearingToHumanRelative(0) // => "straight"
+     * GeoOperations.bearingToHumanRelative(181) // => "behind"
+     * GeoOperations.bearingToHumanRelative(40) // => "slight_right"
+     * GeoOperations.bearingToHumanRelative(46) // => "slight_right"
+     * GeoOperations.bearingToHumanRelative(95) // => "right"
+     * GeoOperations.bearingToHumanRelative(140) // => "sharp_right"
+     * GeoOperations.bearingToHumanRelative(158) // => "behind"
+     *
      */
     public static bearingToHumanRelative(
         bearing: number
