@@ -988,6 +988,7 @@ export default class SpecialVisualizations {
                                 return undefined
                             }
                             return new SvelteUIElement(SpecialTranslation, {
+                                t: title,
                                 tags: tagsSource,
                                 state,
                                 feature,

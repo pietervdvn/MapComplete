@@ -637,12 +637,27 @@
     "softDeletionTags": {
       "and": [
         "shop=",
+        "phone=",
+        "website=",
+        "email=",
+        "opening_hours=",
         "disused:shop:={shop}"
       ]
     },
-    "extraDeleteReasons": [
+    "omitDefaultDeleteReasons": ["disused"],
+    "nonDeleteMappings": [
       {
-        "explanation": {
+        "if": {
+          "and": [
+            "shop=",
+            "phone=",
+            "website=",
+            "email=",
+            "opening_hours=",
+            "disused:shop:={shop}"
+          ]
+        },
+        "then": {
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
@@ -650,8 +665,7 @@
           "fr": "{title()} a fermé définitivement",
           "ca": "{title()} ha tancat permanentment",
           "cs": "{title()} je trvale uzavřen"
-        },
-        "changesetMessage": "shop_closed"
+        }
       }
     ]
   },
