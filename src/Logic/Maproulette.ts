@@ -19,7 +19,7 @@ export default class Maproulette {
         3: "Skipped",
         4: "Deleted",
         5: "Already fixed",
-        6: "Too_hard",
+        6: "Too_Hard",
         9: "Disabled",
     }
     public static singleton = new Maproulette()
