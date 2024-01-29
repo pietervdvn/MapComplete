@@ -16,6 +16,7 @@
   import { ariaLabelStore } from "../../Utils/ariaLabel"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Center from "../../assets/svg/Center.svelte"
+  import Tr from "./Tr.svelte"
 
   export let state: SpecialVisualizationState
   export let feature: Feature
@@ -38,6 +39,13 @@
 
   let relativeDirections = Translations.t.general.visualFeedback.directionsRelative
   let absoluteDirections = Translations.t.general.visualFeedback.directionsAbsolute
+  
+  function round10(n :number){
+    if(n < 50){
+      return n
+    }
+    return Math.round(n / 10) * 10
+  }
 
   let closeToCurrentLocation = state.geolocation.geolocationState.currentGPSLocation.map(
     (gps) => {
@@ -53,7 +61,7 @@
   )
   let labelFromCenter: Store<string> = bearingAndDist.mapD(
     ({ bearing, dist }) => {
-      const distHuman = GeoOperations.distanceToHuman(dist)
+      const distHuman = GeoOperations.distanceToHuman(round10(dist))
       const lang = Locale.language.data
       const t = absoluteDirections[GeoOperations.bearingToHuman(bearing)]
       const mainTr = Translations.t.general.visualFeedback.fromMapCenter.Subs({
@@ -75,7 +83,7 @@
   > = state.geolocation.geolocationState.currentGPSLocation.mapD(({ longitude, latitude }) => {
     let gps = [longitude, latitude]
     let bearing = Math.round(GeoOperations.bearing(gps, fcenter))
-    let dist = Math.round(GeoOperations.distanceBetween(fcenter, gps))
+    let dist = round10(Math.round(GeoOperations.distanceBetween(fcenter, gps)))
     return { bearing, dist }
   })
   let labelFromGps: Store<string | undefined> = bearingAndDistGps.mapD(
@@ -85,7 +93,6 @@
       let bearingHuman: string
       if (compass.data !== undefined) {
         const bearingRelative = bearing - compass.data
-        console.log(feature.properties.id, "compass:", compass.data, "relative:", bearingRelative)
         const t = relativeDirections[GeoOperations.bearingToHumanRelative(bearingRelative)]
         bearingHuman = t.textFor(lang)
       } else {
@@ -143,7 +150,12 @@
         size
       )}
     >
+      <div aria-hidden="true">
       {GeoOperations.distanceToHuman($bearingAndDistGps?.dist)}
+      </div>
+      <div class="offscreen">
+        {$label}
+      </div>
     </div>
     {#if $bearingFromGps !== undefined}
       <div class={twMerge("absolute top-0 left-0 rounded-full", size)}>
@@ -155,3 +167,14 @@
     {/if}
   </div>
 {/if}
+
+<style>
+  .offscreen {
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; /* added line */
+      width: 1px;
+  }
+</style>
