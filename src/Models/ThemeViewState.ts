@@ -761,20 +761,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Setup various services for which no reference are needed
      */
     private initActors() {
-        // Unselect the selected element if it is panned out of view
-        this.mapProperties.bounds.stabilized(250).addCallbackD((bounds) => {
-            const selected = this.selectedElement.data
-            if (selected === undefined) {
-                return
-            }
-            const bbox = BBox.get(selected)
-            if (!bbox.overlapsWith(bounds)) {
-                this.selectedElement.setData(undefined)
-            }
-        })
-
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
+                console.trace("Unselected")
                 // We did _unselect_ an item - we always remove the lastclick-object
                 this.lastClickObject.features.setData([])
                 this.selectedLayer.setData(undefined)
