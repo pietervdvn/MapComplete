@@ -360,5 +360,6 @@
     },
     "description"
   ],
-  "deletion": true
+  "deletion": true,
+  "allowMove": true
 }
