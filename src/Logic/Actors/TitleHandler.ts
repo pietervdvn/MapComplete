@@ -12,20 +12,21 @@ import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 export default class TitleHandler {
     constructor(
         selectedElement: Store<Feature>,
-        selectedLayer: Store<LayerConfig>,
         allElements: FeaturePropertiesStore,
         state: SpecialVisualizationState
     ) {
         const currentTitle: Store<string> = selectedElement.map(
             (selected) => {
                 const defaultTitle = state.layout?.title?.txt ?? "MapComplete"
-
-                if (selected === undefined || selectedLayer.data === undefined) {
+                if (selected === undefined) {
+                    return defaultTitle
+                }
+                const layer = state.layout.getMatchingLayer(selected.properties)
+                if (layer === undefined) {
                     return defaultTitle
                 }
 
                 const tags = selected.properties
-                const layer = selectedLayer.data
                 if (layer.title === undefined) {
                     return defaultTitle
                 }
@@ -43,7 +44,7 @@ export default class TitleHandler {
                     defaultTitle
                 )
             },
-            [Locale.language, selectedLayer]
+            [Locale.language]
         )
 
         currentTitle.addCallbackAndRunD((title) => {
