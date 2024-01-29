@@ -144,7 +144,7 @@
               "type": "maproulette_set_status",
               "message": {
                 "en": "Mark this item as incorrect (duplicate, does not exist anymore, contradictory data)",
-                "nl": "Markeer dit object als incorrect (duplicaatin, incorrect of tegenstrijdige data, ...)"
+                "nl": "Markeer dit object als incorrect (duplicaat, incorrect of tegenstrijdige data, ...)"
               },
               "image": "invalid",
               "status": 6
