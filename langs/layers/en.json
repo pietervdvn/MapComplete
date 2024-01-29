@@ -8109,9 +8109,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} has closed down permanently"
+                    "then": "{title()} has closed down permanently"
                 }
             }
         },

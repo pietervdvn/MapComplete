@@ -5286,9 +5286,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} a fermé définitivement"
+                    "then": "{title()} a fermé définitivement"
                 }
             }
         },

@@ -7198,9 +7198,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} je trvale uzavřen"
+                    "then": "{title()} je trvale uzavřen"
                 }
             }
         },

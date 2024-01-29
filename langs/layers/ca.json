@@ -6895,9 +6895,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} ha tancat permanentment"
+                    "then": "{title()} ha tancat permanentment"
                 }
             }
         },

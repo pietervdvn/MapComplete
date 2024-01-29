@@ -3933,9 +3933,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} ha cerrado permanentemente"
+                    "then": "{title()} ha cerrado permanentemente"
                 }
             }
         },

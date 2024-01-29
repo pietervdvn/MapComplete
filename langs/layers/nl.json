@@ -7097,9 +7097,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} is permanent gestopt"
+                    "then": "{title()} is permanent gestopt"
                 }
             }
         },

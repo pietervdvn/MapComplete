@@ -8034,9 +8034,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} wurde dauerhaft geschlossen"
+                    "then": "{title()} wurde dauerhaft geschlossen"
                 }
             }
         },
