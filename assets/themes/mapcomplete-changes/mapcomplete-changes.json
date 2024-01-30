@@ -369,6 +369,10 @@
                     "then": "./assets/svg/bug.svg"
                   },
                   {
+                    "if": "theme=ski",
+                    "then": "./assets/layers/aerialway/chair_lift.svg"
+                  },
+                  {
                     "if": "theme=speelplekken",
                     "then": "./assets/themes/speelplekken/logo.svg"
                   },

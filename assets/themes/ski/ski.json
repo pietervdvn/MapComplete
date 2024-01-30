@@ -1,0 +1,33 @@
+{
+  "id": "ski",
+  "title": {
+    "en": "Ski pistes and aerialways"
+  },
+  "description": {
+    "en": "Everything you need to go skiing"
+  },
+  "icon": "./assets/layers/aerialway/chair_lift.svg",
+  "layers": [
+    "ski_piste",
+    "aerialway",
+    {
+      "builtin": [
+        "toilet",
+        "drinking_water",
+        "food",
+        "map",
+        "information_board",
+        "viewpoint",
+        "binocular"
+      ],
+      "override": {
+        "pointRendering": [
+          {
+            "=iconSize": "25,25",
+          "=label":null
+          }
+        ]
+      }
+    }
+  ]
+}

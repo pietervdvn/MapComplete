@@ -14,7 +14,11 @@ import {
 import { Translation } from "../src/UI/i18n/Translation"
 import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
-import { Conversion, DesugaringContext, DesugaringStep } from "../src/Models/ThemeConfig/Conversion/Conversion"
+import {
+    Conversion,
+    DesugaringContext,
+    DesugaringStep,
+} from "../src/Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../src/Utils"
 import Script from "./Script"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
@@ -47,7 +51,7 @@ class ParseLayer extends Conversion<
 
     convert(
         path: string,
-        context: ConversionContext,
+        context: ConversionContext
     ): {
         parsed: LayerConfig
         raw: LayerConfigJson
@@ -63,7 +67,7 @@ class ParseLayer extends Conversion<
         try {
             parsed = JSON.parse(fileContents)
         } catch (e) {
-            context.err("Could not parse file as JSON")
+            context.err("Could not parse file as JSON: " + e)
             return undefined
         }
         if (parsed === undefined) {
@@ -102,7 +106,7 @@ class AddIconSummary extends DesugaringStep<{ raw: LayerConfigJson; parsed: Laye
         const fixed = json.raw
         const layerConfig = json.parsed
         const pointRendering: PointRenderingConfig = layerConfig.mapRendering.find((pr) =>
-            pr.location.has("point"),
+            pr.location.has("point")
         )
         const defaultTags = layerConfig.GetBaseTags()
         fixed["_layerIcon"] = Utils.NoNull(
@@ -117,7 +121,7 @@ class AddIconSummary extends DesugaringStep<{ raw: LayerConfigJson; parsed: Laye
                     result["color"] = c
                 }
                 return result
-            }),
+            })
         )
         return { raw: fixed, parsed: layerConfig }
     }
@@ -139,7 +143,7 @@ class LayerOverviewUtils extends Script {
 
     private static extractLayerIdsFrom(
         themeFile: LayoutConfigJson,
-        includeInlineLayers = true,
+        includeInlineLayers = true
     ): string[] {
         const publicLayerIds = []
         if (!Array.isArray(themeFile.layers)) {
@@ -202,10 +206,10 @@ class LayerOverviewUtils extends Script {
                 | LayerConfigJson
                 | string
                 | {
-                builtin
-            }
-                )[]
-        }[],
+                      builtin
+                  }
+            )[]
+        }[]
     ) {
         const perId = new Map<string, any>()
         for (const theme of themes) {
@@ -246,7 +250,7 @@ class LayerOverviewUtils extends Script {
         writeFileSync(
             "./src/assets/generated/theme_overview.json",
             JSON.stringify(sorted, null, "  "),
-            { encoding: "utf8" },
+            { encoding: "utf8" }
         )
     }
 
@@ -258,7 +262,7 @@ class LayerOverviewUtils extends Script {
         writeFileSync(
             `${LayerOverviewUtils.themePath}${theme.id}.json`,
             JSON.stringify(theme, null, "  "),
-            { encoding: "utf8" },
+            { encoding: "utf8" }
         )
     }
 
@@ -269,13 +273,13 @@ class LayerOverviewUtils extends Script {
         writeFileSync(
             `${LayerOverviewUtils.layerPath}${layer.id}.json`,
             JSON.stringify(layer, null, "  "),
-            { encoding: "utf8" },
+            { encoding: "utf8" }
         )
     }
 
     getSharedTagRenderings(
         doesImageExist: DoesImageExist,
-        bootstrapTagRenderings: Map<string, QuestionableTagRenderingConfigJson> = null,
+        bootstrapTagRenderings: Map<string, QuestionableTagRenderingConfigJson> = null
     ): Map<string, QuestionableTagRenderingConfigJson> {
         const prepareLayer = new PrepareLayer({
             tagRenderings: bootstrapTagRenderings,
@@ -336,8 +340,8 @@ class LayerOverviewUtils extends Script {
             if (contents.indexOf("<text") > 0) {
                 console.warn(
                     "The SVG at " +
-                    path +
-                    " contains a `text`-tag. This is highly discouraged. Every machine viewing your theme has their own font libary, and the font you choose might not be present, resulting in a different font being rendered. Solution: open your .svg in inkscape (or another program), select the text and convert it to a path",
+                        path +
+                        " contains a `text`-tag. This is highly discouraged. Every machine viewing your theme has their own font libary, and the font you choose might not be present, resulting in a different font being rendered. Solution: open your .svg in inkscape (or another program), select the text and convert it to a path"
                 )
                 errCount++
             }
@@ -349,11 +353,19 @@ class LayerOverviewUtils extends Script {
 
     async main(args: string[]) {
         console.log("Generating layer overview...")
-        const themeWhitelist = new Set(args.find(a => a.startsWith("--themes="))
-            ?.substring("--themes=".length)?.split(",") ?? [])
+        const themeWhitelist = new Set(
+            args
+                .find((a) => a.startsWith("--themes="))
+                ?.substring("--themes=".length)
+                ?.split(",") ?? []
+        )
 
-        const layerWhitelist = new Set(args.find(a => a.startsWith("--layers="))
-            ?.substring("--layers=".length)?.split(",") ?? [])
+        const layerWhitelist = new Set(
+            args
+                .find((a) => a.startsWith("--layers="))
+                ?.substring("--layers=".length)
+                ?.split(",") ?? []
+        )
 
         const start = new Date()
         const forceReload = args.some((a) => a == "--force")
@@ -385,14 +397,14 @@ class LayerOverviewUtils extends Script {
             themeWhitelist
         )
 
-        if (recompiledThemes.length > 0){
+        if (recompiledThemes.length > 0) {
             writeFileSync(
                 "./src/assets/generated/known_layers.json",
                 JSON.stringify({
                     layers: Array.from(sharedLayers.values()).filter((l) => l.id !== "favourite"),
-                }),
+                })
             )
-         }
+        }
 
         const mcChangesPath = "./assets/themes/mapcomplete-changes/mapcomplete-changes.json"
         if (
@@ -411,7 +423,7 @@ class LayerOverviewUtils extends Script {
             const proto: LayoutConfigJson = JSON.parse(
                 readFileSync("./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json", {
                     encoding: "utf8",
-                }),
+                })
             )
             const protolayer = <LayerConfigJson>(
                 proto.layers.filter((l) => l["id"] === "mapcomplete-changes")[0]
@@ -428,21 +440,21 @@ class LayerOverviewUtils extends Script {
                 layers: ScriptUtils.getLayerFiles().map((f) => f.parsed),
                 themes: ScriptUtils.getThemeFiles().map((f) => f.parsed),
             },
-            ConversionContext.construct([], []),
+            ConversionContext.construct([], [])
         )
 
         for (const [_, theme] of sharedThemes) {
             theme.layers = theme.layers.filter(
-                (l) => Constants.added_by_default.indexOf(l["id"]) < 0,
+                (l) => Constants.added_by_default.indexOf(l["id"]) < 0
             )
         }
 
-        if(recompiledThemes.length > 0) {
+        if (recompiledThemes.length > 0) {
             writeFileSync(
                 "./src/assets/generated/known_themes.json",
                 JSON.stringify({
                     themes: Array.from(sharedThemes.values()),
-                }),
+                })
             )
         }
 
@@ -451,8 +463,8 @@ class LayerOverviewUtils extends Script {
         if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
             console.error(
                 "This was a bootstrapping-run. Run generate layeroverview again!(" +
-                millisNeeded +
-                " ms)",
+                    millisNeeded +
+                    " ms)"
             )
         } else {
             const green = (s) => "\x1b[92m" + s + "\x1b[0m"
@@ -463,7 +475,7 @@ class LayerOverviewUtils extends Script {
     private parseLayer(
         doesImageExist: DoesImageExist,
         prepLayer: PrepareLayer,
-        sharedLayerPath: string,
+        sharedLayerPath: string
     ): {
         raw: LayerConfigJson
         parsed: LayerConfig
@@ -474,7 +486,7 @@ class LayerOverviewUtils extends Script {
         const parsed = parser.convertStrict(sharedLayerPath, context)
         const result = AddIconSummary.singleton.convertStrict(
             parsed,
-            context.inOperation("AddIconSummary"),
+            context.inOperation("AddIconSummary")
         )
         return { ...result, context }
     }
@@ -500,9 +512,12 @@ class LayerOverviewUtils extends Script {
         const recompiledLayers: string[] = []
         let warningCount = 0
         for (const sharedLayerPath of ScriptUtils.getLayerPaths()) {
-            if(whitelist.size > 0){
-            const idByPath = sharedLayerPath.split("/").at(-1).split(".")[0]
-                if(Constants.priviliged_layers.indexOf(<any> idByPath) < 0 && !whitelist.has(idByPath)){
+            if (whitelist.size > 0) {
+                const idByPath = sharedLayerPath.split("/").at(-1).split(".")[0]
+                if (
+                    Constants.priviliged_layers.indexOf(<any>idByPath) < 0 &&
+                    !whitelist.has(idByPath)
+                ) {
                     continue
                 }
             }
@@ -534,17 +549,17 @@ class LayerOverviewUtils extends Script {
 
         console.log(
             "Recompiled layers " +
-            recompiledLayers.join(", ") +
-            " and skipped " +
-            skippedLayers.length +
-            " layers. Detected " +
-            warningCount +
-            " warnings",
+                recompiledLayers.join(", ") +
+                " and skipped " +
+                skippedLayers.length +
+                " layers. Detected " +
+                warningCount +
+                " warnings"
         )
         // We always need the calculated tags of 'usersettings', so we export them separately
         this.extractJavascriptCodeForLayer(
             state.sharedLayers.get("usersettings"),
-            "./src/Logic/State/UserSettingsMetaTagging.ts",
+            "./src/Logic/State/UserSettingsMetaTagging.ts"
         )
 
         return sharedLayers
@@ -561,8 +576,8 @@ class LayerOverviewUtils extends Script {
     private extractJavascriptCode(themeFile: LayoutConfigJson) {
         const allCode = [
             "import {Feature} from 'geojson'",
-            "import { ExtraFuncType } from \"../../../Logic/ExtraFunctions\";",
-            "import { Utils } from \"../../../Utils\"",
+            'import { ExtraFuncType } from "../../../Logic/ExtraFunctions";',
+            'import { Utils } from "../../../Utils"',
             "export class ThemeMetaTagging {",
             "   public static readonly themeName = " + JSON.stringify(themeFile.id),
             "",
@@ -574,8 +589,8 @@ class LayerOverviewUtils extends Script {
 
             allCode.push(
                 "   public metaTaggging_for_" +
-                id +
-                "(feat: Feature, helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>) {",
+                    id +
+                    "(feat: Feature, helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>) {"
             )
             allCode.push("      const {" + ExtraFunctions.types.join(", ") + "} = helperFunctions")
             for (const line of code) {
@@ -586,10 +601,10 @@ class LayerOverviewUtils extends Script {
                 if (!isStrict) {
                     allCode.push(
                         "      Utils.AddLazyProperty(feat.properties, '" +
-                        attributeName +
-                        "', () => " +
-                        expression +
-                        " ) ",
+                            attributeName +
+                            "', () => " +
+                            expression +
+                            " ) "
                     )
                 } else {
                     attributeName = attributeName.substring(0, attributeName.length - 1).trim()
@@ -634,7 +649,7 @@ class LayerOverviewUtils extends Script {
         const code = l.calculatedTags ?? []
 
         allCode.push(
-            "   public metaTaggging_for_" + l.id + "(feat: {properties: Record<string, string>}) {",
+            "   public metaTaggging_for_" + l.id + "(feat: {properties: Record<string, string>}) {"
         )
         for (const line of code) {
             const firstEq = line.indexOf("=")
@@ -644,10 +659,10 @@ class LayerOverviewUtils extends Script {
             if (!isStrict) {
                 allCode.push(
                     "      Utils.AddLazyProperty(feat.properties, '" +
-                    attributeName +
-                    "', () => " +
-                    expression +
-                    " ) ",
+                        attributeName +
+                        "', () => " +
+                        expression +
+                        " ) "
                 )
             } else {
                 attributeName = attributeName.substring(0, attributeName.length - 2).trim()
@@ -679,13 +694,13 @@ class LayerOverviewUtils extends Script {
         const fixed = new Map<string, LayoutConfigJson>()
 
         const publicLayers = LayerOverviewUtils.publicLayerIdsFrom(
-            themeFiles.map((th) => th.parsed),
+            themeFiles.map((th) => th.parsed)
         )
 
         const convertState: DesugaringContext = {
             sharedLayers,
             tagRenderings: this.getSharedTagRenderings(
-                new DoesImageExist(licensePaths, existsSync),
+                new DoesImageExist(licensePaths, existsSync)
             ),
             publicLayers,
         }
@@ -710,7 +725,7 @@ class LayerOverviewUtils extends Script {
             const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
-            if(whitelist.size > 0 && !whitelist.has(themeFile.id)){
+            if (whitelist.size > 0 && !whitelist.has(themeFile.id)) {
                 continue
             }
 
@@ -718,15 +733,15 @@ class LayerOverviewUtils extends Script {
                 LayerOverviewUtils.themePath + "/" + themePath.substring(themePath.lastIndexOf("/"))
 
             const usedLayers = Array.from(
-                LayerOverviewUtils.extractLayerIdsFrom(themeFile, false),
+                LayerOverviewUtils.extractLayerIdsFrom(themeFile, false)
             ).map((id) => LayerOverviewUtils.layerPath + id + ".json")
 
             if (!forceReload && !this.shouldBeUpdated([themePath, ...usedLayers], targetPath)) {
                 fixed.set(
                     themeFile.id,
                     JSON.parse(
-                        readFileSync(LayerOverviewUtils.themePath + themeFile.id + ".json", "utf8"),
-                    ),
+                        readFileSync(LayerOverviewUtils.themePath + themeFile.id + ".json", "utf8")
+                    )
                 )
                 ScriptUtils.erasableLog("Skipping", themeFile.id)
                 skippedThemes.push(themeFile.id)
@@ -737,23 +752,23 @@ class LayerOverviewUtils extends Script {
 
             new PrevalidateTheme().convertStrict(
                 themeFile,
-                ConversionContext.construct([themePath], ["PrepareLayer"]),
+                ConversionContext.construct([themePath], ["PrepareLayer"])
             )
             try {
                 themeFile = new PrepareTheme(convertState, {
                     skipDefaultLayers: true,
                 }).convertStrict(
                     themeFile,
-                    ConversionContext.construct([themePath], ["PrepareLayer"]),
+                    ConversionContext.construct([themePath], ["PrepareLayer"])
                 )
                 new ValidateThemeAndLayers(
                     new DoesImageExist(licensePaths, existsSync, knownTagRenderings),
                     themePath,
                     true,
-                    knownTagRenderings,
+                    knownTagRenderings
                 ).convertStrict(
                     themeFile,
-                    ConversionContext.construct([themePath], ["PrepareLayer"]),
+                    ConversionContext.construct([themePath], ["PrepareLayer"])
                 )
 
                 if (themeFile.icon.endsWith(".svg")) {
@@ -795,29 +810,29 @@ class LayerOverviewUtils extends Script {
             }
         }
 
-        if(whitelist.size == 0){
-        this.writeSmallOverview(
-            Array.from(fixed.values()).map((t) => {
-                return {
-                    ...t,
-                    hideFromOverview: t.hideFromOverview ?? false,
-                    shortDescription:
-                        t.shortDescription ??
-                        new Translation(t.description)
-                            .FirstSentence()
-                            .OnEveryLanguage((s) => parse_html(s).textContent).translations,
-                    mustHaveLanguage: t.mustHaveLanguage?.length > 0,
-                }
-            }),
-        )
+        if (whitelist.size == 0) {
+            this.writeSmallOverview(
+                Array.from(fixed.values()).map((t) => {
+                    return {
+                        ...t,
+                        hideFromOverview: t.hideFromOverview ?? false,
+                        shortDescription:
+                            t.shortDescription ??
+                            new Translation(t.description)
+                                .FirstSentence()
+                                .OnEveryLanguage((s) => parse_html(s).textContent).translations,
+                        mustHaveLanguage: t.mustHaveLanguage?.length > 0,
+                    }
+                })
+            )
         }
 
         console.log(
             "Recompiled themes " +
-            recompiledThemes.join(", ") +
-            " and skipped " +
-            skippedThemes.length +
-            " themes",
+                recompiledThemes.join(", ") +
+                " and skipped " +
+                skippedThemes.length +
+                " themes"
         )
 
         return fixed
