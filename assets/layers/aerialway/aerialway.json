@@ -1,0 +1,141 @@
+{
+  "pointRendering": [
+    {
+      "location": ["start"],
+      "marker": [
+        {
+          "icon": "square"
+        }
+      ],
+      "iconSize": "12,12"
+    },
+    
+    {
+      "location": [
+        "point",
+        "projected_centerpoint"
+      ],
+      "label": {
+        "render": {
+          "en": "{name}"
+        },
+        "condition": "name~*",
+        "classes": "bg-white p-1 px-2 rounded"
+      },
+      "labelCssClasses": "bg-white px-2 py-1 no-weblate"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What type of aerialway is this?"
+      },
+      "id": "type",
+      "mappings": [
+        {
+          "if": "aerialway=cable_car",
+          "then": {
+            "en": "This is a cable car where the car goes up and down again on the same cable."
+          },
+          "icon": "./assets/layers/aerialway/cable_car.svg"
+        },
+        {
+          "if": "aerialway=gondola",
+          "then": {
+            "en": "This is a gondola where the cars go around in continuous circles"
+          },
+          "icon": "./assets/layers/aerialway/gondola_lift.svg"
+        },
+        {
+          "if": "aerialway=chair_lift",
+          "then": {
+            "en": "An open chairlift with seats to sit on and open to the outside air."
+          },
+          "icon": "./assets/layers/aerialway/chair_lift.svg"
+        },
+        {
+          "if": "aerialway=mixed",
+          "then": {
+            "en": "An aerialway which has both chairs and gondolas in the same continuous track"
+          }
+        },
+        {
+          "if": "aerialway=drag_lift",
+          "then": {
+            "en": "A drag lift"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "aerialway=t-bar",
+          "then": {
+            "en": "A drag lift with T-shaped carriers for two passengers at a time"
+          }
+        },
+        {
+          "if": "aerialway=j-bar",
+          "then": {
+            "en": "A drag lift with L-shaped bars for a single passenger at a time"
+          }
+        },
+        {
+          "if": "aerialway=platter",
+          "then": {
+            "en": "A drag lift with a platter to drag a single passenger at a time"
+          }
+        },
+        {
+          "if": "aerialway=rope_tow",
+          "then": {
+            "en": "A tow line which which drags skieers"
+          }
+        },
+        {
+          "if": "aerialway=magic_carpet",
+          "then": {
+            "en": "A magic carpet (a conveyor belt on the ground)"
+          }
+        },
+        {"if": "aerialway=zip_line",
+          "then": {
+            "en": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
+          }
+        }
+      ]
+    },
+    {
+      "id": "length",
+      "render": {
+        "en": "This aerialway is {_length:km} kilometer long"
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "4",
+      "color": "black"
+    }
+  ],
+  "id": "aerialway",
+  "name": {
+    "en": "Aerialways"
+  },
+  "description": {
+    "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "aerialway~*",
+        "aerialway!=pylon",
+        "aerialway!=station"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Aerialway {name}"
+    }
+  }
+}
