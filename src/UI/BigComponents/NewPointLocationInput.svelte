@@ -7,7 +7,10 @@
     import { BBox } from "../../Logic/BBox"
     import type { MapProperties } from "../../Models/MapProperties"
     import ShowDataLayer from "../Map/ShowDataLayer"
-    import type { FeatureSource, FeatureSourceForLayer } from "../../Logic/FeatureSource/FeatureSource"
+    import type {
+        FeatureSource,
+        FeatureSourceForLayer,
+    } from "../../Logic/FeatureSource/FeatureSource"
     import SnappingFeatureSource from "../../Logic/FeatureSource/Sources/SnappingFeatureSource"
     import FeatureSourceMerger from "../../Logic/FeatureSource/Sources/FeatureSourceMerger"
     import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
@@ -40,14 +43,7 @@
         coordinate = value.data
     }
     export let snapToLayers: string[] | undefined
-    export let targetLayer: LayerConfig | LayerConfig[] | undefined
-
-    let targetLayers: LayerConfig[] | undefined
-    if (Array.isArray(targetLayers)) {
-        targetLayers = <LayerConfig[]>targetLayer
-    } else if (targetLayer) {
-        targetLayers = [<LayerConfig>targetLayer]
-    }
+    export let targetLayer: LayerConfig | undefined
     export let maxSnapDistance: number = undefined
 
     export let snappedTo: UIEventSource<string | undefined>
@@ -61,7 +57,7 @@
 
     const xyz = Tiles.embedded_tile(coordinate.lat, coordinate.lon, 16)
     const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
-    let initialMapProperties: Partial<MapProperties> = {
+    let initialMapProperties: Partial<MapProperties> & {location} = {
         zoom: new UIEventSource<number>(19),
         maxbounds: new UIEventSource(undefined),
         /*If no snapping needed: the value is simply the map location;
@@ -78,15 +74,15 @@
         rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer),
     }
 
-    targetLayers?.forEach(layer => {
-        const featuresForLayer = state.perLayer.get(layer.id)
+    if (targetLayer) {
+        const featuresForLayer = state.perLayer.get(targetLayer.id)
         if (featuresForLayer) {
             new ShowDataLayer(map, {
-                layer,
+                layer: targetLayer,
                 features: featuresForLayer,
             })
         }
-    })
+    }
 
     if (snapToLayers?.length > 0) {
         const snapSources: FeatureSource[] = []
@@ -111,25 +107,23 @@
                 allowUnsnapped: true,
                 snappedTo,
                 snapLocation: value,
-            },
+            }
         )
 
-        targetLayers.forEach(layer => {
-            new ShowDataLayer(map, {
-                layer,
-                features: snappedLocation,
-            })
+        new ShowDataLayer(map, {
+            layer: targetLayer,
+            features: snappedLocation,
         })
     }
 </script>
 
 <LocationInput
-  initialCoordinate={coordinate}
   {map}
-  mapProperties={initialMapProperties}
-  maxDistanceInMeters={50}
   on:click={(data) => dispatch("click", data)}
+  mapProperties={initialMapProperties}
   value={preciseLocation}
+  initialCoordinate={coordinate}
+  maxDistanceInMeters={50}
 >
   <slot name="image" slot="image">
     <Move_arrows class="h-full max-h-24" />

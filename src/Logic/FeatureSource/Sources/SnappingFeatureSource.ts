@@ -6,11 +6,14 @@ import { BBox } from "../../BBox"
 
 export interface SnappingOptions {
     /**
-     * If the distance is bigger then this amount, don't snap.
+     * If the distance to the line is bigger then this amount, don't snap.
      * In meter
      */
     maxDistance: number
 
+    /**
+     * If set to true, no value will be given if no snapping was made
+     */
     allowUnsnapped?: false | boolean
 
     /**
