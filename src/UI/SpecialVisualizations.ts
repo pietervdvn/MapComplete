@@ -3,11 +3,7 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState,
-} from "./SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { MinimapViz } from "./Popup/MinimapViz"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -18,7 +14,7 @@ import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
 import { CloseNoteButton } from "./Popup/Notes/CloseNoteButton"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
-import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
+import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
 import { ImageCarousel } from "./Image/ImageCarousel"
@@ -1257,12 +1253,19 @@ export default class SpecialVisualizations {
                     const translation = new Translation({ "*": tr })
                     return new VariableUiElement(
                         featureTags.map((tags) => {
-                            const properties: object[] = JSON.parse(tags[key])
+                            console.log("Trying to parse", tags[key], key)
+                            let properties: object[]
+                            if(typeof tags[key] === "string"){
+                             properties  =JSON.parse(tags[key])
+                            }else{
+                                properties = <any> tags[key]
+                                console.log("Multi properties are", properties)
+                            }
                             const elements = []
                             for (const property of properties) {
                                 const subsTr = new SvelteUIElement(SpecialTranslation, {
                                     t: translation,
-                                    tags: properties,
+                                    tags: new ImmutableStore(property),
                                     state,
                                     feature,
                                     layer,
