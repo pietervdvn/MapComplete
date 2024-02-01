@@ -723,7 +723,8 @@
         "fediverse": {
             "description": "Eine Fediverse Adresse, häufig @username@server.tld",
             "feedback": "Eine Fediverse Adresse besteht aus @username@server.tld oder ist ein Direktlink zu einem Profil",
-            "invalidHost": "{host} ist kein gültiger hostname"
+            "invalidHost": "{host} ist kein gültiger hostname",
+            "onYourServer": "Siehe und folge auf deinem Server"
         },
         "float": {
             "description": "eine Zahl",
