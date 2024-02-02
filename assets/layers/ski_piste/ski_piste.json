@@ -109,9 +109,11 @@
   "source": {
     "osmTags": {
       "and": [
-        {"or": 
-         [ "piste:type=downhill",
-          "piste:type=connection"]
+        {
+          "or": [
+            "piste:type=downhill",
+            "piste:type=connection"
+          ]
         },
         "area!=yes"
       ]

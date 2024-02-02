@@ -80,8 +80,10 @@
         "pointRendering": [
           {
             "=marker": [
-              {"icon": "circle",
-                "color": "white"},
+              {
+                "icon": "circle",
+                "color": "white"
+              },
               {
                 "icon": "./assets/themes/onwheels/entrance.svg"
               }
@@ -413,8 +415,11 @@
         "syncSelection": "theme-only",
         "pointRendering": [
           {
-            "=marker": [  {"icon": "circle",
-              "color": "white"},
+            "=marker": [
+              {
+                "icon": "circle",
+                "color": "white"
+              },
               {
                 "icon": "./assets/themes/onwheels/elevator.svg"
               }

@@ -24,7 +24,7 @@
         "pointRendering": [
           {
             "=iconSize": "25,25",
-          "=label":null
+            "=label": null
           }
         ]
       }

@@ -1311,6 +1311,10 @@
         "shortDescription": "Sidewalk mapping",
         "title": "Sidewalks"
     },
+    "ski": {
+        "description": "Everything you need to go skiing",
+        "title": "Ski pistes and aerialways"
+    },
     "sport_pitches": {
         "description": "A sport pitch is an area where sports are played",
         "shortDescription": "A map showing sport pitches",
