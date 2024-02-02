@@ -644,7 +644,9 @@
         "disused:shop:={shop}"
       ]
     },
-    "omitDefaultDeleteReasons": ["disused"],
+    "omitDefaultDeleteReasons": [
+      "disused"
+    ],
     "nonDeleteMappings": [
       {
         "if": {

@@ -235,6 +235,63 @@
             }
         }
     },
+    "aerialway": {
+        "description": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
+        "name": "Aerialways",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "length": {
+                "render": "This aerialway is {_length:km} kilometer long"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a cable car where the car goes up and down again on the same cable."
+                    },
+                    "1": {
+                        "then": "This is a gondola where the cars go around in continuous circles"
+                    },
+                    "2": {
+                        "then": "An open chairlift with seats to sit on and open to the outside air."
+                    },
+                    "3": {
+                        "then": "An aerialway which has both chairs and gondolas in the same continuous track"
+                    },
+                    "4": {
+                        "then": "A drag lift"
+                    },
+                    "5": {
+                        "then": "A drag lift with T-shaped carriers for two passengers at a time"
+                    },
+                    "6": {
+                        "then": "A drag lift with L-shaped bars for a single passenger at a time"
+                    },
+                    "7": {
+                        "then": "A drag lift with a platter to drag a single passenger at a time"
+                    },
+                    "8": {
+                        "then": "A tow line which which drags skieers"
+                    },
+                    "9": {
+                        "then": "A magic carpet (a conveyor belt on the ground)"
+                    },
+                    "10": {
+                        "then": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
+                    }
+                },
+                "question": "What type of aerialway is this?"
+            }
+        },
+        "title": {
+            "render": "Aerialway {name}"
+        }
+    },
     "ambulancestation": {
         "description": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
         "name": "Map of ambulance stations",
@@ -8289,6 +8346,41 @@
         },
         "title": {
             "render": "Shower"
+        }
+    },
+    "ski_piste": {
+        "description": "Ski and snowboard pistes",
+        "name": "Ski and snowboard pistes",
+        "tagRenderings": {
+            "length": {
+                "render": "This part of the ski piste is {_length:km} kilometer long"
+            },
+            "piste_difficulty": {
+                "mappings": {
+                    "0": {
+                        "then": "Novice (green)"
+                    },
+                    "1": {
+                        "then": "Easy (blue)"
+                    },
+                    "2": {
+                        "then": "Intermediate (red)"
+                    },
+                    "3": {
+                        "then": "Advanced (black)"
+                    },
+                    "4": {
+                        "then": "Expert (orange/double black)"
+                    },
+                    "5": {
+                        "then": "Freeride"
+                    }
+                },
+                "question": "What is the difficulty of this piste?"
+            }
+        },
+        "title": {
+            "render": "Ski piste {name}"
         }
     },
     "slow_roads": {
