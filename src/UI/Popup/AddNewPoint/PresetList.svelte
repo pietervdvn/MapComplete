@@ -12,6 +12,7 @@
   import NextButton from "../../Base/NextButton.svelte"
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import BaseUIElement from "../../BaseUIElement"
+  import Combine from "../../Base/Combine"
 
   /**
    * This component lists all the presets and allows the user to select one
@@ -54,9 +55,9 @@
     for (const preset of layer.presets) {
       const tags = TagUtils.KVtoProperties(preset.tags ?? [])
 
-      const icon: BaseUIElement = layer.mapRendering[0]
-        .RenderIcon(new ImmutableStore<any>(tags))
-        .html.SetClass("w-12 h-12 block relative mr-4")
+      const markers = layer.mapRendering.map((mr, i) => mr.RenderIcon(new ImmutableStore<any>(tags), {noSize: i == 0})
+        .html.SetClass(i == 0 ? "w-full h-full" : ""))
+      const icon: BaseUIElement = new Combine(markers.map(m => new Combine([m]).SetClass("absolute top-0 left-0 w-full h-full flex justify-around items-center"))).SetClass("w-12 h-12 block relative mr-4")
 
       const description = preset.description?.FirstSentence()
 

@@ -79,7 +79,6 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         })
 
-
         this.marker = (json.marker ?? []).map((m) => new IconConfig(<any>m))
         if (json.css !== undefined) {
             this.cssDef = this.tr("css", undefined)
@@ -199,13 +198,14 @@ export default class PointRenderingConfig extends WithContextLoader {
 
         if (options?.noSize) {
             iconAndBadges.SetClass("w-full h-full")
+        } else {
+            tags.map((tags) => this.iconSize.GetRenderValue(tags).Subs(tags).txt ?? "[40,40]").map(
+                (size) => {
+                    const [iconW, iconH] = size.split(",").map((x) => num(x))
+                    iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
+                }
+            )
         }
-        tags.map((tags) => this.iconSize.GetRenderValue(tags).Subs(tags).txt ?? "[40,40]").map(
-            (size) => {
-                const [iconW, iconH] = size.split(",").map((x) => num(x))
-                iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
-            }
-        )
 
         const css = this.cssDef?.GetRenderValue(tags.data)?.txt
         const cssClasses = this.cssClasses?.GetRenderValue(tags.data)?.txt

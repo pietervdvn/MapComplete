@@ -80,8 +80,10 @@
         "pointRendering": [
           {
             "=marker": [
+              {"icon": "circle",
+                "color": "white"},
               {
-                "icon": "circle:white;./assets/themes/onwheels/entrance.svg"
+                "icon": "./assets/themes/onwheels/entrance.svg"
               }
             ]
           }
@@ -258,6 +260,7 @@
     {
       "builtin": "parking_spaces",
       "override": {
+        "id": "parking_spaces_disabled",
         "source": {
           "osmTags": "parking_space=disabled"
         },
@@ -410,9 +413,10 @@
         "syncSelection": "theme-only",
         "pointRendering": [
           {
-            "=marker": [
+            "=marker": [  {"icon": "circle",
+              "color": "white"},
               {
-                "icon": "circle:white;./assets/themes/onwheels/elevator.svg"
+                "icon": "./assets/themes/onwheels/elevator.svg"
               }
             ],
             "iconSize": "40,40",
