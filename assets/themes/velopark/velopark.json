@@ -138,7 +138,8 @@
               "message": {
                 "en": "Mark this item as linked manually. Use this if you did apply the reference via copy-paste or via another editor",
                 "nl": "Markeer als gelinkt. Gebruik deze optie indien je de ID plakte in een fietsenstalling of via een andere editor toevoegdemap"
-              }
+              },
+              "status": 1
             }
           }
         },

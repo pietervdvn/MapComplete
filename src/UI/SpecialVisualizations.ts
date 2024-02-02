@@ -1097,6 +1097,7 @@ export default class SpecialVisualizations {
                     if (maproulette_id_key === "" || maproulette_id_key === undefined) {
                         maproulette_id_key = "mr_taskId"
                     }
+                    statusToSet = statusToSet ?? "1"
                     return new SvelteUIElement(MaprouletteSetStatus, {
                         state,
                         tags: tagsSource,
