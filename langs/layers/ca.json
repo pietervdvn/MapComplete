@@ -1894,6 +1894,32 @@
         }
     },
     "charging_station": {
+        "description": "Una estació de càrrega",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tots els tipus de vehicles"
+                    },
+                    "1": {
+                        "question": "Punt de recàrrega per a bicicletes"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "1": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "2": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
+                    },
+                    "3": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+                    }
+                }
+            }
+        },
         "tagRenderings": {
             "Authentication": {
                 "mappings": {
@@ -2045,7 +2071,7 @@
                         "then": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)"
                     },
                     "2": {
-                        "then": "Sols clientes del lloc al que pertany aquest punt de càrrega poden utilitzar-lo <br/><span class='subtle'>p.e. un punt de càrrega d'un hotel que sols poden utilizar-los els hostes</span>"
+                        "then": "Sols cliente del lloc al que pertany aquest punt de càrrega poden utilitzar-lo <br/><span class='subtle'>p.e. un punt de càrrega d'un hotel que sols poden utilizar-los els hostes</span>"
                     },
                     "3": {
                         "then": "S'ha de sol·licitar una <b>clau</b> per a utilitzar aquest punt de càrrega<br/><span class='subtle'>p.e un punt de càrrega operat per un hotel nomes utilitzable pel seus hostes, els quals reben una clau des de recepció per a desbloquejar el punt de càrrega</span>"
