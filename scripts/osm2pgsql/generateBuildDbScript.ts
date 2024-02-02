@@ -7,6 +7,7 @@ import { Or } from "../../src/Logic/Tags/Or"
 import { RegexTag } from "../../src/Logic/Tags/RegexTag"
 import { ValidateThemeEnsemble } from "../../src/Models/ThemeConfig/Conversion/Validation"
 import { AllKnownLayouts } from "../../src/Customizations/AllKnownLayouts"
+import { OsmObject } from "../../src/Logic/Osm/OsmObject"
 
 class LuaSnippets {
 
@@ -19,6 +20,33 @@ class LuaSnippets {
         "  return c\n" +
         "end",
     ].join("\n")
+
+    public static isPolygonFeature(): { blacklist: TagsFilter, whitelisted: TagsFilter } {
+        const dict = OsmObject.polygonFeatures
+        const or: TagsFilter[] = []
+        const blacklisted : TagsFilter[] = []
+        dict.forEach(({ values, blacklist }, k) => {
+            if(blacklist){
+                if(values === undefined){
+                    blacklisted.push(new RegexTag(k, /.+/is))
+                    return
+                }
+                values.forEach(v => {
+                    blacklisted.push(new RegexTag(k, v))
+                })
+                return
+            }
+            if (values === undefined || values === null) {
+                or.push(new RegexTag(k, /.+/is))
+                return
+            }
+            values.forEach(v => {
+                or.push(new RegexTag(k, v))
+            })
+        })
+        console.log("Polygon features are:", or.map(t => t.asHumanString(false, false, {})))
+        return { blacklist: new Or(blacklisted), whitelisted: new Or(or) }
+    }
 
     public static toLuaFilter(tag: TagsFilter, useParens: boolean = false): string {
         if (tag instanceof Tag) {
@@ -53,6 +81,10 @@ class LuaSnippets {
     private static regexTagToLua(tag: RegexTag) {
         if (typeof tag.value === "string" && tag.invert) {
             return `object.tags["${tag.key}"] ~= "${tag.value}"`
+        }
+
+        if (typeof tag.value === "string" && !tag.invert) {
+            return `object.tags["${tag.key}"] == "${tag.value}"`
         }
 
         const v = (<RegExp>tag.value).source.replace(/\\\//g, "/")
@@ -220,6 +252,7 @@ class GenerateBuildDbScript extends Script {
             bodyPolygons.push(this.insertInto(tags, layerId, "polygons_").join("\n"))
         })
 
+        const isPolygon = LuaSnippets.isPolygonFeature()
         return [
             "function process_polygon(object, geom)",
             "  local matches_filter",
@@ -232,7 +265,9 @@ class GenerateBuildDbScript extends Script {
             "",
             "function osm2pgsql.process_way(object)",
             this.earlyAbort(),
-            "  if object.is_closed then",
+            "  local object_is_line = not object.is_closed or "+LuaSnippets.toLuaFilter(isPolygon.blacklist),
+            `  local object_is_area = object.is_closed and (object.tags["area"] == "yes" or (not object_is_line and ${LuaSnippets.toLuaFilter(isPolygon.whitelisted, true)}))`,
+            "  if object_is_area then",
             "    process_polygon(object, object:as_polygon())",
             "  else",
             "    process_linestring(object, object:as_linestring())",

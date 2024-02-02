@@ -59,7 +59,7 @@ export default class LayoutSource extends FeatureSourceMerger {
             zoom,
             featureSwitches
         )//*/
-
+/*
         const osmApiSource = LayoutSource.setupOsmApiSource(
             osmLayers,
             bounds,
@@ -67,14 +67,14 @@ export default class LayoutSource extends FeatureSourceMerger {
             backend,
             featureSwitches,
             fullNodeDatabaseSource
-        )
+        )*/
 
         const geojsonSources: FeatureSource[] = geojsonlayers.map((l) =>
             LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
 
-        super(osmApiSource, ...geojsonSources, ...fromCache, ...mvtSources)
+        super(...geojsonSources, ...fromCache, ...mvtSources)
 
         const self = this
         function setIsLoading() {
@@ -83,7 +83,7 @@ export default class LayoutSource extends FeatureSourceMerger {
         }
 
         // overpassSource?.runningQuery?.addCallbackAndRun((_) => setIsLoading())
-        osmApiSource?.isRunning?.addCallbackAndRun((_) => setIsLoading())
+       // osmApiSource?.isRunning?.addCallbackAndRun((_) => setIsLoading())
     }
 
     private static setupMvtSource(layer: LayerConfig, mapProperties:  { zoom: Store<number>; bounds: Store<BBox> },    isActive?: Store<boolean>): FeatureSource{
