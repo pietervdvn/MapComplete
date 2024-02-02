@@ -186,7 +186,6 @@
             "includeMetaData": "Zahrnout metadata (poslední editor, vypočtené hodnoty, ...)",
             "licenseInfo": "<h3>Upozornění na autorská práva</h3>Poskytovaná data jsou dostupná pod ODbL. Opětovné použití je zdarma pro jakýkoli účel, ale <ul><li>musí být uveden zdroj <b>© přispěvatelé OpenStreetMap</b><li><li>Jakákoli změna musí být publikována pod stejnou licencí</li>< /ul> Podrobnosti naleznete v úplném <a href='https://www.openstreetmap.org/copyright' target='_blank'>upozornění na autorská práva</a>.",
             "noDataLoaded": "Zatím nejsou načtena žádná data. Brzy bude k dispozici ke stažení",
-            "pdf": {},
             "title": "Stáhnout",
             "uploadGpx": "Nahrajte svou trasu do OpenStreetMap"
         },
