@@ -103,11 +103,11 @@
         {
           "id": "list_nearby_bike_parkings",
           "render": {
+            "before": {
+              "en": "Choose below which bicycle parking you want to link. This will <b>not</b> apply the attributes.",
+              "nl": "Kies hieronder welke fietsenstalling je wilt linken. Dit zal de attributen <b>niet</b> kopieren."
+            },
             "special": {
-              "before": {
-                "en": "Choose below which bicycle parking you want to link. This will <b>not</b> apply the attributes.",
-                "nl": "Kies hieronder welke fietsenstalling je wilt linken. Dit zal de attributen <b>niet</b> kopieren."
-              },
               "type": "multi",
               "key": "_nearby_bicycle_parkings:props",
               "classes": "p-2 m-1 my-4 border-2 border-dashed border-black",
