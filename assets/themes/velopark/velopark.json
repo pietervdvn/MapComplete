@@ -104,9 +104,14 @@
           "id": "list_nearby_bike_parkings",
           "render": {
             "special": {
+              "prefix": {
+                "en": "Choose below which bicycle parking you want to link. This will <b>not</b> apply the attributes.",
+                "nl": "Kies hieronder welke fietsenstalling je wilt linken. Dit zal de attributen <b>niet</b> kopieren."
+              },
               "type": "multi",
               "key": "_nearby_bicycle_parkings:props",
-              "tagrendering": "<span class='p-2 m-1 border-2 border-dashed border-gray'><b><a href='#{id}'>{id}</a></b> ({_distance}m, {_velopark:id}) </span>{minimap(20)} {tag_apply(ref:velopark=$_ref,Link,link,id,_mr_id)}"
+          "classes": "p-2 m-1 my-4 border-2 border-dashed border-black",
+              "tagrendering": "<b><a href='#{id}'>{id}</a></b> ({_distance}m, {_velopark:id}) {minimap(20)} {tag_apply(ref:velopark=$_ref,Link this object.,link,id,_mr_id)}"
             }
           }
         },
@@ -118,8 +123,8 @@
               "targetLayer": "bike_parking_with_velopark_ref bike_parking",
               "tags": "amenity=bicycle_parking;ref:velopark=$ref:velopark",
               "text": {
-                "en": "Create a new bicycle parking in OSM",
-                "nl": "Maak een nieuwe parking aan in OSM"
+                "en": "Create a new bicycle parking in OSM. This parking will have the link, but not all attributes",
+                "nl": "Maak een nieuwe parking aan in OSM. Deze parking zal gelinkt zijn met Velopark, maar niet de attributen bevatten"
               },
               "maproulette_id": "mr_taskId"
             }
@@ -131,8 +136,8 @@
             "special": {
               "type": "maproulette_set_status",
               "message": {
-                "en": "Mark this item as linked",
-                "nl": "Markeer als gelinkt"
+                "en": "Mark this item as linked manually. Use this if you did apply the reference via copy-paste or via another editor",
+                "nl": "Markeer als gelinkt. Gebruik deze optie indien je de ID plakte in een fietsenstalling of via een andere editor toevoegdemap"
               }
             }
           }
@@ -143,8 +148,8 @@
             "special": {
               "type": "maproulette_set_status",
               "message": {
-                "en": "Mark this item as incorrect (duplicate, does not exist anymore, contradictory data)",
-                "nl": "Markeer dit object als incorrect (duplicaat, incorrect of tegenstrijdige data, ...)"
+                "en": "Mark this item as incorrect or too hard to solve (duplicate, does not exist anymore, contradictory data, not placeable from aerial imagery)",
+                "nl": "Markeer dit object als incorrect of te moeillijk (duplicaat, incorrect of tegenstrijdige data, niet eenduidig te plaatsen adhv luchtfoto's, ...)"
               },
               "image": "invalid",
               "status": 6

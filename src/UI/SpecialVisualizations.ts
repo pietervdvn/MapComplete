@@ -3,7 +3,11 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { MinimapViz } from "./Popup/MinimapViz"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -1241,6 +1245,10 @@ export default class SpecialVisualizations {
                         doc: "An entire tagRenderingConfig",
                         required: true,
                     },
+                    {
+                        name: "classes",
+                        doc: "CSS-classes to apply on every individual item. Seperated by `space`",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -1249,16 +1257,16 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ) {
-                    const [key, tr] = args
+                    const [key, tr, classesRaw] = args
+                    let classes = classesRaw ?? ""
                     const translation = new Translation({ "*": tr })
                     return new VariableUiElement(
                         featureTags.map((tags) => {
-                            console.log("Trying to parse", tags[key], key)
                             let properties: object[]
-                            if(typeof tags[key] === "string"){
-                             properties  =JSON.parse(tags[key])
-                            }else{
-                                properties = <any> tags[key]
+                            if (typeof tags[key] === "string") {
+                                properties = JSON.parse(tags[key])
+                            } else {
+                                properties = <any>tags[key]
                                 console.log("Multi properties are", properties)
                             }
                             const elements = []
@@ -1269,7 +1277,7 @@ export default class SpecialVisualizations {
                                     state,
                                     feature,
                                     layer,
-                                })
+                                }).SetClass(classes)
                                 elements.push(subsTr)
                             }
                             return elements

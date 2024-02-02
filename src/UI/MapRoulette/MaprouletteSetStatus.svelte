@@ -55,7 +55,7 @@
   </Loading>
 {:else if $status === Maproulette.STATUS_OPEN}
   <button class="no-image-background w-full p-4 m-0" on:click={() => apply()}>
-    <Icon clss="w-8 h-8 mr-2" icon={image} />
+    <Icon clss="w-8 h-8 mr-2 shrink-0" icon={image} />
     {message}
   </button>
 {:else}
