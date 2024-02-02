@@ -1267,7 +1267,6 @@ export default class SpecialVisualizations {
                                 properties = JSON.parse(tags[key])
                             } else {
                                 properties = <any>tags[key]
-                                console.log("Multi properties are", properties)
                             }
                             const elements = []
                             for (const property of properties) {

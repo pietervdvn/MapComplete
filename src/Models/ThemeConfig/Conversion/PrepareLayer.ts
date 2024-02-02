@@ -762,7 +762,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      *           }
      *         }}
      * const context = ConversionContext.test()
-     * RewriteSpecial.convertIfNeeded(special, context) // => {"en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE)}{_entrances_count_without_width_count} entrances don't have width information yet"}
+     * RewriteSpecial.convertIfNeeded(special, context) // => {"en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrances don't have width information yet"}
      * context.getAll("error") // => []
      *
      * // another actual test
@@ -773,7 +773,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      *          "tagrendering": "<b>{id}</b> ({distance}m) {tagApply(a,b,c)}"
      *         }}
      * const context = ConversionContext.test()
-     * RewriteSpecial.convertIfNeeded(special, context) // => {"*": "{multi(_nearby_bicycle_parkings:props,<b>&LBRACEid&RBRACE</b> &LPARENS&LBRACEdistance&RBRACEm&RPARENS &LBRACEtagApply&LPARENSa&COMMAb&COMMAc&RPARENS&RBRACE)}"}
+     * RewriteSpecial.convertIfNeeded(special, context) // => {"*": "{multi(_nearby_bicycle_parkings:props,<b>&LBRACEid&RBRACE</b> &LPARENS&LBRACEdistance&RBRACEm&RPARENS &LBRACEtagApply&LPARENSa&COMMAb&COMMAc&RPARENS&RBRACE,)}"}
      * context.getAll("error") // => []
      */
     private static convertIfNeeded(
