@@ -5,12 +5,7 @@
     "nl": "Oplaadpunten",
     "de": "Ladestationen"
   },
-  "description": {
-    "en": "A charging station",
-    "nl": "Oplaadpunten",
-    "de": "Eine Ladestation",
-    "ca": "Una estació de càrrega"
-  },
+  "minzoom": 10,
   "source": {
     "osmTags": {
       "and": [
@@ -25,7 +20,6 @@
       ]
     }
   },
-  "minzoom": 10,
   "title": {
     "render": {
       "en": "Charging station",
@@ -71,103 +65,13 @@
       }
     ]
   },
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "pin",
-          "color": "#fff"
-        },
-        {
-          "icon": {
-            "render": "./assets/themes/charging_stations/plug.svg",
-            "mappings": [
-              {
-                "if": "bicycle=yes",
-                "then": "./assets/themes/charging_stations/bicycle.svg"
-              },
-              {
-                "if": {
-                  "or": [
-                    "car=yes",
-                    "motorcar=yes"
-                  ]
-                },
-                "then": "./assets/themes/charging_stations/car.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "disused:amenity=charging_station",
-              "operational_status=broken"
-            ]
-          },
-          "then": "close:#c22;"
-        },
-        {
-          "if": {
-            "or": [
-              "proposed:amenity=charging_station",
-              "planned:amenity=charging_station"
-            ]
-          },
-          "then": "./assets/layers/charging_station/under_construction.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "bicycle=yes",
-              {
-                "or": [
-                  "motorcar=yes",
-                  "car=yes"
-                ]
-              }
-            ]
-          },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
-        }
-      ],
-      "anchor": "bottom",
-      "iconSize": "50,50"
-    }
-  ],
-  "lineRendering": [],
-  "presets": [
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=no",
-        "bicycle=yes"
-      ],
-      "title": {
-        "en": "charging station for electrical bikes",
-        "nl": "oplaadpunt voor elektrische fietsen",
-        "de": "Ladestation für Elektrofahrräder"
-      }
-    },
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=yes",
-        "bicycle=no"
-      ],
-      "title": {
-        "en": "charging station for cars",
-        "nl": "oplaadstation voor elektrische auto's",
-        "de": "Ladestation für Elektrofahrräder"
-      }
-    }
-  ],
+  "description": {
+    "en": "A charging station",
+    "nl": "Oplaadpunten",
+    "ca": "Una estació de càrrega",
+    "de": "Eine Ladestation"
+  },
+  "#": "no-question-hint-check",
   "tagRenderings": [
     "images",
     {
@@ -2412,6 +2316,103 @@
       }
     }
   ],
+  "lineRendering": [],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#fff"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/charging_stations/plug.svg",
+            "mappings": [
+              {
+                "if": "bicycle=yes",
+                "then": "./assets/themes/charging_stations/bicycle.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "car=yes",
+                    "motorcar=yes"
+                  ]
+                },
+                "then": "./assets/themes/charging_stations/car.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "disused:amenity=charging_station",
+              "operational_status=broken"
+            ]
+          },
+          "then": "close:#c22;"
+        },
+        {
+          "if": {
+            "or": [
+              "proposed:amenity=charging_station",
+              "planned:amenity=charging_station"
+            ]
+          },
+          "then": "./assets/layers/charging_station/under_construction.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "bicycle=yes",
+              {
+                "or": [
+                  "motorcar=yes",
+                  "car=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+        }
+      ],
+      "anchor": "bottom",
+      "iconSize": "50,50"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=no",
+        "bicycle=yes"
+      ],
+      "title": {
+        "en": "charging station for electrical bikes",
+        "nl": "oplaadpunt voor elektrische fietsen",
+        "de": "Ladestation für Elektrofahrräder"
+      }
+    },
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=yes",
+        "bicycle=no"
+      ],
+      "title": {
+        "en": "charging station for cars",
+        "nl": "oplaadstation voor elektrische auto's",
+        "de": "Ladestation für Elektrofahrräder"
+      }
+    }
+  ],
   "filter": [
     {
       "id": "vehicle-type",
@@ -2420,16 +2421,16 @@
           "question": {
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
-            "de": "Ladestationen für alle Fahrzeugtypen",
-            "ca": "Tots els tipus de vehicles"
+            "ca": "Tots els tipus de vehicles",
+            "de": "Ladestationen für alle Fahrzeugtypen"
           }
         },
         {
           "question": {
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
-            "de": "Ladestationen für Fahrräder",
-            "ca": "Punt de recàrrega per a bicicletes"
+            "ca": "Punt de recàrrega per a bicicletes",
+            "de": "Ladestationen für Fahrräder"
           },
           "osmTags": "bicycle=yes"
         },
@@ -2480,8 +2481,8 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
-            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
-            "ca": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
           },
           "osmTags": "socket:schuko~*"
         },
@@ -2489,8 +2490,8 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>",
-            "de": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss",
-            "ca": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
+            "ca": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
           },
           "osmTags": "socket:typee~*"
         },
@@ -2498,8 +2499,8 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
-            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker",
-            "ca": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
+            "de": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
           },
           "osmTags": "socket:chademo~*"
         },
@@ -2610,20 +2611,6 @@
       ]
     }
   ],
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "amenity=",
-        "disused:amenity=charging_station"
-      ]
-    },
-    "neededChangesets": 10
-  },
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuracy": true
-  },
-  "#": "no-question-hint-check",
   "units": [
     {
       "maxstay": {
@@ -2772,5 +2759,18 @@
         ]
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "disused:amenity=charging_station"
+      ]
+    },
+    "neededChangesets": 10
+  }
 }

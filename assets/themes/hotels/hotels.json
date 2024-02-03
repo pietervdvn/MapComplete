@@ -33,7 +33,9 @@
   "layers": [
     "hotel",
     {
-      "builtin": ["love_hotel"],
+      "builtin": [
+        "love_hotel"
+      ],
       "override": {
         "minzoom": 18
       }

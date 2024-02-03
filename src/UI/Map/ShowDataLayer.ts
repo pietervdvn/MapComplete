@@ -235,6 +235,33 @@ class LineRenderingLayer {
         map.on("styledata", () => self.update(features.features))
     }
 
+    private addSymbolLayer(sourceId: string, url: string = "./assets/png/oneway.png"){
+        const map = this._map
+        const imgId = url.replaceAll(/[/.-]/g, "_")
+        map.loadImage(url, (err, image) => {
+            if (err) {
+                console.error("Could not add symbol layer to line due to", err);
+                return
+            }
+            map.addImage(imgId, image);
+            map.addLayer({
+                'id': "symbol-layer"+imgId,
+                'type': 'symbol',
+                'source': sourceId,
+                'layout': {
+                    'symbol-placement': 'line',
+                    'symbol-spacing': 1,
+                    'icon-allow-overlap': true,
+                    'icon-rotation-alignment':'map',
+                    'icon-pitch-alignment':'map',
+                    'icon-image': imgId,
+                    'icon-size': 0.045,
+                    'visibility': 'visible'
+                }
+            });
+        });
+    }
+
     public destruct(): void {
         this._map.removeLayer(this._layername + "_polygon")
     }
@@ -320,6 +347,8 @@ class LineRenderingLayer {
                         "line-cap": "round",
                     },
                 })
+                this.addSymbolLayer(this._layername)
+
 
                 for (const feature of features) {
                     if (!feature.properties.id) {
