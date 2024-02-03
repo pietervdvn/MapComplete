@@ -18,8 +18,10 @@ export interface MapProperties {
     readonly allowMoving: UIEventSource<true | boolean>
     readonly allowRotating: UIEventSource<true | boolean>
     readonly rotation: UIEventSource<number>
+    readonly pitch: UIEventSource<number>
     readonly lastClickLocation: Store<{ lon: number; lat: number }>
     readonly allowZooming: UIEventSource<true | boolean>
+    readonly useTerrain: Store<boolean>
 
     /**
      * Triggered when the user navigated by using the keyboard.

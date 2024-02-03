@@ -1,7 +1,7 @@
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import type { Map as MLMap } from "maplibre-gl"
 import { Map as MlMap, SourceSpecification } from "maplibre-gl"
-import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
+import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
 import { ExportableMap, KeyNavigationEvent, MapProperties } from "../../Models/MapProperties"
@@ -10,6 +10,7 @@ import MaplibreMap from "./MaplibreMap.svelte"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
 import RasterLayerHandler from "./RasterLayerHandler"
+import Constants from "../../Models/Constants"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -42,6 +43,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
     readonly rotation: UIEventSource<number>
+    readonly pitch: UIEventSource<number>
+    readonly useTerrain: Store<boolean>
 
     /**
      * Functions that are called when one of those actions has happened
@@ -78,6 +81,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.allowZooming = state?.allowZooming ?? new UIEventSource(true)
         this.bounds = state?.bounds ?? new UIEventSource(undefined)
         this.rotation = state?.rotation ?? new UIEventSource<number>(0)
+        this.pitch = state?.pitch ?? new UIEventSource<number>(0)
+        this.useTerrain = state?.useTerrain ?? new ImmutableStore<boolean>(false)
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
@@ -108,6 +113,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setMinzoom(self.minzoom.data)
                 self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
+                self.setTerrain(self.useTerrain.data)
                 rasterLayerHandler.setBackground()
                 this.updateStores(true)
             })
@@ -121,6 +127,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setMaxzoom(self.maxzoom.data)
             self.setBounds(self.bounds.data)
             self.SetRotation(self.rotation.data)
+            self.setTerrain(self.useTerrain.data)
             rasterLayerHandler.setBackground()
             this.updateStores(true)
             map.on("moveend", () => this.updateStores())
@@ -134,6 +141,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 handleClick(e)
             })
             map.on("rotateend", (_) => {
+                this.updateStores()
+            })
+            map.on("pitchend", () => {
                 this.updateStores()
             })
             map.getContainer().addEventListener("keydown", (event) => {
@@ -183,6 +193,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         )
         this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
+        this.useTerrain?.addCallbackAndRun(useTerrain => self.setTerrain(useTerrain))
     }
 
     /**
@@ -248,7 +259,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const w = map.getContainer().getBoundingClientRect().width
         const h = map.getContainer().getBoundingClientRect().height
 
-        let dpi = map.getPixelRatio()
+        const dpi = map.getPixelRatio()
         // The 'css'-size stays constant...
         drawOn.style.width = w + "px"
         drawOn.style.height = h + "px"
@@ -423,6 +434,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             this.bounds.setData(bbox)
         }
         this.rotation.setData(map.getBearing())
+        this.pitch.setData(map.getPitch())
     }
 
     private SetZoom(z: number): void {
@@ -578,5 +590,33 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
         map.fitBounds(bounds.toLngLat())
+    }
+
+    private async setTerrain(useTerrain: boolean) {
+        const map = this._maplibreMap.data
+        if (!map) {
+            return
+        }
+        const id = "maptiler-terrain-data"
+        if (useTerrain) {
+            if(map.getTerrain()){
+               return
+            }
+            map.addSource(id, {
+                "type": "raster-dem",
+                "url": "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" + Constants.maptilerApiKey
+            })
+            try{
+                while (!map?.isStyleLoaded()) {
+                    await Utils.waitFor(250)
+                }
+            map.setTerrain({
+                source: id
+            })
+            }catch (e) {
+                console.error(e)
+            }
+        }
+
     }
 }

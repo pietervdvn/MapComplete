@@ -156,6 +156,7 @@ export default class Constants {
         "addSmall",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
+    public static readonly maptilerApiKey = "GvoVAJgu46I5rZapJuAy"
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

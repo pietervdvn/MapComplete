@@ -61,6 +61,7 @@ export default class LayoutConfig implements LayoutInformation {
     public readonly enableShowAllQuestions: boolean
     public readonly enableExportButton: boolean
     public readonly enablePdfDownload: boolean
+    public readonly enableTerrain: boolean
 
     public readonly customCss?: string
 
@@ -208,6 +209,7 @@ export default class LayoutConfig implements LayoutInformation {
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false
         this.enableExportButton = json.enableDownload ?? true
         this.enablePdfDownload = json.enablePdfDownload ?? true
+        this.enableTerrain = json.enableTerrain ?? false
         this.customCss = json.customCss
         this.overpassUrl = json.overpassUrl ?? Constants.defaultOverpassUrls
         this.overpassTimeout = json.overpassTimeout ?? 30

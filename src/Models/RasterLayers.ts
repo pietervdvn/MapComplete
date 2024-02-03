@@ -5,6 +5,7 @@ import { BBox } from "../Logic/BBox"
 import { Store, Stores } from "../Logic/UIEventSource"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { RasterLayerProperties } from "./RasterLayerProperties"
+import Constants from "./Constants"
 
 export class AvailableRasterLayers {
     public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
@@ -51,7 +52,7 @@ export class AvailableRasterLayers {
         type: "Feature",
         properties: {
             name: "MapTiler",
-            url: "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key=GvoVAJgu46I5rZapJuAy",
+            url: "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key="+Constants.maptilerApiKey,
             category: "osmbasedmap",
             id: "maptiler",
             type: "vector",

@@ -389,6 +389,18 @@ export interface LayoutConfigJson {
     enableNoteImports?: true | boolean
 
     /**
+     * question: Should the map use elevation data to give a 3D-feel?
+     *
+     * This is especially useful for hiking maps, skiing maps etc...
+     *
+     * funset: MapComplete default: don't use terrain
+     * iftrue: Use elevation and render 3D
+     * iffalse: Do not use terrain
+     * group: advanced
+     */
+    enableTerrain?: false | boolean
+
+    /**
      * question: What overpass-api instance should be used for this layout?
      *
      * ifunset: Use the default, builtin collection of overpass instances

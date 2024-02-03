@@ -7,6 +7,7 @@
     "en": "Everything you need to go skiing"
   },
   "icon": "./assets/layers/aerialway/chair_lift.svg",
+  "enableTerrain": true,
   "layers": [
     "ski_piste",
     "aerialway",
