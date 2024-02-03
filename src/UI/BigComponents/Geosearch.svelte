@@ -11,11 +11,13 @@
   import { placeholder } from "../../Utils/placeholder"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { ariaLabel } from "../../Utils/ariaLabel"
+  import { GeoLocationState } from "../../Logic/State/GeoLocationState"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
   export let selectedElement: UIEventSource<Feature> | undefined = undefined
 
+  export let geolocationState: GeoLocationState | undefined = undefined
   export let clearAfterView: boolean = true
   let searchContents: string = ""
   export let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
@@ -55,6 +57,8 @@
   async function performSearch() {
     try {
       isRunning = true
+      geolocationState?.allowMoving.setData(true)
+      geolocationState?.requestMoment.setData(undefined) // If the GPS is still searching for a fix, we say that we don't want tozoom to it anymore
       searchContents = searchContents?.trim() ?? ""
 
       if (searchContents === "") {

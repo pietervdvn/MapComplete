@@ -203,6 +203,8 @@
         }}
         perLayer={state.perLayer}
         selectedElement={state.selectedElement}
+        geolocationState={state.geolocation.geolocationState}
+
       />
     </If>
   </div>
