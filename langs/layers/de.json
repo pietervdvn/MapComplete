@@ -3197,7 +3197,7 @@
                         "then": "Es gibt eine geteilte Fahrspur"
                     },
                     "1": {
-                        "then": "Es gibt eine Spur neben der Straße (getrennt durch eine Straßenmarkierung)"
+                        "then": "Es gibt einen Radfahrstreifen neben der Straße (getrennt durch eine Straßenmarkierung)"
                     },
                     "2": {
                         "then": "Es gibt einen Weg, aber keinen Radweg, der auf der Karte getrennt von dieser Straße eingezeichnet ist."
