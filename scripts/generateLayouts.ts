@@ -306,7 +306,7 @@ async function generateCsp(
     }
 
     const geojsonSources: string[] = layout.layers.map((l) => l.source?.geojsonSource)
-    const hosts = new Set<string>()
+    const hosts = new Set<string>("self")
     const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
         new ImmutableStore({ lon: 0, lat: 0 })
     ).data
