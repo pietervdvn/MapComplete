@@ -23,6 +23,7 @@ vite build --sourcemap || { echo 'Vite build failed' ; exit 1; }
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
+cp -r assets/png/ dist/assets/png/
 mkdir dist/assets/langs
 mkdir dist/assets/langs/layers
 cp -r langs/layers/ dist/assets/langs/
