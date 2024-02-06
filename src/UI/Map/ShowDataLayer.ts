@@ -250,12 +250,12 @@ class LineRenderingLayer {
                 'source': sourceId,
                 'layout': {
                     'symbol-placement': 'line',
-                    'symbol-spacing': 1,
+                    'symbol-spacing': 10,
                     'icon-allow-overlap': true,
                     'icon-rotation-alignment':'map',
                     'icon-pitch-alignment':'map',
                     'icon-image': imgId,
-                    'icon-size': 0.045,
+                    'icon-size': 0.055,
                     'visibility': 'visible'
                 }
             });
@@ -347,7 +347,13 @@ class LineRenderingLayer {
                         "line-cap": "round",
                     },
                 })
-                this.addSymbolLayer(this._layername)
+
+                if(this._layername.startsWith("mapcomplete_ski_piste") || this._layername.startsWith("mapcomplete_aerialway")){
+                    // TODO FIXME properly enable this so that more layers can use this if appropriate
+                    this.addSymbolLayer(this._layername)
+                }else{
+                    console.log("No oneway arrow for", this._layername)
+                }
 
 
                 for (const feature of features) {
