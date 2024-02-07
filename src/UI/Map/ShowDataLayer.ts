@@ -235,17 +235,26 @@ class LineRenderingLayer {
         map.on("styledata", () => self.update(features.features))
     }
 
-    private addSymbolLayer(sourceId: string, url: string = "./assets/png/oneway.png"){
+    private async addSymbolLayer(sourceId: string, url: string = "./assets/png/oneway.png") {
         const map = this._map
         const imgId = url.replaceAll(/[/.-]/g, "_")
-        map.loadImage(url, (err, image) => {
-            if (err) {
-                console.error("Could not add symbol layer to line due to", err);
-                return
-            }
-            map.addImage(imgId, image);
-            map.addLayer({
-                'id': "symbol-layer"+imgId,
+
+        if (map.getImage(imgId) === undefined) {
+            await new Promise<void>((resolve, reject) => {
+                map.loadImage(url, (err, image) => {
+                    if (err) {
+                        console.error("Could not add symbol layer to line due to", err)
+                        reject(err)
+                        return
+                    }
+                    map.addImage(imgId, image)
+                    resolve()
+                })
+            })
+        }
+
+        map.addLayer({
+            "id": "symbol-layer_" + this._layername + "-" + imgId,
                 'type': 'symbol',
                 'source': sourceId,
                 'layout': {
@@ -259,7 +268,7 @@ class LineRenderingLayer {
                     'visibility': 'visible'
                 }
             });
-        });
+
     }
 
     public destruct(): void {
