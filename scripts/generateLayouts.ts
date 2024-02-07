@@ -306,7 +306,7 @@ async function generateCsp(
     }
 
     const geojsonSources: string[] = layout.layers.map((l) => l.source?.geojsonSource)
-    const hosts = new Set<string>("self")
+    const hosts = new Set<string>()
     const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
         new ImmutableStore({ lon: 0, lat: 0 })
     ).data
@@ -350,7 +350,7 @@ async function generateCsp(
         "default-src": "'self'",
         "child-src": "'self' blob: ",
         "img-src": "* data:", // maplibre depends on 'data:' to load
-        "connect-src": connectSrc.join(" "),
+        "connect-src": "self "+connectSrc.join(" "),
         "report-to": "https://report.mapcomplete.org/csp",
         "worker-src": "'self' blob:", // Vite somehow loads the worker via a 'blob'
         "style-src": "'self' 'unsafe-inline'", // unsafe-inline is needed to change the default background pin colours
