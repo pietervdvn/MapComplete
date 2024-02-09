@@ -16,6 +16,11 @@ import mcChanges from "../../src/assets/generated/themes/mapcomplete-changes.jso
 import SvelteUIElement from "./Base/SvelteUIElement"
 import Filterview from "./BigComponents/Filterview.svelte"
 import FilteredLayer from "../Models/FilteredLayer"
+import DownloadButton from "./DownloadFlow/DownloadButton.svelte"
+import { SubtleButton } from "./Base/SubtleButton"
+import { GeoOperations } from "../Logic/GeoOperations"
+import { Polygon } from "geojson"
+import { Feature } from "geojson"
 
 class StatsticsForOverviewFile extends Combine {
     constructor(homeUrl: string, paths: string[]) {
@@ -185,6 +190,17 @@ class StatsticsForOverviewFile extends Combine {
                             }
                         }
 
+
+                        elements.push(new SubtleButton(
+                            undefined, "Download as csv"
+                        ).onClick(() => {
+                            const data = GeoOperations.toCSV(overview._meta,
+                                {
+                                    ignoreTags: /^((deletion:node)|(import:node)|(move:node)|(soft-delete:))/
+                                })
+                            Utils.offerContentsAsDownloadableFile(data , "statistics.csv", {mimetype: "text/csv"})
+                        }))
+
                         return new Combine(elements)
                     },
                     [filteredLayer.currentFilter]
@@ -249,7 +265,7 @@ class ChangesetsOverview {
         this._meta = Utils.NoNull(meta)
     }
 
-    public static fromDirtyData(meta: ChangeSetData[]) {
+    public static fromDirtyData(meta: ChangeSetData[]): ChangesetsOverview {
         return new ChangesetsOverview(meta?.map((cs) => ChangesetsOverview.cleanChangesetData(cs)))
     }
 
@@ -301,7 +317,7 @@ class ChangesetsOverview {
     }
 }
 
-interface ChangeSetData {
+interface ChangeSetData extends Feature<Polygon> {
     id: number
     type: "Feature"
     geometry: {
