@@ -246,8 +246,17 @@
             }
         },
         "tagRenderings": {
+            "duration": {
+                "question": "How long takes a single journey with this elevator?",
+                "questionHint": "This excludes the waiting time.",
+                "render": "A single journey takes {duration} minutes"
+            },
             "length": {
                 "render": "This aerialway is {_length:km} kilometer long"
+            },
+            "occupancy": {
+                "question": "How many people fit a single carriage?",
+                "render": "{aerialway:occupancy} people fit a single carriage"
             },
             "type": {
                 "mappings": {
@@ -485,6 +494,7 @@
     },
     "assembly_point": {
         "description": "This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.",
+        "name": "Emergency assembly points",
         "presets": {
             "0": {
                 "title": "an assembly point"
@@ -517,7 +527,9 @@
                 "question": "For which disaster type is this assembly point meant?"
             }
         },
-        "title": "Emergency assembly points"
+        "title": {
+            "render": "Assembly point during emergencies"
+        }
     },
     "atm": {
         "description": "ATMs to withdraw money",
@@ -3765,6 +3777,7 @@
     },
     "disaster_response": {
         "description": "This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area.",
+        "name": "Disaster response organizations",
         "presets": {
             "0": {
                 "title": "a disaster response organization"
@@ -3776,7 +3789,9 @@
                 "render": "This organization is named <b>{name}</b>"
             }
         },
-        "title": "Disaster response organization"
+        "title": {
+            "render": "Disaster response organization"
+        }
     },
     "doctors": {
         "description": "This layer shows doctor offices",

@@ -144,6 +144,7 @@
     },
     "assembly_point": {
         "description": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza.",
+        "name": "Punti di raccolta per emergenze",
         "presets": {
             "0": {
                 "title": "un punto di raccolta"
@@ -175,8 +176,7 @@
                 },
                 "question": "Per quali tipi di disastro è pensato questo punto di raccolta?"
             }
-        },
-        "title": "Punti di raccolta per emergenze"
+        }
     },
     "atm": {
         "description": "Sportello Bancomat per prelevare denaro",
@@ -1328,7 +1328,9 @@
                 "render": "Questa organizzazione si chiama <b>{name}</b>"
             }
         },
-        "title": "Organizzazione per la risposta ai disastri"
+        "title": {
+            "render": "Organizzazione per la risposta ai disastri"
+        }
     },
     "drinking_water": {
         "name": "Acqua potabile",

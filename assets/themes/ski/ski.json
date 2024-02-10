@@ -17,14 +17,15 @@
         "map",
         "information_board"
       ],
-    "override":{
-      "minzoom": 13
-    },"pointRendering": [
-      {
-        "=iconSize": "25,25",
-        "=label": null
-      }
-    ]
+      "override": {
+        "minzoom": 13
+      },
+      "pointRendering": [
+        {
+          "=iconSize": "25,25",
+          "=label": null
+        }
+      ]
     },
     {
       "builtin": [
