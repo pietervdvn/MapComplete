@@ -37,6 +37,13 @@
           "de": "Behindertenparkplatz",
           "cs": "Parkovací místo pro osoby se zdravotním postižením"
         }
+      },
+      {
+        "if": "parking_space=charging",
+        "then": {
+          "en": "Electric Vehicle Charging Parking Space",
+          "nl": "Parkeerplek voor opladen van elektrische voertuigen"
+        }
       }
     ]
   },
@@ -50,6 +57,22 @@
               {
                 "if": "parking_space=disabled",
                 "then": "./assets/layers/toilet/wheelchair.svg"
+              },
+              {
+                "if": "parking_space=charging",
+                "then": "./assets/themes/charging_stations/plug.svg"
+              },
+              {
+                "if": "parking_space=private",
+                "then": "./assets/layers/parking_spaces/parking_space_private.svg"
+              },
+              {
+                "if": "parking_space=bus",
+                "then": "./assets/layers/transit_stops/bus_stop.svg"
+              },
+              {
+                "if": "parking_space=hgv",
+                "then": "./assets/layers/parking_spaces/hgv.svg"
               }
             ]
           }
