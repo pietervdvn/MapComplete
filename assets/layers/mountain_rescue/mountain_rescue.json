@@ -1,0 +1,60 @@
+{
+  "credits": "Not logged in",
+  "minzoom": 10,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/mountain_rescue/red_cross.svg"
+        }
+      ],
+      "rotation": "45"
+    }
+  ],
+  "tagRenderings": [
+    "images"
+  ],
+  "lineRendering": [
+    {
+      "width": "3",
+      "color": "#ed333b"
+    }
+  ],
+  "id": "mountain_rescue",
+  "name": {
+    "en": "Mountain rescue stations"
+  },
+  "description": {
+    "en": "A building where first aid responders store material and might be on watch"
+  },
+  "source": {
+    "osmTags": "emergency=mountain_rescue"
+  },
+  "title": {
+    "render": {
+      "en": "Mountain rescue station"
+    }
+  },
+  "deletion": true,
+  "allowMove": {
+    "enableRelocation": false
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a mountain rescue station"
+      },
+      "tags": [
+        "emergency=mountain_rescue"
+      ]
+    }
+  ]
+}

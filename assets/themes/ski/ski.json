@@ -15,7 +15,8 @@
       "builtin": [
         "guidepost",
         "map",
-        "information_board"
+        "information_board",
+        "mountain_rescue"
       ],
       "override": {
         "minzoom": 13
