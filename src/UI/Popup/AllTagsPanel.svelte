@@ -6,13 +6,13 @@
   export let tags: UIEventSource<Record<string, any>>
   export let tagKeys = tags.map(tgs => Object.keys(tgs))
 
-  export let layer: LayerConfig
+  export let layer: LayerConfig | undefined = undefined
 
   /**
    * The names (keys) of the calculated tags. Each will normally start with an underscore (but in rare cases not)
    */
   let calculatedTags: string[] = []
-  for (const calculated of layer.calculatedTags ?? []) {
+  for (const calculated of layer?.calculatedTags ?? []) {
     if(calculated){
       continue
     }
