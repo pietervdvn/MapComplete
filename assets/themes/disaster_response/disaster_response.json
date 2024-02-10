@@ -1,0 +1,203 @@
+{
+  "description": {
+    "en": "This theme contains elements meant for disaster risk reduction and response.",
+    "it": "Questo tema contiene elementi pensati per la riduzione del rischio e per la risposta ai disastri."
+  },
+  "extraLink": {
+    "href": "https://wiki.openstreetmap.org/wiki/Emergency_facilities_and_amenities"
+  },
+  "icon": "./assets/themes/disaster_response/CivilDefence.svg",
+  "id": "disaster_response",
+  "socialImage": "./assets/themes/disaster_response/social.jpg",
+  "title": {
+    "en": "Disaster response",
+    "it": "Risposta ai disastri"
+  },
+  "layers": [
+    "hospital",
+    {
+      "id": "disaster_response",
+      "title": "Disaster response",
+      "description": "This layer contains organizations that has the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area",
+      "extraLink": {
+        "href": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=disaster_response"
+          ]
+        }
+      },
+      "minzoom": 10,
+      "lineRendering": [
+        {
+          "color": "#6BC4F7",
+          "width": 3
+        }
+      ],
+      "pointRendering": [
+        {
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "bottom",
+          "marker": [
+            {
+              "icon": "pin",
+              "color": "#6BC4F7"
+            },
+            {
+              "icon": "./assets/themes/disaster_response/CivilDefence.svg"
+            }
+          ]
+        }
+      ],
+      "tagRenderings": [
+        "images",
+        "website"
+      ]
+    },
+    {
+      "id": "assembly_point",
+      "title": {
+        "en": "Emergency assembly points",
+        "it": "Aree di attesa per emergenze"
+      },
+      "description": "This layer contains designated places or an area where all employees, passengers or a large crowd assemble in case of an emergency in an installation, building or a public place.",
+      "extraLink": {
+        "href": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=assembly_point"
+          ]
+        }
+      },
+      "minzoom": 10,
+      "pointRendering": [
+        {
+          "iconSize": "20,20",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "bottom",
+          "marker": [
+            {
+              "icon": "pin",
+              "color": "#6BC4F7"
+            },
+            {
+              "icon": "./assets/themes/disaster_response/assembly_point.svg"
+            }
+          ]
+        }
+      ],
+      "tagRenderings": [
+        "images",
+        {
+          "id": "operator",
+          "render": {
+            "en": "This assembly point is operated by {operator}",
+            "it": "Questa area di attesa è gestita da {operator}"
+          },
+          "question": {
+            "en": "What organization operates this assembly point?",
+            "it": "Quale organizzazione gestisce questa area di attesa?"
+          },
+          "freeform": {
+            "key": "operator",
+            "type": "string"
+          }
+        },
+        {
+          "id": "disaster_type",
+          "question": {
+            "en": "For which disaster type is this assembly point meant?",
+            "it": "Per quali tipi di disastro è pensata questa area di attesa?"
+          },
+          "multiAnswer": true,
+          "mappings": [
+            {
+              "if": "assembly_point:earthquake=yes",
+              "ifnot": "assembly_point:earthquake=",
+              "then": {
+                "en": "Earthquake",
+                "it": "Terremoto"
+              },
+              "icon": {
+                "path": "./assets/themes/disaster_response/earthquake.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": "assembly_point:flood=yes",
+              "ifnot": "assembly_point:flood=",
+              "then": {
+                "en": "Flood",
+                "it": "Alluvione"
+              },
+              "icon": {
+                "path": "./assets/themes/disaster_response/flood.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": "assembly_point:fire=yes",
+              "ifnot": "assembly_point:fire=",
+              "then": {
+                "en": "Fire",
+                "it": "Incendio"
+              },
+              "icon": {
+                "path": "./assets/themes/disaster_response/fire.svg",
+                "class": "medium"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ses_station",
+      "title": "SES station",
+      "description": "This layer contains stations of State Emergency Service (SES), an Australian volunteer organisation that provides emergency help during and after declared (natural or otherwise) disasters.",
+      "documentation": "https://wiki.openstreetmap.org/wiki/Tag%3Aemergency%3Dses_station",
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=ses_station"
+          ]
+        }
+      },
+      "minzoom": 10,
+      "pointRendering": [
+        {
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "bottom",
+          "marker": [
+            {
+              "icon": "pin",
+              "color": "#6BC4F7"
+            },
+            {
+              "icon": "./assets/themes/disaster_response/CivilDefence.svg"
+            }
+          ]
+        }
+      ],
+      "tagRenderings": [
+        "images",
+        "website"
+      ]
+    }
+  ]
+}
