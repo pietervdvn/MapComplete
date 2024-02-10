@@ -54,6 +54,9 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (ubin dekoratif Spanyol)"
+                    },
                     "2": {
                         "then": "Lukisan"
                     },
@@ -71,9 +74,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (ubin dekoratif Spanyol)"
                     }
                 },
                 "question": "Apa jenis karya seni ini?",
@@ -191,6 +191,15 @@
                     "1": {
                         "then": "Jalur sepeda ini diaspal"
                     },
+                    "10": {
+                        "then": "Jalur sepeda ini terbuat dari kerikil halus"
+                    },
+                    "11": {
+                        "then": "Jalur sepeda ini terbuat dari batu kerikil"
+                    },
+                    "12": {
+                        "then": "Jalur sepeda ini terbuat dari tanah alami"
+                    },
                     "2": {
                         "then": "Jalur sepeda ini terbuat dari aspal"
                     },
@@ -211,15 +220,6 @@
                     },
                     "9": {
                         "then": "Jalur sepeda ini terbuat dari kerikil"
-                    },
-                    "10": {
-                        "then": "Jalur sepeda ini terbuat dari kerikil halus"
-                    },
-                    "11": {
-                        "then": "Jalur sepeda ini terbuat dari batu kerikil"
-                    },
-                    "12": {
-                        "then": "Jalur sepeda ini terbuat dari tanah alami"
                     }
                 },
                 "question": "Permukaan jalannya terbuat dari apa?",
@@ -624,6 +624,58 @@
                         "question": "Hanya akses publik"
                     }
                 }
+            }
+        }
+    },
+    "sports_centre": {
+        "presets": {
+            "0": {
+                "title": "pusat olahraga"
+            }
+        },
+        "title": {
+            "render": "Pusat olahraga"
+        }
+    },
+    "stairs": {
+        "description": "Lapisan ini menunjukkan tangga dan eskalator",
+        "name": "Tangga",
+        "tagRenderings": {
+            "conveying": {
+                "mappings": {
+                    "0": {
+                        "then": "Ini adalah eskalator"
+                    },
+                    "1": {
+                        "then": "Ini bukan eskalator"
+                    },
+                    "2": {
+                        "then": "Ini bukan eskalator"
+                    }
+                }
+            },
+            "handrail": {
+                "mappings": {
+                    "0": {
+                        "then": "Tangga ini memiliki pegangan tangan"
+                    },
+                    "1": {
+                        "then": "Tangga ini <b>tidak </b>memiliki pegangan tangan"
+                    }
+                },
+                "question": "Apakah tangga ini memiliki pegangan?"
+            },
+            "incline": {
+                "mappings": {
+                    "0": {
+                        "then": "Arah ke atas adalah {direction_absolute()}"
+                    },
+                    "1": {
+                        "then": "Arah ke bawah adalah {direction_absolute()}"
+                    }
+                },
+                "question": "Berapa kemiringan tangga ini?",
+                "render": "Tangga ini memiliki kemiringan sebesar {incline}"
             }
         }
     },
