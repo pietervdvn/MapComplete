@@ -132,11 +132,11 @@
   so we use a 'div' and add on:click manually
   -->
   <div
-    class={twMerge("soft relative rounded-full p-1 cursor-pointer border border-black", size)}
+    class={twMerge("soft relative flex justify-center items-center border border-black rounded-full cursor-pointer p-1", size)}
     on:click={() => focusMap()}
     use:ariaLabelStore={label}
   >
-    <Center class="h-7 w-7" />
+    <Center class=" h-6 w-6" />
   </div>
 {:else}
   <div
