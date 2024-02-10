@@ -13,15 +13,30 @@
     "aerialway",
     {
       "builtin": [
+        "guidepost",
+        "map",
+        "information_board"
+      ],
+      "override": {
+        "minzoom": 13
+      },
+      "pointRendering": [
+        {
+          "=iconSize": "25,25",
+          "=label": null
+        }
+      ]
+    },
+    {
+      "builtin": [
         "toilet",
         "drinking_water",
         "food",
-        "map",
-        "information_board",
         "viewpoint",
         "binocular"
       ],
       "override": {
+        "minzoom": 16,
         "pointRendering": [
           {
             "=iconSize": "25,25",

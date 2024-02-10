@@ -1,0 +1,75 @@
+{
+  "id": "disaster_response",
+  "title": {
+    "render": {
+      "en": "Disaster response organization",
+      "it": "Organizzazione per la risposta ai disastri"
+    }
+  },
+  "name": {
+    "en": "Disaster response organizations"
+  },
+  "description": {
+    "en": "This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area.",
+    "it": "Questo livello contiene organizzazioni che hanno come obiettivo principale quello di aiutare la popolazione civile durante e dopo disastri naturali o antropogenici, lavorando nell'area colpita."
+  },
+  "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response",
+  "minzoom": 10,
+  "lineRendering": [
+    {
+      "color": "#6BC4F7",
+      "width": 3
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a disaster response organization",
+        "it": "un'organizzazione per la risposta ai disastri"
+      },
+      "tags": [
+        "emergency=disaster_response"
+      ]
+    }
+  ],
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=disaster_response"
+      ]
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/themes/disaster_response/CivilDefence.svg"
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "website",
+    {
+      "id": "disaster_response_name",
+      "freeform": {
+        "key": "name"
+      },
+      "question": {
+        "en": "What is the name of this organization?",
+        "it": "Qual è il nome di questa organizzazione?"
+      },
+      "render": {
+        "en": "This organization is named <b>{name}</b>",
+        "it": "Questa organizzazione si chiama <b>{name}</b>"
+      }
+    }
+  ]
+}

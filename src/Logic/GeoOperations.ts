@@ -345,11 +345,18 @@ export class GeoOperations {
         return <any>way
     }
 
-    public static toCSV(features: Feature[] | FeatureCollection): string {
+    public static toCSV(features: Feature[] | FeatureCollection, options?: {
+        ignoreTags?: RegExp
+    }): string {
         const headerValuesSeen = new Set<string>()
         const headerValuesOrdered: string[] = []
 
-        function addH(key) {
+        function addH(key: string) {
+            if(options?.ignoreTags){
+                if(key.match(options.ignoreTags)){
+                    return
+                }
+            }
             if (!headerValuesSeen.has(key)) {
                 headerValuesSeen.add(key)
                 headerValuesOrdered.push(key)

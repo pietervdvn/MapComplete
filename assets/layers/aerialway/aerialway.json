@@ -107,6 +107,34 @@
       ]
     },
     {
+      "id": "duration",
+      "question": {
+        "en": "How long takes a single journey with this elevator?"
+      },
+      "questionHint": {
+        "en": "This excludes the waiting time."
+      },
+      "freeform": {
+        "key": "duration"
+      },
+      "render": {
+        "en": "A single journey takes {duration} minutes"
+      }
+    },
+    {
+      "id": "occupancy",
+      "freeform": {
+        "key": "aerialway:occupancy"
+      },
+      "question": {
+        "en": "How many people fit a single carriage?"
+      },
+      "render": {
+        "en": "{aerialway:occupancy} people fit a single carriage"
+      }
+    },
+    "opening_hours",
+    {
       "id": "length",
       "render": {
         "en": "This aerialway is {_length:km} kilometer long"

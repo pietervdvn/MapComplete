@@ -312,7 +312,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                 if (cssLabel) {
                     label.SetStyle(cssLabel)
                 } else if (labelOnly) {
-                    return label.SetStyle("transform: translate(-50%, -50%);")
+                    return label?.SetStyle("transform: translate(-50%, -50%);")
                 }
                 return new Combine([label]).SetClass("flex flex-col items-center")
             })
