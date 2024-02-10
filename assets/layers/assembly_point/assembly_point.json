@@ -3,7 +3,7 @@
     "enableRelocation": false,
     "enableImproveAccuracy": true
   },
-  "title": {
+  "name": {
     "en": "Emergency assembly points",
     "it": "Punti di raccolta per emergenze"
   },
@@ -47,6 +47,11 @@
       ]
     }
   ],
+  "title": {
+    "render": {
+      "en": "Assembly point during emergencies"
+    }
+  },
   "tagRenderings": [
     "images",
     {

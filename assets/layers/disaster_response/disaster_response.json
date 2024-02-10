@@ -1,8 +1,13 @@
 {
   "id": "disaster_response",
   "title": {
-    "en": "Disaster response organization",
-    "it": "Organizzazione per la risposta ai disastri"
+    "render": {
+      "en": "Disaster response organization",
+      "it": "Organizzazione per la risposta ai disastri"
+    }
+  },
+  "name": {
+    "en": "Disaster response organizations"
   },
   "description": {
     "en": "This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area.",
