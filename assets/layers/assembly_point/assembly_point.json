@@ -1,11 +1,19 @@
 {
-  "id": "assembly_point",
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
   "title": {
     "en": "Emergency assembly points",
-    "it": "Aree di attesa per emergenze"
+    "it": "Punti di raccolta per emergenze"
   },
-  "description": "This layer contains designated places or an area where all employees, passengers or a large crowd assemble in case of an emergency in an installation, building or a public place.",
+  "description": {
+    "en": "This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.",
+    "it": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza."
+  },
   "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point",
+  "id": "assembly_point",
+  "minzoom": 10,
   "source": {
     "osmTags": {
       "and": [
@@ -13,7 +21,6 @@
       ]
     }
   },
-  "minzoom": 10,
   "pointRendering": [
     {
       "iconSize": "20,20",
@@ -24,26 +31,47 @@
       "anchor": "bottom",
       "marker": [
         {
-          "icon": "pin",
-          "color": "#6BC4F7"
-        },
-        {
-          "icon": "./assets/themes/disaster_response/assembly_point.svg"
+          "icon": "./assets/layers/assembly_point/assembly_point.svg"
         }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an assembly point",
+        "it": "un punto di raccolta"
+      },
+      "tags": [
+        "emergency=assembly_point"
       ]
     }
   ],
   "tagRenderings": [
     "images",
     {
-      "id": "operator",
+      "id": "assembly_point_name",
+      "freeform": {
+        "key": "name"
+      },
+      "question": {
+        "en": "What is the name of this assembly point?",
+        "it": "Qual è il nome di questo punto di raccolta?"
+      },
       "render": {
-        "en": "This assembly point is operated by {operator}",
-        "it": "Questa area di attesa è gestita da {operator}"
+        "en": "This assembly point is named <b>{name}</b>",
+        "it": "Questo punto di raccolta si chiama <b>{name}</b>"
+      }
+    },
+    {
+      "id": "assembly_point_operator",
+      "render": {
+        "en": "This assembly point is operated by <b>{operator}</b>",
+        "it": "Questo punto di raccolta è gestita da <b>{operator}</b>"
       },
       "question": {
         "en": "What organization operates this assembly point?",
-        "it": "Quale organizzazione gestisce questa area di attesa?"
+        "it": "Quale organizzazione gestisce questo punto di raccolta?"
       },
       "freeform": {
         "key": "operator",
@@ -54,7 +82,7 @@
       "id": "disaster_type",
       "question": {
         "en": "For which disaster type is this assembly point meant?",
-        "it": "Per quali tipi di disastro è pensata questa area di attesa?"
+        "it": "Per quali tipi di disastro è pensato questo punto di raccolta?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -66,7 +94,7 @@
             "it": "Terremoto"
           },
           "icon": {
-            "path": "./assets/themes/disaster_response/earthquake.svg",
+            "path": "./assets/layers/assembly_point/earthquake.svg",
             "class": "medium"
           }
         },
@@ -78,7 +106,7 @@
             "it": "Alluvione"
           },
           "icon": {
-            "path": "./assets/themes/disaster_response/flood.svg",
+            "path": "./assets/layers/assembly_point/flood.svg",
             "class": "medium"
           }
         },
@@ -90,7 +118,7 @@
             "it": "Incendio"
           },
           "icon": {
-            "path": "./assets/themes/disaster_response/fire.svg",
+            "path": "./assets/layers/assembly_point/fire.svg",
             "class": "medium"
           }
         },
@@ -102,7 +130,7 @@
             "it": "Frana"
           },
           "icon": {
-            "path": "./assets/themes/disaster_response/landslide.svg",
+            "path": "./assets/layers/assembly_point/landslide.svg",
             "class": "medium"
           }
         }

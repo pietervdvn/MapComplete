@@ -1,7 +1,7 @@
 {
   "description": {
-    "en": "This theme contains elements meant for disaster risk reduction and response.",
-    "it": "Questo tema contiene elementi pensati per la riduzione del rischio e per la risposta ai disastri."
+    "en": "This map contains elements meant for disaster preparedness and response.",
+    "it": "Questa mappa contiene elementi pensati per la preparazione e risposta ai disastri."
   },
   "docs": "https://wiki.openstreetmap.org/wiki/Emergency_facilities_and_amenities",
   "icon": "./assets/themes/disaster_response/CivilDefence.svg",
@@ -17,7 +17,10 @@
     {
       "id": "disaster_response",
       "title": "Disaster response",
-      "description": "This layer contains organizations that has the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area",
+      "description": {
+        "en": "This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area.",
+        "it": "Questo livello contiene organizzazioni che hanno come obiettivo principale quello di aiutare la popolazione civile durante e dopo disastri naturali o antropogenici, lavorando nell'area colpita."
+      },
       "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response",
       "source": {
         "osmTags": {
@@ -43,10 +46,6 @@
           "anchor": "bottom",
           "marker": [
             {
-              "icon": "pin",
-              "color": "#6BC4F7"
-            },
-            {
               "icon": "./assets/themes/disaster_response/CivilDefence.svg"
             }
           ]
@@ -54,13 +53,30 @@
       ],
       "tagRenderings": [
         "images",
-        "website"
+        "website",
+        {
+          "id": "disaster_response_name",
+          "freeform": {
+            "key": "name"
+          },
+          "question": {
+            "en": "What is the name of this organization?",
+            "it": "Qual è il nome di questa organizzazione?"
+          },
+          "render": {
+            "en": "This organization is named <b>{name}</b>",
+            "it": "Questa organizzazione si chiama <b>{name}</b>"
+          }
+        }
       ]
     },
     {
       "id": "ses_station",
       "title": "SES station",
-      "description": "This layer contains stations of State Emergency Service (SES), an Australian volunteer organisation that provides emergency help during and after declared (natural or otherwise) disasters.",
+      "description": {
+        "en": "This layer contains stations of State Emergency Service (an Australian volunteer organization) mapped using a DEPRECATED tagging scheme.",
+        "it": "Questo livello contiene stazioni del State Emergency Service (un'organizzazione australiana di volontari) mappate utilizzando uno schema di tagging DEPRECATO."
+      },
       "docs": "https://wiki.openstreetmap.org/wiki/Tag%3Aemergency%3Dses_station",
       "source": {
         "osmTags": {
@@ -80,10 +96,6 @@
           "anchor": "bottom",
           "marker": [
             {
-              "icon": "pin",
-              "color": "#6BC4F7"
-            },
-            {
               "icon": "./assets/themes/disaster_response/CivilDefence.svg"
             }
           ]
@@ -91,7 +103,21 @@
       ],
       "tagRenderings": [
         "images",
-        "website"
+        "website",
+        {
+          "id": "ses_station_name",
+          "freeform": {
+            "key": "name"
+          },
+          "question": {
+            "en": "What is the name of this organization?",
+            "it": "Qual è il nome di questa organizzazione?"
+          },
+          "render": {
+            "en": "This organization is named <b>{name}</b>",
+            "it": "Questa organizzazione si chiama <b>{name}</b>"
+          }
+        }
       ]
     }
   ]
