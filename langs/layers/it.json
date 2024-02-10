@@ -142,6 +142,32 @@
             "render": "Opera d’arte"
         }
     },
+    "assembly_point": {
+        "tagRenderings": {
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Terremoto"
+                    },
+                    "1": {
+                        "then": "Alluvione"
+                    },
+                    "2": {
+                        "then": "Incendio"
+                    },
+                    "3": {
+                        "then": "Frana"
+                    }
+                },
+                "question": "Per quali tipi di disastro è pensata questa area di attesa?"
+            },
+            "operator": {
+                "question": "Quale organizzazione gestisce questa area di attesa?",
+                "render": "Questa area di attesa è gestita da {operator}"
+            }
+        },
+        "title": "Aree di attesa per emergenze"
+    },
     "atm": {
         "description": "Sportello Bancomat per prelevare denaro",
         "name": "Sportelli Bancomat",

@@ -483,6 +483,32 @@
             "render": "Artwork"
         }
     },
+    "assembly_point": {
+        "tagRenderings": {
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Earthquake"
+                    },
+                    "1": {
+                        "then": "Flood"
+                    },
+                    "2": {
+                        "then": "Fire"
+                    },
+                    "3": {
+                        "then": "Landslide"
+                    }
+                },
+                "question": "For which disaster type is this assembly point meant?"
+            },
+            "operator": {
+                "question": "What organization operates this assembly point?",
+                "render": "This assembly point is operated by {operator}"
+            }
+        },
+        "title": "Emergency assembly points"
+    },
     "atm": {
         "description": "ATMs to withdraw money",
         "filter": {

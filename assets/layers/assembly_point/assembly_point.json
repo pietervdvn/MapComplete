@@ -1,0 +1,112 @@
+{
+  "id": "assembly_point",
+  "title": {
+    "en": "Emergency assembly points",
+    "it": "Aree di attesa per emergenze"
+  },
+  "description": "This layer contains designated places or an area where all employees, passengers or a large crowd assemble in case of an emergency in an installation, building or a public place.",
+  "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point",
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=assembly_point"
+      ]
+    }
+  },
+  "minzoom": 10,
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#6BC4F7"
+        },
+        {
+          "icon": "./assets/themes/disaster_response/assembly_point.svg"
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "operator",
+      "render": {
+        "en": "This assembly point is operated by {operator}",
+        "it": "Questa area di attesa è gestita da {operator}"
+      },
+      "question": {
+        "en": "What organization operates this assembly point?",
+        "it": "Quale organizzazione gestisce questa area di attesa?"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string"
+      }
+    },
+    {
+      "id": "disaster_type",
+      "question": {
+        "en": "For which disaster type is this assembly point meant?",
+        "it": "Per quali tipi di disastro è pensata questa area di attesa?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "assembly_point:earthquake=yes",
+          "ifnot": "assembly_point:earthquake=",
+          "then": {
+            "en": "Earthquake",
+            "it": "Terremoto"
+          },
+          "icon": {
+            "path": "./assets/themes/disaster_response/earthquake.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "assembly_point:flood=yes",
+          "ifnot": "assembly_point:flood=",
+          "then": {
+            "en": "Flood",
+            "it": "Alluvione"
+          },
+          "icon": {
+            "path": "./assets/themes/disaster_response/flood.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "assembly_point:fire=yes",
+          "ifnot": "assembly_point:fire=",
+          "then": {
+            "en": "Fire",
+            "it": "Incendio"
+          },
+          "icon": {
+            "path": "./assets/themes/disaster_response/fire.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "assembly_point:landslide=yes",
+          "ifnot": "assembly_point:landslide=",
+          "then": {
+            "en": "Landslide",
+            "it": "Frana"
+          },
+          "icon": {
+            "path": "./assets/themes/disaster_response/landslide.svg",
+            "class": "medium"
+          }
+        }
+      ]
+    }
+  ]
+}
