@@ -484,7 +484,21 @@
         }
     },
     "assembly_point": {
+        "description": "This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.",
+        "presets": {
+            "0": {
+                "title": "an assembly point"
+            }
+        },
         "tagRenderings": {
+            "assembly_point_name": {
+                "question": "What is the name of this assembly point?",
+                "render": "This assembly point is named <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "What organization operates this assembly point?",
+                "render": "This assembly point is operated by <b>{operator}</b>"
+            },
             "disaster_type": {
                 "mappings": {
                     "0": {
@@ -501,10 +515,6 @@
                     }
                 },
                 "question": "For which disaster type is this assembly point meant?"
-            },
-            "operator": {
-                "question": "What organization operates this assembly point?",
-                "render": "This assembly point is operated by {operator}"
             }
         },
         "title": "Emergency assembly points"
@@ -3752,6 +3762,21 @@
     "direction": {
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
+    },
+    "disaster_response": {
+        "description": "This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area.",
+        "presets": {
+            "0": {
+                "title": "a disaster response organization"
+            }
+        },
+        "tagRenderings": {
+            "disaster_response_name": {
+                "question": "What is the name of this organization?",
+                "render": "This organization is named <b>{name}</b>"
+            }
+        },
+        "title": "Disaster response organization"
     },
     "doctors": {
         "description": "This layer shows doctor offices",

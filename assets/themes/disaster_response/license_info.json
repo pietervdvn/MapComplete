@@ -10,13 +10,15 @@
     ]
   },
   {
-    "path": "social.jpg",
-    "license": "CC0-1.0",
+    "path": "social.svg",
+    "license": "TRIVIAL",
     "authors": [
-      "United States Agency for International Development"
+      "Geneva Convention",
+      "https://commons.wikimedia.org/wiki/User:MStankie",
+      "https://commons.wikimedia.org/wiki/User:The_Navigators"
     ],
     "sources": [
-      "https://commons.wikimedia.org/wiki/File:A_commune_level_disaster_response_drill_(27239207134).jpg"
+      "https://commons.wikimedia.org/wiki/File:Geneva_Convention_Civil_Defence_Symbol_-_Flag.svg"
     ]
   }
 ]
