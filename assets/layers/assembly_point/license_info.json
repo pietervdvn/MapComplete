@@ -1,0 +1,56 @@
+[
+  {
+    "path": "assembly_point.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "https://commons.wikimedia.org/wiki/User:Epop"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:E011.svg"
+    ]
+  },
+  {
+    "path": "earthquake.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "United Nations Office for the Coordination of Humanitarian Affairs (OCHA)"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/fire-4232/",
+      "https://commons.wikimedia.org/wiki/File:Earthquake_-_The_Noun_Project.svg"
+    ]
+  },
+  {
+    "path": "fire.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "United Nations Office for the Coordination of Humanitarian Affairs (OCHA)"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/fire-4234/",
+      "https://commons.wikimedia.org/wiki/File:Fire_-_The_Noun_Project.svg"
+    ]
+  },
+  {
+    "path": "flood.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Iconathon"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/flood-752/",
+      "https://commons.wikimedia.org/wiki/File:Flood_(752)_-_The_Noun_Project.svg"
+    ]
+  },
+  {
+    "path": "landslide.svg",
+    "license": "CC-BY-3.0",
+    "authors": [
+      "Development Seed"
+    ],
+    "sources": [
+      "https://github.com/developmentseed/mapbox/blob/master/icons-maki/maki-icons.svg",
+      "https://commons.wikimedia.org/wiki/File:Maki1-landslide-15.svg"
+    ]
+  }
+]

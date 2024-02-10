@@ -217,6 +217,10 @@
                     "then": "./assets/themes/cyclofix/logo.svg"
                   },
                   {
+                    "if": "theme=disaster_response",
+                    "then": "./assets/themes/disaster_response/CivilDefence.svg"
+                  },
+                  {
                     "if": "theme=drinking_water",
                     "then": "./assets/themes/drinking_water/logo.svg"
                   },
