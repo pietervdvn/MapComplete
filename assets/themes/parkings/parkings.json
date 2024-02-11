@@ -58,7 +58,13 @@
   "layers": [
     "parking",
     "parking_spaces",
-    "parking_ticket_machine"
+    "parking_ticket_machine",
+    {
+      "builtin": "charging_station",
+      "override": {
+        "minzoom": 18
+      }
+    }
   ],
   "widenFactor": 1.2
 }

@@ -268,19 +268,7 @@
         },
         "pointRendering": [
           {
-            "marker": [
-              {
-                "mappings": null
-              }
-            ],
-            "iconSize": "40,40",
-            "anchor": "center",
-            "iconBadges": [
-              {
-                "if": "parking_space=disabled",
-                "then": "./assets/layers/toilet/wheelchair.svg"
-              }
-            ]
+            "iconSize": "40,40"
           }
         ],
         "name": {
