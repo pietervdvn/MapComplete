@@ -246,8 +246,17 @@
             }
         },
         "tagRenderings": {
+            "duration": {
+                "question": "Wie lange dauert eine Fahrt mit diesem Aufzug?",
+                "questionHint": "Dies schließt die Wartezeit aus.",
+                "render": "Eine Fahrt dauert {duration} Minuten"
+            },
             "length": {
                 "render": "Die Seilbahn hat eine Länge von {_length:km} km"
+            },
+            "occupancy": {
+                "question": "Wie viele Leute passen in eine Kabine?",
+                "render": "{aerialway:occupancy} Leute passen in eine Kabine"
             },
             "type": {
                 "mappings": {
