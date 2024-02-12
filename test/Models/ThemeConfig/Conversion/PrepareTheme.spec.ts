@@ -173,6 +173,7 @@ describe("PrepareTheme", () => {
         }).convertStrict(layout, ConversionContext.test())
         expect(rewritten.layers[0]).toEqual(testLayer)
         expect(rewritten.layers[1]).toEqual({
+            "_basedOn": "layer-example",
             source: {
                 osmTags: "x=y",
             },
