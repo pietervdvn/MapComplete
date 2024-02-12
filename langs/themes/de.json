@@ -631,6 +631,10 @@
         "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
         "title": "Cyclofix - eine Karte für Radfahrer"
     },
+    "disaster_response": {
+        "description": "Diese Karte enthält Elemente, die der Katastrophenvorsorge und dem Katastrophenschutz dienen.",
+        "title": "Katastrophenschutz"
+    },
     "drinking_water": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
         "title": "Trinkwasserstellen"
