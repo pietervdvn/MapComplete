@@ -87,8 +87,7 @@
               "bicycle_rental!=docking_station"
             ]
           }
-        },
-        "name": null
+        }
       }
     },
     {
@@ -99,6 +98,7 @@
           "sameAs": "bicycle_rental_non_docking"
         },
         "minzoom": 18,
+        "name": null,
         "=pointRendering": [
           {
             "marker": [

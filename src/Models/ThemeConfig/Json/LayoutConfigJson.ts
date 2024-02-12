@@ -393,7 +393,7 @@ export interface LayoutConfigJson {
      *
      * This is especially useful for hiking maps, skiing maps etc...
      *
-     * funset: MapComplete default: don't use terrain
+     * ifunset: MapComplete default: don't use terrain
      * iftrue: Use elevation and render 3D
      * iffalse: Do not use terrain
      * group: advanced

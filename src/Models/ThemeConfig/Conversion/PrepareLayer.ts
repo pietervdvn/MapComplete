@@ -1039,7 +1039,7 @@ class SetFullNodeDatabase extends DesugaringStep<LayerConfigJson> {
         if (!needsSpecial) {
             return json
         }
-        context.info("Layer " + json.id + " needs the fullNodeDatabase")
+        context.debug("Layer " + json.id + " needs the fullNodeDatabase")
         return { ...json, fullNodeDatabase: true }
     }
 }
