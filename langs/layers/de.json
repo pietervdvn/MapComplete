@@ -492,6 +492,45 @@
             "render": "Kunstwerk"
         }
     },
+    "assembly_point": {
+        "description": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln.",
+        "name": "Notfallsammelplätze",
+        "presets": {
+            "0": {
+                "title": "ein Sammelplatz"
+            }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "Wie lautet der Name dieser Sammelstelle?",
+                "render": "Diese Sammelstelle hat den Namen <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "Welche Organisation betreibt diese Sammelstelle?",
+                "render": "Diese Sammelstelle wird von <b>{operator}</b> betrieben"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Erdbeben"
+                    },
+                    "1": {
+                        "then": "Flut"
+                    },
+                    "2": {
+                        "then": "Feuer"
+                    },
+                    "3": {
+                        "then": "Erdrutsch"
+                    }
+                },
+                "question": "Für welche Art von Katastrophe ist diese Sammelstelle gedacht?"
+            }
+        },
+        "title": {
+            "render": "Sammelplatz bei Notfällen"
+        }
+    },
     "atm": {
         "description": "Geldautomaten zum Geld abheben",
         "filter": {
@@ -3735,6 +3774,24 @@
     "direction": {
         "description": "Diese Ebene visualisiert Richtungen",
         "name": "Aufnahmewinkel der Kamera anzeigen"
+    },
+    "disaster_response": {
+        "description": "Diese Ebene umfasst Organisationen, deren Hauptziel es ist, der Zivilbevölkerung während und nach Natur- oder anthropogenen Katastrophen zu helfen, indem sie in dem betroffenen Gebiet tätig sind.",
+        "name": "Katastrophenschutzorganisationen",
+        "presets": {
+            "0": {
+                "title": "eine Katastrophenschutzorganisation"
+            }
+        },
+        "tagRenderings": {
+            "disaster_response_name": {
+                "question": "Wie lautet der Name dieser Organisation?",
+                "render": "Diese Organisation heißt <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Katastrophenschutzorganisation"
+        }
     },
     "doctors": {
         "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
