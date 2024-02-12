@@ -261,7 +261,7 @@ export class Unit {
             return stripped ?? value
         }
 
-        return human.Subs({ quantity: value })
+        return human.Subs({ quantity: stripped })
     }
 
     public toOsm(value: string, denomination: string) {

@@ -833,8 +833,7 @@ export default class SpecialVisualizations {
                                     return value
                                 }
                                 const getCountry = () => tagSource.data._country
-                                const [v, denom] = unit.findDenomination(value, getCountry)
-                                return unit.asHumanLongValue(v, getCountry)
+                                return unit.asHumanLongValue(value, getCountry)
                             })
                     )
                 },
