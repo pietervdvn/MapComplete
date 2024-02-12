@@ -113,7 +113,7 @@
         "404": "Diese Seite existiert nicht",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "aboutMapComplete": {
-            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Fragen, und in wenigen Minuten sind deine Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Ersteller</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
+            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Fragen, und in wenigen Minuten sind deine Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Verwalter</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
         },
         "add": {
             "addNew": "{category} hinzufügen",
@@ -676,6 +676,7 @@
         "saving_review": "Speichern…",
         "title": "{count} Rezensionen",
         "title_singular": "Eine Rezension",
+        "too_long": "Maximal {max} Zeichen sind erlaubt. Ihre Bewertung hat {amount} Zeichen.",
         "tos": "Mit der Bewertung stimmen Sie den <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
         "write_a_comment": "Bewertung schreiben…"
     },
