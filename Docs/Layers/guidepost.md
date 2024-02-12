@@ -29,6 +29,7 @@ Guideposts (also known as fingerposts or finger posts) are often found along off
   - [guideposts](https://mapcomplete.org/guideposts)
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
+  - [ski](https://mapcomplete.org/ski)
 
 
 

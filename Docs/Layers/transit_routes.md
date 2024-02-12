@@ -98,11 +98,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What is the name for this bus line? (i.e. Bus XX: From => Via => To)*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `{name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `{name}`
 
 
 
@@ -112,11 +108,7 @@ This is rendered with  `{name}`
 
 The question is  *What is the starting point for this bus line?*
 
-This rendering asks information about the property  [from](https://wiki.openstreetmap.org/wiki/Key:from) 
-
-This is rendered with  `This bus line begins at {from}`
-
-
+This rendering asks information about the property  [from](https://wiki.openstreetmap.org/wiki/Key:from) This is rendered with  `This bus line begins at {from}`
 
 
 
@@ -126,11 +118,7 @@ This is rendered with  `This bus line begins at {from}`
 
 The question is  *What is the via point for this bus line?*
 
-This rendering asks information about the property  [via](https://wiki.openstreetmap.org/wiki/Key:via) 
-
-This is rendered with  `This bus line goes via {via}`
-
-
+This rendering asks information about the property  [via](https://wiki.openstreetmap.org/wiki/Key:via) This is rendered with  `This bus line goes via {via}`
 
 
 
@@ -140,11 +128,7 @@ This is rendered with  `This bus line goes via {via}`
 
 The question is  *What is the ending point for this bus line?*
 
-This rendering asks information about the property  [to](https://wiki.openstreetmap.org/wiki/Key:to) 
-
-This is rendered with  `This bus line ends at {to}`
-
-
+This rendering asks information about the property  [to](https://wiki.openstreetmap.org/wiki/Key:to) This is rendered with  `This bus line ends at {to}`
 
 
 
@@ -154,11 +138,7 @@ This is rendered with  `This bus line ends at {to}`
 
 The question is  *What is the colour for this bus line?*
 
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
-
-This is rendered with  `This bus line has the color {colour}`
-
-
+This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) This is rendered with  `This bus line has the color {colour}`
 
 
 
@@ -168,11 +148,7 @@ This is rendered with  `This bus line has the color {colour}`
 
 The question is  *What network does this bus line belong to?*
 
-This rendering asks information about the property  [network](https://wiki.openstreetmap.org/wiki/Key:network) 
-
-This is rendered with  `This bus line is part of the {network} network`
-
-
+This rendering asks information about the property  [network](https://wiki.openstreetmap.org/wiki/Key:network) This is rendered with  `This bus line is part of the {network} network`
 
 
 
@@ -182,11 +158,7 @@ This is rendered with  `This bus line is part of the {network} network`
 
 The question is  *What company operates this bus line?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `This bus line is operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This bus line is operated by {operator}`
 
 
 

@@ -676,6 +676,7 @@
         "saving_review": "Saving…",
         "title": "{count} reviews",
         "title_singular": "One review",
+        "too_long": "At most {max} characters are allowed. Your review has {amount} characters.",
         "tos": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
         "write_a_comment": "Leave a review…"
     },

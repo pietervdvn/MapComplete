@@ -1223,6 +1223,20 @@
       "key": "ramp",
       "description": "Layer 'Stairs' shows ramp=no with a fixed text, namely 'There is no ramp at these stairs' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if conveying!=yes)",
       "value": "no"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Stairs' shows and asks freeform values for key 'incline' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Stairs' shows incline=up with a fixed text, namely 'The upward direction is {direction_absolute()}' (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "up"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Stairs' shows incline=down with a fixed text, namely 'The downward direction is {direction_absolute()}' (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "down"
     }
   ]
 }

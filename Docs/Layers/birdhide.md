@@ -139,11 +139,7 @@ The question is  *Is this bird hide accessible to wheelchair users?*
 
 The question is  *Who operates this birdhide?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
 
 
 

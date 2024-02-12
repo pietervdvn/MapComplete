@@ -393,6 +393,7 @@
           ]
         },
         "minzoom": 16,
+        "name": null,
         "+tagRenderings": [
           {
             "id": "repairs_climbing_shoes",

@@ -27,6 +27,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - This layer is needed as dependency for layer [entrance](#entrance)
   - This layer is needed as dependency for layer [surveillance_camera](#surveillance_camera)
   - This layer is needed as dependency for layer [facadegardens](#facadegardens)
+  - This layer is needed as dependency for layer [parking_spaces_disabled](#parking_spaces_disabled)
 
 
 

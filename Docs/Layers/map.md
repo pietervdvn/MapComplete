@@ -28,6 +28,7 @@ A map, meant for tourists which is permanently installed in the public space
   - [maps](https://mapcomplete.org/maps)
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
+  - [ski](https://mapcomplete.org/ski)
 
 
 
@@ -144,11 +145,7 @@ The question is  *What is the size of the shown area on the map?*
 
 The question is  *On which data is this map based?*
 
-This rendering asks information about the property  [map_source](https://wiki.openstreetmap.org/wiki/Key:map_source) 
-
-This is rendered with  `This map is based on {map_source}`
-
-
+This rendering asks information about the property  [map_source](https://wiki.openstreetmap.org/wiki/Key:map_source) This is rendered with  `This map is based on {map_source}`
 
 
 

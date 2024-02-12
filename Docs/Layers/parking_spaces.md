@@ -25,7 +25,6 @@ Layer showing individual parking spaces.
 
 
 
-  - [onwheels](https://mapcomplete.org/onwheels)
   - [parkings](https://mapcomplete.org/parkings)
   - [personal](https://mapcomplete.org/personal)
 

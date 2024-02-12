@@ -109,11 +109,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Which type of advertising feature is this?*
 
-This rendering asks information about the property  [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) 
-
-This is rendered with  `This is a {advertising}`
-
-
+This rendering asks information about the property  [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) This is rendered with  `This is a {advertising}`
 
 
 
@@ -176,11 +172,7 @@ The question is  *Is this object lit or does it emit light?*
 
 The question is  *Who operates this feature?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
 
 
 
@@ -242,11 +234,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Wich is the reference number?*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `Reference number is {ref}`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `Reference number is {ref}`
 
 
 

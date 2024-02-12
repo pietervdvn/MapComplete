@@ -274,7 +274,7 @@ To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:
 
 
 
-By using `:=` as separator, the attribute will be calculated as soone as the data is loaded (strict evaluation)
+By using `:=` as separator, the attribute will be calculated as soon as the data is loaded (strict evaluation)
 
 The default behaviour, using `=` as separator, is lazy loading
 

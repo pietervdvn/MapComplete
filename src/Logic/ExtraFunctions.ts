@@ -275,12 +275,7 @@ class ClosestNObjectFunc implements ExtraFunction {
                 allFeatures.push([spec])
             }
         }
-        console.log(
-            "Determining features which are close to",
-            features,
-            "other features:",
-            allFeatures
-        )
+
         if (features === undefined) {
             return
         }

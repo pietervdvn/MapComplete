@@ -1,5 +1,4 @@
 import { TagConfigJson } from "./TagConfigJson"
-import { UploadableTag } from "../../../Logic/Tags/TagUtils"
 
 export interface DeleteConfigJson {
     /***

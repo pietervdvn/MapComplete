@@ -67,6 +67,12 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:3dprinter#values) [service:3dprinter](https://wiki.openstreetmap.org/wiki/Key:service:3dprinter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:lasercutter#values) [service:lasercutter](https://wiki.openstreetmap.org/wiki/Key:service:lasercutter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:cnc_drilling_machine#values) [service:cnc_drilling_machine](https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:media_studio#values) [service:media_studio](https://wiki.openstreetmap.org/wiki/Key:service:media_studio) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dlimited)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:sewing_machine#values) [service:sewing_machine](https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:workshop:wood#values) [service:workshop:wood](https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dlimited)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:workshop:ceramics#values) [service:workshop:ceramics](https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dlimited)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:workshop:metal#values) [service:workshop:metal](https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dlimited)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values) [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dlimited)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/drink:club-mate#values) [drink:club-mate](https://wiki.openstreetmap.org/wiki/Key:drink:club-mate) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) | 
@@ -129,11 +135,7 @@ The question is  *Is this a hackerspace or a makerspace?*
 
 The question is  *What is the name of this hackerspace?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This hackerspace is named <b>{name}</b>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This hackerspace is named <b>{name}</b>`
 
 
 
@@ -157,11 +159,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -184,11 +182,7 @@ This tagrendering has labels  `level`
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -206,11 +200,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the email address of {title()}?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -228,11 +218,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the phone number of {title()}?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -252,11 +238,7 @@ Shows and asks for the mastodon handle
 
 The question is  *What is the Mastodon-handle of {title()}?*
 
-This rendering asks information about the property  [contact:mastodon](https://wiki.openstreetmap.org/wiki/Key:contact:mastodon) 
-
-This is rendered with  `{fediverse_link(contact:mastodon)}`
-
-
+This rendering asks information about the property  [contact:mastodon](https://wiki.openstreetmap.org/wiki/Key:contact:mastodon) This is rendered with  `{fediverse_link(contact:mastodon)}`
 
 
 
@@ -266,11 +248,7 @@ This is rendered with  `{fediverse_link(contact:mastodon)}`
 
 The question is  *When is this hackerspace opened?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -291,6 +269,8 @@ The question is  *Is a 3D-printer available at this hackerspace?*
 
   - *There is a 3D-printer available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes' target='_blank'>yes</a>
   - *There is no 3D-printer available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno' target='_blank'>no</a>
+  - *There is a limited 3D-printer available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dlimited' target='_blank'>limited</a>
+  - _This option cannot be chosen as answer_
 
 
 
@@ -307,6 +287,8 @@ The question is  *Is a laser cutter available at this hackerspace?*
 
   - *There is a laser cutter available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes' target='_blank'>yes</a>
   - *There is no laser cutter available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno' target='_blank'>no</a>
+  - *There is a limited laser cutter available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dlimited' target='_blank'>limited</a>
+  - _This option cannot be chosen as answer_
 
 
 
@@ -323,6 +305,111 @@ The question is  *Is a CNC drill available at this hackerspace?*
 
   - *There is a CNC drill available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes' target='_blank'>yes</a>
   - *There is no CNC drill available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno' target='_blank'>no</a>
+  - *There is a limited CNC drill available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dlimited' target='_blank'>limited</a>
+  - _This option cannot be chosen as answer_
+
+
+
+
+### hackerspaces-service-media_studio 
+
+
+
+The question is  *Is a multimedia studio available at this hackerspace?*
+
+
+
+
+
+  - *There is a multimedia studio available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dyes' target='_blank'>yes</a>
+  - *There is no multimedia studio available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dno' target='_blank'>no</a>
+  - *There is a limited multimedia studio available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dlimited' target='_blank'>limited</a>
+
+
+
+
+### hackerspaces-service-sewing_machine 
+
+
+
+The question is  *Is a sewing machine available at this hackerspace?*
+
+
+
+
+
+  - *There is a sewing machine available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dyes' target='_blank'>yes</a>
+  - *There is no sewing machine available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dno' target='_blank'>no</a>
+  - *There is a limited sewing machine available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dlimited' target='_blank'>limited</a>
+  - _This option cannot be chosen as answer_
+
+
+
+
+### hackerspaces-service-workshop:wood 
+
+
+
+The question is  *Is a woodworking workshop available at this hackerspace?*
+
+
+
+
+
+  - *There is a woodworking workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dyes' target='_blank'>yes</a>
+  - *There is no woodworking workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dno' target='_blank'>no</a>
+  - *There is a limited woodworking workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dlimited' target='_blank'>limited</a>
+
+
+
+
+### hackerspaces-service-workshop:ceramics 
+
+
+
+The question is  *Is a ceramics workshop available at this hackerspace?*
+
+
+
+
+
+  - *There is a ceramics workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dyes' target='_blank'>yes</a>
+  - *There is no ceramics workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dno' target='_blank'>no</a>
+  - *There is a limited ceramics workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dlimited' target='_blank'>limited</a>
+
+
+
+
+### hackerspaces-service-workshop:metal 
+
+
+
+The question is  *Is a metal workshop available at this hackerspace?*
+
+
+
+
+
+  - *There is a metal workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dyes' target='_blank'>yes</a>
+  - *There is no metal workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dno' target='_blank'>no</a>
+  - *There is a limited metal workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dlimited' target='_blank'>limited</a>
+
+
+
+
+### hackerspaces-service-bicycle:diy 
+
+
+
+The question is  *Is a bicycle repair workshop available at this hackerspace?*
+
+
+
+
+
+  - *There is a bicycle repair workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
+  - *There is no bicycle repair workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
+  - *There is a limited bicycle repair workshop available at this hackerspace*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dlimited' target='_blank'>limited</a>
 
 
 
@@ -367,11 +454,7 @@ The question is  *Does this hackerspace serve Club-Mate?*
 
 The question is  *When was this hackerspace founded?*
 
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
-
-This is rendered with  `This hackerspace was founded at {start_date}`
-
-
+This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) This is rendered with  `This hackerspace was founded at {start_date}`
 
 
 

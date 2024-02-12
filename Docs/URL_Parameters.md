@@ -354,7 +354,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  The initial/current zoom level
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L27)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L28)
 
  The default value is _1_
 
@@ -365,7 +365,7 @@ This documentation is defined in the source code at [InitialMapPositioning.ts](/
 
  The initial/current latitude
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L27)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L28)
 
  The default value is _0_
 
@@ -376,7 +376,7 @@ This documentation is defined in the source code at [InitialMapPositioning.ts](/
 
  The initial/current longitude of the app
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L27)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L28)
 
  The default value is _0_
 
@@ -387,7 +387,7 @@ This documentation is defined in the source code at [InitialMapPositioning.ts](/
 
  Used to complete the login
 
-This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L164)
+This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L166)
 
  No default value set
 
@@ -464,7 +464,7 @@ This documentation is defined in the source code at [FilteredLayer.ts](/src/Mode
 
  The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L420)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L420)
 
  The default value is _map_
 

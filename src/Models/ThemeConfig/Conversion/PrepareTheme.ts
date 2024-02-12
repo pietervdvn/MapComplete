@@ -71,6 +71,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
 
         for (const name of names) {
             const found = Utils.Clone(state.sharedLayers.get(name))
+            found["_basedOn"] = name
             if (found === undefined) {
                 reportNotFound(name)
                 continue
@@ -555,6 +556,40 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
     }
 }
 
+class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
+    private readonly _state: DesugaringContext
+    constructor(state: DesugaringContext) {
+        super("Various validation steps when everything is done", [], "PostvalidateTheme")
+        this._state = state
+    }
+
+    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+        for (const l of json.layers) {
+            const layer = <LayerConfigJson> l
+            const basedOn = <string> layer["_basedOn"]
+            const basedOnDef = this._state.sharedLayers.get(basedOn)
+            if(!basedOn){
+                continue
+            }
+            if(layer["name"] === null){
+                continue
+            }
+            const sameBasedOn = <LayerConfigJson[]> json.layers.filter(l => l["_basedOn"] === layer["_basedOn"] && l["id"] !== layer.id)
+            const minZoomAll = Math.min(...sameBasedOn.map(sbo => sbo.minzoom))
+
+            const sameNameDetected = sameBasedOn.some( same =>  JSON.stringify(layer["name"]) === JSON.stringify(same["name"]))
+            if(!sameNameDetected){
+                // The name is unique, so it'll won't be confusing
+                continue
+            }
+            if(minZoomAll < layer.minzoom){
+                context.err("There are multiple layers based on "+basedOn+". The layer with id "+layer.id+" has a minzoom of "+layer.minzoom+", and has a name set. Another similar layer has a lower minzoom. As such, the layer selection might show 'zoom in to see features' even though some of the features are already visible. Set `\"name\": null` for this layer and eventually remove the 'name':null for the other layer.")
+            }
+        }
+
+        return json
+    }
+}
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
     private state: DesugaringContext
 
@@ -583,7 +618,8 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
                 ? new Pass("AddDefaultLayers is disabled due to the set flag")
                 : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
-            new AddImportLayers()
+            new AddImportLayers(),
+            new PostvalidateTheme(state)
         )
         this.state = state
     }

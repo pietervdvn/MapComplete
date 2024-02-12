@@ -1,4 +1,5 @@
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { ExpressionSpecification } from "maplibre-gl"
 
 export abstract class TagsFilter {
     abstract asOverpass(): string[]
@@ -63,4 +64,6 @@ export abstract class TagsFilter {
      * Walks the entire tree, every tagsFilter will be passed into the function once
      */
     abstract visit(f: (tagsFilter: TagsFilter) => void)
+
+    abstract asMapboxExpression(): ExpressionSpecification
 }

@@ -107,11 +107,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the reference number of this street lamp?*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `This street lamp has the reference number {ref}`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `This street lamp has the reference number {ref}`
 
 
 
@@ -187,11 +183,7 @@ The question is  *What kind of lighting does this lamp use?*
 
 The question is  *What colour light does this lamp emit?*
 
-This rendering asks information about the property  [light:colour](https://wiki.openstreetmap.org/wiki/Key:light:colour) 
-
-This is rendered with  `This lamp emits {light:colour} light`
-
-
+This rendering asks information about the property  [light:colour](https://wiki.openstreetmap.org/wiki/Key:light:colour) This is rendered with  `This lamp emits {light:colour} light`
 
 
 
@@ -208,11 +200,7 @@ This is rendered with  `This lamp emits {light:colour} light`
 
 The question is  *How many fixtures does this light have?*
 
-This rendering asks information about the property  [light:count](https://wiki.openstreetmap.org/wiki/Key:light:count) 
-
-This is rendered with  `This lamp has {light:count} fixtures`
-
-
+This rendering asks information about the property  [light:count](https://wiki.openstreetmap.org/wiki/Key:light:count) This is rendered with  `This lamp has {light:count} fixtures`
 
 
 
@@ -248,11 +236,7 @@ The question is  *When is this lamp lit?*
 
 The question is  *Where does this lamp point to?*
 
-This rendering asks information about the property  [light:direction](https://wiki.openstreetmap.org/wiki/Key:light:direction) 
-
-This is rendered with  `This lamp points towards {light:direction}`
-
-
+This rendering asks information about the property  [light:direction](https://wiki.openstreetmap.org/wiki/Key:light:direction) This is rendered with  `This lamp points towards {light:direction}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:light:count' target='_blank'>light:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:count%3D1' target='_blank'>1</a>`
 

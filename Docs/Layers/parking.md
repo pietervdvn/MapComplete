@@ -119,11 +119,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -170,11 +166,7 @@ The question is  *What kind of parking is this?*
 
 The question is  *How many disabled parking spots are there at this parking?*
 
-This rendering asks information about the property  [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) 
-
-This is rendered with  `There are {capacity:disabled} disabled parking spots`
-
-
+This rendering asks information about the property  [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) This is rendered with  `There are {capacity:disabled} disabled parking spots`
 
 
 
@@ -193,11 +185,7 @@ This is rendered with  `There are {capacity:disabled} disabled parking spots`
 
 The question is  *How many parking spots are there at this parking?*
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
-
-This is rendered with  `There are {capacity} parking spots`
-
-
+This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `There are {capacity} parking spots`
 
 
 

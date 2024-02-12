@@ -1,7 +1,8 @@
 import WithContextLoader from "./WithContextLoader"
 import TagRenderingConfig from "./TagRenderingConfig"
-import { Utils } from "../../Utils"
 import LineRenderingConfigJson from "./Json/LineRenderingConfigJson"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
+import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 
 export default class LineRenderingConfig extends WithContextLoader {
     public readonly color: TagRenderingConfig
@@ -12,6 +13,7 @@ export default class LineRenderingConfig extends WithContextLoader {
     public readonly fill: TagRenderingConfig
     public readonly fillColor: TagRenderingConfig
     public readonly leftRightSensitive: boolean
+    public readonly imageAlongWay: { if?: TagsFilter, then: string }[]
 
     constructor(json: LineRenderingConfigJson, context: string) {
         super(json, context)
@@ -21,6 +23,28 @@ export default class LineRenderingConfig extends WithContextLoader {
         this.lineCap = this.tr("lineCap", "round")
         this.fill = this.tr("fill", undefined)
         this.fillColor = this.tr("fillColor", undefined)
+        this.imageAlongWay = []
+        if (json.imageAlongWay) {
+            if (typeof json.imageAlongWay === "string") {
+                this.imageAlongWay.push({
+                    then: json.imageAlongWay,
+                })
+            } else {
+                for (let i = 0; i < json.imageAlongWay.length; i++) {
+                    const imgAlong = json.imageAlongWay[i]
+                    const ctx = context + ".imageAlongWay[" + i + "]"
+                    if(!imgAlong.then.endsWith(".png")){
+                        throw "An imageAlongWay should always be a PNG image"
+                    }
+                    this.imageAlongWay.push(
+                        {
+                            if: TagUtils.Tag(imgAlong.if, ctx),
+                            then: imgAlong.then,
+                        },
+                    )
+                }
+            }
+        }
 
         if (typeof json.offset === "string") {
             json.offset = parseFloat(json.offset)

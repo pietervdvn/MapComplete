@@ -148,11 +148,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -175,11 +171,7 @@ This tagrendering has labels  `level`
 
 The question is  *What is the reference number of this room?*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `This room has the reference number {ref}`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `This room has the reference number {ref}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Droom' target='_blank'>room</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Darea' target='_blank'>area</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dcorridor' target='_blank'>corridor</a>`
 
@@ -191,11 +183,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the name of this room?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This room is named {name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This room is named {name}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Droom' target='_blank'>room</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Darea' target='_blank'>area</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dcorridor' target='_blank'>corridor</a>`
 
@@ -245,11 +233,7 @@ The question is  *What type of room is this?*
 
 The question is  *How much people can at most fit in this room?*
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
-
-This is rendered with  `At most {capacity} people fit this room`
-
-
+This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `At most {capacity} people fit this room`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dwaiting' target='_blank'>waiting</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Drestaurant' target='_blank'>restaurant</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Doffice' target='_blank'>office</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dnursery' target='_blank'>nursery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dconference' target='_blank'>conference</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dauditorium' target='_blank'>auditorium</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dchapel' target='_blank'>chapel</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dbedroom' target='_blank'>bedroom</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dclassroom' target='_blank'>classroom</a>`
 
@@ -261,11 +245,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the Wikidata-item that this object is named after?*
 
-This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) 
-
-This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
-
-
+This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
 
 
 
@@ -275,11 +255,7 @@ This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(n
 
 The question is  *Are these toilets publicly accessible?*
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-
-This is rendered with  `Access is {access}`
-
-
+This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `Access is {access}`
 
 
 
@@ -323,11 +299,7 @@ This tagrendering has labels  `relevant-questions`
 
 The question is  *How much does one have to pay for these toilets?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `The fee is {charge}`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `The fee is {charge}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
@@ -375,11 +347,7 @@ This tagrendering has labels  `relevant-questions`
 
 The question is  *When are these toilets opened?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -419,11 +387,7 @@ This tagrendering has labels  `relevant-questions`
 
 The question is  *What is the width of the door to the wheelchair accessible toilet?*
 
-This rendering asks information about the property  [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) 
-
-This is rendered with  `The door to the wheelchair-accessible toilet is {canonical(door:width)} wide`
-
-
+This rendering asks information about the property  [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) This is rendered with  `The door to the wheelchair-accessible toilet is {canonical(door:width)} wide`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>)`
 
@@ -479,18 +443,14 @@ This tagrendering has labels  `relevant-questions`
 
 The question is  *Where is the changing table located?*
 
-This rendering asks information about the property  [changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location) 
-
-This is rendered with  `The changing table is located at {changing_table:location}`
+This rendering asks information about the property  [changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location) This is rendered with  `A changing table is located at {changing_table:location}`
 
 
 
-
-
-  - *The changing table is in the toilet for women. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
-  - *The changing table is in the toilet for men. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet' target='_blank'>male_toilet</a>
-  - *The changing table is in the toilet for wheelchair users. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
-  - *The changing table is in a dedicated room. *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
+  - *A changing table is in the toilet for women*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
+  - *A changing table is in the toilet for men*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet' target='_blank'>male_toilet</a>
+  - *A changing table is in the toilet for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
+  - *A changing table is in a dedicated room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
 
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>`

@@ -38,7 +38,6 @@
       "builtin": "bank",
       "override": {
         "id": "banks_with_atm",
-        "name": null,
         "minzoom": 14,
         "source": {
           "osmTags": {
@@ -56,6 +55,7 @@
       "builtin": "bank",
       "override": {
         "minzoom": 18,
+        "name": null,
         "filter": {
           "sameAs": "bank_with_atm"
         }
@@ -167,6 +167,7 @@
       "builtin": "postoffices",
       "override": {
         "minzoom": 18,
+        "name": null,
         "filter": {
           "sameAs": "post_offices_with_atm"
         }

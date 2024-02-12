@@ -32,6 +32,7 @@ A layer showing drinking water fountains
   - [drinking_water](https://mapcomplete.org/drinking_water)
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
+  - [ski](https://mapcomplete.org/ski)
 
 
 
@@ -119,11 +120,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Is this drinking water spot still operational?*
 
-This rendering asks information about the property  [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) 
-
-This is rendered with  `The operational status is <i>{operational_status}</i>`
-
-
+This rendering asks information about the property  [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) This is rendered with  `The operational status is <i>{operational_status}</i>`
 
 
 
@@ -206,11 +203,7 @@ The question is  *Is this drinking water point available all year round?*
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -245,11 +238,7 @@ The question is  *Does this drinking water fountain have an artistic element?*
 
 The question is  *What is the type of this artwork?*
 
-This rendering asks information about the property  [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) 
-
-This is rendered with  `This is a {artwork_type}`
-
-
+This rendering asks information about the property  [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) This is rendered with  `This is a {artwork_type}`
 
 
 
@@ -280,11 +269,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *Who made this artwork?*
 
-This rendering asks information about the property  [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) 
-
-This is rendered with  `This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}`
-
-
+This rendering asks information about the property  [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) This is rendered with  `This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 
@@ -298,11 +283,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *Which artist created this?*
 
-This rendering asks information about the property  [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) 
-
-This is rendered with  `Created by {artist_name}`
-
-
+This rendering asks information about the property  [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) This is rendered with  `Created by {artist_name}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 
@@ -316,11 +297,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *Is there a website with more information about this artwork?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `{link(More information on this website,&LBRACEwebsite&RBRACE,,,)}`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `{link(More information on this website,&LBRACEwebsite&RBRACE,,,)}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 
@@ -334,11 +311,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *What does this artwork depict?*
 
-This rendering asks information about the property  [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) 
-
-This is rendered with  `This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}`
-
-
+This rendering asks information about the property  [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) This is rendered with  `This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 

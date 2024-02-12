@@ -833,8 +833,7 @@ export default class SpecialVisualizations {
                                     return value
                                 }
                                 const getCountry = () => tagSource.data._country
-                                const [v, denom] = unit.findDenomination(value, getCountry)
-                                return unit.asHumanLongValue(v, getCountry)
+                                return unit.asHumanLongValue(value, getCountry)
                             })
                     )
                 },
@@ -1172,7 +1171,7 @@ export default class SpecialVisualizations {
                     },
                     {
                         name: "href",
-                        doc: "The URL to link to",
+                        doc: "The URL to link to. Note that this will be URI-encoded before ",
                         required: true,
                     },
                     {
@@ -1181,7 +1180,7 @@ export default class SpecialVisualizations {
                     },
                     {
                         name: "download",
-                        doc: "If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename",
+                        doc: "Expects a string which denotes the filename to download the contents of `href` into. If set, this link will act as a download-button.",
                     },
                     {
                         name: "arialabel",
@@ -1204,7 +1203,7 @@ export default class SpecialVisualizations {
                             (tags) =>
                                 new SvelteUIElement(Link, {
                                     text: Utils.SubstituteKeys(text, tags),
-                                    href: Utils.SubstituteKeys(href, tags),
+                                    href: Utils.SubstituteKeys(href, tags).replaceAll(/ /g, '%20') /* Chromium based browsers eat the spaces */,
                                     classnames,
                                     download: Utils.SubstituteKeys(download, tags),
                                     ariaLabel: Utils.SubstituteKeys(ariaLabel, tags),

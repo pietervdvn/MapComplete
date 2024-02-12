@@ -2,6 +2,7 @@ import { TagsFilter } from "./TagsFilter"
 import { Tag } from "./Tag"
 import { Utils } from "../../Utils"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { ExpressionSpecification } from "maplibre-gl"
 
 /**
  * The substituting-tag uses the tags of a feature a variables and replaces them.
@@ -21,6 +22,10 @@ export default class SubstitutingTag implements TagsFilter {
         this._key = key
         this._value = value
         this._invert = invert
+    }
+
+    asMapboxExpression(): ExpressionSpecification {
+        throw new Error("Method not implemented.")
     }
 
     private static substituteString(template: string, dict: Record<string, string>): string {

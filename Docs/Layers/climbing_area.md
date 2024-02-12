@@ -154,11 +154,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the name of this climbing opportunity?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `<strong>{name}</strong>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `<strong>{name}</strong>`
 
 
 
@@ -190,11 +186,7 @@ The question is  *What kind of climbing opportunity is this?*
 
 The question is  *What is the rock type here?*
 
-This rendering asks information about the property  [rock](https://wiki.openstreetmap.org/wiki/Key:rock) 
-
-This is rendered with  `The rock type is {rock}`
-
-
+This rendering asks information about the property  [rock](https://wiki.openstreetmap.org/wiki/Key:rock) This is rendered with  `The rock type is {rock}`
 
 
 
@@ -223,11 +215,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Is there a (unofficial) website with more informations (e.g. topos)?*
 
-This rendering asks information about the property  [url](https://wiki.openstreetmap.org/wiki/Key:url) 
-
-This is rendered with  `<a href='{url}' target='_blank' rel='noopener'>{url}</a>`
-
-
+This rendering asks information about the property  [url](https://wiki.openstreetmap.org/wiki/Key:url) This is rendered with  `<a href='{url}' target='_blank' rel='noopener'>{url}</a>`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & club= & office= & leisure!~^(sports_centre)$`
 
@@ -239,11 +227,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Is a fee required to climb here?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `A fee of {charge} should be paid for climbing here`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `A fee of {charge} should be paid for climbing here`
 
 
 

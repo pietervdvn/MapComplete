@@ -117,11 +117,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -144,11 +140,7 @@ This tagrendering has labels  `level`
 
 The question is  *What material is this picnic table made of?*
 
-This rendering asks information about the property  [material](https://wiki.openstreetmap.org/wiki/Key:material) 
-
-This is rendered with  `This picnic table is made of {material}`
-
-
+This rendering asks information about the property  [material](https://wiki.openstreetmap.org/wiki/Key:material) This is rendered with  `This picnic table is made of {material}`
 
 
 

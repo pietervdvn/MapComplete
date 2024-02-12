@@ -135,6 +135,27 @@
     },
     "opening_hours",
     {
+      "id": "oneway",
+      "question": {
+        "en": "In what direction can this aerialway be taken?"
+      },
+      "mappings": [
+        {
+          "if": "oneway=yes",
+          "alsoShowIf": "oneway=",
+          "then": {
+            "en": "This aerialway can only be taken to the top"
+          }
+        },
+        {
+          "if": "oneway=no",
+          "then": {
+            "en": "This aerialway can be taken in both directions"
+        }
+        }
+      ]
+    },
+    {
       "id": "length",
       "render": {
         "en": "This aerialway is {_length:km} kilometer long"
@@ -144,7 +165,20 @@
   "lineRendering": [
     {
       "width": "4",
-      "color": "black"
+      "color": "black",
+      "imageAlongWay": [ {
+        "if": "oneway=no",
+        "then": "./assets/png/twoway.png"
+      },{
+        "if": {
+          "or": [
+            "oneway=yes",
+            "oneway="
+          ]
+        },
+        "then": "./assets/png/oneway.png"
+      }
+      ]
     }
   ],
   "id": "aerialway",

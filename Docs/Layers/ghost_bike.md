@@ -113,11 +113,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Whom is remembered by this ghost bike?*
 
-This rendering asks information about the property  [subject](https://wiki.openstreetmap.org/wiki/Key:subject) 
-
-This is rendered with  `In remembrance of {subject}`
-
-
+This rendering asks information about the property  [subject](https://wiki.openstreetmap.org/wiki/Key:subject) This is rendered with  `In remembrance of {subject}`
 
 
 
@@ -134,11 +130,7 @@ This is rendered with  `In remembrance of {subject}`
 
 The question is  *On what webpage can one find more info about the ghost bike or the accident?*
 
-This rendering asks information about the property  [source](https://wiki.openstreetmap.org/wiki/Key:source) 
-
-This is rendered with  `{link(More info available,&LBRACEsource&RBRACE,,,)}`
-
-
+This rendering asks information about the property  [source](https://wiki.openstreetmap.org/wiki/Key:source) This is rendered with  `{link(More info available,&LBRACEsource&RBRACE,,,)}`
 
 
 
@@ -148,11 +140,7 @@ This is rendered with  `{link(More info available,&LBRACEsource&RBRACE,,,)}`
 
 The question is  *What is the inscription on this Ghost bike?*
 
-This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
-
-This is rendered with  `<i>{inscription}</i>`
-
-
+This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) This is rendered with  `<i>{inscription}</i>`
 
 
 
@@ -162,11 +150,7 @@ This is rendered with  `<i>{inscription}</i>`
 
 The question is  *When was this Ghost bike installed?*
 
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
-
-This is rendered with  `Placed on {start_date}`
-
-
+This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) This is rendered with  `Placed on {start_date}`
 
 
 

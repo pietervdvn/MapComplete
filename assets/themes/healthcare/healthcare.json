@@ -110,9 +110,9 @@
     },
     {
       "builtin": "shops",
-      "=presets": [],
-      "=name": null,
       "override": {
+        "=presets": [],
+        "name": null,
         "minzoom": 18
       }
     }

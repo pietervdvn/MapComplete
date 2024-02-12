@@ -125,11 +125,7 @@ The question is  *Does this dog park have a separate fenced in area for small do
 
 The question is  *What is the name of this dog park?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `The name of this dog park is {name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `The name of this dog park is {name}`
 
 
 

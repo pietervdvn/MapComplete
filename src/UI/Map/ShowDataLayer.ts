@@ -1,5 +1,5 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import type { Map as MlMap } from "maplibre-gl"
+import type { AddLayerObject, Map as MlMap } from "maplibre-gl"
 import { GeoJSONSource, Marker } from "maplibre-gl"
 import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
 import { GeoOperations } from "../../Logic/GeoOperations"
@@ -15,6 +15,7 @@ import * as range_layer from "../../../assets/layers/range/range.json"
 import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
+import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -36,7 +37,7 @@ class PointRenderingLayer {
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<Record<string, string>>,
         onClick?: (feature: Feature) => void,
-        selectedElement?: Store<{ properties: { id?: string } }>
+        selectedElement?: Store<{ properties: { id?: string } }>,
     ) {
         this._visibility = visibility
         this._config = config
@@ -89,7 +90,7 @@ class PointRenderingLayer {
                         " while rendering",
                         location,
                         "of",
-                        this._config
+                        this._config,
                     )
                 }
                 const id = feature.properties.id + "-" + location
@@ -97,7 +98,7 @@ class PointRenderingLayer {
 
                 const loc = GeoOperations.featureToCoordinateWithRenderingType(
                     <any>feature,
-                    location
+                    location,
                 )
                 if (loc === undefined) {
                     continue
@@ -153,7 +154,7 @@ class PointRenderingLayer {
 
         if (this._onClick) {
             const self = this
-            el.addEventListener("click", function (ev) {
+            el.addEventListener("click", function(ev) {
                 ev.preventDefault()
                 self._onClick(feature)
                 // Workaround to signal the MapLibreAdaptor to ignore this click
@@ -221,7 +222,7 @@ class LineRenderingLayer {
         config: LineRenderingConfig,
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<Record<string, string>>,
-        onClick?: (feature: Feature) => void
+        onClick?: (feature: Feature) => void,
     ) {
         this._layername = layername
         this._map = map
@@ -235,44 +236,51 @@ class LineRenderingLayer {
         map.on("styledata", () => self.update(features.features))
     }
 
-    private async addSymbolLayer(sourceId: string, url: string = "./assets/png/oneway.png") {
-        const map = this._map
-        const imgId = url.replaceAll(/[/.-]/g, "_")
-
-        if (map.getImage(imgId) === undefined) {
-            await new Promise<void>((resolve, reject) => {
-                map.loadImage(url, (err, image) => {
-                    if (err) {
-                        console.error("Could not add symbol layer to line due to", err)
-                        reject(err)
-                        return
-                    }
-                    map.addImage(imgId, image)
-                    resolve()
-                })
-            })
-        }
-
-        map.addLayer({
-            "id": "symbol-layer_" + this._layername + "-" + imgId,
-                'type': 'symbol',
-                'source': sourceId,
-                'layout': {
-                    'symbol-placement': 'line',
-                    'symbol-spacing': 10,
-                    'icon-allow-overlap': true,
-                    'icon-rotation-alignment':'map',
-                    'icon-pitch-alignment':'map',
-                    'icon-image': imgId,
-                    'icon-size': 0.055,
-                    'visibility': 'visible'
-                }
-            });
-
-    }
-
     public destruct(): void {
         this._map.removeLayer(this._layername + "_polygon")
+    }
+
+    private async addSymbolLayer(sourceId: string, imageAlongWay: { if?: TagsFilter, then: string }[]) {
+        const map = this._map
+        await Promise.allSettled(imageAlongWay.map(async (img, i) => {
+            const imgId = img.then.replaceAll(/[/.-]/g, "_")
+            if (map.getImage(imgId) === undefined) {
+                await new Promise<void>((resolve, reject) => {
+                    map.loadImage(img.then, (err, image) => {
+                        if (err) {
+                            console.error("Could not add symbol layer to line due to", err)
+                            return
+                        }
+                        map.addImage(imgId, image)
+                        resolve()
+                    })
+                })
+            }
+
+
+            const spec: AddLayerObject = {
+                "id": "symbol-layer_" + this._layername + "-" + i,
+                "type": "symbol",
+                "source": sourceId,
+                "layout": {
+                    "symbol-placement": "line",
+                    "symbol-spacing": 10,
+                    "icon-allow-overlap": true,
+                    "icon-rotation-alignment": "map",
+                    "icon-pitch-alignment": "map",
+                    "icon-image": imgId,
+                    "icon-size": 0.055,
+                },
+            }
+            const filter = img.if?.asMapboxExpression()
+            console.log(">>>", this._layername, imgId, img.if, "-->", filter)
+            if (filter) {
+                spec.filter = filter
+            }
+            map.addLayer(spec)
+        }))
+
+
     }
 
     /**
@@ -281,7 +289,7 @@ class LineRenderingLayer {
      * @private
      */
     private calculatePropsFor(
-        properties: Record<string, string>
+        properties: Record<string, string>,
     ): Partial<Record<(typeof LineRenderingLayer.lineConfigKeys)[number], string>> {
         const config = this._config
 
@@ -357,11 +365,8 @@ class LineRenderingLayer {
                     },
                 })
 
-                if(this._layername.startsWith("mapcomplete_ski_piste") || this._layername.startsWith("mapcomplete_aerialway")){
-                    // TODO FIXME properly enable this so that more layers can use this if appropriate
-                    this.addSymbolLayer(this._layername)
-                }else{
-                    console.log("No oneway arrow for", this._layername)
+                if (this._config.imageAlongWay) {
+                    this.addSymbolLayer(this._layername, this._config.imageAlongWay)
                 }
 
 
@@ -372,7 +377,7 @@ class LineRenderingLayer {
                     }
                     map.setFeatureState(
                         { source: this._layername, id: feature.properties.id },
-                        this.calculatePropsFor(feature.properties)
+                        this.calculatePropsFor(feature.properties),
                     )
                 }
 
@@ -415,7 +420,7 @@ class LineRenderingLayer {
                             "Error while setting visibility of layers ",
                             linelayer,
                             polylayer,
-                            e
+                            e,
                         )
                     }
                 })
@@ -436,7 +441,7 @@ class LineRenderingLayer {
                     console.trace(
                         "Got a feature without ID; this causes rendering bugs:",
                         feature,
-                        "from"
+                        "from",
                     )
                     LineRenderingLayer.missingIdTriggered = true
                 }
@@ -448,7 +453,7 @@ class LineRenderingLayer {
             if (this._fetchStore === undefined) {
                 map.setFeatureState(
                     { source: this._layername, id },
-                    this.calculatePropsFor(feature.properties)
+                    this.calculatePropsFor(feature.properties),
                 )
             } else {
                 const tags = this._fetchStore(id)
@@ -465,7 +470,7 @@ class LineRenderingLayer {
                     }
                     map.setFeatureState(
                         { source: this._layername, id },
-                        this.calculatePropsFor(properties)
+                        this.calculatePropsFor(properties),
                     )
                 })
             }
@@ -489,7 +494,7 @@ export default class ShowDataLayer {
             layer: LayerConfig
             drawMarkers?: true | boolean
             drawLines?: true | boolean
-        }
+        },
     ) {
         this._options = options
         const self = this
@@ -500,7 +505,7 @@ export default class ShowDataLayer {
         mlmap: UIEventSource<MlMap>,
         features: FeatureSource,
         layers: LayerConfig[],
-        options?: Partial<ShowDataLayerOptions>
+        options?: Partial<ShowDataLayerOptions>,
     ) {
         const perLayer: PerLayerFeatureSourceSplitter<FeatureSourceForLayer> =
             new PerLayerFeatureSourceSplitter(
@@ -508,7 +513,7 @@ export default class ShowDataLayer {
                 features,
                 {
                     constructStore: (features, layer) => new SimpleFeatureSource(layer, features),
-                }
+                },
             )
         perLayer.forEach((fs) => {
             new ShowDataLayer(mlmap, {
@@ -522,7 +527,7 @@ export default class ShowDataLayer {
     public static showRange(
         map: Store<MlMap>,
         features: FeatureSource,
-        doShowLayer?: Store<boolean>
+        doShowLayer?: Store<boolean>,
     ): ShowDataLayer {
         return new ShowDataLayer(map, {
             layer: ShowDataLayer.rangeLayer,
@@ -531,7 +536,8 @@ export default class ShowDataLayer {
         })
     }
 
-    public destruct() {}
+    public destruct() {
+    }
 
     private zoomToCurrentFeatures(map: MlMap) {
         if (this._options.zoomToFeatures) {
@@ -552,9 +558,9 @@ export default class ShowDataLayer {
             (this._options.layer.title === undefined
                 ? undefined
                 : (feature: Feature) => {
-                      selectedElement?.setData(feature)
-                      selectedLayer?.setData(this._options.layer)
-                  })
+                    selectedElement?.setData(feature)
+                    selectedLayer?.setData(this._options.layer)
+                })
         if (this._options.drawLines !== false) {
             for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
                 const lineRenderingConfig = this._options.layer.lineRendering[i]
@@ -565,7 +571,7 @@ export default class ShowDataLayer {
                     lineRenderingConfig,
                     doShowLayer,
                     fetchStore,
-                    onClick
+                    onClick,
                 )
                 this.onDestroy.push(l.destruct)
             }
@@ -580,7 +586,7 @@ export default class ShowDataLayer {
                     doShowLayer,
                     fetchStore,
                     onClick,
-                    selectedElement
+                    selectedElement,
                 )
             }
         }

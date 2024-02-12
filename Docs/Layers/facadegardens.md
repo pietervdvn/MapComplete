@@ -109,11 +109,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the orientation of the garden?*
 
-This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
-
-This is rendered with  `Orientation: {direction} (where 0=N and 90=O)`
-
-
+This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) This is rendered with  `Orientation: {direction} (where 0=N and 90=O)`
 
 
 
@@ -156,11 +152,7 @@ The question is  *Is there a water barrel installed for the garden?*
 
 The question is  *When was the garden constructed? (a year is sufficient)*
 
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
-
-This is rendered with  `Construction date of the garden: {start_date}`
-
-
+This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) This is rendered with  `Construction date of the garden: {start_date}`
 
 
 
@@ -204,11 +196,7 @@ The question is  *What kinds of plants grow here?*
 
 The question is  *Extra describing info about the garden (if needed and not yet described above)*
 
-This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
-
-This is rendered with  `More details: {description}`
-
-
+This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) This is rendered with  `More details: {description}`
 
 
 

@@ -77,11 +77,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What is the inscription of this plaque?*
 
-This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
-
-This is rendered with  `The inscription on this plaque reads: <p><i>{inscription}<i></p>`
-
-
+This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) This is rendered with  `The inscription on this plaque reads: <p><i>{inscription}<i></p>`
 
 
 

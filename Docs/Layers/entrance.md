@@ -128,11 +128,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -224,11 +220,7 @@ The question is  *Is this door automated?*
 
 The question is  *What is the width of this door/entrance?*
 
-This rendering asks information about the property  [width](https://wiki.openstreetmap.org/wiki/Key:width) 
-
-This is rendered with  `This door has a width of {canonical(width)}`
-
-
+This rendering asks information about the property  [width](https://wiki.openstreetmap.org/wiki/Key:width) This is rendered with  `This door has a width of {canonical(width)}`
 
 
 
@@ -238,11 +230,7 @@ This is rendered with  `This door has a width of {canonical(width)}`
 
 The question is  *What is the height of this kerb?*
 
-This rendering asks information about the property  [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) 
-
-This is rendered with  `The kerb height of this door is {kerb:height}`
-
-
+This rendering asks information about the property  [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) This is rendered with  `The kerb height of this door is {kerb:height}`
 
 
 

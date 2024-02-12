@@ -27,6 +27,7 @@ A layer showing touristical, road side information boards (e.g. giving informati
 
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
+  - [ski](https://mapcomplete.org/ski)
 
 
 

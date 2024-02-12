@@ -106,11 +106,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *How much does it cost to use the cleaning service?*
 
-This rendering asks information about the property  [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) 
-
-This is rendered with  `Using the cleaning service costs {service:bicycle:cleaning:charge}`
-
-
+This rendering asks information about the property  [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) This is rendered with  `Using the cleaning service costs {service:bicycle:cleaning:charge}`
 
 
 
@@ -129,11 +125,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *How much does it cost to use the cleaning service?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `Using the cleaning service costs {charge}`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `Using the cleaning service costs {charge}`
 
 
 

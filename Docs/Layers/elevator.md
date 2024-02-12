@@ -109,11 +109,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What levels does this elevator go to?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `This elevator goes to floors {level}`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `This elevator goes to floors {level}`
 
 
 
@@ -153,11 +149,7 @@ The question is  *Does this elevator work?*
 
 The question is  *What is the width of this elevator's entrance?*
 
-This rendering asks information about the property  [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) 
-
-This is rendered with  `This elevator's doors have a width of {canonical(door:width)}`
-
-
+This rendering asks information about the property  [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) This is rendered with  `This elevator's doors have a width of {canonical(door:width)}`
 
 
 
@@ -167,11 +159,7 @@ This is rendered with  `This elevator's doors have a width of {canonical(door:wi
 
 The question is  *What is the width of this elevator?*
 
-This rendering asks information about the property  [elevator:width](https://wiki.openstreetmap.org/wiki/Key:elevator:width) 
-
-This is rendered with  `This elevator has a width of {canonical(elevator:width)}`
-
-
+This rendering asks information about the property  [elevator:width](https://wiki.openstreetmap.org/wiki/Key:elevator:width) This is rendered with  `This elevator has a width of {canonical(elevator:width)}`
 
 
 
@@ -181,11 +169,7 @@ This is rendered with  `This elevator has a width of {canonical(elevator:width)}
 
 The question is  *What is the depth of this elevator?*
 
-This rendering asks information about the property  [elevator:depth](https://wiki.openstreetmap.org/wiki/Key:elevator:depth) 
-
-This is rendered with  `This elevator has a depth of {canonical(elevator:depth)}`
-
-
+This rendering asks information about the property  [elevator:depth](https://wiki.openstreetmap.org/wiki/Key:elevator:depth) This is rendered with  `This elevator has a depth of {canonical(elevator:depth)}`
 
 
 

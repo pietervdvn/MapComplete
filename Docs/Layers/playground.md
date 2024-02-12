@@ -125,11 +125,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Which is the surface of this playground?*
 
-This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
-
-This is rendered with  `The surface is <b>{surface}</b>`
-
-
+This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) This is rendered with  `The surface is <b>{surface}</b>`
 
 
 
@@ -173,11 +169,7 @@ This tagrendering has labels  `extra`
 
 The question is  *What is the minimum age required to access this playground?*
 
-This rendering asks information about the property  [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) 
-
-This is rendered with  `Accessible to kids older than {min_age} years`
-
-
+This rendering asks information about the property  [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) This is rendered with  `Accessible to kids older than {min_age} years`
 
 This tagrendering has labels  `extra`
 
@@ -189,11 +181,7 @@ This tagrendering has labels  `extra`
 
 The question is  *What is the maximum age allowed to access this playground?*
 
-This rendering asks information about the property  [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) 
-
-This is rendered with  `Accessible to kids of at most {max_age}`
-
-
+This rendering asks information about the property  [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) This is rendered with  `Accessible to kids of at most {max_age}`
 
 This tagrendering has labels  `extra`
 
@@ -205,11 +193,7 @@ This tagrendering has labels  `extra`
 
 The question is  *Who operates this playground?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
 
 
 
@@ -240,11 +224,7 @@ The question is  *Is this playground accessible to the general public?*
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -262,11 +242,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the email address of the playground maintainer?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}'>{email}</a>`
 
 
 
@@ -276,11 +252,7 @@ This is rendered with  `<a href='mailto:{email}'>{email}</a>`
 
 The question is  *What is the phone number of the playground maintainer?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -307,11 +279,7 @@ The question is  *Is this playground accessible to wheelchair users?*
 
 The question is  *When is this playground accessible?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `{opening_hours_table(opening_hours)}`
 
 
 
@@ -327,11 +295,7 @@ This is rendered with  `{opening_hours_table(opening_hours)}`
 
 The question is  *When was this object last checked?*
 
-This rendering asks information about the property  [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) 
-
-This is rendered with  `This object was last checked on <b>{check_date}</b>`
-
-
+This rendering asks information about the property  [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) This is rendered with  `This object was last checked on <b>{check_date}</b>`
 
 
 

@@ -94,11 +94,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What color is the hydrant?*
 
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
-
-This is rendered with  `The hydrant color is {colour}`
-
-
+This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) This is rendered with  `The hydrant color is {colour}`
 
 
 
@@ -114,11 +110,7 @@ This is rendered with  `The hydrant color is {colour}`
 
 The question is  *What type of hydrant is it?*
 
-This rendering asks information about the property  [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) 
-
-This is rendered with  ` Hydrant type: {fire_hydrant:type}`
-
-
+This rendering asks information about the property  [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) This is rendered with  ` Hydrant type: {fire_hydrant:type}`
 
 
 
@@ -153,11 +145,7 @@ The question is  *Is this hydrant still working?*
 
 The question is  *What is the pipe diameter of this hydrant?*
 
-This rendering asks information about the property  [fire_hydrant:diameter](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:diameter) 
-
-This is rendered with  `Pipe diameter: {canonical(fire_hydrant:diameter)}`
-
-
+This rendering asks information about the property  [fire_hydrant:diameter](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:diameter) This is rendered with  `Pipe diameter: {canonical(fire_hydrant:diameter)}`
 
 
 
@@ -167,11 +155,7 @@ This is rendered with  `Pipe diameter: {canonical(fire_hydrant:diameter)}`
 
 The question is  *How many couplings does this fire hydrant have?*
 
-This rendering asks information about the property  [couplings](https://wiki.openstreetmap.org/wiki/Key:couplings) 
-
-This is rendered with  `Number of couplings: {couplings}`
-
-
+This rendering asks information about the property  [couplings](https://wiki.openstreetmap.org/wiki/Key:couplings) This is rendered with  `Number of couplings: {couplings}`
 
 
 
@@ -181,11 +165,7 @@ This is rendered with  `Number of couplings: {couplings}`
 
 The question is  *What kind of couplings does this hydrant have?*
 
-This rendering asks information about the property  [couplings:type](https://wiki.openstreetmap.org/wiki/Key:couplings:type) 
-
-This is rendered with  `Couplings: {couplings:type}`
-
-
+This rendering asks information about the property  [couplings:type](https://wiki.openstreetmap.org/wiki/Key:couplings:type) This is rendered with  `Couplings: {couplings:type}`
 
 
 
@@ -202,11 +182,7 @@ This is rendered with  `Couplings: {couplings:type}`
 
 The question is  *What diameter are the couplings of this hydrant?*
 
-This rendering asks information about the property  [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) 
-
-This is rendered with  `Coupling diameters: {couplings:diameters}`
-
-
+This rendering asks information about the property  [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) This is rendered with  `Coupling diameters: {couplings:diameters}`
 
 
 
@@ -237,6 +213,16 @@ This tagrendering has no question and is thus read-only
 
 
 Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
 
 This tagrendering has no question and is thus read-only
 

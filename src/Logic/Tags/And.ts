@@ -4,6 +4,7 @@ import { TagUtils } from "./TagUtils"
 import { Tag } from "./Tag"
 import { RegexTag } from "./RegexTag"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { ExpressionSpecification } from "maplibre-gl"
 
 export class And extends TagsFilter {
     public and: TagsFilter[]
@@ -428,5 +429,9 @@ export class And extends TagsFilter {
     visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
         this.and.forEach((sub) => sub.visit(f))
+    }
+
+    asMapboxExpression(): ExpressionSpecification {
+        return ["all", ...this.and.map(t => t.asMapboxExpression())]
     }
 }

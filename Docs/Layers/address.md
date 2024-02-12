@@ -82,11 +82,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What is the number of this house?*
 
-This rendering asks information about the property  [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) 
-
-This is rendered with  `The house number is <b>{addr:housenumber}</b>`
-
-
+This rendering asks information about the property  [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) This is rendered with  `The house number is <b>{addr:housenumber}</b>`
 
 
 
@@ -101,11 +97,7 @@ This is rendered with  `The house number is <b>{addr:housenumber}</b>`
 
 The question is  *What street is this address located in?*
 
-This rendering asks information about the property  [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) 
-
-This is rendered with  `This address is in street <b>{addr:street}</b>`
-
-
+This rendering asks information about the property  [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) This is rendered with  `This address is in street <b>{addr:street}</b>`
 
 
 
@@ -122,11 +114,7 @@ This is rendered with  `This address is in street <b>{addr:street}</b>`
 
 The question is  *What should be fixed here? Please explain*
 
-This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) 
-
-This is rendered with  `<b>Fixme description</b>{fixme}`
-
-
+This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) This is rendered with  `<b>Fixme description</b>{fixme}`
 
 
 

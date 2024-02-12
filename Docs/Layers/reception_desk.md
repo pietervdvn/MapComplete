@@ -116,11 +116,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -143,11 +139,7 @@ This tagrendering has labels  `level`
 
 The question is  *What is the height of the reception desk? *
 
-This rendering asks information about the property  [desk:height](https://wiki.openstreetmap.org/wiki/Key:desk:height) 
-
-This is rendered with  `The height of the desk is <b>{canonical(desk:height)}</b>`
-
-
+This rendering asks information about the property  [desk:height](https://wiki.openstreetmap.org/wiki/Key:desk:height) This is rendered with  `The height of the desk is <b>{canonical(desk:height)}</b>`
 
 
 

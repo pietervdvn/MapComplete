@@ -187,11 +187,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *How wide is the gap left over besides the barrier?*
 
-This rendering asks information about the property  [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) 
-
-This is rendered with  `Maximum width: {maxwidth:physical} m`
-
-
+This rendering asks information about the property  [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) This is rendered with  `Maximum width: {maxwidth:physical} m`
 
 This tagrendering is only visible in the popup if the following condition is met: `_referencing_ways~.+ & cycle_barrier!=double & cycle_barrier!=triple`
 
@@ -203,11 +199,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *How much space is there between the barriers (along the length of the road)?*
 
-This rendering asks information about the property  [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) 
-
-This is rendered with  `Space between barriers (along the length of the road): {width:separation} m`
-
-
+This rendering asks information about the property  [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) This is rendered with  `Space between barriers (along the length of the road): {width:separation} m`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
 
@@ -219,11 +211,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *How wide is the smallest opening next to the barriers?*
 
-This rendering asks information about the property  [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) 
-
-This is rendered with  `Width of opening: {width:opening} m`
-
-
+This rendering asks information about the property  [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) This is rendered with  `Width of opening: {width:opening} m`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
 
@@ -235,11 +223,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *How much overlap do the barriers have?*
 
-This rendering asks information about the property  [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) 
-
-This is rendered with  `Overlap: {overlap} m`
-
-
+This rendering asks information about the property  [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) This is rendered with  `Overlap: {overlap} m`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
 

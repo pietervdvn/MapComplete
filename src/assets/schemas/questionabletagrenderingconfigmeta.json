@@ -231,7 +231,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -243,7 +246,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -657,6 +660,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },

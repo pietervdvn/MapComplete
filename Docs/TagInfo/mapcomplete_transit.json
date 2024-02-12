@@ -329,6 +329,37 @@
       "value": "private"
     },
     {
+      "key": "fee",
+      "description": "Layer 'Bike parking' shows fee=yes with a fixed text, namely 'One has to <b>pay</b> to use this bicycle parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike parking' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "value": "no"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Bus routes')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike parking' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "value": "24/7"
+    },
+    {
+      "key": "operator:phone",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'operator:phone' (in the mapcomplete.org theme 'Bus routes')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike parking' shows phone~.+ with a fixed text, namely '<a href='tel:{phone}'>{phone}</a>' (in the mapcomplete.org theme 'Bus routes')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bike parking' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Bus routes')"
+    },
+    {
       "key": "cargo_bike",
       "description": "Layer 'Bike parking' shows cargo_bike=yes with a fixed text, namely 'This parking has room for cargo bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
       "value": "yes"

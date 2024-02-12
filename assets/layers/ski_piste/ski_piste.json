@@ -96,7 +96,8 @@
             "then": "gray"
           }
         ]
-      }
+      },
+      "imageAlongWay": "./assets/png/oneway.png"
     }
   ],
   "id": "ski_piste",

@@ -108,11 +108,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Which sport can be played here?*
 
-This rendering asks information about the property  [sport](https://wiki.openstreetmap.org/wiki/Key:sport) 
-
-This is rendered with  `{sport} is played here`
-
-
+This rendering asks information about the property  [sport](https://wiki.openstreetmap.org/wiki/Key:sport) This is rendered with  `{sport} is played here`
 
 
 
@@ -155,11 +151,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Which is the surface of this sport pitch?*
 
-This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
-
-This is rendered with  `The surface is <b>{surface}</b>`
-
-
+This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) This is rendered with  `The surface is <b>{surface}</b>`
 
 
 
@@ -218,11 +210,7 @@ The question is  *Does one have to make an appointment to use this sport pitch?*
 
 The question is  *What is the phone number of the operator?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -232,11 +220,7 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 The question is  *What is the email address of the operator?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -246,11 +230,7 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 The question is  *When is this pitch accessible?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `Openingsuren: {opening_hours_table()}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `Openingsuren: {opening_hours_table()}`
 
 
 
