@@ -52,6 +52,10 @@ export class MangroveIdentity {
  * Tracks all reviews of a given feature, allows to create a new review
  */
 export default class FeatureReviews {
+    /**
+     * See https://gitlab.com/open-reviews/mangrove/-/blob/master/servers/reviewer/src/review.rs#L269 and https://github.com/pietervdvn/MapComplete/issues/1775
+     */
+    public static readonly REVIEW_OPINION_MAX_LENGTH = 1000
     private static readonly _featureReviewsCache: Record<string, FeatureReviews> = {}
     public readonly subjectUri: Store<string>
     public readonly average: Store<number | null>
@@ -172,6 +176,9 @@ export default class FeatureReviews {
      * The given review is uploaded to mangrove.reviews and added to the list of known reviews
      */
     public async createReview(review: Omit<Review, "sub">): Promise<void> {
+        if(review.opinion.length > FeatureReviews .REVIEW_OPINION_MAX_LENGTH){
+            throw "Opinion too long, should be at most "+FeatureReviews.REVIEW_OPINION_MAX_LENGTH+" characters long"
+        }
         const r: Review = {
             sub: this.subjectUri.data,
             ...review,
