@@ -396,7 +396,7 @@
         "uploadPending": "{count} Änderungen ausstehend",
         "uploadPendingSingle": "Eine Änderung ausstehend",
         "uploadingChanges": "Änderungen werden hochgeladen…",
-        "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
+        "useSearch": "Suche oben verwenden für weitere Optionen",
         "visualFeedback": {
             "closestFeaturesAre": "{n} Objekte im Anzeigebereich.",
             "directionsAbsolute": {
@@ -483,10 +483,10 @@
     "hotkeyDocumentation": {
         "action": "Aktion",
         "closeSidebar": "Seitenleiste schließen",
-        "geolocate": "Karte auf den aktuellen Standort verschieben oder zoomen. Erfordert Standortberechtigung",
+        "geolocate": "Karte auf aktuellen Standort verschieben oder zoomen. Erfordert Standortberechtigung",
         "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
         "key": "Tastenkombination",
-        "openFilterPanel": "Öffnet das Panel für POI-Ebenen und Filter",
+        "openFilterPanel": "Panel für POI-Ebenen und Filter öffnen",
         "openLayersPanel": "Auswahl für Hintergrundebenen öffnen",
         "queryCurrentLocation": "Adresse anzeigen, die der Kartenmitte am nächsten liegt",
         "selectAerial": "Hintergrund als Luftbild oder Satellitenbild einstellen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
