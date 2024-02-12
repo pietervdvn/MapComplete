@@ -2,6 +2,7 @@ import { TagsFilter } from "./TagsFilter"
 import { TagUtils } from "./TagUtils"
 import { And } from "./And"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { ExpressionSpecification } from "maplibre-gl"
 
 export class Or extends TagsFilter {
     public or: TagsFilter[]
@@ -287,5 +288,9 @@ export class Or extends TagsFilter {
     visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
         this.or.forEach((t) => t.visit(f))
+    }
+
+    asMapboxExpression(): ExpressionSpecification {
+        return ["any", ...this.or.map(t => t.asMapboxExpression())]
     }
 }

@@ -1,10 +1,12 @@
 import { Utils } from "../../Utils"
 import { TagsFilter } from "./TagsFilter"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { ExpressionSpecification } from "maplibre-gl"
 
 export class Tag extends TagsFilter {
     public key: string
     public value: string
+
     constructor(key: string, value: string) {
         super()
         this.key = key
@@ -63,7 +65,7 @@ export class Tag extends TagsFilter {
     asOverpass(): string[] {
         if (this.value === "") {
             // NOT having this key
-            return ['[!"' + this.key + '"]']
+            return ["[!\"" + this.key + "\"]"]
         }
         return [`["${this.key}"="${this.value}"]`]
     }
@@ -81,7 +83,7 @@ export class Tag extends TagsFilter {
     asHumanString(
         linkToWiki?: boolean,
         shorten?: boolean,
-        currentProperties?: Record<string, string>
+        currentProperties?: Record<string, string>,
     ) {
         let v = this.value
         if (typeof v !== "string") {
@@ -164,5 +166,17 @@ export class Tag extends TagsFilter {
 
     visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
+    }
+
+    asMapboxExpression(): ExpressionSpecification {
+        if (this.value === "") {
+            return [
+                "any",
+                ["!", ["has", this.key]],
+                ["==", ["get", this.key], ""],
+            ]
+
+        }
+        return ["==", ["get", this.key], this.value]
     }
 }
