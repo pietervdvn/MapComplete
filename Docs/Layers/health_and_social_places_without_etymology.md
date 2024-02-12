@@ -101,11 +101,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the Wikidata-item that this object is named after?*
 
-This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) 
-
-This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
-
-
+This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
 
 
 
@@ -127,11 +123,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is this object named after?*
 
-This rendering asks information about the property  [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) 
-
-This is rendered with  `Named after {name:etymology}`
-
-
+This rendering asks information about the property  [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) This is rendered with  `Named after {name:etymology}`
 
 
 

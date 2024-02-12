@@ -121,11 +121,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the name of this shop?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This shop is called <i>{name}</i>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This shop is called <i>{name}</i>`
 
 
 
@@ -135,11 +131,7 @@ This is rendered with  `This shop is called <i>{name}</i>`
 
 The question is  *What kind of shop is this?*
 
-This rendering asks information about the property  [shop](https://wiki.openstreetmap.org/wiki/Key:shop) 
-
-This is rendered with  `This is a {shop}`
-
-
+This rendering asks information about the property  [shop](https://wiki.openstreetmap.org/wiki/Key:shop) This is rendered with  `This is a {shop}`
 
 
 
@@ -336,11 +328,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -350,11 +338,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -372,11 +356,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the email address of {title()}?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -394,11 +374,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the phone number of {title()}?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -450,11 +426,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -565,11 +537,7 @@ This tagrendering has labels  `internet-all`
 
 The question is  *What is the network name for the wireless internet access?*
 
-This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) 
-
-This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
-
-
+This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 

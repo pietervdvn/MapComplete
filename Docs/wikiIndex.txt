@@ -236,6 +236,15 @@
 |genre= POI, editor, cyclestreets
 }}
 {{service_item
+|name= [https://mapcomplete.org/disaster_response disaster_response]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:it|en}}
+|descr= A MapComplete theme: This map contains elements meant for disaster preparedness and response
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, disaster_response
+}}
+{{service_item
 |name= [https://mapcomplete.org/drinking_water drinking_water]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
@@ -330,7 +339,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/icecream icecream]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: A map showing ice cream parlors and ice cream vending machines
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -461,6 +470,15 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, rainbow_crossings
+}}
+{{service_item
+|name= [https://mapcomplete.org/ski ski]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: Everything you need to go skiing
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, ski
 }}
 {{service_item
 |name= [https://mapcomplete.org/sport_pitches sport_pitches]

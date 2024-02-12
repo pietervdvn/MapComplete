@@ -120,11 +120,7 @@ The question is  *What kind of waste disposal bin is this?*
 
 The question is  *Who can use this waste disposal bin?*
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-
-This is rendered with  `Access: {access}`
-
-
+This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `Access: {access}`
 
 
 

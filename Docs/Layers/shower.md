@@ -119,11 +119,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -179,11 +175,7 @@ The question is  *Is there a fee for using this shower?*
 
 The question is  *How much does it cost to use this shower?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `It costs {charge} to use this shower`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `It costs {charge} to use this shower`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
@@ -195,11 +187,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 

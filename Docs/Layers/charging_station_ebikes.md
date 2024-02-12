@@ -205,11 +205,7 @@ The question is  *Which vehicles are allowed to charge here?*
 
 The question is  *Who is allowed to use this charging station?*
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-
-This is rendered with  `Access is {access}`
-
-
+This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `Access is {access}`
 
 
 
@@ -230,11 +226,7 @@ This is rendered with  `Access is {access}`
 
 The question is  *How much vehicles can be charged here at the same time?*
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
-
-This is rendered with  `{capacity} vehicles can be charged here at the same time`
-
-
+This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `{capacity} vehicles can be charged here at the same time`
 
 
 
@@ -322,11 +314,7 @@ The question is  *Which charging connections are available here?*
 
 The question is  *How much plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) are available here?*
 
-This rendering asks information about the property  [socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:schuko}</b> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here`
-
-
+This rendering asks information about the property  [socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko) This is rendered with  `There are <b class='text-xl'>{socket:schuko}</b> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+ & socket:schuko!=0`
 
@@ -338,11 +326,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?*
 
-This rendering asks information about the property  [socket:schuko:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage) 
-
-This is rendered with  `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs {canonical(socket:schuko:voltage)}`
-
-
+This rendering asks information about the property  [socket:schuko:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage) This is rendered with  `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs {canonical(socket:schuko:voltage)}`
 
 
 
@@ -361,11 +345,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?*
 
-This rendering asks information about the property  [socket:schuko:current](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current) 
-
-This is rendered with  `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:current)}`
-
-
+This rendering asks information about the property  [socket:schuko:current](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current) This is rendered with  `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:current)}`
 
 
 
@@ -384,11 +364,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?*
 
-This rendering asks information about the property  [socket:schuko:output](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output) 
-
-This is rendered with  `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:output)}`
-
-
+This rendering asks information about the property  [socket:schuko:output](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output) This is rendered with  `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:output)}`
 
 
 
@@ -407,11 +383,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) are available here?*
 
-This rendering asks information about the property  [socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:typee}</b> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here`
-
-
+This rendering asks information about the property  [socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee) This is rendered with  `There are <b class='text-xl'>{socket:typee}</b> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+ & socket:typee!=0`
 
@@ -423,11 +395,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?*
 
-This rendering asks information about the property  [socket:typee:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage) 
-
-This is rendered with  `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs {canonical(socket:typee:voltage)}`
-
-
+This rendering asks information about the property  [socket:typee:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage) This is rendered with  `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs {canonical(socket:typee:voltage)}`
 
 
 
@@ -446,11 +414,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?*
 
-This rendering asks information about the property  [socket:typee:current](https://wiki.openstreetmap.org/wiki/Key:socket:typee:current) 
-
-This is rendered with  `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:current)}`
-
-
+This rendering asks information about the property  [socket:typee:current](https://wiki.openstreetmap.org/wiki/Key:socket:typee:current) This is rendered with  `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:current)}`
 
 
 
@@ -469,11 +433,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?*
 
-This rendering asks information about the property  [socket:typee:output](https://wiki.openstreetmap.org/wiki/Key:socket:typee:output) 
-
-This is rendered with  `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:output)}`
-
-
+This rendering asks information about the property  [socket:typee:output](https://wiki.openstreetmap.org/wiki/Key:socket:typee:output) This is rendered with  `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:output)}`
 
 
 
@@ -493,11 +453,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Chademo</b> are available here?*
 
-This rendering asks information about the property  [socket:chademo](https://wiki.openstreetmap.org/wiki/Key:socket:chademo) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:chademo}</b> plugs of type <b>Chademo</b> available here`
-
-
+This rendering asks information about the property  [socket:chademo](https://wiki.openstreetmap.org/wiki/Key:socket:chademo) This is rendered with  `There are <b class='text-xl'>{socket:chademo}</b> plugs of type <b>Chademo</b> available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+ & socket:chademo!=0`
 
@@ -509,11 +465,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Chademo</b> offer?*
 
-This rendering asks information about the property  [socket:chademo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage) 
-
-This is rendered with  `<b>Chademo</b> outputs {canonical(socket:chademo:voltage)}`
-
-
+This rendering asks information about the property  [socket:chademo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage) This is rendered with  `<b>Chademo</b> outputs {canonical(socket:chademo:voltage)}`
 
 
 
@@ -532,11 +484,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Chademo</b> offer?*
 
-This rendering asks information about the property  [socket:chademo:current](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current) 
-
-This is rendered with  `<b>Chademo</b> outputs at most {canonical(socket:chademo:current)}`
-
-
+This rendering asks information about the property  [socket:chademo:current](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current) This is rendered with  `<b>Chademo</b> outputs at most {canonical(socket:chademo:current)}`
 
 
 
@@ -555,11 +503,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Chademo</b> offer?*
 
-This rendering asks information about the property  [socket:chademo:output](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output) 
-
-This is rendered with  `<b>Chademo</b> outputs at most {canonical(socket:chademo:output)}`
-
-
+This rendering asks information about the property  [socket:chademo:output](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output) This is rendered with  `<b>Chademo</b> outputs at most {canonical(socket:chademo:output)}`
 
 
 
@@ -578,11 +522,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Type 1 with cable</b> (J1772) are available here?*
 
-This rendering asks information about the property  [socket:type1_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:type1_cable}</b> plugs of type <b>Type 1 with cable</b> (J1772) available here`
-
-
+This rendering asks information about the property  [socket:type1_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable) This is rendered with  `There are <b class='text-xl'>{socket:type1_cable}</b> plugs of type <b>Type 1 with cable</b> (J1772) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+ & socket:type1_cable!=0`
 
@@ -594,11 +534,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Type 1 with cable</b> (J1772) offer?*
 
-This rendering asks information about the property  [socket:type1_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage) 
-
-This is rendered with  `<b>Type 1 with cable</b> (J1772) outputs {canonical(socket:type1_cable:voltage)}`
-
-
+This rendering asks information about the property  [socket:type1_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage) This is rendered with  `<b>Type 1 with cable</b> (J1772) outputs {canonical(socket:type1_cable:voltage)}`
 
 
 
@@ -618,11 +554,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Type 1 with cable</b> (J1772) offer?*
 
-This rendering asks information about the property  [socket:type1_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current) 
-
-This is rendered with  `<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:current)}`
-
-
+This rendering asks information about the property  [socket:type1_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current) This is rendered with  `<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:current)}`
 
 
 
@@ -641,11 +573,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Type 1 with cable</b> (J1772) offer?*
 
-This rendering asks information about the property  [socket:type1_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output) 
-
-This is rendered with  `<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:output)}`
-
-
+This rendering asks information about the property  [socket:type1_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output) This is rendered with  `<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:output)}`
 
 
 
@@ -665,11 +593,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) are available here?*
 
-This rendering asks information about the property  [socket:type1](https://wiki.openstreetmap.org/wiki/Key:socket:type1) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:type1}</b> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here`
-
-
+This rendering asks information about the property  [socket:type1](https://wiki.openstreetmap.org/wiki/Key:socket:type1) This is rendered with  `There are <b class='text-xl'>{socket:type1}</b> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+ & socket:type1!=0`
 
@@ -681,11 +605,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Type 1 <i>without</i> cable</b> (J1772) offer?*
 
-This rendering asks information about the property  [socket:type1:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage) 
-
-This is rendered with  `<b>Type 1 <i>without</i> cable</b> (J1772) outputs {canonical(socket:type1:voltage)}`
-
-
+This rendering asks information about the property  [socket:type1:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage) This is rendered with  `<b>Type 1 <i>without</i> cable</b> (J1772) outputs {canonical(socket:type1:voltage)}`
 
 
 
@@ -705,11 +625,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Type 1 <i>without</i> cable</b> (J1772) offer?*
 
-This rendering asks information about the property  [socket:type1:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1:current) 
-
-This is rendered with  `<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:current)}`
-
-
+This rendering asks information about the property  [socket:type1:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1:current) This is rendered with  `<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:current)}`
 
 
 
@@ -728,11 +644,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Type 1 <i>without</i> cable</b> (J1772) offer?*
 
-This rendering asks information about the property  [socket:type1:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1:output) 
-
-This is rendered with  `<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:output)}`
-
-
+This rendering asks information about the property  [socket:type1:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1:output) This is rendered with  `<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:output)}`
 
 
 
@@ -754,11 +666,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) are available here?*
 
-This rendering asks information about the property  [socket:type1_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:type1_combo}</b> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here`
-
-
+This rendering asks information about the property  [socket:type1_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo) This is rendered with  `There are <b class='text-xl'>{socket:type1_combo}</b> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+ & socket:type1_combo!=0`
 
@@ -770,11 +678,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Type 1 CCS</b> (aka Type 1 Combo) offer?*
 
-This rendering asks information about the property  [socket:type1_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage) 
-
-This is rendered with  `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs {canonical(socket:type1_combo:voltage)}`
-
-
+This rendering asks information about the property  [socket:type1_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage) This is rendered with  `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs {canonical(socket:type1_combo:voltage)}`
 
 
 
@@ -794,11 +698,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Type 1 CCS</b> (aka Type 1 Combo) offer?*
 
-This rendering asks information about the property  [socket:type1_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current) 
-
-This is rendered with  `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:current)}`
-
-
+This rendering asks information about the property  [socket:type1_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current) This is rendered with  `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:current)}`
 
 
 
@@ -818,11 +718,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Type 1 CCS</b> (aka Type 1 Combo) offer?*
 
-This rendering asks information about the property  [socket:type1_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output) 
-
-This is rendered with  `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:output)}`
-
-
+This rendering asks information about the property  [socket:type1_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output) This is rendered with  `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:output)}`
 
 
 
@@ -844,11 +740,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Tesla Supercharger</b> are available here?*
 
-This rendering asks information about the property  [socket:tesla_supercharger](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:tesla_supercharger}</b> plugs of type <b>Tesla Supercharger</b> available here`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger) This is rendered with  `There are <b class='text-xl'>{socket:tesla_supercharger}</b> plugs of type <b>Tesla Supercharger</b> available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0`
 
@@ -860,11 +752,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Tesla Supercharger</b> offer?*
 
-This rendering asks information about the property  [socket:tesla_supercharger:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage) 
-
-This is rendered with  `<b>Tesla Supercharger</b> outputs {canonical(socket:tesla_supercharger:voltage)}`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage) This is rendered with  `<b>Tesla Supercharger</b> outputs {canonical(socket:tesla_supercharger:voltage)}`
 
 
 
@@ -883,11 +771,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Tesla Supercharger</b> offer?*
 
-This rendering asks information about the property  [socket:tesla_supercharger:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current) 
-
-This is rendered with  `<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:current)}`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current) This is rendered with  `<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:current)}`
 
 
 
@@ -907,11 +791,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Tesla Supercharger</b> offer?*
 
-This rendering asks information about the property  [socket:tesla_supercharger:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output) 
-
-This is rendered with  `<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:output)}`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output) This is rendered with  `<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:output)}`
 
 
 
@@ -932,11 +812,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Type 2</b> (mennekes) are available here?*
 
-This rendering asks information about the property  [socket:type2](https://wiki.openstreetmap.org/wiki/Key:socket:type2) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:type2}</b> plugs of type <b>Type 2</b> (mennekes) available here`
-
-
+This rendering asks information about the property  [socket:type2](https://wiki.openstreetmap.org/wiki/Key:socket:type2) This is rendered with  `There are <b class='text-xl'>{socket:type2}</b> plugs of type <b>Type 2</b> (mennekes) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+ & socket:type2!=0`
 
@@ -948,11 +824,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Type 2</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage) 
-
-This is rendered with  `<b>Type 2</b> (mennekes) outputs {canonical(socket:type2:voltage)}`
-
-
+This rendering asks information about the property  [socket:type2:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage) This is rendered with  `<b>Type 2</b> (mennekes) outputs {canonical(socket:type2:voltage)}`
 
 
 
@@ -972,11 +844,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Type 2</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2:current) 
-
-This is rendered with  `<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:current)}`
-
-
+This rendering asks information about the property  [socket:type2:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2:current) This is rendered with  `<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:current)}`
 
 
 
@@ -996,11 +864,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Type 2</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2:output) 
-
-This is rendered with  `<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:output)}`
-
-
+This rendering asks information about the property  [socket:type2:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2:output) This is rendered with  `<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:output)}`
 
 
 
@@ -1020,11 +884,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Type 2 CCS</b> (mennekes) are available here?*
 
-This rendering asks information about the property  [socket:type2_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:type2_combo}</b> plugs of type <b>Type 2 CCS</b> (mennekes) available here`
-
-
+This rendering asks information about the property  [socket:type2_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo) This is rendered with  `There are <b class='text-xl'>{socket:type2_combo}</b> plugs of type <b>Type 2 CCS</b> (mennekes) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+ & socket:type2_combo!=0`
 
@@ -1036,11 +896,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Type 2 CCS</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage) 
-
-This is rendered with  `<b>Type 2 CCS</b> (mennekes) outputs {canonical(socket:type2_combo:voltage)}`
-
-
+This rendering asks information about the property  [socket:type2_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage) This is rendered with  `<b>Type 2 CCS</b> (mennekes) outputs {canonical(socket:type2_combo:voltage)}`
 
 
 
@@ -1060,11 +916,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Type 2 CCS</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current) 
-
-This is rendered with  `<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:current)}`
-
-
+This rendering asks information about the property  [socket:type2_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current) This is rendered with  `<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:current)}`
 
 
 
@@ -1084,11 +936,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Type 2 CCS</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output) 
-
-This is rendered with  `<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:output)}`
-
-
+This rendering asks information about the property  [socket:type2_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output) This is rendered with  `<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:output)}`
 
 
 
@@ -1107,11 +955,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Type 2 with cable</b> (mennekes) are available here?*
 
-This rendering asks information about the property  [socket:type2_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:type2_cable}</b> plugs of type <b>Type 2 with cable</b> (mennekes) available here`
-
-
+This rendering asks information about the property  [socket:type2_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable) This is rendered with  `There are <b class='text-xl'>{socket:type2_cable}</b> plugs of type <b>Type 2 with cable</b> (mennekes) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+ & socket:type2_cable!=0`
 
@@ -1123,11 +967,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Type 2 with cable</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage) 
-
-This is rendered with  `<b>Type 2 with cable</b> (mennekes) outputs {canonical(socket:type2_cable:voltage)}`
-
-
+This rendering asks information about the property  [socket:type2_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage) This is rendered with  `<b>Type 2 with cable</b> (mennekes) outputs {canonical(socket:type2_cable:voltage)}`
 
 
 
@@ -1147,11 +987,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Type 2 with cable</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current) 
-
-This is rendered with  `<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:current)}`
-
-
+This rendering asks information about the property  [socket:type2_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current) This is rendered with  `<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:current)}`
 
 
 
@@ -1171,11 +1007,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Type 2 with cable</b> (mennekes) offer?*
 
-This rendering asks information about the property  [socket:type2_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output) 
-
-This is rendered with  `<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:output)}`
-
-
+This rendering asks information about the property  [socket:type2_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output) This is rendered with  `<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:output)}`
 
 
 
@@ -1195,11 +1027,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) are available here?*
 
-This rendering asks information about the property  [socket:tesla_supercharger_ccs](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) available here`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger_ccs](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs) This is rendered with  `There are <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0`
 
@@ -1211,11 +1039,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?*
 
-This rendering asks information about the property  [socket:tesla_supercharger_ccs:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage) 
-
-This is rendered with  `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs {canonical(socket:tesla_supercharger_ccs:voltage)}`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger_ccs:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage) This is rendered with  `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs {canonical(socket:tesla_supercharger_ccs:voltage)}`
 
 
 
@@ -1235,11 +1059,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?*
 
-This rendering asks information about the property  [socket:tesla_supercharger_ccs:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current) 
-
-This is rendered with  `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:current)}`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger_ccs:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current) This is rendered with  `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:current)}`
 
 
 
@@ -1259,11 +1079,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?*
 
-This rendering asks information about the property  [socket:tesla_supercharger_ccs:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output) 
-
-This is rendered with  `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:output)}`
-
-
+This rendering asks information about the property  [socket:tesla_supercharger_ccs:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output) This is rendered with  `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:output)}`
 
 
 
@@ -1282,11 +1098,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Tesla Supercharger (destination)</b> are available here?*
 
-This rendering asks information about the property  [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla Supercharger (destination)</b> available here`
-
-
+This rendering asks information about the property  [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) This is rendered with  `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla Supercharger (destination)</b> available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
@@ -1298,11 +1110,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Tesla Supercharger (destination)</b> offer?*
 
-This rendering asks information about the property  [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) 
-
-This is rendered with  `<b>Tesla Supercharger (destination)</b> outputs {canonical(socket:tesla_destination:voltage)}`
-
-
+This rendering asks information about the property  [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) This is rendered with  `<b>Tesla Supercharger (destination)</b> outputs {canonical(socket:tesla_destination:voltage)}`
 
 
 
@@ -1321,11 +1129,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Tesla Supercharger (destination)</b> offer?*
 
-This rendering asks information about the property  [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) 
-
-This is rendered with  `<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:current)}`
-
-
+This rendering asks information about the property  [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) This is rendered with  `<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:current)}`
 
 
 
@@ -1345,11 +1149,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Tesla Supercharger (destination)</b> offer?*
 
-This rendering asks information about the property  [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) 
-
-This is rendered with  `<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:output)}`
-
-
+This rendering asks information about the property  [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) This is rendered with  `<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:output)}`
 
 
 
@@ -1370,11 +1170,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) are available here?*
 
-This rendering asks information about the property  [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) available here`
-
-
+This rendering asks information about the property  [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) This is rendered with  `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+ & socket:tesla_destination!=0`
 
@@ -1386,11 +1182,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?*
 
-This rendering asks information about the property  [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) 
-
-This is rendered with  `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs {canonical(socket:tesla_destination:voltage)}`
-
-
+This rendering asks information about the property  [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) This is rendered with  `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs {canonical(socket:tesla_destination:voltage)}`
 
 
 
@@ -1410,11 +1202,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?*
 
-This rendering asks information about the property  [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) 
-
-This is rendered with  `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:current)}`
-
-
+This rendering asks information about the property  [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) This is rendered with  `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:current)}`
 
 
 
@@ -1434,11 +1222,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?*
 
-This rendering asks information about the property  [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) 
-
-This is rendered with  `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:output)}`
-
-
+This rendering asks information about the property  [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) This is rendered with  `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:output)}`
 
 
 
@@ -1458,11 +1242,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>USB</b> to charge phones and small electronics are available here?*
 
-This rendering asks information about the property  [socket:USB-A](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <b>USB</b> to charge phones and small electronics available here`
-
-
+This rendering asks information about the property  [socket:USB-A](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A) This is rendered with  `There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <b>USB</b> to charge phones and small electronics available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+ & socket:USB-A!=0`
 
@@ -1474,11 +1254,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>USB</b> to charge phones and small electronics offer?*
 
-This rendering asks information about the property  [socket:USB-A:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage) 
-
-This is rendered with  `<b>USB</b> to charge phones and small electronics outputs {canonical(socket:USB-A:voltage)}`
-
-
+This rendering asks information about the property  [socket:USB-A:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage) This is rendered with  `<b>USB</b> to charge phones and small electronics outputs {canonical(socket:USB-A:voltage)}`
 
 
 
@@ -1497,11 +1273,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>USB</b> to charge phones and small electronics offer?*
 
-This rendering asks information about the property  [socket:USB-A:current](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current) 
-
-This is rendered with  `<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:current)}`
-
-
+This rendering asks information about the property  [socket:USB-A:current](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current) This is rendered with  `<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:current)}`
 
 
 
@@ -1521,11 +1293,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>USB</b> to charge phones and small electronics offer?*
 
-This rendering asks information about the property  [socket:USB-A:output](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output) 
-
-This is rendered with  `<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:output)}`
-
-
+This rendering asks information about the property  [socket:USB-A:output](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output) This is rendered with  `<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:output)}`
 
 
 
@@ -1545,11 +1313,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Bosch Active Connect with 3 pins</b> and cable are available here?*
 
-This rendering asks information about the property  [socket:bosch_3pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <b>Bosch Active Connect with 3 pins</b> and cable available here`
-
-
+This rendering asks information about the property  [socket:bosch_3pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin) This is rendered with  `There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <b>Bosch Active Connect with 3 pins</b> and cable available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+ & socket:bosch_3pin!=0`
 
@@ -1561,11 +1325,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Bosch Active Connect with 3 pins</b> and cable offer?*
 
-This rendering asks information about the property  [socket:bosch_3pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:voltage) 
-
-This is rendered with  `<b>Bosch Active Connect with 3 pins</b> and cable outputs {canonical(socket:bosch_3pin:voltage)}`
-
-
+This rendering asks information about the property  [socket:bosch_3pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:voltage) This is rendered with  `<b>Bosch Active Connect with 3 pins</b> and cable outputs {canonical(socket:bosch_3pin:voltage)}`
 
 
 
@@ -1584,11 +1344,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Bosch Active Connect with 3 pins</b> and cable offer?*
 
-This rendering asks information about the property  [socket:bosch_3pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:current) 
-
-This is rendered with  `<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:current)}`
-
-
+This rendering asks information about the property  [socket:bosch_3pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:current) This is rendered with  `<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:current)}`
 
 
 
@@ -1607,11 +1363,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Bosch Active Connect with 3 pins</b> and cable offer?*
 
-This rendering asks information about the property  [socket:bosch_3pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:output) 
-
-This is rendered with  `<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:output)}`
-
-
+This rendering asks information about the property  [socket:bosch_3pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:output) This is rendered with  `<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:output)}`
 
 
 
@@ -1630,11 +1382,7 @@ This tagrendering has labels  `technical`
 
 The question is  *How much plugs of type <b>Bosch Active Connect with 5 pins</b> and cable are available here?*
 
-This rendering asks information about the property  [socket:bosch_5pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin) 
-
-This is rendered with  `There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <b>Bosch Active Connect with 5 pins</b> and cable available here`
-
-
+This rendering asks information about the property  [socket:bosch_5pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin) This is rendered with  `There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <b>Bosch Active Connect with 5 pins</b> and cable available here`
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+ & socket:bosch_5pin!=0`
 
@@ -1646,11 +1394,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What voltage do the plugs with <b>Bosch Active Connect with 5 pins</b> and cable offer?*
 
-This rendering asks information about the property  [socket:bosch_5pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:voltage) 
-
-This is rendered with  `<b>Bosch Active Connect with 5 pins</b> and cable outputs {canonical(socket:bosch_5pin:voltage)}`
-
-
+This rendering asks information about the property  [socket:bosch_5pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:voltage) This is rendered with  `<b>Bosch Active Connect with 5 pins</b> and cable outputs {canonical(socket:bosch_5pin:voltage)}`
 
 
 
@@ -1669,11 +1413,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What current do the plugs with <b>Bosch Active Connect with 5 pins</b> and cable offer?*
 
-This rendering asks information about the property  [socket:bosch_5pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:current) 
-
-This is rendered with  `<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:current)}`
-
-
+This rendering asks information about the property  [socket:bosch_5pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:current) This is rendered with  `<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:current)}`
 
 
 
@@ -1692,11 +1432,7 @@ This tagrendering has labels  `technical`
 
 The question is  *What power output does a single plug of type <b>Bosch Active Connect with 5 pins</b> and cable offer?*
 
-This rendering asks information about the property  [socket:bosch_5pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:output) 
-
-This is rendered with  `<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:output)}`
-
-
+This rendering asks information about the property  [socket:bosch_5pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:output) This is rendered with  `<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:output)}`
 
 
 
@@ -1715,11 +1451,7 @@ This tagrendering has labels  `technical`
 
 The question is  *When is this charging station opened?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -1754,11 +1486,7 @@ The question is  *Does one have to pay to use this charging station?*
 
 The question is  *How much does one have to pay to use this charging station?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `Using this charging station costs <b>{charge}</b>`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `Using this charging station costs <b>{charge}</b>`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
@@ -1826,11 +1554,7 @@ The question is  *What kind of authentication is available at the charging stati
 
 The question is  *What's the phone number for authentication call or SMS?*
 
-This rendering asks information about the property  [authentication:phone_call:number](https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call:number) 
-
-This is rendered with  `Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>`
-
-
+This rendering asks information about the property  [authentication:phone_call:number](https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call:number) This is rendered with  `Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dyes' target='_blank'>yes</a>`
 
@@ -1842,11 +1566,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the maximum amount of time one is allowed to stay here?*
 
-This rendering asks information about the property  [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) 
-
-This is rendered with  `One can stay at most <b>{canonical(maxstay)}</b>`
-
-
+This rendering asks information about the property  [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) This is rendered with  `One can stay at most <b>{canonical(maxstay)}</b>`
 
 
 
@@ -1863,11 +1583,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Is this charging station part of a network?*
 
-This rendering asks information about the property  [network](https://wiki.openstreetmap.org/wiki/Key:network) 
-
-This is rendered with  `Part of the network <b>{network}</b>`
-
-
+This rendering asks information about the property  [network](https://wiki.openstreetmap.org/wiki/Key:network) This is rendered with  `Part of the network <b>{network}</b>`
 
 
 
@@ -1890,11 +1606,7 @@ This is rendered with  `Part of the network <b>{network}</b>`
 
 The question is  *Who is the operator of this charging station?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `This charging station is operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This charging station is operated by {operator}`
 
 
 
@@ -1909,11 +1621,7 @@ This is rendered with  `This charging station is operated by {operator}`
 
 The question is  *What number can one call if there is a problem with this charging station?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `In case of problems, call <a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `In case of problems, call <a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -1923,11 +1631,7 @@ This is rendered with  `In case of problems, call <a href='tel:{phone}'>{phone}<
 
 The question is  *What is the email address of the operator?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `In case of problems, send an email to <a href='mailto:{email}'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `In case of problems, send an email to <a href='mailto:{email}'>{email}</a>`
 
 
 
@@ -1937,11 +1641,7 @@ This is rendered with  `In case of problems, send an email to <a href='mailto:{e
 
 The question is  *What is the website where one can find more information about this charging station?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `More info on <a href='{website}'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `More info on <a href='{website}'>{website}</a>`
 
 
 
@@ -1965,11 +1665,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -1992,11 +1688,7 @@ This tagrendering has labels  `level`
 
 The question is  *What is the reference number of this charging station?*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `Reference number is <b>{ref}</b>`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `Reference number is <b>{ref}</b>`
 
 This tagrendering is only visible in the popup if the following condition is met: `network~.+`
 

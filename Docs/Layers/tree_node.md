@@ -119,11 +119,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What species is this tree?*
 
-This rendering asks information about the property  [species:wikidata](https://wiki.openstreetmap.org/wiki/Key:species:wikidata) 
-
-This is rendered with  `{wikipedia(species:wikidata):max-height: 25rem}`
-
-
+This rendering asks information about the property  [species:wikidata](https://wiki.openstreetmap.org/wiki/Key:species:wikidata) This is rendered with  `{wikipedia(species:wikidata):max-height: 25rem}`
 
 
 
@@ -145,11 +141,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the circumference of the tree trunk?*
 
-This rendering asks information about the property  [circumference](https://wiki.openstreetmap.org/wiki/Key:circumference) 
-
-This is rendered with  `The tree trunk has a circumference of {circumference} meter`
-
-
+This rendering asks information about the property  [circumference](https://wiki.openstreetmap.org/wiki/Key:circumference) This is rendered with  `The tree trunk has a circumference of {circumference} meter`
 
 
 
@@ -159,11 +151,7 @@ This is rendered with  `The tree trunk has a circumference of {circumference} me
 
 The question is  *What is the height of this tree?*
 
-This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height) 
-
-This is rendered with  `This tree is {height} meter high`
-
-
+This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height) This is rendered with  `This tree is {height} meter high`
 
 
 
@@ -229,11 +217,7 @@ The question is  *Is this tree evergreen or deciduous?*
 
 The question is  *Does the tree have a name?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `Name: {name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `Name: {name}`
 
 
 
@@ -272,11 +256,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the ID issued by Onroerend Erfgoed Flanders?*
 
-This rendering asks information about the property  [ref:OnroerendErfgoed](https://wiki.openstreetmap.org/wiki/Key:ref:OnroerendErfgoed) 
-
-This is rendered with  `<img src="./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg" style="width:0.85em;height:1em;vertical-align:middle" alt=""/> Onroerend Erfgoed ID: <a href="https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}">{ref:OnroerendErfgoed}</a>`
-
-
+This rendering asks information about the property  [ref:OnroerendErfgoed](https://wiki.openstreetmap.org/wiki/Key:ref:OnroerendErfgoed) This is rendered with  `<img src="./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg" style="width:0.85em;height:1em;vertical-align:middle" alt=""/> Onroerend Erfgoed ID: <a href="https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}">{ref:OnroerendErfgoed}</a>`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>`
 
@@ -288,11 +268,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the Wikidata ID for this tree?*
 
-This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) 
-
-This is rendered with  `<img src="./assets/svg/wikidata.svg" style="width:1em;height:0.56em;vertical-align:middle" alt=""/> Wikidata: <a href="http://www.wikidata.org/entity/{wikidata}">{wikidata}</a>`
-
-
+This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) This is rendered with  `<img src="./assets/svg/wikidata.svg" style="width:1em;height:0.56em;vertical-align:middle" alt=""/> Wikidata: <a href="http://www.wikidata.org/entity/{wikidata}">{wikidata}</a>`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a> | wikidata~.+`
 

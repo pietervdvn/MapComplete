@@ -107,11 +107,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the name of this climbing route?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `<strong>{name}</strong>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `<strong>{name}</strong>`
 
 
 
@@ -126,11 +122,7 @@ This is rendered with  `<strong>{name}</strong>`
 
 The question is  *How long is this climbing route (in meters)?*
 
-This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) 
-
-This is rendered with  `This route is {canonical(climbing:length)} long`
-
-
+This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) This is rendered with  `This route is {canonical(climbing:length)} long`
 
 
 
@@ -140,11 +132,7 @@ This is rendered with  `This route is {canonical(climbing:length)} long`
 
 The question is  *What is the grade of this climbing route according to the french/belgian system?*
 
-This rendering asks information about the property  [climbing:grade:french](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french) 
-
-This is rendered with  `The grade is {climbing:grade:french} according to the french/belgian system`
-
-
+This rendering asks information about the property  [climbing:grade:french](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french) This is rendered with  `The grade is {climbing:grade:french} according to the french/belgian system`
 
 
 
@@ -154,11 +142,7 @@ This is rendered with  `The grade is {climbing:grade:french} according to the fr
 
 The question is  *How many bolts does this route have before reaching the anchor?*
 
-This rendering asks information about the property  [climbing:bolts](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts) 
-
-This is rendered with  `This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
-
-
+This rendering asks information about the property  [climbing:bolts](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts) This is rendered with  `This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
 
@@ -173,11 +157,7 @@ This is rendered with  `This route has {climbing:bolts} bolts <div class='subtle
 
 The question is  *Is there still some relevant info that the previous questions did not cover? Feel free to add it here.*
 
-This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
-
-This is rendered with  `{description}`
-
-
+This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) This is rendered with  `{description}`
 
 
 
@@ -187,11 +167,7 @@ This is rendered with  `{description}`
 
 This tagrendering has no question and is thus read-only
 
-This rendering asks information about the property  [_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock) 
-
-This is rendered with  `The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>`
-
-
+This rendering asks information about the property  [_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock) This is rendered with  `The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>`
 
 
 

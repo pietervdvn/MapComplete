@@ -109,11 +109,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the name of this tower?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This tower is called <b>{name}</b>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This tower is called <b>{name}</b>`
 
 
 
@@ -128,11 +124,7 @@ This is rendered with  `This tower is called <b>{name}</b>`
 
 The question is  *What is the height of this tower?*
 
-This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height) 
-
-This is rendered with  `This tower is {height} high`
-
-
+This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height) This is rendered with  `This tower is {height} high`
 
 
 
@@ -158,11 +150,7 @@ The question is  *Can this tower be visited?*
 
 The question is  *How much does one have to pay to enter this tower?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `Visiting this tower costs <b>{charge}</b>`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `Visiting this tower costs <b>{charge}</b>`
 
 
 
@@ -201,11 +189,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -223,11 +207,7 @@ This tagrendering has labels  `contact`
 
 The question is  *How much individual steps does one have to climb to reach the top of this tower?*
 
-This rendering asks information about the property  [step_count](https://wiki.openstreetmap.org/wiki/Key:step_count) 
-
-This is rendered with  `This tower has {step_count} steps to reach the top`
-
-
+This rendering asks information about the property  [step_count](https://wiki.openstreetmap.org/wiki/Key:step_count) This is rendered with  `This tower has {step_count} steps to reach the top`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>`
 
@@ -257,11 +237,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Who maintains this tower?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Maintained by <b>{operator}</b>`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Maintained by <b>{operator}</b>`
 
 
 
@@ -293,11 +269,7 @@ Shows a wikipedia box with the corresponding wikipedia article; the wikidata-ite
 
 The question is  *What is the corresponding Wikidata entity?*
 
-This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) 
-
-This is rendered with  `{wikipedia():max-height:25rem}`
-
-
+This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) This is rendered with  `{wikipedia():max-height:25rem}`
 
 
 

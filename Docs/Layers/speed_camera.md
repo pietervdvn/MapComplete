@@ -89,11 +89,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What is the maximum speed allowed at this speed camera?*
 
-This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) 
-
-This is rendered with  `The maximum speed allowed is {canonical(maxspeed)}`
-
-
+This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) This is rendered with  `The maximum speed allowed is {canonical(maxspeed)}`
 
 
 

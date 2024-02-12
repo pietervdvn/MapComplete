@@ -150,11 +150,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the height of this kerb?*
 
-This rendering asks information about the property  [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) 
-
-This is rendered with  `Kerb height: {kerb:height}`
-
-
+This rendering asks information about the property  [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) This is rendered with  `Kerb height: {kerb:height}`
 
 
 

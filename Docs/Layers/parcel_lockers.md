@@ -108,11 +108,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the brand of the parcel locker?*
 
-This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) 
-
-This is rendered with  `This is a {brand} parcel locker`
-
-
+This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) This is rendered with  `This is a {brand} parcel locker`
 
 
 
@@ -130,11 +126,7 @@ This is rendered with  `This is a {brand} parcel locker`
 
 The question is  *What is the operator of the parcel locker?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `This parcel locker is operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This parcel locker is operated by {operator}`
 
 
 
@@ -144,11 +136,7 @@ This is rendered with  `This parcel locker is operated by {operator}`
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -163,11 +151,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 The question is  *What is the reference number/identifier of this parcel locker?*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `This parcel locker has the reference {ref}`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `This parcel locker has the reference {ref}`
 
 
 

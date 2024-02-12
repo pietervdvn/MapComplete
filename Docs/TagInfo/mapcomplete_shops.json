@@ -1371,6 +1371,80 @@
       "key": "wheelchair",
       "description": "Layer 'Ice cream parlors' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
       "value": "no"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Shops has a layer Trolley Bays showing features with this tag",
+      "value": "trolley_bay"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Trolley Bays' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Shops') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Trolley Bays' shows covered=yes with a fixed text, namely 'This trolley bay is covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Trolley Bays' shows covered=no with a fixed text, namely 'This trolley bay is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "no"
+    },
+    {
+      "key": "trolley:deposit",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit=yes with a fixed text, namely 'A deposit is required for the trolleys' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:deposit",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit=no with a fixed text, namely 'No deposit is required for the trolleys' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "no"
+    },
+    {
+      "key": "trolley:deposit:denominations",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') (This is only shown if trolley:deposit=yes & _currency~^(.*EUR.*)$)",
+      "value": "0.50 EUR"
+    },
+    {
+      "key": "trolley:deposit:denominations",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') (This is only shown if trolley:deposit=yes & _currency~^(.*EUR.*)$)",
+      "value": "1 EUR"
+    },
+    {
+      "key": "trolley:deposit:denominations",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') (This is only shown if trolley:deposit=yes & _currency~^(.*EUR.*)$)",
+      "value": "2 EUR"
+    },
+    {
+      "key": "trolley:magnifier",
+      "description": "Layer 'Trolley Bays' shows trolley:magnifier=yes with a fixed text, namely 'Trolleys with a magnifier are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:wheelchair",
+      "description": "Layer 'Trolley Bays' shows trolley:wheelchair=yes with a fixed text, namely 'Trolleys for wheelchair users are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:children",
+      "description": "Layer 'Trolley Bays' shows trolley:children=yes with a fixed text, namely 'Trolleys for children are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:seats",
+      "description": "Layer 'Trolley Bays' shows trolley:seats=yes with a fixed text, namely 'Trolleys with seats for children are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:flatbed",
+      "description": "Layer 'Trolley Bays' shows trolley:flatbed=yes with a fixed text, namely 'Trolleys with a flatbed are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:vertical",
+      "description": "Layer 'Trolley Bays' shows trolley:vertical=yes with a fixed text, namely 'Vertical trolleys for sheet-like goods are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
     }
   ]
 }

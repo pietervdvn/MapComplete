@@ -120,11 +120,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the name of this hotel?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This hotel is called {name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This hotel is called {name}`
 
 
 
@@ -134,11 +130,7 @@ This is rendered with  `This hotel is called {name}`
 
 The question is  *What is the phone number of {title()}?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -156,11 +148,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the email address of {title()}?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -178,11 +166,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -261,11 +245,7 @@ This tagrendering has labels  `internet-all`
 
 The question is  *What is the network name for the wireless internet access?*
 
-This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) 
-
-This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
-
-
+This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 

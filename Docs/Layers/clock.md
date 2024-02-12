@@ -233,11 +233,7 @@ The question is  *Does this clock also display the humidity?*
 
 The question is  *How many faces does this clock have?*
 
-This rendering asks information about the property  [faces](https://wiki.openstreetmap.org/wiki/Key:faces) 
-
-This is rendered with  `This clock has {faces} faces`
-
-
+This rendering asks information about the property  [faces](https://wiki.openstreetmap.org/wiki/Key:faces) This is rendered with  `This clock has {faces} faces`
 
 
 

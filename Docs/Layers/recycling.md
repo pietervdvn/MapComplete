@@ -127,11 +127,7 @@ The question is  *What type of recycling is this?*
 
 The question is  *What is the name of this recycling centre?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This recycling centre is named <b>{name}</b>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This recycling centre is named <b>{name}</b>`
 
 
 
@@ -233,11 +229,7 @@ The question is  *What can be recycled here?*
 
 The question is  *What company operates this recycling facility?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `This recycling facility is operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This recycling facility is operated by {operator}`
 
 
 
@@ -247,11 +239,7 @@ This is rendered with  `This recycling facility is operated by {operator}`
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -271,11 +259,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the email address of {title()}?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -295,11 +279,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the phone number of {title()}?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -319,11 +299,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What are the opening hours of this recycling facility?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -338,11 +314,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 The question is  *Who can use this recycling facility?*
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-
-This is rendered with  `This recycling facility can be used by {access}`
-
-
+This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `This recycling facility can be used by {access}`
 
 
 
@@ -359,11 +331,7 @@ This is rendered with  `This recycling facility can be used by {access}`
 
 The question is  *When was this object last surveyed?*
 
-This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
-
-This is rendered with  `This object was last surveyed on <b>{survey:date}</b>`
-
-
+This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) This is rendered with  `This object was last surveyed on <b>{survey:date}</b>`
 
 
 

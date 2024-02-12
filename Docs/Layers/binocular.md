@@ -27,6 +27,7 @@ Binoculars
 
   - [binoculars](https://mapcomplete.org/binoculars)
   - [personal](https://mapcomplete.org/personal)
+  - [ski](https://mapcomplete.org/ski)
 
 
 
@@ -101,11 +102,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *How much does one have to pay to use these binoculars?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `Using these binoculars costs {charge}`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `Using these binoculars costs {charge}`
 
 
 
@@ -120,11 +117,7 @@ This is rendered with  `Using these binoculars costs {charge}`
 
 The question is  *When looking through this binocular, in what direction does one look?*
 
-This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
-
-This is rendered with  `Looks towards {direction}°`
-
-
+This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) This is rendered with  `Looks towards {direction}°`
 
 
 

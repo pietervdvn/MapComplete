@@ -107,11 +107,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the name of this trail?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This trail is called <b>{name}</b>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This trail is called <b>{name}</b>`
 
 
 
@@ -121,11 +117,7 @@ This is rendered with  `This trail is called <b>{name}</b>`
 
 The question is  *Who maintains this trail?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `This trail is maintained by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This trail is maintained by {operator}`
 
 
 
@@ -142,11 +134,7 @@ This is rendered with  `This trail is maintained by {operator}`
 
 The question is  *What is the reference colour of this trail?*
 
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
-
-This is rendered with  `The reference colour is {colour}`
-
-
+This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) This is rendered with  `The reference colour is {colour}`
 
 
 

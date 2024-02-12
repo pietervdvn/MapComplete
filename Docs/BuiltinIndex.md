@@ -11,6 +11,7 @@
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
     + [luminous_or_lit](#luminous_or_lit)
+    + [opening_hours](#opening_hours)
     + [reviews](#reviews)
     + [website](#website)
     + [phone](#phone)
@@ -19,7 +20,6 @@
     + [bench.*bench-questions](#bench*bench-questions)
     + [opening_hours_24_7](#opening_hours_24_7)
     + [artwork.*artwork-question](#artwork*artwork-question)
-    + [opening_hours](#opening_hours)
     + [description](#description)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
@@ -27,6 +27,7 @@
     + [level](#level)
     + [bicycle_rental.*bicycle_rental](#bicycle_rental*bicycle_rental)
     + [bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaningbike_cleaning-service:bicycle:cleaning:charge)
+    + [contact](#contact)
     + [wheelchair-access](#wheelchair-access)
     + [smoking](#smoking)
     + [service:electricity](#serviceelectricity)
@@ -57,7 +58,6 @@
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
     + [mastodon](#mastodon)
-    + [contact](#contact)
     + [diets](#diets)
     + [etymology.wikipedia-etymology](#etymologywikipedia-etymology)
     + [toilet.relevant-questions](#toiletrelevant-questions)
@@ -91,9 +91,11 @@
 
 
   - advertising
+  - aerialway
   - ambulancestation
   - animal_shelter
   - artwork
+  - assembly_point
   - atm
   - bank
   - barrier
@@ -110,9 +112,11 @@
   - bike_themed_object
   - binocular
   - birdhide
+  - brothel
   - cafe_pub
   - car_rental
   - charging_station
+  - cinema
   - climbing_area
   - climbing_gym
   - climbing_route
@@ -120,6 +124,7 @@
   - crossings
   - defibrillator
   - dentist
+  - disaster_response
   - doctors
   - dogpark
   - drinking_water
@@ -142,7 +147,9 @@
   - indoors
   - information_board
   - kerbs
+  - love_hotel
   - map
+  - mountain_rescue
   - nature_reserve
   - observation_tower
   - parcel_lockers
@@ -163,11 +170,13 @@
   - route_marker
   - shops
   - shower
+  - ski_piste
   - slow_roads
   - sport_pitch
   - sports_centre
   - stairs
   - street_lamps
+  - stripclub
   - surveillance_camera
   - ticket_machine
   - ticket_validator
@@ -197,6 +206,42 @@
 
 
 
+### opening_hours 
+
+
+
+
+
+  - aerialway
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - brothel
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - fitness_centre
+  - food
+  - ice_cream
+  - kindergarten_childcare
+  - pharmacy
+  - postoffices
+  - questions
+  - questions
+  - shops
+  - shower
+  - sports_centre
+  - stripclub
+  - toilet_at_amenity
+  - veterinary
+
+
+
+
 ### reviews 
 
 
@@ -204,7 +249,9 @@
 
 
   - animal_shelter
+  - brothel
   - cafe_pub
+  - cinema
   - climbing_area
   - climbing_gym
   - dogpark
@@ -212,9 +259,11 @@
   - food
   - hackerspace
   - hotel
+  - love_hotel
   - pharmacy
   - playground
   - shops
+  - stripclub
   - veterinary
 
 
@@ -237,6 +286,7 @@
   - climbing_club
   - climbing_gym
   - dentist
+  - disaster_response
   - doctors
   - elongated_coin
   - fitness_centre
@@ -340,6 +390,7 @@
 
 
   - artwork
+  - cinema
   - nature_reserve
   - observation_tower
 
@@ -364,6 +415,7 @@
 
 
   - atm
+  - bike_parking
   - bike_repair_station
   - charging_station
   - defibrillator
@@ -387,39 +439,6 @@
 
   - bench
   - drinking_water
-
-
-
-
-### opening_hours 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - car_rental
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - fitness_centre
-  - food
-  - ice_cream
-  - kindergarten_childcare
-  - pharmacy
-  - postoffices
-  - questions
-  - questions
-  - shops
-  - shower
-  - sports_centre
-  - toilet_at_amenity
-  - veterinary
 
 
 
@@ -537,6 +556,22 @@
 
 
   - bike_shop
+
+
+
+
+### contact 
+
+
+
+
+
+  - brothel
+  - cinema
+  - hospital
+  - ice_cream
+  - love_hotel
+  - stripclub
 
 
 
@@ -909,18 +944,6 @@
 
 
   - hackerspace
-
-
-
-
-### contact 
-
-
-
-
-
-  - hospital
-  - ice_cream
 
 
 

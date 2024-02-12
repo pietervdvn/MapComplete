@@ -88,11 +88,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *Where is it positioned?*
 
-This rendering asks information about the property  [location](https://wiki.openstreetmap.org/wiki/Key:location) 
-
-This is rendered with  `Location: {location}`
-
-
+This rendering asks information about the property  [location](https://wiki.openstreetmap.org/wiki/Key:location) This is rendered with  `Location: {location}`
 
 
 

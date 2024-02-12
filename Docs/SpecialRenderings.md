@@ -168,6 +168,10 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of direction_indicator](#example-usage-of-direction_indicator)
     + [qr_code](#qr_code)
       * [Example usage of qr_code](#example-usage-of-qr_code)
+    + [direction_absolute](#direction_absolute)
+      * [Example usage of direction_absolute](#example-usage-of-direction_absolute)
+    + [compare_data](#compare_data)
+      * [Example usage of compare_data](#example-usage-of-compare_data)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -449,7 +453,7 @@ tags_to_apply | _undefined_ | A specification of the tags to apply. This is eith
 message | _undefined_ | The text to show to the contributor
 image | _undefined_ | An image to show to the contributor on the button
 id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element
-maproulette_task_id | _undefined_ | If specified, this maproulette-challenge will be closed when the tags are applied
+maproulette_id | _undefined_ | If specified, this maproulette-challenge will be closed when the tags are applied. This should be the ID of the task, _not_ the task_id.
  
 
 #### Example usage of tag_apply 
@@ -662,11 +666,12 @@ way_to_conflate | _undefined_ | The key, of which the corresponding value is the
 name | default | description
 ------ | --------- | -------------
 mode | closed | Either `open` or `closed`. If `open`, then the image carousel will always be shown
+readonly | _undefined_ | If 'readonly', will not show the 'link'-button
  
 
 #### Example usage of nearby_images 
 
- `{nearby_images(closed)}`
+ `{nearby_images(closed,)}`
 
 
 
@@ -727,12 +732,11 @@ render_list_item | {language()} | How a single language will be shown in the lis
 render_single_language | _undefined_ | What will be shown if the feature only supports a single language
 render_all | {list()} | The full rendering. Use `{list}` to show where the list of languages must come. Optional if mode=single
 no_known_languages | _undefined_ | The text that is shown if no languages are known for this key. If this text is omitted, the languages will be prompted instead
-mode | multi | If one or many languages can be selected. Should be 'multi' or 'single'
  
 
 #### Example usage of language_chooser 
 
- `{language_chooser(,,{language()},,{list()},,multi)}`
+ `{language_chooser(,,{language()},,{list()},)}`
 
 
 
@@ -1057,6 +1061,7 @@ name | default | description
 ------ | --------- | -------------
 key | _undefined_ | The property to read and to interpret as a list of properties
 tagrendering | _undefined_ | An entire tagRenderingConfig
+classes | _undefined_ | CSS-classes to apply on every individual item. Seperated by `space`
  
 
 #### Example usage of multi 
@@ -1199,6 +1204,39 @@ giggityUrl | _undefined_ | The URL of the giggity-XML
 #### Example usage of qr_code 
 
  `{qr_code()}`
+
+
+
+### direction_absolute 
+
+ Converts compass degrees (with 0° being north, 90° being east, ...) into a human readable, translated direction such as 'north', 'northeast' 
+
+name | default | description
+------ | --------- | -------------
+key | _direction:centerpoint | The attribute containing the degrees
+ 
+
+#### Example usage of direction_absolute 
+
+ `{direction_absolute(_direction:centerpoint)}`
+
+
+
+### compare_data 
+
+ Gives an interactive element which shows a tag comparison between the OSM-object and the upstream object. This allows to copy some or all tags into OSM 
+
+name | default | description
+------ | --------- | -------------
+url | _undefined_ | The attribute containing the url where to fetch more data
+host | _undefined_ | The domain name(s) where data might be fetched from - this is needed to set the CSP. A domain must include 'https', e.g. 'https://example.com'. For multiple domains, separate them with ';'. If you don't know the possible domains, use '*'. 
+postprocessing | _undefined_ | Apply some postprocessing. Currently, only 'velopark' is allowed as value
+readonly | _undefined_ | If 'yes', will not show 'apply'-buttons
+ 
+
+#### Example usage of compare_data 
+
+ `{compare_data(,,,)}`
 
 
 

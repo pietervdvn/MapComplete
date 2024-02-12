@@ -115,11 +115,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *When will this street become a cyclestreet?*
 
-This rendering asks information about the property  [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) 
-
-This is rendered with  `This street will become a cyclestreet at {cyclestreet:start_date}`
-
-
+This rendering asks information about the property  [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) This is rendered with  `This street will become a cyclestreet at {cyclestreet:start_date}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>`
 

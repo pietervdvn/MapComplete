@@ -196,11 +196,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the reference number of this parking ticket machine?*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `This parking ticket machine has the reference number {ref}`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `This parking ticket machine has the reference number {ref}`
 
 
 

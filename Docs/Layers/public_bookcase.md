@@ -109,11 +109,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the name of this public bookcase?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `The name of this bookcase is {name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `The name of this bookcase is {name}`
 
 
 
@@ -128,11 +124,7 @@ This is rendered with  `The name of this bookcase is {name}`
 
 The question is  *How many books fit into this public bookcase?*
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
-
-This is rendered with  `{capacity} books fit in this bookcase`
-
-
+This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `{capacity} books fit in this bookcase`
 
 
 
@@ -142,11 +134,7 @@ This is rendered with  `{capacity} books fit in this bookcase`
 
 The question is  *What kind of books can be found in this public bookcase?*
 
-This rendering asks information about the property  [books](https://wiki.openstreetmap.org/wiki/Key:books) 
-
-This is rendered with  `This place mostly serves {books}`
-
-
+This rendering asks information about the property  [books](https://wiki.openstreetmap.org/wiki/Key:books) This is rendered with  `This place mostly serves {books}`
 
 
 
@@ -198,11 +186,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Who maintains this public bookcase?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
 
 
 
@@ -212,11 +196,7 @@ This is rendered with  `Operated by {operator}`
 
 The question is  *Is this public bookcase part of a bigger network?*
 
-This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) 
-
-This is rendered with  `This public bookcase is part of {brand}`
-
-
+This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) This is rendered with  `This public bookcase is part of {brand}`
 
 
 
@@ -232,11 +212,7 @@ This is rendered with  `This public bookcase is part of {brand}`
 
 The question is  *What is the reference number of this public bookcase?*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `The reference number of this public bookcase within {brand} is {ref}`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `The reference number of this public bookcase within {brand} is {ref}`
 
 
 
@@ -253,11 +229,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *When was this public bookcase installed?*
 
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
-
-This is rendered with  `Installed on {start_date}`
-
-
+This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) This is rendered with  `Installed on {start_date}`
 
 
 
@@ -267,11 +239,7 @@ This is rendered with  `Installed on {start_date}`
 
 The question is  *Is there a website with more information about this public bookcase?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `{link(More info on the website,&LBRACEwebsite&RBRACE,,,)}`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `{link(More info on the website,&LBRACEwebsite&RBRACE,,,)}`
 
 
 

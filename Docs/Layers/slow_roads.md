@@ -114,11 +114,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What surface does this road have?*
 
-This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
-
-This is rendered with  `The surface is <b>{surface}</b>`
-
-
+This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) This is rendered with  `The surface is <b>{surface}</b>`
 
 
 

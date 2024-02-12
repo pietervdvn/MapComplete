@@ -185,11 +185,7 @@ The question is  *Is this a cyclestreet?*
 
 The question is  *What is the maximum speed in this street?*
 
-This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) 
-
-This is rendered with  `The maximum speed on this road is {maxspeed} km/h`
-
-
+This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) This is rendered with  `The maximum speed on this road is {maxspeed} km/h`
 
 
 
@@ -208,11 +204,7 @@ This is rendered with  `The maximum speed on this road is {maxspeed} km/h`
 
 The question is  *What is the surface of the cycleway made from?*
 
-This rendering asks information about the property  [cycleway:surface](https://wiki.openstreetmap.org/wiki/Key:cycleway:surface) 
-
-This is rendered with  `This cyleway is made of {cycleway:surface}`
-
-
+This rendering asks information about the property  [cycleway:surface](https://wiki.openstreetmap.org/wiki/Key:cycleway:surface) This is rendered with  `This cyleway is made of {cycleway:surface}`
 
 
 
@@ -244,11 +236,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Does {title()} have an incline?*
 
-This rendering asks information about the property  [incline](https://wiki.openstreetmap.org/wiki/Key:incline) 
-
-This is rendered with  `This road has an slope of {incline}`
-
-
+This rendering asks information about the property  [incline](https://wiki.openstreetmap.org/wiki/Key:incline) This is rendered with  `This road has an slope of {incline}`
 
 
 
@@ -290,11 +278,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the surface of the street made from?*
 
-This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
-
-This is rendered with  `This road is made of {surface}`
-
-
+This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) This is rendered with  `This road is made of {surface}`
 
 
 
@@ -348,11 +332,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the carriage width of this road (in meters)?*
 
-This rendering asks information about the property  [width:carriageway](https://wiki.openstreetmap.org/wiki/Key:width:carriageway) 
-
-This is rendered with  `The carriage width of this road is <strong>{width:carriageway}m</strong>`
-
-
+This rendering asks information about the property  [width:carriageway](https://wiki.openstreetmap.org/wiki/Key:width:carriageway) This is rendered with  `The carriage width of this road is <strong>{width:carriageway}m</strong>`
 
 
 
@@ -432,11 +412,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *How wide is the gap between the cycleway and the road?*
 
-This rendering asks information about the property  [cycleway:buffer](https://wiki.openstreetmap.org/wiki/Key:cycleway:buffer) 
-
-This is rendered with  `The buffer besides this cycleway is {cycleway:buffer} m`
-
-
+This rendering asks information about the property  [cycleway:buffer](https://wiki.openstreetmap.org/wiki/Key:cycleway:buffer) This is rendered with  `The buffer besides this cycleway is {cycleway:buffer} m`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>`
 

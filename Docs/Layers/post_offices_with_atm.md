@@ -120,11 +120,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What are the opening hours for this post office?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -152,11 +148,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *For which brand does this location offer services?*
 
-This rendering asks information about the property  [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) 
-
-This is rendered with  `This location offers services for {post_office:brand}`
-
-
+This rendering asks information about the property  [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) This is rendered with  `This location offers services for {post_office:brand}`
 
 
 
@@ -180,11 +172,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Can you post a letter here?*
 
-This rendering asks information about the property  [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) 
-
-This is rendered with  `You can post letters with these companies: {post_office:letter_from}`
-
-
+This rendering asks information about the property  [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) This is rendered with  `You can post letters with these companies: {post_office:letter_from}`
 
 
 
@@ -200,11 +188,7 @@ This is rendered with  `You can post letters with these companies: {post_office:
 
 The question is  *Can you send a parcel here?*
 
-This rendering asks information about the property  [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) 
-
-This is rendered with  `You can post parcels with these companies: {post_office:parcel_from}`
-
-
+This rendering asks information about the property  [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) This is rendered with  `You can post parcels with these companies: {post_office:parcel_from}`
 
 
 
@@ -220,11 +204,7 @@ This is rendered with  `You can post parcels with these companies: {post_office:
 
 The question is  *Can you pick up missed parcels here?*
 
-This rendering asks information about the property  [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) 
-
-This is rendered with  `You can pick up parcels from these companies: {post_office:parcel_pickup}`
-
-
+This rendering asks information about the property  [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) This is rendered with  `You can pick up parcels from these companies: {post_office:parcel_pickup}`
 
 
 
@@ -240,11 +220,7 @@ This is rendered with  `You can pick up parcels from these companies: {post_offi
 
 The question is  *Can you send parcels to here for pickup?*
 
-This rendering asks information about the property  [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) 
-
-This is rendered with  `You can send parcels to here for pickup with these companies: {post_office:parcel_to}`
-
-
+This rendering asks information about the property  [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) This is rendered with  `You can send parcels to here for pickup with these companies: {post_office:parcel_to}`
 
 
 
@@ -260,11 +236,7 @@ This is rendered with  `You can send parcels to here for pickup with these compa
 
 The question is  *Can you buy stamps here?*
 
-This rendering asks information about the property  [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) 
-
-This is rendered with  `You can buy stamps from companies: {post_office:stamps}`
-
-
+This rendering asks information about the property  [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) This is rendered with  `You can buy stamps from companies: {post_office:stamps}`
 
 
 

@@ -1205,22 +1205,22 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "dedicated_room"
     },
     {
@@ -1296,6 +1296,54 @@
       "key": "ski",
       "description": "Layer 'Guideposts' shows ski=yes with a fixed text, namely 'This guidepost shows ski routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Into nature has a layer Shelter showing features with this tag",
+      "value": "shelter"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Shelter' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows and asks freeform values for key 'shelter_type' (in the mapcomplete.org theme 'Into nature')"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=public_transport with a fixed text, namely 'This is a shelter at a public transport stop.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "public_transport"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=picnic_shelter with a fixed text, namely 'This is a shelter protecting from rain at a picnic site.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "picnic_shelter"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=gazebo with a fixed text, namely 'This is a gazebo.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "gazebo"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=weather_shelter with a fixed text, namely 'This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "weather_shelter"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=lean_to with a fixed text, namely 'This is a shed with 3 walls, primarily intended for camping.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "lean_to"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=pavilion with a fixed text, namely 'This is a pavilion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "pavilion"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=basic_hut with a fixed text, namely 'This is a basic hut, providing basic shelter and sleeping facilities.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "basic_hut"
     }
   ]
 }

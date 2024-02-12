@@ -146,11 +146,7 @@ The question is  *What kind of camera is this?*
 
 The question is  *In which geographical direction does this camera film?*
 
-This rendering asks information about the property  [camera:direction](https://wiki.openstreetmap.org/wiki/Key:camera:direction) 
-
-This is rendered with  `Films to a compass heading of {camera:direction}`
-
-
+This rendering asks information about the property  [camera:direction](https://wiki.openstreetmap.org/wiki/Key:camera:direction) This is rendered with  `Films to a compass heading of {camera:direction}`
 
 
 
@@ -166,11 +162,7 @@ This is rendered with  `Films to a compass heading of {camera:direction}`
 
 The question is  *Who operates this CCTV?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
 
 
 
@@ -217,11 +209,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *On which level is this camera located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on level {level}`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on level {level}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dye' target='_blank'>ye</a>`
 
@@ -233,11 +221,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What exactly is surveilled here?*
 
-This rendering asks information about the property  [surveillance:zone](https://wiki.openstreetmap.org/wiki/Key:surveillance:zone) 
-
-This is rendered with  `Surveills a {surveillance:zone}`
-
-
+This rendering asks information about the property  [surveillance:zone](https://wiki.openstreetmap.org/wiki/Key:surveillance:zone) This is rendered with  `Surveills a {surveillance:zone}`
 
 
 
@@ -257,11 +241,7 @@ This is rendered with  `Surveills a {surveillance:zone}`
 
 The question is  *How is this camera placed?*
 
-This rendering asks information about the property  [camera:mount](https://wiki.openstreetmap.org/wiki/Key:camera:mount) 
-
-This is rendered with  `Mounting method: {camera:mount}`
-
-
+This rendering asks information about the property  [camera:mount](https://wiki.openstreetmap.org/wiki/Key:camera:mount) This is rendered with  `Mounting method: {camera:mount}`
 
 
 
