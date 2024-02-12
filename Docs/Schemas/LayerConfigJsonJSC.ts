@@ -376,7 +376,7 @@ export default {
       ]
     },
     "allowSplit": {
-      "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\n\nIf the way is part of a relation, MapComplete will attempt to update this relation as well\nquestion: Should the contributor be able to split ways using this layer?\niftrue: enable the 'split-roads'-component\niffalse: don't enable the split-roads componenet\nifunset: don't enable the split-roads component\ngroup: editing",
+      "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\n\nIf the way is part of a relation, MapComplete will attempt to update this relation as well\nquestion: Should the contributor be able to split ways using this layer?\niftrue: enable the 'split-roads'-component\niffalse: don't enable the split-roads component\nifunset: don't enable the split-roads component\ngroup: editing",
       "type": "boolean"
     },
     "units": {
@@ -865,7 +865,7 @@ export default {
           ]
         },
         "alsoShowIf": {
-          "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags.",
+          "description": "question: In what other cases should this item be rendered?\n\nAlso show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!\n\nifunset: No other cases when this text is shown",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1162,6 +1162,33 @@ export default {
             },
             {
               "type": "number"
+            }
+          ]
+        },
+        "imageAlongWay": {
+          "description": "question: What PNG-image should be shown along the way?\n\nifunset: no image is shown along the way\nsuggestions: [{if: \"./assets/png/oneway.png\", then: \"Show a oneway error\"}]\ntype: image",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "if": {
+                    "$ref": "#/definitions/TagConfigJson",
+                    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+                  },
+                  "then": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "if",
+                  "then"
+                ]
+              }
+            },
+            {
+              "type": "string"
             }
           ]
         }
@@ -1841,7 +1868,17 @@ export default {
         },
         "omitDefaultDeleteReasons": {
           "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping\n\nquestion: Should the default delete reasons be hidden?\niftrue: Hide the default delete reasons\niffalse: Show the default delete reasons\nifunset: Show the default delete reasons (default behaviour)",
-          "type": "boolean"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "boolean"
+            }
+          ]
         }
       }
     },

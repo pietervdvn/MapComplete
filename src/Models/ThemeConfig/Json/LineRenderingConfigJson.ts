@@ -1,6 +1,4 @@
 import { MinimalTagRenderingConfigJson } from "./TagRenderingConfigJson"
-import { MappingConfigJson } from "./QuestionableTagRenderingConfigJson"
-import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 import { TagConfigJson } from "./TagConfigJson"
 
 /**
