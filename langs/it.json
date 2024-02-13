@@ -51,6 +51,20 @@
         "reload": "Ricarica i dati"
     },
     "favouritePoi": {
+        "button": {
+            "isFavourite": "Questa posizione è attualmente contrassegnata come preferita e verrà mostrata in tutte le mappe tematiche di MapComplete che visiterai.",
+            "isMarkedShort": "Contrassegnato come posizione preferita",
+            "isNotMarkedShort": "Non contrassegnato come preferito",
+            "markAsFavouriteTitle": "Contrassegna questa posizione come posizione preferita",
+            "markDescription": "Aggiungi questa posizione all'elenco personale dei preferiti",
+            "unmark": "Rimuovi dall'elenco dei tuoi preferiti",
+            "unmarkNotDeleted": "Questo punto non verrà cancellato e sarà visibile nella mappa corrispondente per te per gli altri"
+        },
+        "downloadGeojson": "Scarica i preferiti come geojson",
+        "downloadGpx": "Scarica i preferiti come GPX",
+        "intro": "Hai contrassegnato {length} posizione come posizione preferita.",
+        "introPrivacy": "Questo elenco è visibile solo a te",
+        "loginToSeeList": "Autenticati per vedere l'elenco delle posizioni che hai contrassegnato come preferite",
         "tab": "I tuoi preferiti"
     },
     "flyer": {
