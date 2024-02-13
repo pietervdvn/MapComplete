@@ -185,12 +185,12 @@
           <Region configs={perRegion["expert"]} {state} />
         </div>
         <div slot="title5">Configuration file</div>
-        <div slot="content5">
+        <div slot="content5" class="h-full">
           <div>
             Below, you'll find the raw configuration file in `.json`-format. This is mostly for
             debugging purposes, but you can also edit the file directly if you want.
           </div>
-          <div class="literal-code h-64 w-full">
+          <div class="literal-code h-full w-full">
             <RawEditor {state} />
           </div>
 
