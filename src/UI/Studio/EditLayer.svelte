@@ -13,23 +13,14 @@
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import FloatOver from "../Base/FloatOver.svelte"
   import TagRenderingInput from "./TagRenderingInput.svelte"
-  import FromHtml from "../Base/FromHtml.svelte"
   import AllTagsPanel from "../Popup/AllTagsPanel.svelte"
   import QuestionPreview from "./QuestionPreview.svelte"
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
-  import loader from "@monaco-editor/loader"
-  import type * as Monaco from "monaco-editor/esm/vs/editor/editor.api"
-  import { onMount } from "svelte"
-  import layerSchemaJSON from "../../../Docs/Schemas/LayerConfigJson.schema.json"
+  import RawEditor from "./RawEditor.svelte"
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw
 
   export let state: EditLayerState
-
-  // Throw error if we don't have a state
-  if (!state) {
-    throw new Error("No state provided")
-  }
 
   export let backToStudio: () => void
   let messages = state.messages
@@ -69,7 +60,7 @@
   }
 
   let requiredFields = ["id", "name", "description", "source"]
-  let currentlyMissing = state.configuration.map((config) => {
+  let currentlyMissing = configuration.map((config) => {
     if (!config) {
       return []
     }
@@ -88,61 +79,6 @@
     state.delete()
     backToStudio()
   }
-
-  let tabbedGroup: TabbedGroup
-  let openTab: UIEventSource<number> = new UIEventSource<number>(0)
-
-  let monaco: typeof Monaco
-  let editorContainer: HTMLDivElement
-  let layerEditor: Monaco.editor.IStandaloneCodeEditor
-  let model: Monaco.editor.ITextModel
-
-  onMount(async () => {
-    openTab = tabbedGroup.getTab()
-
-    const monacoEditor = await import("monaco-editor")
-    loader.config({ monaco: monacoEditor.default })
-
-    monaco = await loader.init()
-
-    // Prepare the Monaco editor (language settings)
-    // A.K.A. The schemas for the Monaco editor
-    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-      validate: true,
-      schemas: [
-        {
-          uri: "https://mapcomplete.org/schemas/layerconfig.json",
-          fileMatch: ["layer.json"],
-          schema: layerSchemaJSON,
-        },
-      ],
-    })
-    let modelUri = monaco.Uri.parse("inmemory://inmemory/layer.json")
-    model = monaco.editor.createModel(
-      JSON.stringify(state.configuration.data, null, "  "),
-      "json",
-      modelUri
-    )
-
-    layerEditor = monaco.editor.create(editorContainer, {
-      model: model,
-      automaticLayout: true,
-    })
-
-    // When the editor is changed, update the configuration, but only if the user hasn't typed for 500ms and the JSON is valid
-    let timeout: number
-    layerEditor.onDidChangeModelContent(() => {
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
-        try {
-          const newConfig = JSON.parse(layerEditor.getValue())
-          state.configuration.setData(newConfig)
-        } catch (e) {
-          console.error(e)
-        }
-      }, 500)
-    })
-  })
 </script>
 
 <div class="flex h-screen flex-col">
@@ -191,7 +127,7 @@
     {/each}
   {:else}
     <div class="m4 h-full overflow-y-auto">
-      <TabbedGroup bind:this={tabbedGroup}>
+      <TabbedGroup>
         <div slot="title0" class="flex">
           General properties
           <ErrorIndicatorForRegion firstPaths={firstPathsFor("Basic")} {state} />
@@ -254,7 +190,9 @@
             Below, you'll find the raw configuration file in `.json`-format. This is mostly for
             debugging purposes, but you can also edit the file directly if you want.
           </div>
-          <div class="literal-code h-64 w-full" bind:this={editorContainer} />
+          <div class="literal-code h-64 w-full">
+            <RawEditor {state} />
+          </div>
 
           <ShowConversionMessages messages={$messages} />
           <div>
