@@ -79,7 +79,7 @@
   <label
     class={twMerge(cls, drawAttention ? "glowing-shadow" : "")}
     for={id}
-    on:click={() => {
+    on:click|preventDefault={() => {
       inputElement.click()
     }}
     style="margin-left:0"
