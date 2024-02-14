@@ -50,6 +50,9 @@
         "panelIntro": "<h3>Il tuo tema personale</h3>Attiva i tuoi livelli preferiti fra tutti i temi ufficiali",
         "reload": "Ricarica i dati"
     },
+    "favouritePoi": {
+        "tab": "I tuoi preferiti"
+    },
     "flyer": {
         "aerial": "Questa mappa usa uno sfondo differente, cioè immagini aeree di Agentschap Informatie Vlaanderen",
         "callToAction": "Provalo su mapcomplete.org",
@@ -70,13 +73,26 @@
             "wikipedia": "Vengono mostrati gli articoli collegati di Wikipedia"
         },
         "frontParagraph": "MapComplete è un’applicazione web facile da usare che permette di raccogliere dati geografici su OpenStreetMap, permettendo così di ottenere e gestire dati rilevanti in una maniera open, crowdsource e riutilizzabile.\n\nA richiesta possono essere aggiunti nuove categorie e attributi.",
-        "lines_too": "Vengono anche mostrati linee e poligoni. Anche su questi oggetti si possono aggiungere e aggiornare gli attributi e le immagini."
+        "lines_too": "Vengono anche mostrati linee e poligoni. Anche su questi oggetti si possono aggiungere e aggiornare gli attributi e le immagini.",
+        "mapcomplete": {
+            "li0": "Mostra dove sono i POI",
+            "li1": "Aggiungi nuovi punti e aggiorna le informazioni in quelli già esistenti",
+            "li2": "Aggiungi facilmente le informazioni di contatto e gli orari di apertura",
+            "li3": "Può essere inserita in altri siti web come iFrame",
+            "li5": "Funzione per importare i dataset esistenti",
+            "title": "Che cos'è MapComplete?"
+        },
+        "title": "mapcomplete.org",
+        "whatIsOsm": "Che cos'è OpenStreetMap?"
     },
     "general": {
+        "404": "Questa pagina non esiste",
         "about": "Modifica e aggiungi con semplicità OpenStreetMap per un certo tema",
         "add": {
             "addNew": "Aggiungi {category} qua",
+            "backToSelect": "Seleziona una categoria differente",
             "confirmButton": "Aggiungi una {category} qua.<br><div class=\"alert\">La tua aggiunta è visibile a chiunque</div>",
+            "confirmTitle": "Aggiungi un {title}?",
             "disableFilters": "Disabilita tutti i filtri",
             "disableFiltersExplanation": "Alcuni oggetti potrebbero essere nascosti da un filtro",
             "hasBeenImported": "Questo elemento è stato già importato",
@@ -125,6 +141,7 @@
             "openIssueTracker": "Segnala un problema",
             "openMapillary": "Apri Mapillary qui",
             "openOsmcha": "Vedi le ultime modifiche effettuate con {theme}",
+            "seeOnMapillary": "Guarda questa immagine su Mapillary",
             "themeBy": "Tema manutenuto da {author}",
             "translatedBy": "MapComplete è stata tradotta da {contributors} e da <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} contributori aggiuntivi</a>"
         },
