@@ -265,12 +265,15 @@
         {#if state.lastClickObject.hasPresets || state.lastClickObject.hasNoteLayer}
           <button
             class="pointer-events-auto w-fit"
+            class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
             on:click={() => {
               state.openNewDialog()
             }}
             on:keydown={forwardEventToMap}
           >
-            {#if state.lastClickObject.hasPresets}
+            {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
+              <Tr t={Translations.t.general.add.zoomInFurther}/>
+            {:else if state.lastClickObject.hasPresets}
               <Tr t={Translations.t.general.add.title} />
             {:else}
               <Tr t={Translations.t.notes.addAComment} />
