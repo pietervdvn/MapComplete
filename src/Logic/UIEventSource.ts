@@ -306,7 +306,8 @@ export abstract class Store<T> implements Readable<T> {
 
 export class ImmutableStore<T> extends Store<T> {
     public readonly data: T
-
+    static FALSE = new ImmutableStore<boolean>(false)
+    static TRUE = new ImmutableStore<boolean>(true)
     constructor(data: T) {
         super()
         this.data = data

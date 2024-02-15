@@ -66,6 +66,7 @@
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
+  import ReviewsOverview from "./Reviews/ReviewsOverview.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -588,6 +589,10 @@
           <Tr t={Translations.t.favouritePoi.title} />
         </h3>
         <Favourites {state} />
+        <h3>
+          <Tr t={Translations.t.reviews.your_reviews} />
+        </h3>
+        <ReviewsOverview {state}/>
       </div>
     </TabbedGroup>
   </FloatOver>
