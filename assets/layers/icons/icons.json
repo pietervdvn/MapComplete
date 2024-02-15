@@ -205,6 +205,35 @@
       ]
     },
     {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
       "id": "sharelink",
       "labels": [
         "defaults"
@@ -262,35 +291,6 @@
         }
       ],
       "condition": "id~(node|way|relation)/[0-9]*"
-    },
-    {
-      "id": "dogicon",
-      "labels": [
-        "defaults",
-        "in_favourite"
-      ],
-      "mappings": [
-        {
-          "if": "dog=no",
-          "#": "ignore-image-in-then",
-          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
-        },
-        {
-          "if": "dog=leashed",
-          "#": "ignore-image-in-then",
-          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
-        },
-        {
-          "if": {
-            "or": [
-              "dog=yes",
-              "dog=unleashed"
-            ]
-          },
-          "#": "ignore-image-in-then",
-          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
-        }
-      ]
     },
     {
       "id": "rating",
