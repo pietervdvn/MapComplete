@@ -368,9 +368,28 @@
             "uploading": "Traject uploaden…"
         },
         "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
-        "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
         "visualFeedback": {
             "closestFeaturesAre": "{n} objecten in beeld.",
+            "directionsAbsolute": {
+                "E": "ten oosten",
+                "N": "ten noorden",
+                "NE": "ten noordoosten",
+                "NW": "ten noordwesten",
+                "S": "ten zuiden",
+                "SE": "ten zuidoosten",
+                "SW": "ten zuidwesten",
+                "W": "ten westen"
+            },
+            "directionsRelative": {
+                "behind": "achter je",
+                "left": "links",
+                "right": "rechts",
+                "sharp_left": "scherp linksaf",
+                "sharp_right": "scherp rechtsaf",
+                "slight_left": "ietwat links",
+                "slight_right": "ietwat rechts",
+                "straight": "vooruit"
+            },
             "east": "Naar het oosten",
             "in": "Aan het inzoomen naar zoomlevel {z}",
             "islocked": "Bewegen vergrendeld rond je huidige locatie. Duw op de geolocatie-knop om te ontgrendelen.",
@@ -382,6 +401,8 @@
             "out": "Aan het uitzoomen naar zoomlevel {z}",
             "south": "Naar het zuiden",
             "unlocked": "Bewegen ontgrendeld",
+            "viewportCenterCloseToGps": "De kaart is gecentreerd op je huidige GPS-locatie.",
+            "viewportCenterDetails": "Het kaartbeeldcentrum is {distance} {bearing} vanaf je huidige locatie.",
             "west": "Naar het westen"
         },
         "weekdays": {

@@ -5232,7 +5232,7 @@
                         "no_known_languages": "La langue principale de cette école est inconnue",
                         "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
                         "render_all": "Ces langues sont utilisées dans cette école :{list()}",
-                        "render_single_language": "{language():font-bold} est la langue principale dans cette école"
+                        "render_single_language": "{language()} est la langue principale dans cette école"
                     }
                 }
             },
@@ -5286,9 +5286,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} a fermé définitivement"
+                    "then": "{title()} a fermé définitivement"
                 }
             }
         },

@@ -23,7 +23,7 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
         return this._ohs
     }
 
-    IsValid(t: OpeningHour[]): boolean {
+    IsValid(_: OpeningHour[]): boolean {
         return true
     }
 

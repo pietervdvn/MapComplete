@@ -4,7 +4,6 @@
   import type { Feature } from "geojson"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import { GeoOperations } from "../../Logic/GeoOperations"
-  import DirectionIndicator from "../Base/DirectionIndicator.svelte"
 
   export let feature: Feature
   let properties: Record<string, string> = feature.properties
@@ -30,7 +29,7 @@
     center()
   }
 
-  const titleIconBlacklist = ["osmlink", "sharelink", "favourite_title_icon"]
+  let titleIconBlacklist = ["osmlink", "sharelink", "favourite_title_icon"]
 </script>
 
 {#if favLayer !== undefined}
@@ -52,7 +51,7 @@
       class="title-icons links-as-button flex flex-wrap items-center gap-x-0.5 self-end justify-self-end p-1 pt-0.5 sm:pt-1"
     >
       {#each favConfig.titleIcons as titleIconConfig}
-        {#if titleIconBlacklist.indexOf(titleIconConfig.id) < 0 && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...properties, ...state.userRelatedState.preferencesAsTags.data } ) ?? true) && titleIconConfig.IsKnown(properties)}
+        {#if titleIconBlacklist.indexOf(titleIconConfig.id) < 0 && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties({ ...properties, ...state.userRelatedState.preferencesAsTags.data }) ?? true) && titleIconConfig.IsKnown(properties)}
           <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
             <TagRenderingAnswer
               config={titleIconConfig}

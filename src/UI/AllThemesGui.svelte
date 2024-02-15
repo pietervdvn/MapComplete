@@ -19,7 +19,7 @@
   import { LayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
   import * as themeOverview from "../assets/generated/theme_overview.json"
   import UnofficialThemeList from "./BigComponents/UnofficialThemeList.svelte"
-  import Eye from "@babeard/svelte-heroicons/mini/Eye"
+  import Eye from "../assets/svg/Eye.svelte"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -56,7 +56,7 @@
           .filter((key) => key.startsWith(prefix))
           .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
       )
-      return hiddenThemes.filter((theme) => knownIds.has(theme.id))
+      return hiddenThemes.filter((theme) => knownIds.has(theme.id) || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet")
     })
   }
 </script>

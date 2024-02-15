@@ -10,8 +10,8 @@ import { Tag } from "../../Logic/Tags/Tag"
 import { SpecialVisualizationState } from "../SpecialVisualization"
 import { Feature, Point } from "geojson"
 import SvelteUIElement from "../Base/SvelteUIElement"
-import Confirm from "../../assets/svg/Confirm.svelte"
 import Relocation from "../../assets/svg/Relocation.svelte"
+import Location from "../../assets/svg/Location.svelte"
 
 export interface MoveReason {
     text: Translation | string
@@ -62,7 +62,7 @@ export class MoveWizardState {
             reasons.push({
                 text: t.reasons.reasonInaccurate,
                 invitingText: t.inviteToMove.reasonInaccurate,
-                icon: new SvelteUIElement(Confirm),
+                icon: new SvelteUIElement(Location),
                 changesetCommentValue: "improve_accuracy",
                 lockBounds: true,
                 includeSearch: false,

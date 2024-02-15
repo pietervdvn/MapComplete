@@ -122,11 +122,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the name of this climbing gym?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `<strong>{name}</strong>`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `<strong>{name}</strong>`
 
 
 
@@ -136,11 +132,7 @@ This is rendered with  `<strong>{name}</strong>`
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -158,11 +150,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the phone number of {title()}?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -180,11 +168,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the email address of {title()}?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -202,11 +186,7 @@ This tagrendering has labels  `contact`
 
 The question is  *Is a fee required to climb here?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `A fee of {charge} should be paid for climbing here`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `A fee of {charge} should be paid for climbing here`
 
 
 
@@ -242,11 +222,7 @@ The question is  *Which methods of payment are accepted here?*
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -400,11 +376,7 @@ The question is  *Is toprope climbing possible here?*
 
 The question is  *What is the (average) length of the routes in meters?*
 
-This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) 
-
-This is rendered with  `The routes are <b>{canonical(climbing:length)}</b> long on average`
-
-
+This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) This is rendered with  `The routes are <b>{canonical(climbing:length)}</b> long on average`
 
 
 
@@ -414,11 +386,7 @@ This is rendered with  `The routes are <b>{canonical(climbing:length)}</b> long 
 
 The question is  *What is the grade of the easiest route here, according to the french classification system?*
 
-This rendering asks information about the property  [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) 
-
-This is rendered with  `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
-
-
+This rendering asks information about the property  [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) This is rendered with  `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
 
 
 
@@ -428,11 +396,7 @@ This is rendered with  `The lowest grade is {climbing:grade:french:min} accordin
 
 The question is  *What is the highest grade route here, according to the french classification system?*
 
-This rendering asks information about the property  [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) 
-
-This is rendered with  `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
-
-
+This rendering asks information about the property  [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) This is rendered with  `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
 
 This tagrendering is only visible in the popup if the following condition is met: `club= & office= & (<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>) & climbing!~^(route)$`
 
@@ -444,11 +408,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *How many bolts do routes in {title()} have at most?*
 
-This rendering asks information about the property  [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) 
-
-This is rendered with  `The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
-
-
+This rendering asks information about the property  [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) This is rendered with  `The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
 
@@ -519,11 +479,7 @@ This tagrendering has labels  `internet-all`
 
 The question is  *What is the network name for the wireless internet access?*
 
-This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) 
-
-This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
-
-
+This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 

@@ -91,11 +91,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Wie beheert dit gebied?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Dit gebied wordt beheerd door {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Dit gebied wordt beheerd door {operator}`
 
 
 
@@ -128,11 +124,7 @@ The question is  *Wanneer is deze speelzone toegankelijk?*
 
 The question is  *Wie kan men emailen indien er problemen zijn met de speelzone?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `De bevoegde dienst kan bereikt worden via {email}`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `De bevoegde dienst kan bereikt worden via {email}`
 
 
 
@@ -142,11 +134,7 @@ This is rendered with  `De bevoegde dienst kan bereikt worden via {email}`
 
 The question is  *Wie kan men bellen indien er problemen zijn met de speelzone?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `De bevoegde dienst kan getelefoneerd worden via {phone}`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `De bevoegde dienst kan getelefoneerd worden via {phone}`
 
 
 

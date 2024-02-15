@@ -15,7 +15,24 @@
   export let path: (string | number)[] = []
   export let schema: ConfigMeta
   export let startInEditModeIfUnset: boolean = schema.hints && !schema.hints.ifunset
-  
+
+  function mightBeBoolean(type: undefined | JsonSchemaType): boolean {
+    if (type === undefined) {
+      return false
+    }
+    if (type["type"]) {
+      type = type["type"]
+    }
+    if (type === "boolean") {
+      return true
+    }
+    if (!Array.isArray(type)) {
+      return false
+    }
+
+    return type.some((t) => mightBeBoolean(t))
+  }
+
   const isTranslation =
     schema.hints?.typehint === "translation" ||
     schema.hints?.typehint === "rendered" ||
@@ -66,6 +83,7 @@
             helperArgs,
           },
   }
+ 
 
   if (schema.hints.default) {
     configJson.mappings = [
@@ -77,6 +95,7 @@
           schema.hints.default +
           "</b> will be used. " +
           (schema.hints.ifunset ?? ""),
+        hideInAnswer: mightBeBoolean(schema.type)
       },
     ]
   } else if (!schema.required) {
@@ -88,23 +107,7 @@
     ]
   }
 
-  function mightBeBoolean(type: undefined | JsonSchemaType): boolean {
-    if (type === undefined) {
-      return false
-    }
-    if (type["type"]) {
-      type = type["type"]
-    }
-    if (type === "boolean") {
-      return true
-    }
-    if (!Array.isArray(type)) {
-      return false
-    }
-
-    return type.some((t) => mightBeBoolean(t))
-  }
-
+  
   if (mightBeBoolean(schema.type)) {
     configJson.mappings = configJson.mappings ?? []
     configJson.mappings.push(
@@ -135,7 +138,7 @@
     err = path.join(".") + " " + e
   }
   let startValue = state.getCurrentValueFor(path)
-  let startInEditMode = !startValue && startInEditModeIfUnset
+  let startInEditMode = startValue === undefined && startInEditModeIfUnset
   const tags = new UIEventSource<Record<string, string>>({ value: startValue })
   try {
     onDestroy(
@@ -156,7 +159,7 @@
             if (v === "true" || v === "yes" || v === "1") {
               return true
             }
-            if (v === "false" || v === "no" || v === "0") {
+            if (v === "false" || v === "no" || v === "0" || (<any> v) === false) {
               return false
             }
           }

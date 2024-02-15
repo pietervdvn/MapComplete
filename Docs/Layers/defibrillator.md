@@ -131,11 +131,7 @@ The question is  *Is this defibrillator located indoors?*
 
 The question is  *Is this defibrillator freely accessible?*
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-
-This is rendered with  `Access is {access}`
-
-
+This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `Access is {access}`
 
 
 
@@ -177,11 +173,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *On which floor is this defibrillator located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `This defibrillator is on floor {level}`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `This defibrillator is on floor {level}`
 
 
 
@@ -199,11 +191,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Please give some explanation on where the defibrillator can be found (in the local language)*
 
-This rendering asks information about the property  [defibrillator:location](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location) 
-
-This is rendered with  `<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}`
-
-
+This rendering asks information about the property  [defibrillator:location](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location) This is rendered with  `<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}`
 
 
 
@@ -213,11 +201,7 @@ This is rendered with  `<i>Extra information about the location (in the local la
 
 The question is  *Please give some explanation on where the defibrillator can be found (in English)*
 
-This rendering asks information about the property  [defibrillator:location:en](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:en) 
-
-This is rendered with  `<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}`
-
-
+This rendering asks information about the property  [defibrillator:location:en](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:en) This is rendered with  `<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}`
 
 
 
@@ -227,11 +211,7 @@ This is rendered with  `<i>Extra information about the location (in English):</i
 
 The question is  *Please give some explanation on where the defibrillator can be found (in French)*
 
-This rendering asks information about the property  [defibrillator:location:fr](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:fr) 
-
-This is rendered with  `<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}`
-
-
+This rendering asks information about the property  [defibrillator:location:fr](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:fr) This is rendered with  `<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}`
 
 
 
@@ -259,11 +239,7 @@ The question is  *Is this place accessible with a wheelchair?*
 
 The question is  *What is the official identification number of the device? (if visible on device)*
 
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-
-This is rendered with  `Official identification number of the device: <i>{ref}</i>`
-
-
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `Official identification number of the device: <i>{ref}</i>`
 
 
 
@@ -273,11 +249,7 @@ This is rendered with  `Official identification number of the device: <i>{ref}</
 
 The question is  *What is the email for questions about this defibrillator?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>`
 
 
 
@@ -287,11 +259,7 @@ This is rendered with  `Email for questions about this defibrillator: <a href='m
 
 The question is  *What is the phone number for questions about this defibrillator?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -301,11 +269,7 @@ This is rendered with  `Telephone for questions about this defibrillator: <a hre
 
 The question is  *At what times is this defibrillator available?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -320,11 +284,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 The question is  *Is there any useful information for users that you haven't been able to describe above? (leave blank if no)*
 
-This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
-
-This is rendered with  `Additional information: {description}`
-
-
+This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) This is rendered with  `Additional information: {description}`
 
 
 
@@ -334,11 +294,7 @@ This is rendered with  `Additional information: {description}`
 
 The question is  *When was this defibrillator last surveyed?*
 
-This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
-
-This is rendered with  `This defibrillator was last surveyed on {survey:date}`
-
-
+This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) This is rendered with  `This defibrillator was last surveyed on {survey:date}`
 
 
 
@@ -353,11 +309,7 @@ This is rendered with  `This defibrillator was last surveyed on {survey:date}`
 
 The question is  *Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)*
 
-This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) 
-
-This is rendered with  `Extra information for OpenStreetMap experts: {fixme}`
-
-
+This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) This is rendered with  `Extra information for OpenStreetMap experts: {fixme}`
 
 
 

@@ -35,11 +35,9 @@ export default class DeleteConfig {
         explanation: TypedTranslation<object> | Translation
         changesetMessage: string
     }[]
-
-    private readonly nonDeleteMappings?: { if: TagConfigJson; then: Translation }[]
-
     public readonly softDeletionTags?: TagsFilter
     public readonly neededChangesets?: number
+    private readonly nonDeleteMappings?: { if: TagConfigJson; then: Translation }[]
 
     constructor(json: DeleteConfigJson, context: string) {
         this.deleteReasons = (json.extraDeleteReasons ?? []).map((reason, i) => {
@@ -53,8 +51,17 @@ export default class DeleteConfig {
             }
         })
 
-        if (!json.omitDefaultDeleteReasons) {
-            for (const defaultDeleteReason of DeleteConfig.defaultDeleteReasons) {
+        {
+            let deleteReasons = DeleteConfig.defaultDeleteReasons
+            if (json.omitDefaultDeleteReasons === true) {
+                deleteReasons = []
+            } else if (json.omitDefaultDeleteReasons) {
+                const forbidden = <string[]>json.omitDefaultDeleteReasons
+                deleteReasons = deleteReasons.filter(
+                    (dl) => forbidden.indexOf(dl.changesetMessage) < 0
+                )
+            }
+            for (const defaultDeleteReason of deleteReasons) {
                 this.deleteReasons.push({
                     changesetMessage: defaultDeleteReason.changesetMessage,
                     explanation:
@@ -117,6 +124,7 @@ export default class DeleteConfig {
             mappings,
             id: "why-delete",
         }
+        console.log("Delete config", config)
         return new TagRenderingConfig(config)
     }
 }

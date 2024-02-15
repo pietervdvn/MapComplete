@@ -107,11 +107,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Is this vending machine still operational?*
 
-This rendering asks information about the property  [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) 
-
-This is rendered with  `The operational status is <i>{operational_status}</i>`
-
-
+This rendering asks information about the property  [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) This is rendered with  `The operational status is <i>{operational_status}</i>`
 
 
 
@@ -128,11 +124,7 @@ This is rendered with  `The operational status is <i>{operational_status}</i>`
 
 The question is  *How much does a bicycle tube cost?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `A bicycle tube costs {charge}`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `A bicycle tube costs {charge}`
 
 
 
@@ -172,11 +164,7 @@ The question is  *Which methods of payment are accepted here?*
 
 The question is  *Which brand of tubes are sold here?*
 
-This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) 
-
-This is rendered with  `{brand} tubes are sold here`
-
-
+This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) This is rendered with  `{brand} tubes are sold here`
 
 
 
@@ -192,11 +180,7 @@ This is rendered with  `{brand} tubes are sold here`
 
 The question is  *Who maintains this vending machine?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `This vending machine is maintained by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This vending machine is maintained by {operator}`
 
 
 

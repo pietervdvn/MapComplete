@@ -113,11 +113,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -132,11 +128,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 The question is  *How many designs are available?*
 
-This rendering asks information about the property  [coin:design_count](https://wiki.openstreetmap.org/wiki/Key:coin:design_count) 
-
-This is rendered with  `This penny press has {coin:design_count} designs available.`
-
-
+This rendering asks information about the property  [coin:design_count](https://wiki.openstreetmap.org/wiki/Key:coin:design_count) This is rendered with  `This penny press has {coin:design_count} designs available.`
 
 
 
@@ -201,11 +193,7 @@ The question is  *Which methods of payment are accepted here?*
 
 The question is  *What coin is used for pressing?*
 
-This rendering asks information about the property  [coin:type](https://wiki.openstreetmap.org/wiki/Key:coin:type) 
-
-This is rendered with  `This penny press uses a {coin:type} coin for pressing.`
-
-
+This rendering asks information about the property  [coin:type](https://wiki.openstreetmap.org/wiki/Key:coin:type) This is rendered with  `This penny press uses a {coin:type} coin for pressing.`
 
 
 
@@ -226,11 +214,7 @@ This is rendered with  `This penny press uses a {coin:type} coin for pressing.`
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -248,11 +232,7 @@ This tagrendering has labels  `contact`
 
 The question is  *How much does it cost to press a penny?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-
-This is rendered with  `It costs {charge} to press a penny.`
-
-
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `It costs {charge} to press a penny.`
 
 
 
@@ -331,11 +311,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 
@@ -358,11 +334,7 @@ This tagrendering has labels  `level`
 
 The question is  *When was this object last checked?*
 
-This rendering asks information about the property  [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) 
-
-This is rendered with  `This object was last checked on <b>{check_date}</b>`
-
-
+This rendering asks information about the property  [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) This is rendered with  `This object was last checked on <b>{check_date}</b>`
 
 
 

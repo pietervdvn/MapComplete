@@ -281,8 +281,8 @@
                 "render": {
                     "special": {
                         "question": "באילו שפות יש לכספומט הזה פלט דיבור?",
-                        "render_list_item": "לכספומט הזה יש פלט דיבור ב {language():font-bold}",
-                        "render_single_language": "לכספומט הזה יש פלט דיבור ב {language():font-bold}"
+                        "render_list_item": "לכספומט הזה יש פלט דיבור ב {language()}",
+                        "render_single_language": "לכספומט הזה יש פלט דיבור ב {language()}"
                     }
                 }
             }

@@ -1,67 +1,100 @@
 <script lang="ts">
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import Table from "../Base/Table"
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import SimpleMetaTaggers from "../../Logic/SimpleMetaTagger"
-  import { FixedUiElement } from "../Base/FixedUiElement"
-  import { onDestroy } from "svelte"
-  import Toggle from "../Input/Toggle"
-  import Lazy from "../Base/Lazy"
-  import BaseUIElement from "../BaseUIElement"
-  import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-  import { VariableUiElement } from "../Base/VariableUIElement"
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
-  //Svelte props
-  export let tags: UIEventSource<any>
-  export let state: { layoutToUse: LayoutConfig } = undefined
+  export let tags: UIEventSource<Record<string, any>>
+  export let tagKeys = tags.map(tgs => Object.keys(tgs))
 
-  const calculatedTags = [].concat(
-    ...(state?.layoutToUse?.layers?.map((l) => l.calculatedTags?.map((c) => c[0]) ?? []) ?? [])
-  )
+  export let layer: LayerConfig | undefined = undefined
 
-  const allTags = tags.mapD((tags) => {
-    const parts: (string | BaseUIElement)[][] = []
-    for (const key in tags) {
-      let v = tags[key]
-      if (v === "") {
-        v = "<b>empty string</b>"
-      }
-      parts.push([key, v ?? "<b>undefined</b>"])
+  /**
+   * The names (keys) of the calculated tags. Each will normally start with an underscore (but in rare cases not)
+   */
+  let calculatedTags: string[] = []
+  for (const calculated of layer?.calculatedTags ?? []) {
+    if(calculated){
+      continue
     }
+    const name = calculated[0]
+    calculatedTags.push(name)
+  }
+  let knownValues: Store<string[]> = tags.map(tags => Object.keys(tags))
 
-    for (const key of calculatedTags) {
-      const value = tags[key]
-      if (value === undefined) {
-        continue
-      }
-      let type = ""
-      if (typeof value !== "string") {
-        type = " <i>" + typeof value + "</i>"
-      }
-      parts.push(["<i>" + key + "</i>", value])
-    }
+  const metaKeys: string[] = [].concat(...SimpleMetaTaggers.metatags.map(k => k.keys))
+  let allCalculatedTags = new Set<string>([...calculatedTags, ...metaKeys])
 
-    for (const metatag of SimpleMetaTaggers.metatags.filter((mt) => mt.isLazy)) {
-      const title = "<i>" + metatag.keys.join(";") + "</i> (lazy)"
-      const toggleState = new UIEventSource(false)
-      const toggle: BaseUIElement = new Toggle(
-        new Lazy(() => new FixedUiElement(metatag.keys.map((key) => tags[key]).join(";"))),
-        new FixedUiElement("Evaluate").onClick(() => toggleState.setData(true)),
-        toggleState
-      )
-      parts.push([title, toggle])
-    }
-
-    return parts
-  })
-
-  const tagsTable = new VariableUiElement(
-    allTags.mapD((_allTags) =>
-      new Table(["Key", "Value"], _allTags).SetClass("zebra-table break-all")
-    )
-  )
 </script>
 
 <section>
-  <ToSvelte construct={tagsTable} />
+  <table class="zebra-table break-all">
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <th colspan="2">Normal tags</th>
+    </tr>
+    {#each $tagKeys as key}
+      {#if !allCalculatedTags.has(key)}
+        <tr>
+          <td>{key}</td>
+          <td>
+            {#if $tags[key] === undefined}
+              <i>undefined</i>
+            {:else if $tags[key] === ""}
+              <i>Empty string</i>
+            {:else}
+              {$tags[key]}
+            {/if}
+          </td>
+        </tr>
+      {/if}
+    {/each}
+    <tr>
+      <th colspan="2">Calculated tags</th>
+    </tr>
+    {#if calculatedTags.length === 0}
+      <tr>
+        <td colspan="2"><i>This layer does not use calculated tags</i></td>
+      </tr>
+    {/if}
+    {#each calculatedTags as key}
+      <tr>
+        <td>{key}</td>
+        <td>
+          {#if $tags[key] === undefined}
+            <i>undefined</i>
+          {:else if $tags[key] === ""}
+            <i>Empty string</i>
+          {:else if $tags[key] !== "string"}
+            <span class="literal-code">{$tags[key]}</span>
+            <i>{typeof $tags[key]}</i>
+          {:else}
+            {$tags[key]}
+          {/if}
+        </td>
+      </tr>
+    {/each}
+
+    <tr>
+      <th colspan="2">Metatags tags</th>
+    </tr>
+    {#each metaKeys as key}
+      <tr>
+        <td>{key}</td>
+        <td>
+          {#if $knownValues.indexOf(key) < 0 }
+            <button class="small" on:click={_ => {console.log($tags[key])}}>Evaluate</button>
+          {:else if !$tags[key] === undefined}
+            <i>Undefined</i>
+          {:else if $tags[key] === ""}
+            <i>Empty string</i>
+          {:else}
+            {$tags[key]}
+          {/if}
+        </td>
+      </tr>
+    {/each}
+  </table>
 </section>

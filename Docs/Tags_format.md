@@ -4,7 +4,7 @@
 When creating the `json` file describing your layer or theme, you'll have to add a few tags to describe what you want.
 This document gives an overview of what every expression means and how it behaves in edge cases.
 
-If the schema-files note a type [`TagConfigJson`](https://github.com/pietervdvn/MapComplete/blob/develop/Models/ThemeConfig/Json/TagConfigJson.ts), you can use one of these values.
+If the schema-files note a type [`TagConfigJson`](https://github.com/pietervdvn/MapComplete/blob/develop/src/Models/ThemeConfig/Json/TagConfigJson.ts), you can use one of these values.
 
 In some cases, not every type of tags-filter can be used. For example,  _rendering_ an option with a regex is
 fine (`"if": "brand~[Bb]randname", "then":" The brand is Brandname"`); but this regex can not be used to write a value

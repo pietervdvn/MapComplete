@@ -91,11 +91,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What is wrong with this feature?*
 
-This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) 
-
-This is rendered with  `Fixme Text: {fixme}`
-
-
+This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) This is rendered with  `Fixme Text: {fixme}`
 
 
 

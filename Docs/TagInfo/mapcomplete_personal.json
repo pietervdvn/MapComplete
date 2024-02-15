@@ -222,6 +222,107 @@
       "description": "Layer 'Advertise' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Personal theme') (This is only shown if advertising!=sign)"
     },
     {
+      "key": "aerialway",
+      "description": "The MapComplete theme Personal theme has a layer Aerialways showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Aerialways' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=cable_car with a fixed text, namely 'This is a cable car where the car goes up and down again on the same cable.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "cable_car"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=gondola with a fixed text, namely 'This is a gondola where the cars go around in continuous circles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "gondola"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=chair_lift with a fixed text, namely 'An open chairlift with seats to sit on and open to the outside air.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "chair_lift"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=mixed with a fixed text, namely 'An aerialway which has both chairs and gondolas in the same continuous track' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "mixed"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=drag_lift with a fixed text, namely 'A drag lift' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "drag_lift"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=t-bar with a fixed text, namely 'A drag lift with T-shaped carriers for two passengers at a time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "t-bar"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=j-bar with a fixed text, namely 'A drag lift with L-shaped bars for a single passenger at a time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "j-bar"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=platter with a fixed text, namely 'A drag lift with a platter to drag a single passenger at a time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "platter"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=rope_tow with a fixed text, namely 'A tow line which which drags skieers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "rope_tow"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=magic_carpet with a fixed text, namely 'A magic carpet (a conveyor belt on the ground)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "magic_carpet"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=zip_line with a fixed text, namely 'A zip line. (A touristical attraction where adventurous people go down at high speeds) ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "zip_line"
+    },
+    {
+      "key": "duration",
+      "description": "Layer 'Aerialways' shows and asks freeform values for key 'duration' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "aerialway:occupancy",
+      "description": "Layer 'Aerialways' shows and asks freeform values for key 'aerialway:occupancy' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Aerialways' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "oneway",
+      "description": "Layer 'Aerialways' shows oneway=yes with a fixed text, namely 'This aerialway can only be taken to the top' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "oneway",
+      "description": "Layer 'Aerialways' shows oneway=no with a fixed text, namely 'This aerialway can be taken in both directions' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
       "key": "emergency",
       "description": "The MapComplete theme Personal theme has a layer Map of ambulance stations showing features with this tag",
       "value": "ambulance_station"
@@ -567,6 +668,59 @@
       "key": "not:historic",
       "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=bench)",
       "value": "memorial"
+    },
+    {
+      "key": "emergency",
+      "description": "The MapComplete theme Personal theme has a layer Emergency assembly points showing features with this tag",
+      "value": "assembly_point"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Emergency assembly points' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Emergency assembly points allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Emergency assembly points allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Emergency assembly points allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Emergency assembly points allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Emergency assembly points' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Emergency assembly points' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "assembly_point:earthquake",
+      "description": "Layer 'Emergency assembly points' shows assembly_point:earthquake=yes with a fixed text, namely 'Earthquake' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "assembly_point:flood",
+      "description": "Layer 'Emergency assembly points' shows assembly_point:flood=yes with a fixed text, namely 'Flood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "assembly_point:fire",
+      "description": "Layer 'Emergency assembly points' shows assembly_point:fire=yes with a fixed text, namely 'Fire' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "assembly_point:landslide",
+      "description": "Layer 'Emergency assembly points' shows assembly_point:landslide=yes with a fixed text, namely 'Landslide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
     },
     {
       "key": "amenity",
@@ -1943,6 +2097,37 @@
       "key": "access",
       "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "private"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike parking' shows fee=yes with a fixed text, namely 'One has to <b>pay</b> to use this bicycle parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Bike parking' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike parking' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "24/7"
+    },
+    {
+      "key": "operator:phone",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'operator:phone' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Bike parking' shows phone~.+ with a fixed text, namely '<a href='tel:{phone}'>{phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Bike parking' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "cargo_bike",
@@ -6010,6 +6195,43 @@
       "description": "Layer 'Dentist' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
+      "key": "emergency",
+      "description": "The MapComplete theme Personal theme has a layer Disaster response organizations showing features with this tag",
+      "value": "disaster_response"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Disaster response organizations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Disaster response organizations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Disaster response organizations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Disaster response organizations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Disaster response organizations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Disaster response organizations' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Disaster response organizations' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Disaster response organizations' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Doctors showing features with this tag",
       "value": "doctors"
@@ -8341,6 +8563,11 @@
       "value": "no"
     },
     {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=limited with a fixed text, namely 'There is a limited 3D-printer available at this hackerspace' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
       "key": "service:lasercutter",
       "description": "Layer 'Hackerspace' shows service:lasercutter=yes with a fixed text, namely 'There is a laser cutter available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
@@ -8351,6 +8578,11 @@
       "value": "no"
     },
     {
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=limited with a fixed text, namely 'There is a limited laser cutter available at this hackerspace' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
       "key": "service:cnc_drilling_machine",
       "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=yes with a fixed text, namely 'There is a CNC drill available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
@@ -8359,6 +8591,101 @@
       "key": "service:cnc_drilling_machine",
       "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=no with a fixed text, namely 'There is no CNC drill available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "no"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=limited with a fixed text, namely 'There is a limited CNC drill available at this hackerspace' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "service:media_studio",
+      "description": "Layer 'Hackerspace' shows service:media_studio=yes with a fixed text, namely 'There is a multimedia studio available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:media_studio",
+      "description": "Layer 'Hackerspace' shows service:media_studio=no with a fixed text, namely 'There is no multimedia studio available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:media_studio",
+      "description": "Layer 'Hackerspace' shows service:media_studio=limited with a fixed text, namely 'There is a limited multimedia studio available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "service:sewing_machine",
+      "description": "Layer 'Hackerspace' shows service:sewing_machine=yes with a fixed text, namely 'There is a sewing machine available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:sewing_machine",
+      "description": "Layer 'Hackerspace' shows service:sewing_machine=no with a fixed text, namely 'There is no sewing machine available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:sewing_machine",
+      "description": "Layer 'Hackerspace' shows service:sewing_machine=limited with a fixed text, namely 'There is a limited sewing machine available at this hackerspace' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "service:workshop:wood",
+      "description": "Layer 'Hackerspace' shows service:workshop:wood=yes with a fixed text, namely 'There is a woodworking workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:workshop:wood",
+      "description": "Layer 'Hackerspace' shows service:workshop:wood=no with a fixed text, namely 'There is no woodworking workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:workshop:wood",
+      "description": "Layer 'Hackerspace' shows service:workshop:wood=limited with a fixed text, namely 'There is a limited woodworking workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "service:workshop:ceramics",
+      "description": "Layer 'Hackerspace' shows service:workshop:ceramics=yes with a fixed text, namely 'There is a ceramics workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:workshop:ceramics",
+      "description": "Layer 'Hackerspace' shows service:workshop:ceramics=no with a fixed text, namely 'There is no ceramics workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:workshop:ceramics",
+      "description": "Layer 'Hackerspace' shows service:workshop:ceramics=limited with a fixed text, namely 'There is a limited ceramics workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "service:workshop:metal",
+      "description": "Layer 'Hackerspace' shows service:workshop:metal=yes with a fixed text, namely 'There is a metal workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:workshop:metal",
+      "description": "Layer 'Hackerspace' shows service:workshop:metal=no with a fixed text, namely 'There is no metal workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:workshop:metal",
+      "description": "Layer 'Hackerspace' shows service:workshop:metal=limited with a fixed text, namely 'There is a limited metal workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Hackerspace' shows service:bicycle:diy=yes with a fixed text, namely 'There is a bicycle repair workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Hackerspace' shows service:bicycle:diy=no with a fixed text, namely 'There is no bicycle repair workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Hackerspace' shows service:bicycle:diy=limited with a fixed text, namely 'There is a limited bicycle repair workshop available at this hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
     },
     {
       "key": "wheelchair",
@@ -9210,22 +9537,22 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Indoors' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
+      "description": "Layer 'Indoors' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Indoors' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
+      "description": "Layer 'Indoors' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Indoors' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
+      "description": "Layer 'Indoors' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Indoors' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
+      "description": "Layer 'Indoors' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=toilets & changing_table=yes)",
       "value": "dedicated_room"
     },
     {
@@ -9411,6 +9738,59 @@
     {
       "key": "capacity",
       "description": "Layer 'Kindergartens and childcare' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Love hotels showing features with this tag",
+      "value": "love_hotel"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Love hotels' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Love hotels allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Love hotels allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Love hotels allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Love hotels allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Love hotels' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Love hotels' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Love hotels' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Love hotels' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Love hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Love hotels' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Love hotels' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "tourism",
@@ -9606,8 +9986,33 @@
     },
     {
       "key": "highway",
-      "description": "Layer 'Maxspeed' shows highway=living_street with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Maxspeed' shows highway=living_street & _country=be with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "living_street"
+    },
+    {
+      "key": "emergency",
+      "description": "The MapComplete theme Personal theme has a layer Mountain rescue stations showing features with this tag",
+      "value": "mountain_rescue"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Mountain rescue stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "leisure",
@@ -13051,6 +13456,66 @@
       "value": "yes"
     },
     {
+      "key": "piste:type",
+      "description": "The MapComplete theme Personal theme has a layer Ski and snowboard pistes showing features with this tag",
+      "value": "downhill"
+    },
+    {
+      "key": "piste:type",
+      "description": "The MapComplete theme Personal theme has a layer Ski and snowboard pistes showing features with this tag",
+      "value": "connection"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Ski and snowboard pistes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=novice with a fixed text, namely 'Novice (green)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if piste:type!=connection)",
+      "value": "novice"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=easy with a fixed text, namely 'Easy (blue)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if piste:type!=connection)",
+      "value": "easy"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=intermediate with a fixed text, namely 'Intermediate (red)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if piste:type!=connection)",
+      "value": "intermediate"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=advanced with a fixed text, namely 'Advanced (black)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if piste:type!=connection)",
+      "value": "advanced"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=expert with a fixed text, namely 'Expert (orange/double black)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if piste:type!=connection)",
+      "value": "expert"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=freeride with a fixed text, namely 'Freeride' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if piste:type!=connection)",
+      "value": "freeride"
+    },
+    {
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Speed Camera showing features with this tag",
       "value": "speed_camera"
@@ -13455,6 +13920,20 @@
       "key": "ramp",
       "description": "Layer 'Stairs' shows ramp=no with a fixed text, namely 'There is no ramp at these stairs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if conveying!=yes)",
       "value": "no"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Stairs' shows and asks freeform values for key 'incline' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Stairs' shows incline=up with a fixed text, namely 'The upward direction is {direction_absolute()}' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "up"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Stairs' shows incline=down with a fixed text, namely 'The downward direction is {direction_absolute()}' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "down"
     },
     {
       "key": "highway",
@@ -14365,22 +14844,22 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "dedicated_room"
     },
     {
@@ -14563,22 +15042,22 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if changing_table=yes)",
       "value": "dedicated_room"
     },
     {
@@ -14968,6 +15447,80 @@
     {
       "key": "wikidata",
       "description": "Layer 'Tree' shows and asks freeform values for key 'wikidata' (in the mapcomplete.org theme 'Personal theme') (This is only shown if denotation=landmark | denotation=natural_monument | wikidata~.+)"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Trolley Bays showing features with this tag",
+      "value": "trolley_bay"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Trolley Bays' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Trolley Bays' shows covered=yes with a fixed text, namely 'This trolley bay is covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Trolley Bays' shows covered=no with a fixed text, namely 'This trolley bay is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "trolley:deposit",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit=yes with a fixed text, namely 'A deposit is required for the trolleys' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:deposit",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit=no with a fixed text, namely 'No deposit is required for the trolleys' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "trolley:deposit:denominations",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if trolley:deposit=yes & _currency~^(.*EUR.*)$)",
+      "value": "0.50 EUR"
+    },
+    {
+      "key": "trolley:deposit:denominations",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if trolley:deposit=yes & _currency~^(.*EUR.*)$)",
+      "value": "1 EUR"
+    },
+    {
+      "key": "trolley:deposit:denominations",
+      "description": "Layer 'Trolley Bays' shows trolley:deposit:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if trolley:deposit=yes & _currency~^(.*EUR.*)$)",
+      "value": "2 EUR"
+    },
+    {
+      "key": "trolley:magnifier",
+      "description": "Layer 'Trolley Bays' shows trolley:magnifier=yes with a fixed text, namely 'Trolleys with a magnifier are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:wheelchair",
+      "description": "Layer 'Trolley Bays' shows trolley:wheelchair=yes with a fixed text, namely 'Trolleys for wheelchair users are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:children",
+      "description": "Layer 'Trolley Bays' shows trolley:children=yes with a fixed text, namely 'Trolleys for children are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:seats",
+      "description": "Layer 'Trolley Bays' shows trolley:seats=yes with a fixed text, namely 'Trolleys with seats for children are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:flatbed",
+      "description": "Layer 'Trolley Bays' shows trolley:flatbed=yes with a fixed text, namely 'Trolleys with a flatbed are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "trolley:vertical",
+      "description": "Layer 'Trolley Bays' shows trolley:vertical=yes with a fixed text, namely 'Vertical trolleys for sheet-like goods are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
     },
     {
       "key": "amenity",
@@ -15413,6 +15966,35 @@
     {
       "key": "name",
       "description": "Layer 'veterinary' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Personal theme has a layer Viewpoint showing features with this tag",
+      "value": "viewpoint"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Viewpoint' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Viewpoint' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "amenity",

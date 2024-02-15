@@ -24,11 +24,12 @@ import Table from "../../UI/Base/Table"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import { Overpass } from "../../Logic/Osm/Overpass"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
-import Svg from "../../Svg"
 import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import Statistics from "../../assets/svg/Statistics.svelte"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const

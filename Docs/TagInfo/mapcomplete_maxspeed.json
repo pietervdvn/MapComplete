@@ -90,7 +90,7 @@
     },
     {
       "key": "highway",
-      "description": "Layer 'Maxspeed' shows highway=living_street with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Maxspeed')",
+      "description": "Layer 'Maxspeed' shows highway=living_street & _country=be with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Maxspeed')",
       "value": "living_street"
     },
     {

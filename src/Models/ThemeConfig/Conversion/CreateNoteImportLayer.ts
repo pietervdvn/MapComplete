@@ -24,7 +24,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         this._includeClosedNotesDays = includeClosedNotesDays
     }
 
-    convert(layerJson: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+    convert(layerJson: LayerConfigJson, _: ConversionContext): LayerConfigJson {
         const t = Translations.t.importLayer
 
         /**

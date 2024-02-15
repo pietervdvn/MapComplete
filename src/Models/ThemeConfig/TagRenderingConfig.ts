@@ -17,7 +17,6 @@ import {
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
-import Constants from "../Constants"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
 
 export interface Icon {}
@@ -152,7 +151,7 @@ export default class TagRenderingConfig {
             this.renderIconClass = "small"
         } else if (typeof json.icon === "object") {
             this.renderIcon = json.icon.path
-            this.renderIconClass = json.icon.class
+            this.renderIconClass = json.icon.class ?? "small"
         }
         this.metacondition = TagUtils.Tag(
             json.metacondition ?? { and: [] },
@@ -496,7 +495,8 @@ export default class TagRenderingConfig {
             for (const leftover of leftovers) {
                 applicableMappings.push({
                     then: new TypedTranslation<object>(
-                        this.render.replace("{" + this.freeform.key + "}", leftover).translations
+                        this.render.replace("{" + this.freeform.key + "}", leftover).translations,
+                        this.render.context
                     ),
                 })
             }

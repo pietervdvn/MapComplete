@@ -16,6 +16,7 @@
   import { ariaLabelStore } from "../../Utils/ariaLabel"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Center from "../../assets/svg/Center.svelte"
+  import Tr from "./Tr.svelte"
 
   export let state: SpecialVisualizationState
   export let feature: Feature
@@ -38,6 +39,13 @@
 
   let relativeDirections = Translations.t.general.visualFeedback.directionsRelative
   let absoluteDirections = Translations.t.general.visualFeedback.directionsAbsolute
+  
+  function round10(n :number){
+    if(n < 50){
+      return n
+    }
+    return Math.round(n / 10) * 10
+  }
 
   let closeToCurrentLocation = state.geolocation.geolocationState.currentGPSLocation.map(
     (gps) => {
@@ -53,7 +61,7 @@
   )
   let labelFromCenter: Store<string> = bearingAndDist.mapD(
     ({ bearing, dist }) => {
-      const distHuman = GeoOperations.distanceToHuman(dist)
+      const distHuman = GeoOperations.distanceToHuman(round10(dist))
       const lang = Locale.language.data
       const t = absoluteDirections[GeoOperations.bearingToHuman(bearing)]
       const mainTr = Translations.t.general.visualFeedback.fromMapCenter.Subs({
@@ -75,7 +83,7 @@
   > = state.geolocation.geolocationState.currentGPSLocation.mapD(({ longitude, latitude }) => {
     let gps = [longitude, latitude]
     let bearing = Math.round(GeoOperations.bearing(gps, fcenter))
-    let dist = Math.round(GeoOperations.distanceBetween(fcenter, gps))
+    let dist = round10(Math.round(GeoOperations.distanceBetween(fcenter, gps)))
     return { bearing, dist }
   })
   let labelFromGps: Store<string | undefined> = bearingAndDistGps.mapD(
@@ -84,7 +92,6 @@
       const lang = Locale.language.data
       let bearingHuman: string
       if (compass.data !== undefined) {
-        console.log("compass:", compass.data)
         const bearingRelative = bearing - compass.data
         const t = relativeDirections[GeoOperations.bearingToHumanRelative(bearingRelative)]
         bearingHuman = t.textFor(lang)
@@ -119,26 +126,36 @@
 </script>
 
 {#if $bearingAndDistGps === undefined}
-  <button
-    class={twMerge("soft relative rounded-full p-1", size)}
+  <!-- 
+  Important: one would expect this to be a button - it certainly behaves as one
+  However, this breaks the live-reading functionality (at least with Orca+FF),
+  so we use a 'div' and add on:click manually
+  -->
+  <div
+    class={twMerge("soft relative flex justify-center items-center border border-black rounded-full cursor-pointer p-1", size)}
     on:click={() => focusMap()}
     use:ariaLabelStore={label}
   >
-    <Center class="h-7 w-7" />
-  </button>
+    <Center class=" h-6 w-6" />
+  </div>
 {:else}
-  <button
-    class={twMerge("soft relative rounded-full", size)}
+  <div
+    class={twMerge("soft relative rounded-full border-black border", size)}
     on:click={() => focusMap()}
     use:ariaLabelStore={label}
   >
     <div
       class={twMerge(
-        "absolute top-0 left-0 flex items-center justify-center break-words text-sm",
+        "absolute top-0 left-0 flex items-center justify-center break-words text-xs cursor-pointer",
         size
       )}
     >
+      <div aria-hidden="true">
       {GeoOperations.distanceToHuman($bearingAndDistGps?.dist)}
+      </div>
+      <div class="offscreen">
+        {$label}
+      </div>
     </div>
     {#if $bearingFromGps !== undefined}
       <div class={twMerge("absolute top-0 left-0 rounded-full", size)}>
@@ -148,5 +165,16 @@
         />
       </div>
     {/if}
-  </button>
+  </div>
 {/if}
+
+<style>
+  .offscreen {
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; /* added line */
+      width: 1px;
+  }
+</style>

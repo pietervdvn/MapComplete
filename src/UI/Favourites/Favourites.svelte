@@ -6,7 +6,7 @@
   import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Utils } from "../../Utils"
   import { GeoOperations } from "../../Logic/GeoOperations"
-  import type { Feature, LineString, Point } from "geojson"
+  import type { Feature, Point } from "geojson"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import LoginButton from "../Base/LoginButton.svelte"
 
@@ -23,7 +23,7 @@
       "mapcomplete-favourites-" + new Date().toISOString() + ".geojson",
       {
         mimetype: "application/vnd.geo+json",
-      }
+      },
     )
   }
 
@@ -34,7 +34,7 @@
       "mapcomplete-favourites-" + new Date().toISOString() + ".gpx",
       {
         mimetype: "{gpx=application/gpx+xml}",
-      }
+      },
     )
   }
 </script>
@@ -48,7 +48,7 @@
 
   <div class="flex flex-col" on:keypress={(e) => console.log("Got keypress", e)}>
     <Tr t={Translations.t.favouritePoi.intro.Subs({ length: $favourites?.length ?? 0 })} />
-    <Tr t={Translations.t.favouritePoi.priintroPrivacyvacy} />
+    <Tr t={Translations.t.favouritePoi.introPrivacy} />
 
     {#each $favourites as feature (feature.properties.id)}
       <FavouriteSummary {feature} {state} />

@@ -12,6 +12,7 @@
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
 
   export let value: UIEventSource<string>
+  export let unvalidatedText: UIEventSource<string> = new UIEventSource<string>(value.data)
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
 
@@ -64,6 +65,7 @@
       type={config.freeform.type}
       {placeholder}
       {value}
+      {unvalidatedText}
     />
   {/if}
 
@@ -74,5 +76,6 @@
     {value}
     {state}
     on:submit
+    {unvalidatedText}
   />
 </div>

@@ -110,6 +110,21 @@
               "render": "./assets/layers/id_presets/maki-shop.svg",
               "+mappings": [
                 {
+                  "#": "Layer icon rendering",
+                  "if": {
+                    "or": [
+                      "shop=yes",
+                      {
+                        "and": [
+                          "shop!=yes",
+                          "id="
+                        ]
+                      }
+                    ]
+                  },
+                  "then": "./assets/layers/id_presets/maki-shop.svg"
+                },
+                {
                   "if": {
                     "or": [
                       "shop=vacant",
@@ -128,11 +143,6 @@
                 {
                   "if": "craft=key_cutter",
                   "then": "./assets/layers/id_presets/fas-key.svg"
-                },
-                {
-                  "#": "Layer icon rendering",
-                  "if": "id=",
-                  "then": "./assets/layers/id_presets/maki-shop.svg"
                 }
               ]
             }
@@ -206,7 +216,7 @@
         "en": "You can specify later on what this shop sells.",
         "ca": "Podeu especificar més endavant el que ven aquesta botiga.",
         "cs": "Přidat nový obchod",
-        "de": "Ein neues Geschäft hinzufügen",
+        "de": "Sie können später angeben, was das Geschäft verkauft.",
         "eo": "Enmeti novan butikon",
         "es": "Añadir una nueva tienda",
         "fr": "Ajouter un nouveau magasin",
@@ -627,12 +637,29 @@
     "softDeletionTags": {
       "and": [
         "shop=",
+        "phone=",
+        "website=",
+        "email=",
+        "opening_hours=",
         "disused:shop:={shop}"
       ]
     },
-    "extraDeleteReasons": [
+    "omitDefaultDeleteReasons": [
+      "disused"
+    ],
+    "nonDeleteMappings": [
       {
-        "explanation": {
+        "if": {
+          "and": [
+            "shop=",
+            "phone=",
+            "website=",
+            "email=",
+            "opening_hours=",
+            "disused:shop:={shop}"
+          ]
+        },
+        "then": {
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
@@ -640,8 +667,7 @@
           "fr": "{title()} a fermé définitivement",
           "ca": "{title()} ha tancat permanentment",
           "cs": "{title()} je trvale uzavřen"
-        },
-        "changesetMessage": "shop_closed"
+        }
       }
     ]
   },

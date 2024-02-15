@@ -17,7 +17,7 @@ export class PointImportButtonViz implements SpecialVisualization {
     public readonly funcName: string
     public readonly docs: string | BaseUIElement
     public readonly example?: string
-    public readonly args: { name: string; defaultValue?: string; doc: string }[]
+    public readonly args: { name: string; defaultValue?: string; doc: string, split?: boolean }[]
     public needsUrls = []
 
     constructor() {
@@ -51,8 +51,7 @@ export class PointImportButtonViz implements SpecialVisualization {
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,
         argument: string[],
-        feature: Feature,
-        layer: LayerConfig
+        feature: Feature
     ): BaseUIElement {
         if (feature.geometry.type !== "Point") {
             return Translations.t.general.add.import.wrongType.SetClass("alert")

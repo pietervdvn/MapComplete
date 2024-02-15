@@ -10,9 +10,8 @@
   import type { Feature } from "geojson"
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { TagUtils } from "../../../Logic/Tags/TagUtils"
+  import  { TagUtils } from "../../../Logic/Tags/TagUtils"
+  import type { UploadableTag } from "../../../Logic/Tags/TagUtils"
   import OsmChangeAction from "../../../Logic/Osm/Actions/OsmChangeAction"
   import DeleteAction from "../../../Logic/Osm/Actions/DeleteAction"
   import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction"
@@ -43,7 +42,7 @@
 
   const t = Translations.t.delete
 
-  let selectedTags: TagsFilter
+  let selectedTags: UploadableTag
   let changedProperties = undefined
   $: changedProperties = TagUtils.changeAsProperties(selectedTags?.asChange(tags?.data ?? {}) ?? [])
   let isHardDelete = undefined
@@ -66,7 +65,7 @@
           theme: state?.layout?.id ?? "unknown",
           specialMotivation: deleteReason,
         },
-        canBeDeleted.data
+        canBeDeleted.data,
       )
     } else {
       // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping

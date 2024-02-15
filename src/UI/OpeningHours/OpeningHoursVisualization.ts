@@ -11,6 +11,7 @@ import { Translation } from "../i18n/Translation"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Loading from "../Base/Loading"
 import opening_hours from "opening_hours"
+import Locale from "../i18n/Locale"
 
 export default class OpeningHoursVisualization extends Toggle {
     private static readonly weekdays: Translation[] = [
@@ -53,8 +54,9 @@ export default class OpeningHoursVisualization extends Toggle {
                     applicableWeek.ranges,
                     applicableWeek.startingMonday
                 )
-                textual.current.addCallbackAndRunD((descr) => {
-                    vis.ConstructElement().ariaLabel = descr
+                Locale.language.mapD((lng) => {
+                    console.log("Setting OH description to", lng, textual)
+                    vis.ConstructElement().ariaLabel = textual.textFor(lng)
                 })
                 return vis
             })

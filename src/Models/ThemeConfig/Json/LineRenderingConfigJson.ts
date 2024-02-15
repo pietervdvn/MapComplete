@@ -1,4 +1,5 @@
 import { MinimalTagRenderingConfigJson } from "./TagRenderingConfigJson"
+import { TagConfigJson } from "./TagConfigJson"
 
 /**
  * The LineRenderingConfig gives all details onto how to render a single line of a feature.
@@ -74,4 +75,12 @@ export default interface LineRenderingConfigJson {
      * type: int
      */
     offset?: number | MinimalTagRenderingConfigJson
+    /**
+     * question: What PNG-image should be shown along the way?
+     *
+     * ifunset: no image is shown along the way
+     * suggestions: [{if: "./assets/png/oneway.png", then: "Show a oneway error"}]
+     * type: image
+     */
+    imageAlongWay?: {if: TagConfigJson, then: string}[] | string
 }

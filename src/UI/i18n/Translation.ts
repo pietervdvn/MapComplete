@@ -9,8 +9,6 @@ export class Translation extends BaseUIElement {
 
     public readonly translations: Record<string, string>
     public readonly context?: string
-
-    private _current: Store<string>
     private onDestroy: () => void
 
     constructor(translations: string | Record<string, string>, context?: string) {
@@ -43,9 +41,11 @@ export class Translation extends BaseUIElement {
                 console.error(
                     "Non-string object at",
                     context,
+                    "of type",
+                    typeof translations[translationsKey],
                     `for language`,
                     translationsKey,
-                    `in translation: `,
+                    `. The offending object is: `,
                     translations[translationsKey],
                     "\n    current translations are: ",
                     translations
@@ -66,9 +66,7 @@ export class Translation extends BaseUIElement {
         }
     }
 
-    get txt(): string {
-        return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
-    }
+    private _current: Store<string>
 
     get current(): Store<string> {
         if (!this._current) {
@@ -82,6 +80,11 @@ export class Translation extends BaseUIElement {
         }
         return this._current
     }
+
+    get txt(): string {
+        return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
+    }
+
     static ExtractAllTranslationsFrom(
         object: any,
         context = ""
@@ -367,5 +370,33 @@ export class TypedTranslation<T extends Record<string, any>> extends Translation
         }
 
         return new TypedTranslation<Omit<T, X>>(newTranslations, this.context)
+    }
+
+    PartialSubsTr<K extends string>(
+        key: string,
+        replaceWith: Translation
+    ): TypedTranslation<Omit<T, K>> {
+        const newTranslations: Record<string, string> = {}
+        const toSearch = "{" + key + "}"
+        const missingLanguages = new Set<string>(Object.keys(this.translations))
+        for (const lang in this.translations) {
+            missingLanguages.delete(lang)
+            const template = this.translations[lang]
+            if (lang === "_context") {
+                newTranslations[lang] = template
+                continue
+            }
+            const v = replaceWith.textFor(lang)
+            newTranslations[lang] = template.replaceAll(toSearch, v)
+        }
+        const baseTemplate = this.textFor("en")
+        for (const missingLanguage of missingLanguages) {
+            newTranslations[missingLanguage] = baseTemplate.replaceAll(
+                toSearch,
+                replaceWith.textFor(missingLanguage)
+            )
+        }
+
+        return new TypedTranslation<Omit<T, K>>(newTranslations, this.context)
     }
 }

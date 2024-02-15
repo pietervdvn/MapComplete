@@ -1,46 +1,49 @@
 <script lang="ts">
-    import Pin from "../../assets/svg/Pin.svelte"
-    import Square from "../../assets/svg/Square.svelte"
-    import Circle from "../../assets/svg/Circle.svelte"
-    import Checkmark from "../../assets/svg/Checkmark.svelte"
-    import Clock from "../../assets/svg/Clock.svelte"
-    import Close from "../../assets/svg/Close.svelte"
-    import Crosshair from "../../assets/svg/Crosshair.svelte"
-    import Help from "../../assets/svg/Help.svelte"
-    import Home from "../../assets/svg/Home.svelte"
-    import Invalid from "../../assets/svg/Invalid.svelte"
-    import Location from "../../assets/svg/Location.svelte"
-    import Location_empty from "../../assets/svg/Location_empty.svelte"
-    import Location_locked from "../../assets/svg/Location_locked.svelte"
-    import Note from "../../assets/svg/Note.svelte"
-    import Resolved from "../../assets/svg/Resolved.svelte"
-    import Ring from "../../assets/svg/Ring.svelte"
-    import Scissors from "../../assets/svg/Scissors.svelte"
-    import Teardrop from "../../assets/svg/Teardrop.svelte"
-    import Teardrop_with_hole_green from "../../assets/svg/Teardrop_with_hole_green.svelte"
-    import Triangle from "../../assets/svg/Triangle.svelte"
-    import Brick_wall_square from "../../assets/svg/Brick_wall_square.svelte"
-    import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte"
-    import Gps_arrow from "../../assets/svg/Gps_arrow.svelte"
-    import { HeartIcon } from "@babeard/svelte-heroicons/solid"
-    import { HeartIcon as HeartOutlineIcon } from "@babeard/svelte-heroicons/outline"
-    import Confirm from "../../assets/svg/Confirm.svelte"
-    import Not_found from "../../assets/svg/Not_found.svelte"
-    import { twMerge } from "tailwind-merge"
-    import Direction_gradient from "../../assets/svg/Direction_gradient.svelte"
-    import Mastodon from "../../assets/svg/Mastodon.svelte"
-    import Party from "../../assets/svg/Party.svelte"
-    import AddSmall from "../../assets/svg/AddSmall.svelte"
+  import Pin from "../../assets/svg/Pin.svelte"
+  import Square from "../../assets/svg/Square.svelte"
+  import Circle from "../../assets/svg/Circle.svelte"
+  import Checkmark from "../../assets/svg/Checkmark.svelte"
+  import Clock from "../../assets/svg/Clock.svelte"
+  import Close from "../../assets/svg/Close.svelte"
+  import Crosshair from "../../assets/svg/Crosshair.svelte"
+  import Help from "../../assets/svg/Help.svelte"
+  import Home from "../../assets/svg/Home.svelte"
+  import Invalid from "../../assets/svg/Invalid.svelte"
+  import Location from "../../assets/svg/Location.svelte"
+  import Location_empty from "../../assets/svg/Location_empty.svelte"
+  import Location_locked from "../../assets/svg/Location_locked.svelte"
+  import Note from "../../assets/svg/Note.svelte"
+  import Resolved from "../../assets/svg/Resolved.svelte"
+  import Ring from "../../assets/svg/Ring.svelte"
+  import Scissors from "../../assets/svg/Scissors.svelte"
+  import Teardrop from "../../assets/svg/Teardrop.svelte"
+  import Teardrop_with_hole_green from "../../assets/svg/Teardrop_with_hole_green.svelte"
+  import Triangle from "../../assets/svg/Triangle.svelte"
+  import Brick_wall_square from "../../assets/svg/Brick_wall_square.svelte"
+  import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte"
+  import Gps_arrow from "../../assets/svg/Gps_arrow.svelte"
+  import { HeartIcon } from "@babeard/svelte-heroicons/solid"
+  import { HeartIcon as HeartOutlineIcon } from "@babeard/svelte-heroicons/outline"
+  import Confirm from "../../assets/svg/Confirm.svelte"
+  import Not_found from "../../assets/svg/Not_found.svelte"
+  import { twMerge } from "tailwind-merge"
+  import Direction_gradient from "../../assets/svg/Direction_gradient.svelte"
+  import Mastodon from "../../assets/svg/Mastodon.svelte"
+  import Party from "../../assets/svg/Party.svelte"
+  import AddSmall from "../../assets/svg/AddSmall.svelte"
+  import { LinkIcon } from "@babeard/svelte-heroicons/mini"
+  import Square_rounded from "../../assets/svg/Square_rounded.svelte"
+  import Bug from "../../assets/svg/Bug.svelte"
 
-    /**
-     * Renders a single icon.
-     *
-     * Icons -placed on top of each other- form a 'Marker' together
-     */
+  /**
+   * Renders a single icon.
+   *
+   * Icons -placed on top of each other- form a 'Marker' together
+   */
 
-    export let icon: string | undefined
-    export let color: string | undefined = undefined
-    export let clss: string | undefined = undefined
+  export let icon: string | undefined
+  export let color: string | undefined = undefined
+  export let clss: string | undefined = undefined
 
 </script>
 
@@ -49,6 +52,11 @@
     <Pin {color} class={clss} />
   {:else if icon === "square"}
     <Square {color} class={clss} />
+  {:else if icon === "square_rounded"}
+    <Square_rounded {color} class={clss} />
+  {:else if icon === "bug"}
+    <Bug {color} class={clss} />
+
   {:else if icon === "circle"}
     <Circle {color} class={clss} />
   {:else if icon === "checkmark"}
@@ -115,6 +123,8 @@
     <Party {color} class={clss} />
   {:else if icon === "addSmall"}
     <AddSmall {color} class={clss} />
+  {:else if icon === "link"}
+    <LinkIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}

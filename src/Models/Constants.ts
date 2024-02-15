@@ -118,7 +118,9 @@ export default class Constants {
      */
     private static readonly _defaultPinIcons = [
         "pin",
+        "bug",
         "square",
+        "square_rounded",
         "circle",
         "checkmark",
         "clock",
@@ -146,6 +148,7 @@ export default class Constants {
         "invalid",
         "heart",
         "heart_outline",
+        "link",
         "confirm",
         "direction",
         "not_found",
@@ -159,6 +162,7 @@ export default class Constants {
      * This is a MapLibre/MapBox vector tile server which hosts vector tiles for every (official) layer
      */
     public static VectorTileServer: string | undefined = Constants.config.mvt_layer_server
+    public static readonly maptilerApiKey = "GvoVAJgu46I5rZapJuAy"
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

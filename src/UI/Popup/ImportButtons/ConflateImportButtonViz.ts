@@ -86,8 +86,7 @@ export default class ConflateImportButtonViz implements SpecialVisualization, Au
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,
         argument: string[],
-        feature: Feature,
-        layer: LayerConfig
+        feature: Feature
     ): BaseUIElement {
         const canBeImported =
             feature.geometry.type === "LineString" ||

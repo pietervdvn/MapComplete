@@ -631,6 +631,10 @@
         "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
         "title": "Cyclofix - a map for cyclists"
     },
+    "disaster_response": {
+        "description": "This map contains elements meant for disaster preparedness and response.",
+        "title": "Disaster response"
+    },
     "drinking_water": {
         "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",
         "title": "Drinking Water"
@@ -842,7 +846,7 @@
     "hackerspaces": {
         "description": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
         "shortDescription": "A map of hackerspaces",
-        "title": "Hackerspaces"
+        "title": "Hackerspaces and makerspaces"
     },
     "hailhydrant": {
         "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.",
@@ -1129,6 +1133,57 @@
         },
         "title": "OnWheels"
     },
+    "openlovemap": {
+        "description": "<p><i>Love in the palm of your hand</i></p>Open Love Map lists various adult entries, such as brothels, erotic stores and stripclubs.",
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "an erotic shop"
+                        }
+                    },
+                    "name": "Erotic shops"
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "a condom vending machine"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "an erotic cinema"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "What type of hotel is this?"
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Does {title()} have a private video booth?",
+                    "questionHint": "This is for use by a single person."
+                }
+            }
+        },
+        "title": "Open Love Map"
+    },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
         "title": "Wind power generators"
@@ -1259,6 +1314,10 @@
         },
         "shortDescription": "Sidewalk mapping",
         "title": "Sidewalks"
+    },
+    "ski": {
+        "description": "Everything you need to go skiing",
+        "title": "Ski pistes and aerialways"
     },
     "sport_pitches": {
         "description": "A sport pitch is an area where sports are played",

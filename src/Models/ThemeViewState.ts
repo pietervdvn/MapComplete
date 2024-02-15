@@ -65,6 +65,8 @@ import Zoomcontrol from "../UI/Zoomcontrol"
 import { SummaryTileSource } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import summaryLayer from "../assets/generated/layers/summary.json"
 import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
+import Locale from "../UI/i18n/Locale"
+
 /**
  *
  * The themeviewState contains all the state needed for the themeViewGUI.
@@ -171,7 +173,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,
-            layout?.language,
             layout,
             this.featureSwitches,
             this.mapProperties
@@ -201,7 +202,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         this.geolocationControl = new GeolocationControlState(this.geolocation, this.mapProperties)
 
-        this.availableLayers = AvailableRasterLayers.layersAvailableAt(this.mapProperties.location)
+        this.availableLayers = AvailableRasterLayers.layersAvailableAt(
+            this.mapProperties.location,
+            this.osmConnection.isLoggedIn
+        )
 
         const self = this
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
@@ -640,6 +644,16 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             return true
         })
+
+        Hotkeys.RegisterHotkey(
+            {
+                shift: "T",
+            },
+            Translations.t.hotkeyDocumentation.translationMode,
+            () => {
+                Locale.showLinkToWeblate.setData(!Locale.showLinkToWeblate.data)
+            }
+        )
     }
 
     private setupSummaryLayer() {
@@ -762,18 +776,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Setup various services for which no reference are needed
      */
     private initActors() {
-        // Unselect the selected element if it is panned out of view
-        this.mapProperties.bounds.stabilized(250).addCallbackD((bounds) => {
-            const selected = this.selectedElement.data
-            if (selected === undefined) {
-                return
-            }
-            const bbox = BBox.get(selected)
-            if (!bbox.overlapsWith(bounds)) {
-                this.selectedElement.setData(undefined)
-            }
-        })
-
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
                 this.selectedLayer.setData(undefined)
@@ -789,7 +791,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
-        new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
+        new TitleHandler(this.selectedElement, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
         new PendingChangesUploader(this.changes, this.selectedElement)
         new SelectedElementTagsUpdater(this)

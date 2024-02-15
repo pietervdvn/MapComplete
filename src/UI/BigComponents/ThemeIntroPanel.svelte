@@ -113,6 +113,7 @@
               perLayer={state.perLayer}
               {selectedElement}
               {triggerSearch}
+              geolocationState={state.geolocation.geolocationState}
             />
           </div>
           <button

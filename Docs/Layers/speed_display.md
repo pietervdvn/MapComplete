@@ -89,11 +89,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What is the maximum speed allowed at this speed display?*
 
-This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) 
-
-This is rendered with  `The maximum speed allowed at this speed display is {canonical(maxspeed)}`
-
-
+This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) This is rendered with  `The maximum speed allowed at this speed display is {canonical(maxspeed)}`
 
 
 
@@ -103,11 +99,7 @@ This is rendered with  `The maximum speed allowed at this speed display is {cano
 
 The question is  *What is the text on this speed display?*
 
-This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
-
-This is rendered with  `The text on this speed display is {inscription}`
-
-
+This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) This is rendered with  `The text on this speed display is {inscription}`
 
 
 

@@ -442,35 +442,6 @@
       "value": "Telekom"
     },
     {
-      "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "permit"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "members"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "no"
-    },
-    {
-      "key": "access:description",
-      "description": "Layer 'Climbing gyms' shows values with key 'access:description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
-    },
-    {
       "key": "climbing",
       "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Climbing routes showing features with this tag",
       "value": "route"
@@ -529,35 +500,6 @@
     {
       "key": "description",
       "description": "Layer 'Climbing routes' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing routes' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing routes' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "permit"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing routes' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing routes' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "members"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing routes' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "no"
-    },
-    {
-      "key": "access:description",
-      "description": "Layer 'Climbing routes' shows values with key 'access:description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "sport",
@@ -665,35 +607,6 @@
       "description": "Layer 'Climbing opportunities' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder problems' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "permit"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "members"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "no"
-    },
-    {
-      "key": "access:description",
-      "description": "Layer 'Climbing opportunities' shows values with key 'access:description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
-    },
-    {
       "key": "leisure",
       "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Climbing opportunities? showing features with this tag",
       "value": "sports_centre"
@@ -741,35 +654,6 @@
       "key": "climbing",
       "description": "Layer 'Climbing opportunities?' shows climbing=no with a fixed text, namely 'Climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "no"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "yes"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "permit"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "customers"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "members"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
-      "value": "no"
-    },
-    {
-      "key": "access:description",
-      "description": "Layer 'Climbing opportunities?' shows values with key 'access:description' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "service:climbing_shoes:repair",
@@ -3224,22 +3108,22 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if changing_table=yes)",
       "value": "dedicated_room"
     },
     {

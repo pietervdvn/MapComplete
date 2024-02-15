@@ -127,6 +127,11 @@ export class OH {
      * const oh1: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 0, endHour: 11, endMinutes: 0 };
      * const oh0: OpeningHour = { weekday: 0, startHour: 11, startMinutes: 0, endHour: 12, endMinutes: 0 };
      * OH.MergeTimes([oh0, oh1]) // => [{ weekday: 0, startHour: 10, startMinutes: 0, endHour: 12, endMinutes: 0 }]
+     *
+     * // should merge touching opening hours spanning days
+     * const oh0: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 0, endHour: 24, endMinutes: 0 };
+     * const oh1: OpeningHour = { weekday: 1, startHour: 0, startMinutes: 0, endHour: 12, endMinutes: 0 };
+     * OH.MergeTimes([oh0, oh1]) // => [{ weekday: 0, startHour: 10, startMinutes: 0, endHour: 24, endMinutes: 0 }, { weekday: 1, startHour: 0, startMinutes: 0, endHour: 12, endMinutes: 0 }]
      */
     public static MergeTimes(ohs: OpeningHour[]): OpeningHour[] {
         const queue = ohs.map((oh) => {
@@ -216,6 +221,7 @@ export class OH {
         // This means that the list is changed only if the lengths are different.
         // If the lengths are the same, we might just as well return the old list and be a bit more stable
         if (newList.length !== ohs.length) {
+            newList.sort((a, b) => b.weekday - a.weekday)
             return newList
         } else {
             return ohs
@@ -308,6 +314,12 @@ export class OH {
      * rules[1].weekday // => 1
      * rules[1].startHour // => 0
      * rules[1].endHour // => 2
+     *
+     * const rules = OH.ParseRule("Mo 00:00-24:00")
+     * rules.length // => 1
+     * rules[0].weekday // => 0
+     * rules[0].startHour // => 0
+     * rules[0].endHour // => 24
      */
     public static ParseRule(rule: string): OpeningHour[] {
         try {
@@ -781,6 +793,7 @@ This list will be sorted
     /**
      * OH.ParseHhmmRanges("20:00-22:15") // => [{startHour: 20, startMinutes: 0, endHour: 22, endMinutes: 15}]
      * OH.ParseHhmmRanges("20:00-02:15") // => [{startHour: 20, startMinutes: 0, endHour: 2, endMinutes: 15}]
+     * OH.ParseHhmmRanges("00:00-24:00") // => [{startHour: 0, startMinutes: 0, endHour: 24, endMinutes: 0}]
      */
     private static ParseHhmmRanges(hhmms: string): {
         startHour: number
@@ -897,6 +910,19 @@ This list will be sorted
 }
 
 export class ToTextualDescription {
+    /**
+     * const oh = new opening_hours("mon 12:00-16:00")
+     * const ranges = OH.createRangesForApplicableWeek(oh)
+     * const tr = ToTextualDescription.createTextualDescriptionFor(oh, ranges.ranges)
+     * tr.textFor("en") // => "On monday from 12:00 till 16:00"
+     * tr.textFor("nl") // => "Op maandag van 12:00 tot 16:00"
+     *
+     * const oh = new opening_hours("mon 12:00-16:00; tu 13:00-14:00")
+     * const ranges = OH.createRangesForApplicableWeek(oh)
+     * const tr = ToTextualDescription.createTextualDescriptionFor(oh, ranges.ranges)
+     * tr.textFor("en") // => "On monday from 12:00 till 16:00. On tuesday from 13:00 till 14:00"
+     * tr.textFor("nl") // => "Op maandag van 12:00 tot 16:00. Op dinsdag van 13:00 tot 14:00"
+     */
     public static createTextualDescriptionFor(
         oh: opening_hours,
         ranges: OpeningRange[][]
@@ -972,10 +998,16 @@ export class ToTextualDescription {
     }
 
     private static chain(trs: Translation[]): Translation {
-        let chainer = new TypedTranslation<{ a; b }>({ "*": "{a}. {b}" })
+        const languages: Record<string, string> = {}
+        for (const tr1 of trs) {
+            for (const supportedLanguage of tr1.SupportedLanguages()) {
+                languages[supportedLanguage] = "{a}. {b}"
+            }
+        }
+        let chainer = new TypedTranslation<{ a; b }>(languages)
         let tr = trs[0]
         for (let i = 1; i < trs.length; i++) {
-            tr = chainer.Subs({ a: tr, b: trs[i] })
+            tr = chainer.PartialSubsTr("a", tr).PartialSubsTr("b", trs[i])
         }
         return tr
     }

@@ -6,15 +6,15 @@
   import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import Zoomcontrol from "../Zoomcontrol"
-  import { onDestroy, onMount } from "svelte"
+  import { onDestroy } from "svelte"
 
   export let image: ProvidedImage
   let panzoomInstance = undefined
   let panzoomEl: HTMLElement
   export let isLoaded: UIEventSource<boolean> = undefined
-  
+
   onDestroy(Zoomcontrol.createLock())
-  
+
   $: {
     if (panzoomEl) {
       panzoomInstance = panzoom(panzoomEl, {

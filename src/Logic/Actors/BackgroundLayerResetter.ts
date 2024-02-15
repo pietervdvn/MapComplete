@@ -8,7 +8,7 @@ import { RasterLayerPolygon, RasterLayerUtils } from "../../Models/RasterLayers"
  */
 export default class BackgroundLayerResetter {
     constructor(
-        currentBackgroundLayer: UIEventSource<RasterLayerPolygon>,
+        currentBackgroundLayer: UIEventSource<RasterLayerPolygon | undefined>,
         availableLayers: Store<RasterLayerPolygon[]>
     ) {
         if (Utils.runningFromConsole) {

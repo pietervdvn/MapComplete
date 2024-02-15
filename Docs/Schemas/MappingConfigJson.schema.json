@@ -58,7 +58,7 @@
       ]
     },
     "alsoShowIf": {
-      "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags.",
+      "description": "question: In what other cases should this item be rendered?\n\nAlso show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!\n\nifunset: No other cases when this text is shown",
       "anyOf": [
         {
           "$ref": "#/definitions/{and:TagConfigJson[];}"

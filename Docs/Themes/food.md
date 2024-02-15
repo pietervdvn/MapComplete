@@ -12,6 +12,7 @@ This theme contains the following layers:
 
 
   - [food](../Layers/food.md)
+  - [ice_cream](../Layers/ice_cream.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

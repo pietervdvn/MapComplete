@@ -35,6 +35,10 @@ export default class PhoneValidator extends Validator {
         if (country !== undefined) {
             countryCode = country()?.toUpperCase()
         }
+        if (this.isShortCode(str, countryCode)) {
+            return true
+        }
+
         return parsePhoneNumberFromString(str, countryCode)?.isValid() ?? false
     }
 
@@ -46,9 +50,28 @@ export default class PhoneValidator extends Validator {
         if (country) {
             countryCode = country()
         }
+        if (this.isShortCode(str, countryCode?.toUpperCase())) {
+            return str
+        }
         return parsePhoneNumberFromString(
             str,
             countryCode?.toUpperCase() as any
         )?.formatInternational()
+    }
+
+    /**
+     * Indicates if the given string is a special 'short code' valid in the given country
+     * see https://nl.wikipedia.org/wiki/Short_code
+     * @param str a possible phone number
+     * @param country the upper case, two-letter code for a country
+     * @private
+     */
+    private isShortCode(str: string, country: string) {
+        if (country == "BE" && str.length === 4 && str.match(/[0-9]{4}/)) {
+            return true
+        }
+        if (country == "NL" && str.length === 4 && str.match(/14[0-9]{3}/)) {
+            return true
+        }
     }
 }

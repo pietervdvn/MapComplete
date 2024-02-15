@@ -13,7 +13,7 @@
   const args = importFlow.args
 
   // The following variables are used for the map
-  const targetLayer: LayerConfig = state.layout.layers.find((l) => l.id === args.targetLayer)
+  const targetLayers: LayerConfig[] = args.targetLayer.split(" ").map(tl => state.layout.layers.find((l) => l.id === tl))
   const snapToLayers: string[] | undefined =
     args.snap_onto_layers?.split(",")?.map((l) => l.trim()) ?? []
   const maxSnapDistance: number = Number(args.max_snap_distance ?? 25) ?? 25
@@ -33,21 +33,20 @@
 
   async function onConfirm(): Promise<void> {
     const importedId = await importFlow.onConfirm(value.data, snappedTo.data)
-    state.selectedLayer.setData(targetLayer)
     state.selectedElement.setData(state.indexedFeatures.featuresById.data.get(importedId))
   }
 </script>
 
 <ImportFlow {importFlow} on:confirm={onConfirm}>
   <div class="relative" slot="map">
-    <div class="h-32">
+    <div class="h-64">
       <NewPointLocationInput
         coordinate={startCoordinate}
         {maxSnapDistance}
         {snapToLayers}
         {snappedTo}
         {state}
-        {targetLayer}
+        targetLayer={targetLayers}
         {value}
       />
     </div>

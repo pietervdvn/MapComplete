@@ -333,6 +333,10 @@
           "then": "advertising - We will complete data from advertising features with reference, operator and lit"
         },
         {
+          "if": "value=aerialway",
+          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+        },
+        {
           "if": "value=ambulancestation",
           "then": "ambulancestation - An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies."
         },
@@ -343,6 +347,10 @@
         {
           "if": "value=artwork",
           "then": "artwork - An open map of statues, busts, graffitis and other artwork all over the world"
+        },
+        {
+          "if": "value=assembly_point",
+          "then": "assembly_point - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
           "if": "value=atm",
@@ -409,6 +417,10 @@
           "then": "birdhide - A birdhide"
         },
         {
+          "if": "value=brothel",
+          "then": "brothel - An establishment specifically dedicated to prostitution. "
+        },
+        {
           "if": "value=cafe_pub",
           "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
@@ -419,6 +431,10 @@
         {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
+        },
+        {
+          "if": "value=cinema",
+          "then": "cinema -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
         },
         {
           "if": "value=climbing",
@@ -479,6 +495,10 @@
         {
           "if": "value=direction",
           "then": "direction - This layer visualizes directions"
+        },
+        {
+          "if": "value=disaster_response",
+          "then": "disaster_response - This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area."
         },
         {
           "if": "value=doctors",
@@ -617,6 +637,10 @@
           "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
         },
         {
+          "if": "value=love_hotel",
+          "then": "love_hotel - A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
+        },
+        {
           "if": "value=map",
           "then": "map - A map, meant for tourists which is permanently installed in the public space"
         },
@@ -635,6 +659,10 @@
         {
           "if": "value=memorial",
           "then": "memorial - Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on"
+        },
+        {
+          "if": "value=mountain_rescue",
+          "then": "mountain_rescue - A building where first aid responders store material and might be on watch"
         },
         {
           "if": "value=named_streets",
@@ -757,6 +785,10 @@
           "then": "shower - A layer showing (public) showers"
         },
         {
+          "if": "value=ski_piste",
+          "then": "ski_piste - Ski and snowboard pistes"
+        },
+        {
           "if": "value=slow_roads",
           "then": "slow_roads - All carfree roads"
         },
@@ -791,6 +823,10 @@
         {
           "if": "value=street_lamps",
           "then": "street_lamps - A layer showing street lights"
+        },
+        {
+          "if": "value=stripclub",
+          "then": "stripclub - A venue where erotic dance, striptease, or lap dances are performed commercially. "
         },
         {
           "if": "value=surveillance_camera",
@@ -831,6 +867,10 @@
         {
           "if": "value=tree_node",
           "then": "tree_node - A layer showing trees"
+        },
+        {
+          "if": "value=trolley_bay",
+          "then": "trolley_bay - Find trolley bays for shopping trolleys."
         },
         {
           "if": "value=unit",
@@ -1694,7 +1734,17 @@
                   },
                   "omitDefaultDeleteReasons": {
                     "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping\n\nquestion: Should the default delete reasons be hidden?\niftrue: Hide the default delete reasons\niffalse: Show the default delete reasons\nifunset: Show the default delete reasons (default behaviour)",
-                    "type": "boolean"
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "boolean"
+                      }
+                    ]
                   }
                 },
                 "additionalProperties": false
@@ -1727,7 +1777,7 @@
             ]
           },
           "allowSplit": {
-            "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\n\nIf the way is part of a relation, MapComplete will attempt to update this relation as well\nquestion: Should the contributor be able to split ways using this layer?\niftrue: enable the 'split-roads'-component\niffalse: don't enable the split-roads componenet\nifunset: don't enable the split-roads component\ngroup: editing",
+            "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\n\nIf the way is part of a relation, MapComplete will attempt to update this relation as well\nquestion: Should the contributor be able to split ways using this layer?\niftrue: enable the 'split-roads'-component\niffalse: don't enable the split-roads component\nifunset: don't enable the split-roads component\ngroup: editing",
             "type": "boolean"
           },
           "units": {
@@ -3545,9 +3595,19 @@
           "icon": "pin"
         },
         {
+          "if": "value=bug",
+          "then": "bug",
+          "icon": "bug"
+        },
+        {
           "if": "value=square",
           "then": "square",
           "icon": "square"
+        },
+        {
+          "if": "value=square_rounded",
+          "then": "square_rounded",
+          "icon": "square_rounded"
         },
         {
           "if": "value=circle",
@@ -3683,6 +3743,11 @@
           "if": "value=heart_outline",
           "then": "heart_outline",
           "icon": "heart_outline"
+        },
+        {
+          "if": "value=link",
+          "then": "link",
+          "icon": "link"
         },
         {
           "if": "value=confirm",
@@ -11963,6 +12028,79 @@
   {
     "path": [
       "layers",
+      "lineRendering",
+      "imageAlongWay"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "image",
+      "question": "What PNG-image should be shown along the way?",
+      "ifunset": "no image is shown along the way"
+    },
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "if": {
+              "$ref": "#/definitions/TagConfigJson",
+              "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+            },
+            "then": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "if",
+            "then"
+          ]
+        }
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": ""
+  },
+  {
+    "path": [
+      "layers",
+      "lineRendering",
+      "imageAlongWay",
+      "if"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
       "passAllFeatures"
     ],
     "required": false,
@@ -12108,6 +12246,10 @@
           "then": "advertising - We will complete data from advertising features with reference, operator and lit"
         },
         {
+          "if": "value=aerialway",
+          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+        },
+        {
           "if": "value=ambulancestation",
           "then": "ambulancestation - An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies."
         },
@@ -12118,6 +12260,10 @@
         {
           "if": "value=artwork",
           "then": "artwork - An open map of statues, busts, graffitis and other artwork all over the world"
+        },
+        {
+          "if": "value=assembly_point",
+          "then": "assembly_point - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
           "if": "value=atm",
@@ -12184,6 +12330,10 @@
           "then": "birdhide - A birdhide"
         },
         {
+          "if": "value=brothel",
+          "then": "brothel - An establishment specifically dedicated to prostitution. "
+        },
+        {
           "if": "value=cafe_pub",
           "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
@@ -12194,6 +12344,10 @@
         {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
+        },
+        {
+          "if": "value=cinema",
+          "then": "cinema -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
         },
         {
           "if": "value=climbing",
@@ -12254,6 +12408,10 @@
         {
           "if": "value=direction",
           "then": "direction - This layer visualizes directions"
+        },
+        {
+          "if": "value=disaster_response",
+          "then": "disaster_response - This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area."
         },
         {
           "if": "value=doctors",
@@ -12392,6 +12550,10 @@
           "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
         },
         {
+          "if": "value=love_hotel",
+          "then": "love_hotel - A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
+        },
+        {
           "if": "value=map",
           "then": "map - A map, meant for tourists which is permanently installed in the public space"
         },
@@ -12410,6 +12572,10 @@
         {
           "if": "value=memorial",
           "then": "memorial - Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on"
+        },
+        {
+          "if": "value=mountain_rescue",
+          "then": "mountain_rescue - A building where first aid responders store material and might be on watch"
         },
         {
           "if": "value=named_streets",
@@ -12532,6 +12698,10 @@
           "then": "shower - A layer showing (public) showers"
         },
         {
+          "if": "value=ski_piste",
+          "then": "ski_piste - Ski and snowboard pistes"
+        },
+        {
           "if": "value=slow_roads",
           "then": "slow_roads - All carfree roads"
         },
@@ -12566,6 +12736,10 @@
         {
           "if": "value=street_lamps",
           "then": "street_lamps - A layer showing street lights"
+        },
+        {
+          "if": "value=stripclub",
+          "then": "stripclub - A venue where erotic dance, striptease, or lap dances are performed commercially. "
         },
         {
           "if": "value=surveillance_camera",
@@ -12606,6 +12780,10 @@
         {
           "if": "value=tree_node",
           "then": "tree_node - A layer showing trees"
+        },
+        {
+          "if": "value=trolley_bay",
+          "then": "trolley_bay - Find trolley bays for shopping trolleys."
         },
         {
           "if": "value=unit",
@@ -13207,7 +13385,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -13219,7 +13400,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -13663,6 +13844,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -14506,7 +14691,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -14518,7 +14706,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -14977,6 +15165,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -15854,7 +16046,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -15866,7 +16061,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -16325,6 +16520,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -17202,7 +17401,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -17214,7 +17416,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -17688,6 +17890,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -18579,7 +18785,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -18591,7 +18800,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -19050,6 +19259,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -19927,7 +20140,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -19939,7 +20155,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -20413,6 +20629,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -21305,7 +21525,17 @@
           },
           "omitDefaultDeleteReasons": {
             "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping\n\nquestion: Should the default delete reasons be hidden?\niftrue: Hide the default delete reasons\niffalse: Show the default delete reasons\nifunset: Show the default delete reasons (default behaviour)",
-            "type": "boolean"
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -21535,7 +21765,17 @@
       "iffalse": "Show the default delete reasons",
       "ifunset": "Show the default delete reasons (default behaviour)"
     },
-    "type": "boolean",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "type": "boolean"
+      }
+    ],
     "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping"
   },
   {
@@ -21615,7 +21855,7 @@
       "group": "editing",
       "question": "Should the contributor be able to split ways using this layer?",
       "iftrue": "enable the 'split-roads'-component",
-      "iffalse": "don't enable the split-roads componenet",
+      "iffalse": "don't enable the split-roads component",
       "ifunset": "don't enable the split-roads component"
     },
     "type": "boolean",
@@ -23656,9 +23896,19 @@
           "icon": "pin"
         },
         {
+          "if": "value=bug",
+          "then": "bug",
+          "icon": "bug"
+        },
+        {
           "if": "value=square",
           "then": "square",
           "icon": "square"
+        },
+        {
+          "if": "value=square_rounded",
+          "then": "square_rounded",
+          "icon": "square_rounded"
         },
         {
           "if": "value=circle",
@@ -23794,6 +24044,11 @@
           "if": "value=heart_outline",
           "then": "heart_outline",
           "icon": "heart_outline"
+        },
+        {
+          "if": "value=link",
+          "then": "link",
+          "icon": "link"
         },
         {
           "if": "value=confirm",
@@ -32329,6 +32584,81 @@
     "path": [
       "layers",
       "override",
+      "lineRendering",
+      "imageAlongWay"
+    ],
+    "required": false,
+    "hints": {
+      "typehint": "image",
+      "question": "What PNG-image should be shown along the way?",
+      "ifunset": "no image is shown along the way"
+    },
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "if": {
+              "$ref": "#/definitions/TagConfigJson",
+              "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+            },
+            "then": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "if",
+            "then"
+          ]
+        }
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": ""
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "lineRendering",
+      "imageAlongWay",
+      "if"
+    ],
+    "required": true,
+    "hints": {
+      "typehint": "tag"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/{and:TagConfigJson[];}"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "or": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TagConfigJson"
+            }
+          }
+        },
+        "required": [
+          "or"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
       "passAllFeatures"
     ],
     "required": false,
@@ -32482,6 +32812,10 @@
           "then": "advertising - We will complete data from advertising features with reference, operator and lit"
         },
         {
+          "if": "value=aerialway",
+          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+        },
+        {
           "if": "value=ambulancestation",
           "then": "ambulancestation - An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies."
         },
@@ -32492,6 +32826,10 @@
         {
           "if": "value=artwork",
           "then": "artwork - An open map of statues, busts, graffitis and other artwork all over the world"
+        },
+        {
+          "if": "value=assembly_point",
+          "then": "assembly_point - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
           "if": "value=atm",
@@ -32558,6 +32896,10 @@
           "then": "birdhide - A birdhide"
         },
         {
+          "if": "value=brothel",
+          "then": "brothel - An establishment specifically dedicated to prostitution. "
+        },
+        {
           "if": "value=cafe_pub",
           "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
@@ -32568,6 +32910,10 @@
         {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
+        },
+        {
+          "if": "value=cinema",
+          "then": "cinema -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
         },
         {
           "if": "value=climbing",
@@ -32628,6 +32974,10 @@
         {
           "if": "value=direction",
           "then": "direction - This layer visualizes directions"
+        },
+        {
+          "if": "value=disaster_response",
+          "then": "disaster_response - This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area."
         },
         {
           "if": "value=doctors",
@@ -32766,6 +33116,10 @@
           "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
         },
         {
+          "if": "value=love_hotel",
+          "then": "love_hotel - A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
+        },
+        {
           "if": "value=map",
           "then": "map - A map, meant for tourists which is permanently installed in the public space"
         },
@@ -32784,6 +33138,10 @@
         {
           "if": "value=memorial",
           "then": "memorial - Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on"
+        },
+        {
+          "if": "value=mountain_rescue",
+          "then": "mountain_rescue - A building where first aid responders store material and might be on watch"
         },
         {
           "if": "value=named_streets",
@@ -32906,6 +33264,10 @@
           "then": "shower - A layer showing (public) showers"
         },
         {
+          "if": "value=ski_piste",
+          "then": "ski_piste - Ski and snowboard pistes"
+        },
+        {
           "if": "value=slow_roads",
           "then": "slow_roads - All carfree roads"
         },
@@ -32940,6 +33302,10 @@
         {
           "if": "value=street_lamps",
           "then": "street_lamps - A layer showing street lights"
+        },
+        {
+          "if": "value=stripclub",
+          "then": "stripclub - A venue where erotic dance, striptease, or lap dances are performed commercially. "
         },
         {
           "if": "value=surveillance_camera",
@@ -32980,6 +33346,10 @@
         {
           "if": "value=tree_node",
           "then": "tree_node - A layer showing trees"
+        },
+        {
+          "if": "value=trolley_bay",
+          "then": "trolley_bay - Find trolley bays for shopping trolleys."
         },
         {
           "if": "value=unit",
@@ -33593,7 +33963,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -33605,7 +33978,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -34064,6 +34437,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -34941,7 +35318,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -34953,7 +35333,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -35427,6 +35807,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -36339,7 +36723,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -36351,7 +36738,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -36825,6 +37212,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -37736,7 +38127,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -37748,7 +38142,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -38237,6 +38631,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -39162,7 +39560,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -39174,7 +39575,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -39648,6 +40049,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -40559,7 +40964,10 @@
       "alsoShowIf"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "In what other cases should this item be rendered?",
+      "ifunset": "No other cases when this text is shown"
+    },
     "type": [
       {
         "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -40571,7 +40979,7 @@
         "type": "string"
       }
     ],
-    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags."
+    "description": "Also show this 'then'-option if the feature matches these tags.\nIdeal for outdated tags or default assumptions. The tags from this options will <b>not</b> be set if the option is chosen!"
   },
   {
     "path": [
@@ -41060,6 +41468,10 @@
         {
           "if": "value=slope",
           "then": "<b>slope</b> Validates that the slope is a valid number.The accompanying input element uses the gyroscope and the compass to determine the correct incline. The sign of the incline will be set automatically. The bearing of the way is compared to the bearing of the compass, as such, the device knows if it is measuring in the forward or backward direction."
+        },
+        {
+          "if": "value=velopark",
+          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
         }
       ]
     },
@@ -41985,7 +42397,17 @@
           },
           "omitDefaultDeleteReasons": {
             "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping\n\nquestion: Should the default delete reasons be hidden?\niftrue: Hide the default delete reasons\niffalse: Show the default delete reasons\nifunset: Show the default delete reasons (default behaviour)",
-            "type": "boolean"
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -42226,7 +42648,17 @@
       "iffalse": "Show the default delete reasons",
       "ifunset": "Show the default delete reasons (default behaviour)"
     },
-    "type": "boolean",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "type": "boolean"
+      }
+    ],
     "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping"
   },
   {
@@ -42310,7 +42742,7 @@
       "group": "editing",
       "question": "Should the contributor be able to split ways using this layer?",
       "iftrue": "enable the 'split-roads'-component",
-      "iffalse": "don't enable the split-roads componenet",
+      "iffalse": "don't enable the split-roads component",
       "ifunset": "don't enable the split-roads component"
     },
     "type": "boolean",
@@ -42849,6 +43281,20 @@
     },
     "type": "boolean",
     "description": "If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),\nthese notes will be shown if a relevant layer is present."
+  },
+  {
+    "path": [
+      "enableTerrain"
+    ],
+    "required": false,
+    "hints": {
+      "group": "advanced",
+      "question": "Should the map use elevation data to give a 3D-feel?",
+      "iftrue": "Use elevation and render 3D",
+      "iffalse": "Do not use terrain"
+    },
+    "type": "boolean",
+    "description": "This is especially useful for hiking maps, skiing maps etc...\nfunset: MapComplete default: don't use terrain"
   },
   {
     "path": [

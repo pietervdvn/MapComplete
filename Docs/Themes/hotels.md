@@ -12,6 +12,7 @@ This theme contains the following layers:
 
 
   - [hotel](../Layers/hotel.md)
+  - [love_hotel](../Layers/love_hotel.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

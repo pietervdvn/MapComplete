@@ -113,11 +113,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *Is this nature reserve accessible to the public?*
 
-This rendering asks information about the property  [access:description](https://wiki.openstreetmap.org/wiki/Key:access:description) 
-
-This is rendered with  `Accessin this nature reserve: {access:description}`
-
-
+This rendering asks information about the property  [access:description](https://wiki.openstreetmap.org/wiki/Key:access:description) This is rendered with  `Accessin this nature reserve: {access:description}`
 
 
 
@@ -137,11 +133,7 @@ This is rendered with  `Accessin this nature reserve: {access:description}`
 
 The question is  *Who operates this area?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
 
 
 
@@ -159,11 +151,7 @@ This is rendered with  `Operated by {operator}`
 
 The question is  *What is the name of this area?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This area is named {name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This area is named {name}`
 
 
 
@@ -197,11 +185,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -219,11 +203,7 @@ This tagrendering has labels  `contact`
 
 The question is  *Whom is the curator of this nature reserve?*
 
-This rendering asks information about the property  [curator](https://wiki.openstreetmap.org/wiki/Key:curator) 
-
-This is rendered with  `{curator} is the curator of this nature reserve`
-
-
+This rendering asks information about the property  [curator](https://wiki.openstreetmap.org/wiki/Key:curator) This is rendered with  `{curator} is the curator of this nature reserve`
 
 
 
@@ -233,11 +213,7 @@ This is rendered with  `{curator} is the curator of this nature reserve`
 
 The question is  *What email address can one send to with questions and problems with this nature reserve?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -247,11 +223,7 @@ This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>
 
 The question is  *What phone number can one call to with questions and problems with this nature reserve?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}' target='_blank' rel='noopener'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}' target='_blank' rel='noopener'>{phone}</a>`
 
 
 
@@ -261,11 +233,7 @@ This is rendered with  `<a href='tel:{phone}' target='_blank' rel='noopener'>{ph
 
 This tagrendering has no question and is thus read-only
 
-This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
-
-This is rendered with  `Extra information: <i>{description}</i>`
-
-
+This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) This is rendered with  `Extra information: <i>{description}</i>`
 
 
 
@@ -275,11 +243,7 @@ This is rendered with  `Extra information: <i>{description}</i>`
 
 The question is  *Is there some extra info?*
 
-This rendering asks information about the property  [description:0](https://wiki.openstreetmap.org/wiki/Key:description:0) 
-
-This is rendered with  `Extra info: <i>{description:0}</i>`
-
-
+This rendering asks information about the property  [description:0](https://wiki.openstreetmap.org/wiki/Key:description:0) This is rendered with  `Extra info: <i>{description:0}</i>`
 
 
 
@@ -301,11 +265,7 @@ Shows a wikipedia box with the corresponding wikipedia article; the wikidata-ite
 
 The question is  *What is the corresponding Wikidata entity?*
 
-This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) 
-
-This is rendered with  `{wikipedia():max-height:25rem}`
-
-
+This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) This is rendered with  `{wikipedia():max-height:25rem}`
 
 
 

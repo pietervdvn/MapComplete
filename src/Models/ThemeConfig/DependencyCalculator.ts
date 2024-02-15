@@ -3,7 +3,6 @@ import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
 import LayerConfig from "./LayerConfig"
 import { SpecialVisualization } from "../../UI/SpecialVisualization"
 import SpecialVisualizations from "../../UI/SpecialVisualizations"
-import { Exception } from "sass"
 
 export default class DependencyCalculator {
     public static GetTagRenderingDependencies(tr: TagRenderingConfig): string[] {

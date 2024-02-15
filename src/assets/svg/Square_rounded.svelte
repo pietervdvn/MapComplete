@@ -1,0 +1,4 @@
+<script>
+export let color = "#000000"
+</script>
+ <svg {...$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown    width="500.94501"    height="500.94501"    viewBox="0 0 500.94501 500.94501"    version="1.1"    id="svg5"    sodipodi:docname="square_rounded.svg"    inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"    xmlns="http://www.w3.org/2000/svg"    xmlns:svg="http://www.w3.org/2000/svg">   <g      id="surface1"      transform="translate(0.4725,0.4725)" />   <path      class="selectable"      id="rect1"      style="fill:{color}"      d="m 75.4725,0.4725 h 350 c 41.55,0 75,33.45 75,75 v 350 c 0,41.55 -33.45,75 -75,75 h -350 c -41.55,0 -75,-33.45 -75,-75 v -350 c 0,-41.55 33.45,-75 75,-75 z" /> </svg> 

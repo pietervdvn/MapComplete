@@ -63,6 +63,33 @@ export default {
           "type": "number"
         }
       ]
+    },
+    "imageAlongWay": {
+      "description": "question: What PNG-image should be shown along the way?\n\nifunset: no image is shown along the way\nsuggestions: [{if: \"./assets/png/oneway.png\", then: \"Show a oneway error\"}]\ntype: image",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "if": {
+                "$ref": "#/definitions/TagConfigJson",
+                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+              },
+              "then": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "if",
+              "then"
+            ]
+          }
+        },
+        {
+          "type": "string"
+        }
+      ]
     }
   },
   "definitions": {

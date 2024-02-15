@@ -62,6 +62,9 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/covered#values) [covered](https://wiki.openstreetmap.org/wiki/Key:covered) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [nat](../SpecialInputElements.md#nat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fee#values) [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator:phone#values) [operator:phone](https://wiki.openstreetmap.org/wiki/Key:operator:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cargo_bike#values) [cargo_bike](https://wiki.openstreetmap.org/wiki/Key:cargo_bike) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes) [designated](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated) [no](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:cargo_bike#values) [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) | [nat](../SpecialInputElements.md#nat) | 
 
@@ -107,11 +110,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What is the type of this bicycle parking?*
 
-This rendering asks information about the property  [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) 
-
-This is rendered with  `This is a bicycle parking of the type: {bicycle_parking}`
-
-
+This rendering asks information about the property  [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) This is rendered with  `This is a bicycle parking of the type: {bicycle_parking}`
 
 
 
@@ -168,11 +167,7 @@ The question is  *Is this parking covered? Also select "covered" for indoor park
 
 The question is  *How many bicycles fit in this bicycle parking (including possible cargo bicycles)?*
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
-
-This is rendered with  `Place for {capacity} bikes`
-
-
+This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `Place for {capacity} bikes`
 
 
 
@@ -182,17 +177,62 @@ This is rendered with  `Place for {capacity} bikes`
 
 The question is  *Who can use this bicycle parking?*
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-
-This is rendered with  `{access}`
-
-
+This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `{access}`
 
 
 
   - *Publicly accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
   - *Access is primarily for visitors to a business*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
   - *Access is limited to members of a school, company or organisation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+
+
+
+
+### fee 
+
+
+
+The question is  *Are these bicycle parkings free to use?*
+
+
+
+
+
+  - *One has to <b>pay</b> to use this bicycle parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+  - *Free to use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+
+
+
+
+### opening_hours_24_7 
+
+
+
+The question is  *What are the opening hours of {title()}?*
+
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+
+
+
+  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+
+
+
+
+### operator_phone 
+
+
+
+The question is  *What is the phone number of the operator of this bicycle parking?*
+
+This rendering asks information about the property  [operator:phone](https://wiki.openstreetmap.org/wiki/Key:operator:phone) This is rendered with  `<a href='tel:{operator:phone}'>{operator:phone}</a>`
+
+
+
+  - *<a href='tel:{phone}'>{phone}</a>*  corresponds with  phone~.+
+  - _This option cannot be chosen as answer_
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
+  - _This option cannot be chosen as answer_
 
 
 
@@ -220,11 +260,7 @@ The question is  *Does this bicycle parking have spots for cargo bikes?*
 
 The question is  *How many cargo bicycles fit in this bicycle parking?*
 
-This rendering asks information about the property  [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) 
-
-This is rendered with  `This parking fits {capacity:cargo_bike} cargo bikes`
-
-
+This rendering asks information about the property  [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) This is rendered with  `This parking fits {capacity:cargo_bike} cargo bikes`
 
 This tagrendering is only visible in the popup if the following condition is met: `cargo_bike~^(designated|yes)$`
 

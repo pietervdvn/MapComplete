@@ -308,10 +308,14 @@
           [
             "media_studio",
             {
-              "en": "a multimedia studio"
+              "en": "a multimedia studio",
+              "nl": "een multimedia-studio",
+              "de": "ein Multimediastudio"
             },
             {
-              "en": "multimedia studio"
+              "en": "multimedia studio",
+              "nl": "multimedia-studio",
+              "de": "Multimediastudio"
             },
             "./assets/layers/hackerspace/media_studio.svg",
             false
@@ -319,10 +323,14 @@
           [
             "sewing_machine",
             {
-              "en": "a sewing machine"
+              "en": "a sewing machine",
+              "de": "eine Nähmaschine",
+              "nl": "een naaimachine"
             },
             {
-              "en": "sewing machine"
+              "en": "sewing machine",
+              "de": "Nähmaschine",
+              "nl": "naaimachine"
             },
             "./assets/layers/hackerspace/sewing_machine.svg",
             true
@@ -330,10 +338,14 @@
           [
             "workshop:wood",
             {
-              "en": "a woodworking workshop"
+              "en": "a woodworking workshop",
+              "nl": "een houtbewerkingsatelier",
+              "de": "eine Holzwerkstatt"
             },
             {
-              "en": "woodworking workshop"
+              "en": "woodworking workshop",
+              "nl": "houtbewerkingsatelier",
+              "de": "Holzwerkstatt"
             },
             "./assets/layers/hackerspace/woodworking.svg",
             false
@@ -341,10 +353,14 @@
           [
             "workshop:ceramics",
             {
-              "en": "a ceramics workshop"
+              "en": "a ceramics workshop",
+              "nl": "een keramiekatelier",
+              "de": "eine Keramikwerkstatt"
             },
             {
-              "en": "ceramics workshop"
+              "en": "ceramics workshop",
+              "nl": "keramiekatelier",
+              "de": "Keramikwerkstatt"
             },
             "./assets/layers/hackerspace/ceramics.svg",
             false
@@ -352,10 +368,14 @@
           [
             "workshop:metal",
             {
-              "en": "a metal workshop"
+              "en": "a metal workshop",
+              "nl": "een metaalatelier",
+              "de": "eine Metallwerkstatt"
             },
             {
-              "en": "metal workshop"
+              "en": "metal workshop",
+              "nl": "metaalatelier",
+              "de": "Metallwerkstatt"
             },
             "./assets/layers/hackerspace/metal.svg",
             false
@@ -363,10 +383,14 @@
           [
             "bicycle:diy",
             {
-              "en": "a bicycle repair workshop"
+              "en": "a bicycle repair workshop",
+              "nl": "een fietsherstelplaats",
+              "de": "eine Fahrradwerkstatt"
             },
             {
-              "en": "bicycle repair workshop"
+              "en": "bicycle repair workshop",
+              "nl": "fietsherstelplaats",
+              "de": "Fahrradwerkstatt"
             },
             "./assets/layers/hackerspace/bicycle.svg",
             false

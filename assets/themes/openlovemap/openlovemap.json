@@ -1,6 +1,5 @@
 {
   "id": "openlovemap",
-  "hideFromOverview": true,
   "title": {
     "en": "Open Love Map"
   },
@@ -8,6 +7,7 @@
     "en": "<p><i>Love in the palm of your hand</i></p>Open Love Map lists various adult entries, such as brothels, erotic stores and stripclubs."
   },
   "icon": "./assets/layers/stripclub/stripclub.svg",
+  "hideFromOverview": true,
   "layers": [
     "brothel",
     "stripclub",
@@ -22,6 +22,9 @@
         "=filter": [
           "open_now"
         ],
+        "name": {
+          "en": "Erotic shops"
+        },
         "=presets": [
           {
             "title": {
@@ -39,7 +42,10 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
-        "=name": null
+        "=name": null,
+        "=filter": {
+          "sameAs": "erotic-shop"
+        }
       }
     },
     {
@@ -109,13 +115,14 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
-      "=name": null
+        "=name": null
       }
     },
-
     {
       "builtin": "cinema",
-      "hideTagRenderingsWithLabels": ["wikipedia"],
+      "hideTagRenderingsWithLabels": [
+        "wikipedia"
+      ],
       "override": {
         "id": "erotic_cinema",
         "pointRendering": [
@@ -154,7 +161,9 @@
         "=filter": [
           "open_now"
         ],
-        "tagRenderings+": ["opening_hours"],
+        "tagRenderings+": [
+          "opening_hours"
+        ],
         "source": {
           "osmTags": {
             "=and": [
@@ -182,29 +191,63 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
-       "=name": null
+        "=name": null
+      }
+    },
+    "love_hotel",
+    {
+      "builtin": "hotel",
+      "override": {
+        "minzoom": 17,
+        "+tagRenderings": [
+          {
+            "id": "hotel-type",
+            "question": {
+              "en": "What type of hotel is this?"
+            },
+            "mappings": [
+              {
+                "if": "tourism=hotel",
+                "then": "This is a regular, tourist hotel where people stay multiple days",
+                "addExtraTags": [
+                  "amenity="
+                ]
+              },
+              {
+                "if": "amenity=love_hotel",
+                "then": "This is a love hotel where people rent rooms for sexual activity. The hotel rent rooms for a few days",
+                "addExtraTags": [
+                  "tourism="
+                ]
+              }
+            ]
+          }
+        ],
+        "=presets": []
       }
     }
   ],
   "overrideAll": {
-    "tagRenderings+": [{
-      "id": "has_video_booth",
-      "question": {"en": 
-        "Does {title()} have a private video booth?"
-      },
-      "questionHint": {
-        "en": "This is for use by a single person."
-      },
-      "mappings": [
-        {
-          "if": "service:private_video_booth=yes",
-          "then": "Private video booths are available"
+    "tagRenderings+": [
+      {
+        "id": "has_video_booth",
+        "question": {
+          "en": "Does {title()} have a private video booth?"
         },
-        {
-          "if": "service:private_video_booth=no",
-          "then": "No private video booths"
-        }
-      ]
-    }]
+        "questionHint": {
+          "en": "This is for use by a single person."
+        },
+        "mappings": [
+          {
+            "if": "service:private_video_booth=yes",
+            "then": "Private video booths are available"
+          },
+          {
+            "if": "service:private_video_booth=no",
+            "then": "No private video booths"
+          }
+        ]
+      }
+    ]
   }
 }

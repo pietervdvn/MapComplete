@@ -5,12 +5,18 @@ import { BBox } from "../Logic/BBox"
 import { Store, Stores } from "../Logic/UIEventSource"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { RasterLayerProperties } from "./RasterLayerProperties"
+import Constants from "./Constants"
 
 export class AvailableRasterLayers {
     public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
-        RasterLayerPolygon)[] = <any>editorlayerindex.features
+        RasterLayerPolygon)[] = (<any>editorlayerindex.features).filter(
+        (l) => l.properties.id !== "Bing"
+    )
     public static globalLayers: RasterLayerPolygon[] = globallayers.layers
-        .filter((properties) => properties.id !== "osm.carto" /*Added separately*/)
+        .filter(
+            (properties) =>
+                properties.id !== "osm.carto" && properties.id !== "Bing" /*Added separately*/
+        )
         .map(
             (properties) =>
                 <RasterLayerPolygon>{
@@ -19,6 +25,9 @@ export class AvailableRasterLayers {
                     geometry: BBox.global.asGeometry(),
                 }
         )
+    public static bing: RasterLayerPolygon = (<any>editorlayerindex.features).find(
+        (l) => l.properties.id === "Bing"
+    )
     public static readonly osmCartoProperties: RasterLayerProperties = {
         id: "osm",
         name: "OpenStreetMap",
@@ -43,7 +52,7 @@ export class AvailableRasterLayers {
         type: "Feature",
         properties: {
             name: "MapTiler",
-            url: "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key=GvoVAJgu46I5rZapJuAy",
+            url: "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key="+Constants.maptilerApiKey,
             category: "osmbasedmap",
             id: "maptiler",
             type: "vector",
@@ -56,7 +65,8 @@ export class AvailableRasterLayers {
     }
 
     public static layersAvailableAt(
-        location: Store<{ lon: number; lat: number }>
+        location: Store<{ lon: number; lat: number }>,
+        enableBing?: Store<boolean>
     ): Store<RasterLayerPolygon[]> {
         const availableLayersBboxes = Stores.ListStabilized(
             location.mapD((loc) => {
@@ -67,20 +77,26 @@ export class AvailableRasterLayers {
             })
         )
         return Stores.ListStabilized(
-            availableLayersBboxes.map((eliPolygons) => {
-                const loc = location.data
-                const lonlat: [number, number] = [loc.lon, loc.lat]
-                const matching: RasterLayerPolygon[] = eliPolygons.filter((eliPolygon) => {
-                    if (eliPolygon.geometry === null) {
-                        return true // global ELI-layer
+            availableLayersBboxes.map(
+                (eliPolygons) => {
+                    const loc = location.data
+                    const lonlat: [number, number] = [loc.lon, loc.lat]
+                    const matching: RasterLayerPolygon[] = eliPolygons.filter((eliPolygon) => {
+                        if (eliPolygon.geometry === null) {
+                            return true // global ELI-layer
+                        }
+                        return GeoOperations.inside(lonlat, eliPolygon)
+                    })
+                    matching.unshift(AvailableRasterLayers.osmCarto)
+                    matching.push(AvailableRasterLayers.maptilerDefaultLayer)
+                    if (enableBing?.data) {
+                        matching.push(AvailableRasterLayers.bing)
                     }
-                    return GeoOperations.inside(lonlat, eliPolygon)
-                })
-                matching.unshift(AvailableRasterLayers.osmCarto)
-                matching.push(AvailableRasterLayers.maptilerDefaultLayer)
-                matching.push(...AvailableRasterLayers.globalLayers)
-                return matching
-            })
+                    matching.push(...AvailableRasterLayers.globalLayers)
+                    return matching
+                },
+                [enableBing]
+            )
         )
     }
 

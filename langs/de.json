@@ -60,12 +60,13 @@
             "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen",
             "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
         },
-        "downloadGeojson": "Lade deine Favoriten als geojson herunter",
-        "downloadGpx": "Lade deine Favoriten als GPX herunter",
-        "intro": "Du hast {length} Orte als Lieblingsort markiert.",
+        "downloadGeojson": "Favoriten als geojson herunterladen",
+        "downloadGpx": "Favoriten als GPX herunterladen",
+        "intro": "Du hast {length} Orte als Favorit markiert.",
         "introPrivacy": "Diese Liste ist nur für dich sichtbar",
         "loginToSeeList": "Melde dich an, um die Liste der Orte zu sehen, die du als Favoriten markiert hast",
-        "tab": "Deine Favoriten"
+        "tab": "Deine Favoriten",
+        "title": "Ausgewählte Orte"
     },
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
@@ -173,17 +174,20 @@
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Neueste Bearbeitungen mit {theme} ansehen",
+            "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
             "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",
         "backToIndex": "Zur Übersicht aller Themenkarten",
+        "backToMap": "Zurück zur Karte",
         "backgroundMap": "Hintergrundkarte auswählen",
         "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
         "confirm": "Bestätigen",
-        "customThemeIntro": "<h3>Benutzerdefinierte Themen</h3>Dies sind zuvor angesehene nutzergenerierte Themen.",
+        "customThemeIntro": "Bereits angesehene nutzergenerierte Themen.",
+        "customThemeTitle": "Benutzerdefinierte Themen",
         "download": {
             "downloadAsPdf": "Aktuelle Karte als PDF herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
@@ -213,6 +217,7 @@
         },
         "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
         "enableGeolocationForSafariLink": "Erfahre, wie du die Geo-Berechtigung in den Einstellungen aktivieren kannst",
+        "eraseValue": "Wert löschen",
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
         "examples": "Beispiele",
@@ -223,6 +228,14 @@
         "goToInbox": "Posteingang öffnen",
         "histogram": {
             "error_loading": "Das Histogramm konnte nicht geladen werden"
+        },
+        "labels": {
+            "background": "Hintergrund ändern",
+            "filter": "Daten filtern",
+            "jumpToLocation": "Eigenen Standort anzeigen",
+            "menu": "Menü",
+            "zoomIn": "Hineinzoomen",
+            "zoomOut": "Herauszoomen"
         },
         "layerSelection": {
             "title": "Ebenen auswählen",
@@ -269,11 +282,17 @@
         "openTheMap": "Karte öffnen",
         "openTheMapAtGeolocation": "Zum eigenen Standort zoomen",
         "opening_hours": {
+            "all_days_from": "Geöffnet täglich {ranges}",
             "closed_permanently": "Geschlossen auf unbestimmte Zeit",
             "closed_until": "Geschlossen bis {date}",
+            "error": "Öffnungszeiten können nicht ausgewertet werden",
             "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden.",
+            "friday": "Am Freitag {ranges}",
             "loadingCountry": "Land ermitteln…",
+            "monday": "Am Montag {ranges}",
             "not_all_rules_parsed": "Die Öffnungszeiten sind kompliziert. Folgenden Regeln werden im Eingabefenster ignoriert:",
+            "on_weekdays": "Geöffnet werktags {ranges}",
+            "on_weekends": "Geöffnet am Wochenende {ranges}",
             "openTill": "bis",
             "open_24_7": "Durchgehend geöffnet",
             "open_during_ph": "An Feiertagen ist hier",
@@ -281,7 +300,15 @@
             "ph_closed": "geschlossen",
             "ph_not_known": " ",
             "ph_open": "geöffnet",
-            "ph_open_as_usual": "geöffnet wie üblich"
+            "ph_open_as_usual": "geöffnet wie üblich",
+            "ranges": "von {starttime} bis {endtime}",
+            "rangescombined": "{range0} und {range1}",
+            "saturday": "Am Samstag {ranges}",
+            "sunday": "Am Sonntag {ranges}",
+            "thursday": "Am Donnerstag {ranges}",
+            "tuesday": "Am Dienstag {ranges}",
+            "unknown": "Die Öffnungszeiten sind unbekannt",
+            "wednesday": "Am Mittwoch {ranges}"
         },
         "osmLinkTooltip": "Dieses Element auf OpenStreetMap öffnen, um Verlauf und Bearbeitungsmöglichkeiten anzuzeigen",
         "pdf": {
@@ -290,7 +317,7 @@
             "generatedWith": "Erstellt mit mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - erstellt am {date}"
         },
-        "pickLanguage": "Sprache auswählen: ",
+        "pickLanguage": "Sprache auswählen",
         "poweredByOsm": "Unterstützt von OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Du hast {answered} Fragen beantwortet",
@@ -324,6 +351,8 @@
             "searchShort": "Suche…",
             "searching": "Suchen …"
         },
+        "searchAnswer": "Option suchen…",
+        "share": "Teilen",
         "sharescreen": {
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
             "documentation": "Für weitere Informationen über verfügbare URL-Parameter, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>siehe Dokumentation</a>",
@@ -338,7 +367,7 @@
         "testing": "Testen - Änderungen werden nicht gespeichert",
         "uploadError": "Fehler beim Hochladen von Änderungen: {error}",
         "uploadGpx": {
-            "choosePermission": "Wählen Sie unten, ob Ihre Strecke geteilt werden soll:",
+            "choosePermission": "Wählen Sie unten, wie Ihre Strecke geteilt werden soll:",
             "confirm": "Hochladen bestätigen",
             "gpxServiceOffline": "Der GPX-Dienst ist derzeit offline - ein Hochladen ist derzeit nicht möglich. Versuchen Sie es später noch einmal.",
             "intro0": "Wenn Sie Ihre Strecke hochladen, behält OpenStreetMap.org eine vollständige Kopie der Strecke.",
@@ -367,8 +396,46 @@
         "uploadPending": "{count} Änderungen ausstehend",
         "uploadPendingSingle": "Eine Änderung ausstehend",
         "uploadingChanges": "Änderungen werden hochgeladen…",
-        "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
-        "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
+        "useSearch": "Suche oben verwenden für weitere Optionen",
+        "visualFeedback": {
+            "closestFeaturesAre": "{n} Objekte im Anzeigebereich.",
+            "directionsAbsolute": {
+                "E": "Ost",
+                "N": "Nord",
+                "NE": "Nordost",
+                "NW": "Nordwest",
+                "S": "Süd",
+                "SE": "Südost",
+                "SW": "Südwest",
+                "W": "West"
+            },
+            "directionsRelative": {
+                "behind": "in deinem Rücken",
+                "left": "links",
+                "right": "rechts",
+                "sharp_left": "scharf links",
+                "sharp_right": "scharf rechts",
+                "slight_left": "leicht links",
+                "slight_right": "leicht rechts",
+                "straight": "geradeaus"
+            },
+            "east": "Nach Osten bewegen",
+            "fromGps": "{distance} {direction} von deinem Standort",
+            "fromMapCenter": "{distance} {direction} von der Kartenmitte",
+            "in": "Hineinzoomen auf Stufe {z}",
+            "islocked": "Die Ansicht ist an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert. Drücken Sie zum Entsperren die Geolocation-Taste.",
+            "locked": "Die Ansicht ist jetzt an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert.",
+            "navigation": "Verwenden Sie die Pfeiltasten, um die Karte zu bewegen, drücken Sie die Leertaste, um das nächstgelegene Objekt auszuwählen. Drücken Sie eine Zahl, um weiter entfernte Objekte auszuwählen.",
+            "noCloseFeatures": "Keine Objekte im Anzeigebereich.",
+            "north": "Nach Norden bewegen",
+            "oneFeatureInView": "Ein Objekt im Anzeigebereich.",
+            "out": "Herauszoomen auf Stufe {z}",
+            "south": "Nach Süden bewegen",
+            "unlocked": "Bewegen aktiviert.",
+            "viewportCenterCloseToGps": "Die Karte wird um Ihren Standort zentriert.",
+            "viewportCenterDetails": "Die Kartenmitte ist {distance} und {bearing} von Ihrem Standort entfernt.",
+            "west": "Nach Westen bewegen"
+        },
         "waitingForGeopermission": "Warten auf Ihre Erlaubnis, Standortdaten zu verwenden…",
         "waitingForLocation": "Ihr Standort wird gesucht…",
         "weekdays": {
@@ -416,17 +483,25 @@
     "hotkeyDocumentation": {
         "action": "Aktion",
         "closeSidebar": "Seitenleiste schließen",
-        "geolocate": "Verschieben Sie die Karte auf den aktuellen Standort oder zoomen Sie die Karte auf den aktuellen Standort. Beantragt Standortberechtigung",
+        "geolocate": "Karte auf aktuellen Standort verschieben oder zoomen. Erfordert Standortberechtigung",
         "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
         "key": "Tastenkombination",
-        "openLayersPanel": "Öffnet das Menü für Ebenen und Filter",
+        "openFilterPanel": "Panel für POI-Ebenen und Filter öffnen",
+        "openLayersPanel": "Auswahl für Hintergrundebenen öffnen",
+        "queryCurrentLocation": "Adresse anzeigen, die der Kartenmitte am nächsten liegt",
         "selectAerial": "Hintergrund als Luftbild oder Satellitenbild einstellen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
-        "selectItem": "Wähle das POI, das dem Kartenmittelpunkt (Fadenkreuz) am nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectFavourites": "Favoriten anzeigen",
+        "selectItem": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectItem2": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am zweitnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectItem3": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am drittnächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
+        "selectItemI": "Objekt auswählen, das dem Kartenmittelpunkt (Fadenkreuz) am {i} nächsten liegt. Nur wenn die Tastaturnavigation verwendet wird",
         "selectMap": "Karte aus externer Quelle als Hintergrund wählen. Wechselt zwischen den zwei besten verfügbaren Ebenen",
         "selectMapnik": "OpenStreetMap-carto als Hintergrundebene wählen",
         "selectOsmbasedmap": "OpenStreetMap-basierte Karte als Hintergrund auswählen (oder Hintergrundebene deaktivieren)",
         "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
-        "title": "Tastaturbefehle"
+        "shakePhone": "Telefon schütteln",
+        "title": "Tastaturbefehle",
+        "translationMode": "Übersetzungsmodus ein- oder ausschalten"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -435,7 +510,9 @@
         "dontDelete": "Abbrechen",
         "isDeleted": "Gelöscht",
         "nearby": {
+            "close": "Übersicht mit nahegelegenen Bildern ausklappen",
             "link": "Dieses Bild zeigt das Objekt",
+            "noNearbyImages": "Keine nahegelegenen Bilder gefunden",
             "seeNearby": "Bilder in der Nähe durchsuchen und verlinken",
             "title": "Straßenbilder in der Nähe"
         },
@@ -582,15 +659,19 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Partner-Rezension)",
         "attribution": "Rezensionen von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
+        "averageRating": "Mittlere Bewertung von {n} Sternen",
         "i_am_affiliated": "Ich bin mit diesem Objekt vertraut",
         "i_am_affiliated_explanation": "Prüfung, ob Sie der Eigentümer, Ersteller, Angestellter, … sind",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
         "question": "Wie bewerten Sie {title()}?",
         "question_opinion": "Wie war Ihre Erfahrung?",
+        "rate": "Mit {n} Sternen bewerten",
+        "rated": "Mit {n} Sternen bewertet",
+        "reviewPlaceholder": "Beschreibe deine Erfahrung…",
         "reviewing_as": "Als {nickname} bewerten",
         "reviewing_as_anonymous": "Anonym bewerten",
-        "save": "Speichern",
+        "save": "Bewertung speichern",
         "saved": "Bewertung gespeichert. Danke fürs Teilen!",
         "saving_review": "Speichern…",
         "title": "{count} Rezensionen",
@@ -603,7 +684,7 @@
         "hasBeenSplit": "Dieser Weg wurde geteilt",
         "inviteToSplit": "Die Straße in Abschnitte teilen. Dadurch können je Abschnitt unterschiedliche Eigenschaften angegeben werden.",
         "loginToSplit": "Anmeldung erforderlich, um Straßen zu teilen",
-        "split": "Teilen",
+        "split": "Aufteilen",
         "splitAgain": "Diese Straße erneut teilen",
         "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern"
     },
@@ -642,7 +723,8 @@
         "fediverse": {
             "description": "Eine Fediverse Adresse, häufig @username@server.tld",
             "feedback": "Eine Fediverse Adresse besteht aus @username@server.tld oder ist ein Direktlink zu einem Profil",
-            "invalidHost": "{host} ist kein gültiger hostname"
+            "invalidHost": "{host} ist kein gültiger hostname",
+            "onYourServer": "Siehe und folge auf deinem Server"
         },
         "float": {
             "description": "eine Zahl",
@@ -676,6 +758,10 @@
         "pnat": {
             "description": "eine positive, ganze Zahl",
             "noZero": "Null ist nicht erlaubt"
+        },
+        "slope": {
+            "inputExplanation": "Legen Sie Ihr Telefon so auf den Boden, dass die Oberseite des Telefons zum oberen Ende des Hangs zeigt.",
+            "inputIncorrect": "Für korrekte Messungen achten Sie darauf, dass sich der Pfeil in der grünen Fläche befindet."
         },
         "string": {
             "description": "ein Stück Text"

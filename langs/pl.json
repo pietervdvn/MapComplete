@@ -186,7 +186,6 @@
             "includeMetaData": "Dołącz metadane (ostatni edytor, obliczone wartości, ...)",
             "licenseInfo": "<h3>Informacja o prawach autorskich</h3>Podane dane są dostępne na licencji ODbL. Ponowne użycie jest darmowe, ale musi być <ul><li>podane źródło <b>© autorzy OpenStreetMap</b> <li><li>Jakakolwiek zmiana musi być opublikowana na tej samej licencji.</li></ul> Proszę przeczytać pełną <a href='https://www.openstreetmap.org/copyright' target='_blank'>informację o prawach autorskich</a> dla szczegółów.",
             "noDataLoaded": "Nie załadowano jeszcze żadnych danych. Pobranie będzie wkrótce dostępne",
-            "pdf": {},
             "title": "Pobierz",
             "uploadGpx": "Prześlij swój ślad do OpenStreetMap"
         },
@@ -345,7 +344,6 @@
         "uploadPendingSingle": "Jedna oczekująca zmiana",
         "uploadingChanges": "Przesyłanie zmian…",
         "useSearch": "Skorzystaj z wyszukiwania powyżej, aby zobaczyć gotowe ustawienia",
-        "useSearchForMore": "Użyj funkcji wyszukiwania, aby wyszukać w obrębie ponad {total} więcej wartości…",
         "waitingForGeopermission": "Oczekiwanie na Twoją zgodę na użycie geolokalizacji…",
         "waitingForLocation": "Wyszukiwanie Twojej bieżącej lokalizacji…",
         "weekdays": {

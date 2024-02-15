@@ -31,6 +31,14 @@
   "startLat": 50.8552,
   "startLon": 4.3755,
   "layers": [
-    "hotel"
+    "hotel",
+    {
+      "builtin": [
+        "love_hotel"
+      ],
+      "override": {
+        "minzoom": 18
+      }
+    }
   ]
 }

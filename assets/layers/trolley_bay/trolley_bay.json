@@ -1,0 +1,206 @@
+{
+  "id": "trolley_bay",
+  "name": {
+    "en": "Trolley Bays"
+  },
+  "description": {
+    "en": "Find trolley bays for shopping trolleys."
+  },
+  "title": {
+    "en": "Trolley Bay"
+  },
+  "source": {
+    "osmTags": "amenity=trolley_bay"
+  },
+  "minzoom": 18,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "deletion": true,
+  "tagRenderings": [
+    {
+      "id": "covered",
+      "question": {
+        "en": "Is this trolley bay covered?"
+      },
+      "mappings": [
+        {
+          "if": "covered=yes",
+          "then": {
+            "en": "This trolley bay is covered"
+          }
+        },
+        {
+          "if": "covered=no",
+          "then": {
+            "en": "This trolley bay is not covered"
+          }
+        }
+      ]
+    },
+    {
+      "id": "deposit",
+      "question": {
+        "en": "Is a deposit (e.g. a coin) required for the trolleys?"
+      },
+      "mappings": [
+        {
+          "if": "trolley:deposit=yes",
+          "then": {
+            "en": "A deposit is required for the trolleys"
+          }
+        },
+        {
+          "if": "trolley:deposit=no",
+          "then": {
+            "en": "No deposit is required for the trolleys"
+          }
+        }
+      ]
+    },
+    {
+      "id": "denominations",
+      "condition": {
+        "and": [
+          "trolley:deposit=yes",
+          "_currency~.*EUR.*"
+        ]
+      },
+      "question": {
+        "en": "What coins are accepted for the deposit?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "trolley:deposit:denominations=0.50 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/50cent.svg",
+          "then": {
+            "en": "50 cent coins are accepted",
+            "de": "50-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 50 cent worden geaccepteerd",
+            "nb_NO": "50-cent mynter aksepteres",
+            "fr": "Les pièces de 50 cents sont acceptées",
+            "pl": "Akceptowane są monety 50-centowe",
+            "ca": "S'accepten monedes de 50 cèntims",
+            "es": "Se aceptan monedas de 50 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 50 centů",
+            "id": "Koin 50 sen diterima"
+          }
+        },
+        {
+          "if": "trolley:deposit:denominations=1 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/1euro.svg",
+          "then": {
+            "en": "1 euro coins are accepted",
+            "de": "1-Euro-Münzen werden akzeptiert",
+            "nl": "Munten van 1 euro worden geaccepteerd",
+            "nb_NO": "1-euro mynter aksepteres",
+            "fr": "Les pièces de 1 euro sont acceptées",
+            "pl": "Akceptowane są monety 1 euro",
+            "ca": "S'accepten monedes de 1 euro",
+            "es": "Se aceptan monedas de 1 euro",
+            "cs": "Jsou přijímány mince v hodnotě 1 eura"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "trolley:deposit:denominations=2 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/2euro.svg",
+          "then": {
+            "en": "2 euro coins are accepted",
+            "de": "2-Euro-Münzen werden akzeptiert",
+            "nl": "Munten van 2 euro worden geaccepteerd",
+            "nb_NO": "2-euro mynter aksepteres",
+            "fr": "Les pièces de 2 euros sont acceptées",
+            "pl": "Akceptowane są monety 2 euro",
+            "ca": "S'accepten monedes de 2 euros",
+            "es": "Se aceptan monedas de 2 euros",
+            "cs": "Jsou přijímány mince v hodnotě 2 euro"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        }
+      ]
+    },
+    {
+      "id": "cart_types",
+      "question": {
+        "en": "What kind of special trolleys are available?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "trolley:magnifier=yes",
+          "ifnot": "trolley:magnifier=no",
+          "then": {
+            "en": "Trolleys with a magnifier are available"
+          }
+        },
+        {
+          "if": "trolley:wheelchair=yes",
+          "ifnot": "trolley:wheelchair=no",
+          "then": {
+            "en": "Trolleys for wheelchair users are available"
+          }
+        },
+        {
+          "if": "trolley:children=yes",
+          "ifnot": "trolley:children=no",
+          "then": {
+            "en": "Trolleys for children are available"
+          }
+        },
+        {
+          "if": "trolley:seats=yes",
+          "ifnot": "trolley:seats=no",
+          "then": {
+            "en": "Trolleys with seats for children are available"
+          }
+        },
+        {
+          "if": "trolley:flatbed=yes",
+          "ifnot": "trolley:flatbed=no",
+          "then": {
+            "en": "Trolleys with a flatbed are available"
+          }
+        },
+        {
+          "if": "trolley:vertical=yes",
+          "ifnot": "trolley:vertical=no",
+          "then": {
+            "en": "Vertical trolleys for sheet-like goods are available"
+          }
+        }
+      ]
+    },
+    {
+      "id": "indoor"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a trolley bay"
+      },
+      "tags": [
+        "amenity=trolley_bay"
+      ],
+      "description": {
+        "en": "A trolley bay for parking shopping carts."
+      }
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/trolley_bay/trolley_bay.svg"
+        }
+      ]
+    }
+  ]
+}

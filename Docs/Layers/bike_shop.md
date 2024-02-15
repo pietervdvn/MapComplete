@@ -143,11 +143,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What is the name of this bicycle shop?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `This bicycle shop is called {name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This bicycle shop is called {name}`
 
 
 
@@ -157,11 +153,7 @@ This is rendered with  `This bicycle shop is called {name}`
 
 The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
@@ -179,11 +171,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the phone number of {title()}?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -201,11 +189,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What is the email address of {title()}?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
 
 
@@ -223,11 +207,7 @@ This tagrendering has labels  `contact`
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -237,11 +217,7 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 This tagrendering has no question and is thus read-only
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-
-This is rendered with  `Only accessible to {access}`
-
-
+This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `Only accessible to {access}`
 
 
 
@@ -301,11 +277,7 @@ The question is  *Does this shop rent out bikes?*
 
 The question is  *What kind of bicycles and accessories are rented here?*
 
-This rendering asks information about the property  [rental](https://wiki.openstreetmap.org/wiki/Key:rental) 
-
-This is rendered with  `{rental} is rented here`
-
-
+This rendering asks information about the property  [rental](https://wiki.openstreetmap.org/wiki/Key:rental) This is rendered with  `{rental} is rented here`
 
 
 
@@ -331,11 +303,7 @@ This tagrendering has labels  `bicycle_rental`
 
 The question is  *How many city bikes can be rented here?*
 
-This rendering asks information about the property  [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) 
-
-This is rendered with  `{capacity:city_bike} city bikes can be rented here`
-
-
+This rendering asks information about the property  [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) This is rendered with  `{capacity:city_bike} city bikes can be rented here`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*city_bike.*)$`
 
@@ -349,11 +317,7 @@ This tagrendering has labels  `bicycle_rental`
 
 The question is  *How many electrical bikes can be rented here?*
 
-This rendering asks information about the property  [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) 
-
-This is rendered with  `{capacity:ebike} electrical bikes can be rented here`
-
-
+This rendering asks information about the property  [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) This is rendered with  `{capacity:ebike} electrical bikes can be rented here`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*ebike.*)$`
 
@@ -367,11 +331,7 @@ This tagrendering has labels  `bicycle_rental`
 
 The question is  *How many bikes for children can be rented here?*
 
-This rendering asks information about the property  [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) 
-
-This is rendered with  `{capacity:kid_bike} bikes for children can be rented here`
-
-
+This rendering asks information about the property  [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) This is rendered with  `{capacity:kid_bike} bikes for children can be rented here`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*kid_bike.*)$`
 
@@ -385,11 +345,7 @@ This tagrendering has labels  `bicycle_rental`
 
 The question is  *How many BMX bikes can be rented here?*
 
-This rendering asks information about the property  [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) 
-
-This is rendered with  `{capacity:bmx} BMX bikes can be rented here`
-
-
+This rendering asks information about the property  [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) This is rendered with  `{capacity:bmx} BMX bikes can be rented here`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*bmx.*)$`
 
@@ -403,11 +359,7 @@ This tagrendering has labels  `bicycle_rental`
 
 The question is  *How many mountainbikes can be rented here?*
 
-This rendering asks information about the property  [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) 
-
-This is rendered with  `{capacity:mtb} mountainbikes can be rented here`
-
-
+This rendering asks information about the property  [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) This is rendered with  `{capacity:mtb} mountainbikes can be rented here`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*mtb.*)$`
 
@@ -421,11 +373,7 @@ This tagrendering has labels  `bicycle_rental`
 
 The question is  *How many bicycle panniers can be rented here?*
 
-This rendering asks information about the property  [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) 
-
-This is rendered with  `{capacity:bicycle_pannier} bicycle panniers can be rented here`
-
-
+This rendering asks information about the property  [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) This is rendered with  `{capacity:bicycle_pannier} bicycle panniers can be rented here`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*bicycle_pannier.*)$`
 
@@ -439,11 +387,7 @@ This tagrendering has labels  `bicycle_rental`
 
 The question is  *How many tandem can be rented here?*
 
-This rendering asks information about the property  [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) 
-
-This is rendered with  `{capacity:tandem_bicycle} tandem can be rented here`
-
-
+This rendering asks information about the property  [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) This is rendered with  `{capacity:tandem_bicycle} tandem can be rented here`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*tandem_bicycle.*)$`
 
@@ -525,11 +469,7 @@ The question is  *Are bicycles washed here?*
 
 The question is  *How much does it cost to use the cleaning service?*
 
-This rendering asks information about the property  [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) 
-
-This is rendered with  `Using the cleaning service costs {service:bicycle:cleaning:charge}`
-
-
+This rendering asks information about the property  [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) This is rendered with  `Using the cleaning service costs {service:bicycle:cleaning:charge}`
 
 
 
@@ -548,11 +488,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *Is there still some relevant info that the previous questions did not cover? Feel free to add it here.*
 
-This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
-
-This is rendered with  `{description}`
-
-
+This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) This is rendered with  `{description}`
 
 
 

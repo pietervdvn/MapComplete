@@ -1,0 +1,24 @@
+[
+  {
+    "path": "CivilDefence.svg",
+    "license": "TRIVIAL",
+    "authors": [
+      "https://commons.wikimedia.org/wiki/User:MStankie"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:CivilDefence.svg"
+    ]
+  },
+  {
+    "path": "social.svg",
+    "license": "TRIVIAL",
+    "authors": [
+      "Geneva Convention",
+      "https://commons.wikimedia.org/wiki/User:MStankie",
+      "https://commons.wikimedia.org/wiki/User:The_Navigators"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Geneva_Convention_Civil_Defence_Symbol_-_Flag.svg"
+    ]
+  }
+]

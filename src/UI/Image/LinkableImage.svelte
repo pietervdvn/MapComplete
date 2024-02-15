@@ -15,18 +15,15 @@
   import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
 
   export let tags: UIEventSource<OsmTags>
-  export let lon: number
-  export let lat: number
   export let state: SpecialVisualizationState
   export let image: P4CPicture
   export let feature: Feature
   export let layer: LayerConfig
 
   export let linkable = true
-  let isLinked = Object.values(tags.data).some((v) => image.pictureUrl === v)
-
+  let targetValue = Object.values(image.osmTags)[0]
+  let isLinked = new UIEventSource(Object.values(tags.data).some((v) => targetValue === v))
   const t = Translations.t.image.nearby
-  const c = [lon, lat]
   const providedImage: ProvidedImage = {
     url: image.thumbUrl ?? image.pictureUrl,
     url_hd: image.pictureUrl,
@@ -36,10 +33,11 @@
     id: Object.values(image.osmTags)[0],
   }
 
-  $: {
+  function applyLink(isLinked :boolean) {
+    console.log("Applying linked image", isLinked, targetValue)
     const currentTags = tags.data
     const key = Object.keys(image.osmTags)[0]
-    const url = image.osmTags[key]
+    const url = targetValue
     if (isLinked) {
       const action = new LinkImageAction(currentTags.id, key, url, tags, {
         theme: tags.data._orig_theme ?? state.layout.id,
@@ -59,6 +57,7 @@
       }
     }
   }
+  isLinked.addCallback(isLinked => applyLink(isLinked))
 </script>
 
 <div class="flex w-fit shrink-0 flex-col">
@@ -71,7 +70,7 @@
   </div>
   {#if linkable}
     <label>
-      <input bind:checked={isLinked} type="checkbox" />
+      <input bind:checked={$isLinked} type="checkbox" />
       <SpecialTranslation t={t.link} {tags} {state} {layer} {feature} />
     </label>
   {/if}

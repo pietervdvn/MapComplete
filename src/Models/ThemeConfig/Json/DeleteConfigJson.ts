@@ -100,5 +100,5 @@ export interface DeleteConfigJson {
      * iffalse: Show the default delete reasons
      * ifunset: Show the default delete reasons (default behaviour)
      */
-    omitDefaultDeleteReasons?: false | boolean
+    omitDefaultDeleteReasons?: false | boolean | ("disused" | string)[]
 }

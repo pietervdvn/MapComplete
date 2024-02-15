@@ -156,7 +156,7 @@ export class GeoOperations {
                 const intersection = GeoOperations.calculateIntersection(
                     feature,
                     otherFeature,
-                    featureBBox,
+                    featureBBox
                 )
                 if (intersection === null) {
                     continue
@@ -195,7 +195,7 @@ export class GeoOperations {
         console.error(
             "Could not correctly calculate the overlap of ",
             feature,
-            ": unsupported type",
+            ": unsupported type"
         )
         return result
     }
@@ -224,7 +224,7 @@ export class GeoOperations {
      */
     public static inside(
         pointCoordinate: [number, number] | Feature<Point>,
-        feature: Feature,
+        feature: Feature
     ): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
@@ -302,7 +302,7 @@ export class GeoOperations {
      */
     public static nearestPoint(
         way: Feature<LineString>,
-        point: [number, number],
+        point: [number, number]
     ): Feature<
         Point,
         {
@@ -324,11 +324,11 @@ export class GeoOperations {
     public static forceLineString(way: Feature<LineString | Polygon>): Feature<LineString>
 
     public static forceLineString(
-        way: Feature<MultiLineString | MultiPolygon>,
+        way: Feature<MultiLineString | MultiPolygon>
     ): Feature<MultiLineString>
 
     public static forceLineString(
-        way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>,
+        way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>
     ): Feature<LineString | MultiLineString> {
         if (way.geometry.type === "Polygon") {
             way = { ...way }
@@ -345,11 +345,21 @@ export class GeoOperations {
         return <any>way
     }
 
-    public static toCSV(features: Feature[] | FeatureCollection): string {
+    public static toCSV(
+        features: Feature[] | FeatureCollection,
+        options?: {
+            ignoreTags?: RegExp
+        }
+    ): string {
         const headerValuesSeen = new Set<string>()
         const headerValuesOrdered: string[] = []
 
-        function addH(key) {
+        function addH(key: string) {
+            if (options?.ignoreTags) {
+                if (key.match(options.ignoreTags)) {
+                    return
+                }
+            }
             if (!headerValuesSeen.has(key)) {
                 headerValuesSeen.add(key)
                 headerValuesOrdered.push(key)
@@ -448,7 +458,7 @@ export class GeoOperations {
      */
     public static LineIntersections(
         feature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>,
-        otherFeature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>,
+        otherFeature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>
     ): [number, number][] {
         return turf
             .lineIntersect(feature, otherFeature)
@@ -485,7 +495,7 @@ export class GeoOperations {
         locations:
             | Feature<LineString>
             | Feature<Point, { date?: string; altitude?: number | string }>[],
-        title?: string,
+        title?: string
     ) {
         title = title?.trim()
         if (title === undefined || title === "") {
@@ -506,7 +516,7 @@ export class GeoOperations {
                             type: "Point",
                             coordinates: p,
                         },
-                    },
+                    }
             )
         }
         for (const l of locationsWithMeta) {
@@ -521,7 +531,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
+            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
         return (
             header +
             "\n<name>" +
@@ -539,7 +549,7 @@ export class GeoOperations {
      */
     public static toGpxPoints(
         locations: Feature<Point, { date?: string; altitude?: number | string }>[],
-        title?: string,
+        title?: string
     ) {
         title = title?.trim()
         if (title === undefined || title === "") {
@@ -560,7 +570,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
+            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
         return (
             header +
             "\n<name>" +
@@ -648,7 +658,7 @@ export class GeoOperations {
                 },
             },
             distanceMeter,
-            { units: "meters" },
+            { units: "meters" }
         ).geometry.coordinates
     }
 
@@ -683,7 +693,7 @@ export class GeoOperations {
      */
     static completelyWithin(
         feature: Feature<Geometry, any>,
-        possiblyEnclosingFeature: Feature<Polygon | MultiPolygon, any>,
+        possiblyEnclosingFeature: Feature<Polygon | MultiPolygon, any>
     ): boolean {
         return booleanWithin(feature, possiblyEnclosingFeature)
     }
@@ -716,8 +726,11 @@ export class GeoOperations {
         }
 
         if (toSplit.geometry.type === "MultiLineString") {
-            const lines: Feature<LineString>[][] = toSplit.geometry.coordinates.map(coordinates =>
-                turf.lineSplit(<LineString> {type: "LineString", coordinates}, boundary).features )
+            const lines: Feature<LineString>[][] = toSplit.geometry.coordinates.map(
+                (coordinates) =>
+                    turf.lineSplit(<LineString>{ type: "LineString", coordinates }, boundary)
+                        .features
+            )
             const splitted: Feature<LineString>[] = [].concat(...lines)
             const kept: Feature<LineString>[] = []
             for (const f of splitted) {
@@ -728,7 +741,6 @@ export class GeoOperations {
                 f.properties = { ...toSplit.properties }
                 kept.push(f)
             }
-            console.log(">>>", {lines, splitted, kept})
             return kept
         }
         if (toSplit.geometry.type === "Polygon" || toSplit.geometry.type == "MultiPolygon") {
@@ -756,7 +768,14 @@ export class GeoOperations {
      */
     public static featureToCoordinateWithRenderingType(
         feature: Feature,
-        location: "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string,
+        location:
+            | "point"
+            | "centroid"
+            | "start"
+            | "end"
+            | "projected_centerpoint"
+            | "polygon_centerpoint"
+            | string
     ): [number, number] | undefined {
         switch (location) {
             case "point":
@@ -769,6 +788,11 @@ export class GeoOperations {
                     return undefined
                 }
                 return GeoOperations.centerpointCoordinates(feature)
+            case "polygon_centerpoint":
+                if (feature.geometry.type === "Polygon") {
+                    return GeoOperations.centerpointCoordinates(feature)
+                }
+                return undefined
             case "projected_centerpoint":
                 if (
                     feature.geometry.type === "LineString" ||
@@ -777,7 +801,7 @@ export class GeoOperations {
                     const centerpoint = GeoOperations.centerpointCoordinates(feature)
                     const projected = GeoOperations.nearestPoint(
                         <Feature<LineString>>feature,
-                        centerpoint,
+                        centerpoint
                     )
                     return <[number, number]>projected.geometry.coordinates
                 }
@@ -954,7 +978,7 @@ export class GeoOperations {
      * GeoOperations.bearingToHuman(46) // => "NE"
      */
     public static bearingToHuman(
-        bearing: number,
+        bearing: number
     ): "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW" {
         while (bearing < 0) {
             bearing += 360
@@ -966,14 +990,21 @@ export class GeoOperations {
     }
 
     /**
-     * GeoOperations.bearingToHuman(0) // => "N"
-     * GeoOperations.bearingToHuman(-10) // => "N"
-     * GeoOperations.bearingToHuman(-180) // => "S"
-     * GeoOperations.bearingToHuman(181) // => "S"
-     * GeoOperations.bearingToHuman(46) // => "NE"
+     * GeoOperations.bearingToHumanRelative(-207) // => "sharp_right"
+     * GeoOperations.bearingToHumanRelative(-199) // => "behind"
+     * GeoOperations.bearingToHumanRelative(-180) // => "behind"
+     * GeoOperations.bearingToHumanRelative(-10) // => "straight"
+     * GeoOperations.bearingToHumanRelative(0) // => "straight"
+     * GeoOperations.bearingToHumanRelative(181) // => "behind"
+     * GeoOperations.bearingToHumanRelative(40) // => "slight_right"
+     * GeoOperations.bearingToHumanRelative(46) // => "slight_right"
+     * GeoOperations.bearingToHumanRelative(95) // => "right"
+     * GeoOperations.bearingToHumanRelative(140) // => "sharp_right"
+     * GeoOperations.bearingToHumanRelative(158) // => "behind"
+     *
      */
     public static bearingToHumanRelative(
-        bearing: number,
+        bearing: number
     ):
         | "straight"
         | "slight_right"
@@ -998,9 +1029,11 @@ export class GeoOperations {
      * const merged = GeoOperations.attemptLinearize(f)
      * merged.geometry.coordinates // => [[3.2176208,51.21760169669458],[3.217198532946432,51.218067], [3.216807134449482,51.21849812105347],[3.2164304037883706,51.2189272]]
      */
-    static attemptLinearize(multiLineStringFeature: Feature<MultiLineString>): Feature<LineString | MultiLineString> {
+    static attemptLinearize(
+        multiLineStringFeature: Feature<MultiLineString>
+    ): Feature<LineString | MultiLineString> {
         const coors = multiLineStringFeature.geometry.coordinates
-        if(coors.length === 0) {
+        if (coors.length === 0) {
             console.error(multiLineStringFeature.geometry)
             throw "Error: got degenerate multilinestring"
         }
@@ -1014,7 +1047,12 @@ export class GeoOperations {
                 }
 
                 const jLast = coors[j].at(-1)
-                if (!(Math.abs(iFirst[0] - jLast[0]) < 0.000001 && Math.abs(iFirst[1] - jLast[1]) < 0.0000001)) {
+                if (
+                    !(
+                        Math.abs(iFirst[0] - jLast[0]) < 0.000001 &&
+                        Math.abs(iFirst[1] - jLast[1]) < 0.0000001
+                    )
+                ) {
                     continue
                 }
                 coors[j].splice(coors.length - 1, 1)
@@ -1023,7 +1061,7 @@ export class GeoOperations {
                 continue outer
             }
         }
-        if(coors.length === 0) {
+        if (coors.length === 0) {
             throw "No more coordinates found"
         }
 
@@ -1053,12 +1091,12 @@ export class GeoOperations {
     private static pointInPolygonCoordinates(
         x: number,
         y: number,
-        coordinates: [number, number][][],
+        coordinates: [number, number][][]
     ): boolean {
         const inside = GeoOperations.pointWithinRing(
             x,
             y,
-            /*This is the outer ring of the polygon */ coordinates[0],
+            /*This is the outer ring of the polygon */ coordinates[0]
         )
         if (!inside) {
             return false
@@ -1067,7 +1105,7 @@ export class GeoOperations {
             const inHole = GeoOperations.pointWithinRing(
                 x,
                 y,
-                coordinates[i], /* These are inner rings, aka holes*/
+                coordinates[i] /* These are inner rings, aka holes*/
             )
             if (inHole) {
                 return false
@@ -1105,7 +1143,7 @@ export class GeoOperations {
         feature,
         otherFeature,
         featureBBox: BBox,
-        otherFeatureBBox?: BBox,
+        otherFeatureBBox?: BBox
     ): number {
         if (feature.geometry.type === "LineString") {
             otherFeatureBBox = otherFeatureBBox ?? BBox.get(otherFeature)
@@ -1154,7 +1192,7 @@ export class GeoOperations {
             let intersection = turf.lineSlice(
                 turf.point(intersectionPointsArray[0]),
                 turf.point(intersectionPointsArray[1]),
-                feature,
+                feature
             )
 
             if (intersection == null) {
@@ -1175,7 +1213,7 @@ export class GeoOperations {
                     otherFeature,
                     feature,
                     otherFeatureBBox,
-                    featureBBox,
+                    featureBBox
                 )
             }
 
@@ -1195,7 +1233,7 @@ export class GeoOperations {
                     console.log("Applying fallback intersection...")
                     const intersection = turf.intersect(
                         turf.truncate(feature),
-                        turf.truncate(otherFeature),
+                        turf.truncate(otherFeature)
                     )
                     if (intersection == null) {
                         return null

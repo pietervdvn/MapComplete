@@ -25,6 +25,7 @@ Layer showing shelter structures
 
 
 
+  - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
   - [transit](https://mapcomplete.org/transit)
 
@@ -88,11 +89,7 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What kind of shelter is this?*
 
-This rendering asks information about the property  [shelter_type](https://wiki.openstreetmap.org/wiki/Key:shelter_type) 
-
-This is rendered with  `Shelter type: {shelter_type}`
-
-
+This rendering asks information about the property  [shelter_type](https://wiki.openstreetmap.org/wiki/Key:shelter_type) This is rendered with  `Shelter type: {shelter_type}`
 
 
 

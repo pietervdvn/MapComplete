@@ -1,4 +1,4 @@
-import { UIEventSource } from "../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
@@ -15,6 +15,7 @@ import { QueryParameters } from "../Web/QueryParameters"
 export default class InitialMapPositioning {
     public zoom: UIEventSource<number>
     public location: UIEventSource<{ lon: number; lat: number }>
+    public useTerrain: Store<boolean>
     constructor(layoutToUse: LayoutConfig) {
         function localStorageSynced(
             key: string,
@@ -55,10 +56,11 @@ export default class InitialMapPositioning {
         )
 
         this.location = new UIEventSource({ lon: lon.data, lat: lat.data })
+        // Note: this syncs only in one direction
         this.location.addCallbackD((loc) => {
             lat.setData(loc.lat)
             lon.setData(loc.lon)
         })
-        // Note: this syncs only in one direction
+        this.useTerrain = new ImmutableStore<boolean>(layoutToUse.enableTerrain)
     }
 }

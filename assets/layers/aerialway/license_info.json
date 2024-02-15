@@ -1,0 +1,32 @@
+[
+  {
+    "path": "cable_car.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "SuperFLoh"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Pictogram_Cable_Car_small.svg"
+    ]
+  },
+  {
+    "path": "chair_lift.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Gouvernement fran��ais, Roulex 45"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:France_road_sign_CE20b.svg"
+    ]
+  },
+  {
+    "path": "gondola_lift.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Vasily Astanin"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Pictogram_Gondola_Lift.svg"
+    ]
+  }
+]

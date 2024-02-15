@@ -93,15 +93,11 @@ This tagrendering has labels  `added_by_default`
 
 The question is  *What is the legal maximum speed one is allowed to drive on this road?*
 
-This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) 
-
-This is rendered with  `The maximum allowed speed on this road is {canonical(maxspeed)}`
+This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) This is rendered with  `The maximum allowed speed on this road is {canonical(maxspeed)}`
 
 
 
-
-
-  - *This is a living street, which has a maxspeed of 20km/h*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>
+  - *This is a living street, which has a maxspeed of 20km/h*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
 
 
 

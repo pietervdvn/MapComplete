@@ -294,9 +294,9 @@ There are three important levels in the JSON file:
 
 Every field is documented in the source code itself - you can find them here:
 
-- [The top level `LayoutConfig`](/Models/ThemeConfig/Json/LayoutConfigJson.ts)
-- [A layer object `LayerConfig`](/Models/ThemeConfig/Json/LayerConfigJson.ts)
-- [The `TagRendering`](/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
+- [The top level `LayoutConfig`](/src/Models/ThemeConfig/Json/LayoutConfigJson.ts)
+- [A layer object `LayerConfig`](/src/Models/ThemeConfig/Json/LayerConfigJson.ts)
+- [The `TagRendering`](/src/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
 - At last, the exact semantics of tags are documented [here](Tags_format.md)
 
 A JSON schema file is available in `Docs/Schemas` - use `LayoutConfig.schema.json` to validate a theme file.

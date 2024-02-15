@@ -35,6 +35,16 @@
             "1": {
                 "title": "eine freistehende Posterbox"
             },
+            "10": {
+                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+                "title": "ein Schild"
+            },
+            "11": {
+                "title": "eine Skulptur"
+            },
+            "12": {
+                "title": "eine Wandmalerei"
+            },
             "2": {
                 "title": "eine wandmontierte Posterbox"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "ein Totem"
-            },
-            "10": {
-                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
-                "title": "ein Schild"
-            },
-            "11": {
-                "title": "eine Skulptur"
-            },
-            "12": {
-                "title": "eine Wandmalerei"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Dies ist ein Brett"
                     },
+                    "10": {
+                        "then": "Dies ist eine Wandmalerei"
+                    },
                     "2": {
                         "then": "Dies ist eine Litfaßsäule"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Dies ist ein Totem"
-                    },
-                    "10": {
-                        "then": "Dies ist eine Wandmalerei"
                     }
                 },
                 "question": "Welche Art von Werbung ist das?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Brett"
+                },
+                "10": {
+                    "then": "Wandmalerei"
                 },
                 "2": {
                     "then": "Posterbox"
@@ -228,11 +231,74 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Wandmalerei"
                 }
             }
+        }
+    },
+    "aerialway": {
+        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
+        "name": "Seilbahnen",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "question": "Wie lange dauert eine Fahrt mit diesem Aufzug?",
+                "questionHint": "Dies schließt die Wartezeit aus.",
+                "render": "Eine Fahrt dauert {duration} Minuten"
+            },
+            "length": {
+                "render": "Die Seilbahn hat eine Länge von {_length:km} km"
+            },
+            "occupancy": {
+                "question": "Wie viele Leute passen in eine Kabine?",
+                "render": "{aerialway:occupancy} Leute passen in eine Kabine"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um eine Seilbahn, bei der die Kabine auf demselben Seil nach oben und wieder nach unten fährt."
+                    },
+                    "1": {
+                        "then": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren"
+                    },
+                    "10": {
+                        "then": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) "
+                    },
+                    "2": {
+                        "then": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft."
+                    },
+                    "3": {
+                        "then": "Eine Seilbahn, die sowohl offene Sessel als auch geschlossene Gondeln auf einer durchgehenden Bahn hat"
+                    },
+                    "4": {
+                        "then": "Ein Schlepplift"
+                    },
+                    "5": {
+                        "then": "Ein Schlepplift mit T-förmigen Trägern für jeweils zwei Passagiere"
+                    },
+                    "6": {
+                        "then": "Ein Schlepplift mit L-förmigen Trägern für jeweils einen Passagier"
+                    },
+                    "7": {
+                        "then": "Ein Schlepplift mit einem Teller für jeweils einen Passagier"
+                    },
+                    "8": {
+                        "then": "Eine Schleppleine, die Skifahrer mit sich zieht"
+                    },
+                    "9": {
+                        "then": "Ein magic carpet (ein Förderband auf dem Boden)"
+                    }
+                },
+                "question": "Um welchen Seilbahntyp handelt es sich?"
+            }
+        },
+        "title": {
+            "render": "Seilbahn {name}"
         }
     },
     "ambulancestation": {
@@ -353,6 +419,15 @@
                     "1": {
                         "then": "Wandbild"
                     },
+                    "10": {
+                        "then": "Azulejo (spanische dekorative Fliesenarbeit)"
+                    },
+                    "11": {
+                        "then": "Fliesenarbeit"
+                    },
+                    "12": {
+                        "then": "Holzschnitzerei"
+                    },
                     "2": {
                         "then": "Malerei"
                     },
@@ -376,15 +451,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (spanische dekorative Fliesenarbeit)"
-                    },
-                    "11": {
-                        "then": "Fliesenarbeit"
-                    },
-                    "12": {
-                        "then": "Holzschnitzerei"
                     }
                 },
                 "question": "Um welche Art Kunstwerk handelt es sich?",
@@ -424,6 +490,45 @@
                 }
             },
             "render": "Kunstwerk"
+        }
+    },
+    "assembly_point": {
+        "description": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln.",
+        "name": "Notfallsammelplätze",
+        "presets": {
+            "0": {
+                "title": "ein Sammelplatz"
+            }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "Wie lautet der Name dieser Sammelstelle?",
+                "render": "Diese Sammelstelle hat den Namen <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "Welche Organisation betreibt diese Sammelstelle?",
+                "render": "Diese Sammelstelle wird von <b>{operator}</b> betrieben"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Erdbeben"
+                    },
+                    "1": {
+                        "then": "Flut"
+                    },
+                    "2": {
+                        "then": "Feuer"
+                    },
+                    "3": {
+                        "then": "Erdrutsch"
+                    }
+                },
+                "question": "Für welche Art von Katastrophe ist diese Sammelstelle gedacht?"
+            }
+        },
+        "title": {
+            "render": "Sammelplatz bei Notfällen"
         }
     },
     "atm": {
@@ -530,8 +635,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?",
-                        "render_list_item": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
-                        "render_single_language": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
+                        "render_list_item": "Dieser Geldautomat hat eine Sprachausgabe in {language()}",
+                        "render_single_language": "Dieser Geldautomat hat eine Sprachausgabe in {language()}"
                     }
                 }
             }
@@ -1343,6 +1448,21 @@
                     }
                 },
                 "question": "Wo befinden sich diese Fahrradabstellplätze?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
+                    },
+                    "1": {
+                        "then": "Die Nutzung ist kostenlos"
+                    }
+                },
+                "question": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
+            },
+            "operator_phone": {
+                "question": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?",
+                "questionHint": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen"
             }
         },
         "title": {
@@ -1809,6 +1929,24 @@
             "render": "Ort zur Vogelbeobachtung"
         }
     },
+    "brothel": {
+        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. ",
+        "name": "Bordelle",
+        "presets": {
+            "0": {
+                "title": "ein Bordell"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name des Bordells?",
+                "render": "Der Name des Bordells lautet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Bordell"
+        }
+    },
     "cafe_pub": {
         "deletion": {
             "extraDeleteReasons": {
@@ -1942,30 +2080,6 @@
                     "1": {
                         "question": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     },
-                    "2": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
-                    },
-                    "3": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
-                    },
-                    "4": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
-                    },
-                    "5": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "6": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
-                    },
-                    "7": {
-                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
-                    },
-                    "8": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss"
-                    },
-                    "9": {
-                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
-                    },
                     "10": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
                     },
@@ -1986,6 +2100,30 @@
                     },
                     "16": {
                         "question": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 5 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> und Kabel"
+                    },
+                    "2": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>europäischen Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> Anschluss"
+                    },
+                    "3": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> Stecker"
+                    },
+                    "4": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel"
+                    },
+                    "5": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker"
+                    },
+                    "7": {
+                        "question": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker"
+                    },
+                    "8": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss"
+                    },
+                    "9": {
+                        "question": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss"
                     }
                 }
             }
@@ -2041,30 +2179,6 @@
                     "1": {
                         "then": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)"
                     },
-                    "2": {
-                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
-                    },
-                    "3": {
-                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo-Anschluss</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo-Anschluss</b>"
-                    },
-                    "6": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>Typ 1 CCS</b> (Typ 1 Combo)"
                     },
@@ -2094,6 +2208,9 @@
                     },
                     "19": {
                         "then": "<b>Typ 2 mit Kabel</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)"
@@ -2125,11 +2242,32 @@
                     "29": {
                         "then": "<b> Bosch Active Connect mit 3 Pins </b> und Kabel"
                     },
+                    "3": {
+                        "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect mit 5 Pins</b> und Kabel"
                     },
                     "31": {
                         "then": "<b> Bosch Active Connect mit 5 Pins </b> und Kabel"
+                    },
+                    "4": {
+                        "then": "<b>Chademo-Anschluss</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo-Anschluss</b>"
+                    },
+                    "6": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Typ 1 mit Kabel</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
                     }
                 },
                 "question": "Welche Ladeanschlüsse gibt es hier?"
@@ -2226,7 +2364,7 @@
                         "then": "Für den Zugang zur Station muss ein <b>Schlüssel</b> angefordert werden<br/><span class='subtle'>z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann, die an der Rezeption einen Schlüssel erhalten, um die Ladestation aufzuschließen</span>"
                     },
                     "4": {
-                        "then": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, …)"
+                        "then": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, ...)"
                     },
                     "5": {
                         "then": "Diese Ladestation ist zu gewissen Öffnungszeiten oder Bedingungen öffentlich zugänglich. Einschränkungen sind möglich, aber generelle Nutzung ist erlaubt."
@@ -2259,7 +2397,7 @@
                         "then": "Kostenlose Nutzung"
                     },
                     "3": {
-                        "then": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, … kostenlos"
+                        "then": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, ... kostenlos"
                     },
                     "4": {
                         "then": "Die Nutzung ist kostenpflichtig"
@@ -2304,7 +2442,67 @@
                         "mappings": {
                             "then": "{{description}} liefert maximal {{commonCurrent}} A"
                         },
-                        "question": "Welchen Strom bieten die Stecker mit {{description}}?"
+                        "question": "Welchen Strom bieten die Stecker mit {{description}}?",
+                        "render": "{{description}} liefert maximal {canonical({{key}}:current)}"
+                    },
+                    "3": {
+                        "mappings": {
+                            "then": "{{description}} liefert maximal {{commonOutput}} A"
+                        },
+                        "question": "Welche Leistung liefert ein einzelner Stecker des Typs {{description}}?",
+                        "render": "{{description}} liefert maximal {canonical({{key}}:output)}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "2": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)"
+                        },
+                        "1": {
+                            "2": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
+                        },
+                        "10": {
+                            "2": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)"
+                        },
+                        "11": {
+                            "2": "<b>Tesla Supercharger (Destination)</b>"
+                        },
+                        "12": {
+                            "2": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)"
+                        },
+                        "13": {
+                            "2": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten"
+                        },
+                        "14": {
+                            "2": "<b> Bosch Active Connect mit 3 Pins </b> und Kabel"
+                        },
+                        "15": {
+                            "2": "<b> Bosch Active Connect mit 5 Pins </b> und Kabel"
+                        },
+                        "2": {
+                            "2": "<b>Chademo-Stecker</b>"
+                        },
+                        "3": {
+                            "2": "<b>Typ 1 mit Kabel</b> (J1772)"
+                        },
+                        "4": {
+                            "2": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)"
+                        },
+                        "5": {
+                            "2": "<b>Typ 1 CCS</b> (Typ 1 Combo)"
+                        },
+                        "6": {
+                            "2": "<b>Tesla Supercharger</b>"
+                        },
+                        "7": {
+                            "2": "<b>Typ 2</b> (Mennekes)"
+                        },
+                        "8": {
+                            "2": "<b>Typ 2 CCS</b> (Mennekes)"
+                        },
+                        "9": {
+                            "2": "<b>Typ 2 mit Kabel</b> (Mennekes)"
+                        }
                     }
                 }
             },
@@ -2323,6 +2521,26 @@
                 }
             },
             "render": "Ladestation"
+        }
+    },
+    "cinema": {
+        "description": " Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind",
+        "name": "Kino",
+        "tagRenderings": {
+            "cinema_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein normales Kino, das Filme für alle Altersgruppen zeigt"
+                    },
+                    "1": {
+                        "then": "Dies ist ein Sex-Kino, das Erwachsenenfilme zeigt"
+                    }
+                },
+                "question": "Um welche Art von Kino handelt es sich?"
+            }
+        },
+        "title": {
+            "render": "Kino"
         }
     },
     "climbing": {
@@ -3027,7 +3245,7 @@
                         "then": "Es gibt eine geteilte Fahrspur"
                     },
                     "1": {
-                        "then": "Es gibt eine Spur neben der Straße (getrennt durch eine Straßenmarkierung)"
+                        "then": "Es gibt einen Radfahrstreifen neben der Straße (getrennt durch eine Straßenmarkierung)"
                     },
                     "2": {
                         "then": "Es gibt einen Weg, aber keinen Radweg, der auf der Karte getrennt von dieser Straße eingezeichnet ist."
@@ -3081,6 +3299,15 @@
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
+                    "10": {
+                        "then": "Dieser Radweg besteht aus feinem Schotter"
+                    },
+                    "11": {
+                        "then": "Der Radweg ist aus Kies"
+                    },
+                    "12": {
+                        "then": "Dieser Radweg besteht aus Rohboden"
+                    },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
@@ -3104,15 +3331,6 @@
                     },
                     "9": {
                         "then": "Der Radweg ist aus Schotter"
-                    },
-                    "10": {
-                        "then": "Dieser Radweg besteht aus feinem Schotter"
-                    },
-                    "11": {
-                        "then": "Der Radweg ist aus Kies"
-                    },
-                    "12": {
-                        "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
                 "question": "Was ist der Belag dieses Radwegs?",
@@ -3161,6 +3379,15 @@
                     "1": {
                         "then": "Dieser Radweg hat einen festen Belag"
                     },
+                    "10": {
+                        "then": "Dieser Radweg besteht aus feinem Schotter"
+                    },
+                    "11": {
+                        "then": "Der Radweg ist aus Kies"
+                    },
+                    "12": {
+                        "then": "Dieser Radweg besteht aus Rohboden"
+                    },
                     "2": {
                         "then": "Der Radweg ist aus Asphalt"
                     },
@@ -3184,15 +3411,6 @@
                     },
                     "9": {
                         "then": "Der Radweg ist aus Schotter"
-                    },
-                    "10": {
-                        "then": "Dieser Radweg besteht aus feinem Schotter"
-                    },
-                    "11": {
-                        "then": "Der Radweg ist aus Kies"
-                    },
-                    "12": {
-                        "then": "Dieser Radweg besteht aus Rohboden"
                     }
                 },
                 "question": "Was ist der Belag dieser Straße?",
@@ -3339,6 +3557,18 @@
             "cycleways_and_roads-cycleway:buffer": {
                 "question": "Wie breit ist der Abstand zwischen Radweg und Straße?",
                 "render": "Der Sicherheitsabstand zu diesem Radweg beträgt {cycleway:buffer} m"
+            },
+            "incline": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier gibt es (wahrscheinlich) keine Steigung"
+                    },
+                    "1": {
+                        "then": "Die Straße hat eine Steigung"
+                    }
+                },
+                "question": "Hat {title()} eine Steigung?",
+                "render": "Die Straße hat {incline} Steigung"
             },
             "is lit?": {
                 "mappings": {
@@ -3545,6 +3775,24 @@
         "description": "Diese Ebene visualisiert Richtungen",
         "name": "Aufnahmewinkel der Kamera anzeigen"
     },
+    "disaster_response": {
+        "description": "Diese Ebene umfasst Organisationen, deren Hauptziel es ist, der Zivilbevölkerung während und nach Natur- oder anthropogenen Katastrophen zu helfen, indem sie in dem betroffenen Gebiet tätig sind.",
+        "name": "Katastrophenschutzorganisationen",
+        "presets": {
+            "0": {
+                "title": "eine Katastrophenschutzorganisation"
+            }
+        },
+        "tagRenderings": {
+            "disaster_response_name": {
+                "question": "Wie lautet der Name dieser Organisation?",
+                "render": "Diese Organisation heißt <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Katastrophenschutzorganisation"
+        }
+    },
     "doctors": {
         "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
         "name": "Ärzte",
@@ -3632,6 +3880,9 @@
                 },
                 "1": {
                     "then": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>"
+                },
+                "2": {
+                    "then": "Dies ist eine historische, manuelle Wasserpumpe, an der kein Trinkwasser zu finden ist"
                 }
             }
         },
@@ -3670,8 +3921,72 @@
                 "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
                 "render": "Der Betriebsstatus ist <i>{operational_status}</i>"
             },
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Trinkwasserstelle hat ein integriertes Kunstwerk"
+                    },
+                    "1": {
+                        "then": "Die Trinkwasserstelle hat kein integriertes Kunstwerk"
+                    },
+                    "2": {
+                        "then": "Die Trinkwasserstelle hat <span class=\"subtle\">wahrscheinlich</span> kein integriertes Kunstwerk"
+                    }
+                },
+                "question": "Verfügt der Trinkwasserbrunnen über ein künstlerisches Element?",
+                "questionHint": "Z.B. eine integrierte Statue oder andere künstlerische Werke"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Nutzung ist kostenlos"
+                    },
+                    "1": {
+                        "then": "Die Nutzung ist kostenpflichtig"
+                    }
+                },
+                "question": "Kann diese Trinkwasserstelle kostenlos genutzt werden?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Der Trinkwasserbrunnen ist derzeit nicht in Betrieb. Deshalb werden keine Öffnungszeiten angezeigt."
+                        }
+                    },
+                    "questionHint": "Dies sind die Öffnungszeiten des Trinkwasserbrunnens, wenn dieser in Betrieb ist."
+                }
+            },
             "render-closest-drinking-water": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
+            },
+            "seasonal": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Trinkwasserstelle ist ganzjährig in Betrieb"
+                    },
+                    "1": {
+                        "then": "Die Trinkwasserstelle ist nur im Sommer in Betrieb"
+                    },
+                    "2": {
+                        "then": "Die Trinkwasserstelle ist im Winter nicht in Betrieb"
+                    }
+                },
+                "question": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Sprudelbrunnen. Ein Wasserstrahl zum Trinken wird nach oben gerichtet und in der Regel durch einen Druckknopf gesteuert."
+                    },
+                    "1": {
+                        "then": "Dies ist eine Flaschenauffüllstation, an der das Wasser nach unten geleitet wird, in der Regel durch einen Druckknopf oder einen Bewegungssensor gesteuert. Direkt aus dem Wasserstrahl zu trinken, kann sehr schwierig oder unmöglich sein."
+                    },
+                    "2": {
+                        "then": "Dies ist ein Wasserhahn. Das Wasser fließt nach unten und der Wasserstrahl wird durch ein Ventil oder einen Druckknopf gesteuert."
+                    }
+                },
+                "question": "Um welche Art von Trinkwasserentnahmestelle handelt es sich?"
             }
         },
         "title": {
@@ -3720,8 +4035,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen verfügt der Aufzug über eine Sprachausgabe?",
-                        "render_list_item": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}",
-                        "render_single_language": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}"
+                        "render_list_item": "Der Aufzug hat eine Sprachausgabe in {language()}",
+                        "render_single_language": "Der Aufzug hat eine Sprachausgabe in {language()}"
                     }
                 }
             },
@@ -3752,8 +4067,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen hat der Aufzug taktile Schrift (Braille)?",
-                        "render_list_item": "Der Aufzug hat taktile Schrift in {language():font-bold}",
-                        "render_single_language": "Der Aufzug hat taktile Schrift in {language():font-bold}"
+                        "render_list_item": "Der Aufzug hat taktile Schrift in {language()}",
+                        "render_single_language": "Der Aufzug hat taktile Schrift in {language()}"
                     }
                 }
             }
@@ -4068,6 +4383,54 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Keine Bevorzugung von Hunden"
+                    },
+                    "1": {
+                        "question": "Hunde erlaubt"
+                    },
+                    "2": {
+                        "question": "Keine Hunde erlaubt"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Internetzugang vorhanden"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Stromanschluss vorhanden"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Hat zuckerfreie Angebote"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Hat glutenfreie Angebote"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Hat laktosefreie Angebote"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -4136,54 +4499,6 @@
                 "options": {
                     "0": {
                         "question": "Nutzung kostenlos"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Keine Bevorzugung von Hunden"
-                    },
-                    "1": {
-                        "question": "Hunde erlaubt"
-                    },
-                    "2": {
-                        "question": "Keine Hunde erlaubt"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Internetzugang vorhanden"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Stromanschluss vorhanden"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Hat zuckerfreie Angebote"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Hat glutenfreie Angebote"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Hat laktosefreie Angebote"
                     }
                 }
             }
@@ -4305,30 +4620,6 @@
                     "1": {
                         "then": "Die Fitness-Station hat ein Schild mit Anweisungen für eine bestimmte Übung."
                     },
-                    "2": {
-                        "then": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
-                    },
-                    "3": {
-                        "then": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
-                    },
-                    "4": {
-                        "then": "Die Fitness-Station hat Stangen zum Dehnen."
-                    },
-                    "5": {
-                        "then": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
-                    },
-                    "6": {
-                        "then": "Die Fitness-Station hat Ringe für Gymnastikübungen."
-                    },
-                    "7": {
-                        "then": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
-                    },
-                    "8": {
-                        "then": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
-                    },
-                    "9": {
-                        "then": "Die Fitness-Station hat Pfosten für Slalomübungen."
-                    },
                     "10": {
                         "then": "Die Fitness-Station hat Trittsteine."
                     },
@@ -4359,6 +4650,9 @@
                     "19": {
                         "then": "Die Fitness-Station hat Kampfseile (battle ropes)."
                     },
+                    "2": {
+                        "then": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
+                    },
                     "20": {
                         "then": "Die Fitness-Station hat ein Fahrradergometer."
                     },
@@ -4373,6 +4667,27 @@
                     },
                     "24": {
                         "then": "Die Fitness-Station hat eine Slackline."
+                    },
+                    "3": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
+                    },
+                    "4": {
+                        "then": "Die Fitness-Station hat Stangen zum Dehnen."
+                    },
+                    "5": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
+                    },
+                    "6": {
+                        "then": "Die Fitness-Station hat Ringe für Gymnastikübungen."
+                    },
+                    "7": {
+                        "then": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
+                    },
+                    "8": {
+                        "then": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
+                    },
+                    "9": {
+                        "then": "Die Fitness-Station hat Pfosten für Slalomübungen."
                     }
                 },
                 "question": "Welche Übungsgeräte gibt es an dieser Fitness-Station?"
@@ -4492,6 +4807,21 @@
                     "1": {
                         "then": "Dies ist eine Pommesbude"
                     },
+                    "10": {
+                        "then": "Hier werden chinesische Gerichte serviert"
+                    },
+                    "11": {
+                        "then": "Hier werden griechische Gerichte serviert"
+                    },
+                    "12": {
+                        "then": "Hier werden indische Gerichte serviert"
+                    },
+                    "13": {
+                        "then": "Hier werden türkische Gerichte serviert"
+                    },
+                    "14": {
+                        "then": "Hier werden thailändische Gerichte serviert"
+                    },
                     "2": {
                         "then": "Bietet vorwiegend Pastagerichte an"
                     },
@@ -4515,21 +4845,6 @@
                     },
                     "9": {
                         "then": "Hier werden französische Gerichte serviert"
-                    },
-                    "10": {
-                        "then": "Hier werden chinesische Gerichte serviert"
-                    },
-                    "11": {
-                        "then": "Hier werden griechische Gerichte serviert"
-                    },
-                    "12": {
-                        "then": "Hier werden indische Gerichte serviert"
-                    },
-                    "13": {
-                        "then": "Hier werden türkische Gerichte serviert"
-                    },
-                    "14": {
-                        "then": "Hier werden thailändische Gerichte serviert"
                     }
                 },
                 "question": "Was für Essen gibt es hier?",
@@ -4594,6 +4909,9 @@
                     },
                     "3": {
                         "then": "Hier werden ausschließlich vegane Gerichte angeboten"
+                    },
+                    "4": {
+                        "then": "Einige Gerichte können auf Nachfrage in eine vegane Version umgewandelt werden"
                     }
                 },
                 "question": "Werden hier vegane Gerichte angeboten?"
@@ -4611,6 +4929,9 @@
                     },
                     "3": {
                         "then": "Hier werden ausschließlich vegetarische Gerichte angeboten"
+                    },
+                    "4": {
+                        "then": "Einige Gerichte können auf Nachfrage in eine vegetarische Version umgewandelt werden"
                     }
                 },
                 "question": "Werden hier vegetarische Gerichte angeboten?"
@@ -4879,6 +5200,9 @@
                             },
                             "1": {
                                 "then": "In diesem Hackerspace gibt es kein {negative-name}"
+                            },
+                            "2": {
+                                "then": "Es gibt einen limitierten {negative-name} in diesem Hackerspace"
                             }
                         },
                         "question": "Gibt es {device-name} in diesem Hackerspace?"
@@ -4897,6 +5221,30 @@
                         "2": {
                             "1": "eine CNC-Fräse",
                             "2": "CNC-Fräse"
+                        },
+                        "3": {
+                            "1": "ein Multimediastudio",
+                            "2": "Multimediastudio"
+                        },
+                        "4": {
+                            "1": "eine Nähmaschine",
+                            "2": "Nähmaschine"
+                        },
+                        "5": {
+                            "1": "eine Holzwerkstatt",
+                            "2": "Holzwerkstatt"
+                        },
+                        "6": {
+                            "1": "eine Keramikwerkstatt",
+                            "2": "Keramikwerkstatt"
+                        },
+                        "7": {
+                            "1": "eine Metallwerkstatt",
+                            "2": "Metallwerkstatt"
+                        },
+                        "8": {
+                            "1": "eine Fahrradwerkstatt",
+                            "2": "Fahrradwerkstatt"
                         }
                     }
                 }
@@ -5125,7 +5473,41 @@
         }
     },
     "icons": {
-        "description": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
+        "description": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden",
+        "tagRenderings": {
+            "osmlink": {
+                "mappings": {
+                    "1": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Auf openstreetmap.org öffnen"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "Auf openstreetmap.org öffnen"
+                    }
+                }
+            },
+            "phonelink": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Telefon"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "Telefon"
+                    }
+                }
+            }
+        }
     },
     "indoors": {
         "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
@@ -5157,30 +5539,6 @@
                     "1": {
                         "then": "Dies ist ein Auditorium"
                     },
-                    "2": {
-                        "then": "Dies ist ein Schlafzimmer"
-                    },
-                    "3": {
-                        "then": "Dies ist eine Kapelle"
-                    },
-                    "4": {
-                        "then": "Dies ist ein Klassenzimmer"
-                    },
-                    "5": {
-                        "then": "Dies ist ein Klassenzimmer"
-                    },
-                    "6": {
-                        "then": "Dies ist ein Computerraum"
-                    },
-                    "7": {
-                        "then": "Dies ist ein Konferenzraum"
-                    },
-                    "8": {
-                        "then": "Dies ist eine Krypta"
-                    },
-                    "9": {
-                        "then": "Dies ist eine Küche"
-                    },
                     "10": {
                         "then": "Dies ist ein Labor"
                     },
@@ -5211,6 +5569,9 @@
                     "19": {
                         "then": "Dies ist ein Lagerraum"
                     },
+                    "2": {
+                        "then": "Dies ist ein Schlafzimmer"
+                    },
                     "20": {
                         "then": "Dies ist ein Technikraum"
                     },
@@ -5219,6 +5580,27 @@
                     },
                     "22": {
                         "then": "Dies ist ein Wartezimmer"
+                    },
+                    "3": {
+                        "then": "Dies ist eine Kapelle"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Klassenzimmer"
+                    },
+                    "5": {
+                        "then": "Dies ist ein Klassenzimmer"
+                    },
+                    "6": {
+                        "then": "Dies ist ein Computerraum"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Konferenzraum"
+                    },
+                    "8": {
+                        "then": "Dies ist eine Krypta"
+                    },
+                    "9": {
+                        "then": "Dies ist eine Küche"
                     }
                 },
                 "question": "Wie wird dieser Raum genutzt?"
@@ -5417,6 +5799,25 @@
                     "then": "Objekt hinzufügen"
                 }
             }
+        }
+    },
+    "love_hotel": {
+        "description": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten",
+        "name": "Love Hotels",
+        "presets": {
+            "0": {
+                "description": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten",
+                "title": "ein Love Hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name des Love Hotels?",
+                "render": "Der Name des Love Hotels lautet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Love Hotel <i>{name}</i>"
         }
     },
     "map": {
@@ -5845,6 +6246,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Alle Notizen"
+                    },
+                    "1": {
+                        "question": "Importnotizen ausblenden"
+                    },
+                    "2": {
+                        "question": "Nur Importnotizen anzeigen"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5900,19 +6314,6 @@
                         "question": "Nur offene Notizen anzeigen"
                     }
                 }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Alle Notizen"
-                    },
-                    "1": {
-                        "question": "Importnotizen ausblenden"
-                    },
-                    "2": {
-                        "question": "Nur Importnotizen anzeigen"
-                    }
-                }
             }
         },
         "name": "OpenStreetMap-Hinweise",
@@ -5936,6 +6337,11 @@
                 }
             },
             "render": "Notiz"
+        },
+        "titleIcons": {
+            "0": {
+                "ariaLabel": "Auf OpenStreetMap.org ansehen"
+            }
         }
     },
     "observation_tower": {
@@ -6232,6 +6638,21 @@
                     "1": {
                         "then": "Dies ist ein normaler Stellplatz."
                     },
+                    "10": {
+                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
+                    },
+                    "11": {
+                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
+                    },
+                    "12": {
+                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
+                    },
+                    "13": {
+                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
+                    },
+                    "14": {
+                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
+                    },
                     "2": {
                         "then": "Dies ist ein Behindertenstellplatz."
                     },
@@ -6255,21 +6676,6 @@
                     },
                     "9": {
                         "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
-                    },
-                    "10": {
-                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
-                    },
-                    "11": {
-                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
-                    },
-                    "12": {
-                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
-                    },
-                    "13": {
-                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
-                    },
-                    "14": {
-                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
                     }
                 },
                 "question": "Welche Art von Stellplatz ist dies?"
@@ -6537,6 +6943,12 @@
                     },
                     "7": {
                         "then": "Die Oberfläche ist <b>befestigt</b>"
+                    },
+                    "8": {
+                        "then": "Der Belag ist aus Tartan - ein synthetischer, federnder Belag, der typischerweise auf Sportbahnen zu finden ist"
+                    },
+                    "9": {
+                        "then": "Die Oberfläche besteht aus Gummi, z. B. aus Gummifliesen, Gummimulch oder einer großen Gummifläche"
                     }
                 },
                 "question": "Welchen Bodenbelag hat dieser Spielplatz?",
@@ -6861,6 +7273,21 @@
                     "1": {
                         "then": "2-Cent-Münzen werden akzeptiert"
                     },
+                    "10": {
+                        "then": "20-Centime-Münzen werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "½-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "13": {
+                        "then": "2-Schweizer Franken-Münzen werden akzeptiert"
+                    },
+                    "14": {
+                        "then": "5-Schweizer Franken-Münzen werden akzeptiert"
+                    },
                     "2": {
                         "then": "5-Cent-Münzen werden akzeptiert"
                     },
@@ -6884,21 +7311,6 @@
                     },
                     "9": {
                         "then": "10-Centime-Münzen werden akzeptiert"
-                    },
-                    "10": {
-                        "then": "20-Centime-Münzen werden akzeptiert"
-                    },
-                    "11": {
-                        "then": "½-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "12": {
-                        "then": "1-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "13": {
-                        "then": "2-Schweizer Franken-Münzen werden akzeptiert"
-                    },
-                    "14": {
-                        "then": "5-Schweizer Franken-Münzen werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Münzen kann man hier bezahlen?"
@@ -6910,6 +7322,15 @@
                     },
                     "1": {
                         "then": "10-Euro-Scheine werden angenommen"
+                    },
+                    "10": {
+                        "then": "100-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "11": {
+                        "then": "200-Schweizer Franken-Scheine werden akzeptiert"
+                    },
+                    "12": {
+                        "then": "1000-Schweizer Franken-Scheine werden akzeptiert"
                     },
                     "2": {
                         "then": "20-Euro-Scheine werden angenommen"
@@ -6934,15 +7355,6 @@
                     },
                     "9": {
                         "then": "50-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "10": {
-                        "then": "100-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "11": {
-                        "then": "200-Schweizer Franken-Scheine werden akzeptiert"
-                    },
-                    "12": {
-                        "then": "1000-Schweizer Franken-Scheine werden akzeptiert"
                     }
                 },
                 "question": "Mit welchen Banknoten kann man hier bezahlen?"
@@ -6969,6 +7381,7 @@
                 "question": "Sind Hunde hier erlaubt?"
             },
             "email": {
+                "editButtonAriaLabel": "E-Mail Adresse bearbeiten",
                 "question": "Wie lautet die Mail-Adresse von {title()}?"
             },
             "gluten_free": {
@@ -7167,7 +7580,13 @@
                 }
             },
             "phone": {
+                "editButtonAriaLabel": "Telefonnummer bearbeiten",
                 "question": "Wie lautet die Telefonnummer von {title()}?"
+            },
+            "qr_code": {
+                "render": {
+                    "after": "Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen"
+                }
             },
             "repeated": {
                 "render": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden."
@@ -7188,6 +7607,13 @@
                     }
                 },
                 "question": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?"
+            },
+            "share": {
+                "render": {
+                    "special": {
+                        "text": "Standort teilen"
+                    }
+                }
             },
             "single_level": {
                 "mappings": {
@@ -7269,6 +7695,7 @@
                 "question": "Bietet dieser Ort eine vegane Option an?"
             },
             "website": {
+                "editButtonAriaLabel": "Webseite bearbeiten",
                 "question": "Wie lautet die Webseite von {title()}?"
             },
             "wheelchair-access": {
@@ -7381,30 +7808,6 @@
                     "1": {
                         "question": "Recycling von Batterien"
                     },
-                    "2": {
-                        "question": "Recycling von Getränkekartons"
-                    },
-                    "3": {
-                        "question": "Recycling von Dosen"
-                    },
-                    "4": {
-                        "question": "Recycling von Kleidung"
-                    },
-                    "5": {
-                        "question": "Recycling von Speiseöl"
-                    },
-                    "6": {
-                        "question": "Recycling von Motoröl"
-                    },
-                    "7": {
-                        "question": "Recycling von Leuchtstoffröhren"
-                    },
-                    "8": {
-                        "question": "Recycling von Grünabfällen"
-                    },
-                    "9": {
-                        "question": "Recycling von Glasflaschen"
-                    },
                     "10": {
                         "question": "Recycling von Glas"
                     },
@@ -7435,11 +7838,35 @@
                     "19": {
                         "question": "Recycling von Restabfällen"
                     },
+                    "2": {
+                        "question": "Recycling von Getränkekartons"
+                    },
                     "20": {
                         "question": "Recycling von Druckerpatronen"
                     },
                     "21": {
                         "question": "Recycling von Fahrrädern"
+                    },
+                    "3": {
+                        "question": "Recycling von Dosen"
+                    },
+                    "4": {
+                        "question": "Recycling von Kleidung"
+                    },
+                    "5": {
+                        "question": "Recycling von Speiseöl"
+                    },
+                    "6": {
+                        "question": "Recycling von Motoröl"
+                    },
+                    "7": {
+                        "question": "Recycling von Leuchtstoffröhren"
+                    },
+                    "8": {
+                        "question": "Recycling von Grünabfällen"
+                    },
+                    "9": {
+                        "question": "Recycling von Glasflaschen"
                     }
                 }
             },
@@ -7507,30 +7934,6 @@
                     "1": {
                         "then": "Getränkekartons können hier recycelt werden"
                     },
-                    "2": {
-                        "then": "Dosen können hier recycelt werden"
-                    },
-                    "3": {
-                        "then": "Kleidung kann hier recycelt werden"
-                    },
-                    "4": {
-                        "then": "Speiseöl kann hier recycelt werden"
-                    },
-                    "5": {
-                        "then": "Motoröl kann hier recycelt werden"
-                    },
-                    "6": {
-                        "then": "Hier können Leuchtstoffröhren recycelt werden"
-                    },
-                    "7": {
-                        "then": "Grünabfälle können hier recycelt werden"
-                    },
-                    "8": {
-                        "then": "Bio-Abfall kann hier recycelt werden"
-                    },
-                    "9": {
-                        "then": "Glasflaschen können hier recycelt werden"
-                    },
                     "10": {
                         "then": "Glas kann hier recycelt werden"
                     },
@@ -7561,6 +7964,9 @@
                     "19": {
                         "then": "Schuhe können hier recycelt werden"
                     },
+                    "2": {
+                        "then": "Dosen können hier recycelt werden"
+                    },
                     "20": {
                         "then": "Elektrokleingeräte können hier recycelt werden"
                     },
@@ -7575,6 +7981,27 @@
                     },
                     "24": {
                         "then": "Fahrräder können hier recycelt werden"
+                    },
+                    "3": {
+                        "then": "Kleidung kann hier recycelt werden"
+                    },
+                    "4": {
+                        "then": "Speiseöl kann hier recycelt werden"
+                    },
+                    "5": {
+                        "then": "Motoröl kann hier recycelt werden"
+                    },
+                    "6": {
+                        "then": "Hier können Leuchtstoffröhren recycelt werden"
+                    },
+                    "7": {
+                        "then": "Grünabfälle können hier recycelt werden"
+                    },
+                    "8": {
+                        "then": "Bio-Abfall kann hier recycelt werden"
+                    },
+                    "9": {
+                        "then": "Glasflaschen können hier recycelt werden"
                     }
                 },
                 "question": "Was kann hier recycelt werden?"
@@ -7720,7 +8147,7 @@
                         "no_known_languages": "Die Unterrichtssprache der Schule ist unbekannt",
                         "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
                         "render_all": "Folgende Sprachen werden in der Schule verwendet:{list()}",
-                        "render_single_language": "{language():font-bold} ist die Hauptsprache der Schule"
+                        "render_single_language": "{language()} ist die Hauptsprache der Schule"
                     }
                 }
             },
@@ -7805,9 +8232,9 @@
     },
     "shops": {
         "deletion": {
-            "extraDeleteReasons": {
+            "nonDeleteMappings": {
                 "0": {
-                    "explanation": "{title()} wurde dauerhaft geschlossen"
+                    "then": "{title()} wurde dauerhaft geschlossen"
                 }
             }
         },
@@ -7838,7 +8265,7 @@
         "name": "Geschäfte",
         "presets": {
             "0": {
-                "description": "Ein neues Geschäft hinzufügen",
+                "description": "Sie können später angeben, was das Geschäft verkauft.",
                 "title": "ein Geschäft"
             }
         },
@@ -7985,6 +8412,41 @@
         },
         "title": {
             "render": "Dusche"
+        }
+    },
+    "ski_piste": {
+        "description": "Ski- und Snowboardpisten",
+        "name": "Ski- und Snowboardpisten",
+        "tagRenderings": {
+            "length": {
+                "render": "Dieser Teil der Skipiste hat eine Länge von {_length:km} km"
+            },
+            "piste_difficulty": {
+                "mappings": {
+                    "0": {
+                        "then": "Anfänger (grün)"
+                    },
+                    "1": {
+                        "then": "Einfach (blau)"
+                    },
+                    "2": {
+                        "then": "Mittel (rot)"
+                    },
+                    "3": {
+                        "then": "Fortgeschritten (schwarz)"
+                    },
+                    "4": {
+                        "then": "Experte (orange/doppel schwarz)"
+                    },
+                    "5": {
+                        "then": "Freeride"
+                    }
+                },
+                "question": "Was ist der Schwierigkeitsgrad der Piste?"
+            }
+        },
+        "title": {
+            "render": "Skipiste {name}"
         }
     },
     "slow_roads": {
@@ -8285,6 +8747,9 @@
                     },
                     "5": {
                         "then": "Die Oberfläche ist <b>feiner Kies</b>"
+                    },
+                    "6": {
+                        "then": "Der Belag dieser Laufbahn ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
                     }
                 },
                 "question": "Welchen Belag hat der Sportplatz?",
@@ -8335,6 +8800,18 @@
                 },
                 "question": "Hat die Treppe einen Handlauf?"
             },
+            "incline": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Aufwärtsrichtung ist {direction_absolute()}"
+                    },
+                    "1": {
+                        "then": "Die Abwärtsrichtung ist {direction_absolute()}"
+                    }
+                },
+                "question": "Welche Steigung hat die Treppe?",
+                "render": "Die Treppe hat eine Steigung von {incline}"
+            },
             "multilevels": {
                 "override": {
                     "question": "Zwischen welchen Stockwerken befindet sich diese Treppe?",
@@ -8376,8 +8853,8 @@
                 "render": {
                     "special": {
                         "question": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-                        "render_list_item": "Die Treppe hat taktile Schrift in {language():font-bold}",
-                        "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
+                        "render_list_item": "Die Treppe hat taktile Schrift in {language()}",
+                        "render_single_language": "Die Treppe hat taktile Schrift in {language()}"
                     }
                 }
             }
@@ -8467,6 +8944,12 @@
                     "1": {
                         "then": "Diese Straßenlaterne verwendet LEDs"
                     },
+                    "10": {
+                        "then": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)"
+                    },
+                    "11": {
+                        "then": "Diese Straßenlaterne wird mit Gas beleuchtet"
+                    },
                     "2": {
                         "then": "Diese Straßenlaterne verwendet Glühlampenlicht"
                     },
@@ -8490,12 +8973,6 @@
                     },
                     "9": {
                         "then": "Diese Straßenlaterne verwendet Niederdruck-Natriumdampflampen (einfarbig orange)"
-                    },
-                    "10": {
-                        "then": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)"
-                    },
-                    "11": {
-                        "then": "Diese Straßenlaterne wird mit Gas beleuchtet"
                     }
                 },
                 "question": "Mit welcher Art von Beleuchtung arbeitet diese Straßenlaterne?"
@@ -8538,6 +9015,24 @@
                 }
             },
             "render": "Straßenlaterne"
+        }
+    },
+    "stripclub": {
+        "description": "Ein Ort, an dem erotische Tanz-, Striptease- oder Lapdances kommerziell durchgeführt werden. ",
+        "name": "Stripclubs",
+        "presets": {
+            "0": {
+                "title": "ein Stripclub"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name des Stripclubs?",
+                "render": "Der Name des Stripclubs lautet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Stripclub"
         }
     },
     "surveillance_camera": {
@@ -8861,20 +9356,20 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "Der Wickeltisch befindet sich in der Damentoilette. "
+                        "then": "Ein Wickeltisch ist in der Damentoilette vorhanden"
                     },
                     "1": {
-                        "then": "Der Wickeltisch befindet sich in der Herrentoilette. "
+                        "then": "Ein Wickeltisch ist in der Herrentoilette vorhanden"
                     },
                     "2": {
-                        "then": "Der Wickeltisch befindet sich in der Toilette für Rollstuhlfahrer. "
+                        "then": "Ein Wickeltisch ist in der barrierefreien Toilette vorhanden"
                     },
                     "3": {
-                        "then": "Der Wickeltisch befindet sich in einem eigenen Raum. "
+                        "then": "Ein Wickeltisch befindet sich in einem eigenen Raum"
                     }
                 },
                 "question": "Wo befindet sich der Wickeltisch?",
-                "render": "Die Wickeltabelle befindet sich in {changing_table:location}"
+                "render": "Ein Wickeltisch befindet sich in {changing_table:location}"
             },
             "toilet-charge": {
                 "freeform": {
@@ -9430,6 +9925,7 @@
         }
     },
     "unit": {
+        "description": "Bibliotheksebene mit allen gängigen Einrichtungen.  Einrichtungen können _nur_ aus dieser Datei importiert werden.",
         "units": {
             "0": {
                 "applicableUnits": {
@@ -9447,6 +9943,20 @@
                     }
                 }
             },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} Volt"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} A"
+                    }
+                }
+            },
             "3": {
                 "applicableUnits": {
                     "0": {
@@ -9454,7 +9964,8 @@
                         "humanSingular": "ein Meter"
                     },
                     "1": {
-                        "human": "{quantity} Zentimeter"
+                        "human": "{quantity} Zentimeter",
+                        "humanSingular": "ein Zentimeter"
                     },
                     "2": {
                         "human": "{quantity} Millimeter",
@@ -9476,12 +9987,42 @@
                         "humanShort": "{quantity} mph"
                     }
                 }
+            },
+            "5": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} Minuten",
+                        "humanSingular": "eine Minute"
+                    },
+                    "1": {
+                        "human": "{quantity} Stunden",
+                        "humanSingular": "eine Stunde"
+                    },
+                    "2": {
+                        "human": "{quantity} Tage",
+                        "humanSingular": "ein Tag"
+                    }
+                }
             }
         }
     },
     "usersettings": {
         "description": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
         "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Barrierefrei-Modus aktivieren, wenn Pfeiltasten zum Navigieren in der Karte verwendet werden"
+                    },
+                    "1": {
+                        "then": "Barrierefrei-Modus immer aktivieren"
+                    },
+                    "2": {
+                        "then": "Barrierefrei-Modus niemals aktivieren"
+                    }
+                },
+                "question": "Welche Barrierefrei-Funktionen sollen angewendet werden?"
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {
@@ -9556,7 +10097,7 @@
                     "1": {
                         "then": {
                             "special": {
-                                "text": "<b class='alert'>Du hast {_unreadMessages}</b><br/>Öffne Deinen Posteingang"
+                                "text": "<b class='alert'>Sie haben {_unreadMessages} Nachrichten</b><br/>Posteingang öffnen"
                             }
                         }
                     }
@@ -9565,7 +10106,7 @@
             "language_picker": {
                 "mappings": {
                     "0": {
-                        "then": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.²"
+                        "then": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden."
                     }
                 }
             },
@@ -9699,30 +10240,6 @@
                     "1": {
                         "question": "Verkauf von Getränken"
                     },
-                    "2": {
-                        "question": "Verkauf von Süßigkeiten"
-                    },
-                    "3": {
-                        "question": "Verkauf von Lebensmitteln"
-                    },
-                    "4": {
-                        "question": "Verkauf von Zigaretten"
-                    },
-                    "5": {
-                        "question": "Verkauf von Kondomen"
-                    },
-                    "6": {
-                        "question": "Verkauf von Kaffee"
-                    },
-                    "7": {
-                        "question": "Verkauf von Trinkwasser"
-                    },
-                    "8": {
-                        "question": "Verkauf von Zeitungen"
-                    },
-                    "9": {
-                        "question": "Verkauf von Fahrradschläuchen"
-                    },
                     "10": {
                         "question": "Verkauf von Milch"
                     },
@@ -9753,6 +10270,9 @@
                     "19": {
                         "question": "Verkauf von Blumen"
                     },
+                    "2": {
+                        "question": "Verkauf von Süßigkeiten"
+                    },
                     "20": {
                         "question": "Verkauf von Parkscheinen"
                     },
@@ -9776,6 +10296,27 @@
                     },
                     "27": {
                         "question": "Verkauf von Fahrradschlössern"
+                    },
+                    "3": {
+                        "question": "Verkauf von Lebensmitteln"
+                    },
+                    "4": {
+                        "question": "Verkauf von Zigaretten"
+                    },
+                    "5": {
+                        "question": "Verkauf von Kondomen"
+                    },
+                    "6": {
+                        "question": "Verkauf von Kaffee"
+                    },
+                    "7": {
+                        "question": "Verkauf von Trinkwasser"
+                    },
+                    "8": {
+                        "question": "Verkauf von Zeitungen"
+                    },
+                    "9": {
+                        "question": "Verkauf von Fahrradschläuchen"
                     }
                 }
             }
@@ -9822,30 +10363,6 @@
                     "1": {
                         "then": "Süßigkeiten werden verkauft"
                     },
-                    "2": {
-                        "then": "Lebensmittel werden verkauft"
-                    },
-                    "3": {
-                        "then": "Zigaretten werden verkauft"
-                    },
-                    "4": {
-                        "then": "Kondome werden verkauft"
-                    },
-                    "5": {
-                        "then": "Kaffee wird verkauft"
-                    },
-                    "6": {
-                        "then": "Trinkwasser wird verkauft"
-                    },
-                    "7": {
-                        "then": "Zeitungen werden verkauft"
-                    },
-                    "8": {
-                        "then": "Fahrradschläuche werden verkauft"
-                    },
-                    "9": {
-                        "then": "Milch wird verkauft"
-                    },
                     "10": {
                         "then": "Brot wird verkauft"
                     },
@@ -9876,6 +10393,9 @@
                     "19": {
                         "then": "Parkscheine werden verkauft"
                     },
+                    "2": {
+                        "then": "Lebensmittel werden verkauft"
+                    },
                     "20": {
                         "then": "Souvenirmünzen werden verkauft"
                     },
@@ -9896,6 +10416,27 @@
                     },
                     "26": {
                         "then": "Fahrradschlösser werden verkauft"
+                    },
+                    "3": {
+                        "then": "Zigaretten werden verkauft"
+                    },
+                    "4": {
+                        "then": "Kondome werden verkauft"
+                    },
+                    "5": {
+                        "then": "Kaffee wird verkauft"
+                    },
+                    "6": {
+                        "then": "Trinkwasser wird verkauft"
+                    },
+                    "7": {
+                        "then": "Zeitungen werden verkauft"
+                    },
+                    "8": {
+                        "then": "Fahrradschläuche werden verkauft"
+                    },
+                    "9": {
+                        "then": "Milch wird verkauft"
                     }
                 },
                 "question": "Was wird in diesem Automaten verkauft?",

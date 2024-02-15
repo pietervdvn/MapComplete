@@ -66,6 +66,7 @@
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
+  import ReviewsOverview from "./Reviews/ReviewsOverview.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -208,6 +209,8 @@
         }}
         perLayer={state.perLayer}
         selectedElement={state.selectedElement}
+        geolocationState={state.geolocation.geolocationState}
+
       />
     </If>
   </div>
@@ -267,12 +270,15 @@
         {#if state.layout.hasPresets() || state.layout.hasNoteLayer()}
           <button
             class="pointer-events-auto w-fit"
+            class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
             on:click={() => {
               state.openNewDialog()
             }}
             on:keydown={forwardEventToMap}
           >
-            {#if state.layout.hasPresets()}
+            {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
+              <Tr t={Translations.t.general.add.zoomInFurther}/>
+            {:else if state.lastClickObject.hasPresets}
               <Tr t={Translations.t.general.add.title} />
             {:else}
               <Tr t={Translations.t.notes.addAComment} />
@@ -358,14 +364,16 @@
 
 <LoginToggle ignoreLoading={true} {state}>
   {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
+    <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
     <div
-      class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center justify-center"
+      class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
+      style="height: 100vh" 
     >
       <Cross class="h-4 w-4" />
     </div>
   {/if}
+  <!-- Add in an empty container to remove error messages if login fails -->
   <svelte:fragment slot="error" />
-  <!-- Add in an empty container to remove errors -->
 </LoginToggle>
 
 <If condition={state.previewedImage.map((i) => i !== undefined)}>
@@ -591,6 +599,10 @@
           <Tr t={Translations.t.favouritePoi.title} />
         </h3>
         <Favourites {state} />
+        <h3>
+          <Tr t={Translations.t.reviews.your_reviews} />
+        </h3>
+        <ReviewsOverview {state}/>
       </div>
     </TabbedGroup>
   </FloatOver>

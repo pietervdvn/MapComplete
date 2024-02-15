@@ -38,9 +38,10 @@ export default class PointRenderingConfig extends WithContextLoader {
         "start",
         "end",
         "projected_centerpoint",
+        "polygon_centroid"
     ])
     public readonly location: Set<
-        "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string
+        "point" | "centroid" | "start" | "end" | "projected_centerpoint" | "polygon_centroid" | string
     >
 
     public readonly marker: IconConfig[]
@@ -198,13 +199,14 @@ export default class PointRenderingConfig extends WithContextLoader {
 
         if (options?.noSize) {
             iconAndBadges.SetClass("w-full h-full")
+        } else {
+            tags.map((tags) => this.iconSize.GetRenderValue(tags).Subs(tags).txt ?? "[40,40]").map(
+                (size) => {
+                    const [iconW, iconH] = size.split(",").map((x) => num(x))
+                    iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
+                }
+            )
         }
-        tags.map((tags) => this.iconSize.GetRenderValue(tags).Subs(tags).txt ?? "[40,40]").map(
-            (size) => {
-                const [iconW, iconH] = size.split(",").map((x) => num(x))
-                iconAndBadges.SetStyle(`width: ${iconW}px; height: ${iconH}px`)
-            }
-        )
 
         const css = this.cssDef?.GetRenderValue(tags.data)?.txt
         const cssClasses = this.cssClasses?.GetRenderValue(tags.data)?.txt
@@ -311,7 +313,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                 if (cssLabel) {
                     label.SetStyle(cssLabel)
                 } else if (labelOnly) {
-                    return label.SetStyle("transform: translate(-50%, -50%);")
+                    return label?.SetStyle("transform: translate(-50%, -50%);")
                 }
                 return new Combine([label]).SetClass("flex flex-col items-center")
             })

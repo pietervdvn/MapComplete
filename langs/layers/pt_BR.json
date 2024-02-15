@@ -489,8 +489,8 @@
                 "render": {
                     "special": {
                         "question": "Em quais línguas esse caixa eletrônico tem saída de fala?",
-                        "render_list_item": "Este caixa eletrônico tem saída de fala em {language():font-bold}",
-                        "render_single_language": "Este caixa eletrônico tem saída de fala em {language():font-bold}"
+                        "render_list_item": "Este caixa eletrônico tem saída de fala em {language()}",
+                        "render_single_language": "Este caixa eletrônico tem saída de fala em {language()}"
                     }
                 }
             }

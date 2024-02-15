@@ -147,11 +147,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *When is this bicycle repair point open?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -187,11 +183,7 @@ The question is  *Who is allowed to use this repair station?*
 
 The question is  *Who maintains this cycle pump?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `Maintained by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Maintained by {operator}`
 
 This tagrendering has labels  `operator-info`
 
@@ -203,11 +195,7 @@ This tagrendering has labels  `operator-info`
 
 The question is  *What is the email address of the maintainer?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-
-This is rendered with  `<a href='mailto:{email}'>{email}</a>`
-
-
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}'>{email}</a>`
 
 This tagrendering has labels  `operator-info`
 
@@ -219,11 +207,7 @@ This tagrendering has labels  `operator-info`
 
 The question is  *What is the phone number of the maintainer?*
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-
-This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 This tagrendering has labels  `operator-info`
 
@@ -283,11 +267,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What valves are supported?*
 
-This rendering asks information about the property  [valves](https://wiki.openstreetmap.org/wiki/Key:valves) 
-
-This is rendered with  `This pump supports the following valves: {valves}`
-
-
+This rendering asks information about the property  [valves](https://wiki.openstreetmap.org/wiki/Key:valves) This is rendered with  `This pump supports the following valves: {valves}`
 
 
 
@@ -355,11 +335,7 @@ This tagrendering has labels  `level`
 
 The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
 

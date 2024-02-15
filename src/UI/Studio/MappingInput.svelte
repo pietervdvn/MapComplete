@@ -9,11 +9,11 @@
   import type { ConfigMeta } from "./configMeta"
   import configs from "../../assets/schemas/questionabletagrenderingconfigmeta.json"
   import { Utils } from "../../Utils"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import { VariableUiElement } from "../Base/VariableUIElement"
+  import { ExclamationTriangle } from "@babeard/svelte-heroicons/solid/ExclamationTriangle"
 
   export let state: EditLayerState
   export let path: (string | number)[]
+  let messages = state.messagesFor(path)
   let tag: UIEventSource<TagConfigJson> = state.getStoreFor([...path, "if"])
   let parsedTag = tag.map((t) => (t ? TagUtils.Tag(t) : undefined))
   let exampleTags = parsedTag.map((pt) => {
@@ -27,11 +27,10 @@
     }
     return o
   })
-  let uploadableOnly: boolean = true
 
   let thenText: UIEventSource<Record<string, string>> = state.getStoreFor([...path, "then"])
   let thenTextEn = thenText.mapD((translation) =>
-    typeof translation === "string" ? translation : translation["en"]
+    typeof translation === "string" ? translation : translation["en"],
   )
   let editMode = Object.keys($thenText ?? {})?.length === 0
 
@@ -71,5 +70,11 @@
       <i>No then is set</i>
     {/if}
     <FromHtml src={$parsedTag?.asHumanString(false, false, $exampleTags)} />
+    {#if $messages.length > 0}
+      <div class="alert m-2 flex">
+        <ExclamationTriangle class="w-6 h-6" />
+        {$messages.length} errors
+      </div>
+    {/if}
   </div>
 {/if}

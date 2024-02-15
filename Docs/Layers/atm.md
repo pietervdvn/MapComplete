@@ -118,11 +118,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is  *What brand is this ATM?*
 
-This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) 
-
-This is rendered with  `The brand of this ATM is {brand}`
-
-
+This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) This is rendered with  `The brand of this ATM is {brand}`
 
 
 
@@ -132,11 +128,7 @@ This is rendered with  `The brand of this ATM is {brand}`
 
 The question is  *What company operates this ATM?*
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `The ATM is operated by {operator}`
-
-
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `The ATM is operated by {operator}`
 
 
 
@@ -146,11 +138,7 @@ This is rendered with  `The ATM is operated by {operator}`
 
 The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-
-This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 

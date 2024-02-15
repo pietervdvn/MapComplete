@@ -1,6 +1,7 @@
 import { TagsFilter } from "./TagsFilter"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { Tag } from "./Tag"
+import { ExpressionSpecification } from "maplibre-gl"
 
 export default class ComparingTag implements TagsFilter {
     private readonly _key: string
@@ -12,7 +13,7 @@ export default class ComparingTag implements TagsFilter {
         key: string,
         predicate: (value: string | undefined) => boolean,
         representation: "<" | ">" | "<=" | ">=",
-        boundary: string
+        boundary: string,
     ) {
         this._key = key
         this._predicate = predicate
@@ -20,11 +21,11 @@ export default class ComparingTag implements TagsFilter {
         this._boundary = boundary
     }
 
-    asChange(properties: Record<string, string>): { k: string; v: string }[] {
+    asChange(_: Record<string, string>): { k: string; v: string }[] {
         throw "A comparable tag can not be used to be uploaded to OSM"
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {
+    asHumanString() {
         return this._key + this._representation + this._boundary
     }
 
@@ -124,5 +125,9 @@ export default class ComparingTag implements TagsFilter {
 
     visit(f: (TagsFilter) => void) {
         f(this)
+    }
+
+    asMapboxExpression(): ExpressionSpecification {
+        return [this._representation, ["get", this._key], this._boundary]
     }
 }

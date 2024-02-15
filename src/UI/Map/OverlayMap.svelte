@@ -24,6 +24,8 @@
   let altproperties = new MapLibreAdaptor(altmap, {
     rasterLayer,
     zoom: UIEventSource.feedFrom(placedOverMapProperties.zoom),
+    rotation: UIEventSource.feedFrom(placedOverMapProperties.rotation),
+    pitch: UIEventSource.feedFrom(placedOverMapProperties.pitch)
   })
   altproperties.allowMoving.setData(false)
   altproperties.allowZooming.setData(false)

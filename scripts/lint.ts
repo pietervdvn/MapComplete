@@ -30,17 +30,6 @@ t.OnEveryLanguage((txt, ln) => {
     return txt
 })
 
-const articles = {
-    /*  de: "eine",
-    es: 'una',
-    fr: 'une',
-    it: 'una',
-    nb_NO: 'en',
-    nl: 'een',
-    pt: 'uma',
-    pt_BR : 'uma',//*/
-}
-
 function reorder(object: object, order: string[]) {
     const allKeys = new Set<string>(Object.keys(object))
     const copy = {}
@@ -54,38 +43,6 @@ function reorder(object: object, order: string[]) {
     return copy
 }
 
-function addArticleToPresets(layerConfig: { presets?: { title: any }[] }) {
-    /*
-    if(layerConfig.presets === undefined){
-        return
-    }
-    for (const preset of layerConfig.presets) {
-        preset.title = new Translation(preset.title, "autofix")
-            .OnEveryLanguage((txt, lang) => {
-                let article = articles[lang]
-                if(lang === "en"){
-                   if(["a","e","u","o","i"].some(vowel => txt.toLowerCase().startsWith(vowel))) {
-                        article = "an"
-                   }else{
-                       article = "a"
-                   }
-                }
-                if(article === undefined){
-                    return txt;
-                }
-                if(txt.startsWith(article+" ")){
-                    return txt;
-                }
-                if(txt.startsWith("an ")){
-                    return txt;
-                }
-                return article +" " +  txt.toLowerCase();
-            })
-            .translations
-    }
-    //*/
-}
-
 const layerFiles = ScriptUtils.getLayerFiles()
 for (const layerFile of layerFiles) {
     try {
@@ -95,7 +52,6 @@ for (const layerFile of layerFiles) {
                 ConversionContext.construct([layerFile.path.split("/").at(-1)], ["update legacy"])
             )
         )
-        addArticleToPresets(fixed)
         const reordered = reorder(fixed, layerAttributesOrder)
         writeFileSync(layerFile.path, JSON.stringify(reordered, null, "  ") + "\n")
     } catch (e) {
@@ -110,11 +66,7 @@ for (const themeFile of themeFiles) {
             themeFile.parsed,
             ConversionContext.construct([themeFile.path.split("/").at(-1)], ["update legacy layer"])
         )
-        for (const layer of fixed.layers) {
-            if (layer["presets"] !== undefined) {
-                addArticleToPresets(<any>layer)
-            }
-        }
+
         // extractInlineLayer(fixed)
         const endsWithNewline = themeFile.raw.at(-1) === "\n"
         const ordered = reorder(fixed, themeAttributesOrder)

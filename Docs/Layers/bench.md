@@ -133,11 +133,7 @@ This tagrendering has labels  `bench-questions`
 
 The question is  *How many seats does this bench have?*
 
-This rendering asks information about the property  [seats](https://wiki.openstreetmap.org/wiki/Key:seats) 
-
-This is rendered with  `{seats} seats`
-
-
+This rendering asks information about the property  [seats](https://wiki.openstreetmap.org/wiki/Key:seats) This is rendered with  `{seats} seats`
 
 
 
@@ -154,11 +150,7 @@ This tagrendering has labels  `bench-questions`
 
 The question is  *What is the bench (seating) made from?*
 
-This rendering asks information about the property  [material](https://wiki.openstreetmap.org/wiki/Key:material) 
-
-This is rendered with  `Material: {material}`
-
-
+This rendering asks information about the property  [material](https://wiki.openstreetmap.org/wiki/Key:material) This is rendered with  `Material: {material}`
 
 
 
@@ -180,11 +172,7 @@ This tagrendering has labels  `bench-questions`
 
 The question is  *In which direction are you looking when sitting on the bench?*
 
-This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
-
-This is rendered with  `When sitting on the bench, one looks towards {direction}°.`
-
-
+This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) This is rendered with  `When sitting on the bench, one looks towards {direction}°.`
 
 This tagrendering has labels  `bench-questions`
 
@@ -196,11 +184,7 @@ This tagrendering has labels  `bench-questions`
 
 The question is  *Which colour does this bench have?*
 
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
-
-This is rendered with  `Colour: {colour}`
-
-
+This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) This is rendered with  `Colour: {colour}`
 
 
 
@@ -224,11 +208,7 @@ This tagrendering has labels  `bench-questions`
 
 The question is  *When was this bench last surveyed?*
 
-This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
-
-This is rendered with  `This bench was last surveyed on {survey:date}`
-
-
+This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) This is rendered with  `This bench was last surveyed on {survey:date}`
 
 
 
@@ -245,11 +225,7 @@ This tagrendering has labels  `bench-questions`
 
 The question is  *Does this bench have an inscription?*
 
-This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
-
-This is rendered with  `This bench does have the following inscription:<br/><p><i>{inscription}</i></p>`
-
-
+This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) This is rendered with  `This bench does have the following inscription:<br/><p><i>{inscription}</i></p>`
 
 
 
@@ -306,11 +282,7 @@ This tagrendering has labels  `bench-questions`
 
 The question is  *What is the type of this artwork?*
 
-This rendering asks information about the property  [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) 
-
-This is rendered with  `This is a {artwork_type}`
-
-
+This rendering asks information about the property  [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) This is rendered with  `This is a {artwork_type}`
 
 
 
@@ -341,11 +313,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *Who made this artwork?*
 
-This rendering asks information about the property  [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) 
-
-This is rendered with  `This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}`
-
-
+This rendering asks information about the property  [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) This is rendered with  `This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 
@@ -359,11 +327,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *Which artist created this?*
 
-This rendering asks information about the property  [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) 
-
-This is rendered with  `Created by {artist_name}`
-
-
+This rendering asks information about the property  [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) This is rendered with  `Created by {artist_name}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 
@@ -377,11 +341,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *Is there a website with more information about this artwork?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-
-This is rendered with  `{link(More information on this website,&LBRACEwebsite&RBRACE,,,)}`
-
-
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `{link(More information on this website,&LBRACEwebsite&RBRACE,,,)}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 
@@ -395,11 +355,7 @@ This tagrendering has labels  `artwork-question`
 
 The question is  *What does this artwork depict?*
 
-This rendering asks information about the property  [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) 
-
-This is rendered with  `This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}`
-
-
+This rendering asks information about the property  [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) This is rendered with  `This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}`
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
 

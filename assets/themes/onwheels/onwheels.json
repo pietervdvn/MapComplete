@@ -81,7 +81,11 @@
           {
             "=marker": [
               {
-                "icon": "circle:white;./assets/themes/onwheels/entrance.svg"
+                "icon": "circle",
+                "color": "white"
+              },
+              {
+                "icon": "./assets/themes/onwheels/entrance.svg"
               }
             ]
           }
@@ -264,19 +268,7 @@
         },
         "pointRendering": [
           {
-            "marker": [
-              {
-                "mappings": null
-              }
-            ],
-            "iconSize": "40,40",
-            "anchor": "center",
-            "iconBadges": [
-              {
-                "if": "parking_space=disabled",
-                "then": "./assets/layers/toilet/wheelchair.svg"
-              }
-            ]
+            "iconSize": "40,40"
           }
         ],
         "name": {
@@ -413,7 +405,11 @@
           {
             "=marker": [
               {
-                "icon": "circle:white;./assets/themes/onwheels/elevator.svg"
+                "icon": "circle",
+                "color": "white"
+              },
+              {
+                "icon": "./assets/themes/onwheels/elevator.svg"
               }
             ],
             "iconSize": "40,40",

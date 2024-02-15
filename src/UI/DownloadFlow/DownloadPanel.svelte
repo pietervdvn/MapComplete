@@ -27,7 +27,7 @@
       mapExtent: state.mapProperties.bounds.data,
       width: maindiv.offsetWidth,
       height: maindiv.offsetHeight,
-      noSelfIntersectingLines: true,
+      noSelfIntersectingLines,
     })
   }
 </script>

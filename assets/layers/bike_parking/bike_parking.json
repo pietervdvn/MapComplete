@@ -64,7 +64,8 @@
       "iconSize": "40,40",
       "location": [
         "point",
-        "centroid"
+        "projected_centerpoint",
+        "polygon_centroid"
       ],
       "anchor": "bottom",
       "marker": [
@@ -633,6 +634,79 @@
         }
       ],
       "id": "Access"
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Are these bicycle parkings free to use?",
+        "nl": "Is deze fietsenstalling gratis te gebruiken?"
+      },
+      "mappings": [
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "One has to <b>pay</b> to use this bicycle parking",
+            "nl": "<b>Betalende</b> fietsparking"
+          }
+        },
+        {
+          "if": "fee=no",
+          "alsoShowIf": "fee=",
+          "then": {
+            "en": "Free to use",
+            "nl": "Gratis te gebruiken"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "mappings": [
+          {
+            "alsoShowIf": "opening_hours="
+          }
+        ]
+      }
+    },
+    {
+      "id": "operator_phone",
+      "question": {
+        "en": "What is the phone number of the operator of this bicycle parking?",
+        "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?"
+      },
+      "questionHint": {
+        "en": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles",
+        "nl": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "freeform": {
+        "key": "operator:phone",
+        "type": "phone",
+        "addExtraTags": [
+          "phone=",
+          "contact:phone="
+        ]
+      },
+      "render": "<a href='tel:{operator:phone}'>{operator:phone}</a>",
+      "mappings": [
+        {
+          "if": "phone~*",
+          "hideInAnswer": true,
+          "then": {
+            "*": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg"
+        },
+        {
+          "if": "contact:phone~*",
+          "hideInAnswer": true,
+          "then": {
+            "*": "<a href='tel:{contact:phone}'>{contact:phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ]
     },
     {
       "question": {

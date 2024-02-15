@@ -1,6 +1,24 @@
 [
   {
+    "path": "hgv.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "MarianSigler"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Sinnbild_LKW.svg"
+    ]
+  },
+  {
     "path": "parking_space.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
+    "path": "parking_space_private.svg",
     "license": "CC0-1.0",
     "authors": [
       "Robin van der Linde"

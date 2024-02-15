@@ -1,0 +1,50 @@
+{
+  "id": "ski",
+  "title": {
+    "en": "Ski pistes and aerialways"
+  },
+  "description": {
+    "en": "Everything you need to go skiing"
+  },
+  "icon": "./assets/layers/aerialway/chair_lift.svg",
+  "enableTerrain": true,
+  "layers": [
+    "ski_piste",
+    "aerialway",
+    {
+      "builtin": [
+        "guidepost",
+        "map",
+        "information_board",
+        "mountain_rescue"
+      ],
+      "override": {
+        "minzoom": 13
+      },
+      "pointRendering": [
+        {
+          "=iconSize": "25,25",
+          "=label": null
+        }
+      ]
+    },
+    {
+      "builtin": [
+        "toilet",
+        "drinking_water",
+        "food",
+        "viewpoint",
+        "binocular"
+      ],
+      "override": {
+        "minzoom": 16,
+        "pointRendering": [
+          {
+            "=iconSize": "25,25",
+            "=label": null
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -33,7 +33,7 @@ export class Orientation {
     private _animateFakeMeasurements = false
 
     constructor() {
-        // this.fakeMeasurements(true)
+        //        this.fakeMeasurements()
     }
 
     // noinspection JSUnusedGlobalSymbols
@@ -77,6 +77,9 @@ export class Orientation {
     }
 
     private update(event: DeviceOrientationEvent) {
+        if(event.alpha === null || event.beta === null || event.gamma === null){
+            return
+        }
         this.gotMeasurement.setData(true)
         // IF the phone is lying flat, then:
         // alpha is the compass direction (but not absolute)

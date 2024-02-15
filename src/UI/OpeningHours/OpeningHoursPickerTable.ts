@@ -37,7 +37,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
         this.SetClass("w-full block")
     }
 
-    IsValid(t: OpeningHour[]): boolean {
+    IsValid(_: OpeningHour[]): boolean {
         return true
     }
 

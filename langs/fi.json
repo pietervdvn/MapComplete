@@ -157,6 +157,7 @@
             "attributionBackgroundLayerWithCopyright": "Nykyinen taustataso on {name}: {copyright}",
             "attributionContent": "<p>Kaiken datan tarjoaa <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, vapaasti uudelleenkäytettävissä <a href='https://osm.org/copyright' target='_blank'>Open Database Licensen</a> mukaisesti.</p>",
             "attributionTitle": "Kiitokset",
+            "codeContributionsBy": "MapCompleten on tehneet {contributors} ja <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} muuta</a>",
             "donate": "Tue MapCompletea rahallisesti",
             "editId": "Avaa OpenStreetMap-verkkoeditori tänne",
             "editJosm": "Muokkaa täällä JOSM:illa",
@@ -164,9 +165,17 @@
             "iconAttribution": {
                 "title": "Käytetyt kuvakkeet"
             },
+            "josmNotOpened": "JOSM:iin ei saatu yhteyttä. Tarkista, että se on auki ja etähallinta on käytössä",
             "josmOpened": "JOSM on avattu",
+            "mapContributionsBy": "Tällä hetkellä näkyvää tietoa on muokannut {contributors}",
+            "mapContributionsByAndHidden": "Tällä hetkellä näkyvää tietoa on muokannut {contributors} ja {hiddenCount} muuta",
+            "mapDataByOsm": "Karttatiedot: OpenStreetMap",
+            "mapillaryHelp": "<b>Mapillary</b> on verkkopalvelu, joka kerää katutason kuvia ja tarjoaa niitä vapaan lisenssi mukaisesti. Näitä kuvia saa käyttää parantamaan OpenStreetMapiä",
             "openIssueTracker": "Ilmoita ohjelmavirheestä",
             "openMapillary": "Avaa Mapillary tänne",
+            "openOsmcha": "Näytä viimeisimmät muokkaukset, jotka on tehty teemalla {theme}",
+            "seeOnMapillary": "Näytä tämä kuva Mapillaryssä",
+            "themeBy": "Teemaa ylläpitää {author}",
             "title": "Tekijänoikeudet ja alkuperä"
         },
         "backToIndex": "Palaa kaikkien teemakarttojen yleiskuvaan",

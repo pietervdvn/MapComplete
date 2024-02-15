@@ -5,7 +5,6 @@ import { readFileSync, writeFileSync } from "fs"
 import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import { Utils } from "../src/Utils"
-import TagRenderingConfig from "../src/Models/ThemeConfig/TagRenderingConfig"
 
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used

@@ -217,6 +217,10 @@
                     "then": "./assets/themes/cyclofix/logo.svg"
                   },
                   {
+                    "if": "theme=disaster_response",
+                    "then": "./assets/themes/disaster_response/CivilDefence.svg"
+                  },
+                  {
                     "if": "theme=drinking_water",
                     "then": "./assets/themes/drinking_water/logo.svg"
                   },
@@ -369,6 +373,10 @@
                     "then": "./assets/svg/bug.svg"
                   },
                   {
+                    "if": "theme=ski",
+                    "then": "./assets/layers/aerialway/chair_lift.svg"
+                  },
+                  {
                     "if": "theme=speelplekken",
                     "then": "./assets/themes/speelplekken/logo.svg"
                   },
@@ -415,6 +423,10 @@
                   {
                     "if": "theme=uk_addresses",
                     "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                  },
+                  {
+                    "if": "theme=velopark",
+                    "then": "./assets/themes/velopark/velopark.svg"
                   },
                   {
                     "if": "theme=vending_machine",

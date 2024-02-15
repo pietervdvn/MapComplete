@@ -20,6 +20,7 @@ This theme contains the following layers:
   - [picnic_table](../Layers/picnic_table.md)
   - [toilet](../Layers/toilet.md)
   - [guidepost](../Layers/guidepost.md)
+  - [shelter](../Layers/shelter.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

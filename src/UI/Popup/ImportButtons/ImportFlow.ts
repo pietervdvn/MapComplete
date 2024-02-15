@@ -6,7 +6,6 @@ import TagApplyButton from "../TagApplyButton"
 import { PointImportFlowArguments } from "./PointImportFlowState"
 import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
-import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
 import FilteredLayer from "../../../Models/FilteredLayer"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import { LayerConfigJson } from "../../../Models/ThemeConfig/Json/LayerConfigJson"
@@ -25,7 +24,7 @@ export class ImportFlowUtils {
     public static readonly conflationLayer = new LayerConfig(
         <LayerConfigJson>conflation_json,
         "all_known_layers",
-        true
+        true,
     )
 
     public static readonly documentationGeneral = `\n\n\nNote that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
@@ -67,7 +66,7 @@ ${Utils.special_visualizations_importRequirementDocs}
      */
     public static getTagsToApply(
         originalFeatureTags: UIEventSource<any>,
-        args: { tags: string }
+        args: { tags: string },
     ): Store<Tag[]> {
         if (originalFeatureTags === undefined) {
             return undefined
@@ -83,9 +82,9 @@ ${Utils.special_visualizations_importRequirementDocs}
             const items: string = originalFeatureTags.data[tags]
             console.debug(
                 "The import button is using tags from properties[" +
-                    tags +
-                    "] of this object, namely ",
-                items
+                tags +
+                "] of this object, namely ",
+                items,
             )
 
             if (items.startsWith("{")) {
@@ -108,13 +107,12 @@ ${Utils.special_visualizations_importRequirementDocs}
      * - targetLayer
      *
      * Others (e.g.: snapOnto-layers) are not to be handled here
-     * @param argsRaw
      */
-    public static getLayerDependencies(argsRaw: string[], argSpec?) {
+    public static getLayerDependencies(argsRaw: string[], argSpec?): string[] {
         const args: ImportFlowArguments = <any>(
             Utils.ParseVisArgs(argSpec ?? ImportFlowUtils.generalArguments, argsRaw)
         )
-        return [args.targetLayer]
+        return args.targetLayer.split(" ")
     }
 
     public static getLayerDependenciesWithSnapOnto(
@@ -122,37 +120,13 @@ ${Utils.special_visualizations_importRequirementDocs}
             name: string
             defaultValue?: string
         }[],
-        argsRaw: string[]
+        argsRaw: string[],
     ): string[] {
         const deps = ImportFlowUtils.getLayerDependencies(argsRaw, argSpec)
         const argsParsed: PointImportFlowArguments = <any>Utils.ParseVisArgs(argSpec, argsRaw)
         const snapOntoLayers = argsParsed.snap_onto_layers?.split(";")?.map((l) => l.trim()) ?? []
         deps.push(...snapOntoLayers)
         return deps
-    }
-
-    public static buildTagSpec(
-        args: ImportFlowArguments,
-        tagSource: Store<Record<string, string>>
-    ): Store<string> {
-        let tagSpec = args.tags
-        return tagSource.mapD((tags) => {
-            if (
-                tagSpec.indexOf(" ") < 0 &&
-                tagSpec.indexOf(";") < 0 &&
-                tags[args.tags] !== undefined
-            ) {
-                // This is probably a key
-                tagSpec = tags[args.tags]
-                console.debug(
-                    "The import button is using tags from properties[" +
-                        args.tags +
-                        "] of this object, namely ",
-                    tagSpec
-                )
-            }
-            return tagSpec
-        })
     }
 }
 
@@ -164,7 +138,7 @@ ${Utils.special_visualizations_importRequirementDocs}
 export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
     public readonly state: SpecialVisualizationState
     public readonly args: ArgT
-    public readonly targetLayer: FilteredLayer
+    public readonly targetLayer: FilteredLayer[]
     public readonly tagsToApply: Store<Tag[]>
     protected readonly _originalFeatureTags: UIEventSource<Record<string, string>>
 
@@ -172,13 +146,19 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
         state: SpecialVisualizationState,
         args: ArgT,
         tagsToApply: Store<Tag[]>,
-        originalTags: UIEventSource<Record<string, string>>
+        originalTags: UIEventSource<Record<string, string>>,
     ) {
         this.state = state
         this.args = args
         this.tagsToApply = tagsToApply
         this._originalFeatureTags = originalTags
-        this.targetLayer = state.layerState.filteredLayers.get(args.targetLayer)
+        this.targetLayer = args.targetLayer.split(" ").map(tl => {
+            let found = state.layerState.filteredLayers.get(tl)
+            if (!found) {
+                throw "Layer " + tl + " not found"
+            }
+            return found
+        })
     }
 
     /**
@@ -218,7 +198,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
 
                 return undefined
             },
-            [state.mapProperties.zoom, state.dataIsLoading, this._originalFeatureTags]
+            [state.mapProperties.zoom, state.dataIsLoading, this._originalFeatureTags],
         )
     }
 }

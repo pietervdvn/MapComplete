@@ -98,6 +98,9 @@
                     },
                     "11": {
                         "then": "Mosaico di piastrelle"
+                    },
+                    "12": {
+                        "then": "Scultura in legno"
                     }
                 },
                 "question": "Che tipo di opera d’arte è questo?",
@@ -110,6 +113,24 @@
                         "text": "Ulteriori informazioni su questo sito web"
                     }
                 }
+            },
+            "artwork_subject": {
+                "question": "Che cosa rappresenta quest'opera d'arte?",
+                "render": "Quest'opera d'arte rappresenta {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Quest'opera d'arte funge anche da panchina"
+                    },
+                    "1": {
+                        "then": "Quest'opera d'arte non funge anche da panchina"
+                    },
+                    "2": {
+                        "then": "Quest'opera d'arte non funge anche da panchina"
+                    }
+                },
+                "question": "Quest'opera d'arte funge da panchina?"
             }
         },
         "title": {
@@ -119,6 +140,115 @@
                 }
             },
             "render": "Opera d’arte"
+        }
+    },
+    "assembly_point": {
+        "description": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza.",
+        "name": "Punti di raccolta per emergenze",
+        "presets": {
+            "0": {
+                "title": "un punto di raccolta"
+            }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "Qual è il nome di questo punto di raccolta?",
+                "render": "Questo punto di raccolta si chiama <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "Quale organizzazione gestisce questo punto di raccolta?",
+                "render": "Questo punto di raccolta è gestita da <b>{operator}</b>"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Terremoto"
+                    },
+                    "1": {
+                        "then": "Alluvione"
+                    },
+                    "2": {
+                        "then": "Incendio"
+                    },
+                    "3": {
+                        "then": "Frana"
+                    }
+                },
+                "question": "Per quali tipi di disastro è pensato questo punto di raccolta?"
+            }
+        }
+    },
+    "atm": {
+        "description": "Sportello Bancomat per prelevare denaro",
+        "name": "Sportelli Bancomat",
+        "presets": {
+            "0": {
+                "title": "Uno sportello bancomat"
+            }
+        },
+        "tagRenderings": {
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Probabilmente non puoi depositare dei contanti in questo sportello bancomat"
+                    },
+                    "1": {
+                        "then": "Puoi depositare dei contanti in questo sportello bancomat"
+                    },
+                    "2": {
+                        "then": "Non puoi depositare dei contanti in questo sportello bancomat"
+                    }
+                },
+                "question": "Puoi depositare dei contanti in questo sportello bancomat?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Puoi prelevare dei contanti da questo sportello bancomat"
+                    },
+                    "1": {
+                        "then": "Puoi prelevare dei contanti da questo sportello bancomat"
+                    },
+                    "2": {
+                        "then": "Non puoi prelevare dei contanti da questo sportello bancomat"
+                    }
+                },
+                "question": "Puoi prelevare dei contanti da questo sportello bancomat?"
+            },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Si possono prelevare banconote da 5 euro"
+                    },
+                    "1": {
+                        "then": "Si possono prelevare banconote da 10 euro"
+                    },
+                    "2": {
+                        "then": "Si possono prelevare banconote da 20 euro"
+                    },
+                    "3": {
+                        "then": "Si possono prelevare banconote da 50 euro"
+                    },
+                    "4": {
+                        "then": "Si possono prelevare banconote da 100 euro"
+                    },
+                    "5": {
+                        "then": "Non si possono prelevare banconote da 200 euro"
+                    },
+                    "6": {
+                        "then": "Non si possono prelevare banconote da 500 euro"
+                    }
+                },
+                "question": "Quali banconote si possono ritirare qui?"
+            },
+            "name": {
+                "render": "Il nome di questo sportello bancomat è {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operatore"
+                }
+            }
         }
     },
     "bench": {
@@ -1184,6 +1314,23 @@
     "direction": {
         "description": "Questo livello visualizza le direzioni",
         "name": "Visualizzazione della direzione"
+    },
+    "disaster_response": {
+        "description": "Questo livello contiene organizzazioni che hanno come obiettivo principale quello di aiutare la popolazione civile durante e dopo disastri naturali o antropogenici, lavorando nell'area colpita.",
+        "presets": {
+            "0": {
+                "title": "un'organizzazione per la risposta ai disastri"
+            }
+        },
+        "tagRenderings": {
+            "disaster_response_name": {
+                "question": "Qual è il nome di questa organizzazione?",
+                "render": "Questa organizzazione si chiama <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Organizzazione per la risposta ai disastri"
+        }
     },
     "drinking_water": {
         "name": "Acqua potabile",

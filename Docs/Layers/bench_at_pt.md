@@ -104,11 +104,7 @@ This tagrendering has no question and is thus read-only
 
 This tagrendering has no question and is thus read-only
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-
-This is rendered with  `{name}`
-
-
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `{name}`
 
 
 

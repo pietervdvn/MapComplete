@@ -464,7 +464,7 @@
         "description": "Este mapa muestra redes de nodos ciclistas y te permita añadir nodos nuevos de manera sencilla",
         "layers": {
             "0": {
-                "name": "enlaces nodo a nodo",
+                "name": "Vínculos entre nodos",
                 "tagRenderings": {
                     "node2node-survey:date": {
                         "override": {
@@ -476,18 +476,33 @@
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "enlace nodo a nodo <strong>{ref}</strong>"
+                            "then": "Vínculos entre nodos <strong>{ref}</strong>"
                         }
                     },
-                    "render": "enlace nodo a nodo"
+                    "render": "Vínculos entre nodos"
                 }
             },
             "1": {
-                "name": "nodos",
+                "name": "Nodos",
+                "presets": {
+                    "0": {
+                        "title": "un nodo cíclico"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "Por ejemplo, 3"
+                        },
                         "question": "¿A cuántos otros nodos ciclistas enlaza este nodo?",
                         "render": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas."
+                    },
+                    "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "Por ejemplo, 1"
+                        },
+                        "question": "¿Cuál es el número de referencia de este nodo cíclico?",
+                        "render": "Este nodo cíclico tiene el número de referencia {rcn_ref}"
                     },
                     "node-survey:date": {
                         "override": {
@@ -500,9 +515,29 @@
                     "mappings": {
                         "0": {
                             "then": "nodo ciclista <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Nodo de ciclo propuesto <strong>{proposed:rcn_ref}</strong>"
                         }
                     },
                     "render": "nodo ciclista"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Indicadores de ciclismo",
+                    "title": {
+                        "render": "Hito ciclista"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "Un marcador de ruta para un enlace de nodo a nodo"
+                        }
+                    }
                 }
             }
         },
@@ -746,6 +781,21 @@
         "layers": {
             "0": {
                 "override": {
+                    "filter+": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "No se prefiere ningún tipo de aceite"
+                                },
+                                "1": {
+                                    "question": "Solo muestra freiduras que utilizan aceite vegetal"
+                                },
+                                "2": {
+                                    "question": "Solo muestra freiduras que utilizan aceite animal"
+                                }
+                            }
+                        }
+                    },
                     "name": "Tienda de patatas fritas"
                 }
             }
@@ -792,7 +842,7 @@
     "hackerspaces": {
         "description": "En este mapa puedes ver hackerspaces, añadir un nuevo hackerspace o actualizar datos directamente",
         "shortDescription": "Un mapa de hackerspaces",
-        "title": "Hackerspaces"
+        "title": "Hackerspaces and makerspaces"
     },
     "hailhydrant": {
         "description": "En este mapa puedes encontrar y actualizar hidrantes contra incendios, estaciones de bomberos, estaciones de ambulancias y extintores en tus vecindarios favoritos.",
@@ -823,6 +873,10 @@
     "hotels": {
         "description": "En este mapa encontrarás hoteles en tu zona",
         "title": "Hoteles"
+    },
+    "icecream": {
+        "description": "Mapa de heladerías y máquinas expendedoras de helados",
+        "title": "Helado"
     },
     "indoors": {
         "description": "En este mapa se muestran los lugares cubiertos de acceso público",

@@ -1,6 +1,7 @@
 import { Tag } from "./Tag"
 import { TagsFilter } from "./TagsFilter"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { ExpressionSpecification } from "maplibre-gl"
 
 export class RegexTag extends TagsFilter {
     public readonly key: RegExp | string
@@ -356,5 +357,12 @@ export class RegexTag extends TagsFilter {
 
     visit(f: (TagsFilter) => void) {
         f(this)
+    }
+
+    asMapboxExpression(): ExpressionSpecification {
+        if(typeof this.key=== "string" && typeof this.value === "string" ) {
+            return [this.invert ? "!=" : "==", ["get",this.key], this.value]
+        }
+        throw "TODO"
     }
 }
