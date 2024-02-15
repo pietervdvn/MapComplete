@@ -69,6 +69,30 @@ interface CategoryQueryAPIResponse {
     }
 }
 
+interface ImagesQueryAPIResponse {
+    continue: {
+        imcontinue: string
+        continue: string
+    }
+    query: {
+        normalized?: {
+            from: string
+            to: string
+        }[]
+        pages: {
+            [key: string]: {
+                pageid: number
+                ns: number
+                title: string
+                images?: {
+                    ns: number
+                    title: string
+                }[]
+            }
+        }
+    }
+}
+
 interface TemplateQueryAPIResponse {
     batchcomplete: string
     query: {
@@ -102,7 +126,7 @@ async function main(args: string[]) {
     if (args.length < 2) {
         console.log("Usage: downloadCommons.ts <output folder> <url> <?url> <?url> .. ")
         console.log(
-            "Example: npx vite-node downloadCommons.ts -- assets/svg https://commons.wikimedia.org/wiki/File:Example.jpg"
+            "Example: npx vite-node scripts/downloadCommons.ts -- assets/svg https://commons.wikimedia.org/wiki/File:Example.jpg"
         )
         process.exit(1)
     }
@@ -128,8 +152,24 @@ async function main(args: string[]) {
                     for (const member of apiDetails.query.categorymembers) {
                         await downloadImage(member.title, outputFolder, baseUrl)
                     }
-                } else {
+                } else if (url.includes("File:")) {
                     await downloadImage(commonsFileName, outputFolder, baseUrl)
+                } else {
+                    // Probably a page url, try to get all images from the page
+                    const apiUrl = `${baseUrl}/w/api.php?action=query&format=json&prop=images&titles=${commonsFileName}&imlimit=250`
+                    const response = await fetch(apiUrl)
+                    const apiDetails: ImagesQueryAPIResponse = await response.json()
+                    const page = apiDetails.query.pages[Object.keys(apiDetails.query.pages)[0]]
+                    if (page.images) {
+                        for (const image of page.images) {
+                            await downloadImage(image.title, outputFolder, baseUrl)
+                        }
+                    } else {
+                        console.log(
+                            "\x1b[31m%s\x1b[0m",
+                            `URL ${url} doesn't seem to contain any images! Skipping...`
+                        )
+                    }
                 }
             } else {
                 console.log(
@@ -153,6 +193,12 @@ async function downloadImage(filename: string, outputFolder: string, baseUrl: st
     const response = await fetch(apiUrl)
     const apiDetails: ImageQueryAPIResponse = await response.json()
     const missingPage = apiDetails.query.pages["-1"]
+
+    // Check if the local file already exists, if it does, skip it
+    if (existsSync(`${outputFolder}/${filename}`)) {
+        console.log(`\x1b[33m%s\x1b[0m`, `${filename} already exists, skipping...`)
+        return
+    }
 
     // Check if the file exists, locally or externally
     if (missingPage !== undefined) {
@@ -271,8 +317,8 @@ async function downloadImage(filename: string, outputFolder: string, baseUrl: st
             // Save the license information
             const licenseInfo: SmallLicense = {
                 path: cleanFileName,
-                license: licenseMapping[license] || license,
-                authors: [author],
+                license: licenseMapping[license] || license.replace("CC BY", "CC-BY"),
+                authors: [removeLinks(author)],
                 sources: [wikiUrl],
             }
 
@@ -291,6 +337,11 @@ async function downloadImage(filename: string, outputFolder: string, baseUrl: st
             console.log(`\x1b[33m%s\x1b[0m`, `${filename} does not have image info!, skipping...`)
         }
     }
+}
+
+function removeLinks(text: string): string {
+    // Remove <a> tags
+    return text.replace(/<a.*?>(.*?)<\/a>/g, "$1")
 }
 
 main(process.argv.slice(2))
