@@ -356,9 +356,10 @@
 
 <LoginToggle ignoreLoading={true} {state}>
   {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
+    <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
     <div
       class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
-      style="height: 100vh" <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
+      style="height: 100vh" 
     >
       <Cross class="h-4 w-4" />
     </div>
