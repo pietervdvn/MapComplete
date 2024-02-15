@@ -357,13 +357,14 @@
 <LoginToggle ignoreLoading={true} {state}>
   {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
     <div
-      class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center justify-center"
+      class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
+      style="height: 100vh" <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
     >
       <Cross class="h-4 w-4" />
     </div>
   {/if}
+  <!-- Add in an empty container to remove error messages if login fails -->
   <svelte:fragment slot="error" />
-  <!-- Add in an empty container to remove errors -->
 </LoginToggle>
 
 <If condition={state.previewedImage.map((i) => i !== undefined)}>
