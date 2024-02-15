@@ -62,7 +62,9 @@ import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFe
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
-
+import { SummaryTileSource } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
+import summaryLayer from "../assets/generated/layers/summary.json"
+import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 /**
  *
  * The themeviewState contains all the state needed for the themeViewGUI.
@@ -140,7 +142,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Triggered by navigating the map with arrows or by pressing 'space' or 'enter'
      */
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-    private readonly newPointDialog: FilteredLayer
 
     constructor(layout: LayoutConfig) {
         Utils.initDomPurify()
@@ -309,7 +310,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 fs.layer.layerDef.maxAgeOfCache
             )
         })
-        this.newPointDialog = this.layerState.filteredLayers.get("last_click")
 
         this.floors = this.featuresInView.features.stabilized(500).map((features) => {
             if (!features) {
@@ -343,10 +343,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             return sorted
         })
 
-        this.lastClickObject = new LastClickFeatureSource(
-            this.mapProperties.lastClickLocation,
-            this.layout
-        )
+        this.lastClickObject = new LastClickFeatureSource(this.layout)
 
         this.osmObjectDownloader = new OsmObjectDownloader(
             this.osmConnection.Backend(),
@@ -446,7 +443,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const feature = this.lastClickObject.createFeature(lon, lat)
         this.featureProperties.trackFeature(feature)
         this.selectedElement.setData(feature)
-        this.selectedLayer.setData(this.newPointDialog.layerDef)
     }
 
     /**
@@ -471,16 +467,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
 
         this.userRelatedState.markLayoutAsVisited(this.layout)
-
-        this.selectedElement.addCallbackAndRunD((feature) => {
-            // As soon as we have a selected element, we clear the selected element
-            // This is to work around maplibre, which'll _first_ register the click on the map and only _then_ on the feature
-            // The only exception is if the last element is the 'add_new'-button, as we don't want it to disappear
-            if (feature.properties.id === "last_click") {
-                return
-            }
-            this.lastClickObject.features.setData([])
-        })
 
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
@@ -656,6 +642,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
     }
 
+    private setupSummaryLayer() {
+        const layers = this.layout.layers.filter(
+            (l) =>
+                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
+                l.source.geojsonSource === undefined
+        )
+        return new SummaryTileSource(
+            "http://127.0.0.1:2345",
+            layers.map((l) => l.id),
+            this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z) + 1, 0)),
+            this.mapProperties
+        )
+    }
     /**
      * Add the special layers to the map
      */
@@ -683,6 +682,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             current_view: this.currentView,
             favourite: this.favourites,
+            summary: this.setupSummaryLayer(),
         }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
@@ -720,15 +720,16 @@ export default class ThemeViewState implements SpecialVisualizationState {
             rangeIsDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
         }
 
-        // enumarate all 'normal' layers and match them with the appropriate 'special' layer - if applicable
+        // enumerate all 'normal' layers and match them with the appropriate 'special' layer - if applicable
         this.layerState.filteredLayers.forEach((flayer) => {
             const id = flayer.layerDef.id
             const features: FeatureSource = specialLayers[id]
             if (features === undefined) {
                 return
             }
-            if (id === "favourite") {
-                console.log("Matching special layer", id, flayer)
+            if (id === "summary") {
+                console.log("Skipping summary!")
+                return
             }
 
             this.featureProperties.trackFeatureSource(features)
@@ -740,6 +741,20 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 selectedElement: this.selectedElement,
                 selectedLayer: this.selectedLayer,
             })
+        })
+
+        const maxzoom = Math.min(
+            ...this.layout.layers
+                .filter((l) => Constants.priviliged_layers.indexOf(<any>l.id) < 0)
+                .map((l) => l.minzoom)
+        )
+        console.log("Maxzoom is", maxzoom)
+        new ShowDataLayer(this.map, {
+            features: specialLayers.summary,
+            layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
+            doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
+            selectedLayer: this.selectedLayer,
+            selectedElement: this.selectedElement,
         })
     }
 
@@ -761,8 +776,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
-                // We did _unselect_ an item - we always remove the lastclick-object
-                this.lastClickObject.features.setData([])
                 this.selectedLayer.setData(undefined)
                 this.focusOnMap()
             }

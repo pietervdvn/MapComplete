@@ -36,6 +36,17 @@ Storing properties to table '"public"."osm2pgsql_properties" takes about 25 minu
 Belgium (~555mb) takes 15m
 World (80GB) should take 15m*160 = 2400m = 40hr
 
+73G Jan 23 00:22 planet-240115.osm.pbf: 2024-02-10 16:45:11  osm2pgsql took 871615s (242h 6m 55s; 10 days) overall on lain.local with RAID5 on 4 HDD disks, database is over 1Terrabyte (!)
+
+Server specs
+
+Lenovo thinkserver RD350, Intel Xeon E5-2600, 2Rx4 PC3 
+    11 watt powered off, 73 watt idle, ~100 watt when importing
+
+HP ProLiant DL360 G7 (1U): 2Rx4 DDR3-memory (PC3)
+    Intel Xeon X56**
+
+
 
 ## Deploying a tile server
 

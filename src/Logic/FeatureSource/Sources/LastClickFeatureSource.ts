@@ -11,16 +11,15 @@ import { OsmTags } from "../../../Models/OsmFeature"
  * Highly specialized feature source.
  * Based on a lon/lat UIEVentSource, will generate the corresponding feature with the correct properties
  */
-export class LastClickFeatureSource implements WritableFeatureSource {
-    public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
-    public readonly hasNoteLayer: boolean
+export class LastClickFeatureSource {
     public readonly renderings: string[]
-    public readonly hasPresets: boolean
     private i: number = 0
+    private readonly hasPresets: boolean
+    private readonly hasNoteLayer: boolean
 
-    constructor(location: Store<{ lon: number; lat: number }>, layout: LayoutConfig) {
-        this.hasNoteLayer = layout.layers.some((l) => l.id === "note")
-        this.hasPresets = layout.layers.some((l) => l.presets?.length > 0)
+    constructor(layout: LayoutConfig) {
+        this.hasNoteLayer = layout.hasNoteLayer()
+        this.hasPresets = layout.hasPresets()
         const allPresets: BaseUIElement[] = []
         for (const layer of layout.layers)
             for (let i = 0; i < (layer.presets ?? []).length; i++) {
@@ -43,16 +42,11 @@ export class LastClickFeatureSource implements WritableFeatureSource {
                 Utils.runningFromConsole ? "" : uiElem.ConstructElement().innerHTML
             )
         )
-
-        location.addCallbackAndRunD(({ lon, lat }) => {
-            this.features.setData([this.createFeature(lon, lat)])
-        })
     }
 
     public createFeature(lon: number, lat: number): Feature<Point, OsmTags> {
         const properties: OsmTags = {
-            lastclick: "yes",
-            id: "last_click_" + this.i,
+            id: "new_point_dialog",
             has_note_layer: this.hasNoteLayer ? "yes" : "no",
             has_presets: this.hasPresets ? "yes" : "no",
             renderings: this.renderings.join(""),

@@ -35,7 +35,6 @@
   async function clicked() {
     isExporting = true
     const gpsLayer = state.layerState.filteredLayers.get(<PriviligedLayerType>"gps_location")
-    state.lastClickObject.features.setData([])
     state.userRelatedState.preferencesAsTags.data["__showTimeSensitiveIcons"] = "no"
     state.userRelatedState.preferencesAsTags.ping()
     const gpsIsDisplayed = gpsLayer.isDisplayed.data

@@ -79,7 +79,6 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         })
 
-
         this.marker = (json.marker ?? []).map((m) => new IconConfig(<any>m))
         if (json.css !== undefined) {
             this.cssDef = this.tr("css", undefined)
@@ -307,7 +306,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                 const label = self.label
                     ?.GetRenderValue(tags)
                     ?.Subs(tags)
-                    ?.SetClass("block center absolute text-center marker-label")
+                    ?.SetClass("flex items-center justify-center absolute marker-label")
                     ?.SetClass(cssClassesLabel)
                 if (cssLabel) {
                     label.SetStyle(cssLabel)

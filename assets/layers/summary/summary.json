@@ -1,0 +1,25 @@
+{
+  "id": "summary",
+  "description": "Special layer which shows `count`",
+  "source": "special",
+  "name": "CLusters",
+  "title": {
+    "render": {"en": "Summary"}
+  },
+  "tagRenderings": [
+    "all_tags"
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "25,25",
+      "label": {
+        "render": "{total}"
+      },
+      "labelCssClasses": "bg-white w-6 h-6 text-lg rounded-full"
+    }
+  ]
+}

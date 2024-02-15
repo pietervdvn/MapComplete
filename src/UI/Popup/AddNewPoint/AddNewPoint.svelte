@@ -89,7 +89,6 @@
     state.selectedElement.setData(undefined)
     // When aborted, we force the contributors to place the pin _again_
     // This is because there might be a nearby object that was disabled; this forces them to re-evaluate the map
-    state.lastClickObject.features.setData([])
     preciseInputIsTapped = false
   }
 

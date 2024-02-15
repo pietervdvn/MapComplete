@@ -245,6 +245,14 @@ export default class LayoutConfig implements LayoutInformation {
         return this.layers.some((l) => l.isLeftRightSensitive())
     }
 
+    public hasNoteLayer() {
+        return this.layers.some((l) => l.id === "note")
+    }
+
+    public hasPresets() {
+        return this.layers.some((l) => l.presets?.length > 0)
+    }
+
     public missingTranslations(extraInspection: any): {
         untranslated: Map<string, string[]>
         total: number

@@ -84,7 +84,6 @@ export interface SpecialVisualizationState {
         readonly preferencesAsTags: UIEventSource<Record<string, string>>
         readonly language: UIEventSource<string>
     }
-    readonly lastClickObject: WritableFeatureSource
 
     readonly availableLayers: Store<RasterLayerPolygon[]>
 

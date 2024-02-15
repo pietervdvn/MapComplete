@@ -96,6 +96,11 @@
       if (element.properties.id.startsWith("current_view")) {
         return currentViewLayer
       }
+      console.log(">>> selected:", element)
+      if(element.properties.id === "new_point_dialog"){
+        console.log(">>> searching last_click layer", layout)
+        return layout.layers.find(l => l.id === "last_click")
+      }
       if(element.properties.id === "location_track"){
         return layout.layers.find(l => l.id === "gps_track")
       }
@@ -259,7 +264,7 @@
   <div class="flex w-full items-end justify-between px-4">
     <div class="flex flex-col">
       <If condition={featureSwitches.featureSwitchEnableLogin}>
-        {#if state.lastClickObject.hasPresets || state.lastClickObject.hasNoteLayer}
+        {#if state.layout.hasPresets() || state.layout.hasNoteLayer()}
           <button
             class="pointer-events-auto w-fit"
             on:click={() => {
@@ -267,7 +272,7 @@
             }}
             on:keydown={forwardEventToMap}
           >
-            {#if state.lastClickObject.hasPresets}
+            {#if state.layout.hasPresets()}
               <Tr t={Translations.t.general.add.title} />
             {:else}
               <Tr t={Translations.t.notes.addAComment} />

@@ -24,6 +24,7 @@ export default class Constants {
         "range",
         "last_click",
         "favourite",
+        "summary",
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -36,7 +37,7 @@ export default class Constants {
         "import_candidate",
         "usersettings",
         "icons",
-        "filters"
+        "filters",
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks
@@ -151,7 +152,6 @@ export default class Constants {
         "mastodon",
         "party",
         "addSmall",
-
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
     /**

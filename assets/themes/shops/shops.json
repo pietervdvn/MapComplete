@@ -54,5 +54,7 @@
     "pharmacy",
     "ice_cream"
   ],
-  "widenFactor": 3
+  "overideAll": {
+    "minzoom": 16
+  }
 }

@@ -45,7 +45,6 @@ export default class LayerConfig extends WithContextLoader {
     public readonly isShown: TagsFilter
     public minzoom: number
     public minzoomVisible: number
-    public readonly maxzoom: number
     public readonly title?: TagRenderingConfig
     public readonly titleIcons: TagRenderingConfig[]
     public readonly mapRendering: PointRenderingConfig[]
@@ -464,9 +463,7 @@ export default class LayerConfig extends WithContextLoader {
                     return [
                         new Combine([
                             new Link(
-                                Utils.runningFromConsole
-                                    ? "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>"
-                                    : Svg.statistics_svg().SetClass("w-4 h-4 mr-2"),
+                                "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>",
                                 "https://taginfo.openstreetmap.org/keys/" + values.key + "#values",
                                 true
                             ),
