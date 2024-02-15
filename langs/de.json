@@ -145,7 +145,7 @@
             "title": "Neues Objekt hinzufügen",
             "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein",
             "wrongType": "Dieses Objekt ist weder ein Punkt noch ein Weg und kann nicht importiert werden",
-            "zoomInFurther": "Ausschnitt vergrößern, um ein Objekt hinzuzufügen.",
+            "zoomInFurther": "Ausschnitt vergrößern, um ein Objekt hinzuzufügen",
             "zoomInMore": "Ansicht vergrößern, um dieses Element zu importieren"
         },
         "apply_button": {
