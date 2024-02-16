@@ -15,6 +15,20 @@ class VeloParkToGeojson extends Script {
         )
     }
 
+    exportTo(filename: string, features){
+        fs.writeFileSync(
+            filename+"_" + new Date().toISOString() + ".geojson",
+            JSON.stringify(
+                {
+                    type: "FeatureCollection",
+                    features,
+                },
+                null,
+                "    "
+            )
+        )
+    }
+
     async main(args: string[]): Promise<void> {
         console.log("Downloading velopark data")
         // Download data for NIS-code 1000. 1000 means: all of belgium
@@ -38,12 +52,15 @@ class VeloParkToGeojson extends Script {
         )
         console.log("OpenStreetMap contains", seenIds.size, "bicycle parkings with a velopark ref")
         const allVelopark = data.map((f) => VeloparkLoader.convert(f))
+        this.exportTo("velopark_all", allVelopark)
+
         const features = allVelopark.filter((f) => !seenIds.has(f.properties["ref:velopark"]))
 
         const allProperties = new Set<string>()
         for (const feature of features) {
             Object.keys(feature.properties).forEach((k) => allProperties.add(k))
         }
+        this.exportTo("velopark_noncynced",features)
         allProperties.delete("ref:velopark")
         for (const feature of features) {
             allProperties.forEach((k) => {
@@ -51,17 +68,7 @@ class VeloParkToGeojson extends Script {
             })
         }
 
-        fs.writeFileSync(
-            "velopark_id_only_export_" + new Date().toISOString() + ".geojson",
-            JSON.stringify(
-                {
-                    type: "FeatureCollection",
-                    features,
-                },
-                null,
-                "    "
-            )
-        )
+        this.exportTo("velopark_nonsynced_id_only", features)
     }
 }
 

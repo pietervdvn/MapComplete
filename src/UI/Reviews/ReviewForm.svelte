@@ -35,15 +35,17 @@
 
     let _state: "ask" | "saving" | "done" = "ask"
 
-    const connection = state.osmConnection
+    let connection = state.osmConnection
 
-    const hasError: Store<undefined | "too_long"> = opinion.mapD(op => {
+    let hasError: Store<undefined | "too_long"> = opinion.mapD(op => {
         const tooLong = op.length > FeatureReviews.REVIEW_OPINION_MAX_LENGTH
         if (tooLong) {
             return "too_long"
         }
         return undefined
     })
+
+    let uploadFailed: string = undefined
 
     async function save() {
         if (hasError.data) {
@@ -63,13 +65,24 @@
             console.log("Testing - not actually saving review", review)
             await Utils.waitFor(1000)
         } else {
-            await reviews.createReview(review)
+            try {
+
+                await reviews.createReview(review)
+            } catch (e) {
+                console.error("Could not create review due to", e)
+                uploadFailed = "" + e
+            }
         }
         _state = "done"
     }
 </script>
-
-{#if _state === "done"}
+{#if uploadFailed}
+  <div class="alert flex">
+    <ExclamationTriangle class="w-6 h-6" />
+    <Tr t={Translations.t.general.error}/>
+    {uploadFailed}
+  </div>
+{:else if _state === "done"}
   <Tr cls="thanks w-full" t={t.saved} />
 {:else if _state === "saving"}
   <Loading>
@@ -109,8 +122,9 @@
         />
         {#if $hasError === "too_long"}
           <div class="alert flex items-center px-2">
-            <ExclamationTriangle class="w-12 h-12"/>
-          <Tr t={t.too_long.Subs({max: FeatureReviews.REVIEW_OPINION_MAX_LENGTH, amount: $opinion?.length ?? 0})}> </Tr>
+            <ExclamationTriangle class="w-12 h-12" />
+            <Tr
+              t={t.too_long.Subs({max: FeatureReviews.REVIEW_OPINION_MAX_LENGTH, amount: $opinion?.length ?? 0})}></Tr>
           </div>
         {/if}
       </label>
