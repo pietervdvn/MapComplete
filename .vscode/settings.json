@@ -7,6 +7,41 @@
     {
       "fileMatch": ["/assets/themes/*/*.json", "!/assets/themes/*/license_info.json"],
       "url": "./Docs/Schemas/LayoutConfigJson.schema.json"
+    },
+    {
+      "fileMatch": ["/assets/themes/*/license_info.json", "/assets/layers/*/license_info.json"],
+      "schema": {
+        "type": "array",
+        "title": "License Info",
+        "items": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Path to the file"
+            },
+            "authors": {
+              "type": "array",
+              "description": "Authors of the file",
+              "items": {
+                "type": "string"
+              }
+            },
+            "license": {
+              "type": "string",
+              "description": "License of the file"
+            },
+            "sources": {
+              "type": "array",
+              "description": "Sources of the file",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["path", "authors", "license", "sources"]
+        }
+      }
     }
   ],
   "editor.tabSize": 2,
