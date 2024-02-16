@@ -94,6 +94,13 @@
             "en": "A souvenir note costs 2 euro"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "charge=3 EUR",
+          "then": {
+            "en": "A souvenir note costs 3 euro"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
         }
       ]
     },
