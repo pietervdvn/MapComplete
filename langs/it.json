@@ -157,9 +157,12 @@
             "openOsmcha": "Vedi le ultime modifiche effettuate con {theme}",
             "seeOnMapillary": "Guarda questa immagine su Mapillary",
             "themeBy": "Tema manutenuto da {author}",
+            "title": "Copyright e attribuzione",
             "translatedBy": "MapComplete è stata tradotta da {contributors} e da <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} contributori aggiuntivi</a>"
         },
         "back": "Indietro",
+        "backToIndex": "Ritorna alla panoramica con tutte le mappe tematiche",
+        "backToMap": "Torna alla mappa",
         "backgroundMap": "Mappa di sfondo",
         "cancel": "Annulla",
         "confirm": "Conferma",
@@ -167,6 +170,7 @@
         "download": {
             "downloadAsPdf": "Scarica un PDF della mappa corrente",
             "downloadAsPdfHelper": "Ideale per stampare la mappa corrente",
+            "downloadAsPng": "Scarca come immagine",
             "downloadAsSvg": "Scarica una SVG dalla mappa corrente",
             "downloadAsSvgHelper": "Compatible con Inkscape o Adobe Illustrator; necessita di ulteriori processamenti  ",
             "downloadCSV": "Scarica i dati visibili come CSV",
@@ -184,6 +188,7 @@
             "title": "Scarica i dati visibili",
             "uploadGpx": "Carica la tua traccia su OpenStreetMap"
         },
+        "eraseValue": "Cancella questo valore",
         "error": "Qualcosa è andato storto",
         "example": "Esempio",
         "examples": "Esempi",
@@ -193,6 +198,10 @@
         "goToInbox": "Apri posta in arrivo",
         "histogram": {
             "error_loading": "Impossibile caricare l'istogramma"
+        },
+        "labels": {
+            "background": "Cambia lo sfondo",
+            "menu": "Menu"
         },
         "layerSelection": {
             "title": "Seleziona livelli",
@@ -205,6 +214,9 @@
         "loginToStart": "Accedi per rispondere alla domanda",
         "loginWithOpenStreetMap": "Accedi con OpenStreetMap",
         "logout": "Esci",
+        "menu": {
+            "aboutMapComplete": "Info su MapComplete"
+        },
         "morescreen": {
             "createYourOwnTheme": "Crea il tuo tema di MapComplete personalizzato da zero",
             "hiddenExplanation": "Questi temi sono solo accessibili se si dispone del collegamento. Hai scoperto {hidden_discovered} su {total_hidden} temi nascosti.",
@@ -237,7 +249,15 @@
             "ph_closed": "chiuso",
             "ph_not_known": " ",
             "ph_open": "aperto",
-            "ph_open_as_usual": "aperto come di consueto"
+            "ph_open_as_usual": "aperto, come al solito",
+            "ranges": "da {starttime} a {endtime}",
+            "rangescombined": "{range0} e {range1}",
+            "saturday": "Di sabato {ranges}",
+            "sunday": "Di domenica {ranges}",
+            "thursday": "Di giovedì {ranges}",
+            "tuesday": "Di martedì {ranges}",
+            "unknown": "L'orario di apertura è sconosciuto",
+            "wednesday": "Di mercoledì {ranges}"
         },
         "osmLinkTooltip": "Visita questo oggetto su OpenStreetMap per la cronologia o altre opzioni di modifica",
         "pdf": {
@@ -246,8 +266,13 @@
             "generatedWith": "Generato con mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - generato il {date}"
         },
-        "pickLanguage": "Scegli una lingua: ",
+        "pickLanguage": "Scegli una lingua:",
         "poweredByOsm": "Basato su OpenStreetMap",
+        "questionBox": {
+            "answeredMultiple": "Hai risposto a {answered} domande",
+            "answeredOne": "Hai risposto a una domanda",
+            "done": "Non ci sono più domande! Grazie!"
+        },
         "questions": {
             "emailIs": "L’indirizzo email di questa {category} è <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Qual è l’indirizzo email di {category}?",
@@ -265,6 +290,7 @@
             "error": "Qualcosa è andato storto…",
             "nothing": "Non è stato trovato nulla…",
             "search": "Cerca un luogo",
+            "searchShort": "Cerca…",
             "searching": "Ricerca…"
         },
         "sharescreen": {
@@ -273,10 +299,39 @@
             "fsUserbadge": "Abilita il pulsante di accesso",
             "fsWelcomeMessage": "Mostra il messaggio di benvenuto e le schede associate",
             "intro": "<h3>Condividi questa mappa</h3>Condividi questa mappa copiando il collegamento qua sotto e inviandolo ad amici o parenti:",
-            "thanksForSharing": "Grazie per la condivisione!"
+            "thanksForSharing": "Grazie per la condivisione!",
+            "title": "Condividi questa mappa"
         },
         "skip": "Salta questa domanda",
         "testing": "Prova (le modifiche non verranno salvate)",
+        "uploadGpx": {
+            "confirm": "Conferma caricamento",
+            "meta": {
+                "title": "Titolo e descrizione"
+            },
+            "modes": {
+                "private": {
+                    "name": "Anonimo"
+                }
+            }
+        },
+        "uploadingChanges": "Caricamento modifiche…",
+        "visualFeedback": {
+            "directionsAbsolute": {
+                "E": "est",
+                "N": "nord",
+                "NE": "nord est",
+                "NW": "nord ovest",
+                "S": "sud",
+                "SE": "sud est",
+                "SW": "sud ovest",
+                "W": "ovest"
+            },
+            "directionsRelative": {
+                "left": "sinistra",
+                "right": "destra"
+            }
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Ven",
@@ -295,12 +350,13 @@
             "tuesday": "Martedì",
             "wednesday": "Mercoledì"
         },
-        "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
+        "welcomeBack": "Bentornato/a!",
         "welcomeExplanation": {
             "addNew": "Tocca la mappa per aggiungere un nuovo punto di interesse.",
             "general": "Su questa mappa puoi vedere, modificare ed aggiungere <i>punti di interesse</i>. Esplora per trovare il punto di interesse, toccane uno per vedere o modificarne le informazioni. Tutti i dati sono raccolti e salvati su OpenStreetMap, e potranno essere riutilizzati liberamente."
         },
         "wikipedia": {
+            "addEntry": "Aggiungi un'altra pagina di Wikipedia",
             "createNewWikidata": "Crea un nuovo elemento Wikidata",
             "doSearch": "Cerca qui sopra per vedere i risultati",
             "failed": "Caricamento della voce Wikipedia fallito",
@@ -312,6 +368,7 @@
                 "born": "Nascita: {value}",
                 "died": "Morte: {value}"
             },
+            "readMore": "Leggi il resto dell'articolo",
             "searchToShort": "La tua ricerca è troppo breve, inserisci un testo più completo",
             "searchWikidata": "Cerca su Wikidata",
             "wikipediaboxTitle": "Wikipedia"
