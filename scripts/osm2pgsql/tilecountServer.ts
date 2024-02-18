@@ -214,7 +214,7 @@ const server = new Server(2345, [
         handle: async (path: string) => {
             const layers = await tcs.getLayers()
             const meta = await tcs.getMeta()
-            return JSON.stringify({ meta, layers })
+            return JSON.stringify({ meta, layers: Array.from(layers) })
         },
     },
     {
