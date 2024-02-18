@@ -29,6 +29,7 @@ class OsmPoiDatabase {
     private readonly _client: Client
     private isConnected = false
     private supportedLayers: Set<string> = undefined
+    private supportedLayersDate: Date = undefined
     private metaCache: PoiDatabaseMeta = undefined
     private metaCacheDate: Date = undefined
 
@@ -65,16 +66,21 @@ class OsmPoiDatabase {
     }
 
     async getLayers(): Promise<Set<string>> {
-        if (this.supportedLayers !== undefined) {
+        if (
+            this.supportedLayers !== undefined &&
+            new Date().getTime() - this.supportedLayersDate.getTime() < 1000 * 60 * 60 * 24
+        ) {
             return this.supportedLayers
         }
-        const result = await this._client.query(
+        const q =
             "SELECT table_name \n" +
-                "FROM information_schema.tables \n" +
-                "WHERE table_schema = 'public' AND table_name LIKE 'lines_%';"
-        )
+            "FROM information_schema.tables \n" +
+            "WHERE table_schema = 'public' AND table_name LIKE 'lines_%';"
+        const result = await this._client.query(q)
+        console.log("Getting layers: ", q, result)
         const layers = result.rows.map((r) => r.table_name.substring("lines_".length))
         this.supportedLayers = new Set(layers)
+        this.supportedLayersDate = new Date()
         return this.supportedLayers
     }
 
