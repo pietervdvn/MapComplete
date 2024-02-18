@@ -133,6 +133,7 @@ class Server {
 
                 const url = new URL(`http://127.0.0.1/` + req.url)
                 let path = url.pathname
+                console.log("Handling ", path)
                 while (path.startsWith("/")) {
                     path = path.substring(1)
                 }
