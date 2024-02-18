@@ -54,7 +54,7 @@ pg_tileserv kan hier gedownload worden: https://github.com/CrunchyData/pg_tilese
 
 ````
 export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi
-./pg_tileserv
+nohup ./pg_tileserv &
 ````
 
 Tiles are available at: 
@@ -64,3 +64,8 @@ map.addSource("drinking_water", {
 "tiles": ["http://127.0.0.2:7800/public.drinking_water/{z}/{x}/{y}.pbf"] // http://127.0.0.2:7800/public.drinking_water.json",
 })
 ````
+
+# Rebooting:
+
+-> Restart the docker container
+-> 

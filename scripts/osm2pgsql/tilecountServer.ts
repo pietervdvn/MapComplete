@@ -28,7 +28,7 @@ class OsmPoiDatabase {
     private static readonly prefixes: ReadonlyArray<string> = ["pois", "lines", "polygons"]
     private readonly _client: Client
     private isConnected = false
-    private supportedLayers: string[] = undefined
+    private supportedLayers: Set<string> = undefined
     private metaCache: PoiDatabaseMeta = undefined
     private metaCacheDate: Date = undefined
 
@@ -64,7 +64,7 @@ class OsmPoiDatabase {
         this._client.end()
     }
 
-    async getLayers(): Promise<string[]> {
+    async getLayers(): Promise<Set<string>> {
         if (this.supportedLayers !== undefined) {
             return this.supportedLayers
         }
@@ -74,8 +74,8 @@ class OsmPoiDatabase {
                 "WHERE table_schema = 'public' AND table_name LIKE 'lines_%';"
         )
         const layers = result.rows.map((r) => r.table_name.substring("lines_".length))
-        this.supportedLayers = layers
-        return layers
+        this.supportedLayers = new Set(layers)
+        return this.supportedLayers
     }
 
     async getMeta(): Promise<PoiDatabaseMeta> {
@@ -218,7 +218,12 @@ const server = new Server(2345, [
 
             let sum = 0
             let properties: Record<string, number> = {}
+            const availableLayers = await tcs.getLayers()
             for (const layer of layers.split("+")) {
+                console.log("Getting layer", layer)
+                if (!availableLayers.has(layer)) {
+                    continue
+                }
                 const count = await tcs.getCount(
                     layer,
                     Tiles.tile_bounds_lon_lat(Number(z), Number(x), Number(y))
