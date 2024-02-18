@@ -65,7 +65,8 @@
         "intro": "Hai contrassegnato {length} posizione come posizione preferita.",
         "introPrivacy": "Questo elenco è visibile solo a te",
         "loginToSeeList": "Autenticati per vedere l'elenco delle posizioni che hai contrassegnato come preferite",
-        "tab": "I tuoi preferiti"
+        "tab": "Le recensioni e I tuoi preferiti",
+        "title": "I tuoi luoghi preferiti"
     },
     "flyer": {
         "aerial": "Questa mappa usa uno sfondo differente, cioè immagini aeree di Agentschap Informatie Vlaanderen",
@@ -89,13 +90,21 @@
         "frontParagraph": "MapComplete è un’applicazione web facile da usare che permette di raccogliere dati geografici su OpenStreetMap, permettendo così di ottenere e gestire dati rilevanti in una maniera open, crowdsource e riutilizzabile.\n\nA richiesta possono essere aggiunti nuove categorie e attributi.",
         "lines_too": "Vengono anche mostrati linee e poligoni. Anche su questi oggetti si possono aggiungere e aggiornare gli attributi e le immagini.",
         "mapcomplete": {
+            "customize": "MapComplete può essere adattato alle tue esigenze, con nuovi livelli di mappa, nuove funzionalità o stili con colori e font della tua organizzazione.\nAbbiamo anche esperienza con l'avvio di campagne di crowdsource di geodata.\nContatta pietervdvn@posteo.net per un preventivo.",
+            "intro": "MapComplete è un sito web che ha {mapCount} mappe interattive. Ogni singola mappa permette di aggiungere o aggiornare le informazioni. Ha numerose caratteristiche:",
             "li0": "Mostra dove sono i POI",
             "li1": "Aggiungi nuovi punti e aggiorna le informazioni in quelli già esistenti",
             "li2": "Aggiungi facilmente le informazioni di contatto e gli orari di apertura",
             "li3": "Può essere inserita in altri siti web come iFrame",
+            "li4": "Integrato nell'ecosistema di OpenStreetMap, che ha numerosi strumenti disponibili",
             "li5": "Funzione per importare i dataset esistenti",
+            "li6": "Molte funzionalità avanzate, come il rilevamento degli alberi e metodi avanzati di input",
+            "li7": "Software libero copyleft (rilasciato con licenza GPL) e ad uso gratuito",
             "title": "Che cos'è MapComplete?"
         },
+        "onwheels": "Sono disponibili mappe di interno per utenti con sedia a rotelle.",
+        "osm": "OpenStreetMap è una mappa online che può essere modificata e riutilizzata da ognuno per qualsiasi scopo con la corretta attribuzione e con i dati mantenuti aperti.\n\nÈ il più grande database geospaziale nel mondo ed è utilizzato da migliaia di applicazioni e di siti web.",
+        "tagline": "Raccogli i geodati con OpenStreetMap",
         "title": "mapcomplete.org",
         "whatIsOsm": "Che cos'è OpenStreetMap?"
     },
