@@ -80,7 +80,6 @@ class OsmPoiDatabase {
         console.log("Getting layers: ", q, result)
         const layers = result.rows.map((r) => r.table_name.substring("lines_".length))
         this.supportedLayers = new Set(layers)
-        console.log("Layers are:", layers)
         this.supportedLayersDate = new Date()
         return this.supportedLayers
     }
@@ -214,6 +213,7 @@ const server = new Server(2345, [
         handle: async (path: string) => {
             const layers = await tcs.getLayers()
             const meta = await tcs.getMeta()
+            console.log("Got layers:", layers, "for status")
             return JSON.stringify({ meta, layers: Array.from(layers) })
         },
     },
