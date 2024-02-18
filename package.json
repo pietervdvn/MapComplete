@@ -93,7 +93,8 @@
     "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
     "weblate-fix-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
     "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
-    "reuse-compliance": "reuse lint"
+    "reuse-compliance": "reuse lint",
+    "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts"
   },
   "keywords": [
     "OpenStreetMap",
