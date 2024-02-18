@@ -54,7 +54,6 @@ class OsmPoiDatabase {
             if (bbox) {
                 query += ` WHERE ST_MakeEnvelope (${bbox[0][0]}, ${bbox[0][1]}, ${bbox[1][0]}, ${bbox[1][1]}, 4326) ~ geom`
             }
-            console.log("Query:", query)
             const result = await this._client.query(query)
             total += Number(result.rows[0].count)
         }
@@ -77,7 +76,6 @@ class OsmPoiDatabase {
             "FROM information_schema.tables \n" +
             "WHERE table_schema = 'public' AND table_name LIKE 'lines_%';"
         const result = await this._client.query(q)
-        console.log("Getting layers: ", q, result)
         const layers = result.rows.map((r) => r.table_name.substring("lines_".length))
         this.supportedLayers = new Set(layers)
         this.supportedLayersDate = new Date()
@@ -139,10 +137,10 @@ class Server {
 
                 const url = new URL(`http://127.0.0.1/` + req.url)
                 let path = url.pathname
-                console.log("Handling ", path)
                 while (path.startsWith("/")) {
                     path = path.substring(1)
                 }
+                console.log("Handling ", path)
                 const handler = handle.find((h) => {
                     if (typeof h.mustMatch === "string") {
                         return h.mustMatch === path
@@ -213,12 +211,11 @@ const server = new Server(2345, [
         handle: async (path: string) => {
             const layers = await tcs.getLayers()
             const meta = await tcs.getMeta()
-            console.log("Got layers:", layers, "for status")
             return JSON.stringify({ meta, layers: Array.from(layers) })
         },
     },
     {
-        mustMatch: /summary\/[a-zA-Z0-9+]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
+        mustMatch: /summary\/[a-zA-Z0-9+_-]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
         mimetype: "application/json", // "application/vnd.geo+json",
         async handle(path) {
             console.log("Path is:", path, path.split(".")[0])
