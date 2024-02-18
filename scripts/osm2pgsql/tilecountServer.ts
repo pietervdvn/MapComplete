@@ -80,6 +80,7 @@ class OsmPoiDatabase {
         console.log("Getting layers: ", q, result)
         const layers = result.rows.map((r) => r.table_name.substring("lines_".length))
         this.supportedLayers = new Set(layers)
+        console.log("Layers are:", layers)
         this.supportedLayersDate = new Date()
         return this.supportedLayers
     }
