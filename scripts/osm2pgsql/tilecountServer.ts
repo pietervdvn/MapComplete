@@ -201,7 +201,7 @@ const connectionString = "postgresql://user:password@localhost:5444/osm-poi"
 const tcs = new OsmPoiDatabase(connectionString)
 const server = new Server(2345, [
     {
-        mustMatch: "status.json",
+        mustMatch: "summary/status.json",
         mimetype: "application/json",
         handle: async (path: string) => {
             const layers = await tcs.getLayers()
@@ -210,7 +210,7 @@ const server = new Server(2345, [
         },
     },
     {
-        mustMatch: /[a-zA-Z0-9+]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
+        mustMatch: /summary\/[a-zA-Z0-9+]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
         mimetype: "application/json", // "application/vnd.geo+json",
         async handle(path) {
             console.log("Path is:", path, path.split(".")[0])
