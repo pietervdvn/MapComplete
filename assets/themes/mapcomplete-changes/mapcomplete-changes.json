@@ -253,6 +253,10 @@
                     "then": "./assets/themes/ghostbikes/logo.svg"
                   },
                   {
+                    "if": "theme=ghostsigns",
+                    "then": "./assets/themes/advertising/wall_painting.svg"
+                  },
+                  {
                     "if": "theme=grb",
                     "then": "./assets/themes/grb/logo.svg"
                   },
