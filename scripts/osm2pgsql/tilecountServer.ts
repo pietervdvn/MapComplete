@@ -213,7 +213,7 @@ class Server {
     }
 }
 
-const connectionString = "postgresql://user:password@localhost:5445/osm-poi" // "postgresql://user:password@localhost:5444/osm-poi"
+const connectionString = "postgresql://user:password@localhost:5444/osm-poi"
 const tcs = new OsmPoiDatabase(connectionString)
 const server = new Server(2345, { ignorePathPrefix: ["summary"] }, [
     {
