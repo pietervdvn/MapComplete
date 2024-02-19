@@ -104,6 +104,9 @@ class OsmPoiDatabase {
 class Server {
     constructor(
         port: number,
+        options: {
+            ignorePathPrefix?: string[]
+        },
         handle: {
             mustMatch: string | RegExp
             mimetype: string
@@ -139,6 +142,14 @@ class Server {
                 let path = url.pathname
                 while (path.startsWith("/")) {
                     path = path.substring(1)
+                }
+                if (options?.ignorePathPrefix) {
+                    for (const toIgnore of options.ignorePathPrefix) {
+                        if (path.startsWith(toIgnore)) {
+                            path = path.substring(toIgnore.length + 1)
+                            break
+                        }
+                    }
                 }
                 console.log("Handling ", path)
                 const handler = handle.find((h) => {
@@ -202,11 +213,11 @@ class Server {
     }
 }
 
-const connectionString = "postgresql://user:password@localhost:5444/osm-poi"
+const connectionString = "postgresql://user:password@localhost:5445/osm-poi" // "postgresql://user:password@localhost:5444/osm-poi"
 const tcs = new OsmPoiDatabase(connectionString)
-const server = new Server(2345, [
+const server = new Server(2345, { ignorePathPrefix: ["summary"] }, [
     {
-        mustMatch: "summary/status.json",
+        mustMatch: "status.json",
         mimetype: "application/json",
         handle: async (path: string) => {
             const layers = await tcs.getLayers()
@@ -215,7 +226,7 @@ const server = new Server(2345, [
         },
     },
     {
-        mustMatch: /summary\/[a-zA-Z0-9+_-]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
+        mustMatch: /[a-zA-Z0-9+_-]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
         mimetype: "application/json", // "application/vnd.geo+json",
         async handle(path) {
             console.log("Path is:", path, path.split(".")[0])
