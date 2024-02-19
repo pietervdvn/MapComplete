@@ -1,9 +1,9 @@
 cache.mapcomplete.org {
-    reverse_proxy /mvt/* {
-        to http://127.0.0.1:7800
-    }
-    
     reverse_proxy /summary/* {
         to http://127.0.0.1:2345
+    }
+    
+    reverse_proxy /* {
+        to http://127.0.0.1:7800
     }
 }
