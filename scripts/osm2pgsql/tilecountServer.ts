@@ -40,24 +40,42 @@ class OsmPoiDatabase {
     async getCount(
         layer: string,
         bbox: [[number, number], [number, number]] = undefined
-    ): Promise<number> {
+    ): Promise<{ count: number; lat: number; lon: number }> {
         if (!this.isConnected) {
             await this._client.connect()
             this.isConnected = true
         }
 
-        let total = 0
-
+        let total: number = 0
+        let latSum = 0
+        let lonSum = 0
         for (const prefix of OsmPoiDatabase.prefixes) {
-            let query = "SELECT COUNT(*) FROM " + prefix + "_" + layer
+            let query =
+                "SELECT COUNT(*), ST_AsText(ST_Centroid(ST_Collect(geom))) FROM " +
+                prefix +
+                "_" +
+                layer
 
             if (bbox) {
                 query += ` WHERE ST_MakeEnvelope (${bbox[0][0]}, ${bbox[0][1]}, ${bbox[1][0]}, ${bbox[1][1]}, 4326) ~ geom`
             }
             const result = await this._client.query(query)
-            total += Number(result.rows[0].count)
+            const count = Number(result.rows[0].count)
+            let point = result.rows[0].st_astext
+            if (count === 0) {
+                continue
+            }
+            total += count
+            if (!point) {
+                continue
+            }
+            point = point.substring(6, point.length - 1)
+            const [lon, lat] = point.split(" ")
+            latSum += lat * count
+            lonSum += lon * count
         }
-        return total
+
+        return { count: total, lat: latSum / total, lon: lonSum / total }
     }
 
     disconnect() {
@@ -108,24 +126,28 @@ class CachedSqlCount {
             number,
             {
                 date: Date
-                count: number
+                entry: { count: number; lat: number; lon: number }
             }
         >
     > = {}
 
     private readonly _poiDatabase: OsmPoiDatabase
     private readonly _maxAge: number
+
     constructor(poiDatabase: OsmPoiDatabase, maxAge: number) {
         this._poiDatabase = poiDatabase
         this._maxAge = maxAge
     }
 
-    public async getCount(layer: string, tileId: number): Promise<number> {
+    public async getCount(
+        layer: string,
+        tileId: number
+    ): Promise<{ count: number; lat: number; lon: number }> {
         const cachedEntry = this._cache[layer]?.[tileId]
         if (cachedEntry) {
             const age = (new Date().getTime() - cachedEntry.date.getTime()) / 1000
             if (age < this._maxAge) {
-                return cachedEntry.count
+                return cachedEntry.entry
             }
         }
         const bbox = Tiles.tile_bounds_lon_lat(...Tiles.tile_from_index(tileId))
@@ -133,7 +155,7 @@ class CachedSqlCount {
         if (!this._cache[layer]) {
             this._cache[layer] = {}
         }
-        this._cache[layer][tileId] = { count, date: new Date() }
+        this._cache[layer][tileId] = { entry: count, date: new Date() }
         return count
     }
 }
@@ -188,7 +210,6 @@ class Server {
                         }
                     }
                 }
-                console.log("Handling ", path)
                 const handler = handle.find((h) => {
                     if (typeof h.mustMatch === "string") {
                         return h.mustMatch === path
@@ -267,12 +288,13 @@ new Server(2345, { ignorePathPrefix: ["summary"] }, [
         mustMatch: /[a-zA-Z0-9+_-]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
         mimetype: "application/json", // "application/vnd.geo+json",
         async handle(path) {
-            console.log("Path is:", path, path.split(".")[0])
             const [layers, z, x, y] = path.split(".")[0].split("/")
 
             let sum = 0
             let properties: Record<string, number> = {}
             const availableLayers = await tcs.getLayers()
+            let latSum = 0
+            let lonSum = 0
             for (const layer of layers.split("+")) {
                 if (!availableLayers.has(layer)) {
                     continue
@@ -281,9 +303,15 @@ new Server(2345, { ignorePathPrefix: ["summary"] }, [
                     layer,
                     Tiles.tile_index(Number(z), Number(x), Number(y))
                 )
-                properties[layer] = count
-                sum += count
+
+                latSum += count.lat * count.count
+                lonSum += count.lon * count.count
+                properties[layer] = count.count
+                sum += count.count
             }
+
+            properties["lon"] = lonSum / sum
+            properties["lat"] = latSum / sum
 
             return JSON.stringify({ ...properties, total: sum })
         },
