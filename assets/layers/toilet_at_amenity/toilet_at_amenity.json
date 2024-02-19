@@ -409,6 +409,8 @@
     "toilet.toilet-changing_table:location",
     "toilet.toilet-handwashing",
     "toilet.toilet-has-paper",
+    "toilet.menstrual_products",
+    "toilet.menstrual_products_location",
     {
       "builtin": "description",
       "override": {
