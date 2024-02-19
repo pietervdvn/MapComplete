@@ -120,6 +120,7 @@ const licenseMapping = {}
 // Map template names to license names
 const templateMapping = {
     "Template:PD": "Public Domain",
+    "Template:CC0": "CC0 1.0",
 }
 
 async function main(args: string[]) {
