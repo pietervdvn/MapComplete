@@ -274,7 +274,6 @@ new Server(2345, { ignorePathPrefix: ["summary"] }, [
             let properties: Record<string, number> = {}
             const availableLayers = await tcs.getLayers()
             for (const layer of layers.split("+")) {
-                console.log("Getting layer", layer)
                 if (!availableLayers.has(layer)) {
                     continue
                 }
