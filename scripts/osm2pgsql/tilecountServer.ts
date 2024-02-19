@@ -101,6 +101,43 @@ class OsmPoiDatabase {
     }
 }
 
+class CachedSqlCount {
+    private readonly _cache: Record<
+        string,
+        Record<
+            number,
+            {
+                date: Date
+                count: number
+            }
+        >
+    > = {}
+
+    private readonly _poiDatabase: OsmPoiDatabase
+    private readonly _maxAge: number
+    constructor(poiDatabase: OsmPoiDatabase, maxAge: number) {
+        this._poiDatabase = poiDatabase
+        this._maxAge = maxAge
+    }
+
+    public async getCount(layer: string, tileId: number): Promise<number> {
+        const cachedEntry = this._cache[layer]?.[tileId]
+        if (cachedEntry) {
+            const age = (new Date().getTime() - cachedEntry.date.getTime()) / 1000
+            if (age < this._maxAge) {
+                return cachedEntry.count
+            }
+        }
+        const bbox = Tiles.tile_bounds_lon_lat(...Tiles.tile_from_index(tileId))
+        const count = await this._poiDatabase.getCount(layer, bbox)
+        if (!this._cache[layer]) {
+            this._cache[layer] = {}
+        }
+        this._cache[layer][tileId] = { count, date: new Date() }
+        return count
+    }
+}
+
 class Server {
     constructor(
         port: number,
@@ -215,7 +252,8 @@ class Server {
 
 const connectionString = "postgresql://user:password@localhost:5444/osm-poi"
 const tcs = new OsmPoiDatabase(connectionString)
-const server = new Server(2345, { ignorePathPrefix: ["summary"] }, [
+const withCache = new CachedSqlCount(tcs, 60 * 60 * 24)
+new Server(2345, { ignorePathPrefix: ["summary"] }, [
     {
         mustMatch: "status.json",
         mimetype: "application/json",
@@ -240,9 +278,9 @@ const server = new Server(2345, { ignorePathPrefix: ["summary"] }, [
                 if (!availableLayers.has(layer)) {
                     continue
                 }
-                const count = await tcs.getCount(
+                const count = await withCache.getCount(
                     layer,
-                    Tiles.tile_bounds_lon_lat(Number(z), Number(x), Number(y))
+                    Tiles.tile_index(Number(z), Number(x), Number(y))
                 )
                 properties[layer] = count
                 sum += count
