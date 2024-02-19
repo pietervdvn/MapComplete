@@ -4,12 +4,13 @@ import { BBox } from "../../BBox"
 import { FeatureSource } from "../FeatureSource"
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
 
-
 /***
  * A tiled source which dynamically loads the required tiles at a fixed zoom level.
  * A single featureSource will be initialized for every tile in view; which will later be merged into this featureSource
  */
-export default class DynamicTileSource<Src extends FeatureSource = FeatureSource> extends FeatureSourceMerger<Src> {
+export default class DynamicTileSource<
+    Src extends FeatureSource = FeatureSource
+> extends FeatureSourceMerger<Src> {
     /**
      *
      * @param zoomlevel If {z} is specified in the source, the 'zoomlevel' will be used as zoomlevel to download from
@@ -28,10 +29,12 @@ export default class DynamicTileSource<Src extends FeatureSource = FeatureSource
         },
         options?: {
             isActive?: Store<boolean>
-        },
+            zDiff?: number
+        }
     ) {
         super()
         const loadedTiles = new Set<number>()
+        const zDiff = options?.zDiff ?? 0
         const neededTiles: Store<number[]> = Stores.ListStabilized(
             mapProperties.bounds
                 .mapD(
@@ -43,32 +46,32 @@ export default class DynamicTileSource<Src extends FeatureSource = FeatureSource
                         if (mapProperties.zoom.data < minzoom) {
                             return undefined
                         }
-                        const z = Math.floor(zoomlevel.data)
+                        const z = Math.floor(zoomlevel.data) + zDiff
                         const tileRange = Tiles.TileRangeBetween(
                             z,
                             bounds.getNorth(),
                             bounds.getEast(),
                             bounds.getSouth(),
-                            bounds.getWest(),
+                            bounds.getWest()
                         )
                         if (tileRange.total > 500) {
                             console.warn(
-                                "Got a really big tilerange, bounds and location might be out of sync",
+                                "Got a really big tilerange, bounds and location might be out of sync"
                             )
                             return undefined
                         }
 
                         const needed = Tiles.MapRange(tileRange, (x, y) =>
-                            Tiles.tile_index(z, x, y),
+                            Tiles.tile_index(z, x, y)
                         ).filter((i) => !loadedTiles.has(i))
                         if (needed.length === 0) {
                             return undefined
                         }
                         return needed
                     },
-                    [options?.isActive, mapProperties.zoom],
+                    [options?.isActive, mapProperties.zoom]
                 )
-                .stabilized(250),
+                .stabilized(250)
         )
 
         neededTiles.addCallbackAndRunD((neededIndexes) => {
@@ -79,5 +82,3 @@ export default class DynamicTileSource<Src extends FeatureSource = FeatureSource
         })
     }
 }
-
-

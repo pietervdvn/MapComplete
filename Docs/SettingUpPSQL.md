@@ -47,6 +47,10 @@ HP ProLiant DL360 G7 (1U): 2Rx4 DDR3-memory (PC3)
     Intel Xeon X56**
 
 
+## Updating data
+
+`osm2pgsql-replication update -d postgresql://user:password@localhost:5444/osm-poi -- -O flex -S build_db.lua -s --flat-nodes=import-help-file`
+
 
 ## Deploying a tile server
 

@@ -15,11 +15,12 @@
         "point",
         "centroid"
       ],
-      "iconSize": "25,25",
+      "iconSize": "40,40",
       "label": {
         "render": "{total}"
       },
-      "labelCssClasses": "bg-white w-6 h-6 text-lg rounded-full"
+      "labelCss": "background: #ffffffbb",
+      "labelCssClasses": "w-12 text-lg rounded-xl p-1 px-2"
     }
   ]
 }

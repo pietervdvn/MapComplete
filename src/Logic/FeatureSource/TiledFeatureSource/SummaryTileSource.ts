@@ -24,12 +24,13 @@ export class SummaryTileSource extends DynamicTileSource {
         }
     ) {
         const layersSummed = layers.join("+")
+        const zDiff = 2
         super(
             zoomRounded,
             0, // minzoom
             (tileIndex) => {
                 const [z, x, y] = Tiles.tile_from_index(tileIndex)
-                const coordinates = Tiles.centerPointOf(z, x, y)
+                let coordinates = Tiles.centerPointOf(z, x, y)
 
                 const count = UIEventSource.FromPromiseWithErr(
                     Utils.downloadJson(`${cacheserver}/${layersSummed}/${z}/${x}/${y}.json`)
@@ -50,6 +51,21 @@ export class SummaryTileSource extends DynamicTileSource {
                     if (counts === undefined || counts["total"] === 0) {
                         return SummaryTileSource.empty
                     }
+                    const lat = counts["lat"]
+                    const lon = counts["lon"]
+                    const total = Utils.numberWithMetrixPrefix(Number(counts["total"]))
+                    const tileBbox = new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
+                    if (!tileBbox.contains([lon, lat])) {
+                        console.error(
+                            "Average coordinate is outside of bbox!?",
+                            lon,
+                            lat,
+                            tileBbox,
+                            counts
+                        )
+                    } else {
+                        coordinates = [lon, lat]
+                    }
                     return [
                         {
                             type: "Feature",
@@ -57,6 +73,7 @@ export class SummaryTileSource extends DynamicTileSource {
                                 id: "summary_" + tileIndex,
                                 summary: "yes",
                                 ...counts,
+                                total,
                                 layers: layersSummed,
                             },
                             geometry: {
@@ -69,7 +86,8 @@ export class SummaryTileSource extends DynamicTileSource {
                 return new StaticFeatureSource(
                     features.map(
                         (f) => {
-                            if (z !== zoomRounded.data) {
+                            console.log("z, zdiff, rounded:", z, zDiff, zoomRounded.data)
+                            if (z - zDiff !== zoomRounded.data) {
                                 return SummaryTileSource.empty
                             }
                             return f
@@ -79,7 +97,7 @@ export class SummaryTileSource extends DynamicTileSource {
                 )
             },
             mapProperties,
-            options
+            { ...options, zDiff }
         )
     }
 }

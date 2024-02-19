@@ -145,7 +145,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
-    constructor(layout: LayoutConfig) {
+    constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
         this.layout = layout
         this.featureSwitches = new FeatureSwitchState(layout)
@@ -240,6 +240,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.mapProperties,
                 this.osmConnection.Backend(),
                 (id) => self.layerState.filteredLayers.get(id).isDisplayed,
+                mvtAvailableLayers,
                 this.fullNodeDatabase
             )
 
@@ -662,10 +663,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
                 l.source.geojsonSource === undefined
         )
+        const url = new URL(Constants.VectorTileServer)
         return new SummaryTileSource(
-            "http://127.0.0.1:2345",
+            url.protocol + "//" + url.host + "/summary",
             layers.map((l) => l.id),
-            this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z) + 1, 0)),
+            this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z), 0)),
             this.mapProperties
         )
     }
