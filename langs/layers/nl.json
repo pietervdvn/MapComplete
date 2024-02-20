@@ -8746,6 +8746,13 @@
                     }
                 }
             },
+            "mangrove-key-import": {
+                "render": {
+                    "special": {
+                        "text": "Herstel een Mangrove Private sleutel van backup"
+                    }
+                }
+            },
             "mangrove-keys": {
                 "render": {
                     "after": "Iedereen die dit bestand bezit, kan met jouw identiteit wijzigingen maken",
