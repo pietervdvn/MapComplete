@@ -671,6 +671,7 @@
         "reviewPlaceholder": "Beschreibe deine Erfahrung…",
         "reviewing_as": "Als {nickname} bewerten",
         "reviewing_as_anonymous": "Anonym bewerten",
+        "reviews_bug": "Mehr Bewertungen erwartet? Einige Bewertungen werden aufgrund eines Fehlers nicht angezeigt.",
         "save": "Bewertung speichern",
         "saved": "Bewertung gespeichert. Danke fürs Teilen!",
         "saving_review": "Speichern…",
@@ -678,7 +679,9 @@
         "title_singular": "Eine Rezension",
         "too_long": "Maximal {max} Zeichen sind erlaubt. Ihre Bewertung hat {amount} Zeichen.",
         "tos": "Mit der Bewertung stimmen Sie den <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
-        "write_a_comment": "Bewertung schreiben…"
+        "write_a_comment": "Bewertung schreiben…",
+        "your_reviews": "Deine vorherigen Bewertungen",
+        "your_reviews_empty": "Wir konnten keine deiner vorherigen Bewertungen finden"
     },
     "split": {
         "cancel": "Abbrechen",
