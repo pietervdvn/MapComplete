@@ -1,9 +1,9 @@
-import { Feature, Geometry } from "geojson"
+import { Geometry } from "geojson"
+import { Feature as GeojsonFeature } from "geojson"
+
 import { Store, UIEventSource } from "../../UIEventSource"
 import { FeatureSourceForTile } from "../FeatureSource"
 import Pbf from "pbf"
-import * as pbfCompile from "pbf/compile"
-import * as PbfSchema from "protocol-buffers-schema"
 
 type Coords = [number, number][]
 
@@ -60,12 +60,11 @@ class MvtFeatureBuilder {
             }
             const ccw = area < 0
 
-            if (ccw === (area < 0)) {
+            if (ccw === area < 0) {
                 if (currentPolygon) {
                     polygons.push(currentPolygon)
                 }
                 currentPolygon = [ring]
-
             } else {
                 currentPolygon.push(ring)
             }
@@ -77,7 +76,7 @@ class MvtFeatureBuilder {
         return polygons
     }
 
-    public toGeoJson(geometry: number[], typeIndex: 1 | 2 | 3, properties: any): Feature {
+    public toGeoJson(geometry: number[], typeIndex: 1 | 2 | 3, properties: any): GeojsonFeature {
         let coords: Coords[] = this.encodeGeometry(geometry)
         let classified = undefined
         switch (typeIndex) {
@@ -159,9 +158,9 @@ class MvtFeatureBuilder {
             if (commandId === 1 || commandId === 2) {
                 for (let j = 0; j < commandCount; j++) {
                     const dx = geometry[i + j * 2 + 1]
-                    cX += ((dx >> 1) ^ (-(dx & 1)))
+                    cX += (dx >> 1) ^ -(dx & 1)
                     const dy = geometry[i + j * 2 + 2]
-                    cY += ((dy >> 1) ^ (-(dy & 1)))
+                    cY += (dy >> 1) ^ -(dy & 1)
                     currentRing.push([cX, cY])
                 }
                 i += commandCount * 2
@@ -170,7 +169,6 @@ class MvtFeatureBuilder {
                 currentRing.push([...currentRing[0]])
                 i++
             }
-
         }
         if (currentRing.length > 0) {
             coordss.push(currentRing)
@@ -189,132 +187,182 @@ class MvtFeatureBuilder {
         const size = this._size
         for (let i = 0; i < line.length; i++) {
             let p = line[i]
-            let y2 = 180 - (p[1] + y0) * 360 / size
+            let y2 = 180 - ((p[1] + y0) * 360) / size
             line[i] = [
-                (p[0] + x0) * 360 / size - 180,
-                360 / Math.PI * Math.atan(Math.exp(y2 * Math.PI / 180)) - 90,
+                ((p[0] + x0) * 360) / size - 180,
+                (360 / Math.PI) * Math.atan(Math.exp((y2 * Math.PI) / 180)) - 90,
             ]
         }
         return line
     }
 }
 
-export default class MvtSource implements FeatureSourceForTile {
-
-    private static readonly schemaSpec21 = `
-    package vector_tile;
-
-option optimize_for = LITE_RUNTIME;
-
-message Tile {
-
-        // GeomType is described in section 4.3.4 of the specification
-        enum GeomType {
-             UNKNOWN = 0;
-             POINT = 1;
-             LINESTRING = 2;
-             POLYGON = 3;
-        }
-
-        // Variant type encoding
-        // The use of values is described in section 4.1 of the specification
-        message Value {
-                // Exactly one of these values must be present in a valid message
-                optional string string_value = 1;
-                optional float float_value = 2;
-                optional double double_value = 3;
-                optional int64 int_value = 4;
-                optional uint64 uint_value = 5;
-                optional sint64 sint_value = 6;
-                optional bool bool_value = 7;
-
-                extensions 8 to max;
-        }
-
-        // Features are described in section 4.2 of the specification
-        message Feature {
-                optional uint64 id = 1 [ default = 0 ];
-
-                // Tags of this feature are encoded as repeated pairs of
-                // integers.
-                // A detailed description of tags is located in sections
-                // 4.2 and 4.4 of the specification
-                repeated uint32 tags = 2 [ packed = true ];
-
-                // The type of geometry stored in this feature.
-                optional GeomType type = 3 [ default = UNKNOWN ];
-
-                // Contains a stream of commands and parameters (vertices).
-                // A detailed description on geometry encoding is located in
-                // section 4.3 of the specification.
-                repeated uint32 geometry = 4 [ packed = true ];
-        }
-
-        // Layers are described in section 4.1 of the specification
-        message Layer {
-                // Any compliant implementation must first read the version
-                // number encoded in this message and choose the correct
-                // implementation for this version number before proceeding to
-                // decode other parts of this message.
-                required uint32 version = 15 [ default = 1 ];
-
-                required string name = 1;
-
-                // The actual features in this tile.
-                repeated Feature features = 2;
-
-                // Dictionary encoding for keys
-                repeated string keys = 3;
-
-                // Dictionary encoding for values
-                repeated Value values = 4;
-
-                // Although this is an "optional" field it is required by the specification.
-                // See https://github.com/mapbox/vector-tile-spec/issues/47
-                optional uint32 extent = 5 [ default = 4096 ];
-
-                extensions 16 to max;
-        }
-
-        repeated Layer layers = 3;
-
-        extensions 16 to 8191;
+class Layer {
+    public static read(pbf, end) {
+        return pbf.readFields(
+            Layer._readField,
+            { version: 0, name: "", features: [], keys: [], values: [], extent: 0 },
+            end
+        )
+    }
+    static _readField(tag, obj, pbf) {
+        if (tag === 15) obj.version = pbf.readVarint()
+        else if (tag === 1) obj.name = pbf.readString()
+        else if (tag === 2) obj.features.push(Feature.read(pbf, pbf.readVarint() + pbf.pos))
+        else if (tag === 3) obj.keys.push(pbf.readString())
+        else if (tag === 4) obj.values.push(Value.read(pbf, pbf.readVarint() + pbf.pos))
+        else if (tag === 5) obj.extent = pbf.readVarint()
+    }
+    public static write(obj, pbf) {
+        if (obj.version) pbf.writeVarintField(15, obj.version)
+        if (obj.name) pbf.writeStringField(1, obj.name)
+        if (obj.features)
+            for (var i = 0; i < obj.features.length; i++)
+                pbf.writeMessage(2, Feature.write, obj.features[i])
+        if (obj.keys) for (i = 0; i < obj.keys.length; i++) pbf.writeStringField(3, obj.keys[i])
+        if (obj.values)
+            for (i = 0; i < obj.values.length; i++) pbf.writeMessage(4, Value.write, obj.values[i])
+        if (obj.extent) pbf.writeVarintField(5, obj.extent)
+    }
 }
-`
-    private static readonly tile_schema = (pbfCompile.default ?? pbfCompile)(PbfSchema.parse(MvtSource.schemaSpec21)).Tile
-    public readonly features: Store<Feature<Geometry, { [name: string]: any }>[]>
+
+class Feature {
+    static read(pbf, end) {
+        return pbf.readFields(Feature._readField, { id: 0, tags: [], type: 0, geometry: [] }, end)
+    }
+    static _readField(tag, obj, pbf) {
+        if (tag === 1) obj.id = pbf.readVarint()
+        else if (tag === 2) pbf.readPackedVarint(obj.tags)
+        else if (tag === 3) obj.type = pbf.readVarint()
+        else if (tag === 4) pbf.readPackedVarint(obj.geometry)
+    }
+    public static write(obj, pbf) {
+        if (obj.id) pbf.writeVarintField(1, obj.id)
+        if (obj.tags) pbf.writePackedVarint(2, obj.tags)
+        if (obj.type) pbf.writeVarintField(3, obj.type)
+        if (obj.geometry) pbf.writePackedVarint(4, obj.geometry)
+    }
+}
+
+class Value {
+    public static read(pbf, end) {
+        return pbf.readFields(
+            Value._readField,
+            {
+                string_value: "",
+                float_value: 0,
+                double_value: 0,
+                int_value: 0,
+                uint_value: 0,
+                sint_value: 0,
+                bool_value: false,
+            },
+            end
+        )
+    }
+    static _readField = function (tag, obj, pbf) {
+        if (tag === 1) obj.string_value = pbf.readString()
+        else if (tag === 2) obj.float_value = pbf.readFloat()
+        else if (tag === 3) obj.double_value = pbf.readDouble()
+        else if (tag === 4) obj.int_value = pbf.readVarint(true)
+        else if (tag === 5) obj.uint_value = pbf.readVarint()
+        else if (tag === 6) obj.sint_value = pbf.readSVarint()
+        else if (tag === 7) obj.bool_value = pbf.readBoolean()
+    }
+    public static write(obj, pbf) {
+        if (obj.string_value) pbf.writeStringField(1, obj.string_value)
+        if (obj.float_value) pbf.writeFloatField(2, obj.float_value)
+        if (obj.double_value) pbf.writeDoubleField(3, obj.double_value)
+        if (obj.int_value) pbf.writeVarintField(4, obj.int_value)
+        if (obj.uint_value) pbf.writeVarintField(5, obj.uint_value)
+        if (obj.sint_value) pbf.writeSVarintField(6, obj.sint_value)
+        if (obj.bool_value) pbf.writeBooleanField(7, obj.bool_value)
+    }
+}
+class Tile {
+    // code generated by pbf v3.2.1
+
+    public static read(pbf, end) {
+        return pbf.readFields(Tile._readField, { layers: [] }, end)
+    }
+    static _readField(tag, obj, pbf) {
+        if (tag === 3) obj.layers.push(Layer.read(pbf, pbf.readVarint() + pbf.pos))
+    }
+    static write(obj, pbf) {
+        if (obj.layers)
+            for (var i = 0; i < obj.layers.length; i++)
+                pbf.writeMessage(3, Layer.write, obj.layers[i])
+    }
+
+    static GeomType = {
+        UNKNOWN: {
+            value: 0,
+            options: {},
+        },
+        POINT: {
+            value: 1,
+            options: {},
+        },
+        LINESTRING: {
+            value: 2,
+            options: {},
+        },
+        POLYGON: {
+            value: 3,
+            options: {},
+        },
+    }
+}
+
+export default class MvtSource implements FeatureSourceForTile {
+    public readonly features: Store<GeojsonFeature<Geometry, { [name: string]: any }>[]>
     private readonly _url: string
     private readonly _layerName: string
-    private readonly _features: UIEventSource<Feature<Geometry, {
-        [name: string]: any
-    }>[]> = new UIEventSource<Feature<Geometry, { [p: string]: any }>[]>([])
+    private readonly _features: UIEventSource<
+        GeojsonFeature<
+            Geometry,
+            {
+                [name: string]: any
+            }
+        >[]
+    > = new UIEventSource<GeojsonFeature<Geometry, { [p: string]: any }>[]>([])
     public readonly x: number
     public readonly y: number
     public readonly z: number
 
-    constructor(url: string, x: number, y: number, z: number, layerName?: string, isActive?: Store<boolean>) {
+    constructor(
+        url: string,
+        x: number,
+        y: number,
+        z: number,
+        layerName?: string,
+        isActive?: Store<boolean>
+    ) {
         this._url = url
         this._layerName = layerName
         this.x = x
         this.y = y
         this.z = z
         this.downloadSync()
-        this.features = this._features.map(fs => {
-            if (fs === undefined || isActive?.data === false) {
-                return []
-            }
-            return fs
-        }, [isActive])
+        this.features = this._features.map(
+            (fs) => {
+                if (fs === undefined || isActive?.data === false) {
+                    return []
+                }
+                return fs
+            },
+            [isActive]
+        )
     }
 
     private getValue(v: {
         // Exactly one of these values must be present in a valid message
-        string_value?: string,
-        float_value?: number,
-        double_value?: number,
-        int_value?: number,
-        uint_value?: number,
-        sint_value?: number,
+        string_value?: string
+        float_value?: number
+        double_value?: number
+        int_value?: number
+        uint_value?: number
+        sint_value?: number
         bool_value?: boolean
     }): string | number | undefined | boolean {
         if (v.string_value !== "") {
@@ -339,41 +387,42 @@ message Tile {
             return v.bool_value
         }
         return undefined
-
     }
 
     private downloadSync() {
-        this.download().then(d => {
-            if (d.length === 0) {
-                return
-            }
-            return this._features.setData(d)
-        }).catch(e => {
-            console.error(e)
-        })
+        this.download()
+            .then((d) => {
+                if (d.length === 0) {
+                    return
+                }
+                return this._features.setData(d)
+            })
+            .catch((e) => {
+                console.error(e)
+            })
     }
 
-    private async download(): Promise<Feature[]> {
+    private async download(): Promise<GeojsonFeature[]> {
         const result = await fetch(this._url)
         if (result.status !== 200) {
             console.error("Could not download tile " + this._url)
             return []
         }
         const buffer = await result.arrayBuffer()
-        const data = MvtSource.tile_schema.read(new Pbf(buffer))
+        const data = Tile.read(new Pbf(buffer), undefined)
         const layers = data.layers
         let layer = data.layers[0]
         if (layers.length > 1) {
             if (!this._layerName) {
                 throw "Multiple layers in the downloaded tile, but no layername is given to choose from"
             }
-            layer = layers.find(l => l.name === this._layerName)
+            layer = layers.find((l) => l.name === this._layerName)
         }
         if (!layer) {
             return []
         }
         const builder = new MvtFeatureBuilder(layer.extent, this.x, this.y, this.z)
-        const features: Feature[] = []
+        const features: GeojsonFeature[] = []
 
         for (const feature of layer.features) {
             const properties = this.inflateProperties(feature.tags, layer.keys, layer.values)
@@ -382,7 +431,6 @@ message Tile {
 
         return features
     }
-
 
     private inflateProperties(tags: number[], keys: string[], values: { string_value: string }[]) {
         const properties = {}
@@ -407,5 +455,4 @@ message Tile {
 
         return properties
     }
-
 }

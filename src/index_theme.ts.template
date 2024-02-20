@@ -4,6 +4,8 @@ import ThemeViewGUI from "./src/UI/ThemeViewGUI.svelte"
 import LayoutConfig from "./src/Models/ThemeConfig/LayoutConfig";
 import MetaTagging from "./src/Logic/MetaTagging";
 import { FixedUiElement } from "./src/UI/Base/FixedUiElement";
+import { Utils } from "./src/Utils"
+import Constants from "./src/Models/Constants"
 
 function webgl_support() {
     try {
@@ -16,13 +18,27 @@ function webgl_support() {
         return false
     }
 }
+async function getAvailableLayers(): Promise<Set<string>> {
+    try {
+        const host = new URL(Constants.VectorTileServer).host
+        const status = await Utils.downloadJson("https://" + host + "/summary/status.json")
+        return new Set<string>(status.layers)
+    } catch (e) {
+        console.error("Could not get MVT available layers due to", e)
+        return new Set<string>()
+    }
+}
 
-if (!webgl_support()) {
-     new FixedUiElement("WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this.").SetClass("block alert").AttachTo("maindiv")
-}else{
-    MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
-    // LAYOUT.ADD_LAYERS
-    const state = new ThemeViewState(new LayoutConfig(<any> layout))
-    const main = new SvelteUIElement(ThemeViewGUI, { state })
-    main.AttachTo("maindiv")
-}    
+async function main() {
+    if (!webgl_support()) {
+         new FixedUiElement("WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this.").SetClass("block alert").AttachTo("maindiv")
+    }else{
+        const availableLayers = await getAvailableLayers()
+        MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
+        // LAYOUT.ADD_LAYERS
+        const state = new ThemeViewState(new LayoutConfig(<any> layout), availableLayers)
+        const main = new SvelteUIElement(ThemeViewGUI, { state })
+        main.AttachTo("maindiv")
+    }
+}
+main()
