@@ -92,7 +92,7 @@
       <Tr t={title} />
 
       {#if selected}
-        <span class="alert" aria-hidden="true">
+        <span class="thanks hidden-on-mobile" aria-hidden="true">
           <Tr t={Translations.t.general.morescreen.enterToOpen} />
         </span>
       {/if}
