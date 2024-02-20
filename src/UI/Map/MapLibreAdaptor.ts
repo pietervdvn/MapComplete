@@ -193,7 +193,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         )
         this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
-        this.useTerrain?.addCallbackAndRun(useTerrain => self.setTerrain(useTerrain))
+        this.useTerrain?.addCallbackAndRun((useTerrain) => self.setTerrain(useTerrain))
     }
 
     /**
@@ -599,24 +599,25 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
         const id = "maptiler-terrain-data"
         if (useTerrain) {
-            if(map.getTerrain()){
-               return
+            if (map.getTerrain()) {
+                return
             }
             map.addSource(id, {
-                "type": "raster-dem",
-                "url": "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" + Constants.maptilerApiKey
+                type: "raster-dem",
+                url:
+                    "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" +
+                    Constants.maptilerApiKey,
             })
-            try{
+            try {
                 while (!map?.isStyleLoaded()) {
                     await Utils.waitFor(250)
                 }
-            map.setTerrain({
-                source: id
-            })
-            }catch (e) {
+                map.setTerrain({
+                    source: id,
+                })
+            } catch (e) {
                 console.error(e)
             }
         }
-
     }
 }

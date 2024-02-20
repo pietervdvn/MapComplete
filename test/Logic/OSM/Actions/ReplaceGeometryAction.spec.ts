@@ -884,7 +884,6 @@ describe("ReplaceGeometryAction", () => {
     )
 
     it("should move nodes accordingly", async () => {
-
         const bbox = new BBox([
             [3.2166673243045807, 51.21467321525788],
             [3.217007964849472, 51.21482442824023],

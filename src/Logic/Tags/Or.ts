@@ -291,6 +291,6 @@ export class Or extends TagsFilter {
     }
 
     asMapboxExpression(): ExpressionSpecification {
-        return ["any", ...this.or.map(t => t.asMapboxExpression())]
+        return ["any", ...this.or.map((t) => t.asMapboxExpression())]
     }
 }

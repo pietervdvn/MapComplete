@@ -364,7 +364,7 @@ export default class UserRelatedState {
             [translationMode]
         )
 
-        this.mangroveIdentity.getKeyId().addCallbackAndRun(kid => {
+        this.mangroveIdentity.getKeyId().addCallbackAndRun((kid) => {
             amendedPrefs.data["mangrove_kid"] = kid
             amendedPrefs.ping()
         })

@@ -212,12 +212,7 @@
     with MapComplete Studio
   {:else}
     <div>
-      <TagRenderingEditable
-        {config}
-        selectedElement={undefined}
-        {state}
-        {tags}
-      />
+      <TagRenderingEditable {config} selectedElement={undefined} {state} {tags} />
     </div>
 
     {#if chosenOption !== undefined}

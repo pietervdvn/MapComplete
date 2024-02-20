@@ -14,7 +14,7 @@
 
   export let placedOverMapProperties: MapProperties
   export let placedOverMap: Store<MlMap>
-  
+
   export let interactive: boolean = undefined
 
   export let rasterLayer: UIEventSource<RasterLayerPolygon>
@@ -25,7 +25,7 @@
     rasterLayer,
     zoom: UIEventSource.feedFrom(placedOverMapProperties.zoom),
     rotation: UIEventSource.feedFrom(placedOverMapProperties.rotation),
-    pitch: UIEventSource.feedFrom(placedOverMapProperties.pitch)
+    pitch: UIEventSource.feedFrom(placedOverMapProperties.pitch),
   })
   altproperties.allowMoving.setData(false)
   altproperties.allowZooming.setData(false)

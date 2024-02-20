@@ -12,7 +12,8 @@
     "eu": "Iragarri",
     "pl": "Reklama",
     "pt_BR": "Anunciar",
-    "zh_Hans": "广告"
+    "zh_Hans": "广告",
+    "it": "Pubblicità"
   },
   "description": {
     "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
@@ -23,7 +24,8 @@
     "pt": "Iremos completar os dados das funcionalidades publicitárias com referência, operador e iluminado",
     "eu": "Publizitate-ezaugarrien datuak osatuko ditugu erreferentziarekin, operadorearekin eta argiztatuarekin.",
     "pl": "Uzupełnimy dane z obiektów reklamowych o referencję, operatora i oświetlenie",
-    "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação"
+    "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação",
+    "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione"
   },
   "source": {
     "osmTags": "advertising~*"
@@ -395,7 +397,8 @@
         "eu": "iragarki panela",
         "pl": "bilbord",
         "pt_BR": "um outdoor",
-        "zh_Hans": "一块广告牌"
+        "zh_Hans": "一块广告牌",
+        "it": "un cartellone"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -408,7 +411,8 @@
         "he": "מבנה פרסום חוצות גדול, שנמצא בדרך כלל באזורים עתירי תנועה כמו לצד כבישים סואנים",
         "eu": "Atari zabaleko publizitate-egitura handia, trafiko handiko eremuetan egon ohi dena, adibidez errepideen ondoan",
         "pl": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
-        "pt_BR": "Uma grande estrutura de publicidade outdoor, geralmente encontrada em áreas com alto tráfego, como ao longo de estradas movimentadas"
+        "pt_BR": "Uma grande estrutura de publicidade outdoor, geralmente encontrada em áreas com alto tráfego, como ao longo de estradas movimentadas",
+        "it": "Grande struttura pubblicitaria all'aperto, trovata normalmente in aree ad alto traffico come accanto a strade molto trafficate"
       },
       "exampleImages": [
         "./assets/themes/advertising/KFC_Billboard.jpg",
@@ -429,7 +433,8 @@
         "pt": "uma caixa de pôster independente",
         "fr": "un panneau à affiches scellé au sol",
         "pl": "wolnostojąca skrzynka plakatowa",
-        "pt_BR": "uma caixa expositora independente"
+        "pt_BR": "uma caixa expositora independente",
+        "it": "un cartellone pubblicitario fissato a terra"
       },
       "exampleImages": [
         "./assets/themes/advertising/Mupi_spain.jpg",
@@ -450,7 +455,8 @@
         "fr": "un panneau à affiches monté sur un mur",
         "pl": "skrzynka plakatowa montowana na ścianie",
         "pt_BR": "uma caixa de pôster montada em uma parede",
-        "zh_Hans": "安装在墙上的海报盒子"
+        "zh_Hans": "安装在墙上的海报盒子",
+        "it": "un cartellone pubblicitario fissato al muro"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -470,7 +476,8 @@
         "fr": "un petit panneau",
         "pt": "a bordo",
         "pl": "tablica",
-        "pt_BR": "um painel publicitário"
+        "pt_BR": "um painel publicitário",
+        "it": "un piccolo pannello"
       },
       "description": {
         "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
@@ -482,7 +489,8 @@
         "nl": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
         "pt": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
         "pl": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
-        "pt_BR": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres"
+        "pt_BR": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres",
+        "it": "PIccolo pannello per la pubblicità di vicinanza, generalmente destinato ai pedoni"
       },
       "exampleImages": [
         "./assets/themes/advertising/local_Board.jpg",
@@ -504,7 +512,8 @@
         "fr": "une colonne",
         "pt": "uma coluna",
         "pl": "kolumna",
-        "pt_BR": "uma coluna"
+        "pt_BR": "uma coluna",
+        "it": "una colonna"
       },
       "description": {
         "en": "A cylindrical outdoor structure which shows advertisements",
@@ -516,7 +525,8 @@
         "nl": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
         "pt": "Uma estrutura exterior cilíndrica que mostra anúncios",
         "pl": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
-        "pt_BR": "Uma estrutura cilíndrica ao ar livre que exibe anúncios"
+        "pt_BR": "Uma estrutura cilíndrica ao ar livre que exibe anúncios",
+        "it": "Una struttura cilindrica all'esterno con affissa della pubblicità"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingColumn_001.jpg",
@@ -539,7 +549,8 @@
         "pt": "uma bandeira",
         "pl": "flaga",
         "pt_BR": "uma bandeira",
-        "zh_Hans": "一个旗子"
+        "zh_Hans": "一个旗子",
+        "it": "una bandiera"
       },
       "exampleImages": [
         "./assets/themes/advertising/Advertising_flag.jpg",
@@ -561,7 +572,8 @@
         "pt": "uma tela",
         "pl": "ekran",
         "pt_BR": "uma tela",
-        "zh_Hans": "一块屏幕"
+        "zh_Hans": "一块屏幕",
+        "it": "uno schermo"
       },
       "exampleImages": [
         "./assets/themes/advertising/Screen_poster_box.jpg",
@@ -583,7 +595,8 @@
         "pt": "uma tela montada em uma parede",
         "pl": "ekran zamontowany na ścianie",
         "pt_BR": "uma tela montada em uma parede",
-        "zh_Hans": "一块挂在墙上的屏幕"
+        "zh_Hans": "一块挂在墙上的屏幕",
+        "it": "uno schermo fissato al muro"
       },
       "exampleImages": [
         "./assets/themes/advertising/Subway_screen.jpg",
@@ -610,7 +623,8 @@
         "pt": "uma lona",
         "pl": "plandeka",
         "pt_BR": "uma lona",
-        "zh_Hans": "防水布"
+        "zh_Hans": "防水布",
+        "it": "un telone"
       },
       "description": {
         "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
@@ -622,7 +636,8 @@
         "pt": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede",
         "fr": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
         "pl": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
-        "pt_BR": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede"
+        "pt_BR": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
+        "it": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro"
       },
       "exampleImages": [
         "./assets/themes/advertising/tarp_feder.jpg",
@@ -647,7 +662,8 @@
         "pt": "um totem",
         "pl": "totem",
         "pt_BR": "um totem",
-        "zh_Hans": "图腾"
+        "zh_Hans": "图腾",
+        "it": "un totem"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingTotem_004.jpg",
@@ -670,7 +686,8 @@
         "pt_BR": "uma placa",
         "eu": "letrero bat",
         "pl": "znak",
-        "zh_Hans": "标志"
+        "zh_Hans": "标志",
+        "it": "un'insegna"
       },
       "description": {
         "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
@@ -682,7 +699,8 @@
         "pt": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
         "eu": "Iragarki publizitarioetarako, neon-karteletarako, logotipoetarako eta erakundeen sarrera-seinaleetarako erabiltzen da",
         "pl": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
-        "pt_BR": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais"
+        "pt_BR": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
+        "it": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata"
       },
       "exampleImages": [
         "./assets/themes/advertising/Waitrose_sign.jpg",
@@ -709,7 +727,8 @@
         "eu": "eskultura bat",
         "pl": "rzeźba",
         "pt_BR": "uma escultura",
-        "zh_Hans": "雕像"
+        "zh_Hans": "雕像",
+        "it": "una scultura"
       },
       "exampleImages": [
         "./assets/themes/advertising/Aircraft_Sculpture.jpg",
@@ -733,7 +752,8 @@
         "eu": "pareta margotu bat",
         "pl": "mural ścienny",
         "pt_BR": "uma pintura mural",
-        "zh_Hans": "墙上的画"
+        "zh_Hans": "墙上的画",
+        "it": "un murales"
       },
       "exampleImages": [
         "./assets/themes/advertising/Capitol_wall.jpg",
@@ -1490,7 +1510,8 @@
             "eu": "Objektu honek iragarkiak ditu alde bakar batean",
             "pl": "Ten obiekt ma reklamy po jednej stronie",
             "pt_BR": "Este objeto tem anúncios em um único lado",
-            "zh_Hans": "该物体单面有广告"
+            "zh_Hans": "该物体单面有广告",
+            "it": "Questo oggetto ha la pubblicità solo da un lato"
           }
         },
         {

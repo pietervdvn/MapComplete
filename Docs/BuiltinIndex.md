@@ -72,6 +72,8 @@
     + [toilet.toilet-changing_table:location](#toilettoilet-changing_table:location)
     + [toilet.toilet-handwashing](#toilettoilet-handwashing)
     + [toilet.toilet-has-paper](#toilettoilet-has-paper)
+    + [toilet.menstrual_products](#toiletmenstrual_products)
+    + [toilet.menstrual_products_location](#toiletmenstrual_products_location)
 
 
 
@@ -1094,6 +1096,28 @@
 
 
 ### toilet.toilet-has-paper 
+
+
+
+
+
+  - toilet_at_amenity
+
+
+
+
+### toilet.menstrual_products 
+
+
+
+
+
+  - toilet_at_amenity
+
+
+
+
+### toilet.menstrual_products_location 
 
 
 

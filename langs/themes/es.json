@@ -922,13 +922,6 @@
                             }
                         }
                     },
-                    "10": {
-                        "options": {
-                            "0": {
-                                "question": "Excluir el tema de la etimología"
-                            }
-                        }
-                    },
                     "2": {
                         "options": {
                             "0": {
@@ -982,6 +975,13 @@
                         "options": {
                             "0": {
                                 "question": "Excluir el tema del GRB"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Excluir el tema de la etimología"
                             }
                         }
                     }
@@ -1060,33 +1060,6 @@
     "onwheels": {
         "description": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Estadísticas"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Añadir todas las etiquetas sugeridas"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -1128,6 +1101,33 @@
             "8": {
                 "override": {
                     "name": "Plazas de aparcamiento para discapacitados"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estadísticas"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Añadir todas las etiquetas sugeridas"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1344,6 +1344,10 @@
     "stations": {
         "description": "Ver, editar y añadir detalles a una estación de tren",
         "layers": {
+            "3": {
+                "description": "Capa que muestra las estaciones de tren",
+                "name": "Estación de Tren"
+            },
             "16": {
                 "description": "Pantallas que muestran los trenes que saldrán de esta estación",
                 "name": "Tableros de salidas",
@@ -1375,10 +1379,6 @@
                 "title": {
                     "render": "Tablero de salidas"
                 }
-            },
-            "3": {
-                "description": "Capa que muestra las estaciones de tren",
-                "name": "Estación de Tren"
             }
         },
         "title": "Estaciones de tren"

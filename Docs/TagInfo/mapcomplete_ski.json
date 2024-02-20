@@ -566,6 +566,50 @@
       "value": "seated;urinal"
     },
     {
+      "key": "gender_segregated",
+      "description": "Layer 'Toilets' shows gender_segregated=yes with a fixed text, namely 'There is a separate, signposted area for men and women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:position!=urinal)",
+      "value": "yes"
+    },
+    {
+      "key": "gender_segregated",
+      "description": "Layer 'Toilets' shows gender_segregated=no with a fixed text, namely 'There is no separate, signposted area for men and women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:position!=urinal)",
+      "value": "no"
+    },
+    {
+      "key": "toilets:menstrual_products",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products=yes with a fixed text, namely 'Free menstrual products are available to all visitors of these toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:menstrual_products",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products=limited with a fixed text, namely 'Free menstrual products are available to some visitors of these toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "limited"
+    },
+    {
+      "key": "toilets:menstrual_products",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products=no with a fixed text, namely 'No free menstrual products are available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'toilets:menstrual_products:location' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products:location=female_toilet with a fixed text, namely 'The free, menstrual products are located in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)",
+      "value": "female_toilet"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products:location=male_toilet with a fixed text, namely 'The free, menstrual products are located in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)",
+      "value": "male_toilet"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products:location=wheelchair_toilet with a fixed text, namely 'The free, menstrual products are located in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)",
+      "value": "wheelchair_toilet"
+    },
+    {
       "key": "changing_table",
       "description": "Layer 'Toilets' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "yes"

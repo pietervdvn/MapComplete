@@ -67,9 +67,9 @@
     mapproperties.rasterLayer.setData(rasterLayer.data)
     dispatch("appliedLayer")
   }
-  
-  function handleKeyPress(e: KeyboardEvent){
-    if(e.key === "Enter"){
+
+  function handleKeyPress(e: KeyboardEvent) {
+    if (e.key === "Enter") {
       apply()
     }
   }
@@ -77,20 +77,15 @@
 
 {#if hasLayers}
   <form class="flex h-full w-full flex-col" on:submit|preventDefault={() => {}}>
-    <button
-      tabindex="-1"
-      on:click={() => apply()}
-      class="m-0 h-full w-full p-1 cursor-pointer"
-    >
-      <div class="pointer-events-none w-full h-full">
-        
-      <OverlayMap
-        interactive={false}
-        rasterLayer={rasterLayerOnMap}
-        placedOverMap={map}
-        placedOverMapProperties={mapproperties}
-        {visible}
-      />
+    <button tabindex="-1" on:click={() => apply()} class="m-0 h-full w-full cursor-pointer p-1">
+      <div class="pointer-events-none h-full w-full">
+        <OverlayMap
+          interactive={false}
+          rasterLayer={rasterLayerOnMap}
+          placedOverMap={map}
+          placedOverMapProperties={mapproperties}
+          {visible}
+        />
       </div>
     </button>
     <select bind:value={$rasterLayer} class="w-full" on:keydown={handleKeyPress}>

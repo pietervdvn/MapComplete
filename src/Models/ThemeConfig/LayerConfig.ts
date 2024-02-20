@@ -467,7 +467,7 @@ export default class LayerConfig extends WithContextLoader {
                             new Link(
                                 Utils.runningFromConsole
                                     ? "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>"
-                                    : new SvelteUIElement(Statistics, {class: "w-4 h-4 mr-2"}),
+                                    : new SvelteUIElement(Statistics, { class: "w-4 h-4 mr-2" }),
                                 "https://taginfo.openstreetmap.org/keys/" + values.key + "#values",
                                 true
                             ),

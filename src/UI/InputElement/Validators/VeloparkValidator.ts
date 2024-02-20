@@ -12,14 +12,22 @@ export default class VeloparkValidator extends UrlValidator {
             return superF
         }
         const url = new URL(s)
-        if (url.hostname !== "velopark.be" && url.hostname !== "www.velopark.be" && url.hostname !== "data.velopark.be") {
+        if (
+            url.hostname !== "velopark.be" &&
+            url.hostname !== "www.velopark.be" &&
+            url.hostname !== "data.velopark.be"
+        ) {
             return new Translation({ "*": "Invalid hostname, expected velopark.be" })
         }
 
-        if(!s.startsWith("https://data.velopark.be/data/") && !s.startsWith("https://www.velopark.be/static/data/")){
-            return new Translation({"*":"A valid URL should either start with https://data.velopark.be/data/ or https://www.velopark.be/static/data/"})
+        if (
+            !s.startsWith("https://data.velopark.be/data/") &&
+            !s.startsWith("https://www.velopark.be/static/data/")
+        ) {
+            return new Translation({
+                "*": "A valid URL should either start with https://data.velopark.be/data/ or https://www.velopark.be/static/data/",
+            })
         }
-
     }
 
     public isValid(str: string) {
@@ -28,9 +36,9 @@ export default class VeloparkValidator extends UrlValidator {
 
     reformat(str: string): string {
         const url = new URL(super.reformat(str))
-        if(url.pathname.startsWith("/static/data/")){
-            const id = str.substring(str.lastIndexOf("/")+1)
-            return "https://data.velopark.be/data/"+id
+        if (url.pathname.startsWith("/static/data/")) {
+            const id = str.substring(str.lastIndexOf("/") + 1)
+            return "https://data.velopark.be/data/" + id
         }
         return super.reformat(str)
     }

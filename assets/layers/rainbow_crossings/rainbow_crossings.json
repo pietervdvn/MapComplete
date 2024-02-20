@@ -13,7 +13,8 @@
     "fr": "Une couche affichant les passages piétons avec des peintures arc-en-ciel",
     "ca": "Una capa que mostra els passos de vianants pintats amb de l'arc de Sant Martí",
     "cs": "Vrstva zobrazující přechody pro chodce s duhovými malbami",
-    "pl": "Warstwa przedstawiająca przejścia dla pieszych z tęczowym malowaniem"
+    "pl": "Warstwa przedstawiająca przejścia dla pieszych z tęczowym malowaniem",
+    "es": "Una capa que muestra cruces peatonales con pinturas arco iris"
   },
   "source": {
     "osmTags": {

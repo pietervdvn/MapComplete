@@ -13,7 +13,7 @@ export default class ComparingTag implements TagsFilter {
         key: string,
         predicate: (value: string | undefined) => boolean,
         representation: "<" | ">" | "<=" | ">=",
-        boundary: string,
+        boundary: string
     ) {
         this._key = key
         this._predicate = predicate

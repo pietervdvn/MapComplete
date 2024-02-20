@@ -52,7 +52,9 @@ export class AvailableRasterLayers {
         type: "Feature",
         properties: {
             name: "MapTiler",
-            url: "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key="+Constants.maptilerApiKey,
+            url:
+                "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key=" +
+                Constants.maptilerApiKey,
             category: "osmbasedmap",
             id: "maptiler",
             type: "vector",

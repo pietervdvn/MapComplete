@@ -15,7 +15,8 @@
     "ca": "Capa amb rellotges públics",
     "fr": "Couche avec les horloges publiques",
     "cs": "Vrstva s veřejnými hodinami",
-    "pl": "Warstwa z zegarami publicznymi"
+    "pl": "Warstwa z zegarami publicznymi",
+    "es": "Capa con relojes públicos"
   },
   "source": {
     "osmTags": "amenity=clock"

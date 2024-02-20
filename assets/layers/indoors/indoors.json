@@ -14,7 +14,8 @@
     "nl": "Een basis voor indoor-navigatie: toont binnenruimtes",
     "cs": "Základní mapování interiérů: zobrazuje obrysy místností",
     "ca": "Mapeig interior bàsic: mostra els contorns de les habitacions",
-    "pl": "Podstawowe mapowanie wnętrz: pokazuje kontury pomieszczeń"
+    "pl": "Podstawowe mapowanie wnętrz: pokazuje kontury pomieszczeń",
+    "es": "Cartografía básica en interiores: muestra esquemas de espacio"
   },
   "source": {
     "osmTags": {

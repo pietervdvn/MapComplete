@@ -154,6 +154,18 @@ This rendering asks information about the property  [start_date](https://wiki.op
 
 
 
+### wikidata 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `subject:wikidata~.+`
+
+
+
 ### leftover-questions 
 
 

@@ -14,7 +14,8 @@
     "nl": "Laag met alle taken uit MapRoulette",
     "ca": "Capa que mostra totes les tasques de MapRoulette",
     "pl": "Warstwa pokazująca wszystkie zadania w MapRoulette",
-    "cs": "Vrstva zobrazující všechny úlohy v MapRoulette"
+    "cs": "Vrstva zobrazující všechny úlohy v MapRoulette",
+    "es": "Capa mostrando todas las tareas en MapRoulette"
   },
   "source": {
     "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",

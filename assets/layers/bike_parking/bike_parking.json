@@ -639,14 +639,16 @@
       "id": "fee",
       "question": {
         "en": "Are these bicycle parkings free to use?",
-        "nl": "Is deze fietsenstalling gratis te gebruiken?"
+        "nl": "Is deze fietsenstalling gratis te gebruiken?",
+        "de": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
       },
       "mappings": [
         {
           "if": "fee=yes",
           "then": {
             "en": "One has to <b>pay</b> to use this bicycle parking",
-            "nl": "<b>Betalende</b> fietsparking"
+            "nl": "<b>Betalende</b> fietsparking",
+            "de": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
           }
         },
         {
@@ -654,7 +656,8 @@
           "alsoShowIf": "fee=",
           "then": {
             "en": "Free to use",
-            "nl": "Gratis te gebruiken"
+            "nl": "Gratis te gebruiken",
+            "de": "Die Nutzung ist kostenlos"
           }
         }
       ]
@@ -673,11 +676,13 @@
       "id": "operator_phone",
       "question": {
         "en": "What is the phone number of the operator of this bicycle parking?",
-        "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?"
+        "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
+        "de": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?"
       },
       "questionHint": {
         "en": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles",
-        "nl": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden"
+        "nl": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden",
+        "de": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen"
       },
       "icon": "./assets/layers/questions/phone.svg",
       "freeform": {

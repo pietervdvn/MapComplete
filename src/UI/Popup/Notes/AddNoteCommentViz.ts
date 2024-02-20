@@ -16,10 +16,7 @@ export class AddNoteCommentViz implements SpecialVisualization {
         },
     ]
 
-    public constr(
-        state: SpecialVisualizationState,
-        tags: UIEventSource<Record<string, string>>
-    ) {
+    public constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>) {
         return new SvelteUIElement(AddNoteComment, { state, tags })
     }
 }

@@ -24,7 +24,7 @@
   export let backToStudio: () => void
   let messages = state.messages
   let hasErrors = messages.mapD(
-    (m: ConversionMessage[]) => m.filter((m) => m.level === "error").length,
+    (m: ConversionMessage[]) => m.filter((m) => m.level === "error").length
   )
   const configuration = state.configuration
 
@@ -102,10 +102,7 @@
           rel="noopener"
         >
           <div class="flex flex-col">
-
-            <b>
-              Test in safe mode
-            </b>
+            <b>Test in safe mode</b>
             <div>No changes are recoded to OSM</div>
           </div>
           <ChevronRightIcon class="h-6 w-6 shrink-0" />

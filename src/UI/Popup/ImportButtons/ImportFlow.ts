@@ -24,7 +24,7 @@ export class ImportFlowUtils {
     public static readonly conflationLayer = new LayerConfig(
         <LayerConfigJson>conflation_json,
         "all_known_layers",
-        true,
+        true
     )
 
     public static readonly documentationGeneral = `\n\n\nNote that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
@@ -66,7 +66,7 @@ ${Utils.special_visualizations_importRequirementDocs}
      */
     public static getTagsToApply(
         originalFeatureTags: UIEventSource<any>,
-        args: { tags: string },
+        args: { tags: string }
     ): Store<Tag[]> {
         if (originalFeatureTags === undefined) {
             return undefined
@@ -82,9 +82,9 @@ ${Utils.special_visualizations_importRequirementDocs}
             const items: string = originalFeatureTags.data[tags]
             console.debug(
                 "The import button is using tags from properties[" +
-                tags +
-                "] of this object, namely ",
-                items,
+                    tags +
+                    "] of this object, namely ",
+                items
             )
 
             if (items.startsWith("{")) {
@@ -120,7 +120,7 @@ ${Utils.special_visualizations_importRequirementDocs}
             name: string
             defaultValue?: string
         }[],
-        argsRaw: string[],
+        argsRaw: string[]
     ): string[] {
         const deps = ImportFlowUtils.getLayerDependencies(argsRaw, argSpec)
         const argsParsed: PointImportFlowArguments = <any>Utils.ParseVisArgs(argSpec, argsRaw)
@@ -146,13 +146,13 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
         state: SpecialVisualizationState,
         args: ArgT,
         tagsToApply: Store<Tag[]>,
-        originalTags: UIEventSource<Record<string, string>>,
+        originalTags: UIEventSource<Record<string, string>>
     ) {
         this.state = state
         this.args = args
         this.tagsToApply = tagsToApply
         this._originalFeatureTags = originalTags
-        this.targetLayer = args.targetLayer.split(" ").map(tl => {
+        this.targetLayer = args.targetLayer.split(" ").map((tl) => {
             let found = state.layerState.filteredLayers.get(tl)
             if (!found) {
                 throw "Layer " + tl + " not found"
@@ -198,7 +198,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
 
                 return undefined
             },
-            [state.mapProperties.zoom, state.dataIsLoading, this._originalFeatureTags],
+            [state.mapProperties.zoom, state.dataIsLoading, this._originalFeatureTags]
         )
     }
 }

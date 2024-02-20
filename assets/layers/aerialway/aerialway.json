@@ -18,7 +18,8 @@
       ],
       "label": {
         "render": {
-          "en": "{name}"
+          "en": "{name}",
+          "de": "{name}"
         },
         "condition": "name~*",
         "classes": "bg-white p-1 px-2 rounded"
@@ -30,78 +31,90 @@
     "images",
     {
       "question": {
-        "en": "What type of aerialway is this?"
+        "en": "What type of aerialway is this?",
+        "de": "Um welchen Seilbahntyp handelt es sich?"
       },
       "id": "type",
       "mappings": [
         {
           "if": "aerialway=cable_car",
           "then": {
-            "en": "This is a cable car where the car goes up and down again on the same cable."
+            "en": "This is a cable car where the car goes up and down again on the same cable.",
+            "de": "Es handelt sich um eine Seilbahn, bei der die Kabine auf demselben Seil nach oben und wieder nach unten fährt."
           },
           "icon": "./assets/layers/aerialway/cable_car.svg"
         },
         {
           "if": "aerialway=gondola",
           "then": {
-            "en": "This is a gondola where the cars go around in continuous circles"
+            "en": "This is a gondola where the cars go around in continuous circles",
+            "de": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren"
           },
           "icon": "./assets/layers/aerialway/gondola_lift.svg"
         },
         {
           "if": "aerialway=chair_lift",
           "then": {
-            "en": "An open chairlift with seats to sit on and open to the outside air."
+            "en": "An open chairlift with seats to sit on and open to the outside air.",
+            "de": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft."
           },
           "icon": "./assets/layers/aerialway/chair_lift.svg"
         },
         {
           "if": "aerialway=mixed",
           "then": {
-            "en": "An aerialway which has both chairs and gondolas in the same continuous track"
+            "en": "An aerialway which has both chairs and gondolas in the same continuous track",
+            "de": "Eine Seilbahn, die sowohl offene Sessel als auch geschlossene Gondeln auf einer durchgehenden Bahn hat"
           }
         },
         {
           "if": "aerialway=drag_lift",
           "then": {
-            "en": "A drag lift"
+            "en": "A drag lift",
+            "de": "Ein Schlepplift"
           },
           "hideInAnswer": true
         },
         {
           "if": "aerialway=t-bar",
           "then": {
-            "en": "A drag lift with T-shaped carriers for two passengers at a time"
+            "en": "A drag lift with T-shaped carriers for two passengers at a time",
+            "de": "Ein Schlepplift mit T-förmigen Trägern für jeweils zwei Passagiere"
           }
         },
         {
           "if": "aerialway=j-bar",
           "then": {
-            "en": "A drag lift with L-shaped bars for a single passenger at a time"
+            "en": "A drag lift with L-shaped bars for a single passenger at a time",
+            "de": "Ein Schlepplift mit L-förmigen Trägern für jeweils einen Passagier"
           }
         },
         {
           "if": "aerialway=platter",
           "then": {
-            "en": "A drag lift with a platter to drag a single passenger at a time"
+            "en": "A drag lift with a platter to drag a single passenger at a time",
+            "de": "Ein Schlepplift mit einem Teller für jeweils einen Passagier"
           }
         },
         {
           "if": "aerialway=rope_tow",
           "then": {
-            "en": "A tow line which which drags skieers"
+            "en": "A tow line which which drags skieers",
+            "de": "Eine Schleppleine, die Skifahrer mit sich zieht"
           }
         },
         {
           "if": "aerialway=magic_carpet",
           "then": {
-            "en": "A magic carpet (a conveyor belt on the ground)"
+            "en": "A magic carpet (a conveyor belt on the ground)",
+            "de": "Ein magic carpet (ein Förderband auf dem Boden)"
           }
         },
         {
           "if": "aerialway=zip_line",
           "then": {
-            "en": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
+            "en": "A zip line. (A touristical attraction where adventurous people go down at high speeds) ",
+            "de": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) "
           }
         }
       ]
@@ -109,16 +122,19 @@
     {
       "id": "duration",
       "question": {
-        "en": "How long takes a single journey with this elevator?"
+        "en": "How long takes a single journey with this elevator?",
+        "de": "Wie lange dauert eine Fahrt mit diesem Aufzug?"
       },
       "questionHint": {
-        "en": "This excludes the waiting time."
+        "en": "This excludes the waiting time.",
+        "de": "Dies schließt die Wartezeit aus."
       },
       "freeform": {
         "key": "duration"
       },
       "render": {
-        "en": "A single journey takes {duration} minutes"
+        "en": "A single journey takes {duration} minutes",
+        "de": "Eine Fahrt dauert {duration} Minuten"
       }
     },
     {
@@ -127,10 +143,12 @@
         "key": "aerialway:occupancy"
       },
       "question": {
-        "en": "How many people fit a single carriage?"
+        "en": "How many people fit a single carriage?",
+        "de": "Wie viele Leute passen in eine Kabine?"
       },
       "render": {
-        "en": "{aerialway:occupancy} people fit a single carriage"
+        "en": "{aerialway:occupancy} people fit a single carriage",
+        "de": "{aerialway:occupancy} Leute passen in eine Kabine"
       }
     },
     "opening_hours",
@@ -151,14 +169,15 @@
           "if": "oneway=no",
           "then": {
             "en": "This aerialway can be taken in both directions"
-        }
+          }
         }
       ]
     },
     {
       "id": "length",
       "render": {
-        "en": "This aerialway is {_length:km} kilometer long"
+        "en": "This aerialway is {_length:km} kilometer long",
+        "de": "Die Seilbahn hat eine Länge von {_length:km} km"
       }
     }
   ],
@@ -166,27 +185,31 @@
     {
       "width": "4",
       "color": "black",
-      "imageAlongWay": [ {
-        "if": "oneway=no",
-        "then": "./assets/png/twoway.png"
-      },{
-        "if": {
-          "or": [
-            "oneway=yes",
-            "oneway="
-          ]
+      "imageAlongWay": [
+        {
+          "if": "oneway=no",
+          "then": "./assets/png/twoway.png"
         },
-        "then": "./assets/png/oneway.png"
-      }
+        {
+          "if": {
+            "or": [
+              "oneway=yes",
+              "oneway="
+            ]
+          },
+          "then": "./assets/png/oneway.png"
+        }
       ]
     }
   ],
   "id": "aerialway",
   "name": {
-    "en": "Aerialways"
+    "en": "Aerialways",
+    "de": "Seilbahnen"
   },
   "description": {
-    "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+    "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
+    "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. "
   },
   "source": {
     "osmTags": {
@@ -199,7 +222,8 @@
   },
   "title": {
     "render": {
-      "en": "Aerialway {name}"
+      "en": "Aerialway {name}",
+      "de": "Seilbahn {name}"
     }
   }
 }

@@ -156,14 +156,13 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         await state.changes.applyAction(changeAction)
         try {
             state.selectedElement.setData(state.indexedFeatures.featuresById.data.get(targetId))
-        }catch (e) {
+        } catch (e) {
             console.error(e)
         }
         const maproulette_id_key = args[4]
         if (maproulette_id_key) {
-            const maproulette_id =  tags.data[ maproulette_id_key]
-            const maproulette_feature=  state.indexedFeatures.featuresById.data.get(
-               maproulette_id)
+            const maproulette_id = tags.data[maproulette_id_key]
+            const maproulette_feature = state.indexedFeatures.featuresById.data.get(maproulette_id)
             const maproulette_task_id = Number(maproulette_feature.properties.mr_taskId)
             await Maproulette.singleton.closeTask(maproulette_task_id, Maproulette.STATUS_FIXED, {
                 comment: "Tags are copied onto " + targetId + " with MapComplete",
@@ -202,9 +201,12 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             })
         ).SetClass("subtle")
         const self = this
-        const applied = new UIEventSource(tags?.data?.["mr_taskStatus"] !== undefined && tags?.data?.["mr_taskStatus"] !== "Created") // This will default to 'false' for non-maproulette challenges
+        const applied = new UIEventSource(
+            tags?.data?.["mr_taskStatus"] !== undefined &&
+                tags?.data?.["mr_taskStatus"] !== "Created"
+        ) // This will default to 'false' for non-maproulette challenges
         const applyButton = new SubtleButton(
-            new SvelteUIElement(Icon, {icon: image}),
+            new SvelteUIElement(Icon, { icon: image }),
             new Combine([msg, tagsExplanation]).SetClass("flex flex-col")
         ).onClick(async () => {
             applied.setData(true)

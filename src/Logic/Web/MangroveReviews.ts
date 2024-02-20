@@ -24,8 +24,6 @@ export class MangroveIdentity {
             const pem = await MangroveReviews.publicToPem(keypair.publicKey)
             key_id.setData(pem)
         })
-
-
     }
 
     /**
@@ -48,7 +46,7 @@ export class MangroveIdentity {
      * Only called to create a review.
      */
     async getKeypair(): Promise<CryptoKeyPair> {
-        if(this.keypair.data ?? "" === ""){
+        if (this.keypair.data ?? "" === "") {
             // We want to create a review, but it seems like no key has been setup at this moment
             // We create the key
             try {
@@ -66,33 +64,36 @@ export class MangroveIdentity {
         return this.key_id
     }
 
-    private allReviewsById : UIEventSource<(Review & {kid: string, signature: string})[]>= undefined
-
+    private allReviewsById: UIEventSource<(Review & { kid: string; signature: string })[]> =
+        undefined
 
     /**
      * Gets all reviews that are made for the current identity.
      */
-    public getAllReviews(): Store<(Review & {kid: string, signature: string})[]>{
-        if(this.allReviewsById !== undefined){
+    public getAllReviews(): Store<(Review & { kid: string; signature: string })[]> {
+        if (this.allReviewsById !== undefined) {
             return this.allReviewsById
         }
-        this.allReviewsById = new UIEventSource( [])
-        this.key_id.map(pem => {
-            if(pem === undefined){
+        this.allReviewsById = new UIEventSource([])
+        this.key_id.map((pem) => {
+            if (pem === undefined) {
                 return []
             }
             MangroveReviews.getReviews({
-                kid: pem
-            }).then(allReviews => {
-                this.allReviewsById.setData(allReviews.reviews.map(r => ({
-                    ...r, ...r.payload
-                })))
+                kid: pem,
+            }).then((allReviews) => {
+                this.allReviewsById.setData(
+                    allReviews.reviews.map((r) => ({
+                        ...r,
+                        ...r.payload,
+                    }))
+                )
             })
         })
         return this.allReviewsById
     }
 
-    addReview(review: Review & {kid, signature}) {
+    addReview(review: Review & { kid; signature }) {
         this.allReviewsById?.setData(this.allReviewsById?.data?.concat([review]))
     }
 }
@@ -225,8 +226,15 @@ export default class FeatureReviews {
      * The given review is uploaded to mangrove.reviews and added to the list of known reviews
      */
     public async createReview(review: Omit<Review, "sub">): Promise<void> {
-        if(review.opinion !== undefined && review.opinion.length > FeatureReviews .REVIEW_OPINION_MAX_LENGTH){
-            throw "Opinion too long, should be at most "+FeatureReviews.REVIEW_OPINION_MAX_LENGTH+" characters long"
+        if (
+            review.opinion !== undefined &&
+            review.opinion.length > FeatureReviews.REVIEW_OPINION_MAX_LENGTH
+        ) {
+            throw (
+                "Opinion too long, should be at most " +
+                FeatureReviews.REVIEW_OPINION_MAX_LENGTH +
+                " characters long"
+            )
         }
         const r: Review = {
             sub: this.subjectUri.data,
@@ -242,12 +250,10 @@ export default class FeatureReviews {
             signature: jwt,
             madeByLoggedInUser: new ImmutableStore(true),
         }
-        this._reviews.data.push( reviewWithKid)
+        this._reviews.data.push(reviewWithKid)
         this._reviews.ping()
         this._identity.addReview(reviewWithKid)
     }
-
-
 
     /**
      * Adds given reviews to the 'reviews'-UI-eventsource

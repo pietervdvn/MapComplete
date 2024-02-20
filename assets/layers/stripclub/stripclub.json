@@ -1,10 +1,12 @@
 {
   "id": "stripclub",
   "name": {
-    "en": "Stripclubs"
+    "en": "Stripclubs",
+    "de": "Stripclubs"
   },
   "description": {
-    "en": "A venue where erotic dance, striptease, or lap dances are performed commercially. "
+    "en": "A venue where erotic dance, striptease, or lap dances are performed commercially. ",
+    "de": "Ein Ort, an dem erotische Tanz-, Striptease- oder Lapdances kommerziell durchgeführt werden. "
   },
   "source": {
     "osmTags": "amenity=stripclub",
@@ -13,7 +15,8 @@
   "minzoom": 6,
   "title": {
     "render": {
-      "en": "Stripclub"
+      "en": "Stripclub",
+      "de": "Stripclub"
     },
     "mappings": [
       {
@@ -56,7 +59,8 @@
   "presets": [
     {
       "title": {
-        "en": "a stripclub"
+        "en": "a stripclub",
+        "de": "ein Stripclub"
       },
       "tags": [
         "amenity=stripclub"
@@ -74,10 +78,12 @@
         "key": "name"
       },
       "question": {
-        "en": "What is the name of this stripclub?"
+        "en": "What is the name of this stripclub?",
+        "de": "Wie lautet der Name des Stripclubs?"
       },
       "render": {
-        "en": "This stripclub is named <b>{name}</b>"
+        "en": "This stripclub is named <b>{name}</b>",
+        "de": "Der Name des Stripclubs lautet <b>{name}</b>"
       }
     },
     "opening_hours",
