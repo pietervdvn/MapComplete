@@ -248,7 +248,7 @@
         "question": {
           "en": "Does {title()} have a private video booth?",
           "de": "Hat {title()} eine private Videokabine?",
-          "es": "¿Este {título()} tiene una cabina de video privada?"
+          "es": "¿Este {title()} tiene una cabina de video privada?"
         },
         "questionHint": {
           "en": "This is for use by a single person.",

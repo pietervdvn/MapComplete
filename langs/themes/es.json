@@ -1177,7 +1177,7 @@
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
-                    "question": "¿Este {título()} tiene una cabina de video privada?",
+                    "question": "¿Este {title()} tiene una cabina de video privada?",
                     "questionHint": "Esto es para uso de una sola persona."
                 }
             }

@@ -10255,6 +10255,14 @@
                     }
                 }
             },
+            "mangrove-key-import": {
+                "render": {
+                    "after": "Uploading a private key erases your current private key. If you made reviews with it, download your current private key first",
+                    "special": {
+                        "text": "Import a mangrove private key from backup"
+                    }
+                }
+            },
             "mangrove-keys": {
                 "render": {
                     "after": "Anyone possessing this file can make reviews with your identity",
