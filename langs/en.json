@@ -27,6 +27,7 @@
             "selectReason": "Please, select why this feature should be deleted",
             "softDelete": "This feature will be updated and hidden from this application. <span class='subtle'>{reason}</span>"
         },
+        "isChanged": "This feature has been changed and no longer matches this layer",
         "isDeleted": "This feature is deleted",
         "isntAPoint": "Only nodes can be deleted, the selected feature is a way, area or relation.",
         "loading": "Inspecting properties to check if this feature can be deleted.",
