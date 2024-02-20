@@ -25,7 +25,7 @@ export default class MetaTagging {
     >()
 
     constructor(state: {
-        readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
+        readonly selectedElement: Store<Feature>
         readonly layout: LayoutConfig
         readonly osmObjectDownloader: OsmObjectDownloader
         readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
@@ -61,7 +61,8 @@ export default class MetaTagging {
             })
         }
 
-        state.selectedElementAndLayer.addCallbackAndRunD(({ feature, layer }) => {
+        state.selectedElement.addCallbackAndRunD((feature) => {
+            const layer = state.layout.getMatchingLayer(feature.properties)
             // Force update the tags of the currently selected element
             MetaTagging.addMetatags(
                 [feature],
