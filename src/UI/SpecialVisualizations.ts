@@ -92,6 +92,7 @@ import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
 import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
 import LoginButton from "./Base/LoginButton.svelte"
 import Toggle from "./Input/Toggle"
+import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -735,6 +736,19 @@ export default class SpecialVisualizations {
                         }
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
+                },
+            },
+            {
+                funcName: "import_mangrove_key",
+                docs: "Only makes sense in the usersettings. Allows to import a mangrove public key and to use this to make reviews",
+                args: [{
+                    name: "text",
+                    doc: "The text that is shown on the button",
+                }],
+                needsUrls: [],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    const [text] = argument
+                    return new SvelteUIElement(ImportReviewIdentity, { state, text })
                 },
             },
             {

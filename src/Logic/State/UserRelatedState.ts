@@ -114,7 +114,8 @@ export default class UserRelatedState {
         )
 
         this.mangroveIdentity = new MangroveIdentity(
-            this.osmConnection.GetLongPreference("identity", "mangrove")
+            this.osmConnection.GetLongPreference("identity", "mangrove"),
+            this.osmConnection.GetPreference("identity-creation-date", "mangrove")
         )
         this.preferredBackgroundLayer = this.osmConnection.GetPreference(
             "preferred-background-layer",

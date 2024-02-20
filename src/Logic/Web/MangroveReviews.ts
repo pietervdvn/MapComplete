@@ -6,11 +6,16 @@ import { GeoOperations } from "../GeoOperations"
 
 export class MangroveIdentity {
     private readonly keypair: Store<CryptoKeyPair>
-    private readonly mangroveIdentity: UIEventSource<string>
+    /**
+     * Same as the one in the user settings
+     */
+    public readonly mangroveIdentity: UIEventSource<string>
     private readonly key_id: Store<string>
+    private readonly _mangroveIdentityCreationDate: UIEventSource<string>
 
-    constructor(mangroveIdentity: UIEventSource<string>) {
+    constructor(mangroveIdentity: UIEventSource<string>, mangroveIdentityCreationDate: UIEventSource<string>) {
         this.mangroveIdentity = mangroveIdentity
+        this._mangroveIdentityCreationDate = mangroveIdentityCreationDate
         const key_id = new UIEventSource<string>(undefined)
         this.key_id = key_id
         const keypairEventSource = new UIEventSource<CryptoKeyPair>(undefined)
@@ -31,15 +36,16 @@ export class MangroveIdentity {
      * Is written into the UIEventsource, which was passed into the constructor
      * @constructor
      */
-    private static async CreateIdentity(identity: UIEventSource<string>): Promise<void> {
+    private async CreateIdentity(): Promise<void> {
         const keypair = await MangroveReviews.generateKeypair()
         const jwk = await MangroveReviews.keypairToJwk(keypair)
-        if ((identity.data ?? "") !== "") {
+        if ((this.mangroveIdentity.data ?? "") !== "") {
             // Identity has been loaded via osmPreferences by now - we don't overwrite
             return
         }
         console.log("Creating a new Mangrove identity!")
-        identity.setData(JSON.stringify(jwk))
+        this.mangroveIdentity.setData(JSON.stringify(jwk))
+        this._mangroveIdentityCreationDate.setData(new Date().toISOString())
     }
 
     /**
@@ -51,7 +57,7 @@ export class MangroveIdentity {
             // We create the key
             try {
                 if (!Utils.runningFromConsole && (this.mangroveIdentity.data ?? "") === "") {
-                    await MangroveIdentity.CreateIdentity(this.mangroveIdentity)
+                    await this.CreateIdentity()
                 }
             } catch (e) {
                 console.error("Could not create identity: ", e)
@@ -123,7 +129,7 @@ export default class FeatureReviews {
     private constructor(
         feature: Feature,
         tagsSource: UIEventSource<Record<string, string>>,
-        mangroveIdentity?: MangroveIdentity,
+        mangroveIdentity: MangroveIdentity,
         options?: {
             nameKey?: "name" | string
             fallbackName?: string
@@ -132,8 +138,7 @@ export default class FeatureReviews {
     ) {
         const centerLonLat = GeoOperations.centerpointCoordinates(feature)
         ;[this._lon, this._lat] = centerLonLat
-        this._identity =
-            mangroveIdentity ?? new MangroveIdentity(new UIEventSource<string>(undefined))
+        this._identity = mangroveIdentity
         const nameKey = options?.nameKey ?? "name"
 
         if (feature.geometry.type === "Point") {
