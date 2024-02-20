@@ -5,6 +5,49 @@ import StaticFeatureSource from "../Sources/StaticFeatureSource"
 import { Feature, Point } from "geojson"
 import { Utils } from "../../../Utils"
 import { Tiles } from "../../../Models/TileRange"
+import { FeatureSource } from "../FeatureSource"
+import FilteredLayer from "../../../Models/FilteredLayer"
+import Constants from "../../../Models/Constants"
+
+export class SummaryTileSourceRewriter implements FeatureSource {
+    private readonly _features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
+    private filteredLayers: FilteredLayer[]
+    public readonly features: Store<Feature[]> = this._features
+    private readonly _summarySource: SummaryTileSource
+    constructor(
+        summarySource: SummaryTileSource,
+        filteredLayers: ReadonlyMap<string, FilteredLayer>
+    ) {
+        this.filteredLayers = Array.from(filteredLayers.values()).filter(
+            (l) =>
+                Constants.priviliged_layers.indexOf(<any>l.layerDef.id) < 0 &&
+                !l.layerDef.id.startsWith("note_import")
+        )
+        this._summarySource = summarySource
+        filteredLayers.forEach((v, k) => {
+            v.isDisplayed.addCallback((_) => this.update())
+        })
+        this._summarySource.features.addCallbackAndRunD((_) => this.update())
+    }
+
+    private update() {
+        const newFeatures: Feature[] = []
+        const layersToCount = this.filteredLayers.filter((fl) => fl.isDisplayed.data)
+        const bitmap = layersToCount.map((l) => (l.isDisplayed.data ? "1" : "0")).join("")
+        const ids = layersToCount.map((l) => l.layerDef.id)
+        for (const f of this._summarySource.features.data ?? []) {
+            let newTotal = 0
+            for (const id of ids) {
+                newTotal += Number(f.properties[id] ?? 0)
+            }
+            newFeatures.push({
+                ...f,
+                properties: { ...f.properties, id: f.properties.id + bitmap, total: newTotal },
+            })
+        }
+        this._features.setData(newFeatures)
+    }
+}
 
 /**
  * Provides features summarizing the total amount of features at a given location

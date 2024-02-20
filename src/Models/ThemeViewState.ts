@@ -62,7 +62,10 @@ import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFe
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
-import { SummaryTileSource } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
+import {
+    SummaryTileSource,
+    SummaryTileSourceRewriter,
+} from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import summaryLayer from "../assets/generated/layers/summary.json"
 import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Locale from "../UI/i18n/Locale"
@@ -664,7 +667,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 l.source.geojsonSource === undefined
         )
         const url = new URL(Constants.VectorTileServer)
-        return new SummaryTileSource(
+        const summaryTileSource = new SummaryTileSource(
             url.protocol + "//" + url.host + "/summary",
             layers.map((l) => l.id),
             this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z), 0)),
@@ -673,6 +676,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 isActive: this.mapProperties.zoom.map((z) => z <= maxzoom),
             }
         )
+        return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
     }
     /**
      * Add the special layers to the map
