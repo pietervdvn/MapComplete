@@ -55,7 +55,7 @@
     "ice_cream",
     "trolley_bay"
   ],
-  "overideAll": {
+  "overrideAll": {
     "minzoom": 16
   }
 }
