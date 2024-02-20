@@ -304,10 +304,12 @@ new Server(2345, { ignorePathPrefix: ["summary"] }, [
                     Tiles.tile_index(Number(z), Number(x), Number(y))
                 )
 
-                latSum += count.lat * count.count
-                lonSum += count.lon * count.count
                 properties[layer] = count.count
-                sum += count.count
+                if (count.count !== 0) {
+                    latSum += count.lat * count.count
+                    lonSum += count.lon * count.count
+                    sum += count.count
+                }
             }
 
             properties["lon"] = lonSum / sum
