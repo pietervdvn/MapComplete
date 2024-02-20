@@ -171,7 +171,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,
-            layout?.language,
             layout,
             this.featureSwitches,
             this.mapProperties

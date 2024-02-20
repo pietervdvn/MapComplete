@@ -671,6 +671,7 @@
         "reviewPlaceholder": "Describe your experience…",
         "reviewing_as": "Reviewing as {nickname}",
         "reviewing_as_anonymous": "Reviewing as anonymous",
+        "reviews_bug": "Expected more reviews? Some reviews are not displayed due to a bug.",
         "save": "Save review",
         "saved": "Review saved. Thanks for sharing!",
         "saving_review": "Saving…",
@@ -678,7 +679,9 @@
         "title_singular": "One review",
         "too_long": "At most {max} characters are allowed. Your review has {amount} characters.",
         "tos": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
-        "write_a_comment": "Leave a review…"
+        "write_a_comment": "Leave a review…",
+        "your_reviews": "Your previous reviews",
+        "your_reviews_empty": "We couldn't find any of your previous reviews"
     },
     "split": {
         "cancel": "Cancel",

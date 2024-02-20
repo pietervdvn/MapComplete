@@ -90,6 +90,8 @@ import Qr from "../Utils/Qr"
 import ComparisonTool from "./Comparison/ComparisonTool.svelte"
 import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
 import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
+import LoginButton from "./Base/LoginButton.svelte"
+import Toggle from "./Input/Toggle"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -295,6 +297,7 @@ export default class SpecialVisualizations {
     ): RenderingSpecification[] {
         return SpecialVisualisationUtils.constructSpecification(template, extraMappings)
     }
+
     public static HelpMessage() {
         const helpTexts = SpecialVisualizations.specialVisualizations.map((viz) =>
             SpecialVisualizations.DocumentationFor(viz)
@@ -754,7 +757,7 @@ export default class SpecialVisualizations {
                         doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
                     },
                 ],
-
+                needsUrls: [Constants.countryCoderEndpoint],
                 example:
                     "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state, tagSource: UIEventSource<any>, args) => {
@@ -1086,10 +1089,22 @@ export default class SpecialVisualizations {
                         doc: "The property name containing the maproulette id",
                         defaultValue: "mr_taskId",
                     },
+                    {
+                        name: "ask_feedback",
+                        doc: "If not an empty string, this will be used as question to ask some additional feedback. A text field will be added",
+                        defaultValue: "",
+                    },
                 ],
 
                 constr: (state, tagsSource, args) => {
-                    let [message, image, message_closed, statusToSet, maproulette_id_key] = args
+                    let [
+                        message,
+                        image,
+                        message_closed,
+                        statusToSet,
+                        maproulette_id_key,
+                        askFeedback,
+                    ] = args
                     if (image === "") {
                         image = "confirm"
                     }
@@ -1105,6 +1120,7 @@ export default class SpecialVisualizations {
                         message_closed,
                         statusToSet,
                         maproulette_id_key,
+                        askFeedback,
                     })
                 },
             },
@@ -1203,7 +1219,10 @@ export default class SpecialVisualizations {
                             (tags) =>
                                 new SvelteUIElement(Link, {
                                     text: Utils.SubstituteKeys(text, tags),
-                                    href: Utils.SubstituteKeys(href, tags).replaceAll(/ /g, '%20') /* Chromium based browsers eat the spaces */,
+                                    href: Utils.SubstituteKeys(href, tags).replaceAll(
+                                        / /g,
+                                        "%20"
+                                    ) /* Chromium based browsers eat the spaces */,
                                     classnames,
                                     download: Utils.SubstituteKeys(download, tags),
                                     ariaLabel: Utils.SubstituteKeys(ariaLabel, tags),
@@ -1664,6 +1683,25 @@ export default class SpecialVisualizations {
                         feature,
                         readonly,
                     })
+                },
+            },
+            {
+                funcName: "login_button",
+                args: [],
+                docs: "Show a login button",
+                needsUrls: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new Toggle(
+                        undefined,
+                        new SvelteUIElement(LoginButton),
+                        state.osmConnection.isLoggedIn
+                    )
                 },
             },
         ]

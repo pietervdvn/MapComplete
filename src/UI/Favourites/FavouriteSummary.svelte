@@ -29,7 +29,7 @@
     center()
   }
 
-  const titleIconBlacklist = ["osmlink", "sharelink", "favourite_title_icon"]
+  let titleIconBlacklist = ["osmlink", "sharelink", "favourite_title_icon"]
 </script>
 
 {#if favLayer !== undefined}

@@ -73,7 +73,6 @@ export default class UserRelatedState {
 
     constructor(
         osmConnection: OsmConnection,
-        availableLanguages?: string[],
         layout?: LayoutConfig,
         featureSwitches?: FeatureSwitchState,
         mapProperties?: MapProperties
@@ -364,6 +363,11 @@ export default class UserRelatedState {
             },
             [translationMode]
         )
+
+        this.mangroveIdentity.getKeyId().addCallbackAndRun(kid => {
+            amendedPrefs.data["mangrove_kid"] = kid
+            amendedPrefs.ping()
+        })
 
         const usersettingMetaTagging = new ThemeMetaTagging()
         osmConnection.userDetails.addCallback((userDetails) => {

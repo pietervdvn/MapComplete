@@ -64,7 +64,8 @@
       "iconSize": "40,40",
       "location": [
         "point",
-        "centroid"
+        "projected_centerpoint",
+        "polygon_centroid"
       ],
       "anchor": "bottom",
       "marker": [
