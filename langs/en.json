@@ -65,7 +65,7 @@
         "intro": "You marked {length} locations as a favourite location.",
         "introPrivacy": "This list is only visible to you",
         "loginToSeeList": "Login to see the list of locations you marked as favourite",
-        "tab": "Your favourites",
+        "tab": "Your favourites and reviews",
         "title": "Your favourite locations"
     },
     "flyer": {
@@ -145,7 +145,7 @@
             "title": "Add a new feature",
             "warnVisibleForEveryone": "Your addition will be visible for everyone",
             "wrongType": "This feature is not a node or a way and can not be imported",
-            "zoomInFurther": "Zoom in further to add a feature.",
+            "zoomInFurther": "Zoom in further to add a feature",
             "zoomInMore": "Zoom in more to import this feature"
         },
         "apply_button": {
