@@ -31,10 +31,8 @@ export class SummaryTileSource extends DynamicTileSource {
             (tileIndex) => {
                 const [z, x, y] = Tiles.tile_from_index(tileIndex)
                 let coordinates = Tiles.centerPointOf(z, x, y)
-
-                const count = UIEventSource.FromPromiseWithErr(
-                    Utils.downloadJson(`${cacheserver}/${layersSummed}/${z}/${x}/${y}.json`)
-                )
+                const url = `${cacheserver}/${layersSummed}/${z}/${x}/${y}.json`
+                const count = UIEventSource.FromPromiseWithErr(Utils.downloadJson(url))
                 const features: Store<Feature<Point>[]> = count.mapD((count) => {
                     if (count["error"] !== undefined) {
                         console.error(
@@ -61,7 +59,8 @@ export class SummaryTileSource extends DynamicTileSource {
                             lon,
                             lat,
                             tileBbox,
-                            counts
+                            counts,
+                            url
                         )
                     } else {
                         coordinates = [lon, lat]
@@ -86,7 +85,6 @@ export class SummaryTileSource extends DynamicTileSource {
                 return new StaticFeatureSource(
                     features.map(
                         (f) => {
-                            console.log("z, zdiff, rounded:", z, zDiff, zoomRounded.data)
                             if (z - zDiff !== zoomRounded.data) {
                                 return SummaryTileSource.empty
                             }

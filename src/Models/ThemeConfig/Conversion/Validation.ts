@@ -391,6 +391,13 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson> {
             }
         }
 
+        if (json["overideAll"]) {
+            context
+                .enter("overideAll")
+                .err(
+                    "'overrideAll' is spelled with _two_ `r`s. You only wrote a single one of them."
+                )
+        }
         return json
     }
 }

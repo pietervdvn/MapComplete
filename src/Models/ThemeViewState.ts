@@ -657,7 +657,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
-    private setupSummaryLayer() {
+    private setupSummaryLayer(maxzoom: number) {
         const layers = this.layout.layers.filter(
             (l) =>
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
@@ -668,7 +668,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             url.protocol + "//" + url.host + "/summary",
             layers.map((l) => l.id),
             this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z), 0)),
-            this.mapProperties
+            this.mapProperties,
+            {
+                isActive: this.mapProperties.zoom.map((z) => z <= maxzoom),
+            }
         )
     }
     /**
@@ -677,6 +680,22 @@ export default class ThemeViewState implements SpecialVisualizationState {
     private drawSpecialLayers() {
         type AddedByDefaultTypes = (typeof Constants.added_by_default)[number]
         const empty = []
+
+        /**
+         * MaxZoom for the summary layer
+         */
+        const normalLayers = this.layout.layers.filter(
+            (l) =>
+                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
+                !l.id.startsWith("note_import")
+        )
+        const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
+        console.log(
+            "Maxzoom for summary layer is",
+            maxzoom,
+            normalLayers.map((nl) => nl.id + " - " + nl.minzoom).join(", ")
+        )
+
         /**
          * A listing which maps the layerId onto the featureSource
          */
@@ -698,7 +717,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             current_view: this.currentView,
             favourite: this.favourites,
-            summary: this.setupSummaryLayer(),
+            summary: this.setupSummaryLayer(maxzoom),
         }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
@@ -744,7 +763,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 return
             }
             if (id === "summary") {
-                console.log("Skipping summary!")
                 return
             }
 
@@ -759,16 +777,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             })
         })
 
-        const maxzoom = Math.min(
-            ...this.layout.layers
-                .filter((l) => Constants.priviliged_layers.indexOf(<any>l.id) < 0)
-                .map((l) => l.minzoom)
-        )
-        console.log("Maxzoom is", maxzoom)
         new ShowDataLayer(this.map, {
             features: specialLayers.summary,
             layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
-            doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
+            // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
             selectedLayer: this.selectedLayer,
             selectedElement: this.selectedElement,
         })
