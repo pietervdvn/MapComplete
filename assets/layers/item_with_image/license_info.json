@@ -1,0 +1,12 @@
+[
+  {
+    "path": "camera.svg",
+    "license": "GPL3",
+    "authors": [
+      "https://gitlab.gnome.org/jimmac"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:GNOME_Photos_icon_2018.svg"
+    ]
+  }
+]

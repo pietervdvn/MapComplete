@@ -319,6 +319,10 @@
                     "then": "./assets/layers/entrance/entrance.svg"
                   },
                   {
+                    "if": "theme=items_with_image",
+                    "then": "./assets/layers/item_with_image/camera.svg"
+                  },
+                  {
                     "if": "theme=kerbs_and_crossings",
                     "then": "./assets/layers/kerbs/KerbIcon.svg"
                   },
