@@ -11,6 +11,7 @@
   import type { MapProperties } from "../../Models/MapProperties"
   import { onDestroy } from "svelte"
   import type { RasterLayerPolygon } from "../../Models/RasterLayers"
+  import StyleLoadingIndicator from "./StyleLoadingIndicator.svelte"
 
   export let placedOverMapProperties: MapProperties
   export let placedOverMap: Store<MlMap>
@@ -64,9 +65,13 @@
         updateLocation()
         window.setTimeout(updateLocation, 150)
         window.setTimeout(updateLocation, 500)
-      })
+      }),
     )
   }
 </script>
 
+<div class="absolute w-full h-full flex items-center justify-center"
+     style="z-index: 100">
+  <StyleLoadingIndicator map={altmap} />
+</div>
 <MaplibreMap {interactive} map={altmap} />
