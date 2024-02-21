@@ -19,10 +19,7 @@
   )
   
   
-  let stillMatches = tags.map(tags => {
-    console.log("Tags are now:",tags, layer.source.osmTags?.matchesProperties(tags))
-    return !layer.source?.osmTags || layer.source.osmTags?.matchesProperties(tags)
-  })
+  let stillMatches = tags.map(tags => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags))
 
   let _metatags: Record<string, string>
   onDestroy(
