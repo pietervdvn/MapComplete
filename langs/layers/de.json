@@ -10255,6 +10255,14 @@
                     }
                 }
             },
+            "mangrove-key-import": {
+                "render": {
+                    "after": "Wenn du einen privaten Schlüssel hochlädst, wird dein aktueller privater Schlüssel gelöscht. Wenn du damit Rezensionen geschrieben hast, lade zuerst deinen aktuellen privaten Schlüssel hoch",
+                    "special": {
+                        "text": "Privaten Mangrove-Schlüssel aus Backup importieren"
+                    }
+                }
+            },
             "mangrove-keys": {
                 "render": {
                     "after": "Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
