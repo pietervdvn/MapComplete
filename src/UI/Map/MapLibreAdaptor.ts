@@ -90,7 +90,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.lastClickLocation = lastClickLocation
         const self = this
 
-        const rasterLayerHandler = new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
+        new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
 
         function handleClick(e) {
             if (e.originalEvent["consumed"]) {
@@ -114,7 +114,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
                 self.setTerrain(self.useTerrain.data)
-                rasterLayerHandler.setBackground()
                 this.updateStores(true)
             })
             self.MoveMapToCurrentLoc(self.location.data)
@@ -128,7 +127,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setBounds(self.bounds.data)
             self.SetRotation(self.rotation.data)
             self.setTerrain(self.useTerrain.data)
-            rasterLayerHandler.setBackground()
             this.updateStores(true)
             map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
@@ -177,7 +175,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             })
         })
 
-        this.rasterLayer.addCallbackAndRun((_) => rasterLayerHandler.setBackground())
         this.location.addCallbackAndRunD((loc) => {
             self.MoveMapToCurrentLoc(loc)
         })
