@@ -213,6 +213,7 @@
                 "current_view_generic": "Export a PDF off the current view for {paper_size} in {orientation} orientation"
             },
             "title": "Download",
+            "toMuch": "There are to much features to download them all",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
         "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",

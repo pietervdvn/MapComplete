@@ -1,27 +1,29 @@
-import { FeatureSourceForTile } from "../FeatureSource"
+import { FeatureSourceForTile, UpdatableFeatureSource } from "../FeatureSource"
 import { Store } from "../../UIEventSource"
 import { BBox } from "../../BBox"
 import { Utils } from "../../../Utils"
 import { Feature } from "geojson"
 import { GeoOperations } from "../../GeoOperations"
-import DynamicTileSource from "./DynamicTileSource"
+import DynamicTileSource, { UpdatableDynamicTileSource } from "./DynamicTileSource"
 
 /**
  * The PolygonSourceMerger receives various small pieces of bigger polygons and stitches them together.
  * This is used to reconstruct polygons of vector tiles
  */
-export class PolygonSourceMerger extends DynamicTileSource<FeatureSourceForTile> {
+export class PolygonSourceMerger extends UpdatableDynamicTileSource<
+    FeatureSourceForTile & UpdatableFeatureSource
+> {
     constructor(
         zoomlevel: Store<number>,
         minzoom: number,
-        constructSource: (tileIndex: number) => FeatureSourceForTile,
+        constructSource: (tileIndex: number) => FeatureSourceForTile & UpdatableFeatureSource,
         mapProperties: {
             bounds: Store<BBox>
             zoom: Store<number>
         },
         options?: {
             isActive?: Store<boolean>
-        },
+        }
     ) {
         super(zoomlevel, minzoom, constructSource, mapProperties, options)
     }
@@ -69,5 +71,4 @@ export class PolygonSourceMerger extends DynamicTileSource<FeatureSourceForTile>
         this.features.setData(newList)
         this._featuresById.setData(all)
     }
-
 }

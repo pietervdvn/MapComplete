@@ -114,6 +114,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly closestFeatures: NearbyFeatureSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
+    readonly featureSummary: SummaryTileSourceRewriter
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
@@ -378,6 +379,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         this.favourites = new FavouritesFeatureSource(this)
 
+        this.featureSummary = this.setupSummaryLayer()
         this.initActors()
         this.drawSpecialLayers()
         this.initHotkeys()
@@ -660,7 +662,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
-    private setupSummaryLayer(maxzoom: number) {
+    private setupSummaryLayer(): SummaryTileSourceRewriter {
+        /**
+         * MaxZoom for the summary layer
+         */
+        const normalLayers = this.layout.layers.filter(
+            (l) =>
+                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
+                !l.id.startsWith("note_import")
+        )
+        const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
+
         const layers = this.layout.layers.filter(
             (l) =>
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
@@ -684,22 +696,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     private drawSpecialLayers() {
         type AddedByDefaultTypes = (typeof Constants.added_by_default)[number]
         const empty = []
-
-        /**
-         * MaxZoom for the summary layer
-         */
-        const normalLayers = this.layout.layers.filter(
-            (l) =>
-                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
-                !l.id.startsWith("note_import")
-        )
-        const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
-        console.log(
-            "Maxzoom for summary layer is",
-            maxzoom,
-            normalLayers.map((nl) => nl.id + " - " + nl.minzoom).join(", ")
-        )
-
         /**
          * A listing which maps the layerId onto the featureSource
          */
@@ -721,7 +717,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             current_view: this.currentView,
             favourite: this.favourites,
-            summary: this.setupSummaryLayer(maxzoom),
+            summary: this.featureSummary,
         }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")

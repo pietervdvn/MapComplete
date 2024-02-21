@@ -19,7 +19,7 @@
   let t = Translations.t.general.download
   const downloadHelper = new DownloadHelper(state)
 
-  async function constructPdf(_, title: string, status: UIEventSource<string>) {
+  async function constructPdf(title: string, status: UIEventSource<string>): Promise<Blob> {
     title =
       title.substring(0, title.length - 4) + "_" + template.format + "_" + template.orientation
     const templateUrls = SvgToPdf.templates[templateName].pages
@@ -33,11 +33,11 @@
         console.log("Creating an image for key", key)
         if (key === "qr") {
           const toShare = window.location.href.split("#")[0]
-          return new Qr(toShare).toImageElement(parseFloat(width), parseFloat(height))
+          return new Qr(toShare).toImageElement(parseFloat(width))
         }
         return downloadHelper.createImage(key, width, height)
       },
-      textSubstitutions: <Record<string, string>>{
+      textSubstitutions: <Record<string, string | Translation>>{
         "layout.title": state.layout.title,
         layoutid: state.layout.id,
         title: state.layout.title,
@@ -61,7 +61,6 @@
   construct={constructPdf}
   extension="pdf"
   helperText={t.downloadAsPdfHelper}
-  metaIsIncluded={false}
   mainText={t.pdf.current_view_generic.Subs({
     orientation: template.orientation,
     paper_size: template.format.toUpperCase(),

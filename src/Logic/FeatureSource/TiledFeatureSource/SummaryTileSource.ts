@@ -14,6 +14,10 @@ export class SummaryTileSourceRewriter implements FeatureSource {
     private filteredLayers: FilteredLayer[]
     public readonly features: Store<Feature[]> = this._features
     private readonly _summarySource: SummaryTileSource
+    private readonly _totalNumberOfFeatures: UIEventSource<number> = new UIEventSource<number>(
+        undefined
+    )
+    public readonly totalNumberOfFeatures: Store<number> = this._totalNumberOfFeatures
     constructor(
         summarySource: SummaryTileSource,
         filteredLayers: ReadonlyMap<string, FilteredLayer>
@@ -31,6 +35,7 @@ export class SummaryTileSourceRewriter implements FeatureSource {
     }
 
     private update() {
+        let fullTotal = 0
         const newFeatures: Feature[] = []
         const layersToCount = this.filteredLayers.filter((fl) => fl.isDisplayed.data)
         const bitmap = layersToCount.map((l) => (l.isDisplayed.data ? "1" : "0")).join("")
@@ -42,10 +47,17 @@ export class SummaryTileSourceRewriter implements FeatureSource {
             }
             newFeatures.push({
                 ...f,
-                properties: { ...f.properties, id: f.properties.id + bitmap, total: newTotal },
+                properties: {
+                    ...f.properties,
+                    id: f.properties.id + bitmap,
+                    total: newTotal,
+                    total_metric: Utils.numberWithMetrixPrefix(newTotal),
+                },
             })
+            fullTotal += newTotal
         }
         this._features.setData(newFeatures)
+        this._totalNumberOfFeatures.setData(fullTotal)
     }
 }
 
@@ -94,7 +106,7 @@ export class SummaryTileSource extends DynamicTileSource {
                     }
                     const lat = counts["lat"]
                     const lon = counts["lon"]
-                    const total = Utils.numberWithMetrixPrefix(Number(counts["total"]))
+                    const total = Number(counts["total"])
                     const tileBbox = new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
                     if (!tileBbox.contains([lon, lat])) {
                         console.error(
@@ -116,6 +128,7 @@ export class SummaryTileSource extends DynamicTileSource {
                                 summary: "yes",
                                 ...counts,
                                 total,
+                                total_metric: Utils.numberWithMetrixPrefix(total),
                                 layers: layersSummed,
                             },
                             geometry: {
