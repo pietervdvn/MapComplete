@@ -111,7 +111,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
     readonly availableLayers: Store<RasterLayerPolygon[]>
-    readonly selectedLayer: UIEventSource<LayerConfig>
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
     readonly geolocationControl: GeolocationControlState
@@ -732,7 +731,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 doShowLayer: flayer.isDisplayed,
                 layer: flayer.layerDef,
                 metaTags: this.userRelatedState.preferencesAsTags,
-                selectedElement: this.selectedElement
+                selectedElement: this.selectedElement,
             })
         })
     }
