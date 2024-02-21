@@ -15,6 +15,6 @@
 </script>
 
 <a class="button flex w-full items-center" href={url} style="margin-left: 0">
-  <Envelope class="w-8 h-8 mr-4 shrink-0"/>
+  <Envelope class="mr-4 h-8 w-8 shrink-0" />
   {button_text}
 </a>

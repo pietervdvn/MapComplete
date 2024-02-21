@@ -1,58 +1,55 @@
 <script lang="ts">
-    import type { ImportFlowArguments } from "./ImportFlow"
-    /**
-     * The 'importflow' does some basic setup, e.g. validate that imports are allowed, that the user is logged-in, ...
-     * They show some default components
-     */
-    import ImportFlow from "./ImportFlow"
-    import LoginToggle from "../../Base/LoginToggle.svelte"
-    import BackButton from "../../Base/BackButton.svelte"
-    import Translations from "../../i18n/Translations"
-    import Tr from "../../Base/Tr.svelte"
-    import NextButton from "../../Base/NextButton.svelte"
-    import { createEventDispatcher, onDestroy } from "svelte"
-    import Loading from "../../Base/Loading.svelte"
-    import { And } from "../../../Logic/Tags/And"
-    import TagHint from "../TagHint.svelte"
-    import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-    import { Store } from "../../../Logic/UIEventSource"
-    import Svg from "../../../Svg"
-    import ToSvelte from "../../Base/ToSvelte.svelte"
-    import { EyeIcon, EyeOffIcon } from "@rgossiaux/svelte-heroicons/solid"
-    import FilteredLayer from "../../../Models/FilteredLayer"
-    import Confirm from "../../../assets/svg/Confirm.svelte"
+  import type { ImportFlowArguments } from "./ImportFlow"
+  /**
+   * The 'importflow' does some basic setup, e.g. validate that imports are allowed, that the user is logged-in, ...
+   * They show some default components
+   */
+  import ImportFlow from "./ImportFlow"
+  import LoginToggle from "../../Base/LoginToggle.svelte"
+  import BackButton from "../../Base/BackButton.svelte"
+  import Translations from "../../i18n/Translations"
+  import Tr from "../../Base/Tr.svelte"
+  import NextButton from "../../Base/NextButton.svelte"
+  import { createEventDispatcher, onDestroy } from "svelte"
+  import Loading from "../../Base/Loading.svelte"
+  import { And } from "../../../Logic/Tags/And"
+  import TagHint from "../TagHint.svelte"
+  import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
+  import { Store } from "../../../Logic/UIEventSource"
+  import Svg from "../../../Svg"
+  import ToSvelte from "../../Base/ToSvelte.svelte"
+  import { EyeIcon, EyeOffIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import FilteredLayer from "../../../Models/FilteredLayer"
+  import Confirm from "../../../assets/svg/Confirm.svelte"
 
-    export let importFlow: ImportFlow<ImportFlowArguments>
-    let state = importFlow.state
+  export let importFlow: ImportFlow<ImportFlowArguments>
+  let state = importFlow.state
 
-    export let currentFlowStep: "start" | "confirm" | "importing" | "imported" = "start"
+  export let currentFlowStep: "start" | "confirm" | "importing" | "imported" = "start"
 
-    const isLoading = state.dataIsLoading
-    let dispatch = createEventDispatcher<{ confirm }>()
-    let canBeImported = importFlow.canBeImported()
-    let tags: Store<TagsFilter> = importFlow.tagsToApply.map((tags) => new And(tags))
+  const isLoading = state.dataIsLoading
+  let dispatch = createEventDispatcher<{ confirm }>()
+  let canBeImported = importFlow.canBeImported()
+  let tags: Store<TagsFilter> = importFlow.tagsToApply.map((tags) => new And(tags))
 
+  let targetLayers = importFlow.targetLayer
+  let filteredLayer: FilteredLayer
+  let undisplayedLayer: FilteredLayer
 
-    let targetLayers = importFlow.targetLayer
-    let filteredLayer: FilteredLayer
-    let undisplayedLayer: FilteredLayer
+  function updateIsDisplayed() {
+    filteredLayer = targetLayers.find((tl) => tl.hasFilter.data)
+    undisplayedLayer = targetLayers.find((tl) => !tl.isDisplayed.data)
+  }
 
-    function updateIsDisplayed() {
-        filteredLayer = targetLayers.find(tl => tl.hasFilter.data)
-        undisplayedLayer = targetLayers.find(tl => !tl.isDisplayed.data)
-    }
+  updateIsDisplayed()
 
-    updateIsDisplayed()
-    
-    for (const tl of targetLayers) {
-        onDestroy(
-            tl.isDisplayed.addCallback(updateIsDisplayed),
-        )
-    }
+  for (const tl of targetLayers) {
+    onDestroy(tl.isDisplayed.addCallback(updateIsDisplayed))
+  }
 
-    function abort() {
-        state.selectedElement.setData(undefined)
-    }
+  function abort() {
+    state.selectedElement.setData(undefined)
+  }
 </script>
 
 <LoginToggle {state}>
@@ -160,7 +157,7 @@
             {#if importFlow.args.icon}
               <img src={importFlow.args.icon} />
             {:else}
-              <Confirm class="w-8 h-8 pr-4"/>
+              <Confirm class="h-8 w-8 pr-4" />
             {/if}
           </span>
           <slot name="confirm-text">

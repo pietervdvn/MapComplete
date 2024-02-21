@@ -16,7 +16,8 @@
     "images",
     {
       "question": {
-        "en": "What is the difficulty of this piste?"
+        "en": "What is the difficulty of this piste?",
+        "de": "Was ist der Schwierigkeitsgrad der Piste?"
       },
       "id": "piste_difficulty",
       "condition": "piste:type!=connection",
@@ -24,37 +25,43 @@
         {
           "if": "piste:difficulty=novice",
           "then": {
-            "en": "Novice (green)"
+            "en": "Novice (green)",
+            "de": "Anfänger (grün)"
           }
         },
         {
           "if": "piste:difficulty=easy",
           "then": {
-            "en": "Easy (blue)"
+            "en": "Easy (blue)",
+            "de": "Einfach (blau)"
           }
         },
         {
           "if": "piste:difficulty=intermediate",
           "then": {
-            "en": "Intermediate (red)"
+            "en": "Intermediate (red)",
+            "de": "Mittel (rot)"
           }
         },
         {
           "if": "piste:difficulty=advanced",
           "then": {
-            "en": "Advanced (black)"
+            "en": "Advanced (black)",
+            "de": "Fortgeschritten (schwarz)"
           }
         },
         {
           "if": "piste:difficulty=expert",
           "then": {
-            "en": "Expert (orange/double black)"
+            "en": "Expert (orange/double black)",
+            "de": "Experte (orange/doppel schwarz)"
           }
         },
         {
           "if": "piste:difficulty=freeride",
           "then": {
-            "en": "Freeride"
+            "en": "Freeride",
+            "de": "Freeride"
           }
         }
       ]
@@ -62,7 +69,8 @@
     {
       "id": "length",
       "render": {
-        "en": "This part of the ski piste is {_length:km} kilometer long"
+        "en": "This part of the ski piste is {_length:km} kilometer long",
+        "de": "Dieser Teil der Skipiste hat eine Länge von {_length:km} km"
       }
     }
   ],
@@ -102,10 +110,12 @@
   ],
   "id": "ski_piste",
   "name": {
-    "en": "Ski and snowboard pistes"
+    "en": "Ski and snowboard pistes",
+    "de": "Ski- und Snowboardpisten"
   },
   "description": {
-    "en": "Ski and snowboard pistes"
+    "en": "Ski and snowboard pistes",
+    "de": "Ski- und Snowboardpisten"
   },
   "source": {
     "osmTags": {
@@ -122,7 +132,8 @@
   },
   "title": {
     "render": {
-      "en": "Ski piste {name}"
+      "en": "Ski piste {name}",
+      "de": "Skipiste {name}"
     }
   }
 }

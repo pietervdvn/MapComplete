@@ -54,9 +54,6 @@
                     "1": {
                         "then": "Mural"
                     },
-                    "10": {
-                        "then": "Azulejo (ubin dekoratif Spanyol)"
-                    },
                     "2": {
                         "then": "Lukisan"
                     },
@@ -74,6 +71,9 @@
                     },
                     "9": {
                         "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (ubin dekoratif Spanyol)"
                     }
                 },
                 "question": "Apa jenis karya seni ini?",
@@ -191,15 +191,6 @@
                     "1": {
                         "then": "Jalur sepeda ini diaspal"
                     },
-                    "10": {
-                        "then": "Jalur sepeda ini terbuat dari kerikil halus"
-                    },
-                    "11": {
-                        "then": "Jalur sepeda ini terbuat dari batu kerikil"
-                    },
-                    "12": {
-                        "then": "Jalur sepeda ini terbuat dari tanah alami"
-                    },
                     "2": {
                         "then": "Jalur sepeda ini terbuat dari aspal"
                     },
@@ -220,6 +211,15 @@
                     },
                     "9": {
                         "then": "Jalur sepeda ini terbuat dari kerikil"
+                    },
+                    "10": {
+                        "then": "Jalur sepeda ini terbuat dari kerikil halus"
+                    },
+                    "11": {
+                        "then": "Jalur sepeda ini terbuat dari batu kerikil"
+                    },
+                    "12": {
+                        "then": "Jalur sepeda ini terbuat dari tanah alami"
                     }
                 },
                 "question": "Permukaan jalannya terbuat dari apa?",
@@ -730,6 +730,17 @@
                 },
                 "question": "Apakah pohon ini memiliki nama?",
                 "render": "Nama: {name}"
+            }
+        }
+    },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "Koin 50 sen diterima"
+                    }
+                }
             }
         }
     },

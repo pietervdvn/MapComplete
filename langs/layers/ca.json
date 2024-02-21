@@ -8422,6 +8422,23 @@
             "render": "Arbre"
         }
     },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "S'accepten monedes de 50 cèntims"
+                    },
+                    "1": {
+                        "then": "S'accepten monedes de 1 euro"
+                    },
+                    "2": {
+                        "then": "S'accepten monedes de 2 euros"
+                    }
+                }
+            }
+        }
+    },
     "unit": {
         "units": {
             "0": {

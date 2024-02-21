@@ -258,6 +258,17 @@
                 "question": "How many people fit a single carriage?",
                 "render": "{aerialway:occupancy} people fit a single carriage"
             },
+            "oneway": {
+                "mappings": {
+                    "0": {
+                        "then": "This aerialway can only be taken to the top"
+                    },
+                    "1": {
+                        "then": "This aerialway can be taken in both directions"
+                    }
+                },
+                "question": "In what direction can this aerialway be taken?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -5101,6 +5112,11 @@
             "ghost_bike-start_date": {
                 "question": "When was this Ghost bike installed?",
                 "render": "Placed on {start_date}"
+            },
+            "wikidata": {
+                "render": {
+                    "before": "<h3>Wikipedia page about the deceased person</h3>"
+                }
             }
         },
         "title": {
@@ -6108,6 +6124,18 @@
             "render": "Memorial plaque"
         }
     },
+    "mountain_rescue": {
+        "description": "A building where first aid responders store material and might be on watch",
+        "name": "Mountain rescue stations",
+        "presets": {
+            "0": {
+                "title": "a mountain rescue station"
+            }
+        },
+        "title": {
+            "render": "Mountain rescue station"
+        }
+    },
     "nature_reserve": {
         "description": "A nature reserve is an area where nature can take its course",
         "filter": {
@@ -6685,6 +6713,9 @@
             "mappings": {
                 "0": {
                     "then": "Disabled Parking Space"
+                },
+                "1": {
+                    "then": "Electric Vehicle Charging Parking Space"
                 }
             },
             "render": "Parking Space"
@@ -9327,6 +9358,48 @@
             }
         },
         "tagRenderings": {
+            "gender_segregated": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a separate, signposted area for men and women"
+                    },
+                    "1": {
+                        "then": "There is no separate, signposted area for men and women"
+                    }
+                },
+                "question": "Are these toilets gender-segregated?",
+                "questionHint": "Are there separate stalls or separate areas for men and women and are they signposted as such?"
+            },
+            "menstrual_products": {
+                "mappings": {
+                    "0": {
+                        "then": "Free menstrual products are available to all visitors of these toilets"
+                    },
+                    "1": {
+                        "then": "Free menstrual products are available to some visitors of these toilets"
+                    },
+                    "2": {
+                        "then": "No free menstrual products are available here"
+                    }
+                },
+                "question": "Are free, menstrual products distributed here?",
+                "questionHint": "This is only about menstrual products that are free of charge. If e.g. a vending machine is available which charges for menstrual products, ignore it for this question."
+            },
+            "menstrual_products_location": {
+                "mappings": {
+                    "0": {
+                        "then": "The free, menstrual products are located in the toilet for women"
+                    },
+                    "1": {
+                        "then": "The free, menstrual products are located in the toilet for men"
+                    },
+                    "2": {
+                        "then": "The free, menstrual products are located in the toilet for wheelchair users"
+                    }
+                },
+                "question": "Where are the free menstrual products located?",
+                "render": "The menstrual products are located in {toilets:menstrual_products:location}"
+            },
             "opening_hours_24_7": {
                 "override": {
                     "question": "When are these toilets opened?"
@@ -9924,6 +9997,78 @@
             "render": "Tree"
         }
     },
+    "trolley_bay": {
+        "description": "Find trolley bays for shopping trolleys.",
+        "name": "Trolley Bays",
+        "presets": {
+            "0": {
+                "description": "A trolley bay for parking shopping carts.",
+                "title": "a trolley bay"
+            }
+        },
+        "tagRenderings": {
+            "cart_types": {
+                "mappings": {
+                    "0": {
+                        "then": "Trolleys with a magnifier are available"
+                    },
+                    "1": {
+                        "then": "Trolleys for wheelchair users are available"
+                    },
+                    "2": {
+                        "then": "Trolleys for children are available"
+                    },
+                    "3": {
+                        "then": "Trolleys with seats for children are available"
+                    },
+                    "4": {
+                        "then": "Trolleys with a flatbed are available"
+                    },
+                    "5": {
+                        "then": "Vertical trolleys for sheet-like goods are available"
+                    }
+                },
+                "question": "What kind of special trolleys are available?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "This trolley bay is covered"
+                    },
+                    "1": {
+                        "then": "This trolley bay is not covered"
+                    }
+                },
+                "question": "Is this trolley bay covered?"
+            },
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "50 cent coins are accepted"
+                    },
+                    "1": {
+                        "then": "1 euro coins are accepted"
+                    },
+                    "2": {
+                        "then": "2 euro coins are accepted"
+                    }
+                },
+                "question": "What coins are accepted for the deposit?"
+            },
+            "deposit": {
+                "mappings": {
+                    "0": {
+                        "then": "A deposit is required for the trolleys"
+                    },
+                    "1": {
+                        "then": "No deposit is required for the trolleys"
+                    }
+                },
+                "question": "Is a deposit (e.g. a coin) required for the trolleys?"
+            }
+        },
+        "title": "Trolley Bay"
+    },
     "unit": {
         "description": "Library layer with all common units.  Units can _only_ be imported from this file.",
         "units": {
@@ -10107,6 +10252,14 @@
                 "mappings": {
                     "0": {
                         "then": "The language was set via an URL-parameter and cannot be set by the user."
+                    }
+                }
+            },
+            "mangrove-key-import": {
+                "render": {
+                    "after": "Uploading a private key erases your current private key. If you made reviews with it, download your current private key first",
+                    "special": {
+                        "text": "Import a mangrove private key from backup"
                     }
                 }
             },

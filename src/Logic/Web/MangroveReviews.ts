@@ -6,11 +6,16 @@ import { GeoOperations } from "../GeoOperations"
 
 export class MangroveIdentity {
     private readonly keypair: Store<CryptoKeyPair>
-    private readonly mangroveIdentity: UIEventSource<string>
+    /**
+     * Same as the one in the user settings
+     */
+    public readonly mangroveIdentity: UIEventSource<string>
     private readonly key_id: Store<string>
+    private readonly _mangroveIdentityCreationDate: UIEventSource<string>
 
-    constructor(mangroveIdentity: UIEventSource<string>) {
+    constructor(mangroveIdentity: UIEventSource<string>, mangroveIdentityCreationDate: UIEventSource<string>) {
         this.mangroveIdentity = mangroveIdentity
+        this._mangroveIdentityCreationDate = mangroveIdentityCreationDate
         const key_id = new UIEventSource<string>(undefined)
         this.key_id = key_id
         const keypairEventSource = new UIEventSource<CryptoKeyPair>(undefined)
@@ -24,8 +29,6 @@ export class MangroveIdentity {
             const pem = await MangroveReviews.publicToPem(keypair.publicKey)
             key_id.setData(pem)
         })
-
-
     }
 
     /**
@@ -33,27 +36,28 @@ export class MangroveIdentity {
      * Is written into the UIEventsource, which was passed into the constructor
      * @constructor
      */
-    private static async CreateIdentity(identity: UIEventSource<string>): Promise<void> {
+    private async CreateIdentity(): Promise<void> {
         const keypair = await MangroveReviews.generateKeypair()
         const jwk = await MangroveReviews.keypairToJwk(keypair)
-        if ((identity.data ?? "") !== "") {
+        if ((this.mangroveIdentity.data ?? "") !== "") {
             // Identity has been loaded via osmPreferences by now - we don't overwrite
             return
         }
         console.log("Creating a new Mangrove identity!")
-        identity.setData(JSON.stringify(jwk))
+        this.mangroveIdentity.setData(JSON.stringify(jwk))
+        this._mangroveIdentityCreationDate.setData(new Date().toISOString())
     }
 
     /**
      * Only called to create a review.
      */
     async getKeypair(): Promise<CryptoKeyPair> {
-        if(this.keypair.data ?? "" === ""){
+        if (this.keypair.data ?? "" === "") {
             // We want to create a review, but it seems like no key has been setup at this moment
             // We create the key
             try {
                 if (!Utils.runningFromConsole && (this.mangroveIdentity.data ?? "") === "") {
-                    await MangroveIdentity.CreateIdentity(this.mangroveIdentity)
+                    await this.CreateIdentity()
                 }
             } catch (e) {
                 console.error("Could not create identity: ", e)
@@ -66,33 +70,36 @@ export class MangroveIdentity {
         return this.key_id
     }
 
-    private allReviewsById : UIEventSource<(Review & {kid: string, signature: string})[]>= undefined
-
+    private allReviewsById: UIEventSource<(Review & { kid: string; signature: string })[]> =
+        undefined
 
     /**
      * Gets all reviews that are made for the current identity.
      */
-    public getAllReviews(): Store<(Review & {kid: string, signature: string})[]>{
-        if(this.allReviewsById !== undefined){
+    public getAllReviews(): Store<(Review & { kid: string; signature: string })[]> {
+        if (this.allReviewsById !== undefined) {
             return this.allReviewsById
         }
-        this.allReviewsById = new UIEventSource( [])
-        this.key_id.map(pem => {
-            if(pem === undefined){
+        this.allReviewsById = new UIEventSource([])
+        this.key_id.map((pem) => {
+            if (pem === undefined) {
                 return []
             }
             MangroveReviews.getReviews({
-                kid: pem
-            }).then(allReviews => {
-                this.allReviewsById.setData(allReviews.reviews.map(r => ({
-                    ...r, ...r.payload
-                })))
+                kid: pem,
+            }).then((allReviews) => {
+                this.allReviewsById.setData(
+                    allReviews.reviews.map((r) => ({
+                        ...r,
+                        ...r.payload,
+                    }))
+                )
             })
         })
         return this.allReviewsById
     }
 
-    addReview(review: Review & {kid, signature}) {
+    addReview(review: Review & { kid; signature }) {
         this.allReviewsById?.setData(this.allReviewsById?.data?.concat([review]))
     }
 }
@@ -122,7 +129,7 @@ export default class FeatureReviews {
     private constructor(
         feature: Feature,
         tagsSource: UIEventSource<Record<string, string>>,
-        mangroveIdentity?: MangroveIdentity,
+        mangroveIdentity: MangroveIdentity,
         options?: {
             nameKey?: "name" | string
             fallbackName?: string
@@ -131,8 +138,7 @@ export default class FeatureReviews {
     ) {
         const centerLonLat = GeoOperations.centerpointCoordinates(feature)
         ;[this._lon, this._lat] = centerLonLat
-        this._identity =
-            mangroveIdentity ?? new MangroveIdentity(new UIEventSource<string>(undefined))
+        this._identity = mangroveIdentity
         const nameKey = options?.nameKey ?? "name"
 
         if (feature.geometry.type === "Point") {
@@ -225,8 +231,15 @@ export default class FeatureReviews {
      * The given review is uploaded to mangrove.reviews and added to the list of known reviews
      */
     public async createReview(review: Omit<Review, "sub">): Promise<void> {
-        if(review.opinion !== undefined && review.opinion.length > FeatureReviews .REVIEW_OPINION_MAX_LENGTH){
-            throw "Opinion too long, should be at most "+FeatureReviews.REVIEW_OPINION_MAX_LENGTH+" characters long"
+        if (
+            review.opinion !== undefined &&
+            review.opinion.length > FeatureReviews.REVIEW_OPINION_MAX_LENGTH
+        ) {
+            throw (
+                "Opinion too long, should be at most " +
+                FeatureReviews.REVIEW_OPINION_MAX_LENGTH +
+                " characters long"
+            )
         }
         const r: Review = {
             sub: this.subjectUri.data,
@@ -242,12 +255,10 @@ export default class FeatureReviews {
             signature: jwt,
             madeByLoggedInUser: new ImmutableStore(true),
         }
-        this._reviews.data.push( reviewWithKid)
+        this._reviews.data.push(reviewWithKid)
         this._reviews.ping()
         this._identity.addReview(reviewWithKid)
     }
-
-
 
     /**
      * Adds given reviews to the 'reviews'-UI-eventsource

@@ -51,7 +51,7 @@
       class="title-icons links-as-button flex flex-wrap items-center gap-x-0.5 self-end justify-self-end p-1 pt-0.5 sm:pt-1"
     >
       {#each favConfig.titleIcons as titleIconConfig}
-        {#if titleIconBlacklist.indexOf(titleIconConfig.id) < 0 && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties({ ...properties, ...state.userRelatedState.preferencesAsTags.data }) ?? true) && titleIconConfig.IsKnown(properties)}
+        {#if titleIconBlacklist.indexOf(titleIconConfig.id) < 0 && (titleIconConfig.condition?.matchesProperties(properties) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...properties, ...state.userRelatedState.preferencesAsTags.data } ) ?? true) && titleIconConfig.IsKnown(properties)}
           <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
             <TagRenderingAnswer
               config={titleIconConfig}

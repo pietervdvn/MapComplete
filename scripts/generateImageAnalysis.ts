@@ -451,6 +451,9 @@ export default class GenerateImageAnalysis extends Script {
         args = args.filter((a) => a !== "--cached")
         const datapath = args[1] ?? "../../git/MapComplete-data/ImageLicenseInfo"
         const imageBackupPath = args[0]
+        if(imageBackupPath === "" || imageBackupPath === undefined){
+            throw "No imageBackup path specified"
+        }
         await this.downloadData(datapath, cached)
 
         // await this.downloadViews(datapath)

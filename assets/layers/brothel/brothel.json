@@ -1,10 +1,12 @@
 {
   "id": "brothel",
   "name": {
-    "en": "Brothels"
+    "en": "Brothels",
+    "de": "Bordelle"
   },
   "description": {
-    "en": "An establishment specifically dedicated to prostitution. "
+    "en": "An establishment specifically dedicated to prostitution. ",
+    "de": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. "
   },
   "source": {
     "osmTags": "amenity=brothel"
@@ -12,7 +14,8 @@
   "minzoom": 6,
   "title": {
     "render": {
-      "en": "Brothel"
+      "en": "Brothel",
+      "de": "Bordell"
     },
     "mappings": [
       {
@@ -57,7 +60,8 @@
   "presets": [
     {
       "title": {
-        "en": "a brothel"
+        "en": "a brothel",
+        "de": "ein Bordell"
       },
       "tags": [
         "amenity=brothel"
@@ -75,10 +79,12 @@
         "key": "name"
       },
       "question": {
-        "en": "What is the name of this brothel?"
+        "en": "What is the name of this brothel?",
+        "de": "Wie lautet der Name des Bordells?"
       },
       "render": {
-        "en": "This brothel is named <b>{name}</b>"
+        "en": "This brothel is named <b>{name}</b>",
+        "de": "Der Name des Bordells lautet <b>{name}</b>"
       }
     },
     "opening_hours",

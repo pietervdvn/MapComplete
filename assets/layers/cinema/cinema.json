@@ -1,10 +1,12 @@
 {
   "id": "cinema",
   "name": {
-    "en": "Cinema"
+    "en": "Cinema",
+    "de": "Kino"
   },
   "description": {
-    "en": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
+    "en": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US",
+    "de": " Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind"
   },
   "source": {
     "osmTags": "amenity=cinema"
@@ -20,7 +22,8 @@
       }
     ],
     "render": {
-      "en": "Cinema"
+      "en": "Cinema",
+      "de": "Kino"
     }
   },
   "pointRendering": [
@@ -49,19 +52,22 @@
     {
       "id": "cinema_type",
       "question": {
-        "en": "What type of cinema is this?"
+        "en": "What type of cinema is this?",
+        "de": "Um welche Art von Kino handelt es sich?"
       },
       "mappings": [
         {
           "if": "cinema=",
           "then": {
-            "en": "This is a normal cinema showing movies for all ages"
+            "en": "This is a normal cinema showing movies for all ages",
+            "de": "Dies ist ein normales Kino, das Filme für alle Altersgruppen zeigt"
           }
         },
         {
           "if": "cinema=erotic",
           "then": {
-            "en": "This is an erotic cinema showing adult movies"
+            "en": "This is an erotic cinema showing adult movies",
+            "de": "Dies ist ein Sex-Kino, das Erwachsenenfilme zeigt"
           }
         }
       ]

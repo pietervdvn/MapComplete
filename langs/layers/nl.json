@@ -5770,6 +5770,9 @@
             "mappings": {
                 "0": {
                     "then": "Parkeerplek voor gehandicapten"
+                },
+                "1": {
+                    "then": "Parkeerplek voor opladen van elektrische voertuigen"
                 }
             },
             "render": "Parkeerplek"
@@ -7954,6 +7957,48 @@
             }
         },
         "tagRenderings": {
+            "gender_segregated": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn aparte ruimtes of toiletten voor mannen en vrouwen"
+                    },
+                    "1": {
+                        "then": "Mannen en vrouwen gebruiken dezelfde ruimtes en toiletten"
+                    }
+                },
+                "question": "Zijn deze toiletten gescheiden op basis van geslacht?",
+                "questionHint": "Is er een aparte ruimte voor mannen en vrouwen en zijn deze ruimtes ook expliciet aangegeven?"
+            },
+            "menstrual_products": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn gratis menstruatieprocten beschikbaar voor alle bezoekers van deze toiletten"
+                    },
+                    "1": {
+                        "then": "De gratis menstruatieproducten zijn enkel beschikbaar in een deel van de toiletten"
+                    },
+                    "2": {
+                        "then": "Er zijn geen gratis menstruatieproducten beschikbaar"
+                    }
+                },
+                "question": "Zijn er gratis menstruatieproducten beschikbaar?",
+                "questionHint": "Dit gaat enkel over menstruatieproducten die gratis geschikbaar zijn. Indien er bv. een verkoopautomaat met menstruatieproducten is, negeer deze dan"
+            },
+            "menstrual_products_location": {
+                "mappings": {
+                    "0": {
+                        "then": "De gratis menstruatieproducten bevinden zich in het vrouwentoilet"
+                    },
+                    "1": {
+                        "then": "De gratis menstruatieproducten bevinden zich in het mannentoilet"
+                    },
+                    "2": {
+                        "then": "De gratis menstruatieproducten bevinden zich in het rolstoeltoegankelijke toilet"
+                    }
+                },
+                "question": "Waar bevinden de gratis menstruatieproducten zich?",
+                "render": "De menstruatieproducten bevinden zich in {toilets:menstrual_products:location}"
+            },
             "opening_hours_24_7": {
                 "override": {
                     "question": "Wanneer zijn deze toiletten open?"
@@ -8499,6 +8544,23 @@
             "render": "Boom"
         }
     },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "Munten van 50 cent worden geaccepteerd"
+                    },
+                    "1": {
+                        "then": "Munten van 1 euro worden geaccepteerd"
+                    },
+                    "2": {
+                        "then": "Munten van 2 euro worden geaccepteerd"
+                    }
+                }
+            }
+        }
+    },
     "unit": {
         "units": {
             "0": {
@@ -8681,6 +8743,13 @@
                 "mappings": {
                     "0": {
                         "then": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden."
+                    }
+                }
+            },
+            "mangrove-key-import": {
+                "render": {
+                    "special": {
+                        "text": "Herstel een Mangrove Private sleutel van backup"
                     }
                 }
             },

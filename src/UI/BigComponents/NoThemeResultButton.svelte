@@ -28,7 +28,7 @@
   <h5>{t.noMatchingThemes.toString()}</h5>
   <div class="flex justify-center">
     <button on:click={() => search.setData("")}>
-      <Search_disable class="w-6 mr-2" />
+      <Search_disable class="mr-2 w-6" />
       <Tr t={t.noSearch} />
     </button>
   </div>

@@ -23,7 +23,7 @@ export class UploadToOsmViz implements SpecialVisualization {
         const locations = state.historicalUserLocations.features.data
         return new SvelteUIElement(UploadTraceToOsmUI, {
             state,
-            trace: (title: string) => GeoOperations.toGpx(locations, title)
+            trace: (title: string) => GeoOperations.toGpx(locations, title),
         })
     }
 }

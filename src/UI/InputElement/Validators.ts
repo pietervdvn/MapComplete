@@ -59,7 +59,7 @@ export default class Validators {
         "fediverse",
         "id",
         "slope",
-        "velopark"
+        "velopark",
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -88,7 +88,7 @@ export default class Validators {
         new FediverseValidator(),
         new IdValidator(),
         new SlopeValidator(),
-        new VeloparkValidator()
+        new VeloparkValidator(),
     ]
 
     private static _byType = Validators._byTypeConstructor()

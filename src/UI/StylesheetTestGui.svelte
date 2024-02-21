@@ -22,7 +22,7 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-    <Login class="w-12 h-12" />
+    <Login class="h-12 w-12" />
     <Loading>Loading...</Loading>
   </div>
 
@@ -91,7 +91,7 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-    <Login class="w-12 h-12" />
+    <Login class="h-12 w-12" />
     <Loading>Loading...</Loading>
   </div>
 
@@ -133,7 +133,7 @@
     <div class="information">Some important information</div>
     <div class="thanks">Thank you! Operation successful</div>
 
-    <Login class="w-12 h-12" />
+    <Login class="h-12 w-12" />
     <Loading>Loading...</Loading>
     <div>
       <label for="html0">

@@ -1,10 +1,12 @@
 {
   "id": "love_hotel",
   "name": {
-    "en": "Love hotels"
+    "en": "Love hotels",
+    "de": "Love Hotels"
   },
   "description": {
-    "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
+    "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities",
+    "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten"
   },
   "source": {
     "osmTags": "amenity=love_hotel"
@@ -12,7 +14,8 @@
   "minzoom": 10,
   "title": {
     "render": {
-      "en": "Love Hotel <i>{name}</i>"
+      "en": "Love Hotel <i>{name}</i>",
+      "de": "Love Hotel <i>{name}</i>"
     }
   },
   "pointRendering": [
@@ -49,10 +52,12 @@
   "presets": [
     {
       "title": {
-        "en": "a love hotel"
+        "en": "a love hotel",
+        "de": "ein Love Hotel"
       },
       "description": {
-        "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities."
+        "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities.",
+        "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten"
       },
       "tags": [
         "amenity=love_hotel"
@@ -65,10 +70,12 @@
     {
       "id": "name",
       "question": {
-        "en": "What is the name of this love hotel?"
+        "en": "What is the name of this love hotel?",
+        "de": "Wie lautet der Name des Love Hotels?"
       },
       "render": {
-        "en": "This love hotel is named <b>{name}</b>"
+        "en": "This love hotel is named <b>{name}</b>",
+        "de": "Der Name des Love Hotels lautet <b>{name}</b>"
       },
       "freeform": {
         "key": "name"

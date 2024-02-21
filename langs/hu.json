@@ -128,7 +128,6 @@
             "title": "Rétegek kijelölése",
             "zoomInToSeeThisLayer": "Nagyíts a réteg megtekintéséhez"
         },
-        "levelSelection": {},
         "loading": "Betöltés…",
         "loadingTheme": "{theme} betöltése…",
         "loginFailed": "Az OpenStreetMap-be való bejelentkezés nem sikerült",
@@ -224,7 +223,6 @@
             "wednesday": "Szerda"
         },
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
-        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Új Wikidata-elem létrehozása",
             "doSearch": "Keress fent az eredmények megtekintéséhez",
@@ -232,7 +230,6 @@
             "loading": "Wikipédia betöltése…",
             "noResults": "Nincs találat erre: <i>{search}</i>",
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
-            "previewbox": {},
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia"
         }
@@ -251,8 +248,6 @@
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
         "uploadingPicture": "Kép feltöltése folyamatban…"
     },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "#": "Ezek a szövegek akkor jelennek meg a témagombok felett, ha nincs betöltve téma",
         "featuredThemeTitle": "Kiemelt ezen a héten",
@@ -289,7 +284,6 @@
     "multi_apply": {
         "autoApply": "A(z) {attr_names} tulajdonságok módosításával ezek a tulajdonságok automatikusan módosulnak {count} további objektumon is"
     },
-    "notes": {},
     "privacy": {
         "geodata": "Amikor a MapComplete lekéri a földrajzi helyed meghatározását, az – a korábban meglátogatott helyekkel együtt – az eszközödön marad. Helyadatokat soha nem küldünk el automatikusan máshová – kivéve, ha bizonyos funkciók egyértelműen másként rendelkeznek.",
         "geodataTitle": "Földrajzi helyed",
@@ -318,24 +312,5 @@
         "loginToSplit": "Egy út szétvágásához be kell jelentkezni",
         "split": "Szétvágás",
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
-    },
-    "translations": {},
-    "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
     }
 }

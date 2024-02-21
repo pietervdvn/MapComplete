@@ -71,7 +71,7 @@ class SingleBackgroundHandler {
             this.fadeOut()
         } else {
             this._deactivationTime = undefined
-            this.enable()
+            await this.enable()
             this.fadeIn()
         }
     }
@@ -85,10 +85,23 @@ class SingleBackgroundHandler {
         }
     }
 
-    private enable() {
+    private async enable(){
+        let ttl = 15
+        await this.awaitStyleIsLoaded()
+        while(!this.tryEnable() && ttl > 0){
+            ttl --;
+            await Utils.waitFor(250)
+        }
+    }
+
+    /**
+     * Returns 'false' if should be attempted again
+     * @private
+     */
+    private tryEnable(): boolean {
         const map: MLMap = this._map.data
         if (!map) {
-            return
+            return true
         }
         const background = this._targetLayer.properties
         console.debug("Enabling", background.id)
@@ -101,8 +114,7 @@ class SingleBackgroundHandler {
             try {
                 map.addSource(background.id, RasterLayerHandler.prepareWmsSource(background))
             } catch (e) {
-                console.error("Could not add source", e)
-                return
+                return false
             }
         }
         if (!map.getLayer(background.id)) {
@@ -126,6 +138,7 @@ class SingleBackgroundHandler {
                 map.setPaintProperty(background.id, "raster-opacity", o)
             })
         }
+        return true
     }
 
     private fadeOut() {
@@ -144,22 +157,14 @@ class SingleBackgroundHandler {
 }
 
 export default class RasterLayerHandler {
-    private _map: Store<MLMap>
-    private _background: UIEventSource<RasterLayerPolygon | undefined>
     private _singleLayerHandlers: Record<string, SingleBackgroundHandler> = {}
 
     constructor(map: Store<MLMap>, background: UIEventSource<RasterLayerPolygon | undefined>) {
-        this._map = map
-        this._background = background
         background.addCallbackAndRunD((l) => {
             const key = l.properties.id
             if (!this._singleLayerHandlers[key]) {
                 this._singleLayerHandlers[key] = new SingleBackgroundHandler(map, l, background)
             }
-        })
-        map.addCallback((map) => {
-            map.on("load", () => this.setBackground())
-            this.setBackground()
         })
     }
 
@@ -203,9 +208,4 @@ export default class RasterLayerHandler {
 
         return url
     }
-
-    /**
-     * Performs all necessary updates
-     */
-    public setBackground() {}
 }

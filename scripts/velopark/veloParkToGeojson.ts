@@ -15,9 +15,9 @@ class VeloParkToGeojson extends Script {
         )
     }
 
-    exportTo(filename: string, features){
+    exportTo(filename: string, features) {
         fs.writeFileSync(
-            filename+"_" + new Date().toISOString() + ".geojson",
+            filename + "_" + new Date().toISOString() + ".geojson",
             JSON.stringify(
                 {
                     type: "FeatureCollection",
@@ -60,7 +60,7 @@ class VeloParkToGeojson extends Script {
         for (const feature of features) {
             Object.keys(feature.properties).forEach((k) => allProperties.add(k))
         }
-        this.exportTo("velopark_noncynced",features)
+        this.exportTo("velopark_noncynced", features)
         allProperties.delete("ref:velopark")
         for (const feature of features) {
             allProperties.forEach((k) => {

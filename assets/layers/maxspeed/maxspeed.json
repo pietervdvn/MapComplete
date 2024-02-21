@@ -17,7 +17,8 @@
     "cs": "Zobrazuje povolenou rychlost pro každou silnici",
     "ca": "Mostra la velocitat permesa per a cada carretera",
     "fr": "Affiche les vitesses autorisées sur toutes les routes",
-    "pl": "Pokazuje dozwoloną prędkość na każdej drodze"
+    "pl": "Pokazuje dozwoloną prędkość na każdej drodze",
+    "es": "Muestra la velocidad permitida para cada carretera"
   },
   "source": {
     "osmTags": {

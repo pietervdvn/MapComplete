@@ -6,7 +6,7 @@
 
   export let state: EditLayerState
   export let path: (string | number)[] = []
-  let value = new UIEventSource<Record<string,string>>({})
+  let value = new UIEventSource<Record<string, string>>({})
   console.log("Registering translation to path", path)
   state.register(
     path,

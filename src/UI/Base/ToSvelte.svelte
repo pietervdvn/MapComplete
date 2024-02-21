@@ -8,7 +8,7 @@
   onMount(() => {
     const uiElem = typeof construct === "function" ? construct() : construct
     html = uiElem?.ConstructElement()
-    
+
     if (html !== undefined) {
       elem?.replaceWith(html)
     }

@@ -1,10 +1,14 @@
 {
   "id": "ski",
   "title": {
-    "en": "Ski pistes and aerialways"
+    "en": "Ski pistes and aerialways",
+    "de": "Skipisten und Seilbahnen",
+    "es": "Pistas de esquí y vías aéreas"
   },
   "description": {
-    "en": "Everything you need to go skiing"
+    "en": "Everything you need to go skiing",
+    "de": "Alles, was Sie zum Skifahren brauchen",
+    "es": "Todo lo que necesitas para esquiar"
   },
   "icon": "./assets/layers/aerialway/chair_lift.svg",
   "enableTerrain": true,

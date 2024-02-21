@@ -75,7 +75,7 @@ export default class NoteCommentElement extends Combine {
                 const extension = link.substring(lastDotIndex + 1, link.length)
                 return Utils.imageExtensions.has(extension)
             })
-            .filter(link => !link.startsWith("https://wiki.openstreetmap.org/wiki/File:"))
+            .filter((link) => !link.startsWith("https://wiki.openstreetmap.org/wiki/File:"))
         let imagesEl: BaseUIElement = undefined
         if (images.length > 0) {
             const imageEls = images.map((i) =>

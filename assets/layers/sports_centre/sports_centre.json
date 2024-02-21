@@ -21,7 +21,8 @@
       "en": "Sports centre",
       "de": "Sportzentrum",
       "ca": "Centre esportiu",
-      "cs": "Sportovní centrum"
+      "cs": "Sportovní centrum",
+      "id": "Pusat olahraga"
     },
     "mappings": [
       {
@@ -65,7 +66,8 @@
         "en": "a sports centre",
         "de": "ein Sportzentrum",
         "ca": "un centre esportiu",
-        "cs": "sportovní centra"
+        "cs": "sportovní centra",
+        "id": "pusat olahraga"
       },
       "tags": [
         "leisure=sports_centre"

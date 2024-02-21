@@ -44,7 +44,7 @@
     preset: PresetConfig
     layer: LayerConfig
     icon: BaseUIElement
-    tags: Record<string, string>,
+    tags: Record<string, string>
     text: Translation
   } = undefined
   let checkedOfGlobalFilters: number = 0
@@ -200,7 +200,7 @@
             state.guistate.openFilterView(selectedPreset.layer)
           }}
         >
-          <Layers class="w-12"/>
+          <Layers class="w-12" />
           <Tr t={Translations.t.general.add.openLayerControl} />
         </button>
 
@@ -241,7 +241,7 @@
             state.guistate.openFilterView(selectedPreset.layer)
           }}
         >
-          <Layers class="w-12"/>
+          <Layers class="w-12" />
           <Tr t={Translations.t.general.add.openLayerControl} />
         </button>
       </div>
@@ -284,7 +284,7 @@
 
         <NextButton on:click={() => (confirmedCategory = true)} clss="primary w-full">
           <div slot="image" class="relative">
-            <ToSvelte construct={selectedPreset.icon}/>
+            <ToSvelte construct={selectedPreset.icon} />
             <Confirm class="absolute bottom-0 right-0 h-4 w-4" />
           </div>
           <div class="w-full">
@@ -303,7 +303,7 @@
         <Tr
           slot="message"
           t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.confirmAddNew.Subs({
-            preset: selectedPreset.text
+            preset: selectedPreset.text,
           })}
         />
       </SubtleButton>

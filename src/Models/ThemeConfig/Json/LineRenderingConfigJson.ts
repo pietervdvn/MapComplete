@@ -82,5 +82,5 @@ export default interface LineRenderingConfigJson {
      * suggestions: [{if: "./assets/png/oneway.png", then: "Show a oneway error"}]
      * type: image
      */
-    imageAlongWay?: {if: TagConfigJson, then: string}[] | string
+    imageAlongWay?: { if: TagConfigJson; then: string }[] | string
 }

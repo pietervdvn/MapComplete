@@ -23,7 +23,7 @@
       "mapcomplete-favourites-" + new Date().toISOString() + ".geojson",
       {
         mimetype: "application/vnd.geo+json",
-      },
+      }
     )
   }
 
@@ -34,7 +34,7 @@
       "mapcomplete-favourites-" + new Date().toISOString() + ".gpx",
       {
         mimetype: "{gpx=application/gpx+xml}",
-      },
+      }
     )
   }
 </script>

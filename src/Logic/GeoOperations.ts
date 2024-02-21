@@ -788,7 +788,7 @@ export class GeoOperations {
                     return undefined
                 }
                 return GeoOperations.centerpointCoordinates(feature)
-            case "polygon_centerpoint":
+            case "polygon_centroid":
                 if (feature.geometry.type === "Polygon") {
                     return GeoOperations.centerpointCoordinates(feature)
                 }
@@ -817,7 +817,7 @@ export class GeoOperations {
                 }
                 return undefined
             default:
-                throw "Unkown location type: " + location
+                throw "Unkown location type: " + location+" for feature "+feature.properties.id
         }
     }
 

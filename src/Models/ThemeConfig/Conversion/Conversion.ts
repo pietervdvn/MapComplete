@@ -156,7 +156,7 @@ export class On<P, T> extends DesugaringStep<T> {
 
     convert(json: T, context: ConversionContext): T {
         const key = this.key
-        const value: P = json[key]
+        const value: P = json?.[key]
         if (value === undefined || value === null) {
             return json
         }

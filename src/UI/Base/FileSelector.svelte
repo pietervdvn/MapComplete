@@ -16,19 +16,22 @@
     if (e.target["id"] == id) {
       return
     }
-    if(formElement.contains(e.target) || document.getElementsByClassName("selected-element-view")[0]?.contains(e.target)){
+    if (
+      formElement.contains(e.target) ||
+      document.getElementsByClassName("selected-element-view")[0]?.contains(e.target)
+    ) {
       e.preventDefault()
-      
-      if(e.type === "drop"){
+
+      if (e.type === "drop") {
         console.log("Got a 'drop'", e)
         drawAttention = false
         dispatcher("submit", e.dataTransfer.files)
         return
       }
-      
+
       drawAttention = true
       e.dataTransfer.dropEffect = "copy"
-      
+
       return
       /*
       drawAttention = false
@@ -50,7 +53,6 @@
     window.removeEventListener("dragover", handleDragEvent)
     window.removeEventListener("drop", handleDragEvent)
   })
-
 </script>
 
 <form

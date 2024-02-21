@@ -365,7 +365,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         themeId: string
     ): { config: LayerConfigJson; reason: string }[] {
         const dependenciesToAdd: { config: LayerConfigJson; reason: string }[] = []
-        const loadedLayerIds: Set<string> = new Set<string>(alreadyLoaded.map((l) => l.id))
+        const loadedLayerIds: Set<string> = new Set<string>(alreadyLoaded.map((l) => l?.id))
 
         // Verify cross-dependencies
         let unmetDependencies: {

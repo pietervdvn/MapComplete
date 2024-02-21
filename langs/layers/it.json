@@ -1,4 +1,88 @@
 {
+    "address": {
+        "description": "Indirizzi",
+        "name": "Indirizzo presente su OSM",
+        "tagRenderings": {
+            "fixme": {
+                "question": "Indica cosa deve essere corretto qui"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo edificio non ha indirizzo"
+                    }
+                },
+                "question": "Qual è il numero civico di questa casa?",
+                "render": "Il numero civico della casa è <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Qual è la via in cui si trova?",
+                "render": "L’indirizzo è in via <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Indirizzo conosciuto"
+        }
+    },
+    "advertising": {
+        "description": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione",
+        "name": "Pubblicità",
+        "presets": {
+            "0": {
+                "description": "Grande struttura pubblicitaria all'aperto, trovata normalmente in aree ad alto traffico come accanto a strade molto trafficate",
+                "title": "un cartellone"
+            },
+            "1": {
+                "title": "un cartellone pubblicitario fissato a terra"
+            },
+            "2": {
+                "title": "un cartellone pubblicitario fissato al muro"
+            },
+            "3": {
+                "description": "PIccolo pannello per la pubblicità di vicinanza, generalmente destinato ai pedoni",
+                "title": "un piccolo pannello"
+            },
+            "4": {
+                "description": "Una struttura cilindrica all'esterno con affissa della pubblicità",
+                "title": "una colonna"
+            },
+            "5": {
+                "title": "una bandiera"
+            },
+            "6": {
+                "title": "uno schermo"
+            },
+            "7": {
+                "title": "uno schermo fissato al muro"
+            },
+            "8": {
+                "description": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
+                "title": "un telone"
+            },
+            "9": {
+                "title": "un totem"
+            },
+            "10": {
+                "description": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata",
+                "title": "un'insegna"
+            },
+            "11": {
+                "title": "una scultura"
+            },
+            "12": {
+                "title": "un murales"
+            }
+        },
+        "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo oggetto ha la pubblicità solo da un lato"
+                    }
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
         "name": "Carta delle stazioni delle ambulanze",

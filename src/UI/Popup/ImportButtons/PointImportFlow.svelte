@@ -13,7 +13,9 @@
   const args = importFlow.args
 
   // The following variables are used for the map
-  const targetLayers: LayerConfig[] = args.targetLayer.split(" ").map(tl => state.layout.layers.find((l) => l.id === tl))
+  const targetLayers: LayerConfig[] = args.targetLayer
+    .split(" ")
+    .map((tl) => state.layout.layers.find((l) => l.id === tl))
   const snapToLayers: string[] | undefined =
     args.snap_onto_layers?.split(",")?.map((l) => l.trim()) ?? []
   const maxSnapDistance: number = Number(args.max_snap_distance ?? 25) ?? 25

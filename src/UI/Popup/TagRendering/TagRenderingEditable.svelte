@@ -34,7 +34,7 @@
     onDestroy(
       tags.addCallbackD((tags) => {
         editMode = !config.IsKnown(tags)
-      }),
+      })
     )
   }
 
@@ -104,12 +104,13 @@
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">
         <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
-        <EditButton 
+        <EditButton
           arialabel={config.editButtonAriaLabel}
           ariaLabelledBy={answerId}
           on:click={() => {
-          editMode = true
-        }}/>
+            editMode = true
+          }}
+        />
       </div>
     {/if}
   {:else}

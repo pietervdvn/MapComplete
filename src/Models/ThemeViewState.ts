@@ -90,7 +90,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     readonly osmConnection: OsmConnection
     readonly selectedElement: UIEventSource<Feature>
-    readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
     readonly mapProperties: MapLibreAdaptor & MapProperties & ExportableMap
     readonly osmObjectDownloader: OsmObjectDownloader
 
@@ -119,7 +118,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
     readonly availableLayers: Store<RasterLayerPolygon[]>
-    readonly selectedLayer: UIEventSource<LayerConfig>
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
     readonly geolocationControl: GeolocationControlState
@@ -185,18 +183,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.allowRotating.setData(fixated !== "yes")
         })
         this.selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element")
-        this.selectedLayer = new UIEventSource<LayerConfig>(undefined, "Selected layer")
-
-        this.selectedElementAndLayer = this.selectedElement.mapD(
-            (feature) => {
-                const layer = this.selectedLayer.data
-                if (!layer) {
-                    return undefined
-                }
-                return { layer, feature }
-            },
-            [this.selectedLayer]
-        )
 
         this.geolocation = new GeoLocationHandler(
             geolocationState,
@@ -438,7 +424,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 doShowLayer,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
-                selectedLayer: this.selectedLayer,
                 fetchStore: (id) => this.featureProperties.getStore(id),
             })
         })
@@ -446,7 +431,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     }
 
     public openNewDialog() {
-        this.selectedLayer.setData(undefined)
         this.selectedElement.setData(undefined)
 
         const { lon, lat } = this.mapProperties.location.data
@@ -507,14 +491,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
                 const layer = this.layout.getMatchingLayer(toSelect.properties)
                 this.selectedElement.setData(undefined)
-                this.selectedLayer.setData(layer)
                 this.selectedElement.setData(toSelect)
             })
             return
         }
         const layer = this.layout.getMatchingLayer(toSelect.properties)
         this.selectedElement.setData(undefined)
-        this.selectedLayer.setData(layer)
         this.selectedElement.setData(toSelect)
     }
 
@@ -773,7 +755,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 layer: flayer.layerDef,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
-                selectedLayer: this.selectedLayer,
             })
         })
 
@@ -781,7 +762,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             features: specialLayers.summary,
             layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
             // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
-            selectedLayer: this.selectedLayer,
             selectedElement: this.selectedElement,
         })
     }
@@ -792,7 +772,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     private initActors() {
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
-                this.selectedLayer.setData(undefined)
                 this.focusOnMap()
             }
         })

@@ -13,7 +13,13 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import { CogIcon, EyeIcon, HeartIcon, MenuIcon, XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import {
+    CogIcon,
+    EyeIcon,
+    HeartIcon,
+    MenuIcon,
+    XCircleIcon,
+  } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
@@ -72,7 +78,7 @@
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
-  selectedElement.addCallbackAndRun(se => console.log("Selected element", se))
+  selectedElement.addCallbackAndRun((se) => console.log("Selected element", se))
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
   Orientation.singleton.startMeasurements()
@@ -97,9 +103,7 @@
       if (element.properties.id.startsWith("current_view")) {
         return currentViewLayer
       }
-      console.log(">>> selected:", element)
       if(element.properties.id === "new_point_dialog"){
-        console.log(">>> searching last_click layer", layout)
         return layout.layers.find(l => l.id === "last_click")
       }
       if(element.properties.id === "location_track"){
@@ -148,7 +152,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    }),
+    })
   )
   let previewedImage = state.previewedImage
 
@@ -210,7 +214,6 @@
         perLayer={state.perLayer}
         selectedElement={state.selectedElement}
         geolocationState={state.geolocation.geolocationState}
-
       />
     </If>
   </div>
@@ -277,7 +280,7 @@
             on:keydown={forwardEventToMap}
           >
             {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
-              <Tr t={Translations.t.general.add.zoomInFurther}/>
+              <Tr t={Translations.t.general.add.zoomInFurther} />
             {:else if state.lastClickObject.hasPresets}
               <Tr t={Translations.t.general.add.title} />
             {:else}
@@ -367,7 +370,7 @@
     <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
     <div
       class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
-      style="height: 100vh" 
+      style="height: 100vh"
     >
       <Cross class="h-4 w-4" />
     </div>
@@ -602,7 +605,7 @@
         <h3>
           <Tr t={Translations.t.reviews.your_reviews} />
         </h3>
-        <ReviewsOverview {state}/>
+        <ReviewsOverview {state} />
       </div>
     </TabbedGroup>
   </FloatOver>

@@ -38,10 +38,16 @@ export default class PointRenderingConfig extends WithContextLoader {
         "start",
         "end",
         "projected_centerpoint",
-        "polygon_centroid"
+        "polygon_centroid",
     ])
     public readonly location: Set<
-        "point" | "centroid" | "start" | "end" | "projected_centerpoint" | "polygon_centroid" | string
+        | "point"
+        | "centroid"
+        | "start"
+        | "end"
+        | "projected_centerpoint"
+        | "polygon_centroid"
+        | string
     >
 
     public readonly marker: IconConfig[]

@@ -29,9 +29,9 @@ function detectInCodeUnwrapped(forbidden: string, reason: string): Promise<void>
         ]
 
         const command =
-            "grep -n \"" +
+            'grep -n "' +
             forbidden +
-            "\" -r . " +
+            '" -r . ' +
             excludedDirs.map((d) => "--exclude-dir=" + d).join(" ")
         console.log(command)
         exec(command, (error, stdout, stderr) => {
@@ -116,7 +116,15 @@ async function validateScriptIntegrityOf(path: string): Promise<void> {
 
         const expected = "sha384-" + hashedStr
         if (expected !== integrity) {
-            const msg = "Loading a script from '" + src + "' in the file " + path + " has a mismatched checksum: expected " + expected + " but the HTML-file contains " + integrity
+            const msg =
+                "Loading a script from '" +
+                src +
+                "' in the file " +
+                path +
+                " has a mismatched checksum: expected " +
+                expected +
+                " but the HTML-file contains " +
+                integrity
             failed.add(msg)
             console.warn(msg)
         }
@@ -129,21 +137,21 @@ describe("Code quality", () => {
         "should not contain reverse",
         detectInCode(
             "reverse()",
-            "Reverse is stateful and changes the source list. This often causes subtle bugs",
-        ),
+            "Reverse is stateful and changes the source list. This often causes subtle bugs"
+        )
     )
 
     it(
         "should not contain 'constructor.name'",
-        detectInCode("constructor\\.name", "This is not allowed, as minification does erase names."),
+        detectInCode("constructor\\.name", "This is not allowed, as minification does erase names.")
     )
 
     it(
         "should not contain 'innerText'",
         detectInCode(
             "innerText",
-            "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead.",
-        ),
+            "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead."
+        )
     )
 
     test("scripts with external sources should have an integrity hash", async () => {

@@ -631,6 +631,10 @@
         "description": "El objetivo de este mapa es presentar a los ciclistas con una solución fácil de utilizar para encontrar la infraestructura apropiada para sus necesidades. <br><br>Puedes seguir tu localización precisa (móvil solo) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. Tgambién puedes utilizar esta herramienta para editar o añadir pines (puntos de interés) al mapa y proveer más datos respondiendo a preguntas.<br><br>Todos los cambios que hagas se guardarán de manera automática en la base de datos global de OpenStreetMap y podrán ser utilizados libremente por otros. <br><br>Para más información sobre el proyecto cyclofix, ve a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
         "title": "Cyclofix - un mapa para ciclistas"
     },
+    "disaster_response": {
+        "description": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres.",
+        "title": "Respuesta ante desastres"
+    },
     "drinking_water": {
         "description": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
         "title": "Agua Potable"
@@ -842,7 +846,7 @@
     "hackerspaces": {
         "description": "En este mapa puedes ver hackerspaces, añadir un nuevo hackerspace o actualizar datos directamente",
         "shortDescription": "Un mapa de hackerspaces",
-        "title": "Hackerspaces and makerspaces"
+        "title": "Hackerspaces y makerspaces"
     },
     "hailhydrant": {
         "description": "En este mapa puedes encontrar y actualizar hidrantes contra incendios, estaciones de bomberos, estaciones de ambulancias y extintores en tus vecindarios favoritos.",
@@ -897,6 +901,133 @@
             }
         },
         "title": "Bordillos y cruces"
+    },
+    "mapcomplete-changes": {
+        "description": "Este mapa muestra todos los cambios hechos con MapComplete",
+        "layers": {
+            "0": {
+                "description": "Muestra todos los cambios de MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "El nombre del tema contiene {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "El nombre del tema <b>no</b> contiene {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho por el colaborador {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>No</b> hecho por el colaborador {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho antes de {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho después de {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Idioma del usuario (código ISO) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho con el host {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "El conjunto de cambios ha añadido al menos una imagen"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "Excluir el tema del GRB"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Excluir el tema de la etimología"
+                            }
+                        }
+                    }
+                },
+                "name": "Centro del conjunto de cambios",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "¿Quién realizó este cambio?",
+                        "render": "Cambio hecho por <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "¿Con qué host (página web) se realizó este cambio?",
+                        "render": "Cambio con <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "¿En qué configuración regional (idioma) se realizó este cambio?",
+                        "render": "La configuración regional del usuario es {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "¿Qué tema se utilizó para realizar este cambio?",
+                        "render": "Cambio con el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "¿Qué versión de MapComplete se usó para realizar este cambio?",
+                        "render": "Hecho con {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Conjunto de cambios para {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Puede encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Muestra los cambios hechos por MapComplete",
+        "title": "Cambios hechos con MapComplete"
     },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
@@ -1001,6 +1132,57 @@
             }
         },
         "title": "Sobre ruedas"
+    },
+    "openlovemap": {
+        "description": "<p><i>Amor en la palma de tu mano</i></p>Open Love Map lista varias entradas para adultos, como burdeles, tiendas eróticas y clubs de striptease.",
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "una tienda erótica"
+                        }
+                    },
+                    "name": "Tiendas eróticas"
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "una máquina de venta de condones"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "un cine erótico"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "¿Qué tipo de hotel es este?"
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "¿Este {title()} tiene una cabina de video privada?",
+                    "questionHint": "Esto es para uso de una sola persona."
+                }
+            }
+        },
+        "title": "Open Love Map"
     },
     "openwindpowermap": {
         "description": "Mapa para mostrar y editar turbinas de viento.",
@@ -1132,6 +1314,10 @@
         },
         "shortDescription": "Mapeo de aceras",
         "title": "Aceras"
+    },
+    "ski": {
+        "description": "Todo lo que necesitas para esquiar",
+        "title": "Pistas de esquí y vías aéreas"
     },
     "sport_pitches": {
         "description": "Una pista de deportes es una área donde se practican deportes",
@@ -1276,6 +1462,7 @@
         "title": "Máquinas expendedoras"
     },
     "walkingnodes": {
+        "description": "Este mapa muestra las redes de nodos de senderismo y le permite añadir nuevos nodos fácilmente",
         "layers": {
             "0": {
                 "name": "enlaces nodo a nodo",
@@ -1297,9 +1484,65 @@
                 }
             },
             "1": {
-                "name": "nodos"
+                "name": "nodos",
+                "presets": {
+                    "0": {
+                        "title": "un nodo de senderismo"
+                    }
+                },
+                "tagRenderings": {
+                    "node-expected_rwn_route_relations": {
+                        "freeform": {
+                            "placeholder": "Por ejemplo, 3"
+                        },
+                        "question": "¿A cuántos otros nodos de senderismo conecta este nodo?",
+                        "render": "Este nodo se vincula a {expected_rwn_route_relations} otros nodos de senderismo."
+                    },
+                    "node-rwn_ref": {
+                        "freeform": {
+                            "placeholder": "Por ejemplo, 1"
+                        },
+                        "question": "¿Cuál es el número de referencia de este nodo de senderismo?",
+                        "render": "Este nodo de senderismo tiene la referencia número {rwn_ref}"
+                    },
+                    "survey_date": {
+                        "override": {
+                            "question": "¿Cuándo fue la última revisión de este nodo de senderismo?",
+                            "render": "Este nodo de senderismo fue revisado por última vez en {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Nodo de senderismo <strong>{rwn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Nodo de senderismo propuesto <strong>{proposed:rwn_ref}</strong>"
+                        }
+                    },
+                    "render": "Nodo de senderismo"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Postes guías de senderismo",
+                    "title": {
+                        "render": "Poste guía de senderismo"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "un marcador de ruta para un enlace de nodo a nodo"
+                        }
+                    }
+                }
             }
-        }
+        },
+        "title": "Redes de nodos de senderismo"
     },
     "walls_and_buildings": {
         "description": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en los preajustes para objetos que pueden colocarse contra las paredes (por ejemplo: AEDs, buzones de correos, entradas, direcciones, cámaras de vigilancia, ...). Esta capa es invisible por defecto y no puede ser activada por el usuario.",
