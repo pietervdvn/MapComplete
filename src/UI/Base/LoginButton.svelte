@@ -9,7 +9,7 @@
 </script>
 
 <button class={clss} on:click={() => osmConnection.AttemptLogin()} style="margin-left: 0">
-  <Login class="w-12 m-1" />
+  <Login class="m-1 w-12" />
   <slot>
     <Tr t={Translations.t.general.loginWithOpenStreetMap} />
   </slot>

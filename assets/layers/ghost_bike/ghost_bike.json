@@ -300,6 +300,19 @@
         "type": "date"
       },
       "id": "ghost_bike-start_date"
+    },
+    {
+      "id": "wikidata",
+      "render": {
+        "special": {
+          "type": "wikipedia",
+          "keyToShowWikipediaFor": "subject:wikidata"
+        },
+        "before": {
+          "en": "<h3>Wikipedia page about the deceased person</h3>"
+        }
+      },
+      "condition": "subject:wikidata~*"
     }
   ],
   "deletion": {

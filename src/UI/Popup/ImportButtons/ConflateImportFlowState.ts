@@ -53,7 +53,6 @@ export default class ConflateImportFlowState extends ImportFlow<ConflateFlowArgu
         const action = this.action
         await this.state.changes.applyAction(action)
         const newId = action.newElementId ?? action.mainObjectId
-        this.state.selectedLayer.setData(this.targetLayer.layerDef)
         this.state.selectedElement.setData(this.state.indexedFeatures.featuresById.data.get(newId))
     }
 

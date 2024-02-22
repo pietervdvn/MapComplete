@@ -2633,6 +2633,23 @@
             "render": "Szkoła <i>{name}</i>"
         }
     },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "Akceptowane są monety 50-centowe"
+                    },
+                    "1": {
+                        "then": "Akceptowane są monety 1 euro"
+                    },
+                    "2": {
+                        "then": "Akceptowane są monety 2 euro"
+                    }
+                }
+            }
+        }
+    },
     "unit": {
         "units": {
             "3": {

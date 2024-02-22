@@ -10,7 +10,7 @@
   import type { Feature } from "geojson"
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import  { TagUtils } from "../../../Logic/Tags/TagUtils"
+  import { TagUtils } from "../../../Logic/Tags/TagUtils"
   import type { UploadableTag } from "../../../Logic/Tags/TagUtils"
   import OsmChangeAction from "../../../Logic/Osm/Actions/OsmChangeAction"
   import DeleteAction from "../../../Logic/Osm/Actions/DeleteAction"
@@ -65,7 +65,7 @@
           theme: state?.layout?.id ?? "unknown",
           specialMotivation: deleteReason,
         },
-        canBeDeleted.data,
+        canBeDeleted.data
       )
     } else {
       // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping

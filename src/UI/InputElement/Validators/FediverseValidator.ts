@@ -17,6 +17,7 @@ export default class FediverseValidator extends Validator {
      * @param s
      */
     reformat(s: string): string {
+        s = s.trim()
         if (!s.startsWith("@")) {
             s = "@" + s
         }
@@ -35,6 +36,7 @@ export default class FediverseValidator extends Validator {
         return undefined
     }
     getFeedback(s: string): Translation | undefined {
+        s = s.trim()
         const match = s.match(FediverseValidator.usernameAtServer)
         console.log("Match:", match)
         if (match) {

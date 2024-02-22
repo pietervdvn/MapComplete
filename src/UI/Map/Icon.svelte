@@ -44,7 +44,6 @@
   export let icon: string | undefined
   export let color: string | undefined = undefined
   export let clss: string | undefined = undefined
-
 </script>
 
 {#if icon}
@@ -56,7 +55,6 @@
     <Square_rounded {color} class={clss} />
   {:else if icon === "bug"}
     <Bug {color} class={clss} />
-
   {:else if icon === "circle"}
     <Circle {color} class={clss} />
   {:else if icon === "checkmark"}
@@ -108,7 +106,7 @@
   {:else if icon === "invalid"}
     <Invalid {color} class={clss} />
   {:else if icon === "heart"}
-    <HeartIcon style="--svg-color: {color}" class={twMerge(clss,"apply-fill")} />
+    <HeartIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else if icon === "heart_outline"}
     <HeartOutlineIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else if icon === "confirm"}
@@ -129,4 +127,3 @@
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}
 {/if}
-

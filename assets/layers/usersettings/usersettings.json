@@ -510,6 +510,21 @@
       }
     },
     {
+      "id": "mangrove-key-import",
+      "render": {
+        "special": {
+          "type": "import_mangrove_key",
+          "text": {
+            "en": "Import a mangrove private key from backup",
+            "nl": "Herstel een Mangrove Private sleutel van backup"
+          }
+        },
+        "after": {
+          "en": "Uploading a private key erases your current private key. If you made reviews with it, download your current private key first"
+        }
+      }
+    },
+    {
       "id": "translations-title",
       "label": [
         "translations"

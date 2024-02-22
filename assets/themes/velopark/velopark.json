@@ -11,6 +11,9 @@
     "en": "<p><a href='https://velopark.be' target='_blank'>Velopark.be</a> is a website collecting data about bicycle parkings in a semi-crowdsourced way. However, only 'authorized' instances are allowed to make changes there, in practice the operator of the bicycle parking such as SNCB, de Lijn or the municipality. They have now decided to synchronize their dataset with OpenStreetMap, and this MapComplete-instance is set up to help link and import their data into OpenStreetMap.</p> How to use: <ul><li>A velopark-icon on the map (yellow with bicycle silhouette) represents a bicycle known by Velopark but not yet known by OpenStreetMap</li><li>Blue pins are bicycle parkings known by OpenStreetMap</li><li>Light blue pins are bicycle parkings known by OpenStreetMap with a reference to Velopark.be (<span class='literal-code'>ref-velopark=*</span>)</li><li>Click a velopark item, you can either link it with a nearby OSM-bicycle parking or create a new bicycle parking. Note that the geometry of Velopark is often incorrect and can be a few up till 100 meters away from the actual bicycle parking. Use aerial imagery, linked images and streetview to determine the correct location</li><li>Once linked, you can compare the Velopark- and OSM-attributes and apply correct attributes</li><li>If Velopark has an image, you can also link the image</li></ul> That's it! Thanks for helping to import this!",
     "nl": "<p><a href='https://velopark.be' target='_blank'>Velopark.be</a> is een website die data verzamelt over fietsenstallingen in een semi-crowdsource manier. Hierbij kunnen enkel geautorizeerde gebruikers data bijdragen, in de praktijk de uitbaters van de fietsenstallingen zoals de bevoegde gemeentebesturen, de NMBS of de Lijn. Velopark.be heeft nu beslist om hun data met OpenStreetMap te synchronizeren. Deze website is de tool om van Velopark.be naar OpenStreetMap te gaan en hun data te importeren.</p> Hoe te gebruiken? <ul><li>Een velopark-logo op de kaart (geel met een fietssilhouette) duidt een fietsenstalling aan die gekend is in Velopark maar nog niet gekend (of gelinkt) is aan een fietsenstalling in OpenStreetMap</li><li>Een blauwe pin duidt een fietsenstalling aan die gekend is in OpenStreetMap</li><li>Een licht-blauwe pin duidt een fietsenstalling aan uit OpenStreetMap die een link heeft naar Velopark.be (<span class='literal-code'>ref-velopark=*</span>)</li><li>Als je op een velopark-item klikt op, kan je deze linken met een fietsenstalling in de buurt (<25m) of een nieuwe fietstalling aan OpenStreetMap toevoegen. Let op: de geometrie van Velopark is zelden correct en wijkt makkelijk 10 meter of meer af van de echte locatie - in uitzonderlijke gevallen zelfs tot meer dan 100 meter. Gebruik de meest recente luchtfoto's, de gelinkte foto's en mapillary om de correcte locatie te bepalen</li><li>Eens gelinkt, kan je de Velopark- en OSM-attributen vergelijken en de correcte attributen toepassen in OpenStreetMap</li><li>Indien velopark een foto heeft, kan je die ook nog linken</li></ul> Dat is het! Bedankt om mee te helpen!"
   },
+  "descriptionTail": {
+    "*": "<h3>Maintainer tools</h3><ul><li><a class='link-underline' href='https://maproulette.org/api/v2/challenge/view/43282' download='Velopark_sync_2024-01-15.geojson'>Download the first sync results</a></li></ul>"
+  },
   "hideFromOverview": true,
   "icon": "./assets/themes/velopark/velopark.svg",
   "mustHaveLanguage": [
@@ -30,6 +33,7 @@
   "startLon": 3.71025,
   "startZoom": 18,
   "defaultBackgroundId": "photo",
+  "enableNoteImports": false,
   "layers": [
     {
       "id": "velopark_maproulette",
@@ -95,6 +99,14 @@
           }
         },
         {
+          "id": "login",
+          "render": {
+            "special": {
+              "type": "login_button"
+            }
+          }
+        },
+        {
           "id": "closest_parkings",
           "render": {
             "*": "There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap. "
@@ -137,7 +149,7 @@
               "type": "maproulette_set_status",
               "message": {
                 "en": "Mark this item as linked manually. Use this if you did apply the reference via copy-paste or via another editor",
-                "nl": "Markeer als gelinkt. Gebruik deze optie indien je de ID plakte in een fietsenstalling of via een andere editor toevoegdemap"
+                "nl": "Markeer als gelinkt. Gebruik deze optie indien je de ID plakte in een fietsenstalling of via een andere editor toevoegd"
               },
               "status": 1
             }
@@ -150,10 +162,14 @@
               "type": "maproulette_set_status",
               "message": {
                 "en": "Mark this item as incorrect or too hard to solve (duplicate, does not exist anymore, contradictory data, not placeable from aerial imagery)",
-                "nl": "Markeer dit object als incorrect of te moeillijk (duplicaat, incorrect of tegenstrijdige data, niet eenduidig te plaatsen adhv luchtfoto's, ...)"
+                "nl": "Markeer dit object als incorrecte velopark data of te moeillijk (duplicaat, incorrect of tegenstrijdige data, niet eenduidig te plaatsen adhv luchtfoto's, ...)"
               },
               "image": "invalid",
-              "status": 6
+              "status": 6,
+              "ask_feedback": {
+                "en": "Is this point incorrect or is it difficult to solve? Please provide some feedback below",
+                "nl": "Is dit punt foutief of te moeilijk? Gelieve wat feedback te geven"
+              }
             }
           }
         },
@@ -248,7 +264,7 @@
           {
             "marker": [
               {
-                "color": "#0088ff"
+                "color": "#2cf200"
               }
             ]
           }

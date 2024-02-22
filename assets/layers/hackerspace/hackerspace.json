@@ -433,7 +433,8 @@
               "if": "service:device-key=limited",
               "then": {
                 "en": "There is a limited {negative-name} available at this hackerspace",
-                "nl": "Er is een beperkte {negative-name} beschikbaar in deze hackerspace"
+                "nl": "Er is een beperkte {negative-name} beschikbaar in deze hackerspace",
+                "de": "Es gibt einen limitierten {negative-name} in diesem Hackerspace"
               },
               "hideInAnswer": "{hide_limited}"
             }

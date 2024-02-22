@@ -54,7 +54,8 @@
         "button": {
             "isMarkedShort": "Als favoriet gemarkeerd",
             "isNotMarkedShort": "Niet als favoriet gemarkeerd"
-        }
+        },
+        "tab": "Jouw favorieten en beoordelingen"
     },
     "flyer": {
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",

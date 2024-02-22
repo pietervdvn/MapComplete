@@ -238,7 +238,7 @@
 {{service_item
 |name= [https://mapcomplete.org/disaster_response disaster_response]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:de|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: This map contains elements meant for disaster preparedness and response
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -474,7 +474,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/ski ski]
 |region= Worldwide
-|lang= {{#language:en|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Everything you need to go skiing
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

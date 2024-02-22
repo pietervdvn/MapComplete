@@ -360,8 +360,8 @@ export class RegexTag extends TagsFilter {
     }
 
     asMapboxExpression(): ExpressionSpecification {
-        if(typeof this.key=== "string" && typeof this.value === "string" ) {
-            return [this.invert ? "!=" : "==", ["get",this.key], this.value]
+        if (typeof this.key === "string" && typeof this.value === "string") {
+            return [this.invert ? "!=" : "==", ["get", this.key], this.value]
         }
         throw "TODO"
     }

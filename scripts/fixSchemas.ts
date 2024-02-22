@@ -205,7 +205,7 @@ function extractHintsFrom(
             layers: AllSharedLayers.sharedLayers,
             themes: AllKnownLayouts.allKnownLayouts,
             validators: Validators,
-            Constants: Constants
+            Constants: Constants,
         })
     }
     return hints

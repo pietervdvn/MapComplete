@@ -5,11 +5,13 @@
   },
   "name": {
     "en": "Emergency assembly points",
-    "it": "Punti di raccolta per emergenze"
+    "it": "Punti di raccolta per emergenze",
+    "de": "Notfallsammelplätze"
   },
   "description": {
     "en": "This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.",
-    "it": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza."
+    "it": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza.",
+    "de": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln."
   },
   "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point",
   "id": "assembly_point",
@@ -40,7 +42,8 @@
     {
       "title": {
         "en": "an assembly point",
-        "it": "un punto di raccolta"
+        "it": "un punto di raccolta",
+        "de": "ein Sammelplatz"
       },
       "tags": [
         "emergency=assembly_point"
@@ -49,7 +52,8 @@
   ],
   "title": {
     "render": {
-      "en": "Assembly point during emergencies"
+      "en": "Assembly point during emergencies",
+      "de": "Sammelplatz bei Notfällen"
     }
   },
   "tagRenderings": [
@@ -61,22 +65,26 @@
       },
       "question": {
         "en": "What is the name of this assembly point?",
-        "it": "Qual è il nome di questo punto di raccolta?"
+        "it": "Qual è il nome di questo punto di raccolta?",
+        "de": "Wie lautet der Name dieser Sammelstelle?"
       },
       "render": {
         "en": "This assembly point is named <b>{name}</b>",
-        "it": "Questo punto di raccolta si chiama <b>{name}</b>"
+        "it": "Questo punto di raccolta si chiama <b>{name}</b>",
+        "de": "Diese Sammelstelle hat den Namen <b>{name}</b>"
       }
     },
     {
       "id": "assembly_point_operator",
       "render": {
         "en": "This assembly point is operated by <b>{operator}</b>",
-        "it": "Questo punto di raccolta è gestita da <b>{operator}</b>"
+        "it": "Questo punto di raccolta è gestita da <b>{operator}</b>",
+        "de": "Diese Sammelstelle wird von <b>{operator}</b> betrieben"
       },
       "question": {
         "en": "What organization operates this assembly point?",
-        "it": "Quale organizzazione gestisce questo punto di raccolta?"
+        "it": "Quale organizzazione gestisce questo punto di raccolta?",
+        "de": "Welche Organisation betreibt diese Sammelstelle?"
       },
       "freeform": {
         "key": "operator",
@@ -87,7 +95,8 @@
       "id": "disaster_type",
       "question": {
         "en": "For which disaster type is this assembly point meant?",
-        "it": "Per quali tipi di disastro è pensato questo punto di raccolta?"
+        "it": "Per quali tipi di disastro è pensato questo punto di raccolta?",
+        "de": "Für welche Art von Katastrophe ist diese Sammelstelle gedacht?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -96,7 +105,8 @@
           "ifnot": "assembly_point:earthquake=",
           "then": {
             "en": "Earthquake",
-            "it": "Terremoto"
+            "it": "Terremoto",
+            "de": "Erdbeben"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/earthquake.svg",
@@ -108,7 +118,8 @@
           "ifnot": "assembly_point:flood=",
           "then": {
             "en": "Flood",
-            "it": "Alluvione"
+            "it": "Alluvione",
+            "de": "Flut"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/flood.svg",
@@ -120,7 +131,8 @@
           "ifnot": "assembly_point:fire=",
           "then": {
             "en": "Fire",
-            "it": "Incendio"
+            "it": "Incendio",
+            "de": "Feuer"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/fire.svg",
@@ -132,7 +144,8 @@
           "ifnot": "assembly_point:landslide=",
           "then": {
             "en": "Landslide",
-            "it": "Frana"
+            "it": "Frana",
+            "de": "Erdrutsch"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/landslide.svg",

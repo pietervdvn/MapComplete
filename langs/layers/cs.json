@@ -8711,6 +8711,23 @@
             "render": "Strom"
         }
     },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "Jsou přijímány mince v hodnotě 50 centů"
+                    },
+                    "1": {
+                        "then": "Jsou přijímány mince v hodnotě 1 eura"
+                    },
+                    "2": {
+                        "then": "Jsou přijímány mince v hodnotě 2 euro"
+                    }
+                }
+            }
+        }
+    },
     "unit": {
         "units": {
             "0": {

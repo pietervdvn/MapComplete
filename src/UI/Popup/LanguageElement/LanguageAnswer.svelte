@@ -25,19 +25,30 @@
 </script>
 
 {#if $languages.length === 1}
-  <SpecialTranslation {state} {tags} {feature} {layer}
-        t={new TypedTranslation({"*": single_render}).PartialSubsTr(
-          "language()",
-          new Translation(all_languages[$languages[0]], undefined)
-  )}/>
+  <SpecialTranslation
+    {state}
+    {tags}
+    {feature}
+    {layer}
+    t={new TypedTranslation({ "*": single_render }).PartialSubsTr(
+      "language()",
+      new Translation(all_languages[$languages[0]], undefined)
+    )}
+  />
 {:else}
   {beforeListing}
   <ul>
     {#each $languages as language}
       <li>
-        <SpecialTranslation {state} {tags} {feature} {layer} t={
-          new TypedTranslation({"*": item_render}).PartialSubsTr("language()",
-          new Translation(all_languages[language], undefined)  )}
+        <SpecialTranslation
+          {state}
+          {tags}
+          {feature}
+          {layer}
+          t={new TypedTranslation({ "*": item_render }).PartialSubsTr(
+            "language()",
+            new Translation(all_languages[language], undefined)
+          )}
         />
       </li>
     {/each}

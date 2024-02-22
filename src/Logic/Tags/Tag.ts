@@ -65,7 +65,7 @@ export class Tag extends TagsFilter {
     asOverpass(): string[] {
         if (this.value === "") {
             // NOT having this key
-            return ["[!\"" + this.key + "\"]"]
+            return ['[!"' + this.key + '"]']
         }
         return [`["${this.key}"="${this.value}"]`]
     }
@@ -83,7 +83,7 @@ export class Tag extends TagsFilter {
     asHumanString(
         linkToWiki?: boolean,
         shorten?: boolean,
-        currentProperties?: Record<string, string>,
+        currentProperties?: Record<string, string>
     ) {
         let v = this.value
         if (typeof v !== "string") {
@@ -170,12 +170,7 @@ export class Tag extends TagsFilter {
 
     asMapboxExpression(): ExpressionSpecification {
         if (this.value === "") {
-            return [
-                "any",
-                ["!", ["has", this.key]],
-                ["==", ["get", this.key], ""],
-            ]
-
+            return ["any", ["!", ["has", this.key]], ["==", ["get", this.key], ""]]
         }
         return ["==", ["get", this.key], this.value]
     }

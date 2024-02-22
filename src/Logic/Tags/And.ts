@@ -432,6 +432,6 @@ export class And extends TagsFilter {
     }
 
     asMapboxExpression(): ExpressionSpecification {
-        return ["all", ...this.and.map(t => t.asMapboxExpression())]
+        return ["all", ...this.and.map((t) => t.asMapboxExpression())]
     }
 }

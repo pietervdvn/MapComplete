@@ -20,7 +20,7 @@
     let result = await Geocoding.reverse(
       mapProperties.location.data,
       mapProperties.zoom.data,
-      Locale.language.data,
+      Locale.language.data
     )
     let properties = result.features[0].properties
     currentLocation = properties.display_name
@@ -44,7 +44,7 @@
     () => {
       displayLocation()
     },
-    [Translations.t.hotkeyDocumentation.shakePhone],
+    [Translations.t.hotkeyDocumentation.shakePhone]
   )
 
   Motion.singleton.startListening()

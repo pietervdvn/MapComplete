@@ -345,15 +345,18 @@ export class GeoOperations {
         return <any>way
     }
 
-    public static toCSV(features: Feature[] | FeatureCollection, options?: {
-        ignoreTags?: RegExp
-    }): string {
+    public static toCSV(
+        features: Feature[] | FeatureCollection,
+        options?: {
+            ignoreTags?: RegExp
+        }
+    ): string {
         const headerValuesSeen = new Set<string>()
         const headerValuesOrdered: string[] = []
 
         function addH(key: string) {
-            if(options?.ignoreTags){
-                if(key.match(options.ignoreTags)){
+            if (options?.ignoreTags) {
+                if (key.match(options.ignoreTags)) {
                     return
                 }
             }
@@ -746,7 +749,14 @@ export class GeoOperations {
      */
     public static featureToCoordinateWithRenderingType(
         feature: Feature,
-        location: "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string
+        location:
+            | "point"
+            | "centroid"
+            | "start"
+            | "end"
+            | "projected_centerpoint"
+            | "polygon_centerpoint"
+            | string
     ): [number, number] | undefined {
         switch (location) {
             case "point":
@@ -759,6 +769,11 @@ export class GeoOperations {
                     return undefined
                 }
                 return GeoOperations.centerpointCoordinates(feature)
+            case "polygon_centroid":
+                if (feature.geometry.type === "Polygon") {
+                    return GeoOperations.centerpointCoordinates(feature)
+                }
+                return undefined
             case "projected_centerpoint":
                 if (
                     feature.geometry.type === "LineString" ||
@@ -783,7 +798,7 @@ export class GeoOperations {
                 }
                 return undefined
             default:
-                throw "Unkown location type: " + location
+                throw "Unkown location type: " + location+" for feature "+feature.properties.id
         }
     }
 

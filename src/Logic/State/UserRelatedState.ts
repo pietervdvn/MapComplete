@@ -73,7 +73,6 @@ export default class UserRelatedState {
 
     constructor(
         osmConnection: OsmConnection,
-        availableLanguages?: string[],
         layout?: LayoutConfig,
         featureSwitches?: FeatureSwitchState,
         mapProperties?: MapProperties
@@ -115,7 +114,8 @@ export default class UserRelatedState {
         )
 
         this.mangroveIdentity = new MangroveIdentity(
-            this.osmConnection.GetLongPreference("identity", "mangrove")
+            this.osmConnection.GetLongPreference("identity", "mangrove"),
+            this.osmConnection.GetPreference("identity-creation-date", "mangrove")
         )
         this.preferredBackgroundLayer = this.osmConnection.GetPreference(
             "preferred-background-layer",
@@ -364,6 +364,11 @@ export default class UserRelatedState {
             },
             [translationMode]
         )
+
+        this.mangroveIdentity.getKeyId().addCallbackAndRun((kid) => {
+            amendedPrefs.data["mangrove_kid"] = kid
+            amendedPrefs.ping()
+        })
 
         const usersettingMetaTagging = new ThemeMetaTagging()
         osmConnection.userDetails.addCallback((userDetails) => {

@@ -802,6 +802,23 @@
             }
         }
     },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "50-cent mynter aksepteres"
+                    },
+                    "1": {
+                        "then": "1-euro mynter aksepteres"
+                    },
+                    "2": {
+                        "then": "2-euro mynter aksepteres"
+                    }
+                }
+            }
+        }
+    },
     "unit": {
         "units": {
             "0": {

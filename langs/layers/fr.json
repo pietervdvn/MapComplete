@@ -6278,6 +6278,23 @@
             "render": "Arbre"
         }
     },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "Les pièces de 50 cents sont acceptées"
+                    },
+                    "1": {
+                        "then": "Les pièces de 1 euro sont acceptées"
+                    },
+                    "2": {
+                        "then": "Les pièces de 2 euros sont acceptées"
+                    }
+                }
+            }
+        }
+    },
     "unit": {
         "units": {
             "0": {

@@ -83,7 +83,6 @@
             helperArgs,
           },
   }
- 
 
   if (schema.hints.default) {
     configJson.mappings = [
@@ -95,7 +94,7 @@
           schema.hints.default +
           "</b> will be used. " +
           (schema.hints.ifunset ?? ""),
-        hideInAnswer: mightBeBoolean(schema.type)
+        hideInAnswer: mightBeBoolean(schema.type),
       },
     ]
   } else if (!schema.required) {
@@ -107,7 +106,6 @@
     ]
   }
 
-  
   if (mightBeBoolean(schema.type)) {
     configJson.mappings = configJson.mappings ?? []
     configJson.mappings.push(
@@ -147,19 +145,19 @@
         tags.map((tgs) => {
           const v = tgs["value"]
           if (typeof v === "object") {
-            return { ...<object>v }
+            return { ...(<object>v) }
           }
           if (schema.type === "boolean") {
-              if(v === null || v === undefined){
-                  return v
-              }
+            if (v === null || v === undefined) {
+              return v
+            }
             return v === "true" || v === "yes" || v === "1"
           }
           if (mightBeBoolean(schema.type)) {
             if (v === "true" || v === "yes" || v === "1") {
               return true
             }
-            if (v === "false" || v === "no" || v === "0" || (<any> v) === false) {
+            if (v === "false" || v === "no" || v === "0" || <any>v === false) {
               return false
             }
           }

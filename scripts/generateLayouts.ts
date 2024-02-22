@@ -289,15 +289,21 @@ async function generateCsp(
         apiUrls.push(...(sv.needsUrls ?? []))
     })
 
-    const usedSpecialVisualisations = [].concat(...layoutJson.layers.map(l => ValidationUtils.getAllSpecialVisualisations(<QuestionableTagRenderingConfigJson[]> (<LayerConfigJson>l).tagRenderings ?? [])))
+    const usedSpecialVisualisations = [].concat(
+        ...layoutJson.layers.map((l) =>
+            ValidationUtils.getAllSpecialVisualisations(
+                <QuestionableTagRenderingConfigJson[]>(<LayerConfigJson>l).tagRenderings ?? []
+            )
+        )
+    )
     for (const usedSpecialVisualisation of usedSpecialVisualisations) {
         if (typeof usedSpecialVisualisation === "string") {
             continue
         }
         const neededUrls = usedSpecialVisualisation.func.needsUrls ?? []
         if (typeof neededUrls === "function") {
-            let needed: string | string[]  = neededUrls(usedSpecialVisualisation.args)
-            if(typeof needed === "string"){
+            let needed: string | string[] = neededUrls(usedSpecialVisualisation.args)
+            if (typeof needed === "string") {
                 needed = [needed]
             }
             apiUrls.push(...needed)
@@ -317,8 +323,8 @@ async function generateCsp(
             continue
         }
         try {
-            if(!connectSource.startsWith("http")){
-            connectSource = "https://"+connectSource
+            if (!connectSource.startsWith("http")) {
+                connectSource = "https://" + connectSource
             }
             const url = new URL(connectSource)
             hosts.add("https://" + url.host)
@@ -349,7 +355,7 @@ async function generateCsp(
         "default-src": "'self'",
         "child-src": "'self' blob: ",
         "img-src": "* data:", // maplibre depends on 'data:' to load
-        "connect-src": "'self' "+connectSrc.join(" "),
+        "connect-src": "'self' " + connectSrc.join(" "),
         "report-to": "https://report.mapcomplete.org/csp",
         "worker-src": "'self' blob:", // Vite somehow loads the worker via a 'blob'
         "style-src": "'self' 'unsafe-inline'", // unsafe-inline is needed to change the default background pin colours

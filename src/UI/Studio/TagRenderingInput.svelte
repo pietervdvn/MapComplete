@@ -29,7 +29,7 @@
   const store = state.getStoreFor(path)
   let value = store.data
   let hasSeenIntro = UIEventSource.asBoolean(
-    LocalStorageSource.Get("studio-seen-tagrendering-tutorial", "false"),
+    LocalStorageSource.Get("studio-seen-tagrendering-tutorial", "false")
   )
   onMount(() => {
     if (!hasSeenIntro.data) {
@@ -42,7 +42,7 @@
    * Should only be enabled for 'tagrenderings' in the theme, if the source is OSM
    */
   let allowQuestions: Store<boolean> = state.configuration.mapD(
-    (config) => path.at(0) === "tagRenderings" && config.source?.["geoJson"] === undefined,
+    (config) => path.at(0) === "tagRenderings" && config.source?.["geoJson"] === undefined
   )
 
   let mappingsBuiltin: MappingConfigJson[] = []
@@ -118,7 +118,7 @@
 
   const freeformSchemaAll = <ConfigMeta[]>(
     questionableTagRenderingSchemaRaw.filter(
-      (schema) => schema.path.length == 2 && schema.path[0] === "freeform" && $allowQuestions,
+      (schema) => schema.path.length == 2 && schema.path[0] === "freeform" && $allowQuestions
     )
   )
   let freeformSchema = $expertMode
@@ -127,7 +127,7 @@
   const missing: string[] = questionableTagRenderingSchemaRaw
     .filter(
       (schema) =>
-        schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0]),
+        schema.path.length >= 1 && !items.has(schema.path[0]) && !ignored.has(schema.path[0])
     )
     .map((schema) => schema.path.join("."))
   console.log({ state })
@@ -135,12 +135,7 @@
 
 {#if typeof $store === "string"}
   <div class="low-interaction flex">
-    <TagRenderingEditable
-      config={configBuiltin}
-      selectedElement={undefined}
-      {state}
-      {tags}
-    />
+    <TagRenderingEditable config={configBuiltin} selectedElement={undefined} {state} {tags} />
     <slot name="upper-right" />
   </div>
 {:else}
@@ -177,7 +172,6 @@
           </button>
         </MappingInput>
       </div>
-
     {/each}
 
     <button

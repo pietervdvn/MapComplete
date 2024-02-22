@@ -4,7 +4,7 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
   export let tags: UIEventSource<Record<string, any>>
-  export let tagKeys = tags.map(tgs => Object.keys(tgs))
+  export let tagKeys = tags.map(tgs => tgs === undefined ? [] : Object.keys(tgs))
 
   export let layer: LayerConfig | undefined = undefined
 
@@ -13,17 +13,16 @@
    */
   let calculatedTags: string[] = []
   for (const calculated of layer?.calculatedTags ?? []) {
-    if(calculated){
+    if (calculated) {
       continue
     }
     const name = calculated[0]
     calculatedTags.push(name)
   }
-  let knownValues: Store<string[]> = tags.map(tags => Object.keys(tags))
+  let knownValues: Store<string[]> = tags.map((tags) => Object.keys(tags))
 
-  const metaKeys: string[] = [].concat(...SimpleMetaTaggers.metatags.map(k => k.keys))
+  const metaKeys: string[] = [].concat(...SimpleMetaTaggers.metatags.map((k) => k.keys))
   let allCalculatedTags = new Set<string>([...calculatedTags, ...metaKeys])
-
 </script>
 
 <section>
@@ -84,8 +83,15 @@
       <tr>
         <td>{key}</td>
         <td>
-          {#if $knownValues.indexOf(key) < 0 }
-            <button class="small" on:click={_ => {console.log($tags[key])}}>Evaluate</button>
+          {#if $knownValues.indexOf(key) < 0}
+            <button
+              class="small"
+              on:click={(_) => {
+                console.log($tags[key])
+              }}
+            >
+              Evaluate
+            </button>
           {:else if !$tags[key] === undefined}
             <i>Undefined</i>
           {:else if $tags[key] === ""}
