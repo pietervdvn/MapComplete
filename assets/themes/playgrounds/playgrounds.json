@@ -60,6 +60,7 @@
   "startLon": 4.399,
   "layers": [
     "playground",
+    "playground_equipment",
     {
       "builtin": [
         "bench",

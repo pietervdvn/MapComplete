@@ -1,0 +1,337 @@
+{
+  "minzoom": 18,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/playgrounds/playground.svg"
+        }
+      ],
+      "iconSize": "20,20"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "en": "This is a {playground}"
+      },
+      "id": "type",
+      "freeform": {
+        "key": "playground",
+        "placeholder": {
+          "en": "Type of device"
+        },
+        "addExtraTags": [
+          "fixme=Freeform input used"
+        ]
+      },
+      "question": {
+        "en": "What kind of device is this?",
+        "nl": "Wat voor speeltoestel is dit?"
+      },
+      "invalidValues": "playground=yes",
+      "mappings": [
+        {
+          "if": "playground=swing",
+          "then": {
+            "en": "This is a swing",
+            "nl": "Dit is een schommel"
+          }
+        },
+        {
+          "if": "playground=structure",
+          "then": {
+            "en": "This is a structure consisting of several connected playground devices"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/SunwardCohousingPlayStructure2005.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=slide",
+          "then": {
+            "en": "This is a slide"
+          }
+        },
+        {
+          "if": "playground=sandpit",
+          "then": {
+            "en": "This is a sand pit",
+            "nl": "Dit is een zandbak"
+          },
+          "searchTerms": {
+            "en": [
+              "sandbox"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Zandbakw.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=springy",
+          "then": {
+            "en": "This is a spring rider",
+            "nl": "Dit is een veertoestel"
+          },
+          "searchTerms": {
+            "en": [
+              "springy"
+            ],
+            "nl": [
+              "wipkip"
+            ]
+          }
+        },
+        {
+          "if": "playground=climbingframe",
+          "then": {
+            "en": "This is a climbing frame",
+            "nl": "Dit is een klimrek"
+          },
+          "searchTerms": {
+            "en": [
+              "jungle gym",
+              "rope spider"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/DeimosXL1.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=seesaw",
+          "then": {
+            "en": "This is a seesaw",
+            "nl": "Dit is een wipwap"
+          },
+          "searchTerms": {
+            "en": [
+              "teeter-totter",
+              "teeterboard"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Seesaw-aa.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=playhouse",
+          "then": {
+            "en": "This is a playhouse"
+          },
+          "searchTerms": {
+            "en": [
+              "Wendyhouse"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playhouse.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=roundabout",
+          "then": {
+            "en": "This is a roundabout"
+          },
+          "searchTerms": {
+            "en": [
+              "merry-go-round"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Manually_powered_carousel_on_a_playground_in_Saint-Petersburg.JPG",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=basketswing",
+          "then": {
+            "en": "This is a basket swing"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_swing_03.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=zipwire",
+          "then": {
+            "en": "This is a zip wire"
+          }
+        },
+        {
+          "if": "playground=horizontal_bar",
+          "then": {
+            "en": "This is a horizontal bar",
+            "nl": "Dit is een rekstok"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Rekstok.JPG",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=hopscotch",
+          "then": {
+            "en": "This is a hopscotch"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Hinkelbaan_tegels.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=splash_pad",
+          "then": {
+            "en": "This is a splash pad"
+          },
+          "searchTerms": {
+            "en": "spray pool"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Urbeach-high-park-splashpad.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=climbingwall",
+          "then": {
+            "en": "This is a climbing wall"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_climbingwall.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=map",
+          "then": {
+            "en": "This is a map"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_Map,_Washington_Elementary.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=bridge",
+          "then": {
+            "en": "This is a bridge (either as a standalone device or as part of a larger structure)"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_in_Muchall_Park,_Wolverhampton_-_geograph.org.uk_-_2735437.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=cushion",
+          "then": {
+            "en": "This is a bouncy cushion"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Hupfkissen.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=activitypanel",
+          "then": {
+            "en": "This is an activity panel"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Szwedy_-_plac_zabaw_-_kotko_i_krzyzyk.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=teenshelter",
+          "then": {
+            "en": "This is a teen shelter"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Teen_shelter_near_former_coastguard_lookout,_Watchet_-_geograph.org.uk_-_1714960.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=funnel_ball",
+          "then": {
+            "en": "This is a funnel used to play with funnel ball"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Funnel_ball.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=spinning_circle",
+          "then": {
+            "en": "This is a spinning circle"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Spinning_circle.jpg",
+            "class": "large"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "wheelchair-access",
+      "override": {
+        "question": {
+          "en": "Is this device accessible by wheelchair?"
+        }
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "id": "playground_equipment",
+  "name": {
+    "en": "Playground equipment"
+  },
+  "description": {
+    "en": "Layer showing playground equipment"
+  },
+  "source": {
+    "osmTags": "playground~*"
+  },
+  "title": {
+    "render": {
+      "en": "Playground device"
+    }
+  },
+  "allowMove": true,
+  "presets": [
+    {
+      "tags": [
+        "playground=yes"
+      ],
+      "title": {
+        "en": "a playground device"
+      },
+      "description": {
+        "en": "An exact type is asked later"
+      }
+    }
+  ]
+}
