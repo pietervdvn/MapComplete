@@ -223,6 +223,10 @@
         "example": "Example",
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
+        "filterPanel": {
+            "disableAll": "Disable all",
+            "enableAll": "Enable all"
+        },
         "geopermissionDenied": "Using the geolocation was denied",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
