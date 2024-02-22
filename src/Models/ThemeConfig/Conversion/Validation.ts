@@ -13,10 +13,7 @@ import { And } from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
-import {
-    MappingConfigJson,
-    QuestionableTagRenderingConfigJson,
-} from "../Json/QuestionableTagRenderingConfigJson"
+import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import Validators from "../../../UI/InputElement/Validators"
 import TagRenderingConfig from "../TagRenderingConfig"
 import { parse as parse_html } from "node-html-parser"
@@ -34,7 +31,7 @@ class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
         super(
             "Checks that the given object is fully translated in the specified languages",
             [],
-            "ValidateLanguageCompleteness"
+            "ValidateLanguageCompleteness",
         )
         this._languages = languages ?? ["en"]
     }
@@ -48,18 +45,18 @@ class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
                 .filter(
                     (t) =>
                         t.tr.translations[neededLanguage] === undefined &&
-                        t.tr.translations["*"] === undefined
+                        t.tr.translations["*"] === undefined,
                 )
                 .forEach((missing) => {
                     context
                         .enter(missing.context.split("."))
                         .err(
                             `The theme ${obj.id} should be translation-complete for ` +
-                                neededLanguage +
-                                ", but it lacks a translation for " +
-                                missing.context +
-                                ".\n\tThe known translation is " +
-                                missing.tr.textFor("en")
+                            neededLanguage +
+                            ", but it lacks a translation for " +
+                            missing.context +
+                            ".\n\tThe known translation is " +
+                            missing.tr.textFor("en"),
                         )
                 })
         }
@@ -76,7 +73,7 @@ export class DoesImageExist extends DesugaringStep<string> {
     constructor(
         knownImagePaths: Set<string>,
         checkExistsSync: (path: string) => boolean = undefined,
-        ignore?: Set<string>
+        ignore?: Set<string>,
     ) {
         super("Checks if an image exists", [], "DoesImageExist")
         this._ignore = ignore
@@ -112,15 +109,15 @@ export class DoesImageExist extends DesugaringStep<string> {
         if (!this._knownImagePaths.has(image)) {
             if (this.doesPathExist === undefined) {
                 context.err(
-                    `Image with path ${image} not found or not attributed; it is used in ${context}`
+                    `Image with path ${image} not found or not attributed; it is used in ${context}`,
                 )
             } else if (!this.doesPathExist(image)) {
                 context.err(
-                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path.`
+                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path.`,
                 )
             } else {
                 context.err(
-                    `Image with path ${image} is not attributed (but it exists); execute 'npm run query:licenses' to add the license information and/or run 'npm run generate:licenses' to compile all the license info`
+                    `Image with path ${image} is not attributed (but it exists); execute 'npm run query:licenses' to add the license information and/or run 'npm run generate:licenses' to compile all the license info`,
                 )
             }
         }
@@ -144,7 +141,7 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings?: Set<string>
+        sharedTagRenderings?: Set<string>,
     ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme")
         this._validateImage = doesImageExist
@@ -163,15 +160,15 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 if (json["units"] !== undefined) {
                     context.err(
                         "The theme " +
-                            json.id +
-                            " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) "
+                        json.id +
+                        " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ",
                     )
                 }
                 if (json["roamingRenderings"] !== undefined) {
                     context.err(
                         "Theme " +
-                            json.id +
-                            " contains an old 'roamingRenderings'. Use an 'overrideAll' instead"
+                        json.id +
+                        " contains an old 'roamingRenderings'. Use an 'overrideAll' instead",
                     )
                 }
             }
@@ -189,10 +186,10 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             for (const remoteImage of remoteImages) {
                 context.err(
                     "Found a remote image: " +
-                        remoteImage.path +
-                        " in theme " +
-                        json.id +
-                        ", please download it."
+                    remoteImage.path +
+                    " in theme " +
+                    json.id +
+                    ", please download it.",
                 )
             }
             for (const image of images) {
@@ -208,17 +205,17 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 
                 const filename = this._path.substring(
                     this._path.lastIndexOf("/") + 1,
-                    this._path.length - 5
+                    this._path.length - 5,
                 )
                 if (theme.id !== filename) {
                     context.err(
                         "Theme ids should be the same as the name.json, but we got id: " +
-                            theme.id +
-                            " and filename " +
-                            filename +
-                            " (" +
-                            this._path +
-                            ")"
+                        theme.id +
+                        " and filename " +
+                        filename +
+                        " (" +
+                        this._path +
+                        ")",
                     )
                 }
                 this._validateImage.convert(theme.icon, context.enter("icon"))
@@ -226,13 +223,13 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             const dups = Utils.Duplicates(json.layers.map((layer) => layer["id"]))
             if (dups.length > 0) {
                 context.err(
-                    `The theme ${json.id} defines multiple layers with id ${dups.join(", ")}`
+                    `The theme ${json.id} defines multiple layers with id ${dups.join(", ")}`,
                 )
             }
             if (json["mustHaveLanguage"] !== undefined) {
                 new ValidateLanguageCompleteness(...json["mustHaveLanguage"]).convert(
                     theme,
-                    context
+                    context,
                 )
             }
             if (!json.hideFromOverview && theme.id !== "personal" && this._isBuiltin) {
@@ -240,7 +237,7 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 const targetLanguage = theme.title.SupportedLanguages()[0]
                 if (targetLanguage !== "en") {
                     context.err(
-                        `TargetLanguage is not 'en' for public theme ${theme.id}, it is ${targetLanguage}. Move 'en' up in the title of the theme and set it as the first key`
+                        `TargetLanguage is not 'en' for public theme ${theme.id}, it is ${targetLanguage}. Move 'en' up in the title of the theme and set it as the first key`,
                     )
                 }
 
@@ -301,7 +298,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings?: Set<string>
+        sharedTagRenderings?: Set<string>,
     ) {
         super(
             "Validates a theme and the contained layers",
@@ -311,10 +308,10 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
                 new Each(
                     new Bypass(
                         (layer) => Constants.added_by_default.indexOf(<any>layer.id) < 0,
-                        new ValidateLayerConfig(undefined, isBuiltin, doesImageExist, false, true)
-                    )
-                )
-            )
+                        new ValidateLayerConfig(undefined, isBuiltin, doesImageExist, false, true),
+                    ),
+                ),
+            ),
         )
     }
 }
@@ -324,7 +321,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
         super(
             "Checks that an 'overrideAll' does not override a single override",
             [],
-            "OverrideShadowingCheck"
+            "OverrideShadowingCheck",
         )
     }
 
@@ -373,6 +370,9 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson> {
         if (json.socialImage === "") {
             context.warn("Social image for theme " + json.id + " is the emtpy string")
         }
+        if (json["clustering"]) {
+            context.warn("Obsolete field `clustering` is still around")
+        }
         {
             for (let i = 0; i < json.layers.length; i++) {
                 const l = json.layers[i]
@@ -395,7 +395,7 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson> {
             context
                 .enter("overideAll")
                 .err(
-                    "'overrideAll' is spelled with _two_ `r`s. You only wrote a single one of them."
+                    "'overrideAll' is spelled with _two_ `r`s. You only wrote a single one of them.",
                 )
         }
         return json
@@ -407,7 +407,7 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
         super(
             "Various consistency checks on the raw JSON",
             new MiscThemeChecks(),
-            new OverrideShadowingCheck()
+            new OverrideShadowingCheck(),
         )
     }
 }
@@ -417,7 +417,7 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
         super(
             "The `if`-part in a mapping might set some keys. Those keys are not allowed to be set in the `addExtraTags`, as this might result in conflicting values",
             [],
-            "DetectConflictingAddExtraTags"
+            "DetectConflictingAddExtraTags",
         )
     }
 
@@ -444,7 +444,7 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
                         .enters("mappings", i)
                         .err(
                             "AddExtraTags overrides a key that is set in the `if`-clause of this mapping. Selecting this answer might thus first set one value (needed to match as answer) and then override it with a different value, resulting in an unsaveable question. The offending `addExtraTags` is " +
-                                duplicateKeys.join(", ")
+                            duplicateKeys.join(", "),
                         )
                 }
             }
@@ -462,13 +462,13 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
         super(
             "A tagRendering might set a freeform key (e.g. `name` and have an option that _should_ erase this name, e.g. `noname=yes`). Under normal circumstances, every mapping/freeform should affect all touched keys",
             [],
-            "DetectNonErasedKeysInMappings"
+            "DetectNonErasedKeysInMappings",
         )
     }
 
     convert(
         json: QuestionableTagRenderingConfigJson,
-        context: ConversionContext
+        context: ConversionContext,
     ): QuestionableTagRenderingConfigJson {
         if (json.multiAnswer) {
             // No need to check this here, this has its own validation
@@ -522,8 +522,8 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
                         .enters("freeform")
                         .warn(
                             "The freeform block does not modify the key `" +
-                                neededKey +
-                                "` which is set in a mapping. Use `addExtraTags` to overwrite it"
+                            neededKey +
+                            "` which is set in a mapping. Use `addExtraTags` to overwrite it",
                         )
                 }
             }
@@ -541,8 +541,8 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
                         .enters("mappings", i)
                         .warn(
                             "This mapping does not modify the key `" +
-                                neededKey +
-                                "` which is set in a mapping or by the freeform block. Use `addExtraTags` to overwrite it"
+                            neededKey +
+                            "` which is set in a mapping or by the freeform block. Use `addExtraTags` to overwrite it",
                         )
                 }
             }
@@ -566,7 +566,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
      * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc=js()"]}) // => ["_abc"]
      */
     private static extractCalculatedTagNames(
-        layerConfig?: LayerConfigJson | { calculatedTags: string[] }
+        layerConfig?: LayerConfigJson | { calculatedTags: string[] },
     ) {
         return (
             layerConfig?.calculatedTags?.map((ct) => {
@@ -652,16 +652,16 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                     json.mappings[i]["hideInAnswer"] !== true
                 ) {
                     context.warn(
-                        `Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`
+                        `Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`,
                     )
                 } else if (doesMatch) {
                     // The current mapping is shadowed!
                     context.err(`Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
     The mapping ${parsedConditions[i].asHumanString(
-        false,
-        false,
-        {}
-    )} is fully matched by a previous mapping (namely ${j}), which matches:
+                        false,
+                        false,
+                        {},
+                    )} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
 
     To fix this problem, you can try to:
@@ -688,7 +688,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         super(
             "Checks that 'then'clauses in mappings don't have images, but use 'icon' instead",
             [],
-            "DetectMappingsWithImages"
+            "DetectMappingsWithImages",
         )
         this._doesImageExist = doesImageExist
     }
@@ -728,14 +728,14 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
                 if (!ignore) {
                     ctx.err(
                         `A mapping has an image in the 'then'-clause. Remove the image there and use \`"icon": <your-image>\` instead. The images found are ${images.join(
-                            ", "
-                        )}. (This check can be turned of by adding "#": "${ignoreToken}" in the mapping, but this is discouraged`
+                            ", ",
+                        )}. (This check can be turned of by adding "#": "${ignoreToken}" in the mapping, but this is discouraged`,
                     )
                 } else {
                     ctx.info(
                         `Ignored image ${images.join(
-                            ", "
-                        )} in 'then'-clause of a mapping as this check has been disabled`
+                            ", ",
+                        )} in 'then'-clause of a mapping as this check has been disabled`,
                     )
 
                     for (const image of images) {
@@ -756,7 +756,7 @@ class ValidatePossibleLinks extends DesugaringStep<string | Record<string, strin
         super(
             "Given a possible set of translations, validates that <a href=... target='_blank'> does have `rel='noopener'` set",
             [],
-            "ValidatePossibleLinks"
+            "ValidatePossibleLinks",
         )
     }
 
@@ -786,21 +786,21 @@ class ValidatePossibleLinks extends DesugaringStep<string | Record<string, strin
 
     convert(
         json: string | Record<string, string>,
-        context: ConversionContext
+        context: ConversionContext,
     ): string | Record<string, string> {
         if (typeof json === "string") {
             if (this.isTabnabbingProne(json)) {
                 context.err(
                     "The string " +
-                        json +
-                        " has a link targeting `_blank`, but it doesn't have `rel='noopener'` set. This gives rise to reverse tabnapping"
+                    json +
+                    " has a link targeting `_blank`, but it doesn't have `rel='noopener'` set. This gives rise to reverse tabnapping",
                 )
             }
         } else {
             for (const k in json) {
                 if (this.isTabnabbingProne(json[k])) {
                     context.err(
-                        `The translation for ${k} '${json[k]}' has a link targeting \`_blank\`, but it doesn't have \`rel='noopener'\` set. This gives rise to reverse tabnapping`
+                        `The translation for ${k} '${json[k]}' has a link targeting \`_blank\`, but it doesn't have \`rel='noopener'\` set. This gives rise to reverse tabnapping`,
                     )
                 }
             }
@@ -818,7 +818,7 @@ class CheckTranslation extends DesugaringStep<Translatable> {
         super(
             "Checks that a translation is valid and internally consistent",
             ["*"],
-            "CheckTranslation"
+            "CheckTranslation",
         )
         this._allowUndefined = allowUndefined
     }
@@ -864,17 +864,17 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
 
     convert(
         json: TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
-        context: ConversionContext
+        context: ConversionContext,
     ): TagRenderingConfigJson {
         if (json["special"] !== undefined) {
             context.err(
-                'Detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
+                "Detected `special` on the top level. Did you mean `{\"render\":{ \"special\": ... }}`",
             )
         }
 
         if (Object.keys(json).length === 1 && typeof json["render"] === "string") {
             context.warn(
-                `use the content directly instead of {render: ${JSON.stringify(json["render"])}}`
+                `use the content directly instead of {render: ${JSON.stringify(json["render"])}}`,
             )
         }
 
@@ -886,7 +886,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                 const mapping: MappingConfigJson = json.mappings[i]
                 CheckTranslation.noUndefined.convert(
                     mapping.then,
-                    context.enters("mappings", i, "then")
+                    context.enters("mappings", i, "then"),
                 )
                 if (!mapping.if) {
                     console.log(
@@ -895,7 +895,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         "if",
                         mapping.if,
                         context.path.join("."),
-                        mapping.then
+                        mapping.then,
                     )
                     context.enters("mappings", i, "if").err("No `if` is defined")
                 }
@@ -905,7 +905,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                             context
                                 .enters("mappings", i, "addExtraTags", j)
                                 .err(
-                                    "Detected a 'null' or 'undefined' value. Either specify a tag or delete this item"
+                                    "Detected a 'null' or 'undefined' value. Either specify a tag or delete this item",
                                 )
                         }
                     }
@@ -916,18 +916,18 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     context
                         .enters("mappings", i, "then")
                         .warn(
-                            "A mapping should not start with 'yes' or 'no'. If the attribute is known, it will only show 'yes' or 'no' <i>without</i> the question, resulting in a weird phrasing in the information box"
+                            "A mapping should not start with 'yes' or 'no'. If the attribute is known, it will only show 'yes' or 'no' <i>without</i> the question, resulting in a weird phrasing in the information box",
                         )
                 }
             }
         }
         if (json["group"]) {
-            context.err('Groups are deprecated, use `"label": ["' + json["group"] + '"]` instead')
+            context.err("Groups are deprecated, use `\"label\": [\"" + json["group"] + "\"]` instead")
         }
 
         if (json["question"] && json.freeform?.key === undefined && json.mappings === undefined) {
             context.err(
-                "A question is defined, but no mappings nor freeform (key) are. Add at least one of them"
+                "A question is defined, but no mappings nor freeform (key) are. Add at least one of them",
             )
         }
         if (json["question"] && !json.freeform && (json.mappings?.length ?? 0) == 1) {
@@ -937,7 +937,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
             context
                 .enter("questionHint")
                 .err(
-                    "A questionHint is defined, but no question is given. As such, the questionHint will never be shown"
+                    "A questionHint is defined, but no question is given. As such, the questionHint will never be shown",
                 )
         }
 
@@ -945,7 +945,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
             context
                 .enters("icon", "size")
                 .err(
-                    "size is not a valid attribute. Did you mean 'class'? Class can be one of `small`, `medium` or `large`"
+                    "size is not a valid attribute. Did you mean 'class'? Class can be one of `small`, `medium` or `large`",
                 )
         }
 
@@ -955,10 +955,10 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     .enter("render")
                     .err(
                         "This tagRendering allows to set a value to key " +
-                            json.freeform.key +
-                            ", but does not define a `render`. Please, add a value here which contains `{" +
-                            json.freeform.key +
-                            "}`"
+                        json.freeform.key +
+                        ", but does not define a `render`. Please, add a value here which contains `{" +
+                        json.freeform.key +
+                        "}`",
                     )
             } else {
                 const render = new Translation(<any>json.render)
@@ -989,7 +989,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     const keyFirstArg = ["canonical", "fediverse_link", "translated"]
                     if (
                         keyFirstArg.some(
-                            (funcName) => txt.indexOf(`{${funcName}(${json.freeform.key}`) >= 0
+                            (funcName) => txt.indexOf(`{${funcName}(${json.freeform.key}`) >= 0,
                         )
                     ) {
                         continue
@@ -1012,7 +1012,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     context
                         .enter("render")
                         .err(
-                            `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!`
+                            `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!`,
                         )
                 }
             }
@@ -1020,8 +1020,8 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         if (json.render && json["question"] && json.freeform === undefined) {
             context.err(
                 `Detected a tagrendering which takes input without freeform key in ${context}; the question is ${new Translation(
-                    json["question"]
-                ).textFor("en")}`
+                    json["question"],
+                ).textFor("en")}`,
             )
         }
 
@@ -1032,9 +1032,9 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     .enters("freeform", "type")
                     .err(
                         "Unknown type: " +
-                            freeformType +
-                            "; try one of " +
-                            Validators.availableTypes.join(", ")
+                        freeformType +
+                        "; try one of " +
+                        Validators.availableTypes.join(", "),
                     )
             }
         }
@@ -1070,7 +1070,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             new On("question", new ValidatePossibleLinks()),
             new On("questionHint", new ValidatePossibleLinks()),
             new On("mappings", new Each(new On("then", new ValidatePossibleLinks()))),
-            new MiscTagRenderingChecks()
+            new MiscTagRenderingChecks(),
         )
     }
 }
@@ -1089,7 +1089,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         path: string,
         isBuiltin: boolean,
         doesImageExist: DoesImageExist,
-        studioValidations: boolean
+        studioValidations: boolean,
     ) {
         super("Runs various checks against common mistakes for a layer", [], "PrevalidateLayer")
         this._path = path
@@ -1115,7 +1115,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             context
                 .enter("source")
                 .err(
-                    "No source section is defined; please define one as data is not loaded otherwise"
+                    "No source section is defined; please define one as data is not loaded otherwise",
                 )
         } else {
             if (json.source === "special" || json.source === "special:library") {
@@ -1123,7 +1123,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 context
                     .enters("source", "osmTags")
                     .err(
-                        "No osmTags defined in the source section - these should always be present, even for geojson layer"
+                        "No osmTags defined in the source section - these should always be present, even for geojson layer",
                     )
             } else {
                 const osmTags = TagUtils.Tag(json.source["osmTags"], context + "source.osmTags")
@@ -1132,7 +1132,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                         .enters("source", "osmTags")
                         .err(
                             "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
-                                osmTags.asHumanString(false, false, {})
+                            osmTags.asHumanString(false, false, {}),
                         )
                 }
             }
@@ -1158,10 +1158,10 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 .enter("syncSelection")
                 .err(
                     "Invalid sync-selection: must be one of " +
-                        LayerConfig.syncSelectionAllowed.map((v) => `'${v}'`).join(", ") +
-                        " but got '" +
-                        json.syncSelection +
-                        "'"
+                    LayerConfig.syncSelectionAllowed.map((v) => `'${v}'`).join(", ") +
+                    " but got '" +
+                    json.syncSelection +
+                    "'",
                 )
         }
         if (json["pointRenderings"]?.length > 0) {
@@ -1180,7 +1180,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         }
 
         json.pointRendering?.forEach((pr, i) =>
-            this._validatePointRendering.convert(pr, context.enters("pointeRendering", i))
+            this._validatePointRendering.convert(pr, context.enters("pointeRendering", i)),
         )
 
         if (json["mapRendering"]) {
@@ -1197,8 +1197,8 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 context.err(
                     "Layer " +
-                        json.id +
-                        " uses 'special' as source.osmTags. However, this layer is not a priviliged layer"
+                    json.id +
+                    " uses 'special' as source.osmTags. However, this layer is not a priviliged layer",
                 )
             }
         }
@@ -1213,19 +1213,19 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 context
                     .enter("title")
                     .err(
-                        "This layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
+                        "This layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error.",
                     )
             }
             if (json.title === null) {
                 context.info(
-                    "Title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set."
+                    "Title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set.",
                 )
             }
 
             {
                 // Check for multiple, identical builtin questions - usability for studio users
                 const duplicates = Utils.Duplicates(
-                    <string[]>json.tagRenderings.filter((tr) => typeof tr === "string")
+                    <string[]>json.tagRenderings.filter((tr) => typeof tr === "string"),
                 )
                 for (let i = 0; i < json.tagRenderings.length; i++) {
                     const tagRendering = json.tagRenderings[i]
@@ -1255,7 +1255,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         {
             // duplicate ids in tagrenderings check
             const duplicates = Utils.NoNull(
-                Utils.Duplicates(Utils.NoNull((json.tagRenderings ?? []).map((tr) => tr["id"])))
+                Utils.Duplicates(Utils.NoNull((json.tagRenderings ?? []).map((tr) => tr["id"]))),
             )
             if (duplicates.length > 0) {
                 // It is tempting to add an index to this warning; however, due to labels the indices here might be different from the index in the tagRendering list
@@ -1293,8 +1293,8 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             if (json["overpassTags"] !== undefined) {
                 context.err(
                     "Layer " +
-                        json.id +
-                        'still uses the old \'overpassTags\'-format. Please use "source": {"osmTags": <tags>}\' instead of "overpassTags": <tags> (note: this isn\'t your fault, the custom theme generator still spits out the old format)'
+                    json.id +
+                    "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)",
                 )
             }
             const forbiddenTopLevel = [
@@ -1314,7 +1314,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             }
             if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
                 context.err(
-                    "Layer " + json.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'"
+                    "Layer " + json.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'",
                 )
             }
 
@@ -1331,9 +1331,9 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             if (this._path != undefined && this._path.indexOf(expected) < 0) {
                 context.err(
                     "Layer is in an incorrect place. The path is " +
-                        this._path +
-                        ", but expected " +
-                        expected
+                    this._path +
+                    ", but expected " +
+                    expected,
                 )
             }
         }
@@ -1351,13 +1351,13 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                     .enter(["tagRenderings", ...emptyIndexes])
                     .err(
                         `Some tagrendering-ids are empty or have an emtpy string; this is not allowed (at ${emptyIndexes.join(
-                            ","
-                        )}])`
+                            ",",
+                        )}])`,
                     )
             }
 
             const duplicateIds = Utils.Duplicates(
-                (json.tagRenderings ?? [])?.map((f) => f["id"]).filter((id) => id !== "questions")
+                (json.tagRenderings ?? [])?.map((f) => f["id"]).filter((id) => id !== "questions"),
             )
             if (duplicateIds.length > 0 && !Utils.runningFromConsole) {
                 context
@@ -1381,7 +1381,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         if (json.tagRenderings !== undefined) {
             new On(
                 "tagRenderings",
-                new Each(new ValidateTagRenderings(json, this._doesImageExist))
+                new Each(new ValidateTagRenderings(json, this._doesImageExist)),
             ).convert(json, context)
         }
 
@@ -1408,7 +1408,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                         context
                             .enters("pointRendering", i, "marker", indexM, "icon", "condition")
                             .err(
-                                "Don't set a condition in a marker as this will result in an invisible but clickable element. Use extra filters in the source instead."
+                                "Don't set a condition in a marker as this will result in an invisible but clickable element. Use extra filters in the source instead.",
                             )
                     }
                 }
@@ -1446,9 +1446,9 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                         .enters("presets", i, "tags")
                         .err(
                             "This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
-                                tags.asHumanString(false, false, {}) +
-                                "\n    The required tags are: " +
-                                baseTags.asHumanString(false, false, {})
+                            tags.asHumanString(false, false, {}) +
+                            "\n    The required tags are: " +
+                            baseTags.asHumanString(false, false, {}),
                         )
                 }
             }
@@ -1465,7 +1465,7 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
         isBuiltin: boolean,
         doesImageExist: DoesImageExist,
         studioValidations: boolean = false,
-        skipDefaultLayers: boolean = false
+        skipDefaultLayers: boolean = false,
     ) {
         super("Thin wrapper around 'ValidateLayer", [], "ValidateLayerConfig")
         this.validator = new ValidateLayer(
@@ -1473,7 +1473,7 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
             isBuiltin,
             doesImageExist,
             studioValidations,
-            skipDefaultLayers
+            skipDefaultLayers,
         )
     }
 
@@ -1501,7 +1501,7 @@ class ValidatePointRendering extends DesugaringStep<PointRenderingConfigJson> {
             context
                 .enter("markers")
                 .err(
-                    `Detected a field 'markerS' in pointRendering. It is written as a singular case`
+                    `Detected a field 'markerS' in pointRendering. It is written as a singular case`,
                 )
         }
         if (json.marker && !Array.isArray(json.marker)) {
@@ -1511,7 +1511,7 @@ class ValidatePointRendering extends DesugaringStep<PointRenderingConfigJson> {
             context
                 .enter("location")
                 .err(
-                    "A pointRendering should have at least one 'location' to defined where it should be rendered. "
+                    "A pointRendering should have at least one 'location' to defined where it should be rendered. ",
                 )
         }
         return json
@@ -1530,26 +1530,26 @@ export class ValidateLayer extends Conversion<
         isBuiltin: boolean,
         doesImageExist: DoesImageExist,
         studioValidations: boolean = false,
-        skipDefaultLayers: boolean = false
+        skipDefaultLayers: boolean = false,
     ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer")
         this._prevalidation = new PrevalidateLayer(
             path,
             isBuiltin,
             doesImageExist,
-            studioValidations
+            studioValidations,
         )
         this._skipDefaultLayers = skipDefaultLayers
     }
 
     convert(
         json: LayerConfigJson,
-        context: ConversionContext
+        context: ConversionContext,
     ): { parsed: LayerConfig; raw: LayerConfigJson } {
         context = context.inOperation(this.name)
         if (typeof json === "string") {
             context.err(
-                `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed`
+                `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed`,
             )
             return undefined
         }
@@ -1580,7 +1580,7 @@ export class ValidateLayer extends Conversion<
                 context
                     .enters("calculatedTags", i)
                     .err(
-                        `Invalid function definition: the custom javascript is invalid:${e}. The offending javascript code is:\n    ${code}`
+                        `Invalid function definition: the custom javascript is invalid:${e}. The offending javascript code is:\n    ${code}`,
                     )
             }
         }
@@ -1631,8 +1631,8 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
                         .enters("fields", i)
                         .err(
                             `Invalid filter: ${type} is not a valid textfield type.\n\tTry one of ${Array.from(
-                                Validators.availableTypes
-                            ).join(",")}`
+                                Validators.availableTypes,
+                            ).join(",")}`,
                         )
                 }
             }
@@ -1649,13 +1649,13 @@ export class DetectDuplicateFilters extends DesugaringStep<{
         super(
             "Tries to detect layers where a shared filter can be used (or where similar filters occur)",
             [],
-            "DetectDuplicateFilters"
+            "DetectDuplicateFilters",
         )
     }
 
     convert(
         json: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] },
-        context: ConversionContext
+        context: ConversionContext,
     ): { layers: LayerConfigJson[]; themes: LayoutConfigJson[] } {
         const { layers, themes } = json
         const perOsmTag = new Map<
@@ -1719,7 +1719,7 @@ export class DetectDuplicateFilters extends DesugaringStep<{
                 filter: FilterConfigJson
             }[]
         >,
-        layout?: LayoutConfigJson | undefined
+        layout?: LayoutConfigJson | undefined,
     ): void {
         if (layer.filter === undefined || layer.filter === null) {
             return
@@ -1759,7 +1759,7 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
         super(
             "Detects mappings which have identical (english) names or identical mappings.",
             ["presets"],
-            "DetectDuplicatePresets"
+            "DetectDuplicatePresets",
         )
     }
 
@@ -1770,13 +1770,13 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
         if (new Set(enNames).size != enNames.length) {
             const dups = Utils.Duplicates(enNames)
             const layersWithDup = json.layers.filter((l) =>
-                l.presets.some((p) => dups.indexOf(p.title.textFor("en")) >= 0)
+                l.presets.some((p) => dups.indexOf(p.title.textFor("en")) >= 0),
             )
             const layerIds = layersWithDup.map((l) => l.id)
             context.err(
                 `This themes has multiple presets which are named:${dups}, namely layers ${layerIds.join(
-                    ", "
-                )} this is confusing for contributors and is probably the result of reusing the same layer multiple times. Use \`{"override": {"=presets": []}}\` to remove some presets`
+                    ", ",
+                )} this is confusing for contributors and is probably the result of reusing the same layer multiple times. Use \`{"override": {"=presets": []}}\` to remove some presets`,
             )
         }
 
@@ -1791,17 +1791,17 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
                     Utils.SameObject(presetATags, presetBTags) &&
                     Utils.sameList(
                         presetA.preciseInput.snapToLayers,
-                        presetB.preciseInput.snapToLayers
+                        presetB.preciseInput.snapToLayers,
                     )
                 ) {
                     context.err(
                         `This themes has multiple presets with the same tags: ${presetATags.asHumanString(
                             false,
                             false,
-                            {}
+                            {},
                         )}, namely the preset '${presets[i].title.textFor("en")}' and '${presets[
                             j
-                        ].title.textFor("en")}'`
+                            ].title.textFor("en")}'`,
                     )
                 }
             }
@@ -1825,13 +1825,13 @@ export class ValidateThemeEnsemble extends Conversion<
         super(
             "Validates that all themes together are logical, i.e. no duplicate ids exists within (overriden) themes",
             [],
-            "ValidateThemeEnsemble"
+            "ValidateThemeEnsemble",
         )
     }
 
     convert(
         json: LayoutConfig[],
-        context: ConversionContext
+        context: ConversionContext,
     ): Map<
         string,
         {
@@ -1874,11 +1874,11 @@ export class ValidateThemeEnsemble extends Conversion<
                 context.err(
                     [
                         "The layer with id '" +
-                            id +
-                            "' is found in multiple themes with different tag definitions:",
+                        id +
+                        "' is found in multiple themes with different tag definitions:",
                         "\t In theme " + oldTheme + ":\t" + oldTags.asHumanString(false, false, {}),
                         "\tIn theme " + theme.id + ":\t" + tags.asHumanString(false, false, {}),
-                    ].join("\n")
+                    ].join("\n"),
                 )
             }
         }

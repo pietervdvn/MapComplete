@@ -177,6 +177,18 @@ export interface LayerConfigJson {
     isShown?: TagConfigJson
 
     /**
+     * question: should this layer be included in the summary counts?
+     *
+     * The layer server can give summary counts for a tile.
+     * This should however be disabled for some layers, e.g. because there are too many features (walls_and_buildings) or because the count is irrelevant.
+     *
+     * ifunset: Do count
+     * iffalse: Do not include the counts
+     * iftrue: Do include the count
+     */
+    isCounted?: true | boolean
+
+    /**
      * The minimum needed zoomlevel required to start loading and displaying the data.
      * This can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).
      * This prevents cluttering the map with thousands of parkings if one is looking to an entire city.

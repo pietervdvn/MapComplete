@@ -2,7 +2,6 @@
   "id": "summary",
   "description": "Special layer which shows `count`",
   "source": "special",
-  "name": "CLusters",
   "title": {
     "render": {"en": "Summary"}
   },

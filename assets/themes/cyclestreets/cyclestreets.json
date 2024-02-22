@@ -403,7 +403,8 @@
           },
           "width": "5"
         }
-      ]
+      ],
+      "doCount": false
     }
   ],
   "overrideAll": {
@@ -768,9 +769,5 @@
       }
     ]
   },
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 12,
-    "minNeededElements": 200
-  }
+  "widenFactor": 2
 }

@@ -269,6 +269,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
         oldThemeConfig.layers = Utils.NoNull(oldThemeConfig.layers)
         delete oldThemeConfig["language"]
         delete oldThemeConfig["version"]
+        delete oldThemeConfig["clustering"]
 
         if (oldThemeConfig.startLat === 0) {
             delete oldThemeConfig.startLat

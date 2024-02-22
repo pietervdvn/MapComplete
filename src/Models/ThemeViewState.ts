@@ -489,13 +489,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 if (!toSelect) {
                     return
                 }
-                const layer = this.layout.getMatchingLayer(toSelect.properties)
                 this.selectedElement.setData(undefined)
                 this.selectedElement.setData(toSelect)
             })
             return
         }
-        const layer = this.layout.getMatchingLayer(toSelect.properties)
         this.selectedElement.setData(undefined)
         this.selectedElement.setData(toSelect)
     }
@@ -658,7 +656,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const layers = this.layout.layers.filter(
             (l) =>
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
-                l.source.geojsonSource === undefined
+                l.source.geojsonSource === undefined &&
+                l.doCount
         )
         const url = new URL(Constants.VectorTileServer)
         const summaryTileSource = new SummaryTileSource(
