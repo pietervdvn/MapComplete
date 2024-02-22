@@ -5732,39 +5732,36 @@
                         "then": "Jedná se o parkovací místo pro osoby se zdravotním postižením."
                     },
                     "3": {
-                        "then": "Jedná se o soukromé parkovací místo."
-                    },
-                    "4": {
                         "then": "Jedná se o parkovací místo vyhrazené pro nabíjení vozidel."
                     },
-                    "5": {
+                    "4": {
                         "then": "Jedná se o parkovací místo vyhrazené pro dodávky."
                     },
-                    "6": {
+                    "5": {
                         "then": "Jedná se o parkovací místo vyhrazené pro těžká nákladní vozidla."
                     },
-                    "7": {
+                    "6": {
                         "then": "Jedná se o parkovací místo vyhrazené pro karavany nebo obytná vozidla."
                     },
-                    "8": {
+                    "7": {
                         "then": "Jedná se o parkovací místo vyhrazené pro autobusy."
                     },
-                    "9": {
+                    "8": {
                         "then": "Jedná se o parkovací místo vyhrazené pro motocykly."
                     },
-                    "10": {
+                    "9": {
                         "then": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi."
                     },
-                    "11": {
+                    "10": {
                         "then": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
                     },
-                    "12": {
+                    "11": {
                         "then": "Jedná se o parkovací místo vyhrazené pro taxíky."
                     },
-                    "13": {
+                    "12": {
                         "then": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
                     },
-                    "14": {
+                    "13": {
                         "then": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
                     }
                 },

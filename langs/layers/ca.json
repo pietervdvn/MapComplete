@@ -5518,27 +5518,24 @@
                         "then": "Aquesta és una plaça d'aparcament per a minusvàlids."
                     },
                     "3": {
-                        "then": "Es tracta d'una plaça d'aparcament privada."
-                    },
-                    "4": {
                         "then": "Es tracta d'una plaça d'aparcament reservada per a la recàrrega de vehicles."
                     },
-                    "5": {
+                    "4": {
                         "then": "Es tracta d'una plaça d'aparcament reservada per a repartidors."
                     },
-                    "8": {
+                    "7": {
                         "then": "Es tracta d'una plaça d'aparcament reservada per a autobusos."
                     },
-                    "9": {
+                    "8": {
                         "then": "Es tracta d'una plaça d'aparcament reservada per a motos."
                     },
-                    "10": {
+                    "9": {
                         "then": "Es tracta d'una plaça d'aparcament reservada per a pares amb fills."
                     },
-                    "11": {
+                    "10": {
                         "then": "Es tracta d'una plaça d'aparcament reservada al personal."
                     },
-                    "12": {
+                    "11": {
                         "then": "Aquest espai d'aparcament està reservat per a taxi."
                     }
                 },
