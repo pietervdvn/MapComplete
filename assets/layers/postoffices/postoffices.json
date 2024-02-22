@@ -552,6 +552,86 @@
     }
   ],
   "filter": [
-    "open_now"
+    "open_now",
+    {
+      "id": "letter_from",
+      "options": [
+        {
+          "question": {
+            "en": "Offers letter posting"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:letter_from~*",
+              "post_office:letter_from!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel_from",
+      "options": [
+        {
+          "question": {
+            "en": "Offers parcel posting"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:parcel_from~*",
+              "post_office:parcel_from!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel_pickup",
+      "options": [
+        {
+          "question": {
+            "en": "Offers pickup of missed parcels"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:parcel_pickup~*",
+              "post_office:parcel_pickup!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel_to",
+      "options": [
+        {
+          "question": {
+            "en": "Accepts pickup of parcels sent here"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:parcel_to~*",
+              "post_office:parcel_to!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "stamps",
+      "options": [
+        {
+          "question": {
+            "en": "Sells stamps"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:stamps~*",
+              "post_office:stamps!~i~no"
+            ]
+          }
+        }
+      ]
+    }
   ]
 }

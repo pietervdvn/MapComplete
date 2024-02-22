@@ -6,6 +6,7 @@
   import TabbedGroup from "../Base/TabbedGroup.svelte"
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
   import Region from "./Region.svelte"
+  import RawEditor from "./RawEditor.svelte"
 
   export let state: EditThemeState
   let schema: ConfigMeta[] = state.schema.filter((schema) => schema.path.length > 0)
@@ -50,7 +51,7 @@
   </div>
 
   <div class="m4 h-full overflow-y-auto">
-    {Object.keys(perRegion).join(";")}
+    <!-- {Object.keys(perRegion).join(";")} -->
     <TabbedGroup>
       <div slot="title0">Basic properties</div>
       <div slot="content0">
@@ -73,12 +74,15 @@
       </div>
 
       <div slot="title4">Configuration file</div>
-      <div slot="content4">
-        <div class="literal-code">
-          {JSON.stringify($config)}
+      <div slot="content4" class="flex h-full flex-col">
+        <div>
+          Below, you'll find the raw configuration file in `.json`-format. This is mostly for
+          debugging purposes, but you can also edit the file directly if you want.
         </div>
-
         <ShowConversionMessages messages={$messages} />
+        <div class="literal-code h-full w-full">
+          <RawEditor {state} />
+        </div>
       </div>
     </TabbedGroup>
   </div>

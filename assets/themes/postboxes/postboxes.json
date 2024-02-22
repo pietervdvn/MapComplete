@@ -54,7 +54,54 @@
   "layers": [
     "postboxes",
     "postoffices",
-    "parcel_lockers"
+    "parcel_lockers",
+    {
+      "builtin": "shops",
+      "override": {
+        "minzoom": 18,
+        "minzoomVisible": 18,
+        "description": {
+          "en": "Add a new post partner to the map in an existing shop"
+        },
+        "+tagRenderings": [
+          {
+            "id": "post_partner",
+            "question": {
+              "en": "Is this shop a post partner?"
+            },
+            "mappings": [
+              {
+                "if": "post_office=post_partner",
+                "then": {
+                  "en": "This shop is a post partner"
+                }
+              },
+              {
+                "if": "post_office=",
+                "then": {
+                  "en": "This shop is not a post partner"
+                }
+              }
+            ]
+          }
+        ],
+        "shownByDefault": false,
+        "=presets": [
+          {
+            "tags": [
+              "shop=yes",
+              "post_office=post_partner"
+            ],
+            "title": {
+              "en": "a missing shop that is a post partner"
+            },
+            "description": {
+              "en": "If a shop is not yet on the map and is a post partner, you can add it here."
+            }
+          }
+        ]
+      }
+    }
   ],
   "widenFactor": 1.5,
   "clustering": {

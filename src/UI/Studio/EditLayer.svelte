@@ -13,14 +13,15 @@
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import FloatOver from "../Base/FloatOver.svelte"
   import TagRenderingInput from "./TagRenderingInput.svelte"
-  import FromHtml from "../Base/FromHtml.svelte"
   import AllTagsPanel from "../Popup/AllTagsPanel.svelte"
   import QuestionPreview from "./QuestionPreview.svelte"
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
+  import RawEditor from "./RawEditor.svelte"
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw
 
   export let state: EditLayerState
+
   export let backToStudio: () => void
   let messages = state.messages
   let hasErrors = messages.mapD(
@@ -59,7 +60,7 @@
   }
 
   let requiredFields = ["id", "name", "description", "source"]
-  let currentlyMissing = state.configuration.map((config) => {
+  let currentlyMissing = configuration.map((config) => {
     if (!config) {
       return []
     }
@@ -184,33 +185,34 @@
           <Region configs={perRegion["expert"]} {state} />
         </div>
         <div slot="title5">Configuration file</div>
-        <div slot="content5">
+        <div slot="content5" class="flex h-full flex-col">
           <div>
             Below, you'll find the raw configuration file in `.json`-format. This is mostly for
-            debugging purposes
+            debugging purposes, but you can also edit the file directly if you want.
           </div>
-          <div class="literal-code">
-            <FromHtml src={JSON.stringify($configuration, null, "  ").replaceAll("\n", "</br>")} />
-          </div>
-
           <ShowConversionMessages messages={$messages} />
-          <div>
-            The testobject (which is used to render the questions in the 'information panel' item
-            has the following tags:
-          </div>
+          <div class="flex h-full w-full flex-row justify-between overflow-y-auto">
+            <div class="literal-code h-full w-5/6 overflow-y-auto">
+              <RawEditor {state} />
+            </div>
+            <div class="h-full w-1/6">
+              <div>
+                The testobject (which is used to render the questions in the 'information panel'
+                item has the following tags:
+              </div>
 
-          <AllTagsPanel tags={state.testTags} />
+              <AllTagsPanel tags={state.testTags} />
+            </div>
+          </div>
         </div>
       </TabbedGroup>
     </div>
     {#if $highlightedItem !== undefined}
       <FloatOver on:close={() => highlightedItem.setData(undefined)}>
         <div>
-          <TagRenderingInput
-            path={$highlightedItem.path}
-            {state}
-            schema={$highlightedItem.schema}
-          />
+          <TagRenderingInput path={$highlightedItem.path} {state} />
+          <!-- 
+            schema={$highlightedItem.schema} -->
         </div>
       </FloatOver>
     {/if}

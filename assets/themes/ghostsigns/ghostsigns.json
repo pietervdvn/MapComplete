@@ -1,0 +1,179 @@
+{
+  "id": "ghostsigns",
+  "title": {
+    "en": "Ghost Signs"
+  },
+  "description": {
+    "en": "A map showing disused signs on buildings"
+  },
+  "icon": "./assets/themes/advertising/wall_painting.svg",
+  "layers": [
+    {
+      "id": "ghostsigns",
+      "title": {
+        "render": {
+          "en": "Ghost Sign"
+        }
+      },
+      "description": {
+        "en": "Layer showing disused signs on buildings"
+      },
+      "name": {
+        "en": "Ghost Signs"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "historic~*",
+            "advertising=wall_painting"
+          ]
+        }
+      },
+      "minzoom": 10,
+      "allowMove": {
+        "enableImproveAccuracy": true
+      },
+      "tagRenderings": [
+        {
+          "id": "historic",
+          "question": {
+            "en": "Is this a ghost sign?"
+          },
+          "questionHint": {
+            "en": "Is this sign for a business that no longer exists or no longer being maintained?"
+          },
+          "mappings": [
+            {
+              "if": "historic=advertising",
+              "then": {
+                "en": "This is a ghost sign"
+              },
+              "alsoShowIf": "historic=yes"
+            },
+            {
+              "if": "historic=",
+              "then": {
+                "en": "This is not a ghost sign, answering this will hide the sign from the map"
+              }
+            }
+          ]
+        },
+        "images",
+        {
+          "id": "name",
+          "condition": "name~*",
+          "render": {
+            "*": "{name}"
+          }
+        },
+        {
+          "id": "inscription",
+          "question": {
+            "en": "What is the text on the sign?"
+          },
+          "freeform": {
+            "key": "inscription",
+            "type": "string",
+            "placeholder": {
+              "en": "Text on the sign"
+            }
+          },
+          "render": {
+            "en": "The text on the sign is: {inscription}"
+          }
+        },
+        {
+          "id": "brand",
+          "question": {
+            "en": "For what business was this sign made?"
+          },
+          "freeform": {
+            "key": "brand",
+            "type": "string",
+            "placeholder": {
+              "en": "Business name"
+            }
+          },
+          "render": {
+            "en": "This sign was made for: {brand}"
+          }
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "blue",
+          "width": 2
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": "./assets/themes/advertising/wall_painting.svg"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "tags": [
+            "historic=advertising",
+            "advertising=wall_painting"
+          ],
+          "title": {
+            "en": "a ghost sign"
+          },
+          "snapToLayer": [
+            "walls_and_buildings"
+          ],
+          "maxSnapDistance": 5
+        }
+      ]
+    },
+    {
+      "builtin": "advertising",
+      "override": {
+        "source": {
+          "osmTags": "advertising=wall_painting"
+        },
+        "minzoom": 18,
+        "+tagRenderings": [
+          {
+            "id": "historic",
+            "question": {
+              "en": "Is this a ghost sign?"
+            },
+            "questionHint": {
+              "en": "Is this sign for a business that no longer exists or no longer being maintained?"
+            },
+            "mappings": [
+              {
+                "if": "historic=advertising",
+                "then": {
+                  "en": "This is a ghost sign"
+                },
+                "alsoShowIf": "historic=yes"
+              },
+              {
+                "if": "historic=",
+                "then": {
+                  "en": "This is not a ghost sign"
+                }
+              }
+            ]
+          }
+        ],
+        "=presets": [],
+        "pointRendering": [
+          {
+            "iconSize": "20,20"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import ScriptUtils from "./ScriptUtils"
 import Script from "./Script"
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"]
-
+const ignoreTerms = ["searchTerms"]
 class TranslationPart {
     contents: Map<string, TranslationPart | string> = new Map<string, TranslationPart | string>()
 
@@ -49,6 +49,7 @@ class TranslationPart {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue
             }
+
             const v = translations[translationsKey]
             if (typeof v != "string") {
                 console.error(
@@ -104,6 +105,9 @@ class TranslationPart {
 
         for (let key in object) {
             if (!object.hasOwnProperty(key)) {
+                continue
+            }
+            if (ignoreTerms.indexOf(key) >= 0) {
                 continue
             }
 
