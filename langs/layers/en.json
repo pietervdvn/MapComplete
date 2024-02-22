@@ -6670,39 +6670,36 @@
                         "then": "This is a disabled parking space."
                     },
                     "3": {
-                        "then": "This is a private parking space."
-                    },
-                    "4": {
                         "then": "This is parking space reserved for charging vehicles."
                     },
-                    "5": {
+                    "4": {
                         "then": "This is parking space reserved for deliveries."
                     },
-                    "6": {
+                    "5": {
                         "then": "This is parking space reserved for heavy goods vehicles."
                     },
-                    "7": {
+                    "6": {
                         "then": "This is parking space reserved for caravans or RVs."
                     },
-                    "8": {
+                    "7": {
                         "then": "This is parking space reserved for buses."
                     },
-                    "9": {
+                    "8": {
                         "then": "This is parking space reserved for motorcycles."
                     },
-                    "10": {
+                    "9": {
                         "then": "This is a parking space reserved for parents with children."
                     },
-                    "11": {
+                    "10": {
                         "then": "This is a parking space reserved for staff."
                     },
-                    "12": {
+                    "11": {
                         "then": "This is a parking space reserved for taxis."
                     },
-                    "13": {
+                    "12": {
                         "then": "This is a parking space reserved for vehicles towing a trailer."
                     },
-                    "14": {
+                    "13": {
                         "then": "This is a parking space reserved for car sharing."
                     }
                 },

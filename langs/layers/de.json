@@ -6670,39 +6670,36 @@
                         "then": "Dies ist ein Behindertenstellplatz."
                     },
                     "3": {
-                        "then": "Dies ist ein privater Stellplatz."
-                    },
-                    "4": {
                         "then": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist."
                     },
-                    "5": {
+                    "4": {
                         "then": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist."
                     },
-                    "6": {
+                    "5": {
                         "then": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist."
                     },
-                    "7": {
+                    "6": {
                         "then": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert."
                     },
-                    "8": {
+                    "7": {
                         "then": "Dies ist ein Stellplatz, der für Busse reserviert ist."
                     },
-                    "9": {
+                    "8": {
                         "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
                     },
-                    "10": {
+                    "9": {
                         "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
                     },
-                    "11": {
+                    "10": {
                         "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
                     },
-                    "12": {
+                    "11": {
                         "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
                     },
-                    "13": {
+                    "12": {
                         "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
                     },
-                    "14": {
+                    "13": {
                         "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
                     }
                 },

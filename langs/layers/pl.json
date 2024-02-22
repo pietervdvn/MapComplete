@@ -2200,27 +2200,24 @@
                         "then": "To jest miejsce parkingowe dla niepełnosprawnych."
                     },
                     "3": {
-                        "then": "To jest prywatne miejsce parkingowe."
-                    },
-                    "4": {
                         "then": "To miejsce parkingowe jest zarezerwowane dla ładowania pojazdów."
                     },
-                    "5": {
+                    "4": {
                         "then": "To miejsce parkingowe jest przeznaczone dla dostaw."
                     },
-                    "8": {
+                    "7": {
                         "then": "To miejsce parkingowe jest przeznaczone dla busów."
                     },
-                    "9": {
+                    "8": {
                         "then": "To miejsce parkingowe jest przeznaczone dla motocykli."
                     },
-                    "10": {
+                    "9": {
                         "then": "To miejsce jest przeznaczone dla rodziców z dziećmi."
                     },
-                    "11": {
+                    "10": {
                         "then": "To jest miejsce parkingowe przeznaczone dla pracowników."
                     },
-                    "12": {
+                    "11": {
                         "then": "To miejsce parkingowe jest przeznaczone dla taksówek."
                     }
                 }
