@@ -185,22 +185,25 @@
           <Region configs={perRegion["expert"]} {state} />
         </div>
         <div slot="title5">Configuration file</div>
-        <div slot="content5" class="h-full">
+        <div slot="content5" class="flex h-full flex-col">
           <div>
             Below, you'll find the raw configuration file in `.json`-format. This is mostly for
             debugging purposes, but you can also edit the file directly if you want.
           </div>
-          <div class="literal-code h-full w-full">
-            <RawEditor {state} />
-          </div>
-
           <ShowConversionMessages messages={$messages} />
-          <div>
-            The testobject (which is used to render the questions in the 'information panel' item
-            has the following tags:
-          </div>
+          <div class="flex h-full w-full flex-row justify-between overflow-y-auto">
+            <div class="literal-code h-full w-5/6 overflow-y-auto">
+              <RawEditor {state} />
+            </div>
+            <div class="h-full w-1/6">
+              <div>
+                The testobject (which is used to render the questions in the 'information panel'
+                item has the following tags:
+              </div>
 
-          <AllTagsPanel tags={state.testTags} />
+              <AllTagsPanel tags={state.testTags} />
+            </div>
+          </div>
         </div>
       </TabbedGroup>
     </div>
