@@ -97,7 +97,7 @@
         "minzoom": 18,
         "filter": null,
         "name": null,
-        "doCount": false
+        "isCounted": false
       }
     }
   ],
