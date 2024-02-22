@@ -980,7 +980,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     resolve({ error: "rate limited", url, statuscode: xhr.status })
                 } else {
                     resolve({
-                        error: "other error: " + xhr.statusText,
+                        error: "other error: " + xhr.statusText + ", " + xhr.responseText,
                         url,
                         statuscode: xhr.status,
                     })
