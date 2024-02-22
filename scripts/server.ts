@@ -9,7 +9,7 @@ export class Server {
         handle: {
             mustMatch: string | RegExp
             mimetype: string
-            handle: (path: string) => Promise<string>
+            handle: (path: string, queryParams: URLSearchParams) => Promise<string>
         }[]
     ) {
         handle.push({
@@ -89,7 +89,7 @@ export class Server {
                 }
 
                 try {
-                    const result = await handler.handle(path)
+                    const result = await handler.handle(path, url.searchParams)
                     res.writeHead(200, { "Content-Type": handler.mimetype })
                     res.write(result)
                     res.end()
