@@ -27,6 +27,7 @@
             "selectReason": "Please, select why this feature should be deleted",
             "softDelete": "This feature will be updated and hidden from this application. <span class='subtle'>{reason}</span>"
         },
+        "isChanged": "This feature has been changed and no longer matches this layer",
         "isDeleted": "This feature is deleted",
         "isntAPoint": "Only nodes can be deleted, the selected feature is a way, area or relation.",
         "loading": "Inspecting properties to check if this feature can be deleted.",
@@ -65,7 +66,7 @@
         "intro": "You marked {length} locations as a favourite location.",
         "introPrivacy": "This list is only visible to you",
         "loginToSeeList": "Login to see the list of locations you marked as favourite",
-        "tab": "Your favourites",
+        "tab": "Your favourites and reviews",
         "title": "Your favourite locations"
     },
     "flyer": {
@@ -145,7 +146,7 @@
             "title": "Add a new feature",
             "warnVisibleForEveryone": "Your addition will be visible for everyone",
             "wrongType": "This feature is not a node or a way and can not be imported",
-            "zoomInFurther": "Zoom in further to add a feature.",
+            "zoomInFurther": "Zoom in further to add a feature",
             "zoomInMore": "Zoom in more to import this feature"
         },
         "apply_button": {
@@ -222,6 +223,10 @@
         "example": "Example",
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
+        "filterPanel": {
+            "disableAll": "Disable all",
+            "enableAll": "Enable all"
+        },
         "geopermissionDenied": "Using the geolocation was denied",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",

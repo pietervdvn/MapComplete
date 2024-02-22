@@ -30,8 +30,7 @@
    */
   export let unvalidatedText = new UIEventSource(value.data ?? "")
 
-  
-  if(unvalidatedText == /*Compare by reference!*/ value){
+  if (unvalidatedText == /*Compare by reference!*/ value) {
     throw "Value and unvalidatedText may not be the same store!"
   }
   let validator: Validator = Validators.get(type ?? "string")
@@ -55,14 +54,12 @@
     }
   }
 
-  
-  
-  function onKeyPress(e: KeyboardEvent){
-      if(e.key === "Enter"){
-          e.stopPropagation()
-          e.preventDefault()
-          dispatch("submit")
-      }
+  function onKeyPress(e: KeyboardEvent) {
+    if (e.key === "Enter") {
+      e.stopPropagation()
+      e.preventDefault()
+      dispatch("submit")
+    }
   }
   initValueAndDenom()
 
@@ -139,7 +136,7 @@
 
   let htmlElem: HTMLInputElement | HTMLTextAreaElement
 
-  let dispatch = createEventDispatcher<{ selected, submit }>()
+  let dispatch = createEventDispatcher<{ selected; submit }>()
   $: {
     if (htmlElem !== undefined) {
       htmlElem.onfocus = () => dispatch("selected")
@@ -174,7 +171,13 @@
     {/if}
 
     {#if unit !== undefined}
-      <UnitInput {unit} {selectedUnit} textValue={unvalidatedText} upstreamValue={value} {getCountry} />
+      <UnitInput
+        {unit}
+        {selectedUnit}
+        textValue={unvalidatedText}
+        upstreamValue={value}
+        {getCountry}
+      />
     {/if}
   </div>
 {/if}

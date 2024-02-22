@@ -26,7 +26,7 @@
   const dispatch = createEventDispatcher<{ selected: string }>()
   let collapsedMode = true
   let options: UIEventSource<PlantNetSpeciesMatch[]> = new UIEventSource<PlantNetSpeciesMatch[]>(
-    undefined,
+    undefined
   )
 
   let error: string = undefined

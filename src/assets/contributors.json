@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 6607,
+      "commits": 6880,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 424,
+      "commits": 431,
       "contributor": "Robin van der Linde"
     },
     {
@@ -18,11 +18,11 @@
     },
     {
       "commits": 33,
-      "contributor": "Christian Neumann"
+      "contributor": "Hosted Weblate"
     },
     {
-      "commits": 32,
-      "contributor": "Hosted Weblate"
+      "commits": 33,
+      "contributor": "Christian Neumann"
     },
     {
       "commits": 31,
@@ -37,8 +37,12 @@
       "contributor": "paunofu"
     },
     {
-      "commits": 28,
+      "commits": 29,
       "contributor": "riQQ"
+    },
+    {
+      "commits": 27,
+      "contributor": "dependabot[bot]"
     },
     {
       "commits": 26,
@@ -47,10 +51,6 @@
     {
       "commits": 26,
       "contributor": "karelleketers"
-    },
-    {
-      "commits": 25,
-      "contributor": "dependabot[bot]"
     },
     {
       "commits": 24,
@@ -151,6 +151,10 @@
     {
       "commits": 6,
       "contributor": "danieldegroot2"
+    },
+    {
+      "commits": 4,
+      "contributor": "Daniele Santini"
     },
     {
       "commits": 4,

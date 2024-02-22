@@ -33,7 +33,7 @@
     id: Object.values(image.osmTags)[0],
   }
 
-  function applyLink(isLinked :boolean) {
+  function applyLink(isLinked: boolean) {
     console.log("Applying linked image", isLinked, targetValue)
     const currentTags = tags.data
     const key = Object.keys(image.osmTags)[0]
@@ -57,7 +57,7 @@
       }
     }
   }
-  isLinked.addCallback(isLinked => applyLink(isLinked))
+  isLinked.addCallback((isLinked) => applyLink(isLinked))
 </script>
 
 <div class="flex w-fit shrink-0 flex-col">

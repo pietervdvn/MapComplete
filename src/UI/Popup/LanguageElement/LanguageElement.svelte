@@ -37,33 +37,48 @@
   })
 
   const forceInputMode = new UIEventSource(false)
-
 </script>
 
 {#if $foundLanguages.length === 0 && on_no_known_languages && !$forceInputMode}
-  <div class="p-1 flex items-center justify-between low-interaction rounded">
+  <div class="low-interaction flex items-center justify-between rounded p-1">
     <div>
       {on_no_known_languages}
     </div>
-    <EditButton on:click={_ => forceInputMode.setData(true)} />
+    <EditButton on:click={(_) => forceInputMode.setData(true)} />
   </div>
 {:else if $forceInputMode || $foundLanguages.length === 0}
-  <LanguageQuestion {question} {foundLanguages} {prefix} {state} {tags} {feature} {layer}
-                    on:save={_ => forceInputMode.setData(false)}>
+  <LanguageQuestion
+    {question}
+    {foundLanguages}
+    {prefix}
+    {state}
+    {tags}
+    {feature}
+    {layer}
+    on:save={(_) => forceInputMode.setData(false)}
+  >
     <span slot="cancel-button">
-    {#if $forceInputMode}
-      <button on:click={_ => forceInputMode.setData(false)}>
-        <Tr t={Translations.t.general.cancel} />
-      </button>
+      {#if $forceInputMode}
+        <button on:click={(_) => forceInputMode.setData(false)}>
+          <Tr t={Translations.t.general.cancel} />
+        </button>
       {/if}
     </span>
   </LanguageQuestion>
 {:else}
-  <div class="p-2 flex items-center justify-between low-interaction rounded">
+  <div class="low-interaction flex items-center justify-between rounded p-2">
     <div>
-      <LanguageAnswer {single_render} {item_render} {render_all} languages={foundLanguages} {state} {tags} { feature}
-                      {layer} />
+      <LanguageAnswer
+        {single_render}
+        {item_render}
+        {render_all}
+        languages={foundLanguages}
+        {state}
+        {tags}
+        {feature}
+        {layer}
+      />
     </div>
-    <EditButton on:click={_ => forceInputMode.setData(true)} />
+    <EditButton on:click={(_) => forceInputMode.setData(true)} />
   </div>
 {/if}

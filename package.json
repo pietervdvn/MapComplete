@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.37.5",
+  "version": "0.38.0",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -92,7 +92,8 @@
     "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
     "weblate-fix-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
     "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
-    "reuse-compliance": "reuse lint"
+    "reuse-compliance": "reuse lint",
+    "backup:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/"
   },
   "keywords": [
     "OpenStreetMap",

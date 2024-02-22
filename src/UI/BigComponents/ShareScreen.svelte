@@ -74,7 +74,7 @@
   <div class="flex">
     {#if typeof navigator?.share === "function"}
       <button class="h-8 w-8 shrink-0 p-1" on:click={shareCurrentLink}>
-        <Share/>
+        <Share />
       </button>
     {/if}
     {#if navigator.clipboard !== undefined}

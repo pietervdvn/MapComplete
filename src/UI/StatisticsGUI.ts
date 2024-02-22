@@ -190,16 +190,17 @@ class StatsticsForOverviewFile extends Combine {
                             }
                         }
 
-
-                        elements.push(new SubtleButton(
-                            undefined, "Download as csv"
-                        ).onClick(() => {
-                            const data = GeoOperations.toCSV(overview._meta,
-                                {
-                                    ignoreTags: /^((deletion:node)|(import:node)|(move:node)|(soft-delete:))/
+                        elements.push(
+                            new SubtleButton(undefined, "Download as csv").onClick(() => {
+                                const data = GeoOperations.toCSV(overview._meta, {
+                                    ignoreTags:
+                                        /^((deletion:node)|(import:node)|(move:node)|(soft-delete:))/,
                                 })
-                            Utils.offerContentsAsDownloadableFile(data , "statistics.csv", {mimetype: "text/csv"})
-                        }))
+                                Utils.offerContentsAsDownloadableFile(data, "statistics.csv", {
+                                    mimetype: "text/csv",
+                                })
+                            })
+                        )
 
                         return new Combine(elements)
                     },

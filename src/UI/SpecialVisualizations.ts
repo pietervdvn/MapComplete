@@ -3,7 +3,11 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { MinimapViz } from "./Popup/MinimapViz"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -88,6 +92,7 @@ import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
 import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
 import LoginButton from "./Base/LoginButton.svelte"
 import Toggle from "./Input/Toggle"
+import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -114,7 +119,7 @@ class NearbyImageVis implements SpecialVisualization {
         tags: UIEventSource<Record<string, string>>,
         args: string[],
         feature: Feature,
-        layer: LayerConfig,
+        layer: LayerConfig
     ): BaseUIElement {
         const isOpen = args[0] === "open"
         const readonly = args[1] === "readonly"
@@ -181,7 +186,7 @@ class StealViz implements SpecialVisualization {
                                 selectedElement: otherFeature,
                                 state,
                                 layer,
-                            }),
+                            })
                         )
                     }
                     if (elements.length === 1) {
@@ -189,8 +194,8 @@ class StealViz implements SpecialVisualization {
                     }
                     return new Combine(elements).SetClass("flex flex-col")
                 },
-                [state.indexedFeatures.featuresById],
-            ),
+                [state.indexedFeatures.featuresById]
+            )
         )
     }
 
@@ -229,7 +234,7 @@ export class QuestionViz implements SpecialVisualization {
         tags: UIEventSource<Record<string, string>>,
         args: string[],
         feature: Feature,
-        layer: LayerConfig,
+        layer: LayerConfig
     ): BaseUIElement {
         const labels = args[0]
             ?.split(";")
@@ -265,38 +270,38 @@ export default class SpecialVisualizations {
             viz.docs,
             viz.args.length > 0
                 ? new Table(
-                    ["name", "default", "description"],
-                    viz.args.map((arg) => {
-                        let defaultArg = arg.defaultValue ?? "_undefined_"
-                        if (defaultArg == "") {
-                            defaultArg = "_empty string_"
-                        }
-                        return [arg.name, defaultArg, arg.doc]
-                    }),
-                )
+                      ["name", "default", "description"],
+                      viz.args.map((arg) => {
+                          let defaultArg = arg.defaultValue ?? "_undefined_"
+                          if (defaultArg == "") {
+                              defaultArg = "_empty string_"
+                          }
+                          return [arg.name, defaultArg, arg.doc]
+                      })
+                  )
                 : undefined,
             new Title("Example usage of " + viz.funcName, 4),
             new FixedUiElement(
                 viz.example ??
-                "`{" +
-                viz.funcName +
-                "(" +
-                viz.args.map((arg) => arg.defaultValue).join(",") +
-                ")}`",
+                    "`{" +
+                        viz.funcName +
+                        "(" +
+                        viz.args.map((arg) => arg.defaultValue).join(",") +
+                        ")}`"
             ).SetClass("literal-code"),
         ])
     }
 
     public static constructSpecification(
         template: string,
-        extraMappings: SpecialVisualization[] = [],
+        extraMappings: SpecialVisualization[] = []
     ): RenderingSpecification[] {
         return SpecialVisualisationUtils.constructSpecification(template, extraMappings)
     }
 
     public static HelpMessage() {
         const helpTexts = SpecialVisualizations.specialVisualizations.map((viz) =>
-            SpecialVisualizations.DocumentationFor(viz),
+            SpecialVisualizations.DocumentationFor(viz)
         )
 
         return new Combine([
@@ -330,10 +335,10 @@ export default class SpecialVisualizations {
                             },
                         },
                         null,
-                        "  ",
-                    ),
+                        "  "
+                    )
                 ).SetClass("code"),
-                "In other words: use `{ \"before\": ..., \"after\": ..., \"special\": {\"type\": ..., \"argname\": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)",
+                'In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "argname": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)',
             ]).SetClass("flex flex-col"),
             ...helpTexts,
         ]).SetClass("flex flex-col")
@@ -342,20 +347,20 @@ export default class SpecialVisualizations {
     // noinspection JSUnusedGlobalSymbols
     public static renderExampleOfSpecial(
         state: SpecialVisualizationState,
-        s: SpecialVisualization,
+        s: SpecialVisualization
     ): BaseUIElement {
         const examples =
             s.structuredExamples === undefined
                 ? []
                 : s.structuredExamples().map((e) => {
-                    return s.constr(
-                        state,
-                        new UIEventSource<Record<string, string>>(e.feature.properties),
-                        e.args,
-                        e.feature,
-                        undefined,
-                    )
-                })
+                      return s.constr(
+                          state,
+                          new UIEventSource<Record<string, string>>(e.feature.properties),
+                          e.args,
+                          e.feature,
+                          undefined
+                      )
+                  })
         return new Combine([new Title(s.funcName), s.docs, ...examples])
     }
 
@@ -395,7 +400,7 @@ export default class SpecialVisualizations {
                         assignTo: state.userRelatedState.language,
                         availableLanguages: state.layout.language,
                         preferredLanguages: state.osmConnection.userDetails.map(
-                            (ud) => ud.languages,
+                            (ud) => ud.languages
                         ),
                     })
                 },
@@ -420,7 +425,7 @@ export default class SpecialVisualizations {
 
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
+                    tagSource: UIEventSource<Record<string, string>>
                 ): BaseUIElement {
                     return new VariableUiElement(
                         tagSource
@@ -430,7 +435,7 @@ export default class SpecialVisualizations {
                                     return new SplitRoadWizard(<WayId>id, state)
                                 }
                                 return undefined
-                            }),
+                            })
                     )
                 },
             },
@@ -444,7 +449,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     if (feature.geometry.type !== "Point") {
                         return undefined
@@ -467,7 +472,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     if (!layer.deletion) {
                         return undefined
@@ -495,7 +500,7 @@ export default class SpecialVisualizations {
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
-                    feature: Feature,
+                    feature: Feature
                 ): BaseUIElement {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(CreateNewNote, {
@@ -559,7 +564,7 @@ export default class SpecialVisualizations {
                             .map((tags) => tags[args[0]])
                             .map((wikidata) => {
                                 wikidata = Utils.NoEmpty(
-                                    wikidata?.split(";")?.map((wd) => wd.trim()) ?? [],
+                                    wikidata?.split(";")?.map((wd) => wd.trim()) ?? []
                                 )[0]
                                 const entry = Wikidata.LoadWikidataEntry(wikidata)
                                 return new VariableUiElement(
@@ -569,9 +574,9 @@ export default class SpecialVisualizations {
                                         }
                                         const response = <WikidataResponse>e["success"]
                                         return Translation.fromMap(response.labels)
-                                    }),
+                                    })
                                 )
-                            }),
+                            })
                     ),
             },
             new MapillaryLinkVis(),
@@ -585,7 +590,7 @@ export default class SpecialVisualizations {
                     tags: UIEventSource<Record<string, string>>,
                     _,
                     __,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ) => new SvelteUIElement(AllTagsPanel, { tags, layer }),
             },
             {
@@ -607,7 +612,7 @@ export default class SpecialVisualizations {
                     return new ImageCarousel(
                         AllImageProviders.LoadImagesFor(tags, imagePrefixes),
                         tags,
-                        state,
+                        state
                     )
                 },
             },
@@ -663,7 +668,7 @@ export default class SpecialVisualizations {
                         {
                             nameKey: nameKey,
                             fallbackName,
-                        },
+                        }
                     )
                     return new SvelteUIElement(StarsBarIcon, {
                         score: reviews.average,
@@ -696,7 +701,7 @@ export default class SpecialVisualizations {
                         {
                             nameKey: nameKey,
                             fallbackName,
-                        },
+                        }
                     )
                     return new SvelteUIElement(ReviewForm, { reviews, state, tags, feature, layer })
                 },
@@ -728,9 +733,22 @@ export default class SpecialVisualizations {
                         {
                             nameKey: nameKey,
                             fallbackName,
-                        },
+                        }
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
+                },
+            },
+            {
+                funcName: "import_mangrove_key",
+                docs: "Only makes sense in the usersettings. Allows to import a mangrove public key and to use this to make reviews",
+                args: [{
+                    name: "text",
+                    doc: "The text that is shown on the button",
+                }],
+                needsUrls: [],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    const [text] = argument
+                    return new SvelteUIElement(ImportReviewIdentity, { state, text })
                 },
             },
             {
@@ -753,7 +771,7 @@ export default class SpecialVisualizations {
                         doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
                     },
                 ],
-
+                needsUrls: [Constants.countryCoderEndpoint],
                 example:
                     "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state, tagSource: UIEventSource<any>, args) => {
@@ -786,7 +804,7 @@ export default class SpecialVisualizations {
                     tags: UIEventSource<Record<string, string>>,
                     args: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): SvelteUIElement {
                     const keyToUse = args[0]
                     const prefix = args[1]
@@ -823,17 +841,17 @@ export default class SpecialVisualizations {
                                     return undefined
                                 }
                                 const allUnits: Unit[] = [].concat(
-                                    ...(state?.layout?.layers?.map((lyr) => lyr.units) ?? []),
+                                    ...(state?.layout?.layers?.map((lyr) => lyr.units) ?? [])
                                 )
                                 const unit = allUnits.filter((unit) =>
-                                    unit.isApplicableToKey(key),
+                                    unit.isApplicableToKey(key)
                                 )[0]
                                 if (unit === undefined) {
                                     return value
                                 }
                                 const getCountry = () => tagSource.data._country
                                 return unit.asHumanLongValue(value, getCountry)
-                            }),
+                            })
                     )
                 },
             },
@@ -850,7 +868,7 @@ export default class SpecialVisualizations {
                         new Combine([
                             t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
                             t.downloadGeoJsonHelper.SetClass("subtle"),
-                        ]).SetClass("flex flex-col"),
+                        ]).SetClass("flex flex-col")
                     )
                         .onClick(() => {
                             console.log("Exporting as Geojson")
@@ -863,7 +881,7 @@ export default class SpecialVisualizations {
                                 title + "_mapcomplete_export.geojson",
                                 {
                                     mimetype: "application/vnd.geo+json",
-                                },
+                                }
                             )
                         })
                         .SetClass("w-full")
@@ -899,7 +917,7 @@ export default class SpecialVisualizations {
                 constr: (state) => {
                     return new SubtleButton(
                         Svg.delete_icon_svg().SetStyle("height: 1.5rem"),
-                        Translations.t.general.removeLocationHistory,
+                        Translations.t.general.removeLocationHistory
                     ).onClick(() => {
                         state.historicalUserLocations.features.setData([])
                         state.selectedElement.setData(undefined)
@@ -937,10 +955,10 @@ export default class SpecialVisualizations {
                                         .filter((c) => c.text !== "")
                                         .map(
                                             (c, i) =>
-                                                new NoteCommentElement(c, state, i, comments.length),
-                                        ),
+                                                new NoteCommentElement(c, state, i, comments.length)
+                                        )
                                 ).SetClass("flex flex-col")
-                            }),
+                            })
                     ),
             },
             {
@@ -974,7 +992,7 @@ export default class SpecialVisualizations {
                     tagsSource: UIEventSource<Record<string, string>>,
                     _: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
@@ -992,7 +1010,7 @@ export default class SpecialVisualizations {
                                 feature,
                                 layer,
                             }).SetClass("px-1")
-                        }),
+                        })
                     ),
             },
             {
@@ -1008,8 +1026,8 @@ export default class SpecialVisualizations {
                     let challenge = Stores.FromPromise(
                         Utils.downloadJsonCached(
                             `${Maproulette.defaultEndpoint}/challenge/${parentId}`,
-                            24 * 60 * 60 * 1000,
-                        ),
+                            24 * 60 * 60 * 1000
+                        )
                     )
 
                     return new VariableUiElement(
@@ -1034,7 +1052,7 @@ export default class SpecialVisualizations {
                             } else {
                                 return [title, new List(listItems)]
                             }
-                        }),
+                        })
                     )
                 },
                 docs: "Fetches the metadata of MapRoulette campaign that this task is part of and shows those details (namely `title`, `description` and `instruction`).\n\nThis reads the property `mr_challengeId` to detect the parent campaign.",
@@ -1048,15 +1066,15 @@ export default class SpecialVisualizations {
                     "\n" +
                     "```json\n" +
                     "{\n" +
-                    "   \"id\": \"mark_duplicate\",\n" +
-                    "   \"render\": {\n" +
-                    "      \"special\": {\n" +
-                    "         \"type\": \"maproulette_set_status\",\n" +
-                    "         \"message\": {\n" +
-                    "            \"en\": \"Mark as not found or false positive\"\n" +
+                    '   "id": "mark_duplicate",\n' +
+                    '   "render": {\n' +
+                    '      "special": {\n' +
+                    '         "type": "maproulette_set_status",\n' +
+                    '         "message": {\n' +
+                    '            "en": "Mark as not found or false positive"\n' +
                     "         },\n" +
-                    "         \"status\": \"2\",\n" +
-                    "         \"image\": \"close\"\n" +
+                    '         "status": "2",\n' +
+                    '         "image": "close"\n' +
                     "      }\n" +
                     "   }\n" +
                     "}\n" +
@@ -1088,12 +1106,19 @@ export default class SpecialVisualizations {
                     {
                         name: "ask_feedback",
                         doc: "If not an empty string, this will be used as question to ask some additional feedback. A text field will be added",
-                        defaultValue: ""
-                    }
+                        defaultValue: "",
+                    },
                 ],
 
                 constr: (state, tagsSource, args) => {
-                    let [message, image, message_closed, statusToSet, maproulette_id_key, askFeedback] = args
+                    let [
+                        message,
+                        image,
+                        message_closed,
+                        statusToSet,
+                        maproulette_id_key,
+                        askFeedback,
+                    ] = args
                     if (image === "") {
                         image = "confirm"
                     }
@@ -1109,7 +1134,7 @@ export default class SpecialVisualizations {
                         message_closed,
                         statusToSet,
                         maproulette_id_key,
-                        askFeedback
+                        askFeedback,
                     })
                 },
             },
@@ -1129,8 +1154,8 @@ export default class SpecialVisualizations {
                                     const fsBboxed = new BBoxFeatureSourceForLayer(fs, bbox)
                                     return new StatisticsPanel(fsBboxed)
                                 },
-                                [state.mapProperties.bounds],
-                            ),
+                                [state.mapProperties.bounds]
+                            )
                     )
                 },
             },
@@ -1196,7 +1221,7 @@ export default class SpecialVisualizations {
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
-                    args: string[],
+                    args: string[]
                 ): BaseUIElement {
                     let [text, href, classnames, download, ariaLabel] = args
                     if (download === "") {
@@ -1208,13 +1233,16 @@ export default class SpecialVisualizations {
                             (tags) =>
                                 new SvelteUIElement(Link, {
                                     text: Utils.SubstituteKeys(text, tags),
-                                    href: Utils.SubstituteKeys(href, tags).replaceAll(/ /g, "%20") /* Chromium based browsers eat the spaces */,
+                                    href: Utils.SubstituteKeys(href, tags).replaceAll(
+                                        / /g,
+                                        "%20"
+                                    ) /* Chromium based browsers eat the spaces */,
                                     classnames,
                                     download: Utils.SubstituteKeys(download, tags),
                                     ariaLabel: Utils.SubstituteKeys(ariaLabel, tags),
                                     newTab,
-                                }),
-                        ),
+                                })
+                        )
                     )
                 },
             },
@@ -1236,7 +1264,7 @@ export default class SpecialVisualizations {
                             },
                         },
                         null,
-                        "  ",
+                        "  "
                     ) +
                     "\n```",
                 args: [
@@ -1260,7 +1288,7 @@ export default class SpecialVisualizations {
                     featureTags: UIEventSource<Record<string, string>>,
                     args: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ) {
                     const [key, tr, classesRaw] = args
                     let classes = classesRaw ?? ""
@@ -1285,7 +1313,7 @@ export default class SpecialVisualizations {
                                 elements.push(subsTr)
                             }
                             return elements
-                        }),
+                        })
                     )
                 },
             },
@@ -1305,7 +1333,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     return new VariableUiElement(
                         tagSource.map((tags) => {
@@ -1317,7 +1345,7 @@ export default class SpecialVisualizations {
                                 console.error("Cannot create a translation for", v, "due to", e)
                                 return JSON.stringify(v)
                             }
-                        }),
+                        })
                     )
                 },
             },
@@ -1337,7 +1365,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     const key = argument[0]
                     const validator = new FediverseValidator()
@@ -1347,7 +1375,7 @@ export default class SpecialVisualizations {
                             .map((fediAccount) => {
                                 fediAccount = validator.reformat(fediAccount)
                                 const [_, username, host] = fediAccount.match(
-                                    FediverseValidator.usernameAtServer,
+                                    FediverseValidator.usernameAtServer
                                 )
 
                                 const normalLink = new SvelteUIElement(Link, {
@@ -1359,10 +1387,10 @@ export default class SpecialVisualizations {
                                 const loggedInContributorMastodon =
                                     state.userRelatedState?.preferencesAsTags?.data?.[
                                         "_mastodon_link"
-                                        ]
+                                    ]
                                 console.log(
                                     "LoggedinContributorMastodon",
-                                    loggedInContributorMastodon,
+                                    loggedInContributorMastodon
                                 )
                                 if (!loggedInContributorMastodon) {
                                     return normalLink
@@ -1378,7 +1406,7 @@ export default class SpecialVisualizations {
                                         newTab: true,
                                     }).SetClass("button"),
                                 ])
-                            }),
+                            })
                     )
                 },
             },
@@ -1398,7 +1426,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     return new FixedUiElement("{" + args[0] + "}")
                 },
@@ -1419,7 +1447,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     const key = argument[0] ?? "value"
                     return new VariableUiElement(
@@ -1437,12 +1465,12 @@ export default class SpecialVisualizations {
                             } catch (e) {
                                 return new FixedUiElement(
                                     "Could not parse this tag: " +
-                                    JSON.stringify(value) +
-                                    " due to " +
-                                    e,
+                                        JSON.stringify(value) +
+                                        " due to " +
+                                        e
                                 ).SetClass("alert")
                             }
-                        }),
+                        })
                     )
                 },
             },
@@ -1463,7 +1491,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     const giggityUrl = argument[0]
                     return new SvelteUIElement(Giggity, { tags: tagSource, state, giggityUrl })
@@ -1479,12 +1507,12 @@ export default class SpecialVisualizations {
                     _: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     const tags = (<ThemeViewState>(
                         state
                     )).geolocation.currentUserLocation.features.map(
-                        (features) => features[0]?.properties,
+                        (features) => features[0]?.properties
                     )
                     return new Combine([
                         new SvelteUIElement(OrientationDebugPanel, {}),
@@ -1506,7 +1534,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     return new SvelteUIElement(MarkAsFavourite, {
                         tags: tagSource,
@@ -1526,7 +1554,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     return new SvelteUIElement(MarkAsFavouriteMini, {
                         tags: tagSource,
@@ -1546,7 +1574,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     return new SvelteUIElement(DirectionIndicator, { state, feature })
                 },
@@ -1561,7 +1589,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     return new VariableUiElement(
                         tagSource
@@ -1583,9 +1611,9 @@ export default class SpecialVisualizations {
                                     `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
                                     `#${id}`
                                 return new Img(new Qr(url).toImageElement(75)).SetStyle(
-                                    "width: 75px",
+                                    "width: 75px"
                                 )
-                            }),
+                            })
                     )
                 },
             },
@@ -1605,7 +1633,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     const key = args[0] === "" ? "_direction:centerpoint" : args[0]
                     return new VariableUiElement(
@@ -1616,11 +1644,11 @@ export default class SpecialVisualizations {
                             })
                             .mapD((value) => {
                                 const dir = GeoOperations.bearingToHuman(
-                                    GeoOperations.parseBearing(value),
+                                    GeoOperations.parseBearing(value)
                                 )
                                 console.log("Human dir", dir)
                                 return Translations.t.general.visualFeedback.directionsAbsolute[dir]
-                            }),
+                            })
                     )
                 },
             },
@@ -1655,7 +1683,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     const url = args[0]
                     const postprocessVelopark = args[2] === "velopark"
@@ -1673,13 +1701,21 @@ export default class SpecialVisualizations {
             },
             {
                 funcName: "login_button",
-                args: [
-                ],
+                args: [],
                 docs: "Show a login button",
                 needsUrls: [],
-                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, args: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
-                    return new Toggle(undefined,
-                        new SvelteUIElement(LoginButton), state.osmConnection.isLoggedIn)
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new Toggle(
+                        undefined,
+                        new SvelteUIElement(LoginButton),
+                        state.osmConnection.isLoggedIn
+                    )
                 },
             },
         ]
@@ -1693,7 +1729,7 @@ export default class SpecialVisualizations {
             throw (
                 "Invalid special visualisation found: funcName is undefined for " +
                 invalid.map((sp) => sp.i).join(", ") +
-                ". Did you perhaps type \n  funcName: \"funcname\" // type declaration uses COLON\ninstead of:\n  funcName = \"funcName\" // value definition uses EQUAL"
+                '. Did you perhaps type \n  funcName: "funcname" // type declaration uses COLON\ninstead of:\n  funcName = "funcName" // value definition uses EQUAL'
             )
         }
 

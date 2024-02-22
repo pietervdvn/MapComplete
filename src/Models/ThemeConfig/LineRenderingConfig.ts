@@ -13,7 +13,7 @@ export default class LineRenderingConfig extends WithContextLoader {
     public readonly fill: TagRenderingConfig
     public readonly fillColor: TagRenderingConfig
     public readonly leftRightSensitive: boolean
-    public readonly imageAlongWay: { if?: TagsFilter, then: string }[]
+    public readonly imageAlongWay: { if?: TagsFilter; then: string }[]
 
     constructor(json: LineRenderingConfigJson, context: string) {
         super(json, context)
@@ -33,15 +33,13 @@ export default class LineRenderingConfig extends WithContextLoader {
                 for (let i = 0; i < json.imageAlongWay.length; i++) {
                     const imgAlong = json.imageAlongWay[i]
                     const ctx = context + ".imageAlongWay[" + i + "]"
-                    if(!imgAlong.then.endsWith(".png")){
+                    if (!imgAlong.then.endsWith(".png")) {
                         throw "An imageAlongWay should always be a PNG image"
                     }
-                    this.imageAlongWay.push(
-                        {
-                            if: TagUtils.Tag(imgAlong.if, ctx),
-                            then: imgAlong.then,
-                        },
-                    )
+                    this.imageAlongWay.push({
+                        if: TagUtils.Tag(imgAlong.if, ctx),
+                        then: imgAlong.then,
+                    })
                 }
             }
         }

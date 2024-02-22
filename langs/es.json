@@ -50,6 +50,24 @@
         "panelIntro": "<h3>Tu tema personal</h3>Activa tus capas favoritas de todas los temas oficiales",
         "reload": "Recargar datos"
     },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "Esta ubicación está marcada como favorita y aparecerá en todos los mapas temáticos visitados de MapComplete.",
+            "isMarkedShort": "Marcada como ubicación favorita",
+            "isNotMarkedShort": "No marcada como favorito",
+            "markAsFavouriteTitle": "Marcar esta ubicación como favorita",
+            "markDescription": "Añadir esta ubicación a una lista personal de tus favoritos",
+            "unmark": "Quitar de la lista personal de favoritos",
+            "unmarkNotDeleted": "Este punto no será borrado y todavía será visible en el mapa apropiado para ti y otros"
+        },
+        "downloadGeojson": "Descarga tus favoritos como geojson",
+        "downloadGpx": "Descarga tus favoritos como GPX",
+        "intro": "Has marcado {length} ubicaciones como favoritas.",
+        "introPrivacy": "Esta lista sólo es visible para ti",
+        "loginToSeeList": "Inicia sesión para ver la lista de ubicaciones marcadas como favoritas",
+        "tab": "Tus favoritos y opiniones",
+        "title": "Tus ubicaciones favoritas"
+    },
     "flyer": {
         "aerial": "Este mapa utiliza un fondo diferente, concretamente imagines aéreas por Agentschap Informatie Vlaanderen",
         "callToAction": "Pruebalo en mapcomplete.org",
@@ -66,7 +84,8 @@
             "attributes": "Muestra atributos de una manera amistosa",
             "edit": "Información incorrecta o anticuada? El botón de edición está justo ahí.",
             "question": "Si un atributo aún no se conoce, MapComplete muestra una pregunta",
-            "see_images": "Muestra imágenes de colaboradores anteriores, Wikipedia, Mapillary, …"
+            "see_images": "Muestra imágenes de colaboradores anteriores, Wikipedia, Mapillary, …",
+            "wikipedia": "Se muestran artículos relacionados con Wikipedia"
         },
         "frontParagraph": "MapComplete es una aplicación web fácil de usar para recopilar geodata en OpenStreetMap, lo que permite recopilar y gestionar datos relevantes de forma abierta, con recursos de multitud y reutilizable.\n\nSe pueden añadir nuevas categorías y atributos a petición.",
         "lines_too": "También se muestran líneas y polígonos. Los atributos y imágenes también se pueden añadir y actualizar en esos objetos.",
@@ -84,14 +103,24 @@
             "title": "Qué es MapComplete?"
         },
         "onwheels": "Mapas interiores para usuarios de silla de ruedas también están disponibles.",
-        "osm": "OpenStreetMapa es un mapa en línea que puede ser editado y reutilizado por cualquiera para cualquier propósito mientras se da la atribución y los datos se mantienen abiertos.\n\nEs la base de datos geoespacial más grande del mundo y es reutilizada por miles de aplicaciones y sitios web."
+        "osm": "OpenStreetMapa es un mapa en línea que puede ser editado y reutilizado por cualquiera para cualquier propósito mientras se da la atribución y los datos se mantienen abiertos.\n\nEs la base de datos geoespacial más grande del mundo y es reutilizada por miles de aplicaciones y sitios web.",
+        "tagline": "Recolectar geodata con OpenStreetMap",
+        "title": "mapcomplete.org",
+        "toerisme_vlaanderen": "Para un proyecto conjunto con Visit Flanders, se creó «Fijar tu punto». Más de 160 colaboradores añadieron varios miles de bancos y mesas de picnic y localizaron 100 estaciones de carga para bicicletas.",
+        "whatIsOsm": "¿Qué es OpenStreetMap?"
     },
     "general": {
+        "404": "Esta página no existe",
         "about": "Edita OpenStreetMap fácilmente y añade puntos sobre un tema concreto",
+        "aboutMapComplete": {
+            "intro": "Usa MapComplete para añadir información de OpenStreetMap en un <b>único tema.</b> Responde a las preguntas y en pocos minutos tus contribuciones estarán disponibles en todas partes. En la mayoría de los temas pueden añadirse imágenes o incluso dejar una reseña. El <b>mantenedor del tema</b> define elementos, preguntas e idiomas para él."
+        },
         "add": {
             "addNew": "Añadir {category}",
             "backToSelect": "Selecciones una categoría distinta",
             "confirmButton": "Añade una {category}<br/><div class='alert'>Tu adición es visible para todos</div>",
+            "confirmLocation": "Confirmar esta ubicación",
+            "confirmTitle": "¿Añadir un {title}?",
             "disableFilters": "Desactivar todos los filtros",
             "disableFiltersExplanation": "Algunas características pueden estar ocultas por un filtro",
             "hasBeenImported": "Este elemento ya ha sido importado",
@@ -110,10 +139,10 @@
             "pleaseLogin": "Por favor inicia sesión para añadir un nuevo elemento",
             "presetInfo": "El nuevo POI tendrá {tags}",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir una nueva función.",
-            "title": "¿Quieres añadir un elemento?",
+            "title": "Añadir un elemento nuevo",
             "warnVisibleForEveryone": "Su adición será visible para todos",
             "wrongType": "Este elemento no es un nodo o una vía y no puede ser importado",
-            "zoomInFurther": "Acércate más para añadir un elemento.",
+            "zoomInFurther": "Acércate más para añadir un elemento",
             "zoomInMore": "Aumente el zoom para importar este elemento"
         },
         "apply_button": {
@@ -147,7 +176,7 @@
         "backgroundMap": "Seleccione una capa de fondo",
         "cancel": "Cancelar",
         "confirm": "Confirmar",
-        "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente.",
+        "customThemeIntro": "Estos son los temas generados por los usuarios que han sido visitados previamente.",
         "download": {
             "downloadAsPdf": "Descargar un PDF del mapa actual",
             "downloadAsPdfHelper": "Ideal para imprimir el mapa actual",
@@ -233,7 +262,7 @@
             "generatedWith": "Generado como mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - generado el {date}"
         },
-        "pickLanguage": "Escoge idioma: ",
+        "pickLanguage": "Elige el idioma",
         "questions": {
             "emailIs": "La dirección de correo de {category} es <a href='mailto:{email}' target='_blank'>{email}</a>",
             "emailOf": "¿Qué dirección de correu tiene {category}?",
@@ -422,7 +451,7 @@
         "affiliated_reviewer_warning": "(Revisión afiliada)",
         "name_required": "Se requiere un nombre para mostrar y crear comentarios",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
-        "saved": "<span class=\"thanks\">Reseña guardada. ¡Gracias por compartir!</span>",
+        "saved": "Reseña guardada. ¡Gracias por compartir!",
         "saving_review": "Guardando…",
         "title": "{count} comentarios",
         "title_singular": "Un comentario",

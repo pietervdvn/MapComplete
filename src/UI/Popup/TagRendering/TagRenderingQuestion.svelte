@@ -47,7 +47,7 @@
   // Will be bound if a freeform is available
   let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key])
   let freeformInputUnvalidated = new UIEventSource<string>(freeformInput.data)
-  
+
   let selectedMapping: number = undefined
   /**
    * A list of booleans, used if multiAnswer is set
@@ -153,16 +153,20 @@
     }
   })
   $: {
-    if (allowDeleteOfFreeform && $freeformInput === undefined && $freeformInputUnvalidated === "" && (mappings?.length ?? 0) === 0) {
+    if (
+      allowDeleteOfFreeform &&
+      $freeformInput === undefined &&
+      $freeformInputUnvalidated === "" &&
+      (mappings?.length ?? 0) === 0
+    ) {
       selectedTags = new Tag(config.freeform.key, "")
     } else {
-
       try {
         selectedTags = config?.constructChangeSpecification(
           $freeformInput,
           selectedMapping,
           checkedMappings,
-          tags.data,
+          tags.data
         )
       } catch (e) {
         console.error("Could not calculate changeSpecification:", e)
@@ -227,21 +231,19 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      }),
+      })
     )
   }
 </script>
 
 {#if question !== undefined}
   <div class="relative">
-
     <form
       class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
       on:submit|preventDefault={() => onSave()}
     >
       <fieldset>
-
         <legend>
           <div class="interactive sticky top-0 justify-between pt-1 font-bold" style="z-index: 11">
             <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
@@ -396,13 +398,16 @@
             <slot name="save-button" {selectedTags}>
               {#if allowDeleteOfFreeform && (mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
                 <button class="primary flex" on:click|stopPropagation|preventDefault={onSave}>
-                  <TrashIcon class="w-6 h-6 text-red-500" />
-                  <Tr t={Translations.t.general.eraseValue}/>
+                  <TrashIcon class="h-6 w-6 text-red-500" />
+                  <Tr t={Translations.t.general.eraseValue} />
                 </button>
               {:else}
                 <button
                   on:click={onSave}
-                  class={twJoin(selectedTags === undefined ? "disabled" : "button-shadow", "primary")}
+                  class={twJoin(
+                    selectedTags === undefined ? "disabled" : "button-shadow",
+                    "primary"
+                  )}
                 >
                   <Tr t={Translations.t.general.save} />
                 </button>
@@ -410,23 +415,21 @@
             </slot>
           </div>
           {#if UserRelatedState.SHOW_TAGS_VALUES.indexOf($showTags) >= 0 || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
-        <span class="flex flex-wrap justify-between">
-          <TagHint {state} tags={selectedTags} currentProperties={$tags} />
-          <span class="flex flex-wrap">
-            {#if $featureSwitchIsTesting}
-              Testmode &nbsp;
-            {/if}
-            {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
-              <span class="subtle">{config.id}</span>
-            {/if}
-          </span>
-        </span>
+            <span class="flex flex-wrap justify-between">
+              <TagHint {state} tags={selectedTags} currentProperties={$tags} />
+              <span class="flex flex-wrap">
+                {#if $featureSwitchIsTesting}
+                  Testmode &nbsp;
+                {/if}
+                {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
+                  <span class="subtle">{config.id}</span>
+                {/if}
+              </span>
+            </span>
           {/if}
           <slot name="under-buttons" />
         </LoginToggle>
       </fieldset>
-
     </form>
   </div>
-
 {/if}

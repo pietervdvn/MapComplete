@@ -172,6 +172,8 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of direction_absolute](#example-usage-of-direction_absolute)
     + [compare_data](#compare_data)
       * [Example usage of compare_data](#example-usage-of-compare_data)
+    + [login_button](#login_button)
+      * [Example usage of login_button](#example-usage-of-login_button)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -982,6 +984,7 @@ image | confirm | Image to show
 message_confirm | _undefined_ | What to show when the task is closed, either by the user or was already closed.
 status | 1 | A statuscode to apply when the button is clicked. 1 = `close`, 2 = `false_positive`, 3 = `skip`, 4 = `deleted`, 5 = `already fixed` (on the map, e.g. for duplicates), 6 = `too hard`
 maproulette_id | mr_taskId | The property name containing the maproulette id
+ask_feedback | _empty string_ | If not an empty string, this will be used as question to ask some additional feedback. A text field will be added
  
 
 #### Example usage of maproulette_set_status 
@@ -1041,9 +1044,9 @@ button_text | _undefined_ | The text shown on the button in the UI
 name | default | description
 ------ | --------- | -------------
 text | _undefined_ | Text to be shown
-href | _undefined_ | The URL to link to
+href | _undefined_ | The URL to link to. Note that this will be URI-encoded before 
 class | _undefined_ | CSS-classes to add to the element
-download | _undefined_ | If set, this link will act as a download-button. The contents of `href` will be offered for download; this parameter will act as the proposed filename
+download | _undefined_ | Expects a string which denotes the filename to download the contents of `href` into. If set, this link will act as a download-button.
 arialabel | _undefined_ | If set, this text will be used as aria-label
  
 
@@ -1237,6 +1240,16 @@ readonly | _undefined_ | If 'yes', will not show 'apply'-buttons
 #### Example usage of compare_data 
 
  `{compare_data(,,,)}`
+
+
+
+### login_button 
+
+ Show a login button 
+
+#### Example usage of login_button 
+
+ `{login_button()}`
 
 
 

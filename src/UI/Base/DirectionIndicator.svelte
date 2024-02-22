@@ -39,9 +39,9 @@
 
   let relativeDirections = Translations.t.general.visualFeedback.directionsRelative
   let absoluteDirections = Translations.t.general.visualFeedback.directionsAbsolute
-  
-  function round10(n :number){
-    if(n < 50){
+
+  function round10(n: number) {
+    if (n < 50) {
       return n
     }
     return Math.round(n / 10) * 10
@@ -132,7 +132,10 @@
   so we use a 'div' and add on:click manually
   -->
   <div
-    class={twMerge("soft relative flex justify-center items-center border border-black rounded-full cursor-pointer p-1", size)}
+    class={twMerge(
+      "soft relative flex cursor-pointer items-center justify-center rounded-full border border-black p-1",
+      size
+    )}
     on:click={() => focusMap()}
     use:ariaLabelStore={label}
   >
@@ -140,18 +143,18 @@
   </div>
 {:else}
   <div
-    class={twMerge("soft relative rounded-full border-black border", size)}
+    class={twMerge("soft relative rounded-full border border-black", size)}
     on:click={() => focusMap()}
     use:ariaLabelStore={label}
   >
     <div
       class={twMerge(
-        "absolute top-0 left-0 flex items-center justify-center break-words text-xs cursor-pointer",
+        "absolute top-0 left-0 flex cursor-pointer items-center justify-center break-words text-xs",
         size
       )}
     >
       <div aria-hidden="true">
-      {GeoOperations.distanceToHuman($bearingAndDistGps?.dist)}
+        {GeoOperations.distanceToHuman($bearingAndDistGps?.dist)}
       </div>
       <div class="offscreen">
         {$label}
@@ -170,11 +173,11 @@
 
 <style>
   .offscreen {
-      clip: rect(1px, 1px, 1px, 1px);
-      height: 1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap; /* added line */
-      width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; /* added line */
+    width: 1px;
   }
 </style>

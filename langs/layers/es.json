@@ -1776,6 +1776,9 @@
             }
         }
     },
+    "clock": {
+        "description": "Capa con relojes públicos"
+    },
     "crossings": {
         "description": "Pasos para peatones y ciclistas",
         "name": "Pasos",
@@ -2927,6 +2930,9 @@
             "render": "Boca de incendios"
         }
     },
+    "indoors": {
+        "description": "Cartografía básica en interiores: muestra esquemas de espacio"
+    },
     "information_board": {
         "description": "Una capa que muestra paneles informativos turísticos (ej. informan sobre el paisaje, una construcción, una característica, un mapa, ...)",
         "name": "Paneles informativos",
@@ -2992,7 +2998,11 @@
             "render": "Mapa"
         }
     },
+    "maproulette": {
+        "description": "Capa mostrando todas las tareas en MapRoulette"
+    },
     "maxspeed": {
+        "description": "Muestra la velocidad permitida para cada carretera",
         "name": "Velocidad",
         "tagRenderings": {
             "maxspeed-maxspeed": {
@@ -3365,7 +3375,7 @@
         }
     },
     "postboxes": {
-        "description": "La capa que mostrando buzones de correo.",
+        "description": "La capa muestra buzones de correo.",
         "name": "Buzones de correo",
         "presets": {
             "0": {
@@ -3748,6 +3758,9 @@
             }
         }
     },
+    "rainbow_crossings": {
+        "description": "Una capa que muestra cruces peatonales con pinturas arco iris"
+    },
     "recycling": {
         "description": "Una capa con contenedores y centros de reciclaje",
         "filter": {
@@ -3959,7 +3972,7 @@
         "name": "Tienda",
         "presets": {
             "0": {
-                "description": "Añadir una nueva tienda",
+                "description": "Puedes especificar más adelante lo que vende esta tienda.",
                 "title": "una tienda"
             }
         },
@@ -4451,7 +4464,7 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "3": {
-                        "then": "El cambiador está en una habitación dedicada "
+                        "then": "El cambiador está en una habitación dedicada"
                     }
                 },
                 "question": "¿Dónde está el cambiador?",
@@ -4697,6 +4710,23 @@
         },
         "title": {
             "render": "Árbol"
+        }
+    },
+    "trolley_bay": {
+        "tagRenderings": {
+            "denominations": {
+                "mappings": {
+                    "0": {
+                        "then": "Se aceptan monedas de 50 céntimos"
+                    },
+                    "1": {
+                        "then": "Se aceptan monedas de 1 euro"
+                    },
+                    "2": {
+                        "then": "Se aceptan monedas de 2 euros"
+                    }
+                }
+            }
         }
     },
     "unit": {

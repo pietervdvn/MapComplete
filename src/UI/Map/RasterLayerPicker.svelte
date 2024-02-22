@@ -5,6 +5,7 @@
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import { createEventDispatcher, onDestroy } from "svelte"
+  import StyleLoadingIndicator from "./StyleLoadingIndicator.svelte"
 
   /***
    * Chooses a background-layer out of available options
@@ -67,9 +68,9 @@
     mapproperties.rasterLayer.setData(rasterLayer.data)
     dispatch("appliedLayer")
   }
-  
-  function handleKeyPress(e: KeyboardEvent){
-    if(e.key === "Enter"){
+
+  function handleKeyPress(e: KeyboardEvent) {
+    if (e.key === "Enter") {
       apply()
     }
   }
@@ -77,21 +78,16 @@
 
 {#if hasLayers}
   <form class="flex h-full w-full flex-col" on:submit|preventDefault={() => {}}>
-    <button
-      tabindex="-1"
-      on:click={() => apply()}
-      class="m-0 h-full w-full p-1 cursor-pointer"
-    >
-      <div class="pointer-events-none w-full h-full">
-        
-      <OverlayMap
-        interactive={false}
-        rasterLayer={rasterLayerOnMap}
-        placedOverMap={map}
-        placedOverMapProperties={mapproperties}
-        {visible}
-      />
-      </div>
+    <button tabindex="-1" on:click={() => apply()} class="m-0 h-full w-full cursor-pointer p-1">
+      <span class="pointer-events-none h-full w-full relative">
+        <OverlayMap
+          interactive={false}
+          rasterLayer={rasterLayerOnMap}
+          placedOverMap={map}
+          placedOverMapProperties={mapproperties}
+          {visible}
+        />
+      </span>
     </button>
     <select bind:value={$rasterLayer} class="w-full" on:keydown={handleKeyPress}>
       {#each $availableLayers as availableLayer}

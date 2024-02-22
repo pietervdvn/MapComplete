@@ -115,7 +115,6 @@ export default class ThemeViewStateHashActor {
             ""
         )
         selectedElement.setData(found)
-        state.selectedLayer.setData(layer)
         return true
     }
 

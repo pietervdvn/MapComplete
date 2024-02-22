@@ -84,7 +84,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     readonly osmConnection: OsmConnection
     readonly selectedElement: UIEventSource<Feature>
-    readonly selectedElementAndLayer: Store<{ feature: Feature; layer: LayerConfig }>
     readonly mapProperties: MapLibreAdaptor & MapProperties & ExportableMap
     readonly osmObjectDownloader: OsmObjectDownloader
 
@@ -112,7 +111,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
     readonly availableLayers: Store<RasterLayerPolygon[]>
-    readonly selectedLayer: UIEventSource<LayerConfig>
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
     readonly geolocationControl: GeolocationControlState
@@ -179,18 +177,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.allowRotating.setData(fixated !== "yes")
         })
         this.selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element")
-        this.selectedLayer = new UIEventSource<LayerConfig>(undefined, "Selected layer")
-
-        this.selectedElementAndLayer = this.selectedElement.mapD(
-            (feature) => {
-                const layer = this.selectedLayer.data
-                if (!layer) {
-                    return undefined
-                }
-                return { layer, feature }
-            },
-            [this.selectedLayer]
-        )
 
         this.geolocation = new GeoLocationHandler(
             geolocationState,
@@ -434,7 +420,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 doShowLayer,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
-                selectedLayer: this.selectedLayer,
                 fetchStore: (id) => this.featureProperties.getStore(id),
             })
         })
@@ -442,14 +427,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
     }
 
     public openNewDialog() {
-        this.selectedLayer.setData(undefined)
         this.selectedElement.setData(undefined)
 
         const { lon, lat } = this.mapProperties.location.data
         const feature = this.lastClickObject.createFeature(lon, lat)
         this.featureProperties.trackFeature(feature)
         this.selectedElement.setData(feature)
-        this.selectedLayer.setData(this.newPointDialog.layerDef)
     }
 
     /**
@@ -514,14 +497,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
                 const layer = this.layout.getMatchingLayer(toSelect.properties)
                 this.selectedElement.setData(undefined)
-                this.selectedLayer.setData(layer)
                 this.selectedElement.setData(toSelect)
             })
             return
         }
         const layer = this.layout.getMatchingLayer(toSelect.properties)
         this.selectedElement.setData(undefined)
-        this.selectedLayer.setData(layer)
         this.selectedElement.setData(toSelect)
     }
 
@@ -751,7 +732,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 layer: flayer.layerDef,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
-                selectedLayer: this.selectedLayer,
             })
         })
     }
@@ -765,7 +745,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 console.trace("Unselected")
                 // We did _unselect_ an item - we always remove the lastclick-object
                 this.lastClickObject.features.setData([])
-                this.selectedLayer.setData(undefined)
                 this.focusOnMap()
             }
         })

@@ -26,7 +26,7 @@
     /**
      * Same as `this.preset.description.firstSentence()`
      */
-    description: Translation,
+    description: Translation
     icon: BaseUIElement
     tags: Record<string, string>
   }[] = []
@@ -40,7 +40,7 @@
           "Not showing presets for layer",
           flayer.layerDef.id,
           "as not displayed and featureSwitchFilter.data is set",
-          state.featureSwitches.featureSwitchFilter.data,
+          state.featureSwitches.featureSwitchFilter.data
         )
         // ...and we cannot enable the layer control -> we skip, as these presets can never be shown anyway
         continue
@@ -55,9 +55,18 @@
     for (const preset of layer.presets) {
       const tags = TagUtils.KVtoProperties(preset.tags ?? [])
 
-      const markers = layer.mapRendering.map((mr, i) => mr.RenderIcon(new ImmutableStore<any>(tags), {noSize: i == 0})
-        .html.SetClass(i == 0 ? "w-full h-full" : ""))
-      const icon: BaseUIElement = new Combine(markers.map(m => new Combine([m]).SetClass("absolute top-0 left-0 w-full h-full flex justify-around items-center"))).SetClass("w-12 h-12 block relative mr-4")
+      const markers = layer.mapRendering.map((mr, i) =>
+        mr
+          .RenderIcon(new ImmutableStore<any>(tags), { noSize: i == 0 })
+          .html.SetClass(i == 0 ? "w-full h-full" : "")
+      )
+      const icon: BaseUIElement = new Combine(
+        markers.map((m) =>
+          new Combine([m]).SetClass(
+            "absolute top-0 left-0 w-full h-full flex justify-around items-center"
+          )
+        )
+      ).SetClass("w-12 h-12 block relative mr-4")
 
       const description = preset.description?.FirstSentence()
 
@@ -69,7 +78,7 @@
         tags,
         text: Translations.t.general.add.addNew.Subs(
           { category: preset.title },
-          preset.title["context"],
+          preset.title["context"]
         ),
       }
       presets.push(simplified)
@@ -78,10 +87,10 @@
 
   const dispatch = createEventDispatcher<{
     select: {
-      preset: PresetConfig;
-      layer: LayerConfig;
-      icon: BaseUIElement;
-      tags: Record<string, string>,
+      preset: PresetConfig
+      layer: LayerConfig
+      icon: BaseUIElement
+      tags: Record<string, string>
       text: Translation
     }
   }>()

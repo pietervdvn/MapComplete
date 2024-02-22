@@ -77,7 +77,7 @@ export class Orientation {
     }
 
     private update(event: DeviceOrientationEvent) {
-        if(event.alpha === null || event.beta === null || event.gamma === null){
+        if (event.alpha === null || event.beta === null || event.gamma === null) {
             return
         }
         this.gotMeasurement.setData(true)
