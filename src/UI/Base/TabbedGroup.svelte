@@ -28,6 +28,9 @@
       window.setTimeout(() => tabElements[tab.data].click(), 50)
     }
   }
+  export function getTab() {
+    return tab
+  }
 </script>
 
 <div class="tabbedgroup flex h-full w-full">
