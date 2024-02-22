@@ -112,6 +112,7 @@ export default class Constants {
     public static countryCoderEndpoint: string = Constants.config.country_coder_host
     public static osmAuthConfig: AuthConfig = Constants.config.oauth_credentials
     public static nominatimEndpoint: string = Constants.config.nominatimEndpoint
+    public static linkedDataProxy: string = Constants.config["jsonld-proxy"]
     /**
      * These are the values that are allowed to use as 'backdrop' icon for a map pin
      */

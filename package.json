@@ -39,7 +39,8 @@
       "https://overpass.openstreetmap.ru/cgi/interpreter"
     ],
     "country_coder_host": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country",
-    "nominatimEndpoint": "https://geocoding.geofabrik.de/b75350b1cfc34962ac49824fe5b582dc/"
+    "nominatimEndpoint": "https://geocoding.geofabrik.de/b75350b1cfc34962ac49824fe5b582dc/",
+    "jsonld-proxy": "http://127.0.0.1:2346/extractgraph?url={url}"
   },
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",
@@ -137,6 +138,8 @@
     "i18next-client": "^1.11.4",
     "idb-keyval": "^6.0.3",
     "jest-mock": "^29.4.1",
+    "jsonld": "^8.3.2",
+    "jsonld-request": "^2.0.1",
     "jspdf": "^2.5.1",
     "latlon2country": "^1.2.6",
     "libphonenumber-js": "^1.10.8",
@@ -175,6 +178,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "@types/chai": "^4.3.0",
     "@types/geojson": "^7946.0.10",
+    "@types/jsonld": "^1.5.13",
     "@types/lz-string": "^1.3.34",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",

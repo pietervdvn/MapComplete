@@ -30,7 +30,7 @@ export class ImageCarousel extends Toggle {
                     try {
                         let image: BaseUIElement = new SvelteUIElement(AttributedImage, {
                             image: url,
-                            previewedImage: state.previewedImage,
+                            previewedImage: state?.previewedImage,
                         })
 
                         if (url.key !== undefined) {

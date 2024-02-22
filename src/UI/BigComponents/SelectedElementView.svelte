@@ -14,7 +14,7 @@
   export let selectedElement: Feature
   export let highlightedRendering: UIEventSource<string> = undefined
 
-  export let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
+  export let tags: UIEventSource<Record<string, string>> = state?.featureProperties?.getStore(
     selectedElement.properties.id
   )
   
@@ -22,11 +22,14 @@
   let stillMatches = tags.map(tags => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags))
 
   let _metatags: Record<string, string>
+  if(state?.userRelatedState?.preferencesAsTags){
+    
   onDestroy(
     state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
       _metatags = tags
     })
   )
+  }
 
   let knownTagRenderings: Store<TagRenderingConfig[]> = tags.mapD((tgs) =>
     layer.tagRenderings.filter(

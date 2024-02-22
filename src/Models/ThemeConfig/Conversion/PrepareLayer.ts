@@ -610,6 +610,9 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                 typeof sv === "string" ? undefined : sv.func.funcName
             )
         )
+        if (!allIds.has("lod")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("lod"))
+        }
         if (!usedSpecialFunctions.has("minimap")) {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("minimap"))
         }

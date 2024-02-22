@@ -8,32 +8,40 @@ class ServerLdScrape extends Script {
     }
     async main(args: string[]): Promise<void> {
         const port = Number(args[0] ?? 2346)
+        const cache: Record<string, any> = []
         new Server(port, {}, [
             {
                 mustMatch: "extractgraph",
                 mimetype: "application/ld+json",
                 async handle(content, searchParams: URLSearchParams) {
                     const url = searchParams.get("url")
+                    if (cache[url]) {
+                        return JSON.stringify(cache[url])
+                    }
                     const dloaded = await Utils.download(url, {
                         "User-Agent":
-                            "MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
+                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36", //     "MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
                     })
+                    // return dloaded
                     const parsed = parse(dloaded)
                     const scripts = Array.from(parsed.getElementsByTagName("script"))
-                    const snippets = []
                     for (const script of scripts) {
                         const tp = script.attributes["type"]
                         if (tp !== "application/ld+json") {
                             continue
                         }
                         try {
-                            snippets.push(JSON.parse(script.textContent))
+                            const snippet = JSON.parse(script.textContent)
+                            snippet["@base"] = url
+                            cache[url] = snippet
+
+                            return JSON.stringify(snippet)
                         } catch (e) {
                             console.error(e)
                         }
                     }
 
-                    return JSON.stringify(snippets)
+                    return JSON.stringify({})
                 },
             },
         ])

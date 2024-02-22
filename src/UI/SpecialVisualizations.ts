@@ -93,6 +93,7 @@ import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
 import LoginButton from "./Base/LoginButton.svelte"
 import Toggle from "./Input/Toggle"
 import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
+import LinkedDataDisplay from "./LinkedDataDisplay.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -741,12 +742,20 @@ export default class SpecialVisualizations {
             {
                 funcName: "import_mangrove_key",
                 docs: "Only makes sense in the usersettings. Allows to import a mangrove public key and to use this to make reviews",
-                args: [{
-                    name: "text",
-                    doc: "The text that is shown on the button",
-                }],
+                args: [
+                    {
+                        name: "text",
+                        doc: "The text that is shown on the button",
+                    },
+                ],
                 needsUrls: [],
-                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
                     const [text] = argument
                     return new SvelteUIElement(ImportReviewIdentity, { state, text })
                 },
@@ -1716,6 +1725,34 @@ export default class SpecialVisualizations {
                         new SvelteUIElement(LoginButton),
                         state.osmConnection.isLoggedIn
                     )
+                },
+            },
+            {
+                funcName: "linked_data_from_website",
+                docs: "Attempts to load (via a proxy) the specified website and parsed ld+json from there. Suitable data will be offered to import into OSM",
+                args: [
+                    {
+                        name: "key",
+                        defaultValue: "website",
+                        doc: "Attempt to load ld+json from the specified URL. This can be in an embedded <script type='ld+json'>",
+                    },
+                ],
+                needsUrls: [Constants.linkedDataProxy],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagsSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const key = argument[0] ?? "website"
+                    return new SvelteUIElement(LinkedDataDisplay, {
+                        feature,
+                        state,
+                        tagsSource,
+                        key,
+                        layer,
+                    })
                 },
             },
         ]

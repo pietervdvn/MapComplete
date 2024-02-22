@@ -24,7 +24,7 @@ export default class PhoneValidator extends Validator {
         return generic
     }
 
-    public isValid(str, country: () => string): boolean {
+    public isValid(str: string, country?: () => string): boolean {
         if (str === undefined) {
             return false
         }

@@ -2621,6 +2621,15 @@
       ]
     },
     {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
       "id": "qr_code",
       "labels": [
         "added_by_default"
