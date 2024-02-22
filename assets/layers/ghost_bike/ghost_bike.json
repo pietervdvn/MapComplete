@@ -309,7 +309,8 @@
           "keyToShowWikipediaFor": "subject:wikidata"
         },
         "before": {
-          "en": "<h3>Wikipedia page about the deceased person</h3>"
+          "en": "<h3>Wikipedia page about the deceased person</h3>",
+          "de": "<h3>Wikipedia-Seite über die verstorbene Person</h3>"
         }
       },
       "condition": "subject:wikidata~*"
