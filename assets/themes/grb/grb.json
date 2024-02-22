@@ -785,12 +785,10 @@
     }
   ],
   "overrideAll": {
-    "minzoom": 17
+    "minzoom": 17,
+    "doCount": false
   },
   "widenFactor": 2,
   "overpassMaxZoom": 15,
-  "osmApiTileSize": 17,
-  "clustering": {
-    "maxZoom": 15
-  }
+  "osmApiTileSize": 17
 }

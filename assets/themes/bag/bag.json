@@ -54,6 +54,7 @@
         "maxCacheAge": 0
       },
       "minzoom": 18,
+      "doCount": false,
       "calculatedTags": [
         "_surface:strict:=feat(get)('_surface')"
       ],
@@ -164,6 +165,7 @@
         "maxCacheAge": 0
       },
       "minzoom": 18,
+      "doCount": false,
       "pointRendering": [
         {
           "label": {

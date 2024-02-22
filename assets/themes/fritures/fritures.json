@@ -96,7 +96,8 @@
       "override": {
         "minzoom": 18,
         "filter": null,
-        "name": null
+        "name": null,
+        "doCount": false
       }
     }
   ],
