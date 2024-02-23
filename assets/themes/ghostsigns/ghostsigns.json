@@ -177,7 +177,8 @@
           {
             "iconSize": "20,20"
           }
-        ]
+        ],
+        "isCounted": false
       }
     }
   ]

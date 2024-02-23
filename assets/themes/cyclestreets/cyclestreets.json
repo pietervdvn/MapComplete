@@ -404,7 +404,7 @@
           "width": "5"
         }
       ],
-      "doCount": false
+      "isCounted": false
     }
   ],
   "overrideAll": {
