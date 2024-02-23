@@ -952,8 +952,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Download function which also indicates advanced options, such as redirects
-     * @param url
-     * @param headers
      */
     public static downloadAdvanced(
         url: string,
