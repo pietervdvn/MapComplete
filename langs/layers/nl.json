@@ -5727,39 +5727,36 @@
                         "then": "Dit is een gehandicaptenparkeerplaats."
                     },
                     "3": {
-                        "then": "Dit is een privéparkeerplek."
-                    },
-                    "4": {
                         "then": "Deze parkeerplek is gereserveerd voor het opladen van voertuigen."
                     },
-                    "5": {
+                    "4": {
                         "then": "Deze parkeerplek is gereserveerd voor leveringen."
                     },
-                    "6": {
+                    "5": {
                         "then": "Deze parkeerplek is gereserveerd voor vrachtwagens."
                     },
-                    "7": {
+                    "6": {
                         "then": "Deze parkeerplek is gereserveerd voor caravans of campers."
                     },
-                    "8": {
+                    "7": {
                         "then": "Deze parkeerplek is gereserveerd voor bussen."
                     },
-                    "9": {
+                    "8": {
                         "then": "Deze parkeerplek is gereserveerd voor motoren."
                     },
-                    "10": {
+                    "9": {
                         "then": "Deze parkeerplek is gereserveerd voor ouders met kinderen."
                     },
-                    "11": {
+                    "10": {
                         "then": "Deze parkeerplek is gereserveerd voor personeel."
                     },
-                    "12": {
+                    "11": {
                         "then": "Deze parkeerplek is gereserveerd voor taxis."
                     },
-                    "13": {
+                    "12": {
                         "then": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger."
                     },
-                    "14": {
+                    "13": {
                         "then": "Deze parkeerplek is gereserveerd voor autodelen."
                     }
                 },

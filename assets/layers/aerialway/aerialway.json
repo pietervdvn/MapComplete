@@ -155,20 +155,23 @@
     {
       "id": "oneway",
       "question": {
-        "en": "In what direction can this aerialway be taken?"
+        "en": "In what direction can this aerialway be taken?",
+        "de": "In welche Richtung kann diese Seilbahn genutzt werden?"
       },
       "mappings": [
         {
           "if": "oneway=yes",
           "alsoShowIf": "oneway=",
           "then": {
-            "en": "This aerialway can only be taken to the top"
+            "en": "This aerialway can only be taken to the top",
+            "de": "Diese Seilbahn kann nur nach oben gefahren werden"
           }
         },
         {
           "if": "oneway=no",
           "then": {
-            "en": "This aerialway can be taken in both directions"
+            "en": "This aerialway can be taken in both directions",
+            "de": "Diese Seilbahn kann in beide Richtungen befahren werden"
           }
         }
       ]
