@@ -5,6 +5,13 @@ import { Feature } from "geojson"
 export interface FeatureSource<T extends Feature = Feature> {
     features: Store<T[]>
 }
+
+export interface UpdatableFeatureSource<T extends Feature = Feature> extends FeatureSource<T> {
+    /**
+     * Forces an update and downloads the data, even if the feature source is supposed to be active
+     */
+    updateAsync()
+}
 export interface WritableFeatureSource<T extends Feature = Feature> extends FeatureSource<T> {
     features: UIEventSource<T[]>
 }
@@ -16,6 +23,11 @@ export interface FeatureSourceForLayer<T extends Feature = Feature> extends Feat
     readonly layer: FilteredLayer
 }
 
+export interface FeatureSourceForTile<T extends Feature = Feature> extends FeatureSource<T> {
+    readonly x: number
+    readonly y: number
+    readonly z: number
+}
 /**
  * A feature source which is aware of the indexes it contains
  */

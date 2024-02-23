@@ -1,7 +1,7 @@
 {
   "id": "last_click",
   "name": null,
-  "description": "This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up",
+  "description": "This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed",
   "source": "special",
   "isShown": {
     "or": [

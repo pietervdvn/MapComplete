@@ -43,8 +43,5 @@
   "layers": [
     "ghost_bike"
   ],
-  "widenFactor": 5,
-  "clustering": {
-    "maxZoom": 0
-  }
+  "widenFactor": 5
 }

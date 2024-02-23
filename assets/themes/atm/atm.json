@@ -58,7 +58,8 @@
         "name": null,
         "filter": {
           "sameAs": "bank_with_atm"
-        }
+        },
+        "doCount": false
       }
     },
     {

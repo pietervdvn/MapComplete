@@ -100,14 +100,18 @@
   })
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
-    if (element.properties.id.startsWith("current_view")) {
-      return currentViewLayer
-    }
-    if (element.properties.id === "location_track") {
-      return layout.layers.find((l) => l.id === "gps_track")
-    }
-    return state.layout.getMatchingLayer(element.properties)
-  })
+      if (element.properties.id.startsWith("current_view")) {
+        return currentViewLayer
+      }
+      if(element.properties.id === "new_point_dialog"){
+        return layout.layers.find(l => l.id === "last_click")
+      }
+      if(element.properties.id === "location_track"){
+        return layout.layers.find(l => l.id === "gps_track")
+      }
+      return state.layout.getMatchingLayer(element.properties)
+    },
+  )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
   let visualFeedback = state.visualFeedback
@@ -266,7 +270,7 @@
   <div class="flex w-full items-end justify-between px-4">
     <div class="flex flex-col">
       <If condition={featureSwitches.featureSwitchEnableLogin}>
-        {#if state.lastClickObject.hasPresets || state.lastClickObject.hasNoteLayer}
+        {#if state.layout.hasPresets() || state.layout.hasNoteLayer()}
           <button
             class="pointer-events-auto w-fit"
             class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}

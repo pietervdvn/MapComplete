@@ -1,0 +1,27 @@
+{
+  "id": "summary",
+  "description": "Special layer which shows `count`",
+  "source": "special",
+  "title": {
+    "render": {
+      "en": "Summary"
+    }
+  },
+  "tagRenderings": [
+    "all_tags"
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "label": {
+        "render": "{total_metric}"
+      },
+      "labelCss": "background: #ffffffbb",
+      "labelCssClasses": "w-12 text-lg rounded-xl p-1 px-2"
+    }
+  ]
+}

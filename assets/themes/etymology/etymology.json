@@ -68,6 +68,7 @@
           "pl": "Ulice bez informacji o etymologii"
         },
         "minzoom": 15,
+        "isCounted": false,
         "source": {
           "=osmTags": {
             "and": [
@@ -99,6 +100,7 @@
           "pl": "Parki i lasy bez informacji o etymologii"
         },
         "minzoom": 18,
+        "isCounted": false,
         "source": {
           "osmTags": {
             "and": [
@@ -131,6 +133,7 @@
           "pl": "Instytucje edukacyjne bez informacji o etymologii"
         },
         "minzoom": 18,
+        "isCounted": false,
         "source": {
           "osmTags": {
             "and": [
@@ -166,6 +169,7 @@
           "pl": "Miejsca kulturowe bez informacji o etymologii"
         },
         "minzoom": 18,
+        "isCounted": false,
         "source": {
           "osmTags": {
             "and": [
@@ -201,6 +205,7 @@
           "pl": "Miejsca turystyczne bez informacji o etymologii"
         },
         "minzoom": 18,
+        "isCounted": false,
         "source": {
           "osmTags": {
             "and": [
@@ -235,6 +240,7 @@
           "pl": "Miejsca związane ze zdrowiem i społeczeństwem bez informacji o etymologii"
         },
         "minzoom": 18,
+        "isCounted": false,
         "source": {
           "osmTags": {
             "and": [
@@ -268,6 +274,7 @@
           "pl": "Miejsca sportowe bez informacji o etymologii"
         },
         "minzoom": 18,
+        "isCounted": false,
         "source": {
           "osmTags": {
             "and": [
@@ -284,10 +291,5 @@
         }
       }
     }
-  ],
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 14,
-    "minNeededElements": 250
-  }
+  ]
 }

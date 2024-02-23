@@ -140,7 +140,12 @@
         "source": {
           "osmTags": "advertising=wall_painting"
         },
+        "id": "advertising_wall_paintings",
         "minzoom": 18,
+        "name": {
+          "en": "All advertentie wall paintings",
+          "nl": "Alle adverterende muurschilderingen"
+        },
         "+tagRenderings": [
           {
             "id": "historic",
@@ -172,7 +177,8 @@
           {
             "iconSize": "20,20"
           }
-        ]
+        ],
+        "isCounted": false
       }
     }
   ]

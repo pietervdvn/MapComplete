@@ -17,7 +17,7 @@
   "source": {
     "osmTags": "amenity=shower"
   },
-  "minzoom": 12,
+  "minzoom": 8,
   "title": {
     "render": {
       "en": "Shower",

@@ -7,6 +7,7 @@ import Combine from "./UI/Base/Combine"
 import { SubtleButton } from "./UI/Base/SubtleButton"
 import { Utils } from "./Utils"
 import Download from "./assets/svg/Download.svelte"
+import Constants from "./Models/Constants"
 
 function webgl_support() {
     try {
@@ -19,38 +20,48 @@ function webgl_support() {
         return false
     }
 }
-
-// @ts-ignore
-try {
-    if (!webgl_support()) {
-        throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
+async function getAvailableLayers(): Promise<Set<string>> {
+    try {
+        const host = new URL(Constants.VectorTileServer).host
+        const status = await Utils.downloadJson("https://" + host + "/summary/status.json")
+        return new Set<string>(status.layers)
+    } catch (e) {
+        console.error("Could not get MVT available layers due to", e)
+        return new Set<string>()
     }
-    DetermineLayout.GetLayout()
-        .then((layout) => {
-            const state = new ThemeViewState(layout)
-            const main = new SvelteUIElement(ThemeViewGUI, { state })
-            main.AttachTo("maindiv")
-        })
-        .catch((err) => {
-            console.error("Error while initializing: ", err, err.stack)
-            const customDefinition = DetermineLayout.getCustomDefinition()
-            new Combine([
-                new FixedUiElement(err).SetClass("block alert"),
+}
+async function main() {
+    // @ts-ignore
+    try {
+        if (!webgl_support()) {
+            throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
+        }
+        const [layout, availableLayers] = await Promise.all([
+            DetermineLayout.GetLayout(),
+            await getAvailableLayers(),
+        ])
+        console.log("The available layers on server are", Array.from(availableLayers))
+        const state = new ThemeViewState(layout, availableLayers)
+        const main = new SvelteUIElement(ThemeViewGUI, { state })
+        main.AttachTo("maindiv")
+    } catch (err) {
+        console.error("Error while initializing: ", err, err.stack)
+        const customDefinition = DetermineLayout.getCustomDefinition()
+        new Combine([
+            new FixedUiElement(err).SetClass("block alert"),
 
-                customDefinition?.length > 0
-                    ? new SubtleButton(
-                          new SvelteUIElement(Download),
-                          "Download the raw file"
-                      ).onClick(() =>
+            customDefinition?.length > 0
+                ? new SubtleButton(new SvelteUIElement(Download), "Download the raw file").onClick(
+                      () =>
                           Utils.offerContentsAsDownloadableFile(
                               DetermineLayout.getCustomDefinition(),
                               "mapcomplete-theme.json",
                               { mimetype: "application/json" }
                           )
-                      )
-                    : undefined,
-            ]).AttachTo("maindiv")
-        })
-} catch (err) {
-    new FixedUiElement(err).SetClass("block alert").AttachTo("maindiv")
+                  )
+                : undefined,
+        ]).AttachTo("maindiv")
+    }
 }
+
+main().then((_) => {})

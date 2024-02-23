@@ -1,6 +1,6 @@
 import { BBox } from "./BBox"
 import * as turf from "@turf/turf"
-import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
+import { AllGeoJSON, booleanWithin, Coord, Lines } from "@turf/turf"
 import {
     Feature,
     FeatureCollection,
@@ -724,6 +724,25 @@ export class GeoOperations {
             }
             return kept
         }
+
+        if (toSplit.geometry.type === "MultiLineString") {
+            const lines: Feature<LineString>[][] = toSplit.geometry.coordinates.map(
+                (coordinates) =>
+                    turf.lineSplit(<LineString>{ type: "LineString", coordinates }, boundary)
+                        .features
+            )
+            const splitted: Feature<LineString>[] = [].concat(...lines)
+            const kept: Feature<LineString>[] = []
+            for (const f of splitted) {
+                console.log("Checking", f)
+                if (!GeoOperations.inside(GeoOperations.centerpointCoordinates(f), boundary)) {
+                    continue
+                }
+                f.properties = { ...toSplit.properties }
+                kept.push(f)
+            }
+            return kept
+        }
         if (toSplit.geometry.type === "Polygon" || toSplit.geometry.type == "MultiPolygon") {
             const splitup = turf.intersect(<Feature<Polygon>>toSplit, boundary)
             splitup.properties = { ...toSplit.properties }
@@ -1002,6 +1021,68 @@ export class GeoOperations {
         bearing += 22.5
         const segment = Math.floor(bearing / 45) % GeoOperations.directionsRelative.length
         return GeoOperations.directionsRelative[segment]
+    }
+
+    /**
+     * const coors = [[[3.217198532946432,51.218067],[3.216807134449482,51.21849812105347],[3.2164304037883706,51.2189272]],[[3.2176208,51.21760169669458],[3.217198560167068,51.218067]]]
+     * const f = <any> {geometry: {coordinates: coors}}
+     * const merged = GeoOperations.attemptLinearize(f)
+     * merged.geometry.coordinates // => [[3.2176208,51.21760169669458],[3.217198532946432,51.218067], [3.216807134449482,51.21849812105347],[3.2164304037883706,51.2189272]]
+     */
+    static attemptLinearize(
+        multiLineStringFeature: Feature<MultiLineString>
+    ): Feature<LineString | MultiLineString> {
+        const coors = multiLineStringFeature.geometry.coordinates
+        if (coors.length === 0) {
+            console.error(multiLineStringFeature.geometry)
+            throw "Error: got degenerate multilinestring"
+        }
+        outer: for (let i = coors.length - 1; i >= 0; i--) {
+            // We try to match the first element of 'i' with another, earlier list `j`
+            // If a match is found with `j`, j is extended and `i` is scrapped
+            const iFirst = coors[i][0]
+            for (let j = 0; j < coors.length; j++) {
+                if (i == j) {
+                    continue
+                }
+
+                const jLast = coors[j].at(-1)
+                if (
+                    !(
+                        Math.abs(iFirst[0] - jLast[0]) < 0.000001 &&
+                        Math.abs(iFirst[1] - jLast[1]) < 0.0000001
+                    )
+                ) {
+                    continue
+                }
+                coors[j].splice(coors.length - 1, 1)
+                coors[j].push(...coors[i])
+                coors.splice(i, 1)
+                continue outer
+            }
+        }
+        if (coors.length === 0) {
+            throw "No more coordinates found"
+        }
+
+        if (coors.length === 1) {
+            return {
+                type: "Feature",
+                properties: multiLineStringFeature.properties,
+                geometry: {
+                    type: "LineString",
+                    coordinates: coors[0],
+                },
+            }
+        }
+        return {
+            type: "Feature",
+            properties: multiLineStringFeature.properties,
+            geometry: {
+                type: "MultiLineString",
+                coordinates: coors,
+            },
+        }
     }
 
     /**

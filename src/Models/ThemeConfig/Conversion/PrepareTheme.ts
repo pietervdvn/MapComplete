@@ -194,7 +194,6 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             if (v === undefined) {
                 const msg = `Default layer ${layerName} not found. ${state.sharedLayers.size} layers are available`
                 if (layerName === "favourite") {
-                    //  context.warn(msg)
                     continue
                 }
                 context.err(msg)

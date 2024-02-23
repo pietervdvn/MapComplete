@@ -16,9 +16,9 @@ npm run test &&
 npm run prepare-deploy &&
 zip dist.zip -r dist/* &&
 mv config.json.bu config.json &&
-scp ./scripts/hetzner/config/* hetzner:/root/ &&
+scp ./Docs/ServerConfig/hetzner/* hetzner:/root/ &&
 rsync -rzh --progress dist.zip hetzner:/root/ &&
 echo "Upload completed, deploying config and booting" &&
 ssh hetzner -t "unzip dist.zip && rm dist.zip && rm -rf public/ && mv dist public && caddy stop && caddy start" &&
-rm dist.zip
+# rm dist.zip
 npm run clean

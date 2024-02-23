@@ -18,7 +18,7 @@
     {
       "builtin": "shops",
       "override": {
-        "id": "erotic-shop",
+        "id": "erotic_shop",
         "source": {
           "osmTags": "shop=erotic"
         },
@@ -51,6 +51,7 @@
         "minzoom": 18,
         "=presets": [],
         "=name": null,
+        "doCount": false,
         "=filter": {
           "sameAs": "erotic-shop"
         }
@@ -125,6 +126,7 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
+        "doCount": false,
         "=name": null
       }
     },
@@ -203,6 +205,7 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
+        "doCount": false,
         "=name": null
       }
     },
@@ -237,6 +240,7 @@
             ]
           }
         ],
+        "doCount": false,
         "=presets": []
       }
     }

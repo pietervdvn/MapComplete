@@ -22,10 +22,14 @@
     "render": {
       "en": "POI with image"
     },
-    "mappings": [{
-      "if": "name~*",
-      "then": {"*": "name"}
-    }]
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "name"
+        }
+      }
+    ]
   },
   "name": {
     "en": "Items with at least one image"

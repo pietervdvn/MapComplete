@@ -31,6 +31,7 @@
   ],
   "minzoom": 18,
   "shownByDefault": false,
+  "isCounted": false,
   "title": {
     "render": {
       "en": "Wall or building",
