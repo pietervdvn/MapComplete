@@ -57,37 +57,36 @@ export default class LayoutSource extends FeatureSourceMerger {
         const nonMvtLayers = osmLayers.filter((l) => !mvtAvailableLayers.has(l.id))
 
         const isLoading = new UIEventSource(false)
+
+        const osmApiSource = LayoutSource.setupOsmApiSource(
+            osmLayers,
+            bounds,
+            zoom,
+            backend,
+            featureSwitches,
+            fullNodeDatabaseSource
+        )
+        nonMvtSources.push(osmApiSource)
+
+        let overpassSource: OverpassFeatureSource = undefined
         if (nonMvtLayers.length > 0) {
             console.log(
                 "Layers ",
                 nonMvtLayers.map((l) => l.id),
                 " cannot be fetched from the cache server, defaulting to overpass/OSM-api"
             )
-            const overpassSource = LayoutSource.setupOverpass(
-                osmLayers,
-                bounds,
-                zoom,
-                featureSwitches
-            )
-            const osmApiSource = LayoutSource.setupOsmApiSource(
-                osmLayers,
-                bounds,
-                zoom,
-                backend,
-                featureSwitches,
-                fullNodeDatabaseSource
-            )
-            nonMvtSources.push(overpassSource, osmApiSource)
-
-            function setIsLoading() {
-                const loading = overpassSource?.runningQuery?.data || osmApiSource?.isRunning?.data
-                isLoading.setData(loading)
-            }
-
-            overpassSource?.runningQuery?.addCallbackAndRun((_) => setIsLoading())
-            osmApiSource?.isRunning?.addCallbackAndRun((_) => setIsLoading())
+            overpassSource = LayoutSource.setupOverpass(osmLayers, bounds, zoom, featureSwitches)
+            nonMvtSources.push(overpassSource)
             supportsForceDownload.push(overpassSource)
         }
+
+        function setIsLoading() {
+            const loading = overpassSource?.runningQuery?.data || osmApiSource?.isRunning?.data
+            isLoading.setData(loading)
+        }
+
+        overpassSource?.runningQuery?.addCallbackAndRun((_) => setIsLoading())
+        osmApiSource?.isRunning?.addCallbackAndRun((_) => setIsLoading())
 
         const geojsonSources: UpdatableFeatureSource[] = geojsonlayers.map((l) =>
             LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
