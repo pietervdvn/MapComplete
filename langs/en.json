@@ -785,7 +785,9 @@
             "feedback": "This is not a valid web address"
         },
         "wikidata": {
-            "description": "A Wikidata identifier"
+            "description": "A Wikidata identifier",
+            "empty": "Please, enter some wikidata-entries",
+            "startsWithQ": "A wikidata identifier starts with Q and is followed by a number"
         }
     }
 }
