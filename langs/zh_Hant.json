@@ -12,9 +12,9 @@
     },
     "communityIndex": {
         "available": "這個社群說 {native}",
-        "intro": "與其他人接洽並且與他們熟悉，從他們的經驗學習，...",
+        "intro": "與其他人接洽並且與他們熟悉，從他們的經驗學習，…",
         "notAvailable": "這個社群不說 {native}",
-        "title": "社群索引"
+        "title": "與其他人聯繫"
     },
     "delete": {
         "cancel": "取消",
@@ -50,6 +50,18 @@
         "panelIntro": "<h3>你的個人主題</h3>從所有官方主題啟用你喜愛的圖層",
         "reload": "重新載入資料"
     },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "目前這個位置已經標示為最愛，而且會在所有你瀏覽的 MapComplete 的主題地圖當中顯示。",
+            "isMarkedShort": "標示為最愛地點",
+            "isNotMarkedShort": "並沒有標示為最愛",
+            "markAsFavouriteTitle": "標示這個地點為最愛地點"
+        },
+        "introPrivacy": "只有你看得到這個清單",
+        "loginToSeeList": "登入之後觀看你已經標記為最愛的地點",
+        "tab": "你的最愛與評論",
+        "title": "你最愛的地點"
+    },
     "flyer": {
         "aerial": "這份地圖使用不同的背景，是 Agentschap Informatie Vlaanderen 釋出的空照圖",
         "callToAction": "在 mapcomplete.org 測試",
@@ -59,6 +71,11 @@
             "ex": "下面顯示經過簡化過的自然保留區的樣貌。",
             "intro": "使用者取得滿滿圖徽的地圖，只要選擇一個，就會出現圖徽的相關資訊。",
             "title": "介面長得怎麼樣子？"
+        },
+        "fakeui": {
+            "question": "如果屬或不明的話，MapComplete 會顯示問題",
+            "see_images": "顯示影像先前的貢獻者，維基百科、Mapillary、…",
+            "wikipedia": "顯示連結的維基百科條目"
         }
     },
     "general": {
