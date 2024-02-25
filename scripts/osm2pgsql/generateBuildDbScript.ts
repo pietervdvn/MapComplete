@@ -10,28 +10,27 @@ import { AllKnownLayouts } from "../../src/Customizations/AllKnownLayouts"
 import { OsmObject } from "../../src/Logic/Osm/OsmObject"
 
 class LuaSnippets {
-
     public static helpers = [
         "function countTbl(tbl)\n" +
-        "  local c = 0\n" +
-        "  for n in pairs(tbl) do \n" +
-        "    c = c + 1 \n" +
-        "  end\n" +
-        "  return c\n" +
-        "end",
+            "  local c = 0\n" +
+            "  for n in pairs(tbl) do \n" +
+            "    c = c + 1 \n" +
+            "  end\n" +
+            "  return c\n" +
+            "end",
     ].join("\n")
 
-    public static isPolygonFeature(): { blacklist: TagsFilter, whitelisted: TagsFilter } {
+    public static isPolygonFeature(): { blacklist: TagsFilter; whitelisted: TagsFilter } {
         const dict = OsmObject.polygonFeatures
         const or: TagsFilter[] = []
-        const blacklisted : TagsFilter[] = []
+        const blacklisted: TagsFilter[] = []
         dict.forEach(({ values, blacklist }, k) => {
-            if(blacklist){
-                if(values === undefined){
+            if (blacklist) {
+                if (values === undefined) {
                     blacklisted.push(new RegexTag(k, /.+/is))
                     return
                 }
-                values.forEach(v => {
+                values.forEach((v) => {
                     blacklisted.push(new RegexTag(k, v))
                 })
                 return
@@ -40,11 +39,14 @@ class LuaSnippets {
                 or.push(new RegexTag(k, /.+/is))
                 return
             }
-            values.forEach(v => {
+            values.forEach((v) => {
                 or.push(new RegexTag(k, v))
             })
         })
-        console.log("Polygon features are:", or.map(t => t.asHumanString(false, false, {})))
+        console.log(
+            "Polygon features are:",
+            or.map((t) => t.asHumanString(false, false, {}))
+        )
         return { blacklist: new Or(blacklisted), whitelisted: new Or(or) }
     }
 
@@ -53,14 +55,14 @@ class LuaSnippets {
             return `object.tags["${tag.key}"] == "${tag.value}"`
         }
         if (tag instanceof And) {
-            const expr = tag.and.map(t => this.toLuaFilter(t, true)).join(" and ")
+            const expr = tag.and.map((t) => this.toLuaFilter(t, true)).join(" and ")
             if (useParens) {
                 return "(" + expr + ")"
             }
             return expr
         }
         if (tag instanceof Or) {
-            const expr = tag.or.map(t => this.toLuaFilter(t, true)).join(" or ")
+            const expr = tag.or.map((t) => this.toLuaFilter(t, true)).join(" or ")
             if (useParens) {
                 return "(" + expr + ")"
             }
@@ -87,7 +89,7 @@ class LuaSnippets {
             return `object.tags["${tag.key}"] == "${tag.value}"`
         }
 
-        const v = (<RegExp>tag.value).source.replace(/\\\//g, "/")
+        let v: string = (<RegExp>tag.value).source.replace(/\\\//g, "/")
 
         if ("" + tag.value === "/.+/is" && !tag.invert) {
             return `object.tags["${tag.key}"] ~= nil`
@@ -101,9 +103,27 @@ class LuaSnippets {
             return `object.tags["${tag.key}"] == nil or object.tags["${tag.key}"] == ""`
         }
 
-
         if (tag.matchesEmpty && tag.invert) {
             return `object.tags["${tag.key}"] ~= nil or object.tags["${tag.key}"] ~= ""`
+        }
+
+        let head = "^((.*;)?"
+        let tail = "(;.*)?)$"
+        if (v.startsWith(head)) {
+            v = "(" + v.substring(head.length)
+        }
+        if (v.endsWith(tail)) {
+            v = v.substring(0, v.length - tail.length) + ")"
+            // We basically remove the optional parts at the start and the end, as object.find has this freedom anyway.
+            // This might result in _some_ incorrect values that end up in the database (e.g. when matching 'friture', it might als match "abc;foo_friture_bar;xyz", but the frontend will filter this out
+        }
+
+        if (v.indexOf(")?") > 0) {
+            throw (
+                "LUA regexes have a bad support for (optional) capture groups, as such, " +
+                v +
+                " is not supported"
+            )
         }
 
         if (tag.invert) {
@@ -112,7 +132,6 @@ class LuaSnippets {
 
         return `(object.tags["${tag.key}"] ~= nil and string.find(object.tags["${tag.key}"], "${v}"))`
     }
-
 }
 
 class GenerateLayerLua {
@@ -163,8 +182,6 @@ class GenerateLayerLua {
             "",
         ].join("\n")
     }
-
-
 }
 
 class GenerateBuildDbScript extends Script {
@@ -174,7 +191,7 @@ class GenerateBuildDbScript extends Script {
 
     async main(args: string[]) {
         const allNeededLayers = new ValidateThemeEnsemble().convertStrict(
-            AllKnownLayouts.allKnownLayouts.values(),
+            AllKnownLayouts.allKnownLayouts.values()
         )
 
         const generators: GenerateLayerLua[] = []
@@ -186,29 +203,30 @@ class GenerateBuildDbScript extends Script {
         const script = [
             "local db_tables = {}",
             LuaSnippets.helpers,
-            ...generators.map(g => g.generateTables()),
+            ...generators.map((g) => g.generateTables()),
             this.generateProcessPoi(allNeededLayers),
             this.generateProcessWay(allNeededLayers),
         ].join("\n\n\n")
         const path = "build_db.lua"
         fs.writeFileSync(path, script, "utf-8")
         console.log("Written", path)
-        console.log(allNeededLayers.size + " layers will be created with 3 tables each. Make sure to set 'max_connections' to at least  " + (10 + 3 * allNeededLayers.size))
+        console.log(
+            allNeededLayers.size +
+                " layers will be created with 3 tables each. Make sure to set 'max_connections' to at least  " +
+                (10 + 3 * allNeededLayers.size)
+        )
     }
 
     private earlyAbort() {
-        return ["  if countTbl(object.tags) == 0 then",
-            "    return",
-            "  end",
-            ""].join("\n")
+        return ["  if countTbl(object.tags) == 0 then", "    return", "  end", ""].join("\n")
     }
 
-    private generateProcessPoi(allNeededLayers: Map<string, { tags: TagsFilter; foundInTheme: string[] }>) {
+    private generateProcessPoi(
+        allNeededLayers: Map<string, { tags: TagsFilter; foundInTheme: string[] }>
+    ) {
         const body: string[] = []
         allNeededLayers.forEach(({ tags }, layerId) => {
-            body.push(
-                this.insertInto(tags, layerId, "pois_").join("\n"),
-            )
+            body.push(this.insertInto(tags, layerId, "pois_").join("\n"))
         })
 
         return [
@@ -228,7 +246,11 @@ class GenerateBuildDbScript extends Script {
      * @param tableprefix
      * @private
      */
-    private insertInto(tags: TagsFilter, layerId: string, tableprefix: "pois_" | "lines_" | "polygons_") {
+    private insertInto(
+        tags: TagsFilter,
+        layerId: string,
+        tableprefix: "pois_" | "lines_" | "polygons_"
+    ) {
         const filter = LuaSnippets.toLuaFilter(tags)
         return [
             "  matches_filter = " + filter,
@@ -265,8 +287,12 @@ class GenerateBuildDbScript extends Script {
             "",
             "function osm2pgsql.process_way(object)",
             this.earlyAbort(),
-            "  local object_is_line = not object.is_closed or "+LuaSnippets.toLuaFilter(isPolygon.blacklist),
-            `  local object_is_area = object.is_closed and (object.tags["area"] == "yes" or (not object_is_line and ${LuaSnippets.toLuaFilter(isPolygon.whitelisted, true)}))`,
+            "  local object_is_line = not object.is_closed or " +
+                LuaSnippets.toLuaFilter(isPolygon.blacklist),
+            `  local object_is_area = object.is_closed and (object.tags["area"] == "yes" or (not object_is_line and ${LuaSnippets.toLuaFilter(
+                isPolygon.whitelisted,
+                true
+            )}))`,
             "  if object_is_area then",
             "    process_polygon(object, object:as_polygon())",
             "  else",
