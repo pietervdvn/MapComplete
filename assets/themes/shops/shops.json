@@ -55,5 +55,7 @@
     "ice_cream",
     "trolley_bay"
   ],
-  "widenFactor": 3
+  "overrideAll": {
+    "minzoom": 16
+  }
 }

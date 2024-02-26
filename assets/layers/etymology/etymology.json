@@ -30,7 +30,7 @@
     }
   },
   "calculatedTags": [
-    "_same_name_ids=closestn(feat)('*', 250, undefined, 5000)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
+    "_same_name_ids=closestn(feat)('*', 250, undefined, 3000)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
   ],
   "minzoom": 12,
   "title": {

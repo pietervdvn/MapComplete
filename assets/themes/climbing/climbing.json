@@ -394,6 +394,7 @@
         },
         "minzoom": 16,
         "name": null,
+        "doCount": false,
         "+tagRenderings": [
           {
             "id": "repairs_climbing_shoes",
@@ -460,6 +461,7 @@
       ],
       "override": {
         "minzoom": 15,
+        "doCount": false,
         "pointRendering": [
           {
             "iconSize": "30,30"

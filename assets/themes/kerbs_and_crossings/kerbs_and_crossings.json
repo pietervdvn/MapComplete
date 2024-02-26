@@ -46,6 +46,7 @@
     {
       "builtin": "crossings",
       "override": {
+        "id": "crossings_no_traffic_lights",
         "=presets": [
           {
             "title": {

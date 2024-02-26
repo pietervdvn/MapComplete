@@ -31,6 +31,7 @@
       "override": {
         "id": "all_vending_machine",
         "name": null,
+        "doCount": false,
         "filter": {
           "sameAs": "vending_machine"
         },
@@ -49,6 +50,7 @@
     {
       "builtin": "parking_ticket_machine",
       "override": {
+        "doCount": false,
         "name": null,
         "minzoom": 18
       }
@@ -56,6 +58,7 @@
     {
       "builtin": "elongated_coin",
       "override": {
+        "doCount": false,
         "name": null,
         "minzoom": 18
       }
@@ -63,6 +66,7 @@
     {
       "builtin": "ticket_machine",
       "override": {
+        "doCount": false,
         "name": null,
         "minzoom": 18
       }

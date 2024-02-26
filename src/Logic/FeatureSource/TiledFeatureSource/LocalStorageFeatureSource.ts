@@ -1,5 +1,5 @@
 import DynamicTileSource from "./DynamicTileSource"
-import { Store } from "../../UIEventSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
 import { BBox } from "../../BBox"
 import TileLocalStorage from "../Actors/TileLocalStorage"
 import { Feature } from "geojson"
@@ -27,7 +27,7 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
             options?.maxAge ?? 24 * 60 * 60
         )
         super(
-            zoomlevel,
+           new ImmutableStore(zoomlevel),
             layer.minzoom,
             (tileIndex) =>
                 new StaticFeatureSource(

@@ -45,7 +45,7 @@
   "hideFromOverview": true,
   "layers": [
     {
-      "id": "osm:buildings",
+      "id": "osm_buildings",
       "name": "OSM Buildings",
       "title": "OSM Building",
       "description": "Layer showing buildings that are in OpenStreetMap",
@@ -54,6 +54,7 @@
         "maxCacheAge": 0
       },
       "minzoom": 18,
+      "doCount": false,
       "calculatedTags": [
         "_surface:strict:=feat(get)('_surface')"
       ],
@@ -147,7 +148,7 @@
       ]
     },
     {
-      "id": "osm:adresses",
+      "id": "osm_adresses",
       "name": "OSM Adresses",
       "title": "OSM Adress",
       "description": "Layer showing adresses that are in OpenStreetMap",
@@ -164,6 +165,7 @@
         "maxCacheAge": 0
       },
       "minzoom": 18,
+      "doCount": false,
       "pointRendering": [
         {
           "label": {
@@ -185,7 +187,7 @@
       ]
     },
     {
-      "id": "bag:pand",
+      "id": "bag_pand",
       "name": "BAG Buildings",
       "title": "BAG Building",
       "description": {
@@ -207,7 +209,7 @@
       },
       "minzoom": 18,
       "calculatedTags": [
-        "_overlaps_with_buildings=overlapWith(feat)('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
+        "_overlaps_with_buildings=overlapWith(feat)('osm_buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
         "_overlaps_with=feat(get)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_overlaps_with_properties=feat(get)('_overlaps_with')?.feat?.properties",
         "_overlap_percentage=Math.round(100 * (feat(get)('_overlaps_with')?.overlap / feat(get)('_overlaps_with_properties')['_surface:strict']))",
@@ -228,7 +230,7 @@
           "render": {
             "special": {
               "type": "import_way_button",
-              "targetLayer": "osm:buildings",
+              "targetLayer": "osm_buildings",
               "tags": "building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date",
               "text": {
                 "*": "Upload this building to OpenStreetMap"
@@ -258,7 +260,7 @@
             },
             {
               "if": "_overlaps_with!=",
-              "then": "{conflate_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Replace the geometry in OpenStreetMap, , _osm_obj:id)}"
+              "then": "{conflate_button(osm_buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Replace the geometry in OpenStreetMap, , _osm_obj:id)}"
             },
             {
               "if": {
@@ -268,7 +270,7 @@
                   "_bag_obj:in_construction=true"
                 ]
               },
-              "then": "{import_way_button(osm:buildings, building=$_bag_obj:building; construction=$_bag_obj:construction; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}"
+              "then": "{import_way_button(osm_buildings, building=$_bag_obj:building; construction=$_bag_obj:construction; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}"
             }
           ]
         },
@@ -348,7 +350,7 @@
         },
         {
           "id": "Overlapping building",
-          "render": "<div>The overlapping <a href=https://osm.org/{_osm_obj:id} target=_blank>osm:buildings</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the BAG building.<br>The BAG-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>BAG geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}</div></div>",
+          "render": "<div>The overlapping <a href=https://osm.org/{_osm_obj:id} target=_blank>osm_buildings</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the BAG building.<br>The BAG-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>BAG geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}</div></div>",
           "condition": "_overlaps_with!="
         },
         {
@@ -386,7 +388,7 @@
       ]
     },
     {
-      "id": "bag:verblijfsobject",
+      "id": "bag_verblijfsobject",
       "name": "BAG Addresses",
       "title": "BAG Address",
       "description": "Address information from the BAG register",
@@ -398,7 +400,7 @@
       },
       "minzoom": 18,
       "calculatedTags": [
-        "_closed_osm_addr:=closest(feat)('osm:adresses').properties",
+        "_closed_osm_addr:=closest(feat)('osm_adresses').properties",
         "_bag_obj:addr:housenumber=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
         "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
         "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
@@ -411,7 +413,7 @@
       "tagRenderings": [
         {
           "id": "Import button",
-          "render": "{import_button(osm:adresses, addr:city=$woonplaats; addr:housenumber=$_bag_obj:addr:housenumber; addr:postcode=$postcode; addr:street=$openbare_ruimte; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date, Upload this adress to OpenStreetMap)}",
+          "render": "{import_button(osm_adresses, addr:city=$woonplaats; addr:housenumber=$_bag_obj:addr:housenumber; addr:postcode=$postcode; addr:street=$openbare_ruimte; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date, Upload this adress to OpenStreetMap)}",
           "condition": "_imported_osm_object_found=false"
         },
         {

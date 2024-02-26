@@ -721,6 +721,15 @@
         "description": "Een <b>Witte Fiets</b> of <b>Spookfiets</b> is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat om een fiets die volledig wit is geschilderd en in de buurt van het ongeval werd geinstalleerd.<br/><br/>Op deze kaart zie je alle witte fietsen die door OpenStreetMap gekend zijn. Ontbreekt er een Witte Fiets of wens je informatie aan te passen? Meld je dan aan met een (gratis) OpenStreetMap account.",
         "title": "Witte Fietsen"
     },
+    "ghostsigns": {
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Alle adverterende muurschilderingen"
+                }
+            }
+        }
+    },
     "grb": {
         "description": "Dit thema helpt het GRB importeren.",
         "layers": {

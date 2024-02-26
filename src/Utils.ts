@@ -980,7 +980,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     resolve({ error: "rate limited", url, statuscode: xhr.status })
                 } else {
                     resolve({
-                        error: "other error: " + xhr.statusText,
+                        error: "other error: " + xhr.statusText + ", " + xhr.responseText,
                         url,
                         statuscode: xhr.status,
                     })
@@ -1128,42 +1128,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         element.click()
     }
 
-    public static ColourNameToHex(color: string): string {
-        return colors[color.toLowerCase()] ?? color
-    }
-
-    public static HexToColourName(hex: string): string {
-        hex = hex.toLowerCase()
-        if (!hex.startsWith("#")) {
-            return hex
-        }
-        const c = Utils.color(hex)
-
-        let smallestDiff = Number.MAX_VALUE
-        let bestColor = undefined
-        for (const color in colors) {
-            if (!colors.hasOwnProperty(color)) {
-                continue
-            }
-            const foundhex = colors[color]
-            if (typeof foundhex !== "string") {
-                continue
-            }
-            if (foundhex === hex) {
-                return color
-            }
-            const diff = this.colorDiff(Utils.color(foundhex), c)
-            if (diff > 50) {
-                continue
-            }
-            if (diff < smallestDiff) {
-                smallestDiff = diff
-                bestColor = color
-            }
-        }
-        return bestColor ?? hex
-    }
-
     /**
      * Reorders an object: creates a new object where the keys have been added alphabetically
      *
@@ -1202,33 +1166,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return days + "days" + " " + hours + "h"
         }
         return hours + ":" + Utils.TwoDigits(minutes) + ":" + Utils.TwoDigits(seconds)
-    }
-
-    public static DisableLongPresses() {
-        // Remove all context event listeners on mobile to prevent long presses
-        window.addEventListener(
-            "contextmenu",
-            (e) => {
-                // Not compatible with IE < 9
-
-                if (e.target["nodeName"] === "INPUT") {
-                    return
-                }
-                e.preventDefault()
-                return false
-            },
-            false
-        )
-    }
-
-    public static preventDefaultOnMouseEvent(event: any) {
-        event?.originalEvent?.preventDefault()
-        event?.originalEvent?.stopPropagation()
-        event?.originalEvent?.stopImmediatePropagation()
-        if (event?.originalEvent) {
-            // This is a total workaround, as 'preventDefault' and everything above seems to be not working
-            event.originalEvent["dismissed"] = true
-        }
     }
 
     public static HomepageLink(): string {
@@ -1710,5 +1647,20 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         c1: { r: number; g: number; b: number }
     ) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
+    }
+
+    private static readonly _metrixPrefixes = ["", "k", "M", "G", "T", "P", "E"]
+    /**
+     * Converts a big number (e.g. 1000000) into a rounded postfixed verion (e.g. 1M)
+     *
+     * Supported metric prefixes are: [k, M, G, T, P, E]
+     */
+    public static numberWithMetrixPrefix(n: number) {
+        let index = 0
+        while (n > 1000) {
+            n = Math.round(n / 1000)
+            index++
+        }
+        return n + Utils._metrixPrefixes[index]
     }
 }

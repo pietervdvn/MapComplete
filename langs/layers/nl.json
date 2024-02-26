@@ -6065,6 +6065,33 @@
             "render": "Speeltuin"
         }
     },
+    "playground_equipment": {
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een schommel"
+                    },
+                    "3": {
+                        "then": "Dit is een zandbak"
+                    },
+                    "4": {
+                        "then": "Dit is een veertoestel"
+                    },
+                    "5": {
+                        "then": "Dit is een klimrek"
+                    },
+                    "6": {
+                        "then": "Dit is een wipwap"
+                    },
+                    "11": {
+                        "then": "Dit is een rekstok"
+                    }
+                },
+                "question": "Wat voor speeltoestel is dit?"
+            }
+        }
+    },
     "postboxes": {
         "description": "Deze laag toont brievenbussen.",
         "name": "Brievenbussen",

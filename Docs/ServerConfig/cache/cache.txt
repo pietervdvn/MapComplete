@@ -1,0 +1,15 @@
+# Cache.mapComplete.org server config
+
+The "cache"-server is hosted at nerdlab.
+
+It has a full OSM-copy on disk, and has a Postgis/Postgres database with a table for every layer for quick access. It should run the tileserver and the summaryserver
+
+## Dyndns
+
+https://dynamicdns.park-your-domain.com/update?host=cache&domain=mapcomplete.org&password=[ddns_password]
+
+## Setup
+
+See SettingUpPSQL.md
+
+

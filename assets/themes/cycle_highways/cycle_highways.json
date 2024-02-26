@@ -266,12 +266,6 @@
       ]
     }
   ],
-  "enableDownload": true,
-  "enablePdfDownload": true,
   "overpassTimeout": 60,
-  "widenFactor": 1.1,
-  "#overpassUrl": "https://overpass.kumi.systems/api/interpreter",
-  "clustering": {
-    "maxZoom": 1
-  }
+  "widenFactor": 1.1
 }

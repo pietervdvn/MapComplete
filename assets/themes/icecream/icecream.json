@@ -17,6 +17,5 @@
   "icon": "./assets/layers/ice_cream/ice_cream.svg",
   "layers": [
     "ice_cream"
-  ],
-  "minzoom": "14"
+  ]
 }

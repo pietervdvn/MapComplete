@@ -8563,6 +8563,15 @@
             "render": "Geschwindigkeitsreduzierte Straße"
         }
     },
+    "souvenir_note": {
+        "tagRenderings": {
+            "designs": {
+                "freeform": {
+                    "placeholder": "Motivanzahl (z.B. 5)"
+                }
+            }
+        }
+    },
     "speed_camera": {
         "description": "Ebene mit Blitzern",
         "name": "Blitzer",

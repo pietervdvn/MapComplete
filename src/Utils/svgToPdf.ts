@@ -553,7 +553,7 @@ class SvgToPdfInternals {
 export interface SvgToPdfOptions {
     freeComponentId: string
     disableMaps?: false | true
-    textSubstitutions?: Record<string, string>
+    textSubstitutions?: Record<string, string | Translation>
     beforePage?: (i: number) => void
     overrideLocation?: { lat: number; lon: number }
     disableDataLoading?: boolean | false
@@ -711,9 +711,13 @@ class SvgToPdfPage {
             this.options.beforePage(i)
         }
         const self = this
-        const internal = new SvgToPdfInternals(advancedApi, this, (key) =>
-            self.extractTranslation(key, language)
-        )
+        const internal = new SvgToPdfInternals(advancedApi, this, (key) => {
+            const tr = self.extractTranslation(key, language)
+            if (typeof tr === "string") {
+                return tr
+            }
+            return tr.txt
+        })
         for (const child of Array.from(this._svgRoot.children)) {
             internal.handleElement(<any>child)
         }

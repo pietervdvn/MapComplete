@@ -279,6 +279,7 @@ async function generateCsp(
         "https://www.openstreetmap.org",
         "https://api.openstreetmap.org",
         "https://pietervdvn.goatcounter.com",
+        "https://cache.mapcomplete.org",
     ].concat(...(await eliUrls()))
 
     SpecialVisualizations.specialVisualizations.forEach((sv) => {

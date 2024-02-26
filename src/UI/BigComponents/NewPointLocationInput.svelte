@@ -87,6 +87,7 @@
   if (snapToLayers?.length > 0) {
     const snapSources: FeatureSource[] = []
     for (const layerId of snapToLayers ?? []) {
+      // We assume that the layer contains the data, as the OSM-API-Feature-source should have loaded them, even though the layer might not be displayed
       const layer: FeatureSourceForLayer = state.perLayer.get(layerId)
       snapSources.push(layer)
       if (layer.features === undefined) {

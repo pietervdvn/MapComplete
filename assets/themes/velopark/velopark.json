@@ -284,6 +284,7 @@
         "bike_parking"
       ],
       "override": {
+        "doCount": false,
         "minzoom": 14
       }
     },
@@ -294,6 +295,7 @@
         "bicycle_rental"
       ],
       "override": {
+        "doCount": false,
         "minzoom": 18
       }
     }

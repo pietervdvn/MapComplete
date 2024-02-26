@@ -7100,6 +7100,15 @@
             }
         }
     },
+    "souvenir_note": {
+        "tagRenderings": {
+            "designs": {
+                "freeform": {
+                    "placeholder": "Nombre de dissenys (p. e. 5)"
+                }
+            }
+        }
+    },
     "speed_camera": {
         "description": "Capa que mostra càmeres de velocitat",
         "name": "Càmera de velocitat",

@@ -29,7 +29,7 @@
   "hideFromOverview": true,
   "layers": [
     {
-      "id": "osm-buildings",
+      "id": "osm_buildings_no_points",
       "name": "All OSM-buildings",
       "source": {
         "osmTags": {
@@ -296,7 +296,7 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with_buildings=overlapWith(feat)('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0) ?? []",
+        "_overlaps_with_buildings=overlapWith(feat)('osm_buildings_no_points').filter(f => f.feat.properties.id.indexOf('-') < 0) ?? []",
         "_overlaps_with=get(feat)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=get(feat)('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:id=get(feat)('_overlaps_with')?.feat?.properties?.id",
@@ -319,7 +319,7 @@
       "tagRenderings": [
         {
           "id": "Import-button",
-          "render": "{import_way_button(osm-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
+          "render": "{import_way_button(osm_buildings_no_points,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
           "mappings": [
             {
               "#": "Failsafe",
@@ -371,7 +371,7 @@
                   "addr:housenumber!:={_osm_obj:addr:housenumber}"
                 ]
               },
-              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}"
+              "then": "{conflate_button(osm_buildings_no_points,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}"
             },
             {
               "if": {
@@ -380,7 +380,7 @@
                   "_reverse_overlap_percentage>50"
                 ]
               },
-              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
+              "then": "{conflate_button(osm_buildings_no_points,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
             }
           ]
         },
@@ -612,7 +612,7 @@
       "builtin": "crab_address",
       "override": {
         "calculatedTags+": [
-          "_embedded_in=overlapWith(feat)('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
+          "_embedded_in=overlapWith(feat)('osm_buildings_no_points').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
           "_embedding_nr=get(feat)('_embedded_in')['addr:housenumber']+(get(feat)('_embedded_in')['addr:unit'] ?? '')",
           "_embedding_street=get(feat)('_embedded_in')['addr:street']",
           "_embedding_id=get(feat)('_embedded_in').id",
@@ -709,7 +709,7 @@
                 "text": {
                   "nl": "Voeg dit adres als een nieuw adrespunt toe"
                 },
-                "snap_onto_layers": "osm-buildings"
+                "snap_onto_layers": "osm_buildings_no_points"
               }
             },
             "mappings": [
@@ -785,12 +785,10 @@
     }
   ],
   "overrideAll": {
-    "minzoom": 17
+    "minzoom": 17,
+    "doCount": false
   },
   "widenFactor": 2,
   "overpassMaxZoom": 15,
-  "osmApiTileSize": 17,
-  "clustering": {
-    "maxZoom": 15
-  }
+  "osmApiTileSize": 17
 }

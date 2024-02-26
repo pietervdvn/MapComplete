@@ -7396,6 +7396,15 @@
             }
         }
     },
+    "souvenir_note": {
+        "tagRenderings": {
+            "designs": {
+                "freeform": {
+                    "placeholder": "Počet vzorů (např. 5)"
+                }
+            }
+        }
+    },
     "speed_camera": {
         "description": "Vrstva zobrazující rychlostní radary",
         "name": "Rychlostní radar",

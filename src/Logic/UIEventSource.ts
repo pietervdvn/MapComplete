@@ -639,8 +639,9 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         promise: Promise<T>
     ): UIEventSource<{ success: T } | { error: any } | undefined> {
         const src = new UIEventSource<{ success: T } | { error: any }>(undefined)
-        promise?.then((d) => src.setData({ success: d }))
-        promise?.catch((err) => src.setData({ error: err }))
+        promise
+            ?.then((d) => src.setData({ success: d }))
+            ?.catch((err) => src.setData({ error: err }))
         return src
     }
 

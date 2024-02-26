@@ -4023,6 +4023,15 @@
             }
         }
     },
+    "souvenir_note": {
+        "tagRenderings": {
+            "designs": {
+                "freeform": {
+                    "placeholder": "Número de diseños (por ejemplo, 5)"
+                }
+            }
+        }
+    },
     "speed_camera": {
         "description": "Capa con cámaras de velocidad",
         "name": "Cámara de velocidad",

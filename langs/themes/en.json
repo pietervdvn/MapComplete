@@ -810,6 +810,71 @@
         "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account. <p>There exists an <a href='https://masto.bike/@ghostbikebot' target='_blank'>automated account on Mastodon which posts a monthly overview of ghost bikes worldwide</a></p>",
         "title": "Ghost bikes"
     },
+    "ghostsigns": {
+        "description": "A map showing disused signs on buildings",
+        "layers": {
+            "0": {
+                "description": "Layer showing disused signs on buildings",
+                "name": "Ghost Signs",
+                "presets": {
+                    "0": {
+                        "title": "a ghost sign"
+                    }
+                },
+                "tagRenderings": {
+                    "brand": {
+                        "freeform": {
+                            "placeholder": "Business name"
+                        },
+                        "question": "For what business was this sign made?",
+                        "render": "This sign was made for: {brand}"
+                    },
+                    "historic": {
+                        "mappings": {
+                            "0": {
+                                "then": "This is a ghost sign"
+                            },
+                            "1": {
+                                "then": "This is not a ghost sign, answering this will hide the sign from the map"
+                            }
+                        },
+                        "question": "Is this a ghost sign?",
+                        "questionHint": "Is this sign for a business that no longer exists or no longer being maintained?"
+                    },
+                    "inscription": {
+                        "freeform": {
+                            "placeholder": "Text on the sign"
+                        },
+                        "question": "What is the text on the sign?",
+                        "render": "The text on the sign is: {inscription}"
+                    }
+                },
+                "title": {
+                    "render": "Ghost Sign"
+                }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This is a ghost sign"
+                                },
+                                "1": {
+                                    "then": "This is not a ghost sign"
+                                }
+                            },
+                            "question": "Is this a ghost sign?",
+                            "questionHint": "Is this sign for a business that no longer exists or no longer being maintained?"
+                        }
+                    },
+                    "name": "All advertentie wall paintings"
+                }
+            }
+        },
+        "title": "Ghost Signs"
+    },
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {
@@ -885,6 +950,10 @@
     "indoors": {
         "description": "On this map, publicly accessible indoor places are shown",
         "title": "Indoors"
+    },
+    "items_with_image": {
+        "description": "A map showing all items on OSM which have an image. This theme is a very bad fit for MapComplete as someone is not able to directly add a picture. However, this theme is mostly here to include this all into the database, which'll allow this to quickly fetch images nearby for other features",
+        "title": "All items with images"
     },
     "kerbs_and_crossings": {
         "description": "A map showing kerbs and crossings.",
@@ -1262,6 +1331,32 @@
     },
     "postboxes": {
         "description": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account.",
+        "layers": {
+            "3": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This shop is a post partner"
+                                },
+                                "1": {
+                                    "then": "This shop is not a post partner"
+                                }
+                            },
+                            "question": "Is this shop a post partner?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "description": "If a shop is not yet on the map and is a post partner, you can add it here.",
+                            "title": "a missing shop that is a post partner"
+                        }
+                    },
+                    "description": "Add a new post partner to the map in an existing shop"
+                }
+            }
+        },
         "shortDescription": "A map showing postboxes and post offices",
         "title": "Postbox and Post Office Map"
     },

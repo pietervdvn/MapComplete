@@ -214,6 +214,7 @@
                 "current_view_generic": "Export a PDF off the current view for {paper_size} in {orientation} orientation"
             },
             "title": "Download",
+            "toMuch": "There are to much features to download them all",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
         "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
@@ -784,7 +785,9 @@
             "feedback": "This is not a valid web address"
         },
         "wikidata": {
-            "description": "A Wikidata identifier"
+            "description": "A Wikidata identifier",
+            "empty": "Please, enter some wikidata-entries",
+            "startsWithQ": "A wikidata identifier starts with Q and is followed by a number"
         }
     }
 }
