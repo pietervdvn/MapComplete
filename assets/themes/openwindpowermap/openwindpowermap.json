@@ -41,8 +41,5 @@
   ],
   "layers": [
     "windturbine"
-  ],
-  "clustering": {
-    "maxZoom": 8
-  }
+  ]
 }

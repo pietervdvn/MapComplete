@@ -1,4 +1,24 @@
 {
+  "id": "souvenir_coin",
+  "name": {
+    "en": "Souvenir Coin Machines"
+  },
+  "description": {
+    "en": "Layer showing machines selling souvenir coins"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending~.*souvenir_coins.*"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Souvenir Coin Machine"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -19,6 +39,26 @@
         {
           "icon": "./assets/layers/souvenir_coin/souvenir_coin.svg"
         }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a souvenir coin machine"
+      },
+      "description": {
+        "en": "Add a machine selling souvenir coins"
+      },
+      "tags": [
+        "amenity=vending_machine",
+        "vending=souvenir_coins"
       ]
     }
   ],
@@ -109,46 +149,6 @@
     },
     "level",
     "check_date"
-  ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "id": "souvenir_coin",
-  "name": {
-    "en": "Souvenir Coin Machines"
-  },
-  "description": {
-    "en": "Layer showing machines selling souvenir coins"
-  },
-  "source": {
-    "osmTags": {
-      "and": [
-        "amenity=vending_machine",
-        "vending~.*souvenir_coins.*"
-      ]
-    }
-  },
-  "title": {
-    "render": {
-      "en": "Souvenir Coin Machine"
-    }
-  },
-  "presets": [
-    {
-      "title": {
-        "en": "a souvenir coin machine"
-      },
-      "description": {
-        "en": "Add a machine selling souvenir coins"
-      },
-      "tags": [
-        "amenity=vending_machine",
-        "vending=souvenir_coins"
-      ]
-    }
   ],
   "filter": [
     "open_now",

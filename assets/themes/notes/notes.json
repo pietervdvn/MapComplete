@@ -32,6 +32,5 @@
     "note",
     "fixme"
   ],
-  "enableDownload": true,
-  "clustering": false
+  "enableDownload": true
 }

@@ -31,7 +31,6 @@
   ],
   "minzoom": 18,
   "shownByDefault": false,
-  "isCounted": false,
   "title": {
     "render": {
       "en": "Wall or building",
@@ -122,6 +121,7 @@
       "condition": "_biggest_width_id~*"
     }
   ],
+  "isCounted": false,
   "units": [
     {
       "width": {

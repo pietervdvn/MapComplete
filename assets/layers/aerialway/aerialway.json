@@ -1,4 +1,28 @@
 {
+  "id": "aerialway",
+  "name": {
+    "en": "Aerialways",
+    "de": "Seilbahnen"
+  },
+  "description": {
+    "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
+    "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. "
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "aerialway~*",
+        "aerialway!=pylon",
+        "aerialway!=station"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Aerialway {name}",
+      "de": "Seilbahn {name}"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -25,6 +49,27 @@
         "classes": "bg-white p-1 px-2 rounded"
       },
       "labelCssClasses": "bg-white px-2 py-1 no-weblate"
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "4",
+      "color": "black",
+      "imageAlongWay": [
+        {
+          "if": "oneway=no",
+          "then": "./assets/png/twoway.png"
+        },
+        {
+          "if": {
+            "or": [
+              "oneway=yes",
+              "oneway="
+            ]
+          },
+          "then": "./assets/png/oneway.png"
+        }
+      ]
     }
   ],
   "tagRenderings": [
@@ -183,50 +228,5 @@
         "de": "Die Seilbahn hat eine Länge von {_length:km} km"
       }
     }
-  ],
-  "lineRendering": [
-    {
-      "width": "4",
-      "color": "black",
-      "imageAlongWay": [
-        {
-          "if": "oneway=no",
-          "then": "./assets/png/twoway.png"
-        },
-        {
-          "if": {
-            "or": [
-              "oneway=yes",
-              "oneway="
-            ]
-          },
-          "then": "./assets/png/oneway.png"
-        }
-      ]
-    }
-  ],
-  "id": "aerialway",
-  "name": {
-    "en": "Aerialways",
-    "de": "Seilbahnen"
-  },
-  "description": {
-    "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
-    "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. "
-  },
-  "source": {
-    "osmTags": {
-      "and": [
-        "aerialway~*",
-        "aerialway!=pylon",
-        "aerialway!=station"
-      ]
-    }
-  },
-  "title": {
-    "render": {
-      "en": "Aerialway {name}",
-      "de": "Seilbahn {name}"
-    }
-  }
+  ]
 }

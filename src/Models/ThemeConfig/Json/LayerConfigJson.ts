@@ -74,15 +74,6 @@ export interface LayerConfigJson {
                * Every source must set which tags have to be present in order to load the given layer.
                */
               osmTags: TagConfigJson
-              /**
-               * question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?
-               * The maximum amount of seconds that a tile is allowed to linger in the cache
-               *
-               * type: nat
-               * default: 30 days
-               * group: expert
-               */
-              maxCacheAge?: number
           }
         | {
               /**
@@ -109,17 +100,6 @@ export interface LayerConfigJson {
                * ifunset: This is not a tiled geojson
                */
               geoJsonZoomLevel?: number
-              /**
-               * Indicates that the upstream geojson data is OSM-derived.
-               * Useful for e.g. merging or for scripts generating this cache.
-               * This also indicates that making changes on this data is possible
-               *
-               * question: Is this geojson a cache of OpenStreetMap data?
-               * ifunset: This is not an OpenStreetMap cache
-               * iftrue: this is based on OpenStreetMap and can thus be edited
-               * group: expert
-               */
-              isOsmCache?: boolean
               /**
                * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
                *

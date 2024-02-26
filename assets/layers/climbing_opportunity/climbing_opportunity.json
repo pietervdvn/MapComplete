@@ -35,7 +35,6 @@
     }
   },
   "minzoom": 19,
-  "doCount": false,
   "title": {
     "render": {
       "en": "Climbing opportunity?",
@@ -148,5 +147,6 @@
         }
       ]
     }
-  ]
+  ],
+  "doCount": false
 }

@@ -11,7 +11,6 @@
     "es": "Todo lo que necesitas para esquiar"
   },
   "icon": "./assets/layers/aerialway/chair_lift.svg",
-  "enableTerrain": true,
   "layers": [
     "ski_piste",
     "aerialway",
@@ -50,5 +49,6 @@
         ]
       }
     }
-  ]
+  ],
+  "enableTerrain": true
 }

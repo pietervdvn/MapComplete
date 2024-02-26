@@ -1,5 +1,20 @@
 {
+  "id": "playground_equipment",
+  "name": {
+    "en": "Playground equipment"
+  },
+  "description": {
+    "en": "Layer showing playground equipment"
+  },
+  "source": {
+    "osmTags": "playground~*"
+  },
   "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Playground device"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -16,6 +31,25 @@
         }
       ],
       "iconSize": "20,20"
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "playground=yes"
+      ],
+      "title": {
+        "en": "a playground device"
+      },
+      "description": {
+        "en": "An exact type is asked later"
+      }
     }
   ],
   "tagRenderings": [
@@ -299,39 +333,5 @@
       }
     }
   ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "id": "playground_equipment",
-  "name": {
-    "en": "Playground equipment"
-  },
-  "description": {
-    "en": "Layer showing playground equipment"
-  },
-  "source": {
-    "osmTags": "playground~*"
-  },
-  "title": {
-    "render": {
-      "en": "Playground device"
-    }
-  },
-  "allowMove": true,
-  "presets": [
-    {
-      "tags": [
-        "playground=yes"
-      ],
-      "title": {
-        "en": "a playground device"
-      },
-      "description": {
-        "en": "An exact type is asked later"
-      }
-    }
-  ]
+  "allowMove": true
 }

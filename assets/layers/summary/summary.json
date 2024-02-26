@@ -7,9 +7,6 @@
       "en": "Summary"
     }
   },
-  "tagRenderings": [
-    "all_tags"
-  ],
   "pointRendering": [
     {
       "location": [
@@ -17,11 +14,12 @@
         "centroid"
       ],
       "iconSize": "40,40",
-      "label": {
-        "render": "{total_metric}"
-      },
+      "label": "{total_metric}",
       "labelCss": "background: #ffffffbb",
       "labelCssClasses": "w-12 text-lg rounded-xl p-1 px-2"
     }
+  ],
+  "tagRenderings": [
+    "all_tags"
   ]
 }

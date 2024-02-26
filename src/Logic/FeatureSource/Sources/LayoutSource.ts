@@ -26,6 +26,8 @@ export default class LayoutSource extends FeatureSourceMerger {
 
     private readonly supportsForceDownload: UpdatableFeatureSource[]
 
+    private readonly fromCache: Map<string, LocalStorageFeatureSource>
+    private static readonly fromCacheZoomLevel = 15
     constructor(
         layers: LayerConfig[],
         featureSwitches: FeatureSwitchState,
@@ -43,13 +45,21 @@ export default class LayoutSource extends FeatureSourceMerger {
 
         const geojsonlayers = layers.filter((layer) => layer.source.geojsonSource !== undefined)
         const osmLayers = layers.filter((layer) => layer.source.geojsonSource === undefined)
-        const fromCache = osmLayers.map(
-            (l) =>
-                new LocalStorageFeatureSource(backend, l, 15, mapProperties, {
-                    isActive: isDisplayed(l.id),
-                    maxAge: l.maxAgeOfCache,
-                })
-        )
+        const fromCache = new Map<string, LocalStorageFeatureSource>()
+        for (const layer of osmLayers) {
+            const src = new LocalStorageFeatureSource(
+                backend,
+                layer,
+                LayoutSource.fromCacheZoomLevel,
+                mapProperties,
+                {
+                    isActive: isDisplayed(layer.id),
+                    maxAge: layer.maxAgeOfCache,
+                }
+            )
+            fromCache.set(layer.id, src)
+        }
+
         const mvtSources: UpdatableFeatureSource[] = osmLayers
             .filter((f) => mvtAvailableLayers.has(f.id))
             .map((l) => LayoutSource.setupMvtSource(l, mapProperties, isDisplayed(l.id)))
@@ -92,9 +102,10 @@ export default class LayoutSource extends FeatureSourceMerger {
             LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
-        super(...geojsonSources, ...fromCache, ...mvtSources, ...nonMvtSources)
+        super(...geojsonSources, ...Array.from(fromCache.values()), ...mvtSources, ...nonMvtSources)
 
         this.isLoading = isLoading
+        this.fromCache = fromCache
         supportsForceDownload.push(...geojsonSources)
         supportsForceDownload.push(...mvtSources) // Non-mvt sources are handled by overpass
         this.supportsForceDownload = supportsForceDownload
