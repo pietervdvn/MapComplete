@@ -146,6 +146,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Triggered by navigating the map with arrows or by pressing 'space' or 'enter'
      */
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly toCacheSavers: ReadonlyMap<string, SaveFeatureSourceToLocalStorage>
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -295,16 +296,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             this.perLayer = perLayer.perLayer
         }
-        this.perLayer.forEach((fs) => {
-            new SaveFeatureSourceToLocalStorage(
-                this.osmConnection.Backend(),
-                fs.layer.layerDef.id,
-                15,
-                fs,
-                this.featureProperties,
-                fs.layer.layerDef.maxAgeOfCache
-            )
-        })
 
         this.floors = this.featuresInView.features.stabilized(500).map((features) => {
             if (!features) {
@@ -366,6 +357,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.favourites = new FavouritesFeatureSource(this)
 
         this.featureSummary = this.setupSummaryLayer()
+        this.toCacheSavers = this.initSaveToLocalStorage()
         this.initActors()
         this.drawSpecialLayers()
         this.initHotkeys()
@@ -391,6 +383,25 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
     }
 
+    public initSaveToLocalStorage() {
+        const toLocalStorage = new Map<string, SaveFeatureSourceToLocalStorage>()
+        this.perLayer.forEach((fs, layerId) => {
+            if (fs.layer.layerDef.source.geojsonSource !== undefined) {
+                return // We don't cache external data layers
+            }
+            console.log("Setting up a local store feature sink for", layerId)
+            const storage = new SaveFeatureSourceToLocalStorage(
+                this.osmConnection.Backend(),
+                fs.layer.layerDef.id,
+                LayoutSource.fromCacheZoomLevel,
+                fs,
+                this.featureProperties,
+                fs.layer.layerDef.maxAgeOfCache
+            )
+            toLocalStorage.set(layerId, storage)
+        })
+        return toLocalStorage
+    }
     public showNormalDataOn(map: Store<MlMap>): ReadonlyMap<string, FilteringFeatureSource> {
         const filteringFeatureSource = new Map<string, FilteringFeatureSource>()
         this.perLayer.forEach((fs, layerName) => {

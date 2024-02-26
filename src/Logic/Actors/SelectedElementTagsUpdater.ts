@@ -1,26 +1,12 @@
 /**
  * This actor will download the latest version of the selected element from OSM and update the tags if necessary.
  */
-import { UIEventSource } from "../UIEventSource"
-import { Changes } from "../Osm/Changes"
-import { OsmConnection } from "../Osm/OsmConnection"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SimpleMetaTagger from "../SimpleMetaTagger"
-import { Feature } from "geojson"
 import { OsmTags } from "../../Models/OsmFeature"
-import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
-import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { Utils } from "../../Utils"
-
-interface TagsUpdaterState {
-    selectedElement: UIEventSource<Feature>
-    featureProperties: { getStore: (id: string) => UIEventSource<Record<string, string>> }
-    changes: Changes
-    osmConnection: OsmConnection
-    layout: LayoutConfig
-    osmObjectDownloader: OsmObjectDownloader
-    indexedFeatures: IndexedFeatureSource
-}
+import ThemeViewState from "../../Models/ThemeViewState"
+import { BBox } from "../BBox"
+import { Feature } from "geojson"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -31,19 +17,21 @@ export default class SelectedElementTagsUpdater {
         "uid",
         "id",
     ])
+    private readonly state: ThemeViewState
 
-    constructor(state: TagsUpdaterState) {
+    constructor(state: ThemeViewState) {
+        this.state = state
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
             if (!isLoggedIn && !Utils.runningFromConsole) {
                 return
             }
-            this.installCallback(state)
+            this.installCallback()
             // We only have to do this once...
             return true
         })
     }
 
-    public static applyUpdate(latestTags: OsmTags, id: string, state: TagsUpdaterState) {
+    public static applyUpdate(latestTags: OsmTags, id: string, state: ThemeViewState) {
         try {
             const leftRightSensitive = state.layout.isLeftRightSensitive()
 
@@ -120,8 +108,13 @@ export default class SelectedElementTagsUpdater {
             console.error("Updating the tags of selected element ", id, "failed due to", e)
         }
     }
-
-    private installCallback(state: TagsUpdaterState) {
+    private invalidateCache(s: Feature) {
+        const state = this.state
+        const wasPartOfLayer = state.layout.getMatchingLayer(s.properties)
+        state.toCacheSavers.get(wasPartOfLayer.id).invalidateCacheAround(BBox.get(s))
+    }
+    private installCallback() {
+        const state = this.state
         state.selectedElement.addCallbackAndRunD(async (s) => {
             let id = s.properties?.id
             if (!id) {
@@ -146,9 +139,9 @@ export default class SelectedElementTagsUpdater {
                 const osmObject = await state.osmObjectDownloader.DownloadObjectAsync(id)
                 if (osmObject === "deleted") {
                     console.debug("The current selected element has been deleted upstream!", id)
+                    this.invalidateCache(s)
                     const currentTagsSource = state.featureProperties.getStore(id)
                     currentTagsSource.data["_deleted"] = "yes"
-                    currentTagsSource.addCallbackAndRun((tags) => console.trace("Tags are", tags))
                     currentTagsSource.ping()
                     return
                 }
@@ -158,6 +151,7 @@ export default class SelectedElementTagsUpdater {
                 const oldGeometry = oldFeature?.geometry
                 if (oldGeometry !== undefined && !Utils.SameObject(newGeometry, oldGeometry)) {
                     console.log("Detected a difference in geometry for ", id)
+                    this.invalidateCache(s)
                     oldFeature.geometry = newGeometry
                     state.featureProperties.getStore(id)?.ping()
                 }

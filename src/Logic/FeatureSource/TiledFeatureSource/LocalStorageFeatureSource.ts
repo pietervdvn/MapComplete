@@ -27,14 +27,14 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
             options?.maxAge ?? 24 * 60 * 60
         )
         super(
-           new ImmutableStore(zoomlevel),
+            new ImmutableStore(zoomlevel),
             layer.minzoom,
             (tileIndex) =>
                 new StaticFeatureSource(
                     storage.getTileSource(tileIndex).mapD((features) => {
                         if (features.length === undefined) {
                             console.trace("These are not features:", features)
-                            storage.invalidate(zoomlevel, tileIndex)
+                            storage.invalidate(tileIndex)
                             return []
                         }
                         return features.filter((f) => !f.properties.id.match(/(node|way)\/-[0-9]+/))
