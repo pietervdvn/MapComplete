@@ -1,4 +1,24 @@
 {
+  "id": "souvenir_note",
+  "name": {
+    "en": "Souvenir Banknote Machines"
+  },
+  "description": {
+    "en": "Layer showing machines selling souvenir banknotes"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending~.*souvenir_notes.*"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Souvenir Banknote Machine"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -19,6 +39,26 @@
         {
           "icon": "./assets/layers/souvenir_note/souvenir_note.svg"
         }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a souvenir banknote machine"
+      },
+      "description": {
+        "en": "Add a machine selling souvenir banknotes"
+      },
+      "tags": [
+        "amenity=vending_machine",
+        "vending=souvenir_notes"
       ]
     }
   ],
@@ -127,46 +167,6 @@
     },
     "level",
     "check_date"
-  ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "id": "souvenir_note",
-  "name": {
-    "en": "Souvenir Banknote Machines"
-  },
-  "description": {
-    "en": "Layer showing machines selling souvenir banknotes"
-  },
-  "source": {
-    "osmTags": {
-      "and": [
-        "amenity=vending_machine",
-        "vending~.*souvenir_notes.*"
-      ]
-    }
-  },
-  "title": {
-    "render": {
-      "en": "Souvenir Banknote Machine"
-    }
-  },
-  "presets": [
-    {
-      "title": {
-        "en": "a souvenir banknote machine"
-      },
-      "description": {
-        "en": "Add a machine selling souvenir banknotes"
-      },
-      "tags": [
-        "amenity=vending_machine",
-        "vending=souvenir_notes"
-      ]
-    }
   ],
   "filter": [
     "open_now",

@@ -14,8 +14,6 @@
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
-  "widenFactor": 0.05,
-  "clustering": false,
   "layers": [
     {
       "id": "mapcomplete-changes",
@@ -26,8 +24,7 @@
       "source": {
         "osmTags": "editor~*",
         "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/mapcomplete-changes/tile_{z}_{x}_{y}.geojson",
-        "geoJsonZoomLevel": 8,
-        "maxCacheAge": 0
+        "geoJsonZoomLevel": 8
       },
       "title": {
         "render": {

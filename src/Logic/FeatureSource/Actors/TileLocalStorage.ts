@@ -1,5 +1,6 @@
 import { IdbLocalStorage } from "../../Web/IdbLocalStorage"
 import { UIEventSource } from "../../UIEventSource"
+import { Tiles } from "../../../Models/TileRange"
 
 /**
  * A class which allows to read/write a tile to local storage.
@@ -91,9 +92,17 @@ export default class TileLocalStorage<T> {
             await IdbLocalStorage.GetDirectly(this._layername + "_" + tileIndex + "_date")
         )
         const maxAge = this._maxAgeSeconds
-        const timeDiff = Date.now() - date
+        const timeDiff = (Date.now() - date) / 1000
         if (timeDiff >= maxAge) {
-            console.debug("Dropping cache for", this._layername, tileIndex, "out of date")
+            console.debug(
+                "Dropping cache for",
+                this._layername,
+                tileIndex,
+                "out of date. Max allowed age is",
+                maxAge,
+                "current age is",
+                timeDiff
+            )
             await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex, undefined)
 
             return undefined
@@ -102,7 +111,8 @@ export default class TileLocalStorage<T> {
         return <any>data
     }
 
-    invalidate(zoomlevel: number, tileIndex) {
+    public invalidate(tileIndex: number) {
+        console.log("Invalidated tile", tileIndex)
         this.getTileSource(tileIndex).setData(undefined)
     }
 }

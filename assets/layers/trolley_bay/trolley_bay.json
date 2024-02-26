@@ -8,19 +8,42 @@
     "en": "Find trolley bays for shopping trolleys.",
     "de": "Finde Einkaufswagenbuchten für Einkaufswagen."
   },
-  "title": {
-    "en": "Trolley Bay",
-    "de": "Einkaufswagenbucht"
-  },
   "source": {
     "osmTags": "amenity=trolley_bay"
   },
   "minzoom": 18,
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": true
+  "title": {
+    "en": "Trolley Bay",
+    "de": "Einkaufswagenbucht"
   },
-  "deletion": true,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/trolley_bay/trolley_bay.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a trolley bay",
+        "de": "eine Einkaufswagenbucht"
+      },
+      "tags": [
+        "amenity=trolley_bay"
+      ],
+      "description": {
+        "en": "A trolley bay for parking shopping carts.",
+        "de": "Ein Platz zum Abstellen von Einkaufswagen."
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "covered",
@@ -194,32 +217,9 @@
       "id": "indoor"
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a trolley bay",
-        "de": "eine Einkaufswagenbucht"
-      },
-      "tags": [
-        "amenity=trolley_bay"
-      ],
-      "description": {
-        "en": "A trolley bay for parking shopping carts.",
-        "de": "Ein Platz zum Abstellen von Einkaufswagen."
-      }
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "./assets/layers/trolley_bay/trolley_bay.svg"
-        }
-      ]
-    }
-  ]
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
 }

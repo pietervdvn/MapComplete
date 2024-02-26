@@ -5,8 +5,7 @@
   "source": {
     "osmTags": "HUISNR~*",
     "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson",
-    "geoJsonZoomLevel": 18,
-    "maxCacheAge": 0
+    "geoJsonZoomLevel": 18
   },
   "calculatedTags": [
     "_HNRLABEL=(() => {const lbl = feat.properties.HNRLABEL?.split('-')?.map(l => Number(l))?.filter(i => !isNaN (i)) ;if(lbl?.length != 2) {return feat.properties.HNRLABEL}; const addresses = []; for(let i = lbl[0]; i <= lbl[1]; i += 1){addresses.push(''+i);}; return addresses.join(';')        })()"

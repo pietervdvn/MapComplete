@@ -23,8 +23,7 @@
       "title": null,
       "source": {
         "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/master/assets/themes/speelplekken/shadow.geojson",
-        "osmTags": "shadow=yes",
-        "isOsmCache": false
+        "osmTags": "shadow=yes"
       },
       "pointRendering": null,
       "lineRendering": [
@@ -37,11 +36,6 @@
     {
       "builtin": "play_forest",
       "override": {
-        "source": {
-          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14,
-          "isOsmCache": true
-        },
         "minzoom": 12,
         "calculatedTags": [
           "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
@@ -53,12 +47,6 @@
       "builtin": "playground",
       "override": {
         "minzoom": 14,
-        "source": {
-          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14,
-          "isOsmCache": true
-        },
         "calculatedTags": [
           "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
           "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
@@ -69,12 +57,6 @@
       "builtin": "village_green",
       "override": {
         "minzoom": 14,
-        "source": {
-          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14,
-          "isOsmCache": true
-        },
         "calculatedTags": [
           "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
           "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
@@ -85,12 +67,6 @@
       "builtin": "sport_pitch",
       "override": {
         "minzoom": 15,
-        "source": {
-          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14,
-          "isOsmCache": true
-        },
         "calculatedTags": [
           "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
           "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
@@ -102,13 +78,7 @@
       "override": {
         "calculatedTags": [
           "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''"
-        ],
-        "source": {
-          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14,
-          "isOsmCache": true
-        }
+        ]
       }
     },
     {
@@ -124,10 +94,7 @@
             "route=foot",
             "operator~[pP]rovincie Antwerpen"
           ]
-        },
-        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-        "geoJsonZoomLevel": 14,
-        "isOsmCache": true
+        }
       },
       "title": {
         "render": "Wandeling <i>{name}</i>",
@@ -260,9 +227,5 @@
       51.23978120350654
     ]
   ],
-  "widenFactor": 1.2,
-  "clustering": {
-    "maxZoom": 6,
-    "minNeededElements": 100
-  }
+  "widenFactor": 1.2
 }

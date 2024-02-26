@@ -45,15 +45,16 @@ export class BBox {
         ])
     }
 
-    static get(feature): BBox {
-        if (feature.bbox?.overlapsWith === undefined) {
+    static get(feature: Feature): BBox {
+        const f = <any>feature
+        if (f.bbox?.overlapsWith === undefined) {
             const turfBbox: number[] = turf.bbox(feature)
-            feature.bbox = new BBox([
+            f["bbox"] = new BBox([
                 [turfBbox[0], turfBbox[1]],
                 [turfBbox[2], turfBbox[3]],
             ])
         }
-        return feature.bbox
+        return f["bbox"]
     }
 
     static bboxAroundAll(bboxes: BBox[]): BBox {

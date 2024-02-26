@@ -32,8 +32,7 @@
       "source": {
         "geoJson": "https://osm-uk-addresses.russss.dev/inspire/{z}/{x}/{y}.json",
         "osmTags": "inspireid~*",
-        "geoJsonZoomLevel": 18,
-        "isOsmCache": false
+        "geoJsonZoomLevel": 18
       },
       "minzoom": 18,
       "calculatedTags": [
@@ -69,8 +68,7 @@
             "id!~node/.*"
           ]
         },
-        "geoJsonZoomLevel": 16,
-        "isOsmCache": false
+        "geoJsonZoomLevel": 16
       },
       "name": "Addresses to check",
       "minzoom": 18,
@@ -703,9 +701,5 @@
   ],
   "enableShareScreen": false,
   "enableMoreQuests": false,
-  "widenFactor": 1.01,
-  "clustering": {
-    "minNeededFeatures": 25,
-    "maxZoom": 16
-  }
+  "widenFactor": 1.01
 }

@@ -1615,6 +1615,18 @@ export class ValidateLayer extends Conversion<
             context.enters("doCount").err("Use `isCounted` instead of `doCount`")
         }
 
+        if (json.source) {
+            const src = json.source
+            if (src["isOsmCache"] !== undefined) {
+                context.enters("source").err("isOsmCache is deprecated")
+            }
+            if (src["maxCacheAge"] !== undefined) {
+                context
+                    .enters("source")
+                    .err("maxCacheAge is deprecated; it is " + src["maxCacheAge"])
+            }
+        }
+
         return { raw: json, parsed: layerConfig }
     }
 }

@@ -103,9 +103,5 @@
       }
     }
   ],
-  "widenFactor": 1.5,
-  "clustering": {
-    "maxZoom": 14,
-    "minNeededElements": 100
-  }
+  "widenFactor": 1.5
 }

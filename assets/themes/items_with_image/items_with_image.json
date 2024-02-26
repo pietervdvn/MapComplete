@@ -1,6 +1,5 @@
 {
   "id": "items_with_image",
-  "hideFromOverview": true,
   "title": {
     "en": "All items with images"
   },
@@ -8,6 +7,7 @@
     "en": "A map showing all items on OSM which have an image. This theme is a very bad fit for MapComplete as someone is not able to directly add a picture. However, this theme is mostly here to include this all into the database, which'll allow this to quickly fetch images nearby for other features"
   },
   "icon": "./assets/layers/item_with_image/camera.svg",
+  "hideFromOverview": true,
   "layers": [
     "item_with_image"
   ]

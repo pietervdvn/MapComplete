@@ -135,6 +135,10 @@ export class UpdateLegacyLayer extends DesugaringStep<
         delete config["rotation"]
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
+        const src = config.source
+        delete src["isOsmCache"]
+        delete src["maxCacheAge"]
+        delete src["widenFactor"]
 
         for (const mapRenderingElement of config["mapRendering"] ?? []) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {

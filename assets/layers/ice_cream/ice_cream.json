@@ -4,7 +4,6 @@
     "en": "Ice cream parlors",
     "de": "Eisdielen"
   },
-  "minzoom": 14,
   "description": {
     "en": "A place where ice cream is sold over the counter",
     "de": "Ein Ort, an dem Eiscreme an der Theke verkauft wird"
@@ -12,6 +11,7 @@
   "source": {
     "osmTags": "amenity=ice_cream"
   },
+  "minzoom": 14,
   "title": {
     "render": {
       "en": "Ice cream parlor",

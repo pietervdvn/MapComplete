@@ -92,7 +92,6 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     this._includeClosedNotesDays +
                     "&bbox={x_min},{y_min},{x_max},{y_max}",
                 geoJsonZoomLevel: 10,
-                maxCacheAge: 0,
             },
             /* We need to set 'pass_all_features'
        There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
