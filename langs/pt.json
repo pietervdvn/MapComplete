@@ -27,6 +27,7 @@
             "selectReason": "Por favor, selecione a razão porque este elemento deve ser eliminado",
             "softDelete": "Este elemento será atualizado e ocultado nesta aplicação. <span class=\"sutil\">{reason}</span>"
         },
+        "isChanged": "Este elemento foi alterado e não corresponde a esta camada",
         "isDeleted": "Este elemento está eliminado",
         "isntAPoint": "Apenas os nós podem ser eliminados, o elemento selecionado é uma linha, área ou relação.",
         "loading": "A inspecionar as propriedades para verificar se este elemento pode ser eliminado.",
@@ -191,8 +192,10 @@
             "downloadAsPdf": "Descarregar um PDF do mapa atual",
             "downloadAsPdfHelper": "Ideal para imprimir o mapa atual",
             "downloadAsPng": "Transferir como imagem",
+            "downloadAsPngHelper": "Ideal para incluir em relatórios",
             "downloadAsSvg": "Descarregar um SVG do mapa atual",
             "downloadAsSvgHelper": "Compatível com Inkscape ou Adobe Illustrator; vai precisar de mais processamento  ",
+            "downloadAsSvgLinesOnly": "Transferir um SVG do mapa corrente apenas contendo linhas",
             "downloadCSV": "Descarregar dados visíveis como CSV",
             "downloadCSVHelper": "Compatível com LibreOffice Calc, Excel…",
             "downloadFeatureAsGeojson": "Descarregar como ficheiro GeoJSON",
@@ -205,32 +208,62 @@
             "includeMetaData": "Incluir metadados (último editor, valores calculados…)",
             "licenseInfo": "<h3>Aviso de direitos de autor</h3>Os dados fornecidos estão disponíveis sob a licença ODbL. A sua reutilização é gratuita para qualquer finalidade, mas <ul><li> é obrigatória a atribuição <b>© Contribuidores do OpenStreetMap</b></li><li>Qualquer alteração deve ser feita usando a licença</li></ul>Por favor, leia na íntegra o documento <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Licença e Direitos de Autor</a> para mais informações.",
             "noDataLoaded": "Ainda não foram descarregados dados. O descarregamento estará disponível brevemente",
+            "pdf": {
+                "current_view_generic": "Exportar um PDF da vista corrente no formato {paper_size} na orientação {orientation}"
+            },
             "title": "Descarregar dados visíveis",
             "uploadGpx": "Enviar o seu trilho para o OpenStreetMap"
         },
+        "enableGeolocationForSafariLink": "Aprenda como habilitar a permissão de geolocalização nas definições",
+        "eraseValue": "Eliminar este valor",
         "error": "Algo correu mal",
         "example": "Exemplo",
         "examples": "Exemplos",
         "fewChangesBefore": "Por favor, responda a algumas perguntas sobre os elementos existentes antes de adicionar um novo elemento.",
+        "filterPanel": {
+            "disableAll": "Desabilitar tudo",
+            "enableAll": "Habilitar tudo"
+        },
+        "geopermissionDenied": "A utilização da geolocalização foi recusada",
         "getStartedLogin": "Entrar com OpenStreetMap para começar",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma conta</a>",
         "goToInbox": "Abrir mensagens",
         "histogram": {
             "error_loading": "Não foi possível carregar o histograma"
         },
+        "labels": {
+            "background": "Mudar camada de fundo",
+            "filter": "Filtrar dados",
+            "jumpToLocation": "Ir para a sua localização atual",
+            "menu": "Menu",
+            "zoomIn": "Ampliar",
+            "zoomOut": "Diminuir"
+        },
         "layerSelection": {
             "title": "Selecionar camadas",
             "zoomInToSeeThisLayer": "Amplie para ver esta camada"
         },
+        "levelSelection": {
+            "addNewOnLevel": "Em que andar se localiza este novo ponto?",
+            "confirmLevel": "Sim, adicione {preset} no andar {level}"
+        },
         "loading": "A carregar…",
         "loadingTheme": "A carregar {theme}…",
         "loginFailed": "A autenticação no OpenStreetMap falhou",
+        "loginFailedOfflineMode": "O OpenStreetMap.org não está disponível devido a um manutenção em curso. Fazer edições será possível em breve",
+        "loginFailedReadonlyMode": "O OpenStreetMap.org encontra-se em modo de leitura devido a um manutenção em curso. Fazer edições será possível em breve",
+        "loginFailedUnreachableMode": "O OpenStreetMap.org não está disponível. Está ligado à Internet ou está a bloquear serviços de terceiros? Tente novamente mais tarde",
         "loginOnlyNeededToEdit": "se quiser editar o mapa",
         "loginToStart": "Inicie a sessão para responder a esta pergunta",
         "loginWithOpenStreetMap": "Iniciar sessão com OpenStreetMap",
         "logout": "Sair",
+        "menu": {
+            "aboutMapComplete": "Sobre MapComplete",
+            "filter": "Filtrar dados"
+        },
         "morescreen": {
             "createYourOwnTheme": "Crie o seu próprio tema MapComplete a partir do zero",
+            "enterToOpen": "Pressione Enter para abrir o tema",
             "hiddenExplanation": "Estes temas só são acessíveis a quem tem a hiperligação. Você descobriu {hidden_discovered} de {total_hidden} temas ocultos.",
             "intro": "<h3>Mais mapas temáticos?</h3>Gosta de colecionar dados geográficos? <br>Tem mais temas disponíveis.",
             "noMatchingThemes": "Nenhum tema corresponde aos seus critérios de pesquisa",
@@ -242,18 +275,26 @@
         },
         "nameInlineQuestion": "O nome desta {category} é $$$",
         "next": "Seguinte",
+        "noMatchingMapping": "Nenhuma entrada corresponde à sua procura…",
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma etiqueta selecionada",
         "notValid": "Selecione um valor válido para continuar",
         "number": "número",
         "openStreetMapIntro": "<h3>Um mapa aberto</h3><p>Um que todos podem usar e editar livremente. Um único lugar para armazenar todas as informações geográficas. Mapas diferentes, pequenos, incompatíveis e desatualizados não são necessários em nenhum lugar.</p> <p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> não é o mapa inimigo. Os dados do mapa podem ser usados livremente (com <a href=\"https://osm.org/copyright\" target=\"_blank\">atribuição e publicação das alterações a esses dados</a>). Todos podem adicionar novos dados e corrigir erros. Este site usa o OpenStreetMap. Todos os dados são de lá e suas respostas e correções são usadas em todos os lugares.</p> <p> Muitas pessoas e aplicações já usam o OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">O Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mas também os mapas no Facebook, Instagram, Apple-maps e Bing-maps são (em parte) enriquecidos com dados do OpenStreetMap.</p>",
         "openTheMap": "Abrir o mapa",
+        "openTheMapAtGeolocation": "Ampliar na sua localização",
         "opening_hours": {
+            "all_days_from": "Aberto todos os dias {ranges}",
             "closed_permanently": "Fechado por tempo desconhecido",
             "closed_until": "Fechado até {date}",
+            "error": "Não foi possível interpretar as horas de abertura",
             "error_loading": "Erro: não foi possível visualizar estes horários de funcionamento.",
+            "friday": "Na sexta-feira {ranges}",
             "loadingCountry": "A determinar o país…",
+            "monday": "Na segunda-feira {ranges}",
             "not_all_rules_parsed": "Estes horários de funcionamento são complicados. As seguintes regras são ignoradas no elemento de entrada:",
+            "on_weekdays": "Aberto nos dias da semana {ranges}",
+            "on_weekends": "Aberto aos fim-de-semanas {ranges}",
             "openTill": "até",
             "open_24_7": "Aberto 24 horas por dia, todos os dias",
             "open_during_ph": "Num feriado, isto",
@@ -261,7 +302,15 @@
             "ph_closed": "fechado",
             "ph_not_known": " ",
             "ph_open": "aberto",
-            "ph_open_as_usual": "aberto como de costume"
+            "ph_open_as_usual": "aberto como de costume",
+            "ranges": "desde as {starttime} até às {endtime}",
+            "rangescombined": "{range0} e {range1}",
+            "saturday": "No sábado {ranges}",
+            "sunday": "No domingo {ranges}",
+            "thursday": "Na quinta-feira {ranges}",
+            "tuesday": "Na terça-feira {ranges}",
+            "unknown": "As horas de abertura são desconhecidas",
+            "wednesday": "Na quarta-feira {ranges}"
         },
         "osmLinkTooltip": "Ver este objeto no OpenStreetMap para ver o histórico e mais opções de edição",
         "pdf": {
@@ -272,6 +321,18 @@
         },
         "pickLanguage": "Escolha um idioma: ",
         "poweredByOsm": "Impulsionado pelo OpenStreetMap",
+        "questionBox": {
+            "answeredMultiple": "Respondeu a {answered} questões",
+            "answeredMultipleSkippedMultiple": "Respondeu a {answered} questões e saltou {skipped} questões",
+            "answeredMultipleSkippedOne": "Respondeu a {answered} questões e saltou uma questão",
+            "answeredOne": "Respondeu a uma questão",
+            "answeredOneSkippedMultiple": "Respondeu a uma questão e saltou {skipped} questões",
+            "answeredOneSkippedOne": "Respondeu a uma questão e saltou a uma questão",
+            "done": "Sem mais perguntas! Obrigado!",
+            "reactivate": "Reativar perguntas saltadas",
+            "skippedMultiple": "Saltou {skipped} questões",
+            "skippedOne": "Saltou uma questão"
+        },
         "questions": {
             "emailIs": "O endereço de e-mail de {category} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Qual é o endereço de e-mail de {category}?",
@@ -289,18 +350,34 @@
             "error": "Alguma coisa correu mal…",
             "nothing": "Nada encontrado…",
             "search": "Procurar um local",
+            "searchShort": "Pesquisar…",
             "searching": "A procurar…"
         },
+        "searchAnswer": "Pesquisar uma opção…",
+        "share": "Partilhar",
         "sharescreen": {
             "copiedToClipboard": "Hiperligação copiada para a área de transferência",
+            "documentation": "Para mais informações nos parâmetros URL disponíveis, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>consulte a documentação</a>",
             "embedIntro": "<h3>Incorporar no seu site</h3>Por favor, insira este mapa no seu site. <br>Encorajamos a fazê-lo - nem precisa de pedir permissão. <br> É grátis e sempre será. Quanto mais pessoas estiverem a usar isto, mais valioso se torna.",
             "fsUserbadge": "Ativar o botão de iniciar sessão",
             "fsWelcomeMessage": "Mostrar a janela com a mensagem de boas-vindas e separadores associados",
             "intro": "<h3>Partilhar este mapa</h3> Partilhe este mapa copiando a hiperligação abaixo e enviando-a a amigos e familiares:",
-            "thanksForSharing": "Obrigado por partilhar!"
+            "thanksForSharing": "Obrigado por partilhar!",
+            "title": "Partilhar este mapa"
         },
         "skip": "Ignorar esta pergunta",
         "testing": "Teste - as alterações não serão guardadas",
+        "uploadError": "Ocorreu um erro a carregar alterações: {error}",
+        "uploadGpx": {
+            "choosePermission": "Escolha em baixo como o trilho deve ser partilhado:",
+            "confirm": "Confirmar carregamento",
+            "gpxServiceOffline": "O serviço GPX está indisponível, carregar não está disponível neste momento. Tente novamente mais tarde.",
+            "intro0": "Ao carregar o trilho, o OpenStreetMap.org manterá uma cópia total do mesmo.",
+            "intro1": "Consegue transferir o trilho de novo e carregar-lo em programas de edição do OpenStreetMap",
+            "meta": {
+                "descriptionIntro": "Opcionalmente, pode adicionar uma descrição ao trilho:"
+            }
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Sex",
