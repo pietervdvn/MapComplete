@@ -55,9 +55,9 @@
             "isFavourite": "Der Standort ist derzeit als Favorit markiert und wird auf allen thematischen Karten von MapComplete angezeigt, die Sie besuchen.",
             "isMarkedShort": "Als bevorzugter Standort markiert",
             "isNotMarkedShort": "Nicht als Favorit markiert",
-            "markAsFavouriteTitle": "Diesen Standort als bevorzugten Standort markieren",
+            "markAsFavouriteTitle": "Diesen Standort als Favorit markieren",
             "markDescription": "Diesen Standort zur persönlichen Liste bevorzugter Standorte hinzufügen",
-            "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen",
+            "unmark": "Standort von Favoritenliste entfernen",
             "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
         },
         "downloadGeojson": "Favoriten als geojson herunterladen",
