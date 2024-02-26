@@ -21,6 +21,8 @@
   "startLat": 53.0565,
   "startLon": 8.7492,
   "layers": [
-    "elongated_coin"
+    "elongated_coin",
+    "souvenir_coin",
+    "souvenir_note"
   ]
 }

@@ -5,6 +5,7 @@
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import { createEventDispatcher, onDestroy } from "svelte"
+  import StyleLoadingIndicator from "./StyleLoadingIndicator.svelte"
 
   /***
    * Chooses a background-layer out of available options
@@ -78,7 +79,7 @@
 {#if hasLayers}
   <form class="flex h-full w-full flex-col" on:submit|preventDefault={() => {}}>
     <button tabindex="-1" on:click={() => apply()} class="m-0 h-full w-full cursor-pointer p-1">
-      <div class="pointer-events-none h-full w-full">
+      <span class="pointer-events-none h-full w-full relative">
         <OverlayMap
           interactive={false}
           rasterLayer={rasterLayerOnMap}
@@ -86,7 +87,7 @@
           placedOverMapProperties={mapproperties}
           {visible}
         />
-      </div>
+      </span>
     </button>
     <select bind:value={$rasterLayer} class="w-full" on:keydown={handleKeyPress}>
       {#each $availableLayers as availableLayer}

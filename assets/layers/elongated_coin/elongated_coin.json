@@ -18,7 +18,7 @@
     "osmTags": {
       "and": [
         "amenity=vending_machine",
-        "vending=elongated_coin"
+        "vending~.*elongated_coin.*"
       ]
     }
   },
@@ -440,8 +440,5 @@
     "accepts_credit_cards"
   ],
   "deletion": true,
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": true
-  }
+  "allowMove": true
 }

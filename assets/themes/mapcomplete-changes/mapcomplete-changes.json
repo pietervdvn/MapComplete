@@ -287,6 +287,10 @@
                     "then": "./assets/themes/ghostbikes/logo.svg"
                   },
                   {
+                    "if": "theme=ghostsigns",
+                    "then": "./assets/themes/advertising/wall_painting.svg"
+                  },
+                  {
                     "if": "theme=grb",
                     "then": "./assets/themes/grb/logo.svg"
                   },
@@ -317,6 +321,10 @@
                   {
                     "if": "theme=indoors",
                     "then": "./assets/layers/entrance/entrance.svg"
+                  },
+                  {
+                    "if": "theme=items_with_image",
+                    "then": "./assets/layers/item_with_image/camera.svg"
                   },
                   {
                     "if": "theme=kerbs_and_crossings",

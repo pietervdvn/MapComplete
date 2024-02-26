@@ -1,0 +1,178 @@
+{
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        }
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#FFFFFF00"
+        },
+        {
+          "icon": "./assets/layers/souvenir_note/souvenir_note.svg"
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "opening_hours_24_7",
+    {
+      "id": "designs",
+      "question": {
+        "en": "How many designs are available?"
+      },
+      "freeform": {
+        "key": "note:design_count",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Number of designs (e.g. 5)",
+          "de": "Motivanzahl (z.B. 5)",
+          "es": "Número de diseños (por ejemplo, 5)",
+          "ca": "Nombre de dissenys (p. e. 5)",
+          "cs": "Počet vzorů (např. 5)"
+        }
+      },
+      "render": {
+        "en": "This machine has {note:design_count} designs available."
+      },
+      "mappings": [
+        {
+          "if": "note:design_count=1",
+          "then": {
+            "en": "This machine has one design available."
+          }
+        },
+        {
+          "if": "note:design_count=2",
+          "then": {
+            "en": "This machine has two designs available."
+          }
+        },
+        {
+          "if": "note:design_count=3",
+          "then": {
+            "en": "This machine has three designs available."
+          }
+        },
+        {
+          "if": "note:design_count=4",
+          "then": {
+            "en": "This machine has four designs available."
+          }
+        }
+      ]
+    },
+    "payment-options-split",
+    "website",
+    {
+      "question": {
+        "en": "How much does a souvenir note cost?"
+      },
+      "id": "charge",
+      "render": {
+        "en": "A souvenir note costs {charge}"
+      },
+      "freeform": {
+        "key": "charge",
+        "placeholder": {
+          "en": "Cost (e.g. 2 EUR)"
+        }
+      },
+      "mappings": [
+        {
+          "if": "charge=2 EUR",
+          "then": {
+            "en": "A souvenir note costs 2 euro"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "charge=3 EUR",
+          "then": {
+            "en": "A souvenir note costs 3 euro"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        }
+      ]
+    },
+    "denominations-coins",
+    {
+      "question": {
+        "en": "Is this machine located indoors?"
+      },
+      "id": "indoor",
+      "mappings": [
+        {
+          "if": "indoor=yes",
+          "then": {
+            "en": "This machine is located indoors."
+          }
+        },
+        {
+          "if": "indoor=no",
+          "then": {
+            "en": "This machine is located outdoors."
+          }
+        }
+      ]
+    },
+    "level",
+    "check_date"
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "id": "souvenir_note",
+  "name": {
+    "en": "Souvenir Banknote Machines"
+  },
+  "description": {
+    "en": "Layer showing machines selling souvenir banknotes"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending~.*souvenir_notes.*"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Souvenir Banknote Machine"
+    }
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a souvenir banknote machine"
+      },
+      "description": {
+        "en": "Add a machine selling souvenir banknotes"
+      },
+      "tags": [
+        "amenity=vending_machine",
+        "vending=souvenir_notes"
+      ]
+    }
+  ],
+  "filter": [
+    "open_now",
+    "accepts_debit_cards",
+    "accepts_credit_cards"
+  ],
+  "deletion": true,
+  "allowMove": true
+}

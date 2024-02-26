@@ -17,6 +17,9 @@
   export let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
     selectedElement.properties.id
   )
+  
+  
+  let stillMatches = tags.map(tags => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags))
 
   let _metatags: Record<string, string>
   onDestroy(
@@ -35,7 +38,11 @@
   )
 </script>
 
-{#if $tags._deleted === "yes"}
+{#if !$stillMatches}
+  <div class="alert"  aria-live="assertive">
+    <Tr t={Translations.t.delete.isChanged}/>
+  </div>
+{:else if $tags._deleted === "yes"}
   <div aria-live="assertive">
     <Tr t={Translations.t.delete.isDeleted} />
   </div>

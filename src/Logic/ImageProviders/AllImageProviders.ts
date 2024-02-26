@@ -10,6 +10,8 @@ import { WikidataImageProvider } from "./WikidataImageProvider"
  * A generic 'from the interwebz' image picker, without attribution
  */
 export default class AllImageProviders {
+    private static dontLoadFromPrefixes = ["https://photos.app.goo.gl/"]
+
     public static ImageAttributionSource: ImageProvider[] = [
         Imgur.singleton,
         Mapillary.singleton,
@@ -19,7 +21,8 @@ export default class AllImageProviders {
             [].concat(
                 ...Imgur.defaultValuePrefix,
                 ...WikimediaImageProvider.commonsPrefixes,
-                ...Mapillary.valuePrefixes
+                ...Mapillary.valuePrefixes,
+                ...AllImageProviders.dontLoadFromPrefixes
             )
         ),
     ]
