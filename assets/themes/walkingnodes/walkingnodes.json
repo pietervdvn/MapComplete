@@ -23,7 +23,7 @@
   "hideFromOverview": true,
   "layers": [
     {
-      "id": "node2node",
+      "id": "node2node_hiking",
       "name": {
         "en": "Node to node links",
         "de": "Knotenpunktverbindungen",
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "id": "node",
+      "id": "node_hiking",
       "name": {
         "en": "Nodes",
         "de": "Knotenpunkte",
@@ -293,6 +293,7 @@
       ],
       "override": {
         "minzoom": 16,
+        "id": "guidepost_hiking",
         "source": {
           "osmTags": {
             "and": [

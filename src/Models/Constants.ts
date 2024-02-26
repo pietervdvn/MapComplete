@@ -24,6 +24,7 @@ export default class Constants {
         "range",
         "last_click",
         "favourite",
+        "summary",
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -157,6 +158,11 @@ export default class Constants {
         "addSmall",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
+    /**
+     * The location that the MVT-layer is hosted.
+     * This is a MapLibre/MapBox vector tile server which hosts vector tiles for every (official) layer
+     */
+    public static VectorTileServer: string | undefined = Constants.config.mvt_layer_server
     public static readonly maptilerApiKey = "GvoVAJgu46I5rZapJuAy"
 
     private static isRetina(): boolean {

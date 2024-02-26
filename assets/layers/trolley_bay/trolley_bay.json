@@ -1,40 +1,69 @@
 {
   "id": "trolley_bay",
   "name": {
-    "en": "Trolley Bays"
+    "en": "Trolley Bays",
+    "de": "Einkaufswagenbuchten"
   },
   "description": {
-    "en": "Find trolley bays for shopping trolleys."
-  },
-  "title": {
-    "en": "Trolley Bay"
+    "en": "Find trolley bays for shopping trolleys.",
+    "de": "Finde Einkaufswagenbuchten für Einkaufswagen."
   },
   "source": {
     "osmTags": "amenity=trolley_bay"
   },
   "minzoom": 18,
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": true
+  "title": {
+    "en": "Trolley Bay",
+    "de": "Einkaufswagenbucht"
   },
-  "deletion": true,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/trolley_bay/trolley_bay.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a trolley bay",
+        "de": "eine Einkaufswagenbucht"
+      },
+      "tags": [
+        "amenity=trolley_bay"
+      ],
+      "description": {
+        "en": "A trolley bay for parking shopping carts.",
+        "de": "Ein Platz zum Abstellen von Einkaufswagen."
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "id": "covered",
       "question": {
-        "en": "Is this trolley bay covered?"
+        "en": "Is this trolley bay covered?",
+        "de": "Ist dieser Einkaufswagenplatz überdacht?"
       },
       "mappings": [
         {
           "if": "covered=yes",
           "then": {
-            "en": "This trolley bay is covered"
+            "en": "This trolley bay is covered",
+            "de": "Dieser Einkaufswagenplatz ist überdacht"
           }
         },
         {
           "if": "covered=no",
           "then": {
-            "en": "This trolley bay is not covered"
+            "en": "This trolley bay is not covered",
+            "de": "Dieser Einkaufswagenplatz ist nicht überdacht"
           }
         }
       ]
@@ -42,19 +71,22 @@
     {
       "id": "deposit",
       "question": {
-        "en": "Is a deposit (e.g. a coin) required for the trolleys?"
+        "en": "Is a deposit (e.g. a coin) required for the trolleys?",
+        "de": "Ist für die Einkaufswagen ein Pfand (z.B. eine Münze) erforderlich?"
       },
       "mappings": [
         {
           "if": "trolley:deposit=yes",
           "then": {
-            "en": "A deposit is required for the trolleys"
+            "en": "A deposit is required for the trolleys",
+            "de": "Für die Einkaufswagen ist ein Pfand zu hinterlegen"
           }
         },
         {
           "if": "trolley:deposit=no",
           "then": {
-            "en": "No deposit is required for the trolleys"
+            "en": "No deposit is required for the trolleys",
+            "de": "Für die Einkaufswagen ist kein Pfand erforderlich"
           }
         }
       ]
@@ -68,7 +100,8 @@
         ]
       },
       "question": {
-        "en": "What coins are accepted for the deposit?"
+        "en": "What coins are accepted for the deposit?",
+        "de": "Welche Münzen werden für die Pfandgebühr akzeptiert?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -125,7 +158,8 @@
     {
       "id": "cart_types",
       "question": {
-        "en": "What kind of special trolleys are available?"
+        "en": "What kind of special trolleys are available?",
+        "de": "Welche Art von speziellen Einkaufswagen gibt es?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -133,42 +167,48 @@
           "if": "trolley:magnifier=yes",
           "ifnot": "trolley:magnifier=no",
           "then": {
-            "en": "Trolleys with a magnifier are available"
+            "en": "Trolleys with a magnifier are available",
+            "de": "Einkaufswagen mit Lupe sind erhältlich"
           }
         },
         {
           "if": "trolley:wheelchair=yes",
           "ifnot": "trolley:wheelchair=no",
           "then": {
-            "en": "Trolleys for wheelchair users are available"
+            "en": "Trolleys for wheelchair users are available",
+            "de": "Einkaufswagen für Rollstuhlfahrer sind verfügbar"
           }
         },
         {
           "if": "trolley:children=yes",
           "ifnot": "trolley:children=no",
           "then": {
-            "en": "Trolleys for children are available"
+            "en": "Trolleys for children are available",
+            "de": "Einkaufswagen für Kinder sind verfügbar"
           }
         },
         {
           "if": "trolley:seats=yes",
           "ifnot": "trolley:seats=no",
           "then": {
-            "en": "Trolleys with seats for children are available"
+            "en": "Trolleys with seats for children are available",
+            "de": "Einkaufswagen mit Sitzen für Kinder sind verfügbar"
           }
         },
         {
           "if": "trolley:flatbed=yes",
           "ifnot": "trolley:flatbed=no",
           "then": {
-            "en": "Trolleys with a flatbed are available"
+            "en": "Trolleys with a flatbed are available",
+            "de": "Einkaufswagen mit Flachbett sind verfügbar"
           }
         },
         {
           "if": "trolley:vertical=yes",
           "ifnot": "trolley:vertical=no",
           "then": {
-            "en": "Vertical trolleys for sheet-like goods are available"
+            "en": "Vertical trolleys for sheet-like goods are available",
+            "de": "Vertikale Einkaufswagen für plattenförmige Güter sind verfügbar"
           }
         }
       ]
@@ -177,30 +217,9 @@
       "id": "indoor"
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a trolley bay"
-      },
-      "tags": [
-        "amenity=trolley_bay"
-      ],
-      "description": {
-        "en": "A trolley bay for parking shopping carts."
-      }
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "./assets/layers/trolley_bay/trolley_bay.svg"
-        }
-      ]
-    }
-  ]
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
 }

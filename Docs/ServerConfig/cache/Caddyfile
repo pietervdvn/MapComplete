@@ -1,0 +1,14 @@
+cache.mapcomplete.org {
+    reverse_proxy /summary/* {
+        to http://127.0.0.1:2345
+    }
+    
+    reverse_proxy /extractgraph {
+        to http://127.0.0.1:2346
+    }
+    
+    reverse_proxy /* {
+        to http://127.0.0.1:7800
+    }
+
+}

@@ -135,6 +135,10 @@ export class UpdateLegacyLayer extends DesugaringStep<
         delete config["rotation"]
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
+        const src = config.source
+        delete src["isOsmCache"]
+        delete src["maxCacheAge"]
+        delete src["widenFactor"]
 
         for (const mapRenderingElement of config["mapRendering"] ?? []) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
@@ -269,6 +273,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
         oldThemeConfig.layers = Utils.NoNull(oldThemeConfig.layers)
         delete oldThemeConfig["language"]
         delete oldThemeConfig["version"]
+        delete oldThemeConfig["clustering"]
 
         if (oldThemeConfig.startLat === 0) {
             delete oldThemeConfig.startLat

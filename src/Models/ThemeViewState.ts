@@ -62,6 +62,12 @@ import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFe
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
+import {
+    SummaryTileSource,
+    SummaryTileSourceRewriter,
+} from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
+import summaryLayer from "../assets/generated/layers/summary.json"
+import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Locale from "../UI/i18n/Locale"
 
 /**
@@ -107,6 +113,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly closestFeatures: NearbyFeatureSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
+    readonly featureSummary: SummaryTileSourceRewriter
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
@@ -139,9 +146,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Triggered by navigating the map with arrows or by pressing 'space' or 'enter'
      */
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-    private readonly newPointDialog: FilteredLayer
+    public readonly toCacheSavers: ReadonlyMap<string, SaveFeatureSourceToLocalStorage>
 
-    constructor(layout: LayoutConfig) {
+    constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
         this.layout = layout
         this.featureSwitches = new FeatureSwitchState(layout)
@@ -224,6 +231,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.mapProperties,
                 this.osmConnection.Backend(),
                 (id) => self.layerState.filteredLayers.get(id).isDisplayed,
+                mvtAvailableLayers,
                 this.fullNodeDatabase
             )
 
@@ -288,17 +296,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             this.perLayer = perLayer.perLayer
         }
-        this.perLayer.forEach((fs) => {
-            new SaveFeatureSourceToLocalStorage(
-                this.osmConnection.Backend(),
-                fs.layer.layerDef.id,
-                15,
-                fs,
-                this.featureProperties,
-                fs.layer.layerDef.maxAgeOfCache
-            )
-        })
-        this.newPointDialog = this.layerState.filteredLayers.get("last_click")
 
         this.floors = this.featuresInView.features.stabilized(500).map((features) => {
             if (!features) {
@@ -332,10 +329,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             return sorted
         })
 
-        this.lastClickObject = new LastClickFeatureSource(
-            this.mapProperties.lastClickLocation,
-            this.layout
-        )
+        this.lastClickObject = new LastClickFeatureSource(this.layout)
 
         this.osmObjectDownloader = new OsmObjectDownloader(
             this.osmConnection.Backend(),
@@ -362,6 +356,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         this.favourites = new FavouritesFeatureSource(this)
 
+        this.featureSummary = this.setupSummaryLayer()
+        this.toCacheSavers = this.initSaveToLocalStorage()
         this.initActors()
         this.drawSpecialLayers()
         this.initHotkeys()
@@ -387,6 +383,25 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
     }
 
+    public initSaveToLocalStorage() {
+        const toLocalStorage = new Map<string, SaveFeatureSourceToLocalStorage>()
+        this.perLayer.forEach((fs, layerId) => {
+            if (fs.layer.layerDef.source.geojsonSource !== undefined) {
+                return // We don't cache external data layers
+            }
+            console.log("Setting up a local store feature sink for", layerId)
+            const storage = new SaveFeatureSourceToLocalStorage(
+                this.osmConnection.Backend(),
+                fs.layer.layerDef.id,
+                LayoutSource.fromCacheZoomLevel,
+                fs,
+                this.featureProperties,
+                fs.layer.layerDef.maxAgeOfCache
+            )
+            toLocalStorage.set(layerId, storage)
+        })
+        return toLocalStorage
+    }
     public showNormalDataOn(map: Store<MlMap>): ReadonlyMap<string, FilteringFeatureSource> {
         const filteringFeatureSource = new Map<string, FilteringFeatureSource>()
         this.perLayer.forEach((fs, layerName) => {
@@ -458,16 +473,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         this.userRelatedState.markLayoutAsVisited(this.layout)
 
-        this.selectedElement.addCallbackAndRunD((feature) => {
-            // As soon as we have a selected element, we clear the selected element
-            // This is to work around maplibre, which'll _first_ register the click on the map and only _then_ on the feature
-            // The only exception is if the last element is the 'add_new'-button, as we don't want it to disappear
-            if (feature.properties.id === "last_click") {
-                return
-            }
-            this.lastClickObject.features.setData([])
-        })
-
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
                 Zoomcontrol.resetzoom()
@@ -495,13 +500,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 if (!toSelect) {
                     return
                 }
-                const layer = this.layout.getMatchingLayer(toSelect.properties)
                 this.selectedElement.setData(undefined)
                 this.selectedElement.setData(toSelect)
             })
             return
         }
-        const layer = this.layout.getMatchingLayer(toSelect.properties)
         this.selectedElement.setData(undefined)
         this.selectedElement.setData(toSelect)
     }
@@ -650,6 +653,35 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
+    private setupSummaryLayer(): SummaryTileSourceRewriter {
+        /**
+         * MaxZoom for the summary layer
+         */
+        const normalLayers = this.layout.layers.filter(
+            (l) =>
+                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
+                !l.id.startsWith("note_import")
+        )
+        const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
+
+        const layers = this.layout.layers.filter(
+            (l) =>
+                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
+                l.source.geojsonSource === undefined &&
+                l.doCount
+        )
+        const url = new URL(Constants.VectorTileServer)
+        const summaryTileSource = new SummaryTileSource(
+            url.protocol + "//" + url.host + "/summary",
+            layers.map((l) => l.id),
+            this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z), 0)),
+            this.mapProperties,
+            {
+                isActive: this.mapProperties.zoom.map((z) => z <= maxzoom),
+            }
+        )
+        return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
+    }
     /**
      * Add the special layers to the map
      */
@@ -677,6 +709,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             current_view: this.currentView,
             favourite: this.favourites,
+            summary: this.featureSummary,
         }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
@@ -714,15 +747,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
             rangeIsDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
         }
 
-        // enumarate all 'normal' layers and match them with the appropriate 'special' layer - if applicable
+        // enumerate all 'normal' layers and match them with the appropriate 'special' layer - if applicable
         this.layerState.filteredLayers.forEach((flayer) => {
             const id = flayer.layerDef.id
             const features: FeatureSource = specialLayers[id]
             if (features === undefined) {
                 return
             }
-            if (id === "favourite") {
-                console.log("Matching special layer", id, flayer)
+            if (id === "summary") {
+                return
             }
 
             this.featureProperties.trackFeatureSource(features)
@@ -734,6 +767,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 selectedElement: this.selectedElement,
             })
         })
+
+        new ShowDataLayer(this.map, {
+            features: specialLayers.summary,
+            layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
+            // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
+            selectedElement: this.selectedElement,
+        })
     }
 
     /**
@@ -742,9 +782,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     private initActors() {
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
-                console.trace("Unselected")
-                // We did _unselect_ an item - we always remove the lastclick-object
-                this.lastClickObject.features.setData([])
                 this.focusOnMap()
             }
         })

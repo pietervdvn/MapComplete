@@ -275,6 +275,5 @@
   "enableLayers": false,
   "enableSearch": false,
   "enableBackgroundLayerSelection": false,
-  "widenFactor": 0.05,
-  "clustering": false
+  "widenFactor": 0.05
 }

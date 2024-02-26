@@ -5658,6 +5658,12 @@
             "render": "Information board"
         }
     },
+    "item_with_image": {
+        "name": "Items with at least one image",
+        "title": {
+            "render": "POI with image"
+        }
+    },
     "kerbs": {
         "description": "A layer showing kerbs.",
         "filter": {
@@ -6670,39 +6676,36 @@
                         "then": "This is a disabled parking space."
                     },
                     "3": {
-                        "then": "This is a private parking space."
-                    },
-                    "4": {
                         "then": "This is parking space reserved for charging vehicles."
                     },
-                    "5": {
+                    "4": {
                         "then": "This is parking space reserved for deliveries."
                     },
-                    "6": {
+                    "5": {
                         "then": "This is parking space reserved for heavy goods vehicles."
                     },
-                    "7": {
+                    "6": {
                         "then": "This is parking space reserved for caravans or RVs."
                     },
-                    "8": {
+                    "7": {
                         "then": "This is parking space reserved for buses."
                     },
-                    "9": {
+                    "8": {
                         "then": "This is parking space reserved for motorcycles."
                     },
-                    "10": {
+                    "9": {
                         "then": "This is a parking space reserved for parents with children."
                     },
-                    "11": {
+                    "10": {
                         "then": "This is a parking space reserved for staff."
                     },
-                    "12": {
+                    "11": {
                         "then": "This is a parking space reserved for taxis."
                     },
-                    "13": {
+                    "12": {
                         "then": "This is a parking space reserved for vehicles towing a trailer."
                     },
-                    "14": {
+                    "13": {
                         "then": "This is a parking space reserved for car sharing."
                     }
                 },
@@ -6996,6 +6999,101 @@
             "render": "Playground"
         }
     },
+    "playground_equipment": {
+        "description": "Layer showing playground equipment",
+        "name": "Playground equipment",
+        "presets": {
+            "0": {
+                "description": "An exact type is asked later",
+                "title": "a playground device"
+            }
+        },
+        "tagRenderings": {
+            "type": {
+                "freeform": {
+                    "placeholder": "Type of device"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This is a swing"
+                    },
+                    "1": {
+                        "then": "This is a structure consisting of several connected playground devices"
+                    },
+                    "2": {
+                        "then": "This is a slide"
+                    },
+                    "3": {
+                        "then": "This is a sand pit"
+                    },
+                    "4": {
+                        "then": "This is a spring rider"
+                    },
+                    "5": {
+                        "then": "This is a climbing frame"
+                    },
+                    "6": {
+                        "then": "This is a seesaw"
+                    },
+                    "7": {
+                        "then": "This is a playhouse"
+                    },
+                    "8": {
+                        "then": "This is a roundabout"
+                    },
+                    "9": {
+                        "then": "This is a basket swing"
+                    },
+                    "10": {
+                        "then": "This is a zip wire"
+                    },
+                    "11": {
+                        "then": "This is a horizontal bar"
+                    },
+                    "12": {
+                        "then": "This is a hopscotch"
+                    },
+                    "13": {
+                        "then": "This is a splash pad"
+                    },
+                    "14": {
+                        "then": "This is a climbing wall"
+                    },
+                    "15": {
+                        "then": "This is a map"
+                    },
+                    "16": {
+                        "then": "This is a bridge (either as a standalone device or as part of a larger structure)"
+                    },
+                    "17": {
+                        "then": "This is a bouncy cushion"
+                    },
+                    "18": {
+                        "then": "This is an activity panel"
+                    },
+                    "19": {
+                        "then": "This is a teen shelter"
+                    },
+                    "20": {
+                        "then": "This is a funnel used to play with funnel ball"
+                    },
+                    "21": {
+                        "then": "This is a spinning circle"
+                    }
+                },
+                "question": "What kind of device is this?",
+                "render": "This is a {playground}"
+            },
+            "wheelchair-access": {
+                "override": {
+                    "question": "Is this device accessible by wheelchair?"
+                }
+            }
+        },
+        "title": {
+            "render": "Playground device"
+        }
+    },
     "postboxes": {
         "description": "The layer showing postboxes.",
         "name": "Postboxes",
@@ -7010,6 +7108,43 @@
     },
     "postoffices": {
         "description": "A layer showing post offices.",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Offers letter posting"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offers parcel posting"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Offers pickup of missed parcels"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Accepts pickup of parcels sent here"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Sells stamps"
+                    }
+                }
+            }
+        },
         "name": "Post offices",
         "presets": {
             "0": {
@@ -8566,6 +8701,125 @@
             "render": "Slow road"
         }
     },
+    "souvenir_coin": {
+        "description": "Layer showing machines selling souvenir coins",
+        "name": "Souvenir Coin Machines",
+        "presets": {
+            "0": {
+                "description": "Add a machine selling souvenir coins",
+                "title": "a souvenir coin machine"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Cost (e.g. 2 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "A souvenir coin costs 2 euro"
+                    }
+                },
+                "question": "How much does a souvenir coin cost?",
+                "render": "A souvenir coins costs {charge}"
+            },
+            "designs": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "This machine has one design available"
+                        },
+                        "1": {
+                            "then": "This machine has two designs available"
+                        },
+                        "2": {
+                            "then": "This machine has three designs available"
+                        },
+                        "3": {
+                            "then": "This machine has four designs available"
+                        }
+                    },
+                    "render": "This machine has {coin:design_count} designs available"
+                }
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "This machine is located indoors."
+                    },
+                    "1": {
+                        "then": "This machine is located outdoors."
+                    }
+                },
+                "question": "Is this machine located indoors?"
+            }
+        },
+        "title": {
+            "render": "Souvenir Coin Machine"
+        }
+    },
+    "souvenir_note": {
+        "description": "Layer showing machines selling souvenir banknotes",
+        "name": "Souvenir Banknote Machines",
+        "presets": {
+            "0": {
+                "description": "Add a machine selling souvenir banknotes",
+                "title": "a souvenir banknote machine"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Cost (e.g. 2 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "A souvenir note costs 2 euro"
+                    },
+                    "1": {
+                        "then": "A souvenir note costs 3 euro"
+                    }
+                },
+                "question": "How much does a souvenir note cost?",
+                "render": "A souvenir note costs {charge}"
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Number of designs (e.g. 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This machine has one design available."
+                    },
+                    "1": {
+                        "then": "This machine has two designs available."
+                    },
+                    "2": {
+                        "then": "This machine has three designs available."
+                    },
+                    "3": {
+                        "then": "This machine has four designs available."
+                    }
+                },
+                "question": "How many designs are available?",
+                "render": "This machine has {note:design_count} designs available."
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "This machine is located indoors."
+                    },
+                    "1": {
+                        "then": "This machine is located outdoors."
+                    }
+                },
+                "question": "Is this machine located indoors?"
+            }
+        },
+        "title": {
+            "render": "Souvenir Banknote Machine"
+        }
+    },
     "speed_camera": {
         "description": "Layer showing speed cameras",
         "name": "Speed Camera",
@@ -9064,6 +9318,11 @@
         },
         "title": {
             "render": "Stripclub"
+        }
+    },
+    "summary": {
+        "title": {
+            "render": "Summary"
         }
     },
     "surveillance_camera": {

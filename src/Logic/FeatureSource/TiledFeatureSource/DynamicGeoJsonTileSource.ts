@@ -1,11 +1,11 @@
-import { Store } from "../../UIEventSource"
-import DynamicTileSource from "./DynamicTileSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
+import { UpdatableDynamicTileSource } from "./DynamicTileSource"
 import { Utils } from "../../../Utils"
 import GeoJsonSource from "../Sources/GeoJsonSource"
 import { BBox } from "../../BBox"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 
-export default class DynamicGeoJsonTileSource extends DynamicTileSource {
+export default class DynamicGeoJsonTileSource extends UpdatableDynamicTileSource {
     private static whitelistCache = new Map<string, any>()
 
     constructor(
@@ -65,7 +65,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
 
         const blackList = new Set<string>()
         super(
-            source.geojsonZoomLevel,
+            new ImmutableStore(source.geojsonZoomLevel),
             layer.minzoom,
             (zxy) => {
                 if (whitelist !== undefined) {

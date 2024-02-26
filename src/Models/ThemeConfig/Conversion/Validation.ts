@@ -283,6 +283,15 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
         }
 
+        for (let i = 0; i < theme.layers.length; i++) {
+            const layer = theme.layers[i]
+            if (!layer.id.match("[a-z][a-z0-9_]*")) {
+                context
+                    .enters("layers", i, "id")
+                    .err("Invalid ID:" + layer.id + "should match [a-z][a-z0-9_]*")
+            }
+        }
+
         return json
     }
 }
@@ -363,6 +372,34 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson> {
         }
         if (json.socialImage === "") {
             context.warn("Social image for theme " + json.id + " is the emtpy string")
+        }
+        if (json["clustering"]) {
+            context.warn("Obsolete field `clustering` is still around")
+        }
+        {
+            for (let i = 0; i < json.layers.length; i++) {
+                const l = json.layers[i]
+                if (l["override"]?.["source"] === undefined) {
+                    continue
+                }
+                if (l["override"]?.["source"]?.["geoJson"]) {
+                    continue // We don't care about external data as we won't cache it anyway
+                }
+                if (l["override"]["id"] !== undefined) {
+                    continue
+                }
+                context
+                    .enters("layers", i)
+                    .err("A layer which changes the source-tags must also change the ID")
+            }
+        }
+
+        if (json["overideAll"]) {
+            context
+                .enter("overideAll")
+                .err(
+                    "'overrideAll' is spelled with _two_ `r`s. You only wrote a single one of them."
+                )
         }
         return json
     }
@@ -1035,7 +1072,8 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             new On("render", new ValidatePossibleLinks()),
             new On("question", new ValidatePossibleLinks()),
             new On("questionHint", new ValidatePossibleLinks()),
-            new On("mappings", new Each(new On("then", new ValidatePossibleLinks())))
+            new On("mappings", new Each(new On("then", new ValidatePossibleLinks()))),
+            new MiscTagRenderingChecks()
         )
     }
 }
@@ -1070,8 +1108,9 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             if (json.id?.toLowerCase() !== json.id) {
                 context.enter("id").err(`The id of a layer should be lowercase: ${json.id}`)
             }
-            if (json.id?.match(/[a-z0-9-_]/) == null) {
-                context.enter("id").err(`The id of a layer should match [a-z0-9-_]*: ${json.id}`)
+            const layerRegex = /[a-zA-Z][a-zA-Z_0-9]+/
+            if (json.id.match(layerRegex) === null) {
+                context.enter("id").err("Invalid ID. A layer ID should match " + layerRegex.source)
             }
         }
 
@@ -1572,6 +1611,22 @@ export class ValidateLayer extends Conversion<
             }
         }
 
+        if (json["doCount"]) {
+            context.enters("doCount").err("Use `isCounted` instead of `doCount`")
+        }
+
+        if (json.source) {
+            const src = json.source
+            if (src["isOsmCache"] !== undefined) {
+                context.enters("source").err("isOsmCache is deprecated")
+            }
+            if (src["maxCacheAge"] !== undefined) {
+                context
+                    .enters("source")
+                    .err("maxCacheAge is deprecated; it is " + src["maxCacheAge"])
+            }
+        }
+
         return { raw: json, parsed: layerConfig }
     }
 }
@@ -1772,5 +1827,81 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
         }
 
         return json
+    }
+}
+
+export class ValidateThemeEnsemble extends Conversion<
+    LayoutConfig[],
+    Map<
+        string,
+        {
+            tags: TagsFilter
+            foundInTheme: string[]
+        }
+    >
+> {
+    constructor() {
+        super(
+            "Validates that all themes together are logical, i.e. no duplicate ids exists within (overriden) themes",
+            [],
+            "ValidateThemeEnsemble"
+        )
+    }
+
+    convert(
+        json: LayoutConfig[],
+        context: ConversionContext
+    ): Map<
+        string,
+        {
+            tags: TagsFilter
+            foundInTheme: string[]
+        }
+    > {
+        const idToSource = new Map<string, { tags: TagsFilter; foundInTheme: string[] }>()
+
+        for (const theme of json) {
+            for (const layer of theme.layers) {
+                if (typeof layer.source === "string") {
+                    continue
+                }
+                if (Constants.priviliged_layers.indexOf(<any>layer.id) >= 0) {
+                    continue
+                }
+                if (!layer.source) {
+                    console.log(theme, layer, layer.source)
+                    context.enters(theme.id, "layers", "source", layer.id).err("No source defined")
+                    continue
+                }
+                if (layer.source.geojsonSource) {
+                    continue
+                }
+                const id = layer.id
+                const tags = layer.source.osmTags
+                if (!idToSource.has(id)) {
+                    idToSource.set(id, { tags, foundInTheme: [theme.id] })
+                    continue
+                }
+
+                const oldTags = idToSource.get(id).tags
+                const oldTheme = idToSource.get(id).foundInTheme
+                if (oldTags.shadows(tags) && tags.shadows(oldTags)) {
+                    // All is good, all is well
+                    oldTheme.push(theme.id)
+                    continue
+                }
+                context.err(
+                    [
+                        "The layer with id '" +
+                            id +
+                            "' is found in multiple themes with different tag definitions:",
+                        "\t In theme " + oldTheme + ":\t" + oldTags.asHumanString(false, false, {}),
+                        "\tIn theme " + theme.id + ":\t" + tags.asHumanString(false, false, {}),
+                    ].join("\n")
+                )
+            }
+        }
+
+        return idToSource
     }
 }

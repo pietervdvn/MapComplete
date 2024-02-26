@@ -16,7 +16,6 @@ import mcChanges from "../../src/assets/generated/themes/mapcomplete-changes.jso
 import SvelteUIElement from "./Base/SvelteUIElement"
 import Filterview from "./BigComponents/Filterview.svelte"
 import FilteredLayer from "../Models/FilteredLayer"
-import DownloadButton from "./DownloadFlow/DownloadButton.svelte"
 import { SubtleButton } from "./Base/SubtleButton"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { Polygon } from "geojson"

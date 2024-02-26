@@ -290,7 +290,7 @@
       ]
     },
     {
-      "id": "all_streets",
+      "id": "not_cyclestreets",
       "name": {
         "nl": "Alle straten",
         "en": "All streets",
@@ -403,7 +403,8 @@
           },
           "width": "5"
         }
-      ]
+      ],
+      "isCounted": false
     }
   ],
   "overrideAll": {
@@ -768,9 +769,5 @@
       }
     ]
   },
-  "widenFactor": 2,
-  "clustering": {
-    "maxZoom": 12,
-    "minNeededElements": 200
-  }
+  "widenFactor": 2
 }

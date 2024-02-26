@@ -1,5 +1,5 @@
 import { Feature } from "geojson"
-import { FeatureSource } from "../FeatureSource"
+import { UpdatableFeatureSource } from "../FeatureSource"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import { Or } from "../../Tags/Or"
@@ -12,7 +12,7 @@ import { BBox } from "../../BBox"
  * A wrapper around the 'Overpass'-object.
  * It has more logic and will automatically fetch the data for the right bbox and the active layers
  */
-export default class OverpassFeatureSource implements FeatureSource {
+export default class OverpassFeatureSource implements UpdatableFeatureSource {
     /**
      * The last loaded features, as geojson
      */
@@ -60,60 +60,11 @@ export default class OverpassFeatureSource implements FeatureSource {
     }
 
     /**
-     * Creates the 'Overpass'-object for the given layers
-     * @param interpreterUrl
-     * @param layersToDownload
-     * @constructor
-     * @private
-     */
-    private GetFilter(interpreterUrl: string, layersToDownload: LayerConfig[]): Overpass {
-        let filters: TagsFilter[] = layersToDownload.map((layer) => layer.source.osmTags)
-        filters = Utils.NoNull(filters)
-        if (filters.length === 0) {
-            return undefined
-        }
-        return new Overpass(new Or(filters), [], interpreterUrl, this.state.overpassTimeout)
-    }
-
-    /**
-     *
-     * @private
-     */
-    private async updateAsyncIfNeeded(): Promise<void> {
-        if (!this._isActive?.data) {
-            return
-        }
-        if (this.runningQuery.data) {
-            console.log("Still running a query, not updating")
-            return undefined
-        }
-
-        if (this.timeout.data > 0) {
-            console.log("Still in timeout - not updating")
-            return undefined
-        }
-        const requestedBounds = this.state.bounds.data
-        if (
-            this._lastQueryBBox !== undefined &&
-            requestedBounds.isContainedIn(this._lastQueryBBox)
-        ) {
-            return undefined
-        }
-        const result = await this.updateAsync()
-        if (!result) {
-            return
-        }
-        const [bounds, _, __] = result
-        this._lastQueryBBox = bounds
-    }
-
-    /**
      * Download the relevant data from overpass. Attempt to use a different server; only downloads the relevant layers
      * @private
      */
-    private async updateAsync(): Promise<[BBox, Date, LayerConfig[]]> {
+    public async updateAsync(): Promise<void> {
         let data: any = undefined
-        let date: Date = undefined
         let lastUsed = 0
 
         const layersToDownload = []
@@ -172,7 +123,7 @@ export default class OverpassFeatureSource implements FeatureSource {
                     return undefined
                 }
                 this.runningQuery.setData(true)
-                ;[data, date] = await overpass.queryGeoJson(bounds)
+                data = (await overpass.queryGeoJson(bounds))[0]
             } catch (e) {
                 self.retries.data++
                 self.retries.ping()
@@ -205,13 +156,55 @@ export default class OverpassFeatureSource implements FeatureSource {
 
             console.log("Overpass returned", data.features.length, "features")
             self.features.setData(data.features)
-            return [bounds, date, layersToDownload]
+            this._lastQueryBBox = bounds
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
-            return undefined
         } finally {
             self.retries.setData(0)
             self.runningQuery.setData(false)
         }
+    }
+
+    /**
+     * Creates the 'Overpass'-object for the given layers
+     * @param interpreterUrl
+     * @param layersToDownload
+     * @constructor
+     * @private
+     */
+    private GetFilter(interpreterUrl: string, layersToDownload: LayerConfig[]): Overpass {
+        let filters: TagsFilter[] = layersToDownload.map((layer) => layer.source.osmTags)
+        filters = Utils.NoNull(filters)
+        if (filters.length === 0) {
+            return undefined
+        }
+        return new Overpass(new Or(filters), [], interpreterUrl, this.state.overpassTimeout)
+    }
+
+    /**
+     *
+     * @private
+     */
+    private async updateAsyncIfNeeded(): Promise<void> {
+        if (!this._isActive?.data) {
+            return
+        }
+        if (this.runningQuery.data) {
+            console.log("Still running a query, not updating")
+            return undefined
+        }
+
+        if (this.timeout.data > 0) {
+            console.log("Still in timeout - not updating")
+            return undefined
+        }
+        const requestedBounds = this.state.bounds.data
+        if (
+            this._lastQueryBBox !== undefined &&
+            requestedBounds.isContainedIn(this._lastQueryBBox)
+        ) {
+            return undefined
+        }
+        await this.updateAsync()
     }
 }

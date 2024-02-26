@@ -42,7 +42,8 @@
         "if": "parking_space=charging",
         "then": {
           "en": "Electric Vehicle Charging Parking Space",
-          "nl": "Parkeerplek voor opladen van elektrische voertuigen"
+          "nl": "Parkeerplek voor opladen van elektrische voertuigen",
+          "de": "Parkplatz zum Laden von Elektrofahrzeugen"
         }
       }
     ]
@@ -61,10 +62,6 @@
               {
                 "if": "parking_space=charging",
                 "then": "./assets/themes/charging_stations/plug.svg"
-              },
-              {
-                "if": "parking_space=private",
-                "then": "./assets/layers/parking_spaces/parking_space_private.svg"
               },
               {
                 "if": "parking_space=bus",
@@ -136,17 +133,6 @@
             "pl": "To jest miejsce parkingowe dla niepełnosprawnych.",
             "ca": "Aquesta és una plaça d'aparcament per a minusvàlids.",
             "cs": "Jedná se o parkovací místo pro osoby se zdravotním postižením."
-          }
-        },
-        {
-          "if": "parking_space=private",
-          "then": {
-            "en": "This is a private parking space.",
-            "de": "Dies ist ein privater Stellplatz.",
-            "nl": "Dit is een privéparkeerplek.",
-            "pl": "To jest prywatne miejsce parkingowe.",
-            "ca": "Es tracta d'una plaça d'aparcament privada.",
-            "cs": "Jedná se o soukromé parkovací místo."
           }
         },
         {

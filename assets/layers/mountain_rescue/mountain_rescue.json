@@ -1,6 +1,23 @@
 {
-  "credits": "Not logged in",
+  "id": "mountain_rescue",
+  "name": {
+    "en": "Mountain rescue stations",
+    "de": "Bergrettungsstationen"
+  },
+  "description": {
+    "en": "A building where first aid responders store material and might be on watch",
+    "de": "Ein Gebäude, in dem die Ersthelfer Material lagern und möglicherweise Wache halten"
+  },
+  "source": {
+    "osmTags": "emergency=mountain_rescue"
+  },
   "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Mountain rescue station",
+      "de": "Bergrettungsstation"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -19,42 +36,29 @@
       "rotation": "45"
     }
   ],
-  "tagRenderings": [
-    "images"
-  ],
   "lineRendering": [
     {
       "width": "3",
       "color": "#ed333b"
     }
   ],
-  "id": "mountain_rescue",
-  "name": {
-    "en": "Mountain rescue stations"
-  },
-  "description": {
-    "en": "A building where first aid responders store material and might be on watch"
-  },
-  "source": {
-    "osmTags": "emergency=mountain_rescue"
-  },
-  "title": {
-    "render": {
-      "en": "Mountain rescue station"
-    }
-  },
-  "deletion": true,
-  "allowMove": {
-    "enableRelocation": false
-  },
   "presets": [
     {
       "title": {
-        "en": "a mountain rescue station"
+        "en": "a mountain rescue station",
+        "de": "eine Bergrettungsstation"
       },
       "tags": [
         "emergency=mountain_rescue"
       ]
     }
-  ]
+  ],
+  "tagRenderings": [
+    "images"
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableRelocation": false
+  },
+  "credits": "Not logged in"
 }

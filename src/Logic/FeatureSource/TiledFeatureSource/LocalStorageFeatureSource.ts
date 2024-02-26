@@ -1,5 +1,5 @@
 import DynamicTileSource from "./DynamicTileSource"
-import { Store } from "../../UIEventSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
 import { BBox } from "../../BBox"
 import TileLocalStorage from "../Actors/TileLocalStorage"
 import { Feature } from "geojson"
@@ -27,14 +27,14 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
             options?.maxAge ?? 24 * 60 * 60
         )
         super(
-            zoomlevel,
+            new ImmutableStore(zoomlevel),
             layer.minzoom,
             (tileIndex) =>
                 new StaticFeatureSource(
                     storage.getTileSource(tileIndex).mapD((features) => {
                         if (features.length === undefined) {
                             console.trace("These are not features:", features)
-                            storage.invalidate(zoomlevel, tileIndex)
+                            storage.invalidate(tileIndex)
                             return []
                         }
                         return features.filter((f) => !f.properties.id.match(/(node|way)\/-[0-9]+/))

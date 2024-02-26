@@ -11,6 +11,7 @@
   "source": {
     "osmTags": "amenity=ice_cream"
   },
+  "minzoom": 14,
   "title": {
     "render": {
       "en": "Ice cream parlor",

@@ -10,8 +10,7 @@
   },
   "source": {
     "osmTags": "mr_taskId~*",
-    "geoJson": "https://maproulette.org/api/v2/challenge/view/27971",
-    "isOsmCache": false
+    "geoJson": "https://maproulette.org/api/v2/challenge/view/27971"
   },
   "title": {
     "render": {

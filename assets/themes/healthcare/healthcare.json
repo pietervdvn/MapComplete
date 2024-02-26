@@ -39,7 +39,7 @@
     {
       "builtin": "shops",
       "override": {
-        "id": "medical-shops",
+        "id": "medical_shops",
         "minzoom": 13,
         "=filter": [
           "open_now",
@@ -113,6 +113,7 @@
       "override": {
         "=presets": [],
         "name": null,
+        "doCount": false,
         "minzoom": 18
       }
     }

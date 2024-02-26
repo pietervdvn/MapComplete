@@ -20,6 +20,8 @@ import { OsmTags } from "../Models/OsmFeature"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
+import { SummaryTileSourceRewriter } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
+import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
 
 /**
  * The state needed to render a special Visualisation.
@@ -30,12 +32,13 @@ export interface SpecialVisualizationState {
     readonly featureSwitches: FeatureSwitchState
 
     readonly layerState: LayerState
+    readonly featureSummary: SummaryTileSourceRewriter
     readonly featureProperties: {
         getStore(id: string): UIEventSource<Record<string, string>>
         trackFeature?(feature: { properties: OsmTags })
     }
 
-    readonly indexedFeatures: IndexedFeatureSource
+    readonly indexedFeatures: IndexedFeatureSource & LayoutSource
     /**
      * Some features will create a new element that should be displayed.
      * These can be injected by appending them to this featuresource (and pinging it)
@@ -76,7 +79,6 @@ export interface SpecialVisualizationState {
         readonly preferencesAsTags: UIEventSource<Record<string, string>>
         readonly language: UIEventSource<string>
     }
-    readonly lastClickObject: WritableFeatureSource
 
     readonly availableLayers: Store<RasterLayerPolygon[]>
 

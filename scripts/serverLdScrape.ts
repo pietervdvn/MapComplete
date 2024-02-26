@@ -1,5 +1,5 @@
 import Script from "../scripts/Script"
-import { Server } from "../scripts/server"
+import { Server } from "./server"
 import { Utils } from "../src/Utils"
 import parse from "node-html-parser"
 class ServerLdScrape extends Script {
@@ -8,20 +8,24 @@ class ServerLdScrape extends Script {
     }
     async main(args: string[]): Promise<void> {
         const port = Number(args[0] ?? 2346)
-        const cache: Record<string, any> = []
+        const cache: Record<string, { date: Date; contents: any }> = {}
         new Server(port, {}, [
             {
                 mustMatch: "extractgraph",
                 mimetype: "application/ld+json",
                 async handle(content, searchParams: URLSearchParams) {
                     const url = searchParams.get("url")
-                    console.log("Fetching", url)
-                    if (cache[url]) {
-                        return JSON.stringify(cache[url])
+                    if (cache[url] !== undefined) {
+                        const { date, contents } = cache[url]
+                        // In seconds
+                        const tdiff = (new Date().getTime() - date.getTime()) / 1000
+                        if (tdiff < 24 * 60 * 60) {
+                            return contents
+                        }
                     }
                     const dloaded = await Utils.download(url, {
                         "User-Agent":
-                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36", //     "MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
+                            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36", // MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
                     })
                     // return dloaded
                     const parsed = parse(dloaded)
@@ -41,8 +45,6 @@ class ServerLdScrape extends Script {
                             console.error(e)
                         }
                     }
-
-                    return JSON.stringify({})
                 },
             },
         ])

@@ -28,8 +28,6 @@ import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
-import SvelteUIElement from "../../UI/Base/SvelteUIElement"
-import Statistics from "../../assets/svg/Statistics.svelte"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -46,7 +44,6 @@ export default class LayerConfig extends WithContextLoader {
     public readonly isShown: TagsFilter
     public minzoom: number
     public minzoomVisible: number
-    public readonly maxzoom: number
     public readonly title?: TagRenderingConfig
     public readonly titleIcons: TagRenderingConfig[]
     public readonly mapRendering: PointRenderingConfig[]
@@ -56,6 +53,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly allowMove: MoveConfig | null
     public readonly allowSplit: boolean
     public readonly shownByDefault: boolean
+    public readonly doCount: boolean
     /**
      * In seconds
      */
@@ -161,6 +159,7 @@ export default class LayerConfig extends WithContextLoader {
         }
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom
         this.shownByDefault = json.shownByDefault ?? true
+        this.doCount = json.isCounted ?? true
         this.forceLoad = json.forceLoad ?? false
         if (json.presets === null) json.presets = undefined
         if (json.presets !== undefined && json.presets?.map === undefined) {
@@ -465,9 +464,7 @@ export default class LayerConfig extends WithContextLoader {
                     return [
                         new Combine([
                             new Link(
-                                Utils.runningFromConsole
-                                    ? "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>"
-                                    : new SvelteUIElement(Statistics, { class: "w-4 h-4 mr-2" }),
+                                "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>",
                                 "https://taginfo.openstreetmap.org/keys/" + values.key + "#values",
                                 true
                             ),

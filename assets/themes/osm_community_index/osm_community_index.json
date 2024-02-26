@@ -36,6 +36,5 @@
   "startLon": 4.351697,
   "layers": [
     "osm_community_index"
-  ],
-  "clustering": false
+  ]
 }

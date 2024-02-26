@@ -66,7 +66,7 @@
 
         if (!rangeIsShown) {
           new ShowDataLayer(map, {
-            layer: new LayerConfig(boundsdisplay),
+            layer: new LayerConfig(<any> boundsdisplay),
             features: new StaticFeatureSource([
               turf.circle(c, maxDistanceInMeters, {
                 units: "meters",

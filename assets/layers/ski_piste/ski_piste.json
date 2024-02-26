@@ -1,4 +1,32 @@
 {
+  "id": "ski_piste",
+  "name": {
+    "en": "Ski and snowboard pistes",
+    "de": "Ski- und Snowboardpisten"
+  },
+  "description": {
+    "en": "Ski and snowboard pistes",
+    "de": "Ski- und Snowboardpisten"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "piste:type=downhill",
+            "piste:type=connection"
+          ]
+        },
+        "area!=yes"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Ski piste {name}",
+      "de": "Skipiste {name}"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -10,6 +38,40 @@
           "color": "white"
         }
       ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "10",
+      "color": {
+        "mappings": [
+          {
+            "then": "green",
+            "if": "piste:difficulty=novice"
+          },
+          {
+            "if": "piste:difficulty=easy",
+            "then": "blue"
+          },
+          {
+            "if": "piste:difficulty=intermediate",
+            "then": "red"
+          },
+          {
+            "if": "piste:difficulty=advanced",
+            "then": "black"
+          },
+          {
+            "if": "piste:difficulty=expert",
+            "then": "orange"
+          },
+          {
+            "if": "piste:difficulty=",
+            "then": "gray"
+          }
+        ]
+      },
+      "imageAlongWay": "./assets/png/oneway.png"
     }
   ],
   "tagRenderings": [
@@ -73,67 +135,5 @@
         "de": "Dieser Teil der Skipiste hat eine Länge von {_length:km} km"
       }
     }
-  ],
-  "lineRendering": [
-    {
-      "width": "10",
-      "color": {
-        "mappings": [
-          {
-            "then": "green",
-            "if": "piste:difficulty=novice"
-          },
-          {
-            "if": "piste:difficulty=easy",
-            "then": "blue"
-          },
-          {
-            "if": "piste:difficulty=intermediate",
-            "then": "red"
-          },
-          {
-            "if": "piste:difficulty=advanced",
-            "then": "black"
-          },
-          {
-            "if": "piste:difficulty=expert",
-            "then": "orange"
-          },
-          {
-            "if": "piste:difficulty=",
-            "then": "gray"
-          }
-        ]
-      },
-      "imageAlongWay": "./assets/png/oneway.png"
-    }
-  ],
-  "id": "ski_piste",
-  "name": {
-    "en": "Ski and snowboard pistes",
-    "de": "Ski- und Snowboardpisten"
-  },
-  "description": {
-    "en": "Ski and snowboard pistes",
-    "de": "Ski- und Snowboardpisten"
-  },
-  "source": {
-    "osmTags": {
-      "and": [
-        {
-          "or": [
-            "piste:type=downhill",
-            "piste:type=connection"
-          ]
-        },
-        "area!=yes"
-      ]
-    }
-  },
-  "title": {
-    "render": {
-      "en": "Ski piste {name}",
-      "de": "Skipiste {name}"
-    }
-  }
+  ]
 }

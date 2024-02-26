@@ -1,23 +1,23 @@
 {
-  "description": {
-    "en": "This map contains elements meant for disaster preparedness and response.",
-    "it": "Questa mappa contiene elementi pensati per la preparazione e risposta ai disastri.",
-    "de": "Diese Karte enthält Elemente, die der Katastrophenvorsorge und dem Katastrophenschutz dienen.",
-    "es": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres."
-  },
-  "docs": "https://wiki.openstreetmap.org/wiki/Emergency_facilities_and_amenities",
-  "icon": "./assets/themes/disaster_response/CivilDefence.svg",
   "id": "disaster_response",
-  "socialImage": "./assets/themes/disaster_response/social.svg",
   "title": {
     "en": "Disaster response",
     "it": "Risposta ai disastri",
     "de": "Katastrophenschutz",
     "es": "Respuesta ante desastres"
   },
+  "description": {
+    "en": "This map contains elements meant for disaster preparedness and response.",
+    "it": "Questa mappa contiene elementi pensati per la preparazione e risposta ai disastri.",
+    "de": "Diese Karte enthält Elemente, die der Katastrophenvorsorge und dem Katastrophenschutz dienen.",
+    "es": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres."
+  },
+  "icon": "./assets/themes/disaster_response/CivilDefence.svg",
+  "socialImage": "./assets/themes/disaster_response/social.svg",
   "layers": [
     "hospital",
     "assembly_point",
     "disaster_response"
-  ]
+  ],
+  "docs": "https://wiki.openstreetmap.org/wiki/Emergency_facilities_and_amenities"
 }

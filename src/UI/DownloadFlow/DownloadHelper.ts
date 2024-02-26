@@ -153,7 +153,7 @@ export default class DownloadHelper {
         return header + "\n" + elements.join("\n") + "\n</svg>"
     }
 
-    public getCleanGeoJsonPerLayer(includeMetaData: boolean): Map<string, Feature[]> {
+    private getCleanGeoJsonPerLayer(includeMetaData: boolean): Map<string, Feature[]> {
         const state = this._state
         const featuresPerLayer = new Map<string, any[]>()
         const neededLayers = state.layout.layers.filter((l) => l.source !== null).map((l) => l.id)
@@ -161,6 +161,7 @@ export default class DownloadHelper {
 
         for (const neededLayer of neededLayers) {
             const indexedFeatureSource = state.perLayer.get(neededLayer)
+
             let features = indexedFeatureSource.GetFeaturesWithin(bbox)
             // The 'indexedFeatureSources' contains _all_ features, they are not filtered yet
             const filter = state.layerState.filteredLayers.get(neededLayer)

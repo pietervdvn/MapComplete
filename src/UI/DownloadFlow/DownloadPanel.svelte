@@ -17,9 +17,16 @@
   const downloadHelper = new DownloadHelper(state)
 
   let metaIsIncluded = false
-  const name = state.layout.id
 
-  function offerSvg(noSelfIntersectingLines: boolean): string {
+  let numberOfFeatures = state.featureSummary.totalNumberOfFeatures
+
+  async function getGeojson() {
+    await state.indexedFeatures.downloadAll()
+    return downloadHelper.getCleanGeoJson(metaIsIncluded)
+  }
+
+  async function offerSvg(noSelfIntersectingLines: boolean): Promise<string> {
+    await state.indexedFeatures.downloadAll()
     const maindiv = document.getElementById("maindiv")
     const layers = state.layout.layers.filter((l) => l.source !== null)
     return downloadHelper.asSvg({
@@ -34,6 +41,8 @@
 
 {#if $isLoading}
   <Loading />
+{:else if $numberOfFeatures > 100000}
+  <Tr cls="alert" t={Translations.t.general.download.toMuch} />
 {:else}
   <div class="flex w-full flex-col" />
   <h3>
@@ -44,20 +53,18 @@
     {state}
     extension="geojson"
     mimetype="application/vnd.geo+json"
-    construct={(geojson) => JSON.stringify(geojson)}
+    construct={async () => JSON.stringify(await getGeojson())}
     mainText={t.downloadGeojson}
     helperText={t.downloadGeoJsonHelper}
-    {metaIsIncluded}
   />
 
   <DownloadButton
     {state}
     extension="csv"
     mimetype="text/csv"
-    construct={(geojson) => GeoOperations.toCSV(geojson)}
+    construct={async () => GeoOperations.toCSV(await getGeojson())}
     mainText={t.downloadCSV}
     helperText={t.downloadCSVHelper}
-    {metaIsIncluded}
   />
 
   <label class="mb-8 mt-2">
@@ -67,7 +74,6 @@
 
   <DownloadButton
     {state}
-    {metaIsIncluded}
     extension="svg"
     mimetype="image/svg+xml"
     mainText={t.downloadAsSvg}
@@ -77,7 +83,6 @@
 
   <DownloadButton
     {state}
-    {metaIsIncluded}
     extension="svg"
     mimetype="image/svg+xml"
     mainText={t.downloadAsSvgLinesOnly}
@@ -87,7 +92,6 @@
 
   <DownloadButton
     {state}
-    {metaIsIncluded}
     extension="png"
     mimetype="image/png"
     mainText={t.downloadAsPng}

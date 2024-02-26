@@ -258,6 +258,17 @@
                 "question": "Wie viele Leute passen in eine Kabine?",
                 "render": "{aerialway:occupancy} Leute passen in eine Kabine"
             },
+            "oneway": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Seilbahn kann nur nach oben gefahren werden"
+                    },
+                    "1": {
+                        "then": "Diese Seilbahn kann in beide Richtungen befahren werden"
+                    }
+                },
+                "question": "In welche Richtung kann diese Seilbahn genutzt werden?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -5101,6 +5112,11 @@
             "ghost_bike-start_date": {
                 "question": "Wann wurde dieses Geisterrad aufgestellt?",
                 "render": "Aufgestellt am {start_date}"
+            },
+            "wikidata": {
+                "render": {
+                    "before": "<h3>Wikipedia-Seite über die verstorbene Person</h3>"
+                }
             }
         },
         "title": {
@@ -6108,6 +6124,18 @@
             "render": "Gedenktafel"
         }
     },
+    "mountain_rescue": {
+        "description": "Ein Gebäude, in dem die Ersthelfer Material lagern und möglicherweise Wache halten",
+        "name": "Bergrettungsstationen",
+        "presets": {
+            "0": {
+                "title": "eine Bergrettungsstation"
+            }
+        },
+        "title": {
+            "render": "Bergrettungsstation"
+        }
+    },
     "nature_reserve": {
         "description": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde",
         "filter": {
@@ -6642,39 +6670,36 @@
                         "then": "Dies ist ein Behindertenstellplatz."
                     },
                     "3": {
-                        "then": "Dies ist ein privater Stellplatz."
-                    },
-                    "4": {
                         "then": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist."
                     },
-                    "5": {
+                    "4": {
                         "then": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist."
                     },
-                    "6": {
+                    "5": {
                         "then": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist."
                     },
-                    "7": {
+                    "6": {
                         "then": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert."
                     },
-                    "8": {
+                    "7": {
                         "then": "Dies ist ein Stellplatz, der für Busse reserviert ist."
                     },
-                    "9": {
+                    "8": {
                         "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
                     },
-                    "10": {
+                    "9": {
                         "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
                     },
-                    "11": {
+                    "10": {
                         "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
                     },
-                    "12": {
+                    "11": {
                         "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
                     },
-                    "13": {
+                    "12": {
                         "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
                     },
-                    "14": {
+                    "13": {
                         "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
                     }
                 },
@@ -6685,6 +6710,9 @@
             "mappings": {
                 "0": {
                     "then": "Behindertenparkplatz"
+                },
+                "1": {
+                    "then": "Parkplatz zum Laden von Elektrofahrzeugen"
                 }
             },
             "render": "Stellplatz"
@@ -8535,6 +8563,15 @@
             "render": "Geschwindigkeitsreduzierte Straße"
         }
     },
+    "souvenir_note": {
+        "tagRenderings": {
+            "designs": {
+                "freeform": {
+                    "placeholder": "Motivanzahl (z.B. 5)"
+                }
+            }
+        }
+    },
     "speed_camera": {
         "description": "Ebene mit Blitzern",
         "name": "Blitzer",
@@ -9327,6 +9364,48 @@
             }
         },
         "tagRenderings": {
+            "gender_segregated": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt einen separaten, ausgeschilderten Bereich für Männer und Frauen"
+                    },
+                    "1": {
+                        "then": "Es gibt keinen getrennten, ausgeschilderten Bereich für Männer und Frauen"
+                    }
+                },
+                "question": "Sind diese Toiletten geschlechtergetrennt?",
+                "questionHint": "Gibt es getrennte Kabinen oder getrennte Bereiche für Männer und Frauen, und sind sie als solche ausgeschildert?"
+            },
+            "menstrual_products": {
+                "mappings": {
+                    "0": {
+                        "then": "Für alle Besucher dieser Toiletten stehen kostenlose Menstruationsprodukte zur Verfügung"
+                    },
+                    "1": {
+                        "then": "Für einige Besucher dieser Toiletten gibt es kostenlose Menstruationsprodukte"
+                    },
+                    "2": {
+                        "then": "Hier gibt es keine kostenlosen Menstruationsprodukte"
+                    }
+                },
+                "question": "Werden hier kostenlose Menstruationsprodukte verteilt?",
+                "questionHint": "Hier geht es nur um Menstruationsprodukte, die kostenlos sind. Wenn es z. B. einen Automaten gibt, an dem Menstruationsprodukte kostenpflichtig sind, wird er bei dieser Frage nicht berücksichtigt."
+            },
+            "menstrual_products_location": {
+                "mappings": {
+                    "0": {
+                        "then": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Frauen"
+                    },
+                    "1": {
+                        "then": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Männer"
+                    },
+                    "2": {
+                        "then": "Die kostenlosen Menstruationsprodukte befinden sich auf der Toilette für Rollstuhlfahrende"
+                    }
+                },
+                "question": "Wo befinden sich die kostenlosen Menstruationsprodukte?",
+                "render": "Die Menstruationsprodukte befinden sich in {toilets:menstrual_products:location}"
+            },
             "opening_hours_24_7": {
                 "override": {
                     "question": "Wann sind diese Toiletten geöffnet?"
@@ -9925,7 +10004,49 @@
         }
     },
     "trolley_bay": {
+        "description": "Finde Einkaufswagenbuchten für Einkaufswagen.",
+        "name": "Einkaufswagenbuchten",
+        "presets": {
+            "0": {
+                "description": "Ein Platz zum Abstellen von Einkaufswagen.",
+                "title": "eine Einkaufswagenbucht"
+            }
+        },
         "tagRenderings": {
+            "cart_types": {
+                "mappings": {
+                    "0": {
+                        "then": "Einkaufswagen mit Lupe sind erhältlich"
+                    },
+                    "1": {
+                        "then": "Einkaufswagen für Rollstuhlfahrer sind verfügbar"
+                    },
+                    "2": {
+                        "then": "Einkaufswagen für Kinder sind verfügbar"
+                    },
+                    "3": {
+                        "then": "Einkaufswagen mit Sitzen für Kinder sind verfügbar"
+                    },
+                    "4": {
+                        "then": "Einkaufswagen mit Flachbett sind verfügbar"
+                    },
+                    "5": {
+                        "then": "Vertikale Einkaufswagen für plattenförmige Güter sind verfügbar"
+                    }
+                },
+                "question": "Welche Art von speziellen Einkaufswagen gibt es?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Einkaufswagenplatz ist überdacht"
+                    },
+                    "1": {
+                        "then": "Dieser Einkaufswagenplatz ist nicht überdacht"
+                    }
+                },
+                "question": "Ist dieser Einkaufswagenplatz überdacht?"
+            },
             "denominations": {
                 "mappings": {
                     "0": {
@@ -9937,9 +10058,22 @@
                     "2": {
                         "then": "2-Euro-Münzen werden akzeptiert"
                     }
-                }
+                },
+                "question": "Welche Münzen werden für die Pfandgebühr akzeptiert?"
+            },
+            "deposit": {
+                "mappings": {
+                    "0": {
+                        "then": "Für die Einkaufswagen ist ein Pfand zu hinterlegen"
+                    },
+                    "1": {
+                        "then": "Für die Einkaufswagen ist kein Pfand erforderlich"
+                    }
+                },
+                "question": "Ist für die Einkaufswagen ein Pfand (z.B. eine Münze) erforderlich?"
             }
-        }
+        },
+        "title": "Einkaufswagenbucht"
     },
     "unit": {
         "description": "Bibliotheksebene mit allen gängigen Einrichtungen.  Einrichtungen können _nur_ aus dieser Datei importiert werden.",
@@ -10124,6 +10258,14 @@
                 "mappings": {
                     "0": {
                         "then": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden."
+                    }
+                }
+            },
+            "mangrove-key-import": {
+                "render": {
+                    "after": "Wenn du einen privaten Schlüssel hochlädst, wird dein aktueller privater Schlüssel gelöscht. Wenn du damit Rezensionen geschrieben hast, lade zuerst deinen aktuellen privaten Schlüssel hoch",
+                    "special": {
+                        "text": "Privaten Mangrove-Schlüssel aus Backup importieren"
                     }
                 }
             },

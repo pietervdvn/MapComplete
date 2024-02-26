@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.38.1",
+  "version": "0.40.0",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -21,6 +21,7 @@
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org"
     },
+    "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
     "disabled:oauth_credentials": {
       "##": "DEV",
       "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
@@ -60,8 +61,6 @@
     "reset:translations": "vite-node scripts/generateTranslations.ts -- --ignore-weblate",
     "generate:layouts": "vite-node scripts/generateLayouts.ts",
     "generate:docs": "rm -rf Docs/Themes/* && rm -rf Docs/Layers/* && rm -rf Docs/TagInfo && mkdir Docs/TagInfo && vite-node scripts/generateDocs.ts && vite-node scripts/generateTaginfoProjectFiles.ts",
-    "generate:cache:speelplekken": "npm run generate:layeroverview && vite-node scripts/generateCache.ts -- speelplekken 14 ../MapComplete-data/speelplekken_cache/ 51.20 4.35 51.09 4.56",
-    "generate:cache:natuurpunt": "npm run generate:layeroverview && vite-node scripts/generateCache.ts -- natuurpunt 12 ../MapComplete-data/natuurpunt_cache/ 50.40 2.1 51.54 6.4 --generate-point-overview nature_reserve,visitor_information_centre",
     "generate:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts",
     "velopark": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --force --themes=velopark --layers=bike_parking,maproulette_challenge",
     "generate:mapcomplete-changes-theme": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --generate-change-map",
@@ -96,7 +95,9 @@
     "reuse-compliance": "reuse lint",
     "backup:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
     "dloadVelopark": "vite-node scripts/velopark/veloParkToGeojson.ts ",
-    "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/\n"
+    "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
+    "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts",
+    "ldjson-server": "vite-node scripts/serverLdScrape.ts"
   },
   "keywords": [
     "OpenStreetMap",
@@ -122,6 +123,7 @@
     "@turf/length": "^6.5.0",
     "@turf/turf": "^6.5.0",
     "@types/dompurify": "^3.0.2",
+    "@types/pg": "^8.10.9",
     "@types/qrcode-generator": "^1.0.6",
     "@types/showdown": "^2.0.0",
     "chart.js": "^3.8.0",
@@ -155,6 +157,8 @@
     "osmtogeojson": "^3.0.0-beta.5",
     "panzoom": "^9.4.3",
     "papaparse": "^5.3.1",
+    "pbf": "^3.2.1",
+    "pg": "^8.11.3",
     "pic4carto": "^2.1.15",
     "prompt-sync": "^4.2.0",
     "qrcode-generator": "^1.4.4",

@@ -1,0 +1,5 @@
+# Hetzner
+
+This server hosts the studio files and is used for expermintal builds.
+
+For used hosts, see the Caddyfile

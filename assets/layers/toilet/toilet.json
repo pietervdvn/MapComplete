@@ -553,25 +553,29 @@
       "id": "gender_segregated",
       "question": {
         "en": "Are these toilets gender-segregated?",
-        "nl": "Zijn deze toiletten gescheiden op basis van geslacht?"
+        "nl": "Zijn deze toiletten gescheiden op basis van geslacht?",
+        "de": "Sind diese Toiletten geschlechtergetrennt?"
       },
       "questionHint": {
         "en": "Are there separate stalls or separate areas for men and women and are they signposted as such?",
-        "nl": "Is er een aparte ruimte voor mannen en vrouwen en zijn deze ruimtes ook expliciet aangegeven?"
+        "nl": "Is er een aparte ruimte voor mannen en vrouwen en zijn deze ruimtes ook expliciet aangegeven?",
+        "de": "Gibt es getrennte Kabinen oder getrennte Bereiche für Männer und Frauen, und sind sie als solche ausgeschildert?"
       },
       "mappings": [
         {
           "if": "gender_segregated=yes",
           "then": {
             "en": "There is a separate, signposted area for men and women",
-            "nl": "Er zijn aparte ruimtes of toiletten voor mannen en vrouwen"
+            "nl": "Er zijn aparte ruimtes of toiletten voor mannen en vrouwen",
+            "de": "Es gibt einen separaten, ausgeschilderten Bereich für Männer und Frauen"
           }
         },
         {
           "if": "gender_segregated=no",
           "then": {
             "en": "There is no separate, signposted area for men and women",
-            "nl": "Mannen en vrouwen gebruiken dezelfde ruimtes en toiletten"
+            "nl": "Mannen en vrouwen gebruiken dezelfde ruimtes en toiletten",
+            "de": "Es gibt keinen getrennten, ausgeschilderten Bereich für Männer und Frauen"
           }
         }
       ]
@@ -580,25 +584,29 @@
       "id": "menstrual_products",
       "question": {
         "en": "Are free, menstrual products distributed here?",
-        "nl": "Zijn er gratis menstruatieproducten beschikbaar?"
+        "nl": "Zijn er gratis menstruatieproducten beschikbaar?",
+        "de": "Werden hier kostenlose Menstruationsprodukte verteilt?"
       },
       "questionHint": {
         "en": "This is only about menstrual products that are free of charge. If e.g. a vending machine is available which charges for menstrual products, ignore it for this question.",
-        "nl": "Dit gaat enkel over menstruatieproducten die gratis geschikbaar zijn. Indien er bv. een verkoopautomaat met menstruatieproducten is, negeer deze dan"
+        "nl": "Dit gaat enkel over menstruatieproducten die gratis geschikbaar zijn. Indien er bv. een verkoopautomaat met menstruatieproducten is, negeer deze dan",
+        "de": "Hier geht es nur um Menstruationsprodukte, die kostenlos sind. Wenn es z. B. einen Automaten gibt, an dem Menstruationsprodukte kostenpflichtig sind, wird er bei dieser Frage nicht berücksichtigt."
       },
       "mappings": [
         {
           "if": "toilets:menstrual_products=yes",
           "then": {
             "en": "Free menstrual products are available to all visitors of these toilets",
-            "nl": "Er zijn gratis menstruatieprocten beschikbaar voor alle bezoekers van deze toiletten"
+            "nl": "Er zijn gratis menstruatieprocten beschikbaar voor alle bezoekers van deze toiletten",
+            "de": "Für alle Besucher dieser Toiletten stehen kostenlose Menstruationsprodukte zur Verfügung"
           }
         },
         {
           "if": "toilets:menstrual_products=limited",
           "then": {
             "en": "Free menstrual products are available to some visitors of these toilets",
-            "nl": "De gratis menstruatieproducten zijn enkel beschikbaar in een deel van de toiletten"
+            "nl": "De gratis menstruatieproducten zijn enkel beschikbaar in een deel van de toiletten",
+            "de": "Für einige Besucher dieser Toiletten gibt es kostenlose Menstruationsprodukte"
           },
           "hideInAnswer": "gender_segregated=yes"
         },
@@ -607,7 +615,8 @@
           "alsoShowIf": "toilets:menstrual_products=",
           "then": {
             "en": "No free menstrual products are available here",
-            "nl": "Er zijn geen gratis menstruatieproducten beschikbaar"
+            "nl": "Er zijn geen gratis menstruatieproducten beschikbaar",
+            "de": "Hier gibt es keine kostenlosen Menstruationsprodukte"
           }
         }
       ]
@@ -616,7 +625,8 @@
       "id": "menstrual_products_location",
       "question": {
         "en": "Where are the free menstrual products located?",
-        "nl": "Waar bevinden de gratis menstruatieproducten zich?"
+        "nl": "Waar bevinden de gratis menstruatieproducten zich?",
+        "de": "Wo befinden sich die kostenlosen Menstruationsprodukte?"
       },
       "condition": {
         "or": [
@@ -626,7 +636,8 @@
       },
       "render": {
         "en": "The menstrual products are located in {toilets:menstrual_products:location}",
-        "nl": "De menstruatieproducten bevinden zich in {toilets:menstrual_products:location}"
+        "nl": "De menstruatieproducten bevinden zich in {toilets:menstrual_products:location}",
+        "de": "Die Menstruationsprodukte befinden sich in {toilets:menstrual_products:location}"
       },
       "freeform": {
         "key": "toilets:menstrual_products:location",
@@ -636,7 +647,8 @@
         {
           "then": {
             "en": "The free, menstrual products are located in the toilet for women",
-            "nl": "De gratis menstruatieproducten bevinden zich in het vrouwentoilet"
+            "nl": "De gratis menstruatieproducten bevinden zich in het vrouwentoilet",
+            "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Frauen"
           },
           "if": "toilets:menstrual_products:location=female_toilet",
           "alsoShowIf": "toilets:menstrual_products:location="
@@ -644,7 +656,8 @@
         {
           "then": {
             "en": "The free, menstrual products are located in the toilet for men",
-            "nl": "De gratis menstruatieproducten bevinden zich in het mannentoilet"
+            "nl": "De gratis menstruatieproducten bevinden zich in het mannentoilet",
+            "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Männer"
           },
           "if": "toilets:menstrual_products:location=male_toilet"
         },
@@ -652,7 +665,8 @@
           "if": "toilets:menstrual_products:location=wheelchair_toilet",
           "then": {
             "en": "The free, menstrual products are located in the toilet for wheelchair users",
-            "nl": "De gratis menstruatieproducten bevinden zich in het rolstoeltoegankelijke toilet"
+            "nl": "De gratis menstruatieproducten bevinden zich in het rolstoeltoegankelijke toilet",
+            "de": "Die kostenlosen Menstruationsprodukte befinden sich auf der Toilette für Rollstuhlfahrende"
           }
         }
       ]

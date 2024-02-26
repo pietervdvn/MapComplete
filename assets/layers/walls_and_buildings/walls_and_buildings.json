@@ -121,6 +121,7 @@
       "condition": "_biggest_width_id~*"
     }
   ],
+  "isCounted": false,
   "units": [
     {
       "width": {

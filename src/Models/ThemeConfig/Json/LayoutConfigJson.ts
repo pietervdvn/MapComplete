@@ -418,14 +418,6 @@ export interface LayoutConfigJson {
     overpassTimeout?: number
 
     /**
-     * When a query is run, the data within bounds of the visible map is loaded.
-     * However, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.
-     * For this, the bounds are widened in order to make a small pan still within bounds of the loaded data.
-     *
-     * IF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3
-     */
-    widenFactor?: number
-    /**
      * At low zoom levels, overpass is used to query features.
      * At high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.
      * The overpassMaxZoom controls the flipoverpoint: if the zoom is this or lower, overpass is used.
