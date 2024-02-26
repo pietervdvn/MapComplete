@@ -15,6 +15,7 @@ class ServerLdScrape extends Script {
                 mimetype: "application/ld+json",
                 async handle(content, searchParams: URLSearchParams) {
                     const url = searchParams.get("url")
+                    console.log("Fetching", url)
                     if (cache[url]) {
                         return JSON.stringify(cache[url])
                     }

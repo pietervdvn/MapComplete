@@ -41,6 +41,11 @@ export default class UrlValidator extends Validator {
                 "AdGroup",
                 "TargetId",
                 "msclkid",
+                "pk_source",
+                "pk_medium",
+                "pk_campaign",
+                "pk_content",
+                "pk_kwd"
             ]
             for (const dontLike of blacklistedTrackingParams) {
                 url.searchParams.delete(dontLike.toLowerCase())

@@ -148,7 +148,16 @@ export default class ScriptUtils {
         const data = await ScriptUtils.Download(url, headers)
         return JSON.parse(data["content"])
     }
-
+    public static async DownloadFetch(
+        url: string,
+        headers?: any
+    ): Promise<{ content: string } | { redirect: string }> {
+        console.log("Fetching", url)
+        const req = await fetch(url, {headers})
+        const data= await req.text()
+        console.log("Fetched", url,data)
+        return {content: data}
+    }
     public static Download(
         url: string,
         headers?: any

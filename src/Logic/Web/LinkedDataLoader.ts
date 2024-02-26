@@ -6,7 +6,11 @@ import PhoneValidator from "../../UI/InputElement/Validators/PhoneValidator"
 import EmailValidator from "../../UI/InputElement/Validators/EmailValidator"
 import { Validator } from "../../UI/InputElement/Validator"
 import UrlValidator from "../../UI/InputElement/Validators/UrlValidator"
+import Constants from "../../Models/Constants"
 
+interface JsonLdLoaderOptions {
+    country?: string
+}
 export default class LinkedDataLoader {
     private static readonly COMPACTING_CONTEXT = {
         name: "http://schema.org/name",
@@ -41,6 +45,10 @@ export default class LinkedDataLoader {
         "http://schema.org/hasMap",
         "http://schema.org/priceRange",
         "http://schema.org/contactPoint",
+    ]
+
+    private static ignoreTypes = [
+        "Breadcrumblist"
     ]
 
     static async geoToGeometry(geo): Promise<Geometry> {
@@ -102,15 +110,30 @@ export default class LinkedDataLoader {
         return OH.ToString(OH.MergeTimes(allRules))
     }
 
-    static async fetchJsonLd(url: string, country?: string): Promise<Record<string, any>> {
-        const proxy = "http://127.0.0.1:2346/extractgraph" // "https://cache.mapcomplete.org/extractgraph"
-        const data = await Utils.downloadJson(`${proxy}?url=${url}`)
-        const compacted = await jsonld.compact(data, LinkedDataLoader.COMPACTING_CONTEXT)
+    static async fetchJsonLdWithProxy(url: string, options?: JsonLdLoaderOptions): Promise<any> {
+        const urlWithProxy = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
+        return await this.fetchJsonLd(urlWithProxy, options)
+    }
+
+    /**
+     *
+     *
+     * {
+     *   "content": "{\"@context\":\"http://schema.org\",\"@type\":\"LocalBusiness\",\"@id\":\"http://stores.delhaize.be/nl/ad-delhaize-munsterbilzen\",\"name\":\"AD Delhaize Munsterbilzen\",\"url\":\"http://stores.delhaize.be/nl/ad-delhaize-munsterbilzen\",\"logo\":\"https://stores.delhaize.be/build/images/web/shop/delhaize-be/favicon.ico\",\"image\":\"http://stores.delhaize.be/image/mobilosoft-testing?apiPath=rehab/delhaize-be/images/location/ad%20delhaize%20image%20ge%CC%81ne%CC%81rale%20%281%29%201652787176865&imageSize=h_500\",\"email\":\"\",\"telephone\":\"+3289413520\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Waterstraat, 18\",\"addressLocality\":\"Bilzen\",\"postalCode\":\"3740\",\"addressCountry\":\"BE\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":50.8906898,\"longitude\":5.5260586},\"openingHoursSpecification\":[{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Tuesday\",\"opens\":\"08:00\",\"closes\":\"18:30\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Wednesday\",\"opens\":\"08:00\",\"closes\":\"18:30\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Thursday\",\"opens\":\"08:00\",\"closes\":\"18:30\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Friday\",\"opens\":\"08:00\",\"closes\":\"18:30\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Saturday\",\"opens\":\"08:00\",\"closes\":\"18:30\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Sunday\",\"opens\":\"08:00\",\"closes\":\"12:00\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Monday\",\"opens\":\"12:00\",\"closes\":\"18:30\"}],\"@base\":\"https://stores.delhaize.be/nl/ad-delhaize-munsterbilzen\"}"
+     * }
+     */
+    private static async compact(data: any, options?: JsonLdLoaderOptions): Promise<any>{
+        console.log("Compacting",data)
+        if(Array.isArray(data)) {
+            return await Promise.all(data.map(d => LinkedDataLoader.compact(d)))
+        }
+        const country = options?.country
+        const compacted = await jsonld.compact(data, <any> LinkedDataLoader.COMPACTING_CONTEXT)
         compacted["opening_hours"] = await LinkedDataLoader.ohToOsmFormat(
             compacted["opening_hours"]
         )
         if (compacted["openingHours"]) {
-            const ohspec: string[] = compacted["openingHours"]
+            const ohspec: string[] = <any> compacted["openingHours"]
             compacted["opening_hours"] = OH.simplify(
                 ohspec.map((r) => LinkedDataLoader.ohStringToOsmFormat(r)).join("; ")
             )
@@ -138,5 +161,39 @@ export default class LinkedDataLoader {
             }
         }
         return <any>compacted
+
+    }
+    static async fetchJsonLd(url: string, options?: JsonLdLoaderOptions): Promise<any> {
+        const data = await Utils.downloadJson(url)
+        return await LinkedDataLoader.compact(data, options)
+    }
+
+    /**
+     * Only returns different items
+     * @param externalData
+     * @param currentData
+     */
+    static removeDuplicateData(externalData: Record<string, string>, currentData: Record<string, string>) : Record<string, string>{
+        const d = { ...externalData }
+        delete d["@context"]
+        for (const k in d) {
+            const v = currentData[k]
+            if (!v) {
+                continue
+            }
+            if (k === "opening_hours") {
+                const oh = [].concat(...v.split(";").map(r => OH.ParseRule(r) ?? []))
+                const merged = OH.ToString(OH.MergeTimes(oh ?? []))
+                if (merged === d[k]) {
+                    delete d[k]
+                    continue
+                }
+            }
+            if (v === d[k]) {
+                delete d[k]
+            }
+            delete d.geo
+        }
+        return d
     }
 }

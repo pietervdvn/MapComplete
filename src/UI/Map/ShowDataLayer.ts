@@ -459,7 +459,7 @@ class LineRenderingLayer {
             } else {
                 const tags = this._fetchStore(id)
                 this._listenerInstalledOn.add(id)
-                tags.addCallbackAndRunD((properties) => {
+                tags?.addCallbackAndRunD((properties) => {
                     // Make sure to use 'getSource' here, the layer names are different!
                     try {
                         if (map.getSource(this._layername) === undefined) {

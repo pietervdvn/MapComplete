@@ -7,7 +7,7 @@
   import { Mapillary } from "../../Logic/ImageProviders/Mapillary"
   import { UIEventSource } from "../../Logic/UIEventSource"
 
-  export let image: ProvidedImage
+  export let image: Partial<ProvidedImage>
   let fallbackImage: string = undefined
   if (image.provider === Mapillary.singleton) {
     fallbackImage = "./assets/svg/blocked.svg"

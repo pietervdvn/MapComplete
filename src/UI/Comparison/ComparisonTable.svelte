@@ -26,23 +26,21 @@
   let externalKeys: string[] = Object.keys(externalProperties).sort()
 
   const imageKeyRegex = /image|image:[0-9]+/
-  console.log("Calculating knwon images")
   let knownImages = new Set(
     Object.keys(osmProperties)
       .filter((k) => k.match(imageKeyRegex))
       .map((k) => osmProperties[k])
   )
-  console.log("Known images are:", knownImages)
   let unknownImages = externalKeys
     .filter((k) => k.match(imageKeyRegex))
     .map((k) => externalProperties[k])
     .filter((i) => !knownImages.has(i))
 
   let propertyKeysExternal = externalKeys.filter((k) => k.match(imageKeyRegex) === null)
-  let missing = propertyKeysExternal.filter((k) => osmProperties[k] === undefined)
+  let missing = propertyKeysExternal.filter((k) => osmProperties[k] === undefined && typeof externalProperties[k] === "string")
   let same = propertyKeysExternal.filter((key) => osmProperties[key] === externalProperties[key])
   let different = propertyKeysExternal.filter(
-    (key) => osmProperties[key] !== undefined && osmProperties[key] !== externalProperties[key]
+    (key) => osmProperties[key] !== undefined && osmProperties[key] !== externalProperties[key] && typeof externalProperties[key] === "string"
   )
 
   let currentStep: "init" | "applying_all" | "all_applied" = "init"
@@ -68,11 +66,7 @@
       <th>External</th>
     </tr>
     {#each different as key}
-      <tr>
-        <td>{key}</td>
-        <td>{osmProperties[key]}</td>
-        <td>{externalProperties[key]}</td>
-      </tr>
+      <ComparisonAction {key} {state} {tags} {externalProperties} {layer} {feature} {readonly} />
     {/each}
   </table>
 {/if}
