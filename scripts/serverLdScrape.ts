@@ -17,10 +17,11 @@ class ServerLdScrape extends Script {
                     const url = searchParams.get("url")
                     if (cache[url] !== undefined) {
                         const { date, contents } = cache[url]
+                        console.log(">>>", date, contents)
                         // In seconds
-                        const tdiff = (new Date().getTime() - date.getTime()) / 1000
+                        const tdiff = (new Date().getTime() - (date?.getTime() ?? 0)) / 1000
                         if (tdiff < 24 * 60 * 60) {
-                            return contents
+                            return JSON.stringify(contents)
                         }
                     }
                     const dloaded = await Utils.download(url, {
@@ -38,7 +39,7 @@ class ServerLdScrape extends Script {
                         try {
                             const snippet = JSON.parse(script.textContent)
                             snippet["@base"] = url
-                            cache[url] = snippet
+                            cache[url] = { contents: snippet, date: new Date() }
 
                             return JSON.stringify(snippet)
                         } catch (e) {
