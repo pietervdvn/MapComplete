@@ -10,13 +10,14 @@
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 
   export let state: SpecialVisualizationState
-  export let layer: LayerConfig
   export let selectedElement: Feature
   export let highlightedRendering: UIEventSource<string> = undefined
 
   export let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
     selectedElement.properties.id
   )
+
+  let layer: LayerConfig =state.layout.getMatchingLayer(tags.data)
   
   
   let stillMatches = tags.map(tags => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags))

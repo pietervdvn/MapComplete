@@ -402,7 +402,7 @@
     <div slot="close-button" />
     <div class="normal-background absolute flex h-full w-full flex-col">
       <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement} />
-      <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+      <SelectedElementView {state} selectedElement={$selectedElement} />
     </div>
   </ModalRight>
 {/if}
