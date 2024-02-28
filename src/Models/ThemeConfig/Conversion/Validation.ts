@@ -1012,6 +1012,13 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ) {
                         continue
                     }
+                    if(json.freeform.key.indexOf("wikidata")>=0){
+                        context
+                            .enter("render")
+                            .err(
+                                `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. Did you perhaps forget to set "freeform.type: 'wikidata'"?`
+                            )
+                    }
                     context
                         .enter("render")
                         .err(
@@ -1264,7 +1271,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 // It is tempting to add an index to this warning; however, due to labels the indices here might be different from the index in the tagRendering list
                 context
                     .enter("tagRenderings")
-                    .err("Some tagrenderings have a duplicate id: " + duplicates.join(", "))
+                    .err("Some tagrenderings have a duplicate id: " + duplicates.join(", ")+"\n"+JSON.stringify(json.tagRenderings.filter(tr=> duplicates.indexOf(tr["id"])>=0)))
             }
         }
 
