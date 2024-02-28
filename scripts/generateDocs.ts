@@ -314,9 +314,6 @@ export class GenerateDocs extends Script {
         const themesPerLayer = new Map<string, string[]>()
 
         for (const layout of Array.from(AllKnownLayouts.allKnownLayouts.values())) {
-            if (layout.hideFromOverview) {
-                continue
-            }
             for (const layer of layout.layers) {
                 if (!builtinLayerIds.has(layer.id)) {
                     // This is an inline layer
