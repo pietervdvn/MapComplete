@@ -27,6 +27,7 @@
             "selectReason": "請選擇為什麼這個圖徵應該被刪除",
             "softDelete": "這個圖徵已經被更新，然後從程式被隱藏了。<span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "這個圖徵已經改變，而且不再符合這一圖層",
         "isDeleted": "這圖徵已經刪除",
         "isntAPoint": "只有節點可以被刪，選取的圖徵是路徑、區域或是關聯。",
         "loading": "調查屬性來確定是否能刪除這一圖徵。",
@@ -55,7 +56,9 @@
             "isFavourite": "目前這個位置已經標示為最愛，而且會在所有你瀏覽的 MapComplete 的主題地圖當中顯示。",
             "isMarkedShort": "標示為最愛地點",
             "isNotMarkedShort": "並沒有標示為最愛",
-            "markAsFavouriteTitle": "標示這個地點為最愛地點"
+            "markAsFavouriteTitle": "標示這個地點為最愛地點",
+            "markDescription": "新增這一地點到你個人的最愛",
+            "unmark": "從你的個人最愛移除"
         },
         "introPrivacy": "只有你看得到這個清單",
         "loginToSeeList": "登入之後觀看你已經標記為最愛的地點",
@@ -317,6 +320,11 @@
         },
         "skip": "跳過這問題",
         "testing": "測試 - 改變還沒有儲存",
+        "uploadGpx": {
+            "uploading": "更新你的蹤跡…"
+        },
+        "uploadPending": "{count} 個變動仍在等候中",
+        "uploadPendingSingle": "一個變動等待中",
         "weekdays": {
             "abbreviations": {
                 "friday": "星期五",
