@@ -14,10 +14,7 @@
   },
   "title": {
     "render": {
-      "en": "Memorial plaque",
-      "ca": "Placa commemorativa",
-      "cs": "Pamětní deska",
-      "de": "Gedenktafel"
+      "en": "Memorial"
     },
     "mappings": [
       {
@@ -140,7 +137,29 @@
       ]
     },
     {
-      "id": "wikidata",
+      "id": "memorial-wikidata",
+      "freeform": {
+        "key": "wikidata",
+        "type": "wikidata"
+      },
+      "question": {
+        "en": "What is the Wikipedia page about this memorial?"
+      },
+      "questionHint": {
+        "en": "This is a about the memorial itself, not about the person or event that the memorial remembers. If this memorial does not have a Wikipedia page or Wikidata entity, skip this question."
+      },
+      "render": {
+        "special": {
+          "type": "wikipedia",
+          "keyToShowWikipediaFor": "wikidata"
+        },
+        "before": {
+          "en": "<h3>Wikipedia page about the memorial</h3>"
+        }
+      }
+    },
+    {
+      "id": "subject-wikidata",
       "freeform": {
         "key": "subject:wikidata",
         "type": "wikidata",
@@ -185,8 +204,8 @@
       "id": "start_date"
     },
     {
-      "builtin":         "bench.bench-questions",
-      "override": { 
+      "builtin": "bench.bench-questions",
+      "override": {
         "condition": {
           "+and": [
             "amenity=bench"
