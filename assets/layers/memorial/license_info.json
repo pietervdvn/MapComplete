@@ -1,5 +1,15 @@
 [
   {
+    "path": "memorial.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "OSM-Carto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Memorial-16.svg"
+    ]
+  },
+  {
     "path": "plaque.svg",
     "license": "CC0-1.0",
     "authors": [

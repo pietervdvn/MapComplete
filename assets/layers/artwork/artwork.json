@@ -661,7 +661,11 @@
       "freeform": {
         "key": "artist_name"
       },
-      "condition": "artist:wikidata=",
+      "condition": {
+        "and": [
+          "artist:wikidata="
+        ]
+      },
       "id": "artwork-artist_name",
       "labels": [
         "artwork-question"
@@ -744,7 +748,11 @@
     "wikipedia",
     {
       "id": "artwork_subject",
-      "condition": "subject:wikidata~*",
+      "condition": {
+        "and": [
+          "subject:wikidata~*"
+        ]
+      },
       "question": {
         "en": "What does this artwork depict?",
         "de": "Was zeigt dieses Kunstwerk?",
@@ -856,9 +864,13 @@
       ]
     },
     {
-      "builtin": "bench.*bench-questions",
+      "builtin": "bench.bench-questions",
       "override": {
-        "condition": "amenity=bench"
+        "condition": {
+          "and": [
+            "amenity=bench"
+          ]
+        }
       }
     }
   ],

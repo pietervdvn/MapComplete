@@ -331,8 +331,7 @@
         "he": "חומר: {material}"
       },
       "freeform": {
-        "key": "material",
-        "addExtraTags": []
+        "key": "material"
       },
       "mappings": [
         {
@@ -1045,11 +1044,15 @@
         "bench-questions"
       ],
       "condition": {
-        "or": [
-          "historic=memorial",
-          "inscription~*",
-          "memorial=bench",
-          "tourism=artwork"
+        "and": [
+          {
+            "or": [
+              "historic=memorial",
+              "inscription~*",
+              "memorial=bench",
+              "tourism=artwork"
+            ]
+          }
         ]
       },
       "question": {
@@ -1112,7 +1115,11 @@
     {
       "builtin": "artwork.*artwork-question",
       "override": {
-        "condition": "tourism=artwork"
+        "condition": {
+          "and": [
+            "tourism=artwork"
+          ]
+        }
       }
     }
   ],

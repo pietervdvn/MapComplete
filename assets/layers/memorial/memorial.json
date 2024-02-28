@@ -2,15 +2,34 @@
   "id": "memorial",
   "description": "Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on",
   "source": {
-    "osmTags": "memorial=plaque"
+    "osmTags": {
+      "or": [
+        "memorial~*",
+        "historic=memorial"
+      ]
+    }
+  },
+  "name": {
+    "en": "Memorials"
   },
   "title": {
     "render": {
       "en": "Memorial plaque",
-      "de": "Gedenktafel",
       "ca": "Placa commemorativa",
-      "cs": "Pamětní deska"
-    }
+      "cs": "Pamětní deska",
+      "de": "Gedenktafel"
+    },
+    "mappings": [
+      {
+        "if": "memorial=plaque",
+        "then": {
+          "en": "Memorial plaque",
+          "de": "Gedenktafel",
+          "ca": "Placa commemorativa",
+          "cs": "Pamětní deska"
+        }
+      }
+    ]
   },
   "pointRendering": [
     {
@@ -24,33 +43,169 @@
           "color": "white"
         },
         {
-          "icon": "./assets/layers/memorial/plaque.svg"
+          "icon": {
+            "render": "./assets/layers/memorial/memorial.svg",
+            "mappings": [
+              {
+                "if": "memorial=plaque",
+                "then": "./assets/layers/memorial/plaque.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "memorial=bench",
+                    "amenity=bench"
+                  ]
+                },
+                "then": "./assets/layers/bench/bench.svg"
+              }
+            ]
+          }
         }
       ]
     }
   ],
   "lineRendering": [],
   "tagRenderings": [
+    "images",
+    {
+      "id": "memorial-type",
+      "question": {
+        "en": "What type of memorial is this?"
+      },
+      "mappings": [
+        {
+          "if": "memorial=statue",
+          "then": {
+            "en": "This is a statue"
+          },
+          "addExtraTags": [
+            "tourism=artwork",
+            "artwork=statue"
+          ]
+        },
+        {
+          "if": "memorial=plaque",
+          "then": {
+            "en": "This is a plaque"
+          }
+        },
+        {
+          "if": "memorial=bench",
+          "then": {
+            "en": "This is a commemorative bench"
+          },
+          "addExtraTags": [
+            "amenity=bench"
+          ]
+        },
+        {
+          "if": "memorial=ghost_bike",
+          "then": {
+            "en": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash"
+          }
+        }
+      ]
+    },
     {
       "id": "inscription",
       "question": {
         "en": "What is the inscription of this plaque?",
-        "de": "Wie lautet die Inschrift auf dieser Gedenktafel?",
         "ca": "Quina és la inscripció d'aquesta placa?",
-        "cs": "Jaký je nápis na této desce?"
+        "cs": "Jaký je nápis na této desce?",
+        "de": "Wie lautet die Inschrift auf dieser Gedenktafel?"
       },
+      "#:condition": "Benches have a separate inscription question",
+      "condition": "memorial!=bench",
       "render": {
         "en": "The inscription on this plaque reads: <p><i>{inscription}<i></p>",
-        "de": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>",
         "ca": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>",
-        "cs": "Nápis na této desce zní: <p><i>{inscription}<i></p>"
+        "cs": "Nápis na této desce zní: <p><i>{inscription}<i></p>",
+        "de": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>"
       },
       "freeform": {
         "key": "inscription",
         "type": "text"
+      },
+      "mappings": [
+        {
+          "if": "not:inscription=yes",
+          "then": {
+            "en": "This memorial does not have an inscription"
+          },
+          "addExtraTags": [
+            "inscription="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wikidata",
+      "freeform": {
+        "key": "subject:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "subject;memorial:conflict"
+        ]
+      },
+      "question": {
+        "en": "What is the Wikipedia page about the person or event that is remembered here?"
+      },
+      "questionHint": {
+        "en": "If the person or event does not have a Wikipedia page or Wikidata entity, skip this question."
+      },
+      "render": {
+        "special": {
+          "type": "wikipedia",
+          "keyToShowWikipediaFor": "subject:wikidata"
+        },
+        "before": {
+          "en": "<h3>Wikipedia page about the remembered event or person</h3>"
+        }
+      }
+    },
+    {
+      "question": {
+        "en": "When was this memorial installed?"
+      },
+      "render": {
+        "nl": "Geplaatst op {start_date}",
+        "en": "Placed on {start_date}",
+        "it": "Piazzata in data {start_date}",
+        "fr": "Placé le {start_date}",
+        "ru": "Установлен {start_date}",
+        "de": "Aufgestellt am {start_date}",
+        "ca": "Col·locat el {start_date}",
+        "cs": "Umístěno {start_date}"
+      },
+      "freeform": {
+        "key": "start_date",
+        "type": "date"
+      },
+      "id": "start_date"
+    },
+    {
+      "builtin":         "bench.bench-questions",
+      "override": { 
+        "condition": {
+          "+and": [
+            "amenity=bench"
+          ]
+        }
       }
     }
   ],
+  "presets": [
+    {
+      "title": {
+        "en": "a memorial"
+      },
+      "tags": [
+        "historic=memorial"
+      ]
+    }
+  ],
+  "minzoom": 9,
   "deletion": true,
   "allowMove": {
     "enableImproveAccuracy": true,
