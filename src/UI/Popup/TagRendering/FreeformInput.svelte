@@ -76,6 +76,5 @@
     {value}
     {state}
     on:submit
-    {unvalidatedText}
   />
 </div>

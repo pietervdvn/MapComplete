@@ -69,11 +69,10 @@ export default class InputHelpers {
     ) {
         const inputHelperOptions = props
         const args = inputHelperOptions.args ?? []
-        const searchKey = <string>args[0] ?? "name"
+        const searchKey: string = <string>args[0] ?? "name"
 
-        const searchFor = <string>(
-            (inputHelperOptions.feature?.properties[searchKey]?.toLowerCase() ?? "")
-        )
+        const searchFor: string = searchKey.split(";").map(k => inputHelperOptions.feature?.properties[k]?.toLowerCase())
+                .find(foundValue => !!foundValue) ?? ""
 
         let searchForValue: UIEventSource<string> = new UIEventSource(searchFor)
         const options: any = args[1]
