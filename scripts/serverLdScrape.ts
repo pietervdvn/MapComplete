@@ -1,11 +1,13 @@
 import Script from "../scripts/Script"
 import { Server } from "./server"
-import { Utils } from "../src/Utils"
 import parse from "node-html-parser"
+import ScriptUtils from "./ScriptUtils"
+
 class ServerLdScrape extends Script {
     constructor() {
         super("Starts a server which fetches a webpage and returns embedded LD+JSON")
     }
+
     async main(args: string[]): Promise<void> {
         const port = Number(args[0] ?? 2346)
         const cache: Record<string, { date: Date; contents: any }> = {}
@@ -24,12 +26,18 @@ class ServerLdScrape extends Script {
                             return JSON.stringify(contents)
                         }
                     }
-                    const dloaded = await Utils.download(url, {
-                        "User-Agent":
-                            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36", // MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
-                    })
-                    // return dloaded
-                    const parsed = parse(dloaded)
+                    let dloaded: { content: string } | { redirect: string } | "timeout" = { redirect: url }
+                    do {
+
+                        dloaded = await ScriptUtils.Download(dloaded["redirect"], {
+                            "User-Agent":
+                                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36", // MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
+                        }, 10)
+                        if (dloaded === "timeout") {
+                            return "{\"#\":\"timout reached\"}"
+                        }
+                    } while (dloaded["redirect"])
+                    const parsed = parse(dloaded["content"])
                     const scripts = Array.from(parsed.getElementsByTagName("script"))
                     for (const script of scripts) {
                         const tp = script.attributes["type"]

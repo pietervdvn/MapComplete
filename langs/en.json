@@ -46,6 +46,21 @@
         "useSomethingElse": "Use another OpenStreetMap-editor to delete it instead",
         "whyDelete": "Why should this feature be deleted?"
     },
+    "external": {
+        "allAreApplied": "All missing, external values have been copied into OpenStreetMap",
+        "allIncluded": "The external data and OpenStreetMap-data are the same",
+        "apply": "Apply",
+        "applyAll": "Apply all missing values",
+        "conflicting": {
+            "intro": "OpenStreetMap has a different value then the source website for the following values.",
+            "title": "Conflicting items"
+        },
+        "currentInOsmIs": "At the moment, OpenStreetMap has the following value recorded:",
+        "done": "Done",
+        "error": "Error",
+        "loadedFrom": "The following data is loaded from <a href={url}>{source}</a> using the embedded JSON-LD",
+        "overwrite": "Overwrite"
+    },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",

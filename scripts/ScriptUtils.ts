@@ -5,6 +5,7 @@ import * as https from "https"
 import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
+import { resolve } from "node:dns"
 
 export default class ScriptUtils {
     public static fixUtils() {
@@ -161,8 +162,18 @@ export default class ScriptUtils {
     public static Download(
         url: string,
         headers?: any
-    ): Promise<{ content: string } | { redirect: string }> {
-        return new Promise((resolve, reject) => {
+    ): Promise<{ content: string } | { redirect: string }>
+    public static Download(
+        url: string,
+        headers?: any,
+        timeoutSecs?: number
+    ): Promise<{ content: string } | { redirect: string } | "timeout">
+    public static Download(
+        url: string,
+        headers?: any,
+        timeoutSecs?: number
+    ): Promise<{ content: string } | { redirect: string } | "timeout"> {
+        const requestPromise = new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}
                 headers.accept = "application/json"
@@ -209,5 +220,9 @@ export default class ScriptUtils {
                 reject(e)
             }
         })
+        const timeoutPromise = new Promise<any>((resolve, reject) => {
+            setTimeout(() => timeoutSecs === undefined ? reject(new Error("Timout reached")) : resolve("timeout"), (timeoutSecs ?? 10) * 1000)
+        })
+        return Promise.race([requestPromise, timeoutPromise])
     }
 }

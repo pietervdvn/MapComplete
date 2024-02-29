@@ -1080,12 +1080,12 @@ video {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-32 {
@@ -1161,10 +1161,6 @@ video {
 
 .h-80 {
   height: 20rem;
-}
-
-.h-5\/6 {
-  height: 83.333333%;
 }
 
 .h-56 {
@@ -1484,6 +1480,10 @@ video {
           column-gap: 0.5rem;
 }
 
+.gap-y-8 {
+  row-gap: 2rem;
+}
+
 .space-x-0\.5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.125rem * var(--tw-space-x-reverse));
@@ -1610,12 +1610,12 @@ video {
   word-break: break-all;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
 .rounded {
   border-radius: 0.25rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-xl {
