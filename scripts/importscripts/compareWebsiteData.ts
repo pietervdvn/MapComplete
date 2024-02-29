@@ -1,10 +1,9 @@
 import fs from "fs"
-// import readline from "readline"
+import readline from "readline"
 import Script from "../Script"
 import LinkedDataLoader from "../../src/Logic/Web/LinkedDataLoader"
 import UrlValidator from "../../src/UI/InputElement/Validators/UrlValidator"
 // vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/
-/*
 class CompareWebsiteData extends Script {
     constructor() {
         super("Given a csv file with 'id', 'tags' and 'website', attempts to fetch jsonld and compares the attributes. Usage: csv-file datadir")
@@ -28,19 +27,20 @@ class CompareWebsiteData extends Script {
         tags = tags.replace(/""/g, "\"")
         const data = JSON.parse(tags)
 
-        const website = data.website //this.urlFormatter.reformat(data.website)
-        if(!website.startsWith("https://stores.delhaize.be")){
-            return false
-        }
+        try{
+
+        const website = this.urlFormatter.reformat(data.website)
         console.log(website)
         const jsonld = await this.getWithCache(cachedir, website)
-        console.log(jsonld)
         if(Object.keys(jsonld).length === 0){
             return false
         }
         const diff = LinkedDataLoader.removeDuplicateData(jsonld, data)
-        fs.appendFileSync(targetfile, id +", "+ JSON.stringify(diff)+"\n")
+        fs.appendFileSync(targetfile, id +", "+ JSON.stringify(diff)+"\n\n")
         return true
+        }catch (e) {
+            console.error("Could not download ", data.website)
+        }
     }
 
     async main(args: string[]): Promise<void> {
@@ -66,7 +66,7 @@ class CompareWebsiteData extends Script {
                 handled ++
                 diffed = diffed + (madeComparison ? 1 : 0)
                 if(handled % 1000 == 0){
-                 //   console.log("Handled ",handled," got ",diffed,"diff results")
+                    console.log("Handled ",handled," got ",diffed,"diff results")
                 }
             } catch (e) {
                // console.error(e)
@@ -77,4 +77,3 @@ class CompareWebsiteData extends Script {
 }
 
 new CompareWebsiteData().run()
-*/

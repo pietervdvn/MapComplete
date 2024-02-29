@@ -48,7 +48,8 @@ export default class LinkedDataLoader {
     ]
 
     private static ignoreTypes = [
-        "Breadcrumblist"
+        "Breadcrumblist",
+       "http://schema.org/SearchAction"
     ]
 
     static async geoToGeometry(geo): Promise<Geometry> {
