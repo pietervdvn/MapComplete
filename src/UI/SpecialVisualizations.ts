@@ -1728,7 +1728,7 @@ export default class SpecialVisualizations {
                         doc: "Attempt to load ld+json from the specified URL. This can be in an embedded <script type='ld+json'>",
                     },
                 ],
-                needsUrls: [Constants.linkedDataProxy],
+                needsUrls: [Constants.linkedDataProxy, "http://www.schema.org"],
                 constr(
                     state: SpecialVisualizationState,
                     tags: UIEventSource<Record<string, string>>,

@@ -334,6 +334,7 @@ async function generateCsp(
         }
     }
 
+    hosts.add("http://www.schema.org") // We add schema.org as it must be http, not https
     if (hosts.has("*")) {
         throw "* is not allowed as connect-src"
     }
