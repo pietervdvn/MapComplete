@@ -10,6 +10,8 @@
     import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
     import type { Feature } from "geojson"
     import type { OsmTags } from "../../Models/OsmFeature"
+    import Translations from "../i18n/Translations"
+    import Tr from "../Base/Tr.svelte"
 
     export let externalData: Store<{ success: {content: Record<string, string> } } | { error: string } | undefined | null /* null if no URL is found, undefined if loading*/>
     export let state: SpecialVisualizationState
@@ -17,14 +19,17 @@
     export let layer: LayerConfig
     export let feature: Feature
     export let readonly = false
+    export let sourceUrl: Store<string>
+    
 </script>
-{#if $externalData === null}
+{#if !$sourceUrl}
   <!-- empty block -->
 {:else if $externalData === undefined}
-  <Loading>{$externalData}</Loading>
+  <Loading/>
 {:else if $externalData["error"] !== undefined}
-  <div class="alert">
-    Something went wrong: {$externalData["error"]}
+  <div class="alert flex">
+    <Tr t={Translations.t.general.error}/>
+    {$externalData["error"]}
   </div>
 {:else if $externalData["success"] !== undefined}
   <ComparisonTable
@@ -35,5 +40,6 @@
     {layer}
     {tags}
     {readonly}
+    sourceUrl={$sourceUrl}
   />
 {/if}

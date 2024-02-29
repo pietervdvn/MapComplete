@@ -1743,6 +1743,7 @@ export default class SpecialVisualizations {
                         }
                         return ({ url: tags[key], country: tags._country })
                     })
+                    const sourceUrl: Store<string | undefined> = url.mapD(url => url.url)
                     const externalData: Store<{ success: { content: any } } | {
                         error: string
                     } | undefined | null> = url.bindD(({
@@ -1759,6 +1760,7 @@ export default class SpecialVisualizations {
                             tags,
                             layer,
                             externalData,
+                            sourceUrl
                         }), undefined, url.map(url => !!url),
                     )
                 },

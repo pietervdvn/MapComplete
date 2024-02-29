@@ -6,7 +6,10 @@
     import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
     import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
     import { Tag } from "../../Logic/Tags/Tag"
+    import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
     import Loading from "../Base/Loading.svelte"
+    import Tr from "../Base/Tr.svelte"
+    import Translations from "../i18n/Translations"
 
     export let key: string
     export let externalProperties: Record<string, string>
@@ -38,34 +41,77 @@
         await state.changes.applyChanges(await change.CreateChangeDescriptions())
         currentStep = "done"
     }
+
+    let _country = $tags["_country"]
+    let mockPropertiesOsm = { id: feature.properties.id, [key]: $tags[key], _country }
+    let mockPropertiesExternal = { id: feature.properties.id, [key]: externalProperties[key], _country }
+    let trsWithKeys = layer.tagRenderings.filter(tr => {
+        const keys: string[] = [].concat(...tr.usedTags().map(t => t.usedKeys()))
+        return keys.indexOf(key) >= 0
+    })
+    let renderingBoth = undefined // trsWithKeys.find(tr => tr.IsKnown(mockPropertiesOsm) && tr.IsKnown(mockPropertiesExternal))
+    let renderingExternal = undefined // renderingBoth ?? trsWithKeys.find(tr => tr.IsKnown(mockPropertiesExternal))
+    let onOverwrite = false
+    const t = Translations.t.external
 </script>
 
-<tr>
-  <td><b>{key}</b></td>
+<div>
+  
+<div class="py-1 px-2 interactive flex w-full justify-between">
+  {#if renderingExternal}
+    <TagRenderingAnswer tags={new UIEventSource(mockPropertiesExternal)} selectedElement={feature}
+                        config={renderingExternal}
+                        {layer} {state} />
+  {:else}
+    <div class="flex gap-x-1 items-center">
+      <b>{key}</b>{externalProperties[key]}
+    </div>
 
-  {#if $tags[key]}
-    {$tags[key]}
   {/if}
-  <td>
-    {#if externalProperties[key].startsWith("http")}
-      <a href={externalProperties[key]} target="_blank">
-        {externalProperties[key]}
-      </a>
-    {:else}
-      {externalProperties[key]}
-    {/if}
-  </td>
   {#if !readonly}
-    <td>
-      {#if currentStep === "init"}
-        <button class="small" on:click={() => apply(key)}>Apply</button>
-      {:else if currentStep === "applying"}
-        <Loading />
-      {:else if currentStep === "done"}
-        <div class="thanks">Done</div>
-      {:else}
-        <div class="alert">Error</div>
-      {/if}
-    </td>
+    {#if currentStep === "init"}
+      <button class="small" on:click={() => apply(key)}
+
+              on:mouseover={() => onOverwrite = true}
+              on:focus={() => onOverwrite = true}
+              on:blur={() => onOverwrite = false}
+              on:mouseout={() => onOverwrite = false  }
+      >
+        {#if $tags[key]}
+          <Tr t={t.overwrite}/>
+        {:else}
+          <Tr t={t.apply}/>
+          
+        {/if}
+      </button>
+    {:else if currentStep === "applying"}
+      <Loading />
+    {:else if currentStep === "done"}
+      <div class="thanks">
+      <Tr t={t.done}/>
+        
+      </div>
+    {:else}
+      <div class="alert">
+        <Tr t={t.error}/>
+      </div>
+    {/if}
   {/if}
-</tr>
+
+</div>
+{#if $tags[key]}
+  <div class:glowing-shadow={onOverwrite}>
+    <span class="subtle">
+      <Tr t={t.currentInOsmIs}/>
+    </span>
+    {#if renderingBoth}
+      <TagRenderingAnswer tags={new UIEventSource(mockPropertiesOsm)} selectedElement={feature} config={renderingBoth}
+                          {layer} {state} />
+    {:else}
+      <div class="flex gap-x-2 items-center">
+        <b>{key}</b> {$tags[key]}
+      </div>
+    {/if}
+  </div>
+{/if}
+</div>
