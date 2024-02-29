@@ -313,6 +313,9 @@ export default class LayoutConfig implements LayoutInformation {
         if (tags === undefined) {
             return undefined
         }
+        if(tags.id.startsWith("current_view")){
+            return this.getLayer("current_view")
+        }
         for (const layer of this.layers) {
             if (!layer.source) {
                 if (layer.isShown?.matchesProperties(tags)) {
