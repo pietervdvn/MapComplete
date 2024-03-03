@@ -60,6 +60,7 @@
             "markDescription": "新增這一地點到你個人的最愛",
             "unmark": "從你的個人最愛移除"
         },
+        "intro": "你標記 {length} 的位置為最愛地點。",
         "introPrivacy": "只有你看得到這個清單",
         "loginToSeeList": "登入之後觀看你已經標記為最愛的地點",
         "tab": "你的最愛與評論",
