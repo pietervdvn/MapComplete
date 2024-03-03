@@ -150,6 +150,10 @@
                     "then": "./assets/themes/benches/bench_poi.svg"
                   },
                   {
+                    "if": "theme=bicycle_parkings",
+                    "then": "./assets/themes/bicycle_parkings/logo.svg"
+                  },
+                  {
                     "if": "theme=bicycle_rental",
                     "then": "./assets/themes/bicycle_rental/logo.svg"
                   },
