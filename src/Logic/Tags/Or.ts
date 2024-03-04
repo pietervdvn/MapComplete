@@ -96,7 +96,7 @@ export class Or extends TagsFilter {
         return [].concat(...this.or.map((subkeys) => subkeys.usedTags()))
     }
 
-    asChange(properties: Record<string, string>): { k: string; v: string }[] {
+    asChange(properties: Readonly<Record<string, string>>): { k: string; v: string }[] {
         const result = []
         for (const tagsFilter of this.or) {
             result.push(...tagsFilter.asChange(properties))

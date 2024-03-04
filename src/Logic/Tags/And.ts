@@ -159,7 +159,7 @@ export class And extends TagsFilter {
         return [].concat(...this.and.map((subkeys) => subkeys.usedTags()))
     }
 
-    asChange(properties: Record<string, string>): { k: string; v: string }[] {
+    asChange(properties: Readonly<Record<string, string>>): { k: string; v: string }[] {
         const result = []
         for (const tagsFilter of this.and) {
             result.push(...tagsFilter.asChange(properties))

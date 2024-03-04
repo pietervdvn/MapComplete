@@ -13,12 +13,13 @@ import { ExpressionSpecification } from "maplibre-gl"
  * The 'key' is always fixed and should not contain substitutions.
  * This cannot be used to query features
  */
-export default class SubstitutingTag implements TagsFilter {
+export default class SubstitutingTag extends TagsFilter {
     private readonly _key: string
     private readonly _value: string
     private readonly _invert: boolean
 
     constructor(key: string, value: string, invert = false) {
+        super()
         this._key = key
         this._value = value
         this._invert = invert
@@ -99,7 +100,7 @@ export default class SubstitutingTag implements TagsFilter {
         return []
     }
 
-    asChange(properties: Record<string, string>): { k: string; v: string }[] {
+    asChange(properties: Readonly<Record<string, string>>): { k: string; v: string }[] {
         if (this._invert) {
             throw "An inverted substituting tag can not be used to create a change"
         }
