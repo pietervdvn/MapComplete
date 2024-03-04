@@ -96,6 +96,10 @@
         "shortDescription": "A map of benches",
         "title": "Benches"
     },
+    "bicycle_parkings": {
+        "description": "A map showing all types of bicycle parkings",
+        "title": "Bicycle parkings"
+    },
     "bicycle_rental": {
         "description": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",
         "shortDescription": "A map with bicycle rental stations and bicycle rental shops",
@@ -1111,6 +1115,10 @@
         "description": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",
         "shortDescription": "This map shows the legally allowed maximum speed on every road.",
         "title": "Maxspeed"
+    },
+    "memorials": {
+        "description": "Memorials are physical objects permantently placed in the public space to remember a person or event. They can be a wide range of objects, such as statues, plaques, paintings, military objects (such as tanks), ...",
+        "title": "Memorials"
     },
     "nature": {
         "description": "On this map, one can find interesting information for tourists and nature lovers.",

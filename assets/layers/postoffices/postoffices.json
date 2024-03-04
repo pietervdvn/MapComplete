@@ -558,7 +558,8 @@
       "options": [
         {
           "question": {
-            "en": "Offers letter posting"
+            "en": "Offers letter posting",
+            "de": "Bietet Briefpost an"
           },
           "osmTags": {
             "and": [
@@ -574,7 +575,8 @@
       "options": [
         {
           "question": {
-            "en": "Offers parcel posting"
+            "en": "Offers parcel posting",
+            "de": "Bietet Paketaufgabe an"
           },
           "osmTags": {
             "and": [
@@ -590,7 +592,8 @@
       "options": [
         {
           "question": {
-            "en": "Offers pickup of missed parcels"
+            "en": "Offers pickup of missed parcels",
+            "de": "Bietet die Abholung von verpassten Paketen an"
           },
           "osmTags": {
             "and": [
@@ -606,7 +609,8 @@
       "options": [
         {
           "question": {
-            "en": "Accepts pickup of parcels sent here"
+            "en": "Accepts pickup of parcels sent here",
+            "de": "Akzeptiert die Abholung von Paketen, die hierher geschickt werden"
           },
           "osmTags": {
             "and": [
@@ -622,7 +626,8 @@
       "options": [
         {
           "question": {
-            "en": "Sells stamps"
+            "en": "Sells stamps",
+            "de": "Verkauft Briefmarken"
           },
           "osmTags": {
             "and": [

@@ -5221,6 +5221,13 @@
             }
         }
     },
+    "memorial": {
+        "tagRenderings": {
+            "start_date": {
+                "render": "Geplaatst op {start_date}"
+            }
+        }
+    },
     "nature_reserve": {
         "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
         "filter": {

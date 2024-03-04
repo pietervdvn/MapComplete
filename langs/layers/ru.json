@@ -1231,6 +1231,13 @@
             "render": "Карта"
         }
     },
+    "memorial": {
+        "tagRenderings": {
+            "start_date": {
+                "render": "Установлен {start_date}"
+            }
+        }
+    },
     "observation_tower": {
         "name": "Смотровые башни",
         "title": {

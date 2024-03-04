@@ -5003,9 +5003,17 @@
             "inscription": {
                 "question": "Quina és la inscripció d'aquesta placa?",
                 "render": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>"
+            },
+            "start_date": {
+                "render": "Col·locat el {start_date}"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Placa commemorativa"
+                }
+            },
             "render": "Placa commemorativa"
         }
     },

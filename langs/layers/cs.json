@@ -5197,9 +5197,17 @@
             "inscription": {
                 "question": "Jaký je nápis na této desce?",
                 "render": "Nápis na této desce zní: <p><i>{inscription}<i></p>"
+            },
+            "start_date": {
+                "render": "Umístěno {start_date}"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pamětní deska"
+                }
+            },
             "render": "Pamětní deska"
         }
     },

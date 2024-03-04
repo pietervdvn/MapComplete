@@ -14,7 +14,10 @@
   },
   "title": {
     "render": {
-      "en": "Memorial"
+      "en": "Memorial plaque",
+      "ca": "Placa commemorativa",
+      "cs": "Pamětní deska",
+      "de": "Gedenktafel"
     },
     "mappings": [
       {

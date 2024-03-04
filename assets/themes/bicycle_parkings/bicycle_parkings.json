@@ -9,8 +9,7 @@
   "icon": "./assets/themes/bicycle_parkings/logo.svg",
   "layers": [
     {
-      "builtin": 
-    "bike_parking",
+      "builtin": "bike_parking",
       "override": {
         "minzoom": 12
       }

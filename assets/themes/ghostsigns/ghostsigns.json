@@ -1,10 +1,13 @@
 {
   "id": "ghostsigns",
   "title": {
-    "en": "Ghost Signs"
+    "en": "Ghost Signs",
+    "de": "Geisterzeichen"
   },
   "description": {
-    "en": "A map showing disused signs on buildings"
+    "en": "A map showing disused signs on buildings",
+    "de": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
+    "es": "Un mapa que muestra los rótulos en desuso de los edificios"
   },
   "icon": "./assets/themes/advertising/wall_painting.svg",
   "layers": [
@@ -12,14 +15,19 @@
       "id": "ghostsigns",
       "title": {
         "render": {
-          "en": "Ghost Sign"
+          "en": "Ghost Sign",
+          "de": "Geisterzeichen"
         }
       },
       "description": {
-        "en": "Layer showing disused signs on buildings"
+        "en": "Layer showing disused signs on buildings",
+        "de": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
+        "es": "Capa que muestra carteles en desuso en edificios"
       },
       "name": {
-        "en": "Ghost Signs"
+        "en": "Ghost Signs",
+        "de": "Geisterzeichen",
+        "es": "Señales fantasma"
       },
       "source": {
         "osmTags": {
@@ -37,23 +45,27 @@
         {
           "id": "historic",
           "question": {
-            "en": "Is this a ghost sign?"
+            "en": "Is this a ghost sign?",
+            "de": "Ist das ein Geisterzeichen?"
           },
           "questionHint": {
-            "en": "Is this sign for a business that no longer exists or no longer being maintained?"
+            "en": "Is this sign for a business that no longer exists or no longer being maintained?",
+            "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
           },
           "mappings": [
             {
               "if": "historic=advertising",
               "then": {
-                "en": "This is a ghost sign"
+                "en": "This is a ghost sign",
+                "de": "Das ist ein Geisterzeichen"
               },
               "alsoShowIf": "historic=yes"
             },
             {
               "if": "historic=",
               "then": {
-                "en": "This is not a ghost sign, answering this will hide the sign from the map"
+                "en": "This is not a ghost sign, answering this will hide the sign from the map",
+                "de": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken"
               }
             }
           ]
@@ -69,33 +81,42 @@
         {
           "id": "inscription",
           "question": {
-            "en": "What is the text on the sign?"
+            "en": "What is the text on the sign?",
+            "de": "Was ist der Text auf dem Schild?"
           },
           "freeform": {
             "key": "inscription",
             "type": "string",
             "placeholder": {
-              "en": "Text on the sign"
+              "en": "Text on the sign",
+              "de": "Text auf dem Schild"
             }
           },
           "render": {
-            "en": "The text on the sign is: {inscription}"
+            "en": "The text on the sign is: {inscription}",
+            "de": "Der Text auf dem Schild ist: {inscription}"
           }
         },
         {
           "id": "brand",
           "question": {
-            "en": "For what business was this sign made?"
+            "en": "For what business was this sign made?",
+            "de": "Für welches Unternehmen wurde dieses Schild angefertigt?",
+            "es": "¿Para qué negocio se hizo este cartel?"
           },
           "freeform": {
             "key": "brand",
             "type": "string",
             "placeholder": {
-              "en": "Business name"
+              "en": "Business name",
+              "de": "Unternehmensname",
+              "es": "Nombre comercial"
             }
           },
           "render": {
-            "en": "This sign was made for: {brand}"
+            "en": "This sign was made for: {brand}",
+            "de": "Dieses Schild wurde gemacht für: {brand}",
+            "es": "Este cartel se hizo para: {brand}"
           }
         }
       ],
@@ -125,7 +146,9 @@
             "advertising=wall_painting"
           ],
           "title": {
-            "en": "a ghost sign"
+            "en": "a ghost sign",
+            "de": "ein Geisterzeichen",
+            "es": "una señal fantasma"
           },
           "snapToLayer": [
             "walls_and_buildings"
@@ -144,29 +167,34 @@
         "minzoom": 18,
         "name": {
           "en": "All advertentie wall paintings",
-          "nl": "Alle adverterende muurschilderingen"
+          "nl": "Alle adverterende muurschilderingen",
+          "de": "Alle Werbe-Wandbilder"
         },
         "+tagRenderings": [
           {
             "id": "historic",
             "question": {
-              "en": "Is this a ghost sign?"
+              "en": "Is this a ghost sign?",
+              "de": "Ist das ein Geisterzeichen?"
             },
             "questionHint": {
-              "en": "Is this sign for a business that no longer exists or no longer being maintained?"
+              "en": "Is this sign for a business that no longer exists or no longer being maintained?",
+              "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
             },
             "mappings": [
               {
                 "if": "historic=advertising",
                 "then": {
-                  "en": "This is a ghost sign"
+                  "en": "This is a ghost sign",
+                  "de": "Das ist ein Geisterzeichen"
                 },
                 "alsoShowIf": "historic=yes"
               },
               {
                 "if": "historic=",
                 "then": {
-                  "en": "This is not a ghost sign"
+                  "en": "This is not a ghost sign",
+                  "de": "Das ist kein Geisterzeichen"
                 }
               }
             ]

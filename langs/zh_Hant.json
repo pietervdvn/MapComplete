@@ -202,7 +202,7 @@
             "licenseInfo": "<h3>著作權聲明</h3>提供的資料採用 ODbL 授權釋出。可以用任何目標再利用資料，但是需<ul><li>標明 <b>© 開放街圖貢獻者</b></li><li>任何變動必須相同方式授權</li></ul> 請閱讀完整的 <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">著作權聲明</a>。",
             "noDataLoaded": "還未載入資料，之後能夠下載。",
             "pdf": {
-                "current_view_generic": "匯出目前檢視為 {paper_size } 的 {orientation} 方向 PDF"
+                "current_view_generic": "匯出目前檢視為 {paper_size} 的 {orientation} 方向 PDF"
             },
             "title": "下載",
             "toMuch": "有太多圖徵可以下載了",

@@ -1,10 +1,12 @@
 {
   "id": "souvenir_note",
   "name": {
-    "en": "Souvenir Banknote Machines"
+    "en": "Souvenir Banknote Machines",
+    "de": "Souvenir Banknotenmaschinen"
   },
   "description": {
-    "en": "Layer showing machines selling souvenir banknotes"
+    "en": "Layer showing machines selling souvenir banknotes",
+    "de": "Ebene zeigt Maschinen, die Souvenir-Banknoten verkaufen"
   },
   "source": {
     "osmTags": {
@@ -16,7 +18,8 @@
   },
   "title": {
     "render": {
-      "en": "Souvenir Banknote Machine"
+      "en": "Souvenir Banknote Machine",
+      "de": "Souvenir-Banknotenautomat"
     }
   },
   "pointRendering": [
@@ -51,10 +54,12 @@
   "presets": [
     {
       "title": {
-        "en": "a souvenir banknote machine"
+        "en": "a souvenir banknote machine",
+        "de": "eine Souvenir-Banknotenmaschine"
       },
       "description": {
-        "en": "Add a machine selling souvenir banknotes"
+        "en": "Add a machine selling souvenir banknotes",
+        "de": "Hinzufügen eines Automaten, der Souvenir-Banknoten verkauft"
       },
       "tags": [
         "amenity=vending_machine",
@@ -68,7 +73,8 @@
     {
       "id": "designs",
       "question": {
-        "en": "How many designs are available?"
+        "en": "How many designs are available?",
+        "de": "Wie viele Designs sind verfügbar?"
       },
       "freeform": {
         "key": "note:design_count",
@@ -82,31 +88,36 @@
         }
       },
       "render": {
-        "en": "This machine has {note:design_count} designs available."
+        "en": "This machine has {note:design_count} designs available.",
+        "de": "Diese Maschine verfügt über {note:design_count} Designs."
       },
       "mappings": [
         {
           "if": "note:design_count=1",
           "then": {
-            "en": "This machine has one design available."
+            "en": "This machine has one design available.",
+            "de": "Diese Maschine hat ein Design zur Verfügung."
           }
         },
         {
           "if": "note:design_count=2",
           "then": {
-            "en": "This machine has two designs available."
+            "en": "This machine has two designs available.",
+            "de": "Diese Maschine hat zwei Designs verfügbar."
           }
         },
         {
           "if": "note:design_count=3",
           "then": {
-            "en": "This machine has three designs available."
+            "en": "This machine has three designs available.",
+            "de": "Diese Maschine hat drei Designs verfügbar."
           }
         },
         {
           "if": "note:design_count=4",
           "then": {
-            "en": "This machine has four designs available."
+            "en": "This machine has four designs available.",
+            "de": "Diese Maschine hat vier Designs verfügbar."
           }
         }
       ]
@@ -115,30 +126,35 @@
     "website",
     {
       "question": {
-        "en": "How much does a souvenir note cost?"
+        "en": "How much does a souvenir note cost?",
+        "de": "Wie viel kostet eine Souvenirnote?"
       },
       "id": "charge",
       "render": {
-        "en": "A souvenir note costs {charge}"
+        "en": "A souvenir note costs {charge}",
+        "de": "Eine Souvenirnote kostet {charge}"
       },
       "freeform": {
         "key": "charge",
         "placeholder": {
-          "en": "Cost (e.g. 2 EUR)"
+          "en": "Cost (e.g. 2 EUR)",
+          "de": "Kosten (z.B. 2 EUR)"
         }
       },
       "mappings": [
         {
           "if": "charge=2 EUR",
           "then": {
-            "en": "A souvenir note costs 2 euro"
+            "en": "A souvenir note costs 2 euro",
+            "de": "Eine Souvenirnote kostet 2 Euro"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         },
         {
           "if": "charge=3 EUR",
           "then": {
-            "en": "A souvenir note costs 3 euro"
+            "en": "A souvenir note costs 3 euro",
+            "de": "Eine Souvenirnote kostet 3 Euro"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         }
@@ -147,20 +163,23 @@
     "denominations-coins",
     {
       "question": {
-        "en": "Is this machine located indoors?"
+        "en": "Is this machine located indoors?",
+        "de": "Ist diese Maschine im Innenbereich?"
       },
       "id": "indoor",
       "mappings": [
         {
           "if": "indoor=yes",
           "then": {
-            "en": "This machine is located indoors."
+            "en": "This machine is located indoors.",
+            "de": "Diese Maschine befindet sich im Innenbereich."
           }
         },
         {
           "if": "indoor=no",
           "then": {
-            "en": "This machine is located outdoors."
+            "en": "This machine is located outdoors.",
+            "de": "Diese Maschine befindet sich im Freien."
           }
         }
       ]

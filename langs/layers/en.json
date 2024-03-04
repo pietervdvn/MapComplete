@@ -6120,13 +6120,64 @@
         }
     },
     "memorial": {
+        "name": "Memorials",
+        "presets": {
+            "0": {
+                "title": "a memorial"
+            }
+        },
         "tagRenderings": {
             "inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "This memorial does not have an inscription"
+                    }
+                },
                 "question": "What is the inscription of this plaque?",
                 "render": "The inscription on this plaque reads: <p><i>{inscription}<i></p>"
+            },
+            "memorial-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a statue"
+                    },
+                    "1": {
+                        "then": "This is a plaque"
+                    },
+                    "2": {
+                        "then": "This is a commemorative bench"
+                    },
+                    "3": {
+                        "then": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash"
+                    }
+                },
+                "question": "What type of memorial is this?"
+            },
+            "memorial-wikidata": {
+                "question": "What is the Wikipedia page about this memorial?",
+                "questionHint": "This is a about the memorial itself, not about the person or event that the memorial remembers. If this memorial does not have a Wikipedia page or Wikidata entity, skip this question.",
+                "render": {
+                    "before": "<h3>Wikipedia page about the memorial</h3>"
+                }
+            },
+            "start_date": {
+                "question": "When was this memorial installed?",
+                "render": "Placed on {start_date}"
+            },
+            "subject-wikidata": {
+                "question": "What is the Wikipedia page about the person or event that is remembered here?",
+                "questionHint": "If the person or event does not have a Wikipedia page or Wikidata entity, skip this question.",
+                "render": {
+                    "before": "<h3>Wikipedia page about the remembered event or person</h3>"
+                }
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Memorial plaque"
+                }
+            },
             "render": "Memorial plaque"
         }
     },
