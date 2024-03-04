@@ -23,8 +23,7 @@
         "osmTags": "Lichtmastnummer~*",
         "#geoJson": "https://opendata.arcgis.com/datasets/ba37cdb372064b3199c548b75d16a609_0.geojson",
         "geoJson": "https://robinlinde.github.io/tiles/assen_street_lighting/{z}/{x}/{y}.json",
-        "geoJsonZoomLevel": 16,
-        "isOsmCache": false
+        "geoJsonZoomLevel": 16
       },
       "calculatedTags": [
         "_closest_osm_street_lamp=closest(feat)('street_lamps')?.properties?.id",

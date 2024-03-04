@@ -1,12 +1,5 @@
 {
   "id": "disaster_response",
-  "title": {
-    "render": {
-      "en": "Disaster response organization",
-      "it": "Organizzazione per la risposta ai disastri",
-      "de": "Katastrophenschutzorganisation"
-    }
-  },
   "name": {
     "en": "Disaster response organizations",
     "de": "Katastrophenschutzorganisationen"
@@ -16,8 +9,36 @@
     "it": "Questo livello contiene organizzazioni che hanno come obiettivo principale quello di aiutare la popolazione civile durante e dopo disastri naturali o antropogenici, lavorando nell'area colpita.",
     "de": "Diese Ebene umfasst Organisationen, deren Hauptziel es ist, der Zivilbevölkerung während und nach Natur- oder anthropogenen Katastrophen zu helfen, indem sie in dem betroffenen Gebiet tätig sind."
   },
-  "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response",
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=disaster_response"
+      ]
+    }
+  },
   "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Disaster response organization",
+      "it": "Organizzazione per la risposta ai disastri",
+      "de": "Katastrophenschutzorganisation"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "./assets/themes/disaster_response/CivilDefence.svg"
+        }
+      ]
+    }
+  ],
   "lineRendering": [
     {
       "color": "#6BC4F7",
@@ -33,28 +54,6 @@
       },
       "tags": [
         "emergency=disaster_response"
-      ]
-    }
-  ],
-  "source": {
-    "osmTags": {
-      "and": [
-        "emergency=disaster_response"
-      ]
-    }
-  },
-  "pointRendering": [
-    {
-      "iconSize": "40,40",
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom",
-      "marker": [
-        {
-          "icon": "./assets/themes/disaster_response/CivilDefence.svg"
-        }
       ]
     }
   ],
@@ -77,5 +76,6 @@
         "de": "Diese Organisation heißt <b>{name}</b>"
       }
     }
-  ]
+  ],
+  "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response"
 }

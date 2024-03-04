@@ -62,7 +62,6 @@ describe("ReplaceGeometryAction", () => {
                 name: "All OSM-buildings",
                 source: {
                     osmTags: "building~*",
-                    maxCacheAge: 0,
                 },
                 calculatedTags: ["_surface:strict:=feat.get('_surface')"],
                 lineRendering: [
@@ -269,7 +268,6 @@ describe("ReplaceGeometryAction", () => {
                         "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
                     geoJsonZoomLevel: 18,
                     mercatorCrs: true,
-                    maxCacheAge: 0,
                 },
                 name: "GRB geometries",
                 title: "GRB outline",

@@ -71,9 +71,5 @@
     "tree_node"
   ],
   "widenFactor": 0.2,
-  "osmApiTileSize": 18,
-  "clustering": {
-    "maxZoom": 19,
-    "minNeededElements": 25
-  }
+  "osmApiTileSize": 18
 }

@@ -1,0 +1,19 @@
+{
+  "id": "bicycle_parkings",
+  "description": {
+    "en": "A map showing all types of bicycle parkings"
+  },
+  "title": {
+    "en": "Bicycle parkings"
+  },
+  "icon": "./assets/themes/bicycle_parkings/logo.svg",
+  "layers": [
+    {
+      "builtin": 
+    "bike_parking",
+      "override": {
+        "minzoom": 12
+      }
+    }
+  ]
+}

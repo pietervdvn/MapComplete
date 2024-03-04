@@ -162,7 +162,7 @@ class CachedSqlCount {
 
 const connectionString = "postgresql://user:password@localhost:5444/osm-poi"
 const tcs = new OsmPoiDatabase(connectionString)
-const withCache = new CachedSqlCount(tcs, 60 * 60 * 24)
+const withCache = new CachedSqlCount(tcs, 14 * 60 * 60 * 24)
 new Server(2345, { ignorePathPrefix: ["summary"] }, [
     {
         mustMatch: "status.json",

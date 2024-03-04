@@ -231,6 +231,5 @@
     }
   ],
   "overpassTimeout": 180,
-  "widenFactor": 0.05,
-  "clustering": false
+  "widenFactor": 0.05
 }

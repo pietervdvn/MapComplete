@@ -276,7 +276,6 @@ class LineRenderingLayer {
                     },
                 }
                 const filter = img.if?.asMapboxExpression()
-                console.log(">>>", this._layername, imgId, img.if, "-->", filter)
                 if (filter) {
                     spec.filter = filter
                 }
@@ -552,14 +551,13 @@ export default class ShowDataLayer {
     }
 
     private initDrawFeatures(map: MlMap) {
-        let { features, doShowLayer, fetchStore, selectedElement, selectedLayer } = this._options
+        let { features, doShowLayer, fetchStore, selectedElement } = this._options
         const onClick =
             this._options.onClick ??
             (this._options.layer.title === undefined
                 ? undefined
                 : (feature: Feature) => {
                       selectedElement?.setData(feature)
-                      selectedLayer?.setData(this._options.layer)
                   })
         if (this._options.drawLines !== false) {
             for (let i = 0; i < this._options.layer.lineRendering.length; i++) {

@@ -1,8 +1,5 @@
 {
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuracy": true
-  },
+  "id": "assembly_point",
   "name": {
     "en": "Emergency assembly points",
     "it": "Punti di raccolta per emergenze",
@@ -13,14 +10,18 @@
     "it": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza.",
     "de": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln."
   },
-  "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point",
-  "id": "assembly_point",
-  "minzoom": 10,
   "source": {
     "osmTags": {
       "and": [
         "emergency=assembly_point"
       ]
+    }
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Assembly point during emergencies",
+      "de": "Sammelplatz bei Notfällen"
     }
   },
   "pointRendering": [
@@ -50,12 +51,6 @@
       ]
     }
   ],
-  "title": {
-    "render": {
-      "en": "Assembly point during emergencies",
-      "de": "Sammelplatz bei Notfällen"
-    }
-  },
   "tagRenderings": [
     "images",
     {
@@ -154,5 +149,10 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point"
 }

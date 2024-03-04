@@ -19,8 +19,7 @@
   "source": {
     "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson",
     "geoJsonZoomLevel": 6,
-    "osmTags": "resources~*",
-    "isOsmCache": false
+    "osmTags": "resources~*"
   },
   "calculatedTags": [
     "_community_links=Object.values(JSON.parse(feat.properties.resources || '{}')).map(value =>{return value.resolved.nameHTML + '<br>&emsp;' + value.resolved.descriptionHTML}).join('<br>')"

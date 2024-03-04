@@ -13,12 +13,15 @@
   export let layer: LayerConfig
   export let selectedElement: Feature
   let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
-    selectedElement.properties.id
+    selectedElement.properties.id,
   )
   $: {
     tags = state.featureProperties.getStore(selectedElement.properties.id)
   }
 
+  let isTesting = state.featureSwitchIsTesting
+  let isDebugging = state.featureSwitches.featureSwitchIsDebugging
+  
   let metatags: Store<Record<string, string>> = state.userRelatedState.preferencesAsTags
 </script>
 
@@ -39,7 +42,7 @@
           class="no-weblate title-icons links-as-button mr-2 flex flex-row flex-wrap items-center gap-x-0.5 pt-0.5 sm:pt-1"
         >
           {#each layer.titleIcons as titleIconConfig}
-            {#if (titleIconConfig.condition?.matchesProperties($tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...$metatags, ...$tags } ) ?? true) && titleIconConfig.IsKnown($tags)}
+            {#if (titleIconConfig.condition?.matchesProperties($tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties({ ...$metatags, ...$tags }) ?? true) && titleIconConfig.IsKnown($tags)}
               <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
                 <TagRenderingAnswer
                   config={titleIconConfig}
@@ -52,6 +55,10 @@
               </div>
             {/if}
           {/each}
+
+          {#if $isTesting || $isDebugging}
+            <a class="subtle" href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Layers/{layer.id}.md" target="_blank" rel="noreferrer noopener " >{layer.id}</a>
+          {/if}
         </div>
       </div>
     </div>
@@ -68,7 +75,7 @@
 {/if}
 
 <style>
-  :global(.title-icons a) {
-    display: block !important;
-  }
+    :global(.title-icons a) {
+        display: block !important;
+    }
 </style>

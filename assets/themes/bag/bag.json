@@ -50,8 +50,7 @@
       "title": "OSM Building",
       "description": "Layer showing buildings that are in OpenStreetMap",
       "source": {
-        "osmTags": "building~*",
-        "maxCacheAge": 0
+        "osmTags": "building~*"
       },
       "minzoom": 18,
       "doCount": false,
@@ -161,8 +160,7 @@
             "addr:postcode~*",
             "addr:street~*"
           ]
-        },
-        "maxCacheAge": 0
+        }
       },
       "minzoom": 18,
       "doCount": false,
@@ -204,8 +202,7 @@
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 18,
-        "osmTags": "identificatie~*",
-        "maxCacheAge": 0
+        "osmTags": "identificatie~*"
       },
       "minzoom": 18,
       "calculatedTags": [
@@ -395,8 +392,7 @@
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 19,
-        "osmTags": "identificatie~*",
-        "maxCacheAge": 0
+        "osmTags": "identificatie~*"
       },
       "minzoom": 18,
       "calculatedTags": [
