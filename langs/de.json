@@ -27,6 +27,7 @@
             "selectReason": "Bitte auswählen, warum dieses Element gelöscht werden soll",
             "softDelete": "Dieses Element wird aktualisiert und in dieser Anwendung ausgeblendet. <span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "Dieses Merkmal wurde geändert und passt nicht mehr zu dieser Ebene",
         "isDeleted": "Dieses Element wurde gelöscht",
         "isntAPoint": "Es können nur Punkte gelöscht werden. Das ausgewählte Objekt ist ein Weg, eine Fläche oder eine Relation.",
         "loading": "Eigenschaften untersuchen, um festzustellen, ob das Element gelöscht werden kann.",
@@ -55,9 +56,9 @@
             "isFavourite": "Der Standort ist derzeit als Favorit markiert und wird auf allen thematischen Karten von MapComplete angezeigt, die Sie besuchen.",
             "isMarkedShort": "Als bevorzugter Standort markiert",
             "isNotMarkedShort": "Nicht als Favorit markiert",
-            "markAsFavouriteTitle": "Diesen Standort als bevorzugten Standort markieren",
+            "markAsFavouriteTitle": "Diesen Standort als Favorit markieren",
             "markDescription": "Diesen Standort zur persönlichen Liste bevorzugter Standorte hinzufügen",
-            "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen",
+            "unmark": "Standort von Favoritenliste entfernen",
             "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
         },
         "downloadGeojson": "Favoriten als geojson herunterladen",
@@ -213,6 +214,7 @@
                 "current_view_generic": "Exportiere eine PDF-Ansicht im aktuellen Modus für {paper_size} im {orientation} Modus"
             },
             "title": "Download",
+            "toMuch": "Es gibt zu viele Funktionen, um sie alle herunterzuladen",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
         "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
@@ -222,6 +224,10 @@
         "example": "Beispiel",
         "examples": "Beispiele",
         "fewChangesBefore": "Bitte beantworten Sie einige Fragen zu bestehenden Objekten, bevor Sie ein neues Objekt hinzufügen.",
+        "filterPanel": {
+            "disableAll": "Alle deaktivieren",
+            "enableAll": "Alle aktivieren"
+        },
         "geopermissionDenied": "Die Verwendung der Standortbestimmung wurde verweigert",
         "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">ein neues Konto anlegen</a>",
@@ -779,7 +785,9 @@
             "feedback": "Webadresse ungültig"
         },
         "wikidata": {
-            "description": "Eine Wikidata-Kennung"
+            "description": "Eine Wikidata-Kennung",
+            "empty": "Bitte gib einige Wikidata-Einträge ein",
+            "startsWithQ": "Ein Wikidata-Identifikator beginnt mit Q und wird von einer Zahl gefolgt"
         }
     }
 }

@@ -12,9 +12,9 @@
     },
     "communityIndex": {
         "available": "這個社群說 {native}",
-        "intro": "與其他人接洽並且與他們熟悉，從他們的經驗學習，...",
+        "intro": "與其他人接洽並且與他們熟悉，從他們的經驗學習，…",
         "notAvailable": "這個社群不說 {native}",
-        "title": "社群索引"
+        "title": "與其他人聯繫"
     },
     "delete": {
         "cancel": "取消",
@@ -27,6 +27,7 @@
             "selectReason": "請選擇為什麼這個圖徵應該被刪除",
             "softDelete": "這個圖徵已經被更新，然後從程式被隱藏了。<span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "這個圖徵已經改變，而且不再符合這一圖層",
         "isDeleted": "這圖徵已經刪除",
         "isntAPoint": "只有節點可以被刪，選取的圖徵是路徑、區域或是關聯。",
         "loading": "調查屬性來確定是否能刪除這一圖徵。",
@@ -50,6 +51,21 @@
         "panelIntro": "<h3>你的個人主題</h3>從所有官方主題啟用你喜愛的圖層",
         "reload": "重新載入資料"
     },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "目前這個位置已經標示為最愛，而且會在所有你瀏覽的 MapComplete 的主題地圖當中顯示。",
+            "isMarkedShort": "標示為最愛地點",
+            "isNotMarkedShort": "並沒有標示為最愛",
+            "markAsFavouriteTitle": "標示這個地點為最愛地點",
+            "markDescription": "新增這一地點到你個人的最愛",
+            "unmark": "從你的個人最愛移除"
+        },
+        "intro": "你標記 {length} 的位置為最愛地點。",
+        "introPrivacy": "只有你看得到這個清單",
+        "loginToSeeList": "登入之後觀看你已經標記為最愛的地點",
+        "tab": "你的最愛與評論",
+        "title": "你最愛的地點"
+    },
     "flyer": {
         "aerial": "這份地圖使用不同的背景，是 Agentschap Informatie Vlaanderen 釋出的空照圖",
         "callToAction": "在 mapcomplete.org 測試",
@@ -59,15 +75,48 @@
             "ex": "下面顯示經過簡化過的自然保留區的樣貌。",
             "intro": "使用者取得滿滿圖徽的地圖，只要選擇一個，就會出現圖徽的相關資訊。",
             "title": "介面長得怎麼樣子？"
-        }
+        },
+        "fakeui": {
+            "question": "如果屬或不明的話，MapComplete 會顯示問題",
+            "see_images": "顯示影像先前的貢獻者，維基百科、Mapillary、…",
+            "wikipedia": "顯示連結的維基百科條目"
+        },
+        "mapcomplete": {
+            "customize": "MapComplete 可以透過新地圖圖層、新功能，或是搭配你所屬組織的顏色和字型等樣式，來打造符合的需求。\n我們也有開始募集地理資料的倡議經驗。\n請聯繫 pietervdvn@posteo.net 來洽詢。",
+            "intro": "MapComplete 是有 {mapCount} 份互動地圖的網站，每一份地圖允許人新增或更新資訊，並且有許多功能：",
+            "li0": "顯示 POI 在那裡",
+            "li1": "加新的點位或是更新既有的點位的資訊",
+            "li2": "更容易添加聯絡資訊與營運時間",
+            "li3": "能夠以 iFrame 型式內嵌到其他網站",
+            "li4": "嵌入有相當多工具可用的開放街圖生態系",
+            "li5": "有匯入既有資料集的功能",
+            "li6": "許多先進功能，像是偵測榯木與進階輸入方法",
+            "li7": "智左權的自由軟體 (GPL 授權) 而且免費使用",
+            "title": "什麼是 MapComplete？"
+        },
+        "onwheels": "也有輪椅使用者的室內地圖。",
+        "osm": "開放街圖是任何人基於任何目的，只要標注出處與保持資料是開放的，都可以編輯與再利用的線上地圖。\n\n開放街圖是全世界最大的地理空間資料庫，並且被成千上萬的應用程式與網站使用。",
+        "tagline": "用開放街圖收集地理資料",
+        "title": "mapcomplete.org",
+        "toerisme_vlaanderen": "對於共同專案如 Visit Flanders，「釘選你的點」就會創建。有超過 160 位貢獻者新增上千個長椅與野餐桌，並且觀察到 100 個單車充電站。",
+        "whatIsOsm": "什麼是開放街圖？"
     },
     "general": {
+        "404": "這一頁並不存在",
         "about": "相當容易編輯，而且能為開放街圖新增特定主題",
+        "aboutMapComplete": {
+            "intro": "使用 MapComplete 新增開放街圖資訊到<b>單一主題。</b>回答問題，然後在數分鐘內的你的貢獻就散佈到所有地方。大部分的主題都能添加照片或是留下評論。<b>主題維護者則</b>定義元素、問題與語言。"
+        },
         "add": {
             "addNew": "在這裡新增新的 {category}",
+            "backToSelect": "選取不同的分類",
             "confirmButton": "在此新增 {category}。<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
+            "confirmLocation": "確認這一地點",
+            "confirmTitle": "新增 {title}？",
+            "confirmWarning": "你創建的圖徵會被<b>所有人看到</b>，請只加上現實存在的事物，很多應用程式使用這些資料。",
             "disableFilters": "關閉所有篩選器",
             "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
+            "enableLayer": "啟用圖層 {name}",
             "hasBeenImported": "這個圖徵已經被匯入了",
             "import": {
                 "hasBeenImported": "此物件已匯入",
@@ -85,10 +134,10 @@
             "pleaseLogin": "請先登入來新增圖徵",
             "presetInfo": "新的興趣點有 {tags}",
             "stillLoading": "目前仍在載入資料，請稍後再來新增圖徵。",
-            "title": "新增新的圖徵？",
+            "title": "新增新的圖徵",
             "warnVisibleForEveryone": "你新增的東西將會被所有人看到",
             "wrongType": "這個圖徵並非節點也不是路徑，因此無法匯入",
-            "zoomInFurther": "放大來新增新的圖徵。",
+            "zoomInFurther": "放大來新增新的圖徵",
             "zoomInMore": "再放大來匯入這一圖徵"
         },
         "apply_button": {
@@ -96,6 +145,8 @@
             "isApplied": "變動已經套用了"
         },
         "attribution": {
+            "attributionBackgroundLayer": "目前的背景圖層是 {name}",
+            "attributionBackgroundLayerWithCopyright": "目前的背景圖層是 {name}：{copyright}",
             "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
             "attributionTitle": "署名通知",
             "codeContributionsBy": "MapComplete 是由 {contributors} 和其他 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 位貢獻者</a>構建而成",
@@ -110,23 +161,34 @@
             "josmOpened": "已經開啟 JOSM",
             "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
             "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
+            "mapDataByOsm": "地圖資料：開放街圖",
             "mapillaryHelp": "線上服務 <b>Mapillary</b> 能夠以開放授權提供收集到的街景照片。貢獻者能夠採用 Mapillary 照片來改進開放街圖",
             "openIssueTracker": "提出臭蟲報告",
             "openMapillary": "開啟 Mapillary",
             "openOsmcha": "請見 {theme} 的最新編輯",
+            "seeOnMapillary": "在 Mapillary 觀看這張影像",
             "themeBy": "由 {author} 維護主題",
+            "title": "版權與署名",
             "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
         },
         "back": "回去",
-        "backgroundMap": "背景地圖",
+        "backToIndex": "回到所有主題地圖的總覽頁面",
+        "backToMap": "回到地圖",
+        "backgroundMap": "選擇背景圖層",
+        "backgroundSwitch": "切換背景",
         "cancel": "取消",
         "confirm": "確認",
-        "customThemeIntro": "<h3>客製化主題</h3>觀看這些先前使用者創造的主題。",
+        "customThemeIntro": "這些是先前使用者創造的主題。",
+        "customThemeTitle": "客製化主題",
         "download": {
             "downloadAsPdf": "下載目前地圖的 PDF 檔",
             "downloadAsPdfHelper": "列印當前地圖相當理想",
+            "downloadAsPng": "下載為圖片",
+            "downloadAsPngHelper": "很適合放在報告當中",
             "downloadAsSvg": "下載當前地圖的 SVG",
-            "downloadAsSvgHelper": "與 Inkscape 或是 Adobe Illustrator 相容，仍需要進一步的處理  ",
+            "downloadAsSvgHelper": "與 Inkscape 或是 Adobe Illustrator 的相容問題，仍需要進一步的處理..",
+            "downloadAsSvgLinesOnly": "下載目前地圖只含有線條部分為 svg",
+            "downloadAsSvgLinesOnlyHelper": "自我交叉的線條已經破壞了，能用在一些 3D 軟體",
             "downloadCSV": "下載可視資料為 CSV",
             "downloadCSVHelper": "與 LibreOffice Calc、Excel 等相容",
             "downloadFeatureAsGeojson": "下載為 GeoJSON 檔案",
@@ -137,24 +199,48 @@
             "downloadGpxHelper": "GPX 檔案能被大部分導航裝置或 app 使用",
             "exporting": "匯出…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
-            "licenseInfo": "<h3>著作權聲明</h3>提供的資料採用 ODbL 授權釋出。可以用任何目標再利用資料，但是必須<ul><li>標明 <b>© 開放街圖貢獻者</b></li><li>任何變動必須採用相同授權</li></ul> 請閱讀完整的 <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">著作權聲明</a>。",
+            "licenseInfo": "<h3>著作權聲明</h3>提供的資料採用 ODbL 授權釋出。可以用任何目標再利用資料，但是需<ul><li>標明 <b>© 開放街圖貢獻者</b></li><li>任何變動必須相同方式授權</li></ul> 請閱讀完整的 <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">著作權聲明</a>。",
             "noDataLoaded": "還未載入資料，之後能夠下載。",
-            "title": "下載可視的資料",
+            "pdf": {
+                "current_view_generic": "匯出目前檢視為 {paper_size } 的 {orientation} 方向 PDF"
+            },
+            "title": "下載",
+            "toMuch": "有太多圖徵可以下載了",
             "uploadGpx": "上傳軌跡到開放街圖"
         },
+        "enableGeolocationForSafari": "你沒有看到要求地理位置權限的跳出視窗？",
+        "enableGeolocationForSafariLink": "學習如何在設定當中啟用地理位置權限",
+        "eraseValue": "消除這個數值",
         "error": "發生了狀況",
         "example": "例子",
         "examples": "例子",
         "fewChangesBefore": "請先回答有關既有圖徵的問題再來新增新圖徵。",
+        "filterPanel": {
+            "disableAll": "關閉所有",
+            "enableAll": "啟用所有"
+        },
+        "geopermissionDenied": "使用地理位置要求已經被拒絕",
         "getStartedLogin": "登入開放街圖帳號來開始",
         "getStartedNewAccount": " 或是 <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">註冊新帳號</a>",
         "goToInbox": "開啟訊息框",
         "histogram": {
             "error_loading": "無法載入直方圖"
         },
+        "labels": {
+            "background": "改變背景",
+            "filter": "篩選資料",
+            "jumpToLocation": "到你目前的位置",
+            "menu": "選單",
+            "zoomIn": "放大",
+            "zoomOut": "縮小"
+        },
         "layerSelection": {
             "title": "選擇圖層",
             "zoomInToSeeThisLayer": "放大來看看這一圖層"
+        },
+        "levelSelection": {
+            "addNewOnLevel": "這個新點位置在幾 {level} 樓？",
+            "confirmLevel": "是，在 {level} 樓新增 {preset}"
         },
         "loading": "載入中…",
         "loadingTheme": "載入 {theme}…",
@@ -235,6 +321,11 @@
         },
         "skip": "跳過這問題",
         "testing": "測試 - 改變還沒有儲存",
+        "uploadGpx": {
+            "uploading": "更新你的蹤跡…"
+        },
+        "uploadPending": "{count} 個變動仍在等候中",
+        "uploadPendingSingle": "一個變動等待中",
         "weekdays": {
             "abbreviations": {
                 "friday": "星期五",
