@@ -2424,7 +2424,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Otwarte 24/7 (również w święta)"
                         }

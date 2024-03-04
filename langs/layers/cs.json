@@ -6553,7 +6553,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Otevřeno 24/7 (včetně svátků)"
                         }

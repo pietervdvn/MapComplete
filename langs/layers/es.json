@@ -3607,7 +3607,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Abierta 24/7 (incluyendo festivos)"
                         }

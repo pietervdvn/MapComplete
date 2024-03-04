@@ -4712,7 +4712,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Ouvert 24h/24 (jours fériés compris)"
                         }

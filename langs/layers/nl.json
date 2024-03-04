@@ -6550,7 +6550,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "24/7 open (ook tijdens feestdagen)"
                         }

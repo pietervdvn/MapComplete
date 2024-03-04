@@ -7690,7 +7690,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "durchgehend geöffnet (auch an Feiertagen)"
                         }
