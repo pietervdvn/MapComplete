@@ -46,8 +46,6 @@ import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import { WayId } from "../Models/OsmFeature"
-import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte"
@@ -93,6 +91,7 @@ import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
 import LoginButton from "./Base/LoginButton.svelte"
 import Toggle from "./Input/Toggle"
 import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
+import SplitRoadWizard from "./Popup/SplitRoadWizard.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -432,7 +431,7 @@ export default class SpecialVisualizations {
                             .map((tags) => tags.id)
                             .map((id) => {
                                 if (id.startsWith("way/")) {
-                                    return new SplitRoadWizard(<WayId>id, state)
+                                    return new SvelteUIElement(SplitRoadWizard, { id, state })
                                 }
                                 return undefined
                             })
@@ -741,12 +740,20 @@ export default class SpecialVisualizations {
             {
                 funcName: "import_mangrove_key",
                 docs: "Only makes sense in the usersettings. Allows to import a mangrove public key and to use this to make reviews",
-                args: [{
-                    name: "text",
-                    doc: "The text that is shown on the button",
-                }],
+                args: [
+                    {
+                        name: "text",
+                        doc: "The text that is shown on the button",
+                    },
+                ],
                 needsUrls: [],
-                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
                     const [text] = argument
                     return new SvelteUIElement(ImportReviewIdentity, { state, text })
                 },

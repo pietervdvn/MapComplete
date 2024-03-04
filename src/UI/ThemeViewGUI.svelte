@@ -118,7 +118,8 @@
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
   state.mapProperties.installCustomKeyboardHandler(viewport)
-
+  let canZoomIn = mapproperties.maxzoom.map(mz => mapproperties.zoom.data < mz, [mapproperties.zoom] )
+  let canZoomOut = mapproperties.minzoom.map(mz => mapproperties.zoom.data > mz, [mapproperties.zoom] )
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
     if (!rect) {
@@ -329,12 +330,14 @@
       </If>
       <MapControlButton
         arialabel={Translations.t.general.labels.zoomIn}
+        enabled={canZoomIn}
         on:click={() => mapproperties.zoom.update((z) => z + 1)}
         on:keydown={forwardEventToMap}
       >
         <Plus class="h-8 w-8" />
       </MapControlButton>
       <MapControlButton
+        enabled={canZoomOut}
         arialabel={Translations.t.general.labels.zoomOut}
         on:click={() => mapproperties.zoom.update((z) => z - 1)}
         on:keydown={forwardEventToMap}

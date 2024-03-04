@@ -53,9 +53,6 @@
     lat: number
   }>(undefined)
 
-  const dispatch = createEventDispatcher<{ click: { lon: number; lat: number } }>()
-
-  const xyz = Tiles.embedded_tile(coordinate.lat, coordinate.lon, 16)
   const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
   let initialMapProperties: Partial<MapProperties> & { location } = {
     zoom: new UIEventSource<number>(19),
@@ -73,6 +70,7 @@
     minzoom: new UIEventSource<number>(18),
     rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer),
   }
+  state?.showCurrentLocationOn(map)
 
   if (targetLayer) {
     const featuresForLayer = state.perLayer.get(targetLayer.id)
@@ -120,7 +118,7 @@
 
 <LocationInput
   {map}
-  on:click={(data) => dispatch("click", data)}
+  on:click
   mapProperties={initialMapProperties}
   value={preciseLocation}
   initialCoordinate={coordinate}

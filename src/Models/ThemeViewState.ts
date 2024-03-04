@@ -439,6 +439,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedElement.setData(feature)
     }
 
+    public showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer {
+        const id = "gps_location"
+        const flayerGps = this.layerState.filteredLayers.get(id)
+        const features = this.geolocation.currentUserLocation
+        return new ShowDataLayer(map, {
+            features,
+            doShowLayer: flayerGps.isDisplayed,
+            layer: flayerGps.layerDef,
+            metaTags: this.userRelatedState.preferencesAsTags,
+            selectedElement: this.selectedElement,
+        })
+    }
+
     /**
      * Various small methods that need to be called
      */
@@ -671,6 +684,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
     }
+
     /**
      * Add the special layers to the map
      */

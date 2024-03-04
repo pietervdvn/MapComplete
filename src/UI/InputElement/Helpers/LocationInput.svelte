@@ -13,6 +13,7 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { createEventDispatcher, onDestroy } from "svelte"
   import Move_arrows from "../../../assets/svg/Move_arrows.svelte"
+  import SmallZoomButtons from "../../Map/SmallZoomButtons.svelte"
 
   /**
    * A visualisation to pick a location on a map background
@@ -95,4 +96,5 @@
   </div>
 
   <DragInvitation hideSignal={mla.location} />
+  <SmallZoomButtons adaptor={mla} />
 </div>

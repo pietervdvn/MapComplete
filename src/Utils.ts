@@ -1390,7 +1390,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         d.setUTCMinutes(0)
     }
 
-    public static scrollIntoView(element: HTMLBaseElement | HTMLDivElement) {
+    public static scrollIntoView(element: HTMLBaseElement | HTMLDivElement): void {
+        if (!element) {
+            return
+        }
         // Is the element completely in the view?
         const parentRect = Utils.findParentWithScrolling(element)?.getBoundingClientRect()
         if (!parentRect) {
