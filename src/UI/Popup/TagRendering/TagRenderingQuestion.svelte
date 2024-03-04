@@ -241,7 +241,7 @@
     <form
       class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
-      on:submit|preventDefault={() => onSave()}
+      on:submit|preventDefault={() =>{ /*onSave(); This submit is not needed and triggers to early, causing bugs: see #1808*/}}
     >
       <fieldset>
         <legend>
@@ -285,7 +285,7 @@
             feature={selectedElement}
             value={freeformInput}
             unvalidatedText={freeformInputUnvalidated}
-            on:submit={onSave}
+            on:submit={() => onSave()}
           />
         {:else if mappings !== undefined && !config.multiAnswer}
           <!-- Simple radiobuttons as mapping -->
@@ -329,7 +329,7 @@
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
                   on:selected={() => (selectedMapping = config.mappings?.length)}
-                  on:submit={onSave}
+                  on:submit={() => onSave()}
                 />
               </label>
             {/if}
@@ -372,7 +372,7 @@
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
-                  on:submit={onSave}
+                  on:submit={() => onSave()}
                 />
               </label>
             {/if}
@@ -397,13 +397,13 @@
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
               {#if allowDeleteOfFreeform && (mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
-                <button class="primary flex" on:click|stopPropagation|preventDefault={onSave}>
+                <button class="primary flex" on:click|stopPropagation|preventDefault={() => onSave()}>
                   <TrashIcon class="h-6 w-6 text-red-500" />
                   <Tr t={Translations.t.general.eraseValue} />
                 </button>
               {:else}
                 <button
-                  on:click={onSave}
+                  on:click={() => onSave()}
                   class={twJoin(
                     selectedTags === undefined ? "disabled" : "button-shadow",
                     "primary"
