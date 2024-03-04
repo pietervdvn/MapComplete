@@ -732,7 +732,8 @@
           "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
           "if": "opening_hours=closed",
           "then": {
-            "en": "Marked as closed for an unspecified time"
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur"
           },
           "hideInAnswer": true
         }
