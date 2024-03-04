@@ -628,6 +628,14 @@ export default class TagRenderingConfig {
      * config.constructChangeSpecification("", undefined, undefined, {}) // => undefined
      * config.constructChangeSpecification("5", undefined, undefined, {}).optimize() // => new Tag("capacity", "5")
      *
+     * // Should pick a mapping, even if freeform is used
+     * const config = new TagRenderingConfig({"id": "shop-types", render: "Shop type is {shop}", freeform: {key: "shop", addExtraTags:["fixme=freeform shop type used"]}, mappings:[{if: "shop=second_hand", then: "Second hand shop"}]})
+     * config.constructChangeSpecification("freeform", 1, undefined, {}).asHumanString(false,  false, {}) // => "shop=freeform & fixme=freeform shop type used"
+     * config.constructChangeSpecification("freeform", undefined, undefined, {}).asHumanString(false,  false, {}) // => "shop=freeform & fixme=freeform shop type used"
+     * config.constructChangeSpecification("second_hand", 1, undefined, {}).asHumanString(false,  false, {}) // => "shop=second_hand"
+     *
+     *
+     *
      * @param freeformValue The freeform value which will be applied as 'freeform.key'. Ignored if 'freeform.key' is not set
      *
      * @param singleSelectedMapping (Only used if multiAnswer == false): the single mapping to apply. Use (mappings.length) for the freeform
@@ -667,11 +675,22 @@ export default class TagRenderingConfig {
                 this.mappings.length == 0 ||
                 (singleSelectedMapping === this.mappings.length && !this.multiAnswer))
         ) {
+            const freeformOnly = { [this.freeform.key]: freeformValue }
+            const matchingMapping = this.mappings?.find((m) => m.if.matchesProperties(freeformOnly))
+            if (matchingMapping) {
+                return new And([matchingMapping.if, ...(matchingMapping.addExtraTags ?? [])])
+            }
             // Either no mappings, or this is a radio-button selected freeform value
-            return new And([
+            const tag = new And([
                 new Tag(this.freeform.key, freeformValue),
                 ...(this.freeform.addExtraTags ?? []),
             ])
+            const newProperties = tag.applyOn(currentProperties)
+            if (this.invalidValues?.matchesProperties(newProperties)) {
+                return undefined
+            }
+
+            return tag
         }
 
         if (this.multiAnswer) {
