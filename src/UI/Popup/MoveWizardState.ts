@@ -130,6 +130,15 @@ export class MoveWizardState {
                     this.moveDisallowedReason.setData(t.partOfRelation)
                 }
             })
+        } else {
+            // This is a new point. Check if it was snapped to an existing way due to the '_referencing_ways'-tag
+            const store = this._state.featureProperties.getStore(id)
+            store?.addCallbackAndRunD((tags) => {
+                if (tags._referencing_ways !== "[]") {
+                    console.log("Got referencing ways according to the tags")
+                    this.moveDisallowedReason.setData(t.partOfAWay)
+                }
+            })
         }
     }
 }
