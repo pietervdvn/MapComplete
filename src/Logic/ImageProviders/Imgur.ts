@@ -85,9 +85,15 @@ export class Imgur extends ImageProvider implements ImageUploader {
      * expected.date = new Date(1655052078000)
      * expected.views = 2
      * licenseInfo // => expected
+     * const licenseInfoJpeg = await Imgur.singleton.DownloadAttribution("https://i.imgur.com/E0RuAK3.jpeg")
+     * licenseInfoJpeg // => expected
+     * const licenseInfoUpperCase = await Imgur.singleton.DownloadAttribution("https://i.imgur.com/E0RuAK3.JPEG")
+     * licenseInfoUpperCase // => expected
+     *
+     *
      */
     public async DownloadAttribution(url: string): Promise<LicenseInfo> {
-        const hash = url.substr("https://i.imgur.com/".length).split(".jpg")[0]
+        const hash = url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
 
         const apiUrl = "https://api.imgur.com/3/image/" + hash
         const response = await Utils.downloadJsonCached(apiUrl, 365 * 24 * 60 * 60, {
