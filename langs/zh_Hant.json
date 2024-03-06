@@ -408,7 +408,10 @@
             },
             "east": "往東方移動",
             "fromGps": "你的位置 {direction} {distance}",
-            "fromMapCenter": "地圖中心的 {direction} {distance}"
+            "fromMapCenter": "地圖中心的 {direction} {distance}",
+            "in": "縮放到 {z} 層級",
+            "islocked": "鎖定檢視位置到你的 GPS 位置，停用移動，請按地理位置按鈕來解鎖。",
+            "locked": "鎖定檢視位置到你的 GPS 位置，停用移動。"
         },
         "weekdays": {
             "abbreviations": {
@@ -455,9 +458,29 @@
         "doDelete": "移除圖片",
         "dontDelete": "取消",
         "isDeleted": "已移除",
+        "nearby": {
+            "seeNearby": "瀏覽與連結附近圖片",
+            "title": "附近的街景影像"
+        },
         "pleaseLogin": "請登入以新增圖片",
         "respectPrivacy": "請別照人像或是車牌，不要上傳 Google 地圖、Google 街景或其他受版權保護的資料來源。",
         "toBig": "{actual_size} 因此照片太大，請使用最大 {max_size} 的照片",
+        "upload": {
+            "failReasons": "你也許已經失去網路連線",
+            "failReasonsAdvanced": "另一個方式，請確認瀏覽器與外掛沒有擋掉第三方 API。",
+            "multiple": {
+                "done": "{count} 影像已經成功上傳，感謝你！",
+                "partiallyDone": "{count} 影像已經上傳，{done} 影像已經處理了…",
+                "someFailed": "抱歉，我們無法上傳 {count} 影像",
+                "uploading": "{count} 影像已經上傳…"
+            },
+            "one": {
+                "done": "你的影像已經成功上傳，謝謝你！",
+                "failed": "抱歉，我們無法上傳你的影像",
+                "retrying": "你的影像再次上傳 …",
+                "uploading": "你的影像已經上傳了…"
+            }
+        },
         "uploadDone": "已經新增你的照片，謝謝你的協助！",
         "uploadFailed": "無法上傳您的圖片。您是否已連線至網際網路，並允許第三方 API？Brave 瀏覽器或 uMatrix 外掛程式都可能會封鎖它們。",
         "uploadMultipleDone": "已經新增 {count} 圖片，謝謝你的幫忙！",
@@ -503,7 +526,8 @@
         "partOfRelation": "這個圖徵是關聯的一部分，請用其他編輯器來移動。",
         "pointIsMoved": "這個點已經被移動了",
         "reasons": {
-            "reasonInaccurate": "這個物件的位置並不準確，應該移動個幾公尺"
+            "reasonInaccurate": "這個物件的位置並不準確，應該移動個幾公尺",
+            "reasonRelocation": "你的物件已經移動到完全不同的位置"
         },
         "selectReason": "為什麼你移動這個物件？",
         "whyMove": "為什麼你想要移動這個點？",
@@ -522,6 +546,7 @@
         "createNote": "新增新註解",
         "createNoteIntro": "地圖有什麼錯誤或缺漏的嗎？這裡新增註解，之後會由志工來檢查。",
         "createNoteTitle": "在這裡新增註解",
+        "creating": "新增註解…",
         "disableAllNoteFilters": "關閉所有篩選",
         "isClosed": "這個註解已經解決了",
         "isCreated": "你的註解已經創建了！",
@@ -538,6 +563,24 @@
         "textNeeded": "輸入描述性的文字來新增註解",
         "typeText": "輸入些文字來新增評論",
         "warnAnonymous": "你還未登入，我們無法聯繫你來解決你的問題。"
+    },
+    "plantDetection": {
+        "back": "回到物種總纜",
+        "button": "自動用 Plantnet.org 的 AI 來偵測植物的物種",
+        "confirm": "選擇物種",
+        "done": "已經套用這物種",
+        "error": "偵測樹林所屬物種出錯：{eroor}",
+        "howTo": {
+            "intro": "為了最佳結果，",
+            "li0": "將樹林放在中間拍照，並且盡可能不要有背景",
+            "li1": "拍攝單一葉片的照片",
+            "li2": "拍攝有樹幹的照片",
+            "li3": "拍攝花朵的照片"
+        },
+        "loadingWikidata": "載入 {species} 的資訊…",
+        "matchPercentage": "{match}% 吻合",
+        "overviewIntro": "<a href='https://plantnet.org/' target='_blank'>plantnet.org</a> 的 AI 認為照片中是以下的物種。",
+        "overviewTitle": "自動偵測物種"
     },
     "privacy": {
         "editing": "當你對地圖變動時，這些變動會存在開放街圖並且是公開給所有人。採用 MapComplete 的編輯變動包括以下資料：<ul><li>你做的變動</li><li>你的使用者名稱</li><li>你在什麼時間做的變動</li><li>當你做出變動時使用的主題</li><li>使用者介面語言</li><li>你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究</li></ul>請參考<a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>OpenStreetMap.org的隱私政策</a>來取得更多資訊。我們也提醒你註冊帳號時能夠採用假名。",
