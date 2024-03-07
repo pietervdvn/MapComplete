@@ -12,7 +12,6 @@ import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
 import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
-import * as crypto from "crypto"
 import * as eli from "../src/assets/editor-layer-index.json"
 import * as eli_global from "../src/assets/global-raster-layers.json"
 import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtils"
@@ -374,15 +373,6 @@ async function generateCsp(
     ].join("\n")
 }
 
-const removeOtherLanguages = readFileSync("./src/UI/RemoveOtherLanguages.js", "utf8")
-    .split("\n")
-    .map((s) => s.trim())
-    .join("\n")
-const removeOtherLanguagesHash = crypto
-    .createHash("sha256")
-    .update(removeOtherLanguages)
-    .digest("base64")
-
 async function createLandingPage(
     layout: LayoutConfig,
     layoutJson: LayoutConfigJson,
@@ -461,9 +451,6 @@ async function createLandingPage(
 
     const loadingText = Translations.t.general.loadingTheme.Subs({ theme: layout.title })
     const templateLines = template.split("\n")
-    const removeOtherLanguagesReference = templateLines.find(
-        (line) => line.indexOf("./src/UI/RemoveOtherLanguages.js") >= 0
-    )
     let output = template
         .replace("Loading MapComplete, hang on...", asLangSpan(loadingText, "h1"))
         .replace(
@@ -474,10 +461,9 @@ async function createLandingPage(
         .replace(
             /<!-- CSP -->/,
             await generateCsp(layout, layoutJson, {
-                scriptSrcs: [`'sha256-${removeOtherLanguagesHash}'`],
+                scriptSrcs: [],
             })
         )
-        .replace(removeOtherLanguagesReference, "<script>" + removeOtherLanguages + "</script>")
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
             asLangSpan(layout.shortDescription)
