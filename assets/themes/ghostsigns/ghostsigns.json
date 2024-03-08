@@ -38,9 +38,8 @@
         }
       },
       "minzoom": 10,
-      "allowMove": {
-        "enableImproveAccuracy": true
-      },
+      "#allowMove": "Normally, a ghost sign is snapped to a wall, so moving won't be possible in most cases",
+      "allowMove": false,
       "tagRenderings": [
         {
           "id": "historic",
