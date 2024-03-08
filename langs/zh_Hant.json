@@ -58,8 +58,11 @@
             "isNotMarkedShort": "並沒有標示為最愛",
             "markAsFavouriteTitle": "標示這個地點為最愛地點",
             "markDescription": "新增這一地點到你個人的最愛",
-            "unmark": "從你的個人最愛移除"
+            "unmark": "從你的個人最愛移除",
+            "unmarkNotDeleted": "這個點不會被刪除而且仍會在適當的地圖為你或其他人顯示"
         },
+        "downloadGeojson": "以 geojson 下載你的最愛",
+        "downloadGpx": "以 GPX 下載你的最愛",
         "intro": "你標記 {length} 的位置為最愛地點。",
         "introPrivacy": "只有你看得到這個清單",
         "loginToSeeList": "登入之後觀看你已經標記為最愛的地點",
@@ -323,7 +326,13 @@
         "poweredByOsm": "由開放街圖資料驅動",
         "questionBox": {
             "answeredMultiple": "你回答 {answered} 問題",
-            "done": "沒有更多問題！謝謝你！"
+            "answeredOne": "你回答一個問題了",
+            "answeredOneSkippedMultiple": "你回答一個問題並且跳過 {skipped} 問題",
+            "answeredOneSkippedOne": "你回答一個以及跳過一個問題",
+            "done": "沒有更多問題！謝謝你！",
+            "reactivate": "重新回答跳過問題",
+            "skippedMultiple": "你跳過 {skipped} 問題",
+            "skippedOne": "你跳過一個問題"
         },
         "questions": {
             "emailIs": "{category} 的電子郵件地址是<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
@@ -342,15 +351,19 @@
             "error": "有狀況發生了…",
             "nothing": "沒有找到…",
             "search": "搜尋地點",
+            "searchShort": "搜尋…",
             "searching": "搜尋中…"
         },
+        "searchAnswer": "搜尋選項…",
+        "share": "分享",
         "sharescreen": {
             "copiedToClipboard": "複製連結到簡貼簿",
             "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br>地圖毋須額外授權，非常歡迎您多加利用。<br>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
             "fsUserbadge": "啟用登入按鈕",
             "fsWelcomeMessage": "顯示歡迎訊息以及相關頁籤",
             "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖：",
-            "thanksForSharing": "感謝分享！"
+            "thanksForSharing": "感謝分享！",
+            "title": "分享這份地圖"
         },
         "skip": "跳過這問題",
         "testing": "測試 - 改變還沒有儲存",
@@ -411,7 +424,10 @@
             "fromMapCenter": "地圖中心的 {direction} {distance}",
             "in": "縮放到 {z} 層級",
             "islocked": "鎖定檢視位置到你的 GPS 位置，停用移動，請按地理位置按鈕來解鎖。",
-            "locked": "鎖定檢視位置到你的 GPS 位置，停用移動。"
+            "locked": "鎖定檢視位置到你的 GPS 位置，停用移動。",
+            "south": "向南方移動",
+            "unlocked": "允許移動。",
+            "viewportCenterCloseToGps": "地圖已經在你位置置中。"
         },
         "weekdays": {
             "abbreviations": {
