@@ -583,10 +583,9 @@
           </div>
           <SelectedElementView
             highlightedRendering={state.guistate.highlightedUserSetting}
-            layer={UserRelatedState.usersettingsConfig}
             selectedElement={{
               type: "Feature",
-              properties: {},
+              properties: {id:"settings"},
               geometry: { type: "Point", coordinates: [0, 0] },
             }}
             {state}

@@ -8,6 +8,7 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
+  import UserRelatedState from "../../Logic/State/UserRelatedState"
 
   export let state: SpecialVisualizationState
   export let selectedElement: Feature
@@ -17,7 +18,7 @@
     selectedElement.properties.id
   )
 
-  let layer: LayerConfig =state.layout.getMatchingLayer(tags.data)
+  let layer: LayerConfig = selectedElement.properties.id === "settings" ? UserRelatedState.usersettingsConfig :  state.layout.getMatchingLayer(tags.data)
   
   
   let stillMatches = tags.map(tags => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags))
