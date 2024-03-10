@@ -79,6 +79,7 @@
             "intro": "使用者取得滿滿圖徽的地圖，只要選擇一個，就會出現圖徽的相關資訊。",
             "title": "介面長得怎麼樣子？"
         },
+        "examples": "有不少主題地圖，而這邊有顯示一些。\n\n這裡有不少主題地圖有在線上：健康照護、室內導航、無障礙設施、垃圾處理設施、公共飄書站、有彩虹繪製的人行穿越道…在 mapcomplete.org 來探索吧",
         "fakeui": {
             "add_images": "透過點幾下新增圖片",
             "attributes": "透過友善方式顯示署名",
@@ -118,7 +119,7 @@
         "add": {
             "addNew": "在這裡新增新的 {category}",
             "backToSelect": "選取不同的分類",
-            "confirmButton": "在此新增 {category}。<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
+            "confirmButton": "在此新增 {category}<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
             "confirmLocation": "確認這一地點",
             "confirmTitle": "新增 {title}？",
             "confirmWarning": "你創建的圖徵會被<b>所有人看到</b>，請只加上現實存在的事物，很多應用程式使用這些資料。",
@@ -136,7 +137,7 @@
                 "zoomInMore": "請再放大來匯入這個圖徵"
             },
             "importTags": "這元素會被加上 {tags}",
-            "intro": "您點擊處目前未有已知的資料。<br>",
+            "intro": "您點擊處目前未有已知的資料。<br/>",
             "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的圖徵",
             "openLayerControl": "開啟圖層控制框",
             "pleaseLogin": "請先登入來新增圖徵",
@@ -194,21 +195,21 @@
             "downloadAsPng": "下載為圖片",
             "downloadAsPngHelper": "很適合放在報告當中",
             "downloadAsSvg": "下載當前地圖的 SVG",
-            "downloadAsSvgHelper": "與 Inkscape 或是 Adobe Illustrator 的相容問題，仍需要進一步的處理..",
+            "downloadAsSvgHelper": "與 Inkscape 或是 Adobe Illustrator 的相容問題，仍需要進一步的處理",
             "downloadAsSvgLinesOnly": "下載目前地圖只含有線條部分為 svg",
             "downloadAsSvgLinesOnlyHelper": "自我交叉的線條已經破壞了，能用在一些 3D 軟體",
             "downloadCSV": "下載可視資料為 CSV",
-            "downloadCSVHelper": "與 LibreOffice Calc、Excel 等相容",
+            "downloadCSVHelper": "與 LibreOffice Calc、Excel 等相容…",
             "downloadFeatureAsGeojson": "下載為 GeoJSON 檔案",
             "downloadFeatureAsGpx": "下載為 GPX 檔案",
-            "downloadGeoJsonHelper": "與 QGIS、ArcGIS、ESRI 等相容",
+            "downloadGeoJsonHelper": "與 QGIS、ArcGIS、ESRI 等相容…",
             "downloadGeojson": "下載可視資料為 GeoJSON",
             "downloadGpx": "下載為 GPX 檔案",
             "downloadGpxHelper": "GPX 檔案能被大部分導航裝置或 app 使用",
             "exporting": "匯出…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
             "licenseInfo": "<h3>著作權聲明</h3>提供的資料採用 ODbL 授權釋出。可以用任何目標再利用資料，但是需<ul><li>標明 <b>© 開放街圖貢獻者</b></li><li>任何變動必須相同方式授權</li></ul> 請閱讀完整的 <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">著作權聲明</a>。",
-            "noDataLoaded": "還未載入資料，之後能夠下載。",
+            "noDataLoaded": "還未載入資料，之後能夠下載",
             "pdf": {
                 "current_view_generic": "匯出目前檢視為 {paper_size} 的 {orientation} 方向 PDF"
             },
@@ -268,7 +269,7 @@
             "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
             "enterToOpen": "請按輸入來開啟主題",
             "hiddenExplanation": "這些主題只能透過連結來打開，你已經發現 {total_hidden} 當中 {hidden_discovered} 的隱藏主題。",
-            "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br>還有更多主題。",
+            "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br/>還有更多主題。",
             "noMatchingThemes": "沒有找到符合的主題",
             "noSearch": "顯示所有主題",
             "previouslyHiddenTitle": "先前看過隱藏的主題",
@@ -326,6 +327,8 @@
         "poweredByOsm": "由開放街圖資料驅動",
         "questionBox": {
             "answeredMultiple": "你回答 {answered} 問題",
+            "answeredMultipleSkippedMultiple": "你回答 {answered} 問題與跳過 {skipped} 問題",
+            "answeredMultipleSkippedOne": "你回答 {answered} 問題與跳過一個問題",
             "answeredOne": "你回答一個問題了",
             "answeredOneSkippedMultiple": "你回答一個問題並且跳過 {skipped} 問題",
             "answeredOneSkippedOne": "你回答一個以及跳過一個問題",
@@ -337,7 +340,7 @@
         "questions": {
             "emailIs": "{category} 的電子郵件地址是<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "{category} 的電子郵件地址是？",
-            "phoneNumberIs": "此 {category} 的電話號碼為 <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "此 {category} 的電話號碼為 <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "{category} 的電話號碼是？",
             "websiteIs": "網站：<a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "{category} 的網站網址是？"
@@ -358,7 +361,8 @@
         "share": "分享",
         "sharescreen": {
             "copiedToClipboard": "複製連結到簡貼簿",
-            "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br>地圖毋須額外授權，非常歡迎您多加利用。<br>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
+            "documentation": "要知道更多可以用的網址參數，<a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>參考這份文章</a>",
+            "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br/>地圖毋須額外授權，非常歡迎您多加利用。<br/>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
             "fsUserbadge": "啟用登入按鈕",
             "fsWelcomeMessage": "顯示歡迎訊息以及相關頁籤",
             "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖：",
@@ -367,7 +371,9 @@
         },
         "skip": "跳過這問題",
         "testing": "測試 - 改變還沒有儲存",
+        "uploadError": "上傳時發生錯誤：{error}",
         "uploadGpx": {
+            "choosePermission": "選擇以下你的軌跡如何分享：",
             "confirm": "確認上傳",
             "gpxServiceOffline": "GPS 服務目前離線 - 目前無法上傳，請再試一次。",
             "intro0": "藉由上傳你的軌跡，OpenStreetMap.org 會有你軌跡完整的複製品。",
@@ -425,10 +431,19 @@
             "in": "縮放到 {z} 層級",
             "islocked": "鎖定檢視位置到你的 GPS 位置，停用移動，請按地理位置按鈕來解鎖。",
             "locked": "鎖定檢視位置到你的 GPS 位置，停用移動。",
+            "navigation": "使用鍵頭來移動地圖，按空白鍵來選擇最近的圖徵。請按數字來選擇稍遠的位置。",
+            "noCloseFeatures": "檢視當中沒有圖徵。",
+            "north": "向北方移動",
+            "oneFeatureInView": "檢視當中有一個圖徵。",
+            "out": "縮小到層級 {z}",
             "south": "向南方移動",
             "unlocked": "允許移動。",
-            "viewportCenterCloseToGps": "地圖已經在你位置置中。"
+            "viewportCenterCloseToGps": "地圖已經在你位置置中。",
+            "viewportCenterDetails": "檢視中心離你位置 {bearing} 有 {distance} 遠。",
+            "west": "向西方移動"
         },
+        "waitingForGeopermission": "等待你允許來使用地理位置…",
+        "waitingForLocation": "搜尋你目前位置…",
         "weekdays": {
             "abbreviations": {
                 "friday": "星期五",
@@ -447,12 +462,13 @@
             "tuesday": "星期二",
             "wednesday": "星期三"
         },
-        "welcomeBack": "你已經登入了，歡迎回來！",
+        "welcomeBack": "歡迎回來！",
         "welcomeExplanation": {
             "addNew": "點一下地圖來新增新興趣點。",
             "general": "在這份地圖，你可以檢視、編輯與新增<i>興趣點</i>。在附近放大來檢視興趣點，點一個來檢視或是編輯資訊。所有資料來源以及儲存到開放街圖，能夠自由被再利用。"
         },
         "wikipedia": {
+            "addEntry": "新增其他維基媒體頁面",
             "createNewWikidata": "新增新的的 Wikidata 項目",
             "doSearch": "搜尋來檢視結果",
             "failed": "無法載入維基百科頁面",
@@ -464,17 +480,45 @@
                 "born": "出生：{value}",
                 "died": "死亡：{value}"
             },
+            "readMore": "閱讀剩下的條目內容",
             "searchToShort": "你的搜尋檢索太短了，請輸入長一點的文字",
             "searchWikidata": "在 Wikidata 搜尋",
             "wikipediaboxTitle": "維基百科"
         }
     },
+    "hotkeyDocumentation": {
+        "action": "行動",
+        "closeSidebar": "關閉側邊欄",
+        "geolocate": "平移地圖或是縮放地圖到目前位置，請求地理位置權限",
+        "intro": "MapComplete 支持下列的鍵：",
+        "key": "鍵組合",
+        "openFilterPanel": "開啟 POI 圖層與篩選面板",
+        "openLayersPanel": "開啟背景圖層面板",
+        "queryCurrentLocation": "顯示最接近地圖中心的地址",
+        "selectAerial": "設定背景為空照或衛星影像。在兩個最佳的，可用的圖層切換",
+        "selectFavourites": "開啟最愛頁面",
+        "selectItem": "選擇最接近地圖中心(十字)的 POI，只有鍵盤瀏覽時才使用",
+        "selectItem2": "選擇第二接近地圖中心(十字)的 POI，只有鍵盤瀏覽才會使用",
+        "selectItem3": "選擇第三接近地圖中心(十字)的 POI，只有在鍵盤瀏覽時才使用",
+        "selectItemI": "選擇第 {i} 接近地圖中心(十字)的 POI，只有在鍵盤瀏覽時才使用",
+        "selectMap": "從外部來源設定地圖的背景，切換兩個最佳可用的圖層",
+        "selectMapnik": "設定背景圖層為 OpenStreetMap-carto",
+        "selectOsmbasedmap": "設定背景圖層以開放街圖為基準地圖 (或是停用背景點陣圖層)",
+        "selectSearch": "選擇搜尋欄位的搜尋位置",
+        "shakePhone": "晃動你的手機",
+        "title": "快速鍵",
+        "translationMode": "啟用翻譯模組的開關"
+    },
     "image": {
         "addPicture": "新增圖片",
+        "currentLicense": "你的圖片會以 {license} 釋出",
         "doDelete": "移除圖片",
         "dontDelete": "取消",
         "isDeleted": "已移除",
         "nearby": {
+            "close": "以附近圖片收起面板",
+            "link": "這個圖片顯示物物",
+            "noNearbyImages": "附近沒有找到圖片",
             "seeNearby": "瀏覽與連結附近圖片",
             "title": "附近的街景影像"
         },
@@ -596,7 +640,13 @@
         "loadingWikidata": "載入 {species} 的資訊…",
         "matchPercentage": "{match}% 吻合",
         "overviewIntro": "<a href='https://plantnet.org/' target='_blank'>plantnet.org</a> 的 AI 認為照片中是以下的物種。",
-        "overviewTitle": "自動偵測物種"
+        "overviewTitle": "自動偵測物種",
+        "overviewVerify": "請驗證是否是正確的物種，以及連結到樹木",
+        "poweredByPlantnet": "由 <a href='https://plantnet.org' target='_blank'>plantnet.org</a> 驅動",
+        "querying": "檢索 plantnet.org 上的 {length} 圖片",
+        "seeInfo": "檢視更多物種有關的資訊",
+        "takeImages": "拍攝樹木照片來自動偵測樹木類型",
+        "tryAgain": "選擇不同物種"
     },
     "privacy": {
         "editing": "當你對地圖變動時，這些變動會存在開放街圖並且是公開給所有人。採用 MapComplete 的編輯變動包括以下資料：<ul><li>你做的變動</li><li>你的使用者名稱</li><li>你在什麼時間做的變動</li><li>當你做出變動時使用的主題</li><li>使用者介面語言</li><li>你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究</li></ul>請參考<a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>OpenStreetMap.org的隱私政策</a>來取得更多資訊。我們也提醒你註冊帳號時能夠採用假名。",
@@ -615,15 +665,29 @@
     "reviews": {
         "affiliated_reviewer_warning": "(關係者審核)",
         "attribution": "評審系統由<a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a>提供技術支援，採用<a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>授權條款。",
-        "i_am_affiliated": "<span>我是這物件的相關關係者</span><br><span class=\"subtle\">確認你是否是擁有者、創造者、員工等等</span>",
+        "averageRating": "平均評分 {n} 顆星",
+        "i_am_affiliated": "我是這物件的相關關係者",
+        "i_am_affiliated_explanation": "檢查你是否是店主、創造者或是員工…",
         "name_required": "需要有名稱才能顯示和創造審核",
         "no_reviews_yet": "還沒有審核，當第一個撰寫者來幫助開放資料與商家吧！",
-        "saved": "<span class=\"thanks\">已儲存審核，謝謝你的分享！</span>",
+        "question": "你會怎麼評分 {title()} ？",
+        "question_opinion": "你的體驗如何？",
+        "rate": "評分 {n} 顆星",
+        "rated": "評分 {n} 顆星",
+        "reviewPlaceholder": "描述你的經驗…",
+        "reviewing_as": "以 {nickname} 評鑑",
+        "reviewing_as_anonymous": "暱名評鑑",
+        "reviews_bug": "預期更多評鑑嗎？有些評鑑因為臭蟲無法顯示。",
+        "save": "儲存評鑑",
+        "saved": "已經儲存評鑑，謝謝你的分享！",
         "saving_review": "儲存中…",
         "title": "{count} 審核次數",
         "title_singular": "一次審核",
+        "too_long": "最多允許 {max} 字元，你的評鑑有 {amount} 字元。",
         "tos": "如果你創建審核，你同意<a href=\"https://mangrove.reviews/terms\" target=\"_blank\">TOS 與 Mangrove.reviews 的隱私權政策</a>",
-        "write_a_comment": "留下審核…"
+        "write_a_comment": "留下審核…",
+        "your_reviews": "你先前的評鑑",
+        "your_reviews_empty": "我們無法找到任何你先前的評鑑"
     },
     "split": {
         "cancel": "取消",
@@ -631,13 +695,22 @@
         "inviteToSplit": "分割這道路比較小的片段，讓不同道路能有不同的屬性。",
         "loginToSplit": "你必須登入才能分割道路",
         "split": "分開",
-        "splitTitle": "請在地圖選擇要在那裡分割道路"
+        "splitAgain": "再次切割道路",
+        "splitTitle": "請在地圖選擇要在那裡變更道路屬性"
     },
     "translations": {
         "activateButton": "協助翻譯 MapComplete",
         "allMissing": "還沒有翻譯",
         "missing": "{count} 未翻譯字串",
         "notImmediate": "翻譯不會直接更新，通常會需要幾天時間"
+    },
+    "userinfo": {
+        "editDescription": "編輯你的個人檔敘述",
+        "gotoInbox": "開啟你的收件夾",
+        "gotoSettings": "到你的 OpenStreetMap.org 設定",
+        "noDescription": "你的個人檔還沒有敘述",
+        "noDescriptionCallToAction": "新增個人檔敘述",
+        "notLoggedIn": "你已經登出了"
     },
     "validation": {
         "color": {
@@ -657,9 +730,20 @@
             "feedback": "這不是有效的 email 地址",
             "noAt": "email 地址應當含有 @"
         },
+        "fediverse": {
+            "description": "聯邦宇宙格式，通常是 @user@server.tld",
+            "feedback": "聯邦宇宙格式為 @username@server.tld 或是個人檔的連結",
+            "invalidHost": "{host} 不是有效的伺服器名稱",
+            "onYourServer": "觀看與追隨你的伺服器"
+        },
         "float": {
             "description": "數字",
             "feedback": "這不是數字"
+        },
+        "id": {
+            "description": "一個識別碼",
+            "invalidCharacter": "編號可以只有字母、數字或是底線",
+            "shouldBeLonger": "編號至少需要3個字母的長度"
         },
         "int": {
             "description": "全部的數字"
@@ -678,11 +762,16 @@
         },
         "phone": {
             "description": "電話號碼",
-            "feedback": "這不是有效的電話號碼"
+            "feedback": "這不是有效的電話號碼",
+            "feedbackCountry": "這不是有效的電話號碼 (對國家 {country} 來說)"
         },
         "pnat": {
             "description": "正數、整數",
             "noZero": "並不允許零"
+        },
+        "slope": {
+            "inputExplanation": "將你手機放在地上，並且指向上坡方向。",
+            "inputIncorrect": "為了得到正確的測量數據，請確定箭頭在綠色區域內。"
         },
         "string": {
             "description": "一段文字"
@@ -696,7 +785,9 @@
             "feedback": "這不是有效的網址"
         },
         "wikidata": {
-            "description": "Wikidata 編號"
+            "description": "Wikidata 編號",
+            "empty": "請輸入一些 Wikidata 項目",
+            "startsWithQ": "維基數據編號以 Q 開頭後面接數字"
         }
     }
 }
