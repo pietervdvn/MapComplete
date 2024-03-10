@@ -45,6 +45,7 @@
   ],
   "lineRendering": [],
   "tagRenderings": [
+    "images",
     {
       "id": "shelter-type",
       "mappings": [
