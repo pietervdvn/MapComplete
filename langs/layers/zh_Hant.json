@@ -11,9 +11,17 @@
                     "0": {
                         "then": "這棟建築沒有門牌"
                     }
-                }
+                },
+                "question": "這間房子的門牌號碼是多少？",
+                "render": "門牌號碼是 <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "地址所在的道路是？"
             }
         }
+    },
+    "advertising": {
+        "name": "廣告"
     },
     "artwork": {
         "description": "顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品的地圖",
