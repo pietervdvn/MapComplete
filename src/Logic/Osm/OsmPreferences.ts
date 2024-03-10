@@ -2,6 +2,9 @@ import { UIEventSource } from "../UIEventSource"
 import UserDetails, { OsmConnection } from "./OsmConnection"
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
+// @ts-ignore
+import { osmAuth } from "osm-auth"
+import OSMAuthInstance = OSMAuth.OSMAuthInstance
 
 export class OsmPreferences {
     /**
@@ -17,16 +20,17 @@ export class OsmPreferences {
      * @private
      */
     private readonly preferenceSources = new Map<string, UIEventSource<string>>()
-    private auth: any
+    private readonly auth: OSMAuthInstance
     private userDetails: UIEventSource<UserDetails>
     private longPreferences = {}
+    private readonly _fakeUser: boolean
 
-    constructor(auth, osmConnection: OsmConnection) {
+    constructor(auth: OSMAuthInstance, osmConnection: OsmConnection, fakeUser: boolean = false) {
         this.auth = auth
+        this._fakeUser = fakeUser
         this.userDetails = osmConnection.userDetails
-        const self = this
         osmConnection.OnLoggedIn(() => {
-            self.UpdatePreferences(true)
+            this.UpdatePreferences(true)
             return true
         })
     }
@@ -212,8 +216,21 @@ export class OsmPreferences {
         })
     }
 
+    removeAllWithPrefix(prefix: string) {
+        for (const key in this.preferences.data) {
+            if (key.startsWith(prefix)) {
+                this.GetPreference(key, "", { prefix: "" }).setData(undefined)
+                console.log("Clearing preference", key)
+            }
+        }
+        this.preferences.ping()
+    }
+
     private UpdatePreferences(forceUpdate?: boolean) {
         const self = this
+        if (this._fakeUser) {
+            return
+        }
         this.auth.xhr(
             {
                 method: "GET",
@@ -272,13 +289,15 @@ export class OsmPreferences {
         }
         const self = this
         console.debug("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15))
-
+        if (this._fakeUser) {
+            return
+        }
         if (v === undefined || v === "") {
             this.auth.xhr(
                 {
                     method: "DELETE",
                     path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
-                    options: { header: { "Content-Type": "text/plain" } },
+                    headers: { "Content-Type": "text/plain" },
                 },
                 function (error) {
                     if (error) {
@@ -297,7 +316,7 @@ export class OsmPreferences {
             {
                 method: "PUT",
                 path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
-                options: { header: { "Content-Type": "text/plain" } },
+                headers: { "Content-Type": "text/plain" },
                 content: v,
             },
             function (error) {
@@ -310,15 +329,5 @@ export class OsmPreferences {
                 console.debug(`Preference ${k} written!`)
             }
         )
-    }
-
-    removeAllWithPrefix(prefix: string) {
-        for (const key in this.preferences.data) {
-            if (key.startsWith(prefix)) {
-                this.GetPreference(key, "", { prefix: "" }).setData(undefined)
-                console.log("Clearing preference", key)
-            }
-        }
-        this.preferences.ping()
     }
 }

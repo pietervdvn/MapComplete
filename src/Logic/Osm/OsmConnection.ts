@@ -91,9 +91,11 @@ export class OsmConnection {
             ud.name = "Fake user"
             ud.totalMessages = 42
             ud.languages = ["en"]
+            this.loadingStatus.setData("logged-in")
         }
         const self = this
         this.UpdateCapabilities()
+
         this.isLoggedIn = this.userDetails.map(
             (user) =>
                 user.loggedIn &&
@@ -112,10 +114,7 @@ export class OsmConnection {
 
         this.updateAuthObject()
 
-        this.preferencesHandler = new OsmPreferences(
-            this.auth,
-            <any /*This is needed to make the tests work*/>this
-        )
+        this.preferencesHandler = new OsmPreferences(this.auth, this, this.fakeUser)
 
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
@@ -554,13 +553,12 @@ export class OsmConnection {
     }
 
     private UpdateCapabilities(): void {
-        const self = this
         if (this.fakeUser) {
             return
         }
         this.FetchCapabilities().then(({ api, gpx }) => {
-            self.apiIsOnline.setData(api)
-            self.gpxServiceIsOnline.setData(gpx)
+            this.apiIsOnline.setData(api)
+            this.gpxServiceIsOnline.setData(gpx)
         })
     }
 

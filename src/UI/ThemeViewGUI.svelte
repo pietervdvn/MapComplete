@@ -257,6 +257,9 @@
     <If condition={state.featureSwitchIsTesting}>
       <div class="alert w-fit">Testmode</div>
     </If>
+    <If condition={state.featureSwitches.featureSwitchFakeUser}>
+      <div class="alert w-fit">Faking a user (Testmode)</div>
+    </If>
   </div>
   <div class="flex w-full flex-col items-center justify-center">
     <!-- Flex and w-full are needed for the positioning -->
