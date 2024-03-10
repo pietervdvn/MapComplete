@@ -120,5 +120,9 @@
         "type": "string"
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  }
 }
