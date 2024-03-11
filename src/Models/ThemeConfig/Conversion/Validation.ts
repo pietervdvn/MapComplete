@@ -1844,6 +1844,7 @@ export class ValidateThemeEnsemble extends Conversion<
         {
             tags: TagsFilter
             foundInTheme: string[]
+            isCounted: boolean
         }
     >
 > {
@@ -1862,10 +1863,11 @@ export class ValidateThemeEnsemble extends Conversion<
         string,
         {
             tags: TagsFilter
-            foundInTheme: string[]
+            foundInTheme: string[],
+            isCounted: boolean
         }
     > {
-        const idToSource = new Map<string, { tags: TagsFilter; foundInTheme: string[] }>()
+        const idToSource = new Map<string, { tags: TagsFilter; foundInTheme: string[], isCounted: boolean }>()
 
         for (const theme of json) {
             for (const layer of theme.layers) {
@@ -1886,7 +1888,7 @@ export class ValidateThemeEnsemble extends Conversion<
                 const id = layer.id
                 const tags = layer.source.osmTags
                 if (!idToSource.has(id)) {
-                    idToSource.set(id, { tags, foundInTheme: [theme.id] })
+                    idToSource.set(id, { tags, foundInTheme: [theme.id], isCounted: layer.doCount })
                     continue
                 }
 
@@ -1895,6 +1897,7 @@ export class ValidateThemeEnsemble extends Conversion<
                 if (oldTags.shadows(tags) && tags.shadows(oldTags)) {
                     // All is good, all is well
                     oldTheme.push(theme.id)
+                    idToSource.get(id).isCounted ||= layer.doCount
                     continue
                 }
                 context.err(
