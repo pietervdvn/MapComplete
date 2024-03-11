@@ -12,8 +12,6 @@
     <link href="./css/wikipedia.css" rel="stylesheet"/>
     <meta content="website" property="og:type">
 
-    <!-- THEME-SPECIFIC -->
-    <!-- Every theme gets their own html page, this is created by a script; this part will be removed except for the index -->
     <title>MapComplete</title>
     <link href="./index.webmanifest" rel="manifest">
     
@@ -34,16 +32,6 @@
     <link href="./assets/generated/images/assets_svg_mapcomplete_logo96.png" rel="apple-touch-icon" sizes="96x96">
     <link href="./assets/generated/images/assets_svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
 
-
-    <!-- THEME-SPECIFIC-END-->
-
-    <style>
-        #decoration-desktop img {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
 </head>
 <body>
 
@@ -55,21 +43,8 @@
 <script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="https://gc.zgo.at/count.js" crossorigin="anonymous"
         integrity="sha384-nx5O+otcqJoqMhdDt8jUzmia6ng81Z5zZozYr69TzPkOLjVhLKMxu5zHCV9/0MPn"></script>
 
-<script>
-    window.addEventListener('load', () => {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js').then(
-                () => {
-                    console.log('Service worker registration successful');
-                },
-                err => {
-                    console.error('Service worker registration failed', err)
-                });
-        } else {
-            console.log("Service workers are not supported")
-        }
-    });
-</script>
+<script async src="./src/InstallServiceWorker.ts" type="module"></script>
+
 
 </body>
 </html>
