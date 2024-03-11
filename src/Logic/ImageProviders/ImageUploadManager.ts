@@ -101,7 +101,6 @@ export class ImageUploadManager {
             "osmid:" + tags.id,
         ].join("\n")
 
-        console.log("Upload done, creating ")
         const action = await this.uploadImageWithLicense(
             featureId,
             title,
@@ -110,6 +109,9 @@ export class ImageUploadManager {
             targetKey,
             tags?.data?.["_orig_theme"]
         )
+        if (!action) {
+            return
+        }
         if (!isNaN(Number(featureId))) {
             // This is a map note
             const url = action._url
@@ -145,6 +147,7 @@ export class ImageUploadManager {
             } catch (e) {
                 console.error("Could again not upload image due to", e)
                 this.increaseCountFor(this._uploadFailed, featureId)
+                return undefined
             }
         }
         console.log("Uploading done, creating action for", featureId)

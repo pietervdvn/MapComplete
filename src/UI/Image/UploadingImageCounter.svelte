@@ -11,6 +11,8 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import Loading from "../Base/Loading.svelte"
+  import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
+  import UploadFailedMessage from "./UploadFailedMessage.svelte"
 
   export let state: SpecialVisualizationState
   export let tags: Store<OsmTags> = undefined
@@ -22,19 +24,22 @@
   const { uploadStarted, uploadFinished, retried, failed } =
     state.imageUploadManager.getCountsFor(featureId)
   const t = Translations.t.image
+  const debugging = state.featureSwitches.featureSwitchIsDebugging
+  let dismissed = 0
 </script>
 
-{#if $uploadStarted === 1}
+{#if $debugging}
+  <div class="low-interaction">Started {$uploadStarted} Done {$uploadFinished} Retry {$retried} Err {$failed}</div>
+{/if}
+{#if dismissed === $uploadStarted}
+  <!-- We don't show anything as we ignore this number of failed items-->
+{:else if $uploadStarted === 1}
   {#if $uploadFinished === 1}
     {#if showThankYou}
       <Tr cls="thanks" t={t.upload.one.done} />
     {/if}
   {:else if $failed === 1}
-    <div class="alert flex flex-col">
-      <Tr cls="self-center" t={t.upload.one.failed} />
-      <Tr t={t.upload.failReasons} />
-      <Tr t={t.upload.failReasonsAdvanced} />
-    </div>
+    <UploadFailedMessage failed={$failed} on:click={() => dismissed = $failed}/>
   {:else if $retried === 1}
     <Loading cls="alert">
       <Tr t={t.upload.one.retrying} />
@@ -45,8 +50,10 @@
     </Loading>
   {/if}
 {:else if $uploadStarted > 1}
-  {#if $uploadFinished + $failed === $uploadStarted && $uploadFinished > 0}
-    {#if showThankYou}
+  {#if $uploadFinished + $failed === $uploadStarted}
+    {#if $uploadFinished === 0}
+      <!-- pass -->
+    {:else if showThankYou}
       <Tr cls="thanks" t={t.upload.multiple.done.Subs({ count: $uploadFinished })} />
     {/if}
   {:else if $uploadFinished === 0}
@@ -64,14 +71,7 @@
     </Loading>
   {/if}
   {#if $failed > 0}
-    <div class="alert flex flex-col">
-      {#if $failed === 1}
-        <Tr cls="self-center" t={t.upload.one.failed} />
-      {:else}
-        <Tr cls="self-center" t={t.upload.multiple.someFailed.Subs({ count: $failed })} />
-      {/if}
-      <Tr t={t.upload.failReasons} />
-      <Tr t={t.upload.failReasonsAdvanced} />
-    </div>
+    
+   <UploadFailedMessage failed={$failed} on:click={() => dismissed = $failed}/>
   {/if}
 {/if}
