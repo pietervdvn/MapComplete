@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.40.3",
+  "version": "0.40.4",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -94,7 +94,8 @@
     "reuse-compliance": "reuse lint",
     "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts",
     "ldjson-server": "vite-node scripts/serverLdScrape.ts",
-    "backup:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/"
+    "backup:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
+    "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts"
   },
   "keywords": [
     "OpenStreetMap",
