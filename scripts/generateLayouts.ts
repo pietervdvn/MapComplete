@@ -36,6 +36,7 @@ class GenerateLayouts extends Script {
     private previousSrc: Set<string> = new Set<string>()
     private eliUrlsCached: string[]
     private date = new Date().toISOString()
+    private branchName: string = undefined
 
     constructor() {
         super("Generates an '<theme>.html' and 'index_<theme>.ts' for every theme")
@@ -43,6 +44,27 @@ class GenerateLayouts extends Script {
 
     enc(str: string): string {
         return encodeURIComponent(str.toLowerCase())
+    }
+
+    getBranchName(): Promise<string> {
+        if (this.branchName) {
+            return Promise.resolve(this.branchName)
+        }
+        const { exec } = require("child_process")
+        return new Promise<string>((resolve, reject) => {
+            exec("git rev-parse --abbrev-ref HEAD", (err, stdout, stderr) => {
+                if (err) {
+                    reject(err)
+                    return
+                }
+
+                if (typeof stdout === "string") {
+                    this.branchName = stdout.trim()
+                    resolve(stdout.trim())
+                }
+                reject("Did not get output")
+            })
+        })
     }
 
     async createIcon(iconPath: string, size: number, alreadyWritten: string[]) {
@@ -466,6 +488,13 @@ class GenerateLayouts extends Script {
             ...apple_icons,
         ].join("\n")
 
+        let branchname = await this.getBranchName()
+        if (branchname === "master" || branchname === "main") {
+            branchname = ""
+        } else {
+            branchname = "<div class='text-xs'>" + branchname + "</div>"
+        }
+
         const loadingText = Translations.t.general.loadingTheme.Subs({ theme: layout.title })
         // const templateLines: string[] = this.template.split("\n").slice(1) // Slice to remove the 'export {}'-line
 
@@ -488,7 +517,7 @@ class GenerateLayouts extends Script {
             )
             .replace(
                 /<!-- IMAGE-START -->.*<!-- IMAGE-END -->/s,
-                "<img class='p-4 h-32 w-32 self-start' src='" + icon + "' />"
+                "<img class='p-0 h-32 w-32 self-start' src='" + icon + "' />"
             )
             .replace(
                 /.*\/src\/index\.ts.*/,
@@ -499,7 +528,10 @@ class GenerateLayouts extends Script {
                 /\n.*RemoveOtherLanguages.*\n/i,
                 "\n<script>" + this.removeOtherLanguages + "</script>\n"
             )
-            .replace("Version", `${Constants.vNumber} <div class='text-xs'>${this.date}</div>`)
+            .replace(
+                "Version",
+                `${Constants.vNumber} <div class='text-xs'>${this.date}</div>${branchname}`
+            )
     }
 
     async createIndexFor(theme: LayoutConfig) {
