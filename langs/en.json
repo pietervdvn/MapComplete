@@ -20,6 +20,7 @@
         "cancel": "Cancel",
         "cannotBeDeleted": "This feature can not be deleted",
         "delete": "Delete",
+        "deletedTitle": "Deleted feature",
         "explanations": {
             "hardDelete": "This feature will be deleted in OpenStreetMap. It can be recovered by an experienced contributor",
             "retagNoOtherThemes": "This feature will be reclassified and hidden from this application",

@@ -21,15 +21,17 @@
 
   let isTesting = state.featureSwitchIsTesting
   let isDebugging = state.featureSwitches.featureSwitchIsDebugging
-  
+
   let metatags: Store<Record<string, string>> = state.userRelatedState.preferencesAsTags
 </script>
 
-{#if $tags._deleted === "yes"}
-  <Tr t={Translations.t.delete.isDeleted} />
-{:else}
-  <div class="low-interaction flex border-b-2 border-black px-3 drop-shadow-md">
-    <div class="h-fit w-full overflow-auto sm:p-2" style="max-height: 20vh;">
+<div class="low-interaction flex border-b-2 border-black px-3 drop-shadow-md">
+  <div class="h-fit w-full overflow-auto sm:p-2" style="max-height: 20vh;">
+    {#if $tags._deleted === "yes"}
+      <h3 class="p-4">
+        <Tr t={Translations.t.delete.deletedTitle} />
+      </h3>
+    {:else}
       <div class="flex h-full w-full flex-grow flex-col">
         <!-- Title element and  title icons-->
         <h3 class="m-0">
@@ -37,7 +39,6 @@
             <TagRenderingAnswer config={layer.title} {selectedElement} {state} {tags} {layer} />
           </a>
         </h3>
-
         <div
           class="no-weblate title-icons links-as-button mr-2 flex flex-row flex-wrap items-center gap-x-0.5 pt-0.5 sm:pt-1"
         >
@@ -57,22 +58,22 @@
           {/each}
 
           {#if $isTesting || $isDebugging}
-            <a class="subtle" href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Layers/{layer.id}.md" target="_blank" rel="noreferrer noopener " >{layer.id}</a>
+            <a class="subtle" href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Layers/{layer.id}.md"
+               target="_blank" rel="noreferrer noopener ">{layer.id}</a>
           {/if}
         </div>
       </div>
-    </div>
-
-    <button
-      on:click={() => state.selectedElement.setData(undefined)}
-      use:ariaLabel={Translations.t.general.backToMap}
-      class="mt-2 h-fit shrink-0 rounded-full border-none p-0"
-      style="border: 0 !important; padding: 0 !important;"
-    >
-      <XCircleIcon aria-hidden={true} class="h-8 w-8" />
-    </button>
+    {/if}
   </div>
-{/if}
+  <button
+    class="mt-2 h-fit shrink-0 rounded-full border-none p-0"
+    on:click={() => state.selectedElement.setData(undefined)}
+    style="border: 0 !important; padding: 0 !important;"
+    use:ariaLabel={Translations.t.general.backToMap}
+  >
+    <XCircleIcon aria-hidden={true} class="h-8 w-8" />
+  </button>
+</div>
 
 <style>
     :global(.title-icons a) {
