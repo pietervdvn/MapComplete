@@ -513,6 +513,10 @@
         "pt_BR": "Quantas bicicletas cabem nesse estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
         "pt": "Quantas bicicletas cabem neste estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?"
       },
+      "questionHint": {
+        "en": "This includes regular bicycles, cargo bikes, ebikes, ...",
+        "nl": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ..."
+      },
       "render": {
         "en": "Place for {capacity} bikes",
         "fr": "Place pour {capacity} vélos",
