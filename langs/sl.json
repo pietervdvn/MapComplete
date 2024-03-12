@@ -5,31 +5,13 @@
     },
     "delete": {
         "cancel": "Prekliči",
-        "delete": "Izbriši",
-        "explanations": {},
-        "reasons": {}
+        "delete": "Izbriši"
     },
-    "favourite": {},
     "general": {
-        "add": {
-            "import": {}
-        },
-        "apply_button": {},
-        "attribution": {
-            "iconAttribution": {}
-        },
         "back": "Nazaj",
         "cancel": "Prekliči",
         "confirm": "Potrdi",
-        "download": {},
-        "histogram": {},
-        "layerSelection": {},
-        "levelSelection": {},
-        "morescreen": {},
-        "opening_hours": {},
-        "pdf": {},
-        "pickLanguage": "Izberite jezik: ",
-        "questions": {},
+        "pickLanguage": "Izberite jezik:",
         "save": "Shrani",
         "search": {
             "error": "Nekaj se je zalomilo…",
@@ -37,7 +19,6 @@
             "search": "Poiščite lokacijo",
             "searching": "Iskanje…"
         },
-        "sharescreen": {},
         "skip": "Preskoči to vprašanje",
         "weekdays": {
             "abbreviations": {
@@ -56,10 +37,6 @@
             "thursday": "Četrtek",
             "tuesday": "Torek",
             "wednesday": "Sreda"
-        },
-        "welcomeExplanation": {},
-        "wikipedia": {
-            "previewbox": {}
         }
     },
     "image": {
@@ -68,39 +45,9 @@
         "dontDelete": "Prekliči",
         "isDeleted": "Izbrisana"
     },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
         "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
-    },
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
-    },
-    "multi_apply": {},
-    "notes": {},
-    "privacy": {},
-    "reviews": {},
-    "split": {},
-    "translations": {},
-    "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
     }
 }

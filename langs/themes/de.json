@@ -96,6 +96,10 @@
         "shortDescription": "Eine Karte aller Sitzbänke",
         "title": "Sitzbänke"
     },
+    "bicycle_parkings": {
+        "description": "Eine Karte mit allen Arten von Fahrradabstellplätzen",
+        "title": "Fahrradabstellplätze"
+    },
     "bicycle_rental": {
         "description": "Auf dieser Karte finden Sie alle Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
         "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihgeschäften",
@@ -991,6 +995,13 @@
                             }
                         }
                     },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Etymologie-Thema ausschließen"
+                            }
+                        }
+                    },
                     "2": {
                         "options": {
                             "0": {
@@ -1044,13 +1055,6 @@
                         "options": {
                             "0": {
                                 "question": "GRB-Thema ausschließen"
-                            }
-                        }
-                    },
-                    "10": {
-                        "options": {
-                            "0": {
-                                "question": "Etymologie-Thema ausschließen"
                             }
                         }
                     }
@@ -1112,6 +1116,10 @@
         "shortDescription": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße.",
         "title": "Höchstgeschwindigkeit"
     },
+    "memorials": {
+        "description": "Denkmäler sind physische Objekte, die dauerhaft im öffentlichen Raum aufgestellt werden, um an eine Person oder ein Ereignis zu erinnern. Dabei kann es sich um eine Vielzahl von Objekten handeln, z. B. Statuen, Tafeln, Gemälde, militärische Objekte (wie Panzer), ...",
+        "title": "Denkmäler"
+    },
     "nature": {
         "description": "Eine Karte mit interessanten Informationen für Touristen und Naturliebhaber.",
         "shortDescription": "Eine Karte mit interessanten Orten für Naturliebhaber",
@@ -1129,6 +1137,33 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1170,33 +1205,6 @@
             "8": {
                 "override": {
                     "name": "Barrierefreie Parkplätze"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1439,10 +1447,6 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
-            },
             "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1474,6 +1478,10 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"
