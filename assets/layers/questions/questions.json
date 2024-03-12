@@ -733,7 +733,8 @@
           "if": "opening_hours=closed",
           "then": {
             "en": "Marked as closed for an unspecified time",
-            "nl": "Gesloten voor onbepaalde duur"
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
           },
           "hideInAnswer": true
         }

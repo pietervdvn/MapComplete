@@ -499,9 +499,9 @@
     },
     {
       "question": {
-        "en": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
+        "en": "How many bicycles fit in this bicycle parking?",
         "fr": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
-        "nl": "Hoeveel fietsen kunnen in deze fietsparking (inclusief potentiëel bakfietsen)?",
+        "nl": "Hoeveel fietsen kunnen in deze fietsparking?",
         "gl": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?",
         "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?",
         "it": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici cargo)?",

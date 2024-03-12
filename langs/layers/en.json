@@ -35,16 +35,6 @@
             "1": {
                 "title": "a freestanding poster box"
             },
-            "10": {
-                "description": "Used for advertising signs, neon signs, logos & institutional entrance signs",
-                "title": "a sign"
-            },
-            "11": {
-                "title": "a sculpture"
-            },
-            "12": {
-                "title": "a wall painting"
-            },
             "2": {
                 "title": "a poster box mounted on a wall"
             },
@@ -71,6 +61,16 @@
             },
             "9": {
                 "title": "a totem"
+            },
+            "10": {
+                "description": "Used for advertising signs, neon signs, logos & institutional entrance signs",
+                "title": "a sign"
+            },
+            "11": {
+                "title": "a sculpture"
+            },
+            "12": {
+                "title": "a wall painting"
             }
         },
         "tagRenderings": {
@@ -165,9 +165,6 @@
                     "1": {
                         "then": "This is a board"
                     },
-                    "10": {
-                        "then": "This is a wall painting"
-                    },
                     "2": {
                         "then": "This is a column"
                     },
@@ -191,6 +188,9 @@
                     },
                     "9": {
                         "then": "This is a totem"
+                    },
+                    "10": {
+                        "then": "This is a wall painting"
                     }
                 },
                 "question": "Which type of advertising feature is this?",
@@ -204,9 +204,6 @@
                 },
                 "1": {
                     "then": "Board"
-                },
-                "10": {
-                    "then": "Wall painting"
                 },
                 "2": {
                     "then": "Poster Box"
@@ -231,6 +228,9 @@
                 },
                 "9": {
                     "then": "Totem"
+                },
+                "10": {
+                    "then": "Wall painting"
                 }
             }
         }
@@ -277,9 +277,6 @@
                     "1": {
                         "then": "This is a gondola where the cars go around in continuous circles"
                     },
-                    "10": {
-                        "then": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
-                    },
                     "2": {
                         "then": "An open chairlift with seats to sit on and open to the outside air."
                     },
@@ -303,6 +300,9 @@
                     },
                     "9": {
                         "then": "A magic carpet (a conveyor belt on the ground)"
+                    },
+                    "10": {
+                        "then": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
                     }
                 },
                 "question": "What type of aerialway is this?"
@@ -430,15 +430,6 @@
                     "1": {
                         "then": "Mural"
                     },
-                    "10": {
-                        "then": "Azulejo (Spanish decorative tilework)"
-                    },
-                    "11": {
-                        "then": "Tilework"
-                    },
-                    "12": {
-                        "then": "Woodcarving"
-                    },
                     "2": {
                         "then": "Painting"
                     },
@@ -462,6 +453,15 @@
                     },
                     "9": {
                         "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (Spanish decorative tilework)"
+                    },
+                    "11": {
+                        "then": "Tilework"
+                    },
+                    "12": {
+                        "then": "Woodcarving"
                     }
                 },
                 "question": "What is the type of this artwork?",
@@ -2092,27 +2092,6 @@
                     "1": {
                         "question": "Has a <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
                     },
-                    "10": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
-                    },
-                    "11": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
-                    },
-                    "12": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
-                    },
-                    "13": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
-                    },
-                    "14": {
-                        "question": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector"
-                    },
-                    "15": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector"
-                    },
-                    "16": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
-                    },
                     "2": {
                         "question": "Has a <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> connector"
                     },
@@ -2136,6 +2115,27 @@
                     },
                     "9": {
                         "question": "Has a <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
+                    },
+                    "10": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
+                    },
+                    "11": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
+                    },
+                    "12": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
+                    },
+                    "13": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
+                    },
+                    "14": {
+                        "question": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector"
+                    },
+                    "15": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector"
+                    },
+                    "16": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
                     }
                 }
             }
@@ -2191,6 +2191,30 @@
                     "1": {
                         "then": "<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
                     },
+                    "2": {
+                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
+                    },
+                    "3": {
+                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Type 1 with cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Type 1 with cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
+                    },
                     "10": {
                         "then": "<b>Type 1 CCS</b> (aka Type 1 Combo)"
                     },
@@ -2220,9 +2244,6 @@
                     },
                     "19": {
                         "then": "<b>Type 2 with cable</b> (mennekes)"
-                    },
-                    "2": {
-                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (a branded type2_css)"
@@ -2254,32 +2275,11 @@
                     "29": {
                         "then": "<b>Bosch Active Connect with 3 pins</b> and cable"
                     },
-                    "3": {
-                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
-                    },
                     "30": {
                         "then": "<b>Bosch Active Connect with 5 pins</b> and cable"
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect with 5 pins</b> and cable"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 with cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 with cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Which charging connections are available here?"
@@ -2473,24 +2473,6 @@
                         "1": {
                             "2": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
                         },
-                        "10": {
-                            "2": "<b>Tesla Supercharger CCS</b> (a branded type2_css)"
-                        },
-                        "11": {
-                            "2": "<b>Tesla Supercharger (destination)</b>"
-                        },
-                        "12": {
-                            "2": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)"
-                        },
-                        "13": {
-                            "2": "<b>USB</b> to charge phones and small electronics"
-                        },
-                        "14": {
-                            "2": "<b>Bosch Active Connect with 3 pins</b> and cable"
-                        },
-                        "15": {
-                            "2": "<b>Bosch Active Connect with 5 pins</b> and cable"
-                        },
                         "2": {
                             "2": "<b>Chademo</b>"
                         },
@@ -2514,6 +2496,24 @@
                         },
                         "9": {
                             "2": "<b>Type 2 with cable</b> (mennekes)"
+                        },
+                        "10": {
+                            "2": "<b>Tesla Supercharger CCS</b> (a branded type2_css)"
+                        },
+                        "11": {
+                            "2": "<b>Tesla Supercharger (destination)</b>"
+                        },
+                        "12": {
+                            "2": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)"
+                        },
+                        "13": {
+                            "2": "<b>USB</b> to charge phones and small electronics"
+                        },
+                        "14": {
+                            "2": "<b>Bosch Active Connect with 3 pins</b> and cable"
+                        },
+                        "15": {
+                            "2": "<b>Bosch Active Connect with 5 pins</b> and cable"
                         }
                     }
                 }
@@ -3311,15 +3311,6 @@
                     "1": {
                         "then": "This cycleway is paved"
                     },
-                    "10": {
-                        "then": "This cycleway is made of fine gravel"
-                    },
-                    "11": {
-                        "then": "This cycleway is made of pebblestone"
-                    },
-                    "12": {
-                        "then": "This cycleway is made from raw ground"
-                    },
                     "2": {
                         "then": "This cycleway is made of asphalt"
                     },
@@ -3343,6 +3334,15 @@
                     },
                     "9": {
                         "then": "This cycleway is made of gravel"
+                    },
+                    "10": {
+                        "then": "This cycleway is made of fine gravel"
+                    },
+                    "11": {
+                        "then": "This cycleway is made of pebblestone"
+                    },
+                    "12": {
+                        "then": "This cycleway is made from raw ground"
                     }
                 },
                 "question": "What is the surface of the cycleway made from?",
@@ -3391,15 +3391,6 @@
                     "1": {
                         "then": "This cycleway is paved"
                     },
-                    "10": {
-                        "then": "This cycleway is made of fine gravel"
-                    },
-                    "11": {
-                        "then": "This cycleway is made of pebblestone"
-                    },
-                    "12": {
-                        "then": "This cycleway is made from raw ground"
-                    },
                     "2": {
                         "then": "This cycleway is made of asphalt"
                     },
@@ -3423,6 +3414,15 @@
                     },
                     "9": {
                         "then": "This cycleway is made of gravel"
+                    },
+                    "10": {
+                        "then": "This cycleway is made of fine gravel"
+                    },
+                    "11": {
+                        "then": "This cycleway is made of pebblestone"
+                    },
+                    "12": {
+                        "then": "This cycleway is made from raw ground"
                     }
                 },
                 "question": "What is the surface of the street made from?",
@@ -4395,54 +4395,6 @@
                     }
                 }
             },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "No preference towards dogs"
-                    },
-                    "1": {
-                        "question": "Dogs allowed"
-                    },
-                    "2": {
-                        "question": "No dogs allowed"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Offers internet"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Offers electricity"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Has a sugar-free offering"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Has a gluten free offering"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Has a lactose free offering"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -4511,6 +4463,54 @@
                 "options": {
                     "0": {
                         "question": "Free to use"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "No preference towards dogs"
+                    },
+                    "1": {
+                        "question": "Dogs allowed"
+                    },
+                    "2": {
+                        "question": "No dogs allowed"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Offers internet"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Offers electricity"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Has a sugar-free offering"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Has a gluten free offering"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Has a lactose free offering"
                     }
                 }
             }
@@ -4632,6 +4632,30 @@
                     "1": {
                         "then": "This fitness station has a sign with instructions for a specific exercise."
                     },
+                    "2": {
+                        "then": "This fitness station has a facility for sit-ups."
+                    },
+                    "3": {
+                        "then": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars."
+                    },
+                    "4": {
+                        "then": "This fitness station has bars for stretching."
+                    },
+                    "5": {
+                        "then": "This fitness station has a station for making hyperextensions."
+                    },
+                    "6": {
+                        "then": "This fitness station has rings for gymnastic exercises."
+                    },
+                    "7": {
+                        "then": "This fitness station has a horizontal ladder, also known as monkey bars."
+                    },
+                    "8": {
+                        "then": "This fitness station has wall bars to climb on."
+                    },
+                    "9": {
+                        "then": "This fitness station has posts for performing slalom exercises."
+                    },
                     "10": {
                         "then": "This fitness station has stepping stones."
                     },
@@ -4662,9 +4686,6 @@
                     "19": {
                         "then": "This fitness station has battling ropes."
                     },
-                    "2": {
-                        "then": "This fitness station has a facility for sit-ups."
-                    },
                     "20": {
                         "then": "This fitness station has a stationary bicycle."
                     },
@@ -4679,27 +4700,6 @@
                     },
                     "24": {
                         "then": "This fitness station has a slackline."
-                    },
-                    "3": {
-                        "then": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars."
-                    },
-                    "4": {
-                        "then": "This fitness station has bars for stretching."
-                    },
-                    "5": {
-                        "then": "This fitness station has a station for making hyperextensions."
-                    },
-                    "6": {
-                        "then": "This fitness station has rings for gymnastic exercises."
-                    },
-                    "7": {
-                        "then": "This fitness station has a horizontal ladder, also known as monkey bars."
-                    },
-                    "8": {
-                        "then": "This fitness station has wall bars to climb on."
-                    },
-                    "9": {
-                        "then": "This fitness station has posts for performing slalom exercises."
                     }
                 },
                 "question": "What kind of equipment does this fitness station have?"
@@ -4819,21 +4819,6 @@
                     "1": {
                         "then": "This is a friture"
                     },
-                    "10": {
-                        "then": "Chinese dishes are served here"
-                    },
-                    "11": {
-                        "then": "Greek dishes are served here"
-                    },
-                    "12": {
-                        "then": "Indian dishes are served here"
-                    },
-                    "13": {
-                        "then": "Turkish dishes are served here"
-                    },
-                    "14": {
-                        "then": "Thai dishes are served here"
-                    },
                     "2": {
                         "then": "Mainly serves pasta"
                     },
@@ -4857,6 +4842,21 @@
                     },
                     "9": {
                         "then": "French dishes are served here"
+                    },
+                    "10": {
+                        "then": "Chinese dishes are served here"
+                    },
+                    "11": {
+                        "then": "Greek dishes are served here"
+                    },
+                    "12": {
+                        "then": "Indian dishes are served here"
+                    },
+                    "13": {
+                        "then": "Turkish dishes are served here"
+                    },
+                    "14": {
+                        "then": "Thai dishes are served here"
                     }
                 },
                 "question": "What kind of food is served here?",
@@ -5556,6 +5556,30 @@
                     "1": {
                         "then": "This is a auditorium"
                     },
+                    "2": {
+                        "then": "This is a bedroom"
+                    },
+                    "3": {
+                        "then": "This is a chapel"
+                    },
+                    "4": {
+                        "then": "This is a classroom"
+                    },
+                    "5": {
+                        "then": "This is a classroom"
+                    },
+                    "6": {
+                        "then": "This is a computer room"
+                    },
+                    "7": {
+                        "then": "This is a conference room"
+                    },
+                    "8": {
+                        "then": "This is a crypt"
+                    },
+                    "9": {
+                        "then": "This is a kitchen"
+                    },
                     "10": {
                         "then": "This is a laboratory"
                     },
@@ -5586,9 +5610,6 @@
                     "19": {
                         "then": "This is a storage room"
                     },
-                    "2": {
-                        "then": "This is a bedroom"
-                    },
                     "20": {
                         "then": "This is a technical room"
                     },
@@ -5597,27 +5618,6 @@
                     },
                     "22": {
                         "then": "This is a waiting room"
-                    },
-                    "3": {
-                        "then": "This is a chapel"
-                    },
-                    "4": {
-                        "then": "This is a classroom"
-                    },
-                    "5": {
-                        "then": "This is a classroom"
-                    },
-                    "6": {
-                        "then": "This is a computer room"
-                    },
-                    "7": {
-                        "then": "This is a conference room"
-                    },
-                    "8": {
-                        "then": "This is a crypt"
-                    },
-                    "9": {
-                        "then": "This is a kitchen"
                     }
                 },
                 "question": "What type of room is this?"
@@ -6332,19 +6332,6 @@
                     }
                 }
             },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "All Notes"
-                    },
-                    "1": {
-                        "question": "Hide import notes"
-                    },
-                    "2": {
-                        "question": "Show only import Notes"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -6398,6 +6385,19 @@
                 "options": {
                     "0": {
                         "question": "Only show open notes"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "All Notes"
+                    },
+                    "1": {
+                        "question": "Hide import notes"
+                    },
+                    "2": {
+                        "question": "Show only import Notes"
                     }
                 }
             }
@@ -6724,18 +6724,6 @@
                     "1": {
                         "then": "This is a normal parking space."
                     },
-                    "10": {
-                        "then": "This is a parking space reserved for staff."
-                    },
-                    "11": {
-                        "then": "This is a parking space reserved for taxis."
-                    },
-                    "12": {
-                        "then": "This is a parking space reserved for vehicles towing a trailer."
-                    },
-                    "13": {
-                        "then": "This is a parking space reserved for car sharing."
-                    },
                     "2": {
                         "then": "This is a disabled parking space."
                     },
@@ -6759,6 +6747,18 @@
                     },
                     "9": {
                         "then": "This is a parking space reserved for parents with children."
+                    },
+                    "10": {
+                        "then": "This is a parking space reserved for staff."
+                    },
+                    "11": {
+                        "then": "This is a parking space reserved for taxis."
+                    },
+                    "12": {
+                        "then": "This is a parking space reserved for vehicles towing a trailer."
+                    },
+                    "13": {
+                        "then": "This is a parking space reserved for car sharing."
                     }
                 },
                 "question": "What kind of parking space is this?"
@@ -7072,6 +7072,30 @@
                     "1": {
                         "then": "This is a structure consisting of several connected playground devices"
                     },
+                    "2": {
+                        "then": "This is a slide"
+                    },
+                    "3": {
+                        "then": "This is a sand pit"
+                    },
+                    "4": {
+                        "then": "This is a spring rider"
+                    },
+                    "5": {
+                        "then": "This is a climbing frame"
+                    },
+                    "6": {
+                        "then": "This is a seesaw"
+                    },
+                    "7": {
+                        "then": "This is a playhouse"
+                    },
+                    "8": {
+                        "then": "This is a roundabout"
+                    },
+                    "9": {
+                        "then": "This is a basket swing"
+                    },
                     "10": {
                         "then": "This is a zip wire"
                     },
@@ -7102,35 +7126,11 @@
                     "19": {
                         "then": "This is a teen shelter"
                     },
-                    "2": {
-                        "then": "This is a slide"
-                    },
                     "20": {
                         "then": "This is a funnel used to play with funnel ball"
                     },
                     "21": {
                         "then": "This is a spinning circle"
-                    },
-                    "3": {
-                        "then": "This is a sand pit"
-                    },
-                    "4": {
-                        "then": "This is a spring rider"
-                    },
-                    "5": {
-                        "then": "This is a climbing frame"
-                    },
-                    "6": {
-                        "then": "This is a seesaw"
-                    },
-                    "7": {
-                        "then": "This is a playhouse"
-                    },
-                    "8": {
-                        "then": "This is a roundabout"
-                    },
-                    "9": {
-                        "then": "This is a basket swing"
                     }
                 },
                 "question": "What kind of device is this?",
@@ -7491,21 +7491,6 @@
                     "1": {
                         "then": "2 cent coins are accepted"
                     },
-                    "10": {
-                        "then": "20 centimes coins are accepted"
-                    },
-                    "11": {
-                        "then": "½ franc coins are accepted"
-                    },
-                    "12": {
-                        "then": "1 franc coins are accepted"
-                    },
-                    "13": {
-                        "then": "2 francs coins are accepted"
-                    },
-                    "14": {
-                        "then": "5 francs coins are accepted"
-                    },
                     "2": {
                         "then": "5 cent coins are accepted"
                     },
@@ -7529,6 +7514,21 @@
                     },
                     "9": {
                         "then": "10 centimes coins are accepted"
+                    },
+                    "10": {
+                        "then": "20 centimes coins are accepted"
+                    },
+                    "11": {
+                        "then": "½ franc coins are accepted"
+                    },
+                    "12": {
+                        "then": "1 franc coins are accepted"
+                    },
+                    "13": {
+                        "then": "2 francs coins are accepted"
+                    },
+                    "14": {
+                        "then": "5 francs coins are accepted"
                     }
                 },
                 "question": "What coins can you use to pay here?"
@@ -7540,15 +7540,6 @@
                     },
                     "1": {
                         "then": "10 euro notes are accepted"
-                    },
-                    "10": {
-                        "then": "100 francs notes are accepted"
-                    },
-                    "11": {
-                        "then": "200 francs notes are accepted"
-                    },
-                    "12": {
-                        "then": "1000 francs notes are accepted"
                     },
                     "2": {
                         "then": "20 euro notes are accepted"
@@ -7573,6 +7564,15 @@
                     },
                     "9": {
                         "then": "50 francs notes are accepted"
+                    },
+                    "10": {
+                        "then": "100 francs notes are accepted"
+                    },
+                    "11": {
+                        "then": "200 francs notes are accepted"
+                    },
+                    "12": {
+                        "then": "1000 francs notes are accepted"
                     }
                 },
                 "question": "what notes can you use to pay here?"
@@ -8031,6 +8031,30 @@
                     "1": {
                         "question": "Recycling of batteries"
                     },
+                    "2": {
+                        "question": "Recycling of beverage cartons"
+                    },
+                    "3": {
+                        "question": "Recycling of cans"
+                    },
+                    "4": {
+                        "question": "Recycling of clothes"
+                    },
+                    "5": {
+                        "question": "Recycling of cooking oil"
+                    },
+                    "6": {
+                        "question": "Recycling of engine oil"
+                    },
+                    "7": {
+                        "question": "Recycling of fluorescent tubes"
+                    },
+                    "8": {
+                        "question": "Recycling of green waste"
+                    },
+                    "9": {
+                        "question": "Recycling of glass bottles"
+                    },
                     "10": {
                         "question": "Recycling of glass"
                     },
@@ -8061,35 +8085,11 @@
                     "19": {
                         "question": "Recycling of residual waste"
                     },
-                    "2": {
-                        "question": "Recycling of beverage cartons"
-                    },
                     "20": {
                         "question": "Recycling of printer cartridges"
                     },
                     "21": {
                         "question": "Recycling of bicycles"
-                    },
-                    "3": {
-                        "question": "Recycling of cans"
-                    },
-                    "4": {
-                        "question": "Recycling of clothes"
-                    },
-                    "5": {
-                        "question": "Recycling of cooking oil"
-                    },
-                    "6": {
-                        "question": "Recycling of engine oil"
-                    },
-                    "7": {
-                        "question": "Recycling of fluorescent tubes"
-                    },
-                    "8": {
-                        "question": "Recycling of green waste"
-                    },
-                    "9": {
-                        "question": "Recycling of glass bottles"
                     }
                 }
             },
@@ -8157,6 +8157,30 @@
                     "1": {
                         "then": "Beverage cartons can be recycled here"
                     },
+                    "2": {
+                        "then": "Cans can be recycled here"
+                    },
+                    "3": {
+                        "then": "Clothes can be recycled here"
+                    },
+                    "4": {
+                        "then": "Cooking oil can be recycled here"
+                    },
+                    "5": {
+                        "then": "Engine oil can be recycled here"
+                    },
+                    "6": {
+                        "then": "Fluorescent tubes can be recycled here"
+                    },
+                    "7": {
+                        "then": "Green waste can be recycled here"
+                    },
+                    "8": {
+                        "then": "Organic waste can be recycled here"
+                    },
+                    "9": {
+                        "then": "Glass bottles can be recycled here"
+                    },
                     "10": {
                         "then": "Glass can be recycled here"
                     },
@@ -8187,9 +8211,6 @@
                     "19": {
                         "then": "Shoes can be recycled here"
                     },
-                    "2": {
-                        "then": "Cans can be recycled here"
-                    },
                     "20": {
                         "then": "Small electrical appliances can be recycled here"
                     },
@@ -8204,27 +8225,6 @@
                     },
                     "24": {
                         "then": "Bicycles can be recycled here"
-                    },
-                    "3": {
-                        "then": "Clothes can be recycled here"
-                    },
-                    "4": {
-                        "then": "Cooking oil can be recycled here"
-                    },
-                    "5": {
-                        "then": "Engine oil can be recycled here"
-                    },
-                    "6": {
-                        "then": "Fluorescent tubes can be recycled here"
-                    },
-                    "7": {
-                        "then": "Green waste can be recycled here"
-                    },
-                    "8": {
-                        "then": "Organic waste can be recycled here"
-                    },
-                    "9": {
-                        "then": "Glass bottles can be recycled here"
                     }
                 },
                 "question": "What can be recycled here?"
@@ -9286,12 +9286,6 @@
                     "1": {
                         "then": "This lamp uses LEDs"
                     },
-                    "10": {
-                        "then": "This lamp uses high pressure sodium lamps (orange with white)"
-                    },
-                    "11": {
-                        "then": "This lamp is lit using gas"
-                    },
                     "2": {
                         "then": "This lamp uses incandescent lighting"
                     },
@@ -9315,6 +9309,12 @@
                     },
                     "9": {
                         "then": "This lamp uses low pressure sodium lamps (monochrome orange)"
+                    },
+                    "10": {
+                        "then": "This lamp uses high pressure sodium lamps (orange with white)"
+                    },
+                    "11": {
+                        "then": "This lamp is lit using gas"
                     }
                 },
                 "question": "What kind of lighting does this lamp use?"
@@ -10709,6 +10709,30 @@
                     "1": {
                         "question": "Sale of drinks"
                     },
+                    "2": {
+                        "question": "Sale of sweets"
+                    },
+                    "3": {
+                        "question": "Sale of food"
+                    },
+                    "4": {
+                        "question": "Sale of cigarettes"
+                    },
+                    "5": {
+                        "question": "Sale of condoms"
+                    },
+                    "6": {
+                        "question": "Sale of coffee"
+                    },
+                    "7": {
+                        "question": "Sale of water"
+                    },
+                    "8": {
+                        "question": "Sale of newspapers"
+                    },
+                    "9": {
+                        "question": "Sale of bicycle inner tubes"
+                    },
                     "10": {
                         "question": "Sale of milk"
                     },
@@ -10739,9 +10763,6 @@
                     "19": {
                         "question": "Sale of flowers"
                     },
-                    "2": {
-                        "question": "Sale of sweets"
-                    },
                     "20": {
                         "question": "Sale of parking tickets"
                     },
@@ -10765,27 +10786,6 @@
                     },
                     "27": {
                         "question": "Sale of bicycle locks"
-                    },
-                    "3": {
-                        "question": "Sale of food"
-                    },
-                    "4": {
-                        "question": "Sale of cigarettes"
-                    },
-                    "5": {
-                        "question": "Sale of condoms"
-                    },
-                    "6": {
-                        "question": "Sale of coffee"
-                    },
-                    "7": {
-                        "question": "Sale of water"
-                    },
-                    "8": {
-                        "question": "Sale of newspapers"
-                    },
-                    "9": {
-                        "question": "Sale of bicycle inner tubes"
                     }
                 }
             }
@@ -10832,6 +10832,30 @@
                     "1": {
                         "then": "Sweets are sold"
                     },
+                    "2": {
+                        "then": "Food is sold"
+                    },
+                    "3": {
+                        "then": "Cigarettes are sold"
+                    },
+                    "4": {
+                        "then": "Condoms are sold"
+                    },
+                    "5": {
+                        "then": "Coffee is sold"
+                    },
+                    "6": {
+                        "then": "Drinking water is sold"
+                    },
+                    "7": {
+                        "then": "Newspapers are sold"
+                    },
+                    "8": {
+                        "then": "Bicycle inner tubes are sold"
+                    },
+                    "9": {
+                        "then": "Milk is sold"
+                    },
                     "10": {
                         "then": "Bread is sold"
                     },
@@ -10862,9 +10886,6 @@
                     "19": {
                         "then": "Parking tickets are sold"
                     },
-                    "2": {
-                        "then": "Food is sold"
-                    },
                     "20": {
                         "then": "Pressed pennies are sold"
                     },
@@ -10885,27 +10906,6 @@
                     },
                     "26": {
                         "then": "Bicycle locks are sold"
-                    },
-                    "3": {
-                        "then": "Cigarettes are sold"
-                    },
-                    "4": {
-                        "then": "Condoms are sold"
-                    },
-                    "5": {
-                        "then": "Coffee is sold"
-                    },
-                    "6": {
-                        "then": "Drinking water is sold"
-                    },
-                    "7": {
-                        "then": "Newspapers are sold"
-                    },
-                    "8": {
-                        "then": "Bicycle inner tubes are sold"
-                    },
-                    "9": {
-                        "then": "Milk is sold"
                     }
                 },
                 "question": "What does this vending machine sell?",

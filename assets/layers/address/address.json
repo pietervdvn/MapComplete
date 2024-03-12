@@ -170,7 +170,8 @@
         "pt_BR": "O número da casa é <b>{addr:housenumber}</b>",
         "he": "מספר הבית הוא <b>{addr:housenumber}</b>",
         "eu": "Etxearen zenbakia <b>{addr:housenumber}</b> da",
-        "it": "Il numero civico della casa è <b>{addr:housenumber}</b>"
+        "it": "Il numero civico della casa è <b>{addr:housenumber}</b>",
+        "zh_Hant": "門牌號碼是 <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -191,7 +192,8 @@
         "pt_BR": "Qual é o número desta casa?",
         "he": "מה המספר של הבית הזה?",
         "eu": "Zein da etxe honen zenbakia?",
-        "it": "Qual è il numero civico di questa casa?"
+        "it": "Qual è il numero civico di questa casa?",
+        "zh_Hant": "這間房子的門牌號碼是多少？"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -273,7 +275,8 @@
         "pt_BR": "Em que rua fica esse endereço?",
         "he": "באיזה רחוב נמצאת הכתובת הזו?",
         "eu": "Zein kaletan dago helbide hori?",
-        "it": "Qual è la via in cui si trova?"
+        "it": "Qual è la via in cui si trova?",
+        "zh_Hant": "地址所在的道路是？"
       },
       "freeform": {
         "key": "addr:street"

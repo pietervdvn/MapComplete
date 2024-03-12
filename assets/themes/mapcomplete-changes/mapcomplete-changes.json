@@ -348,6 +348,10 @@
                     "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
                   },
                   {
+                    "if": "theme=memorials",
+                    "then": "./assets/layers/memorial/memorial.svg"
+                  },
+                  {
                     "if": "theme=nature",
                     "then": "./assets/themes/nature/logo.svg"
                   },

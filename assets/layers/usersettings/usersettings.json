@@ -26,7 +26,8 @@
       "da": "Indstillinger",
       "ca": "Configuració",
       "cs": "Nastavení",
-      "fi": "Asetukset"
+      "fi": "Asetukset",
+      "zh_Hant": "設定"
     }
   },
   "pointRendering": null,

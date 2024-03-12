@@ -219,7 +219,8 @@
             "cs": "Cyklista ji může projet.",
             "ca": "Un ciclista pot passar-hi.",
             "pt_BR": "Um ciclista pode passar por isso.",
-            "pt": "Um ciclista pode passar por isto."
+            "pt": "Um ciclista pode passar por isto.",
+            "zh_Hant": "單車騎士能夠穿越。"
           }
         },
         {
@@ -235,7 +236,8 @@
             "cs": "Cyklista tudy nemůže projet.",
             "ca": "Un ciclista no pot passar-hi.",
             "pt_BR": "Um ciclista não pode passar por isso.",
-            "pt": "Um ciclista não pode passar por isst."
+            "pt": "Um ciclista não pode passar por isst.",
+            "zh_Hant": "單車騎士無法穿越。"
           }
         }
       ],
