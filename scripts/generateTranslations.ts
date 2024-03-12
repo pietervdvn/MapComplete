@@ -342,6 +342,9 @@ function isTranslation(tr: any): boolean {
     if (tr["#"] === "no-translations") {
         return false
     }
+    if (tr["special"]) {
+        return false
+    }
     for (const key in tr) {
         if (typeof tr[key] !== "string") {
             return false
