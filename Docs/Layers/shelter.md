@@ -27,7 +27,6 @@ Layer showing shelter structures
 
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
-  - [transit](https://mapcomplete.org/transit)
 
 
 
@@ -83,6 +82,18 @@ This tagrendering has labels  `added_by_default`
 
 
 
+### images 
+
+
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### shelter-type 
 
 
@@ -119,6 +130,16 @@ This tagrendering has no question and is thus read-only
 
 
 Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
 
 This tagrendering has no question and is thus read-only
 

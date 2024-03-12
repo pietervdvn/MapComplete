@@ -75,6 +75,7 @@ This theme contains the following layers:
   - [map](../Layers/map.md)
   - [maproulette_challenge](../Layers/maproulette_challenge.md)
   - [maxspeed](../Layers/maxspeed.md)
+  - [memorial](../Layers/memorial.md)
   - [mountain_rescue](../Layers/mountain_rescue.md)
   - [nature_reserve](../Layers/nature_reserve.md)
   - [note](../Layers/note.md)
@@ -89,6 +90,7 @@ This theme contains the following layers:
   - [physiotherapist](../Layers/physiotherapist.md)
   - [picnic_table](../Layers/picnic_table.md)
   - [playground](../Layers/playground.md)
+  - [playground_equipment](../Layers/playground_equipment.md)
   - [postboxes](../Layers/postboxes.md)
   - [postoffices](../Layers/postoffices.md)
   - [public_bookcase](../Layers/public_bookcase.md)
@@ -100,6 +102,8 @@ This theme contains the following layers:
   - [shops](../Layers/shops.md)
   - [shower](../Layers/shower.md)
   - [ski_piste](../Layers/ski_piste.md)
+  - [souvenir_coin](../Layers/souvenir_coin.md)
+  - [souvenir_note](../Layers/souvenir_note.md)
   - [speed_camera](../Layers/speed_camera.md)
   - [speed_display](../Layers/speed_display.md)
   - [sport_pitch](../Layers/sport_pitch.md)
@@ -130,6 +134,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

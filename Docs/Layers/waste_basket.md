@@ -27,7 +27,9 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
   - [personal](https://mapcomplete.org/personal)
   - [pets](https://mapcomplete.org/pets)
+  - [stations](https://mapcomplete.org/stations)
   - [waste](https://mapcomplete.org/waste)
+  - [waste_assen](https://mapcomplete.org/waste_assen)
   - [waste_basket](https://mapcomplete.org/waste_basket)
 
 

@@ -337,6 +337,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Recycling' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Waste')",
+      "value": "closed"
+    },
+    {
       "key": "access",
       "description": "Layer 'Recycling' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Waste')"
     },

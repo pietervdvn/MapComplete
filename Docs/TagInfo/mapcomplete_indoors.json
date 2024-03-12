@@ -303,6 +303,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "closed"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Indoors' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
       "value": "yes"

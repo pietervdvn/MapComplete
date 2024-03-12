@@ -12,7 +12,7 @@ This theme contains the following layers:
 
 
   - [named_streets](../Layers/named_streets.md)
-  - [osm-buildings](../Layers/osm-buildings.md)
+  - [osm_buildings_no_points](../Layers/osm_buildings_no_points.md)
   - [grb](../Layers/grb.md)
   - [service_ways](../Layers/service_ways.md)
   - [generic_osm_object](../Layers/generic_osm_object.md)
@@ -27,6 +27,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

@@ -259,17 +259,17 @@
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') Picking this answer will delete the key historic. (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') Picking this answer will delete the key historic. (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
     },
     {

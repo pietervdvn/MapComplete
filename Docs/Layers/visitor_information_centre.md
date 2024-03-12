@@ -17,6 +17,8 @@ A visitor center offers information about a specific attraction or place of inte
   - This layer is shown at zoomlevel **12** and higher
 
 
+No themes use this layer
+
 
 
  Basic tags for this layer 

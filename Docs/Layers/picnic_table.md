@@ -29,6 +29,7 @@ The layer showing picnic tables
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
   - [playgrounds](https://mapcomplete.org/playgrounds)
+  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
 
 
 

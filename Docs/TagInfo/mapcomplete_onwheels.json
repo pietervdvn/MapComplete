@@ -123,6 +123,11 @@
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Cafés and pubs' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'OnWheels')",
+      "value": "closed"
+    },
+    {
       "key": "website",
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -567,6 +572,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'OnWheels')",
+      "value": "closed"
     },
     {
       "key": "website",
@@ -2192,6 +2202,11 @@
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Shop' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'OnWheels')",
+      "value": "closed"
+    },
+    {
       "key": "website",
       "description": "Layer 'Shop' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -2570,6 +2585,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'OnWheels') (This is only shown if access!=no)",
+      "value": "closed"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "yes"
@@ -2744,6 +2764,11 @@
       "description": "Layer 'Pharmacies' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Pharmacies' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'OnWheels')",
+      "value": "closed"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Pharmacies' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -2817,7 +2842,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Doctors' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "description": "Layer 'Doctors' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'OnWheels')",
       "value": "\"by appointment\""
     },
     {

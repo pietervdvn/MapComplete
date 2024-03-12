@@ -26,6 +26,7 @@ Find ticket machines for public transport tickets
 
 
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
   - [vending_machine](https://mapcomplete.org/vending_machine)
 
 

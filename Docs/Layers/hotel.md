@@ -27,6 +27,7 @@ Layer showing all hotels
 
   - [hotels](https://mapcomplete.org/hotels)
   - [onwheels](https://mapcomplete.org/onwheels)
+  - [openlovemap](https://mapcomplete.org/openlovemap)
   - [personal](https://mapcomplete.org/personal)
 
 

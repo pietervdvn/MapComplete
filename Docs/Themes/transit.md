@@ -15,7 +15,7 @@ This theme contains the following layers:
   - [transit_routes](../Layers/transit_routes.md)
   - [bike_parking](../Layers/bike_parking.md)
   - [parking](../Layers/parking.md)
-  - [shelter](../Layers/shelter.md)
+  - [pt_shelter](../Layers/pt_shelter.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
@@ -24,6 +24,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

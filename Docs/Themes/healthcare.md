@@ -16,7 +16,7 @@ This theme contains the following layers:
   - [dentist](../Layers/dentist.md)
   - [hospital](../Layers/hospital.md)
   - [pharmacy](../Layers/pharmacy.md)
-  - [medical-shops](../Layers/medical-shops.md)
+  - [medical_shops](../Layers/medical_shops.md)
   - [shops](../Layers/shops.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
@@ -26,6 +26,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

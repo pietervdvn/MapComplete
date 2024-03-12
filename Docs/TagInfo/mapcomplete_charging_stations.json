@@ -898,6 +898,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Charging stations')",
+      "value": "closed"
+    },
+    {
       "key": "fee",
       "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
       "value": "no"

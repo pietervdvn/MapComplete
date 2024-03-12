@@ -162,6 +162,11 @@
       "description": "Layer 'Aerialways' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Aerialways' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "closed"
+    },
+    {
       "key": "oneway",
       "description": "Layer 'Aerialways' shows oneway=yes with a fixed text, namely 'This aerialway can only be taken to the top' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "yes"
@@ -527,6 +532,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if access!=no)",
+      "value": "closed"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "yes"
@@ -785,6 +795,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "closed"
+    },
+    {
       "key": "tourism",
       "description": "Layer 'Drinking water' shows tourism=artwork with a fixed text, namely 'This drinking water point has an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "artwork"
@@ -931,6 +946,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "closed"
     },
     {
       "key": "website",

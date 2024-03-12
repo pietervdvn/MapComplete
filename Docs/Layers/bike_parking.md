@@ -25,9 +25,12 @@ A layer showing where you can park your bike
 
 
 
+  - [bicycle_parkings](https://mapcomplete.org/bicycle_parkings)
   - [cyclofix](https://mapcomplete.org/cyclofix)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
   - [transit](https://mapcomplete.org/transit)
+  - [velopark](https://mapcomplete.org/velopark)
 
 
 
@@ -165,7 +168,7 @@ The question is  *Is this parking covered? Also select "covered" for indoor park
 
 
 
-The question is  *How many bicycles fit in this bicycle parking (including possible cargo bicycles)?*
+The question is  *How many bicycles fit in this bicycle parking?*
 
 This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `Place for {capacity} bikes`
 
@@ -215,6 +218,8 @@ This rendering asks information about the property  [opening_hours](https://wiki
 
 
   - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+  - _This option cannot be chosen as answer_
 
 
 

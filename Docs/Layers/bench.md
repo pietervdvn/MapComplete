@@ -26,9 +26,12 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
 
 
   - [benches](https://mapcomplete.org/benches)
+  - [memorials](https://mapcomplete.org/memorials)
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
   - [playgrounds](https://mapcomplete.org/playgrounds)
+  - [stations](https://mapcomplete.org/stations)
+  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
 
 
 

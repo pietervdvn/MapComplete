@@ -27,6 +27,8 @@ Playgrounds
 
   - [personal](https://mapcomplete.org/personal)
   - [playgrounds](https://mapcomplete.org/playgrounds)
+  - [speelplekken](https://mapcomplete.org/speelplekken)
+  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
 
 
 

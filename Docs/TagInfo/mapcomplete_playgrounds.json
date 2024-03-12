@@ -196,6 +196,164 @@
       "value": ""
     },
     {
+      "key": "playground",
+      "description": "The MapComplete theme Playgrounds has a layer Playground equipment showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Playground equipment' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Playground equipment allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Playground equipment allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Playground equipment allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Playground equipment allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows and asks freeform values for key 'playground' (in the mapcomplete.org theme 'Playgrounds')"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=swing with a fixed text, namely 'This is a swing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "swing"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=structure with a fixed text, namely 'This is a structure consisting of several connected playground devices' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "structure"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=slide with a fixed text, namely 'This is a slide' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "slide"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=sandpit with a fixed text, namely 'This is a sand pit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "sandpit"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=springy with a fixed text, namely 'This is a spring rider' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "springy"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=climbingframe with a fixed text, namely 'This is a climbing frame' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "climbingframe"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=seesaw with a fixed text, namely 'This is a seesaw' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "seesaw"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=playhouse with a fixed text, namely 'This is a playhouse' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "playhouse"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=roundabout with a fixed text, namely 'This is a roundabout' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "roundabout"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=basketswing with a fixed text, namely 'This is a basket swing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "basketswing"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=zipwire with a fixed text, namely 'This is a zip wire' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "zipwire"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=horizontal_bar with a fixed text, namely 'This is a horizontal bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "horizontal_bar"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=hopscotch with a fixed text, namely 'This is a hopscotch' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "hopscotch"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=splash_pad with a fixed text, namely 'This is a splash pad' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "splash_pad"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=climbingwall with a fixed text, namely 'This is a climbing wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "climbingwall"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=map with a fixed text, namely 'This is a map' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "map"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=bridge with a fixed text, namely 'This is a bridge (either as a standalone device or as part of a larger structure)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "bridge"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=cushion with a fixed text, namely 'This is a bouncy cushion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "cushion"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=activitypanel with a fixed text, namely 'This is an activity panel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "activitypanel"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=teenshelter with a fixed text, namely 'This is a teen shelter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "teenshelter"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=funnel_ball with a fixed text, namely 'This is a funnel used to play with funnel ball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "funnel_ball"
+    },
+    {
+      "key": "playground",
+      "description": "Layer 'Playground equipment' shows playground=spinning_circle with a fixed text, namely 'This is a spinning circle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "spinning_circle"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Playground equipment' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Playground equipment' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Playground equipment' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Playground equipment' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "no"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Playgrounds has a layer Benches showing features with this tag",
       "value": "bench"
@@ -371,17 +529,17 @@
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key historic. (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') Picking this answer will delete the key historic. (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
     },
     {

@@ -262,6 +262,11 @@
       "description": "Layer 'Fitness Centres' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Sports')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Fitness Centres' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Sports')",
+      "value": "closed"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Fitness Centres' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
       "value": "designated"
@@ -483,6 +488,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Fitness Stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Sports')",
+      "value": "closed"
+    },
+    {
       "key": "leisure",
       "description": "The MapComplete theme Sports has a layer Sports centres showing features with this tag",
       "value": "sports_centre"
@@ -510,6 +520,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Sports centres' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Sports')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Sports centres' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Sports')",
+      "value": "closed"
     },
     {
       "key": "phone",
@@ -1426,6 +1441,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Sports')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Shop' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Sports')",
+      "value": "closed"
     },
     {
       "key": "website",

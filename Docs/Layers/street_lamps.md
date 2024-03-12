@@ -27,6 +27,7 @@ A layer showing street lights
 
   - [personal](https://mapcomplete.org/personal)
   - [street_lighting](https://mapcomplete.org/street_lighting)
+  - [street_lighting_assen](https://mapcomplete.org/street_lighting_assen)
 
 
 

@@ -26,6 +26,7 @@ A layer showing memorials for cyclists, killed in road accidents
 
 
   - [ghostbikes](https://mapcomplete.org/ghostbikes)
+  - [memorials](https://mapcomplete.org/memorials)
   - [personal](https://mapcomplete.org/personal)
 
 

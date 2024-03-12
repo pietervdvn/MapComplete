@@ -14,6 +14,7 @@ This theme contains the following layers:
   - [postboxes](../Layers/postboxes.md)
   - [postoffices](../Layers/postoffices.md)
   - [parcel_lockers](../Layers/parcel_lockers.md)
+  - [shops](../Layers/shops.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
@@ -22,6 +23,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

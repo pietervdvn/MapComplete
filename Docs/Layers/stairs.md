@@ -27,6 +27,7 @@ Layer showing stairs and escalators
 
   - [blind_osm](https://mapcomplete.org/blind_osm)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
 
 
 

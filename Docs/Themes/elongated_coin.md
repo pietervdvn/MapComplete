@@ -12,6 +12,8 @@ This theme contains the following layers:
 
 
   - [elongated_coin](../Layers/elongated_coin.md)
+  - [souvenir_coin](../Layers/souvenir_coin.md)
+  - [souvenir_note](../Layers/souvenir_note.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
@@ -20,6 +22,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

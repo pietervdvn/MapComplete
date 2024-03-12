@@ -117,6 +117,11 @@
       "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop~.+ | opening_hours~.+)"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle rental' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop~.+ | opening_hours~.+)",
+      "value": "closed"
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if shop~.+)",
       "value": "yes"

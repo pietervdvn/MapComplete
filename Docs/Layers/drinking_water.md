@@ -33,6 +33,7 @@ A layer showing drinking water fountains
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
   - [ski](https://mapcomplete.org/ski)
+  - [stations](https://mapcomplete.org/stations)
 
 
 
@@ -210,6 +211,8 @@ This rendering asks information about the property  [opening_hours](https://wiki
   - *This drinking water fountain is closed this season. As such, the opening hours are not shown.*  corresponds with  seasonal!=no & seasonal~.+ & ((seasonal!~^(.*winter.*)$ & _now:date~^(....-(12|01|02)-..)$) | (seasonal!~^(.*spring.*)$ & _now:date~^(....-(03|04|05)-..)$) | (seasonal!~^(.*summer.*)$ & _now:date~^(....-(06|07|08)-..)$) | (seasonal!~^(.*autumn.*)$ & _now:date~^(....-(09|10|11)-..)$))
   - _This option cannot be chosen as answer_
   - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+  - _This option cannot be chosen as answer_
 
 
 

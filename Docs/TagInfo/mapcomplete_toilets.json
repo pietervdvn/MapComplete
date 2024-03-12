@@ -152,6 +152,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Public toilets') (This is only shown if access!=no)",
+      "value": "closed"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
       "value": "yes"
@@ -394,6 +399,11 @@
       "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Public toilets') (This is only shown if toilets:access!=no)"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets at other amenities' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Public toilets') (This is only shown if toilets:access!=no)",
+      "value": "closed"
+    },
+    {
       "key": "toilets:wheelchair",
       "description": "Layer 'Toilets at other amenities' shows toilets:wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public toilets')",
       "value": "yes"
@@ -610,6 +620,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Shower' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Public toilets')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Shower' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Public toilets')",
+      "value": "closed"
     },
     {
       "key": "hot_water",

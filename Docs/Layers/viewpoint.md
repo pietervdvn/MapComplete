@@ -25,6 +25,7 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 
 
+  - [buurtnatuur](https://mapcomplete.org/buurtnatuur)
   - [personal](https://mapcomplete.org/personal)
   - [ski](https://mapcomplete.org/ski)
 

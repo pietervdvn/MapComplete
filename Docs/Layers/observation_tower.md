@@ -27,6 +27,7 @@ Towers with a panoramic view
 
   - [observation_towers](https://mapcomplete.org/observation_towers)
   - [personal](https://mapcomplete.org/personal)
+  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
 
 
 

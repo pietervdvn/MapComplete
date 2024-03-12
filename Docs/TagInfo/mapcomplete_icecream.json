@@ -44,6 +44,11 @@
       "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Icecream')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Ice cream parlors' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Icecream')",
+      "value": "closed"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Icecream')"
     },

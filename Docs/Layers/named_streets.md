@@ -25,6 +25,18 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
 
 
+#### Themes using this layer 
+
+
+
+
+
+  - [grb](https://mapcomplete.org/grb)
+  - [uk_addresses](https://mapcomplete.org/uk_addresses)
+
+
+
+
  Basic tags for this layer 
 ---------------------------
 

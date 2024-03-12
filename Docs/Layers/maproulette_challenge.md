@@ -30,6 +30,7 @@ Layer showing tasks of a single MapRoulette challenge. This layer is intended to
   - [atm](https://mapcomplete.org/atm)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
+  - [street_lighting_assen](https://mapcomplete.org/street_lighting_assen)
 
 
 

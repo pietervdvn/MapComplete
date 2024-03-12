@@ -17,7 +17,7 @@
     + [phone](#phone)
     + [email](#email)
     + [wikipedia](#wikipedia)
-    + [bench.*bench-questions](#bench*bench-questions)
+    + [bench.bench-questions](#benchbench-questions)
     + [opening_hours_24_7](#opening_hours_24_7)
     + [artwork.*artwork-question](#artwork*artwork-question)
     + [description](#description)
@@ -65,6 +65,7 @@
     + [single_level](#single_level)
     + [survey_date](#survey_date)
     + [id_presets.shop_types](#id_presetsshop_types)
+    + [elongated_coin.designs](#elongated_coindesigns)
     + [school.capacity](#schoolcapacity)
     + [school.gender](#schoolgender)
     + [toilet.toilets-type](#toilettoilets-type)
@@ -148,9 +149,11 @@
   - ice_cream
   - indoors
   - information_board
+  - item_with_image
   - kerbs
   - love_hotel
   - map
+  - memorial
   - mountain_rescue
   - nature_reserve
   - observation_tower
@@ -163,6 +166,7 @@
   - picnic_table
   - play_forest
   - playground
+  - playground_equipment
   - postboxes
   - postoffices
   - public_bookcase
@@ -170,10 +174,13 @@
   - reception_desk
   - recycling
   - route_marker
+  - shelter
   - shops
   - shower
   - ski_piste
   - slow_roads
+  - souvenir_coin
+  - souvenir_note
   - sport_pitch
   - sports_centre
   - stairs
@@ -305,6 +312,8 @@
   - recycling
   - school
   - shops
+  - souvenir_coin
+  - souvenir_note
   - sports_centre
   - tertiary_education
   - vending_machine
@@ -399,13 +408,14 @@
 
 
 
-### bench.*bench-questions 
+### bench.bench-questions 
 
 
 
 
 
   - artwork
+  - memorial
 
 
 
@@ -427,6 +437,8 @@
   - hackerspace
   - parcel_lockers
   - recycling
+  - souvenir_coin
+  - souvenir_note
   - toilet
   - vending_machine
 
@@ -503,6 +515,8 @@
   - elongated_coin
   - parking_ticket_machine
   - shower
+  - souvenir_coin
+  - souvenir_note
   - ticket_machine
   - toilet
   - vending_machine
@@ -531,6 +545,8 @@
   - reception_desk
   - shops
   - shower
+  - souvenir_coin
+  - souvenir_note
   - ticket_machine
   - ticket_validator
   - toilet
@@ -592,6 +608,7 @@
   - hotel
   - ice_cream
   - observation_tower
+  - playground_equipment
   - sports_centre
   - transit_stops
 
@@ -841,6 +858,8 @@
 
   - elongated_coin
   - parking_ticket_machine
+  - souvenir_coin
+  - souvenir_note
   - ticket_machine
   - vending_machine
 
@@ -855,6 +874,8 @@
 
   - elongated_coin
   - playground
+  - souvenir_coin
+  - souvenir_note
 
 
 
@@ -866,6 +887,7 @@
 
 
   - fixme
+  - summary
 
 
 
@@ -1025,6 +1047,17 @@
 
 
   - shops
+
+
+
+
+### elongated_coin.designs 
+
+
+
+
+
+  - souvenir_coin
 
 
 

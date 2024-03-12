@@ -123,6 +123,11 @@
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cafés and pubs')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Cafés and pubs' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cafés and pubs')",
+      "value": "closed"
+    },
+    {
       "key": "website",
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Cafés and pubs')"
     },

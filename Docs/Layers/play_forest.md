@@ -19,6 +19,18 @@ Een speelbos is een vrij toegankelijke zone in een bos
 
 
 
+#### Themes using this layer 
+
+
+
+
+
+  - [play_forests](https://mapcomplete.org/play_forests)
+  - [speelplekken](https://mapcomplete.org/speelplekken)
+
+
+
+
  Basic tags for this layer 
 ---------------------------
 

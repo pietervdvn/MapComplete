@@ -28,6 +28,9 @@ Bicycle rental stations
   - [bicycle_rental](https://mapcomplete.org/bicycle_rental)
   - [cyclofix](https://mapcomplete.org/cyclofix)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
+  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
+  - [velopark](https://mapcomplete.org/velopark)
 
 
 
@@ -194,6 +197,12 @@ This tagrendering has labels  `contact`
 The question is  *What are the opening hours of {title()}?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+
+
+
+  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+  - _This option cannot be chosen as answer_
+
 
 This tagrendering is only visible in the popup if the following condition is met: `opening_hours~.+ | shop~.+`
 
