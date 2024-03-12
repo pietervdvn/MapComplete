@@ -629,7 +629,7 @@
         "button": "自動用 Plantnet.org 的 AI 來偵測植物的物種",
         "confirm": "選擇物種",
         "done": "已經套用這物種",
-        "error": "偵測樹林所屬物種出錯：{eroor}",
+        "error": "偵測樹林所屬物種出錯：{error}",
         "howTo": {
             "intro": "為了最佳結果，",
             "li0": "將樹林放在中間拍照，並且盡可能不要有背景",
