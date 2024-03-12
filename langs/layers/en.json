@@ -1412,6 +1412,7 @@
             },
             "Capacity": {
                 "question": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
+                "questionHint": "This includes regular bicycles, cargo bikes, ebikes, ...",
                 "render": "Place for {capacity} bikes"
             },
             "Cargo bike capacity?": {

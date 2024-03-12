@@ -36,13 +36,17 @@
       <Tr t={t.upload.failReasonsAdvanced} />
     </div>
   {:else if $retried === 1}
-    <Loading cls="alert">
+    <div class="alert">
+    <Loading>
       <Tr t={t.upload.one.retrying} />
     </Loading>
+    </div>
   {:else}
-    <Loading cls="alert">
+    <div class="alert">
+    <Loading>
       <Tr t={t.upload.one.uploading} />
     </Loading>
+    </div>
   {/if}
 {:else if $uploadStarted > 1}
   {#if $uploadFinished + $failed === $uploadStarted && $uploadFinished > 0}
