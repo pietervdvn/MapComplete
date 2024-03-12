@@ -78,7 +78,7 @@ export class And extends TagsFilter {
         return { and: this.and.map((a) => a.asJson()) }
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {
+    asHumanString(linkToWiki?: boolean, shorten?: boolean, properties?: Record<string, string>) {
         return this.and
             .map((t) => {
                 let e = t.asHumanString(linkToWiki, shorten, properties)

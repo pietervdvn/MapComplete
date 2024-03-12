@@ -124,6 +124,7 @@
             "confirmLocation": "Confirm this location",
             "confirmTitle": "Add a {title}?",
             "confirmWarning": "The feature you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
+            "creating": "Creating a new point...",
             "disableFilters": "Disable all filters",
             "disableFiltersExplanation": "Some features might be hidden by a filter",
             "enableLayer": "Enable layer {name}",

@@ -43,7 +43,7 @@ export default class SubstitutingTag extends TagsFilter {
         return new Tag(this._key, Utils.SubstituteKeys(this._value, currentProperties))
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
+    asHumanString(linkToWiki?: boolean, shorten?: boolean, properties?: Record<string, string>) {
         return (
             this._key +
             (this._invert ? "!" : "") +

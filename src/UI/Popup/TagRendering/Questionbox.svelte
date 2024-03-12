@@ -4,7 +4,7 @@
    * The questions can either be shown all at once or one at a time (in which case they can be skipped)
    */
   import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
@@ -12,6 +12,7 @@
   import Tr from "../../Base/Tr.svelte"
   import Translations from "../../i18n/Translations.js"
   import { Utils } from "../../../Utils"
+  import { onDestroy } from "svelte"
 
   export let layer: LayerConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -67,8 +68,13 @@
     },
     [skippedQuestions]
   )
-  let firstQuestion = questionsToAsk.map((qta) => qta[0])
-
+  let firstQuestion: UIEventSource<TagRenderingConfig> = new UIEventSource<TagRenderingConfig>()
+  
+  onDestroy(questionsToAsk.addCallback(qta => {
+    firstQuestion.setData(undefined)
+    firstQuestion.setData(qta[0])
+  }))
+  
   let answered: number = 0
   let skipped: number = 0
 
@@ -144,7 +150,7 @@
             <TagRenderingQuestion config={question} {tags} {selectedElement} {state} {layer} />
           {/each}
         </div>
-      {:else}
+      {:else if $firstQuestion !== undefined}
         <TagRenderingQuestion
           config={$firstQuestion}
           {layer}

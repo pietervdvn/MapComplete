@@ -2,10 +2,10 @@
   import { twMerge } from "tailwind-merge"
   import Loading from "../../assets/svg/Loading.svelte"
 
-  export let cls: string = undefined
+  export let cls: string = "flex p-1 pl-2"
 </script>
 
-<div class={twMerge("flex p-1 pl-2", cls)}>
+<div class={cls}>
   <div class="min-w-6 h-6 w-6 shrink-0 animate-spin self-center">
     <Loading />
   </div>

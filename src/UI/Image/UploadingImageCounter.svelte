@@ -41,13 +41,17 @@
   {:else if $failed === 1}
     <UploadFailedMessage failed={$failed} on:click={() => dismissed = $failed}/>
   {:else if $retried === 1}
-    <Loading cls="alert">
+    <div class="alert">
+    <Loading>
       <Tr t={t.upload.one.retrying} />
     </Loading>
+    </div>
   {:else}
-    <Loading cls="alert">
+    <div class="alert">
+    <Loading>
       <Tr t={t.upload.one.uploading} />
     </Loading>
+    </div>
   {/if}
 {:else if $uploadStarted > 1}
   {#if $uploadFinished + $failed === $uploadStarted}

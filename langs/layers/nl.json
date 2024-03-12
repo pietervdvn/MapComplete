@@ -1151,6 +1151,7 @@
             },
             "Capacity": {
                 "question": "Hoeveel fietsen kunnen in deze fietsparking (inclusief potentiëel bakfietsen)?",
+                "questionHint": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ...",
                 "render": "Plaats voor {capacity} fietsen"
             },
             "Cargo bike capacity?": {
@@ -6545,6 +6546,11 @@
                 }
             },
             "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Gesloten voor onbepaalde duur"
+                    }
+                },
                 "question": "Wat zijn de openingstijden van {title()}?",
                 "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
             },

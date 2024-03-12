@@ -635,6 +635,14 @@ export default class TagRenderingConfig {
      * config.constructChangeSpecification("second_hand", 1, undefined, {}).asHumanString(false,  false, {}) // => "shop=second_hand"
      *
      *
+     * const config = new TagRenderingConfig({id: "oh", render: "{opening_hours}", question: {"en":"When open?"}, freeform: {key: "opening_hours"},
+     *      mappings: [{  "if": "opening_hours=closed",
+     *           "then": {
+     *             "en": "Marked as closed for an unspecified time",
+     *           },
+     *           "hideInAnswer": true}] }
+     * const tags = config.constructChangeSpecification("Tu-Fr 05:30-09:30", undefined, undefined, { }}
+     * tags // =>new And([ new Tag("opening_hours", "Tu-Fr 05:30-09:30")])
      *
      * @param freeformValue The freeform value which will be applied as 'freeform.key'. Ignored if 'freeform.key' is not set
      *
@@ -648,6 +656,12 @@ export default class TagRenderingConfig {
         multiSelectedMapping: boolean[] | undefined,
         currentProperties: Record<string, string>
     ): UploadableTag {
+        console.log("constructChangeSpecification:", {
+            freeformValue,
+            singleSelectedMapping,
+            multiSelectedMapping,
+            currentProperties,
+        })
         if (typeof freeformValue === "string") {
             freeformValue = freeformValue?.trim()
         }
