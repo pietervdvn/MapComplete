@@ -6,6 +6,14 @@ import Constants from "../../Models/Constants"
 import { Changes } from "./Changes"
 import { Utils } from "../../Utils"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
+import ChangeLocationAction from "./Actions/ChangeLocationAction"
+import ChangeTagAction from "./Actions/ChangeTagAction"
+import DeleteAction from "./Actions/DeleteAction"
+import LinkImageAction from "./Actions/LinkImageAction"
+import OsmChangeAction from "./Actions/OsmChangeAction"
+import RelationSplitHandler from "./Actions/RelationSplitHandler"
+import ReplaceGeometryAction from "./Actions/ReplaceGeometryAction"
+import SplitAction from "./Actions/SplitAction"
 
 export interface ChangesetTag {
     key: string

@@ -13,6 +13,12 @@ import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import OsmObjectDownloader from "./OsmObjectDownloader"
+import Combine from "../../UI/Base/Combine"
+import BaseUIElement from "../../UI/BaseUIElement"
+import Title from "../../UI/Base/Title"
+import Table from "../../UI/Base/Table"
+import ChangeLocationAction from "./Actions/ChangeLocationAction"
+import ChangeTagAction from "./Actions/ChangeTagAction"
 
 /**
  * Handles all changes made to OSM.
@@ -97,6 +103,97 @@ export class Changes {
 
         changes += "</osmChange>"
         return changes
+    }
+
+    public static getDocs(): BaseUIElement {
+        function addSource(items: any[], src: string) {
+            items.forEach((i) => {
+                i["source"] = src
+            })
+            return items
+        }
+        const metatagsDocs: {
+            key?: string
+            value?: string
+            docs: string
+            changeType?: string[]
+            specialMotivation?: boolean
+            source?: string
+        }[] = [
+            ...addSource(
+                [
+                    {
+                        key: "comment",
+                        docs: "The changeset comment. Will be a fixed string, mentioning the theme",
+                    },
+                    {
+                        key: "theme",
+                        docs: "The name of the theme that was used to create this change. ",
+                    },
+                    {
+                        key: "source",
+                        value: "survey",
+                        docs: "The contributor had their geolocation enabled while making changes",
+                    },
+                    {
+                        key: "change_within_{distance}",
+                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. This gives an indication of proximity and if they truly surveyed or were armchair-mapping",
+                    },
+                    {
+                        key: "change_over_{distance}",
+                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. If they were over 5000m away, the might have been armchair-mapping",
+                    },
+                    {
+                        key: "created_by",
+                        value: "MapComplete <version>",
+                        docs: "The piece of software used to create this changeset; will always start with MapComplete, followed by the version number",
+                    },
+                    {
+                        key: "locale",
+                        value: "en|nl|de|...",
+                        docs: "The code of the language that the contributor used MapComplete in. Hints what language the user speaks.",
+                    },
+                    {
+                        key: "host",
+                        value: "https://mapcomplete.org/<theme>",
+                        docs: "The URL that the contributor used to make changes. One can see the used instance with this",
+                    },
+                    {
+                        key: "imagery",
+                        docs: "The identifier of the used background layer, this will probably be an identifier from the [editor layer index](https://github.com/osmlab/editor-layer-index)",
+                    },
+                ],
+                "default"
+            ),
+            ...addSource(ChangeTagAction.metatags, "ChangeTag"),
+            ...addSource(ChangeLocationAction.metatags, "ChangeLocation"),
+            // TODO
+            /*
+            ...DeleteAction.metatags,
+            ...LinkImageAction.metatags,
+            ...OsmChangeAction.metatags,
+            ...RelationSplitHandler.metatags,
+            ...ReplaceGeometryAction.metatags,
+            ...SplitAction.metatags,*/
+        ]
+        return new Combine([
+            new Title("Metatags on a changeset", 1),
+            "You might encounter the following metatags on a changeset:",
+            new Table(
+                ["key", "value", "explanation", "source"],
+                metatagsDocs.map(({ key, value, docs, source, changeType, specialMotivation }) => [
+                    key ?? changeType?.join(", ") ?? "",
+                    value,
+                    new Combine([
+                        docs,
+                        specialMotivation
+                            ? "This might give a reason per modified node or way"
+                            : "",
+                    ]),
+                    source,
+                ])
+            ),
+        ])
     }
 
     private static GetNeededIds(changes: ChangeDescription[]) {
