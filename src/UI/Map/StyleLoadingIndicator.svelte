@@ -15,8 +15,9 @@
   
   onDestroy(Stores.Chronic(250).addCallback(
     () => {
-      isLoading = !map.data?.isStyleLoaded() && (didChange === undefined || didChange)
-      if(didChange){
+      const mapIsLoading = !map.data?.isStyleLoaded()
+      isLoading = mapIsLoading && didChange
+      if(didChange && !mapIsLoading){
         didChange = false
       }
     },
