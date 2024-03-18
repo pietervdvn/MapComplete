@@ -97,7 +97,7 @@
     "dloadVelopark": "vite-node scripts/velopark/veloParkToGeojson.ts ",
     "compareVelopark": "vite-node scripts/velopark/compare.ts -- velopark_nonsynced_.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\\ Fietsenstallingen_OSM_met_velopark_ref.geojson\n",
     "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
-    "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts -- postgresql://user:password@localhost:5444/mapcomplete-cache",
+    "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts",
     "ldjson-server": "vite-node scripts/serverLdScrape.ts"
   },
   "keywords": [
