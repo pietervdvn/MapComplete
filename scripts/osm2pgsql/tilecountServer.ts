@@ -170,6 +170,7 @@ class TileCountServer extends Script {
     async main(args: string[]): Promise<void> {
         const connectionString = args[0] ?? "postgresql://user:password@localhost:5444/osm-poi"
         const port = Number(args[1] ?? 2345)
+        console.log("Connecting to database", connectionString)
         const tcs = new OsmPoiDatabase(connectionString)
         const withCache = new CachedSqlCount(tcs, 14 * 60 * 60 * 24)
         new Server(port, { ignorePathPrefix: ["summary"] }, [
@@ -217,6 +218,7 @@ class TileCountServer extends Script {
                 },
             },
         ])
+        console.log("Started server on port", port)
         console.log(
             ">>>",
             await tcs.getCount("drinking_water", [
