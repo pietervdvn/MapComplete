@@ -1,6 +1,7 @@
 import { Client } from "pg"
 import { Tiles } from "../../src/Models/TileRange"
 import { Server } from "../server"
+import Script from "../Script"
 
 /**
  * Just the OSM2PGSL default database
@@ -114,7 +115,7 @@ class OsmPoiDatabase {
             meta[property] = value
         }
         this.metaCacheDate = now
-        this.metaCache = <any>meta
+        this.metaCache = <PoiDatabaseMeta> meta
         return this.metaCache
     }
 }
@@ -160,58 +161,71 @@ class CachedSqlCount {
     }
 }
 
-const connectionString = "postgresql://user:password@localhost:5444/osm-poi"
-const tcs = new OsmPoiDatabase(connectionString)
-const withCache = new CachedSqlCount(tcs, 14 * 60 * 60 * 24)
-new Server(2345, { ignorePathPrefix: ["summary"] }, [
-    {
-        mustMatch: "status.json",
-        mimetype: "application/json",
-        handle: async (path: string) => {
-            const layers = await tcs.getLayers()
-            const meta = await tcs.getMeta()
-            return JSON.stringify({ meta, layers: Array.from(layers) })
-        },
-    },
-    {
-        mustMatch: /[a-zA-Z0-9+_-]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
-        mimetype: "application/json", // "application/vnd.geo+json",
-        async handle(path) {
-            const [layers, z, x, y] = path.split(".")[0].split("/")
 
-            let sum = 0
-            let properties: Record<string, number> = {}
-            const availableLayers = await tcs.getLayers()
-            let latSum = 0
-            let lonSum = 0
-            for (const layer of layers.split("+")) {
-                if (!availableLayers.has(layer)) {
-                    continue
-                }
-                const count = await withCache.getCount(
-                    layer,
-                    Tiles.tile_index(Number(z), Number(x), Number(y))
-                )
+class TileCountServer extends Script {
+    constructor() {
+        super("Starts the tilecount server which calculates summary for a given tile, based on the database. Usage: [db-connection-string] [port=2345]")
+    }
 
-                properties[layer] = count.count
-                if (count.count !== 0) {
-                    latSum += count.lat * count.count
-                    lonSum += count.lon * count.count
-                    sum += count.count
-                }
-            }
+    async main(args: string[]): Promise<void> {
+        const connectionString = args[0] ?? "postgresql://user:password@localhost:5444/osm-poi"
+        const port = Number(args[1] ?? 2345)
+        const tcs = new OsmPoiDatabase(connectionString)
+        const withCache = new CachedSqlCount(tcs, 14 * 60 * 60 * 24)
+        new Server(port, { ignorePathPrefix: ["summary"] }, [
+            {
+                mustMatch: "status.json",
+                mimetype: "application/json",
+                handle: async () => {
+                    const layers = await tcs.getLayers()
+                    const meta = await tcs.getMeta()
+                    return JSON.stringify({ meta, layers: Array.from(layers) })
+                },
+            },
+            {
+                mustMatch: /[a-zA-Z0-9+_-]+\/[0-9]+\/[0-9]+\/[0-9]+\.json/,
+                mimetype: "application/json", // "application/vnd.geo+json",
+                async handle(path) {
+                    const [layers, z, x, y] = path.split(".")[0].split("/")
 
-            properties["lon"] = lonSum / sum
-            properties["lat"] = latSum / sum
+                    let sum = 0
+                    const properties: Record<string, number> = {}
+                    const availableLayers = await tcs.getLayers()
+                    let latSum = 0
+                    let lonSum = 0
+                    for (const layer of layers.split("+")) {
+                        if (!availableLayers.has(layer)) {
+                            continue
+                        }
+                        const count = await withCache.getCount(
+                            layer,
+                            Tiles.tile_index(Number(z), Number(x), Number(y))
+                        )
 
-            return JSON.stringify({ ...properties, total: sum })
-        },
-    },
-])
-console.log(
-    ">>>",
-    await tcs.getCount("drinking_water", [
-        [3.194358020772171, 51.228073636083394],
-        [3.2839964396059145, 51.172701162680994],
-    ])
-)
+                        properties[layer] = count.count
+                        if (count.count !== 0) {
+                            latSum += count.lat * count.count
+                            lonSum += count.lon * count.count
+                            sum += count.count
+                        }
+                    }
+
+                    properties["lon"] = lonSum / sum
+                    properties["lat"] = latSum / sum
+
+                    return JSON.stringify({ ...properties, total: sum })
+                },
+            },
+        ])
+        console.log(
+            ">>>",
+            await tcs.getCount("drinking_water", [
+                [3.194358020772171, 51.228073636083394],
+                [3.2839964396059145, 51.172701162680994],
+            ])
+        )
+
+    }
+}
+
+new TileCountServer().run()
