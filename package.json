@@ -95,8 +95,9 @@
     "reuse-compliance": "reuse lint",
     "backup:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
     "dloadVelopark": "vite-node scripts/velopark/veloParkToGeojson.ts ",
+    "compareVelopark": "vite-node scripts/velopark/compare.ts -- velopark_nonsynced_.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\\ Fietsenstallingen_OSM_met_velopark_ref.geojson\n",
     "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
-    "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts",
+    "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts -- postgresql://user:password@localhost:5444/mapcomplete-cache",
     "ldjson-server": "vite-node scripts/serverLdScrape.ts"
   },
   "keywords": [
@@ -112,6 +113,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@comunica/query-sparql": "^2.10.2",
     "@rgossiaux/svelte-headlessui": "^1.0.2",
     "@rgossiaux/svelte-heroicons": "^0.1.2",
     "@rollup/plugin-typescript": "^11.0.0",
@@ -126,7 +128,9 @@
     "@types/pg": "^8.10.9",
     "@types/qrcode-generator": "^1.0.6",
     "@types/showdown": "^2.0.0",
+    "buffer": "^6.0.3",
     "chart.js": "^3.8.0",
+    "comunica": "^2.0.0",
     "country-language": "^0.1.7",
     "country-to-currency": "^1.0.10",
     "crypto": "^1.0.1",
