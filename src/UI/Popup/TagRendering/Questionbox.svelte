@@ -68,12 +68,18 @@
     },
     [skippedQuestions]
   )
-  let firstQuestion: UIEventSource<TagRenderingConfig> = new UIEventSource<TagRenderingConfig>()
-  
+  let firstQuestion: UIEventSource<TagRenderingConfig> = new UIEventSource<TagRenderingConfig>(undefined)
+
+  let allQuestionsToAsk : UIEventSource<TagRenderingConfig[]> = new UIEventSource<TagRenderingConfig[]>([])
   onDestroy(questionsToAsk.addCallback(qta => {
     firstQuestion.setData(undefined)
     firstQuestion.setData(qta[0])
+
+    allQuestionsToAsk.setData([])
+    allQuestionsToAsk.setData(qta)
   }))
+
+
   
   let answered: number = 0
   let skipped: number = 0
@@ -98,7 +104,7 @@
   class="marker-questionbox-root"
   class:hidden={$questionsToAsk.length === 0 && skipped === 0 && answered === 0}
 >
-  {#if $questionsToAsk.length === 0}
+  {#if $allQuestionsToAsk.length === 0}
     {#if skipped + answered > 0}
       <div class="thanks">
         <Tr t={Translations.t.general.questionBox.done} />
@@ -146,7 +152,7 @@
     <div>
       {#if $showAllQuestionsAtOnce}
         <div class="flex flex-col gap-y-1">
-          {#each $questionsToAsk as question (question.id)}
+          {#each $allQuestionsToAsk as question (question.id)}
             <TagRenderingQuestion config={question} {tags} {selectedElement} {state} {layer} />
           {/each}
         </div>
