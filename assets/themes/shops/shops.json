@@ -56,6 +56,6 @@
     "trolley_bay"
   ],
   "overrideAll": {
-    "minzoom": 16
+    "minzoom": 14
   }
 }
