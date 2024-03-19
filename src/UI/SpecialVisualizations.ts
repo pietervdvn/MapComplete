@@ -1598,6 +1598,9 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
+                    const smallSize = 100
+                    const bigSize = 200
+                    const size = new UIEventSource(smallSize)
                     return new VariableUiElement(
                         tagSource
                             .map((tags) => tags.id)
@@ -1617,11 +1620,17 @@ export default class SpecialVisualizations {
                                 const url =
                                     `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
                                     `#${id}`
-                                return new Img(new Qr(url).toImageElement(75)).SetStyle(
-                                    "width: 75px"
+                                return new Img(new Qr(url).toImageElement(size.data)).SetStyle(
+                                    `width: ${size.data}px`
                                 )
-                            })
-                    )
+                            }, [size])
+                    ).onClick(()=> {
+                        if(size.data !== bigSize){
+                            size.setData(bigSize)
+                        }else{
+                            size.setData(smallSize)
+                        }
+                    })
                 },
             },
             {
