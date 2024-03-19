@@ -201,6 +201,153 @@
             }
         }
     },
+    "speed_camera": {
+        "description": "Sloj prikazuje hitrostne kamere (radarje)",
+        "name": "Hitrostna kamera",
+        "presets": {
+            "0": {
+                "title": "hitrostna kamera"
+            }
+        }
+    },
+    "surveillance_camera": {
+        "description": "Ta sloj prikazuje nadzorne kamere in urednikom omogoča posodabljanje informacij obstoječih in dodajanje novih kamer",
+        "name": "Videonadzorne kamere",
+        "presets": {
+            "0": {
+                "title": "videonadzorna kamera"
+            },
+            "1": {
+                "title": "nadzorna kamera pritrjena na steno"
+            },
+            "2": {
+                "description": "Kamera za prepoznavo registrskih tablic ima običajno dve leči in polje infrardečih lučk.",
+                "title": "kamera za prepoznavo registrskih tablic"
+            },
+            "3": {
+                "description": "Kamera za prepoznavo registrskih tablic ima običajno dve leči in polje infrardečih lučk.",
+                "title": "na steno pritrjena kamera za prepoznavo registrskih tablic"
+            }
+        },
+        "tagRenderings": {
+            "Camera type: fixed; panning; dome": {
+                "mappings": {
+                    "0": {
+                        "then": "Fiksna (nepremična) kamera"
+                    },
+                    "1": {
+                        "then": "Kamera v kupoli (obračajoča)"
+                    }
+                },
+                "question": "Kakšne vrste kamera je to?"
+            },
+            "Level": {
+                "question": "V katerem nadstropju je ta kamera?",
+                "render": "Se nahaja v {level}. nadstropju"
+            },
+            "Operator": {
+                "question": "Kdo upravlja s to kamero?",
+                "render": "Upravlja jo {operator}"
+            },
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Nadzoruje javno površino kot je ulica, most, trg, park, postaja, javni hodnik, tunel…"
+                    },
+                    "1": {
+                        "then": "Nadzoruje zunanjo, a zasebno površino (npr. parkirišče, bencinsko črpalko, dvorišče, vhod v stavbo, zasebni dovoz…)"
+                    },
+                    "2": {
+                        "then": "Nadzoruje zasebno notranjo površino, npr. trgovino, zasebno podzemno parkirišče…"
+                    }
+                },
+                "question": "Kaj nadzoruje ta kamera?"
+            },
+            "Surveillance:zone": {
+                "mappings": {
+                    "0": {
+                        "then": "Nadzoruje parkirišče"
+                    },
+                    "1": {
+                        "then": "Nadzoruje promet"
+                    },
+                    "2": {
+                        "then": "Nadzoruje vhod"
+                    },
+                    "3": {
+                        "then": "Nadzoruje hodnik"
+                    },
+                    "4": {
+                        "then": "Nadzoruje peron javnega prevoza"
+                    },
+                    "5": {
+                        "then": "Nadzoruje trgovino"
+                    }
+                },
+                "question": "Kaj točno je nadzorovano tu?",
+                "render": "Nadzoruje {surveillance:zone}"
+            },
+            "camera:mount": {
+                "mappings": {
+                    "0": {
+                        "then": "Ta kamera je pritrjena na steno"
+                    },
+                    "1": {
+                        "then": "Ta kamera je nameščena na drog"
+                    },
+                    "2": {
+                        "then": "Ta kamera je pritrjena na strop"
+                    },
+                    "3": {
+                        "then": "Ta kamera je nameščena na ulično svetilko"
+                    },
+                    "4": {
+                        "then": "Ta kamera je nameščena na drevo"
+                    }
+                },
+                "question": "Kako je postavljena ta kamera?",
+                "render": "Način namestitve: {camera:mount}"
+            },
+            "camera_direction": {
+                "mappings": {
+                    "0": {
+                        "then": "Snema v smeri kompasa {direction}"
+                    }
+                },
+                "question": "V katero geografsko smer snema ta kamera?",
+                "render": "Snema v smeri kompasa {camera:direction}"
+            },
+            "has_alpr": {
+                "mappings": {
+                    "0": {
+                        "then": "To je kamera brez prepoznave registrskih tablic."
+                    },
+                    "1": {
+                        "then": "To je kamera s prepoznavo registrskih tablic"
+                    }
+                },
+                "question": "Ali ta kamera lahko samodejno prepoznava registrske tablice?",
+                "questionHint": "Kamera za <b>prepoznavo registrskih tablic</b> ima običajno dve leči in med njima polje infrardečih LED svetil."
+            },
+            "is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Ta kamera je znotraj"
+                    },
+                    "1": {
+                        "then": "Ta kamera je zunaj"
+                    },
+                    "2": {
+                        "then": "Ta kamera je verjetno zunaj"
+                    }
+                },
+                "question": "Ali je javni prostor, ki ga nadzoruje ta kamera, notranji ali zunanji?"
+            }
+        },
+        "title": {
+            "render": "Videonadzorna kamera"
+        }
+    },
     "windturbine": {
         "tagRenderings": {
             "windturbine-fixme": {
