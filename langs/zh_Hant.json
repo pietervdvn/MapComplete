@@ -20,6 +20,7 @@
         "cancel": "取消",
         "cannotBeDeleted": "這圖徵無法刪除",
         "delete": "刪除",
+        "deletedTitle": "已刪除的圖徵",
         "explanations": {
             "hardDelete": "這個圖徵已經在開放街圖被刪除了，可以被實驗性的貢獻者恢復",
             "retagNoOtherThemes": "這個圖徵會被重新分類，而且會從 app 隱藏",
@@ -119,10 +120,11 @@
         "add": {
             "addNew": "在這裡新增新的 {category}",
             "backToSelect": "選取不同的分類",
-            "confirmButton": "在此新增 {category}<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
+            "confirmButton": "新增 {category}<br/><div class='alert'>大家都能看到您新增的內容</div>",
             "confirmLocation": "確認這一地點",
             "confirmTitle": "新增 {title}？",
             "confirmWarning": "你創建的圖徵會被<b>所有人看到</b>，請只加上現實存在的事物，很多應用程式使用這些資料。",
+            "creating": "正在建立新的點……",
             "disableFilters": "關閉所有篩選器",
             "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
             "enableLayer": "啟用圖層 {name}",

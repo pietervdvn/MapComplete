@@ -20,6 +20,7 @@
         "cancel": "Peru",
         "cannotBeDeleted": "Tätä kohdetta ei voi poistaa",
         "delete": "Poista",
+        "deletedTitle": "Poistettu ominaisuus",
         "explanations": {
             "hardDelete": "Tämä kohde poistetaan OpenStreetMapistä. Kokenut kartoittaja voi palauttaa sen.",
             "retagNoOtherThemes": "Tämä kohde luokitellaan uudelleen ja piilotetaan tältä sovellukselta",
@@ -27,6 +28,7 @@
             "selectReason": "Valitse, miksi tämä kohde pitäisi poistaa",
             "softDelete": "Tämä kohde päivitetään ja piilotetaan tässä sovelluksessa. <span class='subtle'>{reason}</span>"
         },
+        "isChanged": "Tätä ominaisuutta on muutettu eikä se enää kuulu tähän tasoon",
         "isDeleted": "Tämä kohde on poistettu",
         "isntAPoint": "Vain pisteitä voi poistaa. Valittu kohde on viiva, alue tai relaatio.",
         "loading": "Tutkitaan ominaisuuksista, voiko tämän kohteen poistaa.",
@@ -65,7 +67,7 @@
         "intro": "Olet merkinnyt {length} sijaintia suosikkeihisi.",
         "introPrivacy": "Tämä lista näkyy vain sinulle",
         "loginToSeeList": "Kirjaudu sisään, jotta näet listan sijainneista, jotka olet merkinnyt suosikiksi",
-        "tab": "Omat suosikit",
+        "tab": "Omat suosikit ja arvostelut",
         "title": "Suosikkisijaintisi"
     },
     "flyer": {
@@ -122,6 +124,7 @@
             "confirmLocation": "Vahvista tämä sijainti",
             "confirmTitle": "Lisätäänkö {title}?",
             "confirmWarning": "Täällä luomasi kohde <b>näkyy kaikille</b>. Ole hyvä ja lisää kartalle vain kohteita, jotka ovat oikeasti olemassa. Monet sovellukset käyttävät tätä tietoa.",
+            "creating": "Luodaan uusi piste...",
             "disableFilters": "Poista käytöstä kaikki suodattimet",
             "disableFiltersExplanation": "Jotkin kohteet saattavat olla piilossa suodattimen takia",
             "enableLayer": "Ota käyttöön taso {name}",
@@ -145,7 +148,7 @@
             "title": "Lisää uusi kohde",
             "warnVisibleForEveryone": "Lisäyksesi näkyy kaikille",
             "wrongType": "Tämä kohde ei ole piste eikä viiva eikä sitä voida tuoda",
-            "zoomInFurther": "Lähennä karttaa lisää, jotta kohteen voi lisätä.",
+            "zoomInFurther": "Lähennä karttaa lisää, jotta kohteen voi lisätä",
             "zoomInMore": "Lähennä karttaa lisää, jotta voit tuoda tämän kohteen"
         },
         "apply_button": {
@@ -176,27 +179,78 @@
             "openOsmcha": "Näytä viimeisimmät muokkaukset, jotka on tehty teemalla {theme}",
             "seeOnMapillary": "Näytä tämä kuva Mapillaryssä",
             "themeBy": "Teemaa ylläpitää {author}",
-            "title": "Tekijänoikeudet ja alkuperä"
+            "title": "Tekijänoikeudet ja alkuperä",
+            "translatedBy": "MapCompleten on kääntäneet {contributors} ja <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} muuta</a>"
         },
+        "back": "Takaisin",
         "backToIndex": "Palaa kaikkien teemakarttojen yleiskuvaan",
+        "backToMap": "Takaisin karttaan",
         "backgroundMap": "Valitse taustataso",
         "backgroundSwitch": "Vaihda taustaa",
-        "cancel": "Peruuta",
+        "cancel": "Peru",
+        "confirm": "Vahvista",
+        "customThemeIntro": "Nämä ovat aiemmin katsottuja käyttäjien omia teemoja.",
+        "customThemeTitle": "Omat teemat",
         "download": {
-            "title": "Lataa"
+            "downloadAsPdf": "Lataa PDF nykyisestä kartasta",
+            "downloadAsPdfHelper": "Ihanteellinen nykyisen kartan tulostamiseen",
+            "downloadAsPng": "Lataa kuvana",
+            "downloadAsPngHelper": "Ihanteellinen raportteihin sisällyttämiseen",
+            "downloadAsSvg": "Lataa SVG nykyisestä kartasta",
+            "downloadAsSvgHelper": "Yhteensopiva Inkscapen tai Adobe Illustratorin kanssa; tarvitsee jatkokäsittelyä",
+            "downloadAsSvgLinesOnly": "Lataa SVG nykyisestä kartasta, sisältäen vain viivat",
+            "downloadAsSvgLinesOnlyHelper": "Itseään leikkaavat viivat on katkottu, voidaan käyttää joidenkin 3D-ohjelmistojen kanssa",
+            "downloadCSV": "Lataa näkyvä data CSV-tiedostona",
+            "downloadCSVHelper": "Yhteensopiva mm. LibreOffice Calcin ja Excelin kanssa…",
+            "downloadFeatureAsGeojson": "Lataa GeoJSON-tiedostona",
+            "downloadFeatureAsGpx": "Lataa GPX-tiedostona",
+            "downloadGeoJsonHelper": "Yhteensopiva QGIS:n, ArcGIS:n, ESRIn kanssa …",
+            "downloadGeojson": "Lataa näkyvä data GeoJSON-tiedostona",
+            "downloadGpx": "Lataa GPX-tiedostona",
+            "downloadGpxHelper": "GPX-tiedostoa voidaan käyttää useimmissa navigointilaitteissa ja -sovelluksissa",
+            "exporting": "Viedään…",
+            "includeMetaData": "Sisällytä metadata (viimeisin muokkaaja, lasketut arvot, ...)",
+            "noDataLoaded": "Dataa ei ole vielä ladattu. Lataus tulee saataville pian",
+            "title": "Lataa",
+            "toMuch": "Ominaisuuksia on liian paljon ladattavaksi",
+            "uploadGpx": "Lähetä reittisi OpenStreetMapiin"
         },
+        "enableGeolocationForSafariLink": "Katso, miten paikannuslupa annetaan asetuksissa",
+        "eraseValue": "Poista tämä arvo",
         "error": "Jotain meni vikaan",
         "example": "Esimerkki",
         "examples": "Esimerkit",
+        "fewChangesBefore": "Vastaathan muutamaan kysymykseen olemassa olevista ominaisuuksista ennen kuin lisäät uutta ominaisuutta.",
+        "filterPanel": {
+            "disableAll": "Poista kaikki käytöstä",
+            "enableAll": "Ota kaikki käyttöön"
+        },
+        "geopermissionDenied": "Paikannuksen käyttö estettiin",
+        "getStartedLogin": "Kirjaudu sisään OpenStreetMapin avulla aloittaaksesi",
+        "getStartedNewAccount": " tai <a href='https://www.openstreetmap.org/user/new' target='_blank'>luo uusi tili</a>",
+        "goToInbox": "Avaa postilaatikko",
+        "histogram": {
+            "error_loading": "Histogrammia ei voitu ladata"
+        },
         "labels": {
             "background": "Vaihda taustakarttaa",
             "filter": "Suodata dataa",
             "jumpToLocation": "Siirry nykyiseen sijaintiisi",
+            "menu": "Valikko",
             "zoomIn": "Lähennä",
             "zoomOut": "Loitonna"
         },
+        "layerSelection": {
+            "title": "Valitse tasot",
+            "zoomInToSeeThisLayer": "Lähennä nähdäksesi tämän tason"
+        },
         "loading": "Ladataan…",
         "loadingTheme": "Loading teemaa {theme}…",
+        "loginFailed": "Kirjautuminen OpenStreetMapiin epäonnistui",
+        "loginFailedOfflineMode": "OpenStreetMap.org ei ole juuri nyt saatavilla huollon vuoksi. Muokkaaminen tulee mahdolliseksi pian",
+        "loginFailedReadonlyMode": "OpenStreetMap.org on tällä hetkellä vain-luku-tilassa huollon vuoksi. Muokkaaminen tulee mahdolliseksi pian",
+        "loginFailedUnreachableMode": "OpenStreetMap.org:iin ei saada juuri nyt yhteyttä. Onko internet-yhteys kytketty tai oletko estänyt kolmansia osapuolia? Yritä myöhemmin uudelleen",
+        "loginOnlyNeededToEdit": "jos haluat tehdä muutoksia",
         "loginToStart": "Kirjaudu sisään, jotta voit vastata tähän kysymykseen",
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
         "logout": "Kirjaudu ulos",
@@ -206,19 +260,50 @@
         },
         "morescreen": {
             "createYourOwnTheme": "Luo oma MapComplete-teema alusta asti",
+            "enterToOpen": "Avaa teema painamalla enter",
+            "noMatchingThemes": "Teemaa ei löytynyt hakuehdollasi",
             "noSearch": "Näytä kaikki teemat",
+            "previouslyHiddenTitle": "Aiemmin katsotut piilotetut teemat",
             "searchForATheme": "Etsi teemaa",
             "streetcomplete": "Toinen, samankaltainen sovellus on <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
+        "next": "Seuraava",
+        "noMatchingMapping": "Hakuehtosi ei tuottanut tulosta…",
+        "noNameCategory": "{category} ilman nimeä",
+        "noTagsSelected": "Ei valittuja tageja",
+        "notValid": "Valitse oikea arvo jatkaaksesi",
         "number": "numero",
         "openTheMap": "Avaa kartta",
         "openTheMapAtGeolocation": "Zoomaa sijaintiisi",
         "opening_hours": {
+            "all_days_from": "Auki joka päivä {ranges}",
+            "closed_permanently": "Suljettu toistaiseksi",
+            "closed_until": "Suljettu {date} asti",
+            "error": "Aukioloaikoja ei voitu parsia",
+            "error_loading": "Virhe: näitä aukioloaikoja ei voitu visualisoida.",
+            "friday": "Perjantaisin {ranges}",
             "loadingCountry": "Määritetään maata…",
+            "monday": "Maanantaisin {ranges}",
+            "not_all_rules_parsed": "Nämä aukioloajat ovat monimutkaiset. Seuraavat säännöt jätetään huomiotta syöttöelementissä:",
+            "on_weekdays": "Auki arkipäivisin {ranges}",
+            "on_weekends": "Auki viikonloppuisin {ranges}",
+            "openTill": "kunnes",
+            "open_24_7": "Auki kellon ympäri",
+            "open_during_ph": "Kansallisena vapaapäivänä tämä on",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
-            "ph_open": "auki"
+            "ph_open": "auki",
+            "ph_open_as_usual": "avoinna, kuten yleensä",
+            "ranges": "{starttime}–{endtime}",
+            "rangescombined": "{range0} ja {range1}",
+            "saturday": "Lauantaisin {ranges}",
+            "sunday": "Sunnuntaisin {ranges}",
+            "thursday": "Torstaisin {ranges}",
+            "tuesday": "Tiistaisin {ranges}",
+            "unknown": "Aukioloajat eivät ole tiedossa",
+            "wednesday": "Keskiviikkoisin {ranges}"
         },
+        "osmLinkTooltip": "Tarkastele tätä objektia OpenStreetMapissa nähdäksesi historian ja muita muokkausvaihtoehtoja",
         "pdf": {
             "attrBackground": "Taustataso: {background}"
         },
@@ -226,29 +311,106 @@
         "questionBox": {
             "answeredMultiple": "Vastasit {answered} kysymykseen",
             "answeredOne": "Vastasit yhteen kysymykseen",
+            "answeredOneSkippedOne": "Vastasit yhteen ja ohitit yhden kysymyksen",
             "done": "Ei enempää kysymyksiä. Kiitos!",
+            "reactivate": "Aktivoi ohitetut kysymykset uudelleen",
             "skippedMultiple": "Ohitit {skipped} kysymystä",
             "skippedOne": "Ohitit yhden kysymyksen"
         },
         "questions": {
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
+        "readYourMessages": "Luethan kaikki OpenStreetMap-viestisi ennen kuin lisäät uutta ominaisuutta.",
+        "removeLocationHistory": "Poista sijaintihistoria",
+        "returnToTheMap": "Palaa karttaan",
         "save": "Tallenna",
+        "screenToSmall": "Avaa {theme} uuteen ikkunaan",
         "search": {
+            "error": "Jokin meni pieleen…",
             "nothing": "Mitään ei löytynyt…",
             "search": "Etsi paikkaa",
             "searchShort": "Etsi…",
             "searching": "Etsitään…"
         },
+        "searchAnswer": "Etsi vaihtoehtoa…",
+        "share": "Jaa",
         "sharescreen": {
+            "copiedToClipboard": "Linkki kopioitu leikepöydälle",
+            "fsWelcomeMessage": "Näytä tervetuloa-ponnahdusviesti ja aiheeseen kuuluvat välilehdet",
             "thanksForSharing": "Kiitos jakamisesta!",
             "title": "Jaa tämä kartta"
         },
         "skip": "Ohita tämä kysymys",
+        "testing": "Testataan - muutoksia ei tallenneta",
         "uploadError": "Virhe muutosten lähettämisessä: {error}",
-        "visualFeedback": {
-            "out": "Loitonnetaan tasolle {z}"
+        "uploadGpx": {
+            "choosePermission": "Valitse alta miten reittisi jaetaan:",
+            "confirm": "Vahvista lähetys",
+            "gpxServiceOffline": "GPX-palvelu ei ole juuri nyt saatavilla - lähetys ei ole mahdollista. Yritä myöhemmin uudelleen.",
+            "intro0": "Lähettämällä reittisi OpenStreetMap.org pitää täyden kopion reitistäsi.",
+            "intro1": "Voit ladata reittisi uudelleen ja ladata ne OpenStreetMap-editoreihin",
+            "meta": {
+                "descriptionIntro": "Voit myös halutessasi lisätä kuvauksen jäljestäsi:",
+                "descriptionPlaceHolder": "Anna kuvaus jäljestäsi",
+                "intro": "Lisää otsikko reitillesi:",
+                "title": "Otsikko ja kuvaus",
+                "titlePlaceholder": "Anna jäljellesi otsikko"
+            },
+            "modes": {
+                "private": {
+                    "docs": "Reittisi pisteet jaetaan ja aggregoidaan muiden reittien kanssa. Koko reitti näkyy sinulle, ja voit ladata sen muihin muokkausohjelmiin. OpenStreetMap.org pitää kopion jäljestäsi",
+                    "name": "Anonyymi"
+                },
+                "public": {
+                    "docs": "Jälkesi näkyy kaikille, sekä käyttäjäprofiilissasi että GPS-jälkien luettelossa openstreetmap.org-sivustolla",
+                    "name": "Julkinen"
+                }
+            },
+            "title": "Lähetä reittisi OpenStreetMap.org:iin",
+            "uploadFinished": "Reittisi on lähetetty!",
+            "uploading": "Lähetetään jälkeäsi…"
         },
+        "uploadPending": "{count} muutosta odottaa",
+        "uploadPendingSingle": "Yksi muutos odottaa",
+        "uploadingChanges": "Lähetetään muutoksia…",
+        "useSearch": "Käytä hakua yllä nähdäksesi lisää vaihtoehtoja",
+        "visualFeedback": {
+            "closestFeaturesAre": "{n} kohdetta näkyvissä.",
+            "directionsAbsolute": {
+                "E": "itä",
+                "N": "pohjoinen",
+                "NE": "koillinen",
+                "NW": "luode",
+                "S": "etelä",
+                "SE": "kaakko",
+                "SW": "lounas",
+                "W": "länsi"
+            },
+            "directionsRelative": {
+                "behind": "takanasi",
+                "left": "vasen",
+                "right": "oikea",
+                "sharp_left": "tiukka vasen",
+                "sharp_right": "tiukka oikea",
+                "slight_left": "hieman vasemmalle",
+                "slight_right": "hieman oikealle",
+                "straight": "suoraan eteenpäin"
+            },
+            "east": "Kuljetaan itään",
+            "in": "Lähennetään tasolle {z}",
+            "islocked": "Näkymä lukittu GPS-sijaintiisi, liikkuminen ei käytössä. Paina paikannuspainiketta avataksesi lukituksen.",
+            "locked": "Näkymä on nyt lukittu GPS-sijaintiisi, liikkuminen pois käytöstä.",
+            "navigation": "Käytä nuolinäppäimiä liikuttaaksesi karttaa, paina välilyöntiä valitaksesi lähimmän ominaisuuden. Paina numeroa valitaksesi kaukaisempia kohteita.",
+            "noCloseFeatures": "Ei ominaisuuksia näkymässä.",
+            "north": "Kuljetaan pohjoiseen",
+            "oneFeatureInView": "Yksi ominaisuus näkymässä.",
+            "out": "Loitonnetaan tasolle {z}",
+            "south": "Kuljetaan etelään",
+            "unlocked": "Liikkuminen käytössä.",
+            "viewportCenterCloseToGps": "Kartta on keskitetty sijaintiisi.",
+            "west": "Kuljetaan länteen"
+        },
+        "waitingForGeopermission": "Odotetaan lupaa käyttää sijaintia…",
         "waitingForLocation": "Etsitään nykyistä sijaintiasi…",
         "weekdays": {
             "abbreviations": {
@@ -270,70 +432,242 @@
         },
         "welcomeBack": "Tervetuloa takaisin!",
         "wikipedia": {
-            "addEntry": "Lisää toinen Wikipedia-sivu"
+            "addEntry": "Lisää toinen Wikipedia-sivu",
+            "createNewWikidata": "Luo uusi Wikidata-kohde",
+            "doSearch": "Hae yllä nähdäksesi tulokset",
+            "failed": "Wikipedia-kohteen lataaminen epäonnistui",
+            "fromWikipedia": "Wikipedia, vapaa tietosanakirja",
+            "loading": "Ladataan Wikipediaa…",
+            "noResults": "Ei tuloksia haulle <i>{search}</i>",
+            "noWikipediaPage": "Tällä Wikidata-kohteella ei vielä ole vastaavaa Wikipedia-sivua.",
+            "previewbox": {
+                "born": "Syntyi: {value}",
+                "died": "Kuoli: {value}"
+            },
+            "readMore": "Lue loput artikkelista",
+            "searchToShort": "Hakuehtosi on liian lyhyt, syötä pidempi teksti",
+            "searchWikidata": "Hae Wikidatasta",
+            "wikipediaboxTitle": "Wikipedia"
         }
     },
     "hotkeyDocumentation": {
         "action": "Toiminto",
+        "closeSidebar": "Sulje sivupalkki",
+        "intro": "MapComplete tukee seuraavia pikanäppäimiä:",
         "key": "Näppäinyhdistelmä",
+        "openFilterPanel": "Avaa pisettasot ja suodatinpaneelin",
         "openLayersPanel": "Avaa taustatasojen paneelin",
+        "queryCurrentLocation": "Näytä osoite, joka on lähimpänä kartan keskikohtaa",
         "selectAerial": "Asettaa taustaksi joko ilma- tai satelliittikuvan. Vaihtaa kahden parhaimman, saatavilla olevan tason välillä",
+        "selectFavourites": "Avaa suosikit-sivu",
         "selectMap": "Asettaa taustaksi kartan ulkoisesta lähteestä. Vaihtaa kahden parhaimman, saatavilla olevan tason välillä",
         "selectMapnik": "Aseta taustatasoksi OpenStreetMap-carto",
-        "selectOsmbasedmap": "Aseta taustatasoksi OpenStreetMap-pohjainen kartta (tai poista käytöstä rasterimuotoinen taustataso)"
+        "selectOsmbasedmap": "Aseta taustatasoksi OpenStreetMap-pohjainen kartta (tai poista käytöstä rasterimuotoinen taustataso)",
+        "selectSearch": "Valitse hakupalkki hakeaksesi sijainteja",
+        "shakePhone": "Puhelimen ravistaminen",
+        "title": "Pikanäppäimet",
+        "translationMode": "Käytä käännöstilaa tai poista se käytöstä"
     },
     "image": {
         "addPicture": "Lisää kuva",
         "currentLicense": "Kuvasi julkaistaan lisenssillä {license}",
         "doDelete": "Poista kuva",
-        "dontDelete": "Peruuta",
+        "dontDelete": "Peru",
         "isDeleted": "Poistettu",
         "nearby": {
             "link": "Tämä kuva näyttää kohteen",
+            "noNearbyImages": "Lähellä olevia kuvia ei löytynyt",
             "seeNearby": "Selaa ja linkitä läheisiä kuvia",
             "title": "Läheiset katukuvat"
         },
         "pleaseLogin": "Kirjaudu sisään, jotta voit lisätä kuvan",
         "respectPrivacy": "Älä valokuvaa ihmisiä tai rekisterikilpiä. Älä lähetä kuvia Google Mapsistä, Google Streetview’stä tai muista tekijänoikeuden alaisista lähteistä.",
+        "upload": {
+            "failReasons": "Internet-yhteys on saattanut katketa",
+            "failReasonsAdvanced": "Voit myös tarkistaa ettei selaimesi ja lisäosasi estä kolmannen osapuolen rajapintoja.",
+            "one": {
+                "done": "Kuvasi lähetettiin onnistuneesti. Kiitos!",
+                "failed": "Emme valitettavasti voineet lähettää kuvaasi",
+                "retrying": "Kuvasi lähetetään uudelleen…",
+                "uploading": "Kuvaasi lähetetään…"
+            }
+        },
         "uploadDone": "Kuvasi on lisätty. Kiitoksia avusta!",
+        "uploadFailed": "Kuvaasi ei voitu lähettää. Onko internet-yhteys kytketty ja kolmannen osapuolen rajapinnat sallittu? Brave-selain tai uMatrix-liitännäinen saattaa estää sen.",
         "uploadingMultiple": "Lähetetään {count} kuvaa…",
         "uploadingPicture": "Lähetetään kuvaa…"
     },
+    "importLayer": {
+        "layerName": "Mahdollinen {title}"
+    },
     "index": {
+        "featuredThemeTitle": "Esittelyssä tällä viikolla",
         "intro": "MapComplete on OpenStreetMap-katselin ja -editori, joka näyttää tietoja tiettyyn teeman liittyvistä kohteista ja antaa muokata niitä.",
+        "logIn": "Kirjaudu sisään nähdäksesi aiemmin katsomiasi muita teemoja",
         "pickTheme": "Aloita valitsemalla teema alta.",
         "title": "Tervetuloa MapCompleteen"
     },
     "move": {
+        "cancel": "Peru siirto",
+        "cannotBeMoved": "Tätä ominaisuutta ei voi siirtää.",
+        "confirmMove": "Siirrä tänne",
         "inviteToMove": {
-            "generic": "Siirrä tätä pistettä"
+            "generic": "Siirrä tätä pistettä",
+            "reasonInaccurate": "Paranna tämän pisteen tarkkuutta",
+            "reasonRelocation": "Siirrä tämä objekti toiseen paikkaan, koska se on vaihtanut paikkaa"
         },
-        "whyMove": "Miksi haluat siirtää tätä pistettä?"
+        "inviteToMoveAgain": "Siirrä tämä piste uudelleen",
+        "isRelation": "Tämä ominaisuus on relaatio eikä sitä voi siirtää",
+        "isWay": "Tämä ominaisuus on viiva. Käytä toista OpenStreetMap-editoria sen siirtämiseen.",
+        "loginToMove": "Sinun on kirjauduttava sisään siirtääksesi pistettä",
+        "moveTitle": "Siirrä tätä pistettä",
+        "partOfAWay": "Tämä ominaisuus on osa toista viivaa. Käytä toista editoria sen siirtämiseksi.",
+        "partOfRelation": "Tämä ominaisuus on osa relaatiota. Käytä toista editoria sen siirtämiseksi.",
+        "pointIsMoved": "Piste on siirretty",
+        "reasons": {
+            "reasonInaccurate": "Tämän objektin sijainti on epätarkka, ja sitä pitäisi siirtää muutaman metrin",
+            "reasonRelocation": "Objekti on siirretty täysin eri paikkaan"
+        },
+        "selectReason": "Miksi siirrät tätä objektia?",
+        "whyMove": "Miksi haluat siirtää tätä pistettä?",
+        "zoomInFurther": "Lähennä vahvistaaksesi tämän siirron"
     },
     "multi_apply": {
         "autoApply": "Kun ominaisuuksia {attr_names} muutetaan, nämä ominaisuudet muuttuvat automaattisesti myös {count} muussa kohteessa"
     },
+    "notes": {
+        "addAComment": "Lisää kommentti",
+        "addComment": "Lisää kommentti",
+        "addCommentAndClose": "Lisää kommentti ja sulje",
+        "addCommentPlaceholder": "Lisää kommentti…",
+        "anonymous": "Anonyymi käyttäjä",
+        "closeNote": "Sulje karttailmoitus",
+        "createNote": "Luo uusi karttailmoitus",
+        "createNoteIntro": "Onko kartalla jokin pielessä tai puuttuuko jotain? Voit luoda karttailmoitus tähän. Vapaaehtoiset tarkistavat niitä.",
+        "createNoteTitle": "Luo uusi karttailmoitus tähän",
+        "creating": "Luodaan karttailmoitusta…",
+        "disableAllNoteFilters": "Poista kaikki suotimet",
+        "isClosed": "Tämä karttailmoitus on ratkaistu",
+        "isCreated": "Karttailmoituksesi on luotu!",
+        "loginToAddComment": "Kirjaudu sisään lisätäksesi kommentin",
+        "loginToAddPicture": "Kirjaudu sisään lisätäksesi kuvan",
+        "loginToClose": "Kirjaudu, jotta voit sulkea tämän karttailmoituksen",
+        "noteIsPublic": "Tämä näkyy kaikille",
+        "noteLayerDoEnable": "Näytä karttailmoitusten taso",
+        "reopenNote": "Avaa karttailmoitus uudelleen",
+        "reopenNoteAndComment": "Avaa karttailmoitus uudelleen ja kommentoi",
+        "typeText": "Kirjoita tekstiä lisätäksesi kommentin",
+        "warnAnonymous": "Et ole kirjautunut sisään. Emme pysty ottamaan sinuun yhteyttä ongelmasi ratkaisua varten."
+    },
     "plantDetection": {
+        "back": "Takaisin lajin yleiskuvaan",
+        "confirm": "Valitse laji",
+        "done": "Laji on valittu",
+        "howTo": {
+            "li2": "ota kuva, jossa näkyy kaarna",
+            "li3": "ota kuva kukista"
+        },
+        "loadingWikidata": "Lataa tietoja lajista {species}…",
+        "matchPercentage": "{match} % osuma",
+        "seeInfo": "Katso lisätietoja lajista",
+        "takeImages": "Ota kuvia puusta tunnistaaksesi puun tyypin automaattisesti",
         "tryAgain": "Valitse eri laji"
     },
     "privacy": {
-        "title": "Tietosuojakäytäntö"
+        "geodataTitle": "Sijaintisi",
+        "miscCookiesTitle": "Muut evästeet",
+        "title": "Tietosuojakäytäntö",
+        "trackingTitle": "Tilastollinen data",
+        "whileYoureHere": "Välitätkö yksityisyydestä?"
     },
     "reviews": {
+        "affiliated_reviewer_warning": "(Yhteistyöarvostelu)",
+        "averageRating": "Arvostelun keskiarvo: {n} tähteä",
+        "i_am_affiliated": "Teen yhteistyötä tämän kohteen kanssa",
+        "question": "Miten arvostelisit kohteen {title()}?",
+        "question_opinion": "Millainen oli kokemuksesi?",
+        "rate": "Arvostele: {n} tähteä",
+        "rated": "Arvostelu: {n} tähteä",
+        "reviewPlaceholder": "Kerro kokemuksesi…",
+        "reviewing_as": "Arvostellaan nimellä {nickname}",
+        "reviewing_as_anonymous": "Arvostellaan nimettömänä",
+        "save": "Tallenna arvostelu",
+        "saved": "Arvostelu tallennettu. Kiitos jakamisesta!",
+        "saving_review": "Tallentaa…",
         "title": "{count} arvostelua",
-        "title_singular": "Yksi arvostelu"
+        "title_singular": "Yksi arvostelu",
+        "write_a_comment": "Jätä arvostelu…",
+        "your_reviews": "Aiemmat arvostelusi"
     },
     "split": {
+        "cancel": "Peru",
+        "hasBeenSplit": "Tämä väylä on katkaistu osiin",
+        "split": "Katkaise",
         "splitAgain": "Katkaise tämä tie uudelleen"
+    },
+    "translations": {
+        "activateButton": "Auta kääntämään MapCompletea",
+        "allMissing": "Ei käännöksiä vielä",
+        "missing": "{count} kääntämätöntä viestiä"
     },
     "userinfo": {
         "editDescription": "Muokkaa profiilin kuvausta",
+        "gotoInbox": "Avaa Saapuneet-laatikkosi",
+        "gotoSettings": "Siirry asetuksiin OpenStreetMap.org-sivustolla",
         "noDescriptionCallToAction": "Lisää profiilin kuvaus",
         "notLoggedIn": "Olet kirjautunut ulos"
     },
     "validation": {
+        "color": {
+            "description": "Väri tai heksakoodi"
+        },
+        "direction": {
+            "description": "Suunta"
+        },
         "distance": {
             "description": "Etäisyys metreinä"
+        },
+        "email": {
+            "description": "sähköpostiosoite",
+            "feedback": "Tämä ei ole kelvollinen sähköpostiosoite",
+            "noAt": "Sähköpostiosoitteessa täytyy olla @-merkki"
+        },
+        "fediverse": {
+            "invalidHost": "{host} ei ole kelvollinen konenimi"
+        },
+        "float": {
+            "description": "luku"
+        },
+        "id": {
+            "description": "tunniste"
+        },
+        "int": {
+            "description": "kokonaisluku"
+        },
+        "nat": {
+            "description": "positiivinen kokonaisluku tai nolla",
+            "mustBePositive": "Tämän luvun täytyy olla positiivinen",
+            "mustBeWhole": "Vain kokonaiset luvut sallitaan",
+            "notANumber": "Tämä ei ole luku"
+        },
+        "opening_hours": {
+            "description": "Aukioloajat"
+        },
+        "pfloat": {
+            "description": "positiivinen luku"
+        },
+        "phone": {
+            "description": "puhelinnumero"
+        },
+        "pnat": {
+            "description": "positiivinen kokonaisluku",
+            "noZero": "Nollaa ei sallita"
+        },
+        "url": {
+            "description": "linkki verkkosivulle"
+        },
+        "wikidata": {
+            "description": "Wikidata-tunniste"
         }
     }
 }

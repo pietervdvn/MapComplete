@@ -20,6 +20,7 @@
         "cancel": "Abbrechen",
         "cannotBeDeleted": "Dieses Element kann nicht gelöscht werden",
         "delete": "Löschen",
+        "deletedTitle": "Gelöschtes Objekt",
         "explanations": {
             "hardDelete": "Dieses Objekt wird in OpenStreetMap gelöscht. Es kann von einem erfahrenen Mitwirkenden wiederhergestellt werden",
             "retagNoOtherThemes": "Dieses Objekt wird neu klassifiziert und aus dieser Anwendung ausgeblendet",
@@ -123,6 +124,7 @@
             "confirmLocation": "Diesen Standort bestätigen",
             "confirmTitle": "{title} hinzufügen?",
             "confirmWarning": "Das von Dir eingetragene Objekt wird <b>für alle sichtbar sein</b>. Bitte füge nur Objekte hinzu, die wirklich existieren. Viele Anwendungen nutzen diese Daten.",
+            "creating": "Einen neuen Punkt zu erstellen...",
             "disableFilters": "Alle Filter deaktivieren",
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
             "enableLayer": "Ebene {name} einblenden",
