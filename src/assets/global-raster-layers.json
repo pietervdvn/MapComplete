@@ -110,72 +110,7 @@
         "url": "https://stadiamaps.com/"
       }
     },
-    {
-      "url": "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json?key=eyJhbGciOiJIUzI1NiJ9.eyJhIjoiYWNfdW4ybmhlbTciLCJqdGkiOiIwZGQxNjJmNyJ9.uATJpa6QcrtXhph3Bzvk2nX3QsxEw-Q8dj5khUG6hGk",
-      "name": "Carto Positron",
-      "category": "osmbasedmap",
-      "id": "carto.positron",
-      "type": "vector",
-      "attribution": {
-        "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
-        "url": "https://carto.com/"
-      }
-    },
-    {
-      "url": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json?key=eyJhbGciOiJIUzI1NiJ9.eyJhIjoiYWNfdW4ybmhlbTciLCJqdGkiOiIwZGQxNjJmNyJ9.uATJpa6QcrtXhph3Bzvk2nX3QsxEw-Q8dj5khUG6hGk",
-      "name": "Carto Dark Matter",
-      "category": "osmbasedmap",
-      "id": "carto.dark_matter",
-      "type": "vector",
-      "attribution": {
-        "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
-        "url": "https://carto.com/"
-      }
-    },
-    {
-      "url": "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json?key=eyJhbGciOiJIUzI1NiJ9.eyJhIjoiYWNfdW4ybmhlbTciLCJqdGkiOiIwZGQxNjJmNyJ9.uATJpa6QcrtXhph3Bzvk2nX3QsxEw-Q8dj5khUG6hGk",
-      "name": "Carto Voyager",
-      "category": "osmbasedmap",
-      "id": "carto.voyager",
-      "type": "vector",
-      "attribution": {
-        "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
-        "url": "https://carto.com/"
-      }
-    },
-    {
-      "url": "https://basemaps.cartocdn.com/gl/positron-nolabels-gl-style/style.json?key=eyJhbGciOiJIUzI1NiJ9.eyJhIjoiYWNfdW4ybmhlbTciLCJqdGkiOiIwZGQxNjJmNyJ9.uATJpa6QcrtXhph3Bzvk2nX3QsxEw-Q8dj5khUG6hGk",
-      "name": "Carto Positron (no labels)",
-      "category": "osmbasedmap",
-      "id": "carto.positron_no_labels",
-      "type": "vector",
-      "attribution": {
-        "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
-        "url": "https://carto.com/"
-      }
-    },
-    {
-      "url": "https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json?key=eyJhbGciOiJIUzI1NiJ9.eyJhIjoiYWNfdW4ybmhlbTciLCJqdGkiOiIwZGQxNjJmNyJ9.uATJpa6QcrtXhph3Bzvk2nX3QsxEw-Q8dj5khUG6hGk",
-      "name": "Carto Dark Matter (no labels)",
-      "category": "osmbasedmap",
-      "id": "carto.dark_matter_no_labels",
-      "type": "vector",
-      "attribution": {
-        "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
-        "url": "https://carto.com/"
-      }
-    },
-    {
-      "url": "https://basemaps.cartocdn.com/gl/voyager-nolabels-gl-style/style.json?key=eyJhbGciOiJIUzI1NiJ9.eyJhIjoiYWNfdW4ybmhlbTciLCJqdGkiOiIwZGQxNjJmNyJ9.uATJpa6QcrtXhph3Bzvk2nX3QsxEw-Q8dj5khUG6hGk",
-      "name": "Carto Voyager (no labels)",
-      "category": "osmbasedmap",
-      "id": "carto.voyager_no_labels",
-      "type": "vector",
-      "attribution": {
-        "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
-        "url": "https://carto.com/"
-      }
-    },
+
     {
       "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
       "style": "https://api.protomaps.com/styles/v2/white.json?key=2af8b969a9e8b692",
