@@ -534,7 +534,7 @@ class GenerateLayouts extends Script {
             )
             .replace(
                 /<!-- IMAGE-START -->.*<!-- IMAGE-END -->/s,
-                "<img class='p-0 mb-8 h-32 w-32 self-start' src='" + icon + "' />"
+                "<img class='p-0 h-32 w-32 self-start' src='" + icon + "' />"
             )
             .replace(
                 /.*\/src\/index\.ts.*/,
