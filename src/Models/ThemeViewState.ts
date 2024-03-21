@@ -687,7 +687,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const summaryTileSource = new SummaryTileSource(
             url.protocol + "//" + url.host + "/summary",
             layers.map((l) => l.id),
-            this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z), 0)),
+            this.mapProperties.zoom.map((z) => Math.max(Math.floor(z), 0)),
             this.mapProperties,
             {
                 isActive: this.mapProperties.zoom.map((z) => z <= maxzoom),
