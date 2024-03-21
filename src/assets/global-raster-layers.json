@@ -88,7 +88,8 @@
         "text": "Stamen/Stadiamaps",
         "url": "https://stadiamaps.com/"
       }
-    },   {
+    },
+    {
       "name": "Stamen Watercolor",
       "url": "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?key=14c5a900-7137-42f7-9cb9-fff0f4696f75",
       "category": "osmbasedmap",
@@ -142,8 +143,6 @@
         "url": "https://carto.com/"
       }
     },
-    
-    
     {
       "url": "https://basemaps.cartocdn.com/gl/positron-nolabels-gl-style/style.json?key=eyJhbGciOiJIUzI1NiJ9.eyJhIjoiYWNfdW4ybmhlbTciLCJqdGkiOiIwZGQxNjJmNyJ9.uATJpa6QcrtXhph3Bzvk2nX3QsxEw-Q8dj5khUG6hGk",
       "name": "Carto Positron (no labels)",
@@ -175,6 +174,66 @@
       "attribution": {
         "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
         "url": "https://carto.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/white.json?key=2af8b969a9e8b692",
+      "id": "protomaps.white",
+      "name": "Protomaps White",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/light.json?key=2af8b969a9e8b692",
+      "id": "protomaps.light",
+      "name": "Protomaps Light",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/grayscale.json?key=2af8b969a9e8b692",
+      "id": "protomaps.grayscale",
+      "name": "Protomaps Grayscale",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/dark.json?key=2af8b969a9e8b692",
+      "id": "protomaps.dark",
+      "name": "Protomaps Dark",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/black.json?key=2af8b969a9e8b692",
+      "id": "protomaps.black",
+      "name": "Protomaps Black",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
       }
     }
   ]
