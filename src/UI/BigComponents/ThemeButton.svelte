@@ -6,7 +6,6 @@
   import Constants from "../../Models/Constants"
   import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import Tr from "../Base/Tr.svelte"
-  import SubtleLink from "../Base/SubtleLink.svelte"
   import Translations from "../i18n/Translations"
   import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
 
@@ -86,8 +85,10 @@
 </script>
 
 {#if theme.id !== personal.id || $unlockedPersonal}
-  <SubtleLink href={$href} options={{ extraClasses: "w-full" }}>
-    <img slot="image" src={theme.icon} class="m-1 mr-2 block h-11 w-11 sm:m-2 sm:mr-4" alt="" />
+  <a
+  class={"w-full button text-ellipsis"}
+  href={$href}
+  > <img src={theme.icon} class="m-1 mr-2 block h-11 w-11 sm:m-2 sm:mr-4" alt="" />
     <span class="flex flex-col overflow-hidden text-ellipsis">
       <Tr t={title} />
 
@@ -96,6 +97,5 @@
           <Tr t={Translations.t.general.morescreen.enterToOpen} />
         </span>
       {/if}
-    </span>
-  </SubtleLink>
+    </span></a>
 {/if}

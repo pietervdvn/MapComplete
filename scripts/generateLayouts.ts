@@ -104,9 +104,9 @@ class GenerateLayouts extends Script {
         if (!layout.icon.endsWith(".svg")) {
             console.warn(
                 "Not creating a social image for " +
-                    layout.id +
-                    " as it is _not_ a .svg: " +
-                    layout.icon
+                layout.id +
+                " as it is _not_ a .svg: " +
+                layout.icon
             )
             return undefined
         }
@@ -139,9 +139,9 @@ class GenerateLayouts extends Script {
                         id: "icon",
                         transform: `translate(${cx - r},${cy - r}) scale(${
                             (r * 2) / Number(width)
-                        }) `,
+                        }) `
                     },
-                    g: [svg],
+                    g: [svg]
                 }
             },
             (mightBeTokenToReplace) => {
@@ -202,19 +202,19 @@ class GenerateLayouts extends Script {
                 icons.push({
                     src: name,
                     sizes: size + "x" + size,
-                    type: "image/png",
+                    type: "image/png"
                 })
             }
             icons.push({
                 src: path,
                 sizes: "513x513",
-                type: "image/svg",
+                type: "image/svg"
             })
         } else if (icon.endsWith(".png")) {
             icons.push({
                 src: icon,
                 sizes: "513x513",
-                type: "image/png",
+                type: "image/png"
             })
         } else {
             console.log(icon)
@@ -233,11 +233,11 @@ class GenerateLayouts extends Script {
             description: ogDescr,
             orientation: "portrait-primary, landscape-primary",
             icons: icons,
-            categories: ["map", "navigation"],
+            categories: ["map", "navigation"]
         }
         return {
             manifest,
-            whiteIcons,
+            whiteIcons
         }
     }
 
@@ -261,7 +261,7 @@ class GenerateLayouts extends Script {
         const rasterLayers = [
             AvailableRasterLayers.maptilerDefaultLayer,
             ...eli.features,
-            ...eli_global.layers.map((properties) => ({ properties })),
+            ...eli_global.layers.map((properties) => ({ properties }))
         ]
         for (const feature of rasterLayers) {
             const f = <RasterLayerPolygon>feature
@@ -277,8 +277,15 @@ class GenerateLayouts extends Script {
 
             if (f.properties.type === "vector") {
                 // We also need to whitelist eventual sources
-                const styleSpec = await Utils.downloadJsonCached(f.properties.url, 1000 * 120)
-                for (const key of Object.keys(styleSpec.sources)) {
+                let url = f.properties.url
+                if (url.startsWith("pmtiles://")) {
+                    url = url.substring("pmtiles://".length)
+                }
+                const styleSpec = await Utils.downloadJsonCached(url, 1000 * 120, {
+                    Origin: "https://mapcomplete.org"
+                })
+                urls.push(...(f.properties["connect-src"]??[]))
+                for (const key of Object.keys(styleSpec?.sources ?? {})) {
                     const url = styleSpec.sources[key].url
                     if (!url) {
                         continue
@@ -290,7 +297,9 @@ class GenerateLayouts extends Script {
                     console.log("Source url ", key, url)
                     urls.push(url)
                     if (urlClipped.endsWith(".json")) {
-                        const tileInfo = await Utils.downloadJsonCached(url, 1000 * 120)
+                        const tileInfo = await Utils.downloadJsonCached(url, 1000 * 120, {
+                            Origin: "https://mapcomplete.org"
+                        })
                         urls.push(tileInfo["tiles"] ?? [])
                     }
                 }
@@ -317,7 +326,7 @@ class GenerateLayouts extends Script {
             "https://www.openstreetmap.org",
             "https://api.openstreetmap.org",
             "https://pietervdvn.goatcounter.com",
-            "https://cache.mapcomplete.org",
+            "https://cache.mapcomplete.org"
         ].concat(...(await this.eliUrls()))
 
         SpecialVisualizations.specialVisualizations.forEach((sv) => {
@@ -354,9 +363,17 @@ class GenerateLayouts extends Script {
         const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
             new ImmutableStore({ lon: 0, lat: 0 })
         ).data
-        const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
-        const vectorSources = vectorLayers.map((l) => l.properties.url)
-        apiUrls.push(...vectorSources)
+        {
+            const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
+            const vectorSources = vectorLayers.map((l) => l.properties.url)
+            vectorSources.push(...vectorLayers.map((l) => l.properties.style))
+            apiUrls.push(...vectorSources.map(url => {
+                if (url?.startsWith("pmtiles://")) {
+                    return url.substring("pmtiles://".length)
+                }
+                return url
+            }))
+        }
         for (let connectSource of apiUrls.concat(geojsonSources)) {
             if (!connectSource) {
                 continue
@@ -400,8 +417,8 @@ class GenerateLayouts extends Script {
             "script-src": [
                 "'self'",
                 "https://gc.zgo.at/count.js",
-                ...(options?.scriptSrcs?.map((s) => "'" + s + "'") ?? []),
-            ].join(" "),
+                ...(options?.scriptSrcs?.map((s) => "'" + s + "'") ?? [])
+            ].join(" ")
         }
         const content = Object.keys(csp)
             .map((k) => k + " " + csp[k])
@@ -409,7 +426,7 @@ class GenerateLayouts extends Script {
 
         return [
             `<meta http-equiv ="Report-To" content='{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}'>`,
-            `<meta http-equiv="Content-Security-Policy" content="${content}">`,
+            `<meta http-equiv="Content-Security-Policy" content="${content}">`
         ].join("\n")
     }
 
@@ -421,12 +438,12 @@ class GenerateLayouts extends Script {
     ) {
         Locale.language.setData(layout.language[0])
         const targetLanguage = layout.language[0]
-        const ogTitle = Translations.T(layout.title).textFor(targetLanguage).replace(/"/g, '\\"')
+        const ogTitle = Translations.T(layout.title).textFor(targetLanguage).replace(/"/g, "\\\"")
         const ogDescr = Translations.T(
             layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap"
         )
             .textFor(targetLanguage)
-            .replace(/"/g, '\\"')
+            .replace(/"/g, "\\\"")
         let ogImage = layout.socialImage
         let twitterImage = ogImage
         if (ogImage === LayoutConfig.defaultSocialImage && layout.official) {
@@ -485,7 +502,7 @@ class GenerateLayouts extends Script {
             og,
             customCss,
             `<link rel="icon" href="${icon}" sizes="any" type="image/svg+xml">`,
-            ...apple_icons,
+            ...apple_icons
         ].join("\n")
 
         let branchname = await this.getBranchName()
@@ -508,7 +525,7 @@ class GenerateLayouts extends Script {
             .replace(
                 /<!-- CSP -->/,
                 await this.generateCsp(layout, layoutJson, {
-                    scriptSrcs: [this.removeOtherLanguagesHash],
+                    scriptSrcs: [this.removeOtherLanguagesHash]
                 })
             )
             .replace(
@@ -517,7 +534,7 @@ class GenerateLayouts extends Script {
             )
             .replace(
                 /<!-- IMAGE-START -->.*<!-- IMAGE-END -->/s,
-                "<img class='p-0 mb-8 h-32 w-32 self-start' src='" + icon + "' />"
+                "<img class='p-0 h-32 w-32 self-start' src='" + icon + "' />"
             )
             .replace(
                 /.*\/src\/index\.ts.*/,
@@ -539,7 +556,7 @@ class GenerateLayouts extends Script {
 
         const imports = [
             `import layout from "./src/assets/generated/themes/${theme.id}.json"`,
-            `import { ThemeMetaTagging } from "./src/assets/generated/metatagging/${theme.id}"`,
+            `import { ThemeMetaTagging } from "./src/assets/generated/metatagging/${theme.id}"`
         ]
         for (const layerName of Constants.added_by_default) {
             imports.push(
@@ -586,7 +603,7 @@ class GenerateLayouts extends Script {
             "account",
             "openstreetmap",
             "custom",
-            "theme",
+            "theme"
         ]
         // @ts-ignore
         const all: LayoutConfigJson[] = all_known_layouts.themes
@@ -638,7 +655,7 @@ class GenerateLayouts extends Script {
                 startLon: 0,
                 startZoom: 0,
                 title: { en: "MapComplete" },
-                description: { en: "A thematic map viewer and editor based on OpenStreetMap" },
+                description: { en: "A thematic map viewer and editor based on OpenStreetMap" }
             }),
             alreadyWritten
         )

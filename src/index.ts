@@ -44,6 +44,9 @@ async function main() {
         const state = new ThemeViewState(layout, availableLayers)
         const main = new SvelteUIElement(ThemeViewGUI, { state })
         main.AttachTo("maindiv")
+        Array.from(document.getElementsByClassName("delete-on-load")).forEach(el => {
+            el.parentElement.removeChild(el)
+        })
     } catch (err) {
         console.error("Error while initializing: ", err, err.stack)
         const customDefinition = DetermineLayout.getCustomDefinition()

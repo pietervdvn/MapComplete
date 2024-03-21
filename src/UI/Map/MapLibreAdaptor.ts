@@ -1,6 +1,7 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import type { Map as MLMap } from "maplibre-gl"
+import { Map as MLMap } from "maplibre-gl"
 import { Map as MlMap, SourceSpecification } from "maplibre-gl"
+import maplibregl from "maplibre-gl";
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -11,7 +12,7 @@ import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
 import RasterLayerHandler from "./RasterLayerHandler"
 import Constants from "../../Models/Constants"
-
+import { Protocol } from "pmtiles";
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
  */
@@ -46,6 +47,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly pitch: UIEventSource<number>
     readonly useTerrain: Store<boolean>
 
+   private static pmtilesInited = false
     /**
      * Functions that are called when one of those actions has happened
      * @private
@@ -55,6 +57,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     private readonly _maplibreMap: Store<MLMap>
 
     constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>) {
+        if(!MapLibreAdaptor.pmtilesInited){
+            maplibregl.addProtocol("pmtiles",new Protocol().tile);
+            MapLibreAdaptor.pmtilesInited = true
+        }
         this._maplibreMap = maplibreMap
 
         this.location = state?.location ?? new UIEventSource(undefined)
@@ -103,6 +109,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
 
         maplibreMap.addCallbackAndRunD((map) => {
+
             map.on("load", () => {
                 self.MoveMapToCurrentLoc(self.location.data)
                 self.SetZoom(self.zoom.data)
@@ -212,7 +219,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     }
 
     public static prepareWmsSource(layer: RasterLayerProperties): SourceSpecification {
-        return RasterLayerHandler.prepareWmsSource(layer)
+        return RasterLayerHandler.prepareSource(layer)
     }
 
     /**

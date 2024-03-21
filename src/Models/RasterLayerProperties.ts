@@ -7,6 +7,10 @@ export type EliCategory =
     | "qa"
     | "elevation"
     | "other"
+
+/**
+ * This class has grown beyond the point of only containing Raster Layers
+ */
 export interface RasterLayerProperties {
     /**
      * The name of the imagery source
@@ -19,7 +23,8 @@ export interface RasterLayerProperties {
 
     readonly url: string
     readonly category?: string | EliCategory
-    readonly type?: "vector" | string
+    readonly type?: "vector" | "raster" | string
+    readonly style?: string,
 
     readonly attribution?: {
         readonly url?: string
