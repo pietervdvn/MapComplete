@@ -277,8 +277,14 @@ class GenerateLayouts extends Script {
 
             if (f.properties.type === "vector") {
                 // We also need to whitelist eventual sources
-                const styleSpec = await Utils.downloadJsonCached(f.properties.url, 1000 * 120)
-                for (const key of Object.keys(styleSpec.sources)) {
+                let url = f.properties.url
+                if(url.startsWith("pmtiles://")){
+                    url = url.substring("pmtiles://".length)
+                }
+                const styleSpec = await Utils.downloadJsonCached(url, 1000 * 120, {
+                    Origin: "https://mapcomplete.org"
+                })
+                for (const key of Object.keys(styleSpec?.sources ?? {})) {
                     const url = styleSpec.sources[key].url
                     if (!url) {
                         continue
@@ -290,7 +296,9 @@ class GenerateLayouts extends Script {
                     console.log("Source url ", key, url)
                     urls.push(url)
                     if (urlClipped.endsWith(".json")) {
-                        const tileInfo = await Utils.downloadJsonCached(url, 1000 * 120)
+                        const tileInfo = await Utils.downloadJsonCached(url, 1000 * 120, {
+                            Origin: "https://mapcomplete.org"
+                        })
                         urls.push(tileInfo["tiles"] ?? [])
                     }
                 }
@@ -354,9 +362,17 @@ class GenerateLayouts extends Script {
         const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
             new ImmutableStore({ lon: 0, lat: 0 })
         ).data
-        const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
-        const vectorSources = vectorLayers.map((l) => l.properties.url)
-        apiUrls.push(...vectorSources)
+        {
+            const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
+            const vectorSources = vectorLayers.map((l) => l.properties.url)
+            vectorSources.push(...vectorLayers.map((l) => l.properties.style))
+            apiUrls.push(...vectorSources.map(url => {
+                if(url?.startsWith("pmtiles://")){
+                    return url.substring("pmtiles://".length)
+                }
+                return url
+            }))
+        }
         for (let connectSource of apiUrls.concat(geojsonSources)) {
             if (!connectSource) {
                 continue

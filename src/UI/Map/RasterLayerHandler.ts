@@ -1,6 +1,6 @@
 import { Map as MLMap, RasterSourceSpecification, VectorTileSource } from "maplibre-gl"
 import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
-import { RasterLayerPolygon } from "../../Models/RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import { Utils } from "../../Utils"
 import { VectorSourceSpecification } from "@maplibre/maplibre-gl-style-spec"
@@ -127,7 +127,11 @@ class SingleBackgroundHandler {
                 .layers.find((l) => l.id.startsWith("mapcomplete_"))?.id
 
             if (background.type === "vector") {
-                map.setStyle(background["style"])
+                if(background.style){
+                    map.setStyle(background.style)
+                }else{
+                    map.setStyle(AvailableRasterLayers.maptilerDefaultLayer.properties.style)
+                }
             } else {
 
                 map.addLayer(
@@ -142,7 +146,11 @@ class SingleBackgroundHandler {
                     addLayerBeforeId
                 )
                 this.opacity.addCallbackAndRun((o) => {
-                    map.setPaintProperty(background.id, "raster-opacity", o)
+                    try{
+                        map.setPaintProperty(background.id, "raster-opacity", o)
+                    }catch (e) {
+                        console.debug("Could not set raster-opacity of", background.id)
+                    }
                 })
             }
         }
