@@ -127,13 +127,8 @@ class SingleBackgroundHandler {
                 .layers.find((l) => l.id.startsWith("mapcomplete_"))?.id
 
             if (background.type === "vector") {
-                if(background.style){
-                    map.setStyle(background.style)
-                }else{
-                    map.setStyle(AvailableRasterLayers.maptilerDefaultLayer.properties.style)
-                }
+                map.setStyle(background.style ?? background.url)
             } else {
-
                 map.addLayer(
                     {
                         id: background.id,
@@ -150,6 +145,7 @@ class SingleBackgroundHandler {
                         map.setPaintProperty(background.id, "raster-opacity", o)
                     }catch (e) {
                         console.debug("Could not set raster-opacity of", background.id)
+                        return true // This layer probably doesn't exist anymore, so we unregister
                     }
                 })
             }
