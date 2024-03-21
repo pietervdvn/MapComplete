@@ -213,7 +213,7 @@
       }
     },
     {
-      "url": "pmtiles://https://api.protomaps.com/tiles/v3/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692",
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
       "style": "https://api.protomaps.com/styles/v2/dark.json?key=2af8b969a9e8b692",
       "id": "protomaps.dark",
       "name": "Protomaps Dark",
