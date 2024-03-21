@@ -179,6 +179,7 @@
     {
       "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
       "style": "https://api.protomaps.com/styles/v2/white.json?key=2af8b969a9e8b692",
+      "connect-src": ["https://protomaps.github.io"],
       "id": "protomaps.white",
       "name": "Protomaps White",
       "type": "vector",
@@ -191,6 +192,7 @@
     {
       "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
       "style": "https://api.protomaps.com/styles/v2/light.json?key=2af8b969a9e8b692",
+      "connect-src": ["https://protomaps.github.io"],
       "id": "protomaps.light",
       "name": "Protomaps Light",
       "type": "vector",
@@ -202,6 +204,7 @@
     },
     {
       "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "connect-src": ["https://protomaps.github.io"],
       "style": "https://api.protomaps.com/styles/v2/grayscale.json?key=2af8b969a9e8b692",
       "id": "protomaps.grayscale",
       "name": "Protomaps Grayscale",
@@ -214,6 +217,7 @@
     },
     {
       "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "connect-src": ["https://protomaps.github.io"],
       "style": "https://api.protomaps.com/styles/v2/dark.json?key=2af8b969a9e8b692",
       "id": "protomaps.dark",
       "name": "Protomaps Dark",
@@ -227,6 +231,7 @@
     {
       "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
       "style": "https://api.protomaps.com/styles/v2/black.json?key=2af8b969a9e8b692",
+      "connect-src": ["https://protomaps.github.io"],
       "id": "protomaps.black",
       "name": "Protomaps Black",
       "type": "vector",
