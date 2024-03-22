@@ -210,11 +210,16 @@
             "downloadGpxHelper": "GPX-tiedostoa voidaan käyttää useimmissa navigointilaitteissa ja -sovelluksissa",
             "exporting": "Viedään…",
             "includeMetaData": "Sisällytä metadata (viimeisin muokkaaja, lasketut arvot, ...)",
+            "licenseInfo": "<h3>Tekijänoikeus</h3>Tarjottu data on saatavilla ODbL-lisenssillä. Sen uudelleenkäyttö on ilmaista mihin tahansa tarkoitukseen, mutta: <ul><li>Lähteen maininnan <b>© OpenStreetMap contributors</b> täytyy näkyä.</li><li>Kaikki muutokset täytyy julkaista samalla lisenssillä.</li></ul> Tarkemmat yksityiskohdat voi lukea lyhentämättömistä <a href='https://www.openstreetmap.org/copyright' target='_blank'>tekijänoikeustiedoista</a>.",
             "noDataLoaded": "Dataa ei ole vielä ladattu. Lataus tulee saataville pian",
+            "pdf": {
+                "current_view_generic": "Vie PDF-tiedostoon näkyvä alue {paper_size}-paperikoossa ja {orientation} suunnassa"
+            },
             "title": "Lataa",
             "toMuch": "Ominaisuuksia on liian paljon ladattavaksi",
             "uploadGpx": "Lähetä reittisi OpenStreetMapiin"
         },
+        "enableGeolocationForSafari": "Etkö saanut lupapyyntöä sijainnin käytöstä?",
         "enableGeolocationForSafariLink": "Katso, miten paikannuslupa annetaan asetuksissa",
         "eraseValue": "Poista tämä arvo",
         "error": "Jotain meni vikaan",
@@ -244,6 +249,10 @@
             "title": "Valitse tasot",
             "zoomInToSeeThisLayer": "Lähennä nähdäksesi tämän tason"
         },
+        "levelSelection": {
+            "addNewOnLevel": "Onko uusi piste tasolla {level}?",
+            "confirmLevel": "Kyllä, lisää {preset} tasolle {level}"
+        },
         "loading": "Ladataan…",
         "loadingTheme": "Loading teemaa {theme}…",
         "loginFailed": "Kirjautuminen OpenStreetMapiin epäonnistui",
@@ -261,6 +270,8 @@
         "morescreen": {
             "createYourOwnTheme": "Luo oma MapComplete-teema alusta asti",
             "enterToOpen": "Avaa teema painamalla enter",
+            "hiddenExplanation": "Näitä teemoja voi käyttää vain linkin haltijat. Olet löytänyt {hidden_discovered}/{total_hidden} piilotettua teemaa.",
+            "intro": "<h3>Lisää teemakarttoja?</h3>Nautitko paikkatiedon keräämisestä? <br/>Teemoja on lisää.",
             "noMatchingThemes": "Teemaa ei löytynyt hakuehdollasi",
             "noSearch": "Näytä kaikki teemat",
             "previouslyHiddenTitle": "Aiemmin katsotut piilotetut teemat",
@@ -287,9 +298,10 @@
             "not_all_rules_parsed": "Nämä aukioloajat ovat monimutkaiset. Seuraavat säännöt jätetään huomiotta syöttöelementissä:",
             "on_weekdays": "Auki arkipäivisin {ranges}",
             "on_weekends": "Auki viikonloppuisin {ranges}",
-            "openTill": "kunnes",
+            "openTill": "–",
             "open_24_7": "Auki kellon ympäri",
             "open_during_ph": "Kansallisena vapaapäivänä tämä on",
+            "opensAt": "klo",
             "ph_closed": "suljettu",
             "ph_not_known": " ",
             "ph_open": "auki",
@@ -305,12 +317,19 @@
         },
         "osmLinkTooltip": "Tarkastele tätä objektia OpenStreetMapissa nähdäksesi historian ja muita muokkausvaihtoehtoja",
         "pdf": {
-            "attrBackground": "Taustataso: {background}"
+            "attr": "Karttadata © OpenStreetMap-kartoittajat, uudelleenkäytettävissä ODbL-lisenssillä",
+            "attrBackground": "Taustataso: {background}",
+            "generatedWith": "Luotu osoitteesta mapcomplete.org/{layoutid}",
+            "versionInfo": "v{version} – luotu {date}"
         },
         "pickLanguage": "Valitse kieli",
+        "poweredByOsm": "Datan tarjoaa OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Vastasit {answered} kysymykseen",
+            "answeredMultipleSkippedMultiple": "Vastasit {answered} kysymykseen ja ohitit {skipped} kysymystä",
+            "answeredMultipleSkippedOne": "Vastasit {answered} kysymykseen ja ohitit yhden kysymyksen",
             "answeredOne": "Vastasit yhteen kysymykseen",
+            "answeredOneSkippedMultiple": "Vastasit yhteen kysymykseen ja ohitit {skipped} kysymystä",
             "answeredOneSkippedOne": "Vastasit yhteen ja ohitit yhden kysymyksen",
             "done": "Ei enempää kysymyksiä. Kiitos!",
             "reactivate": "Aktivoi ohitetut kysymykset uudelleen",
@@ -318,7 +337,12 @@
             "skippedOne": "Ohitit yhden kysymyksen"
         },
         "questions": {
-            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+            "emailIs": "Sähköpostiosoite kohteelle {category} on <a href='mailto:{email}' target='_blank'>{email}</a>",
+            "emailOf": "Mikä on sähköpostiosoite kohteelle {category}?",
+            "phoneNumberIs": "Puhelinnumero kohteelle {category} on <a href='tel:{phone}' target='_blank'>{phone}</a>",
+            "phoneNumberOf": "Mikä on puhelinnumero kohteelle {category}?",
+            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "Mikä on verkkosivu kohteelle {category}?"
         },
         "readYourMessages": "Luethan kaikki OpenStreetMap-viestisi ennen kuin lisäät uutta ominaisuutta.",
         "removeLocationHistory": "Poista sijaintihistoria",
@@ -397,6 +421,8 @@
                 "straight": "suoraan eteenpäin"
             },
             "east": "Kuljetaan itään",
+            "fromGps": "{distance} {direction} sijainnistasi",
+            "fromMapCenter": "{distance} {direction} kartan keskeltä",
             "in": "Lähennetään tasolle {z}",
             "islocked": "Näkymä lukittu GPS-sijaintiisi, liikkuminen ei käytössä. Paina paikannuspainiketta avataksesi lukituksen.",
             "locked": "Näkymä on nyt lukittu GPS-sijaintiisi, liikkuminen pois käytöstä.",
@@ -498,7 +524,8 @@
         "uploadingPicture": "Lähetetään kuvaa…"
     },
     "importLayer": {
-        "layerName": "Mahdollinen {title}"
+        "layerName": "Mahdollinen {title}",
+        "popupTitle": "Tässä on ehkä {title}"
     },
     "index": {
         "featuredThemeTitle": "Esittelyssä tällä viikolla",
@@ -574,6 +601,7 @@
         "tryAgain": "Valitse eri laji"
     },
     "privacy": {
+        "editingTitle": "Karttaa muokatessa",
         "geodataTitle": "Sijaintisi",
         "miscCookiesTitle": "Muut evästeet",
         "title": "Tietosuojakäytäntö",
@@ -591,11 +619,13 @@
         "reviewPlaceholder": "Kerro kokemuksesi…",
         "reviewing_as": "Arvostellaan nimellä {nickname}",
         "reviewing_as_anonymous": "Arvostellaan nimettömänä",
+        "reviews_bug": "Odotitko enemmän arvosteluita? Joitain arvosteluita ei näytetä ohjelmistovian takia.",
         "save": "Tallenna arvostelu",
         "saved": "Arvostelu tallennettu. Kiitos jakamisesta!",
         "saving_review": "Tallentaa…",
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu",
+        "too_long": "Enintään {max} merkkiä sallitaan. Arvostelussasi on {amount} merkkiä.",
         "write_a_comment": "Jätä arvostelu…",
         "your_reviews": "Aiemmat arvostelusi"
     },
@@ -636,7 +666,8 @@
             "invalidHost": "{host} ei ole kelvollinen konenimi"
         },
         "float": {
-            "description": "luku"
+            "description": "luku",
+            "feedback": "Tämä ei ole luku"
         },
         "id": {
             "description": "tunniste"
@@ -657,11 +688,19 @@
             "description": "positiivinen luku"
         },
         "phone": {
-            "description": "puhelinnumero"
+            "description": "puhelinnumero",
+            "feedback": "Tämä ei ole kelvollinen puhelinnumero",
+            "feedbackCountry": "Tämä ei ole kelvollinen puhelinnumero (maalle {country})"
         },
         "pnat": {
             "description": "positiivinen kokonaisluku",
             "noZero": "Nollaa ei sallita"
+        },
+        "string": {
+            "description": "tekstinpätkä"
+        },
+        "text": {
+            "description": "tekstinpätkä"
         },
         "url": {
             "description": "linkki verkkosivulle"
