@@ -165,6 +165,13 @@
           "then": {
             "en": "This is a historic tank, permanently placed in public space as memorial"
           }
+        },
+        {
+          "if": "memorial=tree",
+          "then": {
+            "en": "This is a memorial tree"
+          },
+          "addExtraTags": ["natural=tree"]
         }
       ],
       "render": {
