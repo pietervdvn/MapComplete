@@ -15,7 +15,10 @@
   },
   "title": {
     "render": {
-      "en": "Memorial"
+      "en": "Memorial plaque",
+      "ca": "Placa commemorativa",
+      "cs": "Pamětní deska",
+      "de": "Gedenktafel"
     },
     "mappings": [
       {
@@ -107,7 +110,8 @@
             "en": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash",
             "de": "Dies ist ein Geisterrad - ein Fahrrad weiß lackiert, um an einen Radfahrer zu erinnern, der wegen eines Autounfalls verstorben ist"
           }
-        },{
+        },
+        {
           "if": "memorial=stolperstein",
           "alsoShowIf": "memorial:type=stolperstein",
           "then": {
@@ -168,7 +172,9 @@
           "then": {
             "en": "This is a memorial tree"
           },
-          "addExtraTags": ["natural=tree"]
+          "addExtraTags": [
+            "natural=tree"
+          ]
         }
       ],
       "render": {
