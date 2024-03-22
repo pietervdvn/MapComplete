@@ -8722,7 +8722,7 @@
                         "then": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond"
                     },
                     "4": {
-                        "then": "Gebruik altijd <span class='code'>{__current_background}</span>) als achtergrondlaag. Dit is de huidige achtergrond."
+                        "then": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond."
                     },
                     "5": {
                         "then": "Gebruik <span class='code'>{mapcomplete-preferred-background-layer}</span> altijd als achtergrondlaag"
