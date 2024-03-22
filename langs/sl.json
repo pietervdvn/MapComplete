@@ -1,16 +1,34 @@
 {
     "centerMessage": {
         "loadingData": "Nalaganje podatkov…",
+        "noData": "V trenutnem pogledu ni relevantnih elementov",
         "retrying": "Nalaganje podatkov ni uspelo. Ponoven poskus čez {count} sekund…"
     },
     "delete": {
         "cancel": "Prekliči",
-        "delete": "Izbriši"
+        "delete": "Izbriši",
+        "loginToDelete": "Za dodajanje novih elemntov morate biti vpisani"
+    },
+    "favouritePoi": {
+        "loginToSeeList": "Vpišite se za ogled seznama vaših priljubljenih lokacij"
     },
     "general": {
+        "add": {
+            "pleaseLogin": "Vpišite se za dodajanje novega elementa",
+            "zoomInFurther": "Še bolj približajte za dodajanje elementa"
+        },
         "back": "Nazaj",
         "cancel": "Prekliči",
         "confirm": "Potrdi",
+        "getStartedLogin": "Za začetek se vpišite s svojim OpenStreetMap računom",
+        "loginFailed": "Vpis v OpenStreetMap ni uspe",
+        "loginFailedOfflineMode": "Zaradi vzdrževanja OpenStreetMap.org trenutno ni na voljo. Urejanje bo kmalu spet mogoče",
+        "loginFailedReadonlyMode": "Zaradi vzdrževanja je OpenStreetMap.org trenutno možno samo brati. Urejanje bo kmalu spet mogoče",
+        "loginWithOpenStreetMap": "Vpis z OpenStreetMap računom",
+        "logout": "Odjava",
+        "menu": {
+            "aboutMapComplete": "O MapComplete"
+        },
         "pickLanguage": "Izberite jezik",
         "save": "Shrani",
         "search": {
@@ -43,7 +61,8 @@
         "addPicture": "Dodaj sliko",
         "doDelete": "Odstrani sliko",
         "dontDelete": "Prekliči",
-        "isDeleted": "Izbrisana"
+        "isDeleted": "Izbrisana",
+        "pleaseLogin": "Vpišite se za dodajanje slik"
     },
     "index": {
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
