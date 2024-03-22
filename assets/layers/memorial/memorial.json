@@ -110,8 +110,69 @@
             "en": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash",
             "de": "Dies ist ein Geisterrad - ein Fahrrad weiß lackiert, um an einen Radfahrer zu erinnern, der wegen eines Autounfalls verstorben ist"
           }
+        },{
+          "if": "memorial=stolperstein",
+          "alsoShowIf": "memorial:type=stolperstein",
+          "then": {
+            "en": "This is a stolperstein (stumbing stone)"
+          }
+        },
+        {
+          "if": "memorial=stele",
+          "then": {
+            "en": "This is a stele"
+          }
+        },
+        {
+          "if": "memorial=stone",
+          "then": {
+            "en": "This is a memorial stone"
+          }
+        },
+        {
+          "if": "memorial=bust",
+          "then": {
+            "en": "This is a bust"
+          }
+        },
+        {
+          "if": "memorial=sculpture",
+          "then": {
+            "en": "This is a sculpture"
+          }
+        },
+        {
+          "if": "memorial=obelisk",
+          "then": {
+            "en": "This is an obelisk"
+          }
+        },
+        {
+          "if": "memorial=cross",
+          "then": {
+            "en": "This is a cross"
+          }
+        },
+        {
+          "if": "memorial=blue_plaque",
+          "then": {
+            "en": "This is a blue plaque"
+          },
+          "onlyShowIf": "_country=gb"
+        },
+        {
+          "if": "memorial=tank",
+          "then": {
+            "en": "This is a historic tank, permanently placed in public space as memorial"
+          }
         }
-      ]
+      ],
+      "render": {
+        "en": "This is a {memorial}"
+      },
+      "freeform": {
+        "key": "memorial"
+      }
     },
     {
       "id": "inscription",
