@@ -212,10 +212,10 @@
     },
     "surveillance_camera": {
         "description": "Ta sloj prikazuje nadzorne kamere in urednikom omogoča posodabljanje informacij obstoječih in dodajanje novih kamer",
-        "name": "Videonadzorne kamere",
+        "name": "Nadzorne kamere",
         "presets": {
             "0": {
-                "title": "videonadzorna kamera"
+                "title": "nadzorna kamera"
             },
             "1": {
                 "title": "nadzorna kamera pritrjena na steno"
@@ -345,7 +345,7 @@
             }
         },
         "title": {
-            "render": "Videonadzorna kamera"
+            "render": "Nadzorna kamera"
         }
     },
     "windturbine": {
