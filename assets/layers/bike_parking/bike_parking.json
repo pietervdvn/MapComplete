@@ -503,7 +503,7 @@
         "fr": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
         "nl": "Hoeveel fietsen kunnen in deze fietsparking?",
         "gl": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?",
-        "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?",
+        "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz?",
         "it": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici cargo)?",
         "zh_Hant": "這個單車停車場能放幾台單車 (包括裝箱單車)？",
         "es": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas (incluyendo posibles bicicletas de carga)?",
@@ -515,7 +515,8 @@
       },
       "questionHint": {
         "en": "This includes regular bicycles, cargo bikes, ebikes, ...",
-        "nl": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ..."
+        "nl": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ...",
+        "de": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,..."
       },
       "render": {
         "en": "Place for {capacity} bikes",

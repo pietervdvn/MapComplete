@@ -1411,7 +1411,8 @@
                 "render": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?",
+                "question": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz?",
+                "questionHint": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,...",
                 "render": "Der Parkplatz bietet Platz für {capacity} Fahrräder"
             },
             "Cargo bike capacity?": {

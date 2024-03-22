@@ -399,7 +399,8 @@
         "pl": "bilbord",
         "pt_BR": "um outdoor",
         "zh_Hans": "一块广告牌",
-        "it": "un cartellone"
+        "it": "un cartellone",
+        "zh_Hant": "一塊告示牌"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -435,7 +436,8 @@
         "fr": "un panneau à affiches scellé au sol",
         "pl": "wolnostojąca skrzynka plakatowa",
         "pt_BR": "uma caixa expositora independente",
-        "it": "un cartellone pubblicitario fissato a terra"
+        "it": "un cartellone pubblicitario fissato a terra",
+        "zh_Hant": "獨自設立的海報框"
       },
       "exampleImages": [
         "./assets/themes/advertising/Mupi_spain.jpg",

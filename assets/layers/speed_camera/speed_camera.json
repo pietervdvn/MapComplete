@@ -6,7 +6,8 @@
     "nl": "Flitspaal",
     "es": "Cámara de velocidad",
     "ca": "Càmera de velocitat",
-    "cs": "Rychlostní radar"
+    "cs": "Rychlostní radar",
+    "sl": "Hitrostna kamera"
   },
   "description": {
     "en": "Layer showing speed cameras",
@@ -14,7 +15,8 @@
     "nl": "Laag met flitspalen",
     "es": "Capa con cámaras de velocidad",
     "ca": "Capa que mostra càmeres de velocitat",
-    "cs": "Vrstva zobrazující rychlostní radary"
+    "cs": "Vrstva zobrazující rychlostní radary",
+    "sl": "Sloj prikazuje hitrostne kamere (radarje)"
   },
   "source": {
     "osmTags": "highway=speed_camera"
@@ -59,7 +61,8 @@
         "nl": "een flitspaal",
         "es": "una cámara de velocidad",
         "ca": "una càmera de velocitat",
-        "cs": "rychlostní radar"
+        "cs": "rychlostní radar",
+        "sl": "hitrostna kamera"
       },
       "snapToLayer": [
         "maxspeed"

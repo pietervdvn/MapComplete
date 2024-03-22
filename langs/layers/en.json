@@ -6150,9 +6150,40 @@
                     },
                     "3": {
                         "then": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash"
+                    },
+                    "4": {
+                        "then": "This is a stolperstein (stumbing stone)"
+                    },
+                    "5": {
+                        "then": "This is a stele"
+                    },
+                    "6": {
+                        "then": "This is a memorial stone"
+                    },
+                    "7": {
+                        "then": "This is a bust"
+                    },
+                    "8": {
+                        "then": "This is a sculpture"
+                    },
+                    "9": {
+                        "then": "This is an obelisk"
+                    },
+                    "10": {
+                        "then": "This is a cross"
+                    },
+                    "11": {
+                        "then": "This is a blue plaque"
+                    },
+                    "12": {
+                        "then": "This is a historic tank, permanently placed in public space as memorial"
+                    },
+                    "13": {
+                        "then": "This is a memorial tree"
                     }
                 },
-                "question": "What type of memorial is this?"
+                "question": "What type of memorial is this?",
+                "render": "This is a {memorial}"
             },
             "memorial-wikidata": {
                 "question": "What is the Wikipedia page about this memorial?",
