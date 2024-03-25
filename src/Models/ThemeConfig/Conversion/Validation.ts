@@ -277,9 +277,11 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 backgroundId === "photo" || backgroundId === "map" || backgroundId === "osmbasedmap"
 
             if (!isCategory && !ValidateTheme._availableLayers.has(backgroundId)) {
+                const options = Array.from(ValidateTheme._availableLayers)
+                const nearby = Utils.sortedByLevenshteinDistance(backgroundId, options, t => t)
                 context
                     .enter("defaultBackgroundId")
-                    .err("This layer ID is not known: " + backgroundId)
+                    .err(`This layer ID is not known: ${backgroundId}. Perhaps you meant one of ${nearby.slice(0,5).join(", ")}`)
             }
         }
 
