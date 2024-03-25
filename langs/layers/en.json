@@ -4020,11 +4020,26 @@
             },
             "elevator-depth": {
                 "question": "What is the depth of this elevator?",
-                "render": "This elevator has a depth of {canonical(elevator:depth)}"
+                "render": "This elevator has a depth of {canonical(length)}"
+            },
+            "elevator-diameger": {
+                "question": "What is the diameter of this elevator?",
+                "render": "This elevator has a diameger of {canonical(diameter)}"
+            },
+            "elevator-shape": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator has a rectangular shape"
+                    },
+                    "1": {
+                        "then": "This elevator has a circular shape"
+                    }
+                },
+                "question": "What shape does this elevator have?"
             },
             "elevator-width": {
                 "question": "What is the width of this elevator?",
-                "render": "This elevator has a width of {canonical(elevator:width)}"
+                "render": "This elevator has a width of {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {

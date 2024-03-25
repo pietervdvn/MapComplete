@@ -24,17 +24,6 @@
       }
     },
     {
-      "name": "MapTiler Backdrop",
-      "url": "https://api.maptiler.com/maps/backdrop/style.json?key=GvoVAJgu46I5rZapJuAy",
-      "category": "osmbasedmap",
-      "id": "maptiler.backdrop",
-      "type": "vector",
-      "attribution": {
-        "text": "Maptiler",
-        "url": "https://www.maptiler.com/copyright/"
-      }
-    },
-    {
       "name": "MapTiler Carto",
       "url": "https://api.maptiler.com/maps/openstreetmap/style.json?key=GvoVAJgu46I5rZapJuAy",
       "category": "osmbasedmap",

@@ -3219,11 +3219,11 @@
             },
             "elevator-depth": {
                 "question": "Quina és la profunditat de l'ascensor?",
-                "render": "L'ascensor té un profunditat de {canonical(elevator:depth)}"
+                "render": "L'ascensor té un profunditat de {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Quina és l'amplada d'aquest ascensor?",
-                "render": "L'ascensor té una amplada de {canonical(elevator:width)}"
+                "render": "L'ascensor té una amplada de {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {

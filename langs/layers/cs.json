@@ -3242,11 +3242,11 @@
             },
             "elevator-depth": {
                 "question": "Jaká je hloubka tohoto výtahu?",
-                "render": "Tento výtah má hloubku {canonical(elevator:depth)}"
+                "render": "Tento výtah má hloubku {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Jaká je šířka tohoto výtahu?",
-                "render": "Tento výtah má šířku {canonical(elevator:width)}"
+                "render": "Tento výtah má šířku {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {

@@ -1214,7 +1214,7 @@
             },
             "elevator-width": {
                 "question": "Jaka jest szerokość tej windy?",
-                "render": "Szerokość tej windy to {canonical(elevator:width)}"
+                "render": "Szerokość tej windy to {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {

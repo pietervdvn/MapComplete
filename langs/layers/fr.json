@@ -2948,11 +2948,11 @@
             },
             "elevator-depth": {
                 "question": "Quelle est la profondeur de cet ascenseur ?",
-                "render": "Cet ascenseur a une profondeur de {canonical(elevator:depth)}"
+                "render": "Cet ascenseur a une profondeur de {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Quelle est la largeur de cet ascenseur ?",
-                "render": "Cet ascenseur a une largeur de {canonical(elevator:width)}"
+                "render": "Cet ascenseur a une largeur de {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {

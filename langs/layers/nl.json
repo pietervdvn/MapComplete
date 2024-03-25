@@ -3673,11 +3673,11 @@
             },
             "elevator-depth": {
                 "question": "Wat is de diepte van deze lift?",
-                "render": "Deze lift heeft een diepte van {canonical(elevator:depth)}"
+                "render": "Deze lift heeft een diepte van {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Wat is de breedte van deze lift?",
-                "render": "Deze lift heeft een breedte van {canonical(elevator:width)}"
+                "render": "Deze lift heeft een breedte van {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {

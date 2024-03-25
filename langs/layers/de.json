@@ -4020,11 +4020,11 @@
             },
             "elevator-depth": {
                 "question": "Wie tief ist die Kabine dieses Aufzugs?",
-                "render": "Dieser Aufzug hat eine Kabinentiefe von {canonical(elevator:depth)}"
+                "render": "Dieser Aufzug hat eine Kabinentiefe von {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Wie breit ist die Kabine dieses Aufzugs?",
-                "render": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}"
+                "render": "Die Aufzugskabine hat eine Breite von {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {
