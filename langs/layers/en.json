@@ -4022,9 +4022,9 @@
                 "question": "What is the depth of this elevator?",
                 "render": "This elevator has a depth of {canonical(length)}"
             },
-            "elevator-diameger": {
+            "elevator-diameter": {
                 "question": "What is the diameter of this elevator?",
-                "render": "This elevator has a diameger of {canonical(diameter)}"
+                "render": "This elevator has a diameter of {canonical(diameter)}"
             },
             "elevator-shape": {
                 "mappings": {
