@@ -13,6 +13,7 @@
     "en": "Memorials",
     "de": "Denkmäler"
   },
+  "defaultBackgroundId": "protomaps.white",
   "title": {
     "render": {
       "en": "Memorial plaque",
