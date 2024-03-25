@@ -259,7 +259,7 @@ class GenerateLayouts extends Script {
         const urls: string[] = []
         const regex = /{switch:([^}]+)}/
         const rasterLayers = [
-            AvailableRasterLayers.maptilerDefaultLayer,
+            AvailableRasterLayers.defaultBackgroundLayer,
             ...eli.features,
             ...eli_global.layers.map((properties) => ({ properties }))
         ]

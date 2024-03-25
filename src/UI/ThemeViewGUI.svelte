@@ -149,7 +149,7 @@
   let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
   let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
   let rasterLayerName =
-    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maptilerDefaultLayer.properties.name
+    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.defaultBackgroundLayer.properties.name
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
@@ -180,7 +180,7 @@
 </script>
 
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
-  <MaplibreMap map={maplibremap} />
+  <MaplibreMap map={maplibremap} mapProperties={mapproperties} />
 </div>
 
 {#if $visualFeedback}

@@ -48,7 +48,7 @@
 <ImportFlow {importFlow} on:confirm={() => importFlow.onConfirm()}>
   <div slot="map" class="relative">
     <div class="h-32">
-      <MaplibreMap {map} />
+      <MaplibreMap {map} mapProperties={mla} />
     </div>
     <div class="absolute bottom-0">
       <OpenBackgroundSelectorButton />

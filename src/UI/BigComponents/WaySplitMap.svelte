@@ -106,6 +106,6 @@
 </script>
 
 <div class="h-full w-full relative">
-  <MaplibreMap {map} />
+  <MaplibreMap {map} mapProperties={adaptor} />
   <SmallZoomButtons {adaptor} />
 </div>

@@ -108,7 +108,11 @@ class SingleBackgroundHandler {
         }
         const background = this._targetLayer.properties
         console.debug("Enabling", background.id)
-        let addLayerBeforeId = "aeroway_fill" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
+        let addLayerBeforeId = "transit_pier" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
+        if(!map.getLayer(addLayerBeforeId)){
+            console.warn("Layer", addLayerBeforeId,"not foundhttp://127.0.0.1:1234/theme.html?layout=cyclofix&z=14.8&lat=51.05282501324558&lon=3.720591622281745&layer-range=true")
+            addLayerBeforeId = undefined
+        }
         if (background.category === "osmbasedmap" || background.category === "map") {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
             addLayerBeforeId = undefined

@@ -60,6 +60,11 @@ export default class InputHelpers {
         if (!mapProperties.zoom) {
             mapProperties = { ...mapProperties, zoom: new UIEventSource<number>(zoom) }
         }
+        if (!mapProperties.rasterLayer) {
+       /*     mapProperties = {
+                ...mapProperties, rasterLayer: properties?.mapProperties?.rasterLayer
+            }*/
+        }
         return mapProperties
     }
 
@@ -72,7 +77,7 @@ export default class InputHelpers {
         const searchKey: string = <string>args[0] ?? "name"
 
         const searchFor: string = searchKey.split(";").map(k => inputHelperOptions.feature?.properties[k]?.toLowerCase())
-                .find(foundValue => !!foundValue) ?? ""
+            .find(foundValue => !!foundValue) ?? ""
 
         let searchForValue: UIEventSource<string> = new UIEventSource(searchFor)
         const options: any = args[1]
@@ -120,7 +125,7 @@ export default class InputHelpers {
             value,
             searchText: searchForValue,
             instanceOf,
-            notInstanceOf,
+            notInstanceOf
         })
     }
 }
