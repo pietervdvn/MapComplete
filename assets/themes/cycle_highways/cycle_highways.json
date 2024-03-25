@@ -31,7 +31,7 @@
   "startZoom": 10,
   "startLat": 51.1599,
   "startLon": 3.3475,
-  "defaultBackgroundId": "maptiler.backdrop",
+  "defaultBackgroundId": "protomaps.white",
   "credits": [
     "L'imaginaire"
   ],

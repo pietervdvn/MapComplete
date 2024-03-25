@@ -15,7 +15,7 @@
   "startZoom": 12,
   "startLat": 51.17174,
   "startLon": 4.449462,
-  "defaultBackgroundId": "maptiler.backdrop",
+  "defaultBackgroundId": "protomaps.white",
   "hideFromOverview": true,
   "layers": [
     {
