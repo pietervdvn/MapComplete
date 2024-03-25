@@ -13,6 +13,97 @@
       }
     },
     {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/white.json?key=2af8b969a9e8b692",
+      "connect-src": [
+        "https://protomaps.github.io"
+      ],
+      "id": "protomaps.white",
+      "name": "Protomaps White",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/light.json?key=2af8b969a9e8b692",
+      "connect-src": [
+        "https://protomaps.github.io"
+      ],
+      "id": "protomaps.light",
+      "name": "Protomaps Light",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "connect-src": [
+        "https://protomaps.github.io"
+      ],
+      "style": "https://api.protomaps.com/styles/v2/grayscale.json?key=2af8b969a9e8b692",
+      "id": "protomaps.grayscale",
+      "name": "Protomaps Grayscale",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "connect-src": [
+        "https://protomaps.github.io"
+      ],
+      "style": "https://api.protomaps.com/styles/v2/dark.json?key=2af8b969a9e8b692",
+      "id": "protomaps.dark",
+      "name": "Protomaps Dark",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "style": "https://api.protomaps.com/styles/v2/black.json?key=2af8b969a9e8b692",
+      "connect-src": [
+        "https://protomaps.github.io"
+      ],
+      "id": "protomaps.black",
+      "name": "Protomaps Black",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "style": "assets/sunny.json",
+      "connect-src": [
+        "https://protomaps.github.io"
+      ],
+      "id": "protomaps.sunny",
+      "name": "Protomaps Sunny",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
+    },
+
+    {
       "name": "Americana",
       "url": "https://zelonewolf.github.io/openstreetmap-americana/style.json",
       "category": "osmbasedmap",
@@ -175,96 +266,6 @@
       "attribution": {
         "text": "<a href=\"https://carto.com/about-carto/\" target=\"_blank\" rel=\"noopener\">CARTO</a>",
         "url": "https://carto.com/"
-      }
-    },
-    {
-      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
-      "style": "https://api.protomaps.com/styles/v2/white.json?key=2af8b969a9e8b692",
-      "connect-src": [
-        "https://protomaps.github.io"
-      ],
-      "id": "protomaps.white",
-      "name": "Protomaps White",
-      "type": "vector",
-      "category": "osmbasedmap",
-      "attribution": {
-        "text": "Protomaps",
-        "url": "https://protomaps.com/"
-      }
-    },
-    {
-      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
-      "style": "https://api.protomaps.com/styles/v2/light.json?key=2af8b969a9e8b692",
-      "connect-src": [
-        "https://protomaps.github.io"
-      ],
-      "id": "protomaps.light",
-      "name": "Protomaps Light",
-      "type": "vector",
-      "category": "osmbasedmap",
-      "attribution": {
-        "text": "Protomaps",
-        "url": "https://protomaps.com/"
-      }
-    },
-    {
-      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
-      "connect-src": [
-        "https://protomaps.github.io"
-      ],
-      "style": "https://api.protomaps.com/styles/v2/grayscale.json?key=2af8b969a9e8b692",
-      "id": "protomaps.grayscale",
-      "name": "Protomaps Grayscale",
-      "type": "vector",
-      "category": "osmbasedmap",
-      "attribution": {
-        "text": "Protomaps",
-        "url": "https://protomaps.com/"
-      }
-    },
-    {
-      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
-      "connect-src": [
-        "https://protomaps.github.io"
-      ],
-      "style": "https://api.protomaps.com/styles/v2/dark.json?key=2af8b969a9e8b692",
-      "id": "protomaps.dark",
-      "name": "Protomaps Dark",
-      "type": "vector",
-      "category": "osmbasedmap",
-      "attribution": {
-        "text": "Protomaps",
-        "url": "https://protomaps.com/"
-      }
-    },
-    {
-      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
-      "style": "https://api.protomaps.com/styles/v2/black.json?key=2af8b969a9e8b692",
-      "connect-src": [
-        "https://protomaps.github.io"
-      ],
-      "id": "protomaps.black",
-      "name": "Protomaps Black",
-      "type": "vector",
-      "category": "osmbasedmap",
-      "attribution": {
-        "text": "Protomaps",
-        "url": "https://protomaps.com/"
-      }
-    },
-    {
-      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
-      "style": "assets/sunny.json",
-      "connect-src": [
-        "https://protomaps.github.io"
-      ],
-      "id": "protomaps.sunny",
-      "name": "Protomaps Sunny",
-      "type": "vector",
-      "category": "osmbasedmap",
-      "attribution": {
-        "text": "Protomaps",
-        "url": "https://protomaps.com/"
       }
     }
   ]
