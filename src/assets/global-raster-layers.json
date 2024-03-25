@@ -229,6 +229,19 @@
         "text": "Protomaps",
         "url": "https://protomaps.com/"
       }
+    },
+    {
+      "url": "pmtiles://https://api.protomaps.com/tiles/v3.json?key=2af8b969a9e8b692",
+      "style": "assets/sunny.json",
+      "connect-src": ["https://protomaps.github.io"],
+      "id": "protomaps.sunny",
+      "name": "Protomaps Sunny",
+      "type": "vector",
+      "category": "osmbasedmap",
+      "attribution": {
+        "text": "Protomaps",
+        "url": "https://protomaps.com/"
+      }
     }
   ]
 }
