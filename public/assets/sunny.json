@@ -26,7 +26,7 @@
       "source": "protomaps",
       "source-layer": "earth",
       "paint": {
-        "fill-color": "#f0efdd"
+        "fill-color": "#fcf7e5"
       }
     },
     {
@@ -92,9 +92,9 @@
           ],
           2,
           "#f0efdd",
-          3,
+          10,
           "#dfede5",
-          12,
+          18,
           "#b0e9b0"
         ]
       }
@@ -133,7 +133,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#e4dad9"
+        "fill-color": "#f9e1dc"
       }
     },
     {
@@ -150,7 +150,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d1dde1"
+        "fill-color": "#efdfe8"
       }
     },
     {
@@ -249,9 +249,11 @@
           [
             "zoom"
           ],
-          0,
+          2,
+          "#f0efdd",
+          10,
           "#d0ded0",
-          12,
+          18,
           "#add19e"
         ]
       }
@@ -278,9 +280,11 @@
           [
             "zoom"
           ],
-          0,
-          "#d0ded0",
+          6,
+          "#f0efdd",
           12,
+          "#d0ded0",
+          18,
           "#add19e"
         ]
       }
@@ -370,9 +374,11 @@
           [
             "zoom"
           ],
-          0,
+          8,
+          "#fcf7e5",
+          10,
           "#afbdb5",
-          12,
+          16,
           "#7cb384"
         ]
       }
