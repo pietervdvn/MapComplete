@@ -12,7 +12,7 @@
       lon: 3.1929, lat: 51.2190
     }),
     zoom: UIEventSource.asFloat(QueryParameters.GetQueryParameter("z", 13+"")),
-    rasterLayer: new UIEventSource(AvailableRasterLayers.globalLayers.at(-1))
+    rasterLayer: new UIEventSource(AvailableRasterLayers.globalLayers.at(5))
   })
 </script>
 
