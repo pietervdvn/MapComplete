@@ -51,7 +51,7 @@
       <MaplibreMap {map} mapProperties={mla} />
     </div>
     <div class="absolute bottom-0">
-      <OpenBackgroundSelectorButton />
+      <OpenBackgroundSelectorButton {state} {map} />
     </div>
   </div>
 </ImportFlow>

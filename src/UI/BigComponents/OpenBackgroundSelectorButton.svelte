@@ -9,11 +9,12 @@
   import MapControlButton from "../Base/MapControlButton.svelte"
   import Tr from "../Base/Tr.svelte"
   import StyleLoadingIndicator from "../Map/StyleLoadingIndicator.svelte"
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import ThemeViewState from "../../Models/ThemeViewState"
 
   export let state: ThemeViewState
+  export let map: Store<MlMap> = undefined
   export let hideTooltip = false
 </script>
 
@@ -22,7 +23,7 @@
   on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
 >
   
-  <StyleLoadingIndicator map={state.map} rasterLayer={state.mapProperties.rasterLayer} >
+  <StyleLoadingIndicator map={map ?? state.map} rasterLayer={state.mapProperties.rasterLayer} >
     <Square3Stack3dIcon class="h-6 w-6" />
   </StyleLoadingIndicator>
   {#if !hideTooltip}
