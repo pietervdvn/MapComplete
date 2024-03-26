@@ -1046,6 +1046,48 @@
       }
     },
     {
+      "id": "roads_tunnels_major_outline",
+      "type": "line",
+      "source": "protomaps",
+      "source-layer": "roads",
+      "filter": [
+        "all",
+        [
+          "<",
+          "pmap:level",
+          0
+        ],
+        [
+          "==",
+          "pmap:kind",
+          "major_road"
+        ]
+      ],
+      "paint": {
+
+  "line-dasharray":[0.4,0.1],
+      "line-color": "#d9a985",
+      "line-width": [
+        "interpolate",
+        [
+          "exponential",
+          1.6
+        ],
+        [
+          "zoom"
+        ],
+        6,
+        0,
+        12,
+        3.6,
+        15,
+        6,
+        18,
+        18
+      ]
+      }
+    },
+    {
       "id": "roads_tunnels_major",
       "type": "line",
       "source": "protomaps",
@@ -1064,7 +1106,19 @@
         ]
       ],
       "paint": {
-        "line-color": "#d5d5d5",
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          8,
+          "#f9d9b5",
+          18,
+          "#f9c9c5"
+        ],
         "line-width": [
           "interpolate",
           [
@@ -1085,6 +1139,7 @@
         ]
       }
     },
+
     {
       "id": "roads_tunnels_highway",
       "type": "line",
