@@ -1006,6 +1006,50 @@
       }
     },
     {
+      "id": "roads_tunnels_medium_outline",
+      "type": "line",
+      "source": "protomaps",
+      "source-layer": "roads",
+      "filter": [
+        "all",
+        [
+          "<",
+          "pmap:level",
+          0
+        ],
+        [
+          "==",
+          "pmap:kind",
+          "medium_road"
+        ]
+      ],
+      "paint": {
+        "line-dasharray": [
+          0.4,
+          0.1
+        ],
+        "line-color": "#bca664",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            1.6
+          ],
+          [
+            "zoom"
+          ],
+          7,
+          0,
+          12,
+          3.2,
+          15,
+          6,
+          18,
+          17
+        ]
+      }
+    },
+    {
       "id": "roads_tunnels_medium",
       "type": "line",
       "source": "protomaps",
@@ -1024,7 +1068,7 @@
         ]
       ],
       "paint": {
-        "line-color": "#d5d5d5",
+        "line-color": "#fcd6a4",
         "line-width": [
           "interpolate",
           [
@@ -1064,27 +1108,29 @@
         ]
       ],
       "paint": {
-
-  "line-dasharray":[0.4,0.1],
-      "line-color": "#d9a985",
-      "line-width": [
-        "interpolate",
-        [
-          "exponential",
-          1.6
+        "line-dasharray": [
+          0.4,
+          0.1
         ],
-        [
-          "zoom"
-        ],
-        6,
-        0,
-        12,
-        3.6,
-        15,
-        6,
-        18,
-        18
-      ]
+        "line-color": "#d9a985",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            1.6
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0,
+          12,
+          3.6,
+          15,
+          6,
+          18,
+          18
+        ]
       }
     },
     {
@@ -1117,7 +1163,7 @@
           8,
           "#f9d9b5",
           18,
-          "#f9c9c5"
+          "#f9b9a5"
         ],
         "line-width": [
           "interpolate",
@@ -1139,7 +1185,6 @@
         ]
       }
     },
-
     {
       "id": "roads_tunnels_highway",
       "type": "line",
@@ -1736,7 +1781,7 @@
       }
     },
     {
-      "id": "roads_medium_line_around",
+      "id": "roads_medium_outline",
       "type": "line",
       "source": "protomaps",
       "source-layer": "roads",
@@ -1869,7 +1914,7 @@
       }
     },
     {
-      "id": "roads_major_line_around",
+      "id": "roads_major_outline",
       "type": "line",
       "source": "protomaps",
       "source-layer": "roads",
@@ -2553,7 +2598,7 @@
       }
     },
     {
-      "id": "roads_bridges_medium_line_around",
+      "id": "roads_bridges_medium_outline",
       "type": "line",
       "source": "protomaps",
       "source-layer": "roads",
@@ -2613,29 +2658,29 @@
         ]
       ],
       "paint": {
-          "line-color": "#fcd6a4",
-          "line-width": [
-            "interpolate",
-            [
-              "exponential",
-              1.6
-            ],
-            [
-              "zoom"
-            ],
-            7,
-            0,
-            12,
-            1.2,
-            15,
-            3,
-            18,
-            13
-          ]
+        "line-color": "#fcd6a4",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            1.6
+          ],
+          [
+            "zoom"
+          ],
+          7,
+          0,
+          12,
+          1.2,
+          15,
+          3,
+          18,
+          13
+        ]
       }
     },
     {
-      "id": "roads_bridges_major_line_around",
+      "id": "roads_bridges_major_outline",
       "type": "line",
       "source": "protomaps",
       "source-layer": "roads",
