@@ -141,7 +141,7 @@
   >
     <Center class=" h-6 w-6" />
   </div>
-{:else}
+{:else if !!$label}
   <div
     class={twMerge("soft relative rounded-full border border-black", size)}
     on:click={() => focusMap()}
