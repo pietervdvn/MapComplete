@@ -67,6 +67,7 @@
   ],
   "tagRenderings": [
     "images",
+    "reviews",
     {
       "question": {
         "en": "What is the name of this ice cream parlor?",
