@@ -1153,10 +1153,11 @@ export default class SpecialVisualizations {
                 constr: (state) => {
                     return new Combine(
                         state.layout.layers
-                            .filter((l) => l.name !== null)
+                            .filter((l) => l.name !== null && l.title && state.perLayer.get(l.id) !== undefined )
                             .map(
                                 (l) => {
                                     const fs = state.perLayer.get(l.id)
+                                    console.log(">>>", l.id, fs)
                                     const bbox = state.mapProperties.bounds
                                     const fsBboxed = new BBoxFeatureSourceForLayer(fs, bbox)
                                     return new StatisticsPanel(fsBboxed)
