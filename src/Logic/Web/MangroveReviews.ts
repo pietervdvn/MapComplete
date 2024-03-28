@@ -3,6 +3,7 @@ import { MangroveReviews, Review } from "mangrove-reviews-typescript"
 import { Utils } from "../../Utils"
 import { Feature, Position } from "geojson"
 import { GeoOperations } from "../GeoOperations"
+import ScriptUtils from "../../../scripts/ScriptUtils"
 
 export class MangroveIdentity {
     private readonly keypair: Store<CryptoKeyPair>
@@ -70,31 +71,52 @@ export class MangroveIdentity {
         return this.key_id
     }
 
+    private geoReviewsById: Store<(Review & { kid: string; signature: string })[]> =
+        undefined
+
+    public getGeoReviews(): Store<(Review & { kid: string, signature: string })[] | undefined> {
+        if (!this.geoReviewsById) {
+            const all = this.getAllReviews()
+            this.geoReviewsById = this.getAllReviews().mapD(reviews => reviews.filter(
+                review => {
+                    try{
+                    const subjectUrl = new URL(review.sub)
+                        console.log(">>>", subjectUrl)
+                    return subjectUrl.protocol === "geo:"
+                    }catch (e) {
+                        return false
+                    }
+                }
+            ))
+        }
+        return this.geoReviewsById
+    }
+
     private allReviewsById: UIEventSource<(Review & { kid: string; signature: string })[]> =
         undefined
 
     /**
      * Gets all reviews that are made for the current identity.
+     * The returned store will contain `undefined` if still loading
      */
-    public getAllReviews(): Store<(Review & { kid: string; signature: string })[]> {
+    public getAllReviews(): Store<(Review & { kid: string; signature: string })[] | undefined> {
         if (this.allReviewsById !== undefined) {
             return this.allReviewsById
         }
-        this.allReviewsById = new UIEventSource([])
-        this.key_id.map((pem) => {
+        this.allReviewsById = new UIEventSource(undefined)
+        this.key_id.map(async (pem) => {
             if (pem === undefined) {
                 return []
             }
-            MangroveReviews.getReviews({
-                kid: pem,
-            }).then((allReviews) => {
-                this.allReviewsById.setData(
-                    allReviews.reviews.map((r) => ({
-                        ...r,
-                        ...r.payload,
-                    }))
-                )
+            const allReviews = await MangroveReviews.getReviews({
+                kid: pem
             })
+            this.allReviewsById.setData(
+                allReviews.reviews.map((r) => ({
+                    ...r,
+                    ...r.payload
+                }))
+            )
         })
         return this.allReviewsById
     }
@@ -243,7 +265,7 @@ export default class FeatureReviews {
         }
         const r: Review = {
             sub: this.subjectUri.data,
-            ...review,
+            ...review
         }
         const keypair: CryptoKeyPair = await this._identity.getKeypair()
         const jwt = await MangroveReviews.signReview(keypair, r)
@@ -253,7 +275,7 @@ export default class FeatureReviews {
             ...r,
             kid,
             signature: jwt,
-            madeByLoggedInUser: new ImmutableStore(true),
+            madeByLoggedInUser: new ImmutableStore(true)
         }
         this._reviews.data.push(reviewWithKid)
         this._reviews.ping()
@@ -301,7 +323,7 @@ export default class FeatureReviews {
                 signature: reviewData.signature,
                 madeByLoggedInUser: this._identity.getKeyId().map((user_key_id) => {
                     return reviewData.kid === user_key_id
-                }),
+                })
             })
             hasNew = true
         }
@@ -322,7 +344,7 @@ export default class FeatureReviews {
         // https://www.rfc-editor.org/rfc/rfc5870#section-3.4.2
         // `u` stands for `uncertainty`, https://www.rfc-editor.org/rfc/rfc5870#section-3.4.3
         const self = this
-        return this._name.map(function (name) {
+        return this._name.map(function(name) {
             let uri = `geo:${self._lat},${self._lon}?u=${Math.round(self._uncertainty)}`
             if (name) {
                 uri += "&q=" + (dontEncodeName ? name : encodeURIComponent(name))
