@@ -10707,13 +10707,6 @@
                 },
                 "question": "Möchten Sie bei der Übersetzung von MapComplete helfen?"
             },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!"
-                    }
-                }
-            },
             "verified-mastodon": {
                 "mappings": {
                     "0": {

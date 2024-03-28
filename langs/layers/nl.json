@@ -8890,7 +8890,7 @@
             "translation-thanks": {
                 "mappings": {
                     "0": {
-                        "then": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
+                        "then": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!"
                     }
                 }
             },
