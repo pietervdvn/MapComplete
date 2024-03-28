@@ -24,6 +24,7 @@ export class ImageUploadManager {
     private readonly _uploadRetriedSuccess: Map<string, UIEventSource<number>> = new Map()
     private readonly _osmConnection: OsmConnection
     private readonly _changes: Changes
+    public readonly isUploading: Store<boolean>
 
     constructor(
         layout: LayoutConfig,
@@ -37,6 +38,13 @@ export class ImageUploadManager {
         this._layout = layout
         this._osmConnection = osmConnection
         this._changes = changes
+
+        const failed = this.getCounterFor(this._uploadFailed, "*")
+        const done = this.getCounterFor(this._uploadFinished, "*")
+
+        this.isUploading = this.getCounterFor(this._uploadStarted, "*").map(startedCount => {
+            return startedCount > failed.data  + done.data
+        }, [failed, done])
     }
 
     /**
