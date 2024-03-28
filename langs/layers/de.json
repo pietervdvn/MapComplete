@@ -4022,6 +4022,21 @@
                 "question": "Wie tief ist die Kabine dieses Aufzugs?",
                 "render": "Dieser Aufzug hat eine Kabinentiefe von {canonical(length)}"
             },
+            "elevator-diameter": {
+                "question": "Was ist der Durchmesser dieses Aufzugs?",
+                "render": "Dieser Aufzug hat einen Durchmesser von {canonical(diameter)}"
+            },
+            "elevator-shape": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Aufzug hat eine rechteckige Form"
+                    },
+                    "1": {
+                        "then": "Dieser Aufzug hat eine kreisförmige Form"
+                    }
+                },
+                "question": "Welche Form hat dieser Aufzug?"
+            },
             "elevator-width": {
                 "question": "Wie breit ist die Kabine dieses Aufzugs?",
                 "render": "Die Aufzugskabine hat eine Breite von {canonical(width)}"
