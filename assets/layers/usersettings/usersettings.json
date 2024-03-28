@@ -616,7 +616,7 @@
             "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。",
             "cs": "Chcete-li zadat nebo aktualizovat část textu, klikněte na ikonu „přeložit“ vedle řetězce. K tomu potřebujete účet Weblate. Vytvořte si jej s vaším uživatelským jménem OSM, abyste automaticky odemkli režim překladu."
           },
-          "icon": "translate"
+          "icon": "./assets/svg/translate.svg"
         }
       ]
     },
