@@ -115,62 +115,74 @@
           "if": "memorial=stolperstein",
           "alsoShowIf": "memorial:type=stolperstein",
           "then": {
-            "en": "This is a stolperstein (stumbing stone)"
+            "en": "This is a stolperstein (stumbing stone)",
+            "de": "Dies ist ein Stolperstein"
           }
         },
         {
           "if": "memorial=stele",
           "then": {
-            "en": "This is a stele"
+            "en": "This is a stele",
+            "de": "Das ist eine Stele"
           }
         },
         {
           "if": "memorial=stone",
           "then": {
-            "en": "This is a memorial stone"
+            "en": "This is a memorial stone",
+            "de": "Das ist ein Gedenkstein"
           }
         },
         {
           "if": "memorial=bust",
           "then": {
-            "en": "This is a bust"
+            "en": "This is a bust",
+            "de": "Das ist eine Büste"
           }
         },
         {
           "if": "memorial=sculpture",
           "then": {
-            "en": "This is a sculpture"
+            "en": "This is a sculpture",
+            "de": "Dies ist eine Skulptur"
           }
         },
         {
           "if": "memorial=obelisk",
           "then": {
-            "en": "This is an obelisk"
+            "en": "This is an obelisk",
+            "de": "Das ist ein Obelisk",
+            "es": "Es un obelisco"
           }
         },
         {
           "if": "memorial=cross",
           "then": {
-            "en": "This is a cross"
+            "en": "This is a cross",
+            "de": "Das ist ein Kreuz",
+            "es": "Es una cruz"
           }
         },
         {
           "if": "memorial=blue_plaque",
           "then": {
-            "en": "This is a blue plaque"
+            "en": "This is a blue plaque",
+            "de": "Dies ist eine blaue Plaque"
           },
           "onlyShowIf": "_country=gb"
         },
         {
           "if": "memorial=tank",
           "then": {
-            "en": "This is a historic tank, permanently placed in public space as memorial"
+            "en": "This is a historic tank, permanently placed in public space as memorial",
+            "de": "Dies ist ein historischer Panzer, der permanent in den öffentlichen Raum als Denkmal platziert wurde"
           }
         },
         {
           "if": "memorial=tree",
           "then": {
-            "en": "This is a memorial tree"
+            "en": "This is a memorial tree",
+            "de": "Das ist ein Baumdenkmal"
           },
           "addExtraTags": [
             "natural=tree"
@@ -178,7 +190,8 @@
         }
       ],
       "render": {
-        "en": "This is a {memorial}"
+        "en": "This is a {memorial}",
+        "de": "Das ist ein {memorial}"
       },
       "freeform": {
         "key": "memorial"
