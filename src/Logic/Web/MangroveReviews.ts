@@ -81,7 +81,6 @@ export class MangroveIdentity {
                 review => {
                     try{
                     const subjectUrl = new URL(review.sub)
-                        console.log(">>>", subjectUrl)
                     return subjectUrl.protocol === "geo:"
                     }catch (e) {
                         return false
