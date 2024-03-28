@@ -8722,13 +8722,6 @@
                 },
                 "question": "Vols ajudar a traduir MapComplete?"
             },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Has contribuït a traduir MapComplete! Això és fantàstic!"
-                    }
-                }
-            },
             "verified-mastodon": {
                 "mappings": {
                     "0": {

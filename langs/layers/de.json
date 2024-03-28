@@ -6150,9 +6150,40 @@
                     },
                     "3": {
                         "then": "Dies ist ein Geisterrad - ein Fahrrad weiß lackiert, um an einen Radfahrer zu erinnern, der wegen eines Autounfalls verstorben ist"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Stolperstein"
+                    },
+                    "5": {
+                        "then": "Das ist eine Stele"
+                    },
+                    "6": {
+                        "then": "Das ist ein Gedenkstein"
+                    },
+                    "7": {
+                        "then": "Das ist eine Büste"
+                    },
+                    "8": {
+                        "then": "Dies ist eine Skulptur"
+                    },
+                    "9": {
+                        "then": "Das ist ein Obelisk"
+                    },
+                    "10": {
+                        "then": "Das ist ein Kreuz"
+                    },
+                    "11": {
+                        "then": "Dies ist eine blaue Plaque"
+                    },
+                    "12": {
+                        "then": "Dies ist ein historischer Panzer, der permanent in den öffentlichen Raum als Denkmal platziert wurde"
+                    },
+                    "13": {
+                        "then": "Das ist ein Baumdenkmal"
                     }
                 },
-                "question": "Was für eine Art von Denkmal ist das?"
+                "question": "Was für eine Art von Denkmal ist das?",
+                "render": "Das ist ein {memorial}"
             },
             "memorial-wikidata": {
                 "question": "Was ist die Wikipedia-Seite über dieses Denkmal?",
@@ -10675,13 +10706,6 @@
                     }
                 },
                 "question": "Möchten Sie bei der Übersetzung von MapComplete helfen?"
-            },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!"
-                    }
-                }
             },
             "verified-mastodon": {
                 "mappings": {

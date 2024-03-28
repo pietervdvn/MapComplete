@@ -8977,13 +8977,6 @@
                 },
                 "question": "Chcete pomoci s překladem MapComplete?"
             },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Přispěli jste k překladu MapComplete! To je úžasné!"
-                    }
-                }
-            },
             "verified-mastodon": {
                 "mappings": {
                     "0": {

@@ -3010,6 +3010,20 @@
             }
         }
     },
+    "memorial": {
+        "tagRenderings": {
+            "memorial-type": {
+                "mappings": {
+                    "9": {
+                        "then": "Es un obelisco"
+                    },
+                    "10": {
+                        "then": "Es una cruz"
+                    }
+                }
+            }
+        }
+    },
     "nature_reserve": {
         "description": "Una reserva natural es una zona donde la naturaleza puede seguir su curso",
         "name": "Reserva Natural",

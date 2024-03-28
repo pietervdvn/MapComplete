@@ -738,12 +738,8 @@
         {
           "if": "_translation_contributions>0",
           "then": {
-            "en": "You have contributed to translating MapComplete! That's awesome!",
-            "ca": "Has contribuït a traduir MapComplete! Això és fantàstic!",
-            "de": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!",
-            "nl": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!",
-            "cs": "Přispěli jste k překladu MapComplete! To je úžasné!",
-            "pt": "Você contribuiu para a tradução do MapComplete! Fantástico!"
+            "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!",
+            "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!"
           },
           "icon": "party"
         }
