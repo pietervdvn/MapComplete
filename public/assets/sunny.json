@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "style@2.0.0-alpha.0 theme@light",
+  "name": "style@2.0.0-alpha.0 theme@sunny",
   "glyphs": "https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "protomaps": {
@@ -488,7 +488,7 @@
         ]
       ],
       "paint": {
-        "line-color": "#80deea",
+        "line-color": "#85c2e9",
         "line-width": 0.5
       }
     },
@@ -507,7 +507,7 @@
         ]
       ],
       "paint": {
-        "line-color": "#80deea",
+        "line-color": "#85c2e9",
         "line-width": [
           "interpolate",
           [
