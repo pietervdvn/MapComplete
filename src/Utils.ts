@@ -1061,6 +1061,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         throw result["error"]
     }
 
+    public static awaitAnimationFrame(): Promise<void>{
+        return new Promise<void>((resolve) => {
+            window.requestAnimationFrame(() => {
+                resolve()
+            })
+        })
+    }
+
     public static async downloadJsonAdvanced(
         url: string,
         headers?: any

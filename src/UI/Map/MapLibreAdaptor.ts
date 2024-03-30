@@ -1,7 +1,7 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import { Map as MLMap } from "maplibre-gl"
 import { Map as MlMap, SourceSpecification } from "maplibre-gl"
-import maplibregl from "maplibre-gl";
+import maplibregl from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -12,7 +12,9 @@ import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
 import RasterLayerHandler from "./RasterLayerHandler"
 import Constants from "../../Models/Constants"
-import { Protocol } from "pmtiles";
+import { Protocol } from "pmtiles"
+import { bool } from "sharp"
+
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
  */
@@ -24,13 +26,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "dragRotate",
         "dragPan",
         "keyboard",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     private static maplibre_zoom_handlers = [
         "scrollZoom",
         "boxZoom",
         "doubleClickZoom",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
     readonly zoom: UIEventSource<number>
@@ -47,7 +49,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly pitch: UIEventSource<number>
     readonly useTerrain: Store<boolean>
 
-   private static pmtilesInited = false
+    private static pmtilesInited = false
     /**
      * Functions that are called when one of those actions has happened
      * @private
@@ -57,8 +59,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     private readonly _maplibreMap: Store<MLMap>
 
     constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>) {
-        if(!MapLibreAdaptor.pmtilesInited){
-            maplibregl.addProtocol("pmtiles",new Protocol().tile);
+        if (!MapLibreAdaptor.pmtilesInited) {
+            maplibregl.addProtocol("pmtiles", new Protocol().tile)
             MapLibreAdaptor.pmtilesInited = true
             console.log("PM-tiles protocol added" +
                 "")
@@ -214,9 +216,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return {
             map: mlmap,
             ui: new SvelteUIElement(MaplibreMap, {
-                map: mlmap,
+                map: mlmap
             }),
-            mapproperties: new MapLibreAdaptor(mlmap),
+            mapproperties: new MapLibreAdaptor(mlmap)
         }
     }
 
@@ -284,7 +286,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     ) {
         const event = {
             date: new Date(),
-            key: key,
+            key: key
         }
 
         for (let i = 0; i < this._onKeyNavigation.length; i++) {
@@ -328,6 +330,19 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         rescaleIcons: number,
         pixelRatio: number
     ) {
+
+        {
+            const allimages = element.getElementsByTagName("img")
+            for (const img of Array.from(allimages)) {
+                let isLoaded: boolean = false
+                while (!isLoaded) {
+                    console.log("Waiting for image", img.src, "to load")
+                    await Utils.waitFor(250)
+                    isLoaded = img.complete && img.naturalWidth > 0
+                }
+            }
+        }
+
         const style = element.style.transform
         let x = element.getBoundingClientRect().x
         let y = element.getBoundingClientRect().y
@@ -339,12 +354,16 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         // Force a wider view for icon badges
         element.style.width = element.getBoundingClientRect().width * 4 + "px"
-        element.style.height = element.getBoundingClientRect().height + "px"
+        // Force more height to include labels
+        element.style.height = element.getBoundingClientRect().height * 2 + "px"
+        element.classList.add("w-full","flex", "flex-col","items-center")
+
         const svgSource = await htmltoimage.toSvg(element)
         const img = await MapLibreAdaptor.createImage(svgSource)
         element.style.width = w
         element.style.height = h
 
+        await Utils.awaitAnimationFrame()
         if (offset && rescaleIcons !== 1) {
             const [_, __, relYStr] = offset
             const relY = Number(relYStr)
@@ -355,10 +374,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         y *= pixelRatio
 
         try {
-            drawOn.drawImage(img, x, y, img.width * rescaleIcons, img.height * rescaleIcons)
+            let xdiff = img.width * rescaleIcons / 2
+            drawOn.drawImage(img, x - xdiff, y, img.width * rescaleIcons, img.height * rescaleIcons)
         } catch (e) {
             console.log("Could not draw image because of", e)
         }
+        element.classList.remove("w-full","flex", "flex-col","items-center")
+
     }
 
     /**
@@ -393,17 +415,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const markers = Array.from(container.getElementsByClassName("marker"))
         for (let i = 0; i < markers.length; i++) {
             const marker = <HTMLElement>markers[i]
-            const labels = Array.from(marker.getElementsByClassName("marker-label"))
             const style = marker.style.transform
 
             if (isDisplayed(marker)) {
                 await this.drawElement(drawOn, marker, rescaleIcons, pixelRatio)
-            }
-
-            for (const label of labels) {
-                if (isDisplayed(label)) {
-                    await this.drawElement(drawOn, <HTMLElement>label, rescaleIcons, pixelRatio)
-                }
             }
 
             if (progress) {
@@ -434,7 +449,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const bounds = map.getBounds()
         const bbox = new BBox([
             [bounds.getEast(), bounds.getNorth()],
-            [bounds.getWest(), bounds.getSouth()],
+            [bounds.getWest(), bounds.getSouth()]
         ])
         if (this.bounds.data === undefined || !isSetup) {
             this.bounds.setData(bbox)
@@ -612,14 +627,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster-dem",
                 url:
                     "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" +
-                    Constants.maptilerApiKey,
+                    Constants.maptilerApiKey
             })
             try {
                 while (!map?.isStyleLoaded()) {
                     await Utils.waitFor(250)
                 }
                 map.setTerrain({
-                    source: id,
+                    source: id
                 })
             } catch (e) {
                 console.error(e)

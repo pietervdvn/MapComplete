@@ -131,7 +131,8 @@ class SingleBackgroundHandler {
                 .layers.find((l) => l.id.startsWith("mapcomplete_"))?.id
 
             if (background.type === "vector") {
-                map.setStyle(background.style ?? background.url)
+                const styleToSet = background.style ?? background.url
+                map.setStyle(styleToSet)
             } else {
                 map.addLayer(
                     {
