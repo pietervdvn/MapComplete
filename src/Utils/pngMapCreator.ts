@@ -67,7 +67,6 @@ export class PngMapCreator {
             const newZoom = settings.zoom.data + Math.log2(pixelRatio) - 1
             const rasterLayerProperties = settings.rasterLayer.data?.properties ?? AvailableRasterLayers.defaultBackgroundLayer.properties
             const style =  rasterLayerProperties?.style ?? rasterLayerProperties?.url
-console.log("Png-map-creator: initing MlMap with style", style, rasterLayerProperties)
             const mapElem = new MlMap({
                 container: div.id,
                 style,

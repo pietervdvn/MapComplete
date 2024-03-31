@@ -351,7 +351,8 @@ class LineRenderingLayer {
                         "line-color": ["feature-state", "color"],
                         "line-opacity": ["feature-state", "color-opacity"],
                         "line-width": ["feature-state", "width"],
-                        "line-offset": ["feature-state", "offset"]
+                        "line-offset": ["feature-state", "offset"],
+                        "line-dasharray": this._config.dashArray?.split(" ")?.map(s => Number(s))
                     },
                     layout: {
                         "line-cap": "round"

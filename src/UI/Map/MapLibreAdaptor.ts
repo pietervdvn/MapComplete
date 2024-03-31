@@ -357,7 +357,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const targetW = Math.max(element.getBoundingClientRect().width * 4,
             ...labels.map(l => l.getBoundingClientRect().width))
         const targetH = element.getBoundingClientRect().height +
-            Math.max(...labels.map(l => l.getBoundingClientRect().height))
+            Math.max(...labels.map(l => l.getBoundingClientRect().height * 2 /* A bit of buffer to catch eventual 'margin-top'*/))
+
         // Force a wider view for icon badges
         element.style.width = targetW + "px"
         // Force more height to include labels

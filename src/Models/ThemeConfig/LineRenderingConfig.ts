@@ -7,7 +7,7 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 export default class LineRenderingConfig extends WithContextLoader {
     public readonly color: TagRenderingConfig
     public readonly width: TagRenderingConfig
-    public readonly dashArray: TagRenderingConfig
+    public readonly dashArray: string
     public readonly lineCap: TagRenderingConfig
     public readonly offset: TagRenderingConfig
     public readonly fill: TagRenderingConfig
@@ -19,7 +19,7 @@ export default class LineRenderingConfig extends WithContextLoader {
         super(json, context)
         this.color = this.tr("color", "#0000ff")
         this.width = this.tr("width", "7")
-        this.dashArray = this.tr("dashArray", "")
+        this.dashArray = json.dashArray
         this.lineCap = this.tr("lineCap", "round")
         this.fill = this.tr("fill", undefined)
         this.fillColor = this.tr("fillColor", undefined)

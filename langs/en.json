@@ -192,6 +192,13 @@
         "customThemeIntro": "These are previously visited user-generated themes.",
         "customThemeTitle": "Custom themes",
         "download": {
+            "custom": {
+                "download": "Download PNG of {width}mm wide and {height}mm high",
+                "downloadHelper": "This is meant for print",
+                "height": "Image height (in mm):",
+                "title": "Download an image with a custom width and height",
+                "width": "Image width (in mm): "
+            },
             "downloadAsPdf": "Download a PDF of the current map",
             "downloadAsPdfHelper": "Ideal to print the current map",
             "downloadAsPng": "Download as image",
