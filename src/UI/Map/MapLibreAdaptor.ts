@@ -336,9 +336,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             for (const img of Array.from(allimages)) {
                 let isLoaded: boolean = false
                 while (!isLoaded) {
-                    console.log("Waiting for image", img.src, "to load")
+                    console.log("Waiting for image", img.src, "to load", img.complete, img.naturalWidth, img)
                     await Utils.waitFor(250)
-                    isLoaded = img.complete && img.naturalWidth > 0
+                    isLoaded = img.complete && img.width > 0
                 }
             }
         }
@@ -349,21 +349,32 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         element.style.transform = ""
         const offset = style.match(/translate\(([-0-9]+)%, ?([-0-9]+)%\)/)
 
+        let labels =<HTMLElement[]> Array.from(element.getElementsByClassName("marker-label"))
+        const origLabelTransforms = labels.map(l => l.style.transform)
+        // We save the original width (`w`) and height (`h`) in order to restore them later on
         const w = element.style.width
-        const h = element.style.height
-
+        const h = Number(element.style.height)
+        const targetW = Math.max(element.getBoundingClientRect().width * 4,
+            ...labels.map(l => l.getBoundingClientRect().width))
+        const targetH = element.getBoundingClientRect().height +
+            Math.max(...labels.map(l => l.getBoundingClientRect().height))
         // Force a wider view for icon badges
-        element.style.width = element.getBoundingClientRect().width * 4 + "px"
+        element.style.width = targetW + "px"
         // Force more height to include labels
-        element.style.height = element.getBoundingClientRect().height * 2 + "px"
-        element.classList.add("w-full","flex", "flex-col","items-center")
-
+        element.style.height = targetH + "px"
+        element.classList.add("w-full", "flex", "flex-col", "items-center")
+        labels.forEach(l => {
+            l.style.transform = ""
+        })
+        await Utils.awaitAnimationFrame()
         const svgSource = await htmltoimage.toSvg(element)
         const img = await MapLibreAdaptor.createImage(svgSource)
-        element.style.width = w
-        element.style.height = h
+        for (let i = 0; i < labels.length; i++) {
+            labels[i].style.transform = origLabelTransforms[i]
+        }
+        element.style.width = "" + w
+        element.style.height = "" + h
 
-        await Utils.awaitAnimationFrame()
         if (offset && rescaleIcons !== 1) {
             const [_, __, relYStr] = offset
             const relY = Number(relYStr)
@@ -374,12 +385,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         y *= pixelRatio
 
         try {
-            let xdiff = img.width * rescaleIcons / 2
+            const xdiff = img.width * rescaleIcons / 2
             drawOn.drawImage(img, x - xdiff, y, img.width * rescaleIcons, img.height * rescaleIcons)
         } catch (e) {
             console.log("Could not draw image because of", e)
         }
-        element.classList.remove("w-full","flex", "flex-col","items-center")
+        element.classList.remove("w-full", "flex", "flex-col", "items-center")
 
     }
 

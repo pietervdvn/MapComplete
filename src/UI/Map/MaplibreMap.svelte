@@ -3,7 +3,6 @@
   import type { Map, MapOptions } from "maplibre-gl"
   import * as maplibre from "maplibre-gl"
   import type { Writable } from "svelte/store"
-  import { get } from "svelte/store"
   import { AvailableRasterLayers } from "../../Models/RasterLayers"
   import { Utils } from "../../Utils"
   import { ariaLabel } from "../../Utils/ariaLabel"
@@ -40,7 +39,7 @@
       styleUrl = defaultLayer.style ?? defaultLayer.url
     }
 
-    console.log("INiting mapLIbremap with style", styleUrl)
+    console.log("Initing mapLIbremap with style", styleUrl)
 
     const options: MapOptions = {
       container,
