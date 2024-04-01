@@ -313,8 +313,7 @@
             "freeform": {
               "key": "access:description"
             }
-          },
-          "questions"
+          }
         ]
       }
     },
