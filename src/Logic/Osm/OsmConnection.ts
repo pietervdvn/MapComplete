@@ -52,6 +52,7 @@ export class OsmConnection {
     private readonly _iframeMode: Boolean | boolean
     private readonly _singlePage: boolean
     private isChecking = false
+    private readonly _doCheckRegularly
 
     constructor(options?: {
         dryRun?: Store<boolean>
@@ -59,12 +60,17 @@ export class OsmConnection {
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset
         singlePage?: boolean
-        attemptLogin?: true | boolean
+        attemptLogin?: true | boolean,
+        /**
+         * If true: automatically check if we're still online every 5 minutes + fetch messages
+         */
+        checkOnlineRegularly?: true | boolean
     }) {
         options ??= {}
         this.fakeUser = options?.fakeUser ?? false
         this._singlePage = options?.singlePage ?? true
         this._oauth_config = Constants.osmAuthConfig
+        this._doCheckRegularly = options?.checkOnlineRegularly ?? true
         console.debug("Using backend", this._oauth_config.url)
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
 
@@ -542,6 +548,9 @@ export class OsmConnection {
     private CheckForMessagesContinuously() {
         const self = this
         if (this.isChecking) {
+            return
+        }
+        if(!this._doCheckRegularly){
             return
         }
         this.isChecking = true
