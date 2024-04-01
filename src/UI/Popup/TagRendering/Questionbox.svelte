@@ -69,25 +69,22 @@
     [skippedQuestions]
   )
   let firstQuestion: UIEventSource<TagRenderingConfig> = new UIEventSource<TagRenderingConfig>(undefined)
-
   let allQuestionsToAsk : UIEventSource<TagRenderingConfig[]> = new UIEventSource<TagRenderingConfig[]>([])
-  onDestroy(questionsToAsk.addCallback(qta => {
+
+  function calculateQuestions(){
+    console.log("Applying questions to ask")
+    const qta = questionsToAsk.data
     firstQuestion.setData(undefined)
     firstQuestion.setData(qta[0])
 
     allQuestionsToAsk.setData([])
     allQuestionsToAsk.setData(qta)
-  }))
+  }
 
-  onDestroy(showAllQuestionsAtOnce.addCallback(_ => {
-    let qta = questionsToAsk.data
-    firstQuestion.setData(undefined)
-    firstQuestion.setData(qta[0])
 
-    allQuestionsToAsk.setData([])
-    allQuestionsToAsk.setData(qta)
-  }))
-
+  onDestroy(questionsToAsk.addCallback(() =>calculateQuestions()))
+  onDestroy(showAllQuestionsAtOnce.addCallback(() => calculateQuestions()))
+  calculateQuestions()
 
   
   let answered: number = 0
