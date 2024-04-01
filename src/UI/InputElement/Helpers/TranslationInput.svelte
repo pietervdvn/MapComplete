@@ -3,6 +3,7 @@
   import LanguageUtils from "../../../Utils/LanguageUtils"
   import { createEventDispatcher, onDestroy } from "svelte"
   import ValidatedInput from "../ValidatedInput.svelte"
+  import { del } from "idb-keyval"
 
   export let value: UIEventSource<Record<string, string>> = new UIEventSource<
     Record<string, string>
@@ -18,13 +19,24 @@
   const allLanguages: string[] = LanguageUtils.usedLanguagesSorted
   let currentLang = new UIEventSource("en")
   const currentVal = new UIEventSource<string>("")
+  /**
+   * Mostly the same as currentVal, but might be the empty string as well
+   */
+  const currentValRaw = new UIEventSource<string>("")
+
   let dispatch = createEventDispatcher<{ submit }>()
 
   function update() {
-    const v = currentVal.data
+    let v = currentValRaw.data
     const l = currentLang.data
+    console.log("Updating translation input for value", v, " and language", l)
     if (<any>translations.data === "" || translations.data === undefined) {
       translations.data = {}
+    }
+    if (v === "") {
+      delete translations.data[l]
+      translations.ping()
+      return
     }
     if (translations.data[l] === v) {
       return
@@ -39,35 +51,52 @@
         translations.data = {}
       }
       translations.data[currentLang] = translations.data[currentLang] ?? ""
-      currentVal.setData(translations.data[currentLang])
+      if (translations.data[currentLang] === "") {
+        delete translations.data[currentLang]
+      }
+      currentVal.setData(translations.data[currentLang] ?? "")
+      currentValRaw.setData(translations.data[currentLang])
     })
   )
 
   onDestroy(
-    currentVal.addCallbackAndRunD(() => {
+    currentValRaw.addCallbackAndRunD(() => {
       update()
     })
   )
-</script>
 
-<div class="interactive m-1 mt-2 flex space-x-1 font-bold">
+</script>
+<div class="flex flex-col gap-y-1">
+  <div class="interactive m-1 mt-2 flex space-x-1 font-bold">
   <span>
     {prefix}
   </span>
-  <select bind:value={$currentLang}>
-    {#each allLanguages as language}
-      <option value={language}>
-        {language}
-      </option>
-    {/each}
-  </select>
-  <ValidatedInput
-    type="string"
-    cls="w-full"
-    value={currentVal}
-    on:submit={() => dispatch("submit")}
-  />
-  <span>
+    <select bind:value={$currentLang}>
+      {#each allLanguages as language}
+        <option value={language}>
+          {language}
+          {#if $translations[language] !== undefined}
+            *
+          {/if}
+        </option>
+      {/each}
+    </select>
+    <ValidatedInput
+      type="string"
+      cls="w-full"
+      value={currentVal}
+      unvalidatedText={currentValRaw}
+      on:submit={() => dispatch("submit")}
+    />
+    <span>
     {postfix}
   </span>
+
+  </div>
+  You have currently set translations for
+  <ul>
+    {#each Object.keys($translations) as l}
+      <li><button class="small" on:click={() => currentLang.setData(l)}><b>{l}:</b> {$translations[l]}</button></li>
+    {/each}
+  </ul>
 </div>

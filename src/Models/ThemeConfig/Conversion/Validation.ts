@@ -852,7 +852,7 @@ class CheckTranslation extends DesugaringStep<Translatable> {
         for (const key of keys) {
             const lng = json[key]
             if (lng === "") {
-                context.enter(lng).err("Got an empty string in translation for language " + lng)
+                context.enter(lng).err("Got an empty string in translation for language " + key)
             }
 
             // TODO validate that all subparts are here
