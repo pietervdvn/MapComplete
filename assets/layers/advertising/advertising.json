@@ -29,7 +29,9 @@
     "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione"
   },
   "source": {
-    "osmTags": "advertising~*"
+    "osmTags": {
+      "and":["advertising~*", "advertising!=no"]
+    }
   },
   "minzoom": 15,
   "title": {
