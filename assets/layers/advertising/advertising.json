@@ -30,7 +30,10 @@
   },
   "source": {
     "osmTags": {
-      "and":["advertising~*", "advertising!=no"]
+      "and": [
+        "advertising~*",
+        "advertising!=no"
+      ]
     }
   },
   "minzoom": 15,
@@ -311,6 +314,27 @@
                   ]
                 },
                 "then": "./assets/themes/advertising/poster_box_no_support.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "advertising=poster_box",
+                    {
+                      "or": [
+                        "shelter=yes",
+                        "amenity=shelter",
+                        "building=shelter"
+                      ]
+                    },
+                    {
+                      "or": [
+                        "public_transport=platform",
+                        "highway=bus_stop"
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/themes/advertising/poster_box_transit_shelter.svg"
               },
               {
                 "if": "advertising=poster_box",
