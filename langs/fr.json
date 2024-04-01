@@ -49,6 +49,12 @@
         "panelIntro": "<h3>Votre thème personnel</h3>Activer vos couches favorites depuis les thèmes officiels",
         "reload": "Recharger les données"
     },
+    "favouritePoi": {
+        "button": {
+            "markAsFavouriteTitle": "Sauvegarder ce lieu comme favoris",
+            "markDescription": "Ajouter ce lieu à votre liste personnelle de favoris"
+        }
+    },
     "flyer": {
         "cyclofix": "Les pompes à vélo, les stations de réparation, les points d'eau potable et les vélocistes sont sur CycloFix",
         "description": "Un flyer format A4 paysage pour promouvoir MapComplete",
