@@ -343,7 +343,7 @@ class LineRenderingLayer {
                     promoteId: "id"
                 })
                 const linelayer = this._layername + "_line"
-                map.addLayer({
+                const layer: AddLayerObject = {
                     source: this._layername,
                     id: linelayer,
                     type: "line",
@@ -351,13 +351,17 @@ class LineRenderingLayer {
                         "line-color": ["feature-state", "color"],
                         "line-opacity": ["feature-state", "color-opacity"],
                         "line-width": ["feature-state", "width"],
-                        "line-offset": ["feature-state", "offset"],
-                        "line-dasharray": this._config.dashArray?.split(" ")?.map(s => Number(s))
+                        "line-offset": ["feature-state", "offset"]
                     },
                     layout: {
                         "line-cap": "round"
                     }
-                })
+                }
+                if (this._config.dashArray) {
+
+                    layer.paint["line-dasharray"] = this._config.dashArray?.split(" ")?.map(s => Number(s)) ?? null
+                }
+                map.addLayer(layer)
 
                 if (this._config.imageAlongWay) {
                     this.addSymbolLayer(this._layername, this._config.imageAlongWay)
