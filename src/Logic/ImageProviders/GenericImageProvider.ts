@@ -40,7 +40,7 @@ export default class GenericImageProvider extends ImageProvider {
         return undefined
     }
 
-    public DownloadAttribution(url: string) {
+    public DownloadAttribution(_) {
         return undefined
     }
 }
