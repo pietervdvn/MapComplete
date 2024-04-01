@@ -6,6 +6,7 @@
   import { UIEventSource } from "../../Logic/UIEventSource"
   import { onDestroy } from "svelte"
   import { Utils } from "../../Utils"
+  import Tr from "../Base/Tr.svelte"
 
   export let filteredLayer: FilteredLayer
   export let option: FilterConfigOption
