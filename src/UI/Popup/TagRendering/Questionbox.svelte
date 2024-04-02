@@ -71,13 +71,13 @@
   let firstQuestion: UIEventSource<TagRenderingConfig> = new UIEventSource<TagRenderingConfig>(undefined)
   let allQuestionsToAsk : UIEventSource<TagRenderingConfig[]> = new UIEventSource<TagRenderingConfig[]>([])
 
-  function calculateQuestions(){
+  async function calculateQuestions(){
     console.log("Applying questions to ask")
     const qta = questionsToAsk.data
     firstQuestion.setData(undefined)
-    firstQuestion.setData(qta[0])
-
     allQuestionsToAsk.setData([])
+    await Utils.awaitAnimationFrame()
+    firstQuestion.setData(qta[0])
     allQuestionsToAsk.setData(qta)
   }
 
