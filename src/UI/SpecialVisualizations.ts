@@ -667,7 +667,8 @@ export default class SpecialVisualizations {
                         {
                             nameKey: nameKey,
                             fallbackName,
-                        }
+                        },
+                        state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(StarsBarIcon, {
                         score: reviews.average,
@@ -700,7 +701,8 @@ export default class SpecialVisualizations {
                         {
                             nameKey: nameKey,
                             fallbackName,
-                        }
+                        },
+                        state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(ReviewForm, { reviews, state, tags, feature, layer })
                 },
@@ -732,7 +734,8 @@ export default class SpecialVisualizations {
                         {
                             nameKey: nameKey,
                             fallbackName,
-                        }
+                        },
+                        state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
                 },

@@ -6,30 +6,28 @@ import { GeoOperations } from "../GeoOperations"
 import ScriptUtils from "../../../scripts/ScriptUtils"
 
 export class MangroveIdentity {
-    private readonly keypair: Store<CryptoKeyPair>
+    private readonly keypair: UIEventSource<CryptoKeyPair> = new UIEventSource<CryptoKeyPair>(undefined)
     /**
      * Same as the one in the user settings
      */
     public readonly mangroveIdentity: UIEventSource<string>
-    private readonly key_id: Store<string>
+    private readonly key_id: UIEventSource<string> = new UIEventSource<string>(undefined)
     private readonly _mangroveIdentityCreationDate: UIEventSource<string>
 
     constructor(mangroveIdentity: UIEventSource<string>, mangroveIdentityCreationDate: UIEventSource<string>) {
         this.mangroveIdentity = mangroveIdentity
         this._mangroveIdentityCreationDate = mangroveIdentityCreationDate
-        const key_id = new UIEventSource<string>(undefined)
-        this.key_id = key_id
-        const keypairEventSource = new UIEventSource<CryptoKeyPair>(undefined)
-        this.keypair = keypairEventSource
         mangroveIdentity.addCallbackAndRunD(async (data) => {
-            if (!data) {
-                return
-            }
-            const keypair = await MangroveReviews.jwkToKeypair(JSON.parse(data))
-            keypairEventSource.setData(keypair)
-            const pem = await MangroveReviews.publicToPem(keypair.publicKey)
-            key_id.setData(pem)
+               await this.setKeypair(data)
         })
+    }
+
+    private async setKeypair(data: string){
+        console.log("Setting keypair from",data)
+        const keypair = await MangroveReviews.jwkToKeypair(JSON.parse(data))
+        this.keypair.setData(keypair)
+        const pem = await MangroveReviews.publicToPem(keypair.publicKey)
+        this.key_id.setData(pem)
     }
 
     /**
@@ -44,7 +42,9 @@ export class MangroveIdentity {
             // Identity has been loaded via osmPreferences by now - we don't overwrite
             return
         }
-        console.log("Creating a new Mangrove identity!")
+        this.keypair.setData(keypair)
+        const pem = await MangroveReviews.publicToPem(keypair.publicKey)
+        this.key_id.setData(pem)
         this.mangroveIdentity.setData(JSON.stringify(jwk))
         this._mangroveIdentityCreationDate.setData(new Date().toISOString())
     }
@@ -53,7 +53,7 @@ export class MangroveIdentity {
      * Only called to create a review.
      */
     async getKeypair(): Promise<CryptoKeyPair> {
-        if (this.keypair.data ?? "" === "") {
+        if (this.keypair.data === undefined) {
             // We want to create a review, but it seems like no key has been setup at this moment
             // We create the key
             try {
@@ -79,10 +79,10 @@ export class MangroveIdentity {
             const all = this.getAllReviews()
             this.geoReviewsById = this.getAllReviews().mapD(reviews => reviews.filter(
                 review => {
-                    try{
-                    const subjectUrl = new URL(review.sub)
-                    return subjectUrl.protocol === "geo:"
-                    }catch (e) {
+                    try {
+                        const subjectUrl = new URL(review.sub)
+                        return subjectUrl.protocol === "geo:"
+                    } catch (e) {
                         return false
                     }
                 }
@@ -146,6 +146,7 @@ export default class FeatureReviews {
     private readonly _uncertainty: number
     private readonly _name: Store<string>
     private readonly _identity: MangroveIdentity
+    private readonly _testmode: Store<boolean>
 
     private constructor(
         feature: Feature,
@@ -155,11 +156,13 @@ export default class FeatureReviews {
             nameKey?: "name" | string
             fallbackName?: string
             uncertaintyRadius?: number
-        }
+        },
+        testmode?: Store<boolean>
     ) {
         const centerLonLat = GeoOperations.centerpointCoordinates(feature)
         ;[this._lon, this._lat] = centerLonLat
         this._identity = mangroveIdentity
+        this._testmode = testmode ?? new ImmutableStore(false)
         const nameKey = options?.nameKey ?? "name"
 
         if (feature.geometry.type === "Point") {
@@ -231,19 +234,20 @@ export default class FeatureReviews {
     public static construct(
         feature: Feature,
         tagsSource: UIEventSource<Record<string, string>>,
-        mangroveIdentity?: MangroveIdentity,
-        options?: {
+        mangroveIdentity: MangroveIdentity,
+        options: {
             nameKey?: "name" | string
             fallbackName?: string
             uncertaintyRadius?: number
-        }
-    ) {
+        },
+        testmode: Store<boolean>
+    ): FeatureReviews {
         const key = feature.properties.id
         const cached = FeatureReviews._featureReviewsCache[key]
         if (cached !== undefined) {
             return cached
         }
-        const featureReviews = new FeatureReviews(feature, tagsSource, mangroveIdentity, options)
+        const featureReviews = new FeatureReviews(feature, tagsSource, mangroveIdentity, options,testmode )
         FeatureReviews._featureReviewsCache[key] = featureReviews
         return featureReviews
     }
@@ -269,7 +273,12 @@ export default class FeatureReviews {
         const keypair: CryptoKeyPair = await this._identity.getKeypair()
         const jwt = await MangroveReviews.signReview(keypair, r)
         const kid = await MangroveReviews.publicToPem(keypair.publicKey)
-        await MangroveReviews.submitReview(jwt)
+        if (!this._testmode.data) {
+            await MangroveReviews.submitReview(jwt)
+        } else {
+            console.log("Testmode enabled - not uploading review")
+            await Utils.waitFor(1000)
+        }
         const reviewWithKid = {
             ...r,
             kid,
