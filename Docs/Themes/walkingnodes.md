@@ -11,9 +11,9 @@ This theme contains the following layers:
 
 
 
-  - [node2node](../Layers/node2node.md)
-  - [node](../Layers/node.md)
-  - [guidepost](../Layers/guidepost.md)
+  - [node2node_hiking](../Layers/node2node_hiking.md)
+  - [node_hiking](../Layers/node_hiking.md)
+  - [guidepost_hiking](../Layers/guidepost_hiking.md)
   - [route_marker](../Layers/route_marker.md)
   - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
   - [selected_element](../Layers/selected_element.md)
@@ -24,6 +24,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

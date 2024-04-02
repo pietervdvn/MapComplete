@@ -63,6 +63,11 @@
       "description": "Layer 'Fries shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Fries shops')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Fries shop' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Fries shops')",
+      "value": "closed"
+    },
+    {
       "key": "website",
       "description": "Layer 'Fries shop' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Fries shops')"
     },

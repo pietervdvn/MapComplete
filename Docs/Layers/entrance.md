@@ -32,6 +32,8 @@ A layer showing entrances and offering capabilities to survey some advanced data
   - [indoors](https://mapcomplete.org/indoors)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
+  - [walls_and_buildings](https://mapcomplete.org/walls_and_buildings)
 
 
 

@@ -128,6 +128,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Into nature')",
+      "value": "closed"
+    },
+    {
       "key": "tourism",
       "description": "Layer 'Drinking water' shows tourism=artwork with a fixed text, namely 'This drinking water point has an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "artwork"
@@ -838,17 +843,17 @@
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key historic. (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key historic. (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if historic=memorial | inscription~.+ | memorial=bench | tourism=artwork)",
+      "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
     },
     {
@@ -1151,6 +1156,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Into nature') (This is only shown if access!=no)",
+      "value": "closed"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "yes"
@@ -1349,6 +1359,22 @@
     {
       "key": "id",
       "description": "Layer 'Shelter' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "shelter_type",

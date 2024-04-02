@@ -40,6 +40,26 @@ export class GenerateFavouritesLayer extends Script {
         }
     }
 
+    async main(args: string[]): Promise<void> {
+        console.log("Generating the favourite layer: stealing _all_ tagRenderings")
+        const proto = this.readLayer("favourite/favourite.proto.json")
+        this.addTagRenderings(proto)
+        this.addTitle(proto)
+        proto.titleIcons = this.generateTitleIcons()
+        const targetContent = JSON.stringify(proto, null, "  ")
+        const path = "./assets/layers/favourite/favourite.json"
+        if (existsSync(path)) {
+            if (readFileSync(path, "utf8") === targetContent) {
+                console.log(
+                    "Already existing favourite layer is identical to the generated one, not writing"
+                )
+                return
+            }
+        }
+        console.log("Written favourite layer to", path)
+        writeFileSync(path, targetContent)
+    }
+
     private sortMappings(mappings: MappingConfigJson[]): MappingConfigJson[] {
         const sortedMappings: MappingConfigJson[] = [...mappings]
         sortedMappings.sort((a, b) => {
@@ -200,6 +220,10 @@ export class GenerateFavouritesLayer extends Script {
                 if (titleIcon["labels"]?.indexOf("defaults") >= 0) {
                     continue
                 }
+                if (titleIcon.id === "iconsdefaults") {
+                    continue
+                }
+
                 if (titleIcon.id === "rating") {
                     if (!seenTitleIcons.has("rating")) {
                         titleIcons.unshift(...iconsLibrary.get("rating"))
@@ -300,26 +324,6 @@ export class GenerateFavouritesLayer extends Script {
         proto.title = {
             mappings,
         }
-    }
-
-    async main(args: string[]): Promise<void> {
-        console.log("Generating the favourite layer: stealing _all_ tagRenderings")
-        const proto = this.readLayer("favourite/favourite.proto.json")
-        this.addTagRenderings(proto)
-        this.addTitle(proto)
-        proto.titleIcons = this.generateTitleIcons()
-        const targetContent = JSON.stringify(proto, null, "  ")
-        const path = "./assets/layers/favourite/favourite.json"
-        if (existsSync(path)) {
-            if (readFileSync(path, "utf8") === targetContent) {
-                console.log(
-                    "Already existing favourite layer is identical to the generated one, not writing"
-                )
-                return
-            }
-        }
-        console.log("Written favourite layer to", path)
-        writeFileSync(path, targetContent)
     }
 
     private readLayer(path: string): LayerConfigJson {

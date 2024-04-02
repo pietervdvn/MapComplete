@@ -5,7 +5,6 @@
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import { createEventDispatcher, onDestroy } from "svelte"
-  import StyleLoadingIndicator from "./StyleLoadingIndicator.svelte"
 
   /***
    * Chooses a background-layer out of available options

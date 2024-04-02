@@ -61,25 +61,29 @@
         "minzoom": 18,
         "minzoomVisible": 18,
         "description": {
-          "en": "Add a new post partner to the map in an existing shop"
+          "en": "Add a new post partner to the map in an existing shop",
+          "de": "Hinzufügen eines neuen Post-Partners auf der Karte in einem bestehenden Geschäft"
         },
         "+tagRenderings": [
           {
             "id": "post_partner",
             "question": {
-              "en": "Is this shop a post partner?"
+              "en": "Is this shop a post partner?",
+              "de": "Ist dieses Geschäft ein Post-Partner?"
             },
             "mappings": [
               {
                 "if": "post_office=post_partner",
                 "then": {
-                  "en": "This shop is a post partner"
+                  "en": "This shop is a post partner",
+                  "de": "Dieses Geschäft ist ein Post-Partner"
                 }
               },
               {
                 "if": "post_office=",
                 "then": {
-                  "en": "This shop is not a post partner"
+                  "en": "This shop is not a post partner",
+                  "de": "Dieses Geschäft ist kein Post-Partner"
                 }
               }
             ]
@@ -93,10 +97,12 @@
               "post_office=post_partner"
             ],
             "title": {
-              "en": "a missing shop that is a post partner"
+              "en": "a missing shop that is a post partner",
+              "de": "ein fehlendes Geschäft, das ein Post-Partner ist"
             },
             "description": {
-              "en": "If a shop is not yet on the map and is a post partner, you can add it here."
+              "en": "If a shop is not yet on the map and is a post partner, you can add it here.",
+              "de": "Wenn ein Laden noch nicht auf der Karte ist und ein Post-Partner ist, kannst du ihn hier hinzufügen."
             }
           }
         ]

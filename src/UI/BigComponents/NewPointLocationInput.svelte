@@ -2,7 +2,6 @@
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import LocationInput from "../InputElement/Helpers/LocationInput.svelte"
   import { UIEventSource } from "../../Logic/UIEventSource"
-  import { Tiles } from "../../Models/TileRange"
   import { Map as MlMap } from "maplibre-gl"
   import { BBox } from "../../Logic/BBox"
   import type { MapProperties } from "../../Models/MapProperties"
@@ -15,7 +14,6 @@
   import FeatureSourceMerger from "../../Logic/FeatureSource/Sources/FeatureSourceMerger"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import { Utils } from "../../Utils"
-  import { createEventDispatcher } from "svelte"
   import Move_arrows from "../../assets/svg/Move_arrows.svelte"
 
   /**
@@ -53,9 +51,6 @@
     lat: number
   }>(undefined)
 
-  const dispatch = createEventDispatcher<{ click: { lon: number; lat: number } }>()
-
-  const xyz = Tiles.embedded_tile(coordinate.lat, coordinate.lon, 16)
   const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
   let initialMapProperties: Partial<MapProperties> & { location } = {
     zoom: new UIEventSource<number>(19),
@@ -73,6 +68,7 @@
     minzoom: new UIEventSource<number>(18),
     rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer),
   }
+  state?.showCurrentLocationOn(map)
 
   if (targetLayer) {
     const featuresForLayer = state.perLayer.get(targetLayer.id)
@@ -120,7 +116,7 @@
 
 <LocationInput
   {map}
-  on:click={(data) => dispatch("click", data)}
+  on:click
   mapProperties={initialMapProperties}
   value={preciseLocation}
   initialCoordinate={coordinate}

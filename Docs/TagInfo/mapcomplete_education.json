@@ -317,6 +317,11 @@
       "description": "Layer 'Kindergartens and childcare' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Education') (This is only shown if amenity=childcare)"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Kindergartens and childcare' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Education') (This is only shown if amenity=childcare)",
+      "value": "closed"
+    },
+    {
       "key": "capacity",
       "description": "Layer 'Kindergartens and childcare' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Education')"
     }

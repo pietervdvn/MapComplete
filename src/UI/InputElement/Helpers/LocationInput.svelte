@@ -13,6 +13,7 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { createEventDispatcher, onDestroy } from "svelte"
   import Move_arrows from "../../../assets/svg/Move_arrows.svelte"
+  import SmallZoomButtons from "../../Map/SmallZoomButtons.svelte"
 
   /**
    * A visualisation to pick a location on a map background
@@ -83,7 +84,7 @@
 
 <div class="min-h-32 relative h-full cursor-pointer overflow-hidden">
   <div class="absolute top-0 left-0 h-full w-full cursor-pointer">
-    <MaplibreMap center={{ lng: initialCoordinate.lon, lat: initialCoordinate.lat }} {map} />
+    <MaplibreMap center={{ lng: initialCoordinate.lon, lat: initialCoordinate.lat }} {map} mapProperties={mla}/>
   </div>
 
   <div
@@ -95,4 +96,5 @@
   </div>
 
   <DragInvitation hideSignal={mla.location} />
+  <SmallZoomButtons adaptor={mla} />
 </div>

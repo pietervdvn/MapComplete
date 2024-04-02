@@ -45,7 +45,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Doctors' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
+      "description": "Layer 'Doctors' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Healthcare')",
       "value": "\"by appointment\""
     },
     {
@@ -135,7 +135,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Physiotherapist' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
+      "description": "Layer 'Physiotherapist' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Healthcare')",
       "value": "\"by appointment\""
     },
     {
@@ -194,6 +194,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Dentist' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Dentist' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Healthcare')",
+      "value": "closed"
     },
     {
       "key": "phone",
@@ -311,6 +316,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Pharmacies' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Pharmacies' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Healthcare')",
+      "value": "closed"
     },
     {
       "key": "phone",
@@ -1246,6 +1256,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Shop' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Healthcare')",
+      "value": "closed"
     },
     {
       "key": "website",

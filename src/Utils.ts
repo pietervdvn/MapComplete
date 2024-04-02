@@ -1059,6 +1059,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         throw result["error"]
     }
 
+    public static awaitAnimationFrame(): Promise<void>{
+        return new Promise<void>((resolve) => {
+            window.requestAnimationFrame(() => {
+                resolve()
+            })
+        })
+    }
+
     public static async downloadJsonAdvanced(
         url: string,
         headers?: any
@@ -1388,7 +1396,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         d.setUTCMinutes(0)
     }
 
-    public static scrollIntoView(element: HTMLBaseElement | HTMLDivElement) {
+    public static scrollIntoView(element: HTMLBaseElement | HTMLDivElement): void {
+        if (!element) {
+            return
+        }
         // Is the element completely in the view?
         const parentRect = Utils.findParentWithScrolling(element)?.getBoundingClientRect()
         if (!parentRect) {

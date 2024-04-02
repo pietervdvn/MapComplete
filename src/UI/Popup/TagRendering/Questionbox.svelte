@@ -4,7 +4,7 @@
    * The questions can either be shown all at once or one at a time (in which case they can be skipped)
    */
   import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
@@ -12,6 +12,7 @@
   import Tr from "../../Base/Tr.svelte"
   import Translations from "../../i18n/Translations.js"
   import { Utils } from "../../../Utils"
+  import { onDestroy } from "svelte"
 
   export let layer: LayerConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -67,8 +68,25 @@
     },
     [skippedQuestions]
   )
-  let firstQuestion = questionsToAsk.map((qta) => qta[0])
+  let firstQuestion: UIEventSource<TagRenderingConfig> = new UIEventSource<TagRenderingConfig>(undefined)
+  let allQuestionsToAsk : UIEventSource<TagRenderingConfig[]> = new UIEventSource<TagRenderingConfig[]>([])
 
+  function calculateQuestions(){
+    console.log("Applying questions to ask")
+    const qta = questionsToAsk.data
+    firstQuestion.setData(undefined)
+    firstQuestion.setData(qta[0])
+
+    allQuestionsToAsk.setData([])
+    allQuestionsToAsk.setData(qta)
+  }
+
+
+  onDestroy(questionsToAsk.addCallback(() =>calculateQuestions()))
+  onDestroy(showAllQuestionsAtOnce.addCallback(() => calculateQuestions()))
+  calculateQuestions()
+
+  
   let answered: number = 0
   let skipped: number = 0
 
@@ -92,7 +110,7 @@
   class="marker-questionbox-root"
   class:hidden={$questionsToAsk.length === 0 && skipped === 0 && answered === 0}
 >
-  {#if $questionsToAsk.length === 0}
+  {#if $allQuestionsToAsk.length === 0}
     {#if skipped + answered > 0}
       <div class="thanks">
         <Tr t={Translations.t.general.questionBox.done} />
@@ -140,11 +158,11 @@
     <div>
       {#if $showAllQuestionsAtOnce}
         <div class="flex flex-col gap-y-1">
-          {#each $questionsToAsk as question (question.id)}
+          {#each $allQuestionsToAsk as question (question.id)}
             <TagRenderingQuestion config={question} {tags} {selectedElement} {state} {layer} />
           {/each}
         </div>
-      {:else}
+      {:else if $firstQuestion !== undefined}
         <TagRenderingQuestion
           config={$firstQuestion}
           {layer}

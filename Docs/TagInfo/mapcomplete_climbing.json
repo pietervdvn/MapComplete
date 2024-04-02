@@ -65,6 +65,11 @@
       "description": "Layer 'Climbing club' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Climbing club' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "closed"
+    },
+    {
       "key": "access",
       "description": "Layer 'Climbing club' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access~.+ | _embedding_feature:access=)",
       "value": "yes"
@@ -188,6 +193,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Climbing gyms' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "closed"
     },
     {
       "key": "service:climbing_shoes:rental",
@@ -1548,6 +1558,11 @@
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Shop' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "closed"
+    },
+    {
       "key": "website",
       "description": "Layer 'Shop' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
@@ -1926,6 +1941,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if access!=no)",
+      "value": "closed"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
@@ -2182,6 +2202,11 @@
       "key": "opening_hours",
       "description": "Layer 'Drinking water' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "closed"
     },
     {
       "key": "tourism",

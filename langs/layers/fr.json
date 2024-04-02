@@ -1644,7 +1644,7 @@
             },
             "2": {
                 "description": "Un <b>café</b> pour prendre un thé, un café ou une boisson alcoolisée dans un environnement calme",
-                "title": "un café"
+                "title": "un café adama"
             },
             "3": {
                 "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une boisson (alcoolisée)",
@@ -2948,11 +2948,11 @@
             },
             "elevator-depth": {
                 "question": "Quelle est la profondeur de cet ascenseur ?",
-                "render": "Cet ascenseur a une profondeur de {canonical(elevator:depth)}"
+                "render": "Cet ascenseur a une profondeur de {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Quelle est la largeur de cet ascenseur ?",
-                "render": "Cet ascenseur a une largeur de {canonical(elevator:width)}"
+                "render": "Cet ascenseur a une largeur de {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {
@@ -3935,6 +3935,13 @@
             }
         }
     },
+    "memorial": {
+        "tagRenderings": {
+            "start_date": {
+                "render": "Placé le {start_date}"
+            }
+        }
+    },
     "nature_reserve": {
         "tagRenderings": {
             "Curator": {
@@ -4705,7 +4712,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Ouvert 24h/24 (jours fériés compris)"
                         }

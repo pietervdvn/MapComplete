@@ -8,17 +8,21 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
+  import UserRelatedState from "../../Logic/State/UserRelatedState"
+  import Delete_icon from "../../assets/svg/Delete_icon.svelte"
+  import BackButton from "../Base/BackButton.svelte"
 
   export let state: SpecialVisualizationState
-  export let layer: LayerConfig
   export let selectedElement: Feature
   export let highlightedRendering: UIEventSource<string> = undefined
 
   export let tags: UIEventSource<Record<string, string>> = state?.featureProperties?.getStore(
     selectedElement.properties.id
   )
-  
-  
+
+  let layer: LayerConfig = selectedElement.properties.id === "settings" ? UserRelatedState.usersettingsConfig : state.layout.getMatchingLayer(tags.data)
+
+
   let stillMatches = tags.map(tags => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags))
 
   let _metatags: Record<string, string>
@@ -27,7 +31,7 @@
   onDestroy(
     state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
       _metatags = tags
-    })
+    }),
   )
   }
 
@@ -36,22 +40,26 @@
       (config) =>
         (config.condition?.matchesProperties(tgs) ?? true) &&
         (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true) &&
-        config.IsKnown(tgs)
-    )
+        config.IsKnown(tgs),
+    ),
   )
 </script>
 
 {#if !$stillMatches}
-  <div class="alert"  aria-live="assertive">
-    <Tr t={Translations.t.delete.isChanged}/>
+  <div class="alert" aria-live="assertive">
+    <Tr t={Translations.t.delete.isChanged} />
   </div>
 {:else if $tags._deleted === "yes"}
-  <div aria-live="assertive">
-    <Tr t={Translations.t.delete.isDeleted} />
+  <div class="flex w-full flex-col p-2">
+    <div aria-live="assertive" class="alert flex items-center justify-center self-stretch">
+      <Delete_icon class="w-8 h-8 m-2" />
+      <Tr t={Translations.t.delete.isDeleted} />
+    </div>
+    <BackButton clss="self-stretch mt-4" on:click={() => state.selectedElement.setData(undefined)}>
+      <Tr t={Translations.t.general.returnToTheMap} />
+    </BackButton>
+    
   </div>
-  <button class="w-full" on:click={() => state.selectedElement.setData(undefined)}>
-    <Tr t={Translations.t.general.returnToTheMap} />
-  </button>
 {:else}
   <div
     class="selected-element-view flex h-full w-full flex-col gap-y-2 overflow-y-auto p-1 px-4"

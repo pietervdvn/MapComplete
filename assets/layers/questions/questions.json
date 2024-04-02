@@ -726,13 +726,25 @@
       "freeform": {
         "key": "opening_hours",
         "type": "opening_hours"
-      }
+      },
+      "mappings": [
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
     },
     {
       "id": "opening_hours_24_7",
       "builtin": "opening_hours",
       "override": {
-        "mappings": [
+        "+mappings": [
           {
             "if": "opening_hours=24/7",
             "then": {

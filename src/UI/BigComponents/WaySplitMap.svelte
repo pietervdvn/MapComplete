@@ -23,18 +23,20 @@
   import { GeoOperations } from "../../Logic/GeoOperations"
   import { BBox } from "../../Logic/BBox"
   import type { Feature, LineString, Point } from "geojson"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import SmallZoomButtons from "../Map/SmallZoomButtons.svelte"
 
   const splitpoint_style = new LayerConfig(
     <LayerConfigJson>split_point,
     "(BUILTIN) SplitRoadWizard.ts",
-    true
-  ) as const
+    true,
+  )
 
   const splitroad_style = new LayerConfig(
     <LayerConfigJson>split_road,
     "(BUILTIN) SplitRoadWizard.ts",
-    true
-  ) as const
+    true,
+  )
 
   /**
    * The way to focus on
@@ -45,6 +47,7 @@
    * A default is given
    */
   export let layer: LayerConfig = splitroad_style
+  export let state: SpecialVisualizationState | undefined = undefined
   /**
    * Optional: use these properties to set e.g. background layer
    */
@@ -58,6 +61,7 @@
   adaptor.bounds.setData(BBox.get(wayGeojson).pad(2))
   adaptor.maxbounds.setData(BBox.get(wayGeojson).pad(2))
 
+  state?.showCurrentLocationOn(map)
   new ShowDataLayer(map, {
     features: new StaticFeatureSource([wayGeojson]),
     drawMarkers: false,
@@ -101,6 +105,7 @@
   })
 </script>
 
-<div class="h-full w-full">
-  <MaplibreMap {map} />
+<div class="h-full w-full relative">
+  <MaplibreMap {map} mapProperties={adaptor} />
+  <SmallZoomButtons {adaptor} />
 </div>

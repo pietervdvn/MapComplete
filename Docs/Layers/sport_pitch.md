@@ -26,6 +26,7 @@ A sport pitch
 
 
   - [personal](https://mapcomplete.org/personal)
+  - [speelplekken](https://mapcomplete.org/speelplekken)
   - [sport_pitches](https://mapcomplete.org/sport_pitches)
   - [sports](https://mapcomplete.org/sports)
 

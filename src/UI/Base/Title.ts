@@ -17,7 +17,8 @@ export default class Title extends BaseUIElement {
     constructor(embedded: string | BaseUIElement, level: number = 3) {
         super()
         if (embedded === undefined) {
-            throw "A title should have some content. Undefined is not allowed"
+            console.warn("A title should have some content. Undefined is not allowed")
+            embedded = ""
         }
         if (typeof embedded === "string") {
             this.title = new FixedUiElement(embedded)

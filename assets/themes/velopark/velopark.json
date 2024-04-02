@@ -1,10 +1,12 @@
 {
   "id": "velopark",
   "title": {
+    "en": "Velopark to OpenStreetMap synchronisation tool",
     "nl": "Velopark naar OpenStreetMap sync tool"
   },
   "mustHaveLanguage": [
-    "nl"
+    "nl",
+    "en"
   ],
   "description": {
     "en": "<p><a href='https://velopark.be' target='_blank'>Velopark.be</a> is a website collecting data about bicycle parkings in a semi-crowdsourced way. However, only 'authorized' instances are allowed to make changes there, in practice the operator of the bicycle parking such as SNCB, de Lijn or the municipality. They have now decided to synchronize their dataset with OpenStreetMap, and this MapComplete-instance is set up to help link and import their data into OpenStreetMap.</p> How to use: <ul><li>A velopark-icon on the map (yellow with bicycle silhouette) represents a bicycle known by Velopark but not yet known by OpenStreetMap</li><li>Blue pins are bicycle parkings known by OpenStreetMap</li><li>Light blue pins are bicycle parkings known by OpenStreetMap with a reference to Velopark.be (<span class='literal-code'>ref-velopark=*</span>)</li><li>Click a velopark item, you can either link it with a nearby OSM-bicycle parking or create a new bicycle parking. Note that the geometry of Velopark is often incorrect and can be a few up till 100 meters away from the actual bicycle parking. Use aerial imagery, linked images and streetview to determine the correct location</li><li>Once linked, you can compare the Velopark- and OSM-attributes and apply correct attributes</li><li>If Velopark has an image, you can also link the image</li></ul> That's it! Thanks for helping to import this!",

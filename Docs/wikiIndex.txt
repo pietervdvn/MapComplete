@@ -146,6 +146,15 @@
 |genre= POI, editor, benches
 }}
 {{service_item
+|name= [https://mapcomplete.org/bicycle_parkings bicycle_parkings]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: A map showing all types of bicycle parkings
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, bicycle_parkings
+}}
+{{service_item
 |name= [https://mapcomplete.org/bicycle_rental bicycle_rental]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}, {{#language:pl|en}}
@@ -299,6 +308,15 @@
 |genre= POI, editor, ghostbikes
 }}
 {{service_item
+|name= [https://mapcomplete.org/ghostsigns ghostsigns]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}
+|descr= A MapComplete theme: A map showing disused signs on buildings
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, ghostsigns
+}}
+{{service_item
 |name= [https://mapcomplete.org/guideposts guideposts]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:cs|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:pl|en}}
@@ -380,6 +398,15 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, maxspeed
+}}
+{{service_item
+|name= [https://mapcomplete.org/memorials memorials]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: Memorials are physical objects permantently placed in the public space to remember a person or event
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, memorials
 }}
 {{service_item
 |name= [https://mapcomplete.org/nature nature]

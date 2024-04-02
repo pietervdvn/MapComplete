@@ -13,7 +13,7 @@ export class WikimediaImageProvider extends ImageProvider {
     public static readonly singleton = new WikimediaImageProvider()
     public static readonly apiUrls = [
         "https://commons.wikimedia.org/wiki/",
-        "https://upload.wikimedia.org",
+        "https://upload.wikimedia.org"
     ]
     public static readonly commonsPrefixes = [...WikimediaImageProvider.apiUrls, "File:"]
     private readonly commons_key = "wikimedia_commons"
@@ -31,13 +31,18 @@ export class WikimediaImageProvider extends ImageProvider {
         return path.substring(path.lastIndexOf("/") + 1)
     }
 
-    private static PrepareUrl(value: string): string {
+    private static PrepareUrl(value: string, useHd = false): string {
         if (value.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
             return value
         }
-        return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
+        const baseUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
             value
-        )}?width=500&height=400`
+        )}`
+        if (useHd) {
+            return baseUrl
+        }
+        return baseUrl + `?width=500&height=400`
+
     }
 
     private static startsWithCommonsPrefix(value: string): boolean {
@@ -109,8 +114,8 @@ export class WikimediaImageProvider extends ImageProvider {
         return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
-    public async DownloadAttribution(filename: string): Promise<LicenseInfo> {
-        filename = WikimediaImageProvider.ExtractFileName(filename)
+    public async DownloadAttribution(img: ProvidedImage): Promise<LicenseInfo> {
+        const filename = WikimediaImageProvider.ExtractFileName(img.url)
 
         if (filename === "") {
             return undefined
@@ -166,9 +171,10 @@ export class WikimediaImageProvider extends ImageProvider {
         }
         return {
             url: WikimediaImageProvider.PrepareUrl(image),
+            url_hd: WikimediaImageProvider.PrepareUrl(image, true),
             key: undefined,
             provider: this,
-            id: image,
+            id: image
         }
     }
 }

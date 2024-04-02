@@ -42,8 +42,6 @@ import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import { WayId } from "../Models/OsmFeature"
-import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte"
@@ -90,6 +88,7 @@ import LoginButton from "./Base/LoginButton.svelte"
 import Toggle from "./Input/Toggle"
 import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
 import LinkedDataLoader from "../Logic/Web/LinkedDataLoader"
+import SplitRoadWizard from "./Popup/SplitRoadWizard.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -429,7 +428,7 @@ export default class SpecialVisualizations {
                             .map((tags) => tags.id)
                             .map((id) => {
                                 if (id.startsWith("way/")) {
-                                    return new SplitRoadWizard(<WayId>id, state)
+                                    return new SvelteUIElement(SplitRoadWizard, { id, state })
                                 }
                                 return undefined
                             }),
@@ -666,6 +665,7 @@ export default class SpecialVisualizations {
                             nameKey: nameKey,
                             fallbackName,
                         },
+                state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(StarsBarIcon, {
                         score: reviews.average,
@@ -699,6 +699,7 @@ export default class SpecialVisualizations {
                             nameKey: nameKey,
                             fallbackName,
                         },
+                        state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(ReviewForm, { reviews, state, tags, feature, layer })
                 },
@@ -731,6 +732,7 @@ export default class SpecialVisualizations {
                             nameKey: nameKey,
                             fallbackName,
                         },
+                        state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
                 },
@@ -750,7 +752,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
-                    layer: LayerConfig,
+                    layer: LayerConfig
                 ): BaseUIElement {
                     const [text] = argument
                     return new SvelteUIElement(ImportReviewIdentity, { state, text })
@@ -1151,10 +1153,11 @@ export default class SpecialVisualizations {
                 constr: (state) => {
                     return new Combine(
                         state.layout.layers
-                            .filter((l) => l.name !== null)
+                            .filter((l) => l.name !== null && l.title && state.perLayer.get(l.id) !== undefined )
                             .map(
                                 (l) => {
                                     const fs = state.perLayer.get(l.id)
+                                    console.log(">>>", l.id, fs)
                                     const bbox = state.mapProperties.bounds
                                     const fsBboxed = new BBoxFeatureSourceForLayer(fs, bbox)
                                     return new StatisticsPanel(fsBboxed)
@@ -1596,6 +1599,9 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig,
                 ): BaseUIElement {
+                    const smallSize = 100
+                    const bigSize = 200
+                    const size = new UIEventSource(smallSize)
                     return new VariableUiElement(
                         tagSource
                             .map((tags) => tags.id)
@@ -1615,11 +1621,17 @@ export default class SpecialVisualizations {
                                 const url =
                                     `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
                                     `#${id}`
-                                return new Img(new Qr(url).toImageElement(75)).SetStyle(
-                                    "width: 75px",
+                                return new Img(new Qr(url).toImageElement(size.data)).SetStyle(
+                                    `width: ${size.data}px`
                                 )
-                            }),
-                    )
+                            }, [size])
+                    ).onClick(()=> {
+                        if(size.data !== bigSize){
+                            size.setData(bigSize)
+                        }else{
+                            size.setData(smallSize)
+                        }
+                    })
                 },
             },
             {

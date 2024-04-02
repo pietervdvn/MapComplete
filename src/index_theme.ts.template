@@ -18,10 +18,20 @@ function webgl_support() {
         return false
     }
 }
+
+async function timeout(timeMS: number): Promise<{ layers: string[] }> {
+    await Utils.waitFor(timeMS)
+    return { layers: [] }
+}
+
+
 async function getAvailableLayers(): Promise<Set<string>> {
     try {
         const host = new URL(Constants.VectorTileServer).host
-        const status = await Utils.downloadJson("https://" + host + "/summary/status.json")
+        const status = await Promise.any([
+                               //    Utils.downloadJson("https://" + host + "/summary/status.json"),
+                                   timeout(0)
+                               ])
         return new Set<string>(status.layers)
     } catch (e) {
         console.error("Could not get MVT available layers due to", e)
@@ -39,6 +49,9 @@ async function main() {
         const state = new ThemeViewState(new LayoutConfig(<any> layout), availableLayers)
         const main = new SvelteUIElement(ThemeViewGUI, { state })
         main.AttachTo("maindiv")
+        Array.from(document.getElementsByClassName("delete-on-load")).forEach(el => {
+                    el.parentElement.removeChild(el)
+                })
     }
 }
 main()

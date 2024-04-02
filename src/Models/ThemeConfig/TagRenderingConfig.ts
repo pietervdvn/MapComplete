@@ -628,6 +628,22 @@ export default class TagRenderingConfig {
      * config.constructChangeSpecification("", undefined, undefined, {}) // => undefined
      * config.constructChangeSpecification("5", undefined, undefined, {}).optimize() // => new Tag("capacity", "5")
      *
+     * // Should pick a mapping, even if freeform is used
+     * const config = new TagRenderingConfig({"id": "shop-types", render: "Shop type is {shop}", freeform: {key: "shop", addExtraTags:["fixme=freeform shop type used"]}, mappings:[{if: "shop=second_hand", then: "Second hand shop"}]})
+     * config.constructChangeSpecification("freeform", 1, undefined, {}).asHumanString(false,  false, {}) // => "shop=freeform & fixme=freeform shop type used"
+     * config.constructChangeSpecification("freeform", undefined, undefined, {}).asHumanString(false,  false, {}) // => "shop=freeform & fixme=freeform shop type used"
+     * config.constructChangeSpecification("second_hand", 1, undefined, {}).asHumanString(false,  false, {}) // => "shop=second_hand"
+     *
+     *
+     * const config = new TagRenderingConfig({id: "oh", render: "{opening_hours}", question: {"en":"When open?"}, freeform: {key: "opening_hours"},
+     *      mappings: [{  "if": "opening_hours=closed",
+     *           "then": {
+     *             "en": "Marked as closed for an unspecified time",
+     *           },
+     *           "hideInAnswer": true}] }
+     * const tags = config.constructChangeSpecification("Tu-Fr 05:30-09:30", undefined, undefined, { }}
+     * tags // =>new And([ new Tag("opening_hours", "Tu-Fr 05:30-09:30")])
+     *
      * @param freeformValue The freeform value which will be applied as 'freeform.key'. Ignored if 'freeform.key' is not set
      *
      * @param singleSelectedMapping (Only used if multiAnswer == false): the single mapping to apply. Use (mappings.length) for the freeform
@@ -640,6 +656,12 @@ export default class TagRenderingConfig {
         multiSelectedMapping: boolean[] | undefined,
         currentProperties: Record<string, string>
     ): UploadableTag {
+        console.log("constructChangeSpecification:", {
+            freeformValue,
+            singleSelectedMapping,
+            multiSelectedMapping,
+            currentProperties,
+        })
         if (typeof freeformValue === "string") {
             freeformValue = freeformValue?.trim()
         }
@@ -667,11 +689,22 @@ export default class TagRenderingConfig {
                 this.mappings.length == 0 ||
                 (singleSelectedMapping === this.mappings.length && !this.multiAnswer))
         ) {
+            const freeformOnly = { [this.freeform.key]: freeformValue }
+            const matchingMapping = this.mappings?.find((m) => m.if.matchesProperties(freeformOnly))
+            if (matchingMapping) {
+                return new And([matchingMapping.if, ...(matchingMapping.addExtraTags ?? [])])
+            }
             // Either no mappings, or this is a radio-button selected freeform value
-            return new And([
+            const tag = new And([
                 new Tag(this.freeform.key, freeformValue),
                 ...(this.freeform.addExtraTags ?? []),
             ])
+            const newProperties = tag.applyOn(currentProperties)
+            if (this.invalidValues?.matchesProperties(newProperties)) {
+                return undefined
+            }
+
+            return tag
         }
 
         if (this.multiAnswer) {

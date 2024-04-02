@@ -20,6 +20,7 @@
         "cancel": "Cancel",
         "cannotBeDeleted": "This feature can not be deleted",
         "delete": "Delete",
+        "deletedTitle": "Deleted feature",
         "explanations": {
             "hardDelete": "This feature will be deleted in OpenStreetMap. It can be recovered by an experienced contributor",
             "retagNoOtherThemes": "This feature will be reclassified and hidden from this application",
@@ -138,6 +139,7 @@
             "confirmLocation": "Confirm this location",
             "confirmTitle": "Add a {title}?",
             "confirmWarning": "The feature you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
+            "creating": "Creating a new point...",
             "disableFilters": "Disable all filters",
             "disableFiltersExplanation": "Some features might be hidden by a filter",
             "enableLayer": "Enable layer {name}",
@@ -205,6 +207,13 @@
         "customThemeIntro": "These are previously visited user-generated themes.",
         "customThemeTitle": "Custom themes",
         "download": {
+            "custom": {
+                "download": "Download PNG of {width}mm wide and {height}mm high",
+                "downloadHelper": "This is meant for print",
+                "height": "Image height (in mm):",
+                "title": "Download an image with a custom width and height",
+                "width": "Image width (in mm): "
+            },
             "downloadAsPdf": "Download a PDF of the current map",
             "downloadAsPdfHelper": "Ideal to print the current map",
             "downloadAsPng": "Download as image",
@@ -229,7 +238,7 @@
                 "current_view_generic": "Export a PDF off the current view for {paper_size} in {orientation} orientation"
             },
             "title": "Download",
-            "toMuch": "There are to much features to download them all",
+            "toMuch": "There are to many features to download them all",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
         "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
@@ -685,6 +694,8 @@
         "i_am_affiliated_explanation": "Check if you are an owner, creator, employee, …",
         "name_required": "A name is required in order to display and create reviews",
         "no_reviews_yet": "There are no reviews yet. Be the first to write one and help open data and the business!",
+        "non_place_review": "One review is not about a place and is not shown here.",
+        "non_place_reviews": "{n} reviews are not about a place and are not shown here.",
         "question": "How would you rate {title()}?",
         "question_opinion": "How was your experience?",
         "rate": "Rate {n} stars",
@@ -696,6 +707,7 @@
         "save": "Save review",
         "saved": "Review saved. Thanks for sharing!",
         "saving_review": "Saving…",
+        "see_all": "See all your reviews on mangrove.reviews",
         "title": "{count} reviews",
         "title_singular": "One review",
         "too_long": "At most {max} characters are allowed. Your review has {amount} characters.",

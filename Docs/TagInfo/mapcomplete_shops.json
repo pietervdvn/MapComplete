@@ -892,6 +892,11 @@
       "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Shops')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Shop' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Shops')",
+      "value": "closed"
+    },
+    {
       "key": "website",
       "description": "Layer 'Shop' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Shops')"
     },
@@ -1162,6 +1167,11 @@
       "description": "Layer 'Pharmacies' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Shops')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Pharmacies' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Shops')",
+      "value": "closed"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Pharmacies' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Shops')"
     },
@@ -1232,6 +1242,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Shops')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Ice cream parlors' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Shops')",
+      "value": "closed"
     },
     {
       "key": "phone",

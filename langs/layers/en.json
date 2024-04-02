@@ -1411,7 +1411,8 @@
                 "render": "This is a bicycle parking of the type: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
+                "question": "How many bicycles fit in this bicycle parking?",
+                "questionHint": "This includes regular bicycles, cargo bikes, ebikes, ...",
                 "render": "Place for {capacity} bikes"
             },
             "Cargo bike capacity?": {
@@ -4019,11 +4020,26 @@
             },
             "elevator-depth": {
                 "question": "What is the depth of this elevator?",
-                "render": "This elevator has a depth of {canonical(elevator:depth)}"
+                "render": "This elevator has a depth of {canonical(length)}"
+            },
+            "elevator-diameter": {
+                "question": "What is the diameter of this elevator?",
+                "render": "This elevator has a diameter of {canonical(diameter)}"
+            },
+            "elevator-shape": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator has a rectangular shape"
+                    },
+                    "1": {
+                        "then": "This elevator has a circular shape"
+                    }
+                },
+                "question": "What shape does this elevator have?"
             },
             "elevator-width": {
                 "question": "What is the width of this elevator?",
-                "render": "This elevator has a width of {canonical(elevator:width)}"
+                "render": "This elevator has a width of {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {
@@ -6120,13 +6136,95 @@
         }
     },
     "memorial": {
+        "name": "Memorials",
+        "presets": {
+            "0": {
+                "title": "a memorial"
+            }
+        },
         "tagRenderings": {
             "inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "This memorial does not have an inscription"
+                    }
+                },
                 "question": "What is the inscription of this plaque?",
                 "render": "The inscription on this plaque reads: <p><i>{inscription}<i></p>"
+            },
+            "memorial-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a statue"
+                    },
+                    "1": {
+                        "then": "This is a plaque"
+                    },
+                    "2": {
+                        "then": "This is a commemorative bench"
+                    },
+                    "3": {
+                        "then": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash"
+                    },
+                    "4": {
+                        "then": "This is a stolperstein (stumbing stone)"
+                    },
+                    "5": {
+                        "then": "This is a stele"
+                    },
+                    "6": {
+                        "then": "This is a memorial stone"
+                    },
+                    "7": {
+                        "then": "This is a bust"
+                    },
+                    "8": {
+                        "then": "This is a sculpture"
+                    },
+                    "9": {
+                        "then": "This is an obelisk"
+                    },
+                    "10": {
+                        "then": "This is a cross"
+                    },
+                    "11": {
+                        "then": "This is a blue plaque"
+                    },
+                    "12": {
+                        "then": "This is a historic tank, permanently placed in public space as memorial"
+                    },
+                    "13": {
+                        "then": "This is a memorial tree"
+                    }
+                },
+                "question": "What type of memorial is this?",
+                "render": "This is a {memorial}"
+            },
+            "memorial-wikidata": {
+                "question": "What is the Wikipedia page about this memorial?",
+                "questionHint": "This is a about the memorial itself, not about the person or event that the memorial remembers. If this memorial does not have a Wikipedia page or Wikidata entity, skip this question.",
+                "render": {
+                    "before": "<h3>Wikipedia page about the memorial</h3>"
+                }
+            },
+            "start_date": {
+                "question": "When was this memorial installed?",
+                "render": "Placed on {start_date}"
+            },
+            "subject-wikidata": {
+                "question": "What is the Wikipedia page about the person or event that is remembered here?",
+                "questionHint": "If the person or event does not have a Wikipedia page or Wikidata entity, skip this question.",
+                "render": {
+                    "before": "<h3>Wikipedia page about the remembered event or person</h3>"
+                }
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Memorial plaque"
+                }
+            },
             "render": "Memorial plaque"
         }
     },
@@ -7677,12 +7775,17 @@
                 }
             },
             "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Marked as closed for an unspecified time"
+                    }
+                },
                 "question": "What are the opening hours of {title()}?",
                 "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "24/7 opened (including holidays)"
                         }
@@ -10622,7 +10725,7 @@
             "translation-thanks": {
                 "mappings": {
                     "0": {
-                        "then": "You have contributed to translating MapComplete! That's awesome!"
+                        "then": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!"
                     }
                 }
             },

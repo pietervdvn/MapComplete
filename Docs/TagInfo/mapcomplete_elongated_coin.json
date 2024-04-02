@@ -17,8 +17,7 @@
     },
     {
       "key": "vending",
-      "description": "The MapComplete theme Penny Presses has a layer Penny Presses showing features with this tag",
-      "value": "elongated_coin"
+      "description": "The MapComplete theme Penny Presses has a layer Penny Presses showing features with this tag"
     },
     {
       "key": "id",
@@ -48,6 +47,11 @@
       "key": "opening_hours",
       "description": "Layer 'Penny Presses' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
       "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Penny Presses' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "closed"
     },
     {
       "key": "coin:design_count",
@@ -315,6 +319,495 @@
     {
       "key": "check_date",
       "description": "Layer 'Penny Presses' shows check_date= with a fixed text, namely 'This object was last checked today' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') Picking this answer will delete the key check_date.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Penny Presses has a layer Souvenir Coin Machines showing features with this tag",
+      "value": "vending_machine"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Penny Presses has a layer Souvenir Coin Machines showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Souvenir Coin Machines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Souvenir Coin Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Souvenir Coin Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Souvenir Coin Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Souvenir Coin Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Souvenir Coin Machines' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Souvenir Coin Machines' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Souvenir Coin Machines' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "closed"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows and asks freeform values for key 'coin:design_count' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=1 with a fixed text, namely 'This machine has one design available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "1"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=2 with a fixed text, namely 'This machine has two designs available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "2"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=3 with a fixed text, namely 'This machine has three designs available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "3"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=4 with a fixed text, namely 'This machine has four designs available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "4"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Souvenir Coin Machines' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Souvenir Coin Machines' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Souvenir Coin Machines' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Souvenir Coin Machines' shows charge=2 EUR with a fixed text, namely 'A souvenir coin costs 2 euro' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "2 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.01 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.02 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.05 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.10 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.20 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.50 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "1 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "2 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.05 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.10 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.20 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.50 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "1 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "2 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Coin Machines' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "5 CHF"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Souvenir Coin Machines' shows indoor=yes with a fixed text, namely 'This machine is located indoors.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Souvenir Coin Machines' shows indoor=no with a fixed text, namely 'This machine is located outdoors.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "no"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Coin Machines' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Souvenir Coin Machines' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Coin Machines' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Coin Machines' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Penny Presses') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Coin Machines' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Coin Machines' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Souvenir Coin Machines' shows and asks freeform values for key 'check_date' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Souvenir Coin Machines' shows check_date= with a fixed text, namely 'This object was last checked today' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') Picking this answer will delete the key check_date.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Penny Presses has a layer Souvenir Banknote Machines showing features with this tag",
+      "value": "vending_machine"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Penny Presses has a layer Souvenir Banknote Machines showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Souvenir Banknote Machines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Souvenir Banknote Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Souvenir Banknote Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Souvenir Banknote Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Souvenir Banknote Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Souvenir Banknote Machines' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Souvenir Banknote Machines' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Souvenir Banknote Machines' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "closed"
+    },
+    {
+      "key": "note:design_count",
+      "description": "Layer 'Souvenir Banknote Machines' shows and asks freeform values for key 'note:design_count' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "note:design_count",
+      "description": "Layer 'Souvenir Banknote Machines' shows note:design_count=1 with a fixed text, namely 'This machine has one design available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "1"
+    },
+    {
+      "key": "note:design_count",
+      "description": "Layer 'Souvenir Banknote Machines' shows note:design_count=2 with a fixed text, namely 'This machine has two designs available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "2"
+    },
+    {
+      "key": "note:design_count",
+      "description": "Layer 'Souvenir Banknote Machines' shows note:design_count=3 with a fixed text, namely 'This machine has three designs available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "3"
+    },
+    {
+      "key": "note:design_count",
+      "description": "Layer 'Souvenir Banknote Machines' shows note:design_count=4 with a fixed text, namely 'This machine has four designs available.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "4"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Souvenir Banknote Machines' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Souvenir Banknote Machines' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Souvenir Banknote Machines' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Souvenir Banknote Machines' shows charge=2 EUR with a fixed text, namely 'A souvenir note costs 2 euro' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "2 EUR"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Souvenir Banknote Machines' shows charge=3 EUR with a fixed text, namely 'A souvenir note costs 3 euro' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "3 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.01 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.02 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.05 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.10 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.20 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.50 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "1 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "2 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.05 CHF with a fixed text, namely '5 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.05 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.10 CHF with a fixed text, namely '10 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.10 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.20 CHF with a fixed text, namely '20 centimes coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.20 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=0.50 CHF with a fixed text, namely '½ franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "0.50 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=1 CHF with a fixed text, namely '1 franc coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "1 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=2 CHF with a fixed text, namely '2 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "2 CHF"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Souvenir Banknote Machines' shows payment:coins:denominations=5 CHF with a fixed text, namely '5 francs coins are accepted' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if (payment:coins=yes | payment:cash=yes) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$))",
+      "value": "5 CHF"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Souvenir Banknote Machines' shows indoor=yes with a fixed text, namely 'This machine is located indoors.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "yes"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Souvenir Banknote Machines' shows indoor=no with a fixed text, namely 'This machine is located outdoors.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "no"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Banknote Machines' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Souvenir Banknote Machines' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Banknote Machines' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Banknote Machines' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Penny Presses') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Banknote Machines' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Souvenir Banknote Machines' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Souvenir Banknote Machines' shows and asks freeform values for key 'check_date' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "check_date",
+      "description": "Layer 'Souvenir Banknote Machines' shows check_date= with a fixed text, namely 'This object was last checked today' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses') Picking this answer will delete the key check_date.",
       "value": ""
     }
   ]

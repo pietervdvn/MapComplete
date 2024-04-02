@@ -39,7 +39,7 @@
     "pl": "<b>Duch roweru</b> to pomnik upamiętniający rowerzystę, który zginął w wypadku drogowym, w postaci białego roweru umieszczonego na stałe w pobliżu miejsca wypadku.<br/><br/>Na tej mapie każdy może zobaczyć wszystkie takie duchy roweru znane w OpenStreetMap. Czy brakuje ducha roweru? Każdy może tu dodać lub zaktualizować informacje - wystarczy posiadać (bezpłatne) konto OpenStreetMap. <p>Istnieje <a href='https://masto.bike/@ghostbikebot' target='_blank'>automatyczne konto na Mastodonie, na którym publikowany jest miesięczny przegląd duchów roweru na całym świecie</a></p>"
   },
   "icon": "./assets/themes/ghostbikes/logo.svg",
-  "defaultBackgroundId": "maptiler.backdrop",
+  "defaultBackgroundId": "protomaps.white",
   "layers": [
     "ghost_bike"
   ],

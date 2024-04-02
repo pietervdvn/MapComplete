@@ -9,10 +9,18 @@
     <link href="./css/mobile.css" rel="stylesheet"/>
     <link href="./css/openinghourstable.css" rel="stylesheet"/>
     <link href="./css/tagrendering.css" rel="stylesheet"/>
-    <link href="css/ReviewElement.css" rel="stylesheet"/>
     <link href="./css/index-tailwind-output.css" rel="stylesheet"/>
     <link href="./css/wikipedia.css" rel="stylesheet"/>
     <meta content="website" property="og:type">
+
+    <link rel="preconnect" href="https://api.maptiler.com">
+    <link rel="dns-prefetch" href="https://api.maptiler.com">
+    <link rel="preconnect" href="https://api.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://api.openstreetmap.com">
+    <link rel="preconnect" href="https://www.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://www.openstreetmap.com">
+    <link rel="preconnect" href="https://cache.mapcomplete.org">
+    <link rel="dns-prefetch" href="https://cache.mapcomplete.com">
 
     <!-- THEME-SPECIFIC -->
     <!-- Every theme gets their own html page, this is created by a script; this part will be removed except for the index -->
@@ -59,21 +67,24 @@
                 </p>
             </div>
 
-            <div class="flex justify-between items-start w-full">
-                
-            <!-- IMAGE-START -->
-            <img aria-hidden="true" class="p-8 h-32 w-32 self-start" src="./assets/svg/add.svg">
-            <!-- IMAGE-END -->
-                <div class="h-min subtle"> 
-                Version
-                </div>
-                
-            </div>
+
         </div>
     </div>
 </div>
+
+<div class="flex justify-between items-end w-full absolute bottom-0 p-4 h-fit delete-on-load">
+
+  <!-- IMAGE-START -->
+  <img aria-hidden="true" class="p-4 h-32 w-32 self-start" src="./assets/svg/add.svg">
+  <!-- IMAGE-END -->
+  <div class="h-min subtle flex flex-col items-end">
+    Version
+  </div>
+
+</div>
+
 <div aria-hidden="true" id="belowmap" class="absolute top-0 left-0 -z-10">Below</div>
-<script src="./src/UI/RemoveOtherLanguages.js"></script>
+<script src="./src/UI/RemoveOtherLanguages.ts" type="module"></script>
 <script async src="./src/InstallServiceWorker.ts" type="module"></script>
 <script defer src="./src/index.ts" type="module"></script>
 <script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="https://gc.zgo.at/count.js" crossorigin="anonymous" integrity="sha384-nx5O+otcqJoqMhdDt8jUzmia6ng81Z5zZozYr69TzPkOLjVhLKMxu5zHCV9/0MPn"></script>

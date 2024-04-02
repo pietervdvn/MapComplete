@@ -190,10 +190,25 @@ class GenerateBuildDbScript extends Script {
     }
 
     async main(args: string[]) {
-        const allNeededLayers = new ValidateThemeEnsemble().convertStrict(
+        const allLayers = new ValidateThemeEnsemble().convertStrict(
             AllKnownLayouts.allKnownLayouts.values()
         )
-
+        if (allLayers.size === 0) {
+            throw "No layers found at all"
+        }
+        const notCounted: string[] = []
+        const allNeededLayers: Map<string, { tags: TagsFilter; foundInTheme: string[] }> = new Map<
+            string,
+            { tags: TagsFilter; foundInTheme: string[] }
+        >()
+        for (const key of allLayers.keys()) {
+            const layer = allLayers.get(key)
+            if (layer.isCounted) {
+                allNeededLayers.set(key, layer)
+            } else {
+                notCounted.push(key)
+            }
+        }
         const generators: GenerateLayerLua[] = []
 
         allNeededLayers.forEach(({ tags, foundInTheme }, layerId) => {
@@ -210,6 +225,10 @@ class GenerateBuildDbScript extends Script {
         const path = "build_db.lua"
         fs.writeFileSync(path, script, "utf-8")
         console.log("Written", path)
+        console.log(
+            "Following layers are _not_ indexed as they are not counted:",
+            notCounted.join(", ")
+        )
         console.log(
             allNeededLayers.size +
                 " layers will be created with 3 tables each. Make sure to set 'max_connections' to at least  " +

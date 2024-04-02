@@ -65,9 +65,11 @@ export class PngMapCreator {
 
             document.getElementById(freeComponentId).appendChild(div)
             const newZoom = settings.zoom.data + Math.log2(pixelRatio) - 1
+            const rasterLayerProperties = settings.rasterLayer.data?.properties ?? AvailableRasterLayers.defaultBackgroundLayer.properties
+            const style =  rasterLayerProperties?.style ?? rasterLayerProperties?.url
             const mapElem = new MlMap({
                 container: div.id,
-                style: AvailableRasterLayers.maptilerDefaultLayer.properties.url,
+                style,
                 center: [l.lon, l.lat],
                 zoom: newZoom,
                 pixelRatio,

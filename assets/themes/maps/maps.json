@@ -45,7 +45,7 @@
     "pl": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap"
   },
   "icon": "./assets/themes/maps/logo.svg",
-  "defaultBackgroundId": "maptiler.backdrop",
+  "defaultBackgroundId": "protomaps.white",
   "layers": [
     "map"
   ],

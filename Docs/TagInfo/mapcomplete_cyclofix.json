@@ -133,6 +133,11 @@
       "description": "Layer 'Bike cafe' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Bike cafe' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
+    },
+    {
       "key": "shop",
       "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
       "value": "bicycle"
@@ -213,6 +218,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike repair/shop' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
     },
     {
       "key": "access",
@@ -486,6 +496,11 @@
       "key": "opening_hours",
       "description": "Layer 'Bicycle pump and repair' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle pump and repair' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
     },
     {
       "key": "access",
@@ -880,6 +895,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
+    },
+    {
       "key": "tourism",
       "description": "Layer 'Drinking water' shows tourism=artwork with a fixed text, namely 'This drinking water point has an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "artwork"
@@ -1077,6 +1097,11 @@
       "description": "Layer 'Bike-related object' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Bike-related object' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
+    },
+    {
       "key": "service:bicycle:cleaning",
       "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cleaning service showing features with this tag",
       "value": "yes"
@@ -1256,6 +1281,11 @@
       "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+ | opening_hours~.+)"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle rental' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+ | opening_hours~.+)",
+      "value": "closed"
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if shop~.+)",
       "value": "yes"
@@ -1423,6 +1453,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle library' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
     },
     {
       "key": "charge",
@@ -1607,6 +1642,11 @@
       "key": "opening_hours",
       "description": "Layer 'Bike parking' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Bike parking' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
     },
     {
       "key": "operator:phone",
@@ -2530,6 +2570,11 @@
       "key": "opening_hours",
       "description": "Layer 'Charging stations' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
     },
     {
       "key": "fee",

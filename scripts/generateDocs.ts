@@ -30,6 +30,7 @@ import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { Utils } from "../src/Utils"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import Script from "./Script"
+import { Changes } from "../src/Logic/Osm/Changes"
 
 /**
  * Converts a markdown-file into a .json file, which a walkthrough/slideshow element can use
@@ -180,6 +181,10 @@ export class GenerateDocs extends Script {
             "src/UI/InputElement/Validators.ts",
         ])
 
+        this.WriteFile("./Docs/ChangesetMeta.md", Changes.getDocs(), [
+            "src/Logic/Osm/Changes.ts",
+            "src/Logic/Osm/ChangesetHandler.ts",
+        ])
         new WikiPageGenerator().generate()
 
         console.log("Generated docs")
@@ -239,7 +244,7 @@ export class GenerateDocs extends Script {
     }
 
     private generateHotkeyDocs() {
-        new ThemeViewState(new LayoutConfig(<any>bookcases))
+        new ThemeViewState(new LayoutConfig(<any>bookcases), new Set())
         this.WriteFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [])
     }
 
@@ -314,9 +319,6 @@ export class GenerateDocs extends Script {
         const themesPerLayer = new Map<string, string[]>()
 
         for (const layout of Array.from(AllKnownLayouts.allKnownLayouts.values())) {
-            if (layout.hideFromOverview) {
-                continue
-            }
             for (const layer of layout.layers) {
                 if (!builtinLayerIds.has(layer.id)) {
                     // This is an inline layer

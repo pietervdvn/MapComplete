@@ -3,9 +3,10 @@ import Constants from "../../Models/Constants"
 import { UIEventSource } from "../UIEventSource"
 import { Utils } from "../../Utils"
 import { Feature } from "geojson"
+import { ImageUploadManager } from "../ImageProviders/ImageUploadManager"
 
 export default class PendingChangesUploader {
-    constructor(changes: Changes, selectedFeature: UIEventSource<Feature>) {
+    constructor(changes: Changes, selectedFeature: UIEventSource<Feature>, uploader : ImageUploadManager) {
         changes.pendingChanges
             .stabilized(Constants.updateTimeoutSec * 1000)
             .addCallback(() => changes.flushChanges("Flushing changes due to timeout"))
@@ -48,7 +49,9 @@ export default class PendingChangesUploader {
         }
 
         function onunload(e) {
-            if (changes.pendingChanges.data.length == 0) {
+            const pendingChanges = changes.pendingChanges.data.length
+            const uploadingImages = uploader.isUploading.data
+            if (pendingChanges == 0 && !uploadingImages) {
                 return
             }
             changes.flushChanges("onbeforeunload - probably closing or something similar")

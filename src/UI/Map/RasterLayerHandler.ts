@@ -1,8 +1,9 @@
-import { Map as MLMap, SourceSpecification } from "maplibre-gl"
+import { Map as MLMap, RasterSourceSpecification, VectorTileSource } from "maplibre-gl"
 import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
-import { RasterLayerPolygon } from "../../Models/RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import { Utils } from "../../Utils"
+import { VectorSourceSpecification } from "@maplibre/maplibre-gl-style-spec"
 
 class SingleBackgroundHandler {
     // Value between 0 and 1.0
@@ -17,6 +18,7 @@ class SingleBackgroundHandler {
      */
     public static readonly DEACTIVATE_AFTER = 60
     private fadeStep = 0.1
+
     constructor(
         map: Store<MLMap>,
         targetLayer: RasterLayerPolygon,
@@ -75,6 +77,7 @@ class SingleBackgroundHandler {
             this.fadeIn()
         }
     }
+
     private async awaitStyleIsLoaded(): Promise<void> {
         const map = this._map.data
         if (!map) {
@@ -85,11 +88,11 @@ class SingleBackgroundHandler {
         }
     }
 
-    private async enable(){
+    private async enable() {
         let ttl = 15
         await this.awaitStyleIsLoaded()
-        while(!this.tryEnable() && ttl > 0){
-            ttl --;
+        while (!this.tryEnable() && ttl > 0) {
+            ttl--
             await Utils.waitFor(250)
         }
     }
@@ -105,14 +108,19 @@ class SingleBackgroundHandler {
         }
         const background = this._targetLayer.properties
         console.debug("Enabling", background.id)
-        let addLayerBeforeId = "aeroway_fill" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
+        let addLayerBeforeId = "transit_pier" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
+        if(!map.getLayer(addLayerBeforeId)){
+            console.warn("Layer", addLayerBeforeId,"not foundhttp://127.0.0.1:1234/theme.html?layout=cyclofix&z=14.8&lat=51.05282501324558&lon=3.720591622281745&layer-range=true")
+            addLayerBeforeId = undefined
+        }
         if (background.category === "osmbasedmap" || background.category === "map") {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
             addLayerBeforeId = undefined
         }
+
         if (!map.getSource(background.id)) {
             try {
-                map.addSource(background.id, RasterLayerHandler.prepareWmsSource(background))
+                map.addSource(background.id, RasterLayerHandler.prepareSource(background))
             } catch (e) {
                 return false
             }
@@ -122,21 +130,30 @@ class SingleBackgroundHandler {
                 .getStyle()
                 .layers.find((l) => l.id.startsWith("mapcomplete_"))?.id
 
-            map.addLayer(
-                {
-                    id: background.id,
-                    type: "raster",
-                    source: background.id,
-                    paint: {
-                        "raster-opacity": 0,
+            if (background.type === "vector") {
+                const styleToSet = background.style ?? background.url
+                map.setStyle(styleToSet)
+            } else {
+                map.addLayer(
+                    {
+                        id: background.id,
+                        type: "raster",
+                        source: background.id,
+                        paint: {
+                            "raster-opacity": 0
+                        }
                     },
-                },
-                addLayerBeforeId
-            )
-
-            this.opacity.addCallbackAndRun((o) => {
-                map.setPaintProperty(background.id, "raster-opacity", o)
-            })
+                    addLayerBeforeId
+                )
+                this.opacity.addCallbackAndRun((o) => {
+                    try{
+                        map.setPaintProperty(background.id, "raster-opacity", o)
+                    }catch (e) {
+                        console.debug("Could not set raster-opacity of", background.id)
+                        return true // This layer probably doesn't exist anymore, so we unregister
+                    }
+                })
+            }
         }
         return true
     }
@@ -168,7 +185,14 @@ export default class RasterLayerHandler {
         })
     }
 
-    public static prepareWmsSource(layer: RasterLayerProperties): SourceSpecification {
+    public static prepareSource(layer: RasterLayerProperties): RasterSourceSpecification | VectorSourceSpecification {
+        if (layer.type === "vector") {
+            const vs: VectorSourceSpecification = {
+                type: "vector",
+                url: layer.url
+            }
+            return vs
+        }
         return {
             type: "raster",
             // use the tiles option to specify a 256WMS tile source URL
@@ -178,7 +202,7 @@ export default class RasterLayerHandler {
             minzoom: layer["min_zoom"] ?? 1,
             maxzoom: layer["max_zoom"] ?? 25,
             // Bit of a hack, but seems to work
-            scheme: layer.url.includes("{-y}") ? "tms" : "xyz",
+            scheme: layer.url.includes("{-y}") ? "tms" : "xyz"
         }
     }
 
@@ -192,7 +216,7 @@ export default class RasterLayerHandler {
             "{width}": "" + size,
             "{height}": "" + size,
             "{zoom}": "{z}",
-            "{-y}": "{y}",
+            "{-y}": "{y}"
         }
 
         for (const key in toReplace) {

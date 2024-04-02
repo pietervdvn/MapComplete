@@ -20,16 +20,26 @@ function webgl_support() {
         return false
     }
 }
+
+async function timeout(timeMS: number): Promise<{ layers: string[] }> {
+    await Utils.waitFor(timeMS)
+    return { layers: [] }
+}
+
 async function getAvailableLayers(): Promise<Set<string>> {
     try {
         const host = new URL(Constants.VectorTileServer).host
-        const status = await Utils.downloadJson("https://" + host + "/summary/status.json")
+        const status: { layers: string[] } = await Promise.any([
+            // Utils.downloadJson("https://" + host + "/summary/status.json"),
+            timeout(0)
+        ])
         return new Set<string>(status.layers)
     } catch (e) {
         console.error("Could not get MVT available layers due to", e)
         return new Set<string>()
     }
 }
+
 async function main() {
     // @ts-ignore
     try {
@@ -38,12 +48,15 @@ async function main() {
         }
         const [layout, availableLayers] = await Promise.all([
             DetermineLayout.GetLayout(),
-            await getAvailableLayers(),
+            await getAvailableLayers()
         ])
         console.log("The available layers on server are", Array.from(availableLayers))
         const state = new ThemeViewState(layout, availableLayers)
         const main = new SvelteUIElement(ThemeViewGUI, { state })
         main.AttachTo("maindiv")
+        Array.from(document.getElementsByClassName("delete-on-load")).forEach(el => {
+            el.parentElement.removeChild(el)
+        })
     } catch (err) {
         console.error("Error while initializing: ", err, err.stack)
         const customDefinition = DetermineLayout.getCustomDefinition()
@@ -52,16 +65,17 @@ async function main() {
 
             customDefinition?.length > 0
                 ? new SubtleButton(new SvelteUIElement(Download), "Download the raw file").onClick(
-                      () =>
-                          Utils.offerContentsAsDownloadableFile(
-                              DetermineLayout.getCustomDefinition(),
-                              "mapcomplete-theme.json",
-                              { mimetype: "application/json" }
-                          )
-                  )
-                : undefined,
+                    () =>
+                        Utils.offerContentsAsDownloadableFile(
+                            DetermineLayout.getCustomDefinition(),
+                            "mapcomplete-theme.json",
+                            { mimetype: "application/json" }
+                        )
+                )
+                : undefined
         ]).AttachTo("maindiv")
     }
 }
 
-main().then((_) => {})
+main().then((_) => {
+})

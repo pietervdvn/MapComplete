@@ -52,6 +52,7 @@ export class OsmConnection {
     private readonly _iframeMode: Boolean | boolean
     private readonly _singlePage: boolean
     private isChecking = false
+    private readonly _doCheckRegularly
 
     constructor(options?: {
         dryRun?: Store<boolean>
@@ -59,12 +60,17 @@ export class OsmConnection {
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset
         singlePage?: boolean
-        attemptLogin?: true | boolean
+        attemptLogin?: true | boolean,
+        /**
+         * If true: automatically check if we're still online every 5 minutes + fetch messages
+         */
+        checkOnlineRegularly?: true | boolean
     }) {
         options ??= {}
         this.fakeUser = options?.fakeUser ?? false
         this._singlePage = options?.singlePage ?? true
         this._oauth_config = Constants.osmAuthConfig
+        this._doCheckRegularly = options?.checkOnlineRegularly ?? true
         console.debug("Using backend", this._oauth_config.url)
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
 
@@ -91,9 +97,11 @@ export class OsmConnection {
             ud.name = "Fake user"
             ud.totalMessages = 42
             ud.languages = ["en"]
+            this.loadingStatus.setData("logged-in")
         }
         const self = this
         this.UpdateCapabilities()
+
         this.isLoggedIn = this.userDetails.map(
             (user) =>
                 user.loggedIn &&
@@ -111,11 +119,11 @@ export class OsmConnection {
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
 
         this.updateAuthObject()
+        if(!this.fakeUser){
+            self.CheckForMessagesContinuously()
+        }
 
-        this.preferencesHandler = new OsmPreferences(
-            this.auth,
-            <any /*This is needed to make the tests work*/>this
-        )
+        this.preferencesHandler = new OsmPreferences(this.auth, this, this.fakeUser)
 
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
@@ -187,23 +195,27 @@ export class OsmConnection {
         const self = this
         console.log("Trying to log in...")
         this.updateAuthObject()
+
         LocalStorageSource.Get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href
         )
         this.auth.xhr(
             {
                 method: "GET",
-                path: "/api/0.6/user/details",
+                path: "/api/0.6/user/details"
             },
-            function (err, details: XMLDocument) {
+            function(err, details: XMLDocument) {
                 if (err != null) {
-                    console.log(err)
+                    console.log("Could not login due to:", err)
                     self.loadingStatus.setData("error")
                     if (err.status == 401) {
                         console.log("Clearing tokens...")
                         // Not authorized - our token probably got revoked
                         self.auth.logout()
                         self.LogOut()
+                    } else {
+                        console.log("Other error. Status:", err.status)
+                        self.apiIsOnline.setData("unreachable")
                     }
                     return
                 }
@@ -212,8 +224,6 @@ export class OsmConnection {
                     self.loadingStatus.setData("error")
                     return
                 }
-
-                self.CheckForMessagesContinuously()
 
                 // details is an XML DOM of user details
                 let userInfo = details.getElementsByTagName("user")[0]
@@ -303,12 +313,12 @@ export class OsmConnection {
                 <any>{
                     method,
                     options: {
-                        header,
+                        header
                     },
                     content,
-                    path: `/api/0.6/${path}`,
+                    path: `/api/0.6/${path}`
                 },
-                function (err, response) {
+                function(err, response) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -388,7 +398,7 @@ export class OsmConnection {
             "notes.json",
             content,
             {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             true
         )
@@ -400,6 +410,7 @@ export class OsmConnection {
     }
 
     public static GpxTrackVisibility = ["private", "public", "trackable", "identifiable"] as const
+
     public async uploadGpxTrack(
         gpx: string,
         options: {
@@ -428,7 +439,7 @@ export class OsmConnection {
             file: gpx,
             description: options.description,
             tags: options.labels?.join(",") ?? "",
-            visibility: options.visibility,
+            visibility: options.visibility
         }
 
         if (!contents.description) {
@@ -436,9 +447,9 @@ export class OsmConnection {
         }
         const extras = {
             file:
-                '; filename="' +
+                "; filename=\"" +
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
-                '"\r\nContent-Type: application/gpx+xml',
+                "\"\r\nContent-Type: application/gpx+xml"
         }
 
         const boundary = "987654"
@@ -446,7 +457,7 @@ export class OsmConnection {
         let body = ""
         for (const key in contents) {
             body += "--" + boundary + "\r\n"
-            body += 'Content-Disposition: form-data; name="' + key + '"'
+            body += "Content-Disposition: form-data; name=\"" + key + "\""
             if (extras[key] !== undefined) {
                 body += extras[key]
             }
@@ -457,7 +468,7 @@ export class OsmConnection {
 
         const response = await this.post("gpx/create", body, {
             "Content-Type": "multipart/form-data; boundary=" + boundary,
-            "Content-Length": body.length,
+            "Content-Length": body.length
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
@@ -480,9 +491,9 @@ export class OsmConnection {
                 {
                     method: "POST",
 
-                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
                 },
-                function (err, _) {
+                function(err, _) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -497,7 +508,7 @@ export class OsmConnection {
      * To be called by land.html
      */
     public finishLogin(callback: (previousURL: string) => void) {
-        this.auth.authenticate(function () {
+        this.auth.authenticate(function() {
             // Fully authed at this point
             console.log("Authentication successful!")
             const previousLocation = LocalStorageSource.Get("location_before_login")
@@ -536,7 +547,7 @@ export class OsmConnection {
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: !standalone,
-            auto: true,
+            auto: true
         })
     }
 
@@ -545,26 +556,44 @@ export class OsmConnection {
         if (this.isChecking) {
             return
         }
-        this.isChecking = true
-        Stores.Chronic(5 * 60 * 1000).addCallback((_) => {
-            if (self.isLoggedIn.data) {
+        Stores.Chronic(3 * 1000).addCallback((_) => {
+            if (!(self.apiIsOnline.data === "unreachable" || self.apiIsOnline.data === "offline")) {
+                return
+            }
+            try {
+                console.log("Api is offline - trying to reconnect...")
                 self.AttemptLogin()
+            } catch (e) {
+                console.log("Could not login due to", e)
+            }
+        })
+        this.isChecking = true
+        if (!this._doCheckRegularly) {
+            return
+        }
+        Stores.Chronic(60 * 5 * 1000).addCallback((_) => {
+            if (self.isLoggedIn.data) {
+                try {
+                    self.AttemptLogin()
+                } catch (e) {
+                    console.log("Could not login due to", e)
+                }
             }
         })
     }
 
     private UpdateCapabilities(): void {
-        const self = this
         if (this.fakeUser) {
             return
         }
         this.FetchCapabilities().then(({ api, gpx }) => {
-            self.apiIsOnline.setData(api)
-            self.gpxServiceIsOnline.setData(gpx)
+            this.apiIsOnline.setData(api)
+            this.gpxServiceIsOnline.setData(gpx)
         })
     }
 
     private readonly _userInfoCache: Record<number, any> = {}
+
     public async getInformationAboutUser(id: number): Promise<{
         id: number
         display_name: string
@@ -587,6 +616,7 @@ export class OsmConnection {
         this._userInfoCache[id] = parsed
         return parsed
     }
+
     private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
         if (Utils.runningFromConsole) {
             return { api: "online", gpx: "online" }

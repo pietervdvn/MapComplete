@@ -12,6 +12,7 @@ This theme contains the following layers:
 
 
   - [playground](../Layers/playground.md)
+  - [playground_equipment](../Layers/playground_equipment.md)
   - [bench](../Layers/bench.md)
   - [picnic_table](../Layers/picnic_table.md)
   - [selected_element](../Layers/selected_element.md)
@@ -22,6 +23,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

@@ -10,7 +10,7 @@
    */
   export let image: ProvidedImage
   let license: Store<LicenseInfo> = UIEventSource.FromPromise(
-    image.provider?.DownloadAttribution(image.url)
+    image.provider?.DownloadAttribution(image)
   )
   let icon = image.provider?.SourceIcon(image.id)?.SetClass("block h-8 w-8 pr-2")
 </script>
@@ -38,26 +38,28 @@
         </div>
       {/if}
 
-      <div class="flex justify-between">
+      <div class="flex justify-between w-full gap-x-1">
         {#if $license.license !== undefined || $license.licenseShortName !== undefined}
           <div>
             {$license?.license ?? $license?.licenseShortName}
           </div>
         {/if}
 
-        {#if $license.date}
-          <div>
-            {$license.date.toLocaleDateString()}
+        {#if $license.views}
+          <div class="flex justify-around self-center">
+            <EyeIcon class="h-4 w-4 pr-1" />
+            {$license.views}
           </div>
         {/if}
       </div>
 
-      {#if $license.views}
-        <div class="flex justify-around self-center">
-          <EyeIcon class="h-4 w-4 pr-1" />
-          {$license.views}
+      {#if $license.date}
+        <div>
+          {$license.date.toLocaleDateString()}
         </div>
       {/if}
+
+
     </div>
   </div>
 {/if}

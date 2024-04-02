@@ -17,14 +17,17 @@ export default class StatisticsForLayerPanel extends VariableUiElement {
                         return new Loading("Loading data")
                     }
                     if (features.length === 0) {
-                        return "No elements in view"
+                        return new Combine([
+                            "No elements in view for layer ",
+                            layer.id
+                        ]).SetClass("block")
                     }
                     const els: BaseUIElement[] = []
                     const featuresForLayer = features
                     if (featuresForLayer.length === 0) {
                         return
                     }
-                    els.push(new Title(layer.name.Clone(), 1).SetClass("mt-8"))
+                    els.push(new Title(layer.name, 1).SetClass("mt-8"))
 
                     const layerStats = []
                     for (const tagRendering of layer?.tagRenderings ?? []) {

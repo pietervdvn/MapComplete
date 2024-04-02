@@ -57,8 +57,8 @@ export abstract class Validator {
      *
      * Returns 'undefined' if the element is valid
      */
-    public getFeedback(s: string, _?: () => string): Translation | undefined {
-        if (this.isValid(s)) {
+    public getFeedback(s: string, getCountry?: () => string): Translation | undefined {
+        if (this.isValid(s, getCountry)) {
             return undefined
         }
         const tr = Translations.t.validation[this.name]
@@ -71,7 +71,7 @@ export abstract class Validator {
         return Translations.t.validation[this.name].description
     }
 
-    public isValid(_: string): boolean {
+    public isValid(_: string, getCountry?: () => string): boolean {
         return true
     }
 

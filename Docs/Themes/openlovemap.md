@@ -13,7 +13,7 @@ This theme contains the following layers:
 
   - [brothel](../Layers/brothel.md)
   - [stripclub](../Layers/stripclub.md)
-  - [erotic-shop](../Layers/erotic-shop.md)
+  - [erotic_shop](../Layers/erotic_shop.md)
   - [shops](../Layers/shops.md)
   - [condom_vending_machine](../Layers/condom_vending_machine.md)
   - [vending_machine](../Layers/vending_machine.md)
@@ -29,6 +29,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

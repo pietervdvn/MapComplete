@@ -118,7 +118,8 @@
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
   state.mapProperties.installCustomKeyboardHandler(viewport)
-
+  let canZoomIn = mapproperties.maxzoom.map(mz => mapproperties.zoom.data < mz, [mapproperties.zoom] )
+  let canZoomOut = mapproperties.minzoom.map(mz => mapproperties.zoom.data > mz, [mapproperties.zoom] )
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
     if (!rect) {
@@ -148,7 +149,7 @@
   let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
   let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
   let rasterLayerName =
-    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maptilerDefaultLayer.properties.name
+    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.defaultBackgroundLayer.properties.name
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
@@ -179,7 +180,7 @@
 </script>
 
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
-  <MaplibreMap map={maplibremap} />
+  <MaplibreMap map={maplibremap} mapProperties={mapproperties} />
 </div>
 
 {#if $visualFeedback}
@@ -256,6 +257,9 @@
     <If condition={state.featureSwitchIsTesting}>
       <div class="alert w-fit">Testmode</div>
     </If>
+    <If condition={state.featureSwitches.featureSwitchFakeUser}>
+      <div class="alert w-fit">Faking a user (Testmode)</div>
+    </If>
   </div>
   <div class="flex w-full flex-col items-center justify-center">
     <!-- Flex and w-full are needed for the positioning -->
@@ -329,12 +333,14 @@
       </If>
       <MapControlButton
         arialabel={Translations.t.general.labels.zoomIn}
+        enabled={canZoomIn}
         on:click={() => mapproperties.zoom.update((z) => z + 1)}
         on:keydown={forwardEventToMap}
       >
         <Plus class="h-8 w-8" />
       </MapControlButton>
       <MapControlButton
+        enabled={canZoomOut}
         arialabel={Translations.t.general.labels.zoomOut}
         on:click={() => mapproperties.zoom.update((z) => z - 1)}
         on:keydown={forwardEventToMap}
@@ -402,7 +408,7 @@
     <div slot="close-button" />
     <div class="normal-background absolute flex h-full w-full flex-col">
       <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement} />
-      <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+      <SelectedElementView {state} selectedElement={$selectedElement} />
     </div>
   </ModalRight>
 {/if}
@@ -580,10 +586,9 @@
           </div>
           <SelectedElementView
             highlightedRendering={state.guistate.highlightedUserSetting}
-            layer={UserRelatedState.usersettingsConfig}
             selectedElement={{
               type: "Feature",
-              properties: {},
+              properties: {id:"settings"},
               geometry: { type: "Point", coordinates: [0, 0] },
             }}
             {state}

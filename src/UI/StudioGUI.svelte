@@ -42,6 +42,7 @@
   )
   let osmConnection = new OsmConnection({
     oauth_token,
+    checkOnlineRegularly: true
   })
   const expertMode = UIEventSource.asBoolean(
     osmConnection.GetPreference("studio-expert-mode", "false", {

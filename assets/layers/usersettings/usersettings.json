@@ -26,7 +26,8 @@
       "da": "Indstillinger",
       "ca": "Configuració",
       "cs": "Nastavení",
-      "fi": "Asetukset"
+      "fi": "Asetukset",
+      "zh_Hant": "設定"
     }
   },
   "pointRendering": null,
@@ -229,7 +230,7 @@
             "ca": "Utilitzeu la capa de fons actual (<span class='code'>{__current_background}</span>) com a fons predeterminat",
             "de": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden",
             "cs": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí",
-            "nl": "Gebruik altijd <span class='code'>{__current_background}</span>) als achtergrondlaag. Dit is de huidige achtergrond."
+            "nl": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond."
           },
           "hideInAnswer": {
             "or": [
@@ -615,7 +616,7 @@
             "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。",
             "cs": "Chcete-li zadat nebo aktualizovat část textu, klikněte na ikonu „přeložit“ vedle řetězce. K tomu potřebujete účet Weblate. Vytvořte si jej s vaším uživatelským jménem OSM, abyste automaticky odemkli režim překladu."
           },
-          "icon": "translate"
+          "icon": "./assets/svg/translate.svg"
         }
       ]
     },
@@ -737,12 +738,8 @@
         {
           "if": "_translation_contributions>0",
           "then": {
-            "en": "You have contributed to translating MapComplete! That's awesome!",
-            "ca": "Has contribuït a traduir MapComplete! Això és fantàstic!",
-            "de": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!",
-            "nl": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!",
-            "cs": "Přispěli jste k překladu MapComplete! To je úžasné!",
-            "pt": "Você contribuiu para a tradução do MapComplete! Fantástico!"
+            "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!",
+            "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!"
           },
           "icon": "party"
         }

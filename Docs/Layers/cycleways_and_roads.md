@@ -19,6 +19,7 @@ All infrastructure that someone can cycle over, accompanied with questions about
   - This layer is needed as dependency for layer [crossings](#crossings)
   - This layer is needed as dependency for layer [kerbs](#kerbs)
   - This layer is needed as dependency for layer [rainbow_crossings](#rainbow_crossings)
+  - This layer is needed as dependency for layer [crossings_no_traffic_lights](#crossings_no_traffic_lights)
 
 
 
@@ -31,10 +32,12 @@ All infrastructure that someone can cycle over, accompanied with questions about
 
   - [blind_osm](https://mapcomplete.org/blind_osm)
   - [cycle_infra](https://mapcomplete.org/cycle_infra)
+  - [cyclenodes](https://mapcomplete.org/cyclenodes)
   - [kerbs_and_crossings](https://mapcomplete.org/kerbs_and_crossings)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
   - [rainbow_crossings](https://mapcomplete.org/rainbow_crossings)
+  - [walkingnodes](https://mapcomplete.org/walkingnodes)
 
 
 

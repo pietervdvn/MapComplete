@@ -128,6 +128,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Drinking Water')",
+      "value": "closed"
+    },
+    {
       "key": "tourism",
       "description": "Layer 'Drinking water' shows tourism=artwork with a fixed text, namely 'This drinking water point has an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Drinking Water')",
       "value": "artwork"

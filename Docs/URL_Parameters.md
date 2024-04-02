@@ -387,7 +387,7 @@ This documentation is defined in the source code at [InitialMapPositioning.ts](/
 
  Used to complete the login
 
-This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L166)
+This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L171)
 
  No default value set
 
@@ -464,7 +464,7 @@ This documentation is defined in the source code at [FilteredLayer.ts](/src/Mode
 
  The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L420)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L422)
 
  The default value is _map_
 

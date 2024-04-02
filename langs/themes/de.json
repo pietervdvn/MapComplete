@@ -96,6 +96,10 @@
         "shortDescription": "Eine Karte aller Sitzbänke",
         "title": "Sitzbänke"
     },
+    "bicycle_parkings": {
+        "description": "Eine Karte mit allen Arten von Fahrradabstellplätzen",
+        "title": "Fahrradabstellplätze"
+    },
     "bicycle_rental": {
         "description": "Auf dieser Karte finden Sie alle Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
         "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihgeschäften",
@@ -810,6 +814,71 @@
         "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.<p>Es gibt ein Konto <a href='https://masto.bike/@ghostbikebot' target='_blank'>auf Mastodon, das monatliche eine weltweite Übersicht von Geisterfahrrädern veröffentlicht</a></p>",
         "title": "Geisterräder"
     },
+    "ghostsigns": {
+        "description": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
+        "layers": {
+            "0": {
+                "description": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
+                "name": "Geisterzeichen",
+                "presets": {
+                    "0": {
+                        "title": "ein Geisterzeichen"
+                    }
+                },
+                "tagRenderings": {
+                    "brand": {
+                        "freeform": {
+                            "placeholder": "Unternehmensname"
+                        },
+                        "question": "Für welches Unternehmen wurde dieses Schild angefertigt?",
+                        "render": "Dieses Schild wurde gemacht für: {brand}"
+                    },
+                    "historic": {
+                        "mappings": {
+                            "0": {
+                                "then": "Das ist ein Geisterzeichen"
+                            },
+                            "1": {
+                                "then": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken"
+                            }
+                        },
+                        "question": "Ist das ein Geisterzeichen?",
+                        "questionHint": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
+                    },
+                    "inscription": {
+                        "freeform": {
+                            "placeholder": "Text auf dem Schild"
+                        },
+                        "question": "Was ist der Text auf dem Schild?",
+                        "render": "Der Text auf dem Schild ist: {inscription}"
+                    }
+                },
+                "title": {
+                    "render": "Geisterzeichen"
+                }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Das ist ein Geisterzeichen"
+                                },
+                                "1": {
+                                    "then": "Das ist kein Geisterzeichen"
+                                }
+                            },
+                            "question": "Ist das ein Geisterzeichen?",
+                            "questionHint": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
+                        }
+                    },
+                    "name": "Alle Werbe-Wandbilder"
+                }
+            }
+        },
+        "title": "Geisterzeichen"
+    },
     "grb": {
         "description": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
         "layers": {
@@ -886,6 +955,10 @@
         "description": "Diese Karte zeigt öffentlich zugängliche Innenräume",
         "title": "Innenräume"
     },
+    "items_with_image": {
+        "description": "Eine Karte, die alle Objekte auf OSM zeigt, die ein Bild haben. Dieses Thema ist sehr schlecht für MapComplete geeignet, da man nicht direkt ein Bild hinzufügen kann. Dieses Thema ist jedoch hauptsächlich dazu da, um alles in die Datenbank aufzunehmen, was es ermöglicht, Bilder in der Nähe für andere Funktionen schnell zu finden",
+        "title": "Alle Elemente mit Bildern"
+    },
     "kerbs_and_crossings": {
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
         "layers": {
@@ -911,14 +984,21 @@
                     "0": {
                         "options": {
                             "0": {
-                                "question": "Themename enthält {search}"
+                                "question": "Themenname enthält {search}"
                             }
                         }
                     },
                     "1": {
                         "options": {
                             "0": {
-                                "question": "Der Name enthält <b>nicht</b> {search}"
+                                "question": "Themename enthält <b>not</b> {search}"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Etymologie-Thema ausschließen"
                             }
                         }
                     },
@@ -960,14 +1040,14 @@
                     "7": {
                         "options": {
                             "0": {
-                                "question": "Erstellt mit host {search}"
+                                "question": "Erstellt mit Host {search}"
                             }
                         }
                     },
                     "8": {
                         "options": {
                             "0": {
-                                "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
+                                "question": "Änderungssatz hat mindestens ein Bild hinzugefügt"
                             }
                         }
                     },
@@ -977,20 +1057,13 @@
                                 "question": "GRB-Thema ausschließen"
                             }
                         }
-                    },
-                    "10": {
-                        "options": {
-                            "0": {
-                                "question": "Etymologie-Thema ausschließen"
-                            }
-                        }
                     }
                 },
                 "name": "Zentrum der Änderungssätze",
                 "tagRenderings": {
                     "contributor": {
-                        "question": "Wer hat diese Änderung vorgenommen?",
-                        "render": "Änderung von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                        "question": "Welcher Mitwirkende hat diese Änderung vorgenommen?",
+                        "render": "Änderung vorgenommen von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
                     "host": {
                         "question": "Über welchen Host (Webseite) wurde diese Änderung vorgenommen?",
@@ -1005,7 +1078,7 @@
                     },
                     "theme-id": {
                         "question": "Welches Thema wurde für die Änderung verwendet?",
-                        "render": "Geändert mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                        "render": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
                     },
                     "version": {
                         "question": "Mit welcher MapComplete Version wurde die Änderung vorgenommen?",
@@ -1043,6 +1116,10 @@
         "shortDescription": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße.",
         "title": "Höchstgeschwindigkeit"
     },
+    "memorials": {
+        "description": "Denkmäler sind physische Objekte, die dauerhaft im öffentlichen Raum aufgestellt werden, um an eine Person oder ein Ereignis zu erinnern. Dabei kann es sich um eine Vielzahl von Objekten handeln, z. B. Statuen, Tafeln, Gemälde, militärische Objekte (wie Panzer), ...",
+        "title": "Denkmäler"
+    },
     "nature": {
         "description": "Eine Karte mit interessanten Informationen für Touristen und Naturliebhaber.",
         "shortDescription": "Eine Karte mit interessanten Orten für Naturliebhaber",
@@ -1060,6 +1137,33 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1101,33 +1205,6 @@
             "8": {
                 "override": {
                     "name": "Barrierefreie Parkplätze"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1262,6 +1339,32 @@
     },
     "postboxes": {
         "description": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten.",
+        "layers": {
+            "3": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Dieses Geschäft ist ein Post-Partner"
+                                },
+                                "1": {
+                                    "then": "Dieses Geschäft ist kein Post-Partner"
+                                }
+                            },
+                            "question": "Ist dieses Geschäft ein Post-Partner?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "description": "Wenn ein Laden noch nicht auf der Karte ist und ein Post-Partner ist, kannst du ihn hier hinzufügen.",
+                            "title": "ein fehlendes Geschäft, das ein Post-Partner ist"
+                        }
+                    },
+                    "description": "Hinzufügen eines neuen Post-Partners auf der Karte in einem bestehenden Geschäft"
+                }
+            }
+        },
         "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
         "title": "Post- und Briefkastenkarte"
     },
@@ -1344,10 +1447,6 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
-            },
             "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1379,6 +1478,10 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"

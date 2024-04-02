@@ -1910,13 +1910,6 @@
                     }
                 },
                 "question": "Quer ajudar na tradução do MapComplete?"
-            },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Você contribuiu para a tradução do MapComplete! Fantástico!"
-                    }
-                }
             }
         }
     },

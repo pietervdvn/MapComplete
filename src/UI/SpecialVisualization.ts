@@ -22,6 +22,8 @@ import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { SummaryTileSourceRewriter } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
+import { Map as MlMap } from "maplibre-gl"
+import ShowDataLayer from "./Map/ShowDataLayer"
 
 /**
  * The state needed to render a special Visualisation.
@@ -86,6 +88,8 @@ export interface SpecialVisualizationState {
 
     readonly previewedImage: UIEventSource<ProvidedImage>
     readonly geolocation: GeoLocationHandler
+
+    showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
 }
 
 export interface SpecialVisualization {

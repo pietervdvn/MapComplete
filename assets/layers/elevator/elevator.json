@@ -175,15 +175,44 @@
       }
     },
     {
+      "id": "elevator-shape",
+      "question": {
+        "en": "What shape does this elevator have?"
+      },
+      "mappings": [
+        {
+          "if": "shape=rectangular",
+          "alsoShowIf": "shape=",
+          "then": {
+            "en": "This elevator has a rectangular shape"
+          },
+          "icon": "./assets/svg/square.svg"
+        },
+        {
+          "if": "shape=circular",
+          "then": {
+            "en": "This elevator has a circular shape"
+          },
+          "icon": "./assets/svg/circle.svg"
+        }
+      ]
+    },
+    {
       "id": "elevator-width",
+      "condition": {
+        "or": [
+          "shape=",
+          "shape=rectangular"
+        ]
+      },
       "render": {
-        "en": "This elevator has a width of {canonical(elevator:width)}",
-        "fr": "Cet ascenseur a une largeur de {canonical(elevator:width)}",
-        "de": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}",
-        "nl": "Deze lift heeft een breedte van {canonical(elevator:width)}",
-        "pl": "Szerokość tej windy to {canonical(elevator:width)}",
-        "ca": "L'ascensor té una amplada de {canonical(elevator:width)}",
-        "cs": "Tento výtah má šířku {canonical(elevator:width)}"
+        "en": "This elevator has a width of {canonical(width)}",
+        "fr": "Cet ascenseur a une largeur de {canonical(width)}",
+        "de": "Die Aufzugskabine hat eine Breite von {canonical(width)}",
+        "nl": "Deze lift heeft een breedte van {canonical(width)}",
+        "pl": "Szerokość tej windy to {canonical(width)}",
+        "ca": "L'ascensor té una amplada de {canonical(width)}",
+        "cs": "Tento výtah má šířku {canonical(width)}"
       },
       "question": {
         "en": "What is the width of this elevator?",
@@ -195,19 +224,25 @@
         "cs": "Jaká je šířka tohoto výtahu?"
       },
       "freeform": {
-        "key": "elevator:width",
+        "key": "width",
         "type": "pfloat"
       }
     },
     {
       "id": "elevator-depth",
+      "condition": {
+        "or": [
+          "shape=",
+          "shape=rectangular"
+        ]
+      },
       "render": {
-        "en": "This elevator has a depth of {canonical(elevator:depth)}",
-        "fr": "Cet ascenseur a une profondeur de {canonical(elevator:depth)}",
-        "de": "Dieser Aufzug hat eine Kabinentiefe von {canonical(elevator:depth)}",
-        "nl": "Deze lift heeft een diepte van {canonical(elevator:depth)}",
-        "ca": "L'ascensor té un profunditat de {canonical(elevator:depth)}",
-        "cs": "Tento výtah má hloubku {canonical(elevator:depth)}"
+        "en": "This elevator has a depth of {canonical(length)}",
+        "fr": "Cet ascenseur a une profondeur de {canonical(length)}",
+        "de": "Dieser Aufzug hat eine Kabinentiefe von {canonical(length)}",
+        "nl": "Deze lift heeft een diepte van {canonical(length)}",
+        "ca": "L'ascensor té un profunditat de {canonical(length)}",
+        "cs": "Tento výtah má hloubku {canonical(length)}"
       },
       "question": {
         "en": "What is the depth of this elevator?",
@@ -218,7 +253,25 @@
         "cs": "Jaká je hloubka tohoto výtahu?"
       },
       "freeform": {
-        "key": "elevator:depth",
+        "key": "length",
+        "type": "pfloat"
+      }
+    },
+    {
+      "id": "elevator-diameter",
+      "condition": {
+        "or": [
+          "shape=circular"
+        ]
+      },
+      "render": {
+        "en": "This elevator has a diameter of {canonical(diameter)}"
+      },
+      "question": {
+        "en": "What is the diameter of this elevator?"
+      },
+      "freeform": {
+        "key": "diameter",
         "type": "pfloat"
       }
     },
@@ -356,14 +409,14 @@
           "cm"
         ]
       },
-      "elevator:width": {
+      "width": {
         "quantity": "distance",
         "canonical": "m",
         "denominations": [
           "cm"
         ]
       },
-      "elevator:depth": {
+      "length": {
         "quantity": "distance",
         "canonical": "m",
         "denominations": [

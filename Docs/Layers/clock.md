@@ -28,6 +28,7 @@ Layer with public clocks
 
   - [clock](https://mapcomplete.org/clock)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
 
 
 

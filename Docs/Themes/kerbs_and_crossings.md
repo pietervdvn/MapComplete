@@ -12,7 +12,7 @@ This theme contains the following layers:
 
 
   - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
-  - [crossings](../Layers/crossings.md)
+  - [crossings_no_traffic_lights](../Layers/crossings_no_traffic_lights.md)
   - [kerbs](../Layers/kerbs.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
@@ -22,6 +22,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

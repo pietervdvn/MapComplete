@@ -26,6 +26,7 @@ A love hotel is a type of short-stay hotel found around the world operated prima
 
 
   - [hotels](https://mapcomplete.org/hotels)
+  - [openlovemap](https://mapcomplete.org/openlovemap)
   - [personal](https://mapcomplete.org/personal)
 
 

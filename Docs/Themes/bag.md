@@ -11,10 +11,10 @@ This theme contains the following layers:
 
 
 
-  - [osm:buildings](../Layers/osm:buildings.md)
-  - [osm:adresses](../Layers/osm:adresses.md)
-  - [bag:pand](../Layers/bag:pand.md)
-  - [bag:verblijfsobject](../Layers/bag:verblijfsobject.md)
+  - [osm_buildings](../Layers/osm_buildings.md)
+  - [osm_adresses](../Layers/osm_adresses.md)
+  - [bag_pand](../Layers/bag_pand.md)
+  - [bag_verblijfsobject](../Layers/bag_verblijfsobject.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
@@ -23,6 +23,7 @@ This theme contains the following layers:
   - [range](../Layers/range.md)
   - [last_click](../Layers/last_click.md)
   - [favourite](../Layers/favourite.md)
+  - [summary](../Layers/summary.md)
 
 
 Available languages:

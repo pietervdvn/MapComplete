@@ -68,6 +68,11 @@
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Bicycle libraries')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Bicycle library' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Bicycle libraries')",
+      "value": "closed"
+    },
+    {
       "key": "charge",
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Bicycle libraries')"
     },

@@ -11,7 +11,23 @@
                     "0": {
                         "then": "這棟建築沒有門牌"
                     }
-                }
+                },
+                "question": "這間房子的門牌號碼是多少？",
+                "render": "門牌號碼是 <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "地址所在的道路是？"
+            }
+        }
+    },
+    "advertising": {
+        "name": "廣告",
+        "presets": {
+            "0": {
+                "title": "一塊告示牌"
+            },
+            "1": {
+                "title": "獨自設立的海報框"
             }
         }
     },
@@ -86,6 +102,20 @@
                 }
             },
             "render": "藝術品"
+        }
+    },
+    "barrier": {
+        "tagRenderings": {
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": "單車騎士能夠穿越。"
+                    },
+                    "1": {
+                        "then": "單車騎士無法穿越。"
+                    }
+                }
+            }
         }
     },
     "bench": {
@@ -634,7 +664,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "24/7 開放 (包括假日)"
                         }
@@ -777,6 +807,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "設定"
         }
     },
     "walls_and_buildings": {

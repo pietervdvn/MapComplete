@@ -153,6 +153,7 @@
   ],
   "tagRenderings": [
     "images",
+    "reviews",
     {
       "id": "is_makerspace",
       "question": {
@@ -509,8 +510,8 @@
       },
       "id": "hackerspaces-start_date"
     },
-    "questions",
-    "reviews"
+    "internet-all",
+    "questions"
   ],
   "deletion": true,
   "allowMove": true

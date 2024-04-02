@@ -3,7 +3,7 @@ import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { Tag } from "./Tag"
 import { ExpressionSpecification } from "maplibre-gl"
 
-export default class ComparingTag implements TagsFilter {
+export default class ComparingTag extends TagsFilter {
     private readonly _key: string
     private readonly _predicate: (value: string) => boolean
     private readonly _representation: "<" | ">" | "<=" | ">="
@@ -15,13 +15,14 @@ export default class ComparingTag implements TagsFilter {
         representation: "<" | ">" | "<=" | ">=",
         boundary: string
     ) {
+        super()
         this._key = key
         this._predicate = predicate
         this._representation = representation
         this._boundary = boundary
     }
 
-    asChange(_: Record<string, string>): { k: string; v: string }[] {
+    asChange(_: Readonly<Record<string, string>>): { k: string; v: string }[] {
         throw "A comparable tag can not be used to be uploaded to OSM"
     }
 

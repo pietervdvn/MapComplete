@@ -6,14 +6,30 @@
 
   let isLoading = false
   export let map: UIEventSource<MlMap>
+  /**
+   * Optional. Only used for the 'global' change indicator so that it won't spin on pan/zoom but only when a change _actually_ occured
+   */
+  export let rasterLayer: UIEventSource<any> = undefined
+  
+  let didChange = undefined
+  onDestroy(rasterLayer?.addCallback(() => {
+    didChange = true
+  }) ??( () => {}))
+  
   onDestroy(Stores.Chronic(250).addCallback(
     () => {
-      isLoading = !map.data?.isStyleLoaded()
+      const mapIsLoading = !map.data?.isStyleLoaded()
+      isLoading = mapIsLoading && (didChange || rasterLayer === undefined)
+      if(didChange && !mapIsLoading){
+        didChange = false
+      }
     },
   ))
 </script>
 
 
 {#if isLoading}
-  <Loading />
+  <Loading cls="h-6 w-6" />
+{:else}
+  <slot />
 {/if}

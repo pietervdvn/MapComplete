@@ -4,7 +4,8 @@
   "source": "special",
   "title": {
     "render": {
-      "en": "Summary"
+      "en": "Summary",
+      "de": "Übersicht"
     }
   },
   "pointRendering": [

@@ -17,6 +17,8 @@ An animal shelter is a facility where animals in trouble are brought and facilit
   - This layer is shown at zoomlevel **0** and higher
 
 
+No themes use this layer
+
 
 
  Basic tags for this layer 

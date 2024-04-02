@@ -1150,7 +1150,8 @@
                 "render": "Dit is een fietsparking van het type: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "Hoeveel fietsen kunnen in deze fietsparking (inclusief potentiëel bakfietsen)?",
+                "question": "Hoeveel fietsen kunnen in deze fietsparking?",
+                "questionHint": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ...",
                 "render": "Plaats voor {capacity} fietsen"
             },
             "Cargo bike capacity?": {
@@ -3672,11 +3673,11 @@
             },
             "elevator-depth": {
                 "question": "Wat is de diepte van deze lift?",
-                "render": "Deze lift heeft een diepte van {canonical(elevator:depth)}"
+                "render": "Deze lift heeft een diepte van {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Wat is de breedte van deze lift?",
-                "render": "Deze lift heeft een breedte van {canonical(elevator:width)}"
+                "render": "Deze lift heeft een breedte van {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {
@@ -5221,6 +5222,13 @@
             }
         }
     },
+    "memorial": {
+        "tagRenderings": {
+            "start_date": {
+                "render": "Geplaatst op {start_date}"
+            }
+        }
+    },
     "nature_reserve": {
         "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
         "filter": {
@@ -6538,12 +6546,17 @@
                 }
             },
             "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Gesloten voor onbepaalde duur"
+                    }
+                },
                 "question": "Wat zijn de openingstijden van {title()}?",
                 "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "24/7 open (ook tijdens feestdagen)"
                         }
@@ -8709,7 +8722,7 @@
                         "then": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond"
                     },
                     "4": {
-                        "then": "Gebruik altijd <span class='code'>{__current_background}</span>) als achtergrondlaag. Dit is de huidige achtergrond."
+                        "then": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond."
                     },
                     "5": {
                         "then": "Gebruik <span class='code'>{mapcomplete-preferred-background-layer}</span> altijd als achtergrondlaag"
@@ -8877,7 +8890,7 @@
             "translation-thanks": {
                 "mappings": {
                     "0": {
-                        "then": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
+                        "then": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!"
                     }
                 }
             },

@@ -53,6 +53,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'ATMs' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'ATM Machines')",
+      "value": "closed"
+    },
+    {
       "key": "cash_out",
       "description": "Layer 'ATMs' shows cash_out= with a fixed text, namely 'You can withdraw cash from this ATM' (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key cash_out.",
       "value": ""
@@ -210,6 +215,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Post offices' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'ATM Machines')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Post offices' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'ATM Machines')",
+      "value": "closed"
     },
     {
       "key": "post_office",

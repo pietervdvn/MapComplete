@@ -20,6 +20,7 @@
         "cancel": "Abbrechen",
         "cannotBeDeleted": "Dieses Element kann nicht gelöscht werden",
         "delete": "Löschen",
+        "deletedTitle": "Gelöschtes Objekt",
         "explanations": {
             "hardDelete": "Dieses Objekt wird in OpenStreetMap gelöscht. Es kann von einem erfahrenen Mitwirkenden wiederhergestellt werden",
             "retagNoOtherThemes": "Dieses Objekt wird neu klassifiziert und aus dieser Anwendung ausgeblendet",
@@ -27,6 +28,7 @@
             "selectReason": "Bitte auswählen, warum dieses Element gelöscht werden soll",
             "softDelete": "Dieses Element wird aktualisiert und in dieser Anwendung ausgeblendet. <span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "Dieses Merkmal wurde geändert und passt nicht mehr zu dieser Ebene",
         "isDeleted": "Dieses Element wurde gelöscht",
         "isntAPoint": "Es können nur Punkte gelöscht werden. Das ausgewählte Objekt ist ein Weg, eine Fläche oder eine Relation.",
         "loading": "Eigenschaften untersuchen, um festzustellen, ob das Element gelöscht werden kann.",
@@ -55,9 +57,9 @@
             "isFavourite": "Der Standort ist derzeit als Favorit markiert und wird auf allen thematischen Karten von MapComplete angezeigt, die Sie besuchen.",
             "isMarkedShort": "Als bevorzugter Standort markiert",
             "isNotMarkedShort": "Nicht als Favorit markiert",
-            "markAsFavouriteTitle": "Diesen Standort als bevorzugten Standort markieren",
+            "markAsFavouriteTitle": "Diesen Standort als Favorit markieren",
             "markDescription": "Diesen Standort zur persönlichen Liste bevorzugter Standorte hinzufügen",
-            "unmark": "Von persönlicher Liste bevorzugter Standorte entfernen",
+            "unmark": "Standort von Favoritenliste entfernen",
             "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
         },
         "downloadGeojson": "Favoriten als geojson herunterladen",
@@ -122,6 +124,7 @@
             "confirmLocation": "Diesen Standort bestätigen",
             "confirmTitle": "{title} hinzufügen?",
             "confirmWarning": "Das von Dir eingetragene Objekt wird <b>für alle sichtbar sein</b>. Bitte füge nur Objekte hinzu, die wirklich existieren. Viele Anwendungen nutzen diese Daten.",
+            "creating": "Einen neuen Punkt zu erstellen...",
             "disableFilters": "Alle Filter deaktivieren",
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
             "enableLayer": "Ebene {name} einblenden",
@@ -213,6 +216,7 @@
                 "current_view_generic": "Exportiere eine PDF-Ansicht im aktuellen Modus für {paper_size} im {orientation} Modus"
             },
             "title": "Download",
+            "toMuch": "Es gibt zu viele Funktionen, um sie alle herunterzuladen",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
         "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
@@ -222,6 +226,10 @@
         "example": "Beispiel",
         "examples": "Beispiele",
         "fewChangesBefore": "Bitte beantworten Sie einige Fragen zu bestehenden Objekten, bevor Sie ein neues Objekt hinzufügen.",
+        "filterPanel": {
+            "disableAll": "Alle deaktivieren",
+            "enableAll": "Alle aktivieren"
+        },
         "geopermissionDenied": "Die Verwendung der Standortbestimmung wurde verweigert",
         "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">ein neues Konto anlegen</a>",
@@ -664,6 +672,8 @@
         "i_am_affiliated_explanation": "Prüfung, ob Sie der Eigentümer, Ersteller, Angestellter, … sind",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
+        "non_place_review": "Eine Bewertung geht nicht um einen Ort und wird hier nicht angezeigt.",
+        "non_place_reviews": "{n} Bewertungen sind nicht über einen Ort und werden hier nicht angezeigt.",
         "question": "Wie bewerten Sie {title()}?",
         "question_opinion": "Wie war Ihre Erfahrung?",
         "rate": "Mit {n} Sternen bewerten",
@@ -675,6 +685,7 @@
         "save": "Bewertung speichern",
         "saved": "Bewertung gespeichert. Danke fürs Teilen!",
         "saving_review": "Speichern…",
+        "see_all": "Seh alle deine Bewertungen auf Mangrove Reviews",
         "title": "{count} Rezensionen",
         "title_singular": "Eine Rezension",
         "too_long": "Maximal {max} Zeichen sind erlaubt. Ihre Bewertung hat {amount} Zeichen.",
@@ -779,7 +790,9 @@
             "feedback": "Webadresse ungültig"
         },
         "wikidata": {
-            "description": "Eine Wikidata-Kennung"
+            "description": "Eine Wikidata-Kennung",
+            "empty": "Bitte gib einige Wikidata-Einträge ein",
+            "startsWithQ": "Ein Wikidata-Identifikator beginnt mit Q und wird von einer Zahl gefolgt"
         }
     }
 }

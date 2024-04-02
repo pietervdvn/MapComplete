@@ -74,4 +74,4 @@
      style="z-index: 100">
   <StyleLoadingIndicator map={altmap} />
 </div>
-<MaplibreMap {interactive} map={altmap} />
+<MaplibreMap {interactive} map={altmap} mapProperties={altproperties} />

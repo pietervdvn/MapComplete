@@ -13,7 +13,8 @@
     "pl": "Reklama",
     "pt_BR": "Anunciar",
     "zh_Hans": "广告",
-    "it": "Pubblicità"
+    "it": "Pubblicità",
+    "zh_Hant": "廣告"
   },
   "description": {
     "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
@@ -28,7 +29,12 @@
     "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione"
   },
   "source": {
-    "osmTags": "advertising~*"
+    "osmTags": {
+      "and": [
+        "advertising~*",
+        "advertising!=no"
+      ]
+    }
   },
   "minzoom": 15,
   "title": {
@@ -310,6 +316,27 @@
                 "then": "./assets/themes/advertising/poster_box_no_support.svg"
               },
               {
+                "if": {
+                  "and": [
+                    "advertising=poster_box",
+                    {
+                      "or": [
+                        "shelter=yes",
+                        "amenity=shelter",
+                        "building=shelter"
+                      ]
+                    },
+                    {
+                      "or": [
+                        "public_transport=platform",
+                        "highway=bus_stop"
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/themes/advertising/poster_box_transit_shelter.svg"
+              },
+              {
                 "if": "advertising=poster_box",
                 "then": "./assets/themes/advertising/poster_box.svg"
               },
@@ -398,7 +425,8 @@
         "pl": "bilbord",
         "pt_BR": "um outdoor",
         "zh_Hans": "一块广告牌",
-        "it": "un cartellone"
+        "it": "un cartellone",
+        "zh_Hant": "一塊告示牌"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -434,7 +462,8 @@
         "fr": "un panneau à affiches scellé au sol",
         "pl": "wolnostojąca skrzynka plakatowa",
         "pt_BR": "uma caixa expositora independente",
-        "it": "un cartellone pubblicitario fissato a terra"
+        "it": "un cartellone pubblicitario fissato a terra",
+        "zh_Hant": "獨自設立的海報框"
       },
       "exampleImages": [
         "./assets/themes/advertising/Mupi_spain.jpg",

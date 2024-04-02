@@ -30,7 +30,10 @@ A layer showing (public) toilets
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
   - [ski](https://mapcomplete.org/ski)
+  - [stations](https://mapcomplete.org/stations)
+  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
   - [toilets](https://mapcomplete.org/toilets)
+  - [velopark](https://mapcomplete.org/velopark)
 
 
 
@@ -249,6 +252,8 @@ This rendering asks information about the property  [opening_hours](https://wiki
 
 
   - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `relevant-questions`

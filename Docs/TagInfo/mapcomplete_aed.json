@@ -161,6 +161,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Defibrillators' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Defibrillators')",
+      "value": "closed"
+    },
+    {
       "key": "description",
       "description": "Layer 'Defibrillators' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Defibrillators')"
     },

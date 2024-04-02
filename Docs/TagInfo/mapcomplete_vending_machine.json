@@ -184,6 +184,11 @@
       "value": "24/7"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Vending Machines' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Vending Machines')",
+      "value": "closed"
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Vending Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Vending Machines')",
       "value": "yes"

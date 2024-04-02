@@ -19,6 +19,18 @@ Route markers are small markers often found along official hiking/cycling/riding
 
 
 
+#### Themes using this layer 
+
+
+
+
+
+  - [cyclenodes](https://mapcomplete.org/cyclenodes)
+  - [walkingnodes](https://mapcomplete.org/walkingnodes)
+
+
+
+
  Basic tags for this layer 
 ---------------------------
 

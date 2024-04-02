@@ -52,7 +52,4 @@ export default class OpeningHoursValidator extends Validator {
         )
     }
 
-    reformat(s: string, _?: () => string): string {
-        return super.reformat(s, _)
-    }
 }

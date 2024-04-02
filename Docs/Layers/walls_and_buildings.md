@@ -27,6 +27,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - This layer is needed as dependency for layer [entrance](#entrance)
   - This layer is needed as dependency for layer [surveillance_camera](#surveillance_camera)
   - This layer is needed as dependency for layer [facadegardens](#facadegardens)
+  - This layer is needed as dependency for layer [ghostsigns](#ghostsigns)
   - This layer is needed as dependency for layer [parking_spaces_disabled](#parking_spaces_disabled)
 
 
@@ -43,10 +44,13 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - [artwork](https://mapcomplete.org/artwork)
   - [clock](https://mapcomplete.org/clock)
   - [facadegardens](https://mapcomplete.org/facadegardens)
+  - [ghostsigns](https://mapcomplete.org/ghostsigns)
   - [indoors](https://mapcomplete.org/indoors)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
   - [surveillance](https://mapcomplete.org/surveillance)
+  - [walls_and_buildings](https://mapcomplete.org/walls_and_buildings)
 
 
 

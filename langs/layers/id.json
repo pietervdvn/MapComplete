@@ -515,7 +515,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Buka 24 jam (termasuk hari libur)"
                         }

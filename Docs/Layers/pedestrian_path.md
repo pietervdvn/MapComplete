@@ -30,6 +30,8 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
   - [indoors](https://mapcomplete.org/indoors)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
+  - [walls_and_buildings](https://mapcomplete.org/walls_and_buildings)
 
 
 

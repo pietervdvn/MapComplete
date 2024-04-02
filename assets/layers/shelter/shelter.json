@@ -45,6 +45,7 @@
   ],
   "lineRendering": [],
   "tagRenderings": [
+    "images",
     {
       "id": "shelter-type",
       "mappings": [
@@ -120,5 +121,9 @@
         "type": "string"
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  }
 }

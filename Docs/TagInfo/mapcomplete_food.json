@@ -59,6 +59,11 @@
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Restaurants and fast food')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "closed"
+    },
+    {
       "key": "website",
       "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Restaurants and fast food')"
     },
@@ -606,6 +611,11 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Ice cream parlors' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "closed"
     },
     {
       "key": "phone",

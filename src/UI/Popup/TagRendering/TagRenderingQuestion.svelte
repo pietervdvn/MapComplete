@@ -30,6 +30,7 @@
   import { placeholder } from "../../../Utils/placeholder"
   import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Tag } from "../../../Logic/Tags/Tag"
+  import { get, writable } from "svelte/store"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -46,7 +47,7 @@
 
   // Will be bound if a freeform is available
   let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key])
-  let freeformInputUnvalidated = new UIEventSource<string>(freeformInput.data)
+  let freeformInputUnvalidated = new UIEventSource<string>(get(freeformInput))
 
   let selectedMapping: number = undefined
   /**
@@ -112,7 +113,7 @@
           unseenFreeformValues.splice(index, 1)
         }
         // TODO this has _to much_ values
-        freeformInput.setData(unseenFreeformValues.join(";"))
+        freeformInput.set(unseenFreeformValues.join(";"))
         if (checkedMappings.length + 1 < mappings.length) {
           checkedMappings.push(unseenFreeformValues.length > 0)
         }
@@ -121,10 +122,10 @@
     if (confg.freeform?.key) {
       if (!confg.multiAnswer) {
         // Somehow, setting multi-answer freeform values is broken if this is not set
-        freeformInput.setData(tgs[confg.freeform.key])
+        freeformInput.set(tgs[confg.freeform.key])
       }
     } else {
-      freeformInput.setData(undefined)
+      freeformInput.set(undefined)
     }
     feedback.setData(undefined)
   }
@@ -134,8 +135,8 @@
     // We want to (re)-initialize whenever the 'tags' or 'config' change - but not when 'checkedConfig' changes
     initialize($tags, config)
   }
-
-  freeformInput.addCallbackAndRun((freeformValue) => {
+onDestroy(
+  freeformInput.subscribe((freeformValue) => {
     if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
       return
     }
@@ -151,7 +152,8 @@
     if (freeformValue?.length > 0) {
       selectedMapping = mappings.length
     }
-  })
+  }))
+
   $: {
     if (
       allowDeleteOfFreeform &&
@@ -202,7 +204,7 @@
       theme: tags.data["_orig_theme"] ?? state.layout.id,
       changeType: "answer",
     })
-    freeformInput.setData(undefined)
+    freeformInput.set(undefined)
     selectedMapping = undefined
     selectedTags = undefined
 
@@ -241,7 +243,7 @@
     <form
       class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
-      on:submit|preventDefault={() => onSave()}
+      on:submit|preventDefault={() =>{ /*onSave(); This submit is not needed and triggers to early, causing bugs: see #1808*/}}
     >
       <fieldset>
         <legend>
@@ -285,7 +287,7 @@
             feature={selectedElement}
             value={freeformInput}
             unvalidatedText={freeformInputUnvalidated}
-            on:submit={onSave}
+            on:submit={() => onSave()}
           />
         {:else if mappings !== undefined && !config.multiAnswer}
           <!-- Simple radiobuttons as mapping -->
@@ -329,7 +331,7 @@
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
                   on:selected={() => (selectedMapping = config.mappings?.length)}
-                  on:submit={onSave}
+                  on:submit={() => onSave()}
                 />
               </label>
             {/if}
@@ -372,7 +374,7 @@
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
-                  on:submit={onSave}
+                  on:submit={() => onSave()}
                 />
               </label>
             {/if}
@@ -397,13 +399,13 @@
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
               {#if allowDeleteOfFreeform && (mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
-                <button class="primary flex" on:click|stopPropagation|preventDefault={onSave}>
+                <button class="primary flex" on:click|stopPropagation|preventDefault={() => onSave()}>
                   <TrashIcon class="h-6 w-6 text-red-500" />
                   <Tr t={Translations.t.general.eraseValue} />
                 </button>
               {:else}
                 <button
-                  on:click={onSave}
+                  on:click={() => onSave()}
                   class={twJoin(
                     selectedTags === undefined ? "disabled" : "button-shadow",
                     "primary"

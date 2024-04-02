@@ -277,9 +277,11 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 backgroundId === "photo" || backgroundId === "map" || backgroundId === "osmbasedmap"
 
             if (!isCategory && !ValidateTheme._availableLayers.has(backgroundId)) {
+                const options = Array.from(ValidateTheme._availableLayers)
+                const nearby = Utils.sortedByLevenshteinDistance(backgroundId, options, t => t)
                 context
                     .enter("defaultBackgroundId")
-                    .err("This layer ID is not known: " + backgroundId)
+                    .err(`This layer ID is not known: ${backgroundId}. Perhaps you meant one of ${nearby.slice(0,5).join(", ")}`)
             }
         }
 
@@ -850,7 +852,7 @@ class CheckTranslation extends DesugaringStep<Translatable> {
         for (const key of keys) {
             const lng = json[key]
             if (lng === "") {
-                context.enter(lng).err("Got an empty string in translation for language " + lng)
+                context.enter(lng).err("Got an empty string in translation for language " + key)
             }
 
             // TODO validate that all subparts are here
@@ -1011,6 +1013,13 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         txt.indexOf(`{wikidata_label(${json.freeform.key})`) >= 0
                     ) {
                         continue
+                    }
+                    if(json.freeform.key.indexOf("wikidata")>=0){
+                        context
+                            .enter("render")
+                            .err(
+                                `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. Did you perhaps forget to set "freeform.type: 'wikidata'"?`
+                            )
                     }
                     context
                         .enter("render")
@@ -1264,7 +1273,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 // It is tempting to add an index to this warning; however, due to labels the indices here might be different from the index in the tagRendering list
                 context
                     .enter("tagRenderings")
-                    .err("Some tagrenderings have a duplicate id: " + duplicates.join(", "))
+                    .err("Some tagrenderings have a duplicate id: " + duplicates.join(", ")+"\n"+JSON.stringify(json.tagRenderings.filter(tr=> duplicates.indexOf(tr["id"])>=0)))
             }
         }
 
@@ -1837,6 +1846,7 @@ export class ValidateThemeEnsemble extends Conversion<
         {
             tags: TagsFilter
             foundInTheme: string[]
+            isCounted: boolean
         }
     >
 > {
@@ -1855,10 +1865,11 @@ export class ValidateThemeEnsemble extends Conversion<
         string,
         {
             tags: TagsFilter
-            foundInTheme: string[]
+            foundInTheme: string[],
+            isCounted: boolean
         }
     > {
-        const idToSource = new Map<string, { tags: TagsFilter; foundInTheme: string[] }>()
+        const idToSource = new Map<string, { tags: TagsFilter; foundInTheme: string[], isCounted: boolean }>()
 
         for (const theme of json) {
             for (const layer of theme.layers) {
@@ -1879,7 +1890,7 @@ export class ValidateThemeEnsemble extends Conversion<
                 const id = layer.id
                 const tags = layer.source.osmTags
                 if (!idToSource.has(id)) {
-                    idToSource.set(id, { tags, foundInTheme: [theme.id] })
+                    idToSource.set(id, { tags, foundInTheme: [theme.id], isCounted: layer.doCount })
                     continue
                 }
 
@@ -1888,6 +1899,7 @@ export class ValidateThemeEnsemble extends Conversion<
                 if (oldTags.shadows(tags) && tags.shadows(oldTags)) {
                     // All is good, all is well
                     oldTheme.push(theme.id)
+                    idToSource.get(id).isCounted ||= layer.doCount
                     continue
                 }
                 context.err(

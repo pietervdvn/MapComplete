@@ -24,6 +24,7 @@ export class ImageUploadManager {
     private readonly _uploadRetriedSuccess: Map<string, UIEventSource<number>> = new Map()
     private readonly _osmConnection: OsmConnection
     private readonly _changes: Changes
+    public readonly isUploading: Store<boolean>
 
     constructor(
         layout: LayoutConfig,
@@ -37,6 +38,13 @@ export class ImageUploadManager {
         this._layout = layout
         this._osmConnection = osmConnection
         this._changes = changes
+
+        const failed = this.getCounterFor(this._uploadFailed, "*")
+        const done = this.getCounterFor(this._uploadFinished, "*")
+
+        this.isUploading = this.getCounterFor(this._uploadStarted, "*").map(startedCount => {
+            return startedCount > failed.data  + done.data
+        }, [failed, done])
     }
 
     /**
@@ -101,7 +109,6 @@ export class ImageUploadManager {
             "osmid:" + tags.id,
         ].join("\n")
 
-        console.log("Upload done, creating ")
         const action = await this.uploadImageWithLicense(
             featureId,
             title,
@@ -110,6 +117,9 @@ export class ImageUploadManager {
             targetKey,
             tags?.data?.["_orig_theme"]
         )
+        if (!action) {
+            return
+        }
         if (!isNaN(Number(featureId))) {
             // This is a map note
             const url = action._url
@@ -145,6 +155,7 @@ export class ImageUploadManager {
             } catch (e) {
                 console.error("Could again not upload image due to", e)
                 this.increaseCountFor(this._uploadFailed, featureId)
+                return undefined
             }
         }
         console.log("Uploading done, creating action for", featureId)

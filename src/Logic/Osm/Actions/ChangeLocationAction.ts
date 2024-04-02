@@ -5,6 +5,20 @@ export default class ChangeLocationAction extends OsmChangeAction {
     private readonly _id: number
     private readonly _newLonLat: [number, number]
     private readonly _meta: { theme: string; reason: string }
+    static metatags: {
+        readonly key?: string
+        readonly value?: string
+        readonly docs: string
+        readonly changeType: string[]
+        readonly specialMotivation?: boolean
+    }[] = [
+        {
+            value: "relocated|improve_accuraccy|...",
+            docs: "Will appear if the ",
+            changeType: ["move"],
+            specialMotivation: true,
+        },
+    ]
 
     constructor(
         id: string,

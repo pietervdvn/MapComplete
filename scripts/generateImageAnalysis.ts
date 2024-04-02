@@ -95,7 +95,7 @@ export default class GenerateImageAnalysis extends Script {
         if (fs.existsSync(targetPath)) {
             return false
         }
-        const attribution = await Imgur.singleton.DownloadAttribution(image)
+        const attribution = await Imgur.singleton.DownloadAttribution({ url: image,  })
 
         if ((attribution.artist ?? "") === "") {
             // This is an invalid attribution. We save the raw response as well
@@ -215,7 +215,7 @@ export default class GenerateImageAnalysis extends Script {
                 skipped++
             } else {
                 try {
-                    attribution = await Imgur.singleton.DownloadAttribution(image)
+                    attribution = await Imgur.singleton.DownloadAttribution({ url: image })
                     await ScriptUtils.sleep(500)
                     writeFileSync(cachedView, JSON.stringify(attribution))
                     dloaded++

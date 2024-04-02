@@ -31,7 +31,7 @@
   "startZoom": 20,
   "startLat": 52.99238,
   "startLon": 6.570614,
-  "defaultBackgroundId": "maptiler.backdrop",
+  "defaultBackgroundId": "protomaps.white",
   "layers": [
     {
       "builtin": "cycleways_and_roads",

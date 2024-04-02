@@ -24,7 +24,7 @@
 </script>
 
 {#if !userDetails || $userDetails.loggedIn}
-  <div>
+  <div class="break-words" style="word-break: break-word">
     {#if tags === undefined}
       <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected} /></slot>
     {:else if embedIn === undefined}

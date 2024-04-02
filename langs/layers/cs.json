@@ -3242,11 +3242,11 @@
             },
             "elevator-depth": {
                 "question": "Jaká je hloubka tohoto výtahu?",
-                "render": "Tento výtah má hloubku {canonical(elevator:depth)}"
+                "render": "Tento výtah má hloubku {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Jaká je šířka tohoto výtahu?",
-                "render": "Tento výtah má šířku {canonical(elevator:width)}"
+                "render": "Tento výtah má šířku {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {
@@ -5197,9 +5197,17 @@
             "inscription": {
                 "question": "Jaký je nápis na této desce?",
                 "render": "Nápis na této desce zní: <p><i>{inscription}<i></p>"
+            },
+            "start_date": {
+                "render": "Umístěno {start_date}"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pamětní deska"
+                }
+            },
             "render": "Pamětní deska"
         }
     },
@@ -6545,7 +6553,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Otevřeno 24/7 (včetně svátků)"
                         }
@@ -8968,13 +8976,6 @@
                     }
                 },
                 "question": "Chcete pomoci s překladem MapComplete?"
-            },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Přispěli jste k překladu MapComplete! To je úžasné!"
-                    }
-                }
             },
             "verified-mastodon": {
                 "mappings": {

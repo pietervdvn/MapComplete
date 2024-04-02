@@ -116,6 +116,8 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of create_review](#example-usage-of-create_review)
     + [list_reviews](#list_reviews)
       * [Example usage of list_reviews](#example-usage-of-list_reviews)
+    + [import_mangrove_key](#import_mangrove_key)
+      * [Example usage of import_mangrove_key](#example-usage-of-import_mangrove_key)
     + [opening_hours_table](#opening_hours_table)
       * [Example usage of opening_hours_table](#example-usage-of-opening_hours_table)
     + [opening_hours_state](#opening_hours_state)
@@ -828,6 +830,21 @@ fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as sp
 #### Example usage of list_reviews 
 
  `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used
+
+
+
+### import_mangrove_key 
+
+ Only makes sense in the usersettings. Allows to import a mangrove public key and to use this to make reviews 
+
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | The text that is shown on the button
+ 
+
+#### Example usage of import_mangrove_key 
+
+ `{import_mangrove_key()}`
 
 
 

@@ -26,8 +26,12 @@ Use `vite-node ./scripts/osm2pgsql/generateBuildDbScript.ts`
 ## Importing data
 
 Install osm2pgsql (hint: compile from source is painless)
-To seed the database:
 
+Download the latest with:
+`nohup transmission-cli https://planet.osm.org/pbf/planet-latest.osm.pbf.torrent &>nohup_transmission.log &`
+which will download the data to `~/Downloads`
+
+To seed the database:
 ````
 osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi <file>.osm.pbf 
 ````
@@ -48,6 +52,7 @@ HP ProLiant DL360 G7 (1U): 2Rx4 DDR3-memory (PC3)
 
 
 ## Updating data
+
 
 `osm2pgsql-replication update -d postgresql://user:password@localhost:5444/osm-poi -- -O flex -S build_db.lua -s --flat-nodes=import-help-file`
 

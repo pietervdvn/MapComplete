@@ -364,7 +364,7 @@
         </div>
       </div>
     {:else}
-      <Loading>Creating point...</Loading>
+      <Loading><Tr t={Translations.t.general.add.creating}/> </Loading>
     {/if}
   </div>
 </LoginToggle>

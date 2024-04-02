@@ -48,23 +48,12 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
-    public static readonly maptilerDefaultLayer: RasterLayerPolygon = {
-        type: "Feature",
-        properties: {
-            name: "MapTiler",
-            url:
-                "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key=" +
-                Constants.maptilerApiKey,
-            category: "osmbasedmap",
-            id: "maptiler",
-            type: "vector",
-            attribution: {
-                text: "Maptiler",
-                url: "https://www.maptiler.com/copyright/",
-            },
-        },
-        geometry: BBox.global.asGeometry(),
-    }
+    /**
+     * The default background layer that any theme uses which does not explicitly define a background
+     */
+    public static readonly defaultBackgroundLayer: RasterLayerPolygon = AvailableRasterLayers.globalLayers.find(l => {
+        return l.properties.id === "protomaps.sunny"
+    })
 
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>,
@@ -90,7 +79,7 @@ export class AvailableRasterLayers {
                         return GeoOperations.inside(lonlat, eliPolygon)
                     })
                     matching.unshift(AvailableRasterLayers.osmCarto)
-                    matching.push(AvailableRasterLayers.maptilerDefaultLayer)
+                    matching.push(AvailableRasterLayers.defaultBackgroundLayer)
                     if (enableBing?.data) {
                         matching.push(AvailableRasterLayers.bing)
                     }
@@ -107,7 +96,7 @@ export class AvailableRasterLayers {
         all.push(...AvailableRasterLayers.globalLayers.map((l) => l.properties.id))
         all.push(...AvailableRasterLayers.EditorLayerIndex.map((l) => l.properties.id))
         all.push(this.osmCarto.properties.id)
-        all.push(this.maptilerDefaultLayer.properties.id)
+        all.push(this.defaultBackgroundLayer.properties.id)
         return new Set<string>(all)
     }
 }

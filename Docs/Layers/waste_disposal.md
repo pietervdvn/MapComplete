@@ -27,6 +27,7 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
   - [personal](https://mapcomplete.org/personal)
   - [waste](https://mapcomplete.org/waste)
+  - [waste_assen](https://mapcomplete.org/waste_assen)
 
 
 

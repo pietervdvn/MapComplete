@@ -179,11 +179,6 @@
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows parking_space=private with a fixed text, namely 'This is a private parking space.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
-      "value": "private"
-    },
-    {
-      "key": "parking_space",
       "description": "Layer 'Parking Spaces' shows parking_space=charging with a fixed text, namely 'This is parking space reserved for charging vehicles.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "charging"
     },
@@ -1342,6 +1337,11 @@
       "key": "opening_hours",
       "description": "Layer 'Charging stations' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
       "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Parking')",
+      "value": "closed"
     },
     {
       "key": "fee",

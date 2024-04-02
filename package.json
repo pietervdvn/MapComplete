@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.40.1",
+  "version": "0.41.4",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -41,7 +41,18 @@
     ],
     "country_coder_host": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country",
     "nominatimEndpoint": "https://geocoding.geofabrik.de/b75350b1cfc34962ac49824fe5b582dc/",
-    "jsonld-proxy": "https://cache.mapcomplete.org/extractgraph?url={url}"
+    "jsonld-proxy": "https://cache.mapcomplete.org/extractgraph?url={url}",
+    "protomaps": {
+      "api-key": "2af8b969a9e8b692",
+      "endpoint": "https://api.protomaps.com/tiles/",
+      "styles": [
+        "https://api.protomaps.com/styles/v2/light.json",
+        "https://api.protomaps.com/styles/v2/dark.json",
+        "https://api.protomaps.com/styles/v2/white.json",
+        "https://api.protomaps.com/styles/v2/grayscale.json",
+        "https://api.protomaps.com/styles/v2/black.json"
+      ]
+    }
   },
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",
@@ -75,7 +86,7 @@
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
     "generate:stats": "vite-node scripts/GenerateSeries.ts",
     "reset:layeroverview": "npm run prep:layeroverview && npm run generate:layeroverview && npm run refresh:layeroverview",
-    "prep:layeroverview": "mkdir -p ./src/assets/generated/layers; echo {\\\"themes\\\":[]} > ./src/assets/generated/known_themes.json && echo {\\\"layers\\\": []} > ./src/assets/generated/known_layers.json && rm -f ./src/assets/generated/layers/*.json && rm -f ./src/assets/generated/themes/*.json && cp ./assets/layers/usersettings/usersettings.json ./src/assets/generated/layers/usersettings.json && echo '{}' > ./src/assets/generated/layers/favourite.json",
+    "prep:layeroverview": "mkdir -p ./src/assets/generated/layers; echo {\\\"themes\\\":[]} > ./src/assets/generated/known_themes.json && echo {\\\"layers\\\": []} > ./src/assets/generated/known_layers.json && rm -f ./src/assets/generated/layers/*.json && rm -f ./src/assets/generated/themes/*.json && cp ./assets/layers/usersettings/usersettings.json ./src/assets/generated/layers/usersettings.json && echo '{}' > ./src/assets/generated/layers/favourite.json && echo '{}' > ./src/assets/generated/layers/summary.json",
     "generate": "npm run generate:licenses && npm run generate:images && npm run generate:charging-stations && npm run generate:translations && npm run refresh:layeroverview && npm run generate:service-worker",
     "generate:charging-stations": "cd ./assets/layers/charging_station && vite-node csvToJson.ts && cd -",
     "prepare-deploy": "npm run generate:service-worker && ./scripts/prepare-build.sh && npm run build",
@@ -91,14 +102,15 @@
     "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
     "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
     "weblate-fix-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
-    "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
+    "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && vite-node scripts/generateSunnyUnlabeled.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
     "reuse-compliance": "reuse lint",
     "backup:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
     "dloadVelopark": "vite-node scripts/velopark/veloParkToGeojson.ts ",
     "compareVelopark": "vite-node scripts/velopark/compare.ts -- velopark_nonsynced_.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\\ Fietsenstallingen_OSM_met_velopark_ref.geojson\n",
     "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
     "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts",
-    "ldjson-server": "vite-node scripts/serverLdScrape.ts"
+    "ldjson-server": "vite-node scripts/serverLdScrape.ts",
+    "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts"
   },
   "keywords": [
     "OpenStreetMap",
@@ -153,7 +165,7 @@
     "libphonenumber-js": "^1.10.8",
     "lz-string": "^1.4.4",
     "mangrove-reviews-typescript": "^1.1.0",
-    "maplibre-gl": "^3.5.0",
+    "maplibre-gl": "^4.1.1",
     "monaco-editor": "^0.46.0",
     "nano-markdown": "^1.2.2",
     "opening_hours": "^3.6.0",
@@ -164,6 +176,7 @@
     "pbf": "^3.2.1",
     "pg": "^8.11.3",
     "pic4carto": "^2.1.15",
+    "pmtiles": "^3.0.5",
     "prompt-sync": "^4.2.0",
     "qrcode-generator": "^1.4.4",
     "showdown": "^2.1.0",

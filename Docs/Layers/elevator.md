@@ -29,6 +29,7 @@ This layer show elevators and asks for operational status and elevator dimension
   - [indoors](https://mapcomplete.org/indoors)
   - [onwheels](https://mapcomplete.org/onwheels)
   - [personal](https://mapcomplete.org/personal)
+  - [stations](https://mapcomplete.org/stations)
 
 
 

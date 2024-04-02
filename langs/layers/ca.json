@@ -3219,11 +3219,11 @@
             },
             "elevator-depth": {
                 "question": "Quina és la profunditat de l'ascensor?",
-                "render": "L'ascensor té un profunditat de {canonical(elevator:depth)}"
+                "render": "L'ascensor té un profunditat de {canonical(length)}"
             },
             "elevator-width": {
                 "question": "Quina és l'amplada d'aquest ascensor?",
-                "render": "L'ascensor té una amplada de {canonical(elevator:width)}"
+                "render": "L'ascensor té una amplada de {canonical(width)}"
             },
             "operational_status": {
                 "mappings": {
@@ -5003,9 +5003,17 @@
             "inscription": {
                 "question": "Quina és la inscripció d'aquesta placa?",
                 "render": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>"
+            },
+            "start_date": {
+                "render": "Col·locat el {start_date}"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Placa commemorativa"
+                }
+            },
             "render": "Placa commemorativa"
         }
     },
@@ -6316,7 +6324,7 @@
             },
             "opening_hours_24_7": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Obert 24/7 (incloent-hi festius)"
                         }
@@ -8713,13 +8721,6 @@
                     }
                 },
                 "question": "Vols ajudar a traduir MapComplete?"
-            },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Has contribuït a traduir MapComplete! Això és fantàstic!"
-                    }
-                }
             },
             "verified-mastodon": {
                 "mappings": {

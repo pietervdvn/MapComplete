@@ -450,6 +450,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedElement.setData(feature)
     }
 
+    public showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer {
+        const id = "gps_location"
+        const flayerGps = this.layerState.filteredLayers.get(id)
+        const features = this.geolocation.currentUserLocation
+        return new ShowDataLayer(map, {
+            features,
+            doShowLayer: flayerGps.isDisplayed,
+            layer: flayerGps.layerDef,
+            metaTags: this.userRelatedState.preferencesAsTags,
+            selectedElement: this.selectedElement,
+        })
+    }
+
     /**
      * Various small methods that need to be called
      */
@@ -674,7 +687,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const summaryTileSource = new SummaryTileSource(
             url.protocol + "//" + url.host + "/summary",
             layers.map((l) => l.id),
-            this.mapProperties.zoom.map((z) => Math.max(Math.ceil(z), 0)),
+            this.mapProperties.zoom.map((z) => Math.max(Math.floor(z), 0)),
             this.mapProperties,
             {
                 isActive: this.mapProperties.zoom.map((z) => z <= maxzoom),
@@ -682,6 +695,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
     }
+
     /**
      * Add the special layers to the map
      */
@@ -796,7 +810,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
-        new PendingChangesUploader(this.changes, this.selectedElement)
+        new PendingChangesUploader(this.changes, this.selectedElement, this.imageUploadManager)
         new SelectedElementTagsUpdater(this)
         new BackgroundLayerResetter(this.mapProperties.rasterLayer, this.availableLayers)
         new PreferredRasterLayerSelector(
