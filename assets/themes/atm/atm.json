@@ -57,7 +57,7 @@
         "minzoom": 18,
         "name": null,
         "filter": {
-          "sameAs": "bank_with_atm"
+          "sameAs": "banks_with_atm"
         },
         "doCount": false
       }

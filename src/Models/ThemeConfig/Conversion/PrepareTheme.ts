@@ -600,6 +600,23 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
         }
 
+        for (const layer of json.layers) {
+            if(typeof layer === "string"){
+                continue
+            }
+            const config = <LayerConfigJson> layer;
+            const sameAs = config.filter?.["sameAs"]
+            if(!sameAs){
+                continue
+            }
+
+            const matchingLayer = json.layers.find(l => l["id"] === sameAs)
+            if(!matchingLayer){
+                const closeLayers = Utils.sortedByLevenshteinDistance(sameAs, json.layers, l => l["id"]).map(l => l["id"])
+                context.enters("layers", config.id, "filter","sameAs").err("The layer "+config.id+" follows the filter state of layer "+sameAs+", but no layer with this name was found.\n\tDid you perhaps mean one of: "+closeLayers.slice(0, 3).join(", "))
+            }
+        }
+
         return json
     }
 }
