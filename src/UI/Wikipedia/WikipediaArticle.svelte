@@ -25,7 +25,7 @@
 {/if}
 
 {#if $wikipediaDetails.wikidata}
-  <ToSvelte construct={WikidataPreviewBox.WikidataResponsePreview($wikipediaDetails.wikidata)} />
+  <ToSvelte construct={() => WikidataPreviewBox.WikidataResponsePreview($wikipediaDetails.wikidata)} />
 {/if}
 
 {#if $wikipediaDetails.articleUrl}

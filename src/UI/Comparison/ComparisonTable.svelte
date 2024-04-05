@@ -69,12 +69,17 @@
   </div>
 {:else}
   <div class="low-interaction p-1 border-interactive">
-    <Tr t={t.loadedFrom.Subs({url: sourceUrl, source: sourceUrl})} />
-    <h3>
-      <Tr t={t.conflicting.title} />
-    </h3>
-    <div class="flex flex-col gap-y-8">
-      <Tr t={t.conflicting.intro} />
+    {#if !readonly}
+      <Tr t={t.loadedFrom.Subs({url: sourceUrl, source: sourceUrl})} />
+      <h3>
+        <Tr t={t.conflicting.title} />
+      </h3>
+    {/if}
+
+    <div class="flex flex-col" class:gap-y-8={!readonly}>
+      {#if !readonly}
+        <Tr t={t.conflicting.intro} />
+      {/if}
       {#if different.length > 0}
         {#each different as key}
           <div class="mx-2 rounded-2xl">
@@ -102,7 +107,7 @@
             </button>
           {/if}
         {:else if currentStep === "applying_all"}
-          <Loading/>
+          <Loading />
         {:else if currentStep === "all_applied"}
           <div class="thanks">
             <Tr t={t.allAreApplied} />

@@ -81,7 +81,10 @@
           "render": {
             "special": {
               "type": "linked_data_from_website",
-              "key": "ref:velopark"
+              "key": "ref:velopark",
+              "useProxy": "no",
+              "host": "https://data.velopark.be",
+              "mode": "readonly"
             }
           }
         },
@@ -328,7 +331,9 @@
         "render": {
           "special": {
             "type": "linked_data_from_website",
-            "key": "ref:velopark"
+            "key": "ref:velopark",
+            "useProxy": "no",
+            "host": "https://data.velopark.be"
           }
         }
       }

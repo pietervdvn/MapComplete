@@ -15,8 +15,12 @@ class ServerLdScrape extends Script {
             {
                 mustMatch: "extractgraph",
                 mimetype: "application/ld+json",
+                addHeaders: {
+                    "Cache-control":"max-age=3600, public"
+                },
                 async handle(content, searchParams: URLSearchParams) {
                     const url = searchParams.get("url")
+                    console.log("URL", url)
                     if (cache[url] !== undefined) {
                         const { date, contents } = cache[url]
                         console.log(">>>", date, contents)
@@ -37,6 +41,15 @@ class ServerLdScrape extends Script {
                             return "{\"#\":\"timout reached\"}"
                         }
                     } while (dloaded["redirect"])
+
+                    if(dloaded["content"].startsWith("{")){
+                        // This is probably a json
+                        const snippet = JSON.parse(dloaded["content"])
+                        console.log("Snippet is", snippet)
+                        cache[url] = { contents: snippet, date: new Date() }
+                        return JSON.stringify(snippet)
+                    }
+
                     const parsed = parse(dloaded["content"])
                     const scripts = Array.from(parsed.getElementsByTagName("script"))
                     for (const script of scripts) {

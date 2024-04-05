@@ -2,8 +2,8 @@ import Script from "../Script"
 import fs from "fs"
 import { Feature, FeatureCollection } from "geojson"
 import { GeoOperations } from "../../src/Logic/GeoOperations"
-import * as os from "os"
-// vite-node scripts/velopark/compare.ts -- scripts/velopark/velopark_all_2024-02-14T12\:18\:41.772Z.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\ Fietsenstallingen_OSM_met_velopark_ref.geojson
+
+// vite-node scripts/velopark/compare.ts -- scripts/velopark/velopark_all.geojson osm_with_velopark_link_.geojson
 class Compare extends Script {
     compare(
         veloId: string,
@@ -30,6 +30,9 @@ class Compare extends Script {
             Object.keys(osmParking.properties).concat(Object.keys(veloParking.properties))
         )
         for (const key of allKeys) {
+            if(["name","numberOfLevels"].indexOf(key) >= 0){
+                continue // We don't care about these tags
+            }
             if (osmParking.properties[key] === veloParking.properties[key]) {
                 continue
             }
@@ -42,16 +45,22 @@ class Compare extends Script {
             diffs.push({
                 key,
                 osm: osmParking.properties[key],
-                velopark: veloParking.properties[key],
+                velopark: veloParking.properties[key]
             })
         }
+        let osmid = osmParking.properties["@id"] ?? osmParking["id"] /*Not in the properties, that is how overpass returns it*/
+        if (!osmid.startsWith("http")) {
+            osmid = "https://openstreetmap.org/" + osmid
+        }
+
         return {
             ref: veloId,
-            osmid: osmParking.properties["@id"],
+            osmid,
             distance,
-            diffs,
+            diffs
         }
     }
+
     async main(args: string[]): Promise<void> {
         let [velopark, osm, key] = args
         key ??= "ref:velopark"
@@ -60,7 +69,7 @@ class Compare extends Script {
 
         const veloparkById: Record<string, Feature> = {}
         for (const parking of veloparkData.features) {
-            veloparkById[parking.properties[key]] = parking
+            veloparkById[parking.properties[key] ?? parking.properties.url] = parking
         }
 
         const diffs = []
@@ -73,9 +82,12 @@ class Compare extends Script {
             }
             diffs.push(this.compare(veloId, parking, veloparking))
         }
+        console.log("Found ", diffs.length, " items with differences between OSM and the provided data")
 
-        fs.writeFileSync("report_diff.json", JSON.stringify(diffs))
+        fs.writeFileSync("report_diff.json", JSON.stringify(diffs, null, "  "))
+        console.log("Written report_diff.json")
     }
+
     constructor() {
         super(
             "Compares a velopark geojson with OSM geojson. Usage: `compare velopark.geojson osm.geojson [key-to-compare-on]`. If key-to-compare-on is not given, `ref:velopark` will be used"

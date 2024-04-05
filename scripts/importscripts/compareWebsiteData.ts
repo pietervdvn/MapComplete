@@ -15,7 +15,7 @@ class CompareWebsiteData extends Script {
         if(fs.existsSync(filename)){
             return JSON.parse(fs.readFileSync(filename, "utf-8"))
         }
-        const jsonLd = await LinkedDataLoader.fetchJsonLdWithProxy(url)
+        const jsonLd = await LinkedDataLoader.fetchJsonLd(url, undefined, true)
         console.log("Got:", jsonLd)
         fs.writeFileSync(filename, JSON.stringify(jsonLd))
         return jsonLd

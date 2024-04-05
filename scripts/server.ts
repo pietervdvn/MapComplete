@@ -8,7 +8,8 @@ export class Server {
         },
         handle: {
             mustMatch: string | RegExp
-            mimetype: string
+            mimetype: string,
+            addHeaders?: Record<string, string>,
             handle: (path: string, queryParams: URLSearchParams) => Promise<string>
         }[]
     ) {
@@ -30,18 +31,18 @@ export class Server {
         })
         http.createServer(async (req: http.IncomingMessage, res) => {
             try {
-                console.log(
-                    req.method + " " + req.url,
-                    "from:",
-                    req.headers.origin,
-                    new Date().toISOString()
-                )
-
                 const url = new URL(`http://127.0.0.1/` + req.url)
                 let path = url.pathname
                 while (path.startsWith("/")) {
                     path = path.substring(1)
                 }
+                console.log(
+                    req.method + " " + req.url,
+                    "from:",
+                    req.headers.origin,
+                    new Date().toISOString(),
+                    path
+                )
                 if (options?.ignorePathPrefix) {
                     for (const toIgnore of options.ignorePathPrefix) {
                         if (path.startsWith(toIgnore)) {
@@ -90,7 +91,11 @@ export class Server {
 
                 try {
                     const result = await handler.handle(path, url.searchParams)
-                    res.writeHead(200, { "Content-Type": handler.mimetype })
+                    if(typeof result !== "string"){
+                        console.error("Internal server error: handling", url,"resulted in a ",typeof result," instead of a string:", result)
+                    }
+                    const extraHeaders = handler.addHeaders ?? {}
+                    res.writeHead(200, { "Content-Type": handler.mimetype , ...extraHeaders})
                     res.write(result)
                     res.end()
                 } catch (e) {
