@@ -53,7 +53,7 @@
         "=name": null,
         "doCount": false,
         "=filter": {
-          "sameAs": "erotic-shop"
+          "sameAs": "erotic_shop"
         }
       }
     },

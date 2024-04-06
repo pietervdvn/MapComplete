@@ -678,6 +678,20 @@
       }
     },
     {
+      "id": "operator",
+      "question": {
+        "en": "Who maintains this bicycle parking?",
+        "nl": "Wie beheert deze fietsenstalling?"
+      },
+      "render": {
+        "en": "This bicycle parking is maintained by {operator}",
+        "nl": "Deze fietsenstalling wordt beheerd door {operator}"
+      },
+      "freeform": {
+        "key": "operator"
+      }
+    },
+    {
       "id": "operator_phone",
       "question": {
         "en": "What is the phone number of the operator of this bicycle parking?",

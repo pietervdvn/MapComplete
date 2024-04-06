@@ -151,7 +151,7 @@
       "override": {
         "name": null,
         "filter": {
-          "sameAs": "charging_station_ebike"
+          "sameAs": "charging_station_ebikes"
         },
         "minzoom": 18
       }
