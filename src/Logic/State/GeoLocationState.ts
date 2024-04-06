@@ -30,7 +30,7 @@ export class GeoLocationState {
      */
     public readonly requestMoment: UIEventSource<Date | undefined> = new UIEventSource(undefined)
     /**
-     * If true: the map will center (and re-center) to this location
+     * If true: the map will center (and re-center) to the current GPS-location
      */
     public readonly allowMoving: UIEventSource<boolean> = new UIEventSource<boolean>(true)
 

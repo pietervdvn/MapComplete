@@ -95,7 +95,7 @@ export default class GeoLocationHandler {
 
             if (!this.geolocationState.allowMoving.data) {
                 // Jup, the map is locked to the bound location: move automatically
-                self.MoveMapToCurrentLocation()
+                self.MoveMapToCurrentLocation(0)
                 return
             }
         })
@@ -113,7 +113,7 @@ export default class GeoLocationHandler {
      * - The GPS-location iss NULL-island
      * @constructor
      */
-    public MoveMapToCurrentLocation() {
+    public MoveMapToCurrentLocation(zoomToAtLeast: number = 14 ) {
         const newLocation = this.geolocationState.currentGPSLocation.data
         const mapLocation = this.mapProperties.location
         // We got a new location.
@@ -143,7 +143,7 @@ export default class GeoLocationHandler {
             lat: newLocation.latitude,
         })
         const zoom = this.mapProperties.zoom
-        zoom.setData(Math.min(Math.max(zoom.data, 14), 18))
+        zoom.setData(Math.min(Math.max(zoom.data, zoomToAtLeast), 18))
 
         this.mapHasMoved.setData(new Date())
         this.geolocationState.requestMoment.setData(undefined)

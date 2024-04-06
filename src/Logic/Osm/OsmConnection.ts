@@ -546,7 +546,7 @@ export class OsmConnection {
             redirect_uri: Utils.runningFromConsole
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
-            singlepage: !standalone,
+            singlepage: true,
             auto: true
         })
     }
