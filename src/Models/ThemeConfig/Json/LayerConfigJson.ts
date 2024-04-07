@@ -416,7 +416,11 @@ export interface LayerConfigJson {
 
     /**
      * All the extra questions for filtering.
-     * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one
+     * If a string is given, mapComplete will search in
+     * 1. The tagrenderings for a match on ID and use the mappings as options
+     * 2. search 'filters.json' for the appropriate filter or
+     * 3. will try to parse it as `layername.filterid` and us that one.
+     *
      *
      * group: filters
      */

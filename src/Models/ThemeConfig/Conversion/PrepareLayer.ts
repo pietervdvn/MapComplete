@@ -64,11 +64,36 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
         }
 
         const newFilters: FilterConfigJson[] = []
-        for (const filter of <(FilterConfigJson | string)[]>json.filter) {
+        const filters = <(FilterConfigJson | string)[]>json.filter
+        for (let i = 0; i < filters.length; i++){
+            const filter = filters[i]
             if (typeof filter !== "string") {
                 newFilters.push(filter)
                 continue
             }
+
+            const matchingTr =<TagRenderingConfigJson> json.tagRenderings.find(tr => tr["id"] === filter)
+            if(matchingTr){
+                if(!(matchingTr.mappings?.length >= 1)){
+                    context.enters("filter",i ).err("Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings")
+                }
+                const options =  matchingTr.mappings.map(mapping => ({
+                    question: mapping.then,
+                    osmTags: mapping.if
+                }))
+                options.unshift({
+                    question: {
+                        en:"All types"
+                    },
+                    osmTags: undefined
+                })
+                newFilters.push({
+                    id: filter,
+                    options
+                })
+                continue
+            }
+
             if (filter.indexOf(".") > 0) {
                 if (this._state.sharedLayers.size > 0) {
                     const split = filter.split(".")

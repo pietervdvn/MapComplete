@@ -875,8 +875,8 @@
     }
   ],
   "filter": [
-
-    "has_image"
+    "has_image",
+    "artwork-artwork_type"
   ],
   "deletion": {
     "softDeletionTags": {

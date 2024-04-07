@@ -432,7 +432,7 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
         }
 
         try {
-            const tagRendering = new TagRenderingConfig(json)
+            const tagRendering = new TagRenderingConfig(json, context.path.join("."))
 
             for (let i = 0; i < tagRendering.mappings.length; i++) {
                 const mapping = tagRendering.mappings[i]
@@ -632,7 +632,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
             const ifTags = TagUtils.Tag(m.if, c.enter("if"))
             const hideInAnswer = m["hideInAnswer"]
             if (hideInAnswer !== undefined && hideInAnswer !== false && hideInAnswer !== true) {
-                let conditionTags = TagUtils.Tag(hideInAnswer)
+                const conditionTags = TagUtils.Tag(hideInAnswer)
                 // Merge the condition too!
                 return new And([conditionTags, ifTags])
             }
