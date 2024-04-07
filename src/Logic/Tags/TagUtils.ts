@@ -229,27 +229,8 @@ export class TagUtils {
         return tags
     }
 
-    /**
-     * Given two hashes of {key --> values[]}, makes sure that every neededTag is present in availableTags
-     */
-    static AllKeysAreContained(availableTags: any, neededTags: any) {
-        for (const neededKey in neededTags) {
-            const availableValues: string[] = availableTags[neededKey]
-            if (availableValues === undefined) {
-                return false
-            }
-            const neededValues: string[] = neededTags[neededKey]
-            for (const neededValue of neededValues) {
-                if (availableValues.indexOf(neededValue) < 0) {
-                    return false
-                }
-            }
-        }
-        return true
-    }
-
     static SplitKeys(tagsFilters: UploadableTag[]): Record<string, string[]> {
-        return <any>this.SplitKeysRegex(tagsFilters, false)
+        return this.SplitKeysRegex(tagsFilters, false)
     }
 
     /***
@@ -257,6 +238,14 @@ export class TagUtils {
      *
      * TagUtils.SplitKeysRegex([new Tag("isced:level", "bachelor; master")], true) // => {"isced:level": ["bachelor","master"]}
      */
+    static SplitKeysRegex(
+        tagsFilters: UploadableTag[],
+        allowRegex: false
+    ): Record<string, string[]>
+    static SplitKeysRegex(
+        tagsFilters: UploadableTag[],
+        allowRegex: boolean
+    ): Record<string, (string | RegexTag)[]>
     static SplitKeysRegex(
         tagsFilters: UploadableTag[],
         allowRegex: boolean
@@ -360,7 +349,7 @@ export class TagUtils {
             return new And([])
         }
 
-        let keyValues = TagUtils.SplitKeys(tagsFilters)
+        const keyValues = TagUtils.SplitKeys(tagsFilters)
         const and: UploadableTag[] = []
         for (const key in keyValues) {
             const values = Utils.Dedup(keyValues[key]).filter((v) => v !== "")
@@ -487,7 +476,7 @@ export class TagUtils {
 
     public static Tag(json: TagConfigJson, context: string | ConversionContext = ""): TagsFilter {
         try {
-            let ctx = typeof context === "string" ? context : context.path.join(".")
+            const ctx = typeof context === "string" ? context : context.path.join(".")
             return this.ParseTagUnsafe(json, ctx)
         } catch (e) {
             if (typeof context === "string") {
@@ -520,7 +509,7 @@ export class TagUtils {
             )}`
         })
 
-        return <any>t
+        return <UploadableTag> t
     }
 
     /**
@@ -729,7 +718,7 @@ export class TagUtils {
         }
         if (typeof json != "string") {
             if (json["and"] !== undefined && json["or"] !== undefined) {
-                throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of \"parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(json)}`
+                throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of \"parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(json)}`
             }
             if (json["and"] !== undefined) {
                 return new And(json["and"].map((t) => TagUtils.Tag(t, context)))
@@ -804,7 +793,7 @@ export class TagUtils {
                 )
             }
 
-            let value: string | RegExp = withRegex.value
+            const value: string | RegExp = withRegex.value
             if (value === "*") {
                 return new RegexTag(
                     withRegex.key,
