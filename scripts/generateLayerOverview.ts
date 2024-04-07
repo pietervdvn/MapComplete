@@ -31,7 +31,6 @@ import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
 import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
-import { TagsFilter } from "../src/Logic/Tags/TagsFilter"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
