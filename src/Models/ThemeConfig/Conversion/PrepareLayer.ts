@@ -72,7 +72,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 continue
             }
 
-            const matchingTr =<TagRenderingConfigJson> json.tagRenderings.find(tr => tr["id"] === filter)
+            const matchingTr =<TagRenderingConfigJson> json.tagRenderings.find(tr => !!tr && tr["id"] === filter)
             if(matchingTr){
                 if(!(matchingTr.mappings?.length >= 1)){
                     context.enters("filter",i ).err("Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings")
