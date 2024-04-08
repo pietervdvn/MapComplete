@@ -242,6 +242,7 @@
   ],
   "tagRenderings": [
     "images",
+    "reviews",
     {
       "question": {
         "nl": "Wat is de naam van deze eetgelegenheid?",
@@ -1161,12 +1162,12 @@
       ],
       "condition": "cuisine=friture"
     },
+    "smoking",
     "service:electricity",
     "dog-access",
     "internet",
     "internet-fee",
-    "internet-ssid",
-    "reviews"
+    "internet-ssid"
   ],
   "filter": [
     "open_now",
