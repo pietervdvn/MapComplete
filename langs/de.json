@@ -192,6 +192,13 @@
         "customThemeIntro": "Bereits angesehene nutzergenerierte Themen.",
         "customThemeTitle": "Benutzerdefinierte Themen",
         "download": {
+            "custom": {
+                "download": "Lade PNG herunter, das {width}mm breit und {height}mm hoch ist",
+                "downloadHelper": "Das ist für den Druck gedacht",
+                "height": "Bildhöhe (in mm):",
+                "title": "Download eines Bildes mit einer benutzerdefinierten Breite und Höhe",
+                "width": "Bildbreite (in mm): "
+            },
             "downloadAsPdf": "Aktuelle Karte als PDF herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
             "downloadAsPng": "Als Bild herunterladen",
