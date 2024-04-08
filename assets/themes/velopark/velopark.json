@@ -266,7 +266,28 @@
           },
           "icons.defaults"
         ],
-        "minzoom": 8
+        "minzoom": 8,
+        "filter+": [
+          {
+            "id": "last_edited_before",
+            "options": [
+              {
+
+
+            "question": {
+              "en": "Last edit was before {date}",
+              "nl": "Laatste aanpassing voor {date}"
+
+            },
+            "osmTags": "_last_edit:timestamp<{date}",
+            "fields": [
+              {
+                "name": "date",
+                "type": "date"
+              }
+            ]
+          }]}
+        ]
       }
     },
     {

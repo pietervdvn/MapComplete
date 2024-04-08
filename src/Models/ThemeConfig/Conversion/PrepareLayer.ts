@@ -47,7 +47,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     }
 
     private static load_filters(): Map<string, FilterConfigJson> {
-        let filters = new Map<string, FilterConfigJson>()
+        const filters = new Map<string, FilterConfigJson>()
         for (const filter of <FilterConfigJson[]>predifined_filters.filter) {
             filters.set(filter.id, filter)
         }

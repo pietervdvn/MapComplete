@@ -37,7 +37,7 @@ export default class LinkedDataLoader {
             "@type": "http://www.w3.org/2001/XMLSchema#time"
         }
     }
-    private static formatters: Record<string, Validator> = {
+    private static formatters: Record<"phone" | "email" | "website", Validator> = {
         phone: new PhoneValidator(),
         email: new EmailValidator(),
         website: new UrlValidator(undefined, undefined, true)
@@ -330,7 +330,11 @@ export default class LinkedDataLoader {
             delete output[source]
         }
 
-        on("phone", (p => new PhoneValidator().reformat(p, () => "be")))
+        on("phone", (p => this.formatters["phone"].reformat(p, () => "be")))
+
+        for (const attribute in LinkedDataLoader.formatters) {
+            on(attribute, p => LinkedDataLoader.formatters[attribute].reformat(p))
+        }
         on("charge", (p => {
             if(Number(p) === 0){
                 output["fee"] = ["no"]
