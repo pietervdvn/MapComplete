@@ -8,6 +8,7 @@
     "en": "Ski and snowboard pistes",
     "de": "Ski- und Snowboardpisten"
   },
+  "minzoom": 11,
   "source": {
     "osmTags": {
       "and": [
