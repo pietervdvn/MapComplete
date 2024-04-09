@@ -24,7 +24,8 @@ export default class LinkedDataLoader {
         image: { "@id": "http://schema.org/image", "@type": "@id" },
         opening_hours: { "@id": "http://schema.org/openingHoursSpecification" },
         openingHours: { "@id": "http://schema.org/openingHours", "@container": "@set" },
-        geo: { "@id": "http://schema.org/geo" }
+        geo: { "@id": "http://schema.org/geo" },
+        "alt_name": {"@id":"http://schema.org/alternateName"}
     }
     private static COMPACTING_CONTEXT_OH = {
         dayOfWeek: { "@id": "http://schema.org/dayOfWeek", "@container": "@set" },
@@ -188,6 +189,11 @@ export default class LinkedDataLoader {
             compacted["geo"] = <any>await LinkedDataLoader.geoToGeometry(compacted["geo"])
         }
 
+        if(compacted["alt_name"]){
+            if(compacted["alt_name"] === compacted["name"]){
+                delete  compacted["alt_name"]
+            }
+        }
 
         for (const k in compacted) {
             if (compacted[k] === "") {

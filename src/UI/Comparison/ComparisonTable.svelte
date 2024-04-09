@@ -1,66 +1,87 @@
 <script lang="ts">
-    import LinkableImage from "../Image/LinkableImage.svelte"
-    import { UIEventSource } from "../../Logic/UIEventSource"
-    import type { OsmTags } from "../../Models/OsmFeature"
-    import type { SpecialVisualizationState } from "../SpecialVisualization"
-    import type { Feature } from "geojson"
-    import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-    import ComparisonAction from "./ComparisonAction.svelte"
-    import Party from "../../assets/svg/Party.svelte"
-    import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
-    import { Tag } from "../../Logic/Tags/Tag"
-    import { And } from "../../Logic/Tags/And"
-    import Loading from "../Base/Loading.svelte"
-    import AttributedImage from "../Image/AttributedImage.svelte"
-    import Translations from "../i18n/Translations"
-    import Tr from "../Base/Tr.svelte"
+  import LinkableImage from "../Image/LinkableImage.svelte"
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import type { OsmTags } from "../../Models/OsmFeature"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import type { Feature } from "geojson"
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import ComparisonAction from "./ComparisonAction.svelte"
+  import Party from "../../assets/svg/Party.svelte"
+  import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
+  import { Tag } from "../../Logic/Tags/Tag"
+  import { And } from "../../Logic/Tags/And"
+  import Loading from "../Base/Loading.svelte"
+  import AttributedImage from "../Image/AttributedImage.svelte"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
 
-    export let osmProperties: Record<string, string>
-    export let externalProperties: Record<string, string>
-    export let sourceUrl: string
+  export let osmProperties: Record<string, string>
+  export let externalProperties: Record<string, string>
+  export let sourceUrl: string
 
-    export let tags: UIEventSource<OsmTags>
-    export let state: SpecialVisualizationState
-    export let feature: Feature
-    export let layer: LayerConfig
+  export let tags: UIEventSource<OsmTags>
+  export let state: SpecialVisualizationState
+  export let feature: Feature
+  export let layer: LayerConfig
 
-    export let readonly = false
+  export let readonly = false
 
-    const t = Translations.t.external
+  const t = Translations.t.external
 
-    let externalKeys: string[] = Object.keys(externalProperties).sort()
+  let externalKeys: string[] = Object.keys(externalProperties).sort()
 
-    const imageKeyRegex = /image|image:[0-9]+/
-    let knownImages = new Set(
-        Object.keys(osmProperties)
-            .filter((k) => k.match(imageKeyRegex))
-            .map((k) => osmProperties[k]),
-    )
-    let unknownImages = externalKeys
-        .filter((k) => k.match(imageKeyRegex))
-        .map((k) => externalProperties[k])
-        .filter((i) => !knownImages.has(i))
+  const imageKeyRegex = /image|image:[0-9]+/
+  let knownImages = new Set(
+    Object.keys(osmProperties)
+      .filter((k) => k.match(imageKeyRegex))
+      .map((k) => osmProperties[k])
+  )
+  let unknownImages = externalKeys
+    .filter((k) => k.match(imageKeyRegex))
+    .map((k) => externalProperties[k])
+    .filter((i) => !knownImages.has(i))
 
-    let propertyKeysExternal = externalKeys.filter((k) => k.match(imageKeyRegex) === null)
-    let missing = propertyKeysExternal.filter((k) => osmProperties[k] === undefined && typeof externalProperties[k] === "string")
-    let same = propertyKeysExternal.filter((key) => osmProperties[key] === externalProperties[key])
-    let different = propertyKeysExternal.filter(
-        (key) => osmProperties[key] !== undefined && osmProperties[key] !== externalProperties[key] && typeof externalProperties[key] === "string",
-    )
+  let propertyKeysExternal = externalKeys.filter((k) => k.match(imageKeyRegex) === null)
+  let missing = propertyKeysExternal.filter((k) => osmProperties[k] === undefined && typeof externalProperties[k] === "string")
+  // let same = propertyKeysExternal.filter((key) => osmProperties[key] === externalProperties[key])
+  let different = propertyKeysExternal.filter(
+    (key) => {
+      if (osmProperties[key] === undefined) {
+        return false
+      }
+      if (typeof externalProperties[key] !== "string") {
+        return false
+      }
+      if (osmProperties[key] === externalProperties[key]) {
+        return false
+      }
 
-    let currentStep: "init" | "applying_all" | "all_applied" = "init"
-    let applyAllHovered = false
+      if (key === "website")
+      {
+        const osmCanon = new URL(osmProperties[key]).toString()
+        const externalCanon = new URL(externalProperties[key]).toString()
+        if(osmCanon === externalCanon){
+          return false
+        }
+      }
 
-    async function applyAllMissing() {
-        currentStep = "applying_all"
-        const tagsToApply = missing.map((k) => new Tag(k, externalProperties[k]))
-        const change = new ChangeTagAction(tags.data.id, new And(tagsToApply), tags.data, {
-            theme: state.layout.id,
-            changeType: "import",
-        })
-        await state.changes.applyChanges(await change.CreateChangeDescriptions())
-        currentStep = "all_applied"
+      return true
     }
+  )
+
+  let currentStep: "init" | "applying_all" | "all_applied" = "init"
+  let applyAllHovered = false
+
+  async function applyAllMissing() {
+    currentStep = "applying_all"
+    const tagsToApply = missing.map((k) => new Tag(k, externalProperties[k]))
+    const change = new ChangeTagAction(tags.data.id, new And(tagsToApply), tags.data, {
+      theme: state.layout.id,
+      changeType: "import"
+    })
+    await state.changes.applyChanges(await change.CreateChangeDescriptions())
+    currentStep = "all_applied"
+  }
 </script>
 {#if unknownImages.length === 0 && missing.length === 0 && different.length === 0}
   <div class="thanks m-0 flex items-center gap-x-2 px-2">
