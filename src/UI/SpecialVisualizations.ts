@@ -1754,7 +1754,7 @@ export default class SpecialVisualizations {
                     }
 
                 ],
-                needsUrls: (args) => [args[2] ?? Constants.linkedDataProxy, "http://www.schema.org"],
+                needsUrls: [Constants.linkedDataProxy, "http://www.schema.org"],
                 constr(
                     state: SpecialVisualizationState,
                     tags: UIEventSource<Record<string, string>>,
@@ -1766,7 +1766,7 @@ export default class SpecialVisualizations {
                     const useProxy = argument[1] !== "no"
                     const readonly = argument[3] === "readonly"
 
-                    let url = tags.mapD(tags => {
+                    const url = tags.mapD(tags => {
                         if (!tags._country || !tags[key] || tags[key] === "undefined") {
                             return null
                         }
