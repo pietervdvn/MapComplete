@@ -113,7 +113,7 @@ export default class TagRenderingConfig {
         }
 
         this.id = json.id ?? "" // Some tagrenderings - especially for the map rendering - don't need an ID
-        if (this.id.match(/^[a-zA-Z0-9 ()?\/=:;,_-]*$/) === null) {
+        if (this.id.match(/^[a-zA-Z0-9 ()?/=:;,_-]*$/) === null) {
             throw (
                 "Invalid ID in " +
                 context +
@@ -656,12 +656,6 @@ export default class TagRenderingConfig {
         multiSelectedMapping: boolean[] | undefined,
         currentProperties: Record<string, string>
     ): UploadableTag {
-        console.log("constructChangeSpecification:", {
-            freeformValue,
-            singleSelectedMapping,
-            multiSelectedMapping,
-            currentProperties,
-        })
         if (typeof freeformValue === "string") {
             freeformValue = freeformValue?.trim()
         }
@@ -708,11 +702,11 @@ export default class TagRenderingConfig {
         }
 
         if (this.multiAnswer) {
-            let selectedMappings: UploadableTag[] = this.mappings
+            const selectedMappings: UploadableTag[] = this.mappings
                 .filter((_, i) => multiSelectedMapping[i])
                 .map((m) => new And([m.if, ...(m.addExtraTags ?? [])]))
 
-            let unselectedMappings: UploadableTag[] = this.mappings
+            const unselectedMappings: UploadableTag[] = this.mappings
                 .filter((_, i) => !multiSelectedMapping[i])
                 .map((m) => m.ifnot)
 
