@@ -63,31 +63,31 @@
   <div class="py-1 px-2 interactive flex w-full justify-between">
     <div class="flex flex-col">
 
-    <div>
+      <div>
 
-      {#if renderingExternal}
-        <TagRenderingAnswer tags={new UIEventSource(mockPropertiesExternal)} selectedElement={feature}
-                            config={renderingExternal}
-                            {layer} {state} />
-      {:else}
-        <div class="flex gap-x-1 items-center">
-          <b>{key}</b>{externalProperties[key]}
-        </div>
+        {#if renderingExternal}
+          <TagRenderingAnswer tags={new UIEventSource(mockPropertiesExternal)} selectedElement={feature}
+                              config={renderingExternal}
+                              {layer} {state} />
+        {:else}
+          <div class="flex gap-x-1 items-center">
+            <b>{key}</b>{externalProperties[key]}
+          </div>
 
-      {/if}
-    </div>
+        {/if}
+      </div>
 
       {#if $isTesting || $isDebug || $showTags === "yes" || $showTags === "always" || $showTags === "full"}
         <div class="subtle text-sm">
-
+          {#if $tags[key] !== undefined}
           <span>
         OSM:
             {key}={$tags[key]}
-      </span>
+          </span>
+          {/if}
           <span>
-        Ext:
             {key}= {externalProperties[key]}
-      </span>
+          </span>
         </div>
       {/if}
     </div>

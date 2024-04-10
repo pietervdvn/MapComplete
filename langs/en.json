@@ -60,6 +60,7 @@
         "done": "Done",
         "error": "Error",
         "loadedFrom": "The following data is loaded from <a href={url}>{source}</a> using the embedded JSON-LD",
+        "noDataLoaded": "The external website has no linked data that could be loaded",
         "overwrite": "Overwrite"
     },
     "favourite": {

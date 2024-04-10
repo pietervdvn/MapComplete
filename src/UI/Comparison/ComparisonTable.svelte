@@ -42,10 +42,18 @@
     .filter((i) => !knownImages.has(i))
 
   let propertyKeysExternal = externalKeys.filter((k) => k.match(imageKeyRegex) === null)
-  let missing = propertyKeysExternal.filter((k) => osmProperties[k] === undefined && typeof externalProperties[k] === "string")
+  let missing = propertyKeysExternal.filter((k) => {
+    if (k.startsWith("_")) {
+      return false
+    }
+    return osmProperties[k] === undefined && typeof externalProperties[k] === "string"
+  })
   // let same = propertyKeysExternal.filter((key) => osmProperties[key] === externalProperties[key])
   let different = propertyKeysExternal.filter(
     (key) => {
+      if (key.startsWith("_")) {
+        return false
+      }
       if (osmProperties[key] === undefined) {
         return false
       }
@@ -56,11 +64,10 @@
         return false
       }
 
-      if (key === "website")
-      {
+      if (key === "website") {
         const osmCanon = new URL(osmProperties[key]).toString()
         const externalCanon = new URL(externalProperties[key]).toString()
-        if(osmCanon === externalCanon){
+        if (osmCanon === externalCanon) {
           return false
         }
       }
@@ -83,7 +90,9 @@
     currentStep = "all_applied"
   }
 </script>
-{#if unknownImages.length === 0 && missing.length === 0 && different.length === 0}
+{#if propertyKeysExternal.length === 0 && knownImages.size + unknownImages.length === 0}
+  <Tr cls="subtle" t={t.noDataLoaded} />
+{:else if unknownImages.length === 0 && missing.length === 0 && different.length === 0}
   <div class="thanks m-0 flex items-center gap-x-2 px-2">
     <Party class="h-8 w-8" />
     <Tr t={t.allIncluded} />
@@ -169,6 +178,12 @@
           />
         {/each}
       {/if}
+    {/if}
+    {#if externalProperties["_last_edit_timestamp"] !== undefined}
+      <span class="subtle text-sm">
+
+      External data has been last modified on {externalProperties["_last_edit_timestamp"]}
+      </span>
     {/if}
   </div>
 
