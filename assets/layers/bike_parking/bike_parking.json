@@ -330,6 +330,13 @@
             "pt_BR": "Uma área no chão que é marcada para o estacionamento de bicicletas",
             "pt": "Uma área no chão que é marcada para o estacionamento de bicicletas"
           }
+        },
+        {
+          "if": "bicycle_parking=lockers",
+          "then": {
+            "en": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..",
+            "nl": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan."
+          }
         }
       ],
       "id": "Bicycle parking type"
@@ -621,6 +628,13 @@
           }
         },
         {
+          "if": "access=members",
+          "then": {
+            "en": "Access for subscribers",
+            "nl": "Toegang voor abonnees van de fietsparking"
+          }
+        },
+        {
           "if": "access=private",
           "then": {
             "en": "Access is limited to members of a school, company or organisation",
@@ -729,6 +743,41 @@
             "*": "<a href='tel:{contact:phone}'>{contact:phone}</a>"
           },
           "icon": "./assets/layers/questions/phone.svg"
+        }
+      ]
+    },
+    {
+      "id": "operator_website",
+      "question": {
+        "en": "What is the website number of the operator of this bicycle parking?",
+        "nl": "Wat is de website van de operator van deze fietsenstalling?"
+      },
+      "icon": "./assets/layers/icons/website.svg",
+      "freeform": {
+        "key": "operator:website",
+        "type": "url",
+        "addExtraTags": [
+          "website=",
+          "contact:website="
+        ]
+      },
+      "render": "<a href='{operator:website}'>{operator:website}</a>",
+      "mappings": [
+        {
+          "if": "website~*",
+          "hideInAnswer": true,
+          "then": {
+            "*": "<a href='{website}'>{website}</a>"
+          },
+          "icon": "./assets/layers/icons/website.svg"
+        },
+        {
+          "if": "contact:website~*",
+          "hideInAnswer": true,
+          "then": {
+            "*": "<a href='{contact:website}'>{contact:website}</a>"
+          },
+          "icon": "./assets/layers/icons/website.svg"
         }
       ]
     },
