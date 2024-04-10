@@ -48,6 +48,13 @@
       ],
       "tagRenderings": [
         {
+          "id": "Explanation",
+          "render": {
+            "en": "This is data from <b>Velopark</b>. ",
+            "nl": "Dit datapunt komt van <b>Velopark</b>"
+          }
+        },
+        {
           "id": "velopark-id-display",
           "render": {
             "*": "<span class='literal-code'>{ref:velopark}</span>"
@@ -67,28 +74,6 @@
           }
         },
         {
-          "id": "velopark-data-link",
-          "render": {
-            "special": {
-              "type": "link",
-              "href": "{ref:velopark}",
-              "text": "Inspect raw data on velopark.be"
-            }
-          }
-        },
-        {
-          "id": "show-data-velopark",
-          "render": {
-            "special": {
-              "type": "linked_data_from_website",
-              "key": "ref:velopark",
-              "useProxy": "no",
-              "host": "https://data.velopark.be",
-              "mode": "readonly"
-            }
-          }
-        },
-        {
           "id": "login",
           "render": {
             "special": {
@@ -99,7 +84,9 @@
         {
           "id": "closest_parkings",
           "render": {
-            "*": "There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap. "
+            "en": "There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap. ",
+            "nl": "Er zijn {_nearby_bicycle_parkings:count} fietsparkings gekend binnen 25m in OpenStreetMap. "
+
           }
         },
         {
@@ -163,7 +150,29 @@
             }
           }
         },
-        "{nearby_images(open,readonly)}"
+        "{nearby_images(open,readonly)}",
+        {
+          "id": "show-data-velopark",
+          "render": {
+            "special": {
+              "type": "linked_data_from_website",
+              "key": "ref:velopark",
+              "useProxy": "no",
+              "host": "https://data.velopark.be",
+              "mode": "readonly"
+            }
+          }
+        },
+        {
+          "id": "velopark-data-link",
+          "render": {
+            "special": {
+              "type": "link",
+              "href": "{ref:velopark}",
+              "text": "Inspect raw data on velopark.be"
+            }
+          }
+        }
       ],
       "lineRendering": [],
       "filter": [
@@ -272,21 +281,20 @@
             "id": "last_edited_before",
             "options": [
               {
-
-
-            "question": {
-              "en": "Last edit was before {date}",
-              "nl": "Laatste aanpassing voor {date}"
-
-            },
-            "osmTags": "_last_edit:timestamp<{date}",
-            "fields": [
-              {
-                "name": "date",
-                "type": "date"
+                "question": {
+                  "en": "Last edit was before {date}",
+                  "nl": "Laatste aanpassing voor {date}"
+                },
+                "osmTags": "_last_edit:timestamp<{date}",
+                "fields": [
+                  {
+                    "name": "date",
+                    "type": "date"
+                  }
+                ]
               }
             ]
-          }]}
+          }
         ]
       }
     },
