@@ -89,6 +89,7 @@ import Toggle from "./Input/Toggle"
 import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
 import LinkedDataLoader from "../Logic/Web/LinkedDataLoader"
 import SplitRoadWizard from "./Popup/SplitRoadWizard.svelte"
+import DynLink from "./Base/DynLink.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1236,22 +1237,19 @@ export default class SpecialVisualizations {
                         download = undefined
                     }
                     const newTab = download === undefined && !href.startsWith("#")
-                    return new VariableUiElement(
-                        tagSource.map(
-                            (tags) =>
-                                new SvelteUIElement(Link, {
-                                    text: Utils.SubstituteKeys(text, tags),
-                                    href: Utils.SubstituteKeys(href, tags).replaceAll(
-                                        / /g,
-                                        "%20"
-                                    ) /* Chromium based browsers eat the spaces */,
-                                    classnames,
-                                    download: Utils.SubstituteKeys(download, tags),
-                                    ariaLabel: Utils.SubstituteKeys(ariaLabel, tags),
-                                    newTab
-                                })
-                        )
-                    )
+                      const   textStore = tagSource.map(tags => Utils.SubstituteKeys(text, tags))
+                  const  hrefStore = tagSource.map(tags => Utils.SubstituteKeys(href, tags).replaceAll(
+                        / /g,
+                        "%20"
+                    ) /* Chromium based browsers eat the spaces */)
+                    return new SvelteUIElement(DynLink, {
+                    text:textStore,
+                        href: hrefStore,
+                        classnames: new ImmutableStore(classnames),
+                        download: tagSource.map(tags => Utils.SubstituteKeys(download, tags)),
+                        ariaLabel: tagSource.map(tags => Utils.SubstituteKeys(ariaLabel, tags)),
+                        newTab: new ImmutableStore(newTab)
+                    })
                 }
             },
             {
@@ -1308,6 +1306,10 @@ export default class SpecialVisualizations {
                                 properties = JSON.parse(tags[key])
                             } else {
                                 properties = <any>tags[key]
+                            }
+                            if(!properties){
+                                console.debug("Could not create a special visualization for multi(",args.join(", ")+")", "no properties found for object",feature.properties.id)
+                                return undefined
                             }
                             const elements = []
                             for (const property of properties) {
