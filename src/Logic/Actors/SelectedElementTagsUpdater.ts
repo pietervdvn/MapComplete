@@ -7,6 +7,7 @@ import { Utils } from "../../Utils"
 import ThemeViewState from "../../Models/ThemeViewState"
 import { BBox } from "../BBox"
 import { Feature } from "geojson"
+import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -31,7 +32,7 @@ export default class SelectedElementTagsUpdater {
         })
     }
 
-    public static applyUpdate(latestTags: OsmTags, id: string, state: ThemeViewState) {
+    public static applyUpdate(latestTags: OsmTags, id: string, state: SpecialVisualizationState) {
         try {
             const leftRightSensitive = state.layout.isLeftRightSensitive()
 
