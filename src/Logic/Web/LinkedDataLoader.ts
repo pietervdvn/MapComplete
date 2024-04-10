@@ -25,7 +25,7 @@ export default class LinkedDataLoader {
         opening_hours: { "@id": "http://schema.org/openingHoursSpecification" },
         openingHours: { "@id": "http://schema.org/openingHours", "@container": "@set" },
         geo: { "@id": "http://schema.org/geo" },
-        "alt_name": {"@id":"http://schema.org/alternateName"}
+        "alt_name": { "@id": "http://schema.org/alternateName" }
     }
     private static COMPACTING_CONTEXT_OH = {
         dayOfWeek: { "@id": "http://schema.org/dayOfWeek", "@container": "@set" },
@@ -189,9 +189,9 @@ export default class LinkedDataLoader {
             compacted["geo"] = <any>await LinkedDataLoader.geoToGeometry(compacted["geo"])
         }
 
-        if(compacted["alt_name"]){
-            if(compacted["alt_name"] === compacted["name"]){
-                delete  compacted["alt_name"]
+        if (compacted["alt_name"]) {
+            if (compacted["alt_name"] === compacted["name"]) {
+                delete compacted["alt_name"]
             }
         }
 
@@ -295,9 +295,15 @@ export default class LinkedDataLoader {
 
     private static patchVeloparkProperties(input: Record<string, Set<string>>): Record<string, string[]> {
         const output: Record<string, string[]> = {}
+        console.log("Input for patchVelopark:", input)
         for (const k in input) {
             output[k] = Array.from(input[k])
         }
+
+        if (output["type"][0] === "https://data.velopark.be/openvelopark/terms#BicycleLocker") {
+            output["bicycle_parking"] = ["lockers"]
+        }
+        delete output["type"]
 
         function on(key: string, applyF: (s: string) => string) {
             if (!output[key]) {
@@ -341,8 +347,12 @@ export default class LinkedDataLoader {
         for (const attribute in LinkedDataLoader.formatters) {
             on(attribute, p => LinkedDataLoader.formatters[attribute].reformat(p))
         }
+        rename("phone", "operator:phone")
+        rename("email", "operator:email")
+        rename("website", "operator:website")
+
         on("charge", (p => {
-            if(Number(p) === 0){
+            if (Number(p) === 0) {
                 output["fee"] = ["no"]
                 return undefined
             }
@@ -379,34 +389,34 @@ export default class LinkedDataLoader {
         on("access", audience => {
 
             if (["brede publiek", "iedereen", "bezoekers", "iedereen - vooral bezoekers gemeentehuis of bibliotheek."].indexOf(audience.toLowerCase()) >= 0) {
-                return "public"
+                return "yes"
             }
-            if(audience.toLowerCase().startsWith("bezoekers")){
-                return "public"
+            if (audience.toLowerCase().startsWith("bezoekers")) {
+                return "yes"
             }
             if (["abonnees"].indexOf(audience.toLowerCase()) >= 0) {
                 return "members"
             }
-            if(audience.indexOf("Blue-locker app") >= 0){
+            if (audience.indexOf("Blue-locker app") >= 0) {
                 return "members"
             }
             if (["buurtbewoners"].indexOf(audience.toLowerCase()) >= 0) {
                 return "permissive"
                 //   return "members"
             }
-            if(audience.toLowerCase().startsWith("klanten") ||
+            if (audience.toLowerCase().startsWith("klanten") ||
                 audience.toLowerCase().startsWith("werknemers") ||
-                audience.toLowerCase().startsWith("personeel")){
+                audience.toLowerCase().startsWith("personeel")) {
                 return "customers"
             }
 
-            console.warn("Suspicious 'access'-tag:", audience, "for", input["ref:velopark"]," assuming public")
-            return "public"
+            console.warn("Suspicious 'access'-tag:", audience, "for", input["ref:velopark"], " assuming yes")
+            return "yes"
 
         })
 
-        if(output["publicAccess"]?.[0] == "no"){
-            output["access"] =[ "private"]
+        if (output["publicAccess"]?.[0] == "no") {
+            output["access"] = ["private"]
         }
         delete output["publicAccess"]
 
@@ -458,8 +468,8 @@ export default class LinkedDataLoader {
     }
 
     private static async fetchVeloparkGraphProperty<T extends string>(url: string, property: string, subExpr?: string):
-        Promise<SparqlResult<T, "section">> {
-        const results = await new TypedSparql().typedSparql<T, "g">(
+        Promise<SparqlResult<T, "g">> {
+        return await new TypedSparql().typedSparql<T, "g">(
             {
                 schema: "http://schema.org/",
                 mv: "http://schema.mobivoc.org/",
@@ -476,7 +486,6 @@ export default class LinkedDataLoader {
                 "?section a ?type"
             )
         )
-        return results
     }
 
     /**
@@ -594,11 +603,12 @@ export default class LinkedDataLoader {
             "schema:contactPoint": {
                 "schema:email": "email",
                 "schema:telephone": "phone"
-
-            }
+            },
+            "schema:dateModified":"_last_edit_timestamp"
         }
 
         const graphOptionalPaths = {
+            "a": "type",
             "vp:covered": "covered",
             "vp:maximumParkingDuration": "maxstay",
             "mv:totalCapacity": "capacity",
@@ -614,11 +624,7 @@ export default class LinkedDataLoader {
             "schema:priceSpecification": {
                 "mv:freeOfCharge": "fee",
                 "schema:price": "charge"
-            },
-            "schema:amenityFeature": {
-                "a": "fixme_nearby_amenity"
             }
-
         }
 
         const extra = [
