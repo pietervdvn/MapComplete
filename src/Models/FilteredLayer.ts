@@ -12,7 +12,7 @@ import { GlobalFilter } from "./GlobalFilter"
 
 export default class FilteredLayer {
     /**
-     * Whether or not the specified layer is enabled by the user
+     * Whether the specified layer is enabled by the user
      */
     readonly isDisplayed: UIEventSource<boolean>
     /**
@@ -52,11 +52,10 @@ export default class FilteredLayer {
         }
         this.appliedFilters = appliedFilters
 
-        const self = this
         const currentTags = new UIEventSource<TagsFilter>(undefined)
         this.appliedFilters.forEach((filterSrc) => {
-            filterSrc.addCallbackAndRun((_) => {
-                currentTags.setData(self.calculateCurrentTags())
+            filterSrc.addCallbackAndRun(() => {
+                currentTags.setData(this.calculateCurrentTags())
             })
         })
         this.hasFilter = currentTags.map((ct) => ct !== undefined)
@@ -207,7 +206,7 @@ export default class FilteredLayer {
         }
 
         {
-            let neededTags: TagsFilter = this.currentFilter.data
+            const neededTags: TagsFilter = this.currentFilter.data
             if (neededTags !== undefined && !neededTags.matchesProperties(properties)) {
                 return false
             }
@@ -246,7 +245,7 @@ export default class FilteredLayer {
         } else {
             tags = new And(needed)
         }
-        let optimized = tags.optimize()
+        const optimized = tags.optimize()
         if (optimized === true) {
             return undefined
         }
