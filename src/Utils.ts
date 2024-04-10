@@ -896,26 +896,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return dict.get(k)
     }
 
-    /**
-     * Tries to minify the given JSON by applying some compression
-     */
-    public static MinifyJSON(stringified: string): string {
-        stringified = stringified.replace(/\|/g, "||")
-
-        const keys = Utils.knownKeys.concat(Utils.extraKeys)
-        for (let i = 0; i < keys.length; i++) {
-            const knownKey = keys[i]
-            let code = i
-            if (i >= 124) {
-                code += 1 // Character 127 is our 'escape' character |
-            }
-            const replacement = "|" + String.fromCharCode(code)
-            stringified = stringified.replace(new RegExp(`\"${knownKey}\":`, "g"), replacement)
-        }
-
-        return stringified
-    }
-
     public static UnMinify(minified: string): string {
         if (minified === undefined || minified === null) {
             return undefined
@@ -942,7 +922,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         Utils.injectedDownloads[url] = data
     }
 
-    public static async download(url: string, headers?: any): Promise<string | undefined> {
+    public static async download(url: string, headers?: Record<string, string>): Promise<string | undefined> {
         const result = await Utils.downloadAdvanced(url, headers)
         if (result["error"] !== undefined) {
             throw result["error"]
@@ -955,7 +935,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static downloadAdvanced(
         url: string,
-        headers?: any,
+        headers?: Record<string, string>,
         method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
         content?: string
     ): Promise<
@@ -995,7 +975,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         })
     }
 
-    public static upload(url: string, data, headers?: any): Promise<string> {
+    public static upload(url: string, data: string | Blob, headers?: Record<string, string>): Promise<string> {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {
@@ -1022,9 +1002,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static async downloadJsonCached(
         url: string,
         maxCacheTimeMs: number,
-        headers?: any
-    ): Promise<any> {
-        const result = await Utils.downloadJsonAdvanced(url, headers)
+        headers?: Record<string, string>
+    ): Promise<object> {
+        const result = await Utils.downloadJsonCachedAdvanced(url, maxCacheTimeMs, headers)
         if (result["content"]) {
             return result["content"]
         }
@@ -1034,8 +1014,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static async downloadJsonCachedAdvanced(
         url: string,
         maxCacheTimeMs: number,
-        headers?: any
-    ): Promise<{ content: any } | { error: string; url: string; statuscode?: number }> {
+        headers?: Record<string, string>
+    ): Promise<{ content: object | [] } | { error: string; url: string; statuscode?: number }> {
         const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {
             if (new Date().getTime() - cached.timestamp <= maxCacheTimeMs) {
@@ -1051,7 +1031,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return await promise
     }
 
-    public static async downloadJson(url: string, headers?: any): Promise<any> {
+    public static async downloadJson(url: string, headers?: Record<string, string>): Promise<object | []> {
         const result = await Utils.downloadJsonAdvanced(url, headers)
         if (result["content"]) {
             return result["content"]
@@ -1069,12 +1049,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     public static async downloadJsonAdvanced(
         url: string,
-        headers?: any
-    ): Promise<{ content: any } | { error: string; url: string; statuscode?: number }> {
+        headers?: Record<string, string>
+    ): Promise<{ content: object | object[] } | { error: string; url: string; statuscode?: number }> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve, _) => resolve({ content: injected }))
+            return new Promise((resolve) => resolve({ content: injected }))
         }
         const result = await Utils.downloadAdvanced(
             url,
@@ -1086,6 +1066,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const data = result["content"]
         try {
             if (typeof data === "string") {
+                if(data === ""){
+                    return {content: {}}
+                }
                 return { content: JSON.parse(data) }
             }
             return { content: data }
@@ -1132,26 +1115,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         element.download = fileName
         document.body.appendChild(element) // Required for this to work in FireFox
         element.click()
-    }
-
-    /**
-     * Reorders an object: creates a new object where the keys have been added alphabetically
-     *
-     * const sorted = Utils.sortKeys({ x: 'x', abc: {'x': 'x', 'a': 'a'}, def: 'def'})
-     * JSON.stringify(sorted) // => '{"abc":{"a":"a","x":"x"},"def":"def","x":"x"}'
-     */
-    static sortKeys(o: any) {
-        const copy = {}
-        let keys = Object.keys(o)
-        keys = keys.sort()
-        for (const key of keys) {
-            let v = o[key]
-            if (typeof v === "object") {
-                v = Utils.sortKeys(v)
-            }
-            copy[key] = v
-        }
-        return copy
     }
 
     public static async waitFor(timeMillis: number): Promise<void> {
