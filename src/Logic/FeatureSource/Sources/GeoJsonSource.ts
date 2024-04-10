@@ -1,6 +1,3 @@
-/**
- * Fetches a geojson file somewhere and passes it along
- */
 import { Store, UIEventSource } from "../../UIEventSource"
 import { Utils } from "../../../Utils"
 import { FeatureSource } from "../FeatureSource"
@@ -18,8 +15,11 @@ export default class GeoJsonSource implements FeatureSource {
     private readonly url: string
     private readonly layer: LayerConfig
     private _isDownloaded = false
-    private currentlyRunning: Promise<any>
+    private currentlyRunning: Promise<Feature[]>
 
+    /**
+     * Fetches a geojson-file somewhere and passes it along as geojson source
+     */
     public constructor(
         layer: LayerConfig,
         options?: {
@@ -95,7 +95,8 @@ export default class GeoJsonSource implements FeatureSource {
         }
         const url = this.url
         try {
-            let json = await Utils.downloadJsonCached(url, (options?.maxCacheAgeSec ?? 300) * 1000)
+            const cacheAge = (options?.maxCacheAgeSec ?? 300) * 1000
+            let json = <{features: Feature[]}> await Utils.downloadJsonCached(url, cacheAge)
 
             if (json.features === undefined || json.features === null) {
                 json.features = []
