@@ -95,8 +95,8 @@ export default class LayoutSource extends FeatureSourceMerger {
             isLoading.setData(loading)
         }
 
-        overpassSource?.runningQuery?.addCallbackAndRun((_) => setIsLoading())
-        osmApiSource?.isRunning?.addCallbackAndRun((_) => setIsLoading())
+        overpassSource?.runningQuery?.addCallbackAndRun(() => setIsLoading())
+        osmApiSource?.isRunning?.addCallbackAndRun(() => setIsLoading())
 
         const geojsonSources: UpdatableFeatureSource[] = geojsonlayers.map((l) =>
             LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
@@ -122,12 +122,12 @@ export default class LayoutSource extends FeatureSourceMerger {
     private static setupGeojsonSource(
         layer: LayerConfig,
         mapProperties: { zoom: Store<number>; bounds: Store<BBox> },
-        isActive?: Store<boolean>
+        isActiveByFilter?: Store<boolean>
     ): UpdatableFeatureSource {
         const source = layer.source
-        isActive = mapProperties.zoom.map(
-            (z) => (isActive?.data ?? true) && z >= layer.minzoom,
-            [isActive]
+        const isActive = mapProperties.zoom.map(
+            (z) => (isActiveByFilter?.data ?? true) && z >= layer.minzoom,
+            [isActiveByFilter]
         )
         if (source.geojsonZoomLevel === undefined) {
             // This is a 'load everything at once' geojson layer
