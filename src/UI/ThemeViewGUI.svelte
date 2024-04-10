@@ -78,7 +78,6 @@
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
-  selectedElement.addCallbackAndRun((se) => console.log("Selected element", se))
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
   Orientation.singleton.startMeasurements()
@@ -138,10 +137,10 @@
     state.visualFeedbackViewportBounds.setData(bbox)
   }
 
-  viewport.addCallbackAndRunD((_) => {
+  viewport.addCallbackAndRunD(() => {
     updateViewport()
   })
-  mapproperties.bounds.addCallbackAndRunD((_) => {
+  mapproperties.bounds.addCallbackAndRunD(() => {
     updateViewport()
   })
   let featureSwitches: FeatureSwitchState = state.featureSwitches
@@ -224,7 +223,7 @@
       on:keydown={forwardEventToMap}
     >
       <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
-        <img class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8" src={layout.icon} />
+        <img role="presentation" alt="" class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8" src={layout.icon} />
         <b class="mr-1">
           <Tr t={layout.title} />
         </b>
@@ -387,13 +386,13 @@
 
 <If condition={state.previewedImage.map((i) => i !== undefined)}>
   <FloatOver extraClasses="p-1" on:close={() => state.previewedImage.setData(undefined)}>
-    <div
-      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded-full bg-white/50 transition-colors duration-200 hover:bg-white"
+    <button
+      class="absolute p-0 right-4 top-4 h-8 w-8 rounded-full"
       on:click={() => previewedImage.setData(undefined)}
       slot="close-button"
     >
       <XCircleIcon />
-    </div>
+    </button>
     <ImageOperations image={$previewedImage} />
   </FloatOver>
 </If>
