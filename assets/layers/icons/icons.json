@@ -182,8 +182,23 @@
         "defaults",
         "in_favourite"
       ],
-      "render": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>",
-      "condition": "website~*"
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
     },
     {
       "id": "smokingicon",
