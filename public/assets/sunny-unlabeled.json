@@ -1234,6 +1234,49 @@
          }
       },
       {
+         "id": "transit_railway_tunnel",
+         "type": "line",
+         "source": "protomaps",
+         "source-layer": "transit",
+         "filter": [
+            "all",
+            [
+               "==",
+               "pmap:kind",
+               "rail"
+            ],
+            [
+               "<",
+               "pmap:level",
+               0
+            ]
+         ],
+         "paint": {
+            "line-dasharray": [
+               0.3,
+               0.75
+            ],
+            "line-opacity": 0.5,
+            "line-color": "#333333",
+            "line-width": [
+               "interpolate",
+               [
+                  "exponential",
+                  1.6
+               ],
+               [
+                  "zoom"
+               ],
+               3,
+               0,
+               6,
+               0.15,
+               18,
+               9
+            ]
+         }
+      },
+      {
          "id": "buildings",
          "type": "fill",
          "source": "protomaps",
@@ -2141,6 +2184,11 @@
                "==",
                "pmap:kind",
                "rail"
+            ],
+            [
+               ">=",
+               "pmap:level",
+               0
             ]
          ],
          "paint": {
@@ -2176,6 +2224,11 @@
                "==",
                "pmap:kind",
                "rail"
+            ],
+            [
+               ">=",
+               "pmap:level",
+               0
             ]
          ],
          "paint": {
