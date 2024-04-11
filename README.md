@@ -2,9 +2,8 @@
 
 > Let a thousand flowers bloom
 
-[![](https://img.shields.io/liberapay/patrons/Pietervdvn.svg?logo=liberapay) ![](https://img.shields.io/liberapay/receives/pietervdvn.svg?logo=liberapay)  ](https://liberapay.com/pietervdvn/)
-[![Matrix](https://img.shields.io/matrix/MapComplete:matrix.org)](https://matrix.to/#/#MapComplete:matrix.org?via=matrix.org)
-
+[![Liberapay](https://img.shields.io/liberapay/patrons/pietervdvn.svg?logo=liberapay)](https://liberapay.com/pietervdvn/) [![](https://img.shields.io/liberapay/receives/pietervdvn.svg?logo=liberapay)](https://liberapay.com/pietervdvn/)
+[![Matrix](https://img.shields.io/matrix/MapComplete:matrix.org?logo=matrix)](https://matrix.to/#/#MapComplete:matrix.org)
 
 **MapComplete is an OpenStreetMap viewer and editor.** The main goal is to make it trivial to see and update information on OpenStreetMap, also for non-technical users.
 This is achieved by showing only features related to a _single topic_ on the map. MapComplete contains many thematic maps, each built for a certain community of users, showing data and questions that are highly relevant for this topic.
