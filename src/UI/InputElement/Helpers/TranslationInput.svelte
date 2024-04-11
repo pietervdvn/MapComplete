@@ -75,7 +75,7 @@
       {#each allLanguages as language}
         <option value={language}>
           {language}
-          {#if $translations[language] !== undefined}
+          {#if $translations?.[language] !== undefined}
             *
           {/if}
         </option>
