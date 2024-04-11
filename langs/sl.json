@@ -10,16 +10,25 @@
         "loginToDelete": "Za dodajanje novih elemntov morate biti vpisani"
     },
     "favouritePoi": {
+        "button": {
+            "markAsFavouriteTitle": "Označite to lokacijo kot priljubljeno",
+            "unmark": "Odstrani to lokacijo s seznama priljubljenih"
+        },
+        "introPrivacy": "Ta seznam je viden le vam",
         "loginToSeeList": "Vpišite se za ogled seznama vaših priljubljenih lokacij"
     },
     "general": {
         "add": {
             "pleaseLogin": "Vpišite se za dodajanje novega elementa",
-            "zoomInFurther": "Še bolj približajte za dodajanje elementa"
+            "title": "Dodaj nov element",
+            "zoomInFurther": "Približajte za dodajanje elementa"
         },
         "back": "Nazaj",
         "cancel": "Prekliči",
         "confirm": "Potrdi",
+        "download": {
+            "title": "Prenos"
+        },
         "getStartedLogin": "Za začetek se vpišite s svojim OpenStreetMap računom",
         "loginFailed": "Vpis v OpenStreetMap ni uspe",
         "loginFailedOfflineMode": "Zaradi vzdrževanja OpenStreetMap.org trenutno ni na voljo. Urejanje bo kmalu spet mogoče",
@@ -29,15 +38,50 @@
         "menu": {
             "aboutMapComplete": "O MapComplete"
         },
+        "number": "številka",
+        "openTheMap": "Odpri zemljevid",
+        "openTheMapAtGeolocation": "Približaj mojo lokacijo",
+        "opening_hours": {
+            "all_days_from": "Odrpto vsak dan {ranges}",
+            "closed_permanently": "Zaprto do nadaljnega",
+            "closed_until": "Zaprto do {date}",
+            "friday": "Petki {ranges}",
+            "monday": "Ponedeljki {ranges}",
+            "on_weekdays": "Odprto ob delovnikih {ranges}",
+            "on_weekends": "Odprto čez vikend {ranges}",
+            "openTill": "do",
+            "open_24_7": "Odprto ves čas",
+            "open_during_ph": "Med prazniki je to",
+            "opensAt": "od",
+            "ph_closed": "zaprto",
+            "ph_not_known": " ",
+            "ph_open": "odprto",
+            "ph_open_as_usual": "odprto kot običajno",
+            "ranges": "od {starttime} do {endtime}",
+            "rangescombined": "{range0} in {range1}",
+            "saturday": "Sobote {ranges}",
+            "sunday": "Nedelje {ranges}",
+            "thursday": "Četrtki {ranges}",
+            "tuesday": "Torki {ranges}",
+            "unknown": "Odpiralni čas ni znan",
+            "wednesday": "Srede {ranges}"
+        },
         "pickLanguage": "Izberite jezik",
         "save": "Shrani",
         "search": {
             "error": "Nekaj se je zalomilo…",
             "nothing": "Nič ni bilo najdenega…",
             "search": "Poiščite lokacijo",
+            "searchShort": "Išči…",
             "searching": "Iskanje…"
         },
+        "sharescreen": {
+            "title": "Deli ta zemljevid"
+        },
         "skip": "Preskoči to vprašanje",
+        "uploadPending": "{count} čakajočih sprememb",
+        "uploadPendingSingle": "Ena čakajoča sprememba",
+        "uploadingChanges": "Objavljanje sprememb…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Pet",
@@ -59,14 +103,24 @@
     },
     "image": {
         "addPicture": "Dodaj sliko",
+        "currentLicense": "Vaša slika bo objavljena z dovoljenjem {license}",
         "doDelete": "Odstrani sliko",
         "dontDelete": "Prekliči",
         "isDeleted": "Izbrisana",
+        "nearby": {
+            "seeNearby": "Prebrskaj in poveži bližnje slike"
+        },
         "pleaseLogin": "Vpišite se za dodajanje slik"
     },
     "index": {
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
         "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
+    },
+    "move": {
+        "inviteToMove": {
+            "generic": "Premakni ta element"
+        },
+        "whyMove": "Zakaj želite premakniti ta element?"
     }
 }

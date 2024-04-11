@@ -146,6 +146,7 @@
         "cancel": "Annuler",
         "confirm": "Confirmer",
         "customThemeIntro": "<h3>Thèmes personnalisés</h3>Vous avez déjà visité ces thèmes personnalisés.",
+        "customThemeTitle": "Thèmes personnalisés",
         "download": {
             "downloadAsPdf": "Télécharger un PDF de la vue actuelle",
             "downloadAsPdfHelper": "Idéal pour imprimer une carte",
