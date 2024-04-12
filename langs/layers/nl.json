@@ -1114,6 +1114,9 @@
                     },
                     "2": {
                         "then": "Private fietsenstalling van een school, een bedrijf, ..."
+                    },
+                    "3": {
+                        "then": "Private fietsenstalling van een school, een bedrijf, ..."
                     }
                 },
                 "question": "Wie mag er deze fietsenstalling gebruiken?",
@@ -1144,6 +1147,9 @@
                     },
                     "7": {
                         "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
+                    },
+                    "8": {
+                        "then": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan."
                     }
                 },
                 "question": "Van welk type is deze fietsparking?",
@@ -1211,9 +1217,16 @@
                 },
                 "question": "Is deze fietsenstalling gratis te gebruiken?"
             },
+            "operator": {
+                "question": "Wie beheert deze fietsenstalling?",
+                "render": "Deze fietsenstalling wordt beheerd door {operator}"
+            },
             "operator_phone": {
                 "question": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
                 "questionHint": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden"
+            },
+            "operator_website": {
+                "question": "Wat is de website van de operator van deze fietsenstalling?"
             }
         },
         "title": {

@@ -54,7 +54,8 @@
     {
       "title": {
         "en": "an ice cream parlor",
-        "de": "eine Eisdiele"
+        "de": "eine Eisdiele",
+        "fr": "un glacier"
       },
       "tags": [
         "amenity=ice_cream"

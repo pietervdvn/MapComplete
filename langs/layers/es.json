@@ -1204,6 +1204,9 @@
                     },
                     "2": {
                         "then": "El acceso se limita a miembros de una escuela, compañía u organización"
+                    },
+                    "3": {
+                        "then": "El acceso se limita a miembros de una escuela, compañía u organización"
                     }
                 },
                 "question": "¿Quién puede utilizar este aparcamiento de bicicletas?",

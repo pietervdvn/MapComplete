@@ -177,21 +177,24 @@
     {
       "id": "elevator-shape",
       "question": {
-        "en": "What shape does this elevator have?"
+        "en": "What shape does this elevator have?",
+        "de": "Welche Form hat dieser Aufzug?"
       },
       "mappings": [
         {
           "if": "shape=rectangular",
           "alsoShowIf": "shape=",
           "then": {
-            "en": "This elevator has a rectangular shape"
+            "en": "This elevator has a rectangular shape",
+            "de": "Dieser Aufzug hat eine rechteckige Form"
           },
           "icon": "./assets/svg/square.svg"
         },
         {
           "if": "shape=circular",
           "then": {
-            "en": "This elevator has a circular shape"
+            "en": "This elevator has a circular shape",
+            "de": "Dieser Aufzug hat eine kreisförmige Form"
           },
           "icon": "./assets/svg/circle.svg"
         }
@@ -265,10 +268,12 @@
         ]
       },
       "render": {
-        "en": "This elevator has a diameter of {canonical(diameter)}"
+        "en": "This elevator has a diameter of {canonical(diameter)}",
+        "de": "Dieser Aufzug hat einen Durchmesser von {canonical(diameter)}"
       },
       "question": {
-        "en": "What is the diameter of this elevator?"
+        "en": "What is the diameter of this elevator?",
+        "de": "Was ist der Durchmesser dieses Aufzugs?"
       },
       "freeform": {
         "key": "diameter",

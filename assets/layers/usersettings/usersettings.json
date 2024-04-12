@@ -739,7 +739,8 @@
           "if": "_translation_contributions>0",
           "then": {
             "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!",
-            "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!"
+            "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!",
+            "de": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!"
           },
           "icon": "party"
         }

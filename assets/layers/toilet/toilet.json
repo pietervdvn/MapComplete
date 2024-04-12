@@ -11,7 +11,8 @@
     "es": "Baños",
     "da": "Toiletter",
     "pa_PK": "ٹوئیلٹاں",
-    "cs": "Toalety"
+    "cs": "Toalety",
+    "sl": "Stranišča"
   },
   "description": {
     "en": "A layer showing (public) toilets",
@@ -21,7 +22,8 @@
     "fr": "Un calque montrant les toilettes (publiques)",
     "da": "Et lag, der viser (offentlige) toiletter",
     "ca": "Una capa que mostra banys (publics)",
-    "cs": "Vrstva zobrazující (veřejné) toalety"
+    "cs": "Vrstva zobrazující (veřejné) toalety",
+    "sl": "Prikaz (javnih) stranišč"
   },
   "source": {
     "osmTags": "amenity=toilets"
@@ -39,7 +41,8 @@
       "es": "Baño",
       "da": "Toilet",
       "pa_PK": "ٹوئیلٹ",
-      "cs": "Toaleta"
+      "cs": "Toaleta",
+      "sl": "Stranišče"
     }
   },
   "pointRendering": [
@@ -100,7 +103,8 @@
         "es": "un baño público",
         "da": "et offentligt toilet",
         "ca": "un lavabo públic",
-        "cs": "veřejné WC"
+        "cs": "veřejné WC",
+        "sl": "javno stranišče"
       },
       "tags": [
         "amenity=toilets"
@@ -130,7 +134,8 @@
         "it": "Servizi igienici che hanno almeno una toilette accessibile a persone in sedia a rotelle",
         "da": "Et toilet, der har mindst et kørestolsvenligt toilet",
         "ca": "Un lavabo que tingui almenys un lavabo accessible per a cadira de rodes",
-        "cs": "Toaleta, která má alespoň jednu toaletu pro vozíčkáře"
+        "cs": "Toaleta, která má alespoň jednu toaletu pro vozíčkáře",
+        "sl": "Stranišča z vsaj enim invalidom na vozičku dostopnim straniščem"
       }
     }
   ],
@@ -919,7 +924,8 @@
             "fr": "Accessible aux fauteuils roulants",
             "da": "Tilgængelig for kørestolsbrugere",
             "ca": "Accessible amb cadira de rodes",
-            "cs": "Bezbariérový přístup"
+            "cs": "Bezbariérový přístup",
+            "sl": "Dostopno z vozičkom"
           },
           "osmTags": {
             "or": [
@@ -942,7 +948,8 @@
             "fr": "A une table à langer",
             "da": "Har et puslebord",
             "ca": "Té un canviador",
-            "cs": "Má přebalovací pult"
+            "cs": "Má přebalovací pult",
+            "sl": "Ima previjalno mizo"
           },
           "osmTags": "changing_table=yes"
         }

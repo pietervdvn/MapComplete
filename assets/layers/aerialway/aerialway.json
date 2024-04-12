@@ -226,7 +226,8 @@
       "id": "length",
       "render": {
         "en": "This aerialway is {_length:km} kilometer long",
-        "de": "Die Seilbahn hat eine Länge von {_length:km} km"
+        "de": "Die Seilbahn hat eine Länge von {_length:km} km",
+        "fr": "Cette voie aérienne fait {_length:km} kilomètre de long"
       }
     }
   ]

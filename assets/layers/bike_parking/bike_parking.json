@@ -630,8 +630,18 @@
         {
           "if": "access=members",
           "then": {
-            "en": "Access for subscribers",
-            "nl": "Toegang voor abonnees van de fietsparking"
+            "en": "Access is limited to members of a school, company or organisation",
+            "nl": "Private fietsenstalling van een school, een bedrijf, ...",
+            "ca": "L'accés està limitat a membres d'una escola, companyia o organització",
+            "cs": "Přístup je omezen na členy školy, společnosti nebo organizace",
+            "da": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation",
+            "de": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden",
+            "es": "El acceso se limita a miembros de una escuela, compañía u organización",
+            "fr": "Accès limité aux membres d'une école, entreprise ou organisation",
+            "it": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione",
+            "pt": "Acesso é limitado aos membros de uma escola, companhia ou organização",
+            "pt_BR": "Acesso é limitado aos membros de uma escola, companhia ou organização",
+            "zh_Hant": "通行性僅限學校、公司或組織的成員"
           }
         },
         {

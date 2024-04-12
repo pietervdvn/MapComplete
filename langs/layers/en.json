@@ -1375,6 +1375,9 @@
                     },
                     "2": {
                         "then": "Access is limited to members of a school, company or organisation"
+                    },
+                    "3": {
+                        "then": "Access is limited to members of a school, company or organisation"
                     }
                 },
                 "question": "Who can use this bicycle parking?",
@@ -1405,6 +1408,9 @@
                     },
                     "7": {
                         "then": "An area on the floor which is marked for bicycle parking"
+                    },
+                    "8": {
+                        "then": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing.."
                     }
                 },
                 "question": "What is the type of this bicycle parking?",
@@ -1472,9 +1478,16 @@
                 },
                 "question": "Are these bicycle parkings free to use?"
             },
+            "operator": {
+                "question": "Who maintains this bicycle parking?",
+                "render": "This bicycle parking is maintained by {operator}"
+            },
             "operator_phone": {
                 "question": "What is the phone number of the operator of this bicycle parking?",
                 "questionHint": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles"
+            },
+            "operator_website": {
+                "question": "What is the website number of the operator of this bicycle parking?"
             }
         },
         "title": {

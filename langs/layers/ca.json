@@ -1257,6 +1257,9 @@
                     },
                     "2": {
                         "then": "L'accés està limitat a membres d'una escola, companyia o organització"
+                    },
+                    "3": {
+                        "then": "L'accés està limitat a membres d'una escola, companyia o organització"
                     }
                 },
                 "question": "Qui pot utilitzar aquest aparcament de bicicletes?",

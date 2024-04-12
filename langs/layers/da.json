@@ -681,6 +681,9 @@
                     },
                     "2": {
                         "then": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation"
+                    },
+                    "3": {
+                        "then": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation"
                     }
                 },
                 "question": "Hvem kan bruge denne cykelparkering?",

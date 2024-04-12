@@ -86,7 +86,6 @@
           "render": {
             "en": "There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap. ",
             "nl": "Er zijn {_nearby_bicycle_parkings:count} fietsparkings gekend binnen 25m in OpenStreetMap. "
-
           }
         },
         {
