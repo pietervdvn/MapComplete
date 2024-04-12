@@ -35,41 +35,41 @@
             "1": {
                 "title": "un mupi"
             },
-            "3": {
+            "2": {
                 "title": "un mupi sobre la paret"
             },
-            "4": {
+            "3": {
                 "description": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
                 "title": "un tauló d'anunis"
             },
-            "5": {
+            "4": {
                 "description": "Una extructura cilíndica exterior que mostra publicitat",
                 "title": "una columna"
             },
-            "6": {
+            "5": {
                 "title": "una bandera"
             },
-            "7": {
+            "6": {
                 "title": "una pantalla"
             },
-            "8": {
+            "7": {
                 "title": "una patalla sobre una paret"
             },
-            "10": {
+            "8": {
                 "description": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
                 "title": "una lona"
             },
-            "11": {
+            "9": {
                 "title": "un tòtem"
             },
-            "12": {
+            "10": {
                 "description": "S'utilitza per a cartells publicitaris, rètols de neó, logotips i cartells en entrades institucionals",
                 "title": "un lletrer"
             },
-            "13": {
+            "11": {
                 "title": "una escupltura"
             },
-            "14": {
+            "12": {
                 "title": "una paret pintada"
             }
         },
@@ -427,7 +427,7 @@
     "atm": {
         "description": "Caixers automàtics per a retirar diners",
         "filter": {
-            "speech_output": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Amb sortida de veu"
@@ -546,7 +546,7 @@
     "bank": {
         "description": "Una institució financera per a dipositar diners",
         "filter": {
-            "has_atm": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Amb un caixer automàtic"
@@ -676,14 +676,14 @@
     "bench": {
         "description": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
         "filter": {
-            "bench_is_memorial": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "és un memorial"
                     }
                 }
             },
-            "has_backrest": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Amb i sense respatller"
@@ -1009,7 +1009,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "rental-capacity-bicycle_type": {
+                    "0": {
                         "question": "Quants type_plural es poden llogar aquí?",
                         "render": "{capacity:bicycle_type} type_plural es poden llogar aquí"
                     }
@@ -1255,7 +1255,7 @@
                     "1": {
                         "then": "L'accés és principalment per a visitants d'un negoci"
                     },
-                    "3": {
+                    "2": {
                         "then": "L'accés està limitat a membres d'una escola, companyia o organització"
                     }
                 },
@@ -1521,17 +1521,17 @@
     "bike_shop": {
         "description": "Una botiga que ven específicament bicicletes o articles relacionats",
         "filter": {
-            "offers_diy_repair": {
-                "options": {
-                    "0": {
-                        "question": "Ofereix reparar un mateix la bici"
-                    }
-                }
-            },
-            "sells_second-hand": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Ven bicicletes de segona mà"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Ofereix reparar un mateix la bici"
                     }
                 }
             }
@@ -1721,17 +1721,17 @@
     "birdhide": {
         "description": "Un observatori d'ocells",
         "filter": {
-            "shelter": {
-                "options": {
-                    "0": {
-                        "question": "Només observatoris d'ocells coberts"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Accessible per a cadires de rodes"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Només observatoris d'ocells coberts"
                     }
                 }
             }
@@ -1896,7 +1896,17 @@
     "charging_station": {
         "description": "Una estació de càrrega",
         "filter": {
-            "connection_type": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tots els tipus de vehicles"
+                    },
+                    "1": {
+                        "question": "Punt de recàrrega per a bicicletes"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "1": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
@@ -1906,16 +1916,6 @@
                     },
                     "3": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
-                    }
-                }
-            },
-            "vehicle-type": {
-                "options": {
-                    "0": {
-                        "question": "Tots els tipus de vehicles"
-                    },
-                    "1": {
-                        "question": "Punt de recàrrega per a bicicletes"
                     }
                 }
             }
@@ -2133,7 +2133,7 @@
             },
             "rewritten-questions": {
                 "renderings": {
-                    "plugs-amount-{{id}}": {
+                    "0": {
                         "question": "Quants connectors del tipus {{description}} hi han disponibles aquí?"
                     }
                 }
@@ -3565,42 +3565,42 @@
     },
     "filters": {
         "filter": {
-            "accepts_cards": {
+            "0": {
                 "options": {
                     "0": {
-                        "question": "Accepta el pagament amb targeta"
+                        "question": "Obert ara"
                     }
                 }
             },
-            "accepts_cash": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Accepta efectu"
                     }
                 }
             },
-            "accepts_credit_cards": {
+            "2": {
                 "options": {
                     "0": {
-                        "question": "Accepta targetes de crèdit"
+                        "question": "Accepta el pagament amb targeta"
                     }
                 }
             },
-            "accepts_debit_cards": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Accepta targetes de dèbit"
                     }
                 }
             },
-            "free": {
+            "4": {
                 "options": {
                     "0": {
-                        "question": "Ús gratuït"
+                        "question": "Accepta targetes de crèdit"
                     }
                 }
             },
-            "has_image": {
+            "5": {
                 "options": {
                     "0": {
                         "question": "Amb i sense imatges"
@@ -3613,28 +3613,14 @@
                     }
                 }
             },
-            "has_organic": {
-                "options": {
-                    "0": {
-                        "question": "Té opcions orgàniques"
-                    }
-                }
-            },
-            "open_now": {
-                "options": {
-                    "0": {
-                        "question": "Obert ara"
-                    }
-                }
-            },
-            "tactile_paving": {
+            "6": {
                 "options": {
                     "0": {
                         "question": "Amb superfícies podotàctils"
                     }
                 }
             },
-            "tactile_paving_advanced": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Amb o sense superfícies podotàctils"
@@ -3647,6 +3633,20 @@
                     },
                     "3": {
                         "question": "No hi ha informació sobre superfícies podotàctils"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Té opcions orgàniques"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Ús gratuït"
                     }
                 }
             }
@@ -3855,7 +3855,14 @@
         },
         "description": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
         "filter": {
-            "food-category": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "No cal reservar"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Restaurants i negocis de menjar ràpid"
@@ -3868,31 +3875,24 @@
                     }
                 }
             },
-            "halal": {
+            "3": {
                 "options": {
                     "0": {
-                        "question": "Té menú halal"
+                        "question": "Té menú vegetarià"
                     }
                 }
             },
-            "reservation": {
-                "options": {
-                    "0": {
-                        "question": "No cal reservar"
-                    }
-                }
-            },
-            "vegan": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Té menú vegà"
                     }
                 }
             },
-            "vegetarian": {
+            "5": {
                 "options": {
                     "0": {
-                        "question": "Té menú vegetarià"
+                        "question": "Té menú halal"
                     }
                 }
             }
@@ -4268,7 +4268,7 @@
         "tagRenderings": {
             "available_devices": {
                 "renderings": {
-                    "hackerspaces-service-device-key": {
+                    "0": {
                         "mappings": {
                             "0": {
                                 "then": "Hi ha {device-name} disponible a aquest espai hacker"
@@ -4587,7 +4587,7 @@
     "kerbs": {
         "description": "Una capa que mostra les vorades.",
         "filter": {
-            "kerb-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tots els tipus de vorades"
@@ -4808,21 +4808,7 @@
     "maproulette": {
         "description": "Capa que mostra totes les tasques de MapRoulette",
         "filter": {
-            "parent-id": {
-                "options": {
-                    "0": {
-                        "question": "L'identificador de desafiament coincideix amb {search}"
-                    }
-                }
-            },
-            "parent-name": {
-                "options": {
-                    "0": {
-                        "question": "El nom del repte conté {search}"
-                    }
-                }
-            },
-            "status": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Mostra les tasques amb tots els estats"
@@ -4850,6 +4836,20 @@
                     },
                     "8": {
                         "question": "Mostra les tasques que estan desactivades"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "El nom del repte conté {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "L'identificador de desafiament coincideix amb {search}"
                     }
                 }
             }
@@ -4910,7 +4910,7 @@
     "maproulette_challenge": {
         "description": "Capa que mostra les tasques d'un sol repte de MapRoulette. Aquesta capa està pensada per ser reutilitzada i ampliada en temes; consulteu [la documentació](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) sobre com fer-ho.",
         "filter": {
-            "status": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Mostra les tasques amb tots els estats"
@@ -5020,14 +5020,14 @@
     "nature_reserve": {
         "description": "Una reserva natural és una zona on la natura pot seguir el seu curs",
         "filter": {
-            "access": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "De lliure accés"
                     }
                 }
             },
-            "dogs": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Totes les reserves naturals"
@@ -5141,28 +5141,77 @@
     },
     "note": {
         "filter": {
-            "anonymous": {
+            "0": {
                 "options": {
                     "0": {
-                        "question": "Sols mostrar les notes obertes per contribuïdors anònims"
+                        "question": "Has de mencionar {search} en el primer comentari"
                     }
                 }
             },
-            "edited_by": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> s'ha de mencionar {search} al primer comentari"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Obert pel contribuïdor {search}"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> obert pel contribuïdor {search}"
+                    }
+                }
+            },
+            "4": {
                 "options": {
                     "0": {
                         "question": "Editat per última vega pel contribuïdor {search}"
                     }
                 }
             },
-            "is_open": {
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Oberta després de {search}"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Creada abans de {search}"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Creada després de {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Sols mostrar les notes obertes per contribuïdors anònims"
+                    }
+                }
+            },
+            "9": {
                 "options": {
                     "0": {
                         "question": "Sols mostra les notes obertes"
                     }
                 }
             },
-            "no_imports": {
+            "10": {
                 "options": {
                     "0": {
                         "question": "Totes les notes"
@@ -5172,55 +5221,6 @@
                     },
                     "2": {
                         "question": "Mostrar només les notes d'importació"
-                    }
-                }
-            },
-            "not": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> s'ha de mencionar {search} al primer comentari"
-                    }
-                }
-            },
-            "not_edited_by": {
-                "options": {
-                    "0": {
-                        "question": "Oberta després de {search}"
-                    }
-                }
-            },
-            "not_opened_by": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> obert pel contribuïdor {search}"
-                    }
-                }
-            },
-            "opened_after": {
-                "options": {
-                    "0": {
-                        "question": "Creada després de {search}"
-                    }
-                }
-            },
-            "opened_before": {
-                "options": {
-                    "0": {
-                        "question": "Creada abans de {search}"
-                    }
-                }
-            },
-            "opened_by": {
-                "options": {
-                    "0": {
-                        "question": "Obert pel contribuïdor {search}"
-                    }
-                }
-            },
-            "search": {
-                "options": {
-                    "0": {
-                        "question": "Has de mencionar {search} en el primer comentari"
                     }
                 }
             }
@@ -5312,52 +5312,52 @@
     "osm_community_index": {
         "description": "Una capa que mostra les comunitats d'OpenStreetMap",
         "filter": {
-            "country": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "País"
                     }
                 }
             },
-            "intermediate_region": {
-                "options": {
-                    "0": {
-                        "question": "Regió intermèdia"
-                    }
-                }
-            },
-            "other": {
-                "options": {
-                    "0": {
-                        "question": "Altres Comunitats"
-                    }
-                }
-            },
-            "region": {
-                "options": {
-                    "0": {
-                        "question": "Regió"
-                    }
-                }
-            },
-            "sub_country": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Subgrup de països"
                     }
                 }
             },
-            "territory": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Regió"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Regió intermèdia"
+                    }
+                }
+            },
+            "4": {
                 "options": {
                     "0": {
                         "question": "Territori"
                     }
                 }
             },
-            "world": {
+            "5": {
                 "options": {
                     "0": {
                         "question": "Món"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Altres Comunitats"
                     }
                 }
             }
@@ -5586,17 +5586,17 @@
     "pharmacy": {
         "description": "Una capa que mostra les farmàcies, que (probablement) distribueixen medicaments amb recepta",
         "filter": {
-            "dispensing": {
-                "options": {
-                    "0": {
-                        "question": "Farmàcia que subministra medicaments amb recepta"
-                    }
-                }
-            },
-            "drive-through": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Té autoservei"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Farmàcia que subministra medicaments amb recepta"
                     }
                 }
             }
@@ -5970,14 +5970,21 @@
     },
     "public_bookcase": {
         "filter": {
-            "adult-books": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Té llibres infantils"
+                    }
+                }
+            },
+            "1": {
                 "options": {
                     "0": {
                         "question": "Té llibres per a adults"
                     }
                 }
             },
-            "inside": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Interior o exterior"
@@ -5987,13 +5994,6 @@
                     },
                     "2": {
                         "question": "Situat a l'exterior"
-                    }
-                }
-            },
-            "kid-books": {
-                "options": {
-                    "0": {
-                        "question": "Té llibres infantils"
                     }
                 }
             }
@@ -6547,14 +6547,7 @@
     "recycling": {
         "description": "Una capa amb contenidors i centres de reciclatge",
         "filter": {
-            "public-access": {
-                "options": {
-                    "0": {
-                        "question": "Només amb accés públic"
-                    }
-                }
-            },
-            "recyclingType": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Tots els tipus de reciclatge"
@@ -6621,6 +6614,13 @@
                     },
                     "21": {
                         "question": "Reciclatge de bicicletes"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Només amb accés públic"
                     }
                 }
             }
@@ -6934,7 +6934,7 @@
         },
         "description": "Una botiga",
         "filter": {
-            "shop-type": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Sols mostrar botigues que venen {search}"
@@ -7010,7 +7010,7 @@
     "shower": {
         "description": "Una capa que mostra dutxes (públiques)",
         "filter": {
-            "hot-water": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Aigua calenta disponible"
@@ -7161,14 +7161,14 @@
     },
     "sport_pitch": {
         "filter": {
-            "accessibility": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Accés lliure"
                     }
                 }
             },
-            "available_sports": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Tots els esports"
@@ -7844,17 +7844,17 @@
     "toilet": {
         "description": "Una capa que mostra banys (publics)",
         "filter": {
-            "changing_table": {
-                "options": {
-                    "0": {
-                        "question": "Té un canviador"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Accessible amb cadira de rodes"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Té un canviador"
                     }
                 }
             }
@@ -8008,17 +8008,17 @@
     "toilet_at_amenity": {
         "description": "Una capa que mostra banys (públics) ubicats en diferents llocs.",
         "filter": {
-            "free": {
-                "options": {
-                    "0": {
-                        "question": "Ús gratuït"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Accessible amb cadira de rodes"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Ús gratuït"
                     }
                 }
             }
@@ -8175,24 +8175,24 @@
     "transit_stops": {
         "description": "Capa que mostra diferents tipus de parades de transport públic.",
         "filter": {
-            "bench": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Amb refugi"
+                    }
+                }
+            },
+            "1": {
                 "options": {
                     "0": {
                         "question": "Amb un banc"
                     }
                 }
             },
-            "bin": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Amb paperera"
-                    }
-                }
-            },
-            "shelter": {
-                "options": {
-                    "0": {
-                        "question": "Amb refugi"
                     }
                 }
             }
@@ -8740,7 +8740,7 @@
     "vending_machine": {
         "description": "Capa que mostra màquines expenedores",
         "filter": {
-            "vending": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Totes les màquines expenedores"
@@ -9041,7 +9041,7 @@
     "waste_basket": {
         "description": "Es tracta d'una paperera pública, una paperera, on pots llençar la teva paperera.",
         "filter": {
-            "waste-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tots els tipus"
@@ -9066,7 +9066,7 @@
                     }
                 }
             },
-            "waste-vending": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Papereres amb dispensador de bosses d'excrements (per a gossos)"
@@ -9132,7 +9132,7 @@
     "waste_disposal": {
         "description": "Contenidor de fem, contenidor mitjà o gran per a l'eliminació de residus (domèstics)",
         "filter": {
-            "public-access": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Només amb accés públic"

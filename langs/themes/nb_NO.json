@@ -13,7 +13,7 @@
     },
     "bag": {
         "layers": {
-            "bag_pand": {
+            "2": {
                 "tagRenderings": {
                     "Build year": {
                         "mappings": {
@@ -70,7 +70,7 @@
     },
     "campersite": {
         "layers": {
-            "caravansites": {
+            "0": {
                 "tagRenderings": {
                     "caravansites-charge": {
                         "question": "pø",
@@ -151,7 +151,7 @@
                     }
                 }
             },
-            "dumpstations": {
+            "1": {
                 "tagRenderings": {
                     "dumpstations-access": {
                         "mappings": {
@@ -202,11 +202,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "operator": {
+                "0": {
                     "question": "Hvem driver dette stedet?",
                     "render": "Dette stedet drives av {operator}"
                 },
-                "power_supply": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "Dette stedet har strømforsyning"
@@ -231,7 +231,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "access": {
+                        "1": {
                             "mappings": {
                                 "0": {
                                     "then": "Offentlig tilgjengelig for alle"
@@ -253,7 +253,7 @@
     "cycle_highways": {
         "description": "Kart som viser sykkelmotorveier",
         "layers": {
-            "cycle_highways": {
+            "0": {
                 "name": "sykkelmotorveier",
                 "title": {
                     "render": "sykkelmotorvei"
@@ -268,7 +268,7 @@
     },
     "cyclenodes": {
         "layers": {
-            "node_bicycle": {
+            "1": {
                 "name": "noder",
                 "title": {
                     "mappings": {
@@ -284,17 +284,10 @@
     },
     "cyclestreets": {
         "layers": {
-            "fietsstraat": {
+            "0": {
                 "name": "Sykkelgater"
             },
-            "not_cyclestreets": {
-                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
-                "name": "Alle gater",
-                "title": {
-                    "render": "Gate"
-                }
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "Denne gaten vil bli sykkelgate snart",
                 "name": "Fremtidig sykkelvei",
                 "title": {
@@ -305,15 +298,18 @@
                     },
                     "render": "Fremtidig sykkelvei"
                 }
+            },
+            "2": {
+                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
+                "name": "Alle gater",
+                "title": {
+                    "render": "Gate"
+                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "future_cyclestreet": {
-                    "question": "Når vil denne gaten bli en sykkelgate?",
-                    "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
-                },
-                "is_cyclestreet": {
+                "0": {
                     "mappings": {
                         "0": {
                             "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
@@ -330,12 +326,16 @@
                     },
                     "question": "Er <b>{name}</b>-gaten en sykkelgate?"
                 },
-                "supplementary_sign": {
+                "1": {
                     "mappings": {
                         "3": {
                             "then": "Biler tillatt"
                         }
                     }
+                },
+                "2": {
+                    "question": "Når vil denne gaten bli en sykkelgate?",
+                    "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
                 }
             }
         },
@@ -355,37 +355,37 @@
     "etymology": {
         "layers": {
             "1": {
-                "streets_without_etymology": {
+                "override": {
                     "=name": "Gater uten etymologi-info"
                 }
             },
             "2": {
-                "parks_and_forests_without_etymology": {
+                "override": {
                     "=name": "Parker og skoger uten etymologi-info"
                 }
             },
             "3": {
-                "education_institutions_without_etymology": {
+                "override": {
                     "=name": "Utdannelsesinstitusjoner uten etymologi-info"
                 }
             },
             "4": {
-                "cultural_places_without_etymology": {
+                "override": {
                     "=name": "Kulturelle steder uten etymologi-info"
                 }
             },
             "5": {
-                "toursistic_places_without_etymology": {
+                "override": {
                     "=name": "Turiststeder uten etymologi-info"
                 }
             },
             "6": {
-                "health_and_social_places_without_etymology": {
+                "override": {
                     "=name": "Helse- og sosiale steder uten etymologi-info"
                 }
             },
             "7": {
-                "sport_places_without_etymology": {
+                "override": {
                     "=name": "Sportssteder uten etymologi-info"
                 }
             }
@@ -394,7 +394,7 @@
     },
     "facadegardens": {
         "layers": {
-            "facadegardens": {
+            "0": {
                 "presets": {
                     "0": {
                         "description": "Legg til en fronthage",
@@ -497,7 +497,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "width": {
+                        "0": {
                             "options": {
                                 "1": {
                                     "question": "Uten breddeinfo"
@@ -517,14 +517,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Importer"
                                 }
                             }
                         },
-                        "tag-apply-button": {
+                        "1": {
                             "render": {
                                 "special": {
                                     "message": "Legg til alle foreslåtte"
@@ -552,8 +552,16 @@
     "pets": {
         "layers": {
             "1": {
-                "dogfoodb": {
+                "override": {
                     "name": "Hundevennlige spisesteder"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Hundevennlige butikker",
+                    "title": {
+                        "render": "Hundevennlige butikker"
+                    }
                 }
             },
             "6": {
@@ -562,14 +570,6 @@
                         "0": {
                             "title": "hundevennlig butikk"
                         }
-                    }
-                }
-            },
-            "dogshop": {
-                "dogshop": {
-                    "name": "Hundevennlige butikker",
-                    "title": {
-                        "render": "Hundevennlige butikker"
                     }
                 }
             }
@@ -582,7 +582,7 @@
     "postal_codes": {
         "description": "Postnummer",
         "layers": {
-            "postal_code_boundary": {
+            "0": {
                 "name": "postkoder",
                 "tagRenderings": {
                     "postal_code": {
@@ -593,7 +593,7 @@
                     "render": "Postkode {postal_code}"
                 }
             },
-            "town_hall": {
+            "2": {
                 "name": "rådhus",
                 "title": {
                     "render": "{name}-rådhuset"
@@ -613,7 +613,7 @@
     "sidewalks": {
         "description": "Eksperimentelt tema",
         "layers": {
-            "sidewalks": {
+            "0": {
                 "name": "Fortau",
                 "tagRenderings": {
                     "streetname": {
@@ -626,7 +626,11 @@
     },
     "stations": {
         "layers": {
-            "departures_board": {
+            "3": {
+                "description": "Lag som viser togstasjoner",
+                "name": "Togstasjoner"
+            },
+            "16": {
                 "tagRenderings": {
                     "type": {
                         "mappings": {
@@ -636,10 +640,6 @@
                         }
                     }
                 }
-            },
-            "train_station": {
-                "description": "Lag som viser togstasjoner",
-                "name": "Togstasjoner"
             }
         },
         "title": "Togstasjoner"
@@ -647,32 +647,7 @@
     "street_lighting": {
         "description": "Alt om gatebelysning",
         "layers": {
-            "all_streets": {
-                "name": "Alle gater",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Denne gaten er belyst"
-                            },
-                            "1": {
-                                "then": "Denne gaten er ikke belyst"
-                            },
-                            "2": {
-                                "then": "Denne gaten er belyst nattestid"
-                            },
-                            "3": {
-                                "then": "Denne gaten er belyst døgnet rundt"
-                            }
-                        },
-                        "question": "Er denne gaten belyst?"
-                    }
-                },
-                "title": {
-                    "render": "Gate"
-                }
-            },
-            "lit_streets": {
+            "1": {
                 "name": "Belyste gater",
                 "tagRenderings": {
                     "lit": {
@@ -695,6 +670,31 @@
                 },
                 "title": {
                     "render": "Belyst gate"
+                }
+            },
+            "2": {
+                "name": "Alle gater",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Denne gaten er belyst"
+                            },
+                            "1": {
+                                "then": "Denne gaten er ikke belyst"
+                            },
+                            "2": {
+                                "then": "Denne gaten er belyst nattestid"
+                            },
+                            "3": {
+                                "then": "Denne gaten er belyst døgnet rundt"
+                            }
+                        },
+                        "question": "Er denne gaten belyst?"
+                    }
+                },
+                "title": {
+                    "render": "Gate"
                 }
             }
         },
@@ -720,7 +720,7 @@
     },
     "walkingnodes": {
         "layers": {
-            "node_hiking": {
+            "1": {
                 "name": "noder"
             }
         }

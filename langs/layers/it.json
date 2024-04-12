@@ -35,41 +35,41 @@
             "1": {
                 "title": "un cartellone pubblicitario fissato a terra"
             },
-            "3": {
+            "2": {
                 "title": "un cartellone pubblicitario fissato al muro"
             },
-            "4": {
+            "3": {
                 "description": "PIccolo pannello per la pubblicità di vicinanza, generalmente destinato ai pedoni",
                 "title": "un piccolo pannello"
             },
-            "5": {
+            "4": {
                 "description": "Una struttura cilindrica all'esterno con affissa della pubblicità",
                 "title": "una colonna"
             },
-            "6": {
+            "5": {
                 "title": "una bandiera"
             },
-            "7": {
+            "6": {
                 "title": "uno schermo"
             },
-            "8": {
+            "7": {
                 "title": "uno schermo fissato al muro"
             },
-            "10": {
+            "8": {
                 "description": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
                 "title": "un telone"
             },
-            "11": {
+            "9": {
                 "title": "un totem"
             },
-            "12": {
+            "10": {
                 "description": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata",
                 "title": "un'insegna"
             },
-            "13": {
+            "11": {
                 "title": "una scultura"
             },
-            "14": {
+            "12": {
                 "title": "un murales"
             }
         },
@@ -617,7 +617,7 @@
                     "1": {
                         "then": "Accesso destinato principalmente ai visitatori di un’attività"
                     },
-                    "3": {
+                    "2": {
                         "then": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione"
                     }
                 },
@@ -846,17 +846,17 @@
     "bike_shop": {
         "description": "Un negozio che vende specificatamente biciclette o articoli similari",
         "filter": {
-            "offers_diy_repair": {
-                "options": {
-                    "0": {
-                        "question": "Offre riparazioni fai da te"
-                    }
-                }
-            },
-            "sells_second-hand": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Vende biciclette usate"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offre riparazioni fai da te"
                     }
                 }
             }
@@ -1487,7 +1487,7 @@
     },
     "filters": {
         "filter": {
-            "open_now": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Aperto ora"
@@ -2128,14 +2128,7 @@
     "recycling": {
         "description": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili",
         "filter": {
-            "public-access": {
-                "options": {
-                    "0": {
-                        "question": "Solo accesso pubblico"
-                    }
-                }
-            },
-            "recyclingType": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Tutti i tipi di rifiuti"
@@ -2193,6 +2186,13 @@
                     },
                     "20": {
                         "question": "Riciclo di secco"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Solo accesso pubblico"
                     }
                 }
             }
@@ -2912,7 +2912,7 @@
     "waste_basket": {
         "description": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
         "filter": {
-            "waste-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tutti i tipi"
@@ -2937,7 +2937,7 @@
                     }
                 }
             },
-            "waste-vending": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Cestino per rifiuti con dispenser per sacchetti per escrementi dei cani"
@@ -3003,7 +3003,7 @@
     "waste_disposal": {
         "description": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)",
         "filter": {
-            "public-access": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Solo accesso pubblico"

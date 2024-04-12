@@ -18,17 +18,17 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "closeness-indicator": {
-                            "render": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> "
-                        },
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Importuj ten bankomat"
                                 }
                             }
                         },
-                        "tag-apply-button": {
+                        "1": {
+                            "render": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> "
+                        },
+                        "2": {
                             "render": {
                                 "special": {
                                     "message": "Dodaj wszystkie sugerowane znaczniki do najbliższego bankomatu"
@@ -44,7 +44,19 @@
     "bag": {
         "description": "Motyw ten pomaga w importowaniu danych z BAG",
         "layers": {
-            "bag_pand": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Budynek ten nie ma odniesienia w BAG"
+                            }
+                        },
+                        "render": "Numer referencyjny w BAG to <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
                 "description": "Budynki z rejestru BAG",
                 "tagRenderings": {
                     "Build year": {
@@ -72,18 +84,6 @@
                     },
                     "Reference": {
                         "render": "Odniesienie w BAG to <b>{_bag_obj:ref:bag}</b>"
-                    }
-                }
-            },
-            "osm_buildings": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "Budynek ten nie ma odniesienia w BAG"
-                            }
-                        },
-                        "render": "Numer referencyjny w BAG to <b>{ref:bag}</b>"
                     }
                 }
             }
@@ -125,7 +125,7 @@
     "campersite": {
         "description": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "miejsca dla kamperów",
                 "name": "Miejsca kamperowe",
                 "presets": {
@@ -237,7 +237,7 @@
                     "render": "Pole kamperowe {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "Stacje zrzutów sanitarnych",
                 "name": "Stacje zrzutów sanitarnych",
                 "presets": {
@@ -329,11 +329,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "operator": {
+                "0": {
                     "question": "Kto obsługuje to miejsce?",
                     "render": "To miejsce jest obsługiwane przez {operator}"
                 },
-                "power_supply": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "To miejsce ma dostęp do prądu"
@@ -361,7 +361,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "Access from containing feature": {
+                        "0": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> publicznie dostępny<br/>{_embedding_feature:access:description}"
@@ -377,7 +377,7 @@
                                 }
                             }
                         },
-                        "access": {
+                        "1": {
                             "mappings": {
                                 "0": {
                                     "then": "Publicznie dostępne dla każdego"
@@ -398,9 +398,9 @@
                 }
             },
             "1": {
-                "shops_with_climbing_shoe_repair": {
+                "override": {
                     "+tagRenderings": {
-                        "repairs_climbing_shoes": {
+                        "0": {
                             "mappings": {
                                 "0": {
                                     "then": "Ten warsztat naprawia buty wspinaczkowe"
@@ -417,7 +417,7 @@
             "2": {
                 "override": {
                     "+tagRenderings": {
-                        "repairs_climbing_shoes": {
+                        "0": {
                             "mappings": {
                                 "0": {
                                     "then": "Ten warsztat naprawia buty wspinaczkowe"
@@ -446,7 +446,7 @@
     "cycle_highways": {
         "description": "Ta mapa pokazuje ścieżki rowerowe",
         "layers": {
-            "cycle_highways": {
+            "0": {
                 "name": "ścieżki rowerowe",
                 "title": {
                     "render": "ścieżka rowerowa"
@@ -463,7 +463,7 @@
     "cyclenodes": {
         "description": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów",
         "layers": {
-            "node2node_bicycle": {
+            "0": {
                 "name": "łącza węzeł do węzła",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -482,7 +482,7 @@
                     "render": "połączenie węzła z węzłem"
                 }
             },
-            "node_bicycle": {
+            "1": {
                 "name": "węzły",
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
@@ -511,18 +511,11 @@
     "cyclestreets": {
         "description": "Ulica rowerowa to ulica, na której <b>ruch samochodowy nie może wyprzedzać rowerzystów</b>. Są one oznaczone specjalnym znakiem drogowym. Ulice rowerowe można znaleźć w Holandii i Belgii, ale także w Niemczech i Francji. ",
         "layers": {
-            "fietsstraat": {
+            "0": {
                 "description": "Ulica rowerowa to ulica, na której pojazdy zmotoryzowane nie mogą wyprzedzać rowerzystów",
                 "name": "Ulice rowerowe"
             },
-            "not_cyclestreets": {
-                "description": "Warstwa oznaczająca dowolną ulicę jako ulicę rowerową",
-                "name": "Wszystkie ulice",
-                "title": {
-                    "render": "Ulica"
-                }
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "Ta ulica wkrótce stanie się ulicą rowerową",
                 "name": "Przyszła ulica rowerowa",
                 "title": {
@@ -533,15 +526,18 @@
                     },
                     "render": "Przyszła ulica rowerowa"
                 }
+            },
+            "2": {
+                "description": "Warstwa oznaczająca dowolną ulicę jako ulicę rowerową",
+                "name": "Wszystkie ulice",
+                "title": {
+                    "render": "Ulica"
+                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "future_cyclestreet": {
-                    "question": "Kiedy ta ulica stanie się ulicą rowerową?",
-                    "render": "Ta ulica stanie się ulicą rowerową {cyclestreet:start_date}"
-                },
-                "is_cyclestreet": {
+                "0": {
                     "mappings": {
                         "0": {
                             "then": "Ta ulica jest ulicą rowerową (na której obowiązuje ograniczenie prędkości do 30 km/h)"
@@ -567,7 +563,7 @@
                     },
                     "question": "Czy ulica <b>{name}</b> jest ulicą rowerową?"
                 },
-                "supplementary_sign": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "Mieszkańcy dopuszczeni"
@@ -586,6 +582,10 @@
                         }
                     },
                     "question": "Jaki znak ma ta droga rowerowa?"
+                },
+                "2": {
+                    "question": "Kiedy ta ulica stanie się ulicą rowerową?",
+                    "render": "Ta ulica stanie się ulicą rowerową {cyclestreet:start_date}"
                 }
             }
         },
@@ -612,37 +612,37 @@
         "description": "Na tej mapie możesz zobaczyć, od czego pochodzi nazwa obiektu. Ulice, budynki,... pochodzą z OpenStreetMap, który został powiązany z Wikidanymi. W wyskakującym okienku zobaczysz artykuł w Wikipedii (jeśli istnieje) lub pole wikidanych zawierające nazwę obiektu. Jeśli sam obiekt ma stronę w Wikipedii, ona również zostanie wyświetlona.<br/><br/><b>Ty też możesz pomóc!</b>Powiększ wystarczająco mapę i <i>wszystkie</i> ulice się pojawią. Możesz kliknąć jedną, a pojawi się okno wyszukiwania Wikidanych. Za pomocą kilku kliknięć możesz dodać odnośnik etymologiczny. Pamiętaj, że potrzebujesz do tego darmowego konta OpenStreetMap.",
         "layers": {
             "1": {
-                "streets_without_etymology": {
+                "override": {
                     "=name": "Ulice bez informacji o etymologii"
                 }
             },
             "2": {
-                "parks_and_forests_without_etymology": {
+                "override": {
                     "=name": "Parki i lasy bez informacji o etymologii"
                 }
             },
             "3": {
-                "education_institutions_without_etymology": {
+                "override": {
                     "=name": "Instytucje edukacyjne bez informacji o etymologii"
                 }
             },
             "4": {
-                "cultural_places_without_etymology": {
+                "override": {
                     "=name": "Miejsca kulturowe bez informacji o etymologii"
                 }
             },
             "5": {
-                "toursistic_places_without_etymology": {
+                "override": {
                     "=name": "Miejsca turystyczne bez informacji o etymologii"
                 }
             },
             "6": {
-                "health_and_social_places_without_etymology": {
+                "override": {
                     "=name": "Miejsca związane ze zdrowiem i społeczeństwem bez informacji o etymologii"
                 }
             },
             "7": {
-                "sport_places_without_etymology": {
+                "override": {
                     "=name": "Miejsca sportowe bez informacji o etymologii"
                 }
             }
@@ -653,7 +653,7 @@
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Ogrody fasadowe</a>, zielone fasady i drzewa w mieście nie tylko zapewniają ciszę i spokój, ale także piękniejsze miasto, większą różnorodność biologiczną, efekt chłodzący i lepszą jakość powietrza. <br/> Klimaan VZW i Mechelen Klimaatneutraal chcą zmapować istniejące i nowe ogrody fasadowe jako przykład dla osób chcących zbudować własny ogród lub dla spacerowiczów kochających przyrodę.<br/>Więcej informacji o projekcie na <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "Ogrody fasadowe",
                 "name": "Ogrody fasadowe",
                 "presets": {
@@ -745,7 +745,7 @@
         "description": "Na tej mapie znajdziesz swój ulubiony sklep z frytkami!",
         "layers": {
             "0": {
-                "friture": {
+                "override": {
                     "name": "Sklep z frytkami"
                 }
             }
@@ -759,7 +759,17 @@
     "grb": {
         "description": "Ten temat jest próbą pomocy w automatyzacji importu GRB.",
         "layers": {
-            "grb": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Jaki to rodzaj budynku?"
+                    },
+                    "grb-reference": {
+                        "render": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}"
+                    }
+                }
+            },
+            "1": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
@@ -770,16 +780,6 @@
                                 "then": "Budynek ten ma dziury i jest modelowany jako relacja. W związku z tym nie można go łączyć. Połącz to ręcznie za pomocą <a href='https://buildings.osm.be/#/'>strony eksportu budynków</a> {open_in_josm()}"
                             }
                         }
-                    }
-                }
-            },
-            "osm_buildings_no_points": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Jaki to rodzaj budynku?"
-                    },
-                    "grb-reference": {
-                        "render": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}"
                     }
                 }
             }
@@ -803,7 +803,7 @@
         "description": "Na tej mapie pokazane są różne elementy związane z opieką zdrowotną",
         "layers": {
             "5": {
-                "medical_shops": {
+                "override": {
                     "=presets": {
                         "0": {
                             "title": "sklep z artykułami medycznymi"
@@ -832,7 +832,7 @@
         "description": "Mapa pokazująca krawężniki i przejścia.",
         "layers": {
             "1": {
-                "crossings_no_traffic_lights": {
+                "override": {
                     "=presets": {
                         "0": {
                             "description": "Przejście dla pieszych i/lub przejazd dla rowerów",
@@ -878,7 +878,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "width": {
+                        "0": {
                             "options": {
                                 "0": {
                                     "question": "Dowolna/brak informacji o szerokości"
@@ -894,7 +894,7 @@
             "6": {
                 "override": {
                     "=filter": {
-                        "kerb-type": {
+                        "0": {
                             "options": {
                                 "0": {
                                     "question": "Wszystkie rodzaje kraweżnika"
@@ -914,7 +914,7 @@
                 }
             },
             "8": {
-                "parking_spaces_disabled": {
+                "override": {
                     "name": "Miejsca parkingowe dla niepełnosprawnych"
                 }
             },
@@ -928,14 +928,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Import"
                                 }
                             }
                         },
-                        "tag-apply-button": {
+                        "1": {
                             "render": {
                                 "special": {
                                     "message": "Dodaj wszystkie sugerowane znaczniki"
@@ -970,8 +970,16 @@
         "description": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
         "layers": {
             "1": {
-                "dogfoodb": {
+                "override": {
                     "name": "Restauracje przyjazne psom"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Sklepy przyjazne psom",
+                    "title": {
+                        "render": "Sklepy przyjazne psom"
+                    }
                 }
             },
             "6": {
@@ -981,14 +989,6 @@
                             "description": "Sklep, w którym niemal wszędzie można zabrać psa",
                             "title": "sklep przyjazny psom"
                         }
-                    }
-                }
-            },
-            "dogshop": {
-                "dogshop": {
-                    "name": "Sklepy przyjazne psom",
-                    "title": {
-                        "render": "Sklepy przyjazne psom"
                     }
                 }
             }
@@ -1003,7 +1003,7 @@
     "postal_codes": {
         "description": "Kody pocztowe",
         "layers": {
-            "postal_code_boundary": {
+            "0": {
                 "name": "kody pocztowe",
                 "tagRenderings": {
                     "postal_code": {
@@ -1014,7 +1014,7 @@
                     "render": "Kod pocztowy {postal_code}"
                 }
             },
-            "town_hall": {
+            "2": {
                 "name": "ratusz",
                 "title": {
                     "render": "Ratusz {name}"
@@ -1041,13 +1041,13 @@
     "sidewalks": {
         "description": "Temat eksperymentalny",
         "layers": {
-            "sidewalks": {
+            "0": {
                 "description": "Warstwa pokazująca chodniki przy drogach",
                 "name": "Chodniki",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "has_sidewalk_left|right": {
+                            "1": {
                                 "mappings": {
                                     "0": {
                                         "then": "Jest chodnik z boku drogi"
@@ -1061,7 +1061,7 @@
                                 },
                                 "question": "Czy po tej stronie drogi jest chodnik?"
                             },
-                            "sidewalk_width_left|right": {
+                            "2": {
                                 "question": "Jaka jest szerokość chodnika po tej stronie drogi?",
                                 "render": "Ten chodnik ma {sidewalk:left|right:width}m szerokości"
                             }
@@ -1088,7 +1088,7 @@
         "description": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko.",
         "layers": {
             "4": {
-                "sport_shops": {
+                "override": {
                     "presets": {
                         "0": {
                             "description": "Dodaj nowy sklep sprzedający artykuły sportowe.",
@@ -1104,7 +1104,11 @@
     "stations": {
         "description": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
         "layers": {
-            "departures_board": {
+            "3": {
+                "description": "Warstwa pokazująca stacje kolejowe",
+                "name": "Stacje Kolejowe"
+            },
+            "16": {
                 "description": "Ekrany wyświetlające pokazujące pociągi, które odjadą z tej stacji",
                 "name": "Tablice odjazdów",
                 "presets": {
@@ -1135,10 +1139,6 @@
                 "title": {
                     "render": "Tablica odjazdów"
                 }
-            },
-            "train_station": {
-                "description": "Warstwa pokazująca stacje kolejowe",
-                "name": "Stacje Kolejowe"
             }
         },
         "title": "Stacje Kolejowe"
@@ -1146,32 +1146,7 @@
     "street_lighting": {
         "description": "Na tej mapie możesz znaleźć wszystko o oświetleniu ulicznym",
         "layers": {
-            "all_streets": {
-                "name": "Wszystkie ulice",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ta ulica jest oświetlona"
-                            },
-                            "1": {
-                                "then": "Ta ulica nie jest oświetlona"
-                            },
-                            "2": {
-                                "then": "Ta ulica jest oświetlona w nocy"
-                            },
-                            "3": {
-                                "then": "Ta ulica jest oświetlona 24/7"
-                            }
-                        },
-                        "question": "Czy ta ulica jest oświetlona?"
-                    }
-                },
-                "title": {
-                    "render": "Ulica"
-                }
-            },
-            "lit_streets": {
+            "1": {
                 "name": "Oświetlone ulice",
                 "tagRenderings": {
                     "lit": {
@@ -1194,6 +1169,31 @@
                 },
                 "title": {
                     "render": "Ulica oświetlona"
+                }
+            },
+            "2": {
+                "name": "Wszystkie ulice",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ta ulica jest oświetlona"
+                            },
+                            "1": {
+                                "then": "Ta ulica nie jest oświetlona"
+                            },
+                            "2": {
+                                "then": "Ta ulica jest oświetlona w nocy"
+                            },
+                            "3": {
+                                "then": "Ta ulica jest oświetlona 24/7"
+                            }
+                        },
+                        "question": "Czy ta ulica jest oświetlona?"
+                    }
+                },
+                "title": {
+                    "render": "Ulica"
                 }
             }
         },
@@ -1223,7 +1223,7 @@
     },
     "walkingnodes": {
         "layers": {
-            "node2node_hiking": {
+            "0": {
                 "name": "łącza węzeł do węzła",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -1242,7 +1242,7 @@
                     "render": "połączenie węzła z węzłem"
                 }
             },
-            "node_hiking": {
+            "1": {
                 "name": "węzły"
             }
         }

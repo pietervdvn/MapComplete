@@ -208,7 +208,7 @@
     "atm": {
         "description": "כספומטים למשיכת כסף",
         "filter": {
-            "speech_output": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "עם פלט דיבור"
@@ -299,7 +299,7 @@
     "bank": {
         "description": "מוסד פיננסי להפקדת כסף",
         "filter": {
-            "has_atm": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "עם כספומט"
@@ -328,14 +328,14 @@
     "bench": {
         "description": "ספסל הוא משטח עץ, מתכת, אבן, ... בו אדם יכול לשבת. השכבות הללו מדמות אותן ושואלות עליהן מספר שאלות.",
         "filter": {
-            "bench_is_memorial": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "הוא אנדרטה"
                     }
                 }
             },
-            "has_backrest": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "עם ובלי משענת גב"

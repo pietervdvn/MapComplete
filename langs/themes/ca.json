@@ -18,17 +18,17 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "closeness-indicator": {
-                            "render": "OpenStreetMap sap sobre <a href='#{_closest_osm_poi}'>un caixer automàtic que està a {_closest_osm_poi_distance} de distància.</a> "
-                        },
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Importar aquest caixer automàtic"
                                 }
                             }
                         },
-                        "tag-apply-button": {
+                        "1": {
+                            "render": "OpenStreetMap sap sobre <a href='#{_closest_osm_poi}'>un caixer automàtic que està a {_closest_osm_poi_distance} de distància.</a> "
+                        },
+                        "2": {
                             "render": {
                                 "special": {
                                     "message": "Afegeix totes les etiquetes suggerides al caixer automàtic més proper"
@@ -44,7 +44,19 @@
     "bag": {
         "description": "Aquest tema ajuda amb la importació de dades del BAG",
         "layers": {
-            "bag_pand": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest edifici no té referència al BAG"
+                            }
+                        },
+                        "render": "La referència al BAG és <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
                 "description": "Edificis del registre BAG",
                 "tagRenderings": {
                     "Build year": {
@@ -72,18 +84,6 @@
                     },
                     "Reference": {
                         "render": "La referència a BAG és <b>{_bag_obj:ref:bag}</b>"
-                    }
-                }
-            },
-            "osm_buildings": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "Aquest edifici no té referència al BAG"
-                            }
-                        },
-                        "render": "La referència al BAG és <b>{ref:bag}</b>"
                     }
                 }
             }
@@ -125,7 +125,7 @@
     "campersite": {
         "description": "Aquest lloc recull tots els llocs oficials de parada de caravanes i els llocs on es poden abocar les aigües grises i negres. Pots afegir detalls sobre els serveis prestats i el cost. Afig fotos i ressenyes.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "llocs d'acampada",
                 "name": "Llocs d'acampada",
                 "presets": {
@@ -237,7 +237,7 @@
                     "render": "Lloc d'acampada {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "Estacions d'abocament sanitari",
                 "name": "Estacions d'abocament sanitari",
                 "presets": {
@@ -329,11 +329,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "operator": {
+                "0": {
                     "question": "Qui opera aquest lloc?",
                     "render": "Aquest lloc és operat per {operator}"
                 },
-                "power_supply": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "Aquest lloc té subministrament elèctric"
@@ -361,7 +361,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "Access from containing feature": {
+                        "0": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a>indica que és d'</span>accés públic<br/>{_embedding_feature:access:description}"
@@ -377,7 +377,7 @@
                                 }
                             }
                         },
-                        "access": {
+                        "1": {
                             "mappings": {
                                 "0": {
                                     "then": "Accessible públicament a qualsevol"
@@ -398,9 +398,9 @@
                 }
             },
             "1": {
-                "shops_with_climbing_shoe_repair": {
+                "override": {
                     "+tagRenderings": {
-                        "repairs_climbing_shoes": {
+                        "0": {
                             "mappings": {
                                 "0": {
                                     "then": "Aquesta botiga repara sabates d'escalada"
@@ -417,7 +417,7 @@
             "2": {
                 "override": {
                     "+tagRenderings": {
-                        "repairs_climbing_shoes": {
+                        "0": {
                             "mappings": {
                                 "0": {
                                     "then": "Aquesta botiga repara sabates d'escalada"
@@ -446,7 +446,7 @@
     "cycle_highways": {
         "description": "Aquest mapa mostra carrils bici",
         "layers": {
-            "cycle_highways": {
+            "0": {
                 "name": "vies ciclistes",
                 "title": {
                     "render": "via ciclista"
@@ -463,7 +463,7 @@
     "cyclenodes": {
         "description": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir-ne de nous de manera senzilla",
         "layers": {
-            "node2node_bicycle": {
+            "0": {
                 "name": "Enllaços node a node",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -482,7 +482,7 @@
                     "render": "Enllaç node a node"
                 }
             },
-            "node_bicycle": {
+            "1": {
                 "name": "Nodes",
                 "presets": {
                     "0": {
@@ -520,18 +520,11 @@
     "cyclestreets": {
         "description": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. ",
         "layers": {
-            "fietsstraat": {
+            "0": {
                 "description": "Un ciclocarrer és un carrer on el trànsit motoritzat no pot sobrepassar a un ciclista",
                 "name": "Carrers ciclistes"
             },
-            "not_cyclestreets": {
-                "description": "Capa per a marcar qualsevol carrer com a ciclocarrer",
-                "name": "Tots els carrers",
-                "title": {
-                    "render": "Carrer"
-                }
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "Aquest carrer es convertirà en un ciclocarrer pròximament",
                 "name": "Futur carrer ciclista",
                 "title": {
@@ -542,15 +535,18 @@
                     },
                     "render": "Futur carrer ciclista"
                 }
+            },
+            "2": {
+                "description": "Capa per a marcar qualsevol carrer com a ciclocarrer",
+                "name": "Tots els carrers",
+                "title": {
+                    "render": "Carrer"
+                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "future_cyclestreet": {
-                    "question": "Quan es convertirà aquest carrer en un ciclocarrer?",
-                    "render": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}"
-                },
-                "is_cyclestreet": {
+                "0": {
                     "mappings": {
                         "0": {
                             "then": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)"
@@ -576,7 +572,7 @@
                     },
                     "question": "El carrer <b>{name}</b> és un ciclocarrer?"
                 },
-                "supplementary_sign": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "Residents permesos"
@@ -595,6 +591,10 @@
                         }
                     },
                     "question": "Quin senyal té aquesta senda ciclable?"
+                },
+                "2": {
+                    "question": "Quan es convertirà aquest carrer en un ciclocarrer?",
+                    "render": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}"
                 }
             }
         },
@@ -621,37 +621,37 @@
         "description": "En aquest mapa, podeu veure el nom d'un objecte. Els carrers, edificis, ... provenen d'OpenStreetMap que tenen un enllaça a Wikidata. A la finestra emergent, veuràs l'article de la Viquipèdia (si existeix) o un quadre de wikidata amb el nom de l'objecte. Si l'objecte en si té una pàgina de viquipèdia, també es mostrarà.<br/><br/><b>També pots ajudar a contribuir!</b>Amplia prou i <i>tots</i> els carrers apareixerà. Podeu fer clic en un i apareixerà un quadre de cerca de Wikidata. Amb uns quants clics, podeu afegir un enllaç d'etimologia. Tingueu en compte que necessiteu un compte d'OpenStreetMap gratuït per fer-ho.",
         "layers": {
             "1": {
-                "streets_without_etymology": {
+                "override": {
                     "=name": "Carrers sense informació etimològica"
                 }
             },
             "2": {
-                "parks_and_forests_without_etymology": {
+                "override": {
                     "=name": "Parcs i boscos sense informació etimològica"
                 }
             },
             "3": {
-                "education_institutions_without_etymology": {
+                "override": {
                     "=name": "Institucions educatives sense informació d'etimològica"
                 }
             },
             "4": {
-                "cultural_places_without_etymology": {
+                "override": {
                     "=name": "Llocs culturals sense informació etimològica"
                 }
             },
             "5": {
-                "toursistic_places_without_etymology": {
+                "override": {
                     "=name": "Llocs turístics sense informació etimològica"
                 }
             },
             "6": {
-                "health_and_social_places_without_etymology": {
+                "override": {
                     "=name": "Llocs socials i de salut sense informació etimològica"
                 }
             },
             "7": {
-                "sport_places_without_etymology": {
+                "override": {
                     "=name": "Llocs esportius sense informació etimològica"
                 }
             }
@@ -662,7 +662,7 @@
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Els Jardins de façana</a>, façanes verdes i arbres de la ciutat no només aporten pau i tranquil·litat, sinó també una ciutat més bella , una major biodiversitat, un efecte de refredament i una millor qualitat de l'aire. <br/> Klimaan VZW i Mechelen Klimaatneutraal volen cartografiar els jardins de façana existents i nous com a exemple per a les persones que volen construir el seu propi jardí o per als excursionistes de la ciutat que estimen la natura.<br/>Més informació sobre el projecte a <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "Jardins verticals",
                 "name": "Jardins verticals",
                 "presets": {
@@ -754,9 +754,9 @@
         "description": "A aquest mapa, trobaràs la teva botiga preferida de patates!",
         "layers": {
             "0": {
-                "friture": {
+                "override": {
                     "filter+": {
-                        "oil-type": {
+                        "0": {
                             "options": {
                                 "1": {
                                     "question": "Només mostra freiduries que utilitzen oli vegetal"
@@ -780,7 +780,17 @@
     "grb": {
         "description": "Aquest tema és un intent d'automatitzar la importació GRB.",
         "layers": {
-            "grb": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Quin tipus d'edifici és aquest?"
+                    },
+                    "grb-reference": {
+                        "render": "Ha estat importat des de GRB, el número de referència és {source:geometry:ref}"
+                    }
+                }
+            },
+            "1": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
@@ -791,16 +801,6 @@
                                 "then": "Aquest edifici té forats i està modelat com una relació. Com a tal, no es pot combinar. Combineu-lo manualment mitjançant <a href='https://buildings.osm.be/#/'>el lloc d'exportació de l'edifici</a> {open_in_josm()}"
                             }
                         }
-                    }
-                }
-            },
-            "osm_buildings_no_points": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Quin tipus d'edifici és aquest?"
-                    },
-                    "grb-reference": {
-                        "render": "Ha estat importat des de GRB, el número de referència és {source:geometry:ref}"
                     }
                 }
             }
@@ -823,7 +823,7 @@
         "description": "En aquest mapa es mostren diversos elements relacionats amb la salut",
         "layers": {
             "5": {
-                "medical_shops": {
+                "override": {
                     "=presets": {
                         "0": {
                             "title": "una botiga de subministraments mèdics"
@@ -856,7 +856,7 @@
         "description": "Un mapa amb voreres i encreuaments.",
         "layers": {
             "1": {
-                "crossings_no_traffic_lights": {
+                "override": {
                     "=presets": {
                         "0": {
                             "description": "Creuament per vianants i/o ciclistes",
@@ -902,7 +902,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "width": {
+                        "0": {
                             "options": {
                                 "0": {
                                     "question": "Qualsevol/Sense informació d'amplada"
@@ -918,7 +918,7 @@
             "6": {
                 "override": {
                     "=filter": {
-                        "kerb-type": {
+                        "0": {
                             "options": {
                                 "0": {
                                     "question": "Tot tipus de vorals"
@@ -938,7 +938,7 @@
                 }
             },
             "8": {
-                "parking_spaces_disabled": {
+                "override": {
                     "name": "Places d'aparcament per a minusvàlids"
                 }
             },
@@ -952,14 +952,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Importar"
                                 }
                             }
                         },
-                        "tag-apply-button": {
+                        "1": {
                             "render": {
                                 "special": {
                                     "message": "Afegiu totes les etiquetes suggerides"
@@ -994,8 +994,16 @@
         "description": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ...",
         "layers": {
             "1": {
-                "dogfoodb": {
+                "override": {
                     "name": "Restaurants que accepten gossos"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Botigues amigues dels gossos",
+                    "title": {
+                        "render": "Botigues amigues dels gossos"
+                    }
                 }
             },
             "6": {
@@ -1005,14 +1013,6 @@
                             "description": "Una botiga on pots dur al gos gairebé a tot arreu",
                             "title": "botiga amiga dels gossos"
                         }
-                    }
-                }
-            },
-            "dogshop": {
-                "dogshop": {
-                    "name": "Botigues amigues dels gossos",
-                    "title": {
-                        "render": "Botigues amigues dels gossos"
                     }
                 }
             }
@@ -1027,7 +1027,7 @@
     "postal_codes": {
         "description": "Codis postals",
         "layers": {
-            "postal_code_boundary": {
+            "0": {
                 "name": "codis postals",
                 "tagRenderings": {
                     "postal_code": {
@@ -1038,7 +1038,7 @@
                     "render": "Codi postal {postal_code}"
                 }
             },
-            "town_hall": {
+            "2": {
                 "name": "ajuntaments",
                 "title": {
                     "render": "Ajuntament de {name}"
@@ -1065,13 +1065,13 @@
     "sidewalks": {
         "description": "Petició experimental",
         "layers": {
-            "sidewalks": {
+            "0": {
                 "description": "Una capa que mostra les voreres de les vies",
                 "name": "Voreres",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "has_sidewalk_left|right": {
+                            "1": {
                                 "mappings": {
                                     "0": {
                                         "then": "Hi ha una vorera a aquest costat del carrer"
@@ -1085,7 +1085,7 @@
                                 },
                                 "question": "Hi ha una vorera a aquest costat del carrer?"
                             },
-                            "sidewalk_width_left|right": {
+                            "2": {
                                 "question": "Quina és l'amplada de la vorera a aquest costat de la calçada?",
                                 "render": "Aquesta vorera té {sidewalk:left|right:width} m d'ample"
                             }
@@ -1112,7 +1112,7 @@
         "description": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
         "layers": {
             "4": {
-                "sport_shops": {
+                "override": {
                     "presets": {
                         "0": {
                             "description": "Afegeix una nova botiga d'articles esportius.",
@@ -1128,7 +1128,11 @@
     "stations": {
         "description": "Veure, editar i afegir detalls a una estació de tren",
         "layers": {
-            "departures_board": {
+            "3": {
+                "description": "Capa que mostra les estacions de tren",
+                "name": "Estació de tren"
+            },
+            "16": {
                 "description": "Pantalles que mostren els trens que sortiran de l'estació",
                 "name": "Taulers de sortides",
                 "presets": {
@@ -1159,10 +1163,6 @@
                 "title": {
                     "render": "Tauler de sortides"
                 }
-            },
-            "train_station": {
-                "description": "Capa que mostra les estacions de tren",
-                "name": "Estació de tren"
             }
         },
         "title": "Estacions de tren"
@@ -1170,32 +1170,7 @@
     "street_lighting": {
         "description": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic",
         "layers": {
-            "all_streets": {
-                "name": "Tots els carrers",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Aquest carrer està il·luminat"
-                            },
-                            "1": {
-                                "then": "Aquest carrer no està il·luminat"
-                            },
-                            "2": {
-                                "then": "Aquest carrer està il·luminat per la nit"
-                            },
-                            "3": {
-                                "then": "Aquest carrer està il·luminat 24/7"
-                            }
-                        },
-                        "question": "Aquest carrer està il·luminat?"
-                    }
-                },
-                "title": {
-                    "render": "Carrer"
-                }
-            },
-            "lit_streets": {
+            "1": {
                 "name": "Il·luminació de carrers",
                 "tagRenderings": {
                     "lit": {
@@ -1218,6 +1193,31 @@
                 },
                 "title": {
                     "render": "Il·luminació del carrer"
+                }
+            },
+            "2": {
+                "name": "Tots els carrers",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest carrer està il·luminat"
+                            },
+                            "1": {
+                                "then": "Aquest carrer no està il·luminat"
+                            },
+                            "2": {
+                                "then": "Aquest carrer està il·luminat per la nit"
+                            },
+                            "3": {
+                                "then": "Aquest carrer està il·luminat 24/7"
+                            }
+                        },
+                        "question": "Aquest carrer està il·luminat?"
+                    }
+                },
+                "title": {
+                    "render": "Carrer"
                 }
             }
         },
@@ -1247,7 +1247,7 @@
     },
     "walkingnodes": {
         "layers": {
-            "node2node_hiking": {
+            "0": {
                 "name": "enllaços node a node",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -1266,7 +1266,7 @@
                     "render": "Enllaç node a node"
                 }
             },
-            "node_hiking": {
+            "1": {
                 "name": "nodes"
             }
         }

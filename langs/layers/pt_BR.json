@@ -35,41 +35,41 @@
             "1": {
                 "title": "uma caixa expositora independente"
             },
-            "3": {
+            "2": {
                 "title": "uma caixa de pôster montada em uma parede"
             },
-            "4": {
+            "3": {
                 "description": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres",
                 "title": "um painel publicitário"
             },
-            "5": {
+            "4": {
                 "description": "Uma estrutura cilíndrica ao ar livre que exibe anúncios",
                 "title": "uma coluna"
             },
-            "6": {
+            "5": {
                 "title": "uma bandeira"
             },
-            "7": {
+            "6": {
                 "title": "uma tela"
             },
-            "8": {
+            "7": {
                 "title": "uma tela montada em uma parede"
             },
-            "10": {
+            "8": {
                 "description": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
                 "title": "uma lona"
             },
-            "11": {
+            "9": {
                 "title": "um totem"
             },
-            "12": {
+            "10": {
                 "description": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
                 "title": "uma placa"
             },
-            "13": {
+            "11": {
                 "title": "uma escultura"
             },
-            "14": {
+            "12": {
                 "title": "uma pintura mural"
             }
         },
@@ -388,7 +388,7 @@
     "atm": {
         "description": "Caixas eletrônicos para sacar dinheiro",
         "filter": {
-            "speech_output": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Com saída de fala"
@@ -507,7 +507,7 @@
     "bank": {
         "description": "Um instituição financeira para depositar dinheiro",
         "filter": {
-            "has_atm": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Com um caixa eletrônico"
@@ -637,14 +637,14 @@
     "bench": {
         "description": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Essa camada os visualiza e faz algumas perguntas sobre eles.",
         "filter": {
-            "bench_is_memorial": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "é um memorial"
                     }
                 }
             },
-            "has_backrest": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Com e sem encosto"
@@ -970,7 +970,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "rental-capacity-bicycle_type": {
+                    "0": {
                         "question": "Quantos type_plural podem ser alugados aqui?",
                         "render": "{capacity:bicycle_type} type_plural podem ser alugados aqui"
                     }
@@ -1216,7 +1216,7 @@
                     "1": {
                         "then": "Acesso é principalmente para visitantes de uma empresa"
                     },
-                    "3": {
+                    "2": {
                         "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
                     }
                 },

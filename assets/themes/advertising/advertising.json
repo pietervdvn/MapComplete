@@ -43,19 +43,7 @@
     "Offsel"
   ],
   "layers": [
-    "advertising",
-    {
-      "builtin": "shelter",
-      "override": {
-        "minzoom": 17,
-        "lineRendering+": [
-          {
-            "color": "#000",
-            "width": 2
-          }
-        ]
-      }
-    }
+    "advertising"
   ],
   "widenFactor": 0.01,
   "maintainer": "Offsel"

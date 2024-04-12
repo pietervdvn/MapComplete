@@ -36,7 +36,7 @@
     "campersite": {
         "description": "Denne side samler alle officielle camper-stopsteder og steder, hvor du kan dumpe gråt og sort vand. Du kan tilføje detaljer om de leverede tjenester og omkostningerne. Tilføj billeder og anmeldelser. Dette er en hjemmeside og en webapp. Dataene gemmes i OpenStreetMap, så de vil være gratis for evigt og kan genbruges af enhver app.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "autocamperpladser",
                 "name": "Campingpladser",
                 "presets": {
@@ -148,7 +148,7 @@
                     "render": "Camperplads {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "Sanitære afleveringspladser",
                 "name": "Sanitære afleveringspladser",
                 "presets": {
@@ -232,11 +232,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "operator": {
+                "0": {
                     "question": "Hvem driver dette sted?",
                     "render": "Dette sted drives af {operator}"
                 },
-                "power_supply": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "Dette sted har en strømforsyning"
@@ -263,7 +263,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "Access from containing feature": {
+                        "0": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}"
@@ -279,7 +279,7 @@
                                 }
                             }
                         },
-                        "access": {
+                        "1": {
                             "mappings": {
                                 "0": {
                                     "then": "Offentligt tilgængelig for alle"
@@ -305,7 +305,7 @@
     "cycle_highways": {
         "description": "Dette kort viser cykelmotorveje",
         "layers": {
-            "cycle_highways": {
+            "0": {
                 "name": "cykelmotorveje",
                 "title": {
                     "render": "cykelmotorvej"
@@ -325,18 +325,11 @@
     "cyclestreets": {
         "description": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
         "layers": {
-            "fietsstraat": {
+            "0": {
                 "description": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist",
                 "name": "Cykelgader"
             },
-            "not_cyclestreets": {
-                "description": "Lag for at markere enhver gade som cykelgade",
-                "name": "Alle gader",
-                "title": {
-                    "render": "Gade"
-                }
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "Denne gade bliver snart en cykelgade",
                 "name": "Fremtidig cykelgade",
                 "title": {
@@ -347,15 +340,18 @@
                     },
                     "render": "Fremtidig cykelgade"
                 }
+            },
+            "2": {
+                "description": "Lag for at markere enhver gade som cykelgade",
+                "name": "Alle gader",
+                "title": {
+                    "render": "Gade"
+                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "future_cyclestreet": {
-                    "question": "Hvornår bliver denne gade en cykelgade?",
-                    "render": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
-                },
-                "is_cyclestreet": {
+                "0": {
                     "mappings": {
                         "0": {
                             "then": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)"
@@ -371,6 +367,10 @@
                         }
                     },
                     "question": "Er gaden <b>{name}</b> en cykelgade?"
+                },
+                "2": {
+                    "question": "Hvornår bliver denne gade en cykelgade?",
+                    "render": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
                 }
             }
         },
@@ -393,37 +393,37 @@
         "description": "På dette kort kan du se, hvad et objekt er opkaldt efter. Gaderne, bygningerne, ... kommer fra OpenStreetMap, som blev forbundet med Wikidata. I pop op-vinduet vil du se Wikipedia-artiklen (hvis den findes) eller en wikidata-boks med, hvad objektet er opkaldt efter. Hvis selve objektet har en wikipedia-side, vil det også blive vist.<br/><br/><b>Du kan også hjælpe med at bidrage!</b>Zoom nok ind og <i>alle</i> gader vil dukke op. Du kan klikke på en og en Wikidata-søgeboks vil poppe op. Med et par klik kan du tilføje et etymologilink. Bemærk, at du har brug for en gratis OpenStreetMap-konto for at gøre dette.",
         "layers": {
             "1": {
-                "streets_without_etymology": {
+                "override": {
                     "=name": "Gader uden oprindelses information"
                 }
             },
             "2": {
-                "parks_and_forests_without_etymology": {
+                "override": {
                     "=name": "Parker og skove uden oprindelses information"
                 }
             },
             "3": {
-                "education_institutions_without_etymology": {
+                "override": {
                     "=name": "Uddannelsesinstitutioner uden oprindelses oplysninger"
                 }
             },
             "4": {
-                "cultural_places_without_etymology": {
+                "override": {
                     "=name": "Kulturelle steder uden oprindelses information"
                 }
             },
             "5": {
-                "toursistic_places_without_etymology": {
+                "override": {
                     "=name": "Turistiske steder uden oprindelses information"
                 }
             },
             "6": {
-                "health_and_social_places_without_etymology": {
+                "override": {
                     "=name": "Sundhed og sociale steder uden oprindelses information"
                 }
             },
             "7": {
-                "sport_places_without_etymology": {
+                "override": {
                     "=name": "Sportspladser uden oprindelses information"
                 }
             }
@@ -434,7 +434,7 @@
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "Facadehaver",
                 "name": "Facadehaver",
                 "presets": {
@@ -526,7 +526,7 @@
         "description": "På dette kort finder du din foretrukne pomfrits-butik!",
         "layers": {
             "0": {
-                "friture": {
+                "override": {
                     "name": "Pommes frites butik"
                 }
             }
@@ -540,7 +540,14 @@
     "grb": {
         "description": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
         "layers": {
-            "grb": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Hvad er det for en bygning?"
+                    }
+                }
+            },
+            "1": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
@@ -551,13 +558,6 @@
                                 "then": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}"
                             }
                         }
-                    }
-                }
-            },
-            "osm_buildings_no_points": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Hvad er det for en bygning?"
                     }
                 }
             }
@@ -589,7 +589,7 @@
         "description": "Et kort, der viser kantsten og overgange.",
         "layers": {
             "1": {
-                "crossings_no_traffic_lights": {
+                "override": {
                     "=presets": {
                         "0": {
                             "description": "Overgang for fodgængere og/eller cyklister",
@@ -634,7 +634,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "width": {
+                        "0": {
                             "options": {
                                 "0": {
                                     "question": "Eventuelle/ingen bredde info"
@@ -650,7 +650,7 @@
             "6": {
                 "override": {
                     "=filter": {
-                        "kerb-type": {
+                        "0": {
                             "options": {
                                 "0": {
                                     "question": "Alle typer kantsten"
@@ -679,14 +679,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Importere"
                                 }
                             }
                         },
-                        "tag-apply-button": {
+                        "1": {
                             "render": {
                                 "special": {
                                     "message": "Tilføj alle de foreslåede tags"
@@ -714,8 +714,16 @@
         "description": "Hundsteder",
         "layers": {
             "1": {
-                "dogfoodb": {
+                "override": {
                     "name": "Hundevenlige madsteder"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "hundevenlig butik",
+                    "title": {
+                        "render": "hundevenlig butik"
+                    }
                 }
             },
             "6": {
@@ -725,14 +733,6 @@
                             "description": "En butik hvor man kan tage en hund med n&aelig;sten overalt",
                             "title": "EN hundevenlig butik"
                         }
-                    }
-                }
-            },
-            "dogshop": {
-                "dogshop": {
-                    "name": "hundevenlig butik",
-                    "title": {
-                        "render": "hundevenlig butik"
                     }
                 }
             }
@@ -747,7 +747,7 @@
     "postal_codes": {
         "description": "Postnumre",
         "layers": {
-            "postal_code_boundary": {
+            "0": {
                 "name": "postnumre",
                 "tagRenderings": {
                     "postal_code": {
@@ -758,7 +758,7 @@
                     "render": "Postnummer {postal_code}"
                 }
             },
-            "town_hall": {
+            "2": {
                 "name": "rådhuse",
                 "title": {
                     "render": "Rådhus {name}"
@@ -785,13 +785,13 @@
     "sidewalks": {
         "description": "Eksperimentelt tema",
         "layers": {
-            "sidewalks": {
+            "0": {
                 "description": "Lag, der viser fortove på motorveje",
                 "name": "Fortove",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "has_sidewalk_left|right": {
+                            "1": {
                                 "mappings": {
                                     "0": {
                                         "then": "Der er et fortov på denne side af vejen"
@@ -805,7 +805,7 @@
                                 },
                                 "question": "Er der et fortov på denne side af vejen?"
                             },
-                            "sidewalk_width_left|right": {
+                            "2": {
                                 "question": "Hvad er bredden af fortovet på denne side af vejen?",
                                 "render": "Dette fortov er {sidewalk:left|right:width}m bredt"
                             }
@@ -831,32 +831,7 @@
     "street_lighting": {
         "description": "På dette kort kan du finde alt om gadebelysning",
         "layers": {
-            "all_streets": {
-                "name": "Alle gader",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Denne gade er oplyst"
-                            },
-                            "1": {
-                                "then": "Denne gade er ikke oplyst"
-                            },
-                            "2": {
-                                "then": "Denne gade er oplyst om natten"
-                            },
-                            "3": {
-                                "then": "Denne gade er oplyst 24/7"
-                            }
-                        },
-                        "question": "Er denne gade oplyst?"
-                    }
-                },
-                "title": {
-                    "render": "Gade"
-                }
-            },
-            "lit_streets": {
+            "1": {
                 "name": "Oplyste gader",
                 "tagRenderings": {
                     "lit": {
@@ -879,6 +854,31 @@
                 },
                 "title": {
                     "render": "Oplyst gade"
+                }
+            },
+            "2": {
+                "name": "Alle gader",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Denne gade er oplyst"
+                            },
+                            "1": {
+                                "then": "Denne gade er ikke oplyst"
+                            },
+                            "2": {
+                                "then": "Denne gade er oplyst om natten"
+                            },
+                            "3": {
+                                "then": "Denne gade er oplyst 24/7"
+                            }
+                        },
+                        "question": "Er denne gade oplyst?"
+                    }
+                },
+                "title": {
+                    "render": "Gade"
                 }
             }
         },

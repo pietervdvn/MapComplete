@@ -1138,7 +1138,7 @@
     "kerbs": {
         "description": "Слой, изображающий бордюры.",
         "filter": {
-            "kerb-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Все виды бордюров"

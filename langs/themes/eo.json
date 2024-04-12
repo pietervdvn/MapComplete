@@ -1,7 +1,7 @@
 {
     "cyclestreets": {
         "layers": {
-            "not_cyclestreets": {
+            "2": {
                 "name": "Ĉiuj stratoj",
                 "title": {
                     "render": "Strato"
@@ -11,7 +11,7 @@
     },
     "facadegardens": {
         "layers": {
-            "facadegardens": {
+            "0": {
                 "tagRenderings": {
                     "facadegardens-description": {
                         "render": "Pliaj detaloj: {description}"

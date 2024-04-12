@@ -31,7 +31,7 @@
     "campersite": {
         "description": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "Lakóautós megállóhelyek",
                 "name": "Lakóautós megállóhely",
                 "presets": {
@@ -54,7 +54,7 @@
                     }
                 }
             },
-            "dumpstations": {
+            "1": {
                 "presets": {
                     "0": {
                         "description": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is."
@@ -77,7 +77,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "power_supply": {
+                "1": {
                     "question": "Van-e itt elektromos áram?"
                 }
             }
@@ -103,18 +103,11 @@
     "cyclestreets": {
         "description": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. ",
         "layers": {
-            "fietsstraat": {
+            "0": {
                 "description": "A kerékpárosutca olyan utca, ahol gépjármű nem előzhet meg a kerékpárost",
                 "name": "Kerékpárosutcák"
             },
-            "not_cyclestreets": {
-                "description": "Réteg bármely utca kerékpárosutcaként való megjelöléséhez",
-                "name": "Minden utca",
-                "title": {
-                    "render": "Utca"
-                }
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "Ez az utca hamarosan kerékpárosutcává válik",
                 "name": "Jövőbeli kerékpárosutca",
                 "title": {
@@ -125,15 +118,18 @@
                     },
                     "render": "Jövőbeli kerékpárosutca"
                 }
+            },
+            "2": {
+                "description": "Réteg bármely utca kerékpárosutcaként való megjelöléséhez",
+                "name": "Minden utca",
+                "title": {
+                    "render": "Utca"
+                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "future_cyclestreet": {
-                    "question": "Mikor lesz ez az utca kerékpárosutca?",
-                    "render": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}"
-                },
-                "is_cyclestreet": {
+                "0": {
                     "mappings": {
                         "0": {
                             "then": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)"
@@ -149,6 +145,10 @@
                         }
                     },
                     "question": "Kerékpárosutca-e <b>{name}</b>?"
+                },
+                "2": {
+                    "question": "Mikor lesz ez az utca kerékpárosutca?",
+                    "render": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}"
                 }
             }
         },
@@ -167,12 +167,12 @@
         "description": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra.",
         "layers": {
             "1": {
-                "streets_without_etymology": {
+                "override": {
                     "=name": "Etimológiai adat nélküli utcák"
                 }
             },
             "2": {
-                "parks_and_forests_without_etymology": {
+                "override": {
                     "=name": "Etimológiai adat nélküli parkok és erdők"
                 }
             }
@@ -183,7 +183,7 @@
     "facadegardens": {
         "description": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "Homlokzati kertek",
                 "name": "Homlokzati kertek",
                 "presets": {
@@ -273,7 +273,7 @@
     "fritures": {
         "layers": {
             "0": {
-                "friture": {
+                "override": {
                     "name": "Sültkrumplievő-hely"
                 }
             }
@@ -322,7 +322,7 @@
     "postal_codes": {
         "description": "Irányítószámok",
         "layers": {
-            "postal_code_boundary": {
+            "0": {
                 "name": "irányítószámok",
                 "tagRenderings": {
                     "postal_code": {
@@ -333,7 +333,7 @@
                     "render": "Irányítószám: {postal_code}"
                 }
             },
-            "town_hall": {
+            "2": {
                 "name": "polgármesteri hivatalok",
                 "title": {
                     "render": "{name} városháza"
@@ -361,32 +361,7 @@
     "street_lighting": {
         "description": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
         "layers": {
-            "all_streets": {
-                "name": "Minden utca",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ez az utca ki van világítva"
-                            },
-                            "1": {
-                                "then": "Ez az utca nincs kivilágítva"
-                            },
-                            "2": {
-                                "then": "Ez az utca éjjel ki van világítva"
-                            },
-                            "3": {
-                                "then": "Ez az utca éjjel-nappal ki van világítva"
-                            }
-                        },
-                        "question": "Ki van-e világítva ez az utca?"
-                    }
-                },
-                "title": {
-                    "render": "Utca"
-                }
-            },
-            "lit_streets": {
+            "1": {
                 "name": "Kivilágított utcák",
                 "tagRenderings": {
                     "lit": {
@@ -409,6 +384,31 @@
                 },
                 "title": {
                     "render": "Kivilágított utca"
+                }
+            },
+            "2": {
+                "name": "Minden utca",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ez az utca ki van világítva"
+                            },
+                            "1": {
+                                "then": "Ez az utca nincs kivilágítva"
+                            },
+                            "2": {
+                                "then": "Ez az utca éjjel ki van világítva"
+                            },
+                            "3": {
+                                "then": "Ez az utca éjjel-nappal ki van világítva"
+                            }
+                        },
+                        "question": "Ki van-e világítva ez az utca?"
+                    }
+                },
+                "title": {
+                    "render": "Utca"
                 }
             }
         },

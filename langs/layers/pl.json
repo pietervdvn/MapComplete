@@ -35,41 +35,41 @@
             "1": {
                 "title": "wolnostojąca skrzynka plakatowa"
             },
-            "3": {
+            "2": {
                 "title": "skrzynka plakatowa montowana na ścianie"
             },
-            "4": {
+            "3": {
                 "description": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
                 "title": "tablica"
             },
-            "5": {
+            "4": {
                 "description": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
                 "title": "kolumna"
             },
-            "6": {
+            "5": {
                 "title": "flaga"
             },
-            "7": {
+            "6": {
                 "title": "ekran"
             },
-            "8": {
+            "7": {
                 "title": "ekran zamontowany na ścianie"
             },
-            "10": {
+            "8": {
                 "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
                 "title": "plandeka"
             },
-            "11": {
+            "9": {
                 "title": "totem"
             },
-            "12": {
+            "10": {
                 "description": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
                 "title": "znak"
             },
-            "13": {
+            "11": {
                 "title": "rzeźba"
             },
-            "14": {
+            "12": {
                 "title": "mural ścienny"
             }
         },
@@ -429,7 +429,7 @@
     "bank": {
         "description": "Instytucja finansowa pozwalająca wpłacić pieniądze",
         "filter": {
-            "has_atm": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Za pomocą bankomatu"
@@ -457,7 +457,7 @@
     },
     "bench": {
         "filter": {
-            "has_backrest": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Z oraz bez oparcia"
@@ -1340,35 +1340,42 @@
     },
     "filters": {
         "filter": {
-            "accepts_cards": {
+            "0": {
                 "options": {
                     "0": {
-                        "question": "Przyjmuje karty płatnicze"
+                        "question": "Otwarte teraz"
                     }
                 }
             },
-            "accepts_cash": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Przyjmuje gotówkę"
                     }
                 }
             },
-            "accepts_credit_cards": {
+            "2": {
                 "options": {
                     "0": {
-                        "question": "Przyjmuje karty kredytowe"
+                        "question": "Przyjmuje karty płatnicze"
                     }
                 }
             },
-            "accepts_debit_cards": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Przyjmuje karty debetowe"
                     }
                 }
             },
-            "has_image": {
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Przyjmuje karty kredytowe"
+                    }
+                }
+            },
+            "5": {
                 "options": {
                     "0": {
                         "question": "Z oraz bez zdjęć"
@@ -1381,21 +1388,14 @@
                     }
                 }
             },
-            "open_now": {
-                "options": {
-                    "0": {
-                        "question": "Otwarte teraz"
-                    }
-                }
-            },
-            "tactile_paving": {
+            "6": {
                 "options": {
                     "0": {
                         "question": "Z wypustkami dla niewidomych"
                     }
                 }
             },
-            "tactile_paving_advanced": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Z lub bez wypustek dla niewidomych"
@@ -1450,7 +1450,14 @@
         },
         "description": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)",
         "filter": {
-            "food-category": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Rezerwacja nie jest wymagana"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Restauracje i firmy typu fast food"
@@ -1463,24 +1470,17 @@
                     }
                 }
             },
-            "reservation": {
-                "options": {
-                    "0": {
-                        "question": "Rezerwacja nie jest wymagana"
-                    }
-                }
-            },
-            "vegan": {
-                "options": {
-                    "0": {
-                        "question": "Ma menu wegańskie"
-                    }
-                }
-            },
-            "vegetarian": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Ma menu wegetariańskie"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Ma menu wegańskie"
                     }
                 }
             }
@@ -1625,7 +1625,7 @@
     "kerbs": {
         "description": "Warstwa pokazująca krawężniki.",
         "filter": {
-            "kerb-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Wszystkie rodzaje krawężników"
@@ -1828,21 +1828,7 @@
     "maproulette": {
         "description": "Warstwa pokazująca wszystkie zadania w MapRoulette",
         "filter": {
-            "parent-id": {
-                "options": {
-                    "0": {
-                        "question": "ID wyzwania pasuje do {search}"
-                    }
-                }
-            },
-            "parent-name": {
-                "options": {
-                    "0": {
-                        "question": "Nazwa wyzwania zawiera {search}"
-                    }
-                }
-            },
-            "status": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Pokaż zadania z wszystkimi statusami"
@@ -1870,6 +1856,20 @@
                     },
                     "8": {
                         "question": "Pokaż zadania, które są wyłączone"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Nazwa wyzwania zawiera {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "ID wyzwania pasuje do {search}"
                     }
                 }
             }
@@ -1932,7 +1932,7 @@
     },
     "maproulette_challenge": {
         "filter": {
-            "status": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Pokaż zadania z wszystkimi statusami"
@@ -2028,38 +2028,38 @@
     "osm_community_index": {
         "description": "Warstwa pokazująca społeczności OpenStreetMap",
         "filter": {
-            "country": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Kraj"
                     }
                 }
             },
-            "other": {
-                "options": {
-                    "0": {
-                        "question": "Inne społeczności"
-                    }
-                }
-            },
-            "region": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Region"
                     }
                 }
             },
-            "territory": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Terytorium"
                     }
                 }
             },
-            "world": {
+            "5": {
                 "options": {
                     "0": {
                         "question": "Świat"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Inne społeczności"
                     }
                 }
             }

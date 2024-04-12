@@ -13,10 +13,7 @@
     "bag": {
         "description": "ⵉⵜⵜⴰⵡⵙ ⵉⵎⵔⵙⵉ ⴰⴷ ⴳ ⵡⴰⵎⵎⴰⵥ ⵏ ⵜⵎⵓⵛⴰ ⵙⴳ BAG",
         "layers": {
-            "bag_pand": {
-                "description": "ⵜⵓⵚⴽⴰⵡⵉⵏ ⵙⴳ ⵡⴰⵔⵔⴰ ⵏ BAG"
-            },
-            "osm_buildings": {
+            "0": {
                 "tagRenderings": {
                     "Reference": {
                         "mappings": {
@@ -27,6 +24,9 @@
                         "render": "ⵜⴳⴰ ⵜⵙⴰⵖⵓⵍⵜ ⴳ BAG <b>{ref:bag}</b>"
                     }
                 }
+            },
+            "2": {
+                "description": "ⵜⵓⵚⴽⴰⵡⵉⵏ ⵙⴳ ⵡⴰⵔⵔⴰ ⵏ BAG"
             }
         }
     }

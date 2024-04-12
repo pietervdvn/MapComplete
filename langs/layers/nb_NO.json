@@ -187,7 +187,7 @@
     },
     "bank": {
         "filter": {
-            "has_atm": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Med en minibank"

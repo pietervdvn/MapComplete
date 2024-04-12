@@ -23,7 +23,7 @@
     "campersite": {
         "description": "このWebサイトでは、すべてのキャンピングカーの公式停車場所と、汚水を捨てることができる場所を収集します。提供されるサービスとコストに関する詳細を追加できます。写真とレビューを追加します。これはウェブサイトとウェブアプリです。データはOpenStreetMapに保存されるので、永遠に無料で、どんなアプリからでも再利用できます。",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "キャンプサイト",
                 "name": "キャンプサイト",
                 "presets": {
@@ -135,7 +135,7 @@
                     "render": "キャンプサイト {name}"
                 }
             },
-            "dumpstations": {
+            "1": {
                 "description": "衛生ゴミ捨て場",
                 "name": "衛生ゴミ捨て場",
                 "presets": {
@@ -227,11 +227,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "operator": {
+                "0": {
                     "question": "この店は誰が経営しているんですか?",
                     "render": "この場所は{operator}によって運営されます"
                 },
-                "power_supply": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "この場所には電源があります"
@@ -260,18 +260,11 @@
     "cyclestreets": {
         "description": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
         "layers": {
-            "fietsstraat": {
+            "0": {
                 "description": "cyclestreetとは、自動車による交通がサイクリストを追い越すことができない道路です",
                 "name": "Cyclestreets"
             },
-            "not_cyclestreets": {
-                "description": "任意の道路をCycle Streetとしてマークするレイヤ",
-                "name": "すべての道路",
-                "title": {
-                    "render": "ストリート"
-                }
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "description": "この通りはまもなくcyclestreetになります",
                 "name": "将来のcyclestreet",
                 "title": {
@@ -282,15 +275,18 @@
                     },
                     "render": "将来のcyclestreet"
                 }
+            },
+            "2": {
+                "description": "任意の道路をCycle Streetとしてマークするレイヤ",
+                "name": "すべての道路",
+                "title": {
+                    "render": "ストリート"
+                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "future_cyclestreet": {
-                    "question": "この通りはいつcyclestreetになるんですか?",
-                    "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
-                },
-                "is_cyclestreet": {
+                "0": {
                     "mappings": {
                         "0": {
                             "then": "cyclestreet(最高速度は30km/h)"
@@ -305,6 +301,10 @@
                             "then": "この通りはcyclestreetではない"
                         }
                     }
+                },
+                "2": {
+                    "question": "この通りはいつcyclestreetになるんですか?",
+                    "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
                 }
             }
         },
@@ -322,7 +322,7 @@
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>ファサード庭園</a>、都市の緑のファサードと樹木は、平和と静けさをもたらすだけでなく、より美しい都市、より大きな生物多様性、冷却効果、より良い大気質をもたらす。<br/>KlimaanのVZWとMechelenのKlimaatneutraalは、自分で庭を作りたい人や自然を愛する都市の歩行者のために、既存のファサード庭園と新しいファサード庭園のマッピングしたいと考えています。<br/>このプロジェクトに関する詳細情報は<a href='https://klimaan.be/' target=_blank>klimaan</a>にあります。",
         "layers": {
-            "facadegardens": {
+            "0": {
                 "description": "ファサード庭園",
                 "name": "ファサード庭園",
                 "presets": {

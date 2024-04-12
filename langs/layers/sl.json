@@ -179,6 +179,11 @@
             "phone": {
                 "question": "Kakšno telefonsko številko ima {title()}?"
             },
+            "qr_code": {
+                "render": {
+                    "after": "Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+                }
+            },
             "single_level": {
                 "mappings": {
                     "0": {
@@ -346,6 +351,93 @@
         },
         "title": {
             "render": "Nadzorna kamera"
+        }
+    },
+    "toilet": {
+        "description": "Prikaz (javnih) stranišč",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Dostopno z vozičkom"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Ima previjalno mizo"
+                    }
+                }
+            }
+        },
+        "name": "Stranišča",
+        "presets": {
+            "0": {
+                "title": "javno stranišče"
+            },
+            "1": {
+                "description": "Stranišča z vsaj enim invalidom na vozičku dostopnim straniščem"
+            }
+        },
+        "title": {
+            "render": "Stranišče"
+        }
+    },
+    "toilet_at_amenity": {
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Javno dostopno"
+                    },
+                    "1": {
+                        "then": "Samo za stranke lokala"
+                    },
+                    "2": {
+                        "then": "Ni dostopno niti za stranke lokala"
+                    },
+                    "3": {
+                        "then": "Dostopno, a je potrebno vprašati za ključ"
+                    }
+                },
+                "question": "Ali so ta stranišča javno dostopna?",
+                "render": "Dostop je {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "Koliko je potrebno plačati za ta stranišča?",
+                "render": "Plačilo je {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "To so plačljiva stranišča"
+                    },
+                    "1": {
+                        "then": "Brezplačna uporaba"
+                    }
+                },
+                "question": "Ali so ta stranišča brezplačna za uporabo?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "1": {
+                        "then": "Ni dostopno invalidom na vozičku"
+                    }
+                },
+                "question": "Ali je tu stranišče namenjeno invalidom na vozičku?"
+            },
+            "wheelchair-door-width": {
+                "question": "Koliko so široka vrata v stranišče za invalide na vozičku?",
+                "render": "Vrata v stranišče za invalide na vozičku so široka {canonical(toilets:door:width)}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Stranišče v {name}"
+                }
+            }
         }
     },
     "windturbine": {

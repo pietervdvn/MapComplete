@@ -33,42 +33,42 @@
             "1": {
                 "title": "un panneau à affiches scellé au sol"
             },
-            "3": {
-                "title": "un panneau à affiches monté sur un mur"
-            },
-            "4": {
-                "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
-                "title": "un petit panneau"
-            },
-            "5": {
-                "description": "Une structure extérieure cylindrique qui affiche de la publicité",
-                "title": "une colonne"
-            },
-            "6": {
-                "title": "un drapeau"
-            },
-            "7": {
-                "title": "un écran"
-            },
-            "8": {
-                "title": "un écran fixé au mur"
-            },
             "10": {
-                "description": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
-                "title": "une bâche"
-            },
-            "11": {
-                "title": "un totem"
-            },
-            "12": {
                 "description": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
                 "title": "une enseigne"
             },
-            "13": {
+            "11": {
                 "title": "une sculpture"
             },
-            "14": {
+            "12": {
                 "title": "une peinture murale"
+            },
+            "2": {
+                "title": "un panneau à affiches monté sur un mur"
+            },
+            "3": {
+                "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
+                "title": "un petit panneau"
+            },
+            "4": {
+                "description": "Une structure extérieure cylindrique qui affiche de la publicité",
+                "title": "une colonne"
+            },
+            "5": {
+                "title": "un drapeau"
+            },
+            "6": {
+                "title": "un écran"
+            },
+            "7": {
+                "title": "un écran fixé au mur"
+            },
+            "8": {
+                "description": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
+                "title": "une bâche"
+            },
+            "9": {
+                "title": "un totem"
             }
         },
         "tagRenderings": {
@@ -160,6 +160,9 @@
                     "1": {
                         "then": "C'est un petit panneau"
                     },
+                    "10": {
+                        "then": "C'est une peinture murale"
+                    },
                     "2": {
                         "then": "C'est une colonne"
                     },
@@ -183,9 +186,6 @@
                     },
                     "9": {
                         "then": "C'est un totem"
-                    },
-                    "10": {
-                        "then": "C'est une peinture murale"
                     }
                 },
                 "question": "De quel type de dispositif publicitaire s'agit-il ?"
@@ -195,6 +195,9 @@
             "mappings": {
                 "1": {
                     "then": "Petit panneau"
+                },
+                "10": {
+                    "then": "Peinture murale"
                 },
                 "3": {
                     "then": "Colonne"
@@ -216,10 +219,14 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Peinture murale"
                 }
+            }
+        }
+    },
+    "aerialway": {
+        "tagRenderings": {
+            "length": {
+                "render": "Cette voie aérienne fait {_length:km} kilomètre de long"
             }
         }
     },
@@ -300,6 +307,15 @@
                     "1": {
                         "then": "Peinture murale"
                     },
+                    "10": {
+                        "then": "Azulejo (faïence latine)"
+                    },
+                    "11": {
+                        "then": "Carrelage"
+                    },
+                    "12": {
+                        "then": "Sculpture sur bois"
+                    },
                     "2": {
                         "then": "Peinture"
                     },
@@ -323,15 +339,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (faïence latine)"
-                    },
-                    "11": {
-                        "then": "Carrelage"
-                    },
-                    "12": {
-                        "then": "Sculpture sur bois"
                     }
                 },
                 "question": "Quel est le type de cette œuvre d'art ?",
@@ -553,14 +560,14 @@
     "bench": {
         "description": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
         "filter": {
-            "bench_is_memorial": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "est un mémorial"
                     }
                 }
             },
-            "has_backrest": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Avec et sans dossier"
@@ -883,7 +890,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "rental-capacity-bicycle_type": {
+                    "0": {
                         "question": "Combien de type_plural peuvent être loués ici ?",
                         "render": "{capacity:bicycle_type} type_plural peuvent être loués ici"
                     }
@@ -1071,7 +1078,7 @@
                     "1": {
                         "then": "Accès destiné principalement aux visiteurs d'un lieu"
                     },
-                    "3": {
+                    "2": {
                         "then": "Accès limité aux membres d'une école, entreprise ou organisation"
                     }
                 },
@@ -1337,17 +1344,17 @@
     "bike_shop": {
         "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
         "filter": {
-            "offers_diy_repair": {
-                "options": {
-                    "0": {
-                        "question": "Offre des services DIY"
-                    }
-                }
-            },
-            "sells_second-hand": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Vend des vélos usagés"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offre des services DIY"
                     }
                 }
             }
@@ -1537,17 +1544,17 @@
     "birdhide": {
         "description": "Un observatoire ornithologique",
         "filter": {
-            "shelter": {
-                "options": {
-                    "0": {
-                        "question": "Seulement les observatoires ornithologiques couverts"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Accessible aux fauteuils roulants"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Seulement les observatoires ornithologiques couverts"
                     }
                 }
             }
@@ -2408,6 +2415,15 @@
                     "1": {
                         "then": "Cette piste cyclable est goudronée"
                     },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2431,15 +2447,6 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
-                    },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quoi est faite la surface de la piste cyclable ?",
@@ -2488,6 +2495,15 @@
                     "1": {
                         "then": "Cette piste cyclable est pavée"
                     },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2511,15 +2527,6 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
-                    },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quel materiel est faite cette rue ?",
@@ -3163,42 +3170,35 @@
     },
     "filters": {
         "filter": {
-            "accepts_cards": {
-                "options": {
-                    "0": {
-                        "question": "Accepte les cartes de paiement"
-                    }
-                }
-            },
-            "accepts_cash": {
-                "options": {
-                    "0": {
-                        "question": "Accepte les espèces"
-                    }
-                }
-            },
-            "free": {
-                "options": {
-                    "0": {
-                        "question": "Utilisation gratuite"
-                    }
-                }
-            },
-            "open_now": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Ouvert maintenant"
                     }
                 }
             },
-            "tactile_paving": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les espèces"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les cartes de paiement"
+                    }
+                }
+            },
+            "6": {
                 "options": {
                     "0": {
                         "question": "Avec revêtement podotactile"
                     }
                 }
             },
-            "tactile_paving_advanced": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Avec ou sans revêtement podotactile"
@@ -3211,6 +3211,13 @@
                     },
                     "3": {
                         "question": "Sans information sur le revêtement podotactile"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Utilisation gratuite"
                     }
                 }
             }
@@ -3295,7 +3302,14 @@
         },
         "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
         "filter": {
-            "food-category": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pas de réservation nécessaire"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "1": {
                         "question": "Seulement les fastfood"
@@ -3305,24 +3319,17 @@
                     }
                 }
             },
-            "halal": {
-                "options": {
-                    "0": {
-                        "question": "A un menu halal"
-                    }
-                }
-            },
-            "reservation": {
-                "options": {
-                    "0": {
-                        "question": "Pas de réservation nécessaire"
-                    }
-                }
-            },
-            "vegan": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "A un menu végétalien"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "A un menu halal"
                     }
                 }
             }
@@ -3351,6 +3358,21 @@
                     "1": {
                         "then": "C'est une friterie"
                     },
+                    "10": {
+                        "then": "Des plats chinois sont servis ici"
+                    },
+                    "11": {
+                        "then": "Des plats grecs sont servis ici"
+                    },
+                    "12": {
+                        "then": "Des plats indiens sont servis ici"
+                    },
+                    "13": {
+                        "then": "Des plats turcs sont servis ici"
+                    },
+                    "14": {
+                        "then": "Des plats thaïlandais sont servis ici"
+                    },
                     "2": {
                         "then": "Restaurant Italien"
                     },
@@ -3374,21 +3396,6 @@
                     },
                     "9": {
                         "then": "Des plats français sont servis ici"
-                    },
-                    "10": {
-                        "then": "Des plats chinois sont servis ici"
-                    },
-                    "11": {
-                        "then": "Des plats grecs sont servis ici"
-                    },
-                    "12": {
-                        "then": "Des plats indiens sont servis ici"
-                    },
-                    "13": {
-                        "then": "Des plats turcs sont servis ici"
-                    },
-                    "14": {
-                        "then": "Des plats thaïlandais sont servis ici"
                     }
                 },
                 "question": "Quelle type de nourriture est servie ici ?",
@@ -3741,6 +3748,13 @@
             "render": "Bornes incendie"
         }
     },
+    "ice_cream": {
+        "presets": {
+            "0": {
+                "title": "un glacier"
+            }
+        }
+    },
     "indoors": {
         "tagRenderings": {
             "name": {
@@ -3765,7 +3779,7 @@
     "kerbs": {
         "description": "Un calque montrant les bordures.",
         "filter": {
-            "kerb-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tous types de bordures"
@@ -3978,7 +3992,7 @@
     },
     "note": {
         "filter": {
-            "opened_by": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Ouverte par {search}"
@@ -3990,38 +4004,38 @@
     "osm_community_index": {
         "description": "Une couche affichant les communautés OpenStreetMap",
         "filter": {
-            "country": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Pays"
                     }
                 }
             },
-            "other": {
-                "options": {
-                    "0": {
-                        "question": "Autres communautés"
-                    }
-                }
-            },
-            "region": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Région"
                     }
                 }
             },
-            "territory": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Territoire"
                     }
                 }
             },
-            "world": {
+            "5": {
                 "options": {
                     "0": {
                         "question": "Monde"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Autres communautés"
                     }
                 }
             }
@@ -4195,17 +4209,17 @@
     "pharmacy": {
         "description": "Une couche affichant les pharmacie qui (probablement) délivrent des médicaments",
         "filter": {
-            "dispensing": {
-                "options": {
-                    "0": {
-                        "question": "Pharmacie pouvant délivrer des médicaments sous prescription"
-                    }
-                }
-            },
-            "drive-through": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "A une drive"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pharmacie pouvant délivrer des médicaments sous prescription"
                     }
                 }
             }
@@ -4932,44 +4946,13 @@
     "recycling": {
         "description": "Une couche avec des conteneurs de recyclage et des déchèteries",
         "filter": {
-            "public-access": {
-                "options": {
-                    "0": {
-                        "question": "Accès public uniquement"
-                    }
-                }
-            },
-            "recyclingType": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Tout type de recyclage"
                     },
                     "1": {
                         "question": "Recyclage de piles et batteries domestiques"
-                    },
-                    "2": {
-                        "question": "Recyclage d'emballage de boissons"
-                    },
-                    "3": {
-                        "question": "Recyclage de boites de conserve et de canettes"
-                    },
-                    "4": {
-                        "question": "Recyclage de vêtements"
-                    },
-                    "5": {
-                        "question": "Recyclage des huiles de friture"
-                    },
-                    "6": {
-                        "question": "Recyclage des huiles de moteur"
-                    },
-                    "7": {
-                        "question": "Recyclage des lampes fluorescentes"
-                    },
-                    "8": {
-                        "question": "Recyclage des déchets verts"
-                    },
-                    "9": {
-                        "question": "Recyclage des bouteilles en verre et des bocaux"
                     },
                     "10": {
                         "question": "Recyclage de tout type de verre"
@@ -5001,11 +4984,42 @@
                     "19": {
                         "question": "Recyclage des autres déchets"
                     },
+                    "2": {
+                        "question": "Recyclage d'emballage de boissons"
+                    },
                     "20": {
                         "question": "Recyclage des cartouches d'imprimante"
                     },
                     "21": {
                         "question": "Recyclage des vélos"
+                    },
+                    "3": {
+                        "question": "Recyclage de boites de conserve et de canettes"
+                    },
+                    "4": {
+                        "question": "Recyclage de vêtements"
+                    },
+                    "5": {
+                        "question": "Recyclage des huiles de friture"
+                    },
+                    "6": {
+                        "question": "Recyclage des huiles de moteur"
+                    },
+                    "7": {
+                        "question": "Recyclage des lampes fluorescentes"
+                    },
+                    "8": {
+                        "question": "Recyclage des déchets verts"
+                    },
+                    "9": {
+                        "question": "Recyclage des bouteilles en verre et des bocaux"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accès public uniquement"
                     }
                 }
             }
@@ -5061,30 +5075,6 @@
                     "1": {
                         "then": "Les briques alimentaires en carton peuvent être recyclées ici"
                     },
-                    "2": {
-                        "then": "Les boites de conserve et canettes peuvent être recyclées ici"
-                    },
-                    "3": {
-                        "then": "Les vêtements peuvent être recyclés ici"
-                    },
-                    "4": {
-                        "then": "Les huiles de friture peuvent être recyclées ici"
-                    },
-                    "5": {
-                        "then": "Les huiles de moteur peuvent être recyclées ici"
-                    },
-                    "6": {
-                        "then": "Les lampes fluorescentes peuvent être recyclées ici"
-                    },
-                    "7": {
-                        "then": "Les déchets verts peuvent être recyclés ici"
-                    },
-                    "8": {
-                        "then": "Les déchets organiques peuvent être recyclés ici"
-                    },
-                    "9": {
-                        "then": "Les bouteilles en verre et bocaux peuvent être recyclés ici"
-                    },
                     "10": {
                         "then": "Tout type de verre peut être recyclé ici"
                     },
@@ -5115,6 +5105,9 @@
                     "19": {
                         "then": "Les chaussures peuvent être recyclées ici"
                     },
+                    "2": {
+                        "then": "Les boites de conserve et canettes peuvent être recyclées ici"
+                    },
                     "20": {
                         "then": "Les petits appareils électriques peuvent être recyclés ici"
                     },
@@ -5129,6 +5122,27 @@
                     },
                     "24": {
                         "then": "Les vélos peuvent être recyclés ici"
+                    },
+                    "3": {
+                        "then": "Les vêtements peuvent être recyclés ici"
+                    },
+                    "4": {
+                        "then": "Les huiles de friture peuvent être recyclées ici"
+                    },
+                    "5": {
+                        "then": "Les huiles de moteur peuvent être recyclées ici"
+                    },
+                    "6": {
+                        "then": "Les lampes fluorescentes peuvent être recyclées ici"
+                    },
+                    "7": {
+                        "then": "Les déchets verts peuvent être recyclés ici"
+                    },
+                    "8": {
+                        "then": "Les déchets organiques peuvent être recyclés ici"
+                    },
+                    "9": {
+                        "then": "Les bouteilles en verre et bocaux peuvent être recyclés ici"
                     }
                 },
                 "question": "Que peut-on recycler ici ?"
@@ -5301,17 +5315,17 @@
         },
         "description": "Un magasin",
         "filter": {
-            "shop-name": {
-                "options": {
-                    "0": {
-                        "question": "N'afficher que les magasins portant le nom {search}"
-                    }
-                }
-            },
-            "shop-type": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "N'afficher que les magasins vendant {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "N'afficher que les magasins portant le nom {search}"
                     }
                 }
             }
@@ -5384,7 +5398,7 @@
     "shower": {
         "description": "Une couche affichant les douches (publiques)",
         "filter": {
-            "hot-water": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Eau chaude disponible"
@@ -5792,17 +5806,17 @@
     "toilet": {
         "description": "Un calque montrant les toilettes (publiques)",
         "filter": {
-            "changing_table": {
-                "options": {
-                    "0": {
-                        "question": "A une table à langer"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Accessible aux fauteuils roulants"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "A une table à langer"
                     }
                 }
             }
@@ -5949,17 +5963,17 @@
     },
     "toilet_at_amenity": {
         "filter": {
-            "free": {
-                "options": {
-                    "0": {
-                        "question": "Utilisation gratuite"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Accessible aux fauteuils roulants"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Utilisation gratuite"
                     }
                 }
             }
@@ -6066,24 +6080,24 @@
     },
     "transit_stops": {
         "filter": {
-            "bench": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Avec un abri"
+                    }
+                }
+            },
+            "1": {
                 "options": {
                     "0": {
                         "question": "Avec un banc"
                     }
                 }
             },
-            "bin": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Avec un poubelle"
-                    }
-                }
-            },
-            "shelter": {
-                "options": {
-                    "0": {
-                        "question": "Avec un abri"
                     }
                 }
             }
@@ -6427,13 +6441,34 @@
     "vending_machine": {
         "description": "Couche affichant les distributeurs",
         "filter": {
-            "vending": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Tous les distributeurs"
                     },
                     "1": {
                         "question": "Vente de boissons"
+                    },
+                    "10": {
+                        "question": "Vente de lait"
+                    },
+                    "11": {
+                        "question": "Vente de pain"
+                    },
+                    "12": {
+                        "question": "Vente d'œufs"
+                    },
+                    "13": {
+                        "question": "Vente de fromage"
+                    },
+                    "14": {
+                        "question": "Vente de miel"
+                    },
+                    "15": {
+                        "question": "Vente de pommes de terre"
+                    },
+                    "19": {
+                        "question": "Vente de fleurs"
                     },
                     "2": {
                         "question": "Ventre de confiseries"
@@ -6458,27 +6493,6 @@
                     },
                     "9": {
                         "question": "Vente de chambres à air pour vélo"
-                    },
-                    "10": {
-                        "question": "Vente de lait"
-                    },
-                    "11": {
-                        "question": "Vente de pain"
-                    },
-                    "12": {
-                        "question": "Vente d'œufs"
-                    },
-                    "13": {
-                        "question": "Vente de fromage"
-                    },
-                    "14": {
-                        "question": "Vente de miel"
-                    },
-                    "15": {
-                        "question": "Vente de pommes de terre"
-                    },
-                    "19": {
-                        "question": "Vente de fleurs"
                     }
                 }
             }
@@ -6519,6 +6533,24 @@
                     "1": {
                         "then": "Vent des confiseries"
                     },
+                    "10": {
+                        "then": "Vent du pain"
+                    },
+                    "11": {
+                        "then": "Vent des œufs"
+                    },
+                    "12": {
+                        "then": "Vent du fromage"
+                    },
+                    "13": {
+                        "then": "Vent du miel"
+                    },
+                    "14": {
+                        "then": "Vent des pommes de terre"
+                    },
+                    "18": {
+                        "then": "Vent des fleurs"
+                    },
                     "2": {
                         "then": "Vent de la nourriture"
                     },
@@ -6542,24 +6574,6 @@
                     },
                     "9": {
                         "then": "Vent du lait"
-                    },
-                    "10": {
-                        "then": "Vent du pain"
-                    },
-                    "11": {
-                        "then": "Vent des œufs"
-                    },
-                    "12": {
-                        "then": "Vent du fromage"
-                    },
-                    "13": {
-                        "then": "Vent du miel"
-                    },
-                    "14": {
-                        "then": "Vent des pommes de terre"
-                    },
-                    "18": {
-                        "then": "Vent des fleurs"
                     }
                 },
                 "question": "Que vent ce distributeur ?",
@@ -6629,7 +6643,7 @@
     "waste_basket": {
         "description": "C'est une poubelle dans laquelle vous pouvez jeter vos mégots.",
         "filter": {
-            "waste-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tout type"
@@ -6654,7 +6668,7 @@
                     }
                 }
             },
-            "waste-vending": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Poubelle avec distributeur de sacs pour ramasser les déjections canines"

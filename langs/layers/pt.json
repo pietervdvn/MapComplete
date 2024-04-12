@@ -35,41 +35,41 @@
             "1": {
                 "title": "uma caixa de pôster independente"
             },
-            "3": {
+            "2": {
                 "title": "uma caixa de pôster montada em uma parede"
             },
-            "4": {
+            "3": {
                 "description": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
                 "title": "a bordo"
             },
-            "5": {
+            "4": {
                 "description": "Uma estrutura exterior cilíndrica que mostra anúncios",
                 "title": "uma coluna"
             },
-            "6": {
+            "5": {
                 "title": "uma bandeira"
             },
-            "7": {
+            "6": {
                 "title": "uma tela"
             },
-            "8": {
+            "7": {
                 "title": "uma tela montada em uma parede"
             },
-            "10": {
+            "8": {
                 "description": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede",
                 "title": "uma lona"
             },
-            "11": {
+            "9": {
                 "title": "um totem"
             },
-            "12": {
+            "10": {
                 "description": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
                 "title": "um sinal"
             },
-            "13": {
+            "11": {
                 "title": "uma escultura"
             },
-            "14": {
+            "12": {
                 "title": "uma pintura de parede"
             }
         },
@@ -399,7 +399,7 @@
     "atm": {
         "description": "Multibancos para levantar dinheiro",
         "filter": {
-            "speech_output": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Com saída de fala"
@@ -517,7 +517,7 @@
     "bank": {
         "description": "Uma instituição financeira para depositar dinheiro",
         "filter": {
-            "has_atm": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Com um multibanco"
@@ -647,14 +647,14 @@
     "bench": {
         "description": "Um banco é uma superfície de madeira, metal, pedra, etc., onde uma pessoa pode se sentar. Esta camada os visualiza e faz algumas perguntas sobre eles.",
         "filter": {
-            "bench_is_memorial": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "é um memorial"
                     }
                 }
             },
-            "has_backrest": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Com e sem encosto"
@@ -980,7 +980,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "rental-capacity-bicycle_type": {
+                    "0": {
                         "question": "Quantos type_plural podem ser alugados aqui?",
                         "render": "{capacity:bicycle_type} type_plural podem ser alugados aqui"
                     }
@@ -1222,7 +1222,7 @@
                     "1": {
                         "then": "Acesso é principalmente para visitantes de uma empresa"
                     },
-                    "3": {
+                    "2": {
                         "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
                     }
                 },
@@ -1693,7 +1693,7 @@
     },
     "sport_pitch": {
         "filter": {
-            "accessibility": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Acessível ao público"

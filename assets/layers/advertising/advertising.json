@@ -321,25 +321,15 @@
                     "advertising=poster_box",
                     {
                       "or": [
-                        "support=street_furniture:transit_shelter",
-                        {
-                          "and": [
-                            {
-                              "or": [
-                                "shelter=yes",
-                                "amenity=shelter",
-                                "building=shelter"
-                              ]
-                            },
-                            {
-                              "or": [
-                                "public_transport=platform",
-                                "highway=bus_stop",
-                                "support=street_furniture:transit_shelter"
-                              ]
-                            }
-                          ]
-                        }
+                        "shelter=yes",
+                        "amenity=shelter",
+                        "building=shelter"
+                      ]
+                    },
+                    {
+                      "or": [
+                        "public_transport=platform",
+                        "highway=bus_stop"
                       ]
                     }
                   ]
@@ -478,18 +468,6 @@
       "exampleImages": [
         "./assets/themes/advertising/Mupi_spain.jpg",
         "./assets/themes/advertising/Mupi_Alcoi.jpg"
-      ]
-    },
-    {
-      "tags": [
-        "advertising=poster_box",
-        "support=street_furniture:transit_shelter"
-      ],
-      "title": {
-        "en": "a poster box part of a public transport shelter"
-      },
-      "snapToLayer": [
-        "shelter"
       ]
     },
     {
@@ -659,20 +637,6 @@
       ],
       "maxSnapDistance": 5
     },
-    {
-      "tags": [
-        "advertising=screen",
-        "support=street_furniture:transit_shelter"
-      ],
-      "title": {
-        "en": "a screen mounted on a transit shelter"
-      },
-      "snapToLayer": [
-        "shelter"
-      ],
-      "maxSnapDistance": 5
-    },
-
     {
       "tags": [
         "advertising=tarp"

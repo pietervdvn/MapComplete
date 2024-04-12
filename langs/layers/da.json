@@ -679,7 +679,7 @@
                     "1": {
                         "then": "Adgang hovedsageligt for besøgende til en virksomhed"
                     },
-                    "3": {
+                    "2": {
                         "then": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation"
                     }
                 },
@@ -1129,17 +1129,17 @@
     "birdhide": {
         "description": "Et fugleskjul",
         "filter": {
-            "shelter": {
-                "options": {
-                    "0": {
-                        "question": "Kun overdækkede fugleskjul"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tilgængelig for kørestolsbrugere"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Kun overdækkede fugleskjul"
                     }
                 }
             }
@@ -1285,7 +1285,7 @@
         "tagRenderings": {
             "rewritten-questions": {
                 "renderings": {
-                    "plugs-amount-{{id}}": {
+                    "0": {
                         "question": "Hvor mange stik af typen {{description}} er tilgængelige her?"
                     }
                 }
@@ -1494,17 +1494,17 @@
     },
     "filters": {
         "filter": {
-            "free": {
-                "options": {
-                    "0": {
-                        "question": "Gratis at bruge"
-                    }
-                }
-            },
-            "open_now": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Åbent nu"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Gratis at bruge"
                     }
                 }
             }
@@ -1512,7 +1512,7 @@
     },
     "food": {
         "filter": {
-            "halal": {
+            "5": {
                 "options": {
                     "0": {
                         "question": "Har en halalmenu"
@@ -1735,7 +1735,7 @@
     },
     "recycling": {
         "filter": {
-            "public-access": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Kun offentlig adgang"
@@ -1878,17 +1878,17 @@
     "toilet": {
         "description": "Et lag, der viser (offentlige) toiletter",
         "filter": {
-            "changing_table": {
-                "options": {
-                    "0": {
-                        "question": "Har et puslebord"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tilgængelig for kørestolsbrugere"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Har et puslebord"
                     }
                 }
             }
@@ -2032,17 +2032,17 @@
     },
     "toilet_at_amenity": {
         "filter": {
-            "free": {
-                "options": {
-                    "0": {
-                        "question": "Gratis at bruge"
-                    }
-                }
-            },
-            "wheelchair": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Tilgængelig for kørestolsbrugere"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Gratis at bruge"
                     }
                 }
             }
@@ -2522,7 +2522,7 @@
     "waste_basket": {
         "description": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
         "filter": {
-            "waste-type": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Alle typer"
@@ -2547,7 +2547,7 @@
                     }
                 }
             },
-            "waste-vending": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Affaldskurv med dispenser til poser til (hunde)ekskrementer"
@@ -2613,7 +2613,7 @@
     "waste_disposal": {
         "description": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
         "filter": {
-            "public-access": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Kun offentlig adgang"

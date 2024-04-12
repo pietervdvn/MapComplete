@@ -18,14 +18,14 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Inportatu kutxazain automatiko hau"
                                 }
                             }
                         },
-                        "tag-apply-button": {
+                        "2": {
                             "render": {
                                 "special": {
                                     "message": "Gehitu iradokitako etiketa guztiak hurbilen dagoen kutxazainari"
@@ -76,7 +76,7 @@
     "campersite": {
         "description": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak.",
         "layers": {
-            "caravansites": {
+            "0": {
                 "description": "Kanpatzeko tokiak",
                 "name": "Akanpatzeko tokiak",
                 "presets": {
@@ -127,7 +127,7 @@
                     }
                 }
             },
-            "dumpstations": {
+            "1": {
                 "tagRenderings": {
                     "dumpstations-access": {
                         "mappings": {
@@ -163,10 +163,10 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "operator": {
+                "0": {
                     "render": "Leku hau {operator}k operatzen du"
                 },
-                "power_supply": {
+                "1": {
                     "mappings": {
                         "0": {
                             "then": "Leku honek hornidura elektrikoa du"
@@ -185,28 +185,28 @@
     },
     "cyclenodes": {
         "layers": {
-            "node_bicycle": {
+            "1": {
                 "name": "nodoak"
             }
         }
     },
     "cyclestreets": {
         "layers": {
-            "fietsstraat": {
+            "0": {
                 "name": "Bidegorriak"
             },
-            "not_cyclestreets": {
-                "title": {
-                    "render": "Kalea"
-                }
-            },
-            "toekomstige_fietsstraat": {
+            "1": {
                 "title": {
                     "mappings": {
                         "0": {
                             "then": "{name} laster bidegorri bihurtuko da"
                         }
                     }
+                }
+            },
+            "2": {
+                "title": {
+                    "render": "Kalea"
                 }
             }
         },
@@ -230,7 +230,7 @@
     "kerbs_and_crossings": {
         "layers": {
             "1": {
-                "crossings_no_traffic_lights": {
+                "override": {
                     "=presets": {
                         "0": {
                             "title": "bidegurutze bat"
@@ -255,7 +255,7 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "import-button": {
+                        "0": {
                             "render": {
                                 "special": {
                                     "text": "Inportatu"
@@ -279,7 +279,7 @@
     },
     "sidewalks": {
         "layers": {
-            "sidewalks": {
+            "0": {
                 "name": "Espaloiak",
                 "title": {
                     "render": "{name}"
@@ -293,7 +293,7 @@
     },
     "street_lighting": {
         "layers": {
-            "all_streets": {
+            "2": {
                 "title": {
                     "render": "Kalea"
                 }
@@ -305,7 +305,7 @@
     },
     "walkingnodes": {
         "layers": {
-            "node_hiking": {
+            "1": {
                 "name": "nodoak"
             }
         }
