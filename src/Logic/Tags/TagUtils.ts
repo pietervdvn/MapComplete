@@ -213,6 +213,11 @@ export class TagUtils {
         "\n" +
         "\n"
 
+    /**
+     * Converts a list of tags into the corresponding record
+     *
+     * TagUtils.KVtoProperties([new Tag("a","b"), new Tag("c","d")] // => {a: "b", c: "d"}
+     */
     static KVtoProperties(tags: Tag[]): Record<string, string> {
         const properties: Record<string, string> = {}
         for (const tag of tags) {
