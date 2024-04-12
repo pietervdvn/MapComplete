@@ -486,6 +486,11 @@
                "in",
                "pmap:kind",
                "stream"
+            ],
+            [
+               ">=",
+               "pmap:level",
+               0
             ]
          ],
          "paint": {
@@ -505,6 +510,11 @@
                "in",
                "pmap:kind",
                "river"
+            ],
+            [
+               ">=",
+               "pmap:level",
+               0
             ]
          ],
          "paint": {
@@ -524,6 +534,76 @@
                1,
                18,
                12
+            ]
+         }
+      },
+      {
+         "id": "physical_line_underground_stream",
+         "type": "line",
+         "source": "protomaps",
+         "source-layer": "physical_line",
+         "minzoom": 14,
+         "filter": [
+            "all",
+            [
+               "in",
+               "pmap:kind",
+               "stream"
+            ],
+            [
+               "<",
+               "pmap:level",
+               0
+            ]
+         ],
+         "paint": {
+            "line-color": "#85c2e9",
+            "line-width": 0.5
+         }
+      },
+      {
+         "id": "physical_line_underground_river",
+         "type": "line",
+         "source": "protomaps",
+         "source-layer": "physical_line",
+         "minzoom": 9,
+         "filter": [
+            "all",
+            [
+               "in",
+               "pmap:kind",
+               "river"
+            ],
+            [
+               "<",
+               "pmap:level",
+               0
+            ]
+         ],
+         "layout": {
+            "line-cap": "round"
+         },
+         "paint": {
+            "line-color": "#85c2e9",
+            "line-dasharray": [
+               0.75,
+               1.75
+            ],
+            "line-width": [
+               "interpolate",
+               [
+                  "exponential",
+                  1.6
+               ],
+               [
+                  "zoom"
+               ],
+               9,
+               0,
+               9.5,
+               1,
+               18,
+               6
             ]
          }
       },
