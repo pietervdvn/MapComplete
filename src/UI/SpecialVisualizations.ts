@@ -197,11 +197,11 @@ class StealViz implements SpecialVisualization {
     }
 
     getLayerDependencies(args): string[] {
-        const [_, tagRenderingId] = args
+        const [, tagRenderingId] = args
         if (tagRenderingId.indexOf(".") < 0) {
             throw "Error: argument 'layerId.tagRenderingId' of special visualisation 'steal' should contain a dot"
         }
-        const [layerId, __] = tagRenderingId.split(".")
+        const [layerId] = tagRenderingId.split(".")
         return [layerId]
     }
 }
@@ -370,7 +370,7 @@ export default class SpecialVisualizations {
                 args: [],
 
                 constr(state: SpecialVisualizationState, _, __, feature): BaseUIElement {
-                    let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
                         state,
                         coordinate: { lon, lat }
@@ -601,7 +601,7 @@ export default class SpecialVisualizations {
                     }
                 ],
                 needsUrls: AllImageProviders.apiUrls,
-                constr: (state, tags, args, feature) => {
+                constr: (state, tags, args) => {
                     let imagePrefixes: string[] = undefined
                     if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
@@ -655,9 +655,9 @@ export default class SpecialVisualizations {
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
                     }
                 ],
-                constr: (state, tags, args, feature, layer) => {
+                constr: (state, tags, args, feature) => {
                     const nameKey = args[0] ?? "name"
-                    let fallbackName = args[1]
+                    const fallbackName = args[1]
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
@@ -691,7 +691,7 @@ export default class SpecialVisualizations {
                 ],
                 constr: (state, tags, args, feature, layer) => {
                     const nameKey = args[0] ?? "name"
-                    let fallbackName = args[1]
+                    const fallbackName = args[1]
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
@@ -724,7 +724,7 @@ export default class SpecialVisualizations {
                 ],
                 constr: (state, tags, args, feature, layer) => {
                     const nameKey = args[0] ?? "name"
-                    let fallbackName = args[1]
+                    const fallbackName = args[1]
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
@@ -750,10 +750,8 @@ export default class SpecialVisualizations {
                 needsUrls: [],
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
+                    _: UIEventSource<Record<string, string>>,
+                    argument: string[]
                 ): BaseUIElement {
                     const [text] = argument
                     return new SvelteUIElement(ImportReviewIdentity, { state, text })
@@ -810,9 +808,7 @@ export default class SpecialVisualizations {
                 constr(
                     state: SpecialVisualizationState,
                     tags: UIEventSource<Record<string, string>>,
-                    args: string[],
-                    feature: Feature,
-                    layer: LayerConfig
+                    args: string[]
                 ): SvelteUIElement {
                     const keyToUse = args[0]
                     const prefix = args[1]
@@ -1026,12 +1022,12 @@ export default class SpecialVisualizations {
                 args: [],
                 needsUrls: [Maproulette.defaultEndpoint],
                 constr(state, tagSource) {
-                    let parentId = tagSource.data.mr_challengeId
+                    const parentId = tagSource.data.mr_challengeId
                     if (parentId === undefined) {
                         console.warn("Element ", tagSource.data.id, " has no mr_challengeId")
                         return undefined
                     }
-                    let challenge = Stores.FromPromise(
+                    const challenge = Stores.FromPromise(
                         Utils.downloadJsonCached(
                             `${Maproulette.defaultEndpoint}/challenge/${parentId}`,
                             24 * 60 * 60 * 1000
@@ -1040,7 +1036,7 @@ export default class SpecialVisualizations {
 
                     return new VariableUiElement(
                         challenge.map((challenge) => {
-                            let listItems: BaseUIElement[] = []
+                            const listItems: BaseUIElement[] = []
                             let title: BaseUIElement
 
                             if (challenge?.name) {
