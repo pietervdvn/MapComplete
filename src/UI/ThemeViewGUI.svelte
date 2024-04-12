@@ -385,18 +385,7 @@
   <svelte:fragment slot="error" />
 </LoginToggle>
 
-<If condition={state.previewedImage.map((i) => i !== undefined)}>
-  <FloatOver extraClasses="p-1" on:close={() => state.previewedImage.setData(undefined)}>
-    <button
-      class="absolute p-0 right-4 top-4 h-8 w-8 rounded-full"
-      on:click={() => previewedImage.setData(undefined)}
-      slot="close-button"
-    >
-      <XCircleIcon />
-    </button>
-    <ImageOperations image={$previewedImage} />
-  </FloatOver>
-</If>
+
 
 {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
   <!-- right modal with the selected element view -->
@@ -430,6 +419,19 @@
     </div>
   </FloatOver>
 {/if}
+
+<If condition={state.previewedImage.map((i) => i !== undefined)}>
+  <FloatOver extraClasses="p-1" on:close={() => state.previewedImage.setData(undefined)}>
+    <button
+      class="absolute p-0 right-4 top-4 h-8 w-8 rounded-full"
+      on:click={() => previewedImage.setData(undefined)}
+      slot="close-button"
+    >
+      <XCircleIcon />
+    </button>
+    <ImageOperations image={$previewedImage} />
+  </FloatOver>
+</If>
 
 <If condition={state.guistate.themeIsOpened}>
   <!-- Theme menu -->
