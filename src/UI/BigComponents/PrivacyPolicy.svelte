@@ -15,7 +15,7 @@
   <h3>
     <Tr t={t.geodataTitle} />
   </h3>
-  <Tr t={t.geodataTitle} />
+  <Tr t={t.geodata} />
 
   <h3>
     <Tr t={t.editingTitle} />
