@@ -18,17 +18,17 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "0": {
+                        "closeness-indicator": {
+                            "render": "OpenStreetMap ví o <a href='#{_closest_osm_poi}'> bankomatu, který je {_closest_osm_poi_distance} metr daleko.</a> "
+                        },
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Importovat tento bankomat"
                                 }
                             }
                         },
-                        "1": {
-                            "render": "OpenStreetMap ví o <a href='#{_closest_osm_poi}'> bankomatu, který je {_closest_osm_poi_distance} metr daleko.</a> "
-                        },
-                        "2": {
+                        "tag-apply-button": {
                             "render": {
                                 "special": {
                                     "message": "Přidání všech navrhovaných značek do nejbližšího bankomatu"
@@ -44,19 +44,7 @@
     "bag": {
         "description": "Toto téma pomáhá s importem dat ze systému BAG",
         "layers": {
-            "0": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "Tato budova nemá v BAG žádný odkaz"
-                            }
-                        },
-                        "render": "Reference v BAG je <b>{ref:bag}</b>"
-                    }
-                }
-            },
-            "2": {
+            "bag_pand": {
                 "description": "Budovy z registru BAG",
                 "tagRenderings": {
                     "Build year": {
@@ -84,6 +72,18 @@
                     },
                     "Reference": {
                         "render": "Reference v BAG je <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            },
+            "osm_buildings": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tato budova nemá v BAG žádný odkaz"
+                            }
+                        },
+                        "render": "Reference v BAG je <b>{ref:bag}</b>"
                     }
                 }
             }
@@ -125,7 +125,7 @@
     "campersite": {
         "description": "Na této stránce jsou shromážděna všechna oficiální místa pro zastavení karavanů a místa, kde můžete vypouštět šedou a černou vodu. Můžete přidat podrobnosti o poskytovaných službách a cenách. Přidávejte fotografie a recenze.",
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "kempovací místa",
                 "name": "Kempovací místa",
                 "presets": {
@@ -237,7 +237,7 @@
                     "render": "Kempovací místo {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Sanitární skládky",
                 "name": "Sanitární skládky",
                 "presets": {
@@ -329,11 +329,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Kdo toto místo provozuje?",
                     "render": "Toto místo je provozováno {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Toto místo má napájecí zdroj"
@@ -361,7 +361,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> veřejně dostupné<br/>{_embedding_feature:access:description}"
@@ -377,7 +377,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Veřejně přístupné komukoli"
@@ -398,9 +398,9 @@
                 }
             },
             "1": {
-                "override": {
+                "shops_with_climbing_shoe_repair": {
                     "+tagRenderings": {
-                        "0": {
+                        "repairs_climbing_shoes": {
                             "mappings": {
                                 "0": {
                                     "then": "Tento obchod opravuje lezeckou obuv"
@@ -417,7 +417,7 @@
             "2": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "repairs_climbing_shoes": {
                             "mappings": {
                                 "0": {
                                     "then": "Tento obchod opravuje lezeckou obuv"
@@ -446,7 +446,7 @@
     "cycle_highways": {
         "description": "Tato mapa zobrazuje cyklostezky",
         "layers": {
-            "0": {
+            "cycle_highways": {
                 "name": "cyklodálnice",
                 "title": {
                     "render": "cyklodálnice"
@@ -463,7 +463,24 @@
     "cyclenodes": {
         "description": "Tato mapa zobrazuje sítě uzlů cyklu a umožňuje snadno přidávat nové uzly",
         "layers": {
-            "0": {
+            "2": {
+                "bicycle_guidepost": {
+                    "name": "Cyklistické ukazatele",
+                    "title": {
+                        "render": "Cyklistický ukazatel"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "značka trasy pro spojení mezi uzlem"
+                        }
+                    }
+                }
+            },
+            "node2node_bicycle": {
                 "name": "propojení mezi uzly",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -482,7 +499,7 @@
                     "render": "propojení mezi uzly"
                 }
             },
-            "1": {
+            "node_bicycle": {
                 "name": "uzly",
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
@@ -514,23 +531,6 @@
                     },
                     "render": "uzel cyklu"
                 }
-            },
-            "2": {
-                "override": {
-                    "name": "Cyklistické ukazatele",
-                    "title": {
-                        "render": "Cyklistický ukazatel"
-                    }
-                }
-            },
-            "3": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "title": "značka trasy pro spojení mezi uzlem"
-                        }
-                    }
-                }
             }
         },
         "title": "Sítě uzlů cyklu"
@@ -538,11 +538,18 @@
     "cyclestreets": {
         "description": "Cyklostezka je ulice, kde <b>motorizovaná doprava nesmí předjíždět cyklisty</b>. Jsou označeny speciální dopravní značkou. Cyklostezky najdete v Nizozemsku a Belgii, ale také v Německu a Francii. ",
         "layers": {
-            "0": {
+            "fietsstraat": {
                 "description": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty",
                 "name": "Cyklostezky"
             },
-            "1": {
+            "not_cyclestreets": {
+                "description": "Vrstva pro označení jakékoli ulice jako cyklostezky",
+                "name": "Všechny ulice",
+                "title": {
+                    "render": "Ulice"
+                }
+            },
+            "toekomstige_fietsstraat": {
                 "description": "Tato ulice se brzy stane cyklostezkou",
                 "name": "Budoucí cyklostezka",
                 "title": {
@@ -553,18 +560,15 @@
                     },
                     "render": "Budoucí cyklostezka"
                 }
-            },
-            "2": {
-                "description": "Vrstva pro označení jakékoli ulice jako cyklostezky",
-                "name": "Všechny ulice",
-                "title": {
-                    "render": "Ulice"
-                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Kdy se tato ulice stane cyklostezkou?",
+                    "render": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)"
@@ -590,7 +594,7 @@
                     },
                     "question": "Je ulice <b>{name}</b> cyklo ulicí?"
                 },
-                "1": {
+                "supplementary_sign": {
                     "mappings": {
                         "0": {
                             "then": "Přístup povolen obyvatelům"
@@ -609,10 +613,6 @@
                         }
                     },
                     "question": "Jakou značku má tato cyklostezka?"
-                },
-                "2": {
-                    "question": "Kdy se tato ulice stane cyklostezkou?",
-                    "render": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}"
                 }
             }
         },
@@ -639,37 +639,37 @@
         "description": "Na této mapě se můžete podívat, podle čeho je objekt pojmenován. Ulice, budovy, ... pocházejí z OpenStreetMap, které byly propojeny s Wikidaty. Ve vyskakovacím okně se zobrazí článek na Wikipedii (pokud existuje) nebo wikidatové pole toho, po čem je objekt pojmenován. Pokud má samotný objekt stránku na Wikipedii, zobrazí se i ta.<br/><br/><b> Přispět můžete i vy!</b>Dostatečně si objekt přiblížíte a zobrazí se <i>všechny</i>ulice. Na některou z nich můžete kliknout a objeví se okno pro vyhledávání na Wikidatech. Několika kliknutími můžete přidat etymologický odkaz. K provádění těchto úprav potřebujete bezplatný účet na OpenStreetMap.",
         "layers": {
             "1": {
-                "override": {
+                "streets_without_etymology": {
                     "=name": "Ulice bez etymologických informací"
                 }
             },
             "2": {
-                "override": {
+                "parks_and_forests_without_etymology": {
                     "=name": "Parky a lesy bez etymologických informací"
                 }
             },
             "3": {
-                "override": {
+                "education_institutions_without_etymology": {
                     "=name": "Vzdělávací instituce bez etymologických informací"
                 }
             },
             "4": {
-                "override": {
+                "cultural_places_without_etymology": {
                     "=name": "Kulturní místa bez etymologických informací"
                 }
             },
             "5": {
-                "override": {
+                "toursistic_places_without_etymology": {
                     "=name": "Toursistická místa bez etymologických informací"
                 }
             },
             "6": {
-                "override": {
+                "health_and_social_places_without_etymology": {
                     "=name": "Zdravotní a sociální místa bez etymologických informací"
                 }
             },
             "7": {
-                "override": {
+                "sport_places_without_etymology": {
                     "=name": "Sportovní místa bez etymologických informací"
                 }
             }
@@ -680,7 +680,7 @@
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "0": {
+            "facadegardens": {
                 "description": "Fasádní zahrady",
                 "name": "Fasádní zahrady",
                 "presets": {
@@ -772,7 +772,7 @@
         "description": "Na této mapě najdete své oblíbené obchody s hranolky!",
         "layers": {
             "0": {
-                "override": {
+                "friture": {
                     "name": "Obchod s hranolky"
                 }
             }
@@ -786,17 +786,7 @@
     "grb": {
         "description": "Toto téma je pokusem o automatizaci importu GRB.",
         "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Jaký druh budovy je toto?"
-                    },
-                    "grb-reference": {
-                        "render": "Byl importován z GRB, referenční číslo je {source:geometry:ref}"
-                    }
-                }
-            },
-            "1": {
+            "grb": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
@@ -807,6 +797,16 @@
                                 "then": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}"
                             }
                         }
+                    }
+                }
+            },
+            "osm_buildings_no_points": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Jaký druh budovy je toto?"
+                    },
+                    "grb-reference": {
+                        "render": "Byl importován z GRB, referenční číslo je {source:geometry:ref}"
                     }
                 }
             }
@@ -830,7 +830,7 @@
         "description": "Na této mapě jsou zobrazeny různé položky související se zdravotní péčí",
         "layers": {
             "5": {
-                "override": {
+                "medical_shops": {
                     "=presets": {
                         "0": {
                             "title": "obchod se zdravotnickými potřebami"
@@ -863,7 +863,7 @@
         "description": "Mapa zobrazující obrubníky a přechody.",
         "layers": {
             "1": {
-                "override": {
+                "crossings_no_traffic_lights": {
                     "=presets": {
                         "0": {
                             "description": "Přechod pro chodce a/nebo cyklisty",
@@ -909,7 +909,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "0": {
+                        "width": {
                             "options": {
                                 "0": {
                                     "question": "Jakékoliv/žádné informace o šířce"
@@ -925,7 +925,7 @@
             "6": {
                 "override": {
                     "=filter": {
-                        "0": {
+                        "kerb-type": {
                             "options": {
                                 "0": {
                                     "question": "Všechny typy obrubníků"
@@ -945,7 +945,7 @@
                 }
             },
             "8": {
-                "override": {
+                "parking_spaces_disabled": {
                     "name": "Parkovací místa pro osoby se zdravotním postižením"
                 }
             },
@@ -959,14 +959,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Dovoz"
                                 }
                             }
                         },
-                        "1": {
+                        "tag-apply-button": {
                             "render": {
                                 "special": {
                                     "message": "Přidat všechny navrhované značky"
@@ -1001,16 +1001,8 @@
         "description": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
         "layers": {
             "1": {
-                "override": {
+                "dogfoodb": {
                     "name": "Restaurace vhodné pro vstup se psy"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "Obchody vhodné pro vstup se psy",
-                    "title": {
-                        "render": "Obchody vhodné pro vstup se psy"
-                    }
                 }
             },
             "6": {
@@ -1020,6 +1012,14 @@
                             "description": "Obchod, ve kterém si můžete vzít psa téměř kamkoli",
                             "title": "obchod vhodný pro vstup se psem"
                         }
+                    }
+                }
+            },
+            "dogshop": {
+                "dogshop": {
+                    "name": "Obchody vhodné pro vstup se psy",
+                    "title": {
+                        "render": "Obchody vhodné pro vstup se psy"
                     }
                 }
             }
@@ -1034,7 +1034,7 @@
     "postal_codes": {
         "description": "Poštovní směrovací čísla",
         "layers": {
-            "0": {
+            "postal_code_boundary": {
                 "name": "poštovní směrovací čísla",
                 "tagRenderings": {
                     "postal_code": {
@@ -1045,7 +1045,7 @@
                     "render": "Poštovní směrovací číslo {postal_code}"
                 }
             },
-            "2": {
+            "town_hall": {
                 "name": "radnice",
                 "title": {
                     "render": "Radnice {name}"
@@ -1072,13 +1072,13 @@
     "sidewalks": {
         "description": "Experimentální téma",
         "layers": {
-            "0": {
+            "sidewalks": {
                 "description": "Vrstva zobrazující chodníky silnic",
                 "name": "Chodníky",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "1": {
+                            "has_sidewalk_left|right": {
                                 "mappings": {
                                     "0": {
                                         "then": "Na této straně silnice je chodník"
@@ -1092,7 +1092,7 @@
                                 },
                                 "question": "Je na této straně silnice chodník?"
                             },
-                            "2": {
+                            "sidewalk_width_left|right": {
                                 "question": "Jaká je šířka chodníku na této straně silnice?",
                                 "render": "Tento chodník je široký {sidewalk:left|right:width}m"
                             }
@@ -1119,7 +1119,7 @@
         "description": "Vše o sportu, sportovní hřiště, fitness centra a další.",
         "layers": {
             "4": {
-                "override": {
+                "sport_shops": {
                     "presets": {
                         "0": {
                             "description": "Přidejte nový obchod se sportovním zbožím.",
@@ -1135,11 +1135,7 @@
     "stations": {
         "description": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží",
         "layers": {
-            "3": {
-                "description": "Vrstva zobrazující vlaková nádraží",
-                "name": "Vlaková nádraží"
-            },
-            "16": {
+            "departures_board": {
                 "description": "Zobrazuje vlaky odjíždějící z této stanice",
                 "name": "Odjezdové tabule",
                 "presets": {
@@ -1170,6 +1166,10 @@
                 "title": {
                     "render": "Odjezdová tabule"
                 }
+            },
+            "train_station": {
+                "description": "Vrstva zobrazující vlaková nádraží",
+                "name": "Vlaková nádraží"
             }
         },
         "title": "Vlaková nádraží"
@@ -1177,32 +1177,7 @@
     "street_lighting": {
         "description": "Na této mapě najdete vše o pouličním osvětlení",
         "layers": {
-            "1": {
-                "name": "Osvětlené ulice",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Tato ulice je osvětlená"
-                            },
-                            "1": {
-                                "then": "Tato ulice není osvětlená"
-                            },
-                            "2": {
-                                "then": "Tato ulice je v noci osvětlená"
-                            },
-                            "3": {
-                                "then": "Tato ulice je osvětlena 24/7"
-                            }
-                        },
-                        "question": "Je tato ulice osvětlená?"
-                    }
-                },
-                "title": {
-                    "render": "Osvětlená ulice"
-                }
-            },
-            "2": {
+            "all_streets": {
                 "name": "Všechny ulice",
                 "tagRenderings": {
                     "lit": {
@@ -1225,6 +1200,31 @@
                 },
                 "title": {
                     "render": "Ulice"
+                }
+            },
+            "lit_streets": {
+                "name": "Osvětlené ulice",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tato ulice je osvětlená"
+                            },
+                            "1": {
+                                "then": "Tato ulice není osvětlená"
+                            },
+                            "2": {
+                                "then": "Tato ulice je v noci osvětlená"
+                            },
+                            "3": {
+                                "then": "Tato ulice je osvětlena 24/7"
+                            }
+                        },
+                        "question": "Je tato ulice osvětlená?"
+                    }
+                },
+                "title": {
+                    "render": "Osvětlená ulice"
                 }
             }
         },
@@ -1255,7 +1255,7 @@
     "walkingnodes": {
         "description": "Tato mapa zobrazuje sítě uzlových bodů a umožňuje snadné přidávání nových uzlů",
         "layers": {
-            "0": {
+            "node2node_hiking": {
                 "name": "propojení mezi uzly",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -1274,7 +1274,7 @@
                     "render": "propojení mezi uzly"
                 }
             },
-            "1": {
+            "node_hiking": {
                 "name": "uzly",
                 "tagRenderings": {
                     "node-expected_rwn_route_relations": {

@@ -27,7 +27,7 @@
     },
     "campersite": {
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "Tempat camping",
                 "name": "Tempat camping",
                 "tagRenderings": {
@@ -89,14 +89,14 @@
                     "render": "Tempat kemping {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Tempat pembuangan sanitasi",
                 "name": "Tempat pembuangan sanitasi"
             }
         },
         "overrideAll": {
             "tagRenderings+": {
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Tempat ini memiliki catu daya"
@@ -131,7 +131,7 @@
     "postal_codes": {
         "description": "Kode pos",
         "layers": {
-            "0": {
+            "postal_code_boundary": {
                 "name": "kode pos",
                 "tagRenderings": {
                     "postal_code": {
@@ -142,7 +142,7 @@
                     "render": "Kode pos {postal_code}"
                 }
             },
-            "2": {
+            "town_hall": {
                 "name": "balai kota",
                 "title": {
                     "render": "Balai kota {name}"

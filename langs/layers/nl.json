@@ -27,28 +27,28 @@
     "advertising": {
         "name": "Reclame",
         "presets": {
-            "3": {
+            "4": {
                 "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
                 "title": "een uithangbord"
             },
-            "4": {
+            "5": {
                 "description": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
                 "title": "een aanplakzuil"
             },
-            "5": {
+            "6": {
                 "title": "een vlag"
             },
-            "6": {
+            "7": {
                 "title": "een scherm"
             },
-            "7": {
+            "8": {
                 "title": "een scherm op een muur"
             },
-            "8": {
+            "10": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
             },
-            "12": {
+            "14": {
                 "title": "een muurschildering"
             }
         },
@@ -284,7 +284,7 @@
     "atm": {
         "description": "Geldautomaten om geld op te nemen",
         "filter": {
-            "1": {
+            "speech_output": {
                 "options": {
                     "0": {
                         "question": "Heeft spraak"
@@ -403,7 +403,7 @@
     "bank": {
         "description": "Een financiële instelling waar je geld kunt",
         "filter": {
-            "1": {
+            "has_atm": {
                 "options": {
                     "0": {
                         "question": "Met een bankautomaat"
@@ -533,14 +533,14 @@
     "bench": {
         "description": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
         "filter": {
-            "0": {
+            "bench_is_memorial": {
                 "options": {
                     "0": {
                         "question": "is een gedenkteken"
                     }
                 }
             },
-            "1": {
+            "has_backrest": {
                 "options": {
                     "0": {
                         "question": "Met en zonder rugleuning"
@@ -866,7 +866,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "0": {
+                    "rental-capacity-bicycle_type": {
                         "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
                         "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
                     }
@@ -1113,6 +1113,9 @@
                         "then": "Klanten van de zaak of winkel"
                     },
                     "2": {
+                        "then": "Toegang voor abonnees van de fietsparking"
+                    },
+                    "3": {
                         "then": "Private fietsenstalling van een school, een bedrijf, ..."
                     }
                 },
@@ -1144,6 +1147,9 @@
                     },
                     "7": {
                         "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
+                    },
+                    "8": {
+                        "then": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan."
                     }
                 },
                 "question": "Van welk type is deze fietsparking?",
@@ -1211,9 +1217,16 @@
                 },
                 "question": "Is deze fietsenstalling gratis te gebruiken?"
             },
+            "operator": {
+                "question": "Wie beheert deze fietsenstalling?",
+                "render": "Deze fietsenstalling wordt beheerd door {operator}"
+            },
             "operator_phone": {
                 "question": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
                 "questionHint": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden"
+            },
+            "operator_website": {
+                "question": "Wat is de website van de operator van deze fietsenstalling?"
             }
         },
         "title": {
@@ -1394,17 +1407,17 @@
     "bike_shop": {
         "description": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Verkoopt tweedehands fietsen"
-                    }
-                }
-            },
-            "2": {
+            "offers_diy_repair": {
                 "options": {
                     "0": {
                         "question": "Biedt doe-het-zelfreparaties aan"
+                    }
+                }
+            },
+            "sells_second-hand": {
+                "options": {
+                    "0": {
+                        "question": "Verkoopt tweedehands fietsen"
                     }
                 }
             }
@@ -1594,17 +1607,17 @@
     "birdhide": {
         "description": "Een vogelkijkhut",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Rolstoeltoegankelijk"
-                    }
-                }
-            },
-            "1": {
+            "shelter": {
                 "options": {
                     "0": {
                         "question": "Enkel overdekte kijkhutten"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Rolstoeltoegankelijk"
                     }
                 }
             }
@@ -1779,27 +1792,7 @@
     "charging_station": {
         "description": "Oplaadpunten",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Alle voertuigen"
-                    },
-                    "1": {
-                        "question": "Oplaadpunten voor fietsen"
-                    },
-                    "2": {
-                        "question": "Oplaadpunten voor auto's"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Enkel werkende oplaadpunten"
-                    }
-                }
-            },
-            "2": {
+            "connection_type": {
                 "options": {
                     "0": {
                         "question": "Alle types"
@@ -1851,6 +1844,26 @@
                     },
                     "16": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    }
+                }
+            },
+            "vehicle-type": {
+                "options": {
+                    "0": {
+                        "question": "Alle voertuigen"
+                    },
+                    "1": {
+                        "question": "Oplaadpunten voor fietsen"
+                    },
+                    "2": {
+                        "question": "Oplaadpunten voor auto's"
+                    }
+                }
+            },
+            "working": {
+                "options": {
+                    "0": {
+                        "question": "Enkel werkende oplaadpunten"
                     }
                 }
             }
@@ -2154,30 +2167,30 @@
             },
             "rewritten-questions": {
                 "renderings": {
-                    "0": {
-                        "question": "Hoeveel stekkers van type {{description}} heeft dit oplaadpunt?",
-                        "render": "Hier zijn <b class='text-xl'>{{{key}}}</b> stekkers van het type {{description}}"
-                    },
-                    "1": {
-                        "mappings": {
-                            "then": "{{description}} heeft een spanning van {{commonVoltages}} volt"
-                        },
-                        "question": "Welke spanning levert de stekker van type {{description}}",
-                        "render": "{{description}} heeft een spanning van {canonical({{key}}:voltage)}"
-                    },
-                    "2": {
+                    "current-{{id}}": {
                         "mappings": {
                             "then": "{{description}} levert een stroom van maximaal {{commonCurrent}} A"
                         },
                         "question": "Welke stroom levert de stekker van type {{description}}?",
                         "render": "{{description}} levert een stroom van maximaal {canonical({{key}}:current)}"
                     },
-                    "3": {
+                    "plugs-amount-{{id}}": {
+                        "question": "Hoeveel stekkers van type {{description}} heeft dit oplaadpunt?",
+                        "render": "Hier zijn <b class='text-xl'>{{{key}}}</b> stekkers van het type {{description}}"
+                    },
+                    "power-output-{{id}}": {
                         "mappings": {
                             "then": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
                         },
                         "question": "Welk vermogen levert een enkele stekker van type {{description}}?",
                         "render": "{{description}} levert een vermogen van maximaal {canonical({{key}}:output)}"
+                    },
+                    "voltage-{{id}}": {
+                        "mappings": {
+                            "then": "{{description}} heeft een spanning van {{commonVoltages}} volt"
+                        },
+                        "question": "Welke spanning levert de stekker van type {{description}}",
+                        "render": "{{description}} heeft een spanning van {canonical({{key}}:voltage)}"
                     }
                 },
                 "rewrite": {
@@ -3900,28 +3913,28 @@
     },
     "filters": {
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nu open"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Accepteert cash"
-                    }
-                }
-            },
-            "2": {
+            "accepts_cards": {
                 "options": {
                     "0": {
                         "question": "Accepteert betaalkaarten"
                     }
                 }
             },
-            "5": {
+            "accepts_cash": {
+                "options": {
+                    "0": {
+                        "question": "Accepteert cash"
+                    }
+                }
+            },
+            "free": {
+                "options": {
+                    "0": {
+                        "question": "Gratis toegankelijk"
+                    }
+                }
+            },
+            "has_image": {
                 "options": {
                     "0": {
                         "question": "Met en zonder afbeelding"
@@ -3934,14 +3947,28 @@
                     }
                 }
             },
-            "6": {
+            "has_organic": {
+                "options": {
+                    "0": {
+                        "question": "Heeft biologische opties"
+                    }
+                }
+            },
+            "open_now": {
+                "options": {
+                    "0": {
+                        "question": "Nu open"
+                    }
+                }
+            },
+            "tactile_paving": {
                 "options": {
                     "0": {
                         "question": "Met voelbare bestrating"
                     }
                 }
             },
-            "7": {
+            "tactile_paving_advanced": {
                 "options": {
                     "0": {
                         "question": "Met of zonder voelbare bestrating"
@@ -3954,20 +3981,6 @@
                     },
                     "3": {
                         "question": "Geen informatie over voelbare bestrating"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Heeft biologische opties"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Gratis toegankelijk"
                     }
                 }
             }
@@ -4101,31 +4114,31 @@
         },
         "description": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
         "filter": {
-            "1": {
+            "halal": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een halal menu"
+                    }
+                }
+            },
+            "reservation": {
                 "options": {
                     "0": {
                         "question": "Reserveren niet vereist"
                     }
                 }
             },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Heeft een vegetarisch menu"
-                    }
-                }
-            },
-            "4": {
+            "vegan": {
                 "options": {
                     "0": {
                         "question": "Heeft een veganistisch menu"
                     }
                 }
             },
-            "5": {
+            "vegetarian": {
                 "options": {
                     "0": {
-                        "question": "Heeft een halal menu"
+                        "question": "Heeft een vegetarisch menu"
                     }
                 }
             }
@@ -4507,7 +4520,7 @@
         "tagRenderings": {
             "available_devices": {
                 "renderings": {
-                    "0": {
+                    "hackerspaces-service-device-key": {
                         "mappings": {
                             "0": {
                                 "then": "Er is {device-name} beschikbaar in deze hackerspace"
@@ -4847,7 +4860,7 @@
     "kerbs": {
         "description": "Een laag met stoepranden.",
         "filter": {
-            "0": {
+            "kerb-type": {
                 "options": {
                     "0": {
                         "question": "Alle typen stoepranden"
@@ -5050,7 +5063,21 @@
     "maproulette": {
         "description": "Laag met alle taken uit MapRoulette",
         "filter": {
-            "0": {
+            "parent-id": {
+                "options": {
+                    "0": {
+                        "question": "ID uitdaging is {search}"
+                    }
+                }
+            },
+            "parent-name": {
+                "options": {
+                    "0": {
+                        "question": "Naam uitdaging bevat {search}"
+                    }
+                }
+            },
+            "status": {
                 "options": {
                     "0": {
                         "question": "Toon taken met alle statussen"
@@ -5078,20 +5105,6 @@
                     },
                     "8": {
                         "question": "Toon uitgeschakelde taken"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Naam uitdaging bevat {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "ID uitdaging is {search}"
                     }
                 }
             }
@@ -5134,7 +5147,7 @@
     "maproulette_challenge": {
         "description": "Laag met taken van een MapRoulette uitdaging",
         "filter": {
-            "0": {
+            "status": {
                 "options": {
                     "0": {
                         "question": "Toon alle taken, ongeacht de status"
@@ -5232,14 +5245,14 @@
     "nature_reserve": {
         "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
         "filter": {
-            "0": {
+            "access": {
                 "options": {
                     "0": {
                         "question": "Vrij te bezoeken"
                     }
                 }
             },
-            "1": {
+            "dogs": {
                 "options": {
                     "0": {
                         "question": "Alle natuurgebieden"
@@ -5358,77 +5371,28 @@
     },
     "note": {
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Geopend door bijdrager {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>Niet</b> geopend door bijdrager {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Laatst bewerkt door bijdrager {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Geopend na {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Aangemaakt voor {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Aangemaakt na {search}"
-                    }
-                }
-            },
-            "8": {
+            "anonymous": {
                 "options": {
                     "0": {
                         "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
                     }
                 }
             },
-            "9": {
+            "edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Laatst bewerkt door bijdrager {search}"
+                    }
+                }
+            },
+            "is_open": {
                 "options": {
                     "0": {
                         "question": "Toon enkel open Notes"
                     }
                 }
             },
-            "10": {
+            "no_imports": {
                 "options": {
                     "0": {
                         "question": "Alle Notes"
@@ -5438,6 +5402,55 @@
                     },
                     "2": {
                         "question": "Toon enkel import Notes"
+                    }
+                }
+            },
+            "not": {
+                "options": {
+                    "0": {
+                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
+                    }
+                }
+            },
+            "not_edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Geopend na {search}"
+                    }
+                }
+            },
+            "not_opened_by": {
+                "options": {
+                    "0": {
+                        "question": "<b>Niet</b> geopend door bijdrager {search}"
+                    }
+                }
+            },
+            "opened_after": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt na {search}"
+                    }
+                }
+            },
+            "opened_before": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt voor {search}"
+                    }
+                }
+            },
+            "opened_by": {
+                "options": {
+                    "0": {
+                        "question": "Geopend door bijdrager {search}"
+                    }
+                }
+            },
+            "search": {
+                "options": {
+                    "0": {
+                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
                     }
                 }
             }
@@ -5538,21 +5551,21 @@
     },
     "osm_community_index": {
         "filter": {
-            "0": {
+            "country": {
                 "options": {
                     "0": {
                         "question": "Land"
                     }
                 }
             },
-            "2": {
+            "region": {
                 "options": {
                     "0": {
                         "question": "Regio"
                     }
                 }
             },
-            "5": {
+            "world": {
                 "options": {
                     "0": {
                         "question": "Wereld"
@@ -5816,17 +5829,17 @@
     "pharmacy": {
         "description": "Deze laag toont apotheken, welke (waarschijnlijk) ook medicijnen onder voorschrift verkopen",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Heeft een drive-through"
-                    }
-                }
-            },
-            "1": {
+            "dispensing": {
                 "options": {
                     "0": {
                         "question": "Deze apotheek verdeelt medicijnen met voorschrift"
+                    }
+                }
+            },
+            "drive-through": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een drive-through"
                     }
                 }
             }
@@ -6211,21 +6224,14 @@
     "public_bookcase": {
         "description": "Een straatkastje met boeken voor iedereen",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Kinderboeken aanwezig"
-                    }
-                }
-            },
-            "1": {
+            "adult-books": {
                 "options": {
                     "0": {
                         "question": "Boeken voor volwassenen aanwezig"
                     }
                 }
             },
-            "2": {
+            "inside": {
                 "options": {
                     "0": {
                         "question": "Binnen of buiten"
@@ -6235,6 +6241,13 @@
                     },
                     "2": {
                         "question": "Bevindt zich buiten"
+                    }
+                }
+            },
+            "kid-books": {
+                "options": {
+                    "0": {
+                        "question": "Kinderboeken aanwezig"
                     }
                 }
             }
@@ -6759,7 +6772,14 @@
     "recycling": {
         "description": "Een laag met recyclagingcontainers en -centrums",
         "filter": {
-            "1": {
+            "public-access": {
+                "options": {
+                    "0": {
+                        "question": "Enkel publiek toegankelijke afvalcontainers"
+                    }
+                }
+            },
+            "recyclingType": {
                 "options": {
                     "0": {
                         "question": "Alle recyclingtypes"
@@ -6826,13 +6846,6 @@
                     },
                     "21": {
                         "question": "Recycling van fietsen"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Enkel publiek toegankelijke afvalcontainers"
                     }
                 }
             }
@@ -7145,17 +7158,17 @@
         },
         "description": "Een winkel",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels die {search} verkopen"
-                    }
-                }
-            },
-            "2": {
+            "shop-name": {
                 "options": {
                     "0": {
                         "question": "Toon enkel winkels met naam {search}"
+                    }
+                }
+            },
+            "shop-type": {
+                "options": {
+                    "0": {
+                        "question": "Toon enkel winkels die {search} verkopen"
                     }
                 }
             }
@@ -7369,14 +7382,14 @@
     "sport_pitch": {
         "description": "Een sportterrein",
         "filter": {
-            "0": {
+            "accessibility": {
                 "options": {
                     "0": {
                         "question": "Publiek toegankelijk"
                     }
                 }
             },
-            "1": {
+            "available_sports": {
                 "options": {
                     "0": {
                         "question": "Alle sporten"
@@ -7968,17 +7981,17 @@
     "toilet": {
         "description": "Een laag die publieke toiletten toont",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Rolstoel toegankelijk"
-                    }
-                }
-            },
-            "1": {
+            "changing_table": {
                 "options": {
                     "0": {
                         "question": "Heeft een luiertafel"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Rolstoel toegankelijk"
                     }
                 }
             }
@@ -8174,17 +8187,17 @@
     "toilet_at_amenity": {
         "description": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Rolstoel toegankelijk"
-                    }
-                }
-            },
-            "2": {
+            "free": {
                 "options": {
                     "0": {
                         "question": "Gratis toegankelijk"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Rolstoel toegankelijk"
                     }
                 }
             }
@@ -8912,7 +8925,7 @@
     "vending_machine": {
         "description": "Laag met verkoopautomaten",
         "filter": {
-            "1": {
+            "vending": {
                 "options": {
                     "0": {
                         "question": "Alle verkoopautomaten"
@@ -9207,7 +9220,7 @@
     "waste_basket": {
         "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
         "filter": {
-            "0": {
+            "waste-type": {
                 "options": {
                     "0": {
                         "question": "Alle soorten"
@@ -9232,7 +9245,7 @@
                     }
                 }
             },
-            "1": {
+            "waste-vending": {
                 "options": {
                     "0": {
                         "question": "Vuilnisbak met verdeler voor hondenpoepzakjes"
@@ -9298,7 +9311,7 @@
     "waste_disposal": {
         "description": "Een grote afvalcontainer voor (huishoudelijk) afval",
         "filter": {
-            "0": {
+            "public-access": {
                 "options": {
                     "0": {
                         "question": "Enkel publiek toegankelijke afvalcontainers"

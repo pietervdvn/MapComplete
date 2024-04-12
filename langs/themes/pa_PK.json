@@ -23,7 +23,7 @@
     },
     "campersite": {
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "کیمب‌سائیٹاں",
                 "name": "کیمب‌سائیٹاں",
                 "presets": {
@@ -50,7 +50,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "2": {
                                     "then": "صرف گاہک"
@@ -67,7 +67,7 @@
     },
     "cycle_highways": {
         "layers": {
-            "0": {
+            "cycle_highways": {
                 "name": "سائیکل‌وے",
                 "title": {
                     "render": "سائیکل‌وے"
@@ -81,32 +81,32 @@
     },
     "cyclenodes": {
         "layers": {
-            "1": {
+            "node_bicycle": {
                 "name": "نوڈ"
             }
         }
     },
     "cyclestreets": {
         "layers": {
-            "0": {
+            "fietsstraat": {
                 "name": "سائیکاں دیاں سڑکاں"
             },
-            "1": {
-                "name": "بھُوکھی سائیکل سڑک",
-                "title": {
-                    "render": "بھُوکھی سائیکل سڑک"
-                }
-            },
-            "2": {
+            "not_cyclestreets": {
                 "name": "ساریاں سڑکاں",
                 "title": {
                     "render": "سڑک"
+                }
+            },
+            "toekomstige_fietsstraat": {
+                "name": "بھُوکھی سائیکل سڑک",
+                "title": {
+                    "render": "بھُوکھی سائیکل سڑک"
                 }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "1": {
+                "supplementary_sign": {
                     "mappings": {
                         "2": {
                             "then": "موٹرسائیکلاں دی اِجازت اے"
@@ -129,7 +129,7 @@
     "fritures": {
         "layers": {
             "0": {
-                "override": {
+                "friture": {
                     "name": "فرائیاں دی دکان"
                 }
             }
@@ -166,7 +166,7 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "ایمپورٹ کرو"
@@ -190,14 +190,6 @@
     },
     "pets": {
         "layers": {
-            "2": {
-                "override": {
-                    "name": "کُتیاں دی اِجازت دیاں دکاناں",
-                    "title": {
-                        "render": "کُتیاں دی اِجازت دیاں دکاناں"
-                    }
-                }
-            },
             "6": {
                 "override": {
                     "presets": {
@@ -206,13 +198,21 @@
                         }
                     }
                 }
+            },
+            "dogshop": {
+                "dogshop": {
+                    "name": "کُتیاں دی اِجازت دیاں دکاناں",
+                    "title": {
+                        "render": "کُتیاں دی اِجازت دیاں دکاناں"
+                    }
+                }
             }
         }
     },
     "postal_codes": {
         "description": "ڈاک کوڈ",
         "layers": {
-            "0": {
+            "postal_code_boundary": {
                 "name": "ڈاک کوڈ"
             }
         },
@@ -222,7 +222,7 @@
     "sidewalks": {
         "description": "آزمائش تھیم",
         "layers": {
-            "0": {
+            "sidewalks": {
                 "name": "فُٹ‌پاتھ"
             }
         },
@@ -234,16 +234,16 @@
     },
     "street_lighting": {
         "layers": {
-            "1": {
-                "name": "روشنی والیاں سڑکاں",
-                "title": {
-                    "render": "روشنی والی سڑک"
-                }
-            },
-            "2": {
+            "all_streets": {
                 "name": "ساریاں سڑکاں",
                 "title": {
                     "render": "سڑک"
+                }
+            },
+            "lit_streets": {
+                "name": "روشنی والیاں سڑکاں",
+                "title": {
+                    "render": "روشنی والی سڑک"
                 }
             }
         },
@@ -257,7 +257,7 @@
     },
     "walkingnodes": {
         "layers": {
-            "1": {
+            "node_hiking": {
                 "name": "نوڈ"
             }
         }

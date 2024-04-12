@@ -13,7 +13,7 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Importa questo sportello bancomat"
@@ -58,7 +58,7 @@
     "campersite": {
         "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "Aree camper",
                 "name": "Aree camper",
                 "presets": {
@@ -170,7 +170,7 @@
                     "render": "Area camper {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Luoghi di sversamento delle acque reflue",
                 "name": "Luoghi di sversamento delle acque reflue",
                 "presets": {
@@ -262,11 +262,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Chi gestisce questo luogo?",
                     "render": "Questo luogo è gestito da {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Questo luogo fornisce corrente elettrica"
@@ -294,7 +294,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
@@ -310,7 +310,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Pubblicamente accessibile a chiunque"
@@ -345,11 +345,18 @@
     "cyclestreets": {
         "description": "Una strada ciclabile è una strada dove <b>il traffico motorizzato non può superare i velocipedi</b>. La sua presenza è segnalata da un cartello stradale specifico. Le strade ciclabili sono diffuse in Olanda e Belgio, ma si possono trovare anche in Germania e in Francia. ",
         "layers": {
-            "0": {
+            "fietsstraat": {
                 "description": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta",
                 "name": "Strade ciclabili"
             },
-            "1": {
+            "not_cyclestreets": {
+                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
+                "name": "Tutte le strade",
+                "title": {
+                    "render": "Strada"
+                }
+            },
+            "toekomstige_fietsstraat": {
                 "description": "Questa strada diventerà presto una strada ciclabile",
                 "name": "Futura strada ciclabile",
                 "title": {
@@ -360,18 +367,15 @@
                     },
                     "render": "Futura strada ciclabile"
                 }
-            },
-            "2": {
-                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
-                "name": "Tutte le strade",
-                "title": {
-                    "render": "Strada"
-                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Questa strada diventerà una strada ciclabile quando?",
+                    "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
@@ -387,10 +391,6 @@
                         }
                     },
                     "question": "È <b>{name}</b> una strada ciclabile?"
-                },
-                "2": {
-                    "question": "Questa strada diventerà una strada ciclabile quando?",
-                    "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
                 }
             }
         },
@@ -413,12 +413,12 @@
         "description": "Su questa cartina sono visibili i nomi a cui sono riferiti gli oggetti. Le strade, gli edifici, etc. provengono da OpenStreetMap che è a sua volta collegata a Wikidata. Nel popup, se esiste, verrà mostrato l’articolo Wikipedia o l'elemento Wikidata a cui si riferisce il nome di quell’oggetto. Se l’oggetto stesso ha una pagina Wikpedia, anch’essa verrà mostrata.<br/><br/><b>Anche tu puoi contribuire!</b>Ingrandisci abbastanza e <i>tutte</i> le strade appariranno. Puoi cliccare su una e apparirà un popup con la ricerca Wikidata. Con pochi clic puoi aggiungere un collegamento etimologico. Tieni presente che per farlo, hai bisogno di un account gratuito su OpenStreetMap.",
         "layers": {
             "1": {
-                "override": {
+                "streets_without_etymology": {
                     "=name": "Strade senza informazioni etimologiche"
                 }
             },
             "2": {
-                "override": {
+                "parks_and_forests_without_etymology": {
                     "=name": "Parchi e foreste senza informazioni etimologiche"
                 }
             }
@@ -429,7 +429,7 @@
     "facadegardens": {
         "description": "I <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>giardini veritcali</a> e gli alberi in città non solo portano pace e tranquillità ma creano anche un ambiente più bello, aumentano la biodiversità, rendono il clima più fresco e migliorano la qualità dell’aria. <br/> Klimaan VZW e Mechelen Klimaatneutraal vogliono mappare sia i giardini verticali esistenti che quelli nuovi per mostrarli a quanti vogliono costruire un loro proprio giardino o per quelli che amano la natura e vogliono camminare per la città.<br/>Per ulteriori informazioni visita <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "0": {
+            "facadegardens": {
                 "description": "Giardini verticali",
                 "name": "Giardini verticali",
                 "presets": {
@@ -519,7 +519,7 @@
     "fritures": {
         "layers": {
             "0": {
-                "override": {
+                "friture": {
                     "name": "Friggitoria"
                 }
             }
@@ -583,12 +583,12 @@
     },
     "sidewalks": {
         "layers": {
-            "0": {
+            "sidewalks": {
                 "name": "Marciapiedi",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "1": {
+                            "has_sidewalk_left|right": {
                                 "mappings": {
                                     "0": {
                                         "then": "C'è un marciapiede su questo lato della strada"
@@ -619,39 +619,14 @@
     },
     "stations": {
         "layers": {
-            "3": {
+            "train_station": {
                 "name": "Stazioni ferroviarie"
             }
         }
     },
     "street_lighting": {
         "layers": {
-            "1": {
-                "name": "Strade illuminate",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Questa strada è illuminata"
-                            },
-                            "1": {
-                                "then": "Questa strada non è illuminata"
-                            },
-                            "2": {
-                                "then": "Questa strada è illuminata di sera"
-                            },
-                            "3": {
-                                "then": "Questa strada è illuminata 24 ore al giorno"
-                            }
-                        },
-                        "question": "Questa strada è illuminata?"
-                    }
-                },
-                "title": {
-                    "render": "Strada illuminata"
-                }
-            },
-            "2": {
+            "all_streets": {
                 "name": "Tutte le strade",
                 "tagRenderings": {
                     "lit": {
@@ -674,6 +649,31 @@
                 },
                 "title": {
                     "render": "Strada"
+                }
+            },
+            "lit_streets": {
+                "name": "Strade illuminate",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Questa strada è illuminata"
+                            },
+                            "1": {
+                                "then": "Questa strada non è illuminata"
+                            },
+                            "2": {
+                                "then": "Questa strada è illuminata di sera"
+                            },
+                            "3": {
+                                "then": "Questa strada è illuminata 24 ore al giorno"
+                            }
+                        },
+                        "question": "Questa strada è illuminata?"
+                    }
+                },
+                "title": {
+                    "render": "Strada illuminata"
                 }
             }
         },

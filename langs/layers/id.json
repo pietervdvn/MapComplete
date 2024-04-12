@@ -330,7 +330,7 @@
     },
     "filters": {
         "filter": {
-            "0": {
+            "open_now": {
                 "options": {
                     "0": {
                         "question": "Saat ini buka"
@@ -618,7 +618,7 @@
     },
     "recycling": {
         "filter": {
-            "2": {
+            "public-access": {
                 "options": {
                     "0": {
                         "question": "Hanya akses publik"
@@ -868,7 +868,7 @@
     },
     "waste_disposal": {
         "filter": {
-            "0": {
+            "public-access": {
                 "options": {
                     "0": {
                         "question": "Hanya akses publik"

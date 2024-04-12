@@ -10,7 +10,7 @@
     },
     "bag": {
         "layers": {
-            "2": {
+            "bag_pand": {
                 "tagRenderings": {
                     "Build year": {
                         "render": "Esta construção é de <b>{_bag_obj:start_date}</b>"
@@ -28,7 +28,7 @@
     },
     "campersite": {
         "layers": {
-            "0": {
+            "caravansites": {
                 "presets": {
                     "0": {
                         "title": "uma local de acampamento"
@@ -125,7 +125,7 @@
                     "render": "Local de acampamento {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Estações de despejo sanitário",
                 "name": "Estações de despejo sanitário",
                 "tagRenderings": {

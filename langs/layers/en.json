@@ -36,40 +36,46 @@
                 "title": "a freestanding poster box"
             },
             "2": {
-                "title": "a poster box mounted on a wall"
+                "title": "a poster box part of a public transport shelter"
             },
             "3": {
+                "title": "a poster box mounted on a wall"
+            },
+            "4": {
                 "description": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
                 "title": "a board"
             },
-            "4": {
+            "5": {
                 "description": "A cylindrical outdoor structure which shows advertisements",
                 "title": "a column"
             },
-            "5": {
+            "6": {
                 "title": "a flag"
             },
-            "6": {
+            "7": {
                 "title": "a screen"
             },
-            "7": {
+            "8": {
                 "title": "a screen mounted on a wall"
             },
-            "8": {
+            "9": {
+                "title": "a screen mounted on a transit shelter"
+            },
+            "10": {
                 "description": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
                 "title": "a tarp"
             },
-            "9": {
+            "11": {
                 "title": "a totem"
             },
-            "10": {
+            "12": {
                 "description": "Used for advertising signs, neon signs, logos & institutional entrance signs",
                 "title": "a sign"
             },
-            "11": {
+            "13": {
                 "title": "a sculpture"
             },
-            "12": {
+            "14": {
                 "title": "a wall painting"
             }
         },
@@ -545,7 +551,7 @@
     "atm": {
         "description": "ATMs to withdraw money",
         "filter": {
-            "1": {
+            "speech_output": {
                 "options": {
                     "0": {
                         "question": "With speech output"
@@ -664,7 +670,7 @@
     "bank": {
         "description": "A financial institution to deposit money",
         "filter": {
-            "1": {
+            "has_atm": {
                 "options": {
                     "0": {
                         "question": "With an ATM"
@@ -794,14 +800,14 @@
     "bench": {
         "description": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
         "filter": {
-            "0": {
+            "bench_is_memorial": {
                 "options": {
                     "0": {
                         "question": "is a memorial"
                     }
                 }
             },
-            "1": {
+            "has_backrest": {
                 "options": {
                     "0": {
                         "question": "With and without backrest"
@@ -1127,7 +1133,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "0": {
+                    "rental-capacity-bicycle_type": {
                         "question": "How many type_plural can be rented here?",
                         "render": "{capacity:bicycle_type} type_plural can be rented here"
                     }
@@ -1374,6 +1380,9 @@
                         "then": "Access is primarily for visitors to a business"
                     },
                     "2": {
+                        "then": "Access for subscribers"
+                    },
+                    "3": {
                         "then": "Access is limited to members of a school, company or organisation"
                     }
                 },
@@ -1405,6 +1414,9 @@
                     },
                     "7": {
                         "then": "An area on the floor which is marked for bicycle parking"
+                    },
+                    "8": {
+                        "then": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing.."
                     }
                 },
                 "question": "What is the type of this bicycle parking?",
@@ -1472,9 +1484,16 @@
                 },
                 "question": "Are these bicycle parkings free to use?"
             },
+            "operator": {
+                "question": "Who maintains this bicycle parking?",
+                "render": "This bicycle parking is maintained by {operator}"
+            },
             "operator_phone": {
                 "question": "What is the phone number of the operator of this bicycle parking?",
                 "questionHint": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles"
+            },
+            "operator_website": {
+                "question": "What is the website number of the operator of this bicycle parking?"
             }
         },
         "title": {
@@ -1655,17 +1674,17 @@
     "bike_shop": {
         "description": "A shop specifically selling bicycles or related items",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Sells second-hand bicycles"
-                    }
-                }
-            },
-            "2": {
+            "offers_diy_repair": {
                 "options": {
                     "0": {
                         "question": "Offers DIY bike repair"
+                    }
+                }
+            },
+            "sells_second-hand": {
+                "options": {
+                    "0": {
+                        "question": "Sells second-hand bicycles"
                     }
                 }
             }
@@ -1855,17 +1874,17 @@
     "birdhide": {
         "description": "A birdhide",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Wheelchair accessible"
-                    }
-                }
-            },
-            "1": {
+            "shelter": {
                 "options": {
                     "0": {
                         "question": "Only covered birdhides"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Wheelchair accessible"
                     }
                 }
             }
@@ -2064,27 +2083,7 @@
     "charging_station": {
         "description": "A charging station",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "All vehicle types"
-                    },
-                    "1": {
-                        "question": "Charging station for bicycles"
-                    },
-                    "2": {
-                        "question": "Charging station for cars"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Only working charging stations"
-                    }
-                }
-            },
-            "2": {
+            "connection_type": {
                 "options": {
                     "0": {
                         "question": "All connectors"
@@ -2136,6 +2135,26 @@
                     },
                     "16": {
                         "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
+                    }
+                }
+            },
+            "vehicle-type": {
+                "options": {
+                    "0": {
+                        "question": "All vehicle types"
+                    },
+                    "1": {
+                        "question": "Charging station for bicycles"
+                    },
+                    "2": {
+                        "question": "Charging station for cars"
+                    }
+                }
+            },
+            "working": {
+                "options": {
+                    "0": {
+                        "question": "Only working charging stations"
                     }
                 }
             }
@@ -2439,30 +2458,30 @@
             },
             "rewritten-questions": {
                 "renderings": {
-                    "0": {
-                        "question": "How much plugs of type {{description}} are available here?",
-                        "render": "There are <b class='text-xl'>{{{key}}}</b> plugs of type {{description}} available here"
-                    },
-                    "1": {
-                        "mappings": {
-                            "then": "{{description}} outputs {{commonVoltages}} volt"
-                        },
-                        "question": "What voltage do the plugs with {{description}} offer?",
-                        "render": "{{description}} outputs {canonical({{key}}:voltage)}"
-                    },
-                    "2": {
+                    "current-{{id}}": {
                         "mappings": {
                             "then": "{{description}} outputs at most {{commonCurrent}} A"
                         },
                         "question": "What current do the plugs with {{description}} offer?",
                         "render": "{{description}} outputs at most {canonical({{key}}:current)}"
                     },
-                    "3": {
+                    "plugs-amount-{{id}}": {
+                        "question": "How much plugs of type {{description}} are available here?",
+                        "render": "There are <b class='text-xl'>{{{key}}}</b> plugs of type {{description}} available here"
+                    },
+                    "power-output-{{id}}": {
                         "mappings": {
                             "then": "{{description}} outputs at most {{commonOutput}} A"
                         },
                         "question": "What power output does a single plug of type {{description}} offer?",
                         "render": "{{description}} outputs at most {canonical({{key}}:output)}"
+                    },
+                    "voltage-{{id}}": {
+                        "mappings": {
+                            "then": "{{description}} outputs {{commonVoltages}} volt"
+                        },
+                        "question": "What voltage do the plugs with {{description}} offer?",
+                        "render": "{{description}} outputs {canonical({{key}}:voltage)}"
                     }
                 },
                 "rewrite": {
@@ -4396,92 +4415,35 @@
     },
     "filters": {
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Open now"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Accepts cash"
-                    }
-                }
-            },
-            "2": {
+            "accepts_cards": {
                 "options": {
                     "0": {
                         "question": "Accepts payment cards"
                     }
                 }
             },
-            "3": {
+            "accepts_cash": {
                 "options": {
                     "0": {
-                        "question": "Accepts debit cards"
+                        "question": "Accepts cash"
                     }
                 }
             },
-            "4": {
+            "accepts_credit_cards": {
                 "options": {
                     "0": {
                         "question": "Accepts credit cards"
                     }
                 }
             },
-            "5": {
+            "accepts_debit_cards": {
                 "options": {
                     "0": {
-                        "question": "With and without images"
-                    },
-                    "1": {
-                        "question": "Has at least one image"
-                    },
-                    "2": {
-                        "question": "Probably does not have an image"
+                        "question": "Accepts debit cards"
                     }
                 }
             },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "With tactile paving"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "With or without tactile paving"
-                    },
-                    "1": {
-                        "question": "With tactile paving"
-                    },
-                    "2": {
-                        "question": "Without tactile paving"
-                    },
-                    "3": {
-                        "question": "No information about tactile paving"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Has organic options"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Free to use"
-                    }
-                }
-            },
-            "10": {
+            "dogs": {
                 "options": {
                     "0": {
                         "question": "No preference towards dogs"
@@ -4494,38 +4456,95 @@
                     }
                 }
             },
-            "11": {
+            "free": {
                 "options": {
                     "0": {
-                        "question": "Offers internet"
+                        "question": "Free to use"
                     }
                 }
             },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Offers electricity"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Has a sugar-free offering"
-                    }
-                }
-            },
-            "14": {
+            "gluten_free": {
                 "options": {
                     "0": {
                         "question": "Has a gluten free offering"
                     }
                 }
             },
-            "15": {
+            "has_electricity": {
+                "options": {
+                    "0": {
+                        "question": "Offers electricity"
+                    }
+                }
+            },
+            "has_image": {
+                "options": {
+                    "0": {
+                        "question": "With and without images"
+                    },
+                    "1": {
+                        "question": "Has at least one image"
+                    },
+                    "2": {
+                        "question": "Probably does not have an image"
+                    }
+                }
+            },
+            "has_internet": {
+                "options": {
+                    "0": {
+                        "question": "Offers internet"
+                    }
+                }
+            },
+            "has_organic": {
+                "options": {
+                    "0": {
+                        "question": "Has organic options"
+                    }
+                }
+            },
+            "lactose_free": {
                 "options": {
                     "0": {
                         "question": "Has a lactose free offering"
+                    }
+                }
+            },
+            "open_now": {
+                "options": {
+                    "0": {
+                        "question": "Open now"
+                    }
+                }
+            },
+            "sugar_free": {
+                "options": {
+                    "0": {
+                        "question": "Has a sugar-free offering"
+                    }
+                }
+            },
+            "tactile_paving": {
+                "options": {
+                    "0": {
+                        "question": "With tactile paving"
+                    }
+                }
+            },
+            "tactile_paving_advanced": {
+                "options": {
+                    "0": {
+                        "question": "With or without tactile paving"
+                    },
+                    "1": {
+                        "question": "With tactile paving"
+                    },
+                    "2": {
+                        "question": "Without tactile paving"
+                    },
+                    "3": {
+                        "question": "No information about tactile paving"
                     }
                 }
             }
@@ -4768,14 +4787,7 @@
         },
         "description": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Reservation not required"
-                    }
-                }
-            },
-            "2": {
+            "food-category": {
                 "options": {
                     "0": {
                         "question": "Restaurants and fast food businesses"
@@ -4788,24 +4800,31 @@
                     }
                 }
             },
-            "3": {
+            "halal": {
                 "options": {
                     "0": {
-                        "question": "Has a vegetarian menu"
+                        "question": "Has a halal menu"
                     }
                 }
             },
-            "4": {
+            "reservation": {
+                "options": {
+                    "0": {
+                        "question": "Reservation not required"
+                    }
+                }
+            },
+            "vegan": {
                 "options": {
                     "0": {
                         "question": "Has a vegan menu"
                     }
                 }
             },
-            "5": {
+            "vegetarian": {
                 "options": {
                     "0": {
-                        "question": "Has a halal menu"
+                        "question": "Has a vegetarian menu"
                     }
                 }
             }
@@ -5225,7 +5244,7 @@
         "tagRenderings": {
             "available_devices": {
                 "renderings": {
-                    "0": {
+                    "hackerspaces-service-device-key": {
                         "mappings": {
                             "0": {
                                 "then": "There is {device-name} available at this hackerspace"
@@ -5683,7 +5702,7 @@
     "kerbs": {
         "description": "A layer showing kerbs.",
         "filter": {
-            "0": {
+            "kerb-type": {
                 "options": {
                     "0": {
                         "question": "All types of kerbs"
@@ -5942,7 +5961,21 @@
     "maproulette": {
         "description": "Layer showing all tasks in MapRoulette",
         "filter": {
-            "0": {
+            "parent-id": {
+                "options": {
+                    "0": {
+                        "question": "Challenge ID matches {search}"
+                    }
+                }
+            },
+            "parent-name": {
+                "options": {
+                    "0": {
+                        "question": "Challenge name contains {search}"
+                    }
+                }
+            },
+            "status": {
                 "options": {
                     "0": {
                         "question": "Show tasks with all statuses"
@@ -5970,20 +6003,6 @@
                     },
                     "8": {
                         "question": "Show tasks that are disabled"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Challenge name contains {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Challenge ID matches {search}"
                     }
                 }
             }
@@ -6047,7 +6066,7 @@
     "maproulette_challenge": {
         "description": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.",
         "filter": {
-            "0": {
+            "status": {
                 "options": {
                     "0": {
                         "question": "Show tasks with all statuses"
@@ -6243,14 +6262,14 @@
     "nature_reserve": {
         "description": "A nature reserve is an area where nature can take its course",
         "filter": {
-            "0": {
+            "access": {
                 "options": {
                     "0": {
                         "question": "Freely accesible"
                     }
                 }
             },
-            "1": {
+            "dogs": {
                 "options": {
                     "0": {
                         "question": "All nature reserves"
@@ -6364,77 +6383,28 @@
     },
     "note": {
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Should mention {search} in the first comment"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Should <b>not</b> mention {search} in the first comment"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Opened by contributor {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>Not</b> opened by contributor {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Last edited by contributor {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Opened after {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Created before {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Created after {search}"
-                    }
-                }
-            },
-            "8": {
+            "anonymous": {
                 "options": {
                     "0": {
                         "question": "Only show notes opened by an anonymous contributor"
                     }
                 }
             },
-            "9": {
+            "edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Last edited by contributor {search}"
+                    }
+                }
+            },
+            "is_open": {
                 "options": {
                     "0": {
                         "question": "Only show open notes"
                     }
                 }
             },
-            "10": {
+            "no_imports": {
                 "options": {
                     "0": {
                         "question": "All Notes"
@@ -6444,6 +6414,55 @@
                     },
                     "2": {
                         "question": "Show only import Notes"
+                    }
+                }
+            },
+            "not": {
+                "options": {
+                    "0": {
+                        "question": "Should <b>not</b> mention {search} in the first comment"
+                    }
+                }
+            },
+            "not_edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Opened after {search}"
+                    }
+                }
+            },
+            "not_opened_by": {
+                "options": {
+                    "0": {
+                        "question": "<b>Not</b> opened by contributor {search}"
+                    }
+                }
+            },
+            "opened_after": {
+                "options": {
+                    "0": {
+                        "question": "Created after {search}"
+                    }
+                }
+            },
+            "opened_before": {
+                "options": {
+                    "0": {
+                        "question": "Created before {search}"
+                    }
+                }
+            },
+            "opened_by": {
+                "options": {
+                    "0": {
+                        "question": "Opened by contributor {search}"
+                    }
+                }
+            },
+            "search": {
+                "options": {
+                    "0": {
+                        "question": "Should mention {search} in the first comment"
                     }
                 }
             }
@@ -6545,52 +6564,52 @@
     "osm_community_index": {
         "description": "A layer showing the OpenStreetMap Communities",
         "filter": {
-            "0": {
+            "country": {
                 "options": {
                     "0": {
                         "question": "Country"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Sub Country Group"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Region"
-                    }
-                }
-            },
-            "3": {
+            "intermediate_region": {
                 "options": {
                     "0": {
                         "question": "Intermediate Region"
                     }
                 }
             },
-            "4": {
+            "other": {
+                "options": {
+                    "0": {
+                        "question": "Other Communities"
+                    }
+                }
+            },
+            "region": {
+                "options": {
+                    "0": {
+                        "question": "Region"
+                    }
+                }
+            },
+            "sub_country": {
+                "options": {
+                    "0": {
+                        "question": "Sub Country Group"
+                    }
+                }
+            },
+            "territory": {
                 "options": {
                     "0": {
                         "question": "Territory"
                     }
                 }
             },
-            "5": {
+            "world": {
                 "options": {
                     "0": {
                         "question": "World"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Other Communities"
                     }
                 }
             }
@@ -6855,17 +6874,17 @@
     "pharmacy": {
         "description": "A layer showing pharmacies, which (probably) dispense prescription drugs",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Has drive through"
-                    }
-                }
-            },
-            "1": {
+            "dispensing": {
                 "options": {
                     "0": {
                         "question": "Pharmacy able to provide prescription drugs"
+                    }
+                }
+            },
+            "drive-through": {
+                "options": {
+                    "0": {
+                        "question": "Has drive through"
                     }
                 }
             }
@@ -7207,35 +7226,35 @@
     "postoffices": {
         "description": "A layer showing post offices.",
         "filter": {
-            "1": {
+            "letter_from": {
                 "options": {
                     "0": {
                         "question": "Offers letter posting"
                     }
                 }
             },
-            "2": {
+            "parcel_from": {
                 "options": {
                     "0": {
                         "question": "Offers parcel posting"
                     }
                 }
             },
-            "3": {
+            "parcel_pickup": {
                 "options": {
                     "0": {
                         "question": "Offers pickup of missed parcels"
                     }
                 }
             },
-            "4": {
+            "parcel_to": {
                 "options": {
                     "0": {
                         "question": "Accepts pickup of parcels sent here"
                     }
                 }
             },
-            "5": {
+            "stamps": {
                 "options": {
                     "0": {
                         "question": "Sells stamps"
@@ -7386,21 +7405,14 @@
     "public_bookcase": {
         "description": "A streetside cabinet with books, accessible to anyone",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Has children books"
-                    }
-                }
-            },
-            "1": {
+            "adult-books": {
                 "options": {
                     "0": {
                         "question": "Has books for adults"
                     }
                 }
             },
-            "2": {
+            "inside": {
                 "options": {
                     "0": {
                         "question": "Indoor or outdoor"
@@ -7410,6 +7422,13 @@
                     },
                     "2": {
                         "question": "Located outdoors"
+                    }
+                }
+            },
+            "kid-books": {
+                "options": {
+                    "0": {
+                        "question": "Has children books"
                     }
                 }
             }
@@ -8069,7 +8088,14 @@
     "recycling": {
         "description": "A layer with recycling containers and centres",
         "filter": {
-            "1": {
+            "public-access": {
+                "options": {
+                    "0": {
+                        "question": "Only public access"
+                    }
+                }
+            },
+            "recyclingType": {
                 "options": {
                     "0": {
                         "question": "All recycling types"
@@ -8136,13 +8162,6 @@
                     },
                     "21": {
                         "question": "Recycling of bicycles"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Only public access"
                     }
                 }
             }
@@ -8509,24 +8528,24 @@
         },
         "description": "A shop",
         "filter": {
-            "1": {
+            "second_hand": {
                 "options": {
                     "0": {
-                        "question": "Only show shops selling {search}"
+                        "question": "Only show shops selling second-hand items"
                     }
                 }
             },
-            "2": {
+            "shop-name": {
                 "options": {
                     "0": {
                         "question": "Only show shops with name {search}"
                     }
                 }
             },
-            "6": {
+            "shop-type": {
                 "options": {
                     "0": {
-                        "question": "Only show shops selling second-hand items"
+                        "question": "Only show shops selling {search}"
                     }
                 }
             }
@@ -8616,7 +8635,7 @@
     "shower": {
         "description": "A layer showing (public) showers",
         "filter": {
-            "1": {
+            "hot-water": {
                 "options": {
                     "0": {
                         "question": "Hot water available"
@@ -8978,14 +8997,14 @@
     "sport_pitch": {
         "description": "A sport pitch",
         "filter": {
-            "0": {
+            "accessibility": {
                 "options": {
                     "0": {
                         "question": "Publicly accessible"
                     }
                 }
             },
-            "1": {
+            "available_sports": {
                 "options": {
                     "0": {
                         "question": "All sports"
@@ -9694,17 +9713,17 @@
     "toilet": {
         "description": "A layer showing (public) toilets",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Wheelchair accessible"
-                    }
-                }
-            },
-            "1": {
+            "changing_table": {
                 "options": {
                     "0": {
                         "question": "Has a changing table"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Wheelchair accessible"
                     }
                 }
             }
@@ -9900,17 +9919,17 @@
     "toilet_at_amenity": {
         "description": "A layer showing (public) toilets located at different places.",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Wheelchair accessible"
-                    }
-                }
-            },
-            "2": {
+            "free": {
                 "options": {
                     "0": {
                         "question": "Free to use"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Wheelchair accessible"
                     }
                 }
             }
@@ -10098,24 +10117,24 @@
     "transit_stops": {
         "description": "Layer showing different types of transit stops.",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "With a shelter"
-                    }
-                }
-            },
-            "1": {
+            "bench": {
                 "options": {
                     "0": {
                         "question": "With a bench"
                     }
                 }
             },
-            "2": {
+            "bin": {
                 "options": {
                     "0": {
                         "question": "With a bin"
+                    }
+                }
+            },
+            "shelter": {
+                "options": {
+                    "0": {
+                        "question": "With a shelter"
                     }
                 }
             }
@@ -10747,7 +10766,7 @@
     "vending_machine": {
         "description": "Layer showing vending machines",
         "filter": {
-            "1": {
+            "vending": {
                 "options": {
                     "0": {
                         "question": "All vending machines"
@@ -11048,7 +11067,7 @@
     "waste_basket": {
         "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
         "filter": {
-            "0": {
+            "waste-type": {
                 "options": {
                     "0": {
                         "question": "All types"
@@ -11073,7 +11092,7 @@
                     }
                 }
             },
-            "1": {
+            "waste-vending": {
                 "options": {
                     "0": {
                         "question": "Waste basket with dispenser for (dog) excrement bags"
@@ -11139,7 +11158,7 @@
     "waste_disposal": {
         "description": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
         "filter": {
-            "0": {
+            "public-access": {
                 "options": {
                     "0": {
                         "question": "Only public access"

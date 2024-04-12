@@ -18,14 +18,14 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Importer ce distributeur de billets"
                                 }
                             }
                         },
-                        "2": {
+                        "tag-apply-button": {
                             "render": {
                                 "special": {
                                     "message": "Ajouter tous les attributs suggérés au distributeur de billets le plus proche"
@@ -41,19 +41,7 @@
     "bag": {
         "description": "Ce thème aide à l'importation de données depuis BAG",
         "layers": {
-            "0": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ce bâtiment n'a pas de référence dans le BAG"
-                            }
-                        },
-                        "render": "La référence dans le BAG est <b>{ref:bag}</b>"
-                    }
-                }
-            },
-            "2": {
+            "bag_pand": {
                 "description": "Bâtiments du registre BAG",
                 "tagRenderings": {
                     "Build year": {
@@ -81,6 +69,18 @@
                     },
                     "Reference": {
                         "render": "La référence dans BAG est <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            },
+            "osm_buildings": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ce bâtiment n'a pas de référence dans le BAG"
+                            }
+                        },
+                        "render": "La référence dans le BAG est <b>{ref:bag}</b>"
                     }
                 }
             }
@@ -122,7 +122,7 @@
     "campersite": {
         "description": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis.",
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "campings",
                 "name": "Campings",
                 "presets": {
@@ -234,7 +234,7 @@
                     "render": "Site pour camping-cars {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Site de vidange sanitaire",
                 "name": "Sites de vidange sanitaire",
                 "presets": {
@@ -326,11 +326,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Qui est l’exploitant du site ?",
                     "render": "Ce site est exploité par {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Ce site a une source d’alimentation"
@@ -358,7 +358,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}"
@@ -374,7 +374,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Libre d’accès"
@@ -395,9 +395,9 @@
                 }
             },
             "1": {
-                "override": {
+                "shops_with_climbing_shoe_repair": {
                     "+tagRenderings": {
-                        "0": {
+                        "repairs_climbing_shoes": {
                             "mappings": {
                                 "0": {
                                     "then": "Ce commerce répare les chaussures d'escalade"
@@ -414,7 +414,7 @@
             "2": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "repairs_climbing_shoes": {
                             "mappings": {
                                 "0": {
                                     "then": "Ce commerce répare les chaussons d'escalade"
@@ -443,7 +443,7 @@
     "cycle_highways": {
         "description": "Cette carte affiche les aménagements cyclables",
         "layers": {
-            "0": {
+            "cycle_highways": {
                 "name": "Aménagements cyclables",
                 "title": {
                     "render": "Aménagement cyclable"
@@ -460,7 +460,7 @@
     "cyclenodes": {
         "description": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds",
         "layers": {
-            "0": {
+            "node2node_bicycle": {
                 "name": "liens noeud à noeud",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -479,7 +479,7 @@
                     "render": "lien noeud à noeud"
                 }
             },
-            "1": {
+            "node_bicycle": {
                 "name": "noeuds",
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
@@ -508,11 +508,18 @@
     "cyclestreets": {
         "description": "Une rue cyclable est une rue où <b>les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes</b>. Elles sont signalées par un signal routier particulier. On trouve des rues cyclables en Belgique et aux Pays-Bas, mais aussi en Allemagne et en France. ",
         "layers": {
-            "0": {
+            "fietsstraat": {
                 "description": "Une rue cyclable est une rue où les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes",
                 "name": "Rue cyclables"
             },
-            "1": {
+            "not_cyclestreets": {
+                "description": "Calque pour marquer une rue comme cyclable",
+                "name": "Toutes les rues",
+                "title": {
+                    "render": "Rue"
+                }
+            },
+            "toekomstige_fietsstraat": {
                 "description": "Cette rue va bientôt devenir une rue cyclable",
                 "name": "Future rue cyclable",
                 "title": {
@@ -523,18 +530,15 @@
                     },
                     "render": "Future rue cyclable"
                 }
-            },
-            "2": {
-                "description": "Calque pour marquer une rue comme cyclable",
-                "name": "Toutes les rues",
-                "title": {
-                    "render": "Rue"
-                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
+                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Cette rue est une rue cyclable (et est limitée à 30 km/h)"
@@ -560,7 +564,7 @@
                     },
                     "question": "La rue <b>{name}</b> est-elle une rue cyclable ?"
                 },
-                "1": {
+                "supplementary_sign": {
                     "mappings": {
                         "0": {
                             "then": "Riverains autorisés"
@@ -579,10 +583,6 @@
                         }
                     },
                     "question": "Quel panneau comporte cette piste cyclable ?"
-                },
-                "2": {
-                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
-                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
                 }
             }
         },
@@ -605,37 +605,37 @@
         "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi ! </b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
         "layers": {
             "1": {
-                "override": {
+                "streets_without_etymology": {
                     "=name": "Route sans origine étymologique"
                 }
             },
             "2": {
-                "override": {
+                "parks_and_forests_without_etymology": {
                     "=name": "Parcs et forêts sans origine étymologique"
                 }
             },
             "3": {
-                "override": {
+                "education_institutions_without_etymology": {
                     "=name": "Institutions d'éducation sans origine étymologique"
                 }
             },
             "4": {
-                "override": {
+                "cultural_places_without_etymology": {
                     "=name": "Lieux culturels sans origine étymologique"
                 }
             },
             "5": {
-                "override": {
+                "toursistic_places_without_etymology": {
                     "=name": "Lieux touristiques sans origine étymologique"
                 }
             },
             "6": {
-                "override": {
+                "health_and_social_places_without_etymology": {
                     "=name": "Établissements sociaux ou de soins sans origine étymologique"
                 }
             },
             "7": {
-                "override": {
+                "sport_places_without_etymology": {
                     "=name": "Lieux sportifs sans origine étymologique"
                 }
             }
@@ -646,7 +646,7 @@
     "facadegardens": {
         "description": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "0": {
+            "facadegardens": {
                 "description": "Jardins muraux",
                 "name": "Jardins muraux",
                 "presets": {
@@ -738,7 +738,7 @@
         "description": "Retrouves vos friteries préférées sur cette carte !",
         "layers": {
             "0": {
-                "override": {
+                "friture": {
                     "name": "Friteries"
                 }
             }
@@ -752,14 +752,7 @@
     "grb": {
         "description": "Ce thème tente d’aider l’import automatique GRB.",
         "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "De quel type de bâtiment s’agit-il ?"
-                    }
-                }
-            },
-            "1": {
+            "grb": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
@@ -770,6 +763,13 @@
                                 "then": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}"
                             }
                         }
+                    }
+                }
+            },
+            "osm_buildings_no_points": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "De quel type de bâtiment s’agit-il ?"
                     }
                 }
             }
@@ -789,7 +789,7 @@
         "description": "Cette carte affiche différents éléments liés à la santé",
         "layers": {
             "5": {
-                "override": {
+                "medical_shops": {
                     "=presets": {
                         "0": {
                             "title": "un commerce d'équipements médicaux"
@@ -818,7 +818,7 @@
         "description": "Une carte affichant les ressauts et traversées.",
         "layers": {
             "1": {
-                "override": {
+                "crossings_no_traffic_lights": {
                     "=presets": {
                         "0": {
                             "description": "Traversée pour piétons et/ou cyclistes",
@@ -864,7 +864,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "0": {
+                        "width": {
                             "options": {
                                 "0": {
                                     "question": "Toute/aucune information sur la largeur"
@@ -880,7 +880,7 @@
             "6": {
                 "override": {
                     "=filter": {
-                        "0": {
+                        "kerb-type": {
                             "options": {
                                 "0": {
                                     "question": "Tous types de ressauts"
@@ -900,7 +900,7 @@
                 }
             },
             "8": {
-                "override": {
+                "parking_spaces_disabled": {
                     "name": "Places de stationnement pour personnes handicapées"
                 }
             },
@@ -914,14 +914,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Importation"
                                 }
                             }
                         },
-                        "1": {
+                        "tag-apply-button": {
                             "render": {
                                 "special": {
                                     "message": "Ajouter tous les attributs suggérés"
@@ -956,16 +956,8 @@
         "description": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
         "layers": {
             "1": {
-                "override": {
+                "dogfoodb": {
                     "name": "Restaurants acceptant les chiens"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "Magasins acceptant les chiens",
-                    "title": {
-                        "render": "Magasins acceptant les chiens"
-                    }
                 }
             },
             "6": {
@@ -975,6 +967,14 @@
                             "description": "Un magasin où vous pouvez amener votre chien presque partout",
                             "title": "magasin acceptant les chiens"
                         }
+                    }
+                }
+            },
+            "dogshop": {
+                "dogshop": {
+                    "name": "Magasins acceptant les chiens",
+                    "title": {
+                        "render": "Magasins acceptant les chiens"
                     }
                 }
             }
@@ -989,7 +989,7 @@
     "postal_codes": {
         "description": "Codes postaux",
         "layers": {
-            "0": {
+            "postal_code_boundary": {
                 "name": "codes postaux",
                 "tagRenderings": {
                     "postal_code": {
@@ -1000,7 +1000,7 @@
                     "render": "Code postal {postal_code}"
                 }
             },
-            "2": {
+            "town_hall": {
                 "name": "mairies",
                 "title": {
                     "render": "Mairie {name}"
@@ -1027,13 +1027,13 @@
     "sidewalks": {
         "description": "Thème expérimental",
         "layers": {
-            "0": {
+            "sidewalks": {
                 "description": "Calque montrant les trottoirs",
                 "name": "Trottoirs",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "1": {
+                            "has_sidewalk_left|right": {
                                 "mappings": {
                                     "0": {
                                         "then": "Il y a un trottoir de ce côté de la route"
@@ -1047,7 +1047,7 @@
                                 },
                                 "question": "Y a-t-il un trottoir de ce côté de la route ?"
                             },
-                            "2": {
+                            "sidewalk_width_left|right": {
                                 "question": "Quelle est la largeur du trottoir de ce côté de la route ?",
                                 "render": "Ce trottoir fait {sidewalk:left|right:width} m de large"
                             }
@@ -1074,7 +1074,7 @@
         "description": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
         "layers": {
             "4": {
-                "override": {
+                "sport_shops": {
                     "presets": {
                         "0": {
                             "description": "Ajouter un nouveau commerce vendant des équipements sportifs.",
@@ -1090,11 +1090,7 @@
     "stations": {
         "description": "Voir, modifier et ajouter des détails à une gare ferroviaire",
         "layers": {
-            "3": {
-                "description": "Couche montrant les gares",
-                "name": "Gares ferroviaires"
-            },
-            "16": {
+            "departures_board": {
                 "description": "Panneau affichant les trains au départ depuis cette gare",
                 "name": "Panneaux des départs",
                 "presets": {
@@ -1125,6 +1121,10 @@
                 "title": {
                     "render": "Tableau des départs"
                 }
+            },
+            "train_station": {
+                "description": "Couche montrant les gares",
+                "name": "Gares ferroviaires"
             }
         },
         "title": "Gares ferroviaires"
@@ -1132,32 +1132,7 @@
     "street_lighting": {
         "description": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte",
         "layers": {
-            "1": {
-                "name": "Rues éclairées",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Cette rue est éclairée"
-                            },
-                            "1": {
-                                "then": "Cette rue n’est pas éclairée"
-                            },
-                            "2": {
-                                "then": "Cette rue est éclairée la nuit"
-                            },
-                            "3": {
-                                "then": "Cette rue est éclairée en permanence"
-                            }
-                        },
-                        "question": "Cette est-elle éclairée ?"
-                    }
-                },
-                "title": {
-                    "render": "Rue éclairée"
-                }
-            },
-            "2": {
+            "all_streets": {
                 "name": "Toutes les rues",
                 "tagRenderings": {
                     "lit": {
@@ -1180,6 +1155,31 @@
                 },
                 "title": {
                     "render": "Rue"
+                }
+            },
+            "lit_streets": {
+                "name": "Rues éclairées",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cette rue est éclairée"
+                            },
+                            "1": {
+                                "then": "Cette rue n’est pas éclairée"
+                            },
+                            "2": {
+                                "then": "Cette rue est éclairée la nuit"
+                            },
+                            "3": {
+                                "then": "Cette rue est éclairée en permanence"
+                            }
+                        },
+                        "question": "Cette est-elle éclairée ?"
+                    }
+                },
+                "title": {
+                    "render": "Rue éclairée"
                 }
             }
         },
@@ -1209,7 +1209,7 @@
     },
     "walkingnodes": {
         "layers": {
-            "0": {
+            "node2node_hiking": {
                 "name": "liens noeud à noeud",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -1228,7 +1228,7 @@
                     "render": "lien noeud à noeud"
                 }
             },
-            "1": {
+            "node_hiking": {
                 "name": "noeuds"
             }
         }

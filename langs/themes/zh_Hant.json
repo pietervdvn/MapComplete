@@ -18,7 +18,7 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "匯入這座 ATM"
@@ -62,7 +62,7 @@
     "campersite": {
         "description": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。",
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "露營地",
                 "name": "露營地",
                 "presets": {
@@ -174,7 +174,7 @@
                     "render": "露營地 {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "垃圾處理站",
                 "name": "垃圾處理站",
                 "presets": {
@@ -266,7 +266,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "這個地方是誰營運的？",
                     "render": "這個地方由 {operator} 營運的"
                 }
@@ -293,10 +293,10 @@
     "cyclestreets": {
         "description": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
         "layers": {
-            "0": {
+            "fietsstraat": {
                 "name": "單車街道"
             },
-            "1": {
+            "toekomstige_fietsstraat": {
                 "name": "將來的單車街道"
             }
         },
@@ -315,12 +315,12 @@
         "description": "在這份地圖，你可以看到物件是以何命名，道路、 建築等的命名由來連到 Wikidata。在跳出選單，你可以看到物件命名由來的維基條目 (如果有的話)，或是 Wikidata 框。如果物件本身有維基頁面，也會顯示。<br/><br/><b>你也可以貢獻！</b>放大到夠大的層級，然後<i>所有</i>道路都會顯示。你可以點選一個之後 Wikidata 搜尋框會跳出來。只要點幾下，你可以新增詞源連結。注意你要有開放街圖帳號才能這麼做。",
         "layers": {
             "1": {
-                "override": {
+                "streets_without_etymology": {
                     "=name": "道路沒有詞源資訊"
                 }
             },
             "2": {
-                "override": {
+                "parks_and_forests_without_etymology": {
                     "=name": "公園與森哥沒有詞源資訊"
                 }
             }
@@ -330,7 +330,7 @@
     },
     "facadegardens": {
         "layers": {
-            "0": {
+            "facadegardens": {
                 "description": "立面花園",
                 "name": "立面花園",
                 "tagRenderings": {
@@ -414,16 +414,8 @@
     "pets": {
         "layers": {
             "1": {
-                "override": {
+                "dogfoodb": {
                     "name": "寵物友善餐廳"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "寵物友善商家",
-                    "title": {
-                        "render": "寵物友善商家"
-                    }
                 }
             },
             "6": {
@@ -433,6 +425,14 @@
                             "description": "你幾乎可以攜帶寵物到處去的商店",
                             "title": "寵物友善商家"
                         }
+                    }
+                }
+            },
+            "dogshop": {
+                "dogshop": {
+                    "name": "寵物友善商家",
+                    "title": {
+                        "render": "寵物友善商家"
                     }
                 }
             }
@@ -447,7 +447,7 @@
     "postal_codes": {
         "description": "郵遞區號",
         "layers": {
-            "0": {
+            "postal_code_boundary": {
                 "name": "郵遞區號",
                 "tagRenderings": {
                     "postal_code": {
@@ -458,7 +458,7 @@
                     "render": "郵遞區號 {postal_code}"
                 }
             },
-            "2": {
+            "town_hall": {
                 "name": "城鎮",
                 "title": {
                     "render": "城鎮 {name}"
@@ -484,7 +484,7 @@
     "sidewalks": {
         "description": "實驗性的主題",
         "layers": {
-            "0": {
+            "sidewalks": {
                 "description": "顯示道路的人行穿越道的圖層",
                 "name": "人行道"
             }
@@ -499,7 +499,7 @@
     "sports": {
         "layers": {
             "4": {
-                "override": {
+                "sport_shops": {
                     "presets": {
                         "0": {
                             "title": "運動用品店"
@@ -513,10 +513,7 @@
     },
     "stations": {
         "layers": {
-            "3": {
-                "description": "顯示火車站的圖層"
-            },
-            "16": {
+            "departures_board": {
                 "presets": {
                     "0": {
                         "title": "時刻表"
@@ -535,6 +532,9 @@
                 "title": {
                     "render": "時刻表"
                 }
+            },
+            "train_station": {
+                "description": "顯示火車站的圖層"
             }
         },
         "title": "火車站"
@@ -542,32 +542,7 @@
     "street_lighting": {
         "description": "在這份地圖你可以找到任何有關路燈的事情",
         "layers": {
-            "1": {
-                "name": "有照明的道路",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "這個道路有照明"
-                            },
-                            "1": {
-                                "then": "這個道路沒有照明"
-                            },
-                            "2": {
-                                "then": "這個道路晚上有照明"
-                            },
-                            "3": {
-                                "then": "這個道路 24/7 有照明"
-                            }
-                        },
-                        "question": "這道路有路燈嗎？"
-                    }
-                },
-                "title": {
-                    "render": "照明道路"
-                }
-            },
-            "2": {
+            "all_streets": {
                 "name": "所有道路",
                 "tagRenderings": {
                     "lit": {
@@ -590,6 +565,31 @@
                 },
                 "title": {
                     "render": "照明"
+                }
+            },
+            "lit_streets": {
+                "name": "有照明的道路",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "這個道路有照明"
+                            },
+                            "1": {
+                                "then": "這個道路沒有照明"
+                            },
+                            "2": {
+                                "then": "這個道路晚上有照明"
+                            },
+                            "3": {
+                                "then": "這個道路 24/7 有照明"
+                            }
+                        },
+                        "question": "這道路有路燈嗎？"
+                    }
+                },
+                "title": {
+                    "render": "照明道路"
                 }
             }
         },

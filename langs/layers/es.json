@@ -35,41 +35,41 @@
             "1": {
                 "title": "un mupi"
             },
-            "2": {
+            "3": {
                 "title": "un mupi sobre la pared"
             },
-            "3": {
+            "4": {
                 "description": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
                 "title": "un tablón de anuncios"
             },
-            "4": {
+            "5": {
                 "description": "Una estructura cilíndrica exterior que muestra publicidad",
                 "title": "una columna"
             },
-            "5": {
+            "6": {
                 "title": "una bandera"
             },
-            "6": {
+            "7": {
                 "title": "una pantalla"
             },
-            "7": {
+            "8": {
                 "title": "una pantalla sobre una pared"
             },
-            "8": {
+            "10": {
                 "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
                 "title": "una lona"
             },
-            "9": {
+            "11": {
                 "title": "un tótem"
             },
-            "10": {
+            "12": {
                 "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
                 "title": "un señal"
             },
-            "11": {
+            "13": {
                 "title": "una escultura"
             },
-            "12": {
+            "14": {
                 "title": "una pared pintada"
             }
         },
@@ -429,7 +429,7 @@
     "atm": {
         "description": "Cajeros automáticos para retirar dinero",
         "filter": {
-            "1": {
+            "speech_output": {
                 "options": {
                     "0": {
                         "question": "Con salida de audio"
@@ -548,7 +548,7 @@
     "bank": {
         "description": "Una institución financiera para depositar dinero",
         "filter": {
-            "1": {
+            "has_atm": {
                 "options": {
                     "0": {
                         "question": "Con un cajero automático"
@@ -678,14 +678,14 @@
     "bench": {
         "description": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
         "filter": {
-            "0": {
+            "bench_is_memorial": {
                 "options": {
                     "0": {
                         "question": "es un monumento conmemorativo"
                     }
                 }
             },
-            "1": {
+            "has_backrest": {
                 "options": {
                     "0": {
                         "question": "Con y sin respaldo"
@@ -1011,7 +1011,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "0": {
+                    "rental-capacity-bicycle_type": {
                         "question": "¿Cuántos type_plural se pueden alquilar aquí?",
                         "render": "{capacity:bicycle_type} type_plural pueden alquilarse aquí"
                     }
@@ -1202,7 +1202,7 @@
                     "1": {
                         "then": "El acceso es primariamente para visitantes a un negocio"
                     },
-                    "2": {
+                    "3": {
                         "then": "El acceso se limita a miembros de una escuela, compañía u organización"
                     }
                 },
@@ -1453,17 +1453,17 @@
     "bike_shop": {
         "description": "Una tiene que vende específicamente bicis u objetos relacionados",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Vende bicicletas de segunda mano"
-                    }
-                }
-            },
-            "2": {
+            "offers_diy_repair": {
                 "options": {
                     "0": {
                         "question": "Ofrece herramientas para autorreparación de bicis"
+                    }
+                }
+            },
+            "sells_second-hand": {
+                "options": {
+                    "0": {
+                        "question": "Vende bicicletas de segunda mano"
                     }
                 }
             }
@@ -1652,7 +1652,7 @@
     },
     "birdhide": {
         "filter": {
-            "0": {
+            "wheelchair": {
                 "options": {
                     "0": {
                         "question": "Accesible con sillas de ruedas"
@@ -2557,24 +2557,24 @@
     },
     "filters": {
         "filter": {
-            "0": {
+            "accepts_cards": {
                 "options": {
                     "0": {
-                        "question": "Abierto"
+                        "question": "Acepta el pago por tarjeta"
                     }
                 }
             },
-            "1": {
+            "accepts_cash": {
                 "options": {
                     "0": {
                         "question": "Acepta efectivo"
                     }
                 }
             },
-            "2": {
+            "open_now": {
                 "options": {
                     "0": {
-                        "question": "Acepta el pago por tarjeta"
+                        "question": "Abierto"
                     }
                 }
             }
@@ -2620,38 +2620,38 @@
         },
         "description": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "No se necesita reserva"
-                    }
-                }
-            },
-            "2": {
+            "food-category": {
                 "options": {
                     "0": {
                         "question": "Restaurantes y negocios de comida rápida"
                     }
                 }
             },
-            "3": {
+            "halal": {
                 "options": {
                     "0": {
-                        "question": "Tiene menú vegetariano"
+                        "question": "Tiene menú halah"
                     }
                 }
             },
-            "4": {
+            "reservation": {
+                "options": {
+                    "0": {
+                        "question": "No se necesita reserva"
+                    }
+                }
+            },
+            "vegan": {
                 "options": {
                     "0": {
                         "question": "Tiene menú vegano"
                     }
                 }
             },
-            "5": {
+            "vegetarian": {
                 "options": {
                     "0": {
-                        "question": "Tiene menú halah"
+                        "question": "Tiene menú vegetariano"
                     }
                 }
             }
@@ -3095,77 +3095,28 @@
     },
     "note": {
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Debe mencionar {search} en el primer comentario"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> debe mencionar {search} en el primer comentario"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Abierto por el contributor {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> abierto por el contributor {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Editada por última vez por el contributor {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Abierta después de {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Creada antes de {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Creada después de {search}"
-                    }
-                }
-            },
-            "8": {
+            "anonymous": {
                 "options": {
                     "0": {
                         "question": "Solo mostrar las notas abiertas por contributores anómimos"
                     }
                 }
             },
-            "9": {
+            "edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Editada por última vez por el contributor {search}"
+                    }
+                }
+            },
+            "is_open": {
                 "options": {
                     "0": {
                         "question": "Solo mostrar las notas abiertas"
                     }
                 }
             },
-            "10": {
+            "no_imports": {
                 "options": {
                     "0": {
                         "question": "Todas las notas"
@@ -3175,6 +3126,55 @@
                     },
                     "2": {
                         "question": "Solo mostrar las notas de importación"
+                    }
+                }
+            },
+            "not": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> debe mencionar {search} en el primer comentario"
+                    }
+                }
+            },
+            "not_edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Abierta después de {search}"
+                    }
+                }
+            },
+            "not_opened_by": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> abierto por el contributor {search}"
+                    }
+                }
+            },
+            "opened_after": {
+                "options": {
+                    "0": {
+                        "question": "Creada después de {search}"
+                    }
+                }
+            },
+            "opened_before": {
+                "options": {
+                    "0": {
+                        "question": "Creada antes de {search}"
+                    }
+                }
+            },
+            "opened_by": {
+                "options": {
+                    "0": {
+                        "question": "Abierto por el contributor {search}"
+                    }
+                }
+            },
+            "search": {
+                "options": {
+                    "0": {
+                        "question": "Debe mencionar {search} en el primer comentario"
                     }
                 }
             }
@@ -3421,7 +3421,7 @@
     },
     "public_bookcase": {
         "filter": {
-            "2": {
+            "inside": {
                 "options": {
                     "0": {
                         "question": "Interior o exterior"
@@ -3778,7 +3778,7 @@
     "recycling": {
         "description": "Una capa con contenedores y centros de reciclaje",
         "filter": {
-            "1": {
+            "recyclingType": {
                 "options": {
                     "0": {
                         "question": "Todos los tipos de reciclado"
@@ -3968,17 +3968,17 @@
         },
         "description": "Una tienda",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Solo mostrar tiendas que vendan {search}"
-                    }
-                }
-            },
-            "2": {
+            "shop-name": {
                 "options": {
                     "0": {
                         "question": "Solo mostrar tiendas con nombre {search}"
+                    }
+                }
+            },
+            "shop-type": {
+                "options": {
+                    "0": {
+                        "question": "Solo mostrar tiendas que vendan {search}"
                     }
                 }
             }
@@ -4442,17 +4442,17 @@
     "toilet": {
         "description": "Una capa que muestra baños (públicos)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Accesible con sillas de ruedas"
-                    }
-                }
-            },
-            "1": {
+            "changing_table": {
                 "options": {
                     "0": {
                         "question": "Tiene un cambiador"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Accesible con sillas de ruedas"
                     }
                 }
             }
@@ -4564,7 +4564,7 @@
     },
     "toilet_at_amenity": {
         "filter": {
-            "0": {
+            "wheelchair": {
                 "options": {
                     "0": {
                         "question": "Accesible con sillas de ruedas"
@@ -4853,7 +4853,7 @@
     "waste_basket": {
         "description": "Esta es una papelera pública, donde puedes tirar tu basura.",
         "filter": {
-            "0": {
+            "waste-type": {
                 "options": {
                     "0": {
                         "question": "Todos los tipos"
@@ -4872,7 +4872,7 @@
                     }
                 }
             },
-            "1": {
+            "waste-vending": {
                 "options": {
                     "0": {
                         "question": "Papelera con dispensador de bolsas de excrementos (para perros)"

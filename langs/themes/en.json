@@ -18,17 +18,17 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "0": {
+                        "closeness-indicator": {
+                            "render": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> "
+                        },
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Import this ATM"
                                 }
                             }
                         },
-                        "1": {
-                            "render": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> "
-                        },
-                        "2": {
+                        "tag-apply-button": {
                             "render": {
                                 "special": {
                                     "message": "Add all the suggested tags to the closest ATM"
@@ -44,19 +44,7 @@
     "bag": {
         "description": "This theme helps with importing data from BAG",
         "layers": {
-            "0": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "This building has no reference in the BAG"
-                            }
-                        },
-                        "render": "The reference in BAG is <b>{ref:bag}</b>"
-                    }
-                }
-            },
-            "2": {
+            "bag_pand": {
                 "description": "Buildings from BAG register",
                 "tagRenderings": {
                     "Build year": {
@@ -84,6 +72,18 @@
                     },
                     "Reference": {
                         "render": "The reference in BAG is <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            },
+            "osm_buildings": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "This building has no reference in the BAG"
+                            }
+                        },
+                        "render": "The reference in BAG is <b>{ref:bag}</b>"
                     }
                 }
             }
@@ -129,7 +129,7 @@
     "campersite": {
         "description": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews.",
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "camper sites",
                 "name": "Camper sites",
                 "presets": {
@@ -241,7 +241,7 @@
                     "render": "Camper site {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Sanitary dump stations",
                 "name": "Sanitary dump stations",
                 "presets": {
@@ -333,11 +333,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Who operates this place?",
                     "render": "This place is operated by {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "This place has a power supply"
@@ -365,7 +365,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
@@ -381,7 +381,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Publicly accessible to anyone"
@@ -402,9 +402,9 @@
                 }
             },
             "1": {
-                "override": {
+                "shops_with_climbing_shoe_repair": {
                     "+tagRenderings": {
-                        "0": {
+                        "repairs_climbing_shoes": {
                             "mappings": {
                                 "0": {
                                     "then": "This shop repairs climbing shoes"
@@ -421,7 +421,7 @@
             "2": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "repairs_climbing_shoes": {
                             "mappings": {
                                 "0": {
                                     "then": "This shop repairs climbing shoes"
@@ -450,7 +450,7 @@
     "cycle_highways": {
         "description": "This map shows cycle highways",
         "layers": {
-            "0": {
+            "cycle_highways": {
                 "name": "cycle highways",
                 "title": {
                     "render": "cycle highway"
@@ -467,7 +467,24 @@
     "cyclenodes": {
         "description": "This map shows cycle node networks and allows you to add new nodes easily",
         "layers": {
-            "0": {
+            "2": {
+                "bicycle_guidepost": {
+                    "name": "Cycling guideposts",
+                    "title": {
+                        "render": "Cycling guidepost"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "a route marker for a node to node link"
+                        }
+                    }
+                }
+            },
+            "node2node_bicycle": {
                 "name": "Node to node links",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -486,7 +503,7 @@
                     "render": "Node to node link"
                 }
             },
-            "1": {
+            "node_bicycle": {
                 "name": "Nodes",
                 "presets": {
                     "0": {
@@ -526,23 +543,6 @@
                     },
                     "render": "Cycle node"
                 }
-            },
-            "2": {
-                "override": {
-                    "name": "Cycling guideposts",
-                    "title": {
-                        "render": "Cycling guidepost"
-                    }
-                }
-            },
-            "3": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "title": "a route marker for a node to node link"
-                        }
-                    }
-                }
             }
         },
         "title": "Cycle Node Networks"
@@ -550,11 +550,18 @@
     "cyclestreets": {
         "description": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
         "layers": {
-            "0": {
+            "fietsstraat": {
                 "description": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
                 "name": "Cyclestreets"
             },
-            "1": {
+            "not_cyclestreets": {
+                "description": "Layer to mark any street as cyclestreet",
+                "name": "All streets",
+                "title": {
+                    "render": "Street"
+                }
+            },
+            "toekomstige_fietsstraat": {
                 "description": "This street will become a cyclestreet soon",
                 "name": "Future cyclestreet",
                 "title": {
@@ -565,18 +572,15 @@
                     },
                     "render": "Future cyclestreet"
                 }
-            },
-            "2": {
-                "description": "Layer to mark any street as cyclestreet",
-                "name": "All streets",
-                "title": {
-                    "render": "Street"
-                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "When will this street become a cyclestreet?",
+                    "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
@@ -602,7 +606,7 @@
                     },
                     "question": "Is the street <b>{name}</b> a cyclestreet?"
                 },
-                "1": {
+                "supplementary_sign": {
                     "mappings": {
                         "0": {
                             "then": "Residents allowed"
@@ -621,10 +625,6 @@
                         }
                     },
                     "question": "What sign does this bicycle road have?"
-                },
-                "2": {
-                    "question": "When will this street become a cyclestreet?",
-                    "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
                 }
             }
         },
@@ -655,37 +655,37 @@
         "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
         "layers": {
             "1": {
-                "override": {
+                "streets_without_etymology": {
                     "=name": "Streets without etymology information"
                 }
             },
             "2": {
-                "override": {
+                "parks_and_forests_without_etymology": {
                     "=name": "Parks and forests without etymology information"
                 }
             },
             "3": {
-                "override": {
+                "education_institutions_without_etymology": {
                     "=name": "Education institutions without etymology information"
                 }
             },
             "4": {
-                "override": {
+                "cultural_places_without_etymology": {
                     "=name": "Cultural places without etymology information"
                 }
             },
             "5": {
-                "override": {
+                "toursistic_places_without_etymology": {
                     "=name": "Toursistic places without etymology information"
                 }
             },
             "6": {
-                "override": {
+                "health_and_social_places_without_etymology": {
                     "=name": "Health and social places without etymology information"
                 }
             },
             "7": {
-                "override": {
+                "sport_places_without_etymology": {
                     "=name": "Sport places without etymology information"
                 }
             }
@@ -696,7 +696,7 @@
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facade gardens</a>, green facades and trees in the city not only bring peace and quiet, but also a more beautiful city, greater biodiversity, a cooling effect and better air quality. <br/> Klimaan VZW and Mechelen Klimaatneutraal want to map existing and new facade gardens as an example for people who want to build their own garden or for city walkers who love nature.<br/>More info about the project at <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "0": {
+            "facadegardens": {
                 "description": "Facade gardens",
                 "name": "Facade gardens",
                 "presets": {
@@ -788,9 +788,9 @@
         "description": "On this map, you'll find your favourite fries shop!",
         "layers": {
             "0": {
-                "override": {
+                "friture": {
                     "filter+": {
-                        "0": {
+                        "oil-type": {
                             "options": {
                                 "0": {
                                     "question": "No oil type preference"
@@ -817,7 +817,26 @@
     "ghostsigns": {
         "description": "A map showing disused signs on buildings",
         "layers": {
-            "0": {
+            "1": {
+                "advertising_wall_paintings": {
+                    "+tagRenderings": {
+                        "historic": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This is a ghost sign"
+                                },
+                                "1": {
+                                    "then": "This is not a ghost sign"
+                                }
+                            },
+                            "question": "Is this a ghost sign?",
+                            "questionHint": "Is this sign for a business that no longer exists or no longer being maintained?"
+                        }
+                    },
+                    "name": "All advertentie wall paintings"
+                }
+            },
+            "ghostsigns": {
                 "description": "Layer showing disused signs on buildings",
                 "name": "Ghost Signs",
                 "presets": {
@@ -856,25 +875,6 @@
                 "title": {
                     "render": "Ghost Sign"
                 }
-            },
-            "1": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "This is a ghost sign"
-                                },
-                                "1": {
-                                    "then": "This is not a ghost sign"
-                                }
-                            },
-                            "question": "Is this a ghost sign?",
-                            "questionHint": "Is this sign for a business that no longer exists or no longer being maintained?"
-                        }
-                    },
-                    "name": "All advertentie wall paintings"
-                }
             }
         },
         "title": "Ghost Signs"
@@ -882,17 +882,7 @@
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "What kind of building is this?"
-                    },
-                    "grb-reference": {
-                        "render": "Has been imported from GRB, reference number is {source:geometry:ref}"
-                    }
-                }
-            },
-            "1": {
+            "grb": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
@@ -903,6 +893,16 @@
                                 "then": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}"
                             }
                         }
+                    }
+                }
+            },
+            "osm_buildings_no_points": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "What kind of building is this?"
+                    },
+                    "grb-reference": {
+                        "render": "Has been imported from GRB, reference number is {source:geometry:ref}"
                     }
                 }
             }
@@ -926,7 +926,7 @@
         "description": "On this map, various healthcare related items are shown",
         "layers": {
             "5": {
-                "override": {
+                "medical_shops": {
                     "=presets": {
                         "0": {
                             "title": "a medical supply shop"
@@ -963,7 +963,7 @@
         "description": "A map showing kerbs and crossings.",
         "layers": {
             "1": {
-                "override": {
+                "crossings_no_traffic_lights": {
                     "=presets": {
                         "0": {
                             "description": "Crossing for pedestrians and/or cyclists",
@@ -978,83 +978,92 @@
     "mapcomplete-changes": {
         "description": "This maps shows all the changes made with MapComplete",
         "layers": {
-            "0": {
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "link_to_more": {
+                            "render": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
+                        }
+                    }
+                }
+            },
+            "mapcomplete-changes": {
                 "description": "Shows all MapComplete changes",
                 "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themename contains {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Themename does <b>not</b> contain {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "Made by contributor {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Not</b> made by contributor {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Made before {search}"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Made after {search}"
-                            }
-                        }
-                    },
-                    "6": {
-                        "options": {
-                            "0": {
-                                "question": "User language (iso-code) {search}"
-                            }
-                        }
-                    },
-                    "7": {
-                        "options": {
-                            "0": {
-                                "question": "Made with host {search}"
-                            }
-                        }
-                    },
-                    "8": {
+                    "added-image": {
                         "options": {
                             "0": {
                                 "question": "Changeset added at least one image"
                             }
                         }
                     },
-                    "9": {
+                    "created_by": {
+                        "options": {
+                            "0": {
+                                "question": "Made by contributor {search}"
+                            }
+                        }
+                    },
+                    "exclude_etymology": {
+                        "options": {
+                            "0": {
+                                "question": "Exclude etymology theme"
+                            }
+                        }
+                    },
+                    "exclude_grb": {
                         "options": {
                             "0": {
                                 "question": "Exclude GRB theme"
                             }
                         }
                     },
-                    "10": {
+                    "host_name": {
                         "options": {
                             "0": {
-                                "question": "Exclude etymology theme"
+                                "question": "Made with host {search}"
+                            }
+                        }
+                    },
+                    "locale-filter": {
+                        "options": {
+                            "0": {
+                                "question": "User language (iso-code) {search}"
+                            }
+                        }
+                    },
+                    "made_after": {
+                        "options": {
+                            "0": {
+                                "question": "Made after {search}"
+                            }
+                        }
+                    },
+                    "made_before": {
+                        "options": {
+                            "0": {
+                                "question": "Made before {search}"
+                            }
+                        }
+                    },
+                    "not_created_by": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Not</b> made by contributor {search}"
+                            }
+                        }
+                    },
+                    "theme-not-search": {
+                        "options": {
+                            "0": {
+                                "question": "Themename does <b>not</b> contain {search}"
+                            }
+                        }
+                    },
+                    "theme-search": {
+                        "options": {
+                            "0": {
+                                "question": "Themename contains {search}"
                             }
                         }
                     }
@@ -1087,15 +1096,6 @@
                 },
                 "title": {
                     "render": "Changeset for {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings+": {
-                        "0": {
-                            "render": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
-                        }
-                    }
                 }
             }
         },
@@ -1140,7 +1140,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "0": {
+                        "width": {
                             "options": {
                                 "0": {
                                     "question": "Any/No width info"
@@ -1156,7 +1156,7 @@
             "6": {
                 "override": {
                     "=filter": {
-                        "0": {
+                        "kerb-type": {
                             "options": {
                                 "0": {
                                     "question": "All types of kerbs"
@@ -1176,7 +1176,7 @@
                 }
             },
             "8": {
-                "override": {
+                "parking_spaces_disabled": {
                     "name": "Disabled parking spaces"
                 }
             },
@@ -1190,14 +1190,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Import"
                                 }
                             }
                         },
-                        "1": {
+                        "tag-apply-button": {
                             "render": {
                                 "special": {
                                     "message": "Add all the suggested tags"
@@ -1214,7 +1214,7 @@
         "description": "<p><i>Love in the palm of your hand</i></p>Open Love Map lists various adult entries, such as brothels, erotic stores and stripclubs.",
         "layers": {
             "2": {
-                "override": {
+                "erotic_shop": {
                     "=presets": {
                         "0": {
                             "title": "an erotic shop"
@@ -1224,7 +1224,7 @@
                 }
             },
             "4": {
-                "override": {
+                "condom_vending_machine": {
                     "=presets": {
                         "0": {
                             "title": "a condom vending machine"
@@ -1233,7 +1233,7 @@
                 }
             },
             "6": {
-                "override": {
+                "erotic_cinema": {
                     "=presets": {
                         "0": {
                             "title": "an erotic cinema"
@@ -1244,7 +1244,7 @@
             "9": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "hotel-type": {
                             "question": "What type of hotel is this?"
                         }
                     }
@@ -1253,7 +1253,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "has_video_booth": {
                     "question": "Does {title()} have a private video booth?",
                     "questionHint": "This is for use by a single person."
                 }
@@ -1283,16 +1283,8 @@
         "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
         "layers": {
             "1": {
-                "override": {
+                "dogfoodb": {
                     "name": "Dog friendly eateries"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "Dog-friendly shops",
-                    "title": {
-                        "render": "Dog-friendly shops"
-                    }
                 }
             },
             "6": {
@@ -1302,6 +1294,14 @@
                             "description": "A shop where you can bring a dog almost everywhere",
                             "title": "dog-friendly shop"
                         }
+                    }
+                }
+            },
+            "dogshop": {
+                "dogshop": {
+                    "name": "Dog-friendly shops",
+                    "title": {
+                        "render": "Dog-friendly shops"
                     }
                 }
             }
@@ -1316,7 +1316,7 @@
     "postal_codes": {
         "description": "Postal codes",
         "layers": {
-            "0": {
+            "postal_code_boundary": {
                 "name": "postal codes",
                 "tagRenderings": {
                     "postal_code": {
@@ -1327,7 +1327,7 @@
                     "render": "Postal code {postal_code}"
                 }
             },
-            "2": {
+            "town_hall": {
                 "name": "town halls",
                 "title": {
                     "render": "Town hall {name}"
@@ -1343,7 +1343,7 @@
             "3": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "post_partner": {
                             "mappings": {
                                 "0": {
                                     "then": "This shop is a post partner"
@@ -1380,13 +1380,13 @@
     "sidewalks": {
         "description": "Experimental theme",
         "layers": {
-            "0": {
+            "sidewalks": {
                 "description": "Layer showing sidewalks of highways",
                 "name": "Sidewalks",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "1": {
+                            "has_sidewalk_left|right": {
                                 "mappings": {
                                     "0": {
                                         "then": "There is a sidewalk on this side of the road"
@@ -1400,7 +1400,7 @@
                                 },
                                 "question": "Is there a sidewalk on this side of the road?"
                             },
-                            "2": {
+                            "sidewalk_width_left|right": {
                                 "question": "What is the width of the sidewalk on this side of the road?",
                                 "render": "This sidewalk is {sidewalk:left|right:width}m wide"
                             }
@@ -1431,7 +1431,7 @@
         "description": "All about sports, find sport pitches, fitness centres and more.",
         "layers": {
             "4": {
-                "override": {
+                "sport_shops": {
                     "presets": {
                         "0": {
                             "description": "Add a new shop selling sports goods.",
@@ -1447,11 +1447,7 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
-            "3": {
-                "description": "Layer showing train stations",
-                "name": "Train Stations"
-            },
-            "16": {
+            "departures_board": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
                 "presets": {
@@ -1482,6 +1478,10 @@
                 "title": {
                     "render": "Departures board"
                 }
+            },
+            "train_station": {
+                "description": "Layer showing train stations",
+                "name": "Train Stations"
             }
         },
         "title": "Train Stations"
@@ -1489,32 +1489,7 @@
     "street_lighting": {
         "description": "On this map you can find everything about street lighting",
         "layers": {
-            "1": {
-                "name": "Lit streets",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "This street is lit"
-                            },
-                            "1": {
-                                "then": "This street is not lit"
-                            },
-                            "2": {
-                                "then": "This street is lit at night"
-                            },
-                            "3": {
-                                "then": "This street is lit 24/7"
-                            }
-                        },
-                        "question": "Is this street lit?"
-                    }
-                },
-                "title": {
-                    "render": "Lit street"
-                }
-            },
-            "2": {
+            "all_streets": {
                 "name": "All streets",
                 "tagRenderings": {
                     "lit": {
@@ -1537,6 +1512,31 @@
                 },
                 "title": {
                     "render": "Street"
+                }
+            },
+            "lit_streets": {
+                "name": "Lit streets",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This street is not lit"
+                            },
+                            "2": {
+                                "then": "This street is lit at night"
+                            },
+                            "3": {
+                                "then": "This street is lit 24/7"
+                            }
+                        },
+                        "question": "Is this street lit?"
+                    }
+                },
+                "title": {
+                    "render": "Lit street"
                 }
             }
         },
@@ -1567,7 +1567,24 @@
     "walkingnodes": {
         "description": "This map shows walking node networks and allows you to add new nodes easily",
         "layers": {
-            "0": {
+            "2": {
+                "guidepost_hiking": {
+                    "name": "Hiking guideposts",
+                    "title": {
+                        "render": "Hiking guidepost"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "a route marker for a node to node link"
+                        }
+                    }
+                }
+            },
+            "node2node_hiking": {
                 "name": "Node to node links",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -1586,7 +1603,7 @@
                     "render": "Node to node link"
                 }
             },
-            "1": {
+            "node_hiking": {
                 "name": "Nodes",
                 "presets": {
                     "0": {
@@ -1625,23 +1642,6 @@
                         }
                     },
                     "render": "Walking node"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "Hiking guideposts",
-                    "title": {
-                        "render": "Hiking guidepost"
-                    }
-                }
-            },
-            "3": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "title": "a route marker for a node to node link"
-                        }
-                    }
                 }
             }
         },

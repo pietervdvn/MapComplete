@@ -35,41 +35,41 @@
             "1": {
                 "title": "volně stojící plakátovací skříň"
             },
-            "2": {
+            "3": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
-            "3": {
+            "4": {
                 "description": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce",
                 "title": "billboard"
             },
-            "4": {
+            "5": {
                 "description": "Válcová venkovní konstrukce, která zobrazuje reklamy",
                 "title": "sloup"
             },
-            "5": {
+            "6": {
                 "title": "vlajka"
             },
-            "6": {
+            "7": {
                 "title": "obrazovka"
             },
-            "7": {
+            "8": {
                 "title": "obrazovka připevněná na stěnu"
             },
-            "8": {
+            "10": {
                 "description": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
                 "title": "plachta"
             },
-            "9": {
+            "11": {
                 "title": "totem"
             },
-            "10": {
+            "12": {
                 "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
                 "title": "cedule"
             },
-            "11": {
+            "13": {
                 "title": "socha"
             },
-            "12": {
+            "14": {
                 "title": "nástěnná malba"
             }
         },
@@ -388,7 +388,7 @@
     "atm": {
         "description": "Bankomaty pro výběr peněz",
         "filter": {
-            "1": {
+            "speech_output": {
                 "options": {
                     "0": {
                         "question": "S hlasovým výstupem"
@@ -507,7 +507,7 @@
     "bank": {
         "description": "Finanční instituce pro ukládání peněz",
         "filter": {
-            "1": {
+            "has_atm": {
                 "options": {
                     "0": {
                         "question": "S bankomatem"
@@ -637,14 +637,14 @@
     "bench": {
         "description": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
         "filter": {
-            "0": {
+            "bench_is_memorial": {
                 "options": {
                     "0": {
                         "question": "je památník"
                     }
                 }
             },
-            "1": {
+            "has_backrest": {
                 "options": {
                     "0": {
                         "question": "S opěradlem i bez něj"
@@ -970,7 +970,7 @@
             },
             "rental_types": {
                 "renderings": {
-                    "0": {
+                    "rental-capacity-bicycle_type": {
                         "question": "Kolik typů kol si zde můžete pronajmout?",
                         "render": "{capacity:bicycle_type} typů si můžete pronajmout zde"
                     }
@@ -1216,7 +1216,7 @@
                     "1": {
                         "then": "Přístup je určen především pro návštěvníky podniku"
                     },
-                    "2": {
+                    "3": {
                         "then": "Přístup je omezen na členy školy, společnosti nebo organizace"
                     }
                 },
@@ -1482,17 +1482,17 @@
     "bike_shop": {
         "description": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Prodává použitá jízdní kola"
-                    }
-                }
-            },
-            "2": {
+            "offers_diy_repair": {
                 "options": {
                     "0": {
                         "question": "Nabízí opravy kol \"Udělej si sám\""
+                    }
+                }
+            },
+            "sells_second-hand": {
+                "options": {
+                    "0": {
+                        "question": "Prodává použitá jízdní kola"
                     }
                 }
             }
@@ -1682,17 +1682,17 @@
     "birdhide": {
         "description": "Pozorovatelna",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Bezbariérový přístup"
-                    }
-                }
-            },
-            "1": {
+            "shelter": {
                 "options": {
                     "0": {
                         "question": "Pouze zakryté pozorovatelny"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Bezbariérový přístup"
                     }
                 }
             }
@@ -1864,10 +1864,10 @@
         "tagRenderings": {
             "rewritten-questions": {
                 "renderings": {
-                    "0": {
+                    "plugs-amount-{{id}}": {
                         "question": "Kolik zástrček typu {{description}} je k dispozici?"
                     },
-                    "1": {
+                    "voltage-{{id}}": {
                         "mappings": {
                             "then": "{{description}} výstup {{commonVoltages}} voltů"
                         },
@@ -3597,92 +3597,35 @@
     },
     "filters": {
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nyní otevřeno"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Přijímá hotovost"
-                    }
-                }
-            },
-            "2": {
+            "accepts_cards": {
                 "options": {
                     "0": {
                         "question": "Přijímá platební karty"
                     }
                 }
             },
-            "3": {
+            "accepts_cash": {
                 "options": {
                     "0": {
-                        "question": "Přijímá debetní karty"
+                        "question": "Přijímá hotovost"
                     }
                 }
             },
-            "4": {
+            "accepts_credit_cards": {
                 "options": {
                     "0": {
                         "question": "Přijímá kreditní karty"
                     }
                 }
             },
-            "5": {
+            "accepts_debit_cards": {
                 "options": {
                     "0": {
-                        "question": "S obrázky i bez nich"
-                    },
-                    "1": {
-                        "question": "Má alespoň jeden obrázek"
-                    },
-                    "2": {
-                        "question": "Pravděpodobně nemá obrázek"
+                        "question": "Přijímá debetní karty"
                     }
                 }
             },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "S hmatovou dlažbou"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "S nebo bez hmatové dlažby"
-                    },
-                    "1": {
-                        "question": "S hmatovou dlažbou"
-                    },
-                    "2": {
-                        "question": "Bez hmatové dlažby"
-                    },
-                    "3": {
-                        "question": "Žádné informace o hmatové dlažbě"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Má bio možnosti"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Použití zdarma"
-                    }
-                }
-            },
-            "10": {
+            "dogs": {
                 "options": {
                     "0": {
                         "question": "Bez preference psů"
@@ -3695,38 +3638,95 @@
                     }
                 }
             },
-            "11": {
+            "free": {
                 "options": {
                     "0": {
-                        "question": "Nabízí internet"
+                        "question": "Použití zdarma"
                     }
                 }
             },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Nabízí elektřinu"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Má nabídku bez cukru"
-                    }
-                }
-            },
-            "14": {
+            "gluten_free": {
                 "options": {
                     "0": {
                         "question": "Má bezlepkovou nabídku"
                     }
                 }
             },
-            "15": {
+            "has_electricity": {
+                "options": {
+                    "0": {
+                        "question": "Nabízí elektřinu"
+                    }
+                }
+            },
+            "has_image": {
+                "options": {
+                    "0": {
+                        "question": "S obrázky i bez nich"
+                    },
+                    "1": {
+                        "question": "Má alespoň jeden obrázek"
+                    },
+                    "2": {
+                        "question": "Pravděpodobně nemá obrázek"
+                    }
+                }
+            },
+            "has_internet": {
+                "options": {
+                    "0": {
+                        "question": "Nabízí internet"
+                    }
+                }
+            },
+            "has_organic": {
+                "options": {
+                    "0": {
+                        "question": "Má bio možnosti"
+                    }
+                }
+            },
+            "lactose_free": {
                 "options": {
                     "0": {
                         "question": "Má nabídku bez laktózy"
+                    }
+                }
+            },
+            "open_now": {
+                "options": {
+                    "0": {
+                        "question": "Nyní otevřeno"
+                    }
+                }
+            },
+            "sugar_free": {
+                "options": {
+                    "0": {
+                        "question": "Má nabídku bez cukru"
+                    }
+                }
+            },
+            "tactile_paving": {
+                "options": {
+                    "0": {
+                        "question": "S hmatovou dlažbou"
+                    }
+                }
+            },
+            "tactile_paving_advanced": {
+                "options": {
+                    "0": {
+                        "question": "S nebo bez hmatové dlažby"
+                    },
+                    "1": {
+                        "question": "S hmatovou dlažbou"
+                    },
+                    "2": {
+                        "question": "Bez hmatové dlažby"
+                    },
+                    "3": {
+                        "question": "Žádné informace o hmatové dlažbě"
                     }
                 }
             }
@@ -3969,14 +3969,7 @@
         },
         "description": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Rezervace není nutná"
-                    }
-                }
-            },
-            "2": {
+            "food-category": {
                 "options": {
                     "0": {
                         "question": "Restaurace a podniky rychlého občerstvení"
@@ -3989,24 +3982,31 @@
                     }
                 }
             },
-            "3": {
+            "halal": {
                 "options": {
                     "0": {
-                        "question": "Má vegetariánské menu"
+                        "question": "Má halal menu"
                     }
                 }
             },
-            "4": {
+            "reservation": {
+                "options": {
+                    "0": {
+                        "question": "Rezervace není nutná"
+                    }
+                }
+            },
+            "vegan": {
                 "options": {
                     "0": {
                         "question": "Má veganské menu"
                     }
                 }
             },
-            "5": {
+            "vegetarian": {
                 "options": {
                     "0": {
-                        "question": "Má halal menu"
+                        "question": "Má vegetariánské menu"
                     }
                 }
             }
@@ -4392,7 +4392,7 @@
         "tagRenderings": {
             "available_devices": {
                 "renderings": {
-                    "0": {
+                    "hackerspaces-service-device-key": {
                         "mappings": {
                             "0": {
                                 "then": "V tomto prostoru hackerů je k dispozici {device-name}"
@@ -4759,7 +4759,7 @@
     "kerbs": {
         "description": "Vrstva zobrazující obrubníky.",
         "filter": {
-            "0": {
+            "kerb-type": {
                 "options": {
                     "0": {
                         "question": "Všechny typy obrubníků"
@@ -4999,7 +4999,21 @@
     "maproulette": {
         "description": "Vrstva zobrazující všechny úlohy v MapRoulette",
         "filter": {
-            "0": {
+            "parent-id": {
+                "options": {
+                    "0": {
+                        "question": "ID výzvy odpovídá {search}"
+                    }
+                }
+            },
+            "parent-name": {
+                "options": {
+                    "0": {
+                        "question": "Název výzvy obsahuje {search}"
+                    }
+                }
+            },
+            "status": {
                 "options": {
                     "0": {
                         "question": "Zobrazit úkoly se všemi stavy"
@@ -5027,20 +5041,6 @@
                     },
                     "8": {
                         "question": "Zobrazit úkoly, které jsou zakázány"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Název výzvy obsahuje {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "ID výzvy odpovídá {search}"
                     }
                 }
             }
@@ -5104,7 +5104,7 @@
     "maproulette_challenge": {
         "description": "Vrstva zobrazující úkoly jedné výzvy MapRoulette. Tato vrstva je určena k opětovnému použití a rozšíření v tématech; naleznete v [dokumentaci](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md), jak to provést.",
         "filter": {
-            "0": {
+            "status": {
                 "options": {
                     "0": {
                         "question": "Zobrazit úkoly se všemi stavy"
@@ -5214,14 +5214,14 @@
     "nature_reserve": {
         "description": "Přírodní rezervace je území, kde se příroda může rozvíjet",
         "filter": {
-            "0": {
+            "access": {
                 "options": {
                     "0": {
                         "question": "Volně přístupné"
                     }
                 }
             },
-            "1": {
+            "dogs": {
                 "options": {
                     "0": {
                         "question": "Všechny přírodní rezervace"
@@ -5335,77 +5335,28 @@
     },
     "note": {
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Měl by se zmínit {search} v prvním komentáři"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Otevřeno přispěvatelem {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>Není</b> otevřeno přispěvatelem {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Naposledy upravil přispěvatel {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Otevřeno po {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Vytvořeno před {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Vytvořeno po {search}"
-                    }
-                }
-            },
-            "8": {
+            "anonymous": {
                 "options": {
                     "0": {
                         "question": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem"
                     }
                 }
             },
-            "9": {
+            "edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Naposledy upravil přispěvatel {search}"
+                    }
+                }
+            },
+            "is_open": {
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze otevřené poznámky"
                     }
                 }
             },
-            "10": {
+            "no_imports": {
                 "options": {
                     "0": {
                         "question": "Všechny poznámky"
@@ -5415,6 +5366,55 @@
                     },
                     "2": {
                         "question": "Zobrazit pouze poznámky k importu"
+                    }
+                }
+            },
+            "not": {
+                "options": {
+                    "0": {
+                        "question": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
+                    }
+                }
+            },
+            "not_edited_by": {
+                "options": {
+                    "0": {
+                        "question": "Otevřeno po {search}"
+                    }
+                }
+            },
+            "not_opened_by": {
+                "options": {
+                    "0": {
+                        "question": "<b>Není</b> otevřeno přispěvatelem {search}"
+                    }
+                }
+            },
+            "opened_after": {
+                "options": {
+                    "0": {
+                        "question": "Vytvořeno po {search}"
+                    }
+                }
+            },
+            "opened_before": {
+                "options": {
+                    "0": {
+                        "question": "Vytvořeno před {search}"
+                    }
+                }
+            },
+            "opened_by": {
+                "options": {
+                    "0": {
+                        "question": "Otevřeno přispěvatelem {search}"
+                    }
+                }
+            },
+            "search": {
+                "options": {
+                    "0": {
+                        "question": "Měl by se zmínit {search} v prvním komentáři"
                     }
                 }
             }
@@ -5511,52 +5511,52 @@
     "osm_community_index": {
         "description": "Vrstva zobrazující komunity OpenStreetMap",
         "filter": {
-            "0": {
+            "country": {
                 "options": {
                     "0": {
                         "question": "Země"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Skupina dílčích zemí"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Region"
-                    }
-                }
-            },
-            "3": {
+            "intermediate_region": {
                 "options": {
                     "0": {
                         "question": "Střední region"
                     }
                 }
             },
-            "4": {
+            "other": {
+                "options": {
+                    "0": {
+                        "question": "Ostatní komunity"
+                    }
+                }
+            },
+            "region": {
+                "options": {
+                    "0": {
+                        "question": "Region"
+                    }
+                }
+            },
+            "sub_country": {
+                "options": {
+                    "0": {
+                        "question": "Skupina dílčích zemí"
+                    }
+                }
+            },
+            "territory": {
                 "options": {
                     "0": {
                         "question": "Území"
                     }
                 }
             },
-            "5": {
+            "world": {
                 "options": {
                     "0": {
                         "question": "Svět"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Ostatní komunity"
                     }
                 }
             }
@@ -5818,17 +5818,17 @@
     "pharmacy": {
         "description": "Vrstva zobrazující lékárny, které (pravděpodobně) vydávají léky na předpis",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Má průjezd"
-                    }
-                }
-            },
-            "1": {
+            "dispensing": {
                 "options": {
                     "0": {
                         "question": "Lékárna schopná poskytovat léky na předpis"
+                    }
+                }
+            },
+            "drive-through": {
+                "options": {
+                    "0": {
+                        "question": "Má průjezd"
                     }
                 }
             }
@@ -6199,21 +6199,14 @@
     "public_bookcase": {
         "description": "Skříňka s knihami na ulici, která je přístupná komukoli",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Má dětské knihy"
-                    }
-                }
-            },
-            "1": {
+            "adult-books": {
                 "options": {
                     "0": {
                         "question": "Má knihy pro dospělé"
                     }
                 }
             },
-            "2": {
+            "inside": {
                 "options": {
                     "0": {
                         "question": "Vnitřní nebo venkovní"
@@ -6223,6 +6216,13 @@
                     },
                     "2": {
                         "question": "Nachází se venku"
+                    }
+                }
+            },
+            "kid-books": {
+                "options": {
+                    "0": {
+                        "question": "Má dětské knihy"
                     }
                 }
             }
@@ -6806,7 +6806,14 @@
     "recycling": {
         "description": "Vrstva s recyklačními kontejnery a středisky",
         "filter": {
-            "1": {
+            "public-access": {
+                "options": {
+                    "0": {
+                        "question": "Pouze veřejný přístup"
+                    }
+                }
+            },
+            "recyclingType": {
                 "options": {
                     "0": {
                         "question": "Všechny typy recyklace"
@@ -6873,13 +6880,6 @@
                     },
                     "21": {
                         "question": "Recyklace jízdních kol"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Pouze veřejný přístup"
                     }
                 }
             }
@@ -7211,24 +7211,24 @@
         },
         "description": "Obchod",
         "filter": {
-            "1": {
+            "second_hand": {
                 "options": {
                     "0": {
-                        "question": "Zobrazit pouze obchody prodávající {search}"
+                        "question": "Zobrazit pouze obchody prodávající použité zboží"
                     }
                 }
             },
-            "2": {
+            "shop-name": {
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze obchody s názvem {search}"
                     }
                 }
             },
-            "6": {
+            "shop-type": {
                 "options": {
                     "0": {
-                        "question": "Zobrazit pouze obchody prodávající použité zboží"
+                        "question": "Zobrazit pouze obchody prodávající {search}"
                     }
                 }
             }
@@ -7304,7 +7304,7 @@
     "shower": {
         "description": "Vrstva zobrazující (veřejné) sprchy",
         "filter": {
-            "1": {
+            "hot-water": {
                 "options": {
                     "0": {
                         "question": "Teplá voda k dispozici"
@@ -7468,14 +7468,14 @@
     "sport_pitch": {
         "description": "Sportovní hřiště",
         "filter": {
-            "0": {
+            "accessibility": {
                 "options": {
                     "0": {
                         "question": "Veřejně přístupné"
                     }
                 }
             },
-            "1": {
+            "available_sports": {
                 "options": {
                     "0": {
                         "question": "Všechny sporty"
@@ -8143,17 +8143,17 @@
     "toilet": {
         "description": "Vrstva zobrazující (veřejné) toalety",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Bezbariérový přístup"
-                    }
-                }
-            },
-            "1": {
+            "changing_table": {
                 "options": {
                     "0": {
                         "question": "Má přebalovací pult"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Bezbariérový přístup"
                     }
                 }
             }
@@ -8307,17 +8307,17 @@
     "toilet_at_amenity": {
         "description": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech.",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Bezbariérový přístup"
-                    }
-                }
-            },
-            "2": {
+            "free": {
                 "options": {
                     "0": {
                         "question": "Zdarma k použití"
+                    }
+                }
+            },
+            "wheelchair": {
+                "options": {
+                    "0": {
+                        "question": "Bezbariérový přístup"
                     }
                 }
             }
@@ -8464,24 +8464,24 @@
     "transit_stops": {
         "description": "Vrstva zobrazující různé typy zastávek veřejné dopravy.",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "S přístřeškem"
-                    }
-                }
-            },
-            "1": {
+            "bench": {
                 "options": {
                     "0": {
                         "question": "S lavičkou"
                     }
                 }
             },
-            "2": {
+            "bin": {
                 "options": {
                     "0": {
                         "question": "S košem"
+                    }
+                }
+            },
+            "shelter": {
+                "options": {
+                    "0": {
+                        "question": "S přístřeškem"
                     }
                 }
             }
@@ -8995,7 +8995,7 @@
     "vending_machine": {
         "description": "Vrstva zobrazující prodejní automaty",
         "filter": {
-            "1": {
+            "vending": {
                 "options": {
                     "0": {
                         "question": "Všechny prodejní automaty"
@@ -9296,7 +9296,7 @@
     "waste_basket": {
         "description": "Jedná se o veřejný odpadkový koš, odpadkový koš, kam můžete vyhodit odpadky.",
         "filter": {
-            "0": {
+            "waste-type": {
                 "options": {
                     "0": {
                         "question": "Všechny typy"
@@ -9321,7 +9321,7 @@
                     }
                 }
             },
-            "1": {
+            "waste-vending": {
                 "options": {
                     "0": {
                         "question": "Odpadkový koš se zásobníkem na sáčky na (psí) exkrementy"
@@ -9387,7 +9387,7 @@
     "waste_disposal": {
         "description": "Odpadkový koš, střední až velký koš na likvidaci (domácího) odpadu",
         "filter": {
-            "0": {
+            "public-access": {
                 "options": {
                     "0": {
                         "question": "Pouze veřejný přístup"

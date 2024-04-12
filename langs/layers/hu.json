@@ -549,7 +549,7 @@
     },
     "filters": {
         "filter": {
-            "0": {
+            "open_now": {
                 "options": {
                     "0": {
                         "question": "Most nyitva van"
@@ -658,7 +658,7 @@
     "public_bookcase": {
         "description": "Egy utcai szekrény könyvekkel, amelyet bárki használhat",
         "filter": {
-            "2": {
+            "inside": {
                 "options": {
                     "0": {
                         "question": "Beltéri vagy kültéri"

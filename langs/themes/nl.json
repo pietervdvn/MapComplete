@@ -18,7 +18,7 @@
             "3": {
                 "override": {
                     "=tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Voeg deze ATM toe"
@@ -34,19 +34,7 @@
     "bag": {
         "description": "Dit thema helpt het importeren van BAG data",
         "layers": {
-            "0": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dit gebouw heeft geen referentie in de BAG"
-                            }
-                        },
-                        "render": "De referentie in BAG is <b>{ref:bag}</b>"
-                    }
-                }
-            },
-            "2": {
+            "bag_pand": {
                 "description": "Gebouw uit de BAG",
                 "tagRenderings": {
                     "Build year": {
@@ -74,6 +62,18 @@
                     },
                     "Reference": {
                         "render": "De referentie in BAG is <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            },
+            "osm_buildings": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dit gebouw heeft geen referentie in de BAG"
+                            }
+                        },
+                        "render": "De referentie in BAG is <b>{ref:bag}</b>"
                     }
                 }
             }
@@ -115,7 +115,7 @@
     "campersite": {
         "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
         "layers": {
-            "0": {
+            "caravansites": {
                 "description": "camperplaatsen",
                 "name": "Camperplaatsen",
                 "presets": {
@@ -227,7 +227,7 @@
                     "render": "Camperplaats {name}"
                 }
             },
-            "1": {
+            "dumpstations": {
                 "description": "Loosplaatsen",
                 "name": "Loostplaatsen",
                 "presets": {
@@ -319,11 +319,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Wie beheert deze plaats?",
                     "render": "Deze plaats wordt beheerd door {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Deze plaats heeft stroomvoorziening"
@@ -351,7 +351,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
@@ -367,7 +367,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Voor iedereen publiek toegankelijk"
@@ -397,7 +397,7 @@
     "cycle_highways": {
         "description": "Deze kaart toont fietssnelwegen",
         "layers": {
-            "0": {
+            "cycle_highways": {
                 "name": "fietssnelwegen",
                 "title": {
                     "render": "fietssnelweg"
@@ -414,7 +414,7 @@
     "cyclenodes": {
         "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
         "layers": {
-            "0": {
+            "node2node_bicycle": {
                 "name": "Verbindingen van node naar node",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -433,7 +433,7 @@
                     "render": "Node-naar-node verbinding"
                 }
             },
-            "1": {
+            "node_bicycle": {
                 "name": "Knooppunten",
                 "presets": {
                     "0": {
@@ -480,11 +480,18 @@
     "cyclestreets": {
         "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
         "layers": {
-            "0": {
+            "fietsstraat": {
                 "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen",
                 "name": "Fietsstraten"
             },
-            "1": {
+            "not_cyclestreets": {
+                "description": "Laag waar je een straat als fietsstraat kan markeren",
+                "name": "Alle straten",
+                "title": {
+                    "render": "Straat"
+                }
+            },
+            "toekomstige_fietsstraat": {
                 "description": "Deze straat wordt binnenkort een fietsstraat",
                 "name": "Toekomstige fietsstraat",
                 "title": {
@@ -495,18 +502,15 @@
                     },
                     "render": "Toekomstige fietsstraat"
                 }
-            },
-            "2": {
-                "description": "Laag waar je een straat als fietsstraat kan markeren",
-                "name": "Alle straten",
-                "title": {
-                    "render": "Straat"
-                }
             }
         },
         "overrideAll": {
             "+tagRenderings": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Wanneer wordt deze straat een fietsstraat?",
+                    "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Deze straat is een fietsstraat (en dus zone 30)"
@@ -532,7 +536,7 @@
                     },
                     "question": "Is de straat <b>{name}</b> een fietsstraat?"
                 },
-                "1": {
+                "supplementary_sign": {
                     "mappings": {
                         "0": {
                             "then": "Aanwonenden toegestaan"
@@ -551,10 +555,6 @@
                         }
                     },
                     "question": "Welk bord heeft deze fietsstraat?"
-                },
-                "2": {
-                    "question": "Wanneer wordt deze straat een fietsstraat?",
-                    "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
                 }
             }
         },
@@ -577,37 +577,37 @@
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
         "layers": {
             "1": {
-                "override": {
+                "streets_without_etymology": {
                     "=name": "Straten zonder etymologische informatie"
                 }
             },
             "2": {
-                "override": {
+                "parks_and_forests_without_etymology": {
                     "=name": "Parken en bossen zonder etymologische informatie"
                 }
             },
             "3": {
-                "override": {
+                "education_institutions_without_etymology": {
                     "=name": "Onderwijsinstelling zonder etymologische informatie"
                 }
             },
             "4": {
-                "override": {
+                "cultural_places_without_etymology": {
                     "=name": "Culturele plaatsen zonder etymologische informatie"
                 }
             },
             "5": {
-                "override": {
+                "toursistic_places_without_etymology": {
                     "=name": "Toeristische plaatsen zonder etymologische informatie"
                 }
             },
             "6": {
-                "override": {
+                "health_and_social_places_without_etymology": {
                     "=name": "Gezondheidsinstellingen en maatschappelijke plaatsen zonder etymologische informatie"
                 }
             },
             "7": {
-                "override": {
+                "sport_places_without_etymology": {
                     "=name": "Sportplekken zonder etymologische informatie"
                 }
             }
@@ -618,7 +618,7 @@
     "facadegardens": {
         "description": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
-            "0": {
+            "facadegardens": {
                 "description": "Geveltuintjes",
                 "name": "Geveltuintjes",
                 "presets": {
@@ -710,7 +710,7 @@
         "description": "Op deze kaart vind je je favoriete frituur!",
         "layers": {
             "0": {
-                "override": {
+                "friture": {
                     "name": "Frituren"
                 }
             }
@@ -724,7 +724,7 @@
     "ghostsigns": {
         "layers": {
             "1": {
-                "override": {
+                "advertising_wall_paintings": {
                     "name": "Alle adverterende muurschilderingen"
                 }
             }
@@ -733,7 +733,46 @@
     "grb": {
         "description": "Dit thema helpt het GRB importeren.",
         "layers": {
-            "0": {
+            "5": {
+                "override": {
+                    "tagRenderings+": {
+                        "import-button": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
+                                }
+                            },
+                            "render": {
+                                "special": {
+                                    "text": "Voeg dit adres als een nieuw adrespunt toe"
+                                }
+                            }
+                        },
+                        "render_embedded": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "grb": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Metatags nog niet berekend... Heropen deze pop-up"
+                            },
+                            "1": {
+                                "then": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
+                            }
+                        }
+                    }
+                }
+            },
+            "osm_buildings_no_points": {
                 "tagRenderings": {
                     "building type": {
                         "question": "Wat voor soort gebouw is dit?"
@@ -768,45 +807,6 @@
                         "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
                     }
                 }
-            },
-            "1": {
-                "tagRenderings": {
-                    "Import-button": {
-                        "mappings": {
-                            "0": {
-                                "then": "Metatags nog niet berekend... Heropen deze pop-up"
-                            },
-                            "1": {
-                                "then": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
-                            }
-                        }
-                    }
-                }
-            },
-            "5": {
-                "override": {
-                    "tagRenderings+": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "Geen omliggend OSM-gebouw gevonden"
-                                }
-                            }
-                        },
-                        "3": {
-                            "mappings": {
-                                "0": {
-                                    "then": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
-                                }
-                            },
-                            "render": {
-                                "special": {
-                                    "text": "Voeg dit adres als een nieuw adrespunt toe"
-                                }
-                            }
-                        }
-                    }
-                }
             }
         },
         "shortDescription": "Grb import helper tool",
@@ -826,7 +826,7 @@
         "description": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten",
         "layers": {
             "5": {
-                "override": {
+                "medical_shops": {
                     "=presets": {
                         "0": {
                             "title": "een winkel voor medische hulpmiddelen"
@@ -855,7 +855,7 @@
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "layers": {
             "1": {
-                "override": {
+                "crossings_no_traffic_lights": {
                     "=presets": {
                         "0": {
                             "description": "Oversteekplaats voor voetgangers en/of fietsers",
@@ -901,7 +901,7 @@
             "4": {
                 "override": {
                     "filter": {
-                        "0": {
+                        "width": {
                             "options": {
                                 "0": {
                                     "question": "All kerbs"
@@ -917,7 +917,7 @@
             "6": {
                 "override": {
                     "=filter": {
-                        "0": {
+                        "kerb-type": {
                             "options": {
                                 "0": {
                                     "question": "Alle typen stoepranden"
@@ -937,7 +937,7 @@
                 }
             },
             "8": {
-                "override": {
+                "parking_spaces_disabled": {
                     "name": "Parkeerplaatsen voor personen met een beperking"
                 }
             },
@@ -951,14 +951,14 @@
             "20": {
                 "override": {
                     "+tagRenderings": {
-                        "0": {
+                        "import-button": {
                             "render": {
                                 "special": {
                                     "text": "Importeren"
                                 }
                             }
                         },
-                        "1": {
+                        "tag-apply-button": {
                             "render": {
                                 "special": {
                                     "message": "Voeg alle gesuggereerde tags toe"
@@ -993,16 +993,8 @@
         "description": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
         "layers": {
             "1": {
-                "override": {
+                "dogfoodb": {
                     "name": "Hondvriendelijke eetgelegenheden"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "Hondvriendelijke winkels",
-                    "title": {
-                        "render": "Hondvriendelijke winkels"
-                    }
                 }
             },
             "6": {
@@ -1012,6 +1004,14 @@
                             "description": "Een winkel waar je je hond in bijna heel de winkel mag meenemen",
                             "title": "Hondvriendelijke winkels"
                         }
+                    }
+                }
+            },
+            "dogshop": {
+                "dogshop": {
+                    "name": "Hondvriendelijke winkels",
+                    "title": {
+                        "render": "Hondvriendelijke winkels"
                     }
                 }
             }
@@ -1031,7 +1031,7 @@
     "postal_codes": {
         "description": "Postcodes",
         "layers": {
-            "0": {
+            "postal_code_boundary": {
                 "name": "postcodes",
                 "tagRenderings": {
                     "postal_code": {
@@ -1042,7 +1042,7 @@
                     "render": "Postcode {postal_code}"
                 }
             },
-            "2": {
+            "town_hall": {
                 "name": "stadhuizen",
                 "title": {
                     "render": "Stadhuis {name}"
@@ -1069,13 +1069,13 @@
     "sidewalks": {
         "description": "Experimenteel thema",
         "layers": {
-            "0": {
+            "sidewalks": {
                 "description": "Laag die voetpaden naast wegen toont",
                 "name": "Voetpaden",
                 "tagRenderings": {
                     "left-right-questions": {
                         "renderings": {
-                            "1": {
+                            "has_sidewalk_left|right": {
                                 "mappings": {
                                     "0": {
                                         "then": "Er is een stoep aan deze kant van de weg"
@@ -1089,7 +1089,7 @@
                                 },
                                 "question": "Is er een stoep aan deze kant van de weg?"
                             },
-                            "2": {
+                            "sidewalk_width_left|right": {
                                 "question": "Hoe breed is de stoep aan deze kant van de weg?",
                                 "render": "Deze stoep is {sidewalk:left|right:width}m breed"
                             }
@@ -1110,7 +1110,7 @@
     "speelplekken": {
         "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",
         "layers": {
-            "6": {
+            "walking_routes": {
                 "name": "Wandelroutes van provincie Antwerpen",
                 "tagRenderings": {
                     "walk-description": {
@@ -1157,7 +1157,7 @@
         "description": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
         "layers": {
             "4": {
-                "override": {
+                "sport_shops": {
                     "presets": {
                         "0": {
                             "description": "Voeg een nieuwe winkel toe die sportartikelen verkoopt.",
@@ -1173,11 +1173,7 @@
     "stations": {
         "description": "Bekijk, bewerk en voeg details to aan een treinstation",
         "layers": {
-            "3": {
-                "description": "Laag met treinstations",
-                "name": "Treinstations"
-            },
-            "16": {
+            "departures_board": {
                 "description": "Schermen die treinen tonen die van dit station vertrekken",
                 "name": "Vertrektijdenborden",
                 "presets": {
@@ -1208,6 +1204,10 @@
                 "title": {
                     "render": "Vertrektijdenbord"
                 }
+            },
+            "train_station": {
+                "description": "Laag met treinstations",
+                "name": "Treinstations"
             }
         },
         "title": "Treinstations"
@@ -1215,32 +1215,7 @@
     "street_lighting": {
         "description": "Op deze kaart vind je alles over straatlantaarns",
         "layers": {
-            "1": {
-                "name": "Verlichte straten",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "0": {
-                                "then": "Deze straat is verlicht"
-                            },
-                            "1": {
-                                "then": "Deze straat is niet verlicht"
-                            },
-                            "2": {
-                                "then": "Deze straat is 's nachts verlicht"
-                            },
-                            "3": {
-                                "then": "Deze straat is 24/7 verlicht"
-                            }
-                        },
-                        "question": "Is deze straat verlicht?"
-                    }
-                },
-                "title": {
-                    "render": "Verlichte straat"
-                }
-            },
-            "2": {
+            "all_streets": {
                 "name": "Alle straten",
                 "tagRenderings": {
                     "lit": {
@@ -1263,6 +1238,31 @@
                 },
                 "title": {
                     "render": "Straat"
+                }
+            },
+            "lit_streets": {
+                "name": "Verlichte straten",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze straat is verlicht"
+                            },
+                            "1": {
+                                "then": "Deze straat is niet verlicht"
+                            },
+                            "2": {
+                                "then": "Deze straat is 's nachts verlicht"
+                            },
+                            "3": {
+                                "then": "Deze straat is 24/7 verlicht"
+                            }
+                        },
+                        "question": "Is deze straat verlicht?"
+                    }
+                },
+                "title": {
+                    "render": "Verlichte straat"
                 }
             }
         },
@@ -1297,7 +1297,7 @@
     "walkingnodes": {
         "description": "Deze kaart toont wandelknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
         "layers": {
-            "0": {
+            "node2node_hiking": {
                 "name": "Verbindingen van node naar node",
                 "tagRenderings": {
                     "node2node-survey:date": {
@@ -1316,7 +1316,7 @@
                     "render": "Node-naar-node verbinding"
                 }
             },
-            "1": {
+            "node_hiking": {
                 "name": "Knooppunten",
                 "presets": {
                     "0": {
