@@ -65,6 +65,8 @@
       </div>
     {/if}
   </div>
+  <slot name="close-button">
+
   <button
     class="mt-2 h-fit shrink-0 rounded-full border-none p-0"
     on:click={() => state.selectedElement.setData(undefined)}
@@ -73,6 +75,7 @@
   >
     <XCircleIcon aria-hidden={true} class="h-8 w-8" />
   </button>
+  </slot>
 </div>
 
 <style>

@@ -66,7 +66,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly syncSelection: (typeof LayerConfig.syncSelectionAllowed)[number] // this is a trick to conver a constant array of strings into a type union of these values
 
     public readonly _needsFullNodeDatabase: boolean
-    public readonly popupInFloatover
+    public readonly popupInFloatover: boolean | string
 
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
         context = context + "." + json.id

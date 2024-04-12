@@ -219,12 +219,13 @@ export interface LayerConfigJson {
      *
      * If set, open the selectedElementView in a floatOver instead of on the right.
      *
-     * iftrue: show the infobox in the splashscreen floating over the entire UI
+     * iftrue: show the infobox in the splashscreen floating over the entire UI; hide the title bar
      * iffalse: show the infobox in a sidebar on the right
+     * suggestions: return [{if: "value=title", then: "Show in a floatover and show the title bar"}]
      * group: advanced
      * default: sidebar
      */
-    popupInFloatover?: boolean
+    popupInFloatover?: boolean | "title" | string
 
     /**
      * Small icons shown next to the title.

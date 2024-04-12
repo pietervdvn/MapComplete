@@ -18,7 +18,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon,
+    XCircleIcon
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -102,14 +102,14 @@
       if (element.properties.id.startsWith("current_view")) {
         return currentViewLayer
       }
-      if(element.properties.id === "new_point_dialog"){
+      if (element.properties.id === "new_point_dialog") {
         return layout.layers.find(l => l.id === "last_click")
       }
-      if(element.properties.id === "location_track"){
+      if (element.properties.id === "location_track") {
         return layout.layers.find(l => l.id === "gps_track")
       }
       return state.layout.getMatchingLayer(element.properties)
-    },
+    }
   )
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
@@ -117,8 +117,9 @@
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
   state.mapProperties.installCustomKeyboardHandler(viewport)
-  let canZoomIn = mapproperties.maxzoom.map(mz => mapproperties.zoom.data < mz, [mapproperties.zoom] )
-  let canZoomOut = mapproperties.minzoom.map(mz => mapproperties.zoom.data > mz, [mapproperties.zoom] )
+  let canZoomIn = mapproperties.maxzoom.map(mz => mapproperties.zoom.data < mz, [mapproperties.zoom])
+  let canZoomOut = mapproperties.minzoom.map(mz => mapproperties.zoom.data > mz, [mapproperties.zoom])
+
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
     if (!rect) {
@@ -132,7 +133,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat],
+      [bottomRight.lng, bottomRight.lat]
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -419,7 +420,12 @@
       state.selectedElement.setData(undefined)
     }}
   >
-    <div class="flex h-full w-full">
+    <div class="flex flex-col h-full w-full">
+      {#if $selectedLayer.popupInFloatover === "title"}
+        <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement} >
+          <span slot="close-button"/>
+        </SelectedElementTitle>
+      {/if}
       <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
     </div>
   </FloatOver>
