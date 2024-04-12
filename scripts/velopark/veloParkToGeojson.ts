@@ -28,7 +28,7 @@ class VeloParkToGeojson extends Script {
                 "    "
             )
         )
-        console.log("Written", file, "("+features.length," features)")
+        console.log("Written", file, "(" + features.length, " features)")
     }
 
     public static sumProperties(data: object, addTo: Record<string, Set<string>>) {
@@ -48,11 +48,34 @@ class VeloParkToGeojson extends Script {
 
     }
 
+    private static async downloadDataFor(url: string, allProperties: Record<string, Set<string>>): Promise<Feature[]> {
+        const cachePath = "/home/pietervdvn/data/velopark_cache/" + url.replace(/[/:.]/g, "_")
+        if (!fs.existsSync(cachePath)) {
+            const data = await Utils.downloadJson(url)
+            fs.writeFileSync(cachePath, JSON.stringify(data), "utf-8")
+            console.log("Saved a backup to", cachePath)
+        }
+
+        this.sumProperties(JSON.parse(fs.readFileSync(cachePath, "utf-8")), allProperties)
+
+        const linkedData = await LinkedDataLoader.fetchVeloparkEntry(url)
+        const allVelopark: Feature[] = []
+        for (const sectionId in linkedData) {
+            const sectionInfo = linkedData[sectionId]
+            if (Object.keys(sectionInfo).length === 0) {
+                console.warn("No result for", url)
+            }
+            sectionInfo["ref:velopark"] = [sectionId ?? url]
+            allVelopark.push(sectionInfo)
+        }
+        return allVelopark
+    }
+
     private static async downloadData() {
         console.log("Downloading velopark data")
         // Download data for NIS-code 1000. 1000 means: all of belgium
         const url = "https://www.velopark.be/api/parkings/1000"
-        const allVeloparkRaw: { url: string }[] = await Utils.downloadJson(url)
+        const allVeloparkRaw: { url: string }[] = <{url: string}[]> await Utils.downloadJson(url)
 
         let failed = 0
         console.log("Got", allVeloparkRaw.length, "items")
@@ -62,24 +85,8 @@ class VeloParkToGeojson extends Script {
             const f = allVeloparkRaw[i]
             console.log("Handling", i + "/" + allVeloparkRaw.length)
             try {
-                const cachePath = "/home/pietervdvn/data/velopark_cache/" + f.url.replace(/[/:.]/g, "_")
-                if (!fs.existsSync(cachePath)) {
-                    const data = await Utils.downloadJson(f.url)
-                    fs.writeFileSync(cachePath, JSON.stringify(data), "utf-8")
-                    console.log("Saved a backup to", cachePath)
-                }
-
-                this.sumProperties(JSON.parse(fs.readFileSync(cachePath, "utf-8")), allProperties)
-
-                const linkedData = await LinkedDataLoader.fetchVeloparkEntry(f.url)
-                for (const sectionId in linkedData) {
-                    const sectionInfo = linkedData[sectionId]
-                    if (Object.keys(sectionInfo).length === 0) {
-                        console.warn("No result for", f.url)
-                    }
-                    sectionInfo["ref:velopark"] = [sectionId ?? f.url]
-                    allVelopark.push(sectionInfo)
-                }
+                const sections: Feature[] = await VeloParkToGeojson.downloadDataFor(f.url, allProperties)
+                allVelopark.push(...sections)
             } catch (e) {
                 console.error("Loading ", f.url, " failed due to", e)
                 failed++
@@ -87,7 +94,7 @@ class VeloParkToGeojson extends Script {
             }
         }
         console.log("Fetching data done, got ", allVelopark.length + "/" + allVeloparkRaw.length, "failed:", failed)
-        VeloParkToGeojson.exportGeojsonTo("velopark_all.geojson", allVelopark)
+        VeloParkToGeojson.exportGeojsonTo("velopark_all", allVelopark)
         for (const k in allProperties) {
             allProperties[k] = Array.from(allProperties[k])
         }
@@ -97,8 +104,19 @@ class VeloParkToGeojson extends Script {
         return allVelopark
     }
 
-    private static loadFromFile(): Feature[] {
-        return JSON.parse(fs.readFileSync("velopark_all.geojson", "utf-8")).features
+    private static loadFromFile(maxCacheAgeSeconds = 24*60*60): Feature[] | null {
+        const path = "velopark_all.geojson"
+        if(!fs.existsSync(path)){
+            return null
+        }
+        // Millis since epoch
+        const mtime : number = fs.statSync(path).mtime.getTime()
+        const stalenessSeconds = (new Date().getTime() - mtime) / 1000
+        if(stalenessSeconds > maxCacheAgeSeconds){
+            return null
+        }
+
+        return JSON.parse(fs.readFileSync(path, "utf-8")).features
     }
 
     private static exportExtraAmenities(allVelopark: Feature[]) {
@@ -142,7 +160,7 @@ class VeloParkToGeojson extends Script {
         const seenIds = new Set<string>(
             alreadyLinkedFeatures.features.map((f) => f.properties?.["ref:velopark"])
         )
-        this.exportGeojsonTo("osm_with_velopark_link", <Feature[]> alreadyLinkedFeatures.features)
+        this.exportGeojsonTo("osm_with_velopark_link", <Feature[]>alreadyLinkedFeatures.features)
         console.log("OpenStreetMap contains", seenIds.size, "bicycle parkings with a velopark ref")
 
         const features: Feature[] = allVelopark.filter((f) => !seenIds.has(f.properties["ref:velopark"]))
@@ -164,10 +182,10 @@ class VeloParkToGeojson extends Script {
 
     }
 
-    async main(args: string[]): Promise<void> {
-        const allVelopark = VeloParkToGeojson.loadFromFile() //         VeloParkToGeojson.downloadData()
+    async main(): Promise<void> {
+        const allVelopark =VeloParkToGeojson.loadFromFile() ?? await VeloParkToGeojson.downloadData()
         console.log("Got", allVelopark.length, " items")
-        //   VeloParkToGeojson.exportExtraAmenities(allVelopark)
+        VeloParkToGeojson.exportExtraAmenities(allVelopark)
         await VeloParkToGeojson.createDiff(allVelopark)
         console.log("Use vite-node script/velopark/compare to compare the results and generate a diff file")
     }
