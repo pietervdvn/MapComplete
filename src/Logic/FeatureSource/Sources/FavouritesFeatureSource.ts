@@ -60,12 +60,12 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
         this._detectedIds = Stores.ListStabilized(
             features.map((feats) => feats.map((f) => f.properties.id))
         )
-        let allFeatures = state.indexedFeatures
+        const allFeatures = state.indexedFeatures
         this._detectedIds.addCallbackAndRunD((detected) =>
             this.markFeatures(detected, state.featureProperties, allFeatures)
         )
         // We use the indexedFeatureSource as signal to update
-        allFeatures.features.map((_) =>
+        allFeatures.features.map(() =>
             this.markFeatures(this._detectedIds.data, state.featureProperties, allFeatures)
         )
 
@@ -89,7 +89,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
             this.removeFavourite(feature)
             return
         }
-        console.log("Updating metadata due to favourite of", id)
+        console.debug("Updating metadata due to favourite of", id)
         const latestTags = SelectedElementTagsUpdater.applyUpdate(upstream.tags, id, state)
         this.updatePropertiesOfFavourite(latestTags)
     }
@@ -144,7 +144,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
         if (!id) {
             return
         }
-        console.log("Updating store for", id)
+        console.debug("Updating store for", id)
         for (const key in properties) {
             const pref = this._osmConnection.GetPreference(
                 "favourite-" + id + "-property-" + key.replaceAll(":", "__")
