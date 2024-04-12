@@ -77,7 +77,7 @@
         {/if}
       </div>
 
-      {#if $isTesting || $isDebug || $showTags === "yes" || $showTags === "always" || $showTags === "full"}
+      {#if !readonly && ( $isTesting || $isDebug || $showTags === "yes" || $showTags === "always" || $showTags === "full")}
         <div class="subtle text-sm">
           {#if $tags[key] !== undefined}
           <span>
