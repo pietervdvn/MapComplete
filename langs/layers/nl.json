@@ -27,28 +27,28 @@
     "advertising": {
         "name": "Reclame",
         "presets": {
-            "3": {
+            "4": {
                 "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
                 "title": "een uithangbord"
             },
-            "4": {
+            "5": {
                 "description": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
                 "title": "een aanplakzuil"
             },
-            "5": {
+            "6": {
                 "title": "een vlag"
             },
-            "6": {
+            "7": {
                 "title": "een scherm"
             },
-            "7": {
+            "8": {
                 "title": "een scherm op een muur"
             },
-            "8": {
+            "10": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
             },
-            "12": {
+            "14": {
                 "title": "een muurschildering"
             }
         },

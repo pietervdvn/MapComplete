@@ -323,13 +323,15 @@
                       "or": [
                         "shelter=yes",
                         "amenity=shelter",
-                        "building=shelter"
+                        "building=shelter",
+                        "support=street_furniture:transit_shelter"
                       ]
                     },
                     {
                       "or": [
                         "public_transport=platform",
-                        "highway=bus_stop"
+                        "highway=bus_stop",
+                        "support=street_furniture:transit_shelter"
                       ]
                     }
                   ]
@@ -493,6 +495,18 @@
     },
     {
       "tags": [
+        "advertising=poster_box",
+        "support=street_furniture:transit_shelter"
+      ],
+      "title": {
+        "en": "a poster box part of a public transport shelter"
+      },
+      "snapToLayer": [
+        "shelter"
+      ]
+    },
+    {
+      "tags": [
         "advertising=board"
       ],
       "title": {
@@ -634,6 +648,19 @@
       ],
       "snapToLayer": [
         "walls_and_buildings"
+      ],
+      "maxSnapDistance": 5
+    },
+    {
+      "tags": [
+        "advertising=screen",
+        "support=street_furniture:transit_shelter"
+      ],
+      "title": {
+        "en": "a screen mounted on a transit shelter"
+      },
+      "snapToLayer": [
+        "shelter"
       ],
       "maxSnapDistance": 5
     },

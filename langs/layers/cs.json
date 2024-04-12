@@ -38,38 +38,38 @@
             "2": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
-            "3": {
+            "4": {
                 "description": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce",
                 "title": "billboard"
             },
-            "4": {
+            "5": {
                 "description": "Válcová venkovní konstrukce, která zobrazuje reklamy",
                 "title": "sloup"
             },
-            "5": {
+            "6": {
                 "title": "vlajka"
             },
-            "6": {
+            "7": {
                 "title": "obrazovka"
             },
-            "7": {
+            "8": {
                 "title": "obrazovka připevněná na stěnu"
             },
-            "8": {
+            "10": {
                 "description": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
                 "title": "plachta"
             },
-            "9": {
+            "11": {
                 "title": "totem"
             },
-            "10": {
+            "12": {
                 "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
                 "title": "cedule"
             },
-            "11": {
+            "13": {
                 "title": "socha"
             },
-            "12": {
+            "14": {
                 "title": "nástěnná malba"
             }
         },

@@ -36,38 +36,38 @@
             "2": {
                 "title": "un panneau à affiches monté sur un mur"
             },
-            "3": {
+            "4": {
                 "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
                 "title": "un petit panneau"
             },
-            "4": {
+            "5": {
                 "description": "Une structure extérieure cylindrique qui affiche de la publicité",
                 "title": "une colonne"
             },
-            "5": {
+            "6": {
                 "title": "un drapeau"
             },
-            "6": {
+            "7": {
                 "title": "un écran"
             },
-            "7": {
+            "8": {
                 "title": "un écran fixé au mur"
             },
-            "8": {
+            "10": {
                 "description": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
                 "title": "une bâche"
             },
-            "9": {
+            "11": {
                 "title": "un totem"
             },
-            "10": {
+            "12": {
                 "description": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
                 "title": "une enseigne"
             },
-            "11": {
+            "13": {
                 "title": "une sculpture"
             },
-            "12": {
+            "14": {
                 "title": "une peinture murale"
             }
         },

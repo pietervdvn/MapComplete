@@ -38,38 +38,38 @@
             "2": {
                 "title": "skrzynka plakatowa montowana na ścianie"
             },
-            "3": {
+            "4": {
                 "description": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
                 "title": "tablica"
             },
-            "4": {
+            "5": {
                 "description": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
                 "title": "kolumna"
             },
-            "5": {
+            "6": {
                 "title": "flaga"
             },
-            "6": {
+            "7": {
                 "title": "ekran"
             },
-            "7": {
+            "8": {
                 "title": "ekran zamontowany na ścianie"
             },
-            "8": {
+            "10": {
                 "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
                 "title": "plandeka"
             },
-            "9": {
+            "11": {
                 "title": "totem"
             },
-            "10": {
+            "12": {
                 "description": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
                 "title": "znak"
             },
-            "11": {
+            "13": {
                 "title": "rzeźba"
             },
-            "12": {
+            "14": {
                 "title": "mural ścienny"
             }
         },

@@ -39,37 +39,43 @@
                 "title": "a poster box mounted on a wall"
             },
             "3": {
+                "title": "a poster box part of a public transport shelter"
+            },
+            "4": {
                 "description": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
                 "title": "a board"
             },
-            "4": {
+            "5": {
                 "description": "A cylindrical outdoor structure which shows advertisements",
                 "title": "a column"
             },
-            "5": {
+            "6": {
                 "title": "a flag"
             },
-            "6": {
+            "7": {
                 "title": "a screen"
             },
-            "7": {
+            "8": {
                 "title": "a screen mounted on a wall"
             },
-            "8": {
+            "9": {
+                "title": "a screen mounted on a transit shelter"
+            },
+            "10": {
                 "description": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
                 "title": "a tarp"
             },
-            "9": {
+            "11": {
                 "title": "a totem"
             },
-            "10": {
+            "12": {
                 "description": "Used for advertising signs, neon signs, logos & institutional entrance signs",
                 "title": "a sign"
             },
-            "11": {
+            "13": {
                 "title": "a sculpture"
             },
-            "12": {
+            "14": {
                 "title": "a wall painting"
             }
         },
