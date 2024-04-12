@@ -32,8 +32,8 @@ export interface SnappingOptions {
     reusePointWithin?: number
 }
 
-export default class SnappingFeatureSource implements FeatureSource {
-    public readonly features: Store<Feature<Point>[]>
+export default class SnappingFeatureSource implements FeatureSource<Feature<Point,  { "snapped-to": string; dist: number }>> {
+    public readonly features: Store<[Feature<Point,  { "snapped-to": string; dist: number }>]>
     /*Contains the id of the way it snapped to*/
     public readonly snappedTo: Store<string>
     private readonly _snappedTo: UIEventSource<string>
