@@ -84,7 +84,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
         super({
             keys: ["_referencing_ways"],
             isLazy: true,
-            doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
+            doc: "_referencing_ways contains - for a node - which ways use this node as point in their geometry. ",
         })
     }
 

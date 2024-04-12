@@ -49,13 +49,13 @@ export default class NoteCommentElement extends Combine {
             user = new Link(comment.user, comment.user_url ?? "", true)
         }
 
-        let userinfo = Stores.FromPromise(
+        const userinfo = Stores.FromPromise(
             Utils.downloadJsonCached(
                 "https://api.openstreetmap.org/api/0.6/user/" + comment.uid,
                 24 * 60 * 60 * 1000
             )
         )
-        let userImg = new VariableUiElement(
+        const userImg = new VariableUiElement(
             userinfo.map((userinfo) => {
                 const href = userinfo?.user?.img?.href
                 if (href !== undefined) {
@@ -123,7 +123,7 @@ export default class NoteCommentElement extends Combine {
         const comments: any[] = JSON.parse(tags.data["comments"])
         const username = state.osmConnection.userDetails.data.name
 
-        var urlRegex = /(https?:\/\/[^\s]+)/g
+        const urlRegex = /(https?:\/\/[^\s]+)/g
         const html = txt.replace(urlRegex, function (url) {
             return '<a href="' + url + '">' + url + "</a>"
         })

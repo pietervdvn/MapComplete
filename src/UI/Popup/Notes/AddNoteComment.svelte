@@ -17,7 +17,7 @@
     id = $tags.id
   }
 
-  let txt = new UIEventSource(undefined)
+  let txt: UIEventSource<string> = new UIEventSource(undefined)
   let _txt: string = undefined
   txt.addCallbackD((t) => {
     _txt = t

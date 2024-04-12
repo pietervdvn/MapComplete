@@ -11,16 +11,11 @@ import { And } from "../../Logic/Tags/And"
 import Toggle from "../Input/Toggle"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { Changes } from "../../Logic/Osm/Changes"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
-import { IndexedFeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import { Feature } from "geojson"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import Maproulette from "../../Logic/Maproulette"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import Icon from "../Map/Icon.svelte"
-import { Map } from "maplibre-gl"
 
 export default class TagApplyButton implements AutoAction, SpecialVisualization {
     public readonly funcName = "tag_apply"
@@ -177,7 +172,6 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         tags: UIEventSource<Record<string, string>>,
         args: string[],
         feature: Feature,
-        _: LayerConfig
     ): BaseUIElement {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const msg = args[1]
@@ -200,7 +194,6 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
                 return el
             })
         ).SetClass("subtle")
-        const self = this
         const applied = new UIEventSource(
             tags?.data?.["mr_taskStatus"] !== undefined &&
                 tags?.data?.["mr_taskStatus"] !== "Created"
@@ -210,7 +203,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             new Combine([msg, tagsExplanation]).SetClass("flex flex-col")
         ).onClick(async () => {
             applied.setData(true)
-            await self.applyActionOn(feature, state, tags, args)
+            await this.applyActionOn(feature, state, tags, args)
         })
 
         return new Toggle(
