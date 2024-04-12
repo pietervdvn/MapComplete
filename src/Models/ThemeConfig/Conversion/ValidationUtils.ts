@@ -62,9 +62,7 @@ export default class ValidationUtils {
             }
 
             for (const key in translation) {
-                if (!translation.hasOwnProperty(key)) {
-                    continue
-                }
+
 
                 const template = translation[key]
                 const parts = SpecialVisualizations.constructSpecification(template)
