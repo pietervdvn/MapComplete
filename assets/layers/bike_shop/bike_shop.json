@@ -277,7 +277,7 @@
         },
         {
           "if": "service:bicycle:pump=yes",
-          "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
+          "then": "circle:#e2783d;./assets/layers/bike_shop/pump.svg"
         },
         {
           "if": {
