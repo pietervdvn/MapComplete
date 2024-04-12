@@ -3,7 +3,7 @@ import fs from "fs"
 import { Feature, FeatureCollection } from "geojson"
 import { GeoOperations } from "../../src/Logic/GeoOperations"
 
-// vite-node scripts/velopark/compare.ts -- scripts/velopark/velopark_all.geojson osm_with_velopark_link_.geojson
+// vite-node scripts/velopark/compare.ts -- velopark_all.geojson osm_with_velopark_link_.geojson
 class Compare extends Script {
     compare(
         veloId: string,
@@ -84,7 +84,19 @@ class Compare extends Script {
         }
         console.log("Found ", diffs.length, " items with differences between OSM and the provided data")
 
-        fs.writeFileSync("report_diff.json", JSON.stringify(diffs, null, "  "))
+
+        const maxDistance = Math.max(...diffs.map(d => d.distance))
+        const distanceBins = []
+        const binSize = 5
+        for (let i = 0; i < Math.ceil(maxDistance / binSize) ; i++) {
+            distanceBins.push(0)
+        }
+        for (const diff of diffs) {
+            const bin = Math.floor(diff.distance / binSize)
+            distanceBins[bin] += 1
+        }
+
+        fs.writeFileSync("report_diff.json", JSON.stringify({ diffs, distanceBins }, null, "  "))
         console.log("Written report_diff.json")
     }
 
