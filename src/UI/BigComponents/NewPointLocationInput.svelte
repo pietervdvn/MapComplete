@@ -8,13 +8,17 @@
   import ShowDataLayer from "../Map/ShowDataLayer"
   import type {
     FeatureSource,
-    FeatureSourceForLayer,
+    FeatureSourceForLayer
   } from "../../Logic/FeatureSource/FeatureSource"
   import SnappingFeatureSource from "../../Logic/FeatureSource/Sources/SnappingFeatureSource"
   import FeatureSourceMerger from "../../Logic/FeatureSource/Sources/FeatureSourceMerger"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import { Utils } from "../../Utils"
   import Move_arrows from "../../assets/svg/Move_arrows.svelte"
+  import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
+  import { prop_dev } from "svelte/internal"
+  import { Tag } from "../../Logic/Tags/Tag"
+  import { TagUtils } from "../../Logic/Tags/TagUtils"
 
   /**
    * An advanced location input, which has support to:
@@ -43,6 +47,8 @@
   export let snapToLayers: string[] | undefined
   export let targetLayer: LayerConfig | undefined
   export let maxSnapDistance: number = undefined
+  export let presetProperties: Tag[] = undefined
+  let presetPropertiesUnpacked = TagUtils.KVtoProperties(presetProperties)
 
   export let snappedTo: UIEventSource<string | undefined>
 
@@ -66,16 +72,17 @@
     allowMoving: new UIEventSource<boolean>(true),
     allowZooming: new UIEventSource<boolean>(true),
     minzoom: new UIEventSource<number>(18),
-    rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer),
+    rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer)
   }
   state?.showCurrentLocationOn(map)
 
   if (targetLayer) {
+    // Show already existing items
     const featuresForLayer = state.perLayer.get(targetLayer.id)
     if (featuresForLayer) {
       new ShowDataLayer(map, {
         layer: targetLayer,
-        features: featuresForLayer,
+        features: featuresForLayer
       })
     }
   }
@@ -92,7 +99,7 @@
       new ShowDataLayer(map, {
         layer: layer.layer.layerDef,
         zoomToFeatures: false,
-        features: layer,
+        features: layer
       })
     }
     const snappedLocation = new SnappingFeatureSource(
@@ -103,14 +110,28 @@
         maxDistance: maxSnapDistance ?? 15,
         allowUnsnapped: true,
         snappedTo,
-        snapLocation: value,
+        snapLocation: value
       }
     )
-
+    const withCorrectedAttributes = new StaticFeatureSource(
+      snappedLocation.features.mapD(feats => feats.map(f => {
+        const properties =  {
+        ...f.properties,
+        ...presetPropertiesUnpacked
+        }
+        properties["_referencing_ways"] = f.properties["snapped-to"]
+        return ({
+          ...f,
+         properties
+        })
+      }))
+    )
+    // The actual point to be created, snapped at the new location
     new ShowDataLayer(map, {
       layer: targetLayer,
-      features: snappedLocation,
+      features: withCorrectedAttributes
     })
+    withCorrectedAttributes.features.addCallbackAndRunD(f => console.log("Snapped point is", f))
   }
 </script>
 

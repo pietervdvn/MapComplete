@@ -329,6 +329,7 @@
               {state}
               {coordinate}
               targetLayer={selectedPreset.layer}
+              presetProperties={selectedPreset.preset.tags}
               snapToLayers={selectedPreset.preset.preciseInput.snapToLayers}
             />
           </div>
