@@ -286,9 +286,10 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
         )
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: LayoutConfigJson): LayoutConfigJson {
         const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
-        return conversion.convert(json, context)
+        // The context is used to generate the 'context' in the translation .It _must_ be `json.id` to correctly link into weblate
+        return conversion.convert(json, ConversionContext.construct([json.id],["AddContextToTranslation"]))
     }
 }
 
