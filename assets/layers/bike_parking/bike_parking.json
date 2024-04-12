@@ -893,11 +893,25 @@
         "cs": "Toto parkoviště je vhodné pro {capacity:cargo_bike} nákladních kol",
         "ca": "A aquest aparcament caben {capacity:cargo_bike} bicicletes de càrrega"
       },
-      "condition": "cargo_bike~designated|yes",
+      "condition": {
+        "or": [
+          "capacity:cargo_bike~*",
+          "cargo_bike~designated|yes"
+        ]
+      },
       "freeform": {
         "key": "capacity:cargo_bike",
         "type": "nat"
       },
+      "mappings": [{
+          "if": "cargo_bike=no",
+          "then": {
+            "en": "There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed",
+            "nl": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan "
+          },
+          "hideInAnswer": "capacity:cargo_bike=",
+        "addExtraTags": ["capacity:cargo_bike="]
+      }],
       "id": "Cargo bike capacity?"
     }
   ],
