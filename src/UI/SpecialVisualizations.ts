@@ -1017,7 +1017,7 @@ export default class SpecialVisualizations {
                                 state,
                                 feature,
                                 layer
-                            }).SetClass("px-1")
+                            }).SetClass("px-1").setSpan()
                         })
                     )
             },
@@ -1249,7 +1249,7 @@ export default class SpecialVisualizations {
                         download: tagSource.map(tags => Utils.SubstituteKeys(download, tags)),
                         ariaLabel: tagSource.map(tags => Utils.SubstituteKeys(ariaLabel, tags)),
                         newTab: new ImmutableStore(newTab)
-                    })
+                    }).setSpan()
                 }
             },
             {
