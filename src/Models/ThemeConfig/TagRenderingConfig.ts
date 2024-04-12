@@ -232,10 +232,9 @@ export default class TagRenderingConfig {
                 throw "Tagrendering has a 'mappings'-object, but expected a list (" + context + ")"
             }
 
+            const firstMappingSize: string =   json.mappings.map((m) => (m.icon?.["class"])).find(c => !!c)
             const commonIconSize =
-                Utils.NoNull(
-                    json.mappings.map((m) => (!!m.icon ? m.icon["class"] : undefined))
-                )[0] ??
+              firstMappingSize ??
                 json["#iconsize"] ??
                 "small"
             this.mappings = json.mappings.map((m, i) =>
