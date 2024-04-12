@@ -280,8 +280,10 @@
           "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg"
         },
         {
-          "if": "service:bicycle:cleaning~*",
-          "then": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
+          "if": {
+            "and":["service:bicycle:cleaning~*","service:bicycle:cleaning!=no"]
+          },
+          "then": "circle:#6bc4f7;./assets/layers/bike_cleaning/bike_cleaning_icon.svg"
         }
       ],
       "iconSize": "50,50",
