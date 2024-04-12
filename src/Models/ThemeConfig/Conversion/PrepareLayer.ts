@@ -502,6 +502,12 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
         )
     }
 
+    /**
+     * const action = new AddQuestionBox()
+     * const tagRenderings = [{id:"questions", render: {"*": "{questions()}" } }]
+     * const conv = action.convert({tagRenderings}, ConversionContext.construct(["test"], []))
+     * conv.tagRenderings // => [{id:"questions", render: {"*": "{questions()}" } }]
+     */
     convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
         if (
             json.tagRenderings === undefined ||
@@ -515,7 +521,7 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
         json = { ...json }
         json.tagRenderings = [...json.tagRenderings]
         const allSpecials: Exclude<RenderingSpecification, string>[] = <any>(
-            ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
+            ValidationUtils.getAllSpecialVisualisations(<QuestionableTagRenderingConfigJson[]> json.tagRenderings).filter(
                 (spec) => typeof spec !== "string"
             )
         )
@@ -539,7 +545,7 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
                 )
             )
         )
-        const seen = new Set()
+        const seen: Set<string> = new Set()
         for (const questionSpecial of questionSpecials) {
             if (typeof questionSpecial === "string") {
                 continue
