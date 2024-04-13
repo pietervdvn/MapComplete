@@ -1,4 +1,14 @@
 {
+    "atm": {
+        "tagRenderings": {
+            "operator": {
+                "render": "Ta bankomat upravlja {operator}"
+            }
+        },
+        "title": {
+            "render": "Bankomat"
+        }
+    },
     "defibrillator": {
         "description": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja",
         "name": "Defibrilatorji",
