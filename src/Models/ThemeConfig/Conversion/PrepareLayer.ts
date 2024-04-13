@@ -65,31 +65,37 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
 
         const newFilters: FilterConfigJson[] = []
         const filters = <(FilterConfigJson | string)[]>json.filter
-        for (let i = 0; i < filters.length; i++){
+        for (let i = 0; i < filters.length; i++) {
             const filter = filters[i]
             if (typeof filter !== "string") {
                 newFilters.push(filter)
                 continue
             }
 
-            const matchingTr =<TagRenderingConfigJson> json.tagRenderings.find(tr => !!tr && tr["id"] === filter)
-            if(matchingTr){
-                if(!(matchingTr.mappings?.length >= 1)){
-                    context.enters("filter",i ).err("Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings")
+            const matchingTr = <TagRenderingConfigJson>(
+                json.tagRenderings.find((tr) => !!tr && tr["id"] === filter)
+            )
+            if (matchingTr) {
+                if (!(matchingTr.mappings?.length >= 1)) {
+                    context
+                        .enters("filter", i)
+                        .err(
+                            "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings"
+                        )
                 }
-                const options =  matchingTr.mappings.map(mapping => ({
+                const options = matchingTr.mappings.map((mapping) => ({
                     question: mapping.then,
-                    osmTags: mapping.if
+                    osmTags: mapping.if,
                 }))
                 options.unshift({
                     question: {
-                        en:"All types"
+                        en: "All types",
                     },
-                    osmTags: undefined
+                    osmTags: undefined,
                 })
                 newFilters.push({
                     id: filter,
-                    options
+                    options,
                 })
                 continue
             }
@@ -521,9 +527,9 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
         json = { ...json }
         json.tagRenderings = [...json.tagRenderings]
         const allSpecials: Exclude<RenderingSpecification, string>[] = <any>(
-            ValidationUtils.getAllSpecialVisualisations(<QuestionableTagRenderingConfigJson[]> json.tagRenderings).filter(
-                (spec) => typeof spec !== "string"
-            )
+            ValidationUtils.getAllSpecialVisualisations(
+                <QuestionableTagRenderingConfigJson[]>json.tagRenderings
+            ).filter((spec) => typeof spec !== "string")
         )
 
         const questionSpecials = allSpecials.filter((sp) => sp.func.funcName === "questions")

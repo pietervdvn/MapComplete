@@ -6,10 +6,10 @@
    */
   export let selected: UIEventSource<boolean>
   let _c: boolean = selected.data ?? true
-  let id = `checkbox-input-${Math.round(Math.random()*100000000)}`
+  let id = `checkbox-input-${Math.round(Math.random() * 100000000)}`
   $: selected.set(_c)
-  selected.addCallbackD(s => {
-      _c = s
+  selected.addCallbackD((s) => {
+    _c = s
   })
 </script>
 

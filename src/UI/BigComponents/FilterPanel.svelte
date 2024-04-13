@@ -1,49 +1,48 @@
 <script lang="ts">
-    /**
-     * THe panel containing all filter- and layerselection options
-     */
+  /**
+   * THe panel containing all filter- and layerselection options
+   */
 
-    import OverlayToggle from "./OverlayToggle.svelte"
-    import Filterview from "./Filterview.svelte"
-    import ThemeViewState from "../../Models/ThemeViewState"
-    import Translations from "../i18n/Translations"
-    import Tr from "../Base/Tr.svelte"
-    import Filter from "../../assets/svg/Filter.svelte"
+  import OverlayToggle from "./OverlayToggle.svelte"
+  import Filterview from "./Filterview.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
+  import Filter from "../../assets/svg/Filter.svelte"
 
-    export let state: ThemeViewState
-    let layout = state.layout
-    
-    let allEnabled : boolean
-    let allDisabled: boolean
-    
-    function updateEnableState(){
-        allEnabled = true
-        allDisabled = true
-        state.layerState.filteredLayers.forEach((v) => {
-            if(!v.layerDef.name){
-                return
-            }
-            allEnabled &&= v.isDisplayed.data
-            allDisabled &&= !v.isDisplayed.data
-        })
-    }
-    
-    updateEnableState()
+  export let state: ThemeViewState
+  let layout = state.layout
+
+  let allEnabled: boolean
+  let allDisabled: boolean
+
+  function updateEnableState() {
+    allEnabled = true
+    allDisabled = true
     state.layerState.filteredLayers.forEach((v) => {
-        if(!v.layerDef.name){
-            return
-        }
-       v.isDisplayed.addCallbackD(_ => updateEnableState())
+      if (!v.layerDef.name) {
+        return
+      }
+      allEnabled &&= v.isDisplayed.data
+      allDisabled &&= !v.isDisplayed.data
     })
-    function enableAll(doEnable: boolean){
-        state.layerState.filteredLayers.forEach((v) => {
-            if(!v.layerDef.name){
-                return
-            }
-            v.isDisplayed.setData(doEnable)
-        })
+  }
+
+  updateEnableState()
+  state.layerState.filteredLayers.forEach((v) => {
+    if (!v.layerDef.name) {
+      return
     }
-    
+    v.isDisplayed.addCallbackD((_) => updateEnableState())
+  })
+  function enableAll(doEnable: boolean) {
+    state.layerState.filteredLayers.forEach((v) => {
+      if (!v.layerDef.name) {
+        return
+      }
+      v.isDisplayed.setData(doEnable)
+    })
+  }
 </script>
 
 <div class="m-2 flex flex-col">
@@ -59,12 +58,12 @@
       highlightedLayer={state.guistate.highlightedLayerInFilters}
     />
   {/each}
-  <div class="flex self-end mt-1">
+  <div class="mt-1 flex self-end">
     <button class="small" class:disabled={allEnabled} on:click={() => enableAll(true)}>
-      <Tr t={Translations.t.general.filterPanel.enableAll}/>
+      <Tr t={Translations.t.general.filterPanel.enableAll} />
     </button>
-    <button class="small"  class:disabled={allDisabled} on:click={() => enableAll(false)}>
-      <Tr t={Translations.t.general.filterPanel.disableAll}/>
+    <button class="small" class:disabled={allDisabled} on:click={() => enableAll(false)}>
+      <Tr t={Translations.t.general.filterPanel.disableAll} />
     </button>
   </div>
 

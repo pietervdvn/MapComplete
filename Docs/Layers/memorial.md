@@ -59,7 +59,7 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/memorial#values) [memorial](https://wiki.openstreetmap.org/wiki/Key:memorial) | Multiple choice | [statue](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstatue) [plaque](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dplaque) [bench](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench) [ghost_bike](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/memorial#values) [memorial](https://wiki.openstreetmap.org/wiki/Key:memorial) | [string](../SpecialInputElements.md#string) | [statue](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstatue) [plaque](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dplaque) [bench](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench) [ghost_bike](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike) [stolperstein](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstolperstein) [stele](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstele) [stone](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstone) [bust](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbust) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dsculpture) [obelisk](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dobelisk) [cross](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dcross) [blue_plaque](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dblue_plaque) [tank](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtank) [tree](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtree)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/inscription#values) [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wikidata#values) [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/subject:wikidata#values) [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
@@ -115,7 +115,7 @@ This tagrendering has no question and is thus read-only
 
 The question is  *What type of memorial is this?*
 
-
+This rendering asks information about the property  [memorial](https://wiki.openstreetmap.org/wiki/Key:memorial) This is rendered with  `This is a {memorial}`
 
 
 
@@ -123,6 +123,16 @@ The question is  *What type of memorial is this?*
   - *This is a plaque*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dplaque' target='_blank'>plaque</a>
   - *This is a commemorative bench*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench' target='_blank'>bench</a>
   - *This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike' target='_blank'>ghost_bike</a>
+  - *This is a stolperstein (stumbing stone)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstolperstein' target='_blank'>stolperstein</a>
+  - *This is a stele*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstele' target='_blank'>stele</a>
+  - *This is a memorial stone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstone' target='_blank'>stone</a>
+  - *This is a bust*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbust' target='_blank'>bust</a>
+  - *This is a sculpture*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dsculpture' target='_blank'>sculpture</a>
+  - *This is an obelisk*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dobelisk' target='_blank'>obelisk</a>
+  - *This is a cross*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dcross' target='_blank'>cross</a>
+  - *This is a blue plaque*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dblue_plaque' target='_blank'>blue_plaque</a>
+  - *This is a historic tank, permanently placed in public space as memorial*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtank' target='_blank'>tank</a>
+  - *This is a memorial tree*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtree' target='_blank'>tree</a>
 
 
 
@@ -343,6 +353,18 @@ This tagrendering has labels  `bench-questions`
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

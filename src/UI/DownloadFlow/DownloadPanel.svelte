@@ -38,7 +38,7 @@
       mapExtent: state.mapProperties.bounds.data,
       width: maindiv.offsetWidth,
       height: maindiv.offsetHeight,
-      noSelfIntersectingLines
+      noSelfIntersectingLines,
     })
   }
 
@@ -46,13 +46,17 @@
   let customHeight = LocalStorageSource.Get("custom-png-height", "20")
 
   async function offerCustomPng(): Promise<Blob> {
-    console.log("Creating a custom size png with dimensions", customWidth.data + "mm *", customHeight.data + "mm")
+    console.log(
+      "Creating a custom size png with dimensions",
+      customWidth.data + "mm *",
+      customHeight.data + "mm"
+    )
     const creator = new PngMapCreator(state, {
-      height: Number(customHeight.data), width: Number(customWidth.data)
+      height: Number(customHeight.data),
+      width: Number(customWidth.data),
     })
     return await creator.CreatePng("belowmap")
   }
-
 </script>
 
 {#if $isLoading}
@@ -123,25 +127,26 @@
     {/each}
   </div>
 
-  <div class="low-interaction p-2 mt-4">
+  <div class="low-interaction mt-4 p-2">
     <h3 class="m-0 mb-2">
-      <Tr t={t.custom.title}/></h3>
-        <div class="flex">
-          <Tr t={t.custom.width} />
-          <ValidatedInput {state} type="pnat" value={customWidth} />
-        </div>
-        <div class="flex">
-          <Tr t={t.custom.height} />
-          <ValidatedInput {state} type="pnat" value={customHeight} />
-        </div>
-        <DownloadButton
-          mainText={t.custom.download.Subs({width: $customWidth, height: $customHeight})}
-          helperText={t.custom.downloadHelper}
-          extension="png"
-          construct={() => offerCustomPng()}
-          {state}
-          mimetype="image/png"
-        />
+      <Tr t={t.custom.title} />
+    </h3>
+    <div class="flex">
+      <Tr t={t.custom.width} />
+      <ValidatedInput {state} type="pnat" value={customWidth} />
+    </div>
+    <div class="flex">
+      <Tr t={t.custom.height} />
+      <ValidatedInput {state} type="pnat" value={customHeight} />
+    </div>
+    <DownloadButton
+      mainText={t.custom.download.Subs({ width: $customWidth, height: $customHeight })}
+      helperText={t.custom.downloadHelper}
+      extension="png"
+      construct={() => offerCustomPng()}
+      {state}
+      mimetype="image/png"
+    />
   </div>
 
   <Tr cls="link-underline" t={t.licenseInfo} />

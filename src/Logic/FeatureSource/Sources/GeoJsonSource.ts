@@ -96,7 +96,7 @@ export default class GeoJsonSource implements FeatureSource {
         const url = this.url
         try {
             const cacheAge = (options?.maxCacheAgeSec ?? 300) * 1000
-            let json = <{features: Feature[]}> await Utils.downloadJsonCached(url, cacheAge)
+            let json = <{ features: Feature[] }>await Utils.downloadJsonCached(url, cacheAge)
 
             if (json.features === undefined || json.features === null) {
                 json.features = []

@@ -110,7 +110,10 @@ class ApplyButton extends UIElement {
         mla.allowZooming.setData(false)
         mla.allowMoving.setData(false)
 
-        const previewMap = new SvelteUIElement(MaplibreMap, { mapProperties: mla, map: mlmap }).SetClass("h-48")
+        const previewMap = new SvelteUIElement(MaplibreMap, {
+            mapProperties: mla,
+            map: mlmap,
+        }).SetClass("h-48")
 
         const features = this.target_feature_ids.map((id) =>
             this.state.indexedFeatures.featuresById.data.get(id)

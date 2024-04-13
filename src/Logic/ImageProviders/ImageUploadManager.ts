@@ -42,9 +42,12 @@ export class ImageUploadManager {
         const failed = this.getCounterFor(this._uploadFailed, "*")
         const done = this.getCounterFor(this._uploadFinished, "*")
 
-        this.isUploading = this.getCounterFor(this._uploadStarted, "*").map(startedCount => {
-            return startedCount > failed.data  + done.data
-        }, [failed, done])
+        this.isUploading = this.getCounterFor(this._uploadStarted, "*").map(
+            (startedCount) => {
+                return startedCount > failed.data + done.data
+            },
+            [failed, done]
+        )
     }
 
     /**

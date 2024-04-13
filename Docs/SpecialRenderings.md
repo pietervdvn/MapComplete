@@ -176,6 +176,8 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of compare_data](#example-usage-of-compare_data)
     + [login_button](#login_button)
       * [Example usage of login_button](#example-usage-of-login_button)
+    + [linked_data_from_website](#linked_data_from_website)
+      * [Example usage of linked_data_from_website](#example-usage-of-linked_data_from_website)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -1250,13 +1252,12 @@ name | default | description
 ------ | --------- | -------------
 url | _undefined_ | The attribute containing the url where to fetch more data
 host | _undefined_ | The domain name(s) where data might be fetched from - this is needed to set the CSP. A domain must include 'https', e.g. 'https://example.com'. For multiple domains, separate them with ';'. If you don't know the possible domains, use '*'. 
-postprocessing | _undefined_ | Apply some postprocessing. Currently, only 'velopark' is allowed as value
 readonly | _undefined_ | If 'yes', will not show 'apply'-buttons
  
 
 #### Example usage of compare_data 
 
- `{compare_data(,,,)}`
+ `{compare_data(,,)}`
 
 
 
@@ -1267,6 +1268,24 @@ readonly | _undefined_ | If 'yes', will not show 'apply'-buttons
 #### Example usage of login_button 
 
  `{login_button()}`
+
+
+
+### linked_data_from_website 
+
+ Attempts to load (via a proxy) the specified website and parsed ld+json from there. Suitable data will be offered to import into OSM 
+
+name | default | description
+------ | --------- | -------------
+key | website | Attempt to load ld+json from the specified URL. This can be in an embedded <script type='ld+json'>
+useProxy | yes | If 'yes', uses the provided proxy server. This proxy server will scrape HTML and search for a script with `lang='ld+json'`. If `no`, the data will be downloaded and expects a linked-data-json directly
+host | _undefined_ | If not using a proxy, define what host the website is allowed to connect to
+mode | _undefined_ | If `display`, only show the data in tabular and readonly form, ignoring already existing tags. This is used to explicitly show all the tags. If unset or anything else, allow to apply/import on OSM
+ 
+
+#### Example usage of linked_data_from_website 
+
+ `{linked_data_from_website(website,yes,,)}`
 
 
 

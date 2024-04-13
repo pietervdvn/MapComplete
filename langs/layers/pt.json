@@ -165,9 +165,6 @@
                     "1": {
                         "then": "Isso é uma placa"
                     },
-                    "10": {
-                        "then": "Isto é uma pintura mural"
-                    },
                     "2": {
                         "then": "Isto é uma coluna"
                     },
@@ -191,6 +188,9 @@
                     },
                     "9": {
                         "then": "Isto é um totem"
+                    },
+                    "10": {
+                        "then": "Isto é uma pintura mural"
                     }
                 },
                 "question": "Que tipo de recurso de publicitário é este?",
@@ -204,9 +204,6 @@
                 },
                 "1": {
                     "then": "Quadro"
-                },
-                "10": {
-                    "then": "Pintura mural"
                 },
                 "2": {
                     "then": "Caixa de pôster"
@@ -231,6 +228,9 @@
                 },
                 "9": {
                     "then": "Totem"
+                },
+                "10": {
+                    "then": "Pintura mural"
                 }
             }
         }
@@ -323,15 +323,6 @@
                     "1": {
                         "then": "Mural"
                     },
-                    "10": {
-                        "then": "Azulejo (azulejo decorativo espanhol e português)"
-                    },
-                    "11": {
-                        "then": "Ladrilhos"
-                    },
-                    "12": {
-                        "then": "Entalhe em madeira"
-                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -355,6 +346,15 @@
                     },
                     "9": {
                         "then": "Relevo"
+                    },
+                    "10": {
+                        "then": "Azulejo (azulejo decorativo espanhol e português)"
+                    },
+                    "11": {
+                        "then": "Ladrilhos"
+                    },
+                    "12": {
+                        "then": "Entalhe em madeira"
                     }
                 },
                 "question": "Qual é o tipo desta obra de arte?",

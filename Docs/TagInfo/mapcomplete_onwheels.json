@@ -1006,6 +1006,21 @@
       "value": "only"
     },
     {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if _country!~^(al|be)$)",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if _country!~^(al|be)$)",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if _country!~^(al|be)$)",
+      "value": "outside"
+    },
+    {
       "key": "service:electricity",
       "description": "Layer 'Restaurants and fast food' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "yes"
@@ -3100,12 +3115,26 @@
       "description": "Layer 'Elevator' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
-      "key": "elevator:width",
-      "description": "Layer 'Elevator' shows and asks freeform values for key 'elevator:width' (in the mapcomplete.org theme 'OnWheels')"
+      "key": "shape",
+      "description": "Layer 'Elevator' shows shape=rectangular with a fixed text, namely 'This elevator has a rectangular shape' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "rectangular"
     },
     {
-      "key": "elevator:depth",
-      "description": "Layer 'Elevator' shows and asks freeform values for key 'elevator:depth' (in the mapcomplete.org theme 'OnWheels')"
+      "key": "shape",
+      "description": "Layer 'Elevator' shows shape=circular with a fixed text, namely 'This elevator has a circular shape' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
+      "value": "circular"
+    },
+    {
+      "key": "width",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'width' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shape= | shape=rectangular)"
+    },
+    {
+      "key": "length",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'length' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shape= | shape=rectangular)"
+    },
+    {
+      "key": "diameter",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'diameter' (in the mapcomplete.org theme 'OnWheels') (This is only shown if shape=circular)"
     },
     {
       "key": "hearing_loop",

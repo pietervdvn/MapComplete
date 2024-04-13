@@ -26,13 +26,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "dragRotate",
         "dragPan",
         "keyboard",
-        "touchZoomRotate"
+        "touchZoomRotate",
     ]
     private static maplibre_zoom_handlers = [
         "scrollZoom",
         "boxZoom",
         "doubleClickZoom",
-        "touchZoomRotate"
+        "touchZoomRotate",
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
     readonly zoom: UIEventSource<number>
@@ -62,8 +62,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!MapLibreAdaptor.pmtilesInited) {
             maplibregl.addProtocol("pmtiles", new Protocol().tile)
             MapLibreAdaptor.pmtilesInited = true
-            console.log("PM-tiles protocol added" +
-                "")
+            console.log("PM-tiles protocol added" + "")
         }
         this._maplibreMap = maplibreMap
 
@@ -113,7 +112,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
 
         maplibreMap.addCallbackAndRunD((map) => {
-
             map.on("load", () => {
                 self.MoveMapToCurrentLoc(self.location.data)
                 self.SetZoom(self.zoom.data)
@@ -216,9 +214,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return {
             map: mlmap,
             ui: new SvelteUIElement(MaplibreMap, {
-                map: mlmap
+                map: mlmap,
             }),
-            mapproperties: new MapLibreAdaptor(mlmap)
+            mapproperties: new MapLibreAdaptor(mlmap),
         }
     }
 
@@ -286,7 +284,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     ) {
         const event = {
             date: new Date(),
-            key: key
+            key: key,
         }
 
         for (let i = 0; i < this._onKeyNavigation.length; i++) {
@@ -330,13 +328,19 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         rescaleIcons: number,
         pixelRatio: number
     ) {
-
         {
             const allimages = element.getElementsByTagName("img")
             for (const img of Array.from(allimages)) {
                 let isLoaded: boolean = false
                 while (!isLoaded) {
-                    console.log("Waiting for image", img.src, "to load", img.complete, img.naturalWidth, img)
+                    console.log(
+                        "Waiting for image",
+                        img.src,
+                        "to load",
+                        img.complete,
+                        img.naturalWidth,
+                        img
+                    )
                     await Utils.waitFor(250)
                     isLoaded = img.complete && img.width > 0
                 }
@@ -349,22 +353,31 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         element.style.transform = ""
         const offset = style.match(/translate\(([-0-9]+)%, ?([-0-9]+)%\)/)
 
-        let labels =<HTMLElement[]> Array.from(element.getElementsByClassName("marker-label"))
-        const origLabelTransforms = labels.map(l => l.style.transform)
+        let labels = <HTMLElement[]>Array.from(element.getElementsByClassName("marker-label"))
+        const origLabelTransforms = labels.map((l) => l.style.transform)
         // We save the original width (`w`) and height (`h`) in order to restore them later on
         const w = element.style.width
         const h = Number(element.style.height)
-        const targetW = Math.max(element.getBoundingClientRect().width * 4,
-            ...labels.map(l => l.getBoundingClientRect().width))
-        const targetH = element.getBoundingClientRect().height +
-            Math.max(...labels.map(l => l.getBoundingClientRect().height * 2 /* A bit of buffer to catch eventual 'margin-top'*/))
+        const targetW = Math.max(
+            element.getBoundingClientRect().width * 4,
+            ...labels.map((l) => l.getBoundingClientRect().width)
+        )
+        const targetH =
+            element.getBoundingClientRect().height +
+            Math.max(
+                ...labels.map(
+                    (l) =>
+                        l.getBoundingClientRect().height *
+                        2 /* A bit of buffer to catch eventual 'margin-top'*/
+                )
+            )
 
         // Force a wider view for icon badges
         element.style.width = targetW + "px"
         // Force more height to include labels
         element.style.height = targetH + "px"
         element.classList.add("w-full", "flex", "flex-col", "items-center")
-        labels.forEach(l => {
+        labels.forEach((l) => {
             l.style.transform = ""
         })
         await Utils.awaitAnimationFrame()
@@ -386,13 +399,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         y *= pixelRatio
 
         try {
-            const xdiff = img.width * rescaleIcons / 2
+            const xdiff = (img.width * rescaleIcons) / 2
             drawOn.drawImage(img, x - xdiff, y, img.width * rescaleIcons, img.height * rescaleIcons)
         } catch (e) {
             console.log("Could not draw image because of", e)
         }
         element.classList.remove("w-full", "flex", "flex-col", "items-center")
-
     }
 
     /**
@@ -461,7 +473,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const bounds = map.getBounds()
         const bbox = new BBox([
             [bounds.getEast(), bounds.getNorth()],
-            [bounds.getWest(), bounds.getSouth()]
+            [bounds.getWest(), bounds.getSouth()],
         ])
         if (this.bounds.data === undefined || !isSetup) {
             this.bounds.setData(bbox)
@@ -639,14 +651,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster-dem",
                 url:
                     "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" +
-                    Constants.maptilerApiKey
+                    Constants.maptilerApiKey,
             })
             try {
                 while (!map?.isStyleLoaded()) {
                     await Utils.waitFor(250)
                 }
                 map.setTerrain({
-                    source: id
+                    source: id,
                 })
             } catch (e) {
                 console.error(e)

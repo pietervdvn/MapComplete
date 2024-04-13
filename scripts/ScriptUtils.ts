@@ -154,10 +154,10 @@ export default class ScriptUtils {
         headers?: any
     ): Promise<{ content: string } | { redirect: string }> {
         console.log("Fetching", url)
-        const req = await fetch(url, {headers})
-        const data= await req.text()
-        console.log("Fetched", url,data)
-        return {content: data}
+        const req = await fetch(url, { headers })
+        const data = await req.text()
+        console.log("Fetched", url, data)
+        return { content: data }
     }
     public static Download(
         url: string,
@@ -221,7 +221,13 @@ export default class ScriptUtils {
             }
         })
         const timeoutPromise = new Promise<any>((resolve, reject) => {
-            setTimeout(() => timeoutSecs === undefined ? reject(new Error("Timout reached")) : resolve("timeout"), (timeoutSecs ?? 10) * 1000)
+            setTimeout(
+                () =>
+                    timeoutSecs === undefined
+                        ? reject(new Error("Timout reached"))
+                        : resolve("timeout"),
+                (timeoutSecs ?? 10) * 1000
+            )
         })
         return Promise.race([requestPromise, timeoutPromise])
     }

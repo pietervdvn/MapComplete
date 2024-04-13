@@ -20,7 +20,10 @@ export default class WikidataSearchBox extends InputElement<string> {
         new Table(
             ["name", "doc"],
             [
-                ["key", "the value of this tag will initialize search (default: name). This can be a ';'-separated list in which case every key will be inspected. The non-null value will be used as search"],
+                [
+                    "key",
+                    "the value of this tag will initialize search (default: name). This can be a ';'-separated list in which case every key will be inspected. The non-null value will be used as search",
+                ],
                 [
                     "options",
                     new Combine([

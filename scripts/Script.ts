@@ -15,7 +15,7 @@ export default abstract class Script {
         args.splice(0, 2)
         const start = new Date()
         this.main(args)
-            .then((_) =>{
+            .then((_) => {
                 const end = new Date()
                 const millisNeeded = end.getTime() - start.getTime()
 

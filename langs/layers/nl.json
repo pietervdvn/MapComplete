@@ -1161,6 +1161,11 @@
                 "render": "Plaats voor {capacity} fietsen"
             },
             "Cargo bike capacity?": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan "
+                    }
+                },
                 "question": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
                 "render": "Deze parking heeft plaats voor {capacity:cargo_bike} bakfietsen"
             },

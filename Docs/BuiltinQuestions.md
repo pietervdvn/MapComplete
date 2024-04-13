@@ -59,6 +59,7 @@ Special library layer which does not need a '.questions'-prefix before being imp
     + [lactose_free](#lactose_free)
     + [gluten_free](#gluten_free)
     + [vegan](#vegan)
+    + [lod](#lod)
     + [qr_code](#qr_code)
     + [share](#share)
     + [favourite_status](#favourite_status)
@@ -886,6 +887,18 @@ The question is  *Does this place offer a vegan option?*
 
 
 This tagrendering has labels  `diets`
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

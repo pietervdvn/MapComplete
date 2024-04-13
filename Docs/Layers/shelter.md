@@ -15,6 +15,7 @@ Layer showing shelter structures
 
 
   - This layer is shown at zoomlevel **13** and higher
+  - This layer is needed as dependency for layer [advertising](#advertising)
 
 
 
@@ -25,6 +26,7 @@ Layer showing shelter structures
 
 
 
+  - [advertising](https://mapcomplete.org/advertising)
   - [nature](https://mapcomplete.org/nature)
   - [personal](https://mapcomplete.org/personal)
 
@@ -122,6 +124,18 @@ This rendering asks information about the property  [shelter_type](https://wiki.
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

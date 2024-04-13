@@ -96,7 +96,7 @@ export default class FeaturePropertiesStore {
         if (newId === undefined) {
             // We removed the node/way/relation with type 'type' and id 'oldId' on openstreetmap!
             const element = this._elements.get(oldId)
-            if(!element || element.data === undefined){
+            if (!element || element.data === undefined) {
                 return
             }
             element.data._deleted = "yes"

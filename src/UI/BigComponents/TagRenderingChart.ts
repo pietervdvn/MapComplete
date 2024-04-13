@@ -8,8 +8,8 @@ import { OsmFeature } from "../../Models/OsmFeature"
 
 export interface TagRenderingChartOptions {
     groupToOtherCutoff?: 3 | number
-    sort?: boolean,
-    hideUnkown?: boolean,
+    sort?: boolean
+    hideUnkown?: boolean
     hideNotApplicable?: boolean
 }
 
@@ -21,8 +21,8 @@ export class StackedRenderingChart extends ChartJs {
             period: "day" | "month"
             groupToOtherCutoff?: 3 | number
             // If given, take the sum of these fields to get the feature weight
-            sumFields?: string[],
-            hideUnknown?: boolean,
+            sumFields?: string[]
+            hideUnknown?: boolean
             hideNotApplicable?: boolean
         }
     ) {
@@ -30,7 +30,7 @@ export class StackedRenderingChart extends ChartJs {
             sort: true,
             groupToOtherCutoff: options?.groupToOtherCutoff,
             hideNotApplicable: options?.hideNotApplicable,
-            hideUnkown: options?.hideUnknown
+            hideUnkown: options?.hideUnknown,
         })
         if (labels === undefined || data === undefined) {
             console.error(
@@ -121,13 +121,13 @@ export class StackedRenderingChart extends ChartJs {
             datasets.push({
                 data: countsPerDay,
                 backgroundColor,
-                label
+                label,
             })
         }
 
         const perDayData = {
             labels: trimmedDays,
-            datasets
+            datasets,
         }
 
         const config = <ChartConfiguration>{
@@ -136,17 +136,17 @@ export class StackedRenderingChart extends ChartJs {
             options: {
                 responsive: true,
                 legend: {
-                    display: false
+                    display: false,
                 },
                 scales: {
                     x: {
-                        stacked: true
+                        stacked: true,
                     },
                     y: {
-                        stacked: true
-                    }
-                }
-            }
+                        stacked: true,
+                    },
+                },
+            },
         }
         super(config)
     }
@@ -199,7 +199,7 @@ export default class TagRenderingChart extends Combine {
         "rgba(255, 206, 86, 0.2)",
         "rgba(75, 192, 192, 0.2)",
         "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)"
+        "rgba(255, 159, 64, 0.2)",
     ]
 
     public static readonly borderColors = [
@@ -208,7 +208,7 @@ export default class TagRenderingChart extends Combine {
         "rgba(255, 206, 86, 1)",
         "rgba(75, 192, 192, 1)",
         "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)"
+        "rgba(255, 159, 64, 1)",
     ]
 
     /**
@@ -244,12 +244,12 @@ export default class TagRenderingChart extends Combine {
         const borderColor = [
             TagRenderingChart.unkownBorderColor,
             TagRenderingChart.otherBorderColor,
-            TagRenderingChart.notApplicableBorderColor
+            TagRenderingChart.notApplicableBorderColor,
         ]
         const backgroundColor = [
             TagRenderingChart.unkownColor,
             TagRenderingChart.otherColor,
-            TagRenderingChart.notApplicableColor
+            TagRenderingChart.notApplicableColor,
         ]
 
         while (borderColor.length < data.length) {
@@ -281,17 +281,17 @@ export default class TagRenderingChart extends Combine {
                         backgroundColor,
                         borderColor,
                         borderWidth: 1,
-                        label: undefined
-                    }
-                ]
+                        label: undefined,
+                    },
+                ],
             },
             options: {
                 plugins: {
                     legend: {
-                        display: !barchartMode
-                    }
-                }
-            }
+                        display: !barchartMode,
+                    },
+                },
+            },
         }
 
         const chart = new ChartJs(config).SetClass(options?.chartclasses ?? "w-32 h-32")
@@ -302,7 +302,7 @@ export default class TagRenderingChart extends Combine {
 
         super([
             options?.includeTitle ? tagRendering.question.Clone() ?? tagRendering.id : undefined,
-            chart
+            chart,
         ])
 
         this.SetClass("block")
@@ -402,15 +402,10 @@ export default class TagRenderingChart extends Combine {
         labels.push("Other")
         if (!options.hideNotApplicable) {
             data.push(notApplicable)
-            labels.push(
-                "Not applicable"
-            )
+            labels.push("Not applicable")
         }
-        data.push(...categoryCounts,
-            ...otherData)
-        labels.push(
-            ...(mappings?.map((m) => m.then.txt) ?? []),
-            ...otherLabels)
+        data.push(...categoryCounts, ...otherData)
+        labels.push(...(mappings?.map((m) => m.then.txt) ?? []), ...otherLabels)
 
         return { labels, data }
     }

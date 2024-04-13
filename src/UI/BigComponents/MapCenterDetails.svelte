@@ -41,7 +41,7 @@
   let compass = Orientation.singleton.alpha
   let relativeBearing: Store<{ distance: string; bearing: Translation }> = compass.mapD(
     (compass) => {
-      if(!distanceToCurrentLocation.data){
+      if (!distanceToCurrentLocation.data) {
         return undefined
       }
       const bearing: Translation =

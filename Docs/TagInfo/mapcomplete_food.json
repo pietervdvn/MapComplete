@@ -491,6 +491,21 @@
       "value": "only"
     },
     {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "outside"
+    },
+    {
       "key": "service:electricity",
       "description": "Layer 'Restaurants and fast food' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "yes"

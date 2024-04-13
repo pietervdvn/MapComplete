@@ -847,7 +847,7 @@
         {
           "if": "cargo_bike=no",
           "then": {
-            "en": "You're not allowed to park cargo bikes",
+            "en": "You're not allowed to park cargo bikes or there are no places provided for cargo bikes",
             "nl": "Je mag hier geen bakfietsen parkeren",
             "gl": "Non está permitido aparcar bicicletas de carga",
             "de": "Der Parkplatz bietet keine Stellflächen für Lastenfahrräder",
@@ -903,15 +903,19 @@
         "key": "capacity:cargo_bike",
         "type": "nat"
       },
-      "mappings": [{
+      "mappings": [
+        {
           "if": "cargo_bike=no",
           "then": {
             "en": "There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed",
             "nl": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan "
           },
           "hideInAnswer": "capacity:cargo_bike=",
-        "addExtraTags": ["capacity:cargo_bike="]
-      }],
+          "addExtraTags": [
+            "capacity:cargo_bike="
+          ]
+        }
+      ],
       "id": "Cargo bike capacity?"
     }
   ],

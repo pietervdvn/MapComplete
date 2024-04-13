@@ -51,9 +51,10 @@ export class AvailableRasterLayers {
     /**
      * The default background layer that any theme uses which does not explicitly define a background
      */
-    public static readonly defaultBackgroundLayer: RasterLayerPolygon = AvailableRasterLayers.globalLayers.find(l => {
-        return l.properties.id === "protomaps.sunny"
-    })
+    public static readonly defaultBackgroundLayer: RasterLayerPolygon =
+        AvailableRasterLayers.globalLayers.find((l) => {
+            return l.properties.id === "protomaps.sunny"
+        })
 
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>,

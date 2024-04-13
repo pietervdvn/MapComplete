@@ -42,12 +42,13 @@
       {#if $allReviews?.length - $reviews?.length === 1}
         <Tr t={t.non_place_review} />
       {:else}
-        <Tr t={t.non_place_reviews.Subs({n:$allReviews?.length - $reviews?.length })} />
+        <Tr t={t.non_place_reviews.Subs({ n: $allReviews?.length - $reviews?.length })} />
       {/if}
-      <a target="_blank"
-         class="link-underline"
-         rel="noopener nofollow"
-         href={`https://mangrove.reviews/list?kid=${encodeURIComponent($kid)}`}
+      <a
+        target="_blank"
+        class="link-underline"
+        rel="noopener nofollow"
+        href={`https://mangrove.reviews/list?kid=${encodeURIComponent($kid)}`}
       >
         <Tr t={t.see_all} />
       </a>

@@ -62,8 +62,10 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [string](../SpecialInputElements.md#string) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operational_status#values) [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | Multiple choice | [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed) [ok](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dok)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/door:width#values) [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/elevator:width#values) [elevator:width](https://wiki.openstreetmap.org/wiki/Key:elevator:width) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/elevator:depth#values) [elevator:depth](https://wiki.openstreetmap.org/wiki/Key:elevator:depth) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/shape#values) [shape](https://wiki.openstreetmap.org/wiki/Key:shape) | Multiple choice | [rectangular](https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular) [circular](https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width#values) [width](https://wiki.openstreetmap.org/wiki/Key:width) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/length#values) [length](https://wiki.openstreetmap.org/wiki/Key:length) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diameter#values) [diameter](https://wiki.openstreetmap.org/wiki/Key:diameter) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hearing_loop#values) [hearing_loop](https://wiki.openstreetmap.org/wiki/Key:hearing_loop) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tactile_writing:braille#values) [tactile_writing:braille](https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/speech_output#values) [speech_output](https://wiki.openstreetmap.org/wiki/Key:speech_output) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno)
@@ -154,13 +156,29 @@ This rendering asks information about the property  [door:width](https://wiki.op
 
 
 
+### elevator-shape 
+
+
+
+The question is  *What shape does this elevator have?*
+
+
+
+
+
+  - *This elevator has a rectangular shape*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular' target='_blank'>rectangular</a>
+  - *This elevator has a circular shape*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
+
+
+
+
 ### elevator-width 
 
 
 
 The question is  *What is the width of this elevator?*
 
-This rendering asks information about the property  [elevator:width](https://wiki.openstreetmap.org/wiki/Key:elevator:width) This is rendered with  `This elevator has a width of {canonical(elevator:width)}`
+This rendering asks information about the property  [width](https://wiki.openstreetmap.org/wiki/Key:width) This is rendered with  `This elevator has a width of {canonical(width)}`
 
 
 
@@ -170,7 +188,19 @@ This rendering asks information about the property  [elevator:width](https://wik
 
 The question is  *What is the depth of this elevator?*
 
-This rendering asks information about the property  [elevator:depth](https://wiki.openstreetmap.org/wiki/Key:elevator:depth) This is rendered with  `This elevator has a depth of {canonical(elevator:depth)}`
+This rendering asks information about the property  [length](https://wiki.openstreetmap.org/wiki/Key:length) This is rendered with  `This elevator has a depth of {canonical(length)}`
+
+
+
+### elevator-diameter 
+
+
+
+The question is  *What is the diameter of this elevator?*
+
+This rendering asks information about the property  [diameter](https://wiki.openstreetmap.org/wiki/Key:diameter) This is rendered with  `This elevator has a diameter of {canonical(diameter)}`
+
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>`
 
 
 
@@ -255,6 +285,18 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

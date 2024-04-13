@@ -13,10 +13,7 @@
 
   export let extension: string
   export let mimetype: string
-  export let construct: (
-    title: string,
-    status?: UIEventSource<string>
-  ) => Promise<Blob | string>
+  export let construct: (title: string, status?: UIEventSource<string>) => Promise<Blob | string>
   export let mainText: Translation
   export let helperText: Translation
 
@@ -28,7 +25,7 @@
   let status: UIEventSource<string> = new UIEventSource<string>(undefined)
   async function clicked() {
     isExporting = true
-    
+
     const gpsLayer = state.layerState.filteredLayers.get(<PriviligedLayerType>"gps_location")
     state.userRelatedState.preferencesAsTags.data["__showTimeSensitiveIcons"] = "no"
     state.userRelatedState.preferencesAsTags.ping()

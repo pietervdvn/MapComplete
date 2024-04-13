@@ -64,13 +64,13 @@
       update()
     })
   )
-
 </script>
+
 <div class="flex flex-col gap-y-1">
   <div class="interactive m-1 mt-2 flex space-x-1 font-bold">
-  <span>
-    {prefix}
-  </span>
+    <span>
+      {prefix}
+    </span>
     <select bind:value={$currentLang}>
       {#each allLanguages as language}
         <option value={language}>
@@ -89,14 +89,18 @@
       on:submit={() => dispatch("submit")}
     />
     <span>
-    {postfix}
-  </span>
-
+      {postfix}
+    </span>
   </div>
   You have currently set translations for
   <ul>
     {#each Object.keys($translations) as l}
-      <li><button class="small" on:click={() => currentLang.setData(l)}><b>{l}:</b> {$translations[l]}</button></li>
+      <li>
+        <button class="small" on:click={() => currentLang.setData(l)}>
+          <b>{l}:</b>
+          {$translations[l]}
+        </button>
+      </li>
     {/each}
   </ul>
 </div>

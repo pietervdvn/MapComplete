@@ -3,7 +3,11 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { MinimapViz } from "./Popup/MinimapViz"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -97,13 +101,13 @@ class NearbyImageVis implements SpecialVisualization {
         {
             name: "mode",
             defaultValue: "closed",
-            doc: "Either `open` or `closed`. If `open`, then the image carousel will always be shown"
+            doc: "Either `open` or `closed`. If `open`, then the image carousel will always be shown",
         },
         {
             name: "readonly",
             required: false,
-            doc: "If 'readonly', will not show the 'link'-button"
-        }
+            doc: "If 'readonly', will not show the 'link'-button",
+        },
     ]
     docs =
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
@@ -128,7 +132,7 @@ class NearbyImageVis implements SpecialVisualization {
             lat,
             feature,
             layer,
-            linkable: !readonly
+            linkable: !readonly,
         })
     }
 }
@@ -142,13 +146,13 @@ class StealViz implements SpecialVisualization {
         {
             name: "featureId",
             doc: "The key of the attribute which contains the id of the feature from which to use the tags",
-            required: true
+            required: true,
         },
         {
             name: "tagRenderingId",
             doc: "The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection",
-            required: true
-        }
+            required: true,
+        },
     ]
     needsUrls = []
     svelteBased = true
@@ -182,7 +186,7 @@ class StealViz implements SpecialVisualization {
                                 tags: otherTags,
                                 selectedElement: otherFeature,
                                 state,
-                                layer
+                                layer,
                             })
                         )
                     }
@@ -217,12 +221,12 @@ export class QuestionViz implements SpecialVisualization {
     args = [
         {
             name: "labels",
-            doc: "One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown"
+            doc: "One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown",
         },
         {
             name: "blacklisted-labels",
-            doc: "One or more ';'-separated labels of questions which should _not_ be included"
-        }
+            doc: "One or more ';'-separated labels of questions which should _not_ be included",
+        },
     ]
     svelteBased = true
 
@@ -247,7 +251,7 @@ export class QuestionViz implements SpecialVisualization {
             selectedElement: feature,
             state,
             onlyForLabels: labels,
-            notForLabels: blacklist
+            notForLabels: blacklist,
         }).SetClass("w-full")
     }
 }
@@ -267,25 +271,25 @@ export default class SpecialVisualizations {
             viz.docs,
             viz.args.length > 0
                 ? new Table(
-                    ["name", "default", "description"],
-                    viz.args.map((arg) => {
-                        let defaultArg = arg.defaultValue ?? "_undefined_"
-                        if (defaultArg == "") {
-                            defaultArg = "_empty string_"
-                        }
-                        return [arg.name, defaultArg, arg.doc]
-                    })
-                )
+                      ["name", "default", "description"],
+                      viz.args.map((arg) => {
+                          let defaultArg = arg.defaultValue ?? "_undefined_"
+                          if (defaultArg == "") {
+                              defaultArg = "_empty string_"
+                          }
+                          return [arg.name, defaultArg, arg.doc]
+                      })
+                  )
                 : undefined,
             new Title("Example usage of " + viz.funcName, 4),
             new FixedUiElement(
                 viz.example ??
-                "`{" +
-                viz.funcName +
-                "(" +
-                viz.args.map((arg) => arg.defaultValue).join(",") +
-                ")}`"
-            ).SetClass("literal-code")
+                    "`{" +
+                        viz.funcName +
+                        "(" +
+                        viz.args.map((arg) => arg.defaultValue).join(",") +
+                        ")}`"
+            ).SetClass("literal-code"),
         ])
     }
 
@@ -318,26 +322,26 @@ export default class SpecialVisualizations {
                                     argname: "some_arg",
                                     message: {
                                         en: "some other really long message",
-                                        nl: "een boodschap in een andere taal"
+                                        nl: "een boodschap in een andere taal",
                                     },
-                                    other_arg_name: "more args"
+                                    other_arg_name: "more args",
                                 },
                                 before: {
                                     en: "Some text to prefix before the special element (e.g. a title)",
-                                    nl: "Een tekst om voor het element te zetten (bv. een titel)"
+                                    nl: "Een tekst om voor het element te zetten (bv. een titel)",
                                 },
                                 after: {
-                                    en: "Some text to put after the element, e.g. a footer"
-                                }
-                            }
+                                    en: "Some text to put after the element, e.g. a footer",
+                                },
+                            },
                         },
                         null,
                         "  "
                     )
                 ).SetClass("code"),
-                "In other words: use `{ \"before\": ..., \"after\": ..., \"special\": {\"type\": ..., \"argname\": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)"
+                'In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "argname": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)',
             ]).SetClass("flex flex-col"),
-            ...helpTexts
+            ...helpTexts,
         ]).SetClass("flex flex-col")
     }
 
@@ -350,14 +354,14 @@ export default class SpecialVisualizations {
             s.structuredExamples === undefined
                 ? []
                 : s.structuredExamples().map((e) => {
-                    return s.constr(
-                        state,
-                        new UIEventSource<Record<string, string>>(e.feature.properties),
-                        e.args,
-                        e.feature,
-                        undefined
-                    )
-                })
+                      return s.constr(
+                          state,
+                          new UIEventSource<Record<string, string>>(e.feature.properties),
+                          e.args,
+                          e.feature,
+                          undefined
+                      )
+                  })
         return new Combine([new Title(s.funcName), s.docs, ...examples])
     }
 
@@ -373,9 +377,9 @@ export default class SpecialVisualizations {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
                         state,
-                        coordinate: { lon, lat }
+                        coordinate: { lon, lat },
                     }).SetClass("w-full h-full overflow-auto")
-                }
+                },
             },
             {
                 funcName: "user_profile",
@@ -384,9 +388,9 @@ export default class SpecialVisualizations {
                 docs: "A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'",
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(UserProfile, {
-                        osmConnection: state.osmConnection
+                        osmConnection: state.osmConnection,
                     })
-                }
+                },
             },
             {
                 funcName: "language_picker",
@@ -398,9 +402,9 @@ export default class SpecialVisualizations {
                         availableLanguages: state.layout.language,
                         preferredLanguages: state.osmConnection.userDetails.map(
                             (ud) => ud.languages
-                        )
+                        ),
                     })
-                }
+                },
             },
             {
                 funcName: "logout",
@@ -410,7 +414,7 @@ export default class SpecialVisualizations {
 
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(LogoutButton, { osmConnection: state.osmConnection })
-                }
+                },
             },
             new HistogramViz(),
             new StealViz(),
@@ -434,7 +438,7 @@ export default class SpecialVisualizations {
                                 return undefined
                             })
                     )
-                }
+                },
             },
             {
                 funcName: "move_button",
@@ -455,9 +459,9 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(MoveWizard, {
                         state,
                         featureToMove: feature,
-                        layer
+                        layer,
                     })
-                }
+                },
             },
             {
                 funcName: "delete_button",
@@ -479,9 +483,9 @@ export default class SpecialVisualizations {
                         deleteConfig: layer.deletion,
                         state,
                         feature,
-                        layer
+                        layer,
                     })
-                }
+                },
             },
             new ShareLinkViz(),
             new ExportAsGpxViz(),
@@ -502,9 +506,9 @@ export default class SpecialVisualizations {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(CreateNewNote, {
                         state,
-                        coordinate: new UIEventSource({ lon, lat })
+                        coordinate: new UIEventSource({ lon, lat }),
                     })
-                }
+                },
             },
             new CloseNoteButton(),
             new PlantNetDetectionViz(),
@@ -524,8 +528,8 @@ export default class SpecialVisualizations {
                     {
                         name: "keyToShowWikipediaFor",
                         doc: "Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used",
-                        defaultValue: "wikidata;wikipedia"
-                    }
+                        defaultValue: "wikidata;wikipedia",
+                    },
                 ],
                 needsUrls: [...Wikidata.neededUrls, ...Wikipedia.neededUrls],
 
@@ -538,9 +542,9 @@ export default class SpecialVisualizations {
                         return tags[key]?.split(";")?.map((id) => id.trim()) ?? []
                     })
                     return new SvelteUIElement(WikipediaPanel, {
-                        wikiIds
+                        wikiIds,
                     })
-                }
+                },
             },
             {
                 funcName: "wikidata_label",
@@ -549,8 +553,8 @@ export default class SpecialVisualizations {
                     {
                         name: "keyToShowWikidataFor",
                         doc: "Use the wikidata entry from this key to show the label",
-                        defaultValue: "wikidata"
-                    }
+                        defaultValue: "wikidata",
+                    },
                 ],
                 needsUrls: Wikidata.neededUrls,
                 example:
@@ -574,7 +578,7 @@ export default class SpecialVisualizations {
                                     })
                                 )
                             })
-                    )
+                    ),
             },
             new MapillaryLinkVis(),
             new LanguageElement(),
@@ -588,7 +592,7 @@ export default class SpecialVisualizations {
                     _,
                     __,
                     layer: LayerConfig
-                ) => new SvelteUIElement(AllTagsPanel, { tags, layer })
+                ) => new SvelteUIElement(AllTagsPanel, { tags, layer }),
             },
             {
                 funcName: "image_carousel",
@@ -597,8 +601,8 @@ export default class SpecialVisualizations {
                     {
                         name: "image_key",
                         defaultValue: AllImageProviders.defaultKeys.join(","),
-                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated "
-                    }
+                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated ",
+                    },
                 ],
                 needsUrls: AllImageProviders.apiUrls,
                 constr: (state, tags, args) => {
@@ -611,7 +615,7 @@ export default class SpecialVisualizations {
                         tags,
                         state
                     )
-                }
+                },
             },
             {
                 funcName: "image_upload",
@@ -621,13 +625,13 @@ export default class SpecialVisualizations {
                     {
                         name: "image-key",
                         doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        required: false
+                        required: false,
                     },
                     {
                         name: "label",
                         doc: "The text to show on the button",
-                        required: false
-                    }
+                        required: false,
+                    },
                 ],
                 constr: (state, tags, args) => {
                     const targetKey = args[0] === "" ? undefined : args[0]
@@ -636,9 +640,9 @@ export default class SpecialVisualizations {
                         tags,
                         targetKey,
                         labelText: args[1],
-                        image: args[2]
+                        image: args[2],
                     })
-                }
+                },
             },
             {
                 funcName: "rating",
@@ -648,12 +652,12 @@ export default class SpecialVisualizations {
                     {
                         name: "subjectKey",
                         defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
                     },
                     {
                         name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
-                    }
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
                 ],
                 constr: (state, tags, args, feature) => {
                     const nameKey = args[0] ?? "name"
@@ -664,14 +668,14 @@ export default class SpecialVisualizations {
                         state.userRelatedState.mangroveIdentity,
                         {
                             nameKey: nameKey,
-                            fallbackName
+                            fallbackName,
                         },
                         state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(StarsBarIcon, {
-                        score: reviews.average
+                        score: reviews.average,
                     })
-                }
+                },
             },
 
             {
@@ -682,12 +686,12 @@ export default class SpecialVisualizations {
                     {
                         name: "subjectKey",
                         defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
                     },
                     {
                         name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
-                    }
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
                 ],
                 constr: (state, tags, args, feature, layer) => {
                     const nameKey = args[0] ?? "name"
@@ -698,12 +702,12 @@ export default class SpecialVisualizations {
                         state.userRelatedState?.mangroveIdentity,
                         {
                             nameKey: nameKey,
-                            fallbackName
+                            fallbackName,
                         },
                         state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(ReviewForm, { reviews, state, tags, feature, layer })
-                }
+                },
             },
             {
                 funcName: "list_reviews",
@@ -715,12 +719,12 @@ export default class SpecialVisualizations {
                     {
                         name: "subjectKey",
                         defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
                     },
                     {
                         name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
-                    }
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
                 ],
                 constr: (state, tags, args, feature, layer) => {
                     const nameKey = args[0] ?? "name"
@@ -731,12 +735,12 @@ export default class SpecialVisualizations {
                         state.userRelatedState?.mangroveIdentity,
                         {
                             nameKey: nameKey,
-                            fallbackName
+                            fallbackName,
                         },
                         state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
-                }
+                },
             },
             {
                 funcName: "import_mangrove_key",
@@ -744,8 +748,8 @@ export default class SpecialVisualizations {
                 args: [
                     {
                         name: "text",
-                        doc: "The text that is shown on the button"
-                    }
+                        doc: "The text that is shown on the button",
+                    },
                 ],
                 needsUrls: [],
                 constr(
@@ -755,7 +759,7 @@ export default class SpecialVisualizations {
                 ): BaseUIElement {
                     const [text] = argument
                     return new SvelteUIElement(ImportReviewIdentity, { state, text })
-                }
+                },
             },
             {
                 funcName: "opening_hours_table",
@@ -764,18 +768,18 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         defaultValue: "opening_hours",
-                        doc: "The tagkey from which the table is constructed."
+                        doc: "The tagkey from which the table is constructed.",
                     },
                     {
                         name: "prefix",
                         defaultValue: "",
-                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
+                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__",
                     },
                     {
                         name: "postfix",
                         defaultValue: "",
-                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
-                    }
+                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
+                    },
                 ],
                 needsUrls: [Constants.countryCoderEndpoint],
                 example:
@@ -783,7 +787,7 @@ export default class SpecialVisualizations {
                 constr: (state, tagSource: UIEventSource<any>, args) => {
                     const [key, prefix, postfix] = args
                     return new OpeningHoursVisualization(tagSource, state, key, prefix, postfix)
-                }
+                },
             },
             {
                 funcName: "opening_hours_state",
@@ -792,18 +796,18 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         defaultValue: "opening_hours",
-                        doc: "The tagkey from which the opening hours are read."
+                        doc: "The tagkey from which the opening hours are read.",
                     },
                     {
                         name: "prefix",
                         defaultValue: "",
-                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
+                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__",
                     },
                     {
                         name: "postfix",
                         defaultValue: "",
-                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
-                    }
+                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -818,9 +822,9 @@ export default class SpecialVisualizations {
                         keyToUse,
                         tags,
                         prefix,
-                        postfix
+                        postfix,
                     })
-                }
+                },
             },
             {
                 funcName: "canonical",
@@ -832,8 +836,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The key of the tag to give the canonical text for",
-                        required: true
-                    }
+                        required: true,
+                    },
                 ],
                 constr: (state, tagSource, args) => {
                     const key = args[0]
@@ -857,7 +861,7 @@ export default class SpecialVisualizations {
                                 return unit.asHumanLongValue(value, getCountry)
                             })
                     )
-                }
+                },
             },
             {
                 funcName: "export_as_geojson",
@@ -871,7 +875,7 @@ export default class SpecialVisualizations {
                         Svg.download_svg(),
                         new Combine([
                             t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
-                            t.downloadGeoJsonHelper.SetClass("subtle")
+                            t.downloadGeoJsonHelper.SetClass("subtle"),
                         ]).SetClass("flex flex-col")
                     )
                         .onClick(() => {
@@ -884,12 +888,12 @@ export default class SpecialVisualizations {
                                 data,
                                 title + "_mapcomplete_export.geojson",
                                 {
-                                    mimetype: "application/vnd.geo+json"
+                                    mimetype: "application/vnd.geo+json",
                                 }
                             )
                         })
                         .SetClass("w-full")
-                }
+                },
             },
             {
                 funcName: "open_in_iD",
@@ -899,9 +903,9 @@ export default class SpecialVisualizations {
                 constr: (state, feature) => {
                     return new SvelteUIElement(OpenIdEditor, {
                         mapProperties: state.mapProperties,
-                        objectId: feature.data.id
+                        objectId: feature.data.id,
                     })
-                }
+                },
             },
             {
                 funcName: "open_in_josm",
@@ -911,7 +915,7 @@ export default class SpecialVisualizations {
 
                 constr: (state) => {
                     return new SvelteUIElement(OpenJosm, { state })
-                }
+                },
             },
             {
                 funcName: "clear_location_history",
@@ -926,7 +930,7 @@ export default class SpecialVisualizations {
                         state.historicalUserLocations.features.setData([])
                         state.selectedElement.setData(undefined)
                     })
-                }
+                },
             },
             {
                 funcName: "visualize_note_comments",
@@ -935,13 +939,13 @@ export default class SpecialVisualizations {
                     {
                         name: "commentsKey",
                         doc: "The property name of the comments, which should be stringified json",
-                        defaultValue: "comments"
+                        defaultValue: "comments",
                     },
                     {
                         name: "start",
                         doc: "Drop the first 'start' comments",
-                        defaultValue: "0"
-                    }
+                        defaultValue: "0",
+                    },
                 ],
                 needsUrls: [Constants.osmAuthConfig.url],
                 constr: (state, tags, args) =>
@@ -963,7 +967,7 @@ export default class SpecialVisualizations {
                                         )
                                 ).SetClass("flex flex-col")
                             })
-                    )
+                    ),
             },
             {
                 funcName: "add_image_to_note",
@@ -972,8 +976,8 @@ export default class SpecialVisualizations {
                     {
                         name: "Id-key",
                         doc: "The property name where the ID of the note to close can be found",
-                        defaultValue: "id"
-                    }
+                        defaultValue: "id",
+                    },
                 ],
                 needsUrls: [Imgur.apiUrl],
 
@@ -982,7 +986,7 @@ export default class SpecialVisualizations {
                     tags = state.featureProperties.getStore(id)
                     console.log("Id is", id)
                     return new SvelteUIElement(UploadImage, { state, tags })
-                }
+                },
             },
             {
                 funcName: "title",
@@ -1012,10 +1016,12 @@ export default class SpecialVisualizations {
                                 tags: tagsSource,
                                 state,
                                 feature,
-                                layer
-                            }).SetClass("px-1").setSpan()
+                                layer,
+                            })
+                                .SetClass("px-1")
+                                .setSpan()
                         })
-                    )
+                    ),
             },
             {
                 funcName: "maproulette_task",
@@ -1059,7 +1065,7 @@ export default class SpecialVisualizations {
                         })
                     )
                 },
-                docs: "Fetches the metadata of MapRoulette campaign that this task is part of and shows those details (namely `title`, `description` and `instruction`).\n\nThis reads the property `mr_challengeId` to detect the parent campaign."
+                docs: "Fetches the metadata of MapRoulette campaign that this task is part of and shows those details (namely `title`, `description` and `instruction`).\n\nThis reads the property `mr_challengeId` to detect the parent campaign.",
             },
             {
                 funcName: "maproulette_set_status",
@@ -1070,15 +1076,15 @@ export default class SpecialVisualizations {
                     "\n" +
                     "```json\n" +
                     "{\n" +
-                    "   \"id\": \"mark_duplicate\",\n" +
-                    "   \"render\": {\n" +
-                    "      \"special\": {\n" +
-                    "         \"type\": \"maproulette_set_status\",\n" +
-                    "         \"message\": {\n" +
-                    "            \"en\": \"Mark as not found or false positive\"\n" +
+                    '   "id": "mark_duplicate",\n' +
+                    '   "render": {\n' +
+                    '      "special": {\n' +
+                    '         "type": "maproulette_set_status",\n' +
+                    '         "message": {\n' +
+                    '            "en": "Mark as not found or false positive"\n' +
                     "         },\n" +
-                    "         \"status\": \"2\",\n" +
-                    "         \"image\": \"close\"\n" +
+                    '         "status": "2",\n' +
+                    '         "image": "close"\n' +
                     "      }\n" +
                     "   }\n" +
                     "}\n" +
@@ -1086,32 +1092,32 @@ export default class SpecialVisualizations {
                 args: [
                     {
                         name: "message",
-                        doc: "A message to show to the user"
+                        doc: "A message to show to the user",
                     },
                     {
                         name: "image",
                         doc: "Image to show",
-                        defaultValue: "confirm"
+                        defaultValue: "confirm",
                     },
                     {
                         name: "message_confirm",
-                        doc: "What to show when the task is closed, either by the user or was already closed."
+                        doc: "What to show when the task is closed, either by the user or was already closed.",
                     },
                     {
                         name: "status",
                         doc: "A statuscode to apply when the button is clicked. 1 = `close`, 2 = `false_positive`, 3 = `skip`, 4 = `deleted`, 5 = `already fixed` (on the map, e.g. for duplicates), 6 = `too hard`",
-                        defaultValue: "1"
+                        defaultValue: "1",
                     },
                     {
                         name: "maproulette_id",
                         doc: "The property name containing the maproulette id",
-                        defaultValue: "mr_taskId"
+                        defaultValue: "mr_taskId",
                     },
                     {
                         name: "ask_feedback",
                         doc: "If not an empty string, this will be used as question to ask some additional feedback. A text field will be added",
-                        defaultValue: ""
-                    }
+                        defaultValue: "",
+                    },
                 ],
 
                 constr: (state, tagsSource, args) => {
@@ -1121,7 +1127,7 @@ export default class SpecialVisualizations {
                         message_closed,
                         statusToSet,
                         maproulette_id_key,
-                        askFeedback
+                        askFeedback,
                     ] = args
                     if (image === "") {
                         image = "confirm"
@@ -1138,9 +1144,9 @@ export default class SpecialVisualizations {
                         message_closed,
                         statusToSet,
                         maproulette_id_key,
-                        askFeedback
+                        askFeedback,
                     })
-                }
+                },
             },
             {
                 funcName: "statistics",
@@ -1150,7 +1156,12 @@ export default class SpecialVisualizations {
                 constr: (state) => {
                     return new Combine(
                         state.layout.layers
-                            .filter((l) => l.name !== null && l.title && state.perLayer.get(l.id) !== undefined)
+                            .filter(
+                                (l) =>
+                                    l.name !== null &&
+                                    l.title &&
+                                    state.perLayer.get(l.id) !== undefined
+                            )
                             .map(
                                 (l) => {
                                     const fs = state.perLayer.get(l.id)
@@ -1162,7 +1173,7 @@ export default class SpecialVisualizations {
                                 [state.mapProperties.bounds]
                             )
                     )
-                }
+                },
             },
             {
                 funcName: "send_email",
@@ -1171,29 +1182,29 @@ export default class SpecialVisualizations {
                     {
                         name: "to",
                         doc: "Who to send the email to?",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "subject",
                         doc: "The subject of the email",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "body",
                         doc: "The text in the email",
-                        required: true
+                        required: true,
                     },
 
                     {
                         name: "button_text",
                         doc: "The text shown on the button in the UI",
-                        required: true
-                    }
+                        required: true,
+                    },
                 ],
 
                 constr(__, tags, args) {
                     return new SvelteUIElement(SendEmail, { args, tags })
-                }
+                },
             },
             {
                 funcName: "link",
@@ -1202,25 +1213,25 @@ export default class SpecialVisualizations {
                     {
                         name: "text",
                         doc: "Text to be shown",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "href",
                         doc: "The URL to link to. Note that this will be URI-encoded before ",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "class",
-                        doc: "CSS-classes to add to the element"
+                        doc: "CSS-classes to add to the element",
                     },
                     {
                         name: "download",
-                        doc: "Expects a string which denotes the filename to download the contents of `href` into. If set, this link will act as a download-button."
+                        doc: "Expects a string which denotes the filename to download the contents of `href` into. If set, this link will act as a download-button.",
                     },
                     {
                         name: "arialabel",
-                        doc: "If set, this text will be used as aria-label"
-                    }
+                        doc: "If set, this text will be used as aria-label",
+                    },
                 ],
 
                 constr(
@@ -1233,20 +1244,23 @@ export default class SpecialVisualizations {
                         download = undefined
                     }
                     const newTab = download === undefined && !href.startsWith("#")
-                      const   textStore = tagSource.map(tags => Utils.SubstituteKeys(text, tags))
-                  const  hrefStore = tagSource.map(tags => Utils.SubstituteKeys(href, tags).replaceAll(
-                        / /g,
-                        "%20"
-                    ) /* Chromium based browsers eat the spaces */)
+                    const textStore = tagSource.map((tags) => Utils.SubstituteKeys(text, tags))
+                    const hrefStore = tagSource.map(
+                        (tags) =>
+                            Utils.SubstituteKeys(href, tags).replaceAll(
+                                / /g,
+                                "%20"
+                            ) /* Chromium based browsers eat the spaces */
+                    )
                     return new SvelteUIElement(DynLink, {
-                    text:textStore,
+                        text: textStore,
                         href: hrefStore,
                         classnames: new ImmutableStore(classnames),
-                        download: tagSource.map(tags => Utils.SubstituteKeys(download, tags)),
-                        ariaLabel: tagSource.map(tags => Utils.SubstituteKeys(ariaLabel, tags)),
-                        newTab: new ImmutableStore(newTab)
+                        download: tagSource.map((tags) => Utils.SubstituteKeys(download, tags)),
+                        ariaLabel: tagSource.map((tags) => Utils.SubstituteKeys(ariaLabel, tags)),
+                        newTab: new ImmutableStore(newTab),
                     }).setSpan()
-                }
+                },
             },
             {
                 funcName: "multi",
@@ -1260,10 +1274,10 @@ export default class SpecialVisualizations {
                                     type: "multi",
                                     key: "_doors_from_building_properties",
                                     tagrendering: {
-                                        en: "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}"
-                                    }
-                                }
-                            }
+                                        en: "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}",
+                                    },
+                                },
+                            },
                         },
                         null,
                         "  "
@@ -1273,17 +1287,17 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The property to read and to interpret as a list of properties",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "tagrendering",
                         doc: "An entire tagRenderingConfig",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "classes",
-                        doc: "CSS-classes to apply on every individual item. Seperated by `space`"
-                    }
+                        doc: "CSS-classes to apply on every individual item. Seperated by `space`",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -1303,8 +1317,13 @@ export default class SpecialVisualizations {
                             } else {
                                 properties = <any>tags[key]
                             }
-                            if(!properties){
-                                console.debug("Could not create a special visualization for multi(",args.join(", ")+")", "no properties found for object",feature.properties.id)
+                            if (!properties) {
+                                console.debug(
+                                    "Could not create a special visualization for multi(",
+                                    args.join(", ") + ")",
+                                    "no properties found for object",
+                                    feature.properties.id
+                                )
                                 return undefined
                             }
                             const elements = []
@@ -1314,14 +1333,14 @@ export default class SpecialVisualizations {
                                     tags: new ImmutableStore(property),
                                     state,
                                     feature,
-                                    layer
+                                    layer,
                                 }).SetClass(classes)
                                 elements.push(subsTr)
                             }
                             return elements
                         })
                     )
-                }
+                },
             },
             {
                 funcName: "translated",
@@ -1331,8 +1350,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The attribute to interpret as json",
-                        defaultValue: "value"
-                    }
+                        defaultValue: "value",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -1353,7 +1372,7 @@ export default class SpecialVisualizations {
                             }
                         })
                     )
-                }
+                },
             },
             {
                 funcName: "fediverse_link",
@@ -1362,8 +1381,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The attribute-name containing the link",
-                        required: true
-                    }
+                        required: true,
+                    },
                 ],
 
                 constr(
@@ -1387,13 +1406,13 @@ export default class SpecialVisualizations {
                                 const normalLink = new SvelteUIElement(Link, {
                                     text: fediAccount,
                                     href: "https://" + host + "/@" + username,
-                                    newTab: true
+                                    newTab: true,
                                 })
 
                                 const loggedInContributorMastodon =
                                     state.userRelatedState?.preferencesAsTags?.data?.[
                                         "_mastodon_link"
-                                        ]
+                                    ]
                                 console.log(
                                     "LoggedinContributorMastodon",
                                     loggedInContributorMastodon
@@ -1409,12 +1428,12 @@ export default class SpecialVisualizations {
                                     new SvelteUIElement(Link, {
                                         href: homeHost + "/" + fediAccount,
                                         text: Translations.t.validation.fediverse.onYourServer,
-                                        newTab: true
-                                    }).SetClass("button")
+                                        newTab: true,
+                                    }).SetClass("button"),
                                 ])
                             })
                     )
-                }
+                },
             },
             {
                 funcName: "braced",
@@ -1424,8 +1443,8 @@ export default class SpecialVisualizations {
                     {
                         name: "text",
                         required: true,
-                        doc: "The value to show"
-                    }
+                        doc: "The value to show",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -1435,7 +1454,7 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     return new FixedUiElement("{" + args[0] + "}")
-                }
+                },
             },
             {
                 funcName: "tags",
@@ -1445,8 +1464,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         defaultValue: "value",
-                        doc: "The key to look for the tags"
-                    }
+                        doc: "The key to look for the tags",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -1471,14 +1490,14 @@ export default class SpecialVisualizations {
                             } catch (e) {
                                 return new FixedUiElement(
                                     "Could not parse this tag: " +
-                                    JSON.stringify(value) +
-                                    " due to " +
-                                    e
+                                        JSON.stringify(value) +
+                                        " due to " +
+                                        e
                                 ).SetClass("alert")
                             }
                         })
                     )
-                }
+                },
             },
             {
                 funcName: "giggity",
@@ -1486,8 +1505,8 @@ export default class SpecialVisualizations {
                     {
                         name: "giggityUrl",
                         required: true,
-                        doc: "The URL of the giggity-XML"
-                    }
+                        doc: "The URL of the giggity-XML",
+                    },
                 ],
                 docs: "Shows events that are happening based on a Giggity URL",
                 needsUrls: (args) => args[0],
@@ -1501,7 +1520,7 @@ export default class SpecialVisualizations {
                 ): BaseUIElement {
                     const giggityUrl = argument[0]
                     return new SvelteUIElement(Giggity, { tags: tagSource, state, giggityUrl })
-                }
+                },
             },
             {
                 funcName: "gps_all_tags",
@@ -1524,10 +1543,10 @@ export default class SpecialVisualizations {
                         new SvelteUIElement(OrientationDebugPanel, {}),
                         new SvelteUIElement(AllTagsPanel, {
                             state,
-                            tags
-                        })
+                            tags,
+                        }),
                     ])
-                }
+                },
             },
             {
                 funcName: "favourite_status",
@@ -1546,9 +1565,9 @@ export default class SpecialVisualizations {
                         tags: tagSource,
                         state,
                         layer,
-                        feature
+                        feature,
                     })
-                }
+                },
             },
             {
                 funcName: "favourite_icon",
@@ -1566,9 +1585,9 @@ export default class SpecialVisualizations {
                         tags: tagSource,
                         state,
                         layer,
-                        feature
+                        feature,
                     }).SetClass("w-full h-full")
-                }
+                },
             },
             {
                 funcName: "direction_indicator",
@@ -1583,7 +1602,7 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     return new SvelteUIElement(DirectionIndicator, { state, feature })
-                }
+                },
             },
             {
                 funcName: "qr_code",
@@ -1603,26 +1622,29 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(
                         tagSource
                             .map((tags) => tags.id)
-                            .map((id) => {
-                                if (id.startsWith("node/-")) {
-                                    // Not yet uploaded
-                                    return undefined
-                                }
-                                const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                                const includeLayout = window.location.pathname
-                                    .split("/")
-                                    .at(-1)
-                                    .startsWith("theme")
-                                const layout = includeLayout
-                                    ? "layout=" + state.layout.id + "&"
-                                    : ""
-                                const url =
-                                    `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
-                                    `#${id}`
-                                return new Img(new Qr(url).toImageElement(size.data)).SetStyle(
-                                    `width: ${size.data}px`
-                                )
-                            }, [size])
+                            .map(
+                                (id) => {
+                                    if (id.startsWith("node/-")) {
+                                        // Not yet uploaded
+                                        return undefined
+                                    }
+                                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                                    const includeLayout = window.location.pathname
+                                        .split("/")
+                                        .at(-1)
+                                        .startsWith("theme")
+                                    const layout = includeLayout
+                                        ? "layout=" + state.layout.id + "&"
+                                        : ""
+                                    const url =
+                                        `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
+                                        `#${id}`
+                                    return new Img(new Qr(url).toImageElement(size.data)).SetStyle(
+                                        `width: ${size.data}px`
+                                    )
+                                },
+                                [size]
+                            )
                     ).onClick(() => {
                         if (size.data !== bigSize) {
                             size.setData(bigSize)
@@ -1630,7 +1652,7 @@ export default class SpecialVisualizations {
                             size.setData(smallSize)
                         }
                     })
-                }
+                },
             },
             {
                 funcName: "direction_absolute",
@@ -1639,8 +1661,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The attribute containing the degrees",
-                        defaultValue: "_direction:centerpoint"
-                    }
+                        defaultValue: "_direction:centerpoint",
+                    },
                 ],
 
                 constr(
@@ -1665,7 +1687,7 @@ export default class SpecialVisualizations {
                                 return Translations.t.general.visualFeedback.directionsAbsolute[dir]
                             })
                     )
-                }
+                },
             },
             {
                 funcName: "compare_data",
@@ -1674,18 +1696,18 @@ export default class SpecialVisualizations {
                     {
                         name: "url",
                         required: true,
-                        doc: "The attribute containing the url where to fetch more data"
+                        doc: "The attribute containing the url where to fetch more data",
                     },
                     {
                         name: "host",
                         required: true,
-                        doc: "The domain name(s) where data might be fetched from - this is needed to set the CSP. A domain must include 'https', e.g. 'https://example.com'. For multiple domains, separate them with ';'. If you don't know the possible domains, use '*'. "
+                        doc: "The domain name(s) where data might be fetched from - this is needed to set the CSP. A domain must include 'https', e.g. 'https://example.com'. For multiple domains, separate them with ';'. If you don't know the possible domains, use '*'. ",
                     },
                     {
                         name: "readonly",
                         required: false,
-                        doc: "If 'yes', will not show 'apply'-buttons"
-                    }
+                        doc: "If 'yes', will not show 'apply'-buttons",
+                    },
                 ],
                 docs: "Gives an interactive element which shows a tag comparison between the OSM-object and the upstream object. This allows to copy some or all tags into OSM",
                 constr(
@@ -1705,9 +1727,9 @@ export default class SpecialVisualizations {
                         layer,
                         feature,
                         readonly,
-                        externalData
+                        externalData,
                     })
-                }
+                },
             },
             {
                 funcName: "login_button",
@@ -1726,7 +1748,7 @@ export default class SpecialVisualizations {
                         new SvelteUIElement(LoginButton),
                         state.osmConnection.isLoggedIn
                     )
-                }
+                },
             },
             {
                 funcName: "linked_data_from_website",
@@ -1735,22 +1757,21 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         defaultValue: "website",
-                        doc: "Attempt to load ld+json from the specified URL. This can be in an embedded <script type='ld+json'>"
+                        doc: "Attempt to load ld+json from the specified URL. This can be in an embedded <script type='ld+json'>",
                     },
                     {
                         name: "useProxy",
                         defaultValue: "yes",
-                        doc: "If 'yes', uses the provided proxy server. This proxy server will scrape HTML and search for a script with `lang='ld+json'`. If `no`, the data will be downloaded and expects a linked-data-json directly"
+                        doc: "If 'yes', uses the provided proxy server. This proxy server will scrape HTML and search for a script with `lang='ld+json'`. If `no`, the data will be downloaded and expects a linked-data-json directly",
                     },
                     {
                         name: "host",
-                        doc: "If not using a proxy, define what host the website is allowed to connect to"
+                        doc: "If not using a proxy, define what host the website is allowed to connect to",
                     },
                     {
                         name: "mode",
-                        doc: "If `display`, only show the data in tabular and readonly form, ignoring already existing tags. This is used to explicitly show all the tags. If unset or anything else, allow to apply/import on OSM"
-                    }
-
+                        doc: "If `display`, only show the data in tabular and readonly form, ignoring already existing tags. This is used to explicitly show all the tags. If unset or anything else, allow to apply/import on OSM",
+                    },
                 ],
                 needsUrls: [Constants.linkedDataProxy, "http://www.schema.org"],
                 constr(
@@ -1764,40 +1785,54 @@ export default class SpecialVisualizations {
                     const useProxy = argument[1] !== "no"
                     const readonly = argument[3] === "readonly"
 
-                    const url = tags.mapD(tags => {
-                        if (!tags._country || !tags[key] || tags[key] === "undefined") {
-                            return null
-                        }
-                        return (JSON.stringify({ url: tags[key], country: tags._country }))
-                    }).mapD(data => JSON.parse(data))
-                    const sourceUrl: Store<string | undefined> = url.mapD(url => url.url)
-                    const externalData: Store<{ success: { content: any } } | {
-                        error: string
-                    } | undefined | null> = url.bindD(({
-                                                           url,
-                                                           country
-                                                       }) => {
-
+                    const url = tags
+                        .mapD((tags) => {
+                            if (!tags._country || !tags[key] || tags[key] === "undefined") {
+                                return null
+                            }
+                            return JSON.stringify({ url: tags[key], country: tags._country })
+                        })
+                        .mapD((data) => JSON.parse(data))
+                    const sourceUrl: Store<string | undefined> = url.mapD((url) => url.url)
+                    const externalData: Store<
+                        | { success: { content: any } }
+                        | {
+                              error: string
+                          }
+                        | undefined
+                        | null
+                    > = url.bindD(({ url, country }) => {
                         if (url.startsWith("https://data.velopark.be/")) {
-                            return Stores.FromPromiseWithErr((async () => {
-                                try {
-                                    const features = await LinkedDataLoader.fetchVeloparkEntry(url)
-                                    const feature = features.find(f => f.properties["ref:velopark"] === url) ?? features[0]
-                                    const properties = feature.properties
-                                    properties["ref:velopark"] = url
-                                    delete properties["name"]
-                                    console.log("Got properties from velopark:", properties)
-                                    return properties
-                                } catch (e) {
-                                    console.error(e)
-                                    throw e
-                                }
-                            })())
+                            return Stores.FromPromiseWithErr(
+                                (async () => {
+                                    try {
+                                        const features = await LinkedDataLoader.fetchVeloparkEntry(
+                                            url
+                                        )
+                                        const feature =
+                                            features.find(
+                                                (f) => f.properties["ref:velopark"] === url
+                                            ) ?? features[0]
+                                        const properties = feature.properties
+                                        properties["ref:velopark"] = url
+                                        delete properties["name"]
+                                        console.log("Got properties from velopark:", properties)
+                                        return properties
+                                    } catch (e) {
+                                        console.error(e)
+                                        throw e
+                                    }
+                                })()
+                            )
                         }
-                        return Stores.FromPromiseWithErr(LinkedDataLoader.fetchJsonLd(url, { country }, useProxy))
+                        return Stores.FromPromiseWithErr(
+                            LinkedDataLoader.fetchJsonLd(url, { country }, useProxy)
+                        )
                     })
 
-                    externalData.addCallbackAndRunD(lod => console.log("linked_data_from_website received the following data:", lod))
+                    externalData.addCallbackAndRunD((lod) =>
+                        console.log("linked_data_from_website received the following data:", lod)
+                    )
 
                     return new Toggle(
                         new SvelteUIElement(ComparisonTool, {
@@ -1807,11 +1842,13 @@ export default class SpecialVisualizations {
                             layer,
                             externalData,
                             sourceUrl,
-                            readonly
-                        }), undefined, url.map(url => !!url)
+                            readonly,
+                        }),
+                        undefined,
+                        url.map((url) => !!url)
                     )
-                }
-            }
+                },
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
@@ -1823,7 +1860,7 @@ export default class SpecialVisualizations {
             throw (
                 "Invalid special visualisation found: funcName is undefined for " +
                 invalid.map((sp) => sp.i).join(", ") +
-                ". Did you perhaps type \n  funcName: \"funcname\" // type declaration uses COLON\ninstead of:\n  funcName = \"funcName\" // value definition uses EQUAL"
+                '. Did you perhaps type \n  funcName: "funcname" // type declaration uses COLON\ninstead of:\n  funcName = "funcName" // value definition uses EQUAL'
             )
         }
 

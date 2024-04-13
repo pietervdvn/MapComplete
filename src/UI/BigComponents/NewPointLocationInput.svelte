@@ -8,7 +8,7 @@
   import ShowDataLayer from "../Map/ShowDataLayer"
   import type {
     FeatureSource,
-    FeatureSourceForLayer
+    FeatureSourceForLayer,
   } from "../../Logic/FeatureSource/FeatureSource"
   import SnappingFeatureSource from "../../Logic/FeatureSource/Sources/SnappingFeatureSource"
   import FeatureSourceMerger from "../../Logic/FeatureSource/Sources/FeatureSourceMerger"
@@ -72,7 +72,7 @@
     allowMoving: new UIEventSource<boolean>(true),
     allowZooming: new UIEventSource<boolean>(true),
     minzoom: new UIEventSource<number>(18),
-    rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer)
+    rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer),
   }
   state?.showCurrentLocationOn(map)
 
@@ -82,7 +82,7 @@
     if (featuresForLayer) {
       new ShowDataLayer(map, {
         layer: targetLayer,
-        features: featuresForLayer
+        features: featuresForLayer,
       })
     }
   }
@@ -99,7 +99,7 @@
       new ShowDataLayer(map, {
         layer: layer.layer.layerDef,
         zoomToFeatures: false,
-        features: layer
+        features: layer,
       })
     }
     const snappedLocation = new SnappingFeatureSource(
@@ -110,28 +110,30 @@
         maxDistance: maxSnapDistance ?? 15,
         allowUnsnapped: true,
         snappedTo,
-        snapLocation: value
+        snapLocation: value,
       }
     )
     const withCorrectedAttributes = new StaticFeatureSource(
-      snappedLocation.features.mapD(feats => feats.map(f => {
-        const properties =  {
-        ...f.properties,
-        ...presetPropertiesUnpacked
-        }
-        properties["_referencing_ways"] = f.properties["snapped-to"]
-        return ({
-          ...f,
-         properties
+      snappedLocation.features.mapD((feats) =>
+        feats.map((f) => {
+          const properties = {
+            ...f.properties,
+            ...presetPropertiesUnpacked,
+          }
+          properties["_referencing_ways"] = f.properties["snapped-to"]
+          return {
+            ...f,
+            properties,
+          }
         })
-      }))
+      )
     )
     // The actual point to be created, snapped at the new location
     new ShowDataLayer(map, {
       layer: targetLayer,
-      features: withCorrectedAttributes
+      features: withCorrectedAttributes,
     })
-    withCorrectedAttributes.features.addCallbackAndRunD(f => console.log("Snapped point is", f))
+    withCorrectedAttributes.features.addCallbackAndRunD((f) => console.log("Snapped point is", f))
   }
 </script>
 
