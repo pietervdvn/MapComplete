@@ -31,7 +31,9 @@
   "icon": "./assets/layers/food/restaurant.svg",
   "layers": [
     "food",
-    "ice_cream"
+    "ice_cream",
+    "outdoor_seating",
+    "food_courts"
   ],
   "widenFactor": 3
 }

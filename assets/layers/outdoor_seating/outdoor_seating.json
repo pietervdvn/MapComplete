@@ -1,0 +1,174 @@
+{
+  "id": "outdoor_seating",
+  "name": {
+    "en": "Outdoor Seating"
+  },
+  "description": {
+    "en": "Outdoor seating areas, usually located near cafes and restaurants."
+  },
+  "title": {
+    "render": {
+      "en": "Outdoor Seating area"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
+  },
+  "source": {
+    "osmTags": "leisure=outdoor_seating"
+  },
+  "minzoom": 19,
+  "tagRenderings": [
+    "images",
+    {
+      "id": "access",
+      "question": {
+        "en": "Who can use this outdoor seating area?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Anyone can use this outdoor seating area."
+          }
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Only customers can use this outdoor seating area."
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "This outdoor seating area is private."
+          }
+        }
+      ]
+    },
+    {
+      "id": "seasonal",
+      "question": {
+        "en": "Is this outdoor seating area seasonal?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "seasonal=no",
+          "then": {
+            "en": "This outdoor seating area is available all year round."
+          }
+        },
+        {
+          "if": "seasonal=spring",
+          "then": {
+            "en": "This outdoor seating area is available in spring."
+          }
+        },
+        {
+          "if": "seasonal=summer",
+          "then": {
+            "en": "This outdoor seating area is available in summer."
+          }
+        },
+        {
+          "if": "seasonal=autumn",
+          "then": {
+            "en": "This outdoor seating area is available in autumn."
+          }
+        },
+        {
+          "if": "seasonal=winter",
+          "then": {
+            "en": "This outdoor seating area is available in winter."
+          }
+        },
+        {
+          "if": "seasonal=dry_season",
+          "then": {
+            "en": "This outdoor seating area is available in the dry season."
+          }
+        }
+      ]
+    },
+    "opening_hours_24_7",
+    "website",
+    "internet-all",
+    "wheelchair-access",
+    {
+      "id": "heating",
+      "question": {
+        "en": "Is this outdoor seating area heated?"
+      },
+      "mappings": [
+        {
+          "if": "heating=yes",
+          "then": {
+            "en": "This outdoor seating area is heated."
+          }
+        },
+        {
+          "if": "heating=no",
+          "then": {
+            "en": "This outdoor seating area is not heated."
+          }
+        }
+      ]
+    },
+    {
+      "id": "covered",
+      "question": {
+        "en": "Is this outdoor seating area covered?"
+      },
+      "mappings": [
+        {
+          "if": "covered=yes",
+          "then": {
+            "en": "This outdoor seating area is covered."
+          }
+        },
+        {
+          "if": "covered=no",
+          "then": {
+            "en": "This outdoor seating area is not covered."
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "smoking",
+      "override": {
+        "mappings": [
+          {},
+          {},
+          {
+            "hideInAnswer": true
+          }
+        ]
+      }
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "green",
+      "fillColor": "#00FF004D",
+      "width": 2
+    }
+  ]
+}
