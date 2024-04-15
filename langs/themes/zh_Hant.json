@@ -513,9 +513,6 @@
     },
     "stations": {
         "layers": {
-            "3": {
-                "description": "顯示火車站的圖層"
-            },
             "16": {
                 "presets": {
                     "0": {
@@ -535,6 +532,9 @@
                 "title": {
                     "render": "時刻表"
                 }
+            },
+            "3": {
+                "description": "顯示火車站的圖層"
             }
         },
         "title": "火車站"
