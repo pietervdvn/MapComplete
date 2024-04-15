@@ -1658,6 +1658,6 @@
     "waste_basket": {
         "description": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
         "shortDescription": "A map with waste baskets",
-        "title": "Waste Basket"
+        "title": "Waste Baskets"
     }
 }
