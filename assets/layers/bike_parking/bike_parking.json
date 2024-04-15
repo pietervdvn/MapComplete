@@ -903,16 +903,51 @@
         "key": "capacity:cargo_bike",
         "type": "nat"
       },
-      "mappings": [{
+      "mappings": [
+        {
           "if": "cargo_bike=no",
           "then": {
             "en": "There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed",
             "nl": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan "
           },
           "hideInAnswer": "capacity:cargo_bike=",
-        "addExtraTags": ["capacity:cargo_bike="]
-      }],
+          "addExtraTags": [
+            "capacity:cargo_bike="
+          ]
+        }
+      ],
       "id": "Cargo bike capacity?"
+    },
+    {
+      "id": "maxstay",
+      "question": {
+        "en": "What is the maximum allowed parking duration?",
+        "nl": "Wat is de toegestane, maximale parkeerduur?"
+      },
+      "questionHint": {
+        "en": "If the bicycle is parked for a longer amount, it might be removed by the operator",
+        "nl": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder"
+      },
+      "freeform": {
+        "key": "maxstay",
+        "type": "pnat"
+      },
+      "render": {
+        "en": "A bike can be parked here for at most {canonical(maxstay)}",
+        "nl": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren"
+      }
+    }
+  ],
+  "units": [
+    {
+      "maxstay": {
+        "quantity": "duration",
+        "denominations": [
+          "days",
+          "weeks",
+          "months"
+        ]
+      }
     }
   ],
   "deletion": {
