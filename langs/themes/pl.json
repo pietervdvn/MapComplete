@@ -875,6 +875,33 @@
     "onwheels": {
         "description": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statystyki"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Dodaj wszystkie sugerowane znaczniki"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -916,33 +943,6 @@
             "8": {
                 "override": {
                     "name": "Miejsca parkingowe dla niepełnosprawnych"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statystyki"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Dodaj wszystkie sugerowane znaczniki"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1104,10 +1104,6 @@
     "stations": {
         "description": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
         "layers": {
-            "3": {
-                "description": "Warstwa pokazująca stacje kolejowe",
-                "name": "Stacje Kolejowe"
-            },
             "16": {
                 "description": "Ekrany wyświetlające pokazujące pociągi, które odjadą z tej stacji",
                 "name": "Tablice odjazdów",
@@ -1139,6 +1135,10 @@
                 "title": {
                     "render": "Tablica odjazdów"
                 }
+            },
+            "3": {
+                "description": "Warstwa pokazująca stacje kolejowe",
+                "name": "Stacje Kolejowe"
             }
         },
         "title": "Stacje Kolejowe"

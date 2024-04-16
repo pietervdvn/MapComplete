@@ -861,6 +861,33 @@
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistiques"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importation"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Ajouter tous les attributs suggérés"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -902,33 +929,6 @@
             "8": {
                 "override": {
                     "name": "Places de stationnement pour personnes handicapées"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistiques"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importation"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Ajouter tous les attributs suggérés"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1090,10 +1090,6 @@
     "stations": {
         "description": "Voir, modifier et ajouter des détails à une gare ferroviaire",
         "layers": {
-            "3": {
-                "description": "Couche montrant les gares",
-                "name": "Gares ferroviaires"
-            },
             "16": {
                 "description": "Panneau affichant les trains au départ depuis cette gare",
                 "name": "Panneaux des départs",
@@ -1125,6 +1121,10 @@
                 "title": {
                     "render": "Tableau des départs"
                 }
+            },
+            "3": {
+                "description": "Couche montrant les gares",
+                "name": "Gares ferroviaires"
             }
         },
         "title": "Gares ferroviaires"
