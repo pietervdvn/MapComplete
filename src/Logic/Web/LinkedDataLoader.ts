@@ -641,12 +641,17 @@ export default class LinkedDataLoader {
         return results
     }
 
+    private static veloparkCache : Record<string, Feature[]> = {}
+
     /**
      * Fetches all data relevant to velopark.
      * The id will be saved as `ref:velopark`
      * @param url
      */
     public static async fetchVeloparkEntry(url: string): Promise<Feature[]> {
+        if(this.veloparkCache[url]){
+            return this.veloparkCache[url]
+        }
         const withProxyUrl = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
         const optionalPaths: Record<string, string | Record<string, string>> = {
             "schema:interactionService": {
@@ -702,6 +707,7 @@ export default class LinkedDataLoader {
             p["ref:velopark"] = [section]
             patched.push(LinkedDataLoader.asGeojson(p))
         }
+        this.veloparkCache[url] = patched
         return patched
     }
 }
