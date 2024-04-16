@@ -499,7 +499,8 @@
         "support=street_furniture:transit_shelter"
       ],
       "title": {
-        "en": "a poster box part of a public transport shelter"
+        "en": "a poster box part of a public transport shelter",
+        "de": "ein Plakatkasten, der zu einem Unterstand für öffentliche Verkehrsmittel gehört"
       },
       "snapToLayer": [
         "shelter"
@@ -657,7 +658,8 @@
         "support=street_furniture:transit_shelter"
       ],
       "title": {
-        "en": "a screen mounted on a transit shelter"
+        "en": "a screen mounted on a transit shelter",
+        "de": "ein Bildschirm, der an einem Wartehäuschen angebracht ist"
       },
       "snapToLayer": [
         "shelter"

@@ -335,7 +335,8 @@
           "if": "bicycle_parking=lockers",
           "then": {
             "en": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..",
-            "nl": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan."
+            "nl": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan.",
+            "de": "Ein Schließfach - Fahrräder werden einzeln oder mit mehreren Fahrrädern zusammen eingeschlossen. Der Schrank ist zu klein für eine stehende Person."
           }
         }
       ],
@@ -705,11 +706,13 @@
       "id": "operator",
       "question": {
         "en": "Who maintains this bicycle parking?",
-        "nl": "Wie beheert deze fietsenstalling?"
+        "nl": "Wie beheert deze fietsenstalling?",
+        "de": "Wer unterhält diese Fahrradabstellplätze?"
       },
       "render": {
         "en": "This bicycle parking is maintained by {operator}",
-        "nl": "Deze fietsenstalling wordt beheerd door {operator}"
+        "nl": "Deze fietsenstalling wordt beheerd door {operator}",
+        "de": "Dieser Fahrradparkplatz wird von {operator} bereitgestellt"
       },
       "freeform": {
         "key": "operator"
@@ -760,7 +763,8 @@
       "id": "operator_website",
       "question": {
         "en": "What is the website number of the operator of this bicycle parking?",
-        "nl": "Wat is de website van de operator van deze fietsenstalling?"
+        "nl": "Wat is de website van de operator van deze fietsenstalling?",
+        "de": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?"
       },
       "icon": "./assets/layers/icons/website.svg",
       "freeform": {
@@ -850,7 +854,7 @@
             "en": "You're not allowed to park cargo bikes or there are no places provided for cargo bikes",
             "nl": "Je mag hier geen bakfietsen parkeren",
             "gl": "Non está permitido aparcar bicicletas de carga",
-            "de": "Der Parkplatz bietet keine Stellflächen für Lastenfahrräder",
+            "de": "Das Abstellen von Lastenfahrrädern ist nicht erlaubt oder es gibt keine Stellplätze für Lastenfahrräder",
             "fr": "Il est interdit de garer des vélos cargo",
             "it": "Il parcheggio delle bici cargo è proibito",
             "pt_BR": "Você não tem permissão para estacionar bicicletas de carga",
@@ -908,7 +912,8 @@
           "if": "cargo_bike=no",
           "then": {
             "en": "There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed",
-            "nl": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan "
+            "nl": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan ",
+            "de": "Es gibt hier keine speziellen Stellplätze für Lastenfahrräder oder das Abstellen von Lastenfahrrädern ist hier nicht erlaubt"
           },
           "hideInAnswer": "capacity:cargo_bike=",
           "addExtraTags": [
