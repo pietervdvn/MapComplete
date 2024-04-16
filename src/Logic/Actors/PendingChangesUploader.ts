@@ -6,7 +6,11 @@ import { Feature } from "geojson"
 import { ImageUploadManager } from "../ImageProviders/ImageUploadManager"
 
 export default class PendingChangesUploader {
-    constructor(changes: Changes, selectedFeature: UIEventSource<Feature>, uploader : ImageUploadManager) {
+    constructor(
+        changes: Changes,
+        selectedFeature: UIEventSource<Feature>,
+        uploader: ImageUploadManager
+    ) {
         changes.pendingChanges
             .stabilized(Constants.updateTimeoutSec * 1000)
             .addCallback(() => changes.flushChanges("Flushing changes due to timeout"))

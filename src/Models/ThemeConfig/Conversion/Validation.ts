@@ -278,10 +278,14 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 
             if (!isCategory && !ValidateTheme._availableLayers.has(backgroundId)) {
                 const options = Array.from(ValidateTheme._availableLayers)
-                const nearby = Utils.sortedByLevenshteinDistance(backgroundId, options, t => t)
+                const nearby = Utils.sortedByLevenshteinDistance(backgroundId, options, (t) => t)
                 context
                     .enter("defaultBackgroundId")
-                    .err(`This layer ID is not known: ${backgroundId}. Perhaps you meant one of ${nearby.slice(0,5).join(", ")}`)
+                    .err(
+                        `This layer ID is not known: ${backgroundId}. Perhaps you meant one of ${nearby
+                            .slice(0, 5)
+                            .join(", ")}`
+                    )
             }
         }
 
@@ -1014,7 +1018,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ) {
                         continue
                     }
-                    if(json.freeform.key.indexOf("wikidata")>=0){
+                    if (json.freeform.key.indexOf("wikidata") >= 0) {
                         context
                             .enter("render")
                             .err(
@@ -1273,7 +1277,14 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                 // It is tempting to add an index to this warning; however, due to labels the indices here might be different from the index in the tagRendering list
                 context
                     .enter("tagRenderings")
-                    .err("Some tagrenderings have a duplicate id: " + duplicates.join(", ")+"\n"+JSON.stringify(json.tagRenderings.filter(tr=> duplicates.indexOf(tr["id"])>=0)))
+                    .err(
+                        "Some tagrenderings have a duplicate id: " +
+                            duplicates.join(", ") +
+                            "\n" +
+                            JSON.stringify(
+                                json.tagRenderings.filter((tr) => duplicates.indexOf(tr["id"]) >= 0)
+                            )
+                    )
             }
         }
 
@@ -1865,11 +1876,14 @@ export class ValidateThemeEnsemble extends Conversion<
         string,
         {
             tags: TagsFilter
-            foundInTheme: string[],
+            foundInTheme: string[]
             isCounted: boolean
         }
     > {
-        const idToSource = new Map<string, { tags: TagsFilter; foundInTheme: string[], isCounted: boolean }>()
+        const idToSource = new Map<
+            string,
+            { tags: TagsFilter; foundInTheme: string[]; isCounted: boolean }
+        >()
 
         for (const theme of json) {
             for (const layer of theme.layers) {

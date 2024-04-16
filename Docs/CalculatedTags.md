@@ -208,7 +208,7 @@ Extract the 'level'-tag into a normalized, ';'-separated value called '_level' (
 
 
 
-_referencing_ways contains - for a node - which ways use this this node as point in their geometry. 
+_referencing_ways contains - for a node - which ways use this node as point in their geometry. 
 
 This is a lazy metatag and is only calculated when needed
 

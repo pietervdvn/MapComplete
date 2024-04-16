@@ -8,8 +8,8 @@ export class Server {
         },
         handle: {
             mustMatch: string | RegExp
-            mimetype: string,
-            addHeaders?: Record<string, string>,
+            mimetype: string
+            addHeaders?: Record<string, string>
             handle: (path: string, queryParams: URLSearchParams) => Promise<string>
         }[]
     ) {
@@ -91,11 +91,18 @@ export class Server {
 
                 try {
                     const result = await handler.handle(path, url.searchParams)
-                    if(typeof result !== "string"){
-                        console.error("Internal server error: handling", url,"resulted in a ",typeof result," instead of a string:", result)
+                    if (typeof result !== "string") {
+                        console.error(
+                            "Internal server error: handling",
+                            url,
+                            "resulted in a ",
+                            typeof result,
+                            " instead of a string:",
+                            result
+                        )
                     }
                     const extraHeaders = handler.addHeaders ?? {}
-                    res.writeHead(200, { "Content-Type": handler.mimetype , ...extraHeaders})
+                    res.writeHead(200, { "Content-Type": handler.mimetype, ...extraHeaders })
                     res.write(result)
                     res.end()
                 } catch (e) {

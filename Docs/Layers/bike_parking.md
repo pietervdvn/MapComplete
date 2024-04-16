@@ -60,14 +60,16 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bicycle_parking#values) [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) | [string](../SpecialInputElements.md#string) | [stands](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands) [wall_loops](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops) [handlebar_holder](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder) [rack](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack) [two_tier](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier) [shed](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed) [bollard](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard) [floor](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bicycle_parking#values) [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) | [string](../SpecialInputElements.md#string) | [stands](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands) [wall_loops](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops) [handlebar_holder](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder) [rack](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack) [two_tier](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier) [shed](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed) [bollard](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard) [floor](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor) [lockers](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | Multiple choice | [underground](https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground) [surface](https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/covered#values) [covered](https://wiki.openstreetmap.org/wiki/Key:covered) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [nat](../SpecialInputElements.md#nat) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fee#values) [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator:phone#values) [operator:phone](https://wiki.openstreetmap.org/wiki/Key:operator:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator:website#values) [operator:website](https://wiki.openstreetmap.org/wiki/Key:operator:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cargo_bike#values) [cargo_bike](https://wiki.openstreetmap.org/wiki/Key:cargo_bike) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes) [designated](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated) [no](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:cargo_bike#values) [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) | [nat](../SpecialInputElements.md#nat) | 
 
@@ -125,6 +127,7 @@ This rendering asks information about the property  [bicycle_parking](https://wi
   - *Shed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed' target='_blank'>shed</a>
   - *Bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard' target='_blank'>bollard</a>
   - *An area on the floor which is marked for bicycle parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor' target='_blank'>floor</a>
+  - *A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers' target='_blank'>lockers</a>
 
 
 
@@ -186,6 +189,7 @@ This rendering asks information about the property  [access](https://wiki.openst
 
   - *Publicly accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
   - *Access is primarily for visitors to a business*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - *Access is limited to members of a school, company or organisation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
   - *Access is limited to members of a school, company or organisation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
 
@@ -224,6 +228,16 @@ This rendering asks information about the property  [opening_hours](https://wiki
 
 
 
+### operator 
+
+
+
+The question is  *Who maintains this bicycle parking?*
+
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This bicycle parking is maintained by {operator}`
+
+
+
 ### operator_phone 
 
 
@@ -242,6 +256,24 @@ This rendering asks information about the property  [operator:phone](https://wik
 
 
 
+### operator_website 
+
+
+
+The question is  *What is the website number of the operator of this bicycle parking?*
+
+This rendering asks information about the property  [operator:website](https://wiki.openstreetmap.org/wiki/Key:operator:website) This is rendered with  `<a href='{operator:website}'>{operator:website}</a>`
+
+
+
+  - *<a href='{website}'>{website}</a>*  corresponds with  website~.+
+  - _This option cannot be chosen as answer_
+  - *<a href='{contact:website}'>{contact:website}</a>*  corresponds with  contact:website~.+
+  - _This option cannot be chosen as answer_
+
+
+
+
 ### Cargo bike spaces? 
 
 
@@ -254,7 +286,7 @@ The question is  *Does this bicycle parking have spots for cargo bikes?*
 
   - *This parking has room for cargo bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes' target='_blank'>yes</a>
   - *This parking has designated (official) spots for cargo bikes.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated' target='_blank'>designated</a>
-  - *You're not allowed to park cargo bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
+  - *You're not allowed to park cargo bikes or there are no places provided for cargo bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
 
 
 
@@ -267,7 +299,12 @@ The question is  *How many cargo bicycles fit in this bicycle parking?*
 
 This rendering asks information about the property  [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) This is rendered with  `This parking fits {capacity:cargo_bike} cargo bikes`
 
-This tagrendering is only visible in the popup if the following condition is met: `cargo_bike~^(designated|yes)$`
+
+
+  - *There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: `capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$`
 
 
 
@@ -278,6 +315,18 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

@@ -66,7 +66,7 @@
         />
       </If>
 
-      <Tr t={filteredLayer.layerDef.name}/>
+      <Tr t={filteredLayer.layerDef.name} />
 
       {#if $zoomlevel < layer.minzoom}
         <span class="alert">
@@ -82,7 +82,7 @@
             <!-- There are three (and a half) modes of filters: a single checkbox, a radio button/dropdown or with searchable fields -->
             {#if filter.options.length === 1 && filter.options[0].fields.length === 0}
               <Checkbox selected={getBooleanStateFor(filter)}>
-                <Tr t={filter.options[0].question}/>
+                <Tr t={filter.options[0].question} />
               </Checkbox>
             {/if}
 
@@ -94,7 +94,7 @@
               <Dropdown value={getStateFor(filter)}>
                 {#each filter.options as option, i}
                   <option value={i}>
-                   <Tr  t={option.question}/>
+                    <Tr t={option.question} />
                   </option>
                 {/each}
               </Dropdown>

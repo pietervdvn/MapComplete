@@ -24,6 +24,16 @@
                                     "text": "Voeg deze ATM toe"
                                 }
                             }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap kent <a href='#{_closest_osm_poi}'>een geldautomaat die {_closest_osm_poi_distance} meter weg is</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Voeg alle gesuggereerde tags toe aan de dichtstbijzijnde geldautomaat"
+                                }
+                            }
                         }
                     }
                 }
@@ -1375,6 +1385,6 @@
     "waste_basket": {
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
-        "title": "Vuilnisbak"
+        "title": "Vuilnisbakken"
     }
 }

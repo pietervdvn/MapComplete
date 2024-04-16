@@ -12,214 +12,278 @@
   "tags": [
     {
       "key": "advertising",
-      "description": "The MapComplete theme Advertising has a layer Advertise showing features with this tag"
+      "description": "The MapComplete theme Advertising has a layer Advertisement showing features with this tag"
     },
     {
       "key": "id",
-      "description": "Layer 'Advertise' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Advertising') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+      "description": "Layer 'Advertisement' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Advertising') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
-      "description": "The layer 'Advertise allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Advertise allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Advertise allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Advertise allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows and asks freeform values for key 'advertising' (in the mapcomplete.org theme 'Advertising')"
+      "description": "Layer 'Advertisement' shows and asks freeform values for key 'advertising' (in the mapcomplete.org theme 'Advertising')"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=billboard with a fixed text, namely 'This is a billboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=billboard with a fixed text, namely 'This is a billboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "billboard"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=board with a fixed text, namely 'This is a board' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=board with a fixed text, namely 'This is a board' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "board"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=column with a fixed text, namely 'This is a column' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=column with a fixed text, namely 'This is a column' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "column"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=flag with a fixed text, namely 'This is a flag' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=flag with a fixed text, namely 'This is a flag' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "flag"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=poster_box with a fixed text, namely 'This is a poster Box' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=poster_box with a fixed text, namely 'This is a poster Box' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "poster_box"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=screen with a fixed text, namely 'This is a screen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=screen with a fixed text, namely 'This is a screen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "screen"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "sculpture"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=sign with a fixed text, namely 'This is a sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=sign with a fixed text, namely 'This is a sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "sign"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=tarp with a fixed text, namely 'This is a tarp (a weatherproof piece of textile with an advertising message)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=tarp with a fixed text, namely 'This is a tarp (a weatherproof piece of textile with an advertising message)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "tarp"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=totem with a fixed text, namely 'This is a totem' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=totem with a fixed text, namely 'This is a totem' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "totem"
     },
     {
       "key": "advertising",
-      "description": "Layer 'Advertise' shows advertising=wall_painting with a fixed text, namely 'This is a wall painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows advertising=wall_painting with a fixed text, namely 'This is a wall painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "wall_painting"
     },
     {
       "key": "animated",
-      "description": "Layer 'Advertise' shows animated=no with a fixed text, namely '<b>Static</b>, always shows the same message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=no with a fixed text, namely '<b>Static</b>, always shows the same message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "no"
     },
     {
       "key": "animated",
-      "description": "Layer 'Advertise' shows animated=digital_display with a fixed text, namely 'This object has a built-in <b>digital display</b> to show prices or some other message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=digital_display with a fixed text, namely 'This object has a built-in <b>digital display</b> to show prices or some other message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "digital_display"
     },
     {
       "key": "animated",
-      "description": "Layer 'Advertise' shows animated=trivision_blades with a fixed text, namely '<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=trivision_blades with a fixed text, namely '<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "trivision_blades"
     },
     {
       "key": "animated",
-      "description": "Layer 'Advertise' shows animated=winding_posters with a fixed text, namely '<b>Scrolling</b> posters' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=winding_posters with a fixed text, namely '<b>Scrolling</b> posters' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "winding_posters"
     },
     {
       "key": "animated",
-      "description": "Layer 'Advertise' shows animated=revolving with a fixed text, namely '<b>Rotates</b> on itself' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=revolving with a fixed text, namely '<b>Rotates</b> on itself' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "revolving"
     },
     {
       "key": "luminous",
-      "description": "Layer 'Advertise' shows luminous=neon with a fixed text, namely 'This is a neon-tube light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows luminous=neon with a fixed text, namely 'This is a neon-tube light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
       "value": "neon"
     },
     {
       "key": "lit",
-      "description": "Layer 'Advertise' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "luminous",
-      "description": "Layer 'Advertise' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "luminous",
-      "description": "Layer 'Advertise' shows luminous=yes with a fixed text, namely 'This object emits light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows luminous=yes with a fixed text, namely 'This object emits light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "lit",
-      "description": "Layer 'Advertise' shows lit=yes with a fixed text, namely 'This object is lit externally, e.g. by a spotlight or other lights' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=yes with a fixed text, namely 'This object is lit externally, e.g. by a spotlight or other lights' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "lit",
-      "description": "Layer 'Advertise' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
       "value": "no"
     },
     {
       "key": "luminous",
-      "description": "Layer 'Advertise' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=screen)",
       "value": "no"
     },
     {
       "key": "operator",
-      "description": "Layer 'Advertise' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Advertising')"
+      "description": "Layer 'Advertisement' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Advertising')"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=commercial with a fixed text, namely 'Commercial message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=commercial with a fixed text, namely 'Commercial message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "commercial"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=local with a fixed text, namely 'Local information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=local with a fixed text, namely 'Local information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "local"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=safety with a fixed text, namely 'Security information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=safety with a fixed text, namely 'Security information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "safety"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=political with a fixed text, namely 'Electoral advertising' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=political with a fixed text, namely 'Electoral advertising' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "political"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=showbiz with a fixed text, namely 'Information related to theatre, concerts, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=showbiz with a fixed text, namely 'Information related to theatre, concerts, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "showbiz"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=non_profit with a fixed text, namely 'Message from non-profit organizations' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=non_profit with a fixed text, namely 'Message from non-profit organizations' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "non_profit"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=opinion with a fixed text, namely 'To express your opinion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=opinion with a fixed text, namely 'To express your opinion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "opinion"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=religion with a fixed text, namely 'Religious message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=religion with a fixed text, namely 'Religious message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "religion"
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=funding with a fixed text, namely 'Funding sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows message=funding with a fixed text, namely 'Funding sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "funding"
     },
     {
       "key": "information",
-      "description": "Layer 'Advertise' shows information=map with a fixed text, namely 'A map' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "description": "Layer 'Advertisement' shows information=map with a fixed text, namely 'A map' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "map"
     },
     {
       "key": "sides",
-      "description": "Layer 'Advertise' shows sides=1 with a fixed text, namely 'This object has advertisements on a single side' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
+      "description": "Layer 'Advertisement' shows sides=1 with a fixed text, namely 'This object has advertisements on a single side' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
       "value": "1"
     },
     {
       "key": "sides",
-      "description": "Layer 'Advertise' shows sides=2 with a fixed text, namely 'This object has advertisements on both sides' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
+      "description": "Layer 'Advertisement' shows sides=2 with a fixed text, namely 'This object has advertisements on both sides' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
       "value": "2"
     },
     {
       "key": "ref",
-      "description": "Layer 'Advertise' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=sign)"
+      "description": "Layer 'Advertisement' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=sign)"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Advertising has a layer Shelter showing features with this tag",
+      "value": "shelter"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Shelter' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Advertising') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows and asks freeform values for key 'shelter_type' (in the mapcomplete.org theme 'Advertising')"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=public_transport with a fixed text, namely 'This is a shelter at a public transport stop.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "public_transport"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=picnic_shelter with a fixed text, namely 'This is a shelter protecting from rain at a picnic site.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "picnic_shelter"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=gazebo with a fixed text, namely 'This is a gazebo.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "gazebo"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=weather_shelter with a fixed text, namely 'This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "weather_shelter"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=lean_to with a fixed text, namely 'This is a shed with 3 walls, primarily intended for camping.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "lean_to"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=pavilion with a fixed text, namely 'This is a pavilion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "pavilion"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=basic_hut with a fixed text, namely 'This is a basic hut, providing basic shelter and sleeping facilities.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "basic_hut"
     }
   ]
 }

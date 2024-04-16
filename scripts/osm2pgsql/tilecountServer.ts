@@ -115,7 +115,7 @@ class OsmPoiDatabase {
             meta[property] = value
         }
         this.metaCacheDate = now
-        this.metaCache = <PoiDatabaseMeta> meta
+        this.metaCache = <PoiDatabaseMeta>meta
         return this.metaCache
     }
 }
@@ -161,10 +161,11 @@ class CachedSqlCount {
     }
 }
 
-
 class TileCountServer extends Script {
     constructor() {
-        super("Starts the tilecount server which calculates summary for a given tile, based on the database. Usage: [db-connection-string] [port=2345]")
+        super(
+            "Starts the tilecount server which calculates summary for a given tile, based on the database. Usage: [db-connection-string] [port=2345]"
+        )
     }
 
     async main(args: string[]): Promise<void> {
@@ -226,7 +227,6 @@ class TileCountServer extends Script {
                 [3.2839964396059145, 51.172701162680994],
             ])
         )
-
     }
 }
 

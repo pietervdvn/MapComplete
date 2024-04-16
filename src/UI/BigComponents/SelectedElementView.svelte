@@ -20,19 +20,22 @@
     selectedElement.properties.id
   )
 
-  let layer: LayerConfig = selectedElement.properties.id === "settings" ? UserRelatedState.usersettingsConfig : state.layout.getMatchingLayer(tags.data)
+  let layer: LayerConfig =
+    selectedElement.properties.id === "settings"
+      ? UserRelatedState.usersettingsConfig
+      : state.layout.getMatchingLayer(tags.data)
 
-
-  let stillMatches = tags.map(tags => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags))
+  let stillMatches = tags.map(
+    (tags) => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags)
+  )
 
   let _metatags: Record<string, string>
-  if(state?.userRelatedState?.preferencesAsTags){
-    
-  onDestroy(
-    state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
-      _metatags = tags
-    }),
-  )
+  if (state?.userRelatedState?.preferencesAsTags) {
+    onDestroy(
+      state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
+        _metatags = tags
+      })
+    )
   }
 
   let knownTagRenderings: Store<TagRenderingConfig[]> = tags.mapD((tgs) =>
@@ -40,8 +43,8 @@
       (config) =>
         (config.condition?.matchesProperties(tgs) ?? true) &&
         (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true) &&
-        config.IsKnown(tgs),
-    ),
+        config.IsKnown(tgs)
+    )
   )
 </script>
 
@@ -52,13 +55,12 @@
 {:else if $tags._deleted === "yes"}
   <div class="flex w-full flex-col p-2">
     <div aria-live="assertive" class="alert flex items-center justify-center self-stretch">
-      <Delete_icon class="w-8 h-8 m-2" />
+      <Delete_icon class="m-2 h-8 w-8" />
       <Tr t={Translations.t.delete.isDeleted} />
     </div>
     <BackButton clss="self-stretch mt-4" on:click={() => state.selectedElement.setData(undefined)}>
       <Tr t={Translations.t.general.returnToTheMap} />
     </BackButton>
-    
   </div>
 {:else}
   <div

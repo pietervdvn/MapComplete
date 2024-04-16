@@ -65,13 +65,12 @@
         updateLocation()
         window.setTimeout(updateLocation, 150)
         window.setTimeout(updateLocation, 500)
-      }),
+      })
     )
   }
 </script>
 
-<div class="absolute w-full h-full flex items-center justify-center"
-     style="z-index: 100">
+<div class="absolute flex h-full w-full items-center justify-center" style="z-index: 100">
   <StyleLoadingIndicator map={altmap} />
 </div>
 <MaplibreMap {interactive} map={altmap} mapProperties={altproperties} />

@@ -1572,6 +1572,11 @@
       "value": "floor"
     },
     {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=lockers with a fixed text, namely 'A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "lockers"
+    },
+    {
       "key": "location",
       "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "underground"
@@ -1621,6 +1626,11 @@
     },
     {
       "key": "access",
+      "description": "Layer 'Bike parking' shows access=members with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "members"
+    },
+    {
+      "key": "access",
       "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "private"
     },
@@ -1649,6 +1659,10 @@
       "value": "closed"
     },
     {
+      "key": "operator",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
       "key": "operator:phone",
       "description": "Layer 'Bike parking' shows and asks freeform values for key 'operator:phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
@@ -1659,6 +1673,18 @@
     {
       "key": "contact:phone",
       "description": "Layer 'Bike parking' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "operator:website",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'operator:website' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bike parking' shows website~.+ with a fixed text, namely '<a href='{website}'>{website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Bike parking' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}'>{contact:website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "cargo_bike",
@@ -1672,12 +1698,17 @@
     },
     {
       "key": "cargo_bike",
-      "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'You're not allowed to park cargo bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'You're not allowed to park cargo bikes or there are no places provided for cargo bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "no"
     },
     {
       "key": "capacity:cargo_bike",
-      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if cargo_bike~^(designated|yes)$)"
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$)"
+    },
+    {
+      "key": "cargo_bike",
+      "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$)",
+      "value": "no"
     },
     {
       "key": "amenity",

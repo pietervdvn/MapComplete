@@ -111,7 +111,8 @@
               "es": "OpenStreetMap sabe sobre <a href='#{_closest_osm_poi}'>un ATM que es {_closest_osm_poi_distance} de distancia.</a> ",
               "ca": "OpenStreetMap sap sobre <a href='#{_closest_osm_poi}'>un caixer automàtic que està a {_closest_osm_poi_distance} de distància.</a> ",
               "cs": "OpenStreetMap ví o <a href='#{_closest_osm_poi}'> bankomatu, který je {_closest_osm_poi_distance} metr daleko.</a> ",
-              "pl": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> "
+              "pl": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> ",
+              "nl": "OpenStreetMap kent <a href='#{_closest_osm_poi}'>een geldautomaat die {_closest_osm_poi_distance} meter weg is</a> "
             }
           },
           {
@@ -130,7 +131,8 @@
                   "ca": "Afegeix totes les etiquetes suggerides al caixer automàtic més proper",
                   "eu": "Gehitu iradokitako etiketa guztiak hurbilen dagoen kutxazainari",
                   "pl": "Dodaj wszystkie sugerowane znaczniki do najbliższego bankomatu",
-                  "cs": "Přidání všech navrhovaných značek do nejbližšího bankomatu"
+                  "cs": "Přidání všech navrhovaných značek do nejbližšího bankomatu",
+                  "nl": "Voeg alle gesuggereerde tags toe aan de dichtstbijzijnde geldautomaat"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_id": "mr_taskId"

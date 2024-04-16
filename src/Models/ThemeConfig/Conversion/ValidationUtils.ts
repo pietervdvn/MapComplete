@@ -62,8 +62,6 @@ export default class ValidationUtils {
             }
 
             for (const key in translation) {
-
-
                 const template = translation[key]
                 const parts = SpecialVisualizations.constructSpecification(template)
                 const specials = parts.filter((p) => typeof p !== "string")

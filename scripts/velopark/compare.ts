@@ -30,7 +30,7 @@ class Compare extends Script {
             Object.keys(osmParking.properties).concat(Object.keys(veloParking.properties))
         )
         for (const key of allKeys) {
-            if(["name","numberOfLevels"].indexOf(key) >= 0){
+            if (["name", "numberOfLevels"].indexOf(key) >= 0) {
                 continue // We don't care about these tags
             }
             if (osmParking.properties[key] === veloParking.properties[key]) {
@@ -45,10 +45,12 @@ class Compare extends Script {
             diffs.push({
                 key,
                 osm: osmParking.properties[key],
-                velopark: veloParking.properties[key]
+                velopark: veloParking.properties[key],
             })
         }
-        let osmid = osmParking.properties["@id"] ?? osmParking["id"] /*Not in the properties, that is how overpass returns it*/
+        let osmid =
+            osmParking.properties["@id"] ??
+            osmParking["id"] /*Not in the properties, that is how overpass returns it*/
         if (!osmid.startsWith("http")) {
             osmid = "https://openstreetmap.org/" + osmid
         }
@@ -57,7 +59,7 @@ class Compare extends Script {
             ref: veloId,
             osmid,
             distance,
-            diffs
+            diffs,
         }
     }
 
@@ -82,13 +84,16 @@ class Compare extends Script {
             }
             diffs.push(this.compare(veloId, parking, veloparking))
         }
-        console.log("Found ", diffs.length, " items with differences between OSM and the provided data")
+        console.log(
+            "Found ",
+            diffs.length,
+            " items with differences between OSM and the provided data"
+        )
 
-
-        const maxDistance = Math.max(...diffs.map(d => d.distance))
+        const maxDistance = Math.max(...diffs.map((d) => d.distance))
         const distanceBins = []
         const binSize = 5
-        for (let i = 0; i < Math.ceil(maxDistance / binSize) ; i++) {
+        for (let i = 0; i < Math.ceil(maxDistance / binSize); i++) {
             distanceBins.push(0)
         }
         for (const diff of diffs) {

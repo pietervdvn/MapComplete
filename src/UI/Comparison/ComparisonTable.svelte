@@ -49,32 +49,30 @@
     return osmProperties[k] === undefined && typeof externalProperties[k] === "string"
   })
   // let same = propertyKeysExternal.filter((key) => osmProperties[key] === externalProperties[key])
-  let different = propertyKeysExternal.filter(
-    (key) => {
-      if (key.startsWith("_")) {
-        return false
-      }
-      if (osmProperties[key] === undefined) {
-        return false
-      }
-      if (typeof externalProperties[key] !== "string") {
-        return false
-      }
-      if (osmProperties[key] === externalProperties[key]) {
-        return false
-      }
-
-      if (key === "website") {
-        const osmCanon = new URL(osmProperties[key]).toString()
-        const externalCanon = new URL(externalProperties[key]).toString()
-        if (osmCanon === externalCanon) {
-          return false
-        }
-      }
-
-      return true
+  let different = propertyKeysExternal.filter((key) => {
+    if (key.startsWith("_")) {
+      return false
     }
-  )
+    if (osmProperties[key] === undefined) {
+      return false
+    }
+    if (typeof externalProperties[key] !== "string") {
+      return false
+    }
+    if (osmProperties[key] === externalProperties[key]) {
+      return false
+    }
+
+    if (key === "website") {
+      const osmCanon = new URL(osmProperties[key]).toString()
+      const externalCanon = new URL(externalProperties[key]).toString()
+      if (osmCanon === externalCanon) {
+        return false
+      }
+    }
+
+    return true
+  })
 
   let currentStep: "init" | "applying_all" | "all_applied" = "init"
   let applyAllHovered = false
@@ -84,12 +82,13 @@
     const tagsToApply = missing.map((k) => new Tag(k, externalProperties[k]))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToApply), tags.data, {
       theme: state.layout.id,
-      changeType: "import"
+      changeType: "import",
     })
     await state.changes.applyChanges(await change.CreateChangeDescriptions())
     currentStep = "all_applied"
   }
 </script>
+
 {#if propertyKeysExternal.length === 0 && knownImages.size + unknownImages.length === 0}
   <Tr cls="subtle" t={t.noDataLoaded} />
 {:else if unknownImages.length === 0 && missing.length === 0 && different.length === 0}
@@ -98,9 +97,9 @@
     <Tr t={t.allIncluded} />
   </div>
 {:else}
-  <div class="low-interaction p-1 border-interactive">
+  <div class="low-interaction border-interactive p-1">
     {#if !readonly}
-      <Tr t={t.loadedFrom.Subs({url: sourceUrl, source: sourceUrl})} />
+      <Tr t={t.loadedFrom.Subs({ url: sourceUrl, source: sourceUrl })} />
       <h3>
         <Tr t={t.conflicting.title} />
       </h3>
@@ -113,25 +112,41 @@
       {#if different.length > 0}
         {#each different as key}
           <div class="mx-2 rounded-2xl">
-            <ComparisonAction {key} {state} {tags} {externalProperties} {layer} {feature} {readonly} />
+            <ComparisonAction
+              {key}
+              {state}
+              {tags}
+              {externalProperties}
+              {layer}
+              {feature}
+              {readonly}
+            />
           </div>
         {/each}
       {/if}
 
       {#if missing.length > 0}
         {#if currentStep === "init"}
-
           {#each missing as key}
             <div class:glowing-shadow={applyAllHovered} class="mx-2 rounded-2xl">
-              <ComparisonAction {key} {state} {tags} {externalProperties} {layer} {feature} {readonly} />
+              <ComparisonAction
+                {key}
+                {state}
+                {tags}
+                {externalProperties}
+                {layer}
+                {feature}
+                {readonly}
+              />
             </div>
           {/each}
           {#if !readonly && missing.length > 1}
-            <button on:click={() => applyAllMissing()}
-                    on:mouseover={() => applyAllHovered = true}
-                    on:focus={() => applyAllHovered = true}
-                    on:blur={() => applyAllHovered = false}
-                    on:mouseout={() => applyAllHovered = false  }
+            <button
+              on:click={() => applyAllMissing()}
+              on:mouseover={() => (applyAllHovered = true)}
+              on:focus={() => (applyAllHovered = true)}
+              on:blur={() => (applyAllHovered = false)}
+              on:mouseout={() => (applyAllHovered = false)}
             >
               <Tr t={t.applyAll} />
             </button>
@@ -144,7 +159,6 @@
           </div>
         {/if}
       {/if}
-
     </div>
 
     {#if unknownImages.length > 0}
@@ -166,13 +180,13 @@
             {tags}
             {state}
             image={{
-          pictureUrl: image,
-          provider: "Velopark",
-          thumbUrl: image,
-          details: undefined,
-          coordinates: undefined,
-          osmTags: { image },
-        }}
+              pictureUrl: image,
+              provider: "Velopark",
+              thumbUrl: image,
+              details: undefined,
+              coordinates: undefined,
+              osmTags: { image },
+            }}
             {feature}
             {layer}
           />
@@ -181,10 +195,8 @@
     {/if}
     {#if externalProperties["_last_edit_timestamp"] !== undefined}
       <span class="subtle text-sm">
-
-      External data has been last modified on {externalProperties["_last_edit_timestamp"]}
+        External data has been last modified on {externalProperties["_last_edit_timestamp"]}
       </span>
     {/if}
   </div>
-
 {/if}

@@ -32,7 +32,7 @@ export class OH {
         th: 3,
         fr: 4,
         sa: 5,
-        su: 6
+        su: 6,
     }
 
     public static hhmm(h: number, m: number): string {
@@ -143,7 +143,7 @@ export class OH {
         const queue = ohs.map((oh) => {
             if (oh.endHour === 0 && oh.endMinutes === 0) {
                 const newOh = {
-                    ...oh
+                    ...oh,
                 }
                 newOh.endHour = 24
                 return newOh
@@ -211,7 +211,7 @@ export class OH {
                         startMinutes: startMinutes,
                         endHour: endHour,
                         endMinutes: endMinutes,
-                        weekday: guard.weekday
+                        weekday: guard.weekday,
                     })
 
                     doAddEntry = false
@@ -279,7 +279,7 @@ export class OH {
             startHour: start.hours,
             startMinutes: start.minutes,
             endHour: end.hours,
-            endMinutes: end.minutes
+            endMinutes: end.minutes,
         }
     }
 
@@ -337,8 +337,8 @@ export class OH {
                             startHour: 0,
                             startMinutes: 0,
                             endHour: 24,
-                            endMinutes: 0
-                        }
+                            endMinutes: 0,
+                        },
                     ]
                 )
             }
@@ -388,13 +388,13 @@ export class OH {
         str = str.trim()
         if (str.toLowerCase() === "ph off") {
             return {
-                mode: "off"
+                mode: "off",
             }
         }
 
         if (str.toLowerCase() === "ph open") {
             return {
-                mode: "open"
+                mode: "open",
             }
         }
 
@@ -410,7 +410,7 @@ export class OH {
             return {
                 mode: " ",
                 start: OH.hhmm(timerange.startHour, timerange.startMinutes),
-                end: OH.hhmm(timerange.endHour, timerange.endMinutes)
+                end: OH.hhmm(timerange.endHour, timerange.endMinutes),
             }
         } catch (e) {
             return null
@@ -576,8 +576,8 @@ This list will be sorted
                 lon: tags._lon,
                 address: {
                     country_code: country.toLowerCase(),
-                    state: undefined
-                }
+                    state: undefined,
+                },
             },
             <any>{ tag_key: "opening_hours" }
         )
@@ -753,7 +753,7 @@ This list will be sorted
                 isOpen: iterator.getState(),
                 comment: iterator.getComment(),
                 startDate: iterator.getDate() as Date,
-                endDate: endDate // Should be overwritten by the next iteration
+                endDate: endDate, // Should be overwritten by the next iteration
             }
             prevValue = value
 
@@ -891,7 +891,7 @@ This list will be sorted
                         startHour: timerange.startHour,
                         startMinutes: timerange.startMinutes,
                         endHour: timerange.endHour,
-                        endMinutes: timerange.endMinutes
+                        endMinutes: timerange.endMinutes,
                     })
                 } else {
                     ohs.push({
@@ -899,14 +899,14 @@ This list will be sorted
                         startHour: timerange.startHour,
                         startMinutes: timerange.startMinutes,
                         endHour: 0,
-                        endMinutes: 0
+                        endMinutes: 0,
                     })
                     ohs.push({
                         weekday: (weekday + 1) % 7,
                         startHour: 0,
                         startMinutes: 0,
                         endHour: timerange.endHour,
-                        endMinutes: timerange.endMinutes
+                        endMinutes: timerange.endMinutes,
                     })
                 }
             }
@@ -967,7 +967,7 @@ export class ToTextualDescription {
             "thursday",
             "friday",
             "saturday",
-            "sunday"
+            "sunday",
         ]
 
         function addRange(start: number, end: number) {
@@ -1025,7 +1025,7 @@ export class ToTextualDescription {
     private static createRangeFor(range: OpeningRange): Translation {
         return Translations.t.general.opening_hours.ranges.Subs({
             starttime: ToTextualDescription.timeString(range.startDate),
-            endtime: ToTextualDescription.timeString(range.endDate)
+            endtime: ToTextualDescription.timeString(range.endDate),
         })
     }
 
@@ -1037,7 +1037,7 @@ export class ToTextualDescription {
         for (let i = 1; i < ranges.length; i++) {
             tr = Translations.t.general.opening_hours.rangescombined.Subs({
                 range0: tr,
-                range1: ToTextualDescription.createRangeFor(ranges[i])
+                range1: ToTextualDescription.createRangeFor(ranges[i]),
             })
         }
         return tr

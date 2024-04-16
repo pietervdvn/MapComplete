@@ -78,7 +78,7 @@
 {#if hasLayers}
   <form class="flex h-full w-full flex-col" on:submit|preventDefault={() => {}}>
     <button tabindex="-1" on:click={() => apply()} class="m-0 h-full w-full cursor-pointer p-1">
-      <span class="pointer-events-none h-full w-full relative">
+      <span class="pointer-events-none relative h-full w-full">
         <OverlayMap
           interactive={false}
           rasterLayer={rasterLayerOnMap}

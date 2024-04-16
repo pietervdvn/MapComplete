@@ -29,7 +29,9 @@
 </script>
 
 {#if $debugging}
-  <div class="low-interaction">Started {$uploadStarted} Done {$uploadFinished} Retry {$retried} Err {$failed}</div>
+  <div class="low-interaction">
+    Started {$uploadStarted} Done {$uploadFinished} Retry {$retried} Err {$failed}
+  </div>
 {/if}
 {#if dismissed === $uploadStarted}
   <!-- We don't show anything as we ignore this number of failed items-->
@@ -39,18 +41,18 @@
       <Tr cls="thanks" t={t.upload.one.done} />
     {/if}
   {:else if $failed === 1}
-    <UploadFailedMessage failed={$failed} on:click={() => dismissed = $failed}/>
+    <UploadFailedMessage failed={$failed} on:click={() => (dismissed = $failed)} />
   {:else if $retried === 1}
     <div class="alert">
-    <Loading>
-      <Tr t={t.upload.one.retrying} />
-    </Loading>
+      <Loading>
+        <Tr t={t.upload.one.retrying} />
+      </Loading>
     </div>
   {:else}
     <div class="alert">
-    <Loading>
-      <Tr t={t.upload.one.uploading} />
-    </Loading>
+      <Loading>
+        <Tr t={t.upload.one.uploading} />
+      </Loading>
     </div>
   {/if}
 {:else if $uploadStarted > 1}
@@ -75,7 +77,6 @@
     </Loading>
   {/if}
   {#if $failed > 0}
-    
-   <UploadFailedMessage failed={$failed} on:click={() => dismissed = $failed}/>
+    <UploadFailedMessage failed={$failed} on:click={() => (dismissed = $failed)} />
   {/if}
 {/if}

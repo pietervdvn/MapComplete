@@ -24,7 +24,7 @@ export interface RasterLayerProperties {
     readonly url: string
     readonly category?: string | EliCategory
     readonly type?: "vector" | "raster" | string
-    readonly style?: string,
+    readonly style?: string
 
     readonly attribution?: {
         readonly url?: string

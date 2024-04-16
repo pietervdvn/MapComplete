@@ -49,7 +49,8 @@
       "pl": "Bankomat",
       "pt_BR": "Caixa eletrônico",
       "es": "Cajero automático",
-      "pt": "Multibanco"
+      "pt": "Multibanco",
+      "sl": "Bankomat"
     },
     "mappings": [
       {
@@ -226,7 +227,8 @@
         "pl": "Ten bankomat jest obsługiwany przez {operator}",
         "pt_BR": "O caixa eletrônico é operado por {operator}",
         "es": "El cajero es de {operator}",
-        "pt": "O multibanco é operado por {operator}"
+        "pt": "O multibanco é operado por {operator}",
+        "sl": "Ta bankomat upravlja {operator}"
       }
     },
     "opening_hours_24_7",

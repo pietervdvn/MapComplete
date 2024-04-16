@@ -16,7 +16,7 @@ class ServerLdScrape extends Script {
                 mustMatch: "extractgraph",
                 mimetype: "application/ld+json",
                 addHeaders: {
-                    "Cache-control":"max-age=3600, public"
+                    "Cache-control": "max-age=3600, public",
                 },
                 async handle(content, searchParams: URLSearchParams) {
                     const url = searchParams.get("url")
@@ -30,19 +30,24 @@ class ServerLdScrape extends Script {
                             return JSON.stringify(contents)
                         }
                     }
-                    let dloaded: { content: string } | { redirect: string } | "timeout" = { redirect: url }
+                    let dloaded: { content: string } | { redirect: string } | "timeout" = {
+                        redirect: url,
+                    }
                     do {
-
-                        dloaded = await ScriptUtils.Download(dloaded["redirect"], {
-                            "User-Agent":
-                                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36", // MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
-                        }, 10)
+                        dloaded = await ScriptUtils.Download(
+                            dloaded["redirect"],
+                            {
+                                "User-Agent":
+                                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36", // MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
+                            },
+                            10
+                        )
                         if (dloaded === "timeout") {
-                            return "{\"#\":\"timout reached\"}"
+                            return '{"#":"timout reached"}'
                         }
                     } while (dloaded["redirect"])
 
-                    if(dloaded["content"].startsWith("{")){
+                    if (dloaded["content"].startsWith("{")) {
                         // This is probably a json
                         const snippet = JSON.parse(dloaded["content"])
                         console.log("Snippet is", snippet)

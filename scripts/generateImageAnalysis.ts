@@ -95,7 +95,7 @@ export default class GenerateImageAnalysis extends Script {
         if (fs.existsSync(targetPath)) {
             return false
         }
-        const attribution = await Imgur.singleton.DownloadAttribution({ url: image,  })
+        const attribution = await Imgur.singleton.DownloadAttribution({ url: image })
 
         if ((attribution.artist ?? "") === "") {
             // This is an invalid attribution. We save the raw response as well
@@ -451,7 +451,7 @@ export default class GenerateImageAnalysis extends Script {
         args = args.filter((a) => a !== "--cached")
         const datapath = args[1] ?? "../../git/MapComplete-data/ImageLicenseInfo"
         const imageBackupPath = args[0]
-        if(imageBackupPath === "" || imageBackupPath === undefined){
+        if (imageBackupPath === "" || imageBackupPath === undefined) {
             throw "No imageBackup path specified"
         }
         await this.downloadData(datapath, cached)

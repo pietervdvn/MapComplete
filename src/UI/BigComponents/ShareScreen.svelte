@@ -71,10 +71,8 @@
 </script>
 
 <div class="flex flex-col">
-  <div class="flex justify-between items-start">
-
+  <div class="flex items-start justify-between">
     <div class="flex flex-col">
-
       <Tr t={tr.intro} />
       <div class="flex">
         {#if typeof navigator?.share === "function"}
@@ -92,10 +90,10 @@
         </div>
       </div>
     </div>
-      
-    <ToSvelte construct={() => new Img(new Qr(linkToShare).toImageElement(125)).SetStyle(
-                                    "width: 125px"
-                                )} />
+
+    <ToSvelte
+      construct={() => new Img(new Qr(linkToShare).toImageElement(125)).SetStyle("width: 125px")}
+    />
   </div>
 
   <div class="flex justify-center">
@@ -106,8 +104,7 @@
 
   <Tr t={tr.embedIntro} />
 
-  <div class="flex flex-col interactive p-1">
-
+  <div class="interactive flex flex-col p-1">
     <div class="literal-code m-1">
       &lt;span class="literal-code iframe-code-block"&gt; <br />
       &lt;iframe src="{linkToShare}"
@@ -127,7 +124,7 @@
       </label>
 
       <label>
-        <input bind:checked={enableLogin} type="checkbox" id="share_enable_login"/>
+        <input bind:checked={enableLogin} type="checkbox" id="share_enable_login" />
         <Tr t={tr.fsUserbadge} />
       </label>
     </div>

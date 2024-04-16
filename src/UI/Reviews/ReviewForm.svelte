@@ -61,12 +61,12 @@
       opinion: opinion.data,
       metadata: { nickname, is_affiliated: isAffiliated.data },
     }
-      try {
-        await reviews.createReview(review)
-      } catch (e) {
-        console.error("Could not create review due to", e)
-        uploadFailed = "" + e
-      }
+    try {
+      await reviews.createReview(review)
+    } catch (e) {
+      console.error("Could not create review due to", e)
+      uploadFailed = "" + e
+    }
     _state = "done"
   }
 </script>

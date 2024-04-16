@@ -4,7 +4,7 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
   export let tags: UIEventSource<Record<string, any>>
-  export let tagKeys = tags.map(tgs => tgs === undefined ? [] : Object.keys(tgs))
+  export let tagKeys = tags.map((tgs) => (tgs === undefined ? [] : Object.keys(tgs)))
 
   export let layer: LayerConfig | undefined = undefined
 

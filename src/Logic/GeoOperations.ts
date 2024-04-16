@@ -817,7 +817,7 @@ export class GeoOperations {
                 }
                 return undefined
             default:
-                throw "Unkown location type: " + location+" for feature "+feature.properties.id
+                throw "Unkown location type: " + location + " for feature " + feature.properties.id
         }
     }
 

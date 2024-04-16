@@ -29,13 +29,13 @@
   const splitpoint_style = new LayerConfig(
     <LayerConfigJson>split_point,
     "(BUILTIN) SplitRoadWizard.ts",
-    true,
+    true
   )
 
   const splitroad_style = new LayerConfig(
     <LayerConfigJson>split_road,
     "(BUILTIN) SplitRoadWizard.ts",
-    true,
+    true
   )
 
   /**
@@ -105,7 +105,7 @@
   })
 </script>
 
-<div class="h-full w-full relative">
+<div class="relative h-full w-full">
   <MaplibreMap {map} mapProperties={adaptor} />
   <SmallZoomButtons {adaptor} />
 </div>

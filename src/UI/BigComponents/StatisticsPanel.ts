@@ -17,10 +17,9 @@ export default class StatisticsForLayerPanel extends VariableUiElement {
                         return new Loading("Loading data")
                     }
                     if (features.length === 0) {
-                        return new Combine([
-                            "No elements in view for layer ",
-                            layer.id
-                        ]).SetClass("block")
+                        return new Combine(["No elements in view for layer ", layer.id]).SetClass(
+                            "block"
+                        )
                     }
                     const els: BaseUIElement[] = []
                     const featuresForLayer = features

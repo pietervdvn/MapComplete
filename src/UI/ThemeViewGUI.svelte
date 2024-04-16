@@ -18,7 +18,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon
+    XCircleIcon,
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -99,26 +99,31 @@
   })
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
-      if (element.properties.id.startsWith("current_view")) {
-        return currentViewLayer
-      }
-      if (element.properties.id === "new_point_dialog") {
-        return layout.layers.find(l => l.id === "last_click")
-      }
-      if (element.properties.id === "location_track") {
-        return layout.layers.find(l => l.id === "gps_track")
-      }
-      return state.layout.getMatchingLayer(element.properties)
+    if (element.properties.id.startsWith("current_view")) {
+      return currentViewLayer
     }
-  )
+    if (element.properties.id === "new_point_dialog") {
+      return layout.layers.find((l) => l.id === "last_click")
+    }
+    if (element.properties.id === "location_track") {
+      return layout.layers.find((l) => l.id === "gps_track")
+    }
+    return state.layout.getMatchingLayer(element.properties)
+  })
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
   state.mapProperties.installCustomKeyboardHandler(viewport)
-  let canZoomIn = mapproperties.maxzoom.map(mz => mapproperties.zoom.data < mz, [mapproperties.zoom])
-  let canZoomOut = mapproperties.minzoom.map(mz => mapproperties.zoom.data > mz, [mapproperties.zoom])
+  let canZoomIn = mapproperties.maxzoom.map(
+    (mz) => mapproperties.zoom.data < mz,
+    [mapproperties.zoom]
+  )
+  let canZoomOut = mapproperties.minzoom.map(
+    (mz) => mapproperties.zoom.data > mz,
+    [mapproperties.zoom]
+  )
 
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
@@ -133,7 +138,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat]
+      [bottomRight.lng, bottomRight.lat],
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -149,7 +154,8 @@
   let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
   let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
   let rasterLayerName =
-    rasterLayer.data?.properties?.name ?? AvailableRasterLayers.defaultBackgroundLayer.properties.name
+    rasterLayer.data?.properties?.name ??
+    AvailableRasterLayers.defaultBackgroundLayer.properties.name
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
@@ -224,7 +230,12 @@
       on:keydown={forwardEventToMap}
     >
       <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
-        <img role="presentation" alt="" class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8" src={layout.icon} />
+        <img
+          role="presentation"
+          alt=""
+          class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8"
+          src={layout.icon}
+        />
         <b class="mr-1">
           <Tr t={layout.title} />
         </b>
@@ -385,8 +396,6 @@
   <svelte:fragment slot="error" />
 </LoginToggle>
 
-
-
 {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
   <!-- right modal with the selected element view -->
   <ModalRight
@@ -409,10 +418,10 @@
       state.selectedElement.setData(undefined)
     }}
   >
-    <div class="flex flex-col h-full w-full">
+    <div class="flex h-full w-full flex-col">
       {#if $selectedLayer.popupInFloatover === "title"}
-        <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement} >
-          <span slot="close-button"/>
+        <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement}>
+          <span slot="close-button" />
         </SelectedElementTitle>
       {/if}
       <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
@@ -423,7 +432,7 @@
 <If condition={state.previewedImage.map((i) => i !== undefined)}>
   <FloatOver extraClasses="p-1" on:close={() => state.previewedImage.setData(undefined)}>
     <button
-      class="absolute p-0 right-4 top-4 h-8 w-8 rounded-full"
+      class="absolute right-4 top-4 h-8 w-8 rounded-full p-0"
       on:click={() => previewedImage.setData(undefined)}
       slot="close-button"
     >
@@ -595,7 +604,7 @@
             highlightedRendering={state.guistate.highlightedUserSetting}
             selectedElement={{
               type: "Feature",
-              properties: {id:"settings"},
+              properties: { id: "settings" },
               geometry: { type: "Point", coordinates: [0, 0] },
             }}
             {state}

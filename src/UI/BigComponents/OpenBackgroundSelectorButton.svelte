@@ -22,8 +22,7 @@
   arialabel={Translations.t.general.labels.background}
   on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
 >
-  
-  <StyleLoadingIndicator map={map ?? state.map} rasterLayer={state.mapProperties.rasterLayer} >
+  <StyleLoadingIndicator map={map ?? state.map} rasterLayer={state.mapProperties.rasterLayer}>
     <Square3Stack3dIcon class="h-6 w-6" />
   </StyleLoadingIndicator>
   {#if !hideTooltip}

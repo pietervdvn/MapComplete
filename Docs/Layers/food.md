@@ -88,6 +88,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/organic#values) [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/friture:oil#values) [friture:oil](https://wiki.openstreetmap.org/wiki/Key:friture:oil) | Multiple choice | [vegetable](https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Dvegetable) [animal](https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reusable_packaging:accept#values) [reusable_packaging:accept](https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/smoking#values) [smoking](https://wiki.openstreetmap.org/wiki/Key:smoking) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno) [outside](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:electricity#values) [service:electricity](https://wiki.openstreetmap.org/wiki/Key:service:electricity) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited) [ask](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask) [no](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/dog#values) [dog](https://wiki.openstreetmap.org/wiki/Key:dog) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno) [leashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed) [unleashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access#values) [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired)
@@ -123,6 +124,18 @@ This tagrendering has labels  `added_by_default`
 
 
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### reviews 
+
+
+
+Shows the reviews module (including the possibility to leave a review)
 
 This tagrendering has no question and is thus read-only
 
@@ -610,6 +623,23 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
+### smoking 
+
+
+
+The question is  *Is smoking allowed at {title()}?*
+
+
+
+
+
+  - *Smoking is <b>allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes' target='_blank'>yes</a>
+  - *Smoking is <b>not allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno' target='_blank'>no</a>
+  - *Smoking is <b>allowed outside</b>.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside' target='_blank'>outside</a>
+
+
+
+
 ### service:electricity 
 
 
@@ -708,18 +738,6 @@ This tagrendering has labels  `internet-all`
 
 
 
-### reviews 
-
-
-
-Shows the reviews module (including the possibility to leave a review)
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
 ### leftover-questions 
 
 
@@ -727,6 +745,18 @@ This tagrendering has no question and is thus read-only
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 
@@ -881,21 +911,33 @@ has_organic.0 | Has organic options | organic=yes \| organic=only
 
 id | question | osmTags
 ---- | ---------- | ---------
-sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes \| diet:sugar_free=only \| diet:sugar_free=limited
+sugar_free.0 | All types (default) | 
+sugar_free.1 | This shop <b>only sells sugar free</b> products | diet:sugar_free=only
+sugar_free.2 | This shop has a big sugar free offering | diet:sugar_free=yes
+sugar_free.3 | This shop has a <b>limited sugar free</b> offering | diet:sugar_free=limited
+sugar_free.4 | This shop has no sugar free offering | diet:sugar_free=no
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes \| diet:gluten_free=only \| diet:gluten_free=limited
+gluten_free.0 | All types (default) | 
+gluten_free.1 | This shop <b>only sells gluten free</b> products | diet:gluten_free=only
+gluten_free.2 | This shop has a big gluten free offering | diet:gluten_free=yes
+gluten_free.3 | This shop has a <b>limited gluten free</b> offering | diet:gluten_free=limited
+gluten_free.4 | This shop has no gluten free offering | diet:gluten_free=no
 
 
 
 
 id | question | osmTags
 ---- | ---------- | ---------
-lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes \| diet:lactose_free=only \| diet:lactose_free=limited
+lactose_free.0 | All types (default) | 
+lactose_free.1 | <b>Only sells lactose free</b> products | diet:lactose_free=only
+lactose_free.2 | Big lactose free offering | diet:lactose_free=yes
+lactose_free.3 | <b>Limited lactose free</b> offering | diet:lactose_free=limited
+lactose_free.4 | No lactose free offering | diet:lactose_free=no
 
 
 

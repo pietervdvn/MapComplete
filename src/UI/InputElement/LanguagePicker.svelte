@@ -47,31 +47,31 @@
       <LanguageIcon class="mr-1 h-4 w-4 shrink-0" aria-hidden="true" />
     </label>
 
-      <Dropdown cls="max-w-full" value={assignTo} id="pick-language">
-        {#if preferredFiltered}
-          {#each preferredFiltered as language}
-            <option value={language} class="font-bold">
-              {native[language] ?? ""}
-              {#if language !== $current}
-                ({language_translations[language]?.[$current] ?? language})
-              {/if}
-            </option>
-          {/each}
-          <option disabled />
-        {/if}
-
-        {#each availableLanguages.filter((l) => l !== "_context") as language}
+    <Dropdown cls="max-w-full" value={assignTo} id="pick-language">
+      {#if preferredFiltered}
+        {#each preferredFiltered as language}
           <option value={language} class="font-bold">
             {native[language] ?? ""}
             {#if language !== $current}
-              {#if language_translations[language]?.[$current] !== undefined}
-                ({language_translations[language]?.[$current] + " - " + language ?? language})
-              {:else}
-                ({language})
-              {/if}
+              ({language_translations[language]?.[$current] ?? language})
             {/if}
           </option>
         {/each}
-      </Dropdown>
+        <option disabled />
+      {/if}
+
+      {#each availableLanguages.filter((l) => l !== "_context") as language}
+        <option value={language} class="font-bold">
+          {native[language] ?? ""}
+          {#if language !== $current}
+            {#if language_translations[language]?.[$current] !== undefined}
+              ({language_translations[language]?.[$current] + " - " + language ?? language})
+            {:else}
+              ({language})
+            {/if}
+          {/if}
+        </option>
+      {/each}
+    </Dropdown>
   </form>
 {/if}

@@ -398,7 +398,7 @@ This documentation is defined in the source code at [ThemeViewState.ts](/src/Mod
 
  Whether or not layer public_bookcase is shown
 
-This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L106)
+This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L105)
 
  The default value is _true_
 
@@ -453,7 +453,7 @@ This documentation is defined in the source code at [FilterConfig.ts](/src/Model
 
  Whether or not layer note_import_public_bookcase is shown
 
-This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L106)
+This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L105)
 
  The default value is _true_
 

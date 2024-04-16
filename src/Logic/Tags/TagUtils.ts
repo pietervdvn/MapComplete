@@ -243,10 +243,7 @@ export class TagUtils {
      *
      * TagUtils.SplitKeysRegex([new Tag("isced:level", "bachelor; master")], true) // => {"isced:level": ["bachelor","master"]}
      */
-    static SplitKeysRegex(
-        tagsFilters: UploadableTag[],
-        allowRegex: false
-    ): Record<string, string[]>
+    static SplitKeysRegex(tagsFilters: UploadableTag[], allowRegex: false): Record<string, string[]>
     static SplitKeysRegex(
         tagsFilters: UploadableTag[],
         allowRegex: boolean
@@ -514,7 +511,7 @@ export class TagUtils {
             )}`
         })
 
-        return <UploadableTag> t
+        return <UploadableTag>t
     }
 
     /**
@@ -723,7 +720,9 @@ export class TagUtils {
         }
         if (typeof json != "string") {
             if (json["and"] !== undefined && json["or"] !== undefined) {
-                throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of \"parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(json)}`
+                throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of \"parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(
+                    json
+                )}`
             }
             if (json["and"] !== undefined) {
                 return new And(json["and"].map((t) => TagUtils.Tag(t, context)))

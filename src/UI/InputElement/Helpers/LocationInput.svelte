@@ -67,7 +67,7 @@
 
         if (!rangeIsShown) {
           new ShowDataLayer(map, {
-            layer: new LayerConfig(<any> boundsdisplay),
+            layer: new LayerConfig(<any>boundsdisplay),
             features: new StaticFeatureSource([
               turf.circle(c, maxDistanceInMeters, {
                 units: "meters",
@@ -84,7 +84,11 @@
 
 <div class="min-h-32 relative h-full cursor-pointer overflow-hidden">
   <div class="absolute top-0 left-0 h-full w-full cursor-pointer">
-    <MaplibreMap center={{ lng: initialCoordinate.lon, lat: initialCoordinate.lat }} {map} mapProperties={mla}/>
+    <MaplibreMap
+      center={{ lng: initialCoordinate.lon, lat: initialCoordinate.lat }}
+      {map}
+      mapProperties={mla}
+    />
   </div>
 
   <div

@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 6880,
+      "commits": 7248,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 431,
+      "commits": 451,
       "contributor": "Robin van der Linde"
     },
     {
@@ -15,6 +15,10 @@
     {
       "commits": 38,
       "contributor": "Win Olario"
+    },
+    {
+      "commits": 34,
+      "contributor": "dependabot[bot]"
     },
     {
       "commits": 33,
@@ -39,10 +43,6 @@
     {
       "commits": 29,
       "contributor": "riQQ"
-    },
-    {
-      "commits": 27,
-      "contributor": "dependabot[bot]"
     },
     {
       "commits": 26,
@@ -118,6 +118,10 @@
     },
     {
       "commits": 9,
+      "contributor": "Flo Edelmann"
+    },
+    {
+      "commits": 9,
       "contributor": "Codain"
     },
     {
@@ -134,11 +138,11 @@
     },
     {
       "commits": 7,
-      "contributor": "OliNau"
+      "contributor": "danieldegroot2"
     },
     {
       "commits": 7,
-      "contributor": "Flo Edelmann"
+      "contributor": "OliNau"
     },
     {
       "commits": 7,
@@ -147,10 +151,6 @@
     {
       "commits": 6,
       "contributor": "David Haberthür"
-    },
-    {
-      "commits": 6,
-      "contributor": "danieldegroot2"
     },
     {
       "commits": 4,
