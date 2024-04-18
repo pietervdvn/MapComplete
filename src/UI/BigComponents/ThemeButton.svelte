@@ -85,10 +85,8 @@
 </script>
 
 {#if theme.id !== personal.id || $unlockedPersonal}
-  <a
-  class={"w-full button text-ellipsis"}
-  href={$href}
-  > <img src={theme.icon} class="m-1 mr-2 block h-11 w-11 sm:m-2 sm:mr-4" alt="" />
+  <a class={"button w-full text-ellipsis"} href={$href}>
+    <img src={theme.icon} class="m-1 mr-2 block h-11 w-11 sm:m-2 sm:mr-4" alt="" />
     <span class="flex flex-col overflow-hidden text-ellipsis">
       <Tr t={title} />
 
@@ -97,5 +95,6 @@
           <Tr t={Translations.t.general.morescreen.enterToOpen} />
         </span>
       {/if}
-    </span></a>
+    </span>
+  </a>
 {/if}

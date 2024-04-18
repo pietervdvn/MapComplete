@@ -22,7 +22,7 @@ export default class SvelteUIElement<
     private readonly _props: Props
     private readonly _events: Events
     private readonly _slots: Slots
-    private tag : "div" | "span" = "div"
+    private tag: "div" | "span" = "div"
 
     constructor(svelteElement, props?: Props, events?: Events, slots?: Slots) {
         super()
@@ -32,7 +32,7 @@ export default class SvelteUIElement<
         this._slots = slots
     }
 
-    public setSpan(){
+    public setSpan() {
         this.tag = "span"
         return this
     }

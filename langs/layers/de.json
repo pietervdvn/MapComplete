@@ -38,6 +38,9 @@
             "2": {
                 "title": "eine wandmontierte Posterbox"
             },
+            "3": {
+                "title": "ein Plakatkasten, der zu einem Unterstand für öffentliche Verkehrsmittel gehört"
+            },
             "4": {
                 "description": "Kleines Anschlagbrett für Nachbarschaftswerbung, normalerweise an Fußgänger gerichtet",
                 "title": "ein Anschlagbrett"
@@ -54,6 +57,9 @@
             },
             "8": {
                 "title": "ein wandmontierter Bildschirm"
+            },
+            "9": {
+                "title": "ein Bildschirm, der an einem Wartehäuschen angebracht ist"
             },
             "10": {
                 "description": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
@@ -1408,6 +1414,9 @@
                     },
                     "7": {
                         "then": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
+                    },
+                    "8": {
+                        "then": "Ein Schließfach - Fahrräder werden einzeln oder mit mehreren Fahrrädern zusammen eingeschlossen. Der Schrank ist zu klein für eine stehende Person."
                     }
                 },
                 "question": "Was ist die Art dieses Fahrrad-Parkplatzes?",
@@ -1419,6 +1428,11 @@
                 "render": "Der Parkplatz bietet Platz für {capacity} Fahrräder"
             },
             "Cargo bike capacity?": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt hier keine speziellen Stellplätze für Lastenfahrräder oder das Abstellen von Lastenfahrrädern ist hier nicht erlaubt"
+                    }
+                },
                 "question": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?",
                 "render": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder"
             },
@@ -1431,7 +1445,7 @@
                         "then": "Der Parkplatz hat ausgewiesene (offizielle) Stellflächen für Lastenfahrräder."
                     },
                     "2": {
-                        "then": "Der Parkplatz bietet keine Stellflächen für Lastenfahrräder"
+                        "then": "Das Abstellen von Lastenfahrrädern ist nicht erlaubt oder es gibt keine Stellplätze für Lastenfahrräder"
                     }
                 },
                 "question": "Hat der Parkplatz Stellflächen für Lastenfahrräder?"
@@ -1475,9 +1489,16 @@
                 },
                 "question": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
             },
+            "operator": {
+                "question": "Wer unterhält diese Fahrradabstellplätze?",
+                "render": "Dieser Fahrradparkplatz wird von {operator} bereitgestellt"
+            },
             "operator_phone": {
                 "question": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?",
                 "questionHint": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen"
+            },
+            "operator_website": {
+                "question": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?"
             }
         },
         "title": {

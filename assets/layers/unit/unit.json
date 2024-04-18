@@ -396,7 +396,34 @@
             "nl": "één dag",
             "de": "ein Tag"
           }
+        },
+        {
+          "canonicalDenomination": "weeks",
+          "addSpace": true,
+          "canonicalDenominationSingular": "week",
+          "humanSingular": {
+            "en": "one week",
+            "nl": "één week"
+          },
+          "human": {
+            "en": "{quantity} weeks",
+            "nl": "{quantity} weken"
+          }
+        },
+        {
+          "canonicalDenomination": "months",
+          "addSpace": true,
+          "canonicalDenominationSingular": "month",
+          "humanSingular": {
+            "en": "one month",
+            "nl": "één maand"
+          },
+          "human": {
+            "en": "{quantity} months",
+            "nl": "{quantity} maanden"
+          }
         }
+
       ]
     }
   ]

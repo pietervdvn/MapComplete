@@ -289,7 +289,10 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
     convert(json: LayoutConfigJson): LayoutConfigJson {
         const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
         // The context is used to generate the 'context' in the translation .It _must_ be `json.id` to correctly link into weblate
-        return conversion.convert(json, ConversionContext.construct([json.id],["AddContextToTranslation"]))
+        return conversion.convert(
+            json,
+            ConversionContext.construct([json.id], ["AddContextToTranslation"])
+        )
     }
 }
 
@@ -602,19 +605,32 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
 
         for (const layer of json.layers) {
-            if(typeof layer === "string"){
+            if (typeof layer === "string") {
                 continue
             }
-            const config = <LayerConfigJson> layer;
+            const config = <LayerConfigJson>layer
             const sameAs = config.filter?.["sameAs"]
-            if(!sameAs){
+            if (!sameAs) {
                 continue
             }
 
-            const matchingLayer = json.layers.find(l => l["id"] === sameAs)
-            if(!matchingLayer){
-                const closeLayers = Utils.sortedByLevenshteinDistance(sameAs, json.layers, l => l["id"]).map(l => l["id"])
-                context.enters("layers", config.id, "filter","sameAs").err("The layer "+config.id+" follows the filter state of layer "+sameAs+", but no layer with this name was found.\n\tDid you perhaps mean one of: "+closeLayers.slice(0, 3).join(", "))
+            const matchingLayer = json.layers.find((l) => l["id"] === sameAs)
+            if (!matchingLayer) {
+                const closeLayers = Utils.sortedByLevenshteinDistance(
+                    sameAs,
+                    json.layers,
+                    (l) => l["id"]
+                ).map((l) => l["id"])
+                context
+                    .enters("layers", config.id, "filter", "sameAs")
+                    .err(
+                        "The layer " +
+                            config.id +
+                            " follows the filter state of layer " +
+                            sameAs +
+                            ", but no layer with this name was found.\n\tDid you perhaps mean one of: " +
+                            closeLayers.slice(0, 3).join(", ")
+                    )
             }
         }
 

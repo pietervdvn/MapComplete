@@ -38,7 +38,7 @@
         </div>
       {/if}
 
-      <div class="flex justify-between w-full gap-x-1">
+      <div class="flex w-full justify-between gap-x-1">
         {#if $license.license !== undefined || $license.licenseShortName !== undefined}
           <div>
             {$license?.license ?? $license?.licenseShortName}
@@ -58,8 +58,6 @@
           {$license.date.toLocaleDateString()}
         </div>
       {/if}
-
-
     </div>
   </div>
 {/if}

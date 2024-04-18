@@ -3664,7 +3664,6 @@
     "_meta": {
       "countries": [
         "BE",
-        "BF",
         "BI",
         "BJ",
         "CA",
@@ -5229,9 +5228,6 @@
     "zh_Hans": "爪哇语",
     "zh_Hant": "爪哇語",
     "_meta": {
-      "countries": [
-        "ID"
-      ],
       "dir": [
         "left-to-right",
         "right-to-left"

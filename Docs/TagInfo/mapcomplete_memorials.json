@@ -91,6 +91,10 @@
     },
     {
       "key": "memorial",
+      "description": "Layer 'Memorials' shows and asks freeform values for key 'memorial' (in the mapcomplete.org theme 'Memorials')"
+    },
+    {
+      "key": "memorial",
       "description": "Layer 'Memorials' shows memorial=statue with a fixed text, namely 'This is a statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
       "value": "statue"
     },
@@ -108,6 +112,56 @@
       "key": "memorial",
       "description": "Layer 'Memorials' shows memorial=ghost_bike with a fixed text, namely 'This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
       "value": "ghost_bike"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=stolperstein with a fixed text, namely 'This is a stolperstein (stumbing stone)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "stolperstein"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=stele with a fixed text, namely 'This is a stele' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "stele"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=stone with a fixed text, namely 'This is a memorial stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "stone"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=bust with a fixed text, namely 'This is a bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "bust"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "sculpture"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=obelisk with a fixed text, namely 'This is an obelisk' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "obelisk"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=cross with a fixed text, namely 'This is a cross' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "cross"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=blue_plaque with a fixed text, namely 'This is a blue plaque' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "blue_plaque"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=tank with a fixed text, namely 'This is a historic tank, permanently placed in public space as memorial' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "tank"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Memorials' shows memorial=tree with a fixed text, namely 'This is a memorial tree' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "tree"
     },
     {
       "key": "inscription",

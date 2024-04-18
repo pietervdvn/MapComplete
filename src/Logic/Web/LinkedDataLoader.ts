@@ -13,7 +13,9 @@ interface JsonLdLoaderOptions {
     country?: string
 }
 
-type PropertiesSpec<T extends string> = Partial<Record<T, string | string[] | Partial<Record<T, string>>>>
+type PropertiesSpec<T extends string> = Partial<
+    Record<T, string | string[] | Partial<Record<T, string>>>
+>
 
 export default class LinkedDataLoader {
     private static readonly COMPACTING_CONTEXT = {
@@ -25,23 +27,23 @@ export default class LinkedDataLoader {
         opening_hours: { "@id": "http://schema.org/openingHoursSpecification" },
         openingHours: { "@id": "http://schema.org/openingHours", "@container": "@set" },
         geo: { "@id": "http://schema.org/geo" },
-        "alt_name": { "@id": "http://schema.org/alternateName" }
+        alt_name: { "@id": "http://schema.org/alternateName" },
     }
     private static COMPACTING_CONTEXT_OH = {
         dayOfWeek: { "@id": "http://schema.org/dayOfWeek", "@container": "@set" },
         closes: {
             "@id": "http://schema.org/closes",
-            "@type": "http://www.w3.org/2001/XMLSchema#time"
+            "@type": "http://www.w3.org/2001/XMLSchema#time",
         },
         opens: {
             "@id": "http://schema.org/opens",
-            "@type": "http://www.w3.org/2001/XMLSchema#time"
-        }
+            "@type": "http://www.w3.org/2001/XMLSchema#time",
+        },
     }
     private static formatters: Record<"phone" | "email" | "website", Validator> = {
         phone: new PhoneValidator(),
         email: new EmailValidator(),
-        website: new UrlValidator(undefined, undefined, true)
+        website: new UrlValidator(undefined, undefined, true),
     }
     private static ignoreKeys = [
         "http://schema.org/logo",
@@ -54,53 +56,61 @@ export default class LinkedDataLoader {
         "http://schema.org/description",
         "http://schema.org/hasMap",
         "http://schema.org/priceRange",
-        "http://schema.org/contactPoint"
+        "http://schema.org/contactPoint",
     ]
 
     private static shapeToPolygon(str: string): Polygon {
         const polygon = str.substring("POLYGON ((".length, str.length - 2)
         return <Polygon>{
             type: "Polygon",
-            coordinates: [polygon.split(",").map(coors => coors.trim().split(" ").map(n => Number(n)))]
+            coordinates: [
+                polygon.split(",").map((coors) =>
+                    coors
+                        .trim()
+                        .split(" ")
+                        .map((n) => Number(n))
+                ),
+            ],
         }
     }
 
     private static async geoToGeometry(geo): Promise<Geometry> {
         if (Array.isArray(geo)) {
-            const features = await Promise.all(geo.map(g => LinkedDataLoader.geoToGeometry(g)))
-            const polygon = features.find(f => f.type === "Polygon")
+            const features = await Promise.all(geo.map((g) => LinkedDataLoader.geoToGeometry(g)))
+            const polygon = features.find((f) => f.type === "Polygon")
             if (polygon) {
                 return polygon
             }
-            const ls = features.find(f => f.type === "LineString")
+            const ls = features.find((f) => f.type === "LineString")
             if (ls) {
                 return ls
             }
             return features[0]
-
         }
 
         if (geo["@type"] === "http://schema.org/GeoCoordinates") {
-
             const context = {
                 lat: {
                     "@id": "http://schema.org/latitude",
-                    "@type": "http://www.w3.org/2001/XMLSchema#double"
+                    "@type": "http://www.w3.org/2001/XMLSchema#double",
                 },
                 lon: {
                     "@id": "http://schema.org/longitude",
-                    "@type": "http://www.w3.org/2001/XMLSchema#double"
-                }
+                    "@type": "http://www.w3.org/2001/XMLSchema#double",
+                },
             }
             const flattened = await jsonld.compact(geo, context)
 
             return {
                 type: "Point",
-                coordinates: [Number(flattened.lon), Number(flattened.lat)]
+                coordinates: [Number(flattened.lon), Number(flattened.lat)],
             }
         }
 
-        if (geo["@type"] === "http://schema.org/GeoShape" && geo["http://schema.org/polygon"] !== undefined) {
+        if (
+            geo["@type"] === "http://schema.org/GeoShape" &&
+            geo["http://schema.org/polygon"] !== undefined
+        ) {
             const str = geo["http://schema.org/polygon"]["@value"]
             LinkedDataLoader.shapeToPolygon(str)
         }
@@ -167,9 +177,8 @@ export default class LinkedDataLoader {
     }
 
     static async compact(data: object, options?: JsonLdLoaderOptions): Promise<object> {
-
         if (Array.isArray(data)) {
-            return await Promise.all(data.map(point => LinkedDataLoader.compact(point, options)))
+            return await Promise.all(data.map((point) => LinkedDataLoader.compact(point, options)))
         }
 
         const country = options?.country
@@ -214,10 +223,13 @@ export default class LinkedDataLoader {
             }
         }
         return compacted
-
     }
 
-    static async fetchJsonLd(url: string, options?: JsonLdLoaderOptions, useProxy: boolean = false): Promise<object> {
+    static async fetchJsonLd(
+        url: string,
+        options?: JsonLdLoaderOptions,
+        useProxy: boolean = false
+    ): Promise<object> {
         if (useProxy) {
             url = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
         }
@@ -230,7 +242,10 @@ export default class LinkedDataLoader {
      * @param externalData
      * @param currentData
      */
-    static removeDuplicateData(externalData: Record<string, string>, currentData: Record<string, string>): Record<string, string> {
+    static removeDuplicateData(
+        externalData: Record<string, string>,
+        currentData: Record<string, string>
+    ): Record<string, string> {
         const d = { ...externalData }
         delete d["@context"]
         for (const k in d) {
@@ -239,7 +254,7 @@ export default class LinkedDataLoader {
                 continue
             }
             if (k === "opening_hours") {
-                const oh = [].concat(...v.split(";").map(r => OH.ParseRule(r) ?? []))
+                const oh = [].concat(...v.split(";").map((r) => OH.ParseRule(r) ?? []))
                 const merged = OH.ToString(OH.MergeTimes(oh ?? []))
                 if (merged === d[k]) {
                     delete d[k]
@@ -259,7 +274,9 @@ export default class LinkedDataLoader {
         const properties: Record<string, string> = {}
         for (const k in linkedData) {
             if (linkedData[k].length > 1) {
-                throw "Found multiple values in properties for " + k + ": " + linkedData[k].join("; ")
+                throw (
+                    "Found multiple values in properties for " + k + ": " + linkedData[k].join("; ")
+                )
             }
             properties[k] = linkedData[k].join("; ")
         }
@@ -268,7 +285,7 @@ export default class LinkedDataLoader {
         if (properties["latitude"] && properties["longitude"]) {
             geometry = {
                 type: "Point",
-                coordinates: [Number(properties["longitude"]), Number(properties["latitude"])]
+                coordinates: [Number(properties["longitude"]), Number(properties["latitude"])],
             }
             delete properties["latitude"]
             delete properties["longitude"]
@@ -277,11 +294,10 @@ export default class LinkedDataLoader {
             geometry = LinkedDataLoader.shapeToPolygon(properties["shape"])
         }
 
-
         const geo: GeoJSON = {
             type: "Feature",
             properties,
-            geometry
+            geometry,
         }
         delete linkedData.geo
         delete properties.shape
@@ -293,7 +309,9 @@ export default class LinkedDataLoader {
         return geo
     }
 
-    private static patchVeloparkProperties(input: Record<string, Set<string>>): Record<string, string[]> {
+    private static patchVeloparkProperties(
+        input: Record<string, Set<string>>
+    ): Record<string, string[]> {
         const output: Record<string, string[]> = {}
         console.log("Input for patchVelopark:", input)
         for (const k in input) {
@@ -309,12 +327,12 @@ export default class LinkedDataLoader {
             if (!output[key]) {
                 return
             }
-            output[key] = output[key].map(v => applyF(v))
+            output[key] = output[key].map((v) => applyF(v))
         }
 
         function asBoolean(key: string, invert: boolean = false) {
-            on(key, str => {
-                const isTrue = ("" + str) === "true" || str === "True" || str === "yes"
+            on(key, (str) => {
+                const isTrue = "" + str === "true" || str === "True" || str === "yes"
                 if (isTrue != invert) {
                     return "yes"
                 }
@@ -322,7 +340,7 @@ export default class LinkedDataLoader {
             })
         }
 
-        on("maxstay", (maxstay => {
+        on("maxstay", (maxstay) => {
             const match = maxstay.match(/P([0-9]+)D/)
             if (match) {
                 const days = Number(match[1])
@@ -332,7 +350,7 @@ export default class LinkedDataLoader {
                 return days + " days"
             }
             return maxstay
-        }))
+        })
 
         function rename(source: string, target: string) {
             if (output[source] === undefined || output[source] === null) {
@@ -342,40 +360,39 @@ export default class LinkedDataLoader {
             delete output[source]
         }
 
-        on("phone", (p => this.formatters["phone"].reformat(p, () => "be")))
+        on("phone", (p) => this.formatters["phone"].reformat(p, () => "be"))
 
         for (const attribute in LinkedDataLoader.formatters) {
-            on(attribute, p => LinkedDataLoader.formatters[attribute].reformat(p))
+            on(attribute, (p) => LinkedDataLoader.formatters[attribute].reformat(p))
         }
         rename("phone", "operator:phone")
         rename("email", "operator:email")
         rename("website", "operator:website")
 
-        on("charge", (p => {
+        on("charge", (p) => {
             if (Number(p) === 0) {
                 output["fee"] = ["no"]
                 return undefined
             }
             return "€" + Number(p)
-        }))
+        })
         if (output["charge"] && output["timeUnit"]) {
-            const duration = Number(output["chargeEnd"] ?? "1") - Number(output["chargeStart"] ?? "0")
+            const duration =
+                Number(output["chargeEnd"] ?? "1") - Number(output["chargeStart"] ?? "0")
             const unit = output["timeUnit"][0]
             let durationStr = ""
             if (duration !== 1) {
                 durationStr = duration + ""
             }
-            output["charge"] = output["charge"].map(c => c + "/" + (durationStr + unit))
+            output["charge"] = output["charge"].map((c) => c + "/" + (durationStr + unit))
         }
         delete output["chargeEnd"]
         delete output["chargeStart"]
         delete output["timeUnit"]
 
-
         asBoolean("covered")
         asBoolean("fee", true)
         asBoolean("publicAccess")
-
 
         output["images"]?.forEach((p, i) => {
             if (i === 0) {
@@ -386,9 +403,15 @@ export default class LinkedDataLoader {
         })
         delete output["images"]
 
-        on("access", audience => {
-
-            if (["brede publiek", "iedereen", "bezoekers", "iedereen - vooral bezoekers gemeentehuis of bibliotheek."].indexOf(audience.toLowerCase()) >= 0) {
+        on("access", (audience) => {
+            if (
+                [
+                    "brede publiek",
+                    "iedereen",
+                    "bezoekers",
+                    "iedereen - vooral bezoekers gemeentehuis of bibliotheek.",
+                ].indexOf(audience.toLowerCase()) >= 0
+            ) {
                 return "yes"
             }
             if (audience.toLowerCase().startsWith("bezoekers")) {
@@ -404,15 +427,22 @@ export default class LinkedDataLoader {
                 return "permissive"
                 //   return "members"
             }
-            if (audience.toLowerCase().startsWith("klanten") ||
+            if (
+                audience.toLowerCase().startsWith("klanten") ||
                 audience.toLowerCase().startsWith("werknemers") ||
-                audience.toLowerCase().startsWith("personeel")) {
+                audience.toLowerCase().startsWith("personeel")
+            ) {
                 return "customers"
             }
 
-            console.warn("Suspicious 'access'-tag:", audience, "for", input["ref:velopark"], " assuming yes")
+            console.warn(
+                "Suspicious 'access'-tag:",
+                audience,
+                "for",
+                input["ref:velopark"],
+                " assuming yes"
+            )
             return "yes"
-
         })
 
         if (output["publicAccess"]?.[0] == "no") {
@@ -420,7 +450,10 @@ export default class LinkedDataLoader {
         }
         delete output["publicAccess"]
 
-        if (output["restrictions"]?.[0] === "Geen bromfietsen, noch andere gemotoriseerde voertuigen") {
+        if (
+            output["restrictions"]?.[0] ===
+            "Geen bromfietsen, noch andere gemotoriseerde voertuigen"
+        ) {
             output["motor_vehicle"] = ["no"]
             delete output["restrictions"]
         }
@@ -437,7 +470,6 @@ export default class LinkedDataLoader {
         }
         rename("capacityTandem", "capacity:tandem")
 
-
         if (output["electricBikeType"]) {
             output["electric_bicycle"] = ["yes"]
             delete output["electricBikeType"]
@@ -450,14 +482,18 @@ export default class LinkedDataLoader {
         return output
     }
 
-    private static async fetchVeloparkProperty<T extends string, G extends T>(url: string, property: string, variable?: string): Promise<SparqlResult<T, G>> {
+    private static async fetchVeloparkProperty<T extends string, G extends T>(
+        url: string,
+        property: string,
+        variable?: string
+    ): Promise<SparqlResult<T, G>> {
         const results = await new TypedSparql().typedSparql<T, G>(
             {
                 schema: "http://schema.org/",
                 mv: "http://schema.mobivoc.org/",
                 gr: "http://purl.org/goodrelations/v1#",
                 vp: "https://data.velopark.be/openvelopark/vocabulary#",
-                vpt: "https://data.velopark.be/openvelopark/terms#"
+                vpt: "https://data.velopark.be/openvelopark/terms#",
             },
             [url],
             undefined,
@@ -467,24 +503,24 @@ export default class LinkedDataLoader {
         return results
     }
 
-    private static async fetchVeloparkGraphProperty<T extends string>(url: string, property: string, subExpr?: string):
-        Promise<SparqlResult<T, "g">> {
+    private static async fetchVeloparkGraphProperty<T extends string>(
+        url: string,
+        property: string,
+        subExpr?: string
+    ): Promise<SparqlResult<T, "g">> {
         return await new TypedSparql().typedSparql<T, "g">(
             {
                 schema: "http://schema.org/",
                 mv: "http://schema.mobivoc.org/",
                 gr: "http://purl.org/goodrelations/v1#",
                 vp: "https://data.velopark.be/openvelopark/vocabulary#",
-                vpt: "https://data.velopark.be/openvelopark/terms#"
+                vpt: "https://data.velopark.be/openvelopark/terms#",
             },
             [url],
             "g",
             "  ?parking a <http://schema.mobivoc.org/BicycleParkingStation>",
 
-            S.graph("g",
-                "?section " + property + " " + (subExpr ?? ""),
-                "?section a ?type"
-            )
+            S.graph("g", "?section " + property + " " + (subExpr ?? ""), "?section a ?type")
         )
     }
 
@@ -493,8 +529,10 @@ export default class LinkedDataLoader {
      * THis is a workaround for 'optional' not working decently
      * @param r0
      */
-    public static mergeResults(...r0: SparqlResult<string, string>[]): SparqlResult<string, string> {
-        const r: SparqlResult<string> = { "default": {} }
+    public static mergeResults(
+        ...r0: SparqlResult<string, string>[]
+    ): SparqlResult<string, string> {
+        const r: SparqlResult<string> = { default: {} }
         for (const subResult of r0) {
             if (Object.keys(subResult).length === 0) {
                 continue
@@ -524,22 +562,31 @@ export default class LinkedDataLoader {
         return r
     }
 
-    public static async fetchEntry<T extends string>(directUrl: string,
-                                                     propertiesWithoutGraph: PropertiesSpec<T>,
-                                                     propertiesInGraph: PropertiesSpec<T>,
-                                                     extra?: string[]): Promise<SparqlResult<T, string>> {
+    public static async fetchEntry<T extends string>(
+        directUrl: string,
+        propertiesWithoutGraph: PropertiesSpec<T>,
+        propertiesInGraph: PropertiesSpec<T>,
+        extra?: string[]
+    ): Promise<SparqlResult<T, string>> {
         const allPartialResults: SparqlResult<T, string>[] = []
         for (const propertyName in propertiesWithoutGraph) {
             const e = propertiesWithoutGraph[propertyName]
             if (typeof e === "string") {
                 const variableName = e
-                const result = await this.fetchVeloparkProperty(directUrl, propertyName, "?" + variableName)
+                const result = await this.fetchVeloparkProperty(
+                    directUrl,
+                    propertyName,
+                    "?" + variableName
+                )
                 allPartialResults.push(result)
             } else {
                 for (const subProperty in e) {
                     const variableName = e[subProperty]
-                    const result = await this.fetchVeloparkProperty(directUrl,
-                        propertyName, `[${subProperty} ?${variableName}]    `)
+                    const result = await this.fetchVeloparkProperty(
+                        directUrl,
+                        propertyName,
+                        `[${subProperty} ?${variableName}]    `
+                    )
                     allPartialResults.push(result)
                 }
             }
@@ -553,7 +600,11 @@ export default class LinkedDataLoader {
                     if (variableName.match(/[a-zA-Z_]+/)) {
                         variableName = "?" + subquery
                     }
-                    const result = await this.fetchVeloparkGraphProperty(directUrl, propertyName, variableName)
+                    const result = await this.fetchVeloparkGraphProperty(
+                        directUrl,
+                        propertyName,
+                        variableName
+                    )
                     allPartialResults.push(result)
                 }
             } else if (typeof e === "string") {
@@ -561,13 +612,20 @@ export default class LinkedDataLoader {
                 if (variableName.match(/[a-zA-Z_]+/)) {
                     variableName = "?" + e
                 }
-                const result = await this.fetchVeloparkGraphProperty(directUrl, propertyName, variableName)
+                const result = await this.fetchVeloparkGraphProperty(
+                    directUrl,
+                    propertyName,
+                    variableName
+                )
                 allPartialResults.push(result)
             } else {
                 for (const subProperty in e) {
                     const variableName = e[subProperty]
-                    const result = await this.fetchVeloparkGraphProperty(directUrl,
-                        propertyName, `[${subProperty} ?${variableName}]    `)
+                    const result = await this.fetchVeloparkGraphProperty(
+                        directUrl,
+                        propertyName,
+                        `[${subProperty} ?${variableName}]    `
+                    )
                     allPartialResults.push(result)
                 }
             }
@@ -581,8 +639,9 @@ export default class LinkedDataLoader {
         const results = this.mergeResults(...allPartialResults)
 
         return results
-
     }
+
+    private static veloparkCache : Record<string, Feature[]> = {}
 
     /**
      * Fetches all data relevant to velopark.
@@ -590,25 +649,27 @@ export default class LinkedDataLoader {
      * @param url
      */
     public static async fetchVeloparkEntry(url: string): Promise<Feature[]> {
+        if(this.veloparkCache[url]){
+            return this.veloparkCache[url]
+        }
         const withProxyUrl = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
         const optionalPaths: Record<string, string | Record<string, string>> = {
             "schema:interactionService": {
-                "schema:url": "website"
+                "schema:url": "website",
             },
             "schema:name": "name",
             "mv:operatedBy": {
-                "gr:legalName": "operator"
-
+                "gr:legalName": "operator",
             },
             "schema:contactPoint": {
                 "schema:email": "email",
-                "schema:telephone": "phone"
+                "schema:telephone": "phone",
             },
-            "schema:dateModified":"_last_edit_timestamp"
+            "schema:dateModified": "_last_edit_timestamp",
         }
 
         const graphOptionalPaths = {
-            "a": "type",
+            a: "type",
             "vp:covered": "covered",
             "vp:maximumParkingDuration": "maxstay",
             "mv:totalCapacity": "capacity",
@@ -619,28 +680,34 @@ export default class LinkedDataLoader {
             "schema:geo": {
                 "schema:latitude": "latitude",
                 "schema:longitude": "longitude",
-                "schema:polygon": "shape"
+                "schema:polygon": "shape",
             },
             "schema:priceSpecification": {
                 "mv:freeOfCharge": "fee",
-                "schema:price": "charge"
-            }
+                "schema:price": "charge",
+            },
         }
 
         const extra = [
             "schema:priceSpecification [ mv:dueForTime [ mv:timeStartValue ?chargeStart; mv:timeEndValue ?chargeEnd; mv:timeUnit ?timeUnit ]  ]",
             "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#CargoBicycle>; vp:bicyclesAmount ?capacityCargobike; vp:bicycleType ?cargoBikeType]",
             "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#ElectricBicycle>; vp:bicyclesAmount ?capacityElectric; vp:bicycleType ?electricBikeType]",
-            "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#TandemBicycle>; vp:bicyclesAmount ?capacityTandem; vp:bicycleType ?tandemBikeType]"
+            "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#TandemBicycle>; vp:bicyclesAmount ?capacityTandem; vp:bicycleType ?tandemBikeType]",
         ]
 
-        const unpatched = await this.fetchEntry(withProxyUrl, optionalPaths, graphOptionalPaths, extra)
+        const unpatched = await this.fetchEntry(
+            withProxyUrl,
+            optionalPaths,
+            graphOptionalPaths,
+            extra
+        )
         const patched: Feature[] = []
         for (const section in unpatched) {
             const p = LinkedDataLoader.patchVeloparkProperties(unpatched[section])
             p["ref:velopark"] = [section]
             patched.push(LinkedDataLoader.asGeojson(p))
         }
+        this.veloparkCache[url] = patched
         return patched
     }
 }

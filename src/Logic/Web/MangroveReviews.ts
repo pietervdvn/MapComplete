@@ -6,7 +6,9 @@ import { GeoOperations } from "../GeoOperations"
 import ScriptUtils from "../../../scripts/ScriptUtils"
 
 export class MangroveIdentity {
-    private readonly keypair: UIEventSource<CryptoKeyPair> = new UIEventSource<CryptoKeyPair>(undefined)
+    private readonly keypair: UIEventSource<CryptoKeyPair> = new UIEventSource<CryptoKeyPair>(
+        undefined
+    )
     /**
      * Same as the one in the user settings
      */
@@ -14,16 +16,19 @@ export class MangroveIdentity {
     private readonly key_id: UIEventSource<string> = new UIEventSource<string>(undefined)
     private readonly _mangroveIdentityCreationDate: UIEventSource<string>
 
-    constructor(mangroveIdentity: UIEventSource<string>, mangroveIdentityCreationDate: UIEventSource<string>) {
+    constructor(
+        mangroveIdentity: UIEventSource<string>,
+        mangroveIdentityCreationDate: UIEventSource<string>
+    ) {
         this.mangroveIdentity = mangroveIdentity
         this._mangroveIdentityCreationDate = mangroveIdentityCreationDate
         mangroveIdentity.addCallbackAndRunD(async (data) => {
-               await this.setKeypair(data)
+            await this.setKeypair(data)
         })
     }
 
-    private async setKeypair(data: string){
-        console.log("Setting keypair from",data)
+    private async setKeypair(data: string) {
+        console.log("Setting keypair from", data)
         const keypair = await MangroveReviews.jwkToKeypair(JSON.parse(data))
         this.keypair.setData(keypair)
         const pem = await MangroveReviews.publicToPem(keypair.publicKey)
@@ -71,22 +76,21 @@ export class MangroveIdentity {
         return this.key_id
     }
 
-    private geoReviewsById: Store<(Review & { kid: string; signature: string })[]> =
-        undefined
+    private geoReviewsById: Store<(Review & { kid: string; signature: string })[]> = undefined
 
-    public getGeoReviews(): Store<(Review & { kid: string, signature: string })[] | undefined> {
+    public getGeoReviews(): Store<(Review & { kid: string; signature: string })[] | undefined> {
         if (!this.geoReviewsById) {
             const all = this.getAllReviews()
-            this.geoReviewsById = this.getAllReviews().mapD(reviews => reviews.filter(
-                review => {
+            this.geoReviewsById = this.getAllReviews().mapD((reviews) =>
+                reviews.filter((review) => {
                     try {
                         const subjectUrl = new URL(review.sub)
                         return subjectUrl.protocol === "geo:"
                     } catch (e) {
                         return false
                     }
-                }
-            ))
+                })
+            )
         }
         return this.geoReviewsById
     }
@@ -108,12 +112,12 @@ export class MangroveIdentity {
                 return []
             }
             const allReviews = await MangroveReviews.getReviews({
-                kid: pem
+                kid: pem,
             })
             this.allReviewsById.setData(
                 allReviews.reviews.map((r) => ({
                     ...r,
-                    ...r.payload
+                    ...r.payload,
                 }))
             )
         })
@@ -247,7 +251,13 @@ export default class FeatureReviews {
         if (cached !== undefined) {
             return cached
         }
-        const featureReviews = new FeatureReviews(feature, tagsSource, mangroveIdentity, options,testmode )
+        const featureReviews = new FeatureReviews(
+            feature,
+            tagsSource,
+            mangroveIdentity,
+            options,
+            testmode
+        )
         FeatureReviews._featureReviewsCache[key] = featureReviews
         return featureReviews
     }
@@ -268,7 +278,7 @@ export default class FeatureReviews {
         }
         const r: Review = {
             sub: this.subjectUri.data,
-            ...review
+            ...review,
         }
         const keypair: CryptoKeyPair = await this._identity.getKeypair()
         const jwt = await MangroveReviews.signReview(keypair, r)
@@ -283,7 +293,7 @@ export default class FeatureReviews {
             ...r,
             kid,
             signature: jwt,
-            madeByLoggedInUser: new ImmutableStore(true)
+            madeByLoggedInUser: new ImmutableStore(true),
         }
         this._reviews.data.push(reviewWithKid)
         this._reviews.ping()
@@ -331,7 +341,7 @@ export default class FeatureReviews {
                 signature: reviewData.signature,
                 madeByLoggedInUser: this._identity.getKeyId().map((user_key_id) => {
                     return reviewData.kid === user_key_id
-                })
+                }),
             })
             hasNew = true
         }
@@ -352,7 +362,7 @@ export default class FeatureReviews {
         // https://www.rfc-editor.org/rfc/rfc5870#section-3.4.2
         // `u` stands for `uncertainty`, https://www.rfc-editor.org/rfc/rfc5870#section-3.4.3
         const self = this
-        return this._name.map(function(name) {
+        return this._name.map(function (name) {
             let uri = `geo:${self._lat},${self._lon}?u=${Math.round(self._uncertainty)}`
             if (name) {
                 uri += "&q=" + (dontEncodeName ? name : encodeURIComponent(name))

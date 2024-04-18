@@ -922,7 +922,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         Utils.injectedDownloads[url] = data
     }
 
-    public static async download(url: string, headers?: Record<string, string>): Promise<string | undefined> {
+    public static async download(
+        url: string,
+        headers?: Record<string, string>
+    ): Promise<string | undefined> {
         const result = await Utils.downloadAdvanced(url, headers)
         if (result["error"] !== undefined) {
             throw result["error"]
@@ -975,7 +978,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         })
     }
 
-    public static upload(url: string, data: string | Blob, headers?: Record<string, string>): Promise<string> {
+    public static upload(
+        url: string,
+        data: string | Blob,
+        headers?: Record<string, string>
+    ): Promise<string> {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {
@@ -1031,7 +1038,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return await promise
     }
 
-    public static async downloadJson(url: string, headers?: Record<string, string>): Promise<object | []> {
+    public static async downloadJson(
+        url: string,
+        headers?: Record<string, string>
+    ): Promise<object | []> {
         const result = await Utils.downloadJsonAdvanced(url, headers)
         if (result["content"]) {
             return result["content"]
@@ -1039,7 +1049,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         throw result["error"]
     }
 
-    public static awaitAnimationFrame(): Promise<void>{
+    public static awaitAnimationFrame(): Promise<void> {
         return new Promise<void>((resolve) => {
             window.requestAnimationFrame(() => {
                 resolve()
@@ -1050,7 +1060,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static async downloadJsonAdvanced(
         url: string,
         headers?: Record<string, string>
-    ): Promise<{ content: object | object[] } | { error: string; url: string; statuscode?: number }> {
+    ): Promise<
+        { content: object | object[] } | { error: string; url: string; statuscode?: number }
+    > {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
@@ -1066,8 +1078,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const data = result["content"]
         try {
             if (typeof data === "string") {
-                if(data === ""){
-                    return {content: {}}
+                if (data === "") {
+                    return { content: {} }
                 }
                 return { content: JSON.parse(data) }
             }

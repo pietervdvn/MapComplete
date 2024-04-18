@@ -92,9 +92,9 @@ export class Imgur extends ImageProvider implements ImageUploader {
      *
      *
      */
-    public async DownloadAttribution(providedImage: {url: string}): Promise<LicenseInfo> {
+    public async DownloadAttribution(providedImage: { url: string }): Promise<LicenseInfo> {
         const url = providedImage.url
-        const hash =  url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
+        const hash = url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
 
         const apiUrl = "https://api.imgur.com/3/image/" + hash
         const response = await Utils.downloadJsonCached(apiUrl, 365 * 24 * 60 * 60, {

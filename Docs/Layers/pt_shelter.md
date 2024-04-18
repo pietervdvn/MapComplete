@@ -105,6 +105,18 @@ This tagrendering has no question and is thus read-only
 
 
 
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
+
+
+
 ### minimap 
 
 

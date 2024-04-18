@@ -5,13 +5,9 @@
     imgSize?: string
     extraClasses?: string
   } = {}
-
 </script>
 
-<button
-  class={twMerge(options.extraClasses, "secondary no-image-background")}
-  on:click
->
+<button class={twMerge(options.extraClasses, "secondary no-image-background")} on:click>
   <slot name="image" />
   <slot name="message" />
 </button>

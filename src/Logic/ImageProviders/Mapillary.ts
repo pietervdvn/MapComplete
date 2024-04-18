@@ -167,7 +167,7 @@ export class Mapillary extends ImageProvider {
         const url_hd = <string>response["thumb_original_url"]
         const date = new Date()
         date.setTime(response["captured_at"])
-        return <ProvidedImage> {
+        return <ProvidedImage>{
             id: "" + mapillaryId,
             url,
             url_hd,

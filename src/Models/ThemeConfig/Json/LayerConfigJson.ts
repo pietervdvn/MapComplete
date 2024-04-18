@@ -510,6 +510,9 @@ export interface LayerConfigJson {
     allowSplit?: boolean
 
     /**
+     * Either a list with [{"key": "unitname", "key2": {"quantity": "unitname", "denominations": ["denom", "denom"]}}]
+     *
+     *
      * @see UnitConfigJson
      *
      * group: editing

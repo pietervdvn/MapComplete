@@ -1073,12 +1073,26 @@
       "description": "Layer 'Elevator' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'OSM for the blind')"
     },
     {
-      "key": "elevator:width",
-      "description": "Layer 'Elevator' shows and asks freeform values for key 'elevator:width' (in the mapcomplete.org theme 'OSM for the blind')"
+      "key": "shape",
+      "description": "Layer 'Elevator' shows shape=rectangular with a fixed text, namely 'This elevator has a rectangular shape' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "rectangular"
     },
     {
-      "key": "elevator:depth",
-      "description": "Layer 'Elevator' shows and asks freeform values for key 'elevator:depth' (in the mapcomplete.org theme 'OSM for the blind')"
+      "key": "shape",
+      "description": "Layer 'Elevator' shows shape=circular with a fixed text, namely 'This elevator has a circular shape' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "circular"
+    },
+    {
+      "key": "width",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'width' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if shape= | shape=rectangular)"
+    },
+    {
+      "key": "length",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'length' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if shape= | shape=rectangular)"
+    },
+    {
+      "key": "diameter",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'diameter' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if shape=circular)"
     },
     {
       "key": "hearing_loop",

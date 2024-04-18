@@ -25,7 +25,6 @@
 
   let container: HTMLElement
 
-
   let _map: Map
   onMount(() => {
     const { lon, lat } = mapProperties?.location?.data ?? { lon: 0, lat: 0 }
@@ -33,7 +32,10 @@
     const rasterLayer: RasterLayerProperties = mapProperties?.rasterLayer?.data?.properties
     let styleUrl: string
     if (rasterLayer?.type === "vector") {
-      styleUrl = rasterLayer?.style ?? rasterLayer?.url ?? AvailableRasterLayers.defaultBackgroundLayer.properties.url
+      styleUrl =
+        rasterLayer?.style ??
+        rasterLayer?.url ??
+        AvailableRasterLayers.defaultBackgroundLayer.properties.url
     } else {
       const defaultLayer = AvailableRasterLayers.defaultBackgroundLayer.properties
       styleUrl = defaultLayer.style ?? defaultLayer.url
@@ -48,13 +50,13 @@
       center: { lng: lon, lat },
       maxZoom: 24,
       interactive: true,
-      attributionControl: false
+      attributionControl: false,
     }
     _map = new maplibre.Map(options)
     window.requestAnimationFrame(() => {
       _map.resize()
     })
-    _map.on("load", function() {
+    _map.on("load", function () {
       _map.resize()
       const canvas = _map.getCanvas()
       if (interactive) {

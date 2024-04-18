@@ -13,7 +13,7 @@ export class WikimediaImageProvider extends ImageProvider {
     public static readonly singleton = new WikimediaImageProvider()
     public static readonly apiUrls = [
         "https://commons.wikimedia.org/wiki/",
-        "https://upload.wikimedia.org"
+        "https://upload.wikimedia.org",
     ]
     public static readonly commonsPrefixes = [...WikimediaImageProvider.apiUrls, "File:"]
     private readonly commons_key = "wikimedia_commons"
@@ -42,7 +42,6 @@ export class WikimediaImageProvider extends ImageProvider {
             return baseUrl
         }
         return baseUrl + `?width=500&height=400`
-
     }
 
     private static startsWithCommonsPrefix(value: string): boolean {
@@ -174,7 +173,7 @@ export class WikimediaImageProvider extends ImageProvider {
             url_hd: WikimediaImageProvider.PrepareUrl(image, true),
             key: undefined,
             provider: this,
-            id: image
+            id: image,
         }
     }
 }

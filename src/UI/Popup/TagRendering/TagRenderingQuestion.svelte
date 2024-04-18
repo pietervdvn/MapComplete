@@ -135,24 +135,25 @@
     // We want to (re)-initialize whenever the 'tags' or 'config' change - but not when 'checkedConfig' changes
     initialize($tags, config)
   }
-onDestroy(
-  freeformInput.subscribe((freeformValue) => {
-    if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
-      return
-    }
-    // If a freeform value is given, mark the 'mapping' as marked
-    if (config.multiAnswer) {
-      if (checkedMappings === undefined) {
-        // Initialization didn't yet run
+  onDestroy(
+    freeformInput.subscribe((freeformValue) => {
+      if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
         return
       }
-      checkedMappings[mappings.length] = freeformValue?.length > 0
-      return
-    }
-    if (freeformValue?.length > 0) {
-      selectedMapping = mappings.length
-    }
-  }))
+      // If a freeform value is given, mark the 'mapping' as marked
+      if (config.multiAnswer) {
+        if (checkedMappings === undefined) {
+          // Initialization didn't yet run
+          return
+        }
+        checkedMappings[mappings.length] = freeformValue?.length > 0
+        return
+      }
+      if (freeformValue?.length > 0) {
+        selectedMapping = mappings.length
+      }
+    })
+  )
 
   $: {
     if (
@@ -243,7 +244,9 @@ onDestroy(
     <form
       class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
-      on:submit|preventDefault={() =>{ /*onSave(); This submit is not needed and triggers to early, causing bugs: see #1808*/}}
+      on:submit|preventDefault={() => {
+        /*onSave(); This submit is not needed and triggers to early, causing bugs: see #1808*/
+      }}
     >
       <fieldset>
         <legend>
@@ -399,7 +402,10 @@ onDestroy(
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
               {#if allowDeleteOfFreeform && (mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
-                <button class="primary flex" on:click|stopPropagation|preventDefault={() => onSave()}>
+                <button
+                  class="primary flex"
+                  on:click|stopPropagation|preventDefault={() => onSave()}
+                >
                   <TrashIcon class="h-6 w-6 text-red-500" />
                   <Tr t={Translations.t.general.eraseValue} />
                 </button>

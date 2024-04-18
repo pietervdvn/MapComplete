@@ -171,7 +171,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         state: SpecialVisualizationState,
         tags: UIEventSource<Record<string, string>>,
         args: string[],
-        feature: Feature,
+        feature: Feature
     ): BaseUIElement {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const msg = args[1]

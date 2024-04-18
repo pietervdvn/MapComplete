@@ -13,7 +13,7 @@
   export let layer: LayerConfig
   export let selectedElement: Feature
   let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
-    selectedElement.properties.id,
+    selectedElement.properties.id
   )
   $: {
     tags = state.featureProperties.getStore(selectedElement.properties.id)
@@ -43,7 +43,7 @@
           class="no-weblate title-icons links-as-button mr-2 flex flex-row flex-wrap items-center gap-x-0.5 pt-0.5 sm:pt-1"
         >
           {#each layer.titleIcons as titleIconConfig}
-            {#if (titleIconConfig.condition?.matchesProperties($tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties({ ...$metatags, ...$tags }) ?? true) && titleIconConfig.IsKnown($tags)}
+            {#if (titleIconConfig.condition?.matchesProperties($tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ...$metatags, ...$tags } ) ?? true) && titleIconConfig.IsKnown($tags)}
               <div class={titleIconConfig.renderIconClass ?? "flex h-8 w-8 items-center"}>
                 <TagRenderingAnswer
                   config={titleIconConfig}
@@ -58,28 +58,33 @@
           {/each}
 
           {#if $isTesting || $isDebugging}
-            <a class="subtle" href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Layers/{layer.id}.md"
-               target="_blank" rel="noreferrer noopener ">{layer.id}</a>
+            <a
+              class="subtle"
+              href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Layers/{layer.id}.md"
+              target="_blank"
+              rel="noreferrer noopener "
+            >
+              {layer.id}
+            </a>
           {/if}
         </div>
       </div>
     {/if}
   </div>
   <slot name="close-button">
-
-  <button
-    class="mt-2 h-fit shrink-0 rounded-full border-none p-0"
-    on:click={() => state.selectedElement.setData(undefined)}
-    style="border: 0 !important; padding: 0 !important;"
-    use:ariaLabel={Translations.t.general.backToMap}
-  >
-    <XCircleIcon aria-hidden={true} class="h-8 w-8" />
-  </button>
+    <button
+      class="mt-2 h-fit shrink-0 rounded-full border-none p-0"
+      on:click={() => state.selectedElement.setData(undefined)}
+      style="border: 0 !important; padding: 0 !important;"
+      use:ariaLabel={Translations.t.general.backToMap}
+    >
+      <XCircleIcon aria-hidden={true} class="h-8 w-8" />
+    </button>
   </slot>
 </div>
 
 <style>
-    :global(.title-icons a) {
-        display: block !important;
-    }
+  :global(.title-icons a) {
+    display: block !important;
+  }
 </style>

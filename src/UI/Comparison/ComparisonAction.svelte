@@ -38,7 +38,7 @@
       tags.data,
       {
         theme: state.layout.id,
-        changeType: "import"
+        changeType: "import",
       }
     )
     await state.changes.applyChanges(await change.CreateChangeDescriptions())
@@ -47,43 +47,51 @@
 
   let _country = $tags["_country"]
   let mockPropertiesOsm = { id: feature.properties.id, [key]: $tags[key], _country }
-  let mockPropertiesExternal = { id: feature.properties.id, [key]: externalProperties[key], _country }
-  let trsWithKeys = layer.tagRenderings.filter(tr => {
-    const keys: string[] = [].concat(...tr.usedTags().map(t => t.usedKeys()))
+  let mockPropertiesExternal = {
+    id: feature.properties.id,
+    [key]: externalProperties[key],
+    _country,
+  }
+  let trsWithKeys = layer.tagRenderings.filter((tr) => {
+    const keys: string[] = [].concat(...tr.usedTags().map((t) => t.usedKeys()))
     return keys.indexOf(key) >= 0
   })
-  let renderingBoth = trsWithKeys.find(tr => tr.IsKnown(mockPropertiesOsm) && tr.IsKnown(mockPropertiesExternal))
-  let renderingExternal = renderingBoth ?? trsWithKeys.find(tr => tr.IsKnown(mockPropertiesExternal))
+  let renderingBoth = trsWithKeys.find(
+    (tr) => tr.IsKnown(mockPropertiesOsm) && tr.IsKnown(mockPropertiesExternal)
+  )
+  let renderingExternal =
+    renderingBoth ?? trsWithKeys.find((tr) => tr.IsKnown(mockPropertiesExternal))
   let onOverwrite = false
   const t = Translations.t.external
 </script>
 
 <div>
-
-  <div class="py-1 px-2 interactive flex w-full justify-between">
+  <div class="interactive flex w-full justify-between py-1 px-2">
     <div class="flex flex-col">
-
       <div>
-
         {#if renderingExternal}
-          <TagRenderingAnswer tags={new UIEventSource(mockPropertiesExternal)} selectedElement={feature}
-                              config={renderingExternal}
-                              {layer} {state} />
+          <TagRenderingAnswer
+            tags={new UIEventSource(mockPropertiesExternal)}
+            selectedElement={feature}
+            config={renderingExternal}
+            {layer}
+            {state}
+          />
         {:else}
-          <div class="flex gap-x-1 items-center">
-            <b>{key}</b>{externalProperties[key]}
+          <div class="flex items-center gap-x-1">
+            <b>{key}</b>
+            {externalProperties[key]}
           </div>
-
         {/if}
       </div>
 
-      {#if !readonly && ( $isTesting || $isDebug || $showTags === "yes" || $showTags === "always" || $showTags === "full")}
+      {#if !readonly && ($isTesting || $isDebug || $showTags === "yes" || $showTags === "always" || $showTags === "full")}
         <div class="subtle text-sm">
           {#if $tags[key] !== undefined}
-          <span>
-        OSM:
-            {key}={$tags[key]}
-          </span>
+            <span>
+              OSM:
+              {key}={$tags[key]}
+            </span>
           {/if}
           <span>
             {key}= {externalProperties[key]}
@@ -92,21 +100,20 @@
       {/if}
     </div>
 
-
     {#if !readonly}
       {#if currentStep === "init"}
-        <button class="small" on:click={() => apply(key)}
-
-                on:mouseover={() => onOverwrite = true}
-                on:focus={() => onOverwrite = true}
-                on:blur={() => onOverwrite = false}
-                on:mouseout={() => onOverwrite = false  }
+        <button
+          class="small"
+          on:click={() => apply(key)}
+          on:mouseover={() => (onOverwrite = true)}
+          on:focus={() => (onOverwrite = true)}
+          on:blur={() => (onOverwrite = false)}
+          on:mouseout={() => (onOverwrite = false)}
         >
           {#if $tags[key]}
             <Tr t={t.overwrite} />
           {:else}
             <Tr t={t.apply} />
-
           {/if}
         </button>
       {:else if currentStep === "applying"}
@@ -114,7 +121,6 @@
       {:else if currentStep === "done"}
         <div class="thanks">
           <Tr t={t.done} />
-
         </div>
       {:else}
         <div class="alert">
@@ -122,22 +128,26 @@
         </div>
       {/if}
     {/if}
-
   </div>
   {#if $tags[key] && $tags[key] !== externalProperties[key]}
     <div class:glowing-shadow={onOverwrite}>
-    <span class="subtle">
-      <Tr t={t.currentInOsmIs} />
-    </span>
+      <span class="subtle">
+        <Tr t={t.currentInOsmIs} />
+      </span>
       {#if renderingBoth}
-        <TagRenderingAnswer tags={new UIEventSource(mockPropertiesOsm)} selectedElement={feature} config={renderingBoth}
-                            {layer} {state} />
+        <TagRenderingAnswer
+          tags={new UIEventSource(mockPropertiesOsm)}
+          selectedElement={feature}
+          config={renderingBoth}
+          {layer}
+          {state}
+        />
       {:else}
-        <div class="flex gap-x-2 items-center">
-          <b>{key}</b> {$tags[key]}
+        <div class="flex items-center gap-x-2">
+          <b>{key}</b>
+          {$tags[key]}
         </div>
       {/if}
     </div>
   {/if}
-
 </div>

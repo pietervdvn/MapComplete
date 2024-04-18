@@ -237,10 +237,10 @@ export abstract class Store<T> implements Readable<T> {
 
     public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>): Store<X> {
         return this.bind((t) => {
-            if(t=== null){
+            if (t === null) {
                 return null
             }
-            if (t === undefined ) {
+            if (t === undefined) {
                 return undefined
             }
             return f(<Exclude<T, undefined | null>>t)

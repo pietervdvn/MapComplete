@@ -61,7 +61,7 @@
         "error": "Error",
         "loadedFrom": "The following data is loaded from <a href={url}>{source}</a> using the embedded JSON-LD",
         "noDataLoaded": "The external website has no linked data that could be loaded",
-        "overwrite": "Overwrite"
+        "overwrite": "Overwrite in OpenStreetMap"
     },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",

@@ -109,8 +109,12 @@ class SingleBackgroundHandler {
         const background = this._targetLayer.properties
         console.debug("Enabling", background.id)
         let addLayerBeforeId = "transit_pier" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
-        if(!map.getLayer(addLayerBeforeId)){
-            console.warn("Layer", addLayerBeforeId,"not foundhttp://127.0.0.1:1234/theme.html?layout=cyclofix&z=14.8&lat=51.05282501324558&lon=3.720591622281745&layer-range=true")
+        if (!map.getLayer(addLayerBeforeId)) {
+            console.warn(
+                "Layer",
+                addLayerBeforeId,
+                "not foundhttp://127.0.0.1:1234/theme.html?layout=cyclofix&z=14.8&lat=51.05282501324558&lon=3.720591622281745&layer-range=true"
+            )
             addLayerBeforeId = undefined
         }
         if (background.category === "osmbasedmap" || background.category === "map") {
@@ -140,15 +144,15 @@ class SingleBackgroundHandler {
                         type: "raster",
                         source: background.id,
                         paint: {
-                            "raster-opacity": 0
-                        }
+                            "raster-opacity": 0,
+                        },
                     },
                     addLayerBeforeId
                 )
                 this.opacity.addCallbackAndRun((o) => {
-                    try{
+                    try {
                         map.setPaintProperty(background.id, "raster-opacity", o)
-                    }catch (e) {
+                    } catch (e) {
                         console.debug("Could not set raster-opacity of", background.id)
                         return true // This layer probably doesn't exist anymore, so we unregister
                     }
@@ -185,11 +189,13 @@ export default class RasterLayerHandler {
         })
     }
 
-    public static prepareSource(layer: RasterLayerProperties): RasterSourceSpecification | VectorSourceSpecification {
+    public static prepareSource(
+        layer: RasterLayerProperties
+    ): RasterSourceSpecification | VectorSourceSpecification {
         if (layer.type === "vector") {
             const vs: VectorSourceSpecification = {
                 type: "vector",
-                url: layer.url
+                url: layer.url,
             }
             return vs
         }
@@ -202,7 +208,7 @@ export default class RasterLayerHandler {
             minzoom: layer["min_zoom"] ?? 1,
             maxzoom: layer["max_zoom"] ?? 25,
             // Bit of a hack, but seems to work
-            scheme: layer.url.includes("{-y}") ? "tms" : "xyz"
+            scheme: layer.url.includes("{-y}") ? "tms" : "xyz",
         }
     }
 
@@ -216,7 +222,7 @@ export default class RasterLayerHandler {
             "{width}": "" + size,
             "{height}": "" + size,
             "{zoom}": "{z}",
-            "{-y}": "{y}"
+            "{-y}": "{y}",
         }
 
         for (const key in toReplace) {

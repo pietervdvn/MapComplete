@@ -16,10 +16,12 @@ We will complete data from advertising features with reference, operator and lit
 
   - This layer is shown at zoomlevel **15** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[2])
-  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[7])
+  - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[3])
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[8])
+  - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[9])
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[10])
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[12])
+  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[14])
 
 
 
@@ -41,9 +43,12 @@ We will complete data from advertising features with reference, operator and lit
 
 
 
-Elements must match the expression **advertising~.+**
+Elements must match **all** of the following expressions:
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+0. advertising~.+
+1. advertising!=no
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%5D%5B%22advertising%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -245,6 +250,18 @@ This rendering asks information about the property  [ref](https://wiki.openstree
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

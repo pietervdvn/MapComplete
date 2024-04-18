@@ -113,7 +113,7 @@ export default class GeoLocationHandler {
      * - The GPS-location iss NULL-island
      * @constructor
      */
-    public MoveMapToCurrentLocation(zoomToAtLeast: number = 14 ) {
+    public MoveMapToCurrentLocation(zoomToAtLeast: number = 14) {
         const newLocation = this.geolocationState.currentGPSLocation.data
         const mapLocation = this.mapProperties.location
         // We got a new location.

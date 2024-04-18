@@ -14,7 +14,7 @@ Various forms of transport for passengers and goods that use wires, including ca
 
 
 
-  - This layer is shown at zoomlevel **0** and higher
+  - This layer is shown at zoomlevel **11** and higher
 
 
 
@@ -197,6 +197,18 @@ This tagrendering has no question and is thus read-only
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### lod 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering has labels  `added_by_default`
 
 
 

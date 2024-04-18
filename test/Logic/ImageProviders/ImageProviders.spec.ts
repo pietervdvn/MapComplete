@@ -91,10 +91,10 @@ describe("ImageProviders", () => {
                     "https://scontent-bru2-1.xx.fbcdn.net/m1/v/t6/Alorup_ipsumMC602spvM_e_rqOHyiUcYUTetXM7K52DDBEY5J4FWg4WKQqVUlMsWJn4nLXk0pxlBLx31146FqZ2Kg65z7lJUfR6wpW6WPSR5_y7RKdv4YEuzPjwIN0lagBnQONV3UjmXnEGpMouU?stp=s1024x768&ccb=10-5&oh=d460b401c505714ee1cb8bd6baf8ae5d&oe=61731FC3&_nc_sid=122ab1",
 
                 id: "196804715753265",
-                captured_at:1627748022000,
-                "creator": {
-                    "username": "filipc",
-                    "id": "109372117958792"
+                captured_at: 1627748022000,
+                creator: {
+                    username: "filipc",
+                    id: "109372117958792",
                 },
             }
         )
