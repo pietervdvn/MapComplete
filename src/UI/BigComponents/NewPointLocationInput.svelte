@@ -16,7 +16,6 @@
   import { Utils } from "../../Utils"
   import Move_arrows from "../../assets/svg/Move_arrows.svelte"
   import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
-  import { prop_dev } from "svelte/internal"
   import { Tag } from "../../Logic/Tags/Tag"
   import { TagUtils } from "../../Logic/Tags/TagUtils"
 
@@ -47,7 +46,7 @@
   export let snapToLayers: string[] | undefined
   export let targetLayer: LayerConfig | undefined
   export let maxSnapDistance: number = undefined
-  export let presetProperties: Tag[] = undefined
+  export let presetProperties: Tag[] = []
   let presetPropertiesUnpacked = TagUtils.KVtoProperties(presetProperties)
 
   export let snappedTo: UIEventSource<string | undefined>
