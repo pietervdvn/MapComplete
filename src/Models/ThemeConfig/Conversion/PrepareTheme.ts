@@ -97,7 +97,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
                     delete json["override"]["tagRenderings+"]
                 }
 
-                Utils.Merge(json["override"], found)
+                context.MergeObjectsForOverride(json["override"], found)
                 layers.push(found)
             } catch (e) {
                 context.err(
@@ -305,7 +305,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         )
     }
 
-    convert(json: LayoutConfigJson, _: ConversionContext): LayoutConfigJson {
+    convert(json: LayoutConfigJson, ctx: ConversionContext): LayoutConfigJson {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
             return json
@@ -324,7 +324,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
 
         for (let layer of json.layers) {
             layer = Utils.Clone(<LayerConfigJson>layer)
-            Utils.Merge(overrideAll, layer)
+            ctx.MergeObjectsForOverride(overrideAll, layer)
             if (tagRenderingsPlus) {
                 if (!layer.tagRenderings) {
                     layer.tagRenderings = tagRenderingsPlus

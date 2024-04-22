@@ -212,7 +212,7 @@ class ExpandTagRendering extends Conversion<
         return result
     }
 
-    private lookup(name: string): TagRenderingConfigJson[] | undefined {
+    private lookup(name: string, ctx: ConversionContext): TagRenderingConfigJson[] | undefined {
         const direct = this.directLookup(name)
 
         if (direct === undefined) {
@@ -224,13 +224,13 @@ class ExpandTagRendering extends Conversion<
             if (nm !== undefined) {
                 let indirect: TagRenderingConfigJson[]
                 if (typeof nm === "string") {
-                    indirect = this.lookup(nm)
+                    indirect = this.lookup(nm, ctx)
                 } else {
-                    indirect = [].concat(...nm.map((n) => this.lookup(n)))
+                    indirect = [].concat(...nm.map((n) => this.lookup(n, ctx)))
                 }
                 for (let foundTr of indirect) {
                     foundTr = Utils.Clone<any>(foundTr)
-                    Utils.Merge(tagRenderingConfigJson["override"] ?? {}, foundTr)
+                    ctx.Merge(tagRenderingConfigJson["override"] ?? {}, foundTr)
                     foundTr["id"] = tagRenderingConfigJson["id"] ?? foundTr["id"]
                     result.push(foundTr)
                 }
@@ -318,7 +318,7 @@ class ExpandTagRendering extends Conversion<
         if (typeof tr === "string") {
             let lookup
             if (this._state.tagRenderings !== null) {
-                lookup = this.lookup(tr)
+                lookup = this.lookup(tr, ctx)
             }
             if (lookup === undefined) {
                 if (
@@ -382,7 +382,7 @@ class ExpandTagRendering extends Conversion<
 
             const trs: TagRenderingConfigJson[] = []
             for (const name of names) {
-                const lookup = this.lookup(name)
+                const lookup = this.lookup(name, ctx)
                 if (lookup === undefined) {
                     let candidates = Array.from(state.tagRenderings.keys())
                     if (name.indexOf(".") > 0) {
@@ -433,7 +433,7 @@ class ExpandTagRendering extends Conversion<
                 }
                 for (let foundTr of lookup) {
                     foundTr = Utils.Clone<any>(foundTr)
-                    Utils.Merge(tr["override"] ?? {}, foundTr)
+                    ctx.MergeObjectsForOverride(tr["override"] ?? {}, foundTr)
                     if (names.length == 1) {
                         foundTr["id"] = tr["id"] ?? foundTr["id"]
                     }

@@ -1,4 +1,5 @@
 import { ConversionMessage, ConversionMsgLevel } from "./Conversion"
+import { Utils } from "../../../Utils"
 
 export class ConversionContext {
     private static reported = false
@@ -147,5 +148,19 @@ export class ConversionContext {
 
     debug(message: string) {
         this.messages.push({ context: this, level: "debug", message })
+    }
+
+    /**
+     * Exactly the same as Utils.Merge, except that it wraps the error message
+     * @param source
+     * @param target
+     * @constructor
+     */
+    MergeObjectsForOverride<T, S>(source: Readonly<S>, target: T): T & S {
+        try{
+            return Utils.Merge(source,target)
+        }catch (e) {
+            this.err("Could not apply an override: due to "+e+"\n\tHINT: did you just pull changes from the repository or switch branches? Try 'npm run reset:layeroverview'")
+        }
     }
 }
