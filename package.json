@@ -83,7 +83,10 @@
     "fix:schemas": "vite-node scripts/fixSchemas.ts ",
     "watch:schemas": "cd Models/ThemeConfig/Json  & ls | entr -s 'npm run generate:schemas' ",
     "generate:service-worker": "tsc src/service-worker.ts --outFile public/service-worker.js && git_hash=$(git rev-parse HEAD) && sed -i.bak \"s/GITHUB-COMMIT/$git_hash/\" public/service-worker.js && rm public/service-worker.js.bak",
-    "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
+    "optimize-images-png": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
+    "optimize-images-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec jpegoptim '{}' \\; && echo 'JPGs are optimized'",
+    "optimize-images-scaledown-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec mogrify -resize 640x640\\> '{}' \\; && echo 'JPGs are optimized'",
+
     "generate:stats": "vite-node scripts/GenerateSeries.ts",
     "reset:layeroverview": "npm run prep:layeroverview && npm run generate:layeroverview && npm run refresh:layeroverview",
     "prep:layeroverview": "mkdir -p ./src/assets/generated/layers; echo {\\\"themes\\\":[]} > ./src/assets/generated/known_themes.json && echo {\\\"layers\\\": []} > ./src/assets/generated/known_layers.json && rm -f ./src/assets/generated/layers/*.json && rm -f ./src/assets/generated/themes/*.json && cp ./assets/layers/usersettings/usersettings.json ./src/assets/generated/layers/usersettings.json && echo '{}' > ./src/assets/generated/layers/favourite.json && echo '{}' > ./src/assets/generated/layers/summary.json",
