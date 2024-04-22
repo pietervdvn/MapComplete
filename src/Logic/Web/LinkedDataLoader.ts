@@ -194,6 +194,9 @@ export default class LinkedDataLoader {
             )
             delete compacted["openingHours"]
         }
+        if(compacted["opening_hours"] === undefined){
+            delete compacted["opening_hours"]
+        }
         if (compacted["geo"]) {
             compacted["geo"] = <any>await LinkedDataLoader.geoToGeometry(compacted["geo"])
         }

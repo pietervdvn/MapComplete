@@ -39,7 +39,7 @@ import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
-import { Feature } from "geojson"
+import { Feature, GeoJsonProperties } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/Notes/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
@@ -1794,14 +1794,7 @@ export default class SpecialVisualizations {
                         })
                         .mapD((data) => JSON.parse(data))
                     const sourceUrl: Store<string | undefined> = url.mapD((url) => url.url)
-                    const externalData: Store<
-                        | { success: { content: any } }
-                        | {
-                              error: string
-                          }
-                        | undefined
-                        | null
-                    > = url.bindD(({ url, country }) => {
+                    const externalData: Store<{ success: GeoJsonProperties } | { error: any }> = url.bindD(({ url, country }) => {
                         if (url.startsWith("https://data.velopark.be/")) {
                             return Stores.FromPromiseWithErr(
                                 (async () => {

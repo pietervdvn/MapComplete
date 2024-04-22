@@ -1,6 +1,6 @@
 <script lang="ts">
   import LinkableImage from "../Image/LinkableImage.svelte"
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import type { OsmTags } from "../../Models/OsmFeature"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import type { Feature } from "geojson"
@@ -15,8 +15,10 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
 
-  export let osmProperties: Record<string, string>
+
   export let externalProperties: Record<string, string>
+  delete externalProperties["@context"]
+  console.log("External properties are", externalProperties)
   export let sourceUrl: string
 
   export let tags: UIEventSource<OsmTags>
@@ -31,25 +33,26 @@
   let externalKeys: string[] = Object.keys(externalProperties).sort()
 
   const imageKeyRegex = /image|image:[0-9]+/
-  let knownImages = new Set(
+  let knownImages: Store<Set<string>> = tags.map(osmProperties => new Set(
     Object.keys(osmProperties)
       .filter((k) => k.match(imageKeyRegex))
       .map((k) => osmProperties[k])
-  )
-  let unknownImages = externalKeys
+  ))
+  let unknownImages: Store<string[]> = knownImages.map(images => externalKeys
     .filter((k) => k.match(imageKeyRegex))
     .map((k) => externalProperties[k])
-    .filter((i) => !knownImages.has(i))
+    .filter((i) => !images.has(i)))
+
 
   let propertyKeysExternal = externalKeys.filter((k) => k.match(imageKeyRegex) === null)
-  let missing = propertyKeysExternal.filter((k) => {
+  let missing: Store<string[]> = tags.map(osmProperties => propertyKeysExternal.filter((k) => {
     if (k.startsWith("_")) {
       return false
     }
     return osmProperties[k] === undefined && typeof externalProperties[k] === "string"
-  })
+  }))
   // let same = propertyKeysExternal.filter((key) => osmProperties[key] === externalProperties[key])
-  let different = propertyKeysExternal.filter((key) => {
+  let different: Store<string[]> = tags.map(osmProperties => propertyKeysExternal.filter((key) => {
     if (key.startsWith("_")) {
       return false
     }
@@ -72,29 +75,35 @@
     }
 
     return true
-  })
+  }))
+
+  let hasDifferencesAtStart = (different.data.length + missing.data.length + unknownImages.data.length) > 0
 
   let currentStep: "init" | "applying_all" | "all_applied" = "init"
   let applyAllHovered = false
 
   async function applyAllMissing() {
     currentStep = "applying_all"
-    const tagsToApply = missing.map((k) => new Tag(k, externalProperties[k]))
+    const tagsToApply = missing.data.map((k) => new Tag(k, externalProperties[k]))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToApply), tags.data, {
       theme: state.layout.id,
-      changeType: "import",
+      changeType: "import"
     })
     await state.changes.applyChanges(await change.CreateChangeDescriptions())
     currentStep = "all_applied"
   }
 </script>
-
-{#if propertyKeysExternal.length === 0 && knownImages.size + unknownImages.length === 0}
+{#if propertyKeysExternal.length === 0 && $knownImages.size + $unknownImages.length === 0}
   <Tr cls="subtle" t={t.noDataLoaded} />
-{:else if unknownImages.length === 0 && missing.length === 0 && different.length === 0}
+{:else if !hasDifferencesAtStart}
+  <span class="subtle text-sm">
+    <Tr t={t.allIncluded.Subs({source:sourceUrl})}/>
+  </span>
+
+{:else if $unknownImages.length === 0 && $missing.length === 0 && $different.length === 0}
   <div class="thanks m-0 flex items-center gap-x-2 px-2">
-    <Party class="h-8 w-8" />
-    <Tr t={t.allIncluded} />
+    <Party class="h-8 w-8 shrink-0" />
+    <Tr t={t.allIncluded.Subs({source: sourceUrl})} />
   </div>
 {:else}
   <div class="low-interaction border-interactive p-1">
@@ -109,8 +118,8 @@
       {#if !readonly}
         <Tr t={t.conflicting.intro} />
       {/if}
-      {#if different.length > 0}
-        {#each different as key}
+      {#if $different.length > 0}
+        {#each $different as key}
           <div class="mx-2 rounded-2xl">
             <ComparisonAction
               {key}
@@ -125,9 +134,9 @@
         {/each}
       {/if}
 
-      {#if missing.length > 0}
+      {#if $missing.length > 0}
         {#if currentStep === "init"}
-          {#each missing as key}
+          {#each $missing as key}
             <div class:glowing-shadow={applyAllHovered} class="mx-2 rounded-2xl">
               <ComparisonAction
                 {key}
@@ -140,7 +149,7 @@
               />
             </div>
           {/each}
-          {#if !readonly && missing.length > 1}
+          {#if !readonly && $missing.length > 1}
             <button
               on:click={() => applyAllMissing()}
               on:mouseover={() => (applyAllHovered = true)}
@@ -161,11 +170,11 @@
       {/if}
     </div>
 
-    {#if unknownImages.length > 0}
+    {#if $unknownImages.length > 0}
       {#if readonly}
         <div class="w-full overflow-x-auto">
           <div class="flex h-32 w-max gap-x-2">
-            {#each unknownImages as image}
+            {#each $unknownImages as image}
               <AttributedImage
                 imgClass="h-32 w-max shrink-0"
                 image={{ url: image }}
@@ -175,7 +184,7 @@
           </div>
         </div>
       {:else}
-        {#each unknownImages as image}
+        {#each $unknownImages as image}
           <LinkableImage
             {tags}
             {state}

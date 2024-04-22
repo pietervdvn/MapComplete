@@ -39,7 +39,6 @@
 {:else if $externalData["success"] !== undefined}
   <ComparisonTable
     externalProperties={$externalData["success"]}
-    osmProperties={$tags}
     {state}
     {feature}
     {layer}

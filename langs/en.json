@@ -49,7 +49,7 @@
     },
     "external": {
         "allAreApplied": "All missing, external values have been copied into OpenStreetMap",
-        "allIncluded": "The external data and OpenStreetMap-data are the same",
+        "allIncluded": "Data loaded from {source} is contained in OpenStreetMap",
         "apply": "Apply",
         "applyAll": "Apply all missing values",
         "conflicting": {
