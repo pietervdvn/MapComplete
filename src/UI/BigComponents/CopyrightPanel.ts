@@ -22,7 +22,7 @@ import GeoIndexedStore from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 
 /**
- * The attribution panel in the theme menu.
+ * The attribution panel in the theme menu. Shows the licenses of the artwork and of the map data
  */
 export default class CopyrightPanel extends Combine {
     private static LicenseObject = CopyrightPanel.GenerateLicenses()
@@ -40,7 +40,9 @@ export default class CopyrightPanel extends Combine {
         const t = Translations.t.general.attribution
         const layoutToUse = state.layout
 
-        const iconAttributions: BaseUIElement[] = Utils.Dedup(layoutToUse.usedImages).map(
+
+
+        const iconAttributions: BaseUIElement[] = (layoutToUse.getUsedImages()).map(
             CopyrightPanel.IconAttribution
         )
 

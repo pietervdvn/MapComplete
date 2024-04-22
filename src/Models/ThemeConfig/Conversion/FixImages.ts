@@ -191,7 +191,7 @@ export class ExtractImages extends Conversion<
                         continue
                     }
                     allFoundImages.push({
-                        context: context + "." + foundElement.path.join("."),
+                        context: context.path.join(".") + "." + foundElement.path.join("."),
                         path: foundElement.leaf,
                     })
                 }
@@ -202,7 +202,7 @@ export class ExtractImages extends Conversion<
 
         for (const foundImage of allFoundImages) {
             if (foundImage.path.startsWith("<") && foundImage.path.endsWith(">")) {
-                // These is probably html - we ignore
+                // This is probably html
                 const doc = parse_html(foundImage.path)
                 const images = Array.from(doc.getElementsByTagName("img"))
                 const paths = images.map((i) => i.getAttribute("src"))

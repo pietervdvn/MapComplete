@@ -1273,7 +1273,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static TransposeMap<K extends string, V extends string>(
         d: Record<K, V[]>
     ): Record<V, K[]> {
-        const newD: Record<V, K[]> = <any>{}
+        const newD: Record<V, K[]> = <any> {}
 
         for (const k in d) {
             const vs = d[k]
