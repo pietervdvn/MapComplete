@@ -219,15 +219,6 @@
     }
   ],
   "tagRenderings": [
-    {
-      "id": "sotm-events",
-      "render": {
-        "special": {
-          "type": "giggity",
-          "giggityUrl": "https://sotm.osmz.ru/sotmeu2023.xml"
-        }
-      }
-    },
     "images",
     "level",
     {
