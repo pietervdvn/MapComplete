@@ -63,14 +63,11 @@
         "ca": "una càmera de velocitat",
         "cs": "rychlostní radar",
         "sl": "hitrostna kamera"
-      },
-      "snapToLayer": [
-        "maxspeed"
-      ],
-      "maxSnapDistance": 10
+      }
     }
   ],
   "tagRenderings": [
+    "images",
     {
       "id": "maxspeed",
       "question": {
@@ -115,6 +112,37 @@
         "cs": "Referenční číslo tohoto rychlostního radaru je {ref}"
       },
       "condition": "ref~*"
+    },
+    {
+      "question": {
+        "en": "In which geographical direction does this camera film?",
+        "nl": "In welke geografische richting filmt deze camera?",
+        "fr": "Dans quelle direction géographique cette caméra filme-t-elle ?",
+        "it": "In quale direzione geografica punta questa videocamera?",
+        "de": "In welche Himmelsrichtung filmt diese Kamera?",
+        "da": "I hvilken geografisk retning filmer dette kamera?",
+        "ca": "En quina direcció geogràfica apunta aquesta càmera?",
+        "es": "¿A qué dirección geográfica apunta esta cámara?",
+        "cs": "Ve kterém geografickém směru tato kamera snímá?",
+        "sl": "V katero geografsko smer snema ta kamera?"
+      },
+      "render": {
+        "en": "Films to a compass heading of {direction}",
+        "nl": "Filmt in kompasrichting {direction}",
+        "fr": "Filme dans une direction {direction}",
+        "it": "Punta in direzione {direction}",
+        "de": "filmt in Himmelsrichtung {direction}",
+        "da": "Filmer til en kompasretning af {direction}",
+        "ca": "Grava en direcció {direction}",
+        "es": "Graba en dirección a {direction}",
+        "cs": "Snímané oblasti podle směru kompasu {direction}",
+        "sl": "Snema v smeri kompasa {direction}"
+      },
+      "freeform": {
+        "key": "direction",
+        "type": "direction"
+      },
+      "id": "camera_direction"
     }
   ],
   "units": [
@@ -127,5 +155,9 @@
         ]
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

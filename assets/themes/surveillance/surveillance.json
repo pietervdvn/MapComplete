@@ -53,7 +53,12 @@
   "icon": "./assets/themes/surveillance/logo.svg",
   "defaultBackgroundId": "maptiler.carto",
   "layers": [
-    "surveillance_camera"
-  ],
-  "widenFactor": 2
+    "surveillance_camera",
+    {
+      "builtin": "speed_camera",
+      "override": {
+        "minzoom": 12
+      }
+    }
+  ]
 }
