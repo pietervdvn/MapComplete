@@ -103,7 +103,9 @@
     },
     {
       "id": "wikipedia-etymology",
-      "condition": "name:etymology!=unknown",
+      "condition": {
+        "and":["name:etymology!=unknown"]
+      },
       "question": {
         "en": "What is the Wikidata-item that this object is named after?",
         "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",

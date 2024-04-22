@@ -563,7 +563,15 @@
         "type": "pnat"
       }
     },
-    "etymology.wikipedia-etymology",
+    {
+      "builtin": "etymology.wikipedia-etymology",
+      "override": {
+        "condition": {
+          "and+": "name~*"
+        }
+      }
+    },
+
     {
       "builtin": "toilet.relevant-questions",
       "override": {
