@@ -266,6 +266,12 @@
           "icon": "./assets/svg/envelope.svg",
           "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
           "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
         }
       ],
       "freeform": {

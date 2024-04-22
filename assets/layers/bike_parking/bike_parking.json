@@ -796,6 +796,19 @@
       ]
     },
     {
+      "id": "operator_email",
+      "question": {
+        "en": "What is the email address of the operator of this bicycle parking?",
+        "nl": "Wat is het emailadres van de beheerder van deze parking?"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "freeform": {
+        "key": "operator:email",
+        "type": "email"
+      },
+      "render": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>"
+    },
+    {
       "question": {
         "en": "Does this bicycle parking have spots for cargo bikes?",
         "nl": "Heeft deze fietsparking plaats voor bakfietsen?",

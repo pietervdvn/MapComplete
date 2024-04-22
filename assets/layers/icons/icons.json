@@ -167,12 +167,18 @@
           "#": "ignore-image-in-then",
           "if": "contact:email~*",
           "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
         }
       ],
       "condition": {
         "or": [
           "email~*",
-          "contact:email~*"
+          "contact:email~*",
+          "operator:email~*"
         ]
       }
     },
