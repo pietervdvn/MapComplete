@@ -56,6 +56,10 @@ export default class DetermineLayout {
     }
 
     private static async expandRemoteLayers(layoutConfig: LayoutConfigJson): Promise<LayoutConfigJson> {
+        if(!layoutConfig.layers){
+            // This is probably a layer in 'layer-only-mode'
+            return layoutConfig
+        }
         for (let i = 0; i < layoutConfig.layers.length; i++) {
             const l = layoutConfig.layers[i]
             if (typeof l !== "string") {

@@ -1,7 +1,7 @@
 import { Utils } from "../../Utils"
 import Constants from "../../Models/Constants"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import { Store } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
 
 /**
@@ -11,13 +11,23 @@ import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson
 export default class StudioServer {
     private readonly url: string
     private readonly _userId: Store<number>
+    private readonly overview: UIEventSource<{
+        success: { id: string; owner: number; category: "layers" | "themes" }[]
+    } | { error: any } | undefined>
 
     constructor(url: string, userId: Store<number>) {
         this.url = url
         this._userId = userId
+        this.overview = UIEventSource.FromPromiseWithErr(this.fetchOverviewRaw())
     }
 
-    public async fetchOverview(): Promise<
+    public fetchOverview(): Store<{
+        success: { id: string; owner: number; category: "layers" | "themes" }[]
+    } | { error } | undefined> {
+        return this.overview
+    }
+
+    private async fetchOverviewRaw(): Promise<
         {
             id: string
             owner: number
@@ -59,19 +69,29 @@ export default class StudioServer {
         uid?: number
     ): Promise<LayerConfigJson | LayoutConfigJson> {
         try {
-            return <any> await Utils.downloadJson(this.urlFor(layerId, category, uid))
+            return <any>await Utils.downloadJson(this.urlFor(layerId, category, uid))
         } catch (e) {
             return undefined
         }
     }
+
     async delete(id: string, category: "layers" | "themes") {
         if (id === undefined || id === "") {
             return
         }
         await fetch(this.urlFor(id, category), {
-            method: "DELETE",
+            method: "DELETE"
         })
+        const overview: { id: string; owner: number; category: "layers" | "themes" }[] = this.overview.data?.["success"]
+        if (overview) {
+            const index = overview.findIndex(obj => obj.id === id && obj.category === category && obj.owner === this._userId.data)
+            if (index >= 0) {
+                overview.splice(index, 1)
+                this.overview.ping()
+            }
+        }
     }
+
     async update(id: string, config: string, category: "layers" | "themes") {
         if (id === undefined || id === "") {
             return
@@ -79,9 +99,9 @@ export default class StudioServer {
         await fetch(this.urlFor(id, category), {
             method: "POST",
             headers: {
-                "Content-Type": "application/json;charset=utf-8",
+                "Content-Type": "application/json;charset=utf-8"
             },
-            body: config,
+            body: config
         })
     }
 

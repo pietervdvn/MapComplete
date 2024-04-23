@@ -54,7 +54,7 @@
   const uid = osmConnection.userDetails.map((ud) => ud?.uid)
   const studio = new StudioServer(studioUrl, uid)
 
-  let layersWithErr = UIEventSource.FromPromiseWithErr(studio.fetchOverview())
+  let layersWithErr = studio.fetchOverview()
   let layers: Store<{ owner: number; id: string }[]> = layersWithErr.mapD((l) =>
     l["success"]?.filter((l) => l.category === "layers")
   )
@@ -291,7 +291,9 @@
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}
-      <EditTheme state={editThemeState} selfLayers={$selfLayers} otherLayers={$otherLayers} {osmConnection}>
+      <EditTheme state={editThemeState} selfLayers={$selfLayers} otherLayers={$otherLayers} {osmConnection}  backToStudio={() => {
+          state = undefined
+        }}>
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"

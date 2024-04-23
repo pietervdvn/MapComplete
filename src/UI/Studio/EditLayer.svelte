@@ -17,6 +17,9 @@
   import QuestionPreview from "./QuestionPreview.svelte"
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
   import RawEditor from "./RawEditor.svelte"
+  import NextButton from "../Base/NextButton.svelte"
+  import BackButton from "../Base/BackButton.svelte"
+  import DeleteButton from "./DeleteButton.svelte"
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw
 
@@ -75,10 +78,7 @@
 
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
 
-  function deleteLayer() {
-    state.delete()
-    backToStudio()
-  }
+
 </script>
 
 <div class="flex h-screen flex-col">
@@ -134,12 +134,7 @@
         </div>
         <div class="flex flex-col" slot="content0">
           <Region {state} configs={perRegion["Basic"]} />
-          <div class="mt-12">
-            <button on:click={() => deleteLayer()} class="small">
-              <TrashIcon class="h-6 w-6" />
-              Delete this layer
-            </button>
-          </div>
+          <DeleteButton {state} {backToStudio} objectType="layer"/>
         </div>
 
         <div slot="title1" class="flex">

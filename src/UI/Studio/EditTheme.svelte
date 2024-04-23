@@ -7,11 +7,13 @@
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
   import Region from "./Region.svelte"
   import RawEditor from "./RawEditor.svelte"
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+  import DeleteButton from "./DeleteButton.svelte"
 
   export let state: EditThemeState
   export let osmConnection: OsmConnection
+  export let backToStudio: () => void
+
   let schema: ConfigMeta[] = state.schema.filter((schema) => schema.path.length > 0)
 
   export let selfLayers: { owner: number; id: string }[]
@@ -97,6 +99,8 @@
       <div slot="content0">
         <Region configs={perRegion["basic"]} path={[]} {state} title="Basic properties" />
         <Region configs={perRegion["start_location"]} path={[]} {state} title="Start location" />
+        <DeleteButton {state} {backToStudio} objectType="theme"/>
+
       </div>
 
       <div slot="title1">Layers</div>
