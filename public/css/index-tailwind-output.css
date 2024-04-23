@@ -781,6 +781,10 @@ video {
   float: left;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -791,10 +795,6 @@ video {
 
 .m-0 {
   margin: 0px;
-}
-
-.m-8 {
-  margin: 2rem;
 }
 
 .m-2 {
@@ -900,6 +900,10 @@ video {
   margin-right: 4rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -930,10 +934,6 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1872,10 +1872,6 @@ video {
   padding-right: 0.5rem;
 }
 
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
 .pr-12 {
   padding-right: 3rem;
 }
@@ -1886,6 +1882,10 @@ video {
 
 .pr-1 {
   padding-right: 0.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .pt-0\.5 {
@@ -2143,14 +2143,14 @@ video {
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.drop-shadow-2xl {
-  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+.drop-shadow-md {
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.drop-shadow-md {
-  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+.drop-shadow-2xl {
+  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -2462,7 +2462,7 @@ button:not(.no-image-background):not(.soft) svg path, .button:not(.no-image-back
   color: var(--interactive-foreground);
 }
 
-button:hover, .button:hover {
+button:hover :not(select), .button:hover :not(select) {
   background-color: var(--catch-detail-color);
   color: var(--catch-detail-foregroundcolor);
   border: 2px solid var(--catch-detail-color-contrast);
@@ -2572,6 +2572,8 @@ button.soft:hover, .button.soft:hover {
 
 select {
   border: 2px solid #00000000;
+  color: var(--foreground-color) !important;
+  background-color: var(--low-interaction-background) !important;
 }
 
 select:hover {

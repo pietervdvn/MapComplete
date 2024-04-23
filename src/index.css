@@ -239,7 +239,6 @@ button:hover, .button:hover {
     border: 2px solid var(--catch-detail-color-contrast);
 }
 
-
 button:hover:not(.no-image-background) img, .button:hover:not(.no-image-background) img {
     background: var(--low-interaction-background);
     border-radius: 100rem;
@@ -349,6 +348,8 @@ button.soft:hover, .button.soft:hover {
 
 select {
     border: 2px solid #00000000;
+    color: var(--foreground-color) !important;
+    background-color: var(--low-interaction-background) !important;
 }
 
 select:hover {

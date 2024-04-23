@@ -2,6 +2,8 @@
   import Loading from "./Base/Loading.svelte"
   import Community from "../assets/svg/Community.svelte"
   import Login from "../assets/svg/Login.svelte"
+  import Dropdown from "./Base/Dropdown.svelte"
+  import { UIEventSource } from "../Logic/UIEventSource"
 </script>
 
 <div>
@@ -74,6 +76,10 @@
         HTML (mimicks a
         <span class="literal-code">checked</span>
         -element)
+        <Dropdown value={new UIEventSource("abc")}>
+          <option>abc</option>
+          <option>def</option>
+        </Dropdown>
       </label>
       <label for="css">
         <input id="css" name="fav_language" type="radio" value="CSS" />
