@@ -147,6 +147,7 @@
     abort()
     state.selectedElement.setData(feature)
     tagsStore.ping()
+    state.mapProperties.location.setData(location)
   }
 
   function confirmSync() {
