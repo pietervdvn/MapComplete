@@ -28,7 +28,7 @@ export default interface PointRenderingConfigJson {
     /**
      * question: At what location should this icon be shown?
      * multianswer: true
-     * suggestions: return [{if: "value=point",then: "Show an icon for point (node) objects"},{if: "value=centroid",then: "Show an icon for line or polygon (way) objects at their centroid location"}, {if: "value=start",then: "Show an icon for line (way) objects at the start"},{if: "value=end",then: "Show an icon for line (way) object at the end"},{if: "value=projected_centerpoint",then: "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"}, ,{if: "value=polygon_centroid",then: "Show an icon at a polygon centroid (but not if it is a way)"}]
+     * suggestions: return [{if: "value=point",then: "Show an icon for point (node) objects"},{if: "value=centroid",then: "Show an icon for line or polygon (way) objects at their centroid location"}, {if: "value=start",then: "Show an icon for line (way) objects at the start"},{if: "value=end",then: "Show an icon for line (way) object at the end"},{if: "value=projected_centerpoint",then: "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"}, {if: "value=polygon_centroid",then: "Show an icon at a polygon centroid (but not if it is a way)"}]
      */
     location: (
         | "point"

@@ -33,7 +33,6 @@
     }
     state.setValueAt(path, values)
   })
-
   const config = new TagRenderingConfig(configJson)
 </script>
 

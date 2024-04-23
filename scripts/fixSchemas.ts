@@ -207,6 +207,9 @@ function extractHintsFrom(
             validators: Validators,
             Constants: Constants,
         })
+        if(hints["suggestions"]?.indexOf(null) >= 0){
+            throw "A suggestion generated 'null' for "+path.join(".")+". Check the docstring, specifically 'suggestions'. Pay attention to double commas"
+        }
     }
     return hints
 }

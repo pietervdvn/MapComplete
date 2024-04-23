@@ -3597,7 +3597,6 @@
           "if": "value=projected_centerpoint",
           "then": "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"
         },
-        null,
         {
           "if": "value=polygon_centroid",
           "then": "Show an icon at a polygon centroid (but not if it is a way)"
@@ -23954,7 +23953,6 @@
           "if": "value=projected_centerpoint",
           "then": "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"
         },
-        null,
         {
           "if": "value=polygon_centroid",
           "then": "Show an icon at a polygon centroid (but not if it is a way)"
