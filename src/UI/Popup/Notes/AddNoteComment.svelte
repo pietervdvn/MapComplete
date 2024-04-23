@@ -76,7 +76,7 @@
 
     <div class="flex flex-col">
       {#if $txt?.length > 0}
-        <button class="primary flex" on:click={() => addComment()}>
+        <button class="primary flex" on:click|preventDefault={() => addComment()}>
           <!-- Add a comment -->
           <Speech_bubble class="h-7 w-7 pr-2" />
           <Tr t={t.addCommentPlaceholder} />
@@ -88,7 +88,7 @@
       {/if}
 
       {#if !$isClosed}
-        <button class="flex items-center" on:click={() => closeNote()}>
+        <button class="flex items-center" on:click|preventDefault={() => closeNote()}>
           <Resolved class="h-8 w-8 pr-2" />
           <!-- Close note -->
           {#if $txt === undefined || $txt === ""}
@@ -98,7 +98,7 @@
           {/if}
         </button>
       {:else}
-        <button class="flex items-center" on:click={() => reopenNote()}>
+        <button class="flex items-center" on:click|preventDefault={() => reopenNote()}>
           <!-- Reopen -->
           <Note class="h-7 w-7 pr-2" />
           {#if $txt === undefined || $txt === ""}
