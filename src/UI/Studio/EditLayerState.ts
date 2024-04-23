@@ -5,7 +5,7 @@ import {
     Conversion,
     ConversionMessage,
     DesugaringContext,
-    Pipe,
+    Pipe
 } from "../../Models/ThemeConfig/Conversion/Conversion"
 import { PrepareLayer } from "../../Models/ThemeConfig/Conversion/PrepareLayer"
 import { ValidateLayer, ValidateTheme } from "../../Models/ThemeConfig/Conversion/Validation"
@@ -64,7 +64,6 @@ export abstract class EditJsonState<T> {
         this.category = category
         this.expertMode = options?.expertMode ?? new UIEventSource<boolean>(false)
 
-        this.messages = this.setupErrorsForLayers()
 
         const layerId = this.getId()
         this.configuration
@@ -84,6 +83,8 @@ export abstract class EditJsonState<T> {
                 }
                 await this.server.update(id, config, this.category)
             })
+        this.messages = this.createMessagesStore()
+
     }
 
     public startSavingUpdates(enabled = true) {
@@ -152,10 +153,10 @@ export abstract class EditJsonState<T> {
             path,
             type: "translation",
             hints: {
-                typehint: "translation",
+                typehint: "translation"
             },
             required: origConfig.required ?? false,
-            description: origConfig.description ?? "A translatable object",
+            description: origConfig.description ?? "A translatable object"
         }
     }
 
@@ -227,28 +228,19 @@ export abstract class EditJsonState<T> {
 
     protected abstract getId(): Store<string>
 
-    private setupErrorsForLayers(): Store<ConversionMessage[]> {
-        const layers = AllSharedLayers.getSharedLayersConfigs()
-        const questions = layers.get("questions")
-        const sharedQuestions = new Map<string, QuestionableTagRenderingConfigJson>()
-        for (const question of questions.tagRenderings) {
-            sharedQuestions.set(question["id"], <QuestionableTagRenderingConfigJson>question)
-        }
-        let state: DesugaringContext = {
-            tagRenderings: sharedQuestions,
-            sharedLayers: layers,
-        }
-        const prepare = this.buildValidation(state)
-        return this.configuration.mapD((config) => {
-            const context = ConversionContext.construct([], ["prepare"])
-            try {
-                prepare.convert(<T>config, context)
-            } catch (e) {
-                console.error(e)
-                context.err(e)
+    protected abstract validate(configuration: Partial<T>): Promise<ConversionMessage[]>;
+
+    /**
+     * Creates a store that validates the configuration and which contains all relevant (error)-messages
+     * @private
+     */
+    private createMessagesStore(): Store<ConversionMessage[]> {
+        return this.configuration.mapAsyncD(async (config) => {
+            if(!this.validate){
+                return []
             }
-            return context.messages
-        })
+            return await this.validate(config)
+        }).map(messages => messages ?? [])
     }
 }
 
@@ -314,7 +306,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
     public readonly imageUploadManager = {
         getCountsFor() {
             return 0
-        },
+        }
     }
     public readonly layout: { getMatchingLayer: (key: any) => LayerConfig }
     public readonly featureSwitches: {
@@ -330,8 +322,8 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         properties: this.testTags.data,
         geometry: {
             type: "Point",
-            coordinates: [3.21, 51.2],
-        },
+            coordinates: [3.21, 51.2]
+        }
     }
 
     constructor(
@@ -343,16 +335,16 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         super(schema, server, "layers", options)
         this.osmConnection = osmConnection
         this.layout = {
-            getMatchingLayer: (_) => {
+            getMatchingLayer: () => {
                 try {
                     return new LayerConfig(<LayerConfigJson>this.configuration.data, "dynamic")
                 } catch (e) {
                     return undefined
                 }
-            },
+            }
         }
         this.featureSwitches = {
-            featureSwitchIsDebugging: new UIEventSource<boolean>(true),
+            featureSwitchIsDebugging: new UIEventSource<boolean>(true)
         }
 
         this.addMissingTagRenderingIds()
@@ -428,6 +420,30 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
             }
         })
     }
+
+    protected async validate(configuration: Partial<LayerConfigJson>): Promise<ConversionMessage[]> {
+
+        const layers = AllSharedLayers.getSharedLayersConfigs()
+
+        const questions = layers.get("questions")
+        const sharedQuestions = new Map<string, QuestionableTagRenderingConfigJson>()
+        for (const question of questions.tagRenderings) {
+            sharedQuestions.set(question["id"], <QuestionableTagRenderingConfigJson>question)
+        }
+        const state: DesugaringContext = {
+            tagRenderings: sharedQuestions,
+            sharedLayers: layers
+        }
+        const prepare = this.buildValidation(state)
+        const context = ConversionContext.construct([], ["prepare"])
+        try {
+            prepare.convert(<LayerConfigJson>configuration, context)
+        } catch (e) {
+            console.error(e)
+            context.err(e)
+        }
+        return context.messages
+    }
 }
 
 export class EditThemeState extends EditJsonState<LayoutConfigJson> {
@@ -437,6 +453,7 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
         options: { expertMode: UIEventSource<boolean> }
     ) {
         super(schema, server, "themes", options)
+        this.setupFixers()
     }
 
     protected buildValidation(state: DesugaringContext): Conversion<LayoutConfigJson, any> {
@@ -449,4 +466,55 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
     protected getId(): Store<string> {
         return this.configuration.mapD((config) => config.id)
     }
+
+    /** Applies a few bandaids to get everything smoothed out in case of errors; a big bunch of hacks basically
+     */
+    public setupFixers() {
+        this.configuration.addCallbackAndRunD(config => {
+            if (config.layers) {
+                // Remove 'null' and 'undefined' values from the layer array if any are found
+                for (let i = config.layers.length; i >= 0; i--) {
+                    if (!config.layers[i]) {
+                        config.layers.splice(i, 1)
+                    }
+                }
+            }
+        })
+    }
+
+    protected async validate(configuration: Partial<LayoutConfigJson>) {
+
+        const layers = AllSharedLayers.getSharedLayersConfigs()
+
+        for (const l of configuration.layers ?? []) {
+            if(typeof l !== "string"){
+                continue
+            }
+            if (!l.startsWith("https://")) {
+                continue
+            }
+            const config = <LayerConfigJson> await Utils.downloadJsonCached(l, 1000*60*10)
+            layers.set(l, config)
+        }
+
+        const questions = layers.get("questions")
+        const sharedQuestions = new Map<string, QuestionableTagRenderingConfigJson>()
+        for (const question of questions.tagRenderings) {
+            sharedQuestions.set(question["id"], <QuestionableTagRenderingConfigJson>question)
+        }
+        const state: DesugaringContext = {
+            tagRenderings: sharedQuestions,
+            sharedLayers: layers
+        }
+        const prepare = this.buildValidation(state)
+        const context = ConversionContext.construct([], ["prepare"])
+        try {
+            prepare.convert(<LayoutConfigJson>configuration, context)
+        } catch (e) {
+            console.error(e)
+            context.err(e)
+        }
+        return context.messages
+    }
+
 }

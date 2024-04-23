@@ -156,7 +156,7 @@ export interface LayoutConfigJson {
      * type: layer[]
      * types: hidden | layer | hidden
      * group: layers
-     * suggestions: return Array.from(layers.keys()).map(key => ({if: "value="+key, then: key+" - "+layers.get(key).description}))
+     * suggestions: return Array.from(layers.keys()).map(key => ({if: "value="+key, then: "<b>"+key+"</b> (builtin) - "+layers.get(key).description}))
      * Every layer contains a description of which feature to display - the overpassTags which are queried.
      * Instead of running one query for every layer, the query is fused.
      *

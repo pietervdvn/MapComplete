@@ -58,8 +58,8 @@
   let layers: Store<{ owner: number; id: string }[]> = layersWithErr.mapD((l) =>
     l["success"]?.filter((l) => l.category === "layers")
   )
-  let selfLayers = layers.mapD((ls) => ls.filter((l) => l.owner === uid.data), [uid])
-  let otherLayers = layers.mapD(
+  let selfLayers: Store<{ owner: number; id: string }[]> = layers.mapD((ls) => ls.filter((l) => l.owner === uid.data), [uid])
+  let otherLayers: Store<{ owner: number; id: string }[]> = layers.mapD(
     (ls) => ls.filter((l) => l.owner !== undefined && l.owner !== uid.data),
     [uid]
   )
@@ -291,7 +291,7 @@
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}
-      <EditTheme state={editThemeState}>
+      <EditTheme state={editThemeState} selfLayers={$selfLayers} otherLayers={$otherLayers} {osmConnection}>
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"

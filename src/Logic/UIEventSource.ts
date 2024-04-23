@@ -834,6 +834,10 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         )
     }
 
+    public mapAsyncD<J>(f: (t: T) => Promise<J>): Store<J> {
+        return this.bindD(t => UIEventSource.FromPromise(f(t)))
+    }
+
     /**
      * Two way sync with functions in both directions
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
@@ -897,4 +901,5 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     update(f: Updater<T> & ((value: T) => T)): void {
         this.setData(f(this.data))
     }
+
 }

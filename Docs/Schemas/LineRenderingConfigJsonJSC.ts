@@ -28,7 +28,7 @@ export default {
       ]
     },
     "dashArray": {
-      "description": "question: Should a dasharray be used to render the lines?\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a mapbox limitation\nifunset: Ways are rendered with a full line",
+      "description": "question: Should a dasharray be used to render the lines?\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a MapLibre limitation (see https://github.com/maplibre/maplibre-gl-js/issues/1235)\nifunset: Ways are rendered with a full line",
       "type": "string"
     },
     "lineCap": {

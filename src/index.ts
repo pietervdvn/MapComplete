@@ -61,7 +61,7 @@ async function main() {
         console.error("Error while initializing: ", err, err.stack)
         const customDefinition = DetermineLayout.getCustomDefinition()
         new Combine([
-            new FixedUiElement(err).SetClass("block alert"),
+            new FixedUiElement(err.toString().split("\n").join("<br/>")).SetClass("block alert"),
 
             customDefinition?.length > 0
                 ? new SubtleButton(new SvelteUIElement(Download), "Download the raw file").onClick(

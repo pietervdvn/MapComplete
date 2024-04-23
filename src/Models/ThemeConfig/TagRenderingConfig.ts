@@ -233,7 +233,7 @@ export default class TagRenderingConfig {
             }
 
             const firstMappingSize: string = json.mappings
-                .map((m) => m.icon?.["class"])
+                .map((m) => m?.icon?.["class"])
                 .find((c) => !!c)
             const commonIconSize = firstMappingSize ?? json["#iconsize"] ?? "small"
             this.mappings = json.mappings.map((m, i) =>

@@ -7,10 +7,50 @@
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
   import Region from "./Region.svelte"
   import RawEditor from "./RawEditor.svelte"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 
   export let state: EditThemeState
+  export let osmConnection: OsmConnection
   let schema: ConfigMeta[] = state.schema.filter((schema) => schema.path.length > 0)
-  let config = state.configuration
+
+  export let selfLayers: { owner: number; id: string }[]
+  export let otherLayers: { owner: number; id: string }[]
+  {
+
+    /**
+     * We modify the schema and inject options for self-declared layers
+     */
+
+    const layerSchema = schema.find(l => l.path.join(".") === "layers")
+    const suggestions: { if: string, then: string }[] = layerSchema.hints.suggestions
+    suggestions.unshift(...selfLayers.map(
+      l => ({
+        if: `value=https://studio.mapcomplete.org/${l.owner}/layers/${l.id}/${l.id}.json`,
+        then: `<b>${l.id}</b> (made by you)`
+      })
+    ))
+
+    for (let i = 0; i < otherLayers.length; i++) {
+      const l = otherLayers[i]
+      const mapping = {
+        if: `value=https://studio.mapcomplete.org/${l.owner}/layers/${l.id}/${l.id}.json`,
+        then: `<b>${l.id}</b> (made by ${l.owner})`
+      }
+      /**
+       * This is a filthy hack which is time-sensitive and will break
+       * It downloads the username and patches the suggestion, assuming that the list with all layers will be shown a while _after_ loading the view.
+       * Caching in 'getInformationAboutUser' helps with this as well
+       */
+      osmConnection.getInformationAboutUser(l.owner).then(userInfo => {
+        mapping.then = `<b>${l.id}</b> (made by ${userInfo.display_name})`
+      })
+      suggestions.push(mapping)
+    }
+
+  }
+
+
   let messages = state.messages
   let hasErrors = messages.map(
     (m: ConversionMessage[]) => m.filter((m) => m.level === "error").length

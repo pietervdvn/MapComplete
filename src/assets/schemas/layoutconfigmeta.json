@@ -326,595 +326,615 @@
       "suggestions": [
         {
           "if": "value=address",
-          "then": "address - Addresses"
+          "then": "<b>address</b> (builtin) - Addresses"
         },
         {
           "if": "value=advertising",
-          "then": "advertising - We will complete data from advertising features with reference, operator and lit"
+          "then": "<b>advertising</b> (builtin) - We will complete data from advertising features with reference, operator and lit"
         },
         {
           "if": "value=aerialway",
-          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+          "then": "<b>aerialway</b> (builtin) - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
         },
         {
           "if": "value=ambulancestation",
-          "then": "ambulancestation - An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies."
+          "then": "<b>ambulancestation</b> (builtin) - An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies."
         },
         {
           "if": "value=animal_shelter",
-          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+          "then": "<b>animal_shelter</b> (builtin) - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
         },
         {
           "if": "value=artwork",
-          "then": "artwork - An open map of statues, busts, graffitis and other artwork all over the world"
+          "then": "<b>artwork</b> (builtin) - An open map of statues, busts, graffitis and other artwork all over the world"
         },
         {
           "if": "value=assembly_point",
-          "then": "assembly_point - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
+          "then": "<b>assembly_point</b> (builtin) - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
           "if": "value=atm",
-          "then": "atm - ATMs to withdraw money"
+          "then": "<b>atm</b> (builtin) - ATMs to withdraw money"
         },
         {
           "if": "value=bank",
-          "then": "bank - A financial institution to deposit money"
+          "then": "<b>bank</b> (builtin) - A financial institution to deposit money"
         },
         {
           "if": "value=barrier",
-          "then": "barrier - Obstacles while cycling, such as bollards and cycle barriers"
+          "then": "<b>barrier</b> (builtin) - Obstacles while cycling, such as bollards and cycle barriers"
         },
         {
           "if": "value=bench",
-          "then": "bench - A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them."
+          "then": "<b>bench</b> (builtin) - A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them."
         },
         {
           "if": "value=bench_at_pt",
-          "then": "bench_at_pt - A layer showing all public-transport-stops which do have a bench"
+          "then": "<b>bench_at_pt</b> (builtin) - A layer showing all public-transport-stops which do have a bench"
         },
         {
           "if": "value=bicycle_library",
-          "then": "bicycle_library - A facility where bicycles can be lent for longer period of times"
+          "then": "<b>bicycle_library</b> (builtin) - A facility where bicycles can be lent for longer period of times"
         },
         {
           "if": "value=bicycle_rental",
-          "then": "bicycle_rental - Bicycle rental stations"
+          "then": "<b>bicycle_rental</b> (builtin) - Bicycle rental stations"
         },
         {
           "if": "value=bicycle_tube_vending_machine",
-          "then": "bicycle_tube_vending_machine - A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)"
+          "then": "<b>bicycle_tube_vending_machine</b> (builtin) - A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)"
         },
         {
           "if": "value=bike_cafe",
-          "then": "bike_cafe - A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …"
+          "then": "<b>bike_cafe</b> (builtin) - A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …"
         },
         {
           "if": "value=bike_cleaning",
-          "then": "bike_cleaning - A layer showing facilities where one can clean their bike"
+          "then": "<b>bike_cleaning</b> (builtin) - A layer showing facilities where one can clean their bike"
         },
         {
           "if": "value=bike_parking",
-          "then": "bike_parking - A layer showing where you can park your bike"
+          "then": "<b>bike_parking</b> (builtin) - A layer showing where you can park your bike"
         },
         {
           "if": "value=bike_repair_station",
-          "then": "bike_repair_station - A layer showing bicycle pumps and bicycle repair tool stands"
+          "then": "<b>bike_repair_station</b> (builtin) - A layer showing bicycle pumps and bicycle repair tool stands"
         },
         {
           "if": "value=bike_shop",
-          "then": "bike_shop - A shop specifically selling bicycles or related items"
+          "then": "<b>bike_shop</b> (builtin) - A shop specifically selling bicycles or related items"
         },
         {
           "if": "value=bike_themed_object",
-          "then": "bike_themed_object - A layer with bike-themed objects but who don't match any other layer"
+          "then": "<b>bike_themed_object</b> (builtin) - A layer with bike-themed objects but who don't match any other layer"
         },
         {
           "if": "value=binocular",
-          "then": "binocular - Binoculars"
+          "then": "<b>binocular</b> (builtin) - Binoculars"
         },
         {
           "if": "value=birdhide",
-          "then": "birdhide - A birdhide"
+          "then": "<b>birdhide</b> (builtin) - A birdhide"
         },
         {
           "if": "value=brothel",
-          "then": "brothel - An establishment specifically dedicated to prostitution. "
+          "then": "<b>brothel</b> (builtin) - An establishment specifically dedicated to prostitution. "
         },
         {
           "if": "value=cafe_pub",
-          "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
+          "then": "<b>cafe_pub</b> (builtin) - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
         {
           "if": "value=car_rental",
-          "then": "car_rental - Places where you can rent a car"
+          "then": "<b>car_rental</b> (builtin) - Places where you can rent a car"
         },
         {
           "if": "value=charging_station",
-          "then": "charging_station - A charging station"
+          "then": "<b>charging_station</b> (builtin) - A charging station"
         },
         {
           "if": "value=cinema",
-          "then": "cinema -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
+          "then": "<b>cinema</b> (builtin) -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
         },
         {
           "if": "value=climbing",
-          "then": "climbing - A dummy layer which contains tagrenderings, shared among the climbing layers"
+          "then": "<b>climbing</b> (builtin) - A dummy layer which contains tagrenderings, shared among the climbing layers"
         },
         {
           "if": "value=climbing_area",
-          "then": "climbing_area - An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes"
+          "then": "<b>climbing_area</b> (builtin) - An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes"
         },
         {
           "if": "value=climbing_club",
-          "then": "climbing_club - A climbing club or organisation"
+          "then": "<b>climbing_club</b> (builtin) - A climbing club or organisation"
         },
         {
           "if": "value=climbing_gym",
-          "then": "climbing_gym - A climbing gym"
+          "then": "<b>climbing_gym</b> (builtin) - A climbing gym"
         },
         {
           "if": "value=climbing_opportunity",
-          "then": "climbing_opportunity - Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added"
+          "then": "<b>climbing_opportunity</b> (builtin) - Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added"
         },
         {
           "if": "value=climbing_route",
-          "then": "climbing_route - A single climbing route and its properties. Some properties are derived from the containing features"
+          "then": "<b>climbing_route</b> (builtin) - A single climbing route and its properties. Some properties are derived from the containing features"
         },
         {
           "if": "value=clock",
-          "then": "clock - Layer with public clocks"
+          "then": "<b>clock</b> (builtin) - Layer with public clocks"
         },
         {
           "if": "value=conflation",
-          "then": "conflation - If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme."
+          "then": "<b>conflation</b> (builtin) - If the import-button moves OSM points, the imported way points or conflates, a preview is shown. This layer defines how this preview is rendered. This layer cannot be included in a theme."
         },
         {
           "if": "value=crab_address",
-          "then": "crab_address - Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version"
+          "then": "<b>crab_address</b> (builtin) - Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version"
         },
         {
           "if": "value=crossings",
-          "then": "crossings - Crossings for pedestrians and cyclists"
+          "then": "<b>crossings</b> (builtin) - Crossings for pedestrians and cyclists"
         },
         {
           "if": "value=current_view",
-          "then": "current_view - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
+          "then": "<b>current_view</b> (builtin) - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
           "if": "value=cycleways_and_roads",
-          "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
+          "then": "<b>cycleways_and_roads</b> (builtin) - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
         {
           "if": "value=defibrillator",
-          "then": "defibrillator - A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
+          "then": "<b>defibrillator</b> (builtin) - A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
         },
         {
           "if": "value=dentist",
-          "then": "dentist - This layer shows dentist offices"
+          "then": "<b>dentist</b> (builtin) - This layer shows dentist offices"
         },
         {
           "if": "value=direction",
-          "then": "direction - This layer visualizes directions"
+          "then": "<b>direction</b> (builtin) - This layer visualizes directions"
         },
         {
           "if": "value=disaster_response",
-          "then": "disaster_response - This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area."
+          "then": "<b>disaster_response</b> (builtin) - This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area."
         },
         {
           "if": "value=doctors",
-          "then": "doctors - This layer shows doctor offices"
+          "then": "<b>doctors</b> (builtin) - This layer shows doctor offices"
         },
         {
           "if": "value=dogpark",
-          "then": "dogpark - A layer showing dogparks, which are areas where dog are allowed to run without a leash"
+          "then": "<b>dogpark</b> (builtin) - A layer showing dogparks, which are areas where dog are allowed to run without a leash"
         },
         {
           "if": "value=drinking_water",
-          "then": "drinking_water - A layer showing drinking water fountains"
+          "then": "<b>drinking_water</b> (builtin) - A layer showing drinking water fountains"
         },
         {
           "if": "value=elevator",
-          "then": "elevator - This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information"
+          "then": "<b>elevator</b> (builtin) - This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information"
         },
         {
           "if": "value=elongated_coin",
-          "then": "elongated_coin - Layer showing penny presses."
+          "then": "<b>elongated_coin</b> (builtin) - Layer showing penny presses."
         },
         {
           "if": "value=entrance",
-          "then": "entrance - A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)"
+          "then": "<b>entrance</b> (builtin) - A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)"
         },
         {
           "if": "value=etymology",
-          "then": "etymology - All objects which have an etymology known"
+          "then": "<b>etymology</b> (builtin) - All objects which have an etymology known"
         },
         {
           "if": "value=extinguisher",
-          "then": "extinguisher - Map layer to show fire extinguishers."
+          "then": "<b>extinguisher</b> (builtin) - Map layer to show fire extinguishers."
         },
         {
           "if": "value=filters",
-          "then": "filters - This layer acts as library for common filters"
+          "then": "<b>filters</b> (builtin) - This layer acts as library for common filters"
         },
         {
           "if": "value=fire_station",
-          "then": "fire_station - Map layer to show fire stations."
+          "then": "<b>fire_station</b> (builtin) - Map layer to show fire stations."
         },
         {
           "if": "value=fitness_centre",
-          "then": "fitness_centre - Layer showing fitness centres"
+          "then": "<b>fitness_centre</b> (builtin) - Layer showing fitness centres"
         },
         {
           "if": "value=fitness_station",
-          "then": "fitness_station - Find a fitness station near you, and add missing ones."
+          "then": "<b>fitness_station</b> (builtin) - Find a fitness station near you, and add missing ones."
         },
         {
           "if": "value=fixme",
-          "then": "fixme - OSM objects that likely need to be fixed, based on a FIXME tag."
+          "then": "<b>fixme</b> (builtin) - OSM objects that likely need to be fixed, based on a FIXME tag."
         },
         {
           "if": "value=food",
-          "then": "food - A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
+          "then": "<b>food</b> (builtin) - A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
         },
         {
           "if": "value=ghost_bike",
-          "then": "ghost_bike - A layer showing memorials for cyclists, killed in road accidents"
+          "then": "<b>ghost_bike</b> (builtin) - A layer showing memorials for cyclists, killed in road accidents"
         },
         {
           "if": "value=governments",
-          "then": "governments - This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22"
+          "then": "<b>governments</b> (builtin) - This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22"
         },
         {
           "if": "value=gps_location",
-          "then": "gps_location - Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) (except latitude and longitude) returned by the browser, such as `speed`, `altitude`, `heading`, ...."
+          "then": "<b>gps_location</b> (builtin) - Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) (except latitude and longitude) returned by the browser, such as `speed`, `altitude`, `heading`, ...."
         },
         {
           "if": "value=gps_location_history",
-          "then": "gps_location_history - Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object"
+          "then": "<b>gps_location_history</b> (builtin) - Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object"
         },
         {
           "if": "value=gps_track",
-          "then": "gps_track - Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track."
+          "then": "<b>gps_track</b> (builtin) - Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track."
         },
         {
           "if": "value=guidepost",
-          "then": "guidepost - Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
+          "then": "<b>guidepost</b> (builtin) - Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
         },
         {
           "if": "value=hackerspace",
-          "then": "hackerspace - Hackerspace"
+          "then": "<b>hackerspace</b> (builtin) - Hackerspace"
         },
         {
           "if": "value=home_location",
-          "then": "home_location - Meta layer showing the home location of the user. The home location can be set in the [profile settings](https://www.openstreetmap.org/profile/edit) of OpenStreetMap."
+          "then": "<b>home_location</b> (builtin) - Meta layer showing the home location of the user. The home location can be set in the [profile settings](https://www.openstreetmap.org/profile/edit) of OpenStreetMap."
         },
         {
           "if": "value=hospital",
-          "then": "hospital - A layer showing hospital grounds"
+          "then": "<b>hospital</b> (builtin) - A layer showing hospital grounds"
         },
         {
           "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
+          "then": "<b>hotel</b> (builtin) - Layer showing all hotels"
         },
         {
           "if": "value=hydrant",
-          "then": "hydrant - Map layer to show fire hydrants."
+          "then": "<b>hydrant</b> (builtin) - Map layer to show fire hydrants."
         },
         {
           "if": "value=ice_cream",
-          "then": "ice_cream - A place where ice cream is sold over the counter"
+          "then": "<b>ice_cream</b> (builtin) - A place where ice cream is sold over the counter"
         },
         {
           "if": "value=icons",
-          "then": "icons - A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
+          "then": "<b>icons</b> (builtin) - A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
         },
         {
           "if": "value=id_presets",
-          "then": "id_presets - Layer containing various presets and questions generated by ID. These are meant to be reused in other layers by importing the tagRenderings with `id_preset.<tagrendering>"
+          "then": "<b>id_presets</b> (builtin) - Layer containing various presets and questions generated by ID. These are meant to be reused in other layers by importing the tagRenderings with `id_preset.<tagrendering>"
         },
         {
           "if": "value=import_candidate",
-          "then": "import_candidate - Layer used as template in the importHelper"
+          "then": "<b>import_candidate</b> (builtin) - Layer used as template in the importHelper"
         },
         {
           "if": "value=indoors",
-          "then": "indoors - Basic indoor mapping: shows room outlines"
+          "then": "<b>indoors</b> (builtin) - Basic indoor mapping: shows room outlines"
         },
         {
           "if": "value=information_board",
-          "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
+          "then": "<b>information_board</b> (builtin) - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
+        },
+        {
+          "if": "value=item_with_image",
+          "then": "<b>item_with_image</b> (builtin) - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
         },
         {
           "if": "value=kerbs",
-          "then": "kerbs - A layer showing kerbs."
+          "then": "<b>kerbs</b> (builtin) - A layer showing kerbs."
         },
         {
           "if": "value=kindergarten_childcare",
-          "then": "kindergarten_childcare - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
+          "then": "<b>kindergarten_childcare</b> (builtin) - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
         },
         {
           "if": "value=last_click",
-          "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
+          "then": "<b>last_click</b> (builtin) - This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed"
         },
         {
           "if": "value=love_hotel",
-          "then": "love_hotel - A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
+          "then": "<b>love_hotel</b> (builtin) - A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities"
         },
         {
           "if": "value=map",
-          "then": "map - A map, meant for tourists which is permanently installed in the public space"
+          "then": "<b>map</b> (builtin) - A map, meant for tourists which is permanently installed in the public space"
         },
         {
           "if": "value=maproulette",
-          "then": "maproulette - Layer showing all tasks in MapRoulette"
+          "then": "<b>maproulette</b> (builtin) - Layer showing all tasks in MapRoulette"
         },
         {
           "if": "value=maproulette_challenge",
-          "then": "maproulette_challenge - Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this."
+          "then": "<b>maproulette_challenge</b> (builtin) - Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this."
         },
         {
           "if": "value=maxspeed",
-          "then": "maxspeed - Shows the allowed speed for every road"
+          "then": "<b>maxspeed</b> (builtin) - Shows the allowed speed for every road"
         },
         {
           "if": "value=memorial",
-          "then": "memorial - Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on"
+          "then": "<b>memorial</b> (builtin) - Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on"
         },
         {
           "if": "value=mountain_rescue",
-          "then": "mountain_rescue - A building where first aid responders store material and might be on watch"
+          "then": "<b>mountain_rescue</b> (builtin) - A building where first aid responders store material and might be on watch"
         },
         {
           "if": "value=named_streets",
-          "then": "named_streets - Hidden layer with all streets which have a name. Useful to detect addresses"
+          "then": "<b>named_streets</b> (builtin) - Hidden layer with all streets which have a name. Useful to detect addresses"
         },
         {
           "if": "value=nature_reserve",
-          "then": "nature_reserve - A nature reserve is an area where nature can take its course"
+          "then": "<b>nature_reserve</b> (builtin) - A nature reserve is an area where nature can take its course"
         },
         {
           "if": "value=note",
-          "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
+          "then": "<b>note</b> (builtin) - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
         },
         {
           "if": "value=observation_tower",
-          "then": "observation_tower - Towers with a panoramic view"
+          "then": "<b>observation_tower</b> (builtin) - Towers with a panoramic view"
         },
         {
           "if": "value=osm_community_index",
-          "then": "osm_community_index - A layer showing the OpenStreetMap Communities"
+          "then": "<b>osm_community_index</b> (builtin) - A layer showing the OpenStreetMap Communities"
         },
         {
           "if": "value=parcel_lockers",
-          "then": "parcel_lockers - Layer showing parcel lockers for collecting and sending parcels."
+          "then": "<b>parcel_lockers</b> (builtin) - Layer showing parcel lockers for collecting and sending parcels."
         },
         {
           "if": "value=parking",
-          "then": "parking - A layer showing car parkings"
+          "then": "<b>parking</b> (builtin) - A layer showing car parkings"
         },
         {
           "if": "value=parking_spaces",
-          "then": "parking_spaces - Layer showing individual parking spaces."
+          "then": "<b>parking_spaces</b> (builtin) - Layer showing individual parking spaces."
         },
         {
           "if": "value=parking_ticket_machine",
-          "then": "parking_ticket_machine - Layer with parking ticket machines to pay for parking."
+          "then": "<b>parking_ticket_machine</b> (builtin) - Layer with parking ticket machines to pay for parking."
         },
         {
           "if": "value=pedestrian_path",
-          "then": "pedestrian_path - Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer"
+          "then": "<b>pedestrian_path</b> (builtin) - Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer"
         },
         {
           "if": "value=pharmacy",
-          "then": "pharmacy - A layer showing pharmacies, which (probably) dispense prescription drugs"
+          "then": "<b>pharmacy</b> (builtin) - A layer showing pharmacies, which (probably) dispense prescription drugs"
         },
         {
           "if": "value=physiotherapist",
-          "then": "physiotherapist - This layer shows physiotherapists"
+          "then": "<b>physiotherapist</b> (builtin) - This layer shows physiotherapists"
         },
         {
           "if": "value=picnic_table",
-          "then": "picnic_table - The layer showing picnic tables"
+          "then": "<b>picnic_table</b> (builtin) - The layer showing picnic tables"
         },
         {
           "if": "value=play_forest",
-          "then": "play_forest - Een speelbos is een vrij toegankelijke zone in een bos"
+          "then": "<b>play_forest</b> (builtin) - Een speelbos is een vrij toegankelijke zone in een bos"
         },
         {
           "if": "value=playground",
-          "then": "playground - Playgrounds"
+          "then": "<b>playground</b> (builtin) - Playgrounds"
+        },
+        {
+          "if": "value=playground_equipment",
+          "then": "<b>playground_equipment</b> (builtin) - Layer showing playground equipment"
         },
         {
           "if": "value=postboxes",
-          "then": "postboxes - The layer showing postboxes."
+          "then": "<b>postboxes</b> (builtin) - The layer showing postboxes."
         },
         {
           "if": "value=postoffices",
-          "then": "postoffices - A layer showing post offices."
+          "then": "<b>postoffices</b> (builtin) - A layer showing post offices."
         },
         {
           "if": "value=public_bookcase",
-          "then": "public_bookcase - A streetside cabinet with books, accessible to anyone"
+          "then": "<b>public_bookcase</b> (builtin) - A streetside cabinet with books, accessible to anyone"
         },
         {
           "if": "value=questions",
-          "then": "questions - Special library layer which does not need a '.questions'-prefix before being imported"
+          "then": "<b>questions</b> (builtin) - Special library layer which does not need a '.questions'-prefix before being imported"
         },
         {
           "if": "value=railway_platforms",
-          "then": "railway_platforms - Find every platform in the station, and the train routes that use them."
+          "then": "<b>railway_platforms</b> (builtin) - Find every platform in the station, and the train routes that use them."
         },
         {
           "if": "value=rainbow_crossings",
-          "then": "rainbow_crossings - A layer showing pedestrian crossings with rainbow paintings"
+          "then": "<b>rainbow_crossings</b> (builtin) - A layer showing pedestrian crossings with rainbow paintings"
         },
         {
           "if": "value=range",
-          "then": "range - Meta-layer, simply showing a bbox in red"
+          "then": "<b>range</b> (builtin) - Meta-layer, simply showing a bbox in red"
         },
         {
           "if": "value=reception_desk",
-          "then": "reception_desk - A layer showing where the reception desks are and which asks some accessibility information"
+          "then": "<b>reception_desk</b> (builtin) - A layer showing where the reception desks are and which asks some accessibility information"
         },
         {
           "if": "value=recycling",
-          "then": "recycling - A layer with recycling containers and centres"
+          "then": "<b>recycling</b> (builtin) - A layer with recycling containers and centres"
         },
         {
           "if": "value=route_marker",
-          "then": "route_marker - Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
+          "then": "<b>route_marker</b> (builtin) - Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route."
         },
         {
           "if": "value=school",
-          "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+          "then": "<b>school</b> (builtin) - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
         },
         {
           "if": "value=selected_element",
-          "then": "selected_element - Highlights the currently selected element. Override this layer to have different colors"
+          "then": "<b>selected_element</b> (builtin) - Highlights the currently selected element. Override this layer to have different colors"
         },
         {
           "if": "value=shelter",
-          "then": "shelter - Layer showing shelter structures"
+          "then": "<b>shelter</b> (builtin) - Layer showing shelter structures"
         },
         {
           "if": "value=shops",
-          "then": "shops - A shop"
+          "then": "<b>shops</b> (builtin) - A shop"
         },
         {
           "if": "value=shower",
-          "then": "shower - A layer showing (public) showers"
+          "then": "<b>shower</b> (builtin) - A layer showing (public) showers"
         },
         {
           "if": "value=ski_piste",
-          "then": "ski_piste - Ski and snowboard pistes"
+          "then": "<b>ski_piste</b> (builtin) - Ski and snowboard pistes"
         },
         {
           "if": "value=slow_roads",
-          "then": "slow_roads - All carfree roads"
+          "then": "<b>slow_roads</b> (builtin) - All carfree roads"
+        },
+        {
+          "if": "value=souvenir_coin",
+          "then": "<b>souvenir_coin</b> (builtin) - Layer showing machines selling souvenir coins"
+        },
+        {
+          "if": "value=souvenir_note",
+          "then": "<b>souvenir_note</b> (builtin) - Layer showing machines selling souvenir banknotes"
         },
         {
           "if": "value=speed_camera",
-          "then": "speed_camera - Layer showing speed cameras"
+          "then": "<b>speed_camera</b> (builtin) - Layer showing speed cameras"
         },
         {
           "if": "value=speed_display",
-          "then": "speed_display - Layer showing speed displays that alert drivers of their speed."
+          "then": "<b>speed_display</b> (builtin) - Layer showing speed displays that alert drivers of their speed."
         },
         {
           "if": "value=split_point",
-          "then": "split_point - Layer rendering the little scissors for the minimap in the 'splitRoadWizard'"
+          "then": "<b>split_point</b> (builtin) - Layer rendering the little scissors for the minimap in the 'splitRoadWizard'"
         },
         {
           "if": "value=split_road",
-          "then": "split_road - Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible"
+          "then": "<b>split_road</b> (builtin) - Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible"
         },
         {
           "if": "value=sport_pitch",
-          "then": "sport_pitch - A sport pitch"
+          "then": "<b>sport_pitch</b> (builtin) - A sport pitch"
         },
         {
           "if": "value=sports_centre",
-          "then": "sports_centre - Indoor and outdoor sports centres can be found on this layer"
+          "then": "<b>sports_centre</b> (builtin) - Indoor and outdoor sports centres can be found on this layer"
         },
         {
           "if": "value=stairs",
-          "then": "stairs - Layer showing stairs and escalators"
+          "then": "<b>stairs</b> (builtin) - Layer showing stairs and escalators"
         },
         {
           "if": "value=street_lamps",
-          "then": "street_lamps - A layer showing street lights"
+          "then": "<b>street_lamps</b> (builtin) - A layer showing street lights"
         },
         {
           "if": "value=stripclub",
-          "then": "stripclub - A venue where erotic dance, striptease, or lap dances are performed commercially. "
+          "then": "<b>stripclub</b> (builtin) - A venue where erotic dance, striptease, or lap dances are performed commercially. "
+        },
+        {
+          "if": "value=summary",
+          "then": "<b>summary</b> (builtin) - Special layer which shows `count`"
         },
         {
           "if": "value=surveillance_camera",
-          "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+          "then": "<b>surveillance_camera</b> (builtin) - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
         },
         {
           "if": "value=tertiary_education",
-          "then": "tertiary_education - Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)"
+          "then": "<b>tertiary_education</b> (builtin) - Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)"
         },
         {
           "if": "value=ticket_machine",
-          "then": "ticket_machine - Find ticket machines for public transport tickets"
+          "then": "<b>ticket_machine</b> (builtin) - Find ticket machines for public transport tickets"
         },
         {
           "if": "value=ticket_validator",
-          "then": "ticket_validator - Find ticket validators to validate public transport tickets"
+          "then": "<b>ticket_validator</b> (builtin) - Find ticket validators to validate public transport tickets"
         },
         {
           "if": "value=toilet",
-          "then": "toilet - A layer showing (public) toilets"
+          "then": "<b>toilet</b> (builtin) - A layer showing (public) toilets"
         },
         {
           "if": "value=toilet_at_amenity",
-          "then": "toilet_at_amenity - A layer showing (public) toilets located at different places."
+          "then": "<b>toilet_at_amenity</b> (builtin) - A layer showing (public) toilets located at different places."
         },
         {
           "if": "value=trail",
-          "then": "trail - Waymarked trails"
+          "then": "<b>trail</b> (builtin) - Waymarked trails"
         },
         {
           "if": "value=transit_routes",
-          "then": "transit_routes - Layer showing bus lines"
+          "then": "<b>transit_routes</b> (builtin) - Layer showing bus lines"
         },
         {
           "if": "value=transit_stops",
-          "then": "transit_stops - Layer showing different types of transit stops."
+          "then": "<b>transit_stops</b> (builtin) - Layer showing different types of transit stops."
         },
         {
           "if": "value=tree_node",
-          "then": "tree_node - A layer showing trees"
+          "then": "<b>tree_node</b> (builtin) - A layer showing trees"
         },
         {
           "if": "value=trolley_bay",
-          "then": "trolley_bay - Find trolley bays for shopping trolleys."
+          "then": "<b>trolley_bay</b> (builtin) - Find trolley bays for shopping trolleys."
         },
         {
           "if": "value=unit",
-          "then": "unit - Library layer with all common units.  Units can _only_ be imported from this file."
+          "then": "<b>unit</b> (builtin) - Library layer with all common units.  Units can _only_ be imported from this file."
         },
         {
           "if": "value=usersettings",
-          "then": "usersettings - A special layer which is not meant to be shown on a map, but which is used to set user settings"
+          "then": "<b>usersettings</b> (builtin) - A special layer which is not meant to be shown on a map, but which is used to set user settings"
         },
         {
           "if": "value=vending_machine",
-          "then": "vending_machine - Layer showing vending machines"
+          "then": "<b>vending_machine</b> (builtin) - Layer showing vending machines"
         },
         {
           "if": "value=veterinary",
-          "then": "veterinary - A layer showing veterinarians"
+          "then": "<b>veterinary</b> (builtin) - A layer showing veterinarians"
         },
         {
           "if": "value=viewpoint",
-          "then": "viewpoint - A nice viewpoint or nice view. Ideal to add an image if no other category fits"
+          "then": "<b>viewpoint</b> (builtin) - A nice viewpoint or nice view. Ideal to add an image if no other category fits"
         },
         {
           "if": "value=village_green",
-          "then": "village_green - A layer showing village-green (which are communal green areas, but not quite parks)"
+          "then": "<b>village_green</b> (builtin) - A layer showing village-green (which are communal green areas, but not quite parks)"
         },
         {
           "if": "value=visitor_information_centre",
-          "then": "visitor_information_centre - A visitor center offers information about a specific attraction or place of interest where it is located."
+          "then": "<b>visitor_information_centre</b> (builtin) - A visitor center offers information about a specific attraction or place of interest where it is located."
         },
         {
           "if": "value=walls_and_buildings",
-          "then": "walls_and_buildings - Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user."
+          "then": "<b>walls_and_buildings</b> (builtin) - Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user."
         },
         {
           "if": "value=waste_basket",
-          "then": "waste_basket - This is a public waste basket, thrash can, where you can throw away your thrash."
+          "then": "<b>waste_basket</b> (builtin) - This is a public waste basket, thrash can, where you can throw away your thrash."
         },
         {
           "if": "value=waste_disposal",
-          "then": "waste_disposal - Waste Disposal Bin, medium to large bin for disposal of (household) waste"
+          "then": "<b>waste_disposal</b> (builtin) - Waste Disposal Bin, medium to large bin for disposal of (household) waste"
         },
         {
           "if": "value=windturbine",
-          "then": "windturbine - Modern windmills generating electricity"
+          "then": "<b>windturbine</b> (builtin) - Modern windmills generating electricity"
         }
       ]
     },
@@ -958,10 +978,6 @@
                   "osmTags": {
                     "$ref": "#/definitions/TagConfigJson",
                     "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
-                  },
-                  "maxCacheAge": {
-                    "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
-                    "type": "number"
                   }
                 },
                 "required": [
@@ -978,10 +994,6 @@
                   "geoJsonZoomLevel": {
                     "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
                     "type": "number"
-                  },
-                  "isOsmCache": {
-                    "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
-                    "type": "boolean"
                   },
                   "mercatorCrs": {
                     "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
@@ -1025,6 +1037,10 @@
                 "type": "string"
               }
             ]
+          },
+          "isCounted": {
+            "description": "question: should this layer be included in the summary counts?\n\nThe layer server can give summary counts for a tile.\nThis should however be disabled for some layers, e.g. because there are too many features (walls_and_buildings) or because the count is irrelevant.\n\nifunset: Do count\niffalse: Do not include the counts\niftrue: Do include the count",
+            "type": "boolean"
           },
           "minzoom": {
             "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\ngroup: Basic\ntype: nat\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
@@ -1223,8 +1239,11 @@
             ]
           },
           "popupInFloatover": {
-            "description": "Question: Should the information for this layer be shown in the sidebar or in a splash screen?\n\nIf set, open the selectedElementView in a floatOver instead of on the right.\n\niftrue: show the infobox in the splashscreen floating over the entire UI\niffalse: show the infobox in a sidebar on the right\ngroup: advanced\ndefault: sidebar",
-            "type": "boolean"
+            "description": "Question: Should the information for this layer be shown in the sidebar or in a splash screen?\n\nIf set, open the selectedElementView in a floatOver instead of on the right.\n\niftrue: show the infobox in the splashscreen floating over the entire UI; hide the title bar\niffalse: show the infobox in a sidebar on the right\nsuggestions: return [{if: \"value=title\", then: \"Show in a floatover and show the title bar\"}]\ngroup: advanced\ndefault: sidebar",
+            "type": [
+              "string",
+              "boolean"
+            ]
           },
           "titleIcons": {
             "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nUse `auto:<tagrenderingId>` to automatically create an icon based on a tagRendering which has icons\n\nType: icon[]\ngroup: infobox",
@@ -1640,7 +1659,7 @@
             }
           },
           "filter": {
-            "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one\n\ngroup: filters",
+            "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\n\n\ngroup: filters",
             "anyOf": [
               {
                 "type": "array",
@@ -1781,11 +1800,45 @@
             "type": "boolean"
           },
           "units": {
+            "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]",
             "type": "array",
             "items": {
               "anyOf": [
                 {
-                  "$ref": "#/definitions/default_2"
+                  "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
+                  "type": "object",
+                  "properties": {
+                    "quantity": {
+                      "description": "What is quantified? E.g. 'speed', 'length' (including width, diameter, ...), 'electric tension', 'electric current', 'duration'",
+                      "type": "string"
+                    },
+                    "appliesToKey": {
+                      "description": "Every key from this list will be normalized.\n\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "eraseInvalidValues": {
+                      "description": "If set, invalid values will be erased in the MC application (but not in OSM of course!)\nBe careful with setting this",
+                      "type": "boolean"
+                    },
+                    "applicableUnits": {
+                      "description": "The possible denominations for this unit.\nFor length, denominations could be \"meter\", \"kilometer\", \"miles\", \"foot\"",
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/DenominationConfigJson"
+                      }
+                    },
+                    "defaultInput": {
+                      "description": "In some cases, the default denomination is not the most user friendly to input.\nE.g., when measuring kerb heights, it is illogical to ask contributors to input an amount in meters.\n\nWhen a default input method should be used, this can be specified by setting the canonical denomination here, e.g.\n`defaultInput: \"cm\"`. This must be a denomination which appears in the applicableUnits",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "applicableUnits"
+                  ],
+                  "additionalProperties": false
                 },
                 {
                   "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
@@ -1932,10 +1985,6 @@
           "osmTags": {
             "$ref": "#/definitions/TagConfigJson",
             "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
-          },
-          "maxCacheAge": {
-            "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
-            "type": "number"
           }
         },
         "required": [
@@ -1952,10 +2001,6 @@
           "geoJsonZoomLevel": {
             "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
             "type": "number"
-          },
-          "isOsmCache": {
-            "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
-            "type": "boolean"
           },
           "mercatorCrs": {
             "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
@@ -2019,22 +2064,6 @@
     "path": [
       "layers",
       "source",
-      "maxCacheAge"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "nat",
-      "group": "expert",
-      "default": "30 days",
-      "question": "How long (in seconds) is the data allowed to remain cached until it must be refreshed?"
-    },
-    "type": "number",
-    "description": "The maximum amount of seconds that a tile is allowed to linger in the cache"
-  },
-  {
-    "path": [
-      "layers",
-      "source",
       "geoJson"
     ],
     "required": true,
@@ -2058,22 +2087,6 @@
     },
     "type": "number",
     "description": "To load a tiled geojson layer, set the zoomlevel of the tiles"
-  },
-  {
-    "path": [
-      "layers",
-      "source",
-      "isOsmCache"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert",
-      "question": "Is this geojson a cache of OpenStreetMap data?",
-      "iftrue": "this is based on OpenStreetMap and can thus be edited",
-      "ifunset": "This is not an OpenStreetMap cache"
-    },
-    "type": "boolean",
-    "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible"
   },
   {
     "path": [
@@ -2209,6 +2222,21 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "isCounted"
+    ],
+    "required": false,
+    "hints": {
+      "question": "should this layer be included in the summary counts?",
+      "iftrue": "Do include the count",
+      "iffalse": "Do not include the counts",
+      "ifunset": "Do count"
+    },
+    "type": "boolean",
+    "description": "The layer server can give summary counts for a tile.\nThis should however be disabled for some layers, e.g. because there are too many features (walls_and_buildings) or because the count is irrelevant."
   },
   {
     "path": [
@@ -2951,10 +2979,19 @@
       "group": "advanced",
       "default": "sidebar",
       "question": "Should the information for this layer be shown in the sidebar or in a splash screen?",
-      "iftrue": "show the infobox in the splashscreen floating over the entire UI",
-      "iffalse": "show the infobox in a sidebar on the right"
+      "iftrue": "show the infobox in the splashscreen floating over the entire UI; hide the title bar",
+      "iffalse": "show the infobox in a sidebar on the right",
+      "suggestions": [
+        {
+          "if": "value=title",
+          "then": "Show in a floatover and show the title bar"
+        }
+      ]
     },
-    "type": "boolean",
+    "type": [
+      "string",
+      "boolean"
+    ],
     "description": "If set, open the selectedElementView in a floatOver instead of on the right."
   },
   {
@@ -3558,7 +3595,12 @@
         },
         {
           "if": "value=projected_centerpoint",
-          "then": "Show an icon for line (way) object near the centroid location, but moved onto the line"
+          "then": "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"
+        },
+        null,
+        {
+          "if": "value=polygon_centroid",
+          "then": "Show an icon at a polygon centroid (but not if it is a way)"
         }
       ],
       "multianswer": "true"
@@ -11611,7 +11653,7 @@
       "ifunset": "Ways are rendered with a full line"
     },
     "type": "string",
-    "description": "The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a mapbox limitation"
+    "description": "The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a MapLibre limitation (see https://github.com/maplibre/maplibre-gl-js/issues/1235)"
   },
   {
     "path": [
@@ -12538,6 +12580,10 @@
           "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
         },
         {
+          "if": "value=item_with_image",
+          "then": "item_with_image - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
+        },
+        {
           "if": "value=kerbs",
           "then": "kerbs - A layer showing kerbs."
         },
@@ -12547,7 +12593,7 @@
         },
         {
           "if": "value=last_click",
-          "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
+          "then": "last_click - This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed"
         },
         {
           "if": "value=love_hotel",
@@ -12638,6 +12684,10 @@
           "then": "playground - Playgrounds"
         },
         {
+          "if": "value=playground_equipment",
+          "then": "playground_equipment - Layer showing playground equipment"
+        },
+        {
           "if": "value=postboxes",
           "then": "postboxes - The layer showing postboxes."
         },
@@ -12706,6 +12756,14 @@
           "then": "slow_roads - All carfree roads"
         },
         {
+          "if": "value=souvenir_coin",
+          "then": "souvenir_coin - Layer showing machines selling souvenir coins"
+        },
+        {
+          "if": "value=souvenir_note",
+          "then": "souvenir_note - Layer showing machines selling souvenir banknotes"
+        },
+        {
           "if": "value=speed_camera",
           "then": "speed_camera - Layer showing speed cameras"
         },
@@ -12740,6 +12798,10 @@
         {
           "if": "value=stripclub",
           "then": "stripclub - A venue where erotic dance, striptease, or lap dances are performed commercially. "
+        },
+        {
+          "if": "value=summary",
+          "then": "summary - Special layer which shows `count`"
         },
         {
           "if": "value=surveillance_camera",
@@ -21304,7 +21366,7 @@
         ]
       }
     ],
-    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one"
+    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one."
   },
   {
     "path": [
@@ -21860,6 +21922,56 @@
     },
     "type": "boolean",
     "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\nIf the way is part of a relation, MapComplete will attempt to update this relation as well"
+  },
+  {
+    "path": [
+      "layers",
+      "units"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "description": "What is quantified? E.g. 'speed', 'length' (including width, diameter, ...), 'electric tension', 'electric current', 'duration'",
+            "type": "string"
+          },
+          "appliesToKey": {
+            "description": "Every key from this list will be normalized.\n\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "eraseInvalidValues": {
+            "description": "If set, invalid values will be erased in the MC application (but not in OSM of course!)\nBe careful with setting this",
+            "type": "boolean"
+          },
+          "applicableUnits": {
+            "description": "The possible denominations for this unit.\nFor length, denominations could be \"meter\", \"kilometer\", \"miles\", \"foot\"",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DenominationConfigJson"
+            }
+          },
+          "defaultInput": {
+            "description": "In some cases, the default denomination is not the most user friendly to input.\nE.g., when measuring kerb heights, it is illogical to ask contributors to input an amount in meters.\n\nWhen a default input method should be used, this can be specified by setting the canonical denomination here, e.g.\n`defaultInput: \"cm\"`. This must be a denomination which appears in the applicableUnits",
+            "type": "string"
+          }
+        },
+        "required": [
+          "applicableUnits"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
+      }
+    ],
+    "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]"
   },
   {
     "path": [
@@ -22170,10 +22282,6 @@
           "osmTags": {
             "$ref": "#/definitions/TagConfigJson",
             "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
-          },
-          "maxCacheAge": {
-            "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
-            "type": "number"
           }
         },
         "required": [
@@ -22190,10 +22298,6 @@
           "geoJsonZoomLevel": {
             "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
             "type": "number"
-          },
-          "isOsmCache": {
-            "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
-            "type": "boolean"
           },
           "mercatorCrs": {
             "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
@@ -22259,23 +22363,6 @@
       "layers",
       "override",
       "source",
-      "maxCacheAge"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "nat",
-      "group": "expert",
-      "default": "30 days",
-      "question": "How long (in seconds) is the data allowed to remain cached until it must be refreshed?"
-    },
-    "type": "number",
-    "description": "The maximum amount of seconds that a tile is allowed to linger in the cache"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "source",
       "geoJson"
     ],
     "required": true,
@@ -22300,23 +22387,6 @@
     },
     "type": "number",
     "description": "To load a tiled geojson layer, set the zoomlevel of the tiles"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "source",
-      "isOsmCache"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert",
-      "question": "Is this geojson a cache of OpenStreetMap data?",
-      "iftrue": "this is based on OpenStreetMap and can thus be edited",
-      "ifunset": "This is not an OpenStreetMap cache"
-    },
-    "type": "boolean",
-    "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible"
   },
   {
     "path": [
@@ -22458,6 +22528,22 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "isCounted"
+    ],
+    "required": false,
+    "hints": {
+      "question": "should this layer be included in the summary counts?",
+      "iftrue": "Do include the count",
+      "iffalse": "Do not include the counts",
+      "ifunset": "Do count"
+    },
+    "type": "boolean",
+    "description": "The layer server can give summary counts for a tile.\nThis should however be disabled for some layers, e.g. because there are too many features (walls_and_buildings) or because the count is irrelevant."
   },
   {
     "path": [
@@ -23225,10 +23311,19 @@
       "group": "advanced",
       "default": "sidebar",
       "question": "Should the information for this layer be shown in the sidebar or in a splash screen?",
-      "iftrue": "show the infobox in the splashscreen floating over the entire UI",
-      "iffalse": "show the infobox in a sidebar on the right"
+      "iftrue": "show the infobox in the splashscreen floating over the entire UI; hide the title bar",
+      "iffalse": "show the infobox in a sidebar on the right",
+      "suggestions": [
+        {
+          "if": "value=title",
+          "then": "Show in a floatover and show the title bar"
+        }
+      ]
     },
-    "type": "boolean",
+    "type": [
+      "string",
+      "boolean"
+    ],
     "description": "If set, open the selectedElementView in a floatOver instead of on the right."
   },
   {
@@ -23857,7 +23952,12 @@
         },
         {
           "if": "value=projected_centerpoint",
-          "then": "Show an icon for line (way) object near the centroid location, but moved onto the line"
+          "then": "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"
+        },
+        null,
+        {
+          "if": "value=polygon_centroid",
+          "then": "Show an icon at a polygon centroid (but not if it is a way)"
         }
       ],
       "multianswer": "true"
@@ -32151,7 +32251,7 @@
       "ifunset": "Ways are rendered with a full line"
     },
     "type": "string",
-    "description": "The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a mapbox limitation"
+    "description": "The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a MapLibre limitation (see https://github.com/maplibre/maplibre-gl-js/issues/1235)"
   },
   {
     "path": [
@@ -33104,6 +33204,10 @@
           "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
         },
         {
+          "if": "value=item_with_image",
+          "then": "item_with_image - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
+        },
+        {
           "if": "value=kerbs",
           "then": "kerbs - A layer showing kerbs."
         },
@@ -33113,7 +33217,7 @@
         },
         {
           "if": "value=last_click",
-          "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
+          "then": "last_click - This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed"
         },
         {
           "if": "value=love_hotel",
@@ -33204,6 +33308,10 @@
           "then": "playground - Playgrounds"
         },
         {
+          "if": "value=playground_equipment",
+          "then": "playground_equipment - Layer showing playground equipment"
+        },
+        {
           "if": "value=postboxes",
           "then": "postboxes - The layer showing postboxes."
         },
@@ -33272,6 +33380,14 @@
           "then": "slow_roads - All carfree roads"
         },
         {
+          "if": "value=souvenir_coin",
+          "then": "souvenir_coin - Layer showing machines selling souvenir coins"
+        },
+        {
+          "if": "value=souvenir_note",
+          "then": "souvenir_note - Layer showing machines selling souvenir banknotes"
+        },
+        {
           "if": "value=speed_camera",
           "then": "speed_camera - Layer showing speed cameras"
         },
@@ -33306,6 +33422,10 @@
         {
           "if": "value=stripclub",
           "then": "stripclub - A venue where erotic dance, striptease, or lap dances are performed commercially. "
+        },
+        {
+          "if": "value=summary",
+          "then": "summary - Special layer which shows `count`"
         },
         {
           "if": "value=surveillance_camera",
@@ -42168,7 +42288,7 @@
         ]
       }
     ],
-    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one"
+    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one."
   },
   {
     "path": [
@@ -42747,6 +42867,57 @@
     },
     "type": "boolean",
     "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\nIf the way is part of a relation, MapComplete will attempt to update this relation as well"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "units"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "description": "What is quantified? E.g. 'speed', 'length' (including width, diameter, ...), 'electric tension', 'electric current', 'duration'",
+            "type": "string"
+          },
+          "appliesToKey": {
+            "description": "Every key from this list will be normalized.\n\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "eraseInvalidValues": {
+            "description": "If set, invalid values will be erased in the MC application (but not in OSM of course!)\nBe careful with setting this",
+            "type": "boolean"
+          },
+          "applicableUnits": {
+            "description": "The possible denominations for this unit.\nFor length, denominations could be \"meter\", \"kilometer\", \"miles\", \"foot\"",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DenominationConfigJson"
+            }
+          },
+          "defaultInput": {
+            "description": "In some cases, the default denomination is not the most user friendly to input.\nE.g., when measuring kerb heights, it is illogical to ask contributors to input an amount in meters.\n\nWhen a default input method should be used, this can be specified by setting the canonical denomination here, e.g.\n`defaultInput: \"cm\"`. This must be a denomination which appears in the applicableUnits",
+            "type": "string"
+          }
+        },
+        "required": [
+          "applicableUnits"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
+      }
+    ],
+    "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]"
   },
   {
     "path": [
@@ -43024,6 +43195,15 @@
   },
   {
     "path": [
+      "tileLayerSources"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "object",
+    "description": "This class has grown beyond the point of only containing Raster Layers"
+  },
+  {
+    "path": [
       "tileLayerSources",
       "name"
     ],
@@ -43291,10 +43471,11 @@
       "group": "advanced",
       "question": "Should the map use elevation data to give a 3D-feel?",
       "iftrue": "Use elevation and render 3D",
-      "iffalse": "Do not use terrain"
+      "iffalse": "Do not use terrain",
+      "ifunset": "MapComplete default: don't use terrain"
     },
     "type": "boolean",
-    "description": "This is especially useful for hiking maps, skiing maps etc...\nfunset: MapComplete default: don't use terrain"
+    "description": "This is especially useful for hiking maps, skiing maps etc..."
   },
   {
     "path": [
@@ -43322,15 +43503,6 @@
     },
     "type": "number",
     "description": "If a query takes too long, the overpass-server will abort.\nOnce can set the amount of time before overpass gives up here."
-  },
-  {
-    "path": [
-      "widenFactor"
-    ],
-    "required": false,
-    "hints": {},
-    "type": "number",
-    "description": "When a query is run, the data within bounds of the visible map is loaded.\nHowever, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.\nFor this, the bounds are widened in order to make a small pan still within bounds of the loaded data.\nIF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3"
   },
   {
     "path": [

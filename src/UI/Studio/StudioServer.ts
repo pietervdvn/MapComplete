@@ -4,6 +4,10 @@ import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import { Store } from "../../Logic/UIEventSource"
 import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
 
+/**
+ * A small class wrapping around the Server API.
+ * This is _not_ the script which actually hosts!
+ */
 export default class StudioServer {
     private readonly url: string
     private readonly _userId: Store<number>
@@ -29,7 +33,7 @@ export default class StudioServer {
             category: "layers" | "themes"
         }[] = []
         for (let file of allFiles) {
-            let parts = file.split("/")
+            const parts = file.split("/")
             let owner = Number(parts[0])
             if (!isNaN(owner)) {
                 parts.splice(0, 1)
@@ -55,7 +59,7 @@ export default class StudioServer {
         uid?: number
     ): Promise<LayerConfigJson | LayoutConfigJson> {
         try {
-            return await Utils.downloadJson(this.urlFor(layerId, category, uid))
+            return <any> await Utils.downloadJson(this.urlFor(layerId, category, uid))
         } catch (e) {
             return undefined
         }

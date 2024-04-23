@@ -104,7 +104,7 @@ export default {
       "type": "boolean"
     },
     "layers": {
-      "description": "question: What layers should this map show?\ntype: layer[]\ntypes: hidden | layer | hidden\ngroup: layers\nsuggestions: return Array.from(layers.keys()).map(key => ({if: \"value=\"+key, then: key+\" - \"+layers.get(key).description}))\nEvery layer contains a description of which feature to display - the overpassTags which are queried.\nInstead of running one query for every layer, the query is fused.\n\nAfterwards, every layer is given the list of features.\nEvery layer takes away the features that match with them*, and give the leftovers to the next layers.\n\nThis implies that the _order_ of the layers is important in the case of features with the same tags;\nas the later layers might never receive their feature.\n\n*layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself\n\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\n\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\n\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\n\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```",
+      "description": "question: What layers should this map show?\ntype: layer[]\ntypes: hidden | layer | hidden\ngroup: layers\nsuggestions: return Array.from(layers.keys()).map(key => ({if: \"value=\"+key, then: \"<b>\"+key+\"</b> (builtin) - \"+layers.get(key).description}))\nEvery layer contains a description of which feature to display - the overpassTags which are queried.\nInstead of running one query for every layer, the query is fused.\n\nAfterwards, every layer is given the list of features.\nEvery layer takes away the features that match with them*, and give the leftovers to the next layers.\n\nThis implies that the _order_ of the layers is important in the case of features with the same tags;\nas the later layers might never receive their feature.\n\n*layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself\n\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\n\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\n\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\n\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```",
       "type": "array",
       "items": {
         "anyOf": [
@@ -272,7 +272,7 @@ export default {
       "type": "boolean"
     },
     "enableTerrain": {
-      "description": "question: Should the map use elevation data to give a 3D-feel?\n\nThis is especially useful for hiking maps, skiing maps etc...\n\nfunset: MapComplete default: don't use terrain\niftrue: Use elevation and render 3D\niffalse: Do not use terrain\ngroup: advanced",
+      "description": "question: Should the map use elevation data to give a 3D-feel?\n\nThis is especially useful for hiking maps, skiing maps etc...\n\nifunset: MapComplete default: don't use terrain\niftrue: Use elevation and render 3D\niffalse: Do not use terrain\ngroup: advanced",
       "type": "boolean"
     },
     "overpassUrl": {
@@ -284,10 +284,6 @@ export default {
     },
     "overpassTimeout": {
       "description": "question: After how much seconds should the overpass-query stop?\nIf a query takes too long, the overpass-server will abort.\nOnce can set the amount of time before overpass gives up here.\nifunset: use the default amount of 30 seconds as timeout\ntype: pnat\ngroup: advanced",
-      "type": "number"
-    },
-    "widenFactor": {
-      "description": "When a query is run, the data within bounds of the visible map is loaded.\nHowever, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.\nFor this, the bounds are widened in order to make a small pan still within bounds of the loaded data.\n\nIF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3",
       "type": "number"
     },
     "overpassMaxZoom": {
@@ -829,7 +825,7 @@ export default {
       "type": "object",
       "properties": {
         "location": {
-          "description": "question: At what location should this icon be shown?\nmultianswer: true\nsuggestions: return [{if: \"value=point\",then: \"Show an icon for point (node) objects\"},{if: \"value=centroid\",then: \"Show an icon for line or polygon (way) objects at their centroid location\"}, {if: \"value=start\",then: \"Show an icon for line (way) objects at the start\"},{if: \"value=end\",then: \"Show an icon for line (way) object at the end\"},{if: \"value=projected_centerpoint\",then: \"Show an icon for line (way) object near the centroid location, but moved onto the line\"}]",
+          "description": "question: At what location should this icon be shown?\nmultianswer: true\nsuggestions: return [{if: \"value=point\",then: \"Show an icon for point (node) objects\"},{if: \"value=centroid\",then: \"Show an icon for line or polygon (way) objects at their centroid location\"}, {if: \"value=start\",then: \"Show an icon for line (way) objects at the start\"},{if: \"value=end\",then: \"Show an icon for line (way) object at the end\"},{if: \"value=projected_centerpoint\",then: \"Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons\"}, ,{if: \"value=polygon_centroid\",then: \"Show an icon at a polygon centroid (but not if it is a way)\"}]",
           "type": "array",
           "items": {
             "type": "string"
@@ -1023,7 +1019,7 @@ export default {
           ]
         },
         "dashArray": {
-          "description": "question: Should a dasharray be used to render the lines?\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a mapbox limitation\nifunset: Ways are rendered with a full line",
+          "description": "question: Should a dasharray be used to render the lines?\nThe dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a MapLibre limitation (see https://github.com/maplibre/maplibre-gl-js/issues/1235)\nifunset: Ways are rendered with a full line",
           "type": "string"
         },
         "lineCap": {
@@ -1910,10 +1906,6 @@ export default {
                 "osmTags": {
                   "$ref": "#/definitions/TagConfigJson",
                   "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
-                },
-                "maxCacheAge": {
-                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
-                  "type": "number"
                 }
               },
               "required": [
@@ -1930,10 +1922,6 @@ export default {
                 "geoJsonZoomLevel": {
                   "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
                   "type": "number"
-                },
-                "isOsmCache": {
-                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
-                  "type": "boolean"
                 },
                 "mercatorCrs": {
                   "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
@@ -1978,6 +1966,10 @@ export default {
             }
           ]
         },
+        "isCounted": {
+          "description": "question: should this layer be included in the summary counts?\n\nThe layer server can give summary counts for a tile.\nThis should however be disabled for some layers, e.g. because there are too many features (walls_and_buildings) or because the count is irrelevant.\n\nifunset: Do count\niffalse: Do not include the counts\niftrue: Do include the count",
+          "type": "boolean"
+        },
         "minzoom": {
           "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\ngroup: Basic\ntype: nat\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
           "type": "number"
@@ -2005,8 +1997,11 @@ export default {
           ]
         },
         "popupInFloatover": {
-          "description": "Question: Should the information for this layer be shown in the sidebar or in a splash screen?\n\nIf set, open the selectedElementView in a floatOver instead of on the right.\n\niftrue: show the infobox in the splashscreen floating over the entire UI\niffalse: show the infobox in a sidebar on the right\ngroup: advanced\ndefault: sidebar",
-          "type": "boolean"
+          "description": "Question: Should the information for this layer be shown in the sidebar or in a splash screen?\n\nIf set, open the selectedElementView in a floatOver instead of on the right.\n\niftrue: show the infobox in the splashscreen floating over the entire UI; hide the title bar\niffalse: show the infobox in a sidebar on the right\nsuggestions: return [{if: \"value=title\", then: \"Show in a floatover and show the title bar\"}]\ngroup: advanced\ndefault: sidebar",
+          "type": [
+            "string",
+            "boolean"
+          ]
         },
         "titleIcons": {
           "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nUse `auto:<tagrenderingId>` to automatically create an icon based on a tagRendering which has icons\n\nType: icon[]\ngroup: infobox",
@@ -2198,7 +2193,7 @@ export default {
           }
         },
         "filter": {
-          "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one\n\ngroup: filters",
+          "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\n\n\ngroup: filters",
           "anyOf": [
             {
               "type": "array",
@@ -2253,6 +2248,7 @@ export default {
           "type": "boolean"
         },
         "units": {
+          "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]",
           "type": "array",
           "items": {
             "anyOf": [
@@ -2328,10 +2324,6 @@ export default {
                 "osmTags": {
                   "$ref": "#/definitions/TagConfigJson",
                   "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
-                },
-                "maxCacheAge": {
-                  "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
-                  "type": "number"
                 }
               },
               "required": [
@@ -2348,10 +2340,6 @@ export default {
                 "geoJsonZoomLevel": {
                   "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
                   "type": "number"
-                },
-                "isOsmCache": {
-                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
-                  "type": "boolean"
                 },
                 "mercatorCrs": {
                   "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
@@ -2396,6 +2384,10 @@ export default {
             }
           ]
         },
+        "isCounted": {
+          "description": "question: should this layer be included in the summary counts?\n\nThe layer server can give summary counts for a tile.\nThis should however be disabled for some layers, e.g. because there are too many features (walls_and_buildings) or because the count is irrelevant.\n\nifunset: Do count\niffalse: Do not include the counts\niftrue: Do include the count",
+          "type": "boolean"
+        },
         "minzoom": {
           "description": "The minimum needed zoomlevel required to start loading and displaying the data.\nThis can be used to only show common features (e.g. a bicycle parking) only when the map is zoomed in very much (17).\nThis prevents cluttering the map with thousands of parkings if one is looking to an entire city.\n\nDefault: 0\ngroup: Basic\ntype: nat\nquestion: At what zoom level should features of the layer be shown?\nifunset: Always load this layer, even if the entire world is in view.",
           "type": "number"
@@ -2423,8 +2415,11 @@ export default {
           ]
         },
         "popupInFloatover": {
-          "description": "Question: Should the information for this layer be shown in the sidebar or in a splash screen?\n\nIf set, open the selectedElementView in a floatOver instead of on the right.\n\niftrue: show the infobox in the splashscreen floating over the entire UI\niffalse: show the infobox in a sidebar on the right\ngroup: advanced\ndefault: sidebar",
-          "type": "boolean"
+          "description": "Question: Should the information for this layer be shown in the sidebar or in a splash screen?\n\nIf set, open the selectedElementView in a floatOver instead of on the right.\n\niftrue: show the infobox in the splashscreen floating over the entire UI; hide the title bar\niffalse: show the infobox in a sidebar on the right\nsuggestions: return [{if: \"value=title\", then: \"Show in a floatover and show the title bar\"}]\ngroup: advanced\ndefault: sidebar",
+          "type": [
+            "string",
+            "boolean"
+          ]
         },
         "titleIcons": {
           "description": "Small icons shown next to the title.\nIf not specified, the OsmLink and wikipedia links will be used by default.\nUse an empty array to hide them.\nNote that \"defaults\" will insert all the default titleIcons (which are added automatically)\n\nUse `auto:<tagrenderingId>` to automatically create an icon based on a tagRendering which has icons\n\nType: icon[]\ngroup: infobox",
@@ -2616,7 +2611,7 @@ export default {
           }
         },
         "filter": {
-          "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one\n\ngroup: filters",
+          "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\n\n\ngroup: filters",
           "anyOf": [
             {
               "type": "array",
@@ -2671,6 +2666,7 @@ export default {
           "type": "boolean"
         },
         "units": {
+          "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]",
           "type": "array",
           "items": {
             "anyOf": [
@@ -2707,6 +2703,7 @@ export default {
       "type": "object"
     },
     "RasterLayerProperties": {
+      "description": "This class has grown beyond the point of only containing Raster Layers",
       "type": "object",
       "properties": {
         "name": {
@@ -2733,6 +2730,9 @@ export default {
           "type": "string"
         },
         "type": {
+          "type": "string"
+        },
+        "style": {
           "type": "string"
         },
         "attribution": {

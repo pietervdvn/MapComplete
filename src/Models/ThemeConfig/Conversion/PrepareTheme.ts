@@ -186,7 +186,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
 
     convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         const state = this._state
-        json.layers = [...(json.layers ?? [])]
+        json.layers = Utils.NoNull([...(json.layers ?? [])])
         const alreadyLoaded = new Set(json.layers.map((l) => l["id"]))
 
         for (const layerName of Constants.added_by_default) {

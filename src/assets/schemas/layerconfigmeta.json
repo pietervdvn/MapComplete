@@ -77,10 +77,6 @@
           "osmTags": {
             "$ref": "#/definitions/TagConfigJson",
             "description": "question: Which tags must be present on the feature to show it in this layer?\nEvery source must set which tags have to be present in order to load the given layer."
-          },
-          "maxCacheAge": {
-            "description": "question: How long (in seconds) is the data allowed to remain cached until it must be refreshed?\nThe maximum amount of seconds that a tile is allowed to linger in the cache\n\ntype: nat\ndefault: 30 days\ngroup: expert",
-            "type": "number"
           }
         },
         "required": [
@@ -97,10 +93,6 @@
           "geoJsonZoomLevel": {
             "description": "To load a tiled geojson layer, set the zoomlevel of the tiles\n\nquestion: If using a tiled geojson, what is the zoomlevel of the tiles?\nifunset: This is not a tiled geojson",
             "type": "number"
-          },
-          "isOsmCache": {
-            "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible\n\nquestion: Is this geojson a cache of OpenStreetMap data?\nifunset: This is not an OpenStreetMap cache\niftrue: this is based on OpenStreetMap and can thus be edited\ngroup: expert",
-            "type": "boolean"
           },
           "mercatorCrs": {
             "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this\n\nquestion: Does this geojson use  EPSG:900913 instead of WGS84 as projection?\niftrue: This geojson uses EPSG:900913 instead of WGS84\nifunset: This geojson uses WGS84 just like most geojson (default)",
@@ -162,21 +154,6 @@
   {
     "path": [
       "source",
-      "maxCacheAge"
-    ],
-    "required": false,
-    "hints": {
-      "typehint": "nat",
-      "group": "expert",
-      "default": "30 days",
-      "question": "How long (in seconds) is the data allowed to remain cached until it must be refreshed?"
-    },
-    "type": "number",
-    "description": "The maximum amount of seconds that a tile is allowed to linger in the cache"
-  },
-  {
-    "path": [
-      "source",
       "geoJson"
     ],
     "required": true,
@@ -199,21 +176,6 @@
     },
     "type": "number",
     "description": "To load a tiled geojson layer, set the zoomlevel of the tiles"
-  },
-  {
-    "path": [
-      "source",
-      "isOsmCache"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert",
-      "question": "Is this geojson a cache of OpenStreetMap data?",
-      "iftrue": "this is based on OpenStreetMap and can thus be edited",
-      "ifunset": "This is not an OpenStreetMap cache"
-    },
-    "type": "boolean",
-    "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache.\nThis also indicates that making changes on this data is possible"
   },
   {
     "path": [
@@ -343,6 +305,20 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "isCounted"
+    ],
+    "required": false,
+    "hints": {
+      "question": "should this layer be included in the summary counts?",
+      "iftrue": "Do include the count",
+      "iffalse": "Do not include the counts",
+      "ifunset": "Do count"
+    },
+    "type": "boolean",
+    "description": "The layer server can give summary counts for a tile.\nThis should however be disabled for some layers, e.g. because there are too many features (walls_and_buildings) or because the count is irrelevant."
   },
   {
     "path": [
@@ -1060,10 +1036,19 @@
       "group": "advanced",
       "default": "sidebar",
       "question": "Should the information for this layer be shown in the sidebar or in a splash screen?",
-      "iftrue": "show the infobox in the splashscreen floating over the entire UI",
-      "iffalse": "show the infobox in a sidebar on the right"
+      "iftrue": "show the infobox in the splashscreen floating over the entire UI; hide the title bar",
+      "iffalse": "show the infobox in a sidebar on the right",
+      "suggestions": [
+        {
+          "if": "value=title",
+          "then": "Show in a floatover and show the title bar"
+        }
+      ]
     },
-    "type": "boolean",
+    "type": [
+      "string",
+      "boolean"
+    ],
     "description": "If set, open the selectedElementView in a floatOver instead of on the right."
   },
   {
@@ -1642,7 +1627,12 @@
         },
         {
           "if": "value=projected_centerpoint",
-          "then": "Show an icon for line (way) object near the centroid location, but moved onto the line"
+          "then": "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"
+        },
+        null,
+        {
+          "if": "value=polygon_centroid",
+          "then": "Show an icon at a polygon centroid (but not if it is a way)"
         }
       ],
       "multianswer": "true"
@@ -9454,7 +9444,7 @@
       "ifunset": "Ways are rendered with a full line"
     },
     "type": "string",
-    "description": "The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a mapbox limitation"
+    "description": "The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap, ...'. For example, `5 6` will be 5 pixels of line followed by a 6 pixel gap.\nCannot be a dynamic property due to a MapLibre limitation (see https://github.com/maplibre/maplibre-gl-js/issues/1235)"
   },
   {
     "path": [
@@ -10355,6 +10345,10 @@
           "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
         },
         {
+          "if": "value=item_with_image",
+          "then": "item_with_image - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
+        },
+        {
           "if": "value=kerbs",
           "then": "kerbs - A layer showing kerbs."
         },
@@ -10364,7 +10358,7 @@
         },
         {
           "if": "value=last_click",
-          "then": "last_click - This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up"
+          "then": "last_click - This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed"
         },
         {
           "if": "value=love_hotel",
@@ -10455,6 +10449,10 @@
           "then": "playground - Playgrounds"
         },
         {
+          "if": "value=playground_equipment",
+          "then": "playground_equipment - Layer showing playground equipment"
+        },
+        {
           "if": "value=postboxes",
           "then": "postboxes - The layer showing postboxes."
         },
@@ -10523,6 +10521,14 @@
           "then": "slow_roads - All carfree roads"
         },
         {
+          "if": "value=souvenir_coin",
+          "then": "souvenir_coin - Layer showing machines selling souvenir coins"
+        },
+        {
+          "if": "value=souvenir_note",
+          "then": "souvenir_note - Layer showing machines selling souvenir banknotes"
+        },
+        {
           "if": "value=speed_camera",
           "then": "speed_camera - Layer showing speed cameras"
         },
@@ -10557,6 +10563,10 @@
         {
           "if": "value=stripclub",
           "then": "stripclub - A venue where erotic dance, striptease, or lap dances are performed commercially. "
+        },
+        {
+          "if": "value=summary",
+          "then": "summary - Special layer which shows `count`"
         },
         {
           "if": "value=surveillance_camera",
@@ -18823,7 +18833,7 @@
         ]
       }
     ],
-    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one"
+    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one."
   },
   {
     "path": [
@@ -19356,6 +19366,55 @@
     },
     "type": "boolean",
     "description": "If set, a 'split this way' button is shown on objects rendered as LineStrings, e.g. highways.\nIf the way is part of a relation, MapComplete will attempt to update this relation as well"
+  },
+  {
+    "path": [
+      "units"
+    ],
+    "required": false,
+    "hints": {},
+    "type": [
+      {
+        "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "description": "What is quantified? E.g. 'speed', 'length' (including width, diameter, ...), 'electric tension', 'electric current', 'duration'",
+            "type": "string"
+          },
+          "appliesToKey": {
+            "description": "Every key from this list will be normalized.\n\nTo render the value properly (with a human readable denomination), use `{canonical(<key>)}`",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "eraseInvalidValues": {
+            "description": "If set, invalid values will be erased in the MC application (but not in OSM of course!)\nBe careful with setting this",
+            "type": "boolean"
+          },
+          "applicableUnits": {
+            "description": "The possible denominations for this unit.\nFor length, denominations could be \"meter\", \"kilometer\", \"miles\", \"foot\"",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DenominationConfigJson"
+            }
+          },
+          "defaultInput": {
+            "description": "In some cases, the default denomination is not the most user friendly to input.\nE.g., when measuring kerb heights, it is illogical to ask contributors to input an amount in meters.\n\nWhen a default input method should be used, this can be specified by setting the canonical denomination here, e.g.\n`defaultInput: \"cm\"`. This must be a denomination which appears in the applicableUnits",
+            "type": "string"
+          }
+        },
+        "required": [
+          "applicableUnits"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
+      }
+    ],
+    "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]"
   },
   {
     "path": [
