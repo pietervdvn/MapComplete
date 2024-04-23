@@ -393,10 +393,6 @@
                     }
                 },
                 "question": "Was ist der Zweck des Tierheims?"
-            },
-            "7": {
-                "question": "Wann ist das Tierheim geöffnet?",
-                "render": "{opening_hours_table()}"
             }
         },
         "title": {
@@ -8956,6 +8952,10 @@
             }
         },
         "tagRenderings": {
+            "camera_direction": {
+                "question": "In welche Himmelsrichtung filmt diese Kamera?",
+                "render": "filmt in Himmelsrichtung {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Zulässige Höchstgeschwindigkeit"

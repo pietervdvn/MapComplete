@@ -1222,9 +1222,17 @@
                 },
                 "question": "Is deze fietsenstalling gratis te gebruiken?"
             },
+            "maxstay": {
+                "question": "Wat is de toegestane, maximale parkeerduur?",
+                "questionHint": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder",
+                "render": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren"
+            },
             "operator": {
                 "question": "Wie beheert deze fietsenstalling?",
                 "render": "Deze fietsenstalling wordt beheerd door {operator}"
+            },
+            "operator_email": {
+                "question": "Wat is het emailadres van de beheerder van deze parking?"
             },
             "operator_phone": {
                 "question": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
@@ -1869,6 +1877,9 @@
                     },
                     "16": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    },
+                    "17": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
                     }
                 }
             }
@@ -2013,6 +2024,12 @@
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+                    },
+                    "32": {
+                        "then": "<b>BS1363</b> (VK 3-pin)"
+                    },
+                    "33": {
+                        "then": "<b>BS1363</b> (VK 3-pin)"
                     }
                 },
                 "question": "Welke aansluitingen zijn hier beschikbaar?"
@@ -2247,6 +2264,9 @@
                         },
                         "15": {
                             "2": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+                        },
+                        "16": {
+                            "2": "<b>BS1363</b> (VK 3-pin)"
                         }
                     }
                 }
@@ -7341,6 +7361,10 @@
             }
         },
         "tagRenderings": {
+            "camera_direction": {
+                "question": "In welke geografische richting filmt deze camera?",
+                "render": "Filmt in kompasrichting {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Maximum toegestane snelheid"
@@ -8692,6 +8716,14 @@
                     "2": {
                         "human": "{quantity} day",
                         "humanSingular": "één dag"
+                    },
+                    "3": {
+                        "human": "{quantity} weken",
+                        "humanSingular": "één week"
+                    },
+                    "4": {
+                        "human": "{quantity} maanden",
+                        "humanSingular": "één maand"
                     }
                 }
             }

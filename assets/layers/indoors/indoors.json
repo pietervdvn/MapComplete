@@ -571,7 +571,6 @@
         }
       }
     },
-
     {
       "builtin": "toilet.relevant-questions",
       "override": {

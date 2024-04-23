@@ -1747,6 +1747,14 @@
             }
         }
     },
+    "speed_camera": {
+        "tagRenderings": {
+            "camera_direction": {
+                "question": "I hvilken geografisk retning filmer dette kamera?",
+                "render": "Filmer til en kompasretning af {direction}"
+            }
+        }
+    },
     "surveillance_camera": {
         "tagRenderings": {
             "Surveillance type: public, outdoor, indoor": {

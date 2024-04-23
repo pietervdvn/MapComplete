@@ -292,10 +292,6 @@
                     }
                 },
                 "question": "动物收容所的目的是什么？"
-            },
-            "7": {
-                "question": "这个动物收容所什么时候开放？",
-                "render": "{opening_hours_table()}"
             }
         },
         "title": {

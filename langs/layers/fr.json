@@ -5503,6 +5503,10 @@
     },
     "speed_camera": {
         "tagRenderings": {
+            "camera_direction": {
+                "question": "Dans quelle direction géographique cette caméra filme-t-elle ?",
+                "render": "Filme dans une direction {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Vitesse maximale autorisée"

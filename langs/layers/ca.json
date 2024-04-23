@@ -308,10 +308,6 @@
                     }
                 },
                 "question": "Quina és la finalitat del refugi d'animals?"
-            },
-            "7": {
-                "question": "Quan està obert aquest refugi d'animals?",
-                "render": "{opening_hours_table()}"
             }
         },
         "title": {
@@ -7129,6 +7125,10 @@
             }
         },
         "tagRenderings": {
+            "camera_direction": {
+                "question": "En quina direcció geogràfica apunta aquesta càmera?",
+                "render": "Grava en direcció {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Velocitat màxima permesa"

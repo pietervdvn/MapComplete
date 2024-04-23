@@ -2373,6 +2373,14 @@
             }
         }
     },
+    "speed_camera": {
+        "tagRenderings": {
+            "camera_direction": {
+                "question": "In quale direzione geografica punta questa videocamera?",
+                "render": "Punta in direzione {direction}"
+            }
+        }
+    },
     "sport_pitch": {
         "description": "Un campo sportivo",
         "name": "Campi sportivi",

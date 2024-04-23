@@ -223,6 +223,12 @@
             "0": {
                 "title": "hitrostna kamera"
             }
+        },
+        "tagRenderings": {
+            "camera_direction": {
+                "question": "V katero geografsko smer snema ta kamera?",
+                "render": "Snema v smeri kompasa {direction}"
+            }
         }
     },
     "surveillance_camera": {

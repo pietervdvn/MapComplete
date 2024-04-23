@@ -7425,6 +7425,10 @@
             }
         },
         "tagRenderings": {
+            "camera_direction": {
+                "question": "Ve kterém geografickém směru tato kamera snímá?",
+                "render": "Snímané oblasti podle směru kompasu {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Maximální povolená rychlost"

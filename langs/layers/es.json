@@ -310,10 +310,6 @@
                     }
                 },
                 "question": "¿Cuál es la finalidad del refugio de animales?"
-            },
-            "7": {
-                "question": "¿Cuándo se abre este refugio de animales?",
-                "render": "{opening_hours_table()}"
             }
         },
         "title": {
@@ -4058,6 +4054,10 @@
             }
         },
         "tagRenderings": {
+            "camera_direction": {
+                "question": "¿A qué dirección geográfica apunta esta cámara?",
+                "render": "Graba en dirección a {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Velocidad máxima permitida"
