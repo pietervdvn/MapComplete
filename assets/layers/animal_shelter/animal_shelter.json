@@ -51,7 +51,7 @@
           "color": "#ffffff"
         },
         {
-          "icon": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Animal_Shelter_%288670%29_-_The_Noun_Project.svg"
+          "icon": "./assets/layers/animal_shelter/animal_shelter.svg"
         }
       ]
     }
@@ -146,26 +146,51 @@
       ],
       "multiAnswer": true
     },
+    "opening_hours_by_appointment",
     {
       "question": {
-        "en": "When is this animal shelter opened?",
-        "de": "Wann ist das Tierheim geöffnet?",
-        "es": "¿Cuándo se abre este refugio de animales?",
-        "zh_Hans": "这个动物收容所什么时候开放？",
-        "ca": "Quan està obert aquest refugi d'animals?"
+        "en": "Which animals are accepted here?"
       },
-      "id": "7",
+      "id": "boarded_animals",
+      "mappings": [
+        {
+          "if": "animal_shelter=dog",
+          "then": {
+            "en": "Dogs are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=cat",
+          "then": {
+            "en": "Cats are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=horse",
+          "then": {
+            "en": "Horses are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=bird",
+          "then": {
+            "en": "Birds are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=wildlife",
+          "then": {
+            "en": "Wild animals are kept here"
+          }
+        }
+      ],
       "render": {
-        "en": "{opening_hours_table()}",
-        "de": "{opening_hours_table()}",
-        "es": "{opening_hours_table()}",
-        "zh_Hans": "{opening_hours_table()}",
-        "ca": "{opening_hours_table()}"
+        "en": "{animal_shelter} is kept here"
       },
       "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      }
+        "key": "animal_shelter"
+      },
+      "multiAnswer": true
     }
   ],
   "deletion": true,

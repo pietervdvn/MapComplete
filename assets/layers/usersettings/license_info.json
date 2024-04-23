@@ -1,5 +1,21 @@
 [
   {
+    "path": "question_multiple.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "question_single.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "translate_disabled.svg",
     "license": "CC-BY-SA-3.0",
     "authors": [

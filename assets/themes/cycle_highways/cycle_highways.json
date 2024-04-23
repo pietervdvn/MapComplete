@@ -244,24 +244,7 @@
               }
             ]
           },
-          "width": "4",
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": "state=temporary",
-                "then": "12 10"
-              },
-              {
-                "if": "note:state=has_highway_no",
-                "then": "0 8"
-              },
-              {
-                "if": "note:state=has_highway_under_construction",
-                "then": "12 10"
-              }
-            ]
-          }
+          "width": "4"
         }
       ]
     }
