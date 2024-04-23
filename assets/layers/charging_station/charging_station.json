@@ -1221,6 +1221,85 @@
             "path": "./assets/layers/charging_station/bosch-5pin.svg",
             "class": "medium"
           }
+        },
+        {
+          "if": "socket:bs1363=1",
+          "ifnot": "socket:bs1363=",
+          "then": {
+            "en": "<b>BS1363</b> (Type G)",
+            "nl": "<b>BS1363</b> (VK 3-pin)"
+          },
+          "icon": {
+            "path": "./assets/layers/charging_station/bs1363.svg",
+            "class": "medium"
+          },
+          "hideInAnswer": {
+            "and": [
+              "_country!=bh",
+              "_country!=bd",
+              "_country!=bz",
+              "_country!=bt",
+              "_country!=bw",
+              "_country!=bn",
+              "_country!=kh",
+              "_country!=cy",
+              "_country!=dm",
+              "_country!=gh",
+              "_country!=gi",
+              "_country!=gd",
+              "_country!=gg",
+              "_country!=gy",
+              "_country!=id",
+              "_country!=iq",
+              "_country!=ie",
+              "_country!=im",
+              "_country!=je",
+              "_country!=jo",
+              "_country!=ke",
+              "_country!=kw",
+              "_country!=lb",
+              "_country!=mo",
+              "_country!=mw",
+              "_country!=mv",
+              "_country!=mt",
+              "_country!=mu",
+              "_country!=ng",
+              "_country!=om",
+              "_country!=pk",
+              "_country!=qa",
+              "_country!=rw",
+              "_country!=sa",
+              "_country!=sc",
+              "_country!=sl",
+              "_country!=sb",
+              "_country!=lk",
+              "_country!=sd",
+              "_country!=tz",
+              "_country!=ug",
+              "_country!=vu",
+              "_country!=vn",
+              "_country!=ye",
+              "_country!=zm",
+              "_country!=zw"
+            ]
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "socket:bs1363~*",
+              "socket:bs1363!=1"
+            ]
+          },
+          "then": {
+            "en": "<b>BS1363</b> (Type G)",
+            "nl": "<b>BS1363</b> (VK 3-pin)"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/charging_station/bs1363.svg",
+            "class": "medium"
+          }
         }
       ]
     },
@@ -1561,6 +1640,24 @@
             [],
             [],
             []
+          ],
+          [
+            "socket:bs1363",
+            "socket:bs1363",
+            {
+              "en": "<b>BS1363</b> (Type G)",
+              "nl": "<b>BS1363</b> (VK 3-pin)"
+            },
+            "bs1363.svg",
+            [
+              "230"
+            ],
+            [
+              "13"
+            ],
+            [
+              "3kW"
+            ]
           ]
         ]
       },
@@ -2607,6 +2704,13 @@
             "de": "Hat einen <div style='display: inline-block'><b><b>Bosch Active Connect Anschluss mit 5 Pins</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> und Kabel"
           },
           "osmTags": "socket:bosch_5pin~*"
+        },
+        {
+          "question": {
+            "en": "Has a <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> connector",
+            "nl": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
+          },
+          "osmTags": "socket:bs1363~*"
         }
       ]
     }
@@ -2752,6 +2856,15 @@
       "socket:bosch_5pin:voltage": "voltage",
       "socket:bosch_5pin:current": "current",
       "socket:bosch_5pin:output": {
+        "quantity": "power",
+        "denominations": [
+          "mW",
+          "kW"
+        ]
+      },
+      "socket:bs1363:voltage": "voltage",
+      "socket:bs1363:current": "current",
+      "socket:bs1363:output": {
         "quantity": "power",
         "denominations": [
           "mW",

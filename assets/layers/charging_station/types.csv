@@ -15,3 +15,4 @@ socket:tesla_destination,,Type2_tethered.svg,<b>Tesla supercharger (destination)
 socket:USB-A,,usb_port.svg,<b>USB</b> to charge phones and small electronics,,,5,1;2,5W;10W,<b>USB</b> om GSMs en kleine electronica op te laden,*,,
 socket:bosch_3pin,,bosch-3pin.svg,<b>Bosch Active Connect with 3 pins</b> and cable,,,,,,<b>Bosch Active Connect met 3 pinnen</b> aan een kabel,bicycle,car;motorcar;hgv;bus,
 socket:bosch_5pin,,bosch-5pin.svg,<b>Bosch Active Connect with 5 pins</b> and cable,,,,,,<b>Bosch Active Connect met 5 pinnen</b> aan een kabel,bicycle,car;motorcar;hgv;bus,
+socket:bs1363,,bs1363.svg,<b>BS1363</b> (Type G),bh;bd;bz;bt;bw;bn;kh;cy;dm;gh;gi;gd;gg;gy;id;iq;ie;im;je;jo;ke;kw;lb;mo;mw;mv;mt;mu;ng;om;pk;qa;rw;sa;sc;sl;sb;lk;sd;tz;ug;vu;vn;ye;zm;zw,,230,13,3kW,<b>BS1363</b> (VK 3-pin),*,,

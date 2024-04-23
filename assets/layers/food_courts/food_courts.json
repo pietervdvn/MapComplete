@@ -1,0 +1,76 @@
+{
+  "id": "food_courts",
+  "name": {
+    "en": "Food Courts"
+  },
+  "description": {
+    "en": "Food courts with a variety of food options."
+  },
+  "title": {
+    "render": {
+      "en": "Food Court"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
+  },
+  "source": {
+    "osmTags": "amenity=food_court"
+  },
+  "minzoom": 12,
+  "tagRenderings": [
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this food court?"
+      },
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the food court"
+        }
+      },
+      "render": {
+        "en": "This food court is called <b>{name}</b>."
+      }
+    },
+    "reviews",
+    "images",
+    "opening_hours",
+    "wheelchair-access",
+    "website",
+    "phone",
+    "smoking"
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/food_courts/food_court.svg"
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#C77400",
+      "fillColor": "#C774004D"
+    }
+  ]
+}

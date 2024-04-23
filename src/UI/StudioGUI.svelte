@@ -29,6 +29,7 @@
   import Translations from "./i18n/Translations"
   import Tr from "./Base/Tr.svelte"
   import Add from "../assets/svg/Add.svelte"
+  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
 
   export let studioUrl =
     window.location.hostname === "127.0.0.2"
@@ -55,25 +56,64 @@
   const studio = new StudioServer(studioUrl, uid)
 
   let layersWithErr = studio.fetchOverview()
+  let layerFilterTerm: string = ""
   let layers: Store<{ owner: number; id: string }[]> = layersWithErr.mapD((l) =>
     l["success"]?.filter((l) => l.category === "layers")
   )
-  let selfLayers: Store<{ owner: number; id: string }[]> = layers.mapD((ls) => ls.filter((l) => l.owner === uid.data), [uid])
-  let otherLayers: Store<{ owner: number; id: string }[]> = layers.mapD(
-    (ls) => ls.filter((l) => l.owner !== undefined && l.owner !== uid.data),
+  $: selfLayers = layers.mapD(
+      (ls) =>
+        ls.filter(
+          (l) => l.owner === uid.data && l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
+        ),
+      [uid]
+    )
+  $: otherLayers = layers.mapD(
+    (ls) =>
+      ls.filter(
+        (l) =>
+          l.owner !== undefined &&
+          l.owner !== uid.data &&
+          l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
+      ),
     [uid]
   )
-  let officialLayers = layers.mapD((ls) => ls.filter((l) => l.owner === undefined), [uid])
+  $: officialLayers = layers.mapD(
+    (ls) =>
+      ls.filter(
+        (l) => l.owner === undefined && l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
+      ),
+    [uid]
+  )
+
+  let themeFilterTerm: string = ""
 
   let themes: Store<{ owner: number; id: string }[]> = layersWithErr.mapD((l) =>
     l["success"]?.filter((l) => l.category === "themes")
   )
-  let selfThemes = themes.mapD((ls) => ls.filter((l) => l.owner === uid.data), [uid])
-  let otherThemes = themes.mapD(
-    (ls) => ls.filter((l) => l.owner !== undefined && l.owner !== uid.data),
+  $: selfThemes = themes.mapD(
+    (ls) =>
+      ls.filter(
+        (l) => l.owner === uid.data && l.id.toLowerCase().includes(themeFilterTerm.toLowerCase())
+      ),
     [uid]
   )
-  let officialThemes = themes.mapD((ls) => ls.filter((l) => l.owner === undefined), [uid])
+  $: otherThemes = themes.mapD(
+    (ls) =>
+      ls.filter(
+        (l) =>
+          l.owner !== undefined &&
+          l.owner !== uid.data &&
+          l.id.toLowerCase().includes(themeFilterTerm.toLowerCase())
+      ),
+    [uid]
+  )
+  $: officialThemes = themes.mapD(
+    (ls) =>
+      ls.filter(
+        (l) => l.owner === undefined && l.id.toLowerCase().includes(themeFilterTerm.toLowerCase())
+      ),
+    [uid]
+  )
 
   let state:
     | undefined
@@ -224,6 +264,22 @@
           MapComplete Studio
         </BackButton>
         <h2>Choose a layer to edit</h2>
+
+        <form class="flex justify-center">
+          <label
+            class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"
+          >
+            <SearchIcon aria-hidden="true" class="h-8 w-8" />
+            <input
+              class="mr-4 w-full outline-none"
+              id="layer-search"
+              type="search"
+              placeholder="Filter layers by name"
+              bind:value={layerFilterTerm}
+            />
+          </label>
+        </form>
+
         <ChooseLayerToEdit {osmConnection} layerIds={$selfLayers} on:layerSelected={editLayer}>
           <h3 slot="title">Your layers</h3>
         </ChooseLayerToEdit>
@@ -257,6 +313,22 @@
           MapComplete Studio
         </BackButton>
         <h2>Choose a theme to edit</h2>
+
+        <form class="flex justify-center">
+          <label
+            class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"
+          >
+            <SearchIcon aria-hidden="true" class="h-8 w-8" />
+            <input
+              class="mr-4 w-full outline-none"
+              id="theme-search"
+              type="search"
+              placeholder="Filter themes by name"
+              bind:value={themeFilterTerm}
+            />
+          </label>
+        </form>
+
         <ChooseLayerToEdit {osmConnection} layerIds={$selfThemes} on:layerSelected={editTheme}>
           <h3 slot="title">Your themes</h3>
         </ChooseLayerToEdit>

@@ -170,7 +170,7 @@ export default class DetermineLayout {
                         .map((mr) => mr?.marker?.find((icon) => icon.icon !== undefined)?.icon)
                         .find((i) => i !== undefined)
                 ) ?? "bug"
-            const icon = new TagRenderingConfig(iconTr).render.txt
+            const icon = new TagRenderingConfig(iconTr)?.render?.txt ?? "./assets/svg/bug.svg"
             json = {
                 id: json.id,
                 description: json.description,

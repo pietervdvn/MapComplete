@@ -37,7 +37,9 @@
   },
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "layers": [
-    "cafe_pub"
+    "cafe_pub",
+    "outdoor_seating",
+    "food_courts"
   ],
   "widenFactor": 1.5
 }

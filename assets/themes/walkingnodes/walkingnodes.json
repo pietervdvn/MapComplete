@@ -151,15 +151,15 @@
             "centroid"
           ],
           "label": {
-            "render": "<div style='position: absolute; top: -30px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>?</div>",
+            "render": "<div class='text-white text-center w-5 h-5 rounded-full' style='background-color: #452b29'>?</div>",
             "mappings": [
               {
                 "if": "rwn_ref~*",
-                "then": "<div style='position: absolute; top: -30px; right: -10px; color: white; background-color: #452b29; width: 20px; height: 20px; border-radius: 100%'>{rwn_ref}</div>"
+                "then": "<div class='text-white text-center w-5 h-5 rounded-full' style='background-color: #452b29'>{rwn_ref}</div>"
               },
               {
                 "if": "proposed:rwn_ref~*",
-                "then": "<div style='position: absolute; top: -31px; right: -10px; color: white; background-color: #452b29; width: 22px; height: 22px; border-radius: 100%; border-style:dotted; border-color:white; border-width: 2px'>{proposed:rwn_ref}</div>"
+                "then": "<div class='text-white text-center w-5 h-5 rounded-full border-2 border-white border-dotted' style='background-color: #452b29'>{proposed:rwn_ref}</div>"
               }
             ]
           }
