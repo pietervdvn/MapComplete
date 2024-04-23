@@ -8,6 +8,50 @@ class ServerLdScrape extends Script {
         super("Starts a server which fetches a webpage and returns embedded LD+JSON")
     }
 
+    private static async attemptDownload(url: string) {
+        const host = new URL(url).host
+        const headers = [
+            {
+                "User-Agent":
+                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36",
+                "accept": "application/html"
+            },
+            {
+                "User-Agent": "MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
+                "accept": "application/html"
+            },
+            {
+                Host: host,
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:122.0) Gecko/20100101 Firefox/122.0",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.5",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Alt-Used": host,
+                DNT: 1,
+                "Sec-GPC": 1,
+                "Upgrade-Insecure-Requests": 1,
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "cross-site",
+                "Sec-Fetch-User":"?1",
+                "TE": "trailers",
+                Connection: "keep-alive"
+            }
+        ]
+        for (let i = 0; i < headers.length; i++) {
+            try {
+
+                return await ScriptUtils.Download(
+                    url,
+                    headers[i],
+                    10
+                )
+            } catch (e) {
+                console.error("Could not download", url, "with headers", headers[i])
+            }
+        }
+    }
+
     async main(args: string[]): Promise<void> {
         const port = Number(args[0] ?? 2346)
         const cache: Record<string, { date: Date; contents: any }> = {}
@@ -16,7 +60,7 @@ class ServerLdScrape extends Script {
                 mustMatch: "extractgraph",
                 mimetype: "application/ld+json",
                 addHeaders: {
-                    "Cache-control": "max-age=3600, public",
+                    "Cache-control": "max-age=3600, public"
                 },
                 async handle(content, searchParams: URLSearchParams) {
                     const url = searchParams.get("url")
@@ -31,19 +75,13 @@ class ServerLdScrape extends Script {
                         }
                     }
                     let dloaded: { content: string } | { redirect: string } | "timeout" = {
-                        redirect: url,
+                        redirect: url
                     }
+
                     do {
-                        dloaded = await ScriptUtils.Download(
-                            dloaded["redirect"],
-                            {
-                                "User-Agent":
-                                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36", // MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
-                            },
-                            10
-                        )
+                        dloaded = await ServerLdScrape.attemptDownload(dloaded["redirect"])
                         if (dloaded === "timeout") {
-                            return '{"#":"timout reached"}'
+                            return "{\"#\":\"timout reached\"}"
                         }
                     } while (dloaded["redirect"])
 
@@ -72,8 +110,8 @@ class ServerLdScrape extends Script {
                             console.error(e)
                         }
                     }
-                },
-            },
+                }
+            }
         ])
     }
 }

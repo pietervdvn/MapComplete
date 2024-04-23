@@ -176,7 +176,9 @@ export default class ScriptUtils {
         const requestPromise = new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}
-                headers.accept ??= "application/json"
+                if(!headers.Accept){
+                    headers.accept ??= "application/json"
+                }
                 console.log(" > ScriptUtils.Download(", url, ")")
                 const urlObj = new URL(url)
                 const request = https.get(
