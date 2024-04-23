@@ -132,7 +132,7 @@
           General properties
           <ErrorIndicatorForRegion firstPaths={firstPathsFor("Basic")} {state} />
         </div>
-        <div class="flex flex-col" slot="content0">
+        <div class="flex flex-col mb-8" slot="content0">
           <Region {state} configs={perRegion["Basic"]} />
           <DeleteButton {state} {backToStudio} objectType="layer"/>
         </div>

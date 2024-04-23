@@ -96,7 +96,7 @@
     <!-- {Object.keys(perRegion).join(";")} -->
     <TabbedGroup>
       <div slot="title0">Basic properties</div>
-      <div slot="content0">
+      <div slot="content0" class="mb-8">
         <Region configs={perRegion["basic"]} path={[]} {state} title="Basic properties" />
         <Region configs={perRegion["start_location"]} path={[]} {state} title="Start location" />
         <DeleteButton {state} {backToStudio} objectType="theme"/>
