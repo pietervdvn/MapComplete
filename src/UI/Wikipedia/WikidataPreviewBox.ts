@@ -12,7 +12,7 @@ import Link from "../Base/Link"
 import BaseUIElement from "../BaseUIElement"
 import { Utils } from "../../Utils"
 import SvelteUIElement from "../Base/SvelteUIElement"
-import * as Wikidata_icon from "../../assets/svg/Wikidata.svelte"
+import {default as Wikidata_icon} from "../../assets/svg/Wikidata.svelte"
 import Gender_male from "../../assets/svg/Gender_male.svelte"
 import Gender_female from "../../assets/svg/Gender_female.svelte"
 import Gender_inter from "../../assets/svg/Gender_inter.svelte"
@@ -131,7 +131,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
             extraItems?: (BaseUIElement | string)[]
         }
     ): BaseUIElement {
-        let link = new Link(
+        const link = new Link(
             new Combine([
                 wikidata.id,
                 options?.noImages
