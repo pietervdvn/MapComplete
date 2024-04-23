@@ -81,7 +81,8 @@ export class MinimapViz implements SpecialVisualization {
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         const mla = new MapLibreAdaptor(mlmap, {
             rasterLayer: state.mapProperties.rasterLayer,
-            zoom: new UIEventSource<number>(18)
+            zoom: new UIEventSource<number>(17),
+            maxzoom: new UIEventSource<number>(17)
         })
 
         mla.allowMoving.setData(false)
