@@ -635,7 +635,7 @@
 <If condition={state.guistate.privacyPanelIsOpened}>
   <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
     <div class="flex h-full flex-col overflow-hidden">
-      <h2 class="low-interaction m-0 flex items-center p-4">
+      <h2 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
         <EyeIcon class="w-6 pr-2" />
         <Tr t={Translations.t.privacy.title} />
       </h2>
