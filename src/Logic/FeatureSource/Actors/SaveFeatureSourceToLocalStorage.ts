@@ -38,6 +38,10 @@ class SingleTileSaver {
             if (this._registeredIds.has(id)) {
                 continue
             }
+            if(id.match(/(node|way|relation)\/-.*/)){
+                // We don't cache newly created points
+                continue
+            }
             this._featureProperties.getStore(id)?.addCallbackAndRunD(() => {
                 this._isDirty.setData(true)
             })
@@ -57,7 +61,7 @@ class SingleTileSaver {
  */
 export default class SaveFeatureSourceToLocalStorage {
     public readonly storage: TileLocalStorage<Feature[]>
-    private zoomlevel: number
+    private readonly zoomlevel: number
     constructor(
         backend: string,
         layername: string,
