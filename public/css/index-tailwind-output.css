@@ -2462,7 +2462,7 @@ button:not(.no-image-background):not(.soft) svg path, .button:not(.no-image-back
   color: var(--interactive-foreground);
 }
 
-button:hover :not(select), .button:hover :not(select) {
+button:hover, .button:hover {
   background-color: var(--catch-detail-color);
   color: var(--catch-detail-foregroundcolor);
   border: 2px solid var(--catch-detail-color-contrast);
