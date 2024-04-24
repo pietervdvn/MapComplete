@@ -228,6 +228,10 @@ export default class MetaTagging {
                     })
                     return feats
                 }
+                if(!state.perLayer.get(layerId)){
+                    // This layer is not loaded
+                    return []
+                }
                 return [state.perLayer.get(layerId).GetFeaturesWithin(bbox)]
             },
         }
