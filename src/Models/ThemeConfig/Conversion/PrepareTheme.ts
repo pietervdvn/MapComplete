@@ -475,7 +475,13 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 )
             }
         }
-        layers.unshift(...dependencies.map((l) => l.config))
+        /**
+         * Must be added to the _end_ of the layer list:
+         * - Imagine that 'walls_and_buildings' is added...
+         * - but there is a layer about a specific type of building already
+         * Adding it up front would cause 'walls_and_buildings' to be triggered
+         */
+        layers.push(...dependencies.map((l) => l.config))
 
         return {
             ...theme,

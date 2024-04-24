@@ -331,11 +331,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             configurable: true,
             get: () => {
                 delete object[name]
-                object[name] = init()
-                if (whenDone) {
-                    whenDone()
+                try{
+                    object[name] = init()
+                    if (whenDone) {
+                        whenDone()
+                    }
+                    return object[name]
+                }catch (e) {
+                    console.error("Error while calculating a lazy property", e)
+                    return undefined
                 }
-                return object[name]
             },
         })
     }
