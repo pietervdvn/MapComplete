@@ -186,7 +186,8 @@
           "alsoShowIf": "shape=",
           "then": {
             "en": "This elevator has a rectangular shape",
-            "de": "Dieser Aufzug hat eine rechteckige Form"
+            "de": "Dieser Aufzug hat eine rechteckige Form",
+            "fr": "Cet ascenseur est de forme rectangulaire"
           },
           "icon": "./assets/svg/square.svg"
         },
