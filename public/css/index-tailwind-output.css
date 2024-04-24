@@ -2420,6 +2420,28 @@ button.small,
   color: var(--low-interaction-foreground);
 }
 
+.button.theme-button {
+  margin: 0;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  /* Margin should be removed on larger screens */
+  @media (min-width: 768px) {
+    margin: 0;
+
+    margin-top: 0;
+
+    margin-bottom: 0;
+  }
+  /* Experimental support for foldable devices */
+  @media (horizontal-viewport-segments: 2) {
+    margin: 0;
+
+    margin-top: 0;
+
+    margin-bottom: 0;
+  }
+}
+
 button,
 .button {
   align-items: center;
@@ -2438,10 +2460,6 @@ button,
   --tw-bg-opacity: 1;
   background: var(--low-interaction-background);
   color: var(--low-interaction-foreground);
-}
-
-.theme-button {
-  margin: 0 !important;
 }
 
 .button-shadow {

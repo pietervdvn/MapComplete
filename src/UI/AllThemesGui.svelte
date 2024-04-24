@@ -136,7 +136,7 @@
     <UnofficialThemeList search={themeSearchText} {state} />
 
     <div slot="not-logged-in">
-      <button class="w-full" on:click={() => osmConnection.AttemptLogin()}>
+      <button class="m-0 my-2 w-full" on:click={() => osmConnection.AttemptLogin()}>
         <Login class="mr-2 h-6 w-6 " />
         <Tr t={Translations.t.index.logIn} />
       </button>
