@@ -150,7 +150,7 @@
       },
       "freeform": {
         "key": "brand",
-        "type": "string",
+        "type": "nsi",
         "placeholder": {
           "en": "Brand name",
           "de": "Markenname",
