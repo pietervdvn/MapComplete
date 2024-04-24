@@ -781,10 +781,6 @@ video {
   float: left;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -795,6 +791,10 @@ video {
 
 .m-0 {
   margin: 0px;
+}
+
+.m-8 {
+  margin: 2rem;
 }
 
 .m-2 {
@@ -900,10 +900,6 @@ video {
   margin-right: 4rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -934,6 +930,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -2351,7 +2351,7 @@ input {
   color: var(--foreground-color);
 }
 
-input[type=text] {
+input[type="text"] {
   width: 100%;
 }
 
@@ -2374,12 +2374,12 @@ input[type=text] {
 
 .low-interaction {
   background: var(--low-interaction-background);
-  color: var(--low-interaction-foreground)
+  color: var(--low-interaction-foreground);
 }
 
 .interactive {
   background: var(--interactive-background);
-  color: var(--interactive-foreground)
+  color: var(--interactive-foreground);
 }
 
 .border-interactive {
@@ -2398,7 +2398,8 @@ input[type=text] {
  * This very important section defines what the various input elements look like within the 'low-interaction' and 'interactive'-blocks
  */
 
-button.small, .button.small {
+button.small,
+.button.small {
   line-height: 1rem;
   margin: 0;
   margin-left: 0.5rem;
@@ -2419,7 +2420,8 @@ button.small, .button.small {
   color: var(--low-interaction-foreground);
 }
 
-button, .button {
+button,
+.button {
   align-items: center;
   display: inline-flex;
   line-height: 1.25rem;
@@ -2442,56 +2444,67 @@ button, .button {
   box-shadow: 0 5px 10px #88888888;
 }
 
-button.selected, .button.selected {
+button.selected,
+.button.selected {
   background-color: var(--catch-detail-color);
   border-color: var(--catch-detail-color);
   color: var(--catch-detail-foregroundcolor);
 }
 
-button.selected svg path, .button.selected svg path {
+button.selected svg path,
+.button.selected svg path {
   fill: var(--catch-detail-foregroundcolor) !important;
 }
 
-button:not(.no-image-background):not(.soft) svg path, .button:not(.no-image-background):not(.soft) svg path {
+button:not(.no-image-background):not(.soft) svg path,
+.button:not(.no-image-background):not(.soft) svg path {
   fill: var(--interactive-foreground) !important;
   transition: all 250ms;
 }
 
-.interactive button, .interactive .button {
+.interactive button,
+.interactive .button {
   background: var(--interactive-background);
   color: var(--interactive-foreground);
 }
 
-button:hover, .button:hover {
+button:hover,
+.button:hover {
   background-color: var(--catch-detail-color);
   color: var(--catch-detail-foregroundcolor);
   border: 2px solid var(--catch-detail-color-contrast);
 }
 
-button:hover:not(.no-image-background) img, .button:hover:not(.no-image-background) img {
+button:hover:not(.no-image-background) img,
+.button:hover:not(.no-image-background) img {
   background: var(--low-interaction-background);
   border-radius: 100rem;
 }
 
-button:hover:not(.no-image-background) svg path, .button:hover:not(.no-image-background) svg path {
+button:hover:not(.no-image-background) svg path,
+.button:hover:not(.no-image-background) svg path {
   fill: var(--catch-detail-foregroundcolor) !important;
 }
 
-button.disabled:hover:not(.no-image-background) svg path, .button.disabled:hover:not(.no-image-background) svg path {
+button.disabled:hover:not(.no-image-background) svg path,
+.button.disabled:hover:not(.no-image-background) svg path {
   fill: var(--low-interaction-foreground) !important;
 }
 
-button.primary, .button.primary {
+button.primary,
+.button.primary {
   color: var(--button-foreground);
   background: var(--button-background);
 }
 
-button.primary:not(.no-image-background) svg path, .button.primary:not(.no-image-background) svg path {
+button.primary:not(.no-image-background) svg path,
+.button.primary:not(.no-image-background) svg path {
   fill: var(--button-foreground) !important;
   transition: all 250ms;
 }
 
-button.disabled, .button.disabled {
+button.disabled,
+.button.disabled {
   cursor: default;
   border: 2px dashed var(--button-background);
   background: unset;
@@ -2499,7 +2512,8 @@ button.disabled, .button.disabled {
   box-shadow: none;
 }
 
-button.disabled:hover, .button.disabled:hover {
+button.disabled:hover,
+.button.disabled:hover {
   cursor: default;
   border: 2px dashed var(--button-background);
   background: unset;
@@ -2513,18 +2527,21 @@ button.link {
 }
 
 button.link:hover {
-  color:unset;
+  color: unset;
 }
 
-.interactive button.disabled svg path, .interactive .button.disabled svg path {
+.interactive button.disabled svg path,
+.interactive .button.disabled svg path {
   fill: var(--interactive-foreground) !important;
 }
 
-.low-interaction button.disabled svg path, .low-interaction .button.disabled svg path {
+.low-interaction button.disabled svg path,
+.low-interaction .button.disabled svg path {
   fill: var(--low-interaction-foreground) !important;
 }
 
-.normal-background button.disabled svg path, .normal-background .button.disabled svg path {
+.normal-background button.disabled svg path,
+.normal-background .button.disabled svg path {
   fill: var(--foreground-color) !important;
 }
 
@@ -2537,12 +2554,14 @@ button.link:hover {
   width: 100%;
 }
 
-button.soft, .button.soft {
+button.soft,
+.button.soft {
   border: 2px solid var(--interactive-background);
   margin: 0;
 }
 
-button.soft:hover, .button.soft:hover {
+button.soft:hover,
+.button.soft:hover {
   background-color: var(--interactive-background);
   color: var(--interactive-foreground);
   border: 2px solid var(--catch-detail-color-contrast);
@@ -2580,7 +2599,7 @@ select:hover {
   border-color: var(--catch-detail-color-contrast);
 }
 
-.neutral-label{
+.neutral-label {
   /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
      * Placed here for autocompletion
      */
@@ -2608,7 +2627,7 @@ label.button {
 label:hover:not(.neutral-label) {
   background-color: var(--catch-detail-color);
   color: var(--catch-detail-foregroundcolor);
-  border: 2px solid var(--interactive-contrast)
+  border: 2px solid var(--interactive-contrast);
 }
 
 label:not(.no-image-background):not(.neutral-label) img {
@@ -2839,18 +2858,18 @@ a.link-underline {
 }
 
 svg.apply-fill path {
-  fill: var(--svg-color)
+  fill: var(--svg-color);
 }
 
 .compass_arrow {
-  width: calc( 2.5rem - 1px ) ;
-  height: calc( 2.5rem - 1px )
+  width: calc(2.5rem - 1px);
+  height: calc(2.5rem - 1px);
 }
 
 @media (min-width: 640px) {
   .compass_arrow {
-    width: calc( 2.75rem - 1px ) ;
-    height: calc( 2.75rem - 1px )
+    width: calc(2.75rem - 1px);
+    height: calc(2.75rem - 1px);
   }
 }
 
@@ -2929,6 +2948,16 @@ svg.apply-fill path {
 
 .max-w-full {
   max-width: 100%;
+}
+
+/************************* Experimental support for foldable devices ********************************/
+
+@media (horizontal-viewport-segments: 2) {
+  .theme-list {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .hover\:bg-indigo-200:hover {

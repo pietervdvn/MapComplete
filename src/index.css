@@ -12,50 +12,48 @@
 @tailwind utilities;
 
 :root {
-    /* 
+  /* 
     * The main colour scheme of mapcomplete is configured here.
     * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
     */
 
-    /* Main color of the application: the background and text colours */
-    --background-color: white;
-    /* Main text colour. Also styles some elements, such as the 'close popup'-button or 'back-arrow' (in mobile) */
-    --foreground-color: black;
+  /* Main color of the application: the background and text colours */
+  --background-color: white;
+  /* Main text colour. Also styles some elements, such as the 'close popup'-button or 'back-arrow' (in mobile) */
+  --foreground-color: black;
 
-    /* A colour scheme to indicate an error or warning */
-    --alert-color: #fee4d1;
-    --alert-foreground-color: var(--foreground-color);
+  /* A colour scheme to indicate an error or warning */
+  --alert-color: #fee4d1;
+  --alert-foreground-color: var(--foreground-color);
 
-    --low-interaction-background: #eeeeee;
-    --low-interaction-foreground: black;
-    --low-interaction-contrast: #ff00ff;
+  --low-interaction-background: #eeeeee;
+  --low-interaction-foreground: black;
+  --low-interaction-contrast: #ff00ff;
 
-    --interactive-background: #dddddd;
-    --interactive-foreground: black;
-    --interactive-contrast: #ff00ff;
+  --interactive-background: #dddddd;
+  --interactive-foreground: black;
+  --interactive-contrast: #ff00ff;
 
-    --button-background: black;
-    --button-foreground: white;
+  --button-background: black;
+  --button-foreground: white;
 
-    /**
+  /**
      * Base colour of interactive elements, mainly the 'subtle button'
      * @deprecated
      */
-    --subtle-detail-color: #dbeafe;
-    --subtle-detail-color-contrast: black;
-    --subtle-detail-color-light-contrast: lightgrey;
+  --subtle-detail-color: #dbeafe;
+  --subtle-detail-color-contrast: black;
+  --subtle-detail-color-light-contrast: lightgrey;
 
+  --catch-detail-color: black; /*#3a3aeb;*/
+  --catch-detail-foregroundcolor: white;
+  --catch-detail-color-contrast: #fb3afb;
 
-    --catch-detail-color: black; /*#3a3aeb;*/
-    --catch-detail-foregroundcolor: white;
-    --catch-detail-color-contrast: #fb3afb;
+  --image-carousel-height: 350px;
 
-
-    --image-carousel-height: 350px;
-
-    /** Technical value, used by icon.svelte
+  /** Technical value, used by icon.svelte
      */
-    --svg-color: #000000;
+  --svg-color: #000000;
 }
 
 /***********************************************************************\
@@ -63,65 +61,64 @@
 \***********************************************************************/
 html,
 body {
-    height: 100%;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    font-family: "Helvetica Neue", Arial, sans-serif;
+  height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 svg,
 img {
-    box-sizing: content-box;
-    width: 100%;
-    height: 100%;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
 }
 
 li {
-    margin-left: 0.5em;
-    padding-left: 0.2em;
-    margin-top: 0.1em;
+  margin-left: 0.5em;
+  padding-left: 0.2em;
+  margin-top: 0.1em;
 }
 
 li::marker {
-    content: "•";
+  content: "•";
 }
 
 h1 {
-    font-size: xx-large;
-    margin-top: 0.6em;
-    margin-bottom: 0.4em;
-    font-weight: bold;
+  font-size: xx-large;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  font-weight: bold;
 }
 
-
 h2 {
-    font-size: x-large;
-    margin-top: 0.5em;
-    margin-bottom: 0.3em;
-    font-weight: bold;
+  font-size: x-large;
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
+  font-weight: bold;
 }
 
 h3 {
-    font-size: larger;
-    margin-top: 0.6em;
-    margin-bottom: 0;
-    font-weight: bold;
+  font-size: larger;
+  margin-top: 0.6em;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 
 p {
-    padding-top: 0.1em;
+  padding-top: 0.1em;
 }
 
 input {
-    color: var(--foreground-color);
+  color: var(--foreground-color);
 }
 
-input[type=text] {
-    width: 100%;
+input[type="text"] {
+  width: 100%;
 }
 
 /************************* BIG CATEGORIES ********************************/
@@ -131,35 +128,34 @@ input[type=text] {
  * and some interactive elements
  */
 
-
 .subtle-background {
-    background: var(--subtle-detail-color);
-    color: var(--subtle-detail-color-contrast);
+  background: var(--subtle-detail-color);
+  color: var(--subtle-detail-color-contrast);
 }
 
 .normal-background {
-    background: var(--background-color);
-    color: var(--foreground-color);
+  background: var(--background-color);
+  color: var(--foreground-color);
 }
 
 .low-interaction {
-    background: var(--low-interaction-background);
-    color: var(--low-interaction-foreground)
+  background: var(--low-interaction-background);
+  color: var(--low-interaction-foreground);
 }
 
 .interactive {
-    background: var(--interactive-background);
-    color: var(--interactive-foreground)
+  background: var(--interactive-background);
+  color: var(--interactive-foreground);
 }
 
 .border-interactive {
-    border: 2px dashed var(--catch-detail-color-contrast);
-    border-radius: 0.5rem;
+  border: 2px dashed var(--catch-detail-color-contrast);
+  border-radius: 0.5rem;
 }
 
 .border-region {
-    border: 2px dashed var(--interactive-background);
-    border-radius: 0.5rem;
+  border: 2px dashed var(--interactive-background);
+  border-radius: 0.5rem;
 }
 
 /******************* Styling of input elements **********************/
@@ -168,246 +164,256 @@ input[type=text] {
  * This very important section defines what the various input elements look like within the 'low-interaction' and 'interactive'-blocks
  */
 
-button.small, .button.small {
-    line-height: 1rem;
-    margin: 0;
-    margin-left: 0.5rem;
-    padding: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    height: fit-content;
-    font-size: unset;
-    border: 2px solid var(--button-background);
-    border-radius: 0.5rem;
-    font-weight: normal;
-    transition: all 250ms;
-    --tw-text-opacity: 1;
-    --tw-bg-opacity: 1;
-    background: var(--low-interaction-background);
-    color: var(--low-interaction-foreground);
+button.small,
+.button.small {
+  line-height: 1rem;
+  margin: 0;
+  margin-left: 0.5rem;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: fit-content;
+  font-size: unset;
+  border: 2px solid var(--button-background);
+  border-radius: 0.5rem;
+  font-weight: normal;
+  transition: all 250ms;
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  background: var(--low-interaction-background);
+  color: var(--low-interaction-foreground);
 }
 
-button, .button {
-    align-items: center;
-    display: inline-flex;
-    line-height: 1.25rem;
-    margin: 0.2rem;
-    padding: 0.4rem;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    font-size: large;
-    font-weight: bold;
-    border: 2px solid var(--button-background);
-    border-radius: 0.5rem;
-    transition: all 250ms;
-    --tw-text-opacity: 1;
-    --tw-bg-opacity: 1;
-    background: var(--low-interaction-background);
-    color: var(--low-interaction-foreground);
+button,
+.button {
+  align-items: center;
+  display: inline-flex;
+  line-height: 1.25rem;
+  margin: 0.2rem;
+  padding: 0.4rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  font-size: large;
+  font-weight: bold;
+  border: 2px solid var(--button-background);
+  border-radius: 0.5rem;
+  transition: all 250ms;
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  background: var(--low-interaction-background);
+  color: var(--low-interaction-foreground);
 }
 
 .button-shadow {
-    box-shadow: 0 5px 10px #88888888;
+  box-shadow: 0 5px 10px #88888888;
 }
 
+button.selected,
+.button.selected {
+  background-color: var(--catch-detail-color);
+  border-color: var(--catch-detail-color);
 
-
-button.selected, .button.selected {
-    background-color: var(--catch-detail-color);
-    border-color: var(--catch-detail-color);
-
-    color: var(--catch-detail-foregroundcolor);
+  color: var(--catch-detail-foregroundcolor);
 }
 
-button.selected svg path, .button.selected svg path {
-    fill: var(--catch-detail-foregroundcolor) !important;
+button.selected svg path,
+.button.selected svg path {
+  fill: var(--catch-detail-foregroundcolor) !important;
 }
 
-button:not(.no-image-background):not(.soft) svg path, .button:not(.no-image-background):not(.soft) svg path {
-    fill: var(--interactive-foreground) !important;;
-    transition: all 250ms;
+button:not(.no-image-background):not(.soft) svg path,
+.button:not(.no-image-background):not(.soft) svg path {
+  fill: var(--interactive-foreground) !important;
+  transition: all 250ms;
 }
 
-.interactive button, .interactive .button {
-    background: var(--interactive-background);
-    color: var(--interactive-foreground);
+.interactive button,
+.interactive .button {
+  background: var(--interactive-background);
+  color: var(--interactive-foreground);
 }
 
-button:hover, .button:hover {
-    background-color: var(--catch-detail-color);
-    color: var(--catch-detail-foregroundcolor);
-    border: 2px solid var(--catch-detail-color-contrast);
+button:hover,
+.button:hover {
+  background-color: var(--catch-detail-color);
+  color: var(--catch-detail-foregroundcolor);
+  border: 2px solid var(--catch-detail-color-contrast);
 }
 
-button:hover:not(.no-image-background) img, .button:hover:not(.no-image-background) img {
-    background: var(--low-interaction-background);
-    border-radius: 100rem;
+button:hover:not(.no-image-background) img,
+.button:hover:not(.no-image-background) img {
+  background: var(--low-interaction-background);
+  border-radius: 100rem;
 }
 
-
-button:hover:not(.no-image-background) svg path, .button:hover:not(.no-image-background) svg path {
-    fill: var(--catch-detail-foregroundcolor) !important;;
+button:hover:not(.no-image-background) svg path,
+.button:hover:not(.no-image-background) svg path {
+  fill: var(--catch-detail-foregroundcolor) !important;
 }
 
-button.disabled:hover:not(.no-image-background) svg path, .button.disabled:hover:not(.no-image-background) svg path {
-    fill: var(--low-interaction-foreground) !important;;
+button.disabled:hover:not(.no-image-background) svg path,
+.button.disabled:hover:not(.no-image-background) svg path {
+  fill: var(--low-interaction-foreground) !important;
 }
 
-
-button.primary, .button.primary {
-    color: var(--button-foreground);
-    background: var(--button-background);
+button.primary,
+.button.primary {
+  color: var(--button-foreground);
+  background: var(--button-background);
 }
 
-button.primary:not(.no-image-background) svg path, .button.primary:not(.no-image-background) svg path {
-    fill: var(--button-foreground) !important;;
-    transition: all 250ms;
+button.primary:not(.no-image-background) svg path,
+.button.primary:not(.no-image-background) svg path {
+  fill: var(--button-foreground) !important;
+  transition: all 250ms;
 }
 
-
-button.disabled, .button.disabled {
-    cursor: default;
-    border: 2px dashed var(--button-background);
-    background: unset;
-    color: unset;
-    box-shadow: none;
+button.disabled,
+.button.disabled {
+  cursor: default;
+  border: 2px dashed var(--button-background);
+  background: unset;
+  color: unset;
+  box-shadow: none;
 }
 
-
-button.disabled:hover, .button.disabled:hover {
-    cursor: default;
-    border: 2px dashed var(--button-background);
-    background: unset;
-    color: unset;
+button.disabled:hover,
+.button.disabled:hover {
+  cursor: default;
+  border: 2px dashed var(--button-background);
+  background: unset;
+  color: unset;
 }
 
 button.link {
-    border: none;
-    text-decoration: underline;
-    background-color: unset;
+  border: none;
+  text-decoration: underline;
+  background-color: unset;
 }
 
 button.link:hover {
-    color:unset;
+  color: unset;
 }
 
-.interactive button.disabled svg path, .interactive .button.disabled svg path {
-    fill: var(--interactive-foreground) !important;;
+.interactive button.disabled svg path,
+.interactive .button.disabled svg path {
+  fill: var(--interactive-foreground) !important;
 }
 
-
-.low-interaction button.disabled svg path, .low-interaction .button.disabled svg path {
-    fill: var(--low-interaction-foreground) !important;;
+.low-interaction button.disabled svg path,
+.low-interaction .button.disabled svg path {
+  fill: var(--low-interaction-foreground) !important;
 }
 
-.normal-background button.disabled svg path, .normal-background .button.disabled svg path {
-    fill: var(--foreground-color) !important;
+.normal-background button.disabled svg path,
+.normal-background .button.disabled svg path {
+  fill: var(--foreground-color) !important;
 }
-
 
 .links-w-full a:not(.weblate-link) {
-    display: flex;
-    column-gap: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    width: 100%;
+  display: flex;
+  column-gap: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
 }
 
-button.soft, .button.soft {
-    border: 2px solid var(--interactive-background);
-    margin: 0;
+button.soft,
+.button.soft {
+  border: 2px solid var(--interactive-background);
+  margin: 0;
 }
 
-button.soft:hover, .button.soft:hover {
-    background-color: var(--interactive-background);
-    color: var(--interactive-foreground);
-    border: 2px solid var(--catch-detail-color-contrast);
+button.soft:hover,
+.button.soft:hover {
+  background-color: var(--interactive-background);
+  color: var(--interactive-foreground);
+  border: 2px solid var(--catch-detail-color-contrast);
 }
 
 .links-as-button a {
-    /*
+  /*
     * Let a 'link' mimick a button, but not entirely
     */
-    padding: 3px;
-    margin: 0;
-    background: var(--low-interaction-background);
-    color: var(--low-interaction-foreground);
-    border: 2px solid var(--interactive-background);
-    border-radius: 0.5rem;
+  padding: 3px;
+  margin: 0;
+  background: var(--low-interaction-background);
+  color: var(--low-interaction-foreground);
+  border: 2px solid var(--interactive-background);
+  border-radius: 0.5rem;
 }
 
 .links-as-button a:hover {
-    background-color: var(--interactive-background);
-    color: var(--interactive-foregroundcolor);
-    border-color: var(--catch-detail-color-contrast);
+  background-color: var(--interactive-background);
+  color: var(--interactive-foregroundcolor);
+  border-color: var(--catch-detail-color-contrast);
 }
 
 .links-as-button a:hover svg path {
-    fill: var(--catch-detail-foregroundcolor) !important;
+  fill: var(--catch-detail-foregroundcolor) !important;
 }
 
 select {
-    border: 2px solid #00000000;
-    color: var(--foreground-color) !important;
-    background-color: var(--low-interaction-background) !important;
+  border: 2px solid #00000000;
+  color: var(--foreground-color) !important;
+  background-color: var(--low-interaction-background) !important;
 }
 
 select:hover {
-    border-color: var(--catch-detail-color-contrast);
+  border-color: var(--catch-detail-color-contrast);
 }
 
-
-.neutral-label{
-    /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
+.neutral-label {
+  /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
      * Placed here for autocompletion
      */
 }
 
 label:not(.neutral-label):not(.button) {
-    /**
+  /**
      * Label should _contain_ the input element
      */
-    border: 2px solid var(--interactive-background);
-    padding: 0.25rem;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: var(--low-interaction-background);
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 250ms;
+  border: 2px solid var(--interactive-background);
+  padding: 0.25rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--low-interaction-background);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 250ms;
 }
 
 label.button {
-    width: 100%;
+  width: 100%;
 }
 
 label:hover:not(.neutral-label) {
-    background-color: var(--catch-detail-color);
-    color: var(--catch-detail-foregroundcolor);
-    border: 2px solid var(--interactive-contrast)
+  background-color: var(--catch-detail-color);
+  color: var(--catch-detail-foregroundcolor);
+  border: 2px solid var(--interactive-contrast);
 }
 
 label:not(.no-image-background):not(.neutral-label) img {
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    background: var(--low-interaction-background);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background: var(--low-interaction-background);
 }
 
 label:not(.neutral-label) svg path {
-    transition: all 250ms;
+  transition: all 250ms;
 }
 
 label:hover:not(.no-image-background):not(.neutral-label) svg path {
-    fill: var(--catch-detail-foregroundcolor) !important;
+  fill: var(--catch-detail-foregroundcolor) !important;
 }
 
 label.checked:not(.neutral-label) {
-    border: 2px solid var(--foreground-color);
+  border: 2px solid var(--foreground-color);
 }
 
 textarea {
-    color: black;
+  color: black;
 }
 
 /************************* OTHER CATEGORIES ********************************/
@@ -418,97 +424,95 @@ textarea {
  */
 
 .thanks {
-    /* The class to indicate 'operation successful' or 'thank you for contributing' */
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    border: 3px dotted #58cd27;
-    background-color: #58cd2722;
+  /* The class to indicate 'operation successful' or 'thank you for contributing' */
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: 3px dotted #58cd27;
+  background-color: #58cd2722;
 }
 
 .alert {
-    /* The class to convey important information, e.g. 'invalid', 'something went wrong', 'warning: testmode', ... */
-    background-color: var(--alert-color);
-    color: var(--alert-foreground-color);
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
-    border: 2px dotted #ff9143;
+  /* The class to convey important information, e.g. 'invalid', 'something went wrong', 'warning: testmode', ... */
+  background-color: var(--alert-color);
+  color: var(--alert-foreground-color);
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
+  border: 2px dotted #ff9143;
 }
 
-
 .warning {
-    /* The class to convey important information, but not as grave as 'alert' */
-    background-color: var(--low-interaction-background);
-    color: var(--alert-foreground-color);
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
-    border: 3px dotted #ff9143;
+  /* The class to convey important information, but not as grave as 'alert' */
+  background-color: var(--low-interaction-background);
+  color: var(--alert-foreground-color);
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
+  border: 3px dotted #ff9143;
 }
 
 .low-interaction .warning {
-    background-color: var(--interactive-background);
+  background-color: var(--interactive-background);
 }
 
 .information {
-    /* The class to convey important information which does _not_ denote an error... */
-    background-color: var(--low-interaction-background);
-    color: var(--alert-foreground-color);
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
-    border: 3px dotted var(--catch-detail-color-contrast);
+  /* The class to convey important information which does _not_ denote an error... */
+  background-color: var(--low-interaction-background);
+  color: var(--alert-foreground-color);
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
+  border: 3px dotted var(--catch-detail-color-contrast);
 }
 
 .low-interaction .interactive {
-    background-color: var(--interactive-background);
+  background-color: var(--interactive-background);
 }
 
 .subtle {
-    /* For all information that is not important for 99% of the users */
-    color: #666;
-    font-weight: normal;
+  /* For all information that is not important for 99% of the users */
+  color: #666;
+  font-weight: normal;
 }
 
 .low-interaction .subtle {
-    color: #444;
+  color: #444;
 }
 
 .interactive .subtle {
-    color: #333;
+  color: #333;
 }
 
 .link-underline .subtle a {
-    text-decoration: underline 1px #7193bb88;
-    color: #7193bb;
+  text-decoration: underline 1px #7193bb88;
+  color: #7193bb;
 }
 
-
 .literal-code {
-    /* A codeblock */
-    display: inline-block;
-    background-color: lightgray;
-    padding: 0.1rem;
-    padding-left: 0.35rem;
-    padding-right: 0.35rem;
-    word-break: break-word;
-    color: black;
-    box-sizing: border-box;
-    font-family: monospace;
+  /* A codeblock */
+  display: inline-block;
+  background-color: lightgray;
+  padding: 0.1rem;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+  word-break: break-word;
+  color: black;
+  box-sizing: border-box;
+  font-family: monospace;
 }
 
 .interactive .literal-code {
-    background-color: #b3b3b3;
+  background-color: #b3b3b3;
 }
 
 /************************** UTILITY ************************/
@@ -517,184 +521,181 @@ textarea {
  * Utility classes are there for a specific function to pin down browser behaviour (and cannot be changed)
  */
 
-
 .text-white a {
-    /* Used solely in 'imageAttribution'  and in many themes*/
-    color: var(--background-color);
+  /* Used solely in 'imageAttribution'  and in many themes*/
+  color: var(--background-color);
 }
 
 .bg-black-transparent {
-    background-color: #00000088;
+  background-color: #00000088;
 }
 
 .block-ruby {
-    display: block ruby;
+  display: block ruby;
 }
 
-
 .rounded-left-full {
-    border-bottom-left-radius: 999rem;
-    border-top-left-radius: 999rem;
+  border-bottom-left-radius: 999rem;
+  border-top-left-radius: 999rem;
 }
 
 .rounded-right-full {
-    border-bottom-right-radius: 999rem;
-    border-top-right-radius: 999rem;
+  border-bottom-right-radius: 999rem;
+  border-top-right-radius: 999rem;
 }
 
-
 .no-images img {
-    /* Used solely in 'imageAttribution' and in many themes for the label*/
-    display: none;
+  /* Used solely in 'imageAttribution' and in many themes for the label*/
+  display: none;
 }
 
 .weblate-link {
-    display: inline-block;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0.25rem;
-    width: 1.2rem;
-    height: 1.2rem;
-    border: unset;
-    border-radius: 5rem;
-    backdrop-filter: var(--low-interaction-background);
+  display: inline-block;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0.25rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: unset;
+  border-radius: 5rem;
+  backdrop-filter: var(--low-interaction-background);
 }
 
-
 .no-weblate .weblate-link {
-    display: none !important;
+  display: none !important;
 }
 
 .link-underline a {
-    text-decoration: underline 1px var(--foreground-color);
+  text-decoration: underline 1px var(--foreground-color);
 }
 
 a.link-underline {
-    text-decoration: underline 1px var(--foreground-color);
+  text-decoration: underline 1px var(--foreground-color);
 }
 
 .link-no-underline a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .disable-links a {
-    pointer-events: none;
-    text-decoration: none !important;
-    color: var(--subtle-detail-color-contrast) !important;
+  pointer-events: none;
+  text-decoration: none !important;
+  color: var(--subtle-detail-color-contrast) !important;
 }
 
 .enable-links a {
-    pointer-events: unset;
-    text-decoration: underline !important;
-    color: unset !important;
+  pointer-events: unset;
+  text-decoration: underline !important;
+  color: unset !important;
 }
 
 .disable-links a.must-link,
 .disable-links .must-link a {
-    /* Hide links if they are disabled */
-    display: none;
+  /* Hide links if they are disabled */
+  display: none;
 }
-
 
 .zebra-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
-
 
 /************************* MISC ELEMENTS *************************/
 
 .selected svg:not(.noselect *) path.selectable {
-    /* A marker on the map gets the 'selected' class when it's properties are displayed
+  /* A marker on the map gets the 'selected' class when it's properties are displayed
     */
-    stroke: white !important;
-    stroke-width: 20px !important;
-    overflow: visible !important;
-    -webkit-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
-    -moz-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
-    animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+  stroke: white !important;
+  stroke-width: 20px !important;
+  overflow: visible !important;
+  -webkit-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+  -moz-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+  animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
 }
 
 .selected svg {
-    /* A marker on the map gets the 'selected' class when it's properties are displayed
+  /* A marker on the map gets the 'selected' class when it's properties are displayed
     */
-    overflow: visible !important;
+  overflow: visible !important;
 }
 
 svg.apply-fill path {
-    fill: var(--svg-color)
+  fill: var(--svg-color);
 }
 
 .compass_arrow {
-    width: calc( 2.5rem - 1px ) ; 
-    height: calc( 2.5rem - 1px )
+  width: calc(2.5rem - 1px);
+  height: calc(2.5rem - 1px);
 }
 
 @media (min-width: 640px) {
-    .compass_arrow {
-        width: calc( 2.75rem - 1px ) ;
-        height: calc( 2.75rem - 1px )
-    }
+  .compass_arrow {
+    width: calc(2.75rem - 1px);
+    height: calc(2.75rem - 1px);
+  }
 }
 
-
-
-
 @-webkit-keyframes glowing-drop-shadow {
-    from {
-        filter: drop-shadow(5px 5px 60px rgb(128 128 128 / 0.6));
-    }
-    to {
-        filter: drop-shadow(5px 5px 80px rgb(0.5 0.5 0.5 / 0.8));
-    }
+  from {
+    filter: drop-shadow(5px 5px 60px rgb(128 128 128 / 0.6));
+  }
+  to {
+    filter: drop-shadow(5px 5px 80px rgb(0.5 0.5 0.5 / 0.8));
+  }
 }
 
 @keyframes slide {
-    /* This is the animation on the marker to add a new point - it slides through all the possible presets */
-    from {
-        transform: translateX(0%);
-    }
+  /* This is the animation on the marker to add a new point - it slides through all the possible presets */
+  from {
+    transform: translateX(0%);
+  }
 
-    to {
-        transform: translateX(calc(-100% + 42px));
-    }
+  to {
+    transform: translateX(calc(-100% + 42px));
+  }
 }
 
 .glowing-shadow {
-    -webkit-animation: glowing 1s ease-in-out infinite alternate;
-    -moz-animation: glowing 1s ease-in-out infinite alternate;
-    animation: glowing 1s ease-in-out infinite alternate;
+  -webkit-animation: glowing 1s ease-in-out infinite alternate;
+  -moz-animation: glowing 1s ease-in-out infinite alternate;
+  animation: glowing 1s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes glowing {
-    from {
-        box-shadow: 0 0 20px 10px #eaaf2588, inset 0 0 0px 1px #eaaf25;
-    }
-    to {
-        box-shadow: 0 0 20px 20px #eaaf2588, inset 0 0 5px 1px #eaaf25;
-    }
+  from {
+    box-shadow: 0 0 20px 10px #eaaf2588, inset 0 0 0px 1px #eaaf25;
+  }
+  to {
+    box-shadow: 0 0 20px 20px #eaaf2588, inset 0 0 5px 1px #eaaf25;
+  }
 }
-
 
 /************************* LEGACY MARKER - CLEANUP BELOW ********************************/
 
-
 .slideshow-item img {
-    /* Legacy: should be replace when the image element is ported to Svelte*/
-    height: var(--image-carousel-height);
-    width: unset;
+  /* Legacy: should be replace when the image element is ported to Svelte*/
+  height: var(--image-carousel-height);
+  width: unset;
 }
 
 .animate-height {
-    /* Legacy: should be replaced by headlessui disclosure in time */
-    transition: max-height 0.5s ease-in-out;
-    overflow-y: hidden;
+  /* Legacy: should be replaced by headlessui disclosure in time */
+  transition: max-height 0.5s ease-in-out;
+  overflow-y: hidden;
 }
 
-
 .min-h-32 {
-    min-height: 8rem;
+  min-height: 8rem;
 }
 
 .max-w-full {
-    max-width: 100%;
+  max-width: 100%;
+}
+
+/************************* Experimental support for foldable devices ********************************/
+@media (horizontal-viewport-segments: 2) {
+  .theme-list {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
