@@ -119,7 +119,7 @@
         <Tr t={t.conflicting.intro} />
       {/if}
       {#if $different.length > 0}
-        {#each $different as key}
+        {#each $different as key (key)}
           <div class="mx-2 rounded-2xl">
             <ComparisonAction
               {key}
@@ -136,7 +136,7 @@
 
       {#if $missing.length > 0}
         {#if currentStep === "init"}
-          {#each $missing as key}
+          {#each $missing as key (key)}
             <div class:glowing-shadow={applyAllHovered} class="mx-2 rounded-2xl">
               <ComparisonAction
                 {key}
@@ -174,7 +174,7 @@
       {#if readonly}
         <div class="w-full overflow-x-auto">
           <div class="flex h-32 w-max gap-x-2">
-            {#each $unknownImages as image}
+            {#each $unknownImages as image (image)}
               <AttributedImage
                 imgClass="h-32 w-max shrink-0"
                 image={{ url: image }}
@@ -184,7 +184,7 @@
           </div>
         </div>
       {:else}
-        {#each $unknownImages as image}
+        {#each $unknownImages as image (image)}
           <LinkableImage
             {tags}
             {state}
