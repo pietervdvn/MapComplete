@@ -5,6 +5,8 @@
   import * as nsiFeatures from "../../../../node_modules/name-suggestion-index/dist/featureCollection.json"
   import { LocationConflation } from "@rapideditor/location-conflation"
   import * as turf from "@turf/turf"
+  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { twMerge } from "tailwind-merge"
 
   const nsiFile: NSIFile = nsi
   const loco = new LocationConflation(nsiFeatures)
@@ -22,8 +24,6 @@
   let maintag = helperArgs[0].toString()
   let tag = key
 
-  let selectedItem: NSIItem
-
   const path = `${tag}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
 
   // Check if the path exists in the NSI file
@@ -33,6 +33,8 @@
   }
 
   let items = nsiFile.nsi[path].items
+
+  let selectedItem: NSIItem = items.find((item) => item.tags[tag] === value.data)
 
   // Get the coordinates if the feature is a point, otherwise use the center
   let lon: number
@@ -62,7 +64,6 @@
       }
       return true
     })
-    .slice(0, 25)
 
   /**
    * Some interfaces for the NSI files
@@ -121,11 +122,17 @@
 </script>
 
 <div>
-  <input type="text" placeholder="Filter entries" bind:value={filter} />
-  <div class="flex h-32 w-full flex-wrap overflow-hidden">
+  <div class="normal-background my-2 flex w-5/6 justify-between rounded-full pl-2">
+    <input type="text" placeholder="Filter entries" bind:value={filter} class="outline-none" />
+    <SearchIcon aria-hidden="true" class="h-6 w-6 self-end" />
+  </div>
+  <div class="flex h-36 w-full flex-wrap overflow-scroll">
     {#each filteredItems as item}
       <div
-        class="m-1 h-fit rounded-full border border-black p-4 text-center"
+        class={twMerge(
+          "m-1 h-fit rounded-full border-2 border-black p-4 text-center",
+          selectedItem === item ? "interactive" : "bg-white"
+        )}
         on:click={() => {
           select(item)
         }}

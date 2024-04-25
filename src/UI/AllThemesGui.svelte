@@ -100,7 +100,7 @@
       <input
         autofocus
         bind:value={$themeSearchText}
-        class="mr-4 w-full"
+        class="mr-4 w-full outline-none"
         id="theme-search"
         type="search"
         use:placeholder={tr.searchForATheme}

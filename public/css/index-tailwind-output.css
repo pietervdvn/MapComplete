@@ -781,10 +781,6 @@ video {
   float: left;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -795,6 +791,10 @@ video {
 
 .m-0 {
   margin: 0px;
+}
+
+.m-8 {
+  margin: 2rem;
 }
 
 .m-2 {
@@ -900,10 +900,6 @@ video {
   margin-right: 4rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -934,6 +930,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1161,6 +1161,10 @@ video {
 
 .h-80 {
   height: 20rem;
+}
+
+.h-36 {
+  height: 9rem;
 }
 
 .h-56 {
@@ -1578,6 +1582,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .overflow-x-auto {
