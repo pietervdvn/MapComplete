@@ -6758,20 +6758,6 @@
                 "freeform": {
                     "placeholder": "Brand"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "This is an Amazon Locker"
-                    },
-                    "1": {
-                        "then": "This is a DHL Packstation"
-                    },
-                    "2": {
-                        "then": "This is a DPD Pickup Station"
-                    },
-                    "3": {
-                        "then": "This is a PostNL Parcel Locker"
-                    }
-                },
                 "question": "What is the brand of the parcel locker?",
                 "render": "This is a {brand} parcel locker"
             },

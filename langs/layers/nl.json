@@ -5612,20 +5612,6 @@
                 "freeform": {
                     "placeholder": "Merk"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een Amazon Locker"
-                    },
-                    "1": {
-                        "then": "Dit is een DHL Packstation"
-                    },
-                    "2": {
-                        "then": "Dit is een DPD Pickup Station"
-                    },
-                    "3": {
-                        "then": "Dit is een PostNL pakketautomaat"
-                    }
-                },
                 "question": "Wat is het merk van deze pakketautomaat?",
                 "render": "Dit is een {brand} pakketautomaat"
             },

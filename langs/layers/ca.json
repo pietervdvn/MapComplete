@@ -5379,17 +5379,6 @@
                 "freeform": {
                     "placeholder": "Marca"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "Açò és un Amazon Locker"
-                    },
-                    "1": {
-                        "then": "Açò és un DHL Packstation"
-                    },
-                    "3": {
-                        "then": "Açò és una bústia intel·ligent de PostNL"
-                    }
-                },
                 "question": "Quina és la marca d'aquesta bústia intel·ligent?",
                 "render": "Açò és una bústia intel·ligent de {brand}"
             },
