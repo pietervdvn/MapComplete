@@ -15,6 +15,7 @@
   export let unvalidatedText: UIEventSource<string> = new UIEventSource<string>(value.data)
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
+  export let extraTags: UIEventSource<Record<string, string>>
 
   export let feature: Feature = undefined
   export let state: SpecialVisualizationState
@@ -77,9 +78,9 @@
     type={config.freeform.type}
     {value}
     {state}
-    {tags}
     {helperArgs}
     {key}
+    {extraTags}
     on:submit
   />
 </div>

@@ -13,13 +13,16 @@
    * All props for this input helper
    */
   export let value: UIEventSource<string> = new UIEventSource<string>(undefined)
+  // Since we're getting extra tags aside from the standard we need to export them
+  export let extraTags: UIEventSource<Record<string, string>>
   export let feature: Feature
-  export let tags: UIEventSource<Record<string, string>>
   export let helperArgs: (string | number | boolean)[]
   export let key: string
 
   let maintag = helperArgs[0].toString()
   let tag = key
+
+  let selectedItem: NSIItem
 
   const path = `${tag}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
 
@@ -64,6 +67,10 @@
   /**
    * Some interfaces for the NSI files
    */
+
+  /**
+   * Main name suggestion index file
+   */
   interface NSIFile {
     _meta: {
       version: string
@@ -95,6 +102,22 @@
     }
     fromTemplate?: boolean
   }
+
+  /**
+   * Function called when an item is selected
+   */
+  function select(item: NSIItem) {
+    value.setData(item.tags[tag])
+    selectedItem = item
+    // Tranform the object into record<string, string> and remove the tag we're using, as well as the maintag
+    const tags = Object.entries(item.tags).reduce((acc, [key, value]) => {
+      if (key !== tag && key !== maintag.split("=")[0]) {
+        acc[key] = value
+      }
+      return acc
+    }, {} as Record<string, string>)
+    extraTags.setData(tags)
+  }
 </script>
 
 <div>
@@ -104,7 +127,12 @@
       <div
         class="m-1 h-fit rounded-full border border-black p-4 text-center"
         on:click={() => {
-          value.setData(item.tags[tag])
+          select(item)
+        }}
+        on:keydown={(e) => {
+          if (e.key === "Enter") {
+            select(item)
+          }
         }}
       >
         {item.displayName}

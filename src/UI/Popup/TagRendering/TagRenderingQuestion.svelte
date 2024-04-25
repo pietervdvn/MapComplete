@@ -31,6 +31,7 @@
   import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Tag } from "../../../Logic/Tags/Tag"
   import { get, writable } from "svelte/store"
+  import { And } from "../../../Logic/Tags/And"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -38,6 +39,7 @@
   export let state: SpecialVisualizationState
   export let layer: LayerConfig | undefined
   export let selectedTags: UploadableTag = undefined
+  export let extraTags: UIEventSource<Record<string, string>> = new UIEventSource({})
 
   export let allowDeleteOfFreeform: boolean = false
 
@@ -179,9 +181,27 @@
   }
 
   function onSave(_ = undefined) {
+    console.log("Extra tags to save", extraTags.data)
     if (selectedTags === undefined) {
       return
     }
+
+    if (extraTags.data) {
+      // Map the extraTags into an array of Tag objects
+      const extraTagsArray = Object.entries(extraTags.data).map(([k, v]) => new Tag(k, v))
+
+      // Check the type of selectedTags
+      if (selectedTags instanceof Tag) {
+        // Re-define selectedTags as an And
+        selectedTags = new And([selectedTags, ...extraTagsArray])
+      } else if (selectedTags instanceof And) {
+        // Add the extraTags to the existing And
+        selectedTags = new And([...selectedTags.and, ...extraTagsArray])
+      } else {
+        console.error("selectedTags is not of type Tag or And")
+      }
+    }
+
     if (layer === undefined || (layer?.source === null && layer.id !== "favourite")) {
       /**
        * This is a special, priviliged layer.
@@ -287,6 +307,7 @@
             {feedback}
             {unit}
             {state}
+            {extraTags}
             feature={selectedElement}
             value={freeformInput}
             unvalidatedText={freeformInputUnvalidated}
@@ -330,6 +351,7 @@
                   {feedback}
                   {unit}
                   {state}
+                  {extraTags}
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
@@ -374,6 +396,7 @@
                   {feedback}
                   {unit}
                   {state}
+                  {extraTags}
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}

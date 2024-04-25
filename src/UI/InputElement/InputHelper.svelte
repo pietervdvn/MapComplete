@@ -27,9 +27,9 @@
   export let feature: Feature
   export let args: (string | number | boolean)[] = undefined
   export let state: SpecialVisualizationState
-  export let tags: UIEventSource<Record<string, string>>
   export let helperArgs: (string | number | boolean)[]
   export let key: string
+  export let extraTags: UIEventSource<Record<string, string>>
 
   let properties = { feature, args: args ?? [] }
 </script>
@@ -55,5 +55,5 @@
 {:else if type === "wikidata"}
   <ToSvelte construct={() => InputHelpers.constructWikidataHelper(value, properties)} />
 {:else if type === "nsi"}
-  <NameSuggestionIndexInput {value} {feature} {tags} {helperArgs} {key} />
+  <NameSuggestionIndexInput {value} {feature} {helperArgs} {key} {extraTags} />
 {/if}
