@@ -93,6 +93,9 @@
         "shortDescription": "Carte des bancs",
         "title": "Bancs"
     },
+    "bicycle_parkings": {
+        "title": "Stationnement vélo"
+    },
     "bicycle_rental": {
         "description": "Vous trouverez sur cette carte toutes les stations de location de vélo telles qu'elles sont référencées dans OpenStreetMap",
         "shortDescription": "Une carte avec des stations et magasins de location de vélos",
