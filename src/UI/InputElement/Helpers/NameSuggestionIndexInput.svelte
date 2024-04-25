@@ -14,12 +14,21 @@
    */
   export let value: UIEventSource<string> = new UIEventSource<string>(undefined)
   export let feature: Feature
+  export let tags: UIEventSource<Record<string, string>>
+  export let helperArgs: (string | number | boolean)[]
+  export let key: string
 
-  // Currently hardcoded, should be dynamic
-  let maintag = "amenity=atm"
-  let tag = "brand"
+  let maintag = helperArgs[0].toString()
+  let tag = key
 
   const path = `${tag}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
+
+  // Check if the path exists in the NSI file
+  if (!nsiFile.nsi[path]) {
+    console.error(`Path ${path} does not exist in the NSI file`)
+    throw new Error(`Path ${path} does not exist in the NSI file`)
+  }
+
   let items = nsiFile.nsi[path].items
 
   // Get the coordinates if the feature is a point, otherwise use the center
@@ -34,7 +43,9 @@
     lat = feature.bbox[1] + (feature.bbox[3] - feature.bbox[1]) / 2
   }
 
-  // Filter the items
+  /**
+   * Filter the items, first by the display name, then by the location set
+   */
   let filter = ""
   $: filteredItems = items
     .filter((item) => item.displayName.toLowerCase().includes(filter.toLowerCase()))

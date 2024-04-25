@@ -27,6 +27,8 @@
     inline = false
     inline = config.freeform?.inline
   }
+  let helperArgs = config.freeform?.helperArgs
+  let key = config.freeform?.key
 
   const dispatch = createEventDispatcher<{ selected }>()
   export let feedback: UIEventSource<Translation>
@@ -75,6 +77,9 @@
     type={config.freeform.type}
     {value}
     {state}
+    {tags}
+    {helperArgs}
+    {key}
     on:submit
   />
 </div>

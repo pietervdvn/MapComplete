@@ -24,7 +24,6 @@ export default class NameSuggestionIndexValidator extends Validator {
                                             "main",
                                             "The main tag to give suggestions for, e.g. `amenity=restaurant`.",
                                         ],
-                                        ["key", "The key to give suggestions for, e.g. `brand`."],
                                     ]
                                 ),
                             ]),
