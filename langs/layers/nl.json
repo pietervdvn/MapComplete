@@ -27,6 +27,13 @@
     "advertising": {
         "name": "Reclame",
         "presets": {
+            "10": {
+                "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
+                "title": "een spandoek"
+            },
+            "14": {
+                "title": "een muurschildering"
+            },
             "4": {
                 "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
                 "title": "een uithangbord"
@@ -43,13 +50,6 @@
             },
             "8": {
                 "title": "een scherm op een muur"
-            },
-            "10": {
-                "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
-                "title": "een spandoek"
-            },
-            "14": {
-                "title": "een muurschildering"
             }
         },
         "tagRenderings": {
@@ -107,6 +107,9 @@
         },
         "title": {
             "mappings": {
+                "10": {
+                    "then": "Muurschildering"
+                },
                 "3": {
                     "then": "Aanplakzuil"
                 },
@@ -124,9 +127,6 @@
                 },
                 "9": {
                     "then": "Aanplakzuil"
-                },
-                "10": {
-                    "then": "Muurschildering"
                 }
             }
         }
@@ -208,6 +208,15 @@
                     "1": {
                         "then": "Muurschildering"
                     },
+                    "10": {
+                        "then": "Azulejo (Spaanse siertegels)"
+                    },
+                    "11": {
+                        "then": "Tegelwerk"
+                    },
+                    "12": {
+                        "then": "Houtsculptuur"
+                    },
                     "2": {
                         "then": "Schilderij"
                     },
@@ -231,15 +240,6 @@
                     },
                     "9": {
                         "then": "Reliëf"
-                    },
-                    "10": {
-                        "then": "Azulejo (Spaanse siertegels)"
-                    },
-                    "11": {
-                        "then": "Tegelwerk"
-                    },
-                    "12": {
-                        "then": "Houtsculptuur"
                     }
                 },
                 "question": "Wat voor soort kunstwerk is dit?",
@@ -1935,30 +1935,6 @@
                     "1": {
                         "then": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
                     },
-                    "2": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
-                    },
-                    "3": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 met kabel</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 met kabel</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)"
                     },
@@ -1988,6 +1964,9 @@
                     },
                     "19": {
                         "then": "<b>Type 2 met kabel</b> (J1772)"
+                    },
+                    "2": {
+                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
@@ -2019,6 +1998,9 @@
                     "29": {
                         "then": "<b>Bosch Active Connect met 3 pinnen</b> aan een kabel"
                     },
+                    "3": {
+                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
                     },
@@ -2029,7 +2011,25 @@
                         "then": "<b>BS1363</b> (VK 3-pin)"
                     },
                     "33": {
-                        "then": "<b>BS1363</b> (VK 3-pin)"
+                      "then": "<b>BS1363</b> (VK 3-pin)"
+                    },
+                  "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Type 1 met kabel</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Type 1 met kabel</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
                     }
                 },
                 "question": "Welke aansluitingen zijn hier beschikbaar?"
@@ -3032,6 +3032,15 @@
                     "1": {
                         "then": "Dit fietspad is geplaveid"
                     },
+                    "10": {
+                        "then": "Dit fietspad is gemaakt van fijn grind"
+                    },
+                    "11": {
+                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                    },
+                    "12": {
+                        "then": "Dit fietspad is gemaakt van aarde"
+                    },
                     "2": {
                         "then": "Dit fietspad is gemaakt van asfalt"
                     },
@@ -3055,15 +3064,6 @@
                     },
                     "9": {
                         "then": "Dit fietspad is gemaakt van grind"
-                    },
-                    "10": {
-                        "then": "Dit fietspad is gemaakt van fijn grind"
-                    },
-                    "11": {
-                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
-                    },
-                    "12": {
-                        "then": "Dit fietspad is gemaakt van aarde"
                     }
                 },
                 "question": "Waaruit is het oppervlak van het fietspad van gemaakt?",
@@ -3112,6 +3112,15 @@
                     "1": {
                         "then": "Dit fietspad is geplaveid"
                     },
+                    "10": {
+                        "then": "Dit fietspad is gemaakt van fijn grind"
+                    },
+                    "11": {
+                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                    },
+                    "12": {
+                        "then": "Dit fietspad is gemaakt van aarde"
+                    },
                     "2": {
                         "then": "Dit fietspad is gemaakt van asfalt"
                     },
@@ -3135,15 +3144,6 @@
                     },
                     "9": {
                         "then": "Dit fietspad is gemaakt van grind"
-                    },
-                    "10": {
-                        "then": "Dit fietspad is gemaakt van fijn grind"
-                    },
-                    "11": {
-                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
-                    },
-                    "12": {
-                        "then": "Dit fietspad is gemaakt van aarde"
                     }
                 },
                 "question": "Waaruit is het oppervlak van de straat gemaakt?",
@@ -4192,6 +4192,21 @@
                     "1": {
                         "then": "Dit is een frituur"
                     },
+                    "10": {
+                        "then": "Dit is een Chinees restaurant"
+                    },
+                    "11": {
+                        "then": "Dit is een Grieks restaurant"
+                    },
+                    "12": {
+                        "then": "Dit is een Indisch restaurant"
+                    },
+                    "13": {
+                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+                    },
+                    "14": {
+                        "then": "Dit is een Thaïs restaurant"
+                    },
                     "2": {
                         "then": "Dit is een pastazaak"
                     },
@@ -4215,21 +4230,6 @@
                     },
                     "9": {
                         "then": "Dit is een Frans restaurant"
-                    },
-                    "10": {
-                        "then": "Dit is een Chinees restaurant"
-                    },
-                    "11": {
-                        "then": "Dit is een Grieks restaurant"
-                    },
-                    "12": {
-                        "then": "Dit is een Indisch restaurant"
-                    },
-                    "13": {
-                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
-                    },
-                    "14": {
-                        "then": "Dit is een Thaïs restaurant"
                     }
                 },
                 "question": "Welk soort gerechten worden hier geserveerd?",
@@ -5410,6 +5410,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Alle Notes"
+                    },
+                    "1": {
+                        "question": "Verberg import Notes"
+                    },
+                    "2": {
+                        "question": "Toon enkel import Notes"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5463,19 +5476,6 @@
                 "options": {
                     "0": {
                         "question": "Toon enkel open Notes"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Alle Notes"
-                    },
-                    "1": {
-                        "question": "Verberg import Notes"
-                    },
-                    "2": {
-                        "question": "Toon enkel import Notes"
                     }
                 }
             }
@@ -5769,6 +5769,18 @@
                     "1": {
                         "then": "Dit is een normale parkeerplek."
                     },
+                    "10": {
+                        "then": "Deze parkeerplek is gereserveerd voor personeel."
+                    },
+                    "11": {
+                        "then": "Deze parkeerplek is gereserveerd voor taxis."
+                    },
+                    "12": {
+                        "then": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger."
+                    },
+                    "13": {
+                        "then": "Deze parkeerplek is gereserveerd voor autodelen."
+                    },
                     "2": {
                         "then": "Dit is een gehandicaptenparkeerplaats."
                     },
@@ -5792,18 +5804,6 @@
                     },
                     "9": {
                         "then": "Deze parkeerplek is gereserveerd voor ouders met kinderen."
-                    },
-                    "10": {
-                        "then": "Deze parkeerplek is gereserveerd voor personeel."
-                    },
-                    "11": {
-                        "then": "Deze parkeerplek is gereserveerd voor taxis."
-                    },
-                    "12": {
-                        "then": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger."
-                    },
-                    "13": {
-                        "then": "Deze parkeerplek is gereserveerd voor autodelen."
                     }
                 },
                 "question": "Wat voor parkeerplek is dit?"
@@ -6118,6 +6118,9 @@
                     "0": {
                         "then": "Dit is een schommel"
                     },
+                    "11": {
+                        "then": "Dit is een rekstok"
+                    },
                     "3": {
                         "then": "Dit is een zandbak"
                     },
@@ -6129,9 +6132,6 @@
                     },
                     "6": {
                         "then": "Dit is een wipwap"
-                    },
-                    "11": {
-                        "then": "Dit is een rekstok"
                     }
                 },
                 "question": "Wat voor speeltoestel is dit?"
@@ -6400,6 +6400,21 @@
                     "1": {
                         "then": "Munten van 2 cent worden geaccepteerd"
                     },
+                    "10": {
+                        "then": "Munten van 20 rappen worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Munten van ½ frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Munten van 1 frank worden geaccepteerd"
+                    },
+                    "13": {
+                        "then": "Munten van 2 frank worden geaccepteerd"
+                    },
+                    "14": {
+                        "then": "Munten van 5 frank worden geaccepteerd"
+                    },
                     "2": {
                         "then": "Munten van 5 cent worden geaccepteerd"
                     },
@@ -6423,21 +6438,6 @@
                     },
                     "9": {
                         "then": "Munten van 10 rappen worden geaccepteerd"
-                    },
-                    "10": {
-                        "then": "Munten van 20 rappen worden geaccepteerd"
-                    },
-                    "11": {
-                        "then": "Munten van ½ frank worden geaccepteerd"
-                    },
-                    "12": {
-                        "then": "Munten van 1 frank worden geaccepteerd"
-                    },
-                    "13": {
-                        "then": "Munten van 2 frank worden geaccepteerd"
-                    },
-                    "14": {
-                        "then": "Munten van 5 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke munten kan je hier betalen?"
@@ -6449,6 +6449,15 @@
                     },
                     "1": {
                         "then": "Biljetten van 10 euro worden geaccepteerd"
+                    },
+                    "10": {
+                        "then": "Biljetten van 100 frank worden geaccepteerd"
+                    },
+                    "11": {
+                        "then": "Biljetten van 200 frank worden geaccepteerd"
+                    },
+                    "12": {
+                        "then": "Biljetten van 1000 frank worden geaccepteerd"
                     },
                     "2": {
                         "then": "Biljetten van 20 euro worden geaccepteerd"
@@ -6473,15 +6482,6 @@
                     },
                     "9": {
                         "then": "Biljetten van 50 frank worden geaccepteerd"
-                    },
-                    "10": {
-                        "then": "Biljetten van 100 frank worden geaccepteerd"
-                    },
-                    "11": {
-                        "then": "Biljetten van 200 frank worden geaccepteerd"
-                    },
-                    "12": {
-                        "then": "Biljetten van 1000 frank worden geaccepteerd"
                     }
                 },
                 "question": "Met welke bankbiljetten kan je hier betalen?"
@@ -6805,30 +6805,6 @@
                     "1": {
                         "question": "Recycling van batterijen"
                     },
-                    "2": {
-                        "question": "Recycling van drankpakken"
-                    },
-                    "3": {
-                        "question": "Recycling van blikken"
-                    },
-                    "4": {
-                        "question": "Recycling van kleding"
-                    },
-                    "5": {
-                        "question": "Recycling van frituurvet"
-                    },
-                    "6": {
-                        "question": "Recycling van motorolie"
-                    },
-                    "7": {
-                        "question": "Recycling van tl-buizen"
-                    },
-                    "8": {
-                        "question": "Recycling van groen afval"
-                    },
-                    "9": {
-                        "question": "Recycling van glazen flessen"
-                    },
                     "10": {
                         "question": "Recycling van glas"
                     },
@@ -6859,11 +6835,35 @@
                     "19": {
                         "question": "Recycling van restafval"
                     },
+                    "2": {
+                        "question": "Recycling van drankpakken"
+                    },
                     "20": {
                         "question": "Recycling van inktpatronen"
                     },
                     "21": {
                         "question": "Recycling van fietsen"
+                    },
+                    "3": {
+                        "question": "Recycling van blikken"
+                    },
+                    "4": {
+                        "question": "Recycling van kleding"
+                    },
+                    "5": {
+                        "question": "Recycling van frituurvet"
+                    },
+                    "6": {
+                        "question": "Recycling van motorolie"
+                    },
+                    "7": {
+                        "question": "Recycling van tl-buizen"
+                    },
+                    "8": {
+                        "question": "Recycling van groen afval"
+                    },
+                    "9": {
+                        "question": "Recycling van glazen flessen"
                     }
                 }
             },
@@ -6931,30 +6931,6 @@
                     "1": {
                         "then": "Drankpakken kunnen hier gerecycled worden"
                     },
-                    "2": {
-                        "then": "Blikken kunnen hier gerecycled worden"
-                    },
-                    "3": {
-                        "then": "Kleren kunnen hier gerecycled worden"
-                    },
-                    "4": {
-                        "then": "Frituurvet kan hier gerecycled worden"
-                    },
-                    "5": {
-                        "then": "Motorolie kan hier gerecycled worden"
-                    },
-                    "6": {
-                        "then": "TL-buizen kunnen hier gerecycled worden"
-                    },
-                    "7": {
-                        "then": "Groen afval kan hier gerecycled worden"
-                    },
-                    "8": {
-                        "then": "Organisch afval kan hier gerecycled worden"
-                    },
-                    "9": {
-                        "then": "Glazen flessen kunnen hier gerecycled worden"
-                    },
                     "10": {
                         "then": "Glas kan hier gerecycled worden"
                     },
@@ -6985,6 +6961,9 @@
                     "19": {
                         "then": "Schoenen kunnen hier gerecycled worden"
                     },
+                    "2": {
+                        "then": "Blikken kunnen hier gerecycled worden"
+                    },
                     "20": {
                         "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
@@ -6999,6 +6978,27 @@
                     },
                     "24": {
                         "then": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
+                    },
+                    "3": {
+                        "then": "Kleren kunnen hier gerecycled worden"
+                    },
+                    "4": {
+                        "then": "Frituurvet kan hier gerecycled worden"
+                    },
+                    "5": {
+                        "then": "Motorolie kan hier gerecycled worden"
+                    },
+                    "6": {
+                        "then": "TL-buizen kunnen hier gerecycled worden"
+                    },
+                    "7": {
+                        "then": "Groen afval kan hier gerecycled worden"
+                    },
+                    "8": {
+                        "then": "Organisch afval kan hier gerecycled worden"
+                    },
+                    "9": {
+                        "then": "Glazen flessen kunnen hier gerecycled worden"
                     }
                 },
                 "question": "Wat kan hier gerecycled worden?"
@@ -7724,6 +7724,12 @@
                     "1": {
                         "then": "Deze lantaarn gebruikt LEDs"
                     },
+                    "10": {
+                        "then": "Deze lantaarn gebruikt hogedruknatriumlampen (oranje met wit)"
+                    },
+                    "11": {
+                        "then": "Deze lantaarn wordt verlicht met gas"
+                    },
                     "2": {
                         "then": "Deze lantaarn gebruikt gloeilampen"
                     },
@@ -7747,12 +7753,6 @@
                     },
                     "9": {
                         "then": "Deze lantaarn gebruikt lagedruknatriumlampen (monochroom oranje)"
-                    },
-                    "10": {
-                        "then": "Deze lantaarn gebruikt hogedruknatriumlampen (oranje met wit)"
-                    },
-                    "11": {
-                        "then": "Deze lantaarn wordt verlicht met gas"
                     }
                 },
                 "question": "Wat voor verlichting gebruikt deze lantaarn?"
@@ -8970,30 +8970,6 @@
                     "1": {
                         "question": "Verkoop van dranken"
                     },
-                    "2": {
-                        "question": "Verkoop van snoep"
-                    },
-                    "3": {
-                        "question": "Verkoop van eten"
-                    },
-                    "4": {
-                        "question": "Verkoop van sigaretten"
-                    },
-                    "5": {
-                        "question": "Verkoop van condooms"
-                    },
-                    "6": {
-                        "question": "Verkoop van koffie"
-                    },
-                    "7": {
-                        "question": "Verkoop van water"
-                    },
-                    "8": {
-                        "question": "Verkoop van kranten"
-                    },
-                    "9": {
-                        "question": "Verkoop van fietsbinnenbanden"
-                    },
                     "10": {
                         "question": "Verkoop van melk"
                     },
@@ -9024,6 +9000,9 @@
                     "19": {
                         "question": "Verkoop van bloemen"
                     },
+                    "2": {
+                        "question": "Verkoop van snoep"
+                    },
                     "23": {
                         "question": "Verkoop van fietslampjes"
                     },
@@ -9038,6 +9017,27 @@
                     },
                     "27": {
                         "question": "Verkoop van fietssloten"
+                    },
+                    "3": {
+                        "question": "Verkoop van eten"
+                    },
+                    "4": {
+                        "question": "Verkoop van sigaretten"
+                    },
+                    "5": {
+                        "question": "Verkoop van condooms"
+                    },
+                    "6": {
+                        "question": "Verkoop van koffie"
+                    },
+                    "7": {
+                        "question": "Verkoop van water"
+                    },
+                    "8": {
+                        "question": "Verkoop van kranten"
+                    },
+                    "9": {
+                        "question": "Verkoop van fietsbinnenbanden"
                     }
                 }
             }
@@ -9078,30 +9078,6 @@
                     "1": {
                         "then": "Snoep wordt verkocht"
                     },
-                    "2": {
-                        "then": "Eten wordt verkocht"
-                    },
-                    "3": {
-                        "then": "Sigaretten worden verkocht"
-                    },
-                    "4": {
-                        "then": "Condooms worden verkocht"
-                    },
-                    "5": {
-                        "then": "Koffie wordt verkocht"
-                    },
-                    "6": {
-                        "then": "Drinkwater wordt verkocht"
-                    },
-                    "7": {
-                        "then": "Kranten worden verkocht"
-                    },
-                    "8": {
-                        "then": "Binnenbanden voor fietsen worden verkocht"
-                    },
-                    "9": {
-                        "then": "Melk wordt verkocht"
-                    },
                     "10": {
                         "then": "Brood wordt verkocht"
                     },
@@ -9132,6 +9108,9 @@
                     "19": {
                         "then": "Parkeerkaarten worden verkocht"
                     },
+                    "2": {
+                        "then": "Eten wordt verkocht"
+                    },
                     "21": {
                         "then": "Openbaar vervoerkaartjes worden verkocht"
                     },
@@ -9149,6 +9128,27 @@
                     },
                     "26": {
                         "then": "Fietssloten worden verkocht"
+                    },
+                    "3": {
+                        "then": "Sigaretten worden verkocht"
+                    },
+                    "4": {
+                        "then": "Condooms worden verkocht"
+                    },
+                    "5": {
+                        "then": "Koffie wordt verkocht"
+                    },
+                    "6": {
+                        "then": "Drinkwater wordt verkocht"
+                    },
+                    "7": {
+                        "then": "Kranten worden verkocht"
+                    },
+                    "8": {
+                        "then": "Binnenbanden voor fietsen worden verkocht"
+                    },
+                    "9": {
+                        "then": "Melk wordt verkocht"
                     }
                 },
                 "question": "Wat verkoopt deze verkoopautomaat?",
