@@ -38,13 +38,13 @@
       {#if !allCalculatedTags.has(key)}
         <tr>
           <td>{key}</td>
-          <td>
+          <td style="width: 75%">
             {#if $tags[key] === undefined}
               <i>undefined</i>
             {:else if $tags[key] === ""}
               <i>Empty string</i>
             {:else if typeof $tags[key] === "object"}
-              <div class="literal-code">{JSON.stringify($tags[key])}</div>
+              <div class="literal-code" >{JSON.stringify($tags[key])}</div>
             {:else}
               {$tags[key]}
             {/if}
