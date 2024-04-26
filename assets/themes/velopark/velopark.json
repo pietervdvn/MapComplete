@@ -319,7 +319,14 @@
           }
         ],
         "+tagRenderings": [
-          "questions"
+          "questions",
+          {
+            "render": {
+              "en": "<h3>Attributes from OpenStreetMap</h3>Editing below will make changes directly in OpenStreetMap",
+              "nl": "<h3>Attributen uit OpenStreetMap</h3>Als je hieronder wijzigingen maakt, dan worden die direct in OpenStreetMap opgeslaan"
+
+            }
+          }
         ],
         "tagRenderings+": [
           "images"
@@ -338,7 +345,13 @@
         "doCount": false,
         "minzoom": 14,
         "+tagRenderings": [
-          "questions"
+          "questions",{
+            "render": {
+              "en": "<h3>Attributes from OpenStreetMap</h3>Editing below will make changes directly in OpenStreetMap",
+              "nl": "<h3>Attributen uit OpenStreetMap</h3>Als je hieronder wijzigingen maakt, dan worden die direct in OpenStreetMap opgeslaan"
+
+            }
+          }
         ],
         "tagRenderings+": [
           "images"
