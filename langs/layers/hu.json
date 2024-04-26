@@ -94,6 +94,12 @@
                     "1": {
                         "then": "Falfestmény"
                     },
+                    "10": {
+                        "then": "Azulejo (portugál vagy spanyol dekoratív csempe)"
+                    },
+                    "11": {
+                        "then": "Csempe"
+                    },
                     "2": {
                         "then": "Festmény"
                     },
@@ -117,12 +123,6 @@
                     },
                     "9": {
                         "then": "Dombormű"
-                    },
-                    "10": {
-                        "then": "Azulejo (portugál vagy spanyol dekoratív csempe)"
-                    },
-                    "11": {
-                        "then": "Csempe"
                     }
                 },
                 "question": "Milyen fajta műalkotás ez?",
