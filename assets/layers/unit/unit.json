@@ -422,7 +422,21 @@
             "en": "{quantity} months",
             "nl": "{quantity} maanden"
           }
+        },
+        {
+          "canonicalDenomination": "years",
+          "addSpace": true,
+          "canonicalDenominationSingular": "year",
+          "humanSingular": {
+            "en": "one year",
+            "nl": "één jaar"
+          },
+          "human": {
+            "en": "{quantity} years",
+            "nl": "{quantity} jaar"
+          }
         }
+
       ]
     }
   ]
