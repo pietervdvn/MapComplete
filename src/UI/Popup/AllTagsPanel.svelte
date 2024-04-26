@@ -43,6 +43,8 @@
               <i>undefined</i>
             {:else if $tags[key] === ""}
               <i>Empty string</i>
+            {:else if typeof $tags[key] === "object"}
+              <div class="literal-code">{JSON.stringify($tags[key])}</div>
             {:else}
               {$tags[key]}
             {/if}
