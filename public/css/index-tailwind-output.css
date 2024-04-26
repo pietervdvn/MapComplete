@@ -2265,6 +2265,7 @@ video {
   --alert-color: #fee4d1;
   --alert-foreground-color: var(--foreground-color);
   --low-interaction-background: #eeeeee;
+  --low-interaction-background-50: #eeeeee90;
   --low-interaction-foreground: black;
   --low-interaction-contrast: #ff00ff;
   --interactive-background: #dddddd;
@@ -2489,6 +2490,10 @@ button.primary, .button.primary {
 button.primary:not(.no-image-background) svg path, .button.primary:not(.no-image-background) svg path {
   fill: var(--button-foreground) !important;
   transition: all 250ms;
+}
+
+button.disabled.low-interaction, .button.disabled.low-interaction {
+  background-color: var(--low-interaction-background-50);
 }
 
 button.disabled, .button.disabled {
