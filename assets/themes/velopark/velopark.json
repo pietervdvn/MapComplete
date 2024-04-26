@@ -73,6 +73,18 @@
           }
         },
         {
+          "id": "show-data-velopark",
+          "render": {
+            "special": {
+              "type": "linked_data_from_website",
+              "key": "ref:velopark",
+              "useProxy": "no",
+              "host": "https://data.velopark.be",
+              "mode": "readonly"
+            }
+          }
+        },
+        {
           "id": "closest_parkings",
           "render": {
             "en": "<h3>Nearby parkings</h3>There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap.",
@@ -166,18 +178,6 @@
           "render": {
             "en": "<h3>Extra information</h3>",
             "nl": "<h3>Extra informatie</h3>"
-          }
-        },
-        {
-          "id": "show-data-velopark",
-          "render": {
-            "special": {
-              "type": "linked_data_from_website",
-              "key": "ref:velopark",
-              "useProxy": "no",
-              "host": "https://data.velopark.be",
-              "mode": "readonly"
-            }
           }
         },
         {
