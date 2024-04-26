@@ -394,26 +394,9 @@
                 },
                 "question": "What is the purpose of the animal shelter?"
             },
-            "boarded_animals": {
-                "mappings": {
-                    "0": {
-                        "then": "Dogs are kept here"
-                    },
-                    "1": {
-                        "then": "Cats are kept here"
-                    },
-                    "2": {
-                        "then": "Horses are kept here"
-                    },
-                    "3": {
-                        "then": "Birds are kept here"
-                    },
-                    "4": {
-                        "then": "Wild animals are kept here"
-                    }
-                },
-                "question": "Which animals are accepted here?",
-                "render": "{animal_shelter} is kept here"
+            "7": {
+                "question": "When is this animal shelter opened?",
+                "render": "{opening_hours_table()}"
             }
         },
         "title": {
@@ -1506,17 +1489,9 @@
                 },
                 "question": "Are these bicycle parkings free to use?"
             },
-            "maxstay": {
-                "question": "What is the maximum allowed parking duration?",
-                "questionHint": "If the bicycle is parked for a longer amount, it might be removed by the operator",
-                "render": "A bike can be parked here for at most {canonical(maxstay)}"
-            },
             "operator": {
                 "question": "Who maintains this bicycle parking?",
                 "render": "This bicycle parking is maintained by {operator}"
-            },
-            "operator_email": {
-                "question": "What is the email address of the operator of this bicycle parking?"
             },
             "operator_phone": {
                 "question": "What is the phone number of the operator of this bicycle parking?",
@@ -2141,6 +2116,27 @@
                     "1": {
                         "question": "Has a <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
                     },
+                    "10": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
+                    },
+                    "11": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
+                    },
+                    "12": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
+                    },
+                    "13": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
+                    },
+                    "14": {
+                        "question": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector"
+                    },
+                    "15": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector"
+                    },
+                    "16": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
+                    },
                     "2": {
                         "question": "Has a <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> connector"
                     },
@@ -2164,30 +2160,6 @@
                     },
                     "9": {
                         "question": "Has a <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
-                    },
-                    "10": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
-                    },
-                    "11": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
-                    },
-                    "12": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
-                    },
-                    "13": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
-                    },
-                    "14": {
-                        "question": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector"
-                    },
-                    "15": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector"
-                    },
-                    "16": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
-                    },
-                    "17": {
-                        "question": "Has a <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> connector"
                     }
                 }
             }
@@ -2314,12 +2286,6 @@
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect with 5 pins</b> and cable"
-                    },
-                    "32": {
-                        "then": "<b>BS1363</b> (Type G)"
-                    },
-                    "33": {
-                        "then": "<b>BS1363</b> (Type G)"
                     },
                     "4": {
                         "then": "<b>Chademo</b>"
@@ -2531,6 +2497,24 @@
                         "1": {
                             "2": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
                         },
+                        "10": {
+                            "2": "<b>Tesla Supercharger CCS</b> (a branded type2_css)"
+                        },
+                        "11": {
+                            "2": "<b>Tesla Supercharger (destination)</b>"
+                        },
+                        "12": {
+                            "2": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)"
+                        },
+                        "13": {
+                            "2": "<b>USB</b> to charge phones and small electronics"
+                        },
+                        "14": {
+                            "2": "<b>Bosch Active Connect with 3 pins</b> and cable"
+                        },
+                        "15": {
+                            "2": "<b>Bosch Active Connect with 5 pins</b> and cable"
+                        },
                         "2": {
                             "2": "<b>Chademo</b>"
                         },
@@ -2554,27 +2538,6 @@
                         },
                         "9": {
                             "2": "<b>Type 2 with cable</b> (mennekes)"
-                        },
-                        "10": {
-                            "2": "<b>Tesla Supercharger CCS</b> (a branded type2_css)"
-                        },
-                        "11": {
-                            "2": "<b>Tesla Supercharger (destination)</b>"
-                        },
-                        "12": {
-                            "2": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)"
-                        },
-                        "13": {
-                            "2": "<b>USB</b> to charge phones and small electronics"
-                        },
-                        "14": {
-                            "2": "<b>Bosch Active Connect with 3 pins</b> and cable"
-                        },
-                        "15": {
-                            "2": "<b>Bosch Active Connect with 5 pins</b> and cable"
-                        },
-                        "16": {
-                            "2": "<b>BS1363</b> (Type G)"
                         }
                     }
                 }
@@ -5149,22 +5112,6 @@
             "render": "Restaurant"
         }
     },
-    "food_courts": {
-        "description": "Food courts with a variety of food options.",
-        "name": "Food Courts",
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Name of the food court"
-                },
-                "question": "What is the name of this food court?",
-                "render": "This food court is called <b>{name}</b>."
-            }
-        },
-        "title": {
-            "render": "Food Court"
-        }
-    },
     "ghost_bike": {
         "description": "A layer showing memorials for cyclists, killed in road accidents",
         "name": "Ghost bikes",
@@ -6675,74 +6622,6 @@
         "name": "OSM Community Index",
         "title": {
             "render": "OSM Community Index"
-        }
-    },
-    "outdoor_seating": {
-        "description": "Outdoor seating areas, usually located near cafes and restaurants.",
-        "name": "Outdoor Seating",
-        "tagRenderings": {
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Anyone can use this outdoor seating area."
-                    },
-                    "1": {
-                        "then": "Only customers can use this outdoor seating area."
-                    },
-                    "2": {
-                        "then": "This outdoor seating area is private."
-                    }
-                },
-                "question": "Who can use this outdoor seating area?"
-            },
-            "covered": {
-                "mappings": {
-                    "0": {
-                        "then": "This outdoor seating area is covered."
-                    },
-                    "1": {
-                        "then": "This outdoor seating area is not covered."
-                    }
-                },
-                "question": "Is this outdoor seating area covered?"
-            },
-            "heating": {
-                "mappings": {
-                    "0": {
-                        "then": "This outdoor seating area is heated."
-                    },
-                    "1": {
-                        "then": "This outdoor seating area is not heated."
-                    }
-                },
-                "question": "Is this outdoor seating area heated?"
-            },
-            "seasonal": {
-                "mappings": {
-                    "0": {
-                        "then": "This outdoor seating area is available all year round."
-                    },
-                    "1": {
-                        "then": "This outdoor seating area is available in spring."
-                    },
-                    "2": {
-                        "then": "This outdoor seating area is available in summer."
-                    },
-                    "3": {
-                        "then": "This outdoor seating area is available in autumn."
-                    },
-                    "4": {
-                        "then": "This outdoor seating area is available in winter."
-                    },
-                    "5": {
-                        "then": "This outdoor seating area is available in the dry season."
-                    }
-                },
-                "question": "Is this outdoor seating area seasonal?"
-            }
-        },
-        "title": {
-            "render": "Outdoor Seating area"
         }
     },
     "parcel_lockers": {
@@ -9077,10 +8956,6 @@
             }
         },
         "tagRenderings": {
-            "camera_direction": {
-                "question": "In which geographical direction does this camera film?",
-                "render": "Films to a compass heading of {direction}"
-            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Maximum speed allowed"
@@ -10657,14 +10532,6 @@
                     "2": {
                         "human": "{quantity} days",
                         "humanSingular": "one day"
-                    },
-                    "3": {
-                        "human": "{quantity} weeks",
-                        "humanSingular": "one week"
-                    },
-                    "4": {
-                        "human": "{quantity} months",
-                        "humanSingular": "one month"
                     }
                 }
             }

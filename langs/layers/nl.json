@@ -1222,17 +1222,9 @@
                 },
                 "question": "Is deze fietsenstalling gratis te gebruiken?"
             },
-            "maxstay": {
-                "question": "Wat is de toegestane, maximale parkeerduur?",
-                "questionHint": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder",
-                "render": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren"
-            },
             "operator": {
                 "question": "Wie beheert deze fietsenstalling?",
                 "render": "Deze fietsenstalling wordt beheerd door {operator}"
-            },
-            "operator_email": {
-                "question": "Wat is het emailadres van de beheerder van deze parking?"
             },
             "operator_phone": {
                 "question": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
@@ -1833,6 +1825,27 @@
                     "1": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     },
+                    "10": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "11": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "12": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "14": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+                    },
+                    "16": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    },
                     "2": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     },
@@ -1856,30 +1869,6 @@
                     },
                     "9": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "11": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "12": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "14": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "16": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-                    },
-                    "17": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
                     }
                 }
             }
@@ -2007,13 +1996,7 @@
                     "31": {
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
                     },
-                    "32": {
-                        "then": "<b>BS1363</b> (VK 3-pin)"
-                    },
-                    "33": {
-                      "then": "<b>BS1363</b> (VK 3-pin)"
-                    },
-                  "4": {
+                    "4": {
                         "then": "<b>Chademo</b>"
                     },
                     "5": {
@@ -2223,6 +2206,24 @@
                         "1": {
                             "2": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
                         },
+                        "10": {
+                            "2": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
+                        },
+                        "11": {
+                            "2": "<b>Tesla Supercharger (destination)</b>"
+                        },
+                        "12": {
+                            "2": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)"
+                        },
+                        "13": {
+                            "2": "<b>USB</b> om GSMs en kleine electronica op te laden"
+                        },
+                        "14": {
+                            "2": "<b>Bosch Active Connect met 3 pinnen</b> aan een kabel"
+                        },
+                        "15": {
+                            "2": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+                        },
                         "2": {
                             "2": "<b>Chademo</b>"
                         },
@@ -2246,27 +2247,6 @@
                         },
                         "9": {
                             "2": "<b>Type 2 met kabel</b> (J1772)"
-                        },
-                        "10": {
-                            "2": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
-                        },
-                        "11": {
-                            "2": "<b>Tesla Supercharger (destination)</b>"
-                        },
-                        "12": {
-                            "2": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo)"
-                        },
-                        "13": {
-                            "2": "<b>USB</b> om GSMs en kleine electronica op te laden"
-                        },
-                        "14": {
-                            "2": "<b>Bosch Active Connect met 3 pinnen</b> aan een kabel"
-                        },
-                        "15": {
-                            "2": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
-                        },
-                        "16": {
-                            "2": "<b>BS1363</b> (VK 3-pin)"
                         }
                     }
                 }
@@ -7361,10 +7341,6 @@
             }
         },
         "tagRenderings": {
-            "camera_direction": {
-                "question": "In welke geografische richting filmt deze camera?",
-                "render": "Filmt in kompasrichting {direction}"
-            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Maximum toegestane snelheid"
@@ -8716,14 +8692,6 @@
                     "2": {
                         "human": "{quantity} day",
                         "humanSingular": "één dag"
-                    },
-                    "3": {
-                        "human": "{quantity} weken",
-                        "humanSingular": "één week"
-                    },
-                    "4": {
-                        "human": "{quantity} maanden",
-                        "humanSingular": "één maand"
                     }
                 }
             }
