@@ -35,23 +35,6 @@
             "1": {
                 "title": "uma caixa expositora independente"
             },
-            "10": {
-                "description": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
-                "title": "uma lona"
-            },
-            "11": {
-                "title": "um totem"
-            },
-            "12": {
-                "description": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
-                "title": "uma placa"
-            },
-            "13": {
-                "title": "uma escultura"
-            },
-            "14": {
-                "title": "uma pintura mural"
-            },
             "2": {
                 "title": "uma caixa de pôster montada em uma parede"
             },
@@ -71,6 +54,23 @@
             },
             "8": {
                 "title": "uma tela montada em uma parede"
+            },
+            "10": {
+                "description": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
+                "title": "uma lona"
+            },
+            "11": {
+                "title": "um totem"
+            },
+            "12": {
+                "description": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
+                "title": "uma placa"
+            },
+            "13": {
+                "title": "uma escultura"
+            },
+            "14": {
+                "title": "uma pintura mural"
             }
         },
         "tagRenderings": {
@@ -165,9 +165,6 @@
                     "1": {
                         "then": "Isso é uma placa"
                     },
-                    "10": {
-                        "then": "Isso é uma pintura mural"
-                    },
                     "2": {
                         "then": "Isto é uma coluna"
                     },
@@ -191,6 +188,9 @@
                     },
                     "9": {
                         "then": "Isso é um totem"
+                    },
+                    "10": {
+                        "then": "Isso é uma pintura mural"
                     }
                 },
                 "question": "Que tipo de recurso de publicitário é este?",
@@ -204,9 +204,6 @@
                 },
                 "1": {
                     "then": "Quadro"
-                },
-                "10": {
-                    "then": "Pintura mural"
                 },
                 "2": {
                     "then": "Caixa de pôster"
@@ -231,6 +228,9 @@
                 },
                 "9": {
                     "then": "Totem"
+                },
+                "10": {
+                    "then": "Pintura mural"
                 }
             }
         }
@@ -312,15 +312,6 @@
                     "1": {
                         "then": "Mural"
                     },
-                    "10": {
-                        "then": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
-                    },
-                    "11": {
-                        "then": "Azulejaria"
-                    },
-                    "12": {
-                        "then": "Entalhe"
-                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -344,6 +335,15 @@
                     },
                     "9": {
                         "then": "Relevo"
+                    },
+                    "10": {
+                        "then": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
+                    },
+                    "11": {
+                        "then": "Azulejaria"
+                    },
+                    "12": {
+                        "then": "Entalhe"
                     }
                 },
                 "question": "Qual é o tipo dessa obra de arte?",
