@@ -362,7 +362,7 @@ export interface LayoutConfigJson {
     /**
      * question: Should the 'download as CSV'- and 'download as Geojson'-buttons be enabled?
      * iftrue: Enable the option to download the map as CSV and GeoJson
-     * iffalse: Enable the option to download the map as CSV and GeoJson
+     * iffalse: Disable the option to download the map as CSV and GeoJson
      * ifunset: MapComplete default: Enable the option to download the map as CSV and GeoJson
      * group: feature_switches
      */

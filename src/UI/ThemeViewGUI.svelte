@@ -287,7 +287,7 @@
       <If condition={featureSwitches.featureSwitchEnableLogin}>
         {#if state.layout.hasPresets() || state.layout.hasNoteLayer()}
           <button
-            class="pointer-events-auto w-fit"
+            class="pointer-events-auto w-fit low-interaction"
             class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
             on:click={() => {
               state.openNewDialog()

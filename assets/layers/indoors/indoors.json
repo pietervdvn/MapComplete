@@ -352,7 +352,8 @@
             "en": "This is a classroom",
             "de": "Dies ist ein Klassenzimmer",
             "ca": "Açò és una aula",
-            "cs": "Jedná se o učebnu"
+            "cs": "Jedná se o učebnu",
+            "fr": "C'est une salle de classe"
           },
           "icon": "./assets/layers/indoors/room_class.svg"
         },
@@ -449,7 +450,8 @@
             "en": "This is an office",
             "de": "Dies ist ein Büro",
             "ca": "Açò és una oficina",
-            "cs": "Jedná se o kancelář"
+            "cs": "Jedná se o kancelář",
+            "fr": "C'est un bureau"
           },
           "icon": "./assets/layers/indoors/room_office.svg"
         },

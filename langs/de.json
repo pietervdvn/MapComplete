@@ -60,7 +60,7 @@
         "error": "Fehler",
         "loadedFrom": "Die folgenden Daten werden von <a href={url}>{source}</a> unter Verwendung des eingebetteten JSON-LD geladen",
         "noDataLoaded": "Die externe Website hat keine verlinkten Daten, die geladen werden könnten",
-        "overwrite": "Überschreiben"
+        "overwrite": "In OpenStreetMap überschreiben"
     },
     "favourite": {
         "loginNeeded": "<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar",
