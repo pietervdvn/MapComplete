@@ -393,10 +393,6 @@
                     }
                 },
                 "question": "What is the purpose of the animal shelter?"
-            },
-            "7": {
-                "question": "When is this animal shelter opened?",
-                "render": "{opening_hours_table()}"
             }
         },
         "title": {
