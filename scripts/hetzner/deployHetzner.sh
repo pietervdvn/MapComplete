@@ -1,5 +1,6 @@
 #! /bin/bash
-### To be run from the root of the repository 
+### To be run from the root of the repository
+### Prepares and builds MapComplete, uploads it to hetzner for hosted.mapcomplete.org. Will upload about 500MB to this computer
 
 # Some pointers to get started:
 # apt install npm
@@ -20,5 +21,5 @@ scp ./Docs/ServerConfig/hetzner/* hetzner:/root/ &&
 rsync -rzh --progress dist.zip hetzner:/root/ &&
 echo "Upload completed, deploying config and booting" &&
 ssh hetzner -t "unzip dist.zip && rm dist.zip && rm -rf public/ && mv dist public && caddy stop && caddy start" &&
-# rm dist.zip
+rm dist.zip
 npm run clean
