@@ -90,7 +90,7 @@
               "type": "multi",
               "key": "_nearby_bicycle_parkings:props",
               "classes": "p-2 m-1 my-4 border-2 border-dashed border-black",
-              "tagrendering": "<b><a href='#{id}'>{id}</a></b> ({_distance}m, {_velopark:id}) {minimap(20)} {tag_apply(ref:velopark=$_ref,Link this object.,link,id,_mr_id)}"
+              "tagrendering": "<b><a href='#{id}'>{id}</a></b> ({_distance}m, {_velopark:id}) {minimap(20,id,_mr_id)} {tag_apply(ref:velopark=$_ref,Link this object.,link,id,_mr_id)}"
             }
           }
         },
