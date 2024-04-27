@@ -43,6 +43,11 @@ export abstract class EditJsonState<T> {
     public readonly messages: Store<ConversionMessage[]>
 
     /**
+     * The tab in the UI that is selected, used for deeplinks
+     */
+    public readonly selectedTab: UIEventSource<number> = new UIEventSource<number>(0)
+
+    /**
      * The EditLayerUI shows a 'schemaBasedInput' for this path to pop advanced questions out
      */
     public readonly highlightedItem: UIEventSource<HighlightedTagRendering> = new UIEventSource(

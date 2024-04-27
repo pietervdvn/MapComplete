@@ -9,12 +9,15 @@
   import RawEditor from "./RawEditor.svelte"
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import DeleteButton from "./DeleteButton.svelte"
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import StudioHashSetter from "./StudioHashSetter"
 
   export let state: EditThemeState
   export let osmConnection: OsmConnection
   export let backToStudio: () => void
 
   let schema: ConfigMeta[] = state.schema.filter((schema) => schema.path.length > 0)
+  new StudioHashSetter("theme", state.selectedTab, state.getStoreFor(["id"]))
 
   export let selfLayers: { owner: number; id: string }[]
   export let otherLayers: { owner: number; id: string }[]
@@ -94,7 +97,7 @@
 
   <div class="m4 h-full overflow-y-auto">
     <!-- {Object.keys(perRegion).join(";")} -->
-    <TabbedGroup>
+    <TabbedGroup tab={state.selectedTab}>
       <div slot="title0">Basic properties</div>
       <div slot="content0" class="mb-8">
         <Region configs={perRegion["basic"]} path={[]} {state} title="Basic properties" />

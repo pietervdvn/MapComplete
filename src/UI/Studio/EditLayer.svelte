@@ -20,12 +20,16 @@
   import NextButton from "../Base/NextButton.svelte"
   import BackButton from "../Base/BackButton.svelte"
   import DeleteButton from "./DeleteButton.svelte"
+  import StudioHashSetter from "./StudioHashSetter"
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw
 
   export let state: EditLayerState
 
   export let backToStudio: () => void
+
+  new StudioHashSetter("layer", state.selectedTab, state.getStoreFor(["id"]))
+
   let messages = state.messages
   let hasErrors = messages.mapD(
     (m: ConversionMessage[]) => m.filter((m) => m.level === "error").length
@@ -127,7 +131,7 @@
     {/each}
   {:else}
     <div class="m4 h-full overflow-y-auto">
-      <TabbedGroup>
+      <TabbedGroup tab={state.selectedTab}>
         <div slot="title0" class="flex">
           General properties
           <ErrorIndicatorForRegion firstPaths={firstPathsFor("Basic")} {state} />
