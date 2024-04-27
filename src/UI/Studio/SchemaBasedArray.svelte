@@ -31,10 +31,9 @@
     schema.description = undefined
   }
 
-  const subparts: ConfigMeta = state
+  const subparts: ConfigMeta[] = state
     .getSchemaStartingWith(schema.path)
     .filter((part) => part.path.length - 1 === schema.path.length)
-
   let messages = state.messagesFor(path)
 
   const currentValue: UIEventSource<any[]> = state.getStoreFor(path)

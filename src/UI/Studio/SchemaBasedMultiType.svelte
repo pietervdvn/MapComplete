@@ -9,6 +9,7 @@
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import type { JsonSchemaType } from "./jsonSchema"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
+  import type { Translatable } from "../../Models/ThemeConfig/Json/Translatable"
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
@@ -41,7 +42,7 @@
   }
   const configJson: QuestionableTagRenderingConfigJson  & {questionHintIsMd: boolean}= {
     id: "TYPE_OF:" + path.join("_"),
-    question: "Which subcategory is needed for " + schema.path.at(-1) + "?",
+    question: schema.hints.question ?? "Which subcategory is needed for " + schema.path.at(-1) + "?",
     questionHint: schema.description,
     questionHintIsMd: true,
     mappings: types
