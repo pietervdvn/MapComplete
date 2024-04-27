@@ -8,6 +8,7 @@
   import QuestionPreview from "./QuestionPreview.svelte"
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
+  import Markdown from "../Base/Markdown.svelte"
 
   export let state: EditLayerState
   export let schema: ConfigMeta
@@ -97,9 +98,7 @@
   <h3>{schema.path.at(-1)}</h3>
 
   {#if subparts.length > 0}
-    <span class="subtle">
-      {schema.description}
-    </span>
+    <Markdown src={schema.description}/>
   {/if}
   {#if $currentValue === undefined}
     No array defined

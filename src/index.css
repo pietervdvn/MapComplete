@@ -500,7 +500,7 @@ textarea {
 }
 
 
-.literal-code {
+.literal-code, code {
     /* A codeblock */
     display: inline-block;
     background-color: lightgray;

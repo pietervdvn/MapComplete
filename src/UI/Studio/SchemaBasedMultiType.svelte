@@ -41,10 +41,11 @@
   if (lastIsString) {
     types.splice(types.length - 1, 1)
   }
-  const configJson: QuestionableTagRenderingConfigJson = {
+  const configJson: QuestionableTagRenderingConfigJson  & {questionHintIsMd: boolean}= {
     id: "TYPE_OF:" + path.join("_"),
     question: "Which subcategory is needed for " + schema.path.at(-1) + "?",
-    questionHint: nmd(schema.description),
+    questionHint: schema.description,
+    questionHintIsMd: true,
     mappings: types
       .map((opt) => opt.trim())
       .filter((opt) => opt.length > 0)

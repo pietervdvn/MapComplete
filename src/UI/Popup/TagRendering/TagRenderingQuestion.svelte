@@ -263,7 +263,7 @@
 
           {#if config.questionhint}
             {#if config.questionHintIsMd}
-              <Markdown src={config.questionHint} />
+              <Markdown srcWritable={ config.questionhint.current} />
             {:else}
               <div class="max-h-60 overflow-y-auto">
                 <SpecialTranslation
@@ -274,7 +274,7 @@
                   feature={selectedElement}
                 />
               </div>
-            {/if}
+          {/if}
           {/if}
         </legend>
 
