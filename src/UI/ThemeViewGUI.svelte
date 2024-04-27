@@ -285,7 +285,7 @@
   <div class="flex w-full items-end justify-between px-4">
     <div class="flex flex-col">
       <If condition={featureSwitches.featureSwitchEnableLogin}>
-        {#if state.layout.hasPresets() || state.layout.hasNoteLayer()}
+        {#if (state.layout.hasPresets() && state.layout.enableAddNewPoints) || state.layout.hasNoteLayer()}
           <button
             class="pointer-events-auto w-fit low-interaction"
             class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
