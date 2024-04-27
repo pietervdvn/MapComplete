@@ -9965,7 +9965,7 @@
       "group": "presets"
     },
     "type": "array",
-    "description": "Presets for this layer.\nA preset shows up when clicking the map on a without data (or when right-clicking/long-pressing);\nit will prompt the user to add a new point.\nThe most important aspect are the tags, which define which tags the new point will have;\nThe title is shown in the dialog, along with the first sentence of the description.\nUpon confirmation, the full description is shown beneath the buttons - perfect to add pictures and examples.\nNote: the icon of the preset is determined automatically based on the tags and the icon above. Don't worry about that!\nNB: if no presets are defined, the popup to add new points doesn't show up at all"
+    "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<a class='block m-2 min-w-64' href='./Docs/Screenshots/AddNewItemScreencast.webm' target='_blank'> <video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/></a>\n</div>"
   },
   {
     "path": [
