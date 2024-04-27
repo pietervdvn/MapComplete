@@ -8,8 +8,6 @@
   import { onDestroy } from "svelte"
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import type { JsonSchemaType } from "./jsonSchema"
-  // @ts-ignore
-  import nmd from "nano-markdown"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
 
   /**

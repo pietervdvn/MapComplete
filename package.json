@@ -170,7 +170,7 @@
     "lz-string": "^1.4.4",
     "mangrove-reviews-typescript": "^1.1.0",
     "maplibre-gl": "^4.1.1",
-    "markdown-it": "^14.1.0",
+    "marked": "^12.0.2",
     "monaco-editor": "^0.46.0",
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.2.0",
