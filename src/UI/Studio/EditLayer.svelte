@@ -134,7 +134,7 @@
         </div>
         <div class="flex flex-col mb-8" slot="content0">
           <Region {state} configs={perRegion["Basic"]} />
-          <DeleteButton {state} {backToStudio} objectType="layer"/>
+          <DeleteButton {state} {backToStudio} objectType="layer" />
         </div>
 
         <div slot="title1" class="flex">
@@ -185,19 +185,18 @@
             Below, you'll find the raw configuration file in `.json`-format. This is mostly for
             debugging purposes, but you can also edit the file directly if you want.
           </div>
+          <div class="literal-code overflow-y-auto h-full" style="min-height: 75%">
+            <RawEditor {state} />
+          </div>
           <ShowConversionMessages messages={$messages} />
-          <div class="flex h-full w-full flex-row justify-between overflow-y-auto">
-            <div class="literal-code h-full w-5/6 overflow-y-auto">
-              <RawEditor {state} />
-            </div>
-            <div class="h-full w-1/6">
-              <div>
-                The testobject (which is used to render the questions in the 'information panel'
-                item has the following tags:
-              </div>
 
-              <AllTagsPanel tags={state.testTags} />
+          <div class="flex w-full flex-col">
+            <div>
+              The testobject (which is used to render the questions in the 'information panel'
+              item has the following tags:
             </div>
+
+            <AllTagsPanel tags={state.testTags} />
           </div>
         </div>
       </TabbedGroup>

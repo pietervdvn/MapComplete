@@ -123,11 +123,10 @@
           Below, you'll find the raw configuration file in `.json`-format. This is mostly for
           debugging purposes, but you can also edit the file directly if you want.
         </div>
-        <ShowConversionMessages messages={$messages} />
-        <div class="literal-code h-full w-full">
+        <div class="literal-code overflow-y-auto h-full" style="min-height: 75%">
           <RawEditor {state} />
         </div>
-      </div>
+        <ShowConversionMessages messages={$messages} />
     </TabbedGroup>
   </div>
 </div>
