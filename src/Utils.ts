@@ -1649,4 +1649,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return n + Utils._metrixPrefixes[index]
     }
+
+    static NoNullInplace(layers: any[]):void {
+        for (let i = layers.length - 1; i >= 0; i--) {
+            if(layers[i] === null || layers[i] === undefined){
+                layers.splice(i, 1)
+            }
+        }
+    }
 }

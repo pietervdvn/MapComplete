@@ -508,6 +508,9 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
         }
         const prepare = this.buildValidation(state)
         const context = ConversionContext.construct([], ["prepare"])
+        if(configuration.layers){
+            Utils.NoNullInplace(configuration.layers)
+        }
         try {
             prepare.convert(<LayoutConfigJson>configuration, context)
         } catch (e) {
