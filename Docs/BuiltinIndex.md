@@ -16,6 +16,7 @@
     + [website](#website)
     + [phone](#phone)
     + [email](#email)
+    + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [wikipedia](#wikipedia)
     + [bench.bench-questions](#benchbench-questions)
     + [opening_hours_24_7](#opening_hours_24_7)
@@ -45,7 +46,6 @@
     + [climbing.min_difficulty](#climbingmin_difficulty)
     + [climbing.max_difficulty](#climbingmax_difficulty)
     + [climbing.max_bolts](#climbingmax_bolts)
-    + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
     + [denominations-coins](#denominations-coins)
@@ -141,6 +141,7 @@
   - fitness_centre
   - fitness_station
   - food
+  - food_courts
   - ghost_bike
   - governments
   - guidepost
@@ -158,6 +159,7 @@
   - mountain_rescue
   - nature_reserve
   - observation_tower
+  - outdoor_seating
   - parcel_lockers
   - parking
   - parking_spaces
@@ -182,6 +184,7 @@
   - slow_roads
   - souvenir_coin
   - souvenir_note
+  - speed_camera
   - sport_pitch
   - sports_centre
   - stairs
@@ -236,6 +239,7 @@
   - dentist
   - fitness_centre
   - food
+  - food_courts
   - ice_cream
   - kindergarten_childcare
   - pharmacy
@@ -267,6 +271,7 @@
   - dogpark
   - fitness_centre
   - food
+  - food_courts
   - hackerspace
   - hotel
   - ice_cream
@@ -302,12 +307,14 @@
   - elongated_coin
   - fitness_centre
   - food
+  - food_courts
   - governments
   - hackerspace
   - hotel
   - kindergarten_childcare
   - nature_reserve
   - observation_tower
+  - outdoor_seating
   - pharmacy
   - physiotherapist
   - playground
@@ -344,6 +351,7 @@
   - doctors
   - fitness_centre
   - food
+  - food_courts
   - governments
   - hackerspace
   - hotel
@@ -396,6 +404,19 @@
 
 
 
+### opening_hours_by_appointment 
+
+
+
+
+
+  - animal_shelter
+  - doctors
+  - physiotherapist
+
+
+
+
 ### wikipedia 
 
 
@@ -437,6 +458,7 @@
   - elongated_coin
   - fitness_station
   - hackerspace
+  - outdoor_seating
   - parcel_lockers
   - recycling
   - souvenir_coin
@@ -606,10 +628,12 @@
   - defibrillator
   - fitness_centre
   - food
+  - food_courts
   - hackerspace
   - hotel
   - ice_cream
   - observation_tower
+  - outdoor_seating
   - playground_equipment
   - sports_centre
   - transit_stops
@@ -625,6 +649,8 @@
 
   - cafe_pub
   - food
+  - food_courts
+  - outdoor_seating
 
 
 
@@ -817,18 +843,6 @@
 
 
 
-### opening_hours_by_appointment 
-
-
-
-
-
-  - doctors
-  - physiotherapist
-
-
-
-
 ### multilevels 
 
 
@@ -982,6 +996,7 @@
 
 
   - hackerspace
+  - outdoor_seating
 
 
 

@@ -17,7 +17,17 @@ An animal shelter is a facility where animals in trouble are brought and facilit
   - This layer is shown at zoomlevel **0** and higher
 
 
-No themes use this layer
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.org/personal)
+  - [pets](https://mapcomplete.org/pets)
+
 
 
 
@@ -52,6 +62,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/purpose#values) [purpose](https://wiki.openstreetmap.org/wiki/Key:purpose) | Multiple choice | [adoption](https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dadoption) [sanctuary](https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dsanctuary) [release](https://wiki.openstreetmap.org/wiki/Tag:purpose%3Drelease)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/animal_shelter#values) [animal_shelter](https://wiki.openstreetmap.org/wiki/Key:animal_shelter) | [string](../SpecialInputElements.md#string) | [dog](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Ddog) [cat](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dcat) [horse](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dhorse) [bird](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dbird) [wildlife](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dwildlife)
 
 
 
@@ -159,6 +170,8 @@ This rendering asks information about the property  [email](https://wiki.openstr
 
   - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
   - _This option cannot be chosen as answer_
+  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering has labels  `contact`
@@ -182,13 +195,40 @@ The question is  *What is the purpose of the animal shelter?*
 
 
 
-### 7 
+### opening_hours_by_appointment 
 
 
 
-The question is  *When is this animal shelter opened?*
+The question is  *What are the opening hours of {title()}?*
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `{opening_hours_table()}`
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+
+
+
+  - *Only by appointment*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
+  - _This option cannot be chosen as answer_
+  - *Only by appointment*  corresponds with  opening_hours~^("by appointment"|by appointment)$
+  - _This option cannot be chosen as answer_
+
+
+
+
+### boarded_animals 
+
+
+
+The question is  *Which animals are accepted here?*
+
+This rendering asks information about the property  [animal_shelter](https://wiki.openstreetmap.org/wiki/Key:animal_shelter) This is rendered with  `{animal_shelter} is kept here`
+
+
+
+  - *Dogs are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Ddog' target='_blank'>dog</a>
+  - *Cats are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dcat' target='_blank'>cat</a>
+  - *Horses are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dhorse' target='_blank'>horse</a>
+  - *Birds are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dbird' target='_blank'>bird</a>
+  - *Wild animals are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dwildlife' target='_blank'>wildlife</a>
+
 
 
 

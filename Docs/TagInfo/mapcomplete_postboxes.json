@@ -1227,6 +1227,10 @@
       "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Postbox and Post Office Map')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Shop' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Postbox and Post Office Map')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Shop' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Postbox and Post Office Map')"
     },

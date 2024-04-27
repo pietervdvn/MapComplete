@@ -66,12 +66,15 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [nat](../SpecialInputElements.md#nat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fee#values) [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [currency](../SpecialInputElements.md#currency) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator:phone#values) [operator:phone](https://wiki.openstreetmap.org/wiki/Key:operator:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator:website#values) [operator:website](https://wiki.openstreetmap.org/wiki/Key:operator:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator:email#values) [operator:email](https://wiki.openstreetmap.org/wiki/Key:operator:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cargo_bike#values) [cargo_bike](https://wiki.openstreetmap.org/wiki/Key:cargo_bike) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes) [designated](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated) [no](https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:cargo_bike#values) [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) | [nat](../SpecialInputElements.md#nat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxstay#values) [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) | [pnat](../SpecialInputElements.md#pnat) | 
 
 
 
@@ -211,6 +214,18 @@ The question is  *Are these bicycle parkings free to use?*
 
 
 
+### charge 
+
+
+
+The question is  *How much does it cost to park your bike here?*
+
+This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `Parking your bike costs {charge}`
+
+This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
+
+
+
 ### opening_hours_24_7 
 
 
@@ -274,6 +289,16 @@ This rendering asks information about the property  [operator:website](https://w
 
 
 
+### operator_email 
+
+
+
+The question is  *What is the email address of the operator of this bicycle parking?*
+
+This rendering asks information about the property  [operator:email](https://wiki.openstreetmap.org/wiki/Key:operator:email) This is rendered with  `<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>`
+
+
+
 ### Cargo bike spaces? 
 
 
@@ -305,6 +330,16 @@ This rendering asks information about the property  [capacity:cargo_bike](https:
 
 
 This tagrendering is only visible in the popup if the following condition is met: `capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$`
+
+
+
+### maxstay 
+
+
+
+The question is  *What is the maximum allowed parking duration?*
+
+This rendering asks information about the property  [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) This is rendered with  `A bike can be parked here for at most {canonical(maxstay)}`
 
 
 

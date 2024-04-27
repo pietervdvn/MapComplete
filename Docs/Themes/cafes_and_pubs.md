@@ -12,6 +12,8 @@ This theme contains the following layers:
 
 
   - [cafe_pub](../Layers/cafe_pub.md)
+  - [outdoor_seating](../Layers/outdoor_seating.md)
+  - [food_courts](../Layers/food_courts.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

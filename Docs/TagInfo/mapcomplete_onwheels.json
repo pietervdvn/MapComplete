@@ -144,6 +144,10 @@
       "description": "Layer 'Cafés and pubs' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Cafés and pubs' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -593,6 +597,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Restaurants and fast food' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "phone",
@@ -2238,6 +2246,10 @@
       "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Shop' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Shop' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -2800,6 +2812,10 @@
       "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Pharmacies' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Pharmacies' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -2881,6 +2897,10 @@
       "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Doctors' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Doctors' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -2955,6 +2975,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Hospitals' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "website",
@@ -3212,6 +3236,10 @@
       "description": "Layer 'Hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Hotels' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Hotels' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'OnWheels')"
     },
@@ -3328,6 +3356,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'governments' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'governments' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "website",

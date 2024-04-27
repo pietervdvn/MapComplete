@@ -266,6 +266,8 @@ This rendering asks information about the property  [email](https://wiki.openstr
 
   - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
   - _This option cannot be chosen as answer_
+  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
+  - _This option cannot be chosen as answer_
 
 
 This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>`

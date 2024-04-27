@@ -913,6 +913,10 @@
       "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Shops')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Shop' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Shops')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Shop' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Shops')"
     },
@@ -1188,6 +1192,10 @@
       "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Shops')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Pharmacies' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Shops')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Pharmacies' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Shops')"
     },
@@ -1263,6 +1271,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Ice cream parlors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Shops')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Ice cream parlors' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Shops')"
     },
     {
       "key": "website",

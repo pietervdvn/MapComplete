@@ -15,7 +15,6 @@ Shows the allowed speed for every road
 
 
   - This layer is shown at zoomlevel **16** and higher
-  - This layer is needed as dependency for layer [speed_camera](#speed_camera)
 
 
 

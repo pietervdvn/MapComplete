@@ -108,16 +108,6 @@ This tagrendering has labels  `added_by_default`
 
 
 
-### sotm-events 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
 ### images 
 
 
@@ -248,6 +238,8 @@ This tagrendering is only visible in the popup if the following condition is met
 The question is  *What is the Wikidata-item that this object is named after?*
 
 This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
+
+This tagrendering is only visible in the popup if the following condition is met: `name:etymology!=unknown & name~.+`
 
 
 

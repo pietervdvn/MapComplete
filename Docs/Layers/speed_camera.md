@@ -15,7 +15,6 @@ Layer showing speed cameras
 
 
   - This layer is shown at zoomlevel **12** and higher
-  - This layer will automatically load  [maxspeed](./maxspeed.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
 
 
 
@@ -28,6 +27,7 @@ Layer showing speed cameras
 
   - [maxspeed](https://mapcomplete.org/maxspeed)
   - [personal](https://mapcomplete.org/personal)
+  - [surveillance](https://mapcomplete.org/surveillance)
 
 
 
@@ -58,6 +58,7 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxspeed#values) [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/direction#values) [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) | 
 
 
 
@@ -83,6 +84,18 @@ This tagrendering has labels  `added_by_default`
 
 
 
+### images 
+
+
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### maxspeed 
 
 
@@ -102,6 +115,16 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `ref~.+`
+
+
+
+### camera_direction 
+
+
+
+The question is  *In which geographical direction does this camera film?*
+
+This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) This is rendered with  `Films to a compass heading of {direction}`
 
 
 
@@ -132,6 +155,16 @@ This tagrendering has labels  `added_by_default`
 
 
 Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
 
 This tagrendering has no question and is thus read-only
 

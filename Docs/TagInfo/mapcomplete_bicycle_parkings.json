@@ -153,6 +153,10 @@
       "value": "no"
     },
     {
+      "key": "charge",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Bicycle parkings') (This is only shown if fee=yes)"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Bike parking' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Bicycle parkings')"
     },
@@ -195,6 +199,10 @@
       "description": "Layer 'Bike parking' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}'>{contact:website}</a>' (in the mapcomplete.org theme 'Bicycle parkings')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'operator:email' (in the mapcomplete.org theme 'Bicycle parkings')"
+    },
+    {
       "key": "cargo_bike",
       "description": "Layer 'Bike parking' shows cargo_bike=yes with a fixed text, namely 'This parking has room for cargo bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
       "value": "yes"
@@ -217,6 +225,10 @@
       "key": "cargo_bike",
       "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings') (This is only shown if capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$)",
       "value": "no"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Bicycle parkings')"
     }
   ]
 }

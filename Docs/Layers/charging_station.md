@@ -130,6 +130,10 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:voltage#values) [socket:bosch_5pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:current#values) [socket:bosch_5pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:current) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:output#values) [socket:bosch_5pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:output) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bs1363#values) [socket:bs1363](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bs1363:voltage#values) [socket:bs1363:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:voltage%3D230 V)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bs1363:current#values) [socket:bs1363:current](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:current) | [pfloat](../SpecialInputElements.md#pfloat) | [13 A](https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:current%3D13 A)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/socket:bs1363:output#values) [socket:bs1363:output](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3kW](https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:output%3D3kW)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fee#values) [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/charge#values) [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | 
@@ -309,6 +313,10 @@ The question is  *Which charging connections are available here?*
   - *<b>Bosch Active Connect with 5 pins</b> and cable*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin' target='_blank'>socket:bosch_5pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_5pin%3D1' target='_blank'>1</a>
   - Unselecting this answer will add socket:bosch_5pin=
   - *<b>Bosch Active Connect with 5 pins</b> and cable*  corresponds with  socket:bosch_5pin~.+ & socket:bosch_5pin!=1
+  - _This option cannot be chosen as answer_
+  - *<b>BS1363</b> (Type G)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363' target='_blank'>socket:bs1363</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363%3D1' target='_blank'>1</a>
+  - Unselecting this answer will add socket:bs1363=
+  - *<b>BS1363</b> (Type G)*  corresponds with  socket:bs1363~.+ & socket:bs1363!=1
   - _This option cannot be chosen as answer_
 
 
@@ -1451,6 +1459,75 @@ This tagrendering has labels  `technical`
 
 
 
+### plugs-amount-socket:bs1363 
+
+
+
+The question is  *How much plugs of type <b>BS1363</b> (Type G) are available here?*
+
+This rendering asks information about the property  [socket:bs1363](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363) This is rendered with  `There are <b class='text-xl'>{socket:bs1363}</b> plugs of type <b>BS1363</b> (Type G) available here`
+
+This tagrendering is only visible in the popup if the following condition is met: `socket:bs1363~.+ & socket:bs1363!=0`
+
+
+
+### voltage-socket:bs1363 
+
+
+
+The question is  *What voltage do the plugs with <b>BS1363</b> (Type G) offer?*
+
+This rendering asks information about the property  [socket:bs1363:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:voltage) This is rendered with  `<b>BS1363</b> (Type G) outputs {canonical(socket:bs1363:voltage)}`
+
+
+
+  - *<b>BS1363</b> (Type G) outputs 230 volt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:voltage' target='_blank'>socket:bs1363:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:voltage%3D230 V' target='_blank'>230 V</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: `socket:bs1363~.+ & socket:bs1363!=0`
+
+This tagrendering has labels  `technical`
+
+
+
+### current-socket:bs1363 
+
+
+
+The question is  *What current do the plugs with <b>BS1363</b> (Type G) offer?*
+
+This rendering asks information about the property  [socket:bs1363:current](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:current) This is rendered with  `<b>BS1363</b> (Type G) outputs at most {canonical(socket:bs1363:current)}`
+
+
+
+  - *<b>BS1363</b> (Type G) outputs at most 13 A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:current' target='_blank'>socket:bs1363:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:current%3D13 A' target='_blank'>13 A</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: `socket:bs1363~.+ & socket:bs1363!=0`
+
+This tagrendering has labels  `technical`
+
+
+
+### power-output-socket:bs1363 
+
+
+
+The question is  *What power output does a single plug of type <b>BS1363</b> (Type G) offer?*
+
+This rendering asks information about the property  [socket:bs1363:output](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:output) This is rendered with  `<b>BS1363</b> (Type G) outputs at most {canonical(socket:bs1363:output)}`
+
+
+
+  - *<b>BS1363</b> (Type G) outputs at most 3kW A*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:output' target='_blank'>socket:bs1363:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:output%3D3kW' target='_blank'>3kW</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: `socket:bs1363~.+ & socket:bs1363!=0`
+
+This tagrendering has labels  `technical`
+
+
+
 ### OH 
 
 
@@ -1904,6 +1981,7 @@ connection_type.13 | Has a <div style='display: inline-block'><b><b>Tesla superc
 connection_type.14 | Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector | socket:USB-A~.+
 connection_type.15 | Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 3 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> connector | socket:bosch_3pin~.+
 connection_type.16 | Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector | socket:bosch_5pin~.+
+connection_type.17 | Has a <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> connector | socket:bs1363~.+
  
 
 This document is autogenerated from [assets/layers/charging_station/charging_station.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/charging_station/charging_station.json)
