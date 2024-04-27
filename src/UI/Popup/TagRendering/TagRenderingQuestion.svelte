@@ -31,6 +31,7 @@
   import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Tag } from "../../../Logic/Tags/Tag"
   import { get } from "svelte/store"
+  import Markdown from "../../Base/Markdown.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -68,15 +69,17 @@
   /**
    * Prepares and fills the checkedMappings
    */
-  function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void{
+  function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void {
     mappings = confg.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
         return !m.hideInAnswer
       }
       return !m.hideInAnswer.matchesProperties(tgs)
     })
-    selectedMapping = mappings.findIndex(mapping => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs))
-
+    selectedMapping = mappings?.findIndex(mapping => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs))
+    if(selectedMapping < 0){
+      selectedMapping = undefined
+    }
     // We received a new config -> reinit
     unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
 
@@ -99,7 +102,7 @@
             seenFreeforms.push(newProps[confg.freeform.key])
           }
           return matches
-        }),
+        })
       ]
 
       if (tgs !== undefined && confg.freeform) {
@@ -207,7 +210,7 @@
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
       theme: tags.data["_orig_theme"] ?? state.layout.id,
-      changeType: "answer",
+      changeType: "answer"
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -259,15 +262,19 @@
           </div>
 
           {#if config.questionhint}
-            <div class="max-h-60 overflow-y-auto">
-              <SpecialTranslation
-                t={config.questionhint}
-                {tags}
-                {state}
-                {layer}
-                feature={selectedElement}
-              />
-            </div>
+            {#if config.questionHintIsMd}
+              <Markdown src={config.questionHint} />
+            {:else}
+              <div class="max-h-60 overflow-y-auto">
+                <SpecialTranslation
+                  t={config.questionhint}
+                  {tags}
+                  {state}
+                  {layer}
+                  feature={selectedElement}
+                />
+              </div>
+            {/if}
           {/if}
         </legend>
 
