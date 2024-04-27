@@ -12,6 +12,8 @@ import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
+import { UIElement } from "../../UI/UIElement"
+import Img from "../../UI/Base/Img"
 
 export class IconConfig extends WithContextLoader {
     public static readonly defaultIcon = new IconConfig({ icon: "pin", color: "#ff9939" })
@@ -121,9 +123,14 @@ export default class PointRenderingConfig extends WithContextLoader {
             context + ".rotationAlignment"
         )
     }
-    private static FromHtmlMulti(multiSpec: string, tags: Store<Record<string, string>>) {
+    private static FromHtmlMulti(multiSpec: string, tags: Store<Record<string, string>>): BaseUIElement {
         const icons: IconConfig[] = []
+
         for (const subspec of multiSpec.split(";")) {
+            if(subspec.startsWith("http://") || subspec.startsWith("https://")){
+                icons.push(new IconConfig({icon: subspec}))
+                continue
+            }
             const [icon, color] = subspec.split(":")
             icons.push(new IconConfig({ icon, color }))
         }
