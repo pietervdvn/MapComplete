@@ -557,6 +557,10 @@
           "then": "<b>food</b> (builtin) - A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
         },
         {
+          "if": "value=food_courts",
+          "then": "<b>food_courts</b> (builtin) - Food courts with a variety of food options."
+        },
+        {
           "if": "value=ghost_bike",
           "then": "<b>ghost_bike</b> (builtin) - A layer showing memorials for cyclists, killed in road accidents"
         },
@@ -687,6 +691,10 @@
         {
           "if": "value=osm_community_index",
           "then": "<b>osm_community_index</b> (builtin) - A layer showing the OpenStreetMap Communities"
+        },
+        {
+          "if": "value=outdoor_seating",
+          "then": "<b>outdoor_seating</b> (builtin) - Outdoor seating areas, usually located near cafes and restaurants."
         },
         {
           "if": "value=parcel_lockers",
@@ -1908,7 +1916,7 @@
         "type": "string"
       }
     ],
-    "description": "Every layer contains a description of which feature to display - the overpassTags which are queried.\nInstead of running one query for every layer, the query is fused.\nAfterwards, every layer is given the list of features.\nEvery layer takes away the features that match with them*, and give the leftovers to the next layers.\nThis implies that the _order_ of the layers is important in the case of features with the same tags;\nas the later layers might never receive their feature.\n*layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```"
+    "description": "A theme must contain at least one layer.\nA layer contains all features of a single type, for example \"shops\", \"bicycle pumps\", \"benches\".\nNote that every layer contains a specification of attributes that it should match. MapComplete will fetch the relevant data from either overpass, the OSM-API or the cache server.\nIf a feature can match multiple layers, the first matching layer in the list will be used.\nThis implies that the _order_ of the layers is important.\n<div class='hidden-in-studio'>\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```\n</div>"
   },
   {
     "path": [
@@ -12511,6 +12519,10 @@
           "then": "food - A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
         },
         {
+          "if": "value=food_courts",
+          "then": "food_courts - Food courts with a variety of food options."
+        },
+        {
           "if": "value=ghost_bike",
           "then": "ghost_bike - A layer showing memorials for cyclists, killed in road accidents"
         },
@@ -12641,6 +12653,10 @@
         {
           "if": "value=osm_community_index",
           "then": "osm_community_index - A layer showing the OpenStreetMap Communities"
+        },
+        {
+          "if": "value=outdoor_seating",
+          "then": "outdoor_seating - Outdoor seating areas, usually located near cafes and restaurants."
         },
         {
           "if": "value=parcel_lockers",
@@ -13908,7 +13924,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -15229,7 +15249,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -16584,7 +16608,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -17954,7 +17982,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -19323,7 +19355,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -20693,7 +20729,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -33134,6 +33174,10 @@
           "then": "food - A layer showing restaurants and fast-food amenities (with a special rendering for friteries)"
         },
         {
+          "if": "value=food_courts",
+          "then": "food_courts - Food courts with a variety of food options."
+        },
+        {
           "if": "value=ghost_bike",
           "then": "ghost_bike - A layer showing memorials for cyclists, killed in road accidents"
         },
@@ -33264,6 +33308,10 @@
         {
           "if": "value=osm_community_index",
           "then": "osm_community_index - A layer showing the OpenStreetMap Communities"
+        },
+        {
+          "if": "value=outdoor_seating",
+          "then": "outdoor_seating - Outdoor seating areas, usually located near cafes and restaurants."
         },
         {
           "if": "value=parcel_lockers",
@@ -34558,7 +34606,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -35928,7 +35980,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -37333,7 +37389,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -38752,7 +38812,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -40170,7 +40234,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -41589,7 +41657,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },
@@ -43424,7 +43496,7 @@
       "group": "feature_switches",
       "question": "Should the 'download as CSV'- and 'download as Geojson'-buttons be enabled?",
       "iftrue": "Enable the option to download the map as CSV and GeoJson",
-      "iffalse": "Enable the option to download the map as CSV and GeoJson",
+      "iffalse": "Disable the option to download the map as CSV and GeoJson",
       "ifunset": "MapComplete default: Enable the option to download the map as CSV and GeoJson"
     },
     "type": "boolean",

@@ -157,17 +157,16 @@ export interface LayoutConfigJson {
      * types: hidden | layer | hidden
      * group: layers
      * suggestions: return Array.from(layers.keys()).map(key => ({if: "value="+key, then: "<b>"+key+"</b> (builtin) - "+layers.get(key).description}))
-     * Every layer contains a description of which feature to display - the overpassTags which are queried.
-     * Instead of running one query for every layer, the query is fused.
      *
-     * Afterwards, every layer is given the list of features.
-     * Every layer takes away the features that match with them*, and give the leftovers to the next layers.
+     * A theme must contain at least one layer.
      *
-     * This implies that the _order_ of the layers is important in the case of features with the same tags;
-     * as the later layers might never receive their feature.
+     * A layer contains all features of a single type, for example "shops", "bicycle pumps", "benches".
+     * Note that every layer contains a specification of attributes that it should match. MapComplete will fetch the relevant data from either overpass, the OSM-API or the cache server.
+     * If a feature can match multiple layers, the first matching layer in the list will be used.
+     * This implies that the _order_ of the layers is important.
      *
-     * *layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself
      *
+     * <div class='hidden-in-studio'>
      * Note that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: "layername", override: ...}
      *
      * The 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer
@@ -194,6 +193,7 @@ export interface LayoutConfigJson {
      *  "override": {"minzoom": 12}
      * }
      *```
+     * </div>
      */
     layers: (
         | LayerConfigJson
