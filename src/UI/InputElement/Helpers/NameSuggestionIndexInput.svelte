@@ -152,7 +152,7 @@
     {#each filteredItems as item}
       <div
         class={twMerge(
-          "m-1 h-fit rounded-full border-2 border-black p-4 text-center",
+          "m-1 h-fit rounded-full border-2 border-black p-4 text-center text-black",
           selectedItem === item ? "interactive" : "bg-white"
         )}
         on:click={() => {
