@@ -178,7 +178,9 @@
           checkedMappings,
           tags.data
         )
-        console.log("Constructing change spec from", {freeform: $freeformInput, selectedMapping, checkedMappings, currentTags: tags.data}, " --> ", selectedTags)
+        if(state.featureSwitches.featureSwitchIsDebugging.data){
+          console.log("Constructing change spec from", {freeform: $freeformInput, selectedMapping, checkedMappings, currentTags: tags.data}, " --> ", selectedTags)
+        }
       } catch (e) {
         console.error("Could not calculate changeSpecification:", e)
         selectedTags = undefined

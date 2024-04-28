@@ -110,19 +110,21 @@ export class Denomination {
      * @param value the value from OSM
      * @param actAsDefault if set and the value can be parsed as number, will be parsed and trimmed
      *
+     * import Validators from "../UI/InputElement/Validators"
+     *
      * const unit = Denomination.fromJson({
      *               canonicalDenomination: "m",
      *               alternativeDenomination: ["meter"],
      *               human: {
      *                   en: "{quantity} meter"
      *               }
-     *           }, "test")
-     * unit.canonicalValue("42m", true) // =>"42 m"
-     * unit.canonicalValue("42", true) // =>"42 m"
-     * unit.canonicalValue("42 m", true) // =>"42 m"
-     * unit.canonicalValue("42 meter", true) // =>"42 m"
-     * unit.canonicalValue("42m", true) // =>"42 m"
-     * unit.canonicalValue("42", true) // =>"42 m"
+     *           }, Validators.get("float"), "test")
+     * unit.canonicalValue("42m", true, false) // =>"42 m"
+     * unit.canonicalValue("42", true, false) // =>"42 m"
+     * unit.canonicalValue("42 m", true, false) // =>"42 m"
+     * unit.canonicalValue("42 meter", true, false) // =>"42 m"
+     * unit.canonicalValue("42m", true, false) // =>"42 m"
+     * unit.canonicalValue("42", true, false) // =>"42 m"
      *
      * // Should be trimmed if canonical is empty
      * const unit = Denomination.fromJson({
@@ -131,21 +133,25 @@ export class Denomination {
      *               human: {
      *                   en: "{quantity} meter"
      *               }
-     *           }, "test")
-     * unit.canonicalValue("42m", true) // =>"42"
-     * unit.canonicalValue("42", true) // =>"42"
-     * unit.canonicalValue("42 m", true) // =>"42"
-     * unit.canonicalValue("42 meter", true) // =>"42"
+     *           }, Validators.get("float"), "test")
+     * unit.canonicalValue("42m", true, false) // =>"42"
+     * unit.canonicalValue("42", true, false) // =>"42"
+     * unit.canonicalValue("42 m", true, false) // =>"42"
+     * unit.canonicalValue("42 meter", true, false) // =>"42"
      *
      *
      */
-    public canonicalValue(value: string, actAsDefault: boolean): string {
+    public canonicalValue(value: string, actAsDefault: boolean, inverted: boolean): string {
         if (value === undefined) {
             return undefined
         }
-        const stripped = this.StrippedValue(value, actAsDefault)
+        const stripped = this.StrippedValue(value, actAsDefault, inverted)
         if (stripped === null) {
             return null
+        }
+        if(inverted){
+            return (stripped + "/" + this.canonical).trim()
+
         }
         if (stripped === "1" && this._canonicalSingular !== undefined) {
             return ("1 " + this._canonicalSingular).trim()
@@ -160,7 +166,7 @@ export class Denomination {
      *
      * Returns null if it doesn't match this unit
      */
-    public StrippedValue(value: string, actAsDefault: boolean): string {
+    public StrippedValue(value: string, actAsDefault: boolean, inverted: boolean): string {
         if (value === undefined) {
             return undefined
         }
@@ -178,10 +184,16 @@ export class Denomination {
 
         function substr(key) {
             if (self.prefix) {
-                return value.substr(key.length).trim()
-            } else {
-                return value.substring(0, value.length - key.length).trim()
+                return value.substring(key.length).trim()
             }
+            let trimmed =            value.substring(0, value.length - key.length).trim()
+            if(!inverted){
+                return trimmed
+            }
+            if(trimmed.endsWith("/")){
+                trimmed = trimmed.substring(0, trimmed.length - 1).trim()
+            }
+            return trimmed
         }
 
         if (this.canonical !== "" && startsWith(this.canonical.toLowerCase())) {

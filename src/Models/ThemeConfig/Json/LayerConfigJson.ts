@@ -519,6 +519,7 @@ export interface LayerConfigJson {
     /**
      * Either a list with [{"key": "unitname", "key2": {"quantity": "unitname", "denominations": ["denom", "denom"]}}]
      *
+     * Use `"inverted": true` if the amount should be _divided_ by the denomination, e.g. for charge over time (`€5/day`)
      *
      * @see UnitConfigJson
      *
@@ -526,7 +527,7 @@ export interface LayerConfigJson {
      */
     units?: (
         | UnitConfigJson
-        | Record<string, string | { quantity: string; denominations: string[]; canonical?: string }>
+        | Record<string, string | { quantity: string; denominations: string[]; canonical?: string, inverted?: boolean }>
     )[]
 
     /**

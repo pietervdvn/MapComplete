@@ -15,16 +15,19 @@ export class Unit {
     public readonly eraseInvalid: boolean
     public readonly quantity: string
     private readonly _validator: Validator
+    public readonly inverted: boolean
 
     constructor(
         quantity: string,
         appliesToKeys: string[],
         applicableDenominations: Denomination[],
         eraseInvalid: boolean,
-        validator: Validator
+        validator: Validator,
+        inverted: boolean = false
     ) {
         this.quantity = quantity
         this._validator = validator
+        this.inverted = inverted
         this.appliesToKeys = new Set(appliesToKeys)
         this.denominations = applicableDenominations
         this.eraseInvalid = eraseInvalid
@@ -73,7 +76,7 @@ export class Unit {
     static fromJson(
         json:
             | UnitConfigJson
-            | Record<string, string | { quantity: string; denominations: string[] }>,
+            | Record<string, string | { quantity: string; denominations: string[], inverted?: boolean }>,
         tagRenderings: TagRenderingConfig[],
         ctx: string
     ): Unit[] {
@@ -210,7 +213,7 @@ export class Unit {
     private static loadFromLibrary(
         spec: Record<
             string,
-            string | { quantity: string; denominations: string[]; canonical?: string }
+            string | { quantity: string; denominations: string[]; canonical?: string, inverted?: boolean }
         >,
         types: Record<string, ValidatorType>,
         ctx: string
@@ -222,7 +225,7 @@ export class Unit {
             if (typeof toLoad === "string") {
                 const loaded = this.getFromLibrary(toLoad, ctx)
                 units.push(
-                    new Unit(loaded.quantity, [key], loaded.denominations, loaded.eraseInvalid, validator)
+                    new Unit(loaded.quantity, [key], loaded.denominations, loaded.eraseInvalid, validator, toLoad["inverted"])
                 )
                 continue
             }
@@ -252,7 +255,7 @@ export class Unit {
                 const canonical = fetchDenom(toLoad.canonical).withValidator(validator)
                 denoms.unshift(canonical.withBlankCanonical())
             }
-            units.push(new Unit(loaded.quantity, [key], denoms, loaded.eraseInvalid, validator))
+            units.push(new Unit(loaded.quantity, [key], denoms, loaded.eraseInvalid, validator, toLoad["inverted"]))
         }
         return units
     }
@@ -274,7 +277,7 @@ export class Unit {
         }
         const defaultDenom = this.getDefaultDenomination(country)
         for (const denomination of this.denominationsSorted) {
-            const bare = denomination.StrippedValue(valueWithDenom, defaultDenom === denomination)
+            const bare = denomination.StrippedValue(valueWithDenom, defaultDenom === denomination, this.inverted)
             if (bare !== null) {
                 return [bare, denomination]
             }
@@ -287,10 +290,13 @@ export class Unit {
             return undefined
         }
         const [stripped, denom] = this.findDenomination(value, country)
+        const human = denom?.human
+        if(this.inverted ){
+            return human.Subs({quantity: stripped+"/"})
+        }
         if (stripped === "1") {
             return denom?.humanSingular ?? stripped
         }
-        const human = denom?.human
         if (human === undefined) {
             return stripped ?? value
         }
@@ -300,6 +306,10 @@ export class Unit {
 
     public toOsm(value: string, denomination: string) {
         const denom = this.denominations.find((d) => d.canonical === denomination)
+        if(this.inverted){
+            return value+"/"+denom._canonicalSingular
+        }
+
         const space = denom.addSpace ? " " : ""
         if (denom.prefix) {
             return denom.canonical + space + value
@@ -307,7 +317,7 @@ export class Unit {
         return value + space + denom.canonical
     }
 
-    public getDefaultDenomination(country: () => string) {
+    public getDefaultDenomination(country: () => string): Denomination {
         for (const denomination of this.denominations) {
             if (denomination.useIfNoUnitGiven === true) {
                 return denomination

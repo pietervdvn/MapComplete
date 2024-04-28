@@ -435,7 +435,7 @@ export default class SimpleMetaTaggers {
                         () => feature.properties["_country"]
                     )
                     let canonical =
-                        denomination?.canonicalValue(value, defaultDenom == denomination) ??
+                        denomination?.canonicalValue(value, defaultDenom == denomination, unit.inverted) ??
                         undefined
                     if (canonical === value) {
                         break
