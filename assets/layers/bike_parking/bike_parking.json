@@ -976,18 +976,6 @@
       }
     }
   ],
-  "units": [
-    {
-      "maxstay": {
-        "quantity": "duration",
-        "denominations": [
-          "days",
-          "weeks",
-          "months"
-        ]
-      }
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -1000,5 +988,17 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  }
+  },
+  "units": [
+    {
+      "maxstay": {
+        "quantity": "duration",
+        "denominations": [
+          "days",
+          "weeks",
+          "months"
+        ]
+      }
+    }
+  ]
 }

@@ -1,12 +1,12 @@
 {
   "id": "bicycle_parkings",
-  "description": {
-    "en": "A map showing all types of bicycle parkings",
-    "de": "Eine Karte mit allen Arten von Fahrradabstellplätzen"
-  },
   "title": {
     "en": "Bicycle parkings",
     "de": "Fahrradabstellplätze"
+  },
+  "description": {
+    "en": "A map showing all types of bicycle parkings",
+    "de": "Eine Karte mit allen Arten von Fahrradabstellplätzen"
   },
   "icon": "./assets/themes/bicycle_parkings/logo.svg",
   "layers": [

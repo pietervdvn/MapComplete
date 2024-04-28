@@ -6,6 +6,10 @@
   "description": {
     "en": "Outdoor seating areas, usually located near cafes and restaurants."
   },
+  "source": {
+    "osmTags": "leisure=outdoor_seating"
+  },
+  "minzoom": 19,
   "title": {
     "render": {
       "en": "Outdoor Seating area"
@@ -17,10 +21,26 @@
       }
     ]
   },
-  "source": {
-    "osmTags": "leisure=outdoor_seating"
-  },
-  "minzoom": 19,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "green",
+      "fillColor": "#00FF004D",
+      "width": 2
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -149,26 +169,6 @@
           }
         ]
       }
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
-        }
-      ]
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "green",
-      "fillColor": "#00FF004D",
-      "width": 2
     }
   ]
 }
