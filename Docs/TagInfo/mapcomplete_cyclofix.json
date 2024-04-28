@@ -129,6 +129,10 @@
       "description": "Layer 'Bike cafe' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Bike cafe' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Bike cafe' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
@@ -214,6 +218,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Bike repair/shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Bike repair/shop' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "opening_hours",
@@ -1085,6 +1093,10 @@
       "description": "Layer 'Bike-related object' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Bike-related object' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Bike-related object' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
@@ -1269,6 +1281,10 @@
       "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Bicycle rental' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
@@ -1449,6 +1465,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Bicycle library' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "opening_hours",
@@ -1645,6 +1665,10 @@
       "value": "no"
     },
     {
+      "key": "charge",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if fee=yes)"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Bike parking' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
@@ -1687,6 +1711,10 @@
       "description": "Layer 'Bike parking' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}'>{contact:website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'operator:email' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
       "key": "cargo_bike",
       "description": "Layer 'Bike parking' shows cargo_bike=yes with a fixed text, namely 'This parking has room for cargo bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "yes"
@@ -1709,6 +1737,10 @@
       "key": "cargo_bike",
       "description": "Layer 'Bike parking' shows cargo_bike=no with a fixed text, namely 'There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$)",
       "value": "no"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "amenity",
@@ -1961,6 +1993,15 @@
     {
       "key": "socket:bosch_5pin",
       "description": "Layer 'Charging stations' shows socket:bosch_5pin~.+ & socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows socket:bs1363=1 with a fixed text, namely '<b>BS1363</b> (Type G)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "1"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows socket:bs1363~.+ & socket:bs1363!=1 with a fixed text, namely '<b>BS1363</b> (Type G)' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "socket:schuko",
@@ -2592,6 +2633,37 @@
     {
       "key": "socket:bosch_5pin:output",
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:output' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bosch_5pin~.+ & socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:voltage' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:voltage",
+      "description": "Layer 'Charging stations' shows socket:bs1363:voltage=230 V with a fixed text, namely '<b>BS1363</b> (Type G) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:bs1363:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:current' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:current",
+      "description": "Layer 'Charging stations' shows socket:bs1363:current=13 A with a fixed text, namely '<b>BS1363</b> (Type G) outputs at most 13 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "13 A"
+    },
+    {
+      "key": "socket:bs1363:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:output' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:output",
+      "description": "Layer 'Charging stations' shows socket:bs1363:output=3kW with a fixed text, namely '<b>BS1363</b> (Type G) outputs at most 3kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "3kW"
     },
     {
       "key": "opening_hours",

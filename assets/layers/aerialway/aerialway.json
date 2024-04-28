@@ -8,7 +8,6 @@
     "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
     "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. "
   },
-  "minzoom": 11,
   "source": {
     "osmTags": {
       "and": [
@@ -18,6 +17,7 @@
       ]
     }
   },
+  "minzoom": 11,
   "title": {
     "render": {
       "en": "Aerialway {name}",

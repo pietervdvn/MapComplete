@@ -64,6 +64,10 @@
       "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Bicycle libraries')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Bicycle library' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Bicycle libraries')"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Bicycle libraries')"
     },

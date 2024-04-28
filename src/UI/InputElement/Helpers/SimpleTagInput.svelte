@@ -5,8 +5,8 @@
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import BasicTagInput from "../../Studio/TagInput/BasicTagInput.svelte"
   import { TagUtils } from "../../../Logic/Tags/TagUtils"
-  import nmd from "nano-markdown"
   import FromHtml from "../../Base/FromHtml.svelte"
+  import Markdown from "../../Base/Markdown.svelte"
   export let value: UIEventSource<undefined | string>
   export let args: string[] = []
   let uploadableOnly: boolean = args[0] === "uploadableOnly"
@@ -34,6 +34,6 @@
 {#if $dropdownFocussed}
   <div class="m-2 border border-dashed border-black p-2">
     <b>{documentation.name}</b>
-    <FromHtml src={nmd(documentation.docs)} />
+    <Markdown src={documentation.docs} />
   </div>
 {/if}

@@ -6,6 +6,10 @@
   "description": {
     "en": "Food courts with a variety of food options."
   },
+  "source": {
+    "osmTags": "amenity=food_court"
+  },
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Food Court"
@@ -17,35 +21,6 @@
       }
     ]
   },
-  "source": {
-    "osmTags": "amenity=food_court"
-  },
-  "minzoom": 12,
-  "tagRenderings": [
-    {
-      "id": "name",
-      "question": {
-        "en": "What is the name of this food court?"
-      },
-      "freeform": {
-        "key": "name",
-        "type": "string",
-        "placeholder": {
-          "en": "Name of the food court"
-        }
-      },
-      "render": {
-        "en": "This food court is called <b>{name}</b>."
-      }
-    },
-    "reviews",
-    "images",
-    "opening_hours",
-    "wheelchair-access",
-    "website",
-    "phone",
-    "smoking"
-  ],
   "pointRendering": [
     {
       "location": [
@@ -72,5 +47,30 @@
       "color": "#C77400",
       "fillColor": "#C774004D"
     }
+  ],
+  "tagRenderings": [
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this food court?"
+      },
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the food court"
+        }
+      },
+      "render": {
+        "en": "This food court is called <b>{name}</b>."
+      }
+    },
+    "reviews",
+    "images",
+    "opening_hours",
+    "wheelchair-access",
+    "website",
+    "phone",
+    "smoking"
   ]
 }

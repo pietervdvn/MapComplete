@@ -1,73 +1,21 @@
 import Combine from "./Combine"
 import BaseUIElement from "../BaseUIElement"
-import { Translation } from "../i18n/Translation"
-import { FixedUiElement } from "./FixedUiElement"
 import Title from "./Title"
 import List from "./List"
 import Link from "./Link"
+import { marked } from "marked"
+import { parse as parse_html } from "node-html-parser"
+import {default as turndown} from "turndown"
 import { Utils } from "../../Utils"
 
-export default class TableOfContents extends Combine {
-    private readonly titles: Title[]
+export default class TableOfContents {
 
-    constructor(
-        elements: Combine | Title[],
-        options?: {
-            noTopLevel: false | boolean
-            maxDepth?: number
-        }
-    ) {
-        let titles: Title[]
-        if (elements instanceof Combine) {
-            titles = TableOfContents.getTitles(elements.getElements()) ?? []
-        } else {
-            titles = elements ?? []
-        }
 
-        let els: { level: number; content: BaseUIElement }[] = []
-        for (const title of titles) {
-            let content: BaseUIElement
-            if (title.title instanceof Translation) {
-                content = title.title.Clone()
-            } else if (title.title instanceof FixedUiElement) {
-                content = new FixedUiElement(title.title.content)
-            } else if (Utils.runningFromConsole) {
-                content = new FixedUiElement(title.AsMarkdown())
-            } else if (title["title"] !== undefined) {
-                content = new FixedUiElement(title.title.ConstructElement().textContent)
-            } else {
-                console.log("Not generating a title for ", title)
-                continue
-            }
-
-            const vis = new Link(content, "#" + title.id)
-
-            els.push({ level: title.level, content: vis })
-        }
-        const minLevel = Math.min(...els.map((e) => e.level))
-        if (options?.noTopLevel) {
-            els = els.filter((e) => e.level !== minLevel)
-        }
-
-        if (options?.maxDepth) {
-            els = els.filter((e) => e.level <= options.maxDepth + minLevel)
-        }
-
-        super(TableOfContents.mergeLevel(els).map((el) => el.SetClass("mt-2")))
-        this.SetClass("flex flex-col")
-        this.titles = titles
-    }
-
-    private static getTitles(elements: BaseUIElement[]): Title[] {
-        const titles = []
-        for (const uiElement of elements) {
-            if (uiElement instanceof Combine) {
-                titles.push(...TableOfContents.getTitles(uiElement.getElements()))
-            } else if (uiElement instanceof Title) {
-                titles.push(uiElement)
-            }
-        }
-        return titles
+    private static asLinkableId(text: string): string {
+        return text
+            ?.replace(/ /g, "-")
+            ?.replace(/[?#.;:/]/, "")
+            ?.toLowerCase() ?? ""
     }
 
     private static mergeLevel(
@@ -88,7 +36,7 @@ export default class TableOfContents extends Combine {
             if (running.length !== undefined) {
                 result.push({
                     content: new List(running),
-                    level: maxLevel - 1,
+                    level: maxLevel - 1
                 })
                 running = []
             }
@@ -97,24 +45,81 @@ export default class TableOfContents extends Combine {
         if (running.length !== undefined) {
             result.push({
                 content: new List(running),
-                level: maxLevel - 1,
+                level: maxLevel - 1
             })
         }
 
         return TableOfContents.mergeLevel(result)
     }
 
-    AsMarkdown(): string {
-        const depthIcons = ["1.", "  -", "    +", "      *"]
-        const lines = ["## Table of contents\n"]
-        const minLevel = Math.min(...this.titles.map((t) => t.level))
-        for (const title of this.titles) {
-            const prefix = depthIcons[title.level - minLevel] ?? "        ~"
-            const text = title.title.AsMarkdown().replace("\n", "")
-            const link = title.id
-            lines.push(prefix + " [" + text + "](#" + link + ")")
+    public static insertTocIntoMd(md: string): string {
+        const htmlSource = <string>marked.parse(md)
+        const el = parse_html(htmlSource)
+        const structure = TableOfContents.generateStructure(<any>el)
+        let firstTitle = structure[1]
+        let minDepth = undefined
+        do {
+            minDepth = Math.min(...structure.map(s => s.depth))
+            const minDepthCount = structure.filter(s => s.depth === minDepth)
+            if (minDepthCount.length > 1) {
+                break
+            }
+            // Erase a single top level heading
+            structure.splice(structure.findIndex(s => s.depth === minDepth), 1)
+        } while (structure.length > 0)
+
+        if (structure.length <= 1) {
+            return md
+        }
+        const separators = {
+            1: "  -",
+            2: "    +",
+            3: "       *"
         }
 
-        return lines.join("\n") + "\n\n"
+        let toc = ""
+        let topLevelCount = 0
+        for (const el of structure) {
+            const depthDiff = el.depth - minDepth
+            let link = `[${el.title}](#${TableOfContents.asLinkableId(el.title)})`
+            if (depthDiff === 0) {
+                topLevelCount++
+                toc += `${topLevelCount}. ${link}\n`
+            } else if (depthDiff <= 3) {
+                toc += `${separators[depthDiff]} ${link}\n`
+            }
+        }
+
+        const heading = Utils.Times(() => "#", firstTitle.depth)
+        toc = heading +" Table of contents\n\n"+toc
+
+        const original = el.outerHTML
+        const firstTitleIndex = original.indexOf(firstTitle.el.outerHTML)
+        const tocHtml = (<string>marked.parse(toc))
+        const withToc = original.substring(0, firstTitleIndex) + tocHtml + original.substring(firstTitleIndex)
+
+        const htmlToMd = new turndown()
+        return htmlToMd.turndown(withToc)
+
+
+    }
+
+    public static generateStructure(html: Element): { depth: number, title: string, el: Element }[] {
+        if (html === undefined) {
+            return []
+        }
+        return [].concat(...Array.from(html.childNodes ?? []).map(
+            child => {
+                const tag: string = child["tagName"]?.toLowerCase()
+                if (!tag) {
+                    return []
+                }
+                if (tag.match(/h[0-9]/)) {
+                    const depth = Number(tag.substring(1))
+                    return [{ depth, title: child.textContent, el: child }]
+                }
+                return TableOfContents.generateStructure(<Element>child)
+            }
+        ))
     }
 }

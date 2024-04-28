@@ -52,6 +52,7 @@ export default class TagRenderingConfig {
     public readonly renderIconClass?: string
     public readonly question?: TypedTranslation<object>
     public readonly questionhint?: TypedTranslation<object>
+    public readonly questionHintIsMd?: boolean
     public readonly condition?: TagsFilter
     public readonly invalidValues?: TagsFilter
     /**
@@ -80,7 +81,7 @@ export default class TagRenderingConfig {
     public readonly classes: string[] | undefined
 
     constructor(
-        config: string | TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
+        config: string | TagRenderingConfigJson | (QuestionableTagRenderingConfigJson & {questionHintIsMd?: boolean}),
         context?: string
     ) {
         let json = <string | QuestionableTagRenderingConfigJson>config
@@ -136,6 +137,7 @@ export default class TagRenderingConfig {
         this.render = Translations.T(<any>json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
+        this.questionHintIsMd = json["questionHintIsMd"] ?? false
         this.description = Translations.T(json.description, translationKey + ".description")
         this.editButtonAriaLabel = Translations.T(
             json.editButtonAriaLabel,

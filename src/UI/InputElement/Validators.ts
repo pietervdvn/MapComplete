@@ -29,6 +29,7 @@ import IdValidator from "./Validators/IdValidator"
 import SlopeValidator from "./Validators/SlopeValidator"
 import VeloparkValidator from "./Validators/VeloparkValidator"
 import NameSuggestionIndexValidator from "./Validators/NameSuggestionIndexValidator"
+import CurrencyValidator from "./Validators/CurrencyValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -62,6 +63,7 @@ export default class Validators {
         "slope",
         "velopark",
         "nsi",
+        "currency"
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -92,6 +94,7 @@ export default class Validators {
         new SlopeValidator(),
         new VeloparkValidator(),
         new NameSuggestionIndexValidator(),
+        new CurrencyValidator()
     ]
 
     private static _byType = Validators._byTypeConstructor()

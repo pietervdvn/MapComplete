@@ -1,5 +1,9 @@
 {
   "id": "memorial",
+  "name": {
+    "en": "Memorials",
+    "de": "Denkmäler"
+  },
   "description": "Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on",
   "source": {
     "osmTags": {
@@ -9,11 +13,7 @@
       ]
     }
   },
-  "name": {
-    "en": "Memorials",
-    "de": "Denkmäler"
-  },
-  "defaultBackgroundId": "protomaps.white",
+  "minzoom": 9,
   "title": {
     "render": {
       "en": "Memorial plaque",
@@ -68,6 +68,17 @@
     }
   ],
   "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a memorial",
+        "de": "ein Denkmal"
+      },
+      "tags": [
+        "historic=memorial"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -316,21 +327,10 @@
       }
     }
   ],
-  "presets": [
-    {
-      "title": {
-        "en": "a memorial",
-        "de": "ein Denkmal"
-      },
-      "tags": [
-        "historic=memorial"
-      ]
-    }
-  ],
-  "minzoom": 9,
   "deletion": true,
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
-  }
+  },
+  "defaultBackgroundId": "protomaps.white"
 }

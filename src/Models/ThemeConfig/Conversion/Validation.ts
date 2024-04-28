@@ -1647,6 +1647,10 @@ export class ValidateLayer extends Conversion<
             }
         }
 
+        if(json.allowMove?.["enableAccuraccy"] !== undefined){
+            context.enters("allowMove", "enableAccuracy").err("`enableAccuracy` is written with two C in the first occurrence and only one in the last")
+        }
+
         return { raw: json, parsed: layerConfig }
     }
 }

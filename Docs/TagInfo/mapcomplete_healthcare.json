@@ -69,6 +69,10 @@
       "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Doctors' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Doctors' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Healthcare')"
     },
@@ -159,6 +163,10 @@
       "description": "Layer 'Physiotherapist' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Physiotherapist' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Physiotherapist' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Healthcare')"
     },
@@ -217,6 +225,10 @@
       "description": "Layer 'Dentist' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Dentist' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Dentist' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Healthcare')"
     },
@@ -271,6 +283,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Hospitals' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
     },
     {
       "key": "website",
@@ -337,6 +353,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Pharmacies' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
     },
     {
       "key": "website",
@@ -1277,6 +1297,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Shop' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Healthcare')"
     },
     {
       "key": "phone",

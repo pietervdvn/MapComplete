@@ -3765,6 +3765,16 @@
             },
             "ref": {
                 "question": "Quel est le numéro de référence de cette pièce ?"
+            },
+            "room-type": {
+                "mappings": {
+                    "4": {
+                        "then": "C'est une salle de classe"
+                    },
+                    "14": {
+                        "then": "C'est un bureau"
+                    }
+                }
             }
         }
     },

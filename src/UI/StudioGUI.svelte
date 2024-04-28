@@ -1,7 +1,7 @@
 <script lang="ts">
   import NextButton from "./Base/NextButton.svelte"
   import { Store, UIEventSource } from "../Logic/UIEventSource"
-  import EditLayerState, { EditThemeState } from "./Studio/EditLayerState"
+  import EditLayerState, { EditJsonState, EditThemeState } from "./Studio/EditLayerState"
   import EditLayer from "./Studio/EditLayer.svelte"
   import Loading from "../assets/svg/Loading.svelte"
   import StudioServer from "./Studio/StudioServer"
@@ -30,6 +30,7 @@
   import Tr from "./Base/Tr.svelte"
   import Add from "../assets/svg/Add.svelte"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import Hash from "../Logic/Web/Hash"
 
   export let studioUrl =
     window.location.hostname === "127.0.0.2"
@@ -43,11 +44,11 @@
   )
   let osmConnection = new OsmConnection({
     oauth_token,
-    checkOnlineRegularly: true,
+    checkOnlineRegularly: true
   })
   const expertMode = UIEventSource.asBoolean(
     osmConnection.GetPreference("studio-expert-mode", "false", {
-      documentation: "Indicates if more options are shown in mapcomplete studio",
+      documentation: "Indicates if more options are shown in mapcomplete studio"
     })
   )
   expertMode.addCallbackAndRunD((expert) => console.log("Expert mode is", expert))
@@ -61,12 +62,12 @@
     l["success"]?.filter((l) => l.category === "layers")
   )
   $: selfLayers = layers.mapD(
-      (ls) =>
-        ls.filter(
-          (l) => l.owner === uid.data && l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
-        ),
-      [uid]
-    )
+    (ls) =>
+      ls.filter(
+        (l) => l.owner === uid.data && l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
+      ),
+    [uid]
+  )
   $: otherLayers = layers.mapD(
     (ls) =>
       ls.filter(
@@ -132,16 +133,17 @@
 
   const version = meta.version
 
-  async function editLayer(event: Event) {
+  async function editLayer(event: { detail }): Promise<EditLayerState> {
     const layerId: { owner: number; id: string } = event["detail"]
     state = "loading"
     editLayerState.startSavingUpdates(false)
     editLayerState.configuration.setData(await studio.fetch(layerId.id, "layers", layerId.owner))
     editLayerState.startSavingUpdates()
     state = "editing_layer"
+    return editLayerState
   }
 
-  async function editTheme(event: Event) {
+  async function editTheme(event: { detail }): Promise<EditThemeState> {
     const id: { id: string; owner: number } = event["detail"]
     state = "loading"
     editThemeState.startSavingUpdates(false)
@@ -149,6 +151,7 @@
     editThemeState.configuration.setData(layout)
     editThemeState.startSavingUpdates()
     state = "editing_theme"
+    return editThemeState
   }
 
   async function createNewLayer() {
@@ -162,22 +165,49 @@
           marker: [
             {
               icon: "circle",
-              color: "white",
-            },
-          ],
-        },
+              color: "white"
+            }
+          ]
+        }
       ],
       tagRenderings: ["images"],
       lineRendering: [
         {
           width: 1,
-          color: "blue",
-        },
-      ],
+          color: "blue"
+        }
+      ]
     }
     editLayerState.configuration.setData(initialLayerConfig)
     editLayerState.startSavingUpdates()
     state = "editing_layer"
+  }
+
+  async function selectStateBasedOnHash() {
+    const hash = Hash.hash.data
+    if (!hash) {
+      return
+    }
+    console.log("Selecting state based on ", hash)
+    const [mode, id, tab] = hash.split("/")
+    // Not really an event, we just set the 'detail'
+    const event = {
+      detail: {
+        id,
+        owner: uid.data
+      }
+    }
+    const statePromise: Promise<EditJsonState<any>> = mode === "layer" ? editLayer(event) : editTheme(event)
+    const state = await statePromise
+    state.selectedTab.setData(Number(tab))
+  }
+
+  selectStateBasedOnHash()
+
+  function backToStudio() {
+    console.log("Back to studio")
+    state = undefined
+    Hash.hash.setData(undefined)
   }
 </script>
 
@@ -191,8 +221,8 @@
       <li>Try again in a few minutes</li>
       <li>
         Contact <a href="https://app.element.io/#/room/#MapComplete:matrix.org">
-          the MapComplete community via the chat.
-        </a>
+        the MapComplete community via the chat.
+      </a>
         Someone might be able to help you
       </li>
       <li>
@@ -257,9 +287,7 @@
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"
-          on:click={() => {
-            state = undefined
-          }}
+          on:click={() => backToStudio()}
         >
           MapComplete Studio
         </BackButton>
@@ -306,9 +334,7 @@
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"
-          on:click={() => {
-            state = undefined
-          }}
+          on:click={() => backToStudio()}
         >
           MapComplete Studio
         </BackButton>
@@ -348,30 +374,23 @@
     {:else if state === "editing_layer"}
       <EditLayer
         state={editLayerState}
-        backToStudio={() => {
-          state = undefined
-        }}
+        {backToStudio}
       >
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"
-          on:click={() => {
-            state = undefined
-          }}
+          on:click={() => backToStudio()}
         >
           MapComplete Studio
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}
-      <EditTheme state={editThemeState} selfLayers={$selfLayers} otherLayers={$otherLayers} {osmConnection}  backToStudio={() => {
-          state = undefined
-        }}>
+      <EditTheme state={editThemeState} selfLayers={$selfLayers} otherLayers={$otherLayers} {osmConnection}
+                 {backToStudio}>
         <BackButton
           clss="small p-1"
           imageClass="w-8 h-8"
-          on:click={() => {
-            state = undefined
-          }}
+          on:click={() => backToStudio()}
         >
           MapComplete Studio
         </BackButton>
