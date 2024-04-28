@@ -188,7 +188,6 @@
   }
 
   function onSave(_ = undefined) {
-    console.log("Extra tags to save", extraTags.data)
     if (selectedTags === undefined) {
       return
     }

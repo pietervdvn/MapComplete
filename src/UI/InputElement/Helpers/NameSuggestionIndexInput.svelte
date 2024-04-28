@@ -117,6 +117,22 @@
       }
       return acc
     }, {} as Record<string, string>)
+
+    // Also check if the object currently matches a different item, based on the key
+    const otherItem = items.find((item) => item.tags[tag] === feature.properties[key])
+
+    // If the other item is not the same as the selected item, we need to make sure we clear any old keys we don't need anymore by setting them to an empty string
+    if (otherItem && otherItem !== item) {
+      Object.keys(otherItem.tags).forEach((key) => {
+        // If we have a different value for the key, we don't need to clear it
+        if (!tags[key] && key !== tag && key !== maintag.split("=")[0]) {
+          console.log(`Clearing key ${key}`)
+          tags[key] = ""
+        }
+      })
+    }
+
+    // Finally, set the extra tags
     extraTags.setData(tags)
   }
 </script>
