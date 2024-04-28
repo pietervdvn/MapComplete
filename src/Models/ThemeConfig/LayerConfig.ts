@@ -368,7 +368,6 @@ export default class LayerConfig extends WithContextLoader {
         canBeIncluded = true
     ): BaseUIElement {
         const extraProps: (string | BaseUIElement)[] = []
-
         extraProps.push("This layer is shown at zoomlevel **" + this.minzoom + "** and higher")
 
         if (canBeIncluded) {
@@ -424,7 +423,7 @@ export default class LayerConfig extends WithContextLoader {
         if (!addedByDefault) {
             if (usedInThemes?.length > 0) {
                 usingLayer = [
-                    new Title("Themes using this layer", 4),
+                    new Title("Themes using this layer", 2),
                     new List(
                         (usedInThemes ?? []).map(
                             (id) => new Link(id, "https://mapcomplete.org/" + id)
