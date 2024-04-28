@@ -23,7 +23,10 @@
 
   let maintag = helperArgs[0].toString()
   let tag = key
-  let addExtraTags = helperArgs[1].split(";")
+  let addExtraTags: string[] = []
+  if (helperArgs[1]) {
+    addExtraTags = helperArgs[1].split(";")
+  }
 
   const path = `${tag}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
 
@@ -141,6 +144,32 @@
     // Finally, set the extra tags
     extraTags.setData(tags)
   }
+
+  value.addCallback((value) => {
+    // If the value changes by the user typing we might need to update the selected item or make sure we clear any old keys
+
+    // First, check if the value is already selected, in that case we don't need to do anything
+    if (selectedItem && selectedItem.tags[tag] === value) {
+      return
+    }
+
+    // If the value is not selected, we check if there is an item with the same value and select it
+    const item = items.find((item) => item.tags[tag] === value)
+    if (item) {
+      select(item)
+    } else {
+      // If there is no item with the value, we need to clear the extra tags based on the last selected item by looping over the tags from the last selected item
+      if (selectedItem) {
+        const tags = Object.entries(selectedItem.tags).reduce((acc, [key, value]) => {
+          if (key !== tag && key !== maintag.split("=")[0]) {
+            acc[key] = ""
+          }
+          return acc
+        }, {} as Record<string, string>)
+        extraTags.setData(tags)
+      }
+    }
+  })
 </script>
 
 <div>

@@ -195,6 +195,26 @@
       ]
     },
     {
+      "id": "post_offic_brand",
+      "condition": "amenity=post_office",
+      "question": {
+        "en": "To which brand does this post office belong?"
+      },
+      "render": {
+        "en": "This is a {brand} post office"
+      },
+      "freeform": {
+        "type": "nsi",
+        "key": "brand",
+        "placeholder": {
+          "en": "Brand of the post office"
+        },
+        "helperArgs": [
+          "amenity=post_office"
+        ]
+      }
+    },
+    {
       "id": "partner-brand",
       "render": {
         "en": "This location offers services for {post_office:brand}",
