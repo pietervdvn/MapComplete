@@ -230,7 +230,7 @@ class ExpandTagRendering extends Conversion<
                 }
                 for (let foundTr of indirect) {
                     foundTr = Utils.Clone<any>(foundTr)
-                    ctx.Merge(tagRenderingConfigJson["override"] ?? {}, foundTr)
+                    ctx.MergeObjectsForOverride(tagRenderingConfigJson["override"] ?? {}, foundTr)
                     foundTr["id"] = tagRenderingConfigJson["id"] ?? foundTr["id"]
                     result.push(foundTr)
                 }
