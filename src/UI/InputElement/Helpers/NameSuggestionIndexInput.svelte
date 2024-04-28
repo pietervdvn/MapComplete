@@ -23,6 +23,7 @@
 
   let maintag = helperArgs[0].toString()
   let tag = key
+  let addExtraTags = helperArgs[1].split(";")
 
   const path = `${tag}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
 
@@ -131,6 +132,11 @@
         }
       })
     }
+
+    // If we have layer-defined extra tags, also add them
+    addExtraTags.forEach((extraTag) => {
+      tags[extraTag.split("=")[0]] = extraTag.split("=")[1]
+    })
 
     // Finally, set the extra tags
     extraTags.setData(tags)

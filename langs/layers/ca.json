@@ -6032,9 +6032,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Part de la xarxa 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "Aquesta prestatgeria pública no és part d'una xarxa més gran"
                     }
                 },

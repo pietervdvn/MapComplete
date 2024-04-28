@@ -6263,9 +6263,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Součást sítě 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "Tato veřejná knihobudka není součástí větší sítě"
                     }
                 },

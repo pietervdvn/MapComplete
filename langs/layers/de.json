@@ -2166,7 +2166,7 @@
                 "title": "Ladestation für Elektrofahrräder"
             },
             "1": {
-                "title": "Ladestation für Elektrofahrräder"
+                "title": "Ladestation für Autos"
             }
         },
         "tagRenderings": {
@@ -7467,9 +7467,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Der Bücherschrank gehört zum Netzwerk 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "Der Bücherschrank gehört zu keinem Netzwerk"
                     }
                 },

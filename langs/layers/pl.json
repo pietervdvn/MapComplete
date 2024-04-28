@@ -2234,17 +2234,6 @@
             }
         }
     },
-    "public_bookcase": {
-        "tagRenderings": {
-            "public_bookcase-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Część sieci \"Little Free Library\""
-                    }
-                }
-            }
-        }
-    },
     "questions": {
         "tagRenderings": {
             "check_date": {

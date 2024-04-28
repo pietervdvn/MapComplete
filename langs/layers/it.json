@@ -1967,9 +1967,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Fa parte della rete 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "Questa microbiblioteca non fa parte di una rete"
                     }
                 },

@@ -24,6 +24,10 @@ export default class NameSuggestionIndexValidator extends Validator {
                                             "main",
                                             "The main tag to give suggestions for, e.g. `amenity=restaurant`.",
                                         ],
+                                        [
+                                            "addExtraTags",
+                                            "Extra tags to add to the suggestions, e.g. `nobrand=yes`.",
+                                        ],
                                     ]
                                 ),
                             ]),

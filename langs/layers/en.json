@@ -1495,6 +1495,11 @@
                 },
                 "question": "What is the relative location of this bicycle parking?"
             },
+            "charge": {
+                "question": "How much does it cost to park your bike here?",
+                "questionHint": "This is the amount which is charged for a single bike",
+                "render": "Parking your bike costs {charge}"
+            },
             "fee": {
                 "mappings": {
                     "0": {
@@ -7590,11 +7595,11 @@
                 "question": "Is this bookcase located outdoors?"
             },
             "public_bookcase-brand": {
+                "freeform": {
+                    "placeholder": "Name of the network"
+                },
                 "mappings": {
                     "0": {
-                        "then": "Part of the network 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "This public bookcase is not part of a bigger network"
                     }
                 },
@@ -10651,6 +10656,10 @@
                     "4": {
                         "human": "{quantity} months",
                         "humanSingular": "one month"
+                    },
+                    "5": {
+                        "human": "{quantity} years",
+                        "humanSingular": "one year"
                     }
                 }
             }

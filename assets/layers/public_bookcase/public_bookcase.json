@@ -396,32 +396,17 @@
       },
       "condition": "ref=",
       "freeform": {
-        "key": "brand"
+        "key": "brand",
+        "type": "nsi",
+        "helperArgs": [
+          "amenity=public_bookcase",
+          "nobrand="
+        ],
+        "placeholder": {
+          "en": "Name of the network"
+        }
       },
       "mappings": [
-        {
-          "then": {
-            "en": "Part of the network 'Little Free Library'",
-            "nl": "Deel van het netwerk 'Little Free Library'",
-            "de": "Der Bücherschrank gehört zum Netzwerk 'Little Free Library'",
-            "fr": "Fait partie du réseau Little Free Library",
-            "it": "Fa parte della rete 'Little Free Library'",
-            "hu": "A „Little Free Library” hálózat része",
-            "es": "Parte de la red 'Little Free Library'",
-            "pl": "Część sieci \"Little Free Library\"",
-            "ca": "Part de la xarxa 'Little Free Library'",
-            "cs": "Součást sítě 'Little Free Library'"
-          },
-          "if": {
-            "and": [
-              "brand=Little Free Library",
-              "nobrand="
-            ]
-          },
-          "addExtraTags": [
-            "brand:wikidata=Q6650101"
-          ]
-        },
         {
           "if": {
             "and": [
@@ -438,7 +423,10 @@
             "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak",
             "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran",
             "cs": "Tato veřejná knihobudka není součástí větší sítě"
-          }
+          },
+          "addExtraTags": [
+            "brand:wikidata="
+          ]
         }
       ],
       "id": "public_bookcase-brand"

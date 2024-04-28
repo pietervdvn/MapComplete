@@ -595,6 +595,9 @@
                     },
                     "1": {
                         "then": "Ce banc n'a pas d'oeuvre d'art intégrée"
+                    },
+                    "2": {
+                        "then": "Ce banc ne comporte <span class=\"subtle\">probablement</span> pas d'œuvre d'art"
                     }
                 },
                 "question": "Est-ce que ce banc inclut un élément artistique ?",
@@ -654,7 +657,7 @@
                         "then": "Ce banc n'a pas d'inscription"
                     },
                     "1": {
-                        "then": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
+                        "then": "Ce banc n'a <span class='subtle'>(probablement)</span> pas d'inscription"
                     }
                 },
                 "question": "Est-ce que ce banc possède une inscription ?",
@@ -2960,6 +2963,13 @@
                 "question": "Quelle est la profondeur de cet ascenseur ?",
                 "render": "Cet ascenseur a une profondeur de {canonical(length)}"
             },
+            "elevator-shape": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet ascenseur est de forme rectangulaire"
+                    }
+                }
+            },
             "elevator-width": {
                 "question": "Quelle est la largeur de cet ascenseur ?",
                 "render": "Cet ascenseur a une largeur de {canonical(width)}"
@@ -4502,9 +4512,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Fait partie du réseau Little Free Library"
-                    },
-                    "1": {
                         "then": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe"
                     }
                 },
