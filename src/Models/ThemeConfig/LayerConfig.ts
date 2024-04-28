@@ -97,18 +97,6 @@ export default class LayerConfig extends WithContextLoader {
 
         this.allowSplit = json.allowSplit ?? false
         this.name = Translations.T(json.name, translationContext + ".name")
-        if (json.units !== undefined && !Array.isArray(json.units)) {
-            throw (
-                "At " +
-                context +
-                ".units: the 'units'-section should be a list; you probably have an object there"
-            )
-        }
-        this.units = [].concat(
-            ...(json.units ?? []).map((unitJson, i) =>
-                Unit.fromJson(unitJson, `${context}.unit[${i}]`)
-            )
-        )
 
         if (json.description !== undefined) {
             if (Object.keys(json.description).length === 0) {
@@ -279,6 +267,18 @@ export default class LayerConfig extends WithContextLoader {
                     <QuestionableTagRenderingConfigJson>tr,
                     this.id + ".tagRenderings[" + i + "]"
                 )
+        )
+        if (json.units !== undefined && !Array.isArray(json.units)) {
+            throw (
+                "At " +
+                context +
+                ".units: the 'units'-section should be a list; you probably have an object there"
+            )
+        }
+        this.units = [].concat(
+            ...(json.units ?? []).map((unitJson, i) =>
+                Unit.fromJson(unitJson, this.tagRenderings,`${context}.unit[${i}]`)
+            )
         )
 
         if (

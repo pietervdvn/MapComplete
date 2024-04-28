@@ -91,11 +91,6 @@
       return
     }
 
-    if (unit !== undefined && isNaN(Number(v))) {
-      value.setData(undefined)
-      return
-    }
-
     feedback?.setData(undefined)
     if (selectedUnit.data) {
       value.setData(unit.toOsm(v, selectedUnit.data))

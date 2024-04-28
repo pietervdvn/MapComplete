@@ -1,6 +1,7 @@
 import { Translation, TypedTranslation } from "../UI/i18n/Translation"
 import { DenominationConfigJson } from "./ThemeConfig/Json/UnitConfigJson"
 import Translations from "../UI/i18n/Translations"
+import { Validator } from "../UI/InputElement/Validator"
 
 /**
  * A 'denomination' is one way to write a certain quantity.
@@ -15,6 +16,7 @@ export class Denomination {
     public readonly alternativeDenominations: string[]
     public readonly human: TypedTranslation<{ quantity: string }>
     public readonly humanSingular?: Translation
+    private readonly _validator: Validator
 
     private constructor(
         canonical: string,
@@ -24,7 +26,8 @@ export class Denomination {
         addSpace: boolean,
         alternativeDenominations: string[],
         _human: TypedTranslation<{ quantity: string }>,
-        _humanSingular?: Translation
+        _humanSingular: Translation,
+        validator: Validator
     ) {
         this.canonical = canonical
         this._canonicalSingular = _canonicalSingular
@@ -34,9 +37,10 @@ export class Denomination {
         this.alternativeDenominations = alternativeDenominations
         this.human = _human
         this.humanSingular = _humanSingular
+        this._validator = validator
     }
 
-    public static fromJson(json: DenominationConfigJson, context: string) {
+    public static fromJson(json: DenominationConfigJson, validator: Validator, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
         const canonical = json.canonicalDenomination.trim()
         if (canonical === undefined) {
@@ -68,7 +72,8 @@ export class Denomination {
             json.addSpace ?? false,
             json.alternativeDenomination?.map((v) => v.trim()) ?? [],
             humanTexts,
-            Translations.T(json.humanSingular, context + "humanSingular")
+            Translations.T(json.humanSingular, context + "humanSingular"),
+            validator
         )
     }
 
@@ -81,7 +86,8 @@ export class Denomination {
             this.addSpace,
             this.alternativeDenominations,
             this.human,
-            this.humanSingular
+            this.humanSingular,
+            this._validator
         )
     }
 
@@ -94,7 +100,8 @@ export class Denomination {
             this.addSpace,
             [this.canonical, ...this.alternativeDenominations],
             this.human,
-            this.humanSingular
+            this.humanSingular,
+            this._validator
         )
     }
 
@@ -199,11 +206,13 @@ export class Denomination {
             return null
         }
 
-        const parsed = Number(value.trim())
-        if (!isNaN(parsed)) {
-            return value.trim()
+        if(!this._validator.isValid(value.trim())){
+            return null
         }
+        return this._validator.reformat(value.trim())
+    }
 
-        return null
+    withValidator(validator: Validator) {
+        return new Denomination(this.canonical, this._canonicalSingular, this.useIfNoUnitGiven, this.prefix, this.addSpace, this.alternativeDenominations, this.human, this.humanSingular, validator)
     }
 }
