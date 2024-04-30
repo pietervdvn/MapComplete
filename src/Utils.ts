@@ -1042,7 +1042,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         return await promise
     }
-
+    public static async downloadJson(
+        url: string,
+        headers?: Record<string, string>
+    ): Promise<object | []>
+    public static async downloadJson<T>(
+        url: string,
+        headers?: Record<string, string>
+    ): Promise<T>
     public static async downloadJson(
         url: string,
         headers?: Record<string, string>
