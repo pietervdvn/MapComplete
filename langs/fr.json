@@ -26,6 +26,7 @@
             "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
             "softDelete": "Cet objet sera mis à jour et caché de l'application. <span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "Cet objet a été modifié et ne correspond plus au calque",
         "isDeleted": "Cet objet est supprimé",
         "isntAPoint": "Seul les nœuds peuvent être supprimés, l'élément sélectionné est une ligne, un polygone ou une relation.",
         "loading": "Inspection des propriétés pour vérifier si l’élément peut être supprimé.",
@@ -291,6 +292,7 @@
             },
             "title": "Envoyer votre trace sur OpenStreetMap.org"
         },
+        "uploadPendingSingle": "Une modification en attente",
         "weekdays": {
             "abbreviations": {
                 "friday": "Ven",
