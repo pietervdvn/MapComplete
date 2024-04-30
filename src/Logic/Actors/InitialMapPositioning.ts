@@ -70,7 +70,7 @@ export default class InitialMapPositioning {
         })
         this.useTerrain = new ImmutableStore<boolean>(layoutToUse.enableTerrain)
 
-        if(initialHash.match(/^(node|way|relation)\/[0-9]+$/)){
+        if(initialHash?.match(/^(node|way|relation)\/[0-9]+$/)){
             const [type, id] = initialHash.split("/")
             OsmObjectDownloader.RawDownloadObjectAsync(type, Number(id), Constants.osmAuthConfig.url+"/").then(osmObject => {
                 if(osmObject === "deleted"){
