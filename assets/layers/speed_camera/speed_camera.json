@@ -145,6 +145,10 @@
       "id": "camera_direction"
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "units": [
     {
       "maxspeed": {
@@ -155,9 +159,5 @@
         ]
       }
     }
-  ],
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": false
-  }
+  ]
 }

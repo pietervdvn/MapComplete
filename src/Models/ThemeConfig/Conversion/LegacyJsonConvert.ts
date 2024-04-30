@@ -33,6 +33,12 @@ export class UpdateLegacyLayer extends DesugaringStep<
             delete config["overpassTags"]
         }
 
+        if(config.allowMove?.["enableImproveAccuraccy"]){
+            // Fix common misspelling: 'accuracy' is often typo'ed as 'accuraCCy'
+            config.allowMove["enableImproveAccuracy"] = config.allowMove["enableImproveAccuraccy"]
+            delete config.allowMove["enableImproveAccuraccy"]
+        }
+
         for (const preset of config.presets ?? []) {
             const preciseInput = preset["preciseInput"]
             if (typeof preciseInput === "boolean") {

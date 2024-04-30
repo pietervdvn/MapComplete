@@ -8,6 +8,7 @@
   import QuestionPreview from "./QuestionPreview.svelte"
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
+  import Markdown from "../Base/Markdown.svelte"
 
   export let state: EditLayerState
   export let schema: ConfigMeta
@@ -30,10 +31,9 @@
     schema.description = undefined
   }
 
-  const subparts: ConfigMeta = state
+  const subparts: ConfigMeta[] = state
     .getSchemaStartingWith(schema.path)
     .filter((part) => part.path.length - 1 === schema.path.length)
-
   let messages = state.messagesFor(path)
 
   const currentValue: UIEventSource<any[]> = state.getStoreFor(path)
@@ -97,9 +97,7 @@
   <h3>{schema.path.at(-1)}</h3>
 
   {#if subparts.length > 0}
-    <span class="subtle">
-      {schema.description}
-    </span>
+    <Markdown src={schema.description}/>
   {/if}
   {#if $currentValue === undefined}
     No array defined

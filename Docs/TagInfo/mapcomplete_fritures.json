@@ -84,6 +84,10 @@
       "description": "Layer 'Fries shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Fries shops')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Fries shop' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Fries shops')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Fries shop' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Fries shops')"
     },

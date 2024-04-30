@@ -331,11 +331,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             configurable: true,
             get: () => {
                 delete object[name]
-                object[name] = init()
-                if (whenDone) {
-                    whenDone()
+                try{
+                    object[name] = init()
+                    if (whenDone) {
+                        whenDone()
+                    }
+                    return object[name]
+                }catch (e) {
+                    console.error("Error while calculating a lazy property", e)
+                    return undefined
                 }
-                return object[name]
             },
         })
     }
@@ -502,7 +507,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         let result = ""
         while (match) {
             const [_, normal, key, leftover] = match
-            let v = tags === undefined ? undefined : tags[key]
+            let v = tags?.[key]
             if (v !== undefined && v !== null) {
                 if (v["toISOString"] != undefined) {
                     // This is a date, probably the timestamp of the object
@@ -1643,5 +1648,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             index++
         }
         return n + Utils._metrixPrefixes[index]
+    }
+
+    static NoNullInplace(layers: any[]):void {
+        for (let i = layers.length - 1; i >= 0; i--) {
+            if(layers[i] === null || layers[i] === undefined){
+                layers.splice(i, 1)
+            }
+        }
     }
 }

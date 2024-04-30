@@ -785,7 +785,7 @@
     "minzoom": 17,
     "doCount": false
   },
-  "widenFactor": 2,
   "overpassMaxZoom": 15,
-  "osmApiTileSize": 17
+  "osmApiTileSize": 17,
+  "widenFactor": 2
 }

@@ -194,6 +194,7 @@
         },
         "morescreen": {
             "createYourOwnTheme": "Créez votre propre thème MapComplete à partir de zéro",
+            "enterToOpen": "Appuyez sur Entrée pour ouvrir le thème",
             "hiddenExplanation": "Ces thèmes sont seulement accessibles par lien. Vous avez découvert {hidden_discovered} des {total_hidden} thèmes cachés.",
             "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
             "noMatchingThemes": "Aucun thème ne correspond à vos critères de recherche",
@@ -212,6 +213,7 @@
         "number": "nombre",
         "openStreetMapIntro": "<h3>Une carte ouverte</h3><p>Utilisable et éditable librement. Une seule et unique plateforme regroupant toutes les informations géographiques ? Toutes ces différentes cartes isolées, incompatibles et obsolètes ne sont plus utiles.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> n’est pas un énième concurrent. Toutes les données de cette carte peuvent être utilisé librement (avec <a href=\"https://osm.org/copyright\" target=\"_blank\"> attribution et publication des changements de données</a>). De plus tout le monde est libre d'ajouter de nouvelles données et corriger les erreurs. Ce site utilise également OpenStreetMap. Toutes les données en proviennent et tous les ajouts et modifications y seront également ajoutés.</p><p>De nombreux individus et applications utilisent déjà OpenStreetMap : <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mais aussi les cartes de Facebook, Instagram, Apple Maps et Bing Maps sont (en partie) alimentées par OpenStreetMap</p>",
         "openTheMap": "Ouvrir la carte",
+        "openTheMapAtGeolocation": "Zoom sur votre position",
         "opening_hours": {
             "closed_permanently": "Fermé",
             "closed_until": "Fermé jusqu'au {date}",
@@ -324,6 +326,7 @@
                 "born": "Né·e le : {value}",
                 "died": "Décédé·e le : {value}"
             },
+            "readMore": "Lire le reste de l'article",
             "searchToShort": "Votre requête est trop courte, entrez un texte plus long.",
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
@@ -344,6 +347,11 @@
         "doDelete": "Supprimer l'image",
         "dontDelete": "Annuler",
         "isDeleted": "Supprimé",
+        "nearby": {
+            "link": "Cette photo montre l'objet",
+            "seeNearby": "Parcourez et associez des photos à proximité",
+            "title": "Imagerie StreetView à proximité"
+        },
         "pleaseLogin": "Connectez-vous pour téléverser une photo",
         "respectPrivacy": "Ne photographiez ni les personnes ni les plaques d'immatriculation. Ne téléversez rien issu de Google Maps, Google Streetview ou d'autre sources soumises à des droits d'auteurs.",
         "toBig": "Votre image est trop large car elle est de {actual_size}. Veuillez utiliser des images d'au maximum {max_size}",
@@ -403,6 +411,7 @@
         "warnAnonymous": "Vous n'êtes pas connecté. Nous ne pourrons pas vous contacter pour résoudre ce problème."
     },
     "plantDetection": {
+        "button": "Détecter automatiquement les espèces végétales à l'aide de l'IA de Plantnet.org",
         "error": "Une erreur est survenue lors de la détection de l'espèce de l'arbre : {error}",
         "howTo": {
             "intro": "Pour de résultats optimaux,",
@@ -415,6 +424,7 @@
         "matchPercentage": "Correspondance {match} %",
         "overviewIntro": "L'IA de <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> pense que les images représentes les espèces ci-dessous.",
         "overviewTitle": "Espèces détectées automatiquement",
+        "overviewVerify": "Vérifiez que l'espèce est correcte avant de la relier à l'arbre",
         "poweredByPlantnet": "Propulsé par <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "seeInfo": "Voir plus d'informations sur les espèces",
         "takeImages": "Prenez des photos de l'arbre pour détecter automatiquement de quel type il s'agit"

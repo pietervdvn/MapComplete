@@ -30,7 +30,8 @@
   import { placeholder } from "../../../Utils/placeholder"
   import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Tag } from "../../../Logic/Tags/Tag"
-  import { get, writable } from "svelte/store"
+  import { get } from "svelte/store"
+  import Markdown from "../../Base/Markdown.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -68,13 +69,17 @@
   /**
    * Prepares and fills the checkedMappings
    */
-  function initialize(tgs: Record<string, string>, confg: TagRenderingConfig) {
+  function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void {
     mappings = confg.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
         return !m.hideInAnswer
       }
       return !m.hideInAnswer.matchesProperties(tgs)
     })
+    selectedMapping = mappings?.findIndex(mapping => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs))
+    if(selectedMapping < 0){
+      selectedMapping = undefined
+    }
     // We received a new config -> reinit
     unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
 
@@ -85,7 +90,7 @@
         checkedMappings?.length < confg.mappings.length + (confg.freeform ? 1 : 0))
     ) {
       const seenFreeforms = []
-      // Initial setup of the mappings
+      // Initial setup of the mappings; detect checked mappings
       checkedMappings = [
         ...confg.mappings.map((mapping) => {
           if (mapping.hideInAnswer === true) {
@@ -97,7 +102,7 @@
             seenFreeforms.push(newProps[confg.freeform.key])
           }
           return matches
-        }),
+        })
       ]
 
       if (tgs !== undefined && confg.freeform) {
@@ -128,6 +133,8 @@
       freeformInput.set(undefined)
     }
     feedback.setData(undefined)
+
+
   }
 
   $: {
@@ -171,6 +178,9 @@
           checkedMappings,
           tags.data
         )
+        if(state.featureSwitches.featureSwitchIsDebugging.data){
+          console.log("Constructing change spec from", {freeform: $freeformInput, selectedMapping, checkedMappings, currentTags: tags.data}, " --> ", selectedTags)
+        }
       } catch (e) {
         console.error("Could not calculate changeSpecification:", e)
         selectedTags = undefined
@@ -203,7 +213,7 @@
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
       theme: tags.data["_orig_theme"] ?? state.layout.id,
-      changeType: "answer",
+      changeType: "answer"
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -255,15 +265,19 @@
           </div>
 
           {#if config.questionhint}
-            <div class="max-h-60 overflow-y-auto">
-              <SpecialTranslation
-                t={config.questionhint}
-                {tags}
-                {state}
-                {layer}
-                feature={selectedElement}
-              />
-            </div>
+            {#if config.questionHintIsMd}
+              <Markdown srcWritable={ config.questionhint.current} />
+            {:else}
+              <div class="max-h-60 overflow-y-auto">
+                <SpecialTranslation
+                  t={config.questionhint}
+                  {tags}
+                  {state}
+                  {layer}
+                  feature={selectedElement}
+                />
+              </div>
+          {/if}
           {/if}
         </legend>
 

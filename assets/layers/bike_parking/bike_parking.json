@@ -693,6 +693,26 @@
       ]
     },
     {
+      "id": "charge",
+      "condition": "fee=yes",
+      "question": {
+        "en": "How much does it cost to park your bike here?",
+        "nl": "Hoeveel kost het om een fiets te stallen?"
+      },
+      "questionHint": {
+        "en": "This is the amount which is charged for a single bike",
+        "nl": "Dit is de kostprijs voor een enkele fiets"
+      },
+      "render": {
+        "en": "Parking your bike costs {charge}",
+        "nl": "Je fiets hier parkeren kost {charge}"
+      },
+      "freeform": {
+        "key": "charge",
+        "type": "currency"
+      }
+    },
+    {
       "builtin": "opening_hours_24_7",
       "override": {
         "mappings": [
@@ -956,18 +976,6 @@
       }
     }
   ],
-  "units": [
-    {
-      "maxstay": {
-        "quantity": "duration",
-        "denominations": [
-          "days",
-          "weeks",
-          "months"
-        ]
-      }
-    }
-  ],
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -980,5 +988,27 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  }
+  },
+  "units": [
+    {
+      "maxstay": {
+        "quantity": "duration",
+        "denominations": [
+          "days",
+          "weeks",
+          "months"
+        ]
+      },
+      "charge": {
+        "quantity": "duration",
+        "inverted": true,
+        "denominations": [
+          "days",
+          "weeks",
+          "months",
+          "years"
+        ]
+      }
+    }
+  ]
 }

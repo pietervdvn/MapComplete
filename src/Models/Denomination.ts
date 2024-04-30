@@ -1,6 +1,7 @@
 import { Translation, TypedTranslation } from "../UI/i18n/Translation"
 import { DenominationConfigJson } from "./ThemeConfig/Json/UnitConfigJson"
 import Translations from "../UI/i18n/Translations"
+import { Validator } from "../UI/InputElement/Validator"
 
 /**
  * A 'denomination' is one way to write a certain quantity.
@@ -15,6 +16,7 @@ export class Denomination {
     public readonly alternativeDenominations: string[]
     public readonly human: TypedTranslation<{ quantity: string }>
     public readonly humanSingular?: Translation
+    private readonly _validator: Validator
 
     private constructor(
         canonical: string,
@@ -24,7 +26,8 @@ export class Denomination {
         addSpace: boolean,
         alternativeDenominations: string[],
         _human: TypedTranslation<{ quantity: string }>,
-        _humanSingular?: Translation
+        _humanSingular: Translation,
+        validator: Validator
     ) {
         this.canonical = canonical
         this._canonicalSingular = _canonicalSingular
@@ -34,9 +37,10 @@ export class Denomination {
         this.alternativeDenominations = alternativeDenominations
         this.human = _human
         this.humanSingular = _humanSingular
+        this._validator = validator
     }
 
-    public static fromJson(json: DenominationConfigJson, context: string) {
+    public static fromJson(json: DenominationConfigJson, validator: Validator, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
         const canonical = json.canonicalDenomination.trim()
         if (canonical === undefined) {
@@ -68,7 +72,8 @@ export class Denomination {
             json.addSpace ?? false,
             json.alternativeDenomination?.map((v) => v.trim()) ?? [],
             humanTexts,
-            Translations.T(json.humanSingular, context + "humanSingular")
+            Translations.T(json.humanSingular, context + "humanSingular"),
+            validator
         )
     }
 
@@ -81,7 +86,8 @@ export class Denomination {
             this.addSpace,
             this.alternativeDenominations,
             this.human,
-            this.humanSingular
+            this.humanSingular,
+            this._validator
         )
     }
 
@@ -94,7 +100,8 @@ export class Denomination {
             this.addSpace,
             [this.canonical, ...this.alternativeDenominations],
             this.human,
-            this.humanSingular
+            this.humanSingular,
+            this._validator
         )
     }
 
@@ -103,19 +110,21 @@ export class Denomination {
      * @param value the value from OSM
      * @param actAsDefault if set and the value can be parsed as number, will be parsed and trimmed
      *
+     * import Validators from "../UI/InputElement/Validators"
+     *
      * const unit = Denomination.fromJson({
      *               canonicalDenomination: "m",
      *               alternativeDenomination: ["meter"],
      *               human: {
      *                   en: "{quantity} meter"
      *               }
-     *           }, "test")
-     * unit.canonicalValue("42m", true) // =>"42 m"
-     * unit.canonicalValue("42", true) // =>"42 m"
-     * unit.canonicalValue("42 m", true) // =>"42 m"
-     * unit.canonicalValue("42 meter", true) // =>"42 m"
-     * unit.canonicalValue("42m", true) // =>"42 m"
-     * unit.canonicalValue("42", true) // =>"42 m"
+     *           }, Validators.get("float"), "test")
+     * unit.canonicalValue("42m", true, false) // =>"42 m"
+     * unit.canonicalValue("42", true, false) // =>"42 m"
+     * unit.canonicalValue("42 m", true, false) // =>"42 m"
+     * unit.canonicalValue("42 meter", true, false) // =>"42 m"
+     * unit.canonicalValue("42m", true, false) // =>"42 m"
+     * unit.canonicalValue("42", true, false) // =>"42 m"
      *
      * // Should be trimmed if canonical is empty
      * const unit = Denomination.fromJson({
@@ -124,21 +133,25 @@ export class Denomination {
      *               human: {
      *                   en: "{quantity} meter"
      *               }
-     *           }, "test")
-     * unit.canonicalValue("42m", true) // =>"42"
-     * unit.canonicalValue("42", true) // =>"42"
-     * unit.canonicalValue("42 m", true) // =>"42"
-     * unit.canonicalValue("42 meter", true) // =>"42"
+     *           }, Validators.get("float"), "test")
+     * unit.canonicalValue("42m", true, false) // =>"42"
+     * unit.canonicalValue("42", true, false) // =>"42"
+     * unit.canonicalValue("42 m", true, false) // =>"42"
+     * unit.canonicalValue("42 meter", true, false) // =>"42"
      *
      *
      */
-    public canonicalValue(value: string, actAsDefault: boolean): string {
+    public canonicalValue(value: string, actAsDefault: boolean, inverted: boolean): string {
         if (value === undefined) {
             return undefined
         }
-        const stripped = this.StrippedValue(value, actAsDefault)
+        const stripped = this.StrippedValue(value, actAsDefault, inverted)
         if (stripped === null) {
             return null
+        }
+        if(inverted){
+            return (stripped + "/" + this.canonical).trim()
+
         }
         if (stripped === "1" && this._canonicalSingular !== undefined) {
             return ("1 " + this._canonicalSingular).trim()
@@ -153,7 +166,7 @@ export class Denomination {
      *
      * Returns null if it doesn't match this unit
      */
-    public StrippedValue(value: string, actAsDefault: boolean): string {
+    public StrippedValue(value: string, actAsDefault: boolean, inverted: boolean): string {
         if (value === undefined) {
             return undefined
         }
@@ -171,10 +184,16 @@ export class Denomination {
 
         function substr(key) {
             if (self.prefix) {
-                return value.substr(key.length).trim()
-            } else {
-                return value.substring(0, value.length - key.length).trim()
+                return value.substring(key.length).trim()
             }
+            let trimmed =            value.substring(0, value.length - key.length).trim()
+            if(!inverted){
+                return trimmed
+            }
+            if(trimmed.endsWith("/")){
+                trimmed = trimmed.substring(0, trimmed.length - 1).trim()
+            }
+            return trimmed
         }
 
         if (this.canonical !== "" && startsWith(this.canonical.toLowerCase())) {
@@ -199,11 +218,13 @@ export class Denomination {
             return null
         }
 
-        const parsed = Number(value.trim())
-        if (!isNaN(parsed)) {
-            return value.trim()
+        if(!this._validator.isValid(value.trim())){
+            return null
         }
+        return this._validator.reformat(value.trim())
+    }
 
-        return null
+    withValidator(validator: Validator) {
+        return new Denomination(this.canonical, this._canonicalSingular, this.useIfNoUnitGiven, this.prefix, this.addSpace, this.alternativeDenominations, this.human, this.humanSingular, validator)
     }
 }

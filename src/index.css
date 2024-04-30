@@ -27,6 +27,7 @@
   --alert-foreground-color: var(--foreground-color);
 
   --low-interaction-background: #eeeeee;
+  --low-interaction-background-50: #eeeeee90;
   --low-interaction-foreground: black;
   --low-interaction-contrast: #ff00ff;
 
@@ -288,6 +289,11 @@ button.primary:not(.no-image-background) svg path,
   transition: all 250ms;
 }
 
+button.disabled.low-interaction,
+.button.disabled.low-interaction {
+  background-color: var(--low-interaction-background-50);
+}
+
 button.disabled,
 .button.disabled {
   cursor: default;
@@ -518,7 +524,8 @@ textarea {
   color: #7193bb;
 }
 
-.literal-code {
+.literal-code,
+code {
   /* A codeblock */
   display: inline-block;
   background-color: lightgray;

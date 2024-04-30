@@ -2,6 +2,10 @@ import BaseUIElement from "../UI/BaseUIElement"
 import { Denomination } from "./Denomination"
 import UnitConfigJson from "./ThemeConfig/Json/UnitConfigJson"
 import unit from "../../assets/layers/unit/unit.json"
+import { QuestionableTagRenderingConfigJson } from "./ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import TagRenderingConfig from "./ThemeConfig/TagRenderingConfig"
+import Validators, { ValidatorType } from "../UI/InputElement/Validators"
+import { Validator } from "../UI/InputElement/Validator"
 
 export class Unit {
     private static allUnits = this.initUnits()
@@ -10,14 +14,20 @@ export class Unit {
     public readonly denominationsSorted: Denomination[]
     public readonly eraseInvalid: boolean
     public readonly quantity: string
+    private readonly _validator: Validator
+    public readonly inverted: boolean
 
     constructor(
         quantity: string,
         appliesToKeys: string[],
         applicableDenominations: Denomination[],
-        eraseInvalid: boolean
+        eraseInvalid: boolean,
+        validator: Validator,
+        inverted: boolean = false
     ) {
         this.quantity = quantity
+        this._validator = validator
+        this.inverted = inverted
         this.appliesToKeys = new Set(appliesToKeys)
         this.denominations = applicableDenominations
         this.eraseInvalid = eraseInvalid
@@ -66,13 +76,47 @@ export class Unit {
     static fromJson(
         json:
             | UnitConfigJson
-            | Record<string, string | { quantity: string; denominations: string[] }>,
+            | Record<string, string | { quantity: string; denominations: string[], inverted?: boolean }>,
+        tagRenderings: TagRenderingConfig[],
         ctx: string
     ): Unit[] {
-        if (!json.appliesToKey && !json.quantity) {
-            return this.loadFromLibrary(<any>json, ctx)
+
+        let types: Record<string, ValidatorType> = {}
+        for (const tagRendering of tagRenderings) {
+            if (tagRendering.freeform?.type) {
+                types[tagRendering.freeform.key] = tagRendering.freeform.type
+            }
         }
-        return [this.parse(<UnitConfigJson>json, ctx)]
+
+        if (!json.appliesToKey && !json.quantity) {
+            return this.loadFromLibrary(<any>json, types, ctx)
+        }
+        return this.parse(<UnitConfigJson>json, types, ctx)
+    }
+
+    private static parseDenomination(json: UnitConfigJson, validator: Validator, appliesToKey: string, ctx: string): Unit {
+        const applicable = json.applicableUnits.map((u, i) =>
+            Denomination.fromJson(u, validator, `${ctx}.units[${i}]`)
+        )
+
+        if (
+            json.defaultInput &&
+            !applicable.some((denom) => denom.canonical.trim() === json.defaultInput)
+        ) {
+            throw `${ctx}: no denomination has the specified default denomination. The default denomination is '${
+                json.defaultInput
+            }', but the available denominations are ${applicable
+                .map((denom) => denom.canonical)
+                .join(", ")}`
+        }
+
+        return new Unit(
+            json.quantity ?? "",
+            appliesToKey === undefined ? undefined : [appliesToKey],
+            applicable,
+            json.eraseInvalidValues ?? false,
+            validator
+        )
     }
 
     /**
@@ -113,7 +157,7 @@ export class Unit {
      *     ]
      * }, "test")
      */
-    private static parse(json: UnitConfigJson, ctx: string): Unit {
+    private static parse(json: UnitConfigJson, types: Record<string, ValidatorType>, ctx: string): Unit[] {
         const appliesTo = json.appliesToKey
         for (let i = 0; i < (appliesTo ?? []).length; i++) {
             let key = appliesTo[i]
@@ -127,32 +171,22 @@ export class Unit {
         }
         // Some keys do have unit handling
 
-        const applicable = json.applicableUnits.map((u, i) =>
-            Denomination.fromJson(u, `${ctx}.units[${i}]`)
-        )
 
-        if (
-            json.defaultInput &&
-            !applicable.some((denom) => denom.canonical.trim() === json.defaultInput)
-        ) {
-            throw `${ctx}: no denomination has the specified default denomination. The default denomination is '${
-                json.defaultInput
-            }', but the available denominations are ${applicable
-                .map((denom) => denom.canonical)
-                .join(", ")}`
+        const units: Unit[] = []
+        if (appliesTo === undefined) {
+            units.push(this.parseDenomination(json, Validators.get("float"), undefined, ctx))
         }
-        return new Unit(
-            json.quantity ?? "",
-            appliesTo,
-            applicable,
-            json.eraseInvalidValues ?? false
-        )
+        for (const key of appliesTo ?? []) {
+            const validator = Validators.get(types[key] ?? "float")
+            units.push(this.parseDenomination(json, validator, undefined, ctx))
+        }
+        return units
     }
 
     private static initUnits(): Map<string, Unit> {
         const m = new Map<string, Unit>()
-        const units = (<UnitConfigJson[]>unit.units).map((json, i) =>
-            this.parse(json, "unit.json.units." + i)
+        const units = (<UnitConfigJson[]>unit.units).flatMap((json, i) =>
+            this.parse(json, {}, "unit.json.units." + i)
         )
 
         for (const unit of units) {
@@ -179,17 +213,19 @@ export class Unit {
     private static loadFromLibrary(
         spec: Record<
             string,
-            string | { quantity: string; denominations: string[]; canonical?: string }
+            string | { quantity: string; denominations: string[]; canonical?: string, inverted?: boolean }
         >,
+        types: Record<string, ValidatorType>,
         ctx: string
     ): Unit[] {
         const units: Unit[] = []
         for (const key in spec) {
             const toLoad = spec[key]
+            const validator = Validators.get(types[key] ?? "float")
             if (typeof toLoad === "string") {
                 const loaded = this.getFromLibrary(toLoad, ctx)
                 units.push(
-                    new Unit(loaded.quantity, [key], loaded.denominations, loaded.eraseInvalid)
+                    new Unit(loaded.quantity, [key], loaded.denominations, loaded.eraseInvalid, validator, toLoad["inverted"])
                 )
                 continue
             }
@@ -213,12 +249,13 @@ export class Unit {
             const denoms = toLoad.denominations
                 .map((d) => d.toLowerCase())
                 .map((d) => fetchDenom(d))
+                .map(d => d.withValidator(validator))
 
             if (toLoad.canonical) {
-                const canonical = fetchDenom(toLoad.canonical)
+                const canonical = fetchDenom(toLoad.canonical).withValidator(validator)
                 denoms.unshift(canonical.withBlankCanonical())
             }
-            units.push(new Unit(loaded.quantity, [key], denoms, loaded.eraseInvalid))
+            units.push(new Unit(loaded.quantity, [key], denoms, loaded.eraseInvalid, validator, toLoad["inverted"]))
         }
         return units
     }
@@ -240,7 +277,7 @@ export class Unit {
         }
         const defaultDenom = this.getDefaultDenomination(country)
         for (const denomination of this.denominationsSorted) {
-            const bare = denomination.StrippedValue(valueWithDenom, defaultDenom === denomination)
+            const bare = denomination.StrippedValue(valueWithDenom, defaultDenom === denomination, this.inverted)
             if (bare !== null) {
                 return [bare, denomination]
             }
@@ -253,10 +290,13 @@ export class Unit {
             return undefined
         }
         const [stripped, denom] = this.findDenomination(value, country)
+        const human = denom?.human
+        if(this.inverted ){
+            return human.Subs({quantity: stripped+"/"})
+        }
         if (stripped === "1") {
             return denom?.humanSingular ?? stripped
         }
-        const human = denom?.human
         if (human === undefined) {
             return stripped ?? value
         }
@@ -266,6 +306,10 @@ export class Unit {
 
     public toOsm(value: string, denomination: string) {
         const denom = this.denominations.find((d) => d.canonical === denomination)
+        if(this.inverted){
+            return value+"/"+denom._canonicalSingular
+        }
+
         const space = denom.addSpace ? " " : ""
         if (denom.prefix) {
             return denom.canonical + space + value
@@ -273,7 +317,7 @@ export class Unit {
         return value + space + denom.canonical
     }
 
-    public getDefaultDenomination(country: () => string) {
+    public getDefaultDenomination(country: () => string): Denomination {
         for (const denomination of this.denominations) {
             if (denomination.useIfNoUnitGiven === true) {
                 return denomination

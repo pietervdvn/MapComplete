@@ -65,6 +65,10 @@
       "description": "Layer 'Ice cream parlors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Icecream')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Ice cream parlors' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Icecream')"
+    },
+    {
       "key": "website",
       "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Icecream')"
     },

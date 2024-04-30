@@ -103,6 +103,10 @@
       "description": "Layer 'Colleges and universities' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Colleges and universities' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Education')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Colleges and universities' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Education')"
     },
@@ -256,6 +260,10 @@
       "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Primary and secondary schools' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Education')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Education has a layer Kindergartens and childcare showing features with this tag",
       "value": "childcare"
@@ -303,6 +311,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Kindergartens and childcare' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Kindergartens and childcare' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "phone",

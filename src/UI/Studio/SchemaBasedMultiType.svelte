@@ -8,9 +8,8 @@
   import { onDestroy } from "svelte"
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import type { JsonSchemaType } from "./jsonSchema"
-  // @ts-ignore
-  import nmd from "nano-markdown"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
+  import type { Translatable } from "../../Models/ThemeConfig/Json/Translatable"
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
@@ -41,10 +40,11 @@
   if (lastIsString) {
     types.splice(types.length - 1, 1)
   }
-  const configJson: QuestionableTagRenderingConfigJson = {
+  const configJson: QuestionableTagRenderingConfigJson  & {questionHintIsMd: boolean}= {
     id: "TYPE_OF:" + path.join("_"),
-    question: "Which subcategory is needed for " + schema.path.at(-1) + "?",
-    questionHint: nmd(schema.description),
+    question: schema.hints.question ?? "Which subcategory is needed for " + schema.path.at(-1) + "?",
+    questionHint: schema.description,
+    questionHintIsMd: true,
     mappings: types
       .map((opt) => opt.trim())
       .filter((opt) => opt.length > 0)
