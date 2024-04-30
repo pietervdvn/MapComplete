@@ -22,7 +22,7 @@ export default class InitialMapPositioning {
     public location: UIEventSource<{ lon: number; lat: number }>
     public useTerrain: Store<boolean>
 
-    constructor(layoutToUse: LayoutConfig, downloader: OsmObjectDownloader) {
+    constructor(layoutToUse: LayoutConfig) {
         function localStorageSynced(
             key: string,
             deflt: number,
