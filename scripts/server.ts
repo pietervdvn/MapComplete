@@ -91,6 +91,12 @@ export class Server {
 
                 try {
                     const result = await handler.handle(path, url.searchParams)
+                    if(result === undefined){
+                        res.writeHead(500)
+                        res.write("Could not fetch this website, probably blocked by them")
+                        res.end()
+                        return
+                    }
                     if (typeof result !== "string") {
                         console.error(
                             "Internal server error: handling",

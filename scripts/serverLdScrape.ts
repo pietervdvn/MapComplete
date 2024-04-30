@@ -4,26 +4,30 @@ import parse from "node-html-parser"
 import ScriptUtils from "./ScriptUtils"
 
 class ServerLdScrape extends Script {
+
     constructor() {
         super("Starts a server which fetches a webpage and returns embedded LD+JSON")
     }
 
     private static async attemptDownload(url: string) {
         const host = new URL(url).host
+        const random = Math.floor(Math.random()*100)
+        const random1 = Math.floor(Math.random()*100)
+
         const headers = [
             {
                 "User-Agent":
-                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36",
+                    `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.${random}.${random1} Safari/537.36`,
                 "accept": "application/html"
-            },
-            {
+            }
+           /* {
                 "User-Agent": "MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
                 "accept": "application/html"
             },
             {
                 Host: host,
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:122.0) Gecko/20100101 Firefox/122.0",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,* /*;q=0.8", TODO remove space in * /*
                 "Accept-Language": "en-US,en;q=0.5",
                 "Accept-Encoding": "gzip, deflate, br",
                 "Alt-Used": host,
@@ -36,7 +40,7 @@ class ServerLdScrape extends Script {
                 "Sec-Fetch-User":"?1",
                 "TE": "trailers",
                 Connection: "keep-alive"
-            }
+            }*/
         ]
         for (let i = 0; i < headers.length; i++) {
             try {
@@ -47,7 +51,7 @@ class ServerLdScrape extends Script {
                     10
                 )
             } catch (e) {
-                console.error("Could not download", url, "with headers", headers[i])
+                console.error("Could not download", url, "with headers", headers[i], "due to", e)
             }
         }
     }
@@ -70,7 +74,7 @@ class ServerLdScrape extends Script {
                         console.log(">>>", date, contents)
                         // In seconds
                         const tdiff = (new Date().getTime() - (date?.getTime() ?? 0)) / 1000
-                        if (tdiff < 24 * 60 * 60) {
+                        if (tdiff < 31 * 24 * 60 * 60) {
                             return JSON.stringify(contents)
                         }
                     }
@@ -82,6 +86,9 @@ class ServerLdScrape extends Script {
                         dloaded = await ServerLdScrape.attemptDownload(dloaded["redirect"])
                         if (dloaded === "timeout") {
                             return "{\"#\":\"timout reached\"}"
+                        }
+                        if(dloaded === undefined){
+                            return undefined
                         }
                     } while (dloaded["redirect"])
 
