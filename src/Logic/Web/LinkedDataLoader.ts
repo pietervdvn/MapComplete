@@ -331,6 +331,9 @@ export default class LinkedDataLoader {
                 return
             }
             output[key] = output[key].map((v) => applyF(v))
+            if(!output[key].some(v => v !== undefined)){
+                delete output[key]
+            }
         }
 
         function asBoolean(key: string, invert: boolean = false) {
@@ -379,6 +382,7 @@ export default class LinkedDataLoader {
             }
             return "€" + Number(p)
         })
+
         if (output["charge"] && output["timeUnit"]) {
             const duration =
                 Number(output["chargeEnd"] ?? "1") - Number(output["chargeStart"] ?? "0")
