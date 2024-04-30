@@ -263,6 +263,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return res
     }
 
+    public static NoNull<T>(array: T[] | undefined): (T[] | undefined)
+    public static NoNull<T>(array: undefined): undefined
+    public static NoNull<T>(array: T[]): T[]
     public static NoNull<T>(array: T[]): NonNullable<T>[] {
         return <any>array?.filter((o) => o !== undefined && o !== null)
     }
