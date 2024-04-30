@@ -71,7 +71,6 @@ class ServerLdScrape extends Script {
                     console.log("URL", url)
                     if (cache[url] !== undefined) {
                         const { date, contents } = cache[url]
-                        console.log(">>>", date, contents)
                         // In seconds
                         const tdiff = (new Date().getTime() - (date?.getTime() ?? 0)) / 1000
                         if (tdiff < 31 * 24 * 60 * 60) {

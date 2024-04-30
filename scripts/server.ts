@@ -109,7 +109,7 @@ export class Server {
                     }
                     const extraHeaders = handler.addHeaders ?? {}
                     res.writeHead(200, { "Content-Type": handler.mimetype, ...extraHeaders })
-                    res.write(result)
+                    res.write(""+result)
                     res.end()
                 } catch (e) {
                     console.error("Could not handle request:", e)
