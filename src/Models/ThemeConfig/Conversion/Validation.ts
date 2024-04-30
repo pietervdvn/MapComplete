@@ -1091,6 +1091,9 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         )
                 }
             }
+            if(json.freeform.type === "nsi"){
+                throw "Should validate NSI: path should exist"
+            }
         }
         if (json.render && json["question"] && json.freeform === undefined) {
             context.err(

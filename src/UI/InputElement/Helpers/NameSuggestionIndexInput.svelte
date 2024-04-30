@@ -1,24 +1,23 @@
 <script lang="ts">
   import type { Feature, MultiPolygon } from "geojson"
   import { UIEventSource } from "../../../Logic/UIEventSource"
-  import * as nsi from "../../../../node_modules/name-suggestion-index/dist/nsi.json"
-  import * as nsiFeatures from "../../../../node_modules/name-suggestion-index/dist/featureCollection.json"
-  import { LocationConflation } from "@rapideditor/location-conflation"
-  import * as turf from "@turf/turf"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { twMerge } from "tailwind-merge"
+  import { GeoOperations } from "../../../Logic/GeoOperations"
+  import NameSuggestionIndex from "../../../Logic/Web/NameSuggestionIndex"
+  import type { NSIItem } from "../../../Logic/Web/NameSuggestionIndex"
 
-  const nsiFile: NSIFile = nsi
-  const loco = new LocationConflation(nsiFeatures)
 
-  /**
-   * All props for this input helper
-   */
   export let value: UIEventSource<string> = new UIEventSource<string>(undefined)
   // Since we're getting extra tags aside from the standard we need to export them
   export let extraTags: UIEventSource<Record<string, string>>
   export let feature: Feature
   export let helperArgs: (string | number | boolean)[]
+  /**
+   * An inputhelper is always used with a freeform.
+   * The 'key' is what the value will be written into.
+   * This will probably be `brand` or `operator`
+   */
   export let key: string
 
   let maintag = helperArgs[0].toString()
@@ -28,7 +27,7 @@
     addExtraTags = helperArgs[1].split(";")
   }
 
-  const path = `${tag}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
+  const path = `${key}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
 
   // Check if the path exists in the NSI file
   if (!nsiFile.nsi[path]) {
@@ -36,21 +35,12 @@
     throw new Error(`Path ${path} does not exist in the NSI file`)
   }
 
-  let items = nsiFile.nsi[path].items
+  let items: NSIItem[] = NameSuggestionIndex.getSuggestionsFor(path, feature.properties["_country"])
 
-  let selectedItem: NSIItem = items.find((item) => item.tags[tag] === value.data)
+  let selectedItem: NSIItem = items.find((item) => item.tags[key] === value.data)
 
   // Get the coordinates if the feature is a point, otherwise use the center
-  let lon: number
-  let lat: number
-  if (feature.geometry.type === "Point") {
-    const coordinates = feature.geometry.coordinates
-    lon = coordinates[0]
-    lat = coordinates[1]
-  } else {
-    lon = feature.bbox[0] + (feature.bbox[2] - feature.bbox[0]) / 2
-    lat = feature.bbox[1] + (feature.bbox[3] - feature.bbox[1]) / 2
-  }
+  let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
 
   /**
    * Filter the items, first by the display name, then by the location set
@@ -60,78 +50,36 @@
     .filter((item) => item.displayName.toLowerCase().includes(filter.toLowerCase()))
     .filter((item) => {
       // Check if the feature is in the location set using the location-conflation library
-      const resolvedSet = loco.resolveLocationSet(item.locationSet)
-      if (resolvedSet) {
-        const setFeature: Feature<MultiPolygon> = resolvedSet.feature
-        // We actually have a location set, so we can check if the feature is in it, by determining if our point is inside of the MultiPolygon using @turf/boolean-point-in-polygon
-        return turf.booleanPointInPolygon([lon, lat], setFeature.geometry)
-      }
+
       return true
     })
 
-  /**
-   * Some interfaces for the NSI files
-   */
 
-  /**
-   * Main name suggestion index file
-   */
-  interface NSIFile {
-    _meta: {
-      version: string
-      generated: string
-      url: string
-      hash: string
-    }
-    nsi: {
-      [path: string]: NSIEntry
-    }
-  }
-
-  interface NSIEntry {
-    properties: {
-      path: string
-      skipCollection?: boolean
-      preserveTags?: string[]
-      exclude: unknown
-    }
-    items: NSIItem[]
-  }
-
-  interface NSIItem {
-    displayName: string
-    id: string
-    locationSet: unknown
-    tags: {
-      [key: string]: string
-    }
-    fromTemplate?: boolean
-  }
 
   /**
    * Function called when an item is selected
    */
   function select(item: NSIItem) {
-    value.setData(item.tags[tag])
+    value.setData(item.tags[key])
     selectedItem = item
-    // Tranform the object into record<string, string> and remove the tag we're using, as well as the maintag
-    const tags = Object.entries(item.tags).reduce((acc, [key, value]) => {
-      if (key !== tag && key !== maintag.split("=")[0]) {
-        acc[key] = value
+    // Transform the object into record<string, string> and remove the tag we're using, as well as the maintag
+    const tags = Object.entries(item.tags).reduce((acc, [k, value]) => {
+      if (k !== key && key !== maintag.split("=")[0]) {
+        acc[k] = value
       }
       return acc
     }, {} as Record<string, string>)
 
     // Also check if the object currently matches a different item, based on the key
-    const otherItem = items.find((item) => item.tags[tag] === feature.properties[key])
+    const otherItem = items.find((item) => item.tags[key] === feature.properties[key])
 
     // If the other item is not the same as the selected item, we need to make sure we clear any old keys we don't need anymore by setting them to an empty string
     if (otherItem && otherItem !== item) {
-      Object.keys(otherItem.tags).forEach((key) => {
+      Object.keys(otherItem.tags).forEach((k) => {
         // If we have a different value for the key, we don't need to clear it
-        if (!tags[key] && key !== tag && key !== maintag.split("=")[0]) {
+        if (!tags[k] && key !== k && key !== maintag.split("=")[0]) {
           console.log(`Clearing key ${key}`)
-          tags[key] = ""
+          tags[k] = ""
         }
       })
     }
@@ -154,14 +102,14 @@
     }
 
     // If the value is not selected, we check if there is an item with the same value and select it
-    const item = items.find((item) => item.tags[tag] === value)
+    const item = items.find((item) => item.tags[key] === value)
     if (item) {
       select(item)
     } else {
       // If there is no item with the value, we need to clear the extra tags based on the last selected item by looping over the tags from the last selected item
       if (selectedItem) {
-        const tags = Object.entries(selectedItem.tags).reduce((acc, [key, value]) => {
-          if (key !== tag && key !== maintag.split("=")[0]) {
+        const tags = Object.entries(selectedItem.tags).reduce((acc, [k, value]) => {
+          if (key !== k && key !== maintag.split("=")[0]) {
             acc[key] = ""
           }
           return acc
