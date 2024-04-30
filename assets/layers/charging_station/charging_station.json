@@ -5,12 +5,7 @@
     "nl": "Oplaadpunten",
     "de": "Ladestationen"
   },
-  "description": {
-    "en": "A charging station",
-    "nl": "Oplaadpunten",
-    "ca": "Una estació de càrrega",
-    "de": "Eine Ladestation"
-  },
+  "minzoom": 10,
   "source": {
     "osmTags": {
       "and": [
@@ -25,7 +20,6 @@
       ]
     }
   },
-  "minzoom": 10,
   "title": {
     "render": {
       "en": "Charging station",
@@ -71,103 +65,13 @@
       }
     ]
   },
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "pin",
-          "color": "#fff"
-        },
-        {
-          "icon": {
-            "render": "./assets/themes/charging_stations/plug.svg",
-            "mappings": [
-              {
-                "if": "bicycle=yes",
-                "then": "./assets/themes/charging_stations/bicycle.svg"
-              },
-              {
-                "if": {
-                  "or": [
-                    "car=yes",
-                    "motorcar=yes"
-                  ]
-                },
-                "then": "./assets/themes/charging_stations/car.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "disused:amenity=charging_station",
-              "operational_status=broken"
-            ]
-          },
-          "then": "close:#c22;"
-        },
-        {
-          "if": {
-            "or": [
-              "proposed:amenity=charging_station",
-              "planned:amenity=charging_station"
-            ]
-          },
-          "then": "./assets/layers/charging_station/under_construction.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "bicycle=yes",
-              {
-                "or": [
-                  "motorcar=yes",
-                  "car=yes"
-                ]
-              }
-            ]
-          },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
-        }
-      ],
-      "anchor": "bottom",
-      "iconSize": "50,50"
-    }
-  ],
-  "lineRendering": [],
-  "presets": [
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=no",
-        "bicycle=yes"
-      ],
-      "title": {
-        "en": "charging station for electrical bikes",
-        "nl": "oplaadpunt voor elektrische fietsen",
-        "de": "Ladestation für Elektrofahrräder"
-      }
-    },
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=yes",
-        "bicycle=no"
-      ],
-      "title": {
-        "en": "charging station for cars",
-        "nl": "oplaadstation voor elektrische auto's",
-        "de": "Ladestation für Autos"
-      }
-    }
-  ],
+  "description": {
+    "en": "A charging station",
+    "nl": "Oplaadpunten",
+    "ca": "Una estació de càrrega",
+    "de": "Eine Ladestation"
+  },
+  "#": "no-question-hint-check",
   "tagRenderings": [
     "images",
     {
@@ -2509,6 +2413,109 @@
       }
     }
   ],
+  "lineRendering": [
+    {
+      "color": "black",
+      "width": 2,
+      "fillColor": "#80808080"
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#fff"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/charging_stations/plug.svg",
+            "mappings": [
+              {
+                "if": "bicycle=yes",
+                "then": "./assets/themes/charging_stations/bicycle.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "car=yes",
+                    "motorcar=yes"
+                  ]
+                },
+                "then": "./assets/themes/charging_stations/car.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "disused:amenity=charging_station",
+              "operational_status=broken"
+            ]
+          },
+          "then": "close:#c22;"
+        },
+        {
+          "if": {
+            "or": [
+              "proposed:amenity=charging_station",
+              "planned:amenity=charging_station"
+            ]
+          },
+          "then": "./assets/layers/charging_station/under_construction.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "bicycle=yes",
+              {
+                "or": [
+                  "motorcar=yes",
+                  "car=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+        }
+      ],
+      "anchor": "bottom",
+      "iconSize": "50,50"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=no",
+        "bicycle=yes"
+      ],
+      "title": {
+        "en": "charging station for electrical bikes",
+        "nl": "oplaadpunt voor elektrische fietsen",
+        "de": "Ladestation für Elektrofahrräder"
+      }
+    },
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=yes",
+        "bicycle=no"
+      ],
+      "title": {
+        "en": "charging station for cars",
+        "nl": "oplaadstation voor elektrische auto's",
+        "de": "Ladestation für Autos"
+      }
+    }
+  ],
   "filter": [
     {
       "id": "vehicle-type",
@@ -2714,19 +2721,6 @@
       ]
     }
   ],
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "amenity=",
-        "disused:amenity=charging_station"
-      ]
-    },
-    "neededChangesets": 10
-  },
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuracy": true
-  },
   "units": [
     {
       "maxstay": {
@@ -2885,5 +2879,17 @@
       }
     }
   ],
-  "#": "no-question-hint-check"
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "disused:amenity=charging_station"
+      ]
+    },
+    "neededChangesets": 10
+  }
 }
