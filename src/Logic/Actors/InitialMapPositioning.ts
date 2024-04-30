@@ -21,6 +21,7 @@ export default class InitialMapPositioning {
     public zoom: UIEventSource<number>
     public location: UIEventSource<{ lon: number; lat: number }>
     public useTerrain: Store<boolean>
+
     constructor(layoutToUse: LayoutConfig, downloader: OsmObjectDownloader) {
         function localStorageSynced(
             key: string,
@@ -70,14 +71,16 @@ export default class InitialMapPositioning {
         })
         this.useTerrain = new ImmutableStore<boolean>(layoutToUse.enableTerrain)
 
-        if(initialHash?.match(/^(node|way|relation)\/[0-9]+$/)){
+        if (initialHash?.match(/^(node|way|relation)\/[0-9]+$/)) {
             const [type, id] = initialHash.split("/")
-            OsmObjectDownloader.RawDownloadObjectAsync(type, Number(id), Constants.osmAuthConfig.url+"/").then(osmObject => {
-                if(osmObject === "deleted"){
+            OsmObjectDownloader.RawDownloadObjectAsync(type, Number(id), Constants.osmAuthConfig.url + "/").then(osmObject => {
+                if (osmObject === "deleted") {
                     return
                 }
+                const targetLayer = layoutToUse.getMatchingLayer(osmObject.tags)
+                this.zoom.setData(Math.max(this.zoom.data, targetLayer.minzoom))
                 const [lat, lon] = osmObject.centerpoint()
-                this.location.setData({lon, lat})
+                this.location.setData({ lon, lat })
             })
         }
 
