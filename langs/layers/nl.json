@@ -1211,6 +1211,11 @@
                 },
                 "question": "Wat is de relatieve locatie van deze parking??"
             },
+            "charge": {
+                "question": "Hoeveel kost het om een fiets te stallen?",
+                "questionHint": "Dit is de kostprijs voor een enkele fiets",
+                "render": "Je fiets hier parkeren kost {charge}"
+            },
             "fee": {
                 "mappings": {
                     "0": {
@@ -8724,6 +8729,10 @@
                     "4": {
                         "human": "{quantity} maanden",
                         "humanSingular": "één maand"
+                    },
+                    "5": {
+                        "human": "{quantity} jaar",
+                        "humanSingular": "één jaar"
                     }
                 }
             }
