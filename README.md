@@ -24,19 +24,19 @@ sent back to directly to OpenStreetMap.
 Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `wikimedia_commons`-tag is present, it
 follows those to get these images too.
 
-**An explicit non-goal** of MapComplete is to modify geometries of ways, especially generic geometry-editing. (Splitting
-roads is possible and in some restricted themes is geometry-conflation possible too). If adding geometry would be supported, we'd also have to show all geometries (to avoid accidental intersections).
-This would invite to show and map these other geometries as well, resulting in a general-purpose editor. However, we already [have an excellent, web-based general purpose editor](https://wiki.openstreetmap.org/wiki/ID).
+**An explicit non-goal** of MapComplete is to modify geometries of ways, especially generic geometry editing. (Splitting
+roads is possible; in some restricted themes, geometry conflation is also possible). If adding geometry would be supported, we'd also have to show all geometries (to avoid accidental intersections).
+This would invite showing and editing other geometries as well, resulting in a general-purpose editor. However, we already [have an excellent, web-based general purpose editor](https://wiki.openstreetmap.org/wiki/ID).
 
 **More about
 MapComplete:** [Watch Pieter's talk on the 2021 State Of The Map Conference](https://media.ccc.de/v/sotm2021-9448-introduction-and-review-of-mapcomplete) ([YouTube](https://www.youtube.com/watch?v=zTtMn6fNbYY))
 about the history, vision and future of MapComplete.
 
-## What's the difference with StreetComplete?
+## How is it different from StreetComplete?
 
 This is the repository of _Map_ Complete. _Street_ Complete is an Android-only application where the contributor is shown some questions to solve, after which the pin will dissappear from the map.
 
-StreetComplete can thus be seen as a Todo-map for contributors who go on a stroll, whereas MapComplete is a website showing relevant information and which allows to add or update information.
+StreetComplete can thus be seen as a Todo-map for contributors who go on a stroll, whereas MapComplete is a website showing relevant information and which allows adding or updating information.
 
 The codebases are separate, even though many ideas and some artwork are copied from the StreetComplete app.
 
@@ -53,8 +53,8 @@ To develop or deploy a version of MapComplete, have a look [to the guide](Docs/D
 
 It is possible to quickly make and distribute your own theme, [please read the documentation on how to do this](Docs/Making_Your_Own_Theme.md).
 
-The main developer is currently _not_ taking requests for new themes (unless they are commissioned). There are simply to much good thematic maps to make.
-We do however encourage you to try to create your own theme yourself - we'll gladly accept it as official theme if it meets the criteria.
+The main developer is currently _not_ taking requests for new themes (unless they are commissioned). There are simply too many good thematic maps to make.
+We do however encourage you to try to create your own theme yourself - we'll gladly accept it as an official theme if it meets the criteria.
 
 ## Examples
 
@@ -84,35 +84,35 @@ MapComplete is set up to lure people into OpenStreetMap and to teach them while 
 
 A typical user journey would be:
 
-0. Oh, this is a cool map of _my specific interest_! There is a lot of data already...
+1. Oh, this is a cool map of _my specific interest_! There is a lot of data already...
 
     * The user might discover the explanation about OSM in the second tab
     * The user might share the map and/or embed it in the third tab
     * The user might discover the other themes in the last tab
 
-1. The user clicks that big tempting button 'login' in order to answer questions - there's enough of these login
-   buttons... The user creates an account.
+2. The user clicks that big tempting button 'login' in order to answer questions - there's enough of these login
+   buttons...the user creates an account.
 
-2. The user answers a question! Hooray! The user transformed into a __contributor__ now.
+3. The user answers a question! Hooray! The user is now transformed into a __contributor__.
 
-    * When at least one question is answered (aka: having one changeset on OSM), adding a new point is unlocked
+    * When at least one question is answered (AKA: having one changeset on OSM), adding a new point is unlocked
 
-3. The user adds a new POI somewhere
+4. The user adds a new POI somewhere
 
     * Note that _all messages_ must be read before being able to add a point.
     * In other words, sending a message to a misbehaving MapComplete user acts as having a **zero-day-block**. This is
       added deliberately to make sure new users _have_ to read feedback from the community.
 
-4. At 50 changesets, the [personal layout](https://mapcomplete.org/personal.html) is advertised. The
+5. At 50 changesets, the [personal layout](https://mapcomplete.org/personal.html) is advertised. The
    personal theme is a theme where contributors can pick layers from all the official themes. Note that the personal
    theme is always available.
 
-5. At 200 changesets, the tags become visible when answering questions and when adding a new point from a preset. This
-   is to give more control to power users and to teach new users the tagging scheme
+6. At 200 changesets, the tags become visible when answering questions and when adding a new point from a preset. This
+   is to give more control to power users and to teach new users the tagging scheme.
 
-6. At 250 changesets, the tags get linked to the wiki
+7. At 250 changesets, the tags get linked to the wiki.
 
-7. At 500 changesets, I expect contributors to be power users and to be comfortable with tagging scheme and such. The
+8. At 500 changesets, I expect contributors to be power users and to be comfortable with tagging schemes and such. The
    custom theme generator is unlocked.
 
 ## License
@@ -143,7 +143,7 @@ The website is purely static. This means that there is no database here, nor one
 OpenStreetMap, Wikimedia (for images), Imgur. Settings are saved in the preferences-space of the OSM-website, amended by
 some local-storage if the user is not logged-in.
 
-When viewing, the data is loaded from overpass. The data is then converted (in the browser) to geojson, which is
+When viewing, the data is loaded from Overpass. The data is then converted (in the browser) to GeoJSON, which is
 rendered by Leaflet.
 
 When a map feature is clicked, a popup shows the information, images and questions that are relevant for that object.
@@ -173,7 +173,7 @@ need some help in getting their API working).
 In order to avoid lots of small changesets, a changeset is opened and kept open. The changeset number is saved into the
 users preferences on OSM.
 
-Whenever a change is made -even adding a single tag - the change is uploaded into this changeset. If that fails, the
+Whenever a change is made - even adding a single tag - the change is uploaded into this changeset. If that fails, the
 changeset is probably closed and we open a new changeset.
 
 Note that changesets are closed automatically after one hour of inactivity, so we don't have to worry about closing
@@ -182,7 +182,7 @@ them.
 # Privacy
 
 Privacy is important, we try to leak as little information as possible. All major personal information is handled by
-OSM. Geolocation is available on mobile only through the device's GPS location (so no geolocation is sent of to Google).
+OSM. Geolocation is available on mobile only through the device's GPS location (so no geolocation is sent to Google).
 
 TODO: erase cookies of third party websites and API's
 
