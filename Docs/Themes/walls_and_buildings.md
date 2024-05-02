@@ -13,10 +13,10 @@ This theme contains the following layers:
 
 
 
-  - [indoors](../Layers/indoors.md)
-  - [pedestrian_path](../Layers/pedestrian_path.md)
   - [walls_and_buildings](../Layers/walls_and_buildings.md)
   - [entrance](../Layers/entrance.md)
+  - [indoors](../Layers/indoors.md)
+  - [pedestrian_path](../Layers/pedestrian_path.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

@@ -291,7 +291,7 @@ z
 
 The initial/current zoom level
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L28)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L34)
 
 The default value is _1_
 
@@ -300,7 +300,7 @@ lat
 
 The initial/current latitude
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L28)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L34)
 
 The default value is _0_
 
@@ -309,7 +309,7 @@ lon
 
 The initial/current longitude of the app
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L28)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L34)
 
 The default value is _0_
 
