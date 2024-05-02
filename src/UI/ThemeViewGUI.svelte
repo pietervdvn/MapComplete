@@ -34,7 +34,6 @@
   import { Utils } from "../Utils"
   import Hotkeys from "./Base/Hotkeys"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
-  import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
   import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
   import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
   import type { RasterLayerPolygon } from "../Models/RasterLayers"
@@ -73,6 +72,7 @@
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
   import ReviewsOverview from "./Reviews/ReviewsOverview.svelte"
+  import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -260,9 +260,7 @@
         />
       </MapControlButton>
     {/if}
-    <ToSvelte
-      construct={() => new ExtraLinkButton(state, layout.extraLink).SetClass("pointer-events-auto")}
-    />
+    <ExtraLinkButton {state} />
     <UploadingImageCounter featureId="*" showThankYou={false} {state} />
     <PendingChangesIndicator {state} />
     <If condition={state.featureSwitchIsTesting}>
