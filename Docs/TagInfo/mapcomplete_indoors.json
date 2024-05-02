@@ -213,7 +213,7 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Indoors' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Indoors') (This is only shown if name:etymology!=unknown)"
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Indoors') (This is only shown if name:etymology!=unknown & name~.+)"
     },
     {
       "key": "access",

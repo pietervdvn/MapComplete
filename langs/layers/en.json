@@ -1474,6 +1474,11 @@
                 },
                 "question": "What is the relative location of this bicycle parking?"
             },
+            "charge": {
+                "question": "How much does it cost to park your bike here?",
+                "questionHint": "This is the amount which is charged for a single bike",
+                "render": "Parking your bike costs {charge}"
+            },
             "fee": {
                 "mappings": {
                     "0": {
@@ -10528,6 +10533,18 @@
                     "2": {
                         "human": "{quantity} days",
                         "humanSingular": "one day"
+                    },
+                    "3": {
+                        "human": "{quantity} weeks",
+                        "humanSingular": "one week"
+                    },
+                    "4": {
+                        "human": "{quantity} months",
+                        "humanSingular": "one month"
+                    },
+                    "5": {
+                        "human": "{quantity} years",
+                        "humanSingular": "one year"
                     }
                 }
             }

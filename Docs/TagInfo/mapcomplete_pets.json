@@ -154,6 +154,10 @@
       "description": "Layer 'Dog friendly eateries' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Dog friendly eateries' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
@@ -1576,6 +1580,10 @@
       "description": "Layer 'Dog-friendly shops' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Dog-friendly shops' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
@@ -1833,6 +1841,120 @@
     {
       "key": "name",
       "description": "Layer 'veterinary' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Animal shelters showing features with this tag",
+      "value": "animal_shelter"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Animal shelters' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Animal shelters' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Animal shelters' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Animal shelters' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Animal shelters' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "purpose",
+      "description": "Layer 'Animal shelters' shows purpose=adoption with a fixed text, namely 'Animals are kept here until adopted by a new owner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "adoption"
+    },
+    {
+      "key": "purpose",
+      "description": "Layer 'Animal shelters' shows purpose=sanctuary with a fixed text, namely 'Animals are taken care of for the rest of their lives' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "sanctuary"
+    },
+    {
+      "key": "purpose",
+      "description": "Layer 'Animal shelters' shows purpose=release with a fixed text, namely 'Injured animals are rehabilitated here until they can be released in nature again ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "release"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "\"by appointment\""
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows opening_hours~^(\"by appointment\"|by appointment)$ with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'animal_shelter' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=dog with a fixed text, namely 'Dogs are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "dog"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=cat with a fixed text, namely 'Cats are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "cat"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=horse with a fixed text, namely 'Horses are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "horse"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=bird with a fixed text, namely 'Birds are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "bird"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=wildlife with a fixed text, namely 'Wild animals are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "wildlife"
     }
   ]
 }

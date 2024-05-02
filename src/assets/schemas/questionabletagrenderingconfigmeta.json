@@ -663,7 +663,11 @@
         },
         {
           "if": "value=velopark",
-          "then": "<b>velopark</b> A custom element to allow copy-pasting velopark-pages"
+          "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        },
+        {
+          "if": "value=currency",
+          "then": "<b>currency</b> Validates monetary amounts"
         }
       ]
     },

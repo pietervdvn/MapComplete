@@ -73,6 +73,18 @@
           }
         },
         {
+          "id": "show-data-velopark",
+          "render": {
+            "special": {
+              "type": "linked_data_from_website",
+              "key": "ref:velopark",
+              "useProxy": "no",
+              "host": "https://data.velopark.be",
+              "mode": "readonly"
+            }
+          }
+        },
+        {
           "id": "closest_parkings",
           "render": {
             "en": "<h3>Nearby parkings</h3>There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap.",
@@ -90,7 +102,7 @@
               "type": "multi",
               "key": "_nearby_bicycle_parkings:props",
               "classes": "p-2 m-1 my-4 border-2 border-dashed border-black",
-              "tagrendering": "<b><a href='#{id}'>{id}</a></b> ({_distance}m, {_velopark:id}) {minimap(20)} {tag_apply(ref:velopark=$_ref,Link this object.,link,id,_mr_id)}"
+              "tagrendering": "<b><a href='#{id}'>{id}</a></b> ({_distance}m, {_velopark:id}, place for {capacity}, covered: {covered}) {minimap(20,id,_mr_id)} {tag_apply(ref:velopark=$_ref,Link this object.,link,id,_mr_id)}"
             }
           }
         },
@@ -120,7 +132,7 @@
           "id": "title_manually_copy",
           "render": {
             "en": "<h3>Manually link</h3>Does the bicycle parking exist in OpenStreetMap but is it further then 25m away? Then: <ol><li>Copy the following URL: <span class='literal-code'>{ref:velopark}</span></li><li>Select the correct bicycle parking on the map</li><li>Paste the URL into the question <i>What is the URL of the data path in Velopark?</i></li><li>Mark this item as handled with the button below:</li></ul>",
-            "nl": "<h3>Manueel linken</h3>"
+            "nl": "<h3>Manueel linken</h3>Bestaat de fietsenstalling in OpenStreetMap maar is staat deze meer dan 25m verder?In dit geval: <ol><li>Kopieer de volgende URL: <span class='literal-code'>{ref:velopark}</span></li><li>Selecteer de juiste fietsenstalling op de kaart</li><li>Plak de URL in de vraag <i>Wat is de data-url van deze fietsenstalling in Velopark.be?</i></li><li>Open deze fietsenstalling opnieuw en markeer deze als gelinkt met onderstaande knop:</li></ul>"
           }
         },
         {
@@ -166,18 +178,6 @@
           "render": {
             "en": "<h3>Extra information</h3>",
             "nl": "<h3>Extra informatie</h3>"
-          }
-        },
-        {
-          "id": "show-data-velopark",
-          "render": {
-            "special": {
-              "type": "linked_data_from_website",
-              "key": "ref:velopark",
-              "useProxy": "no",
-              "host": "https://data.velopark.be",
-              "mode": "readonly"
-            }
           }
         },
         {
@@ -319,7 +319,21 @@
           }
         ],
         "+tagRenderings": [
-          "questions"
+          {
+            "id": "questions-intro",
+            "render": {
+              "en": "The question(s) below inquiry about attributes that are not yet known in OpenStreetMap",
+              "nl": "De vragen hieronder zijn attributen die nog niet gekend zijn in OpenStreetMap"
+            }
+          },
+          "questions",
+          {
+            "id": "osm-block-title",
+            "render": {
+              "en": "<h3>Attributes from OpenStreetMap</h3>Editing below will make changes directly in OpenStreetMap",
+              "nl": "<h3>Attributen uit OpenStreetMap</h3>Als je hieronder wijzigingen maakt, dan worden die direct in OpenStreetMap opgeslaan"
+            }
+          }
         ],
         "tagRenderings+": [
           "images"
@@ -338,7 +352,14 @@
         "doCount": false,
         "minzoom": 14,
         "+tagRenderings": [
-          "questions"
+          "questions",
+          {
+            "id": "osm-block-title",
+            "render": {
+              "en": "<h3>Attributes from OpenStreetMap</h3>Editing below will make changes directly in OpenStreetMap",
+              "nl": "<h3>Attributen uit OpenStreetMap</h3>Als je hieronder wijzigingen maakt, dan worden die direct in OpenStreetMap opgeslaan"
+            }
+          }
         ],
         "tagRenderings+": [
           "images"

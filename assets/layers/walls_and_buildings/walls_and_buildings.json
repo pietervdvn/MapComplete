@@ -29,6 +29,7 @@
     "_biggest_width_properties= /* Can be a list! */ get(feat)('_entrance_properties').filter(p => p.width === get(feat)('_biggest_width'))",
     "_biggest_width_id=get(feat)('_biggest_width_properties').id"
   ],
+  "isCounted": false,
   "minzoom": 18,
   "shownByDefault": false,
   "title": {
@@ -121,7 +122,6 @@
       "condition": "_biggest_width_id~*"
     }
   ],
-  "isCounted": false,
   "units": [
     {
       "width": {

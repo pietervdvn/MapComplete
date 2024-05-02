@@ -5,12 +5,12 @@
   import { ImmutableStore, Store } from "../../Logic/UIEventSource"
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
-  import nmd from "nano-markdown"
   import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson.js"
   import type { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
   import FromHtml from "../Base/FromHtml.svelte"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
   import NextButton from "../Base/NextButton.svelte"
+  import Markdown from "../Base/Markdown.svelte"
 
   export let state: EditLayerState
   export let path: ReadonlyArray<string | number>
@@ -62,13 +62,6 @@
   let messages = state.messagesFor(path)
 
   let description = schema.description
-  if (description) {
-    try {
-      description = nmd(description)
-    } catch (e) {
-      console.error("Could not convert description to markdown", { description })
-    }
-  }
 </script>
 
 <div class="flex">
@@ -82,7 +75,7 @@
       {/if}
     </NextButton>
     {#if description}
-      <FromHtml src={description} />
+      <Markdown src={description}/>
     {/if}
     {#each $messages as message}
       <ShowConversionMessage {message} />

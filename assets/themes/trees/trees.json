@@ -70,6 +70,6 @@
   "layers": [
     "tree_node"
   ],
-  "widenFactor": 0.2,
-  "osmApiTileSize": 18
+  "osmApiTileSize": 18,
+  "widenFactor": 0.2
 }

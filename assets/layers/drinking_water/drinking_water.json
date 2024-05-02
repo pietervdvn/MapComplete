@@ -545,6 +545,6 @@
   },
   "allowMove": {
     "enableRelocation": false,
-    "enableImproveAccuraccy": true
+    "enableImproveAccuracy": true
   }
 }

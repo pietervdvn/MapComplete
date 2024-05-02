@@ -34,7 +34,6 @@
   import { Utils } from "../Utils"
   import Hotkeys from "./Base/Hotkeys"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
-  import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
   import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
   import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
   import type { RasterLayerPolygon } from "../Models/RasterLayers"
@@ -73,6 +72,7 @@
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
   import ReviewsOverview from "./Reviews/ReviewsOverview.svelte"
+  import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -260,9 +260,7 @@
         />
       </MapControlButton>
     {/if}
-    <ToSvelte
-      construct={() => new ExtraLinkButton(state, layout.extraLink).SetClass("pointer-events-auto")}
-    />
+    <ExtraLinkButton {state} />
     <UploadingImageCounter featureId="*" showThankYou={false} {state} />
     <PendingChangesIndicator {state} />
     <If condition={state.featureSwitchIsTesting}>
@@ -285,9 +283,9 @@
   <div class="flex w-full items-end justify-between px-4">
     <div class="flex flex-col">
       <If condition={featureSwitches.featureSwitchEnableLogin}>
-        {#if state.layout.hasPresets() || state.layout.hasNoteLayer()}
+        {#if (state.layout.hasPresets() && state.layout.enableAddNewPoints) || state.layout.hasNoteLayer()}
           <button
-            class="pointer-events-auto w-fit"
+            class="pointer-events-auto w-fit low-interaction"
             class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
             on:click={() => {
               state.openNewDialog()

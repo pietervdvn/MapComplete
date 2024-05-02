@@ -781,12 +781,12 @@ video {
   float: left;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
 .m-4 {
   margin: 1rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
 }
 
 .m-3 {
@@ -797,8 +797,8 @@ video {
   margin: 0px;
 }
 
-.m-2 {
-  margin: 0.5rem;
+.m-8 {
+  margin: 2rem;
 }
 
 .m-1 {
@@ -900,10 +900,6 @@ video {
   margin-right: 4rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -936,16 +932,16 @@ video {
   margin-right: 0.25rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .mb-2 {
@@ -962,6 +958,10 @@ video {
 
 .ml-4 {
   margin-left: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mt-8 {
@@ -1199,6 +1199,10 @@ video {
   width: 8rem;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -1264,14 +1268,6 @@ video {
 
 .w-16 {
   width: 4rem;
-}
-
-.w-5\/6 {
-  width: 83.333333%;
-}
-
-.w-1\/6 {
-  width: 16.666667%;
 }
 
 .w-min {
@@ -1762,11 +1758,6 @@ video {
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
-
 .border-gray-800 {
   --tw-border-opacity: 1;
   border-color: rgb(31 41 55 / var(--tw-border-opacity));
@@ -1815,12 +1806,12 @@ video {
   background-repeat: repeat;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-4 {
   padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .p-0 {
@@ -1914,10 +1905,6 @@ video {
 
 .pl-3 {
   padding-left: 0.75rem;
-}
-
-.pr-0 {
-  padding-right: 0px;
 }
 
 .pt-1 {
@@ -2265,6 +2252,7 @@ video {
   --alert-color: #fee4d1;
   --alert-foreground-color: var(--foreground-color);
   --low-interaction-background: #eeeeee;
+  --low-interaction-background-50: #eeeeee90;
   --low-interaction-foreground: black;
   --low-interaction-contrast: #ff00ff;
   --interactive-background: #dddddd;
@@ -2489,6 +2477,10 @@ button.primary, .button.primary {
 button.primary:not(.no-image-background) svg path, .button.primary:not(.no-image-background) svg path {
   fill: var(--button-foreground) !important;
   transition: all 250ms;
+}
+
+button.disabled.low-interaction, .button.disabled.low-interaction {
+  background-color: var(--low-interaction-background-50);
 }
 
 button.disabled, .button.disabled {
@@ -2716,7 +2708,7 @@ textarea {
   color: #7193bb;
 }
 
-.literal-code {
+.literal-code, code {
   /* A codeblock */
   display: inline-block;
   background-color: lightgray;

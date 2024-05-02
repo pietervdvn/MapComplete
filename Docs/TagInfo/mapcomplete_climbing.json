@@ -53,6 +53,10 @@
       "description": "Layer 'Climbing club' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
+      "key": "operator:email",
+      "description": "Layer 'Climbing club' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Climbing club' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
@@ -155,6 +159,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Climbing gyms' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "charge",
@@ -1577,6 +1585,10 @@
     {
       "key": "contact:email",
       "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Shop' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
     {
       "key": "phone",

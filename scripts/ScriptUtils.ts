@@ -224,10 +224,12 @@ export default class ScriptUtils {
         })
         const timeoutPromise = new Promise<any>((resolve, reject) => {
             setTimeout(
-                () =>
-                    timeoutSecs === undefined
-                        ? reject(new Error("Timout reached"))
-                        : resolve("timeout"),
+                () => {
+                    if(timeoutSecs === undefined){
+                        return // No resolve
+                    }
+                   resolve("timeout")
+                },
                 (timeoutSecs ?? 10) * 1000
             )
         })

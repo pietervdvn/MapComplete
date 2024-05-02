@@ -699,6 +699,15 @@
       "description": "Layer 'Charging stations' shows socket:bosch_5pin~.+ & socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the mapcomplete.org theme 'Parking')"
     },
     {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows socket:bs1363=1 with a fixed text, namely '<b>BS1363</b> (Type G)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
+      "value": "1"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows socket:bs1363~.+ & socket:bs1363!=1 with a fixed text, namely '<b>BS1363</b> (Type G)' (in the mapcomplete.org theme 'Parking')"
+    },
+    {
       "key": "socket:schuko",
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko' (in the mapcomplete.org theme 'Parking') (This is only shown if socket:schuko~.+ & socket:schuko!=0)"
     },
@@ -1328,6 +1337,37 @@
     {
       "key": "socket:bosch_5pin:output",
       "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:output' (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bosch_5pin~.+ & socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363' (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:voltage' (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:voltage",
+      "description": "Layer 'Charging stations' shows socket:bs1363:voltage=230 V with a fixed text, namely '<b>BS1363</b> (Type G) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:bs1363:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:current' (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:current",
+      "description": "Layer 'Charging stations' shows socket:bs1363:current=13 A with a fixed text, namely '<b>BS1363</b> (Type G) outputs at most 13 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "13 A"
+    },
+    {
+      "key": "socket:bs1363:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:output' (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:output",
+      "description": "Layer 'Charging stations' shows socket:bs1363:output=3kW with a fixed text, namely '<b>BS1363</b> (Type G) outputs at most 3kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "3kW"
     },
     {
       "key": "opening_hours",

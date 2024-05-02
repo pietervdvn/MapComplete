@@ -3,7 +3,6 @@
   import type { ConfigMeta } from "./configMeta"
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
-  import nmd from "nano-markdown"
   import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
   import EditLayerState from "./EditLayerState"
   import { onDestroy } from "svelte"
@@ -68,11 +67,12 @@
     type = type.substring(0, type.length - 2)
   }
 
-  const configJson: QuestionableTagRenderingConfigJson = {
+  const configJson: QuestionableTagRenderingConfigJson & {questionHintIsMd: boolean} = {
     id: path.join("_"),
     render: rendervalue,
     question: schema.hints.question,
-    questionHint: nmd(schema.description),
+    questionHint: schema.description,
+    questionHintIsMd: true,
     freeform:
       schema.type === "boolean"
         ? undefined

@@ -42,7 +42,7 @@
     "shownByDefault": false
   },
   "enableNoteImports": false,
-  "widenFactor": 1.2,
   "overpassMaxZoom": 15,
+  "widenFactor": 1.2,
   "#note": "The 'overpassMaxZoom' should be exactly the same as or less then the minzzom in overrideAll"
 }

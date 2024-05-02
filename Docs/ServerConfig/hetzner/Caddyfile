@@ -46,3 +46,9 @@ mapcomplete.osm.be {
         to http://127.0.0.1:1236
     }
 }
+
+cache.mapcomplete.org {
+    reverse_proxy /summary/* {
+        to http://127.0.0.1:2345
+    }
+}

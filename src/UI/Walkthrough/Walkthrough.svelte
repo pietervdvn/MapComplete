@@ -1,8 +1,8 @@
 <script lang="ts">
-  import nmd from "nano-markdown"
   import { createEventDispatcher } from "svelte"
   import WalkthroughStep from "./WalkthroughStep.svelte"
   import FromHtml from "../Base/FromHtml.svelte"
+  import Markdown from "../Base/Markdown.svelte"
 
   /**
    * Markdown
@@ -31,5 +31,5 @@
   totalPages={pages.length}
   pageNumber={currentPage}
 >
-  <FromHtml src={nmd(pages[currentPage])} />
+  <Markdown src={pages[currentPage]} />
 </WalkthroughStep>

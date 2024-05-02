@@ -291,17 +291,24 @@ export interface LayerConfigJson {
     forceLoad?: false | boolean
 
     /**
-     * Presets for this layer.
-     * A preset shows up when clicking the map on a without data (or when right-clicking/long-pressing);
-     * it will prompt the user to add a new point.
+     *  <div class='flex'>
+     *      <div>
+     *  Presets for this layer.
      *
-     * The most important aspect are the tags, which define which tags the new point will have;
-     * The title is shown in the dialog, along with the first sentence of the description.
+     *  A preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.
      *
-     * Upon confirmation, the full description is shown beneath the buttons - perfect to add pictures and examples.
+     *  When the contributor wishes to add a point to OpenStreetMap, they'll:
      *
-     * Note: the icon of the preset is determined automatically based on the tags and the icon above. Don't worry about that!
-     * NB: if no presets are defined, the popup to add new points doesn't show up at all
+     * 1. Press the 'add new point'-button
+     * 2. Choose a preset from the list of all presets
+     * 3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown
+     * 4. Confirm the location
+     * 5. A new point will be created with the attributes that were defined in the preset
+     *
+     * If no presets are defined, the button which invites to add a new preset will not be shown.
+     *</div>
+     * <video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>
+     *</div>
      *
      * group: presets
      */
@@ -512,6 +519,7 @@ export interface LayerConfigJson {
     /**
      * Either a list with [{"key": "unitname", "key2": {"quantity": "unitname", "denominations": ["denom", "denom"]}}]
      *
+     * Use `"inverted": true` if the amount should be _divided_ by the denomination, e.g. for charge over time (`€5/day`)
      *
      * @see UnitConfigJson
      *
@@ -519,7 +527,7 @@ export interface LayerConfigJson {
      */
     units?: (
         | UnitConfigJson
-        | Record<string, string | { quantity: string; denominations: string[]; canonical?: string }>
+        | Record<string, string | { quantity: string; denominations: string[]; canonical?: string, inverted?: boolean }>
     )[]
 
     /**

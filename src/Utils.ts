@@ -263,6 +263,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return res
     }
 
+    public static NoNull<T>(array: T[] | undefined): (T[] | undefined)
+    public static NoNull<T>(array: undefined): undefined
+    public static NoNull<T>(array: T[]): T[]
     public static NoNull<T>(array: T[]): NonNullable<T>[] {
         return <any>array?.filter((o) => o !== undefined && o !== null)
     }
@@ -507,7 +510,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         let result = ""
         while (match) {
             const [_, normal, key, leftover] = match
-            let v = tags === undefined ? undefined : tags[key]
+            let v = tags?.[key]
             if (v !== undefined && v !== null) {
                 if (v["toISOString"] != undefined) {
                     // This is a date, probably the timestamp of the object
@@ -1039,7 +1042,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         return await promise
     }
-
+    public static async downloadJson(
+        url: string,
+        headers?: Record<string, string>
+    ): Promise<object | []>
+    public static async downloadJson<T>(
+        url: string,
+        headers?: Record<string, string>
+    ): Promise<T>
     public static async downloadJson(
         url: string,
         headers?: Record<string, string>
@@ -1648,5 +1658,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             index++
         }
         return n + Utils._metrixPrefixes[index]
+    }
+
+    static NoNullInplace(layers: any[]):void {
+        for (let i = layers.length - 1; i >= 0; i--) {
+            if(layers[i] === null || layers[i] === undefined){
+                layers.splice(i, 1)
+            }
+        }
     }
 }
