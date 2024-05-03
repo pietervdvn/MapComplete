@@ -12,7 +12,6 @@
   export let state: SpecialVisualizationState
   let theme = state.layout?.id ?? ""
   let config: ExtraLinkConfig = state.layout.extraLink
-  console.log(">>>",config)
   const isIframe = window !== window.top
   let basepath = window.location.host
   let showWelcomeMessageSwitch = state.featureSwitches.featureSwitchWelcomeMessage
