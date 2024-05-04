@@ -847,6 +847,10 @@
         "shortDescription": "Cette carte montre la vitesse maximale autorisée sur les routes.",
         "title": "Vitesse maximale"
     },
+    "memorials": {
+        "description": "Un mémorial est un objet physiquement installé sur l'espace public en souvenir d'une personne ou d'un évènement. Cela peut être toute sorte d'objets, comme une statue, une plaque, une peinture, un objet militaire (comme un tank), ...",
+        "title": "Mémorials"
+    },
     "nature": {
         "description": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature.",
         "shortDescription": "Une carte pour les amoureux de la nature",
