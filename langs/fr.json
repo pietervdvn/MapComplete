@@ -117,6 +117,7 @@
             "isApplied": "Les changements sont appliqués"
         },
         "attribution": {
+            "attributionBackgroundLayer": "Le fond de plan actuel est {name}",
             "attributionBackgroundLayerWithCopyright": "Le fond de carte actuel est {name}: {copyright}",
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
             "attributionTitle": "Crédits",
@@ -240,9 +241,16 @@
         "pickLanguage": "Choisir la langue : ",
         "poweredByOsm": "Propulsé par OpenStreetMap",
         "questionBox": {
+            "answeredMultiple": "Vous avez répondu à {answered} questions",
             "answeredMultipleSkippedMultiple": "Vous avez répondu à {answered} questions et passé {skipped} questions",
+            "answeredMultipleSkippedOne": "Vous avez répondu à {answered} questions et passé une question",
+            "answeredOne": "Vous avez répondu à une question",
+            "answeredOneSkippedMultiple": "Vous avez répondu à une question et passé {skipped} questions",
+            "answeredOneSkippedOne": "Vous avez répondu à une question et passé une question",
             "done": "Pas d'autre question ! Merci !",
-            "reactivate": "Réactiver les questions passées"
+            "reactivate": "Réactiver les questions passées",
+            "skippedMultiple": "Vous avez passé {skipped} questions",
+            "skippedOne": "Vous avez passé une question"
         },
         "questions": {
             "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
@@ -264,8 +272,11 @@
             "searchShort": "Rechercher…",
             "searching": "Chargement…"
         },
+        "searchAnswer": "Chercher une option…",
+        "share": "Partager",
         "sharescreen": {
             "copiedToClipboard": "Lien copié dans le presse-papier",
+            "documentation": "Pour plus d'information sur les paramètre d'URL disponible,<a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>consultez la documentation</a>",
             "embedIntro": "<h3>Incorporer à votre site Web</h3>Ajouter la carte à votre site Web. <br>Nous vous y encourageons – pas besoin de permission.<br> C'est gratuit et pour toujours. Plus de personnes l'utilisent, mieux c'est.",
             "fsUserbadge": "Activer le bouton de connexion",
             "fsWelcomeMessage": "Afficher le message de bienvenue et les onglets associés",
@@ -275,6 +286,7 @@
         },
         "skip": "Passer la question",
         "testing": "Test - les changements ne seront pas sauvegardés",
+        "uploadError": "Erreur lors de l'envoi des changements : {error}",
         "uploadGpx": {
             "meta": {
                 "descriptionIntro": "En option, vous pouvez entrer une description de votre trace :",
@@ -352,7 +364,7 @@
         "nearby": {
             "link": "Cette photo montre l'objet",
             "seeNearby": "Parcourez et associez des photos à proximité",
-            "title": "Imagerie StreetView à proximité"
+            "title": "Imagerie de rue à proximité"
         },
         "pleaseLogin": "Connectez-vous pour téléverser une photo",
         "respectPrivacy": "Ne photographiez ni les personnes ni les plaques d'immatriculation. Ne téléversez rien issu de Google Maps, Google Streetview ou d'autre sources soumises à des droits d'auteurs.",
