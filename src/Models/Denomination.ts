@@ -167,7 +167,7 @@ export class Denomination {
      * Returns null if it doesn't match this unit
      */
     public StrippedValue(value: string, actAsDefault: boolean, inverted: boolean): string {
-        if (value === undefined) {
+        if (value === undefined || value === "") {
             return undefined
         }
 
@@ -183,10 +183,10 @@ export class Denomination {
         }
 
         function substr(key) {
-            if (self.prefix) {
+            if (this.prefix) {
                 return value.substring(key.length).trim()
             }
-            let trimmed =            value.substring(0, value.length - key.length).trim()
+            let trimmed = value.substring(0, value.length - key.length).trim()
             if(!inverted){
                 return trimmed
             }
