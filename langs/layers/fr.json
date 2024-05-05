@@ -6660,6 +6660,34 @@
                         "humanShort": "{quantity} mph"
                     }
                 }
+            },
+            "5": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} minutes",
+                        "humanSingular": "une minute"
+                    },
+                    "1": {
+                        "human": "{quantity} heures",
+                        "humanSingular": "une heure"
+                    },
+                    "2": {
+                        "human": "{quantity} jours",
+                        "humanSingular": "un jour"
+                    },
+                    "3": {
+                        "human": "{quantity} semaines",
+                        "humanSingular": "une semaine"
+                    },
+                    "4": {
+                        "human": "{quantity} mois",
+                        "humanSingular": "un mois"
+                    },
+                    "5": {
+                        "human": "{quantity} années",
+                        "humanSingular": "un an"
+                    }
+                }
             }
         }
     },
@@ -6675,6 +6703,29 @@
                     }
                 },
                 "question": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?"
+            },
+            "background-layer": {
+                "mappings": {
+                    "0": {
+                        "then": "Utiliser le fond par défaut"
+                    },
+                    "1": {
+                        "then": "Utiliser le fond OpenStreetMap-carto par défaut"
+                    },
+                    "2": {
+                        "then": "Utiliser le fond imagerie aérienne par défaut"
+                    },
+                    "3": {
+                        "then": "Utiliser un fond non basé sur OpenStreetMap par défaut"
+                    },
+                    "4": {
+                        "then": "Utiliser le fond actuel (<span class='code'>{__current_background}</span>) par défaut"
+                    },
+                    "5": {
+                        "then": "Utiliser le fond (<span class='code'>{__current_background}</span>)par défaut"
+                    }
+                },
+                "question": "Quel fond souhaitez-vous utiliser par défaut ?"
             },
             "cscount-thanks": {
                 "mappings": {
