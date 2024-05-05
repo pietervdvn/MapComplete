@@ -54,7 +54,13 @@
         "button": {
             "markAsFavouriteTitle": "Sauvegarder ce lieu comme favoris",
             "markDescription": "Ajouter ce lieu à votre liste personnelle de favoris"
-        }
+        },
+        "downloadGeojson": "Télécharger vos lieux favoris en geojson",
+        "downloadGpx": "Télécharger vos lieux favoris en GPX",
+        "intro": "Vous avez indiqué {length} lieux comme favoris.",
+        "introPrivacy": "Cette liste est uniquement visible par vous",
+        "tab": "Vos favoris et avis",
+        "title": "Vos lieux favoris"
     },
     "flyer": {
         "cyclofix": "Les pompes à vélo, les stations de réparation, les points d'eau potable et les vélocistes sont sur CycloFix",
@@ -70,6 +76,7 @@
             "intro": "MapComplete est un site qui a {mapCount} carte intéractives. Chaque carte permet d'ajouter et mettre à jour des informations. IL y a de nombreuses fonctionnalités :",
             "li1": "Ajouter de nouveaux points et mettre à jour les infos de ceux existant",
             "li2": "Ajouter facilement des informations de contact et des heures d'ouverture",
+            "li5": "Fonction d'import de jeux de données existants",
             "title": "Qu'est-ce que MapComplete ?"
         },
         "title": "mapcomplete.org",
@@ -79,7 +86,7 @@
         "404": "Cette page n'existe pas",
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
         "aboutMapComplete": {
-            "intro": "Utilisez MapComplete pour ajouter des informations à OpenStreetMap <b>par thématiques.</b> Réponsez à des question et, en quelques minutes, vos contributions seront disponibles partout. Dans la plupart des thèmes vous pouvez ajouter des photos et même laisser un commentaire. Le <b>responsable du thème</b> définit les éléments, les questions et les langues."
+            "intro": "Utilisez MapComplete pour ajouter des informations à OpenStreetMap <b>par thématiques.</b> Répondez à des questions et, en quelques minutes, vos contributions seront disponibles partout. Dans la plupart des thèmes vous pouvez ajouter des photos et même laisser un commentaire. Le <b>responsable du thème</b> définit les éléments, les questions et les langues."
         },
         "add": {
             "addNew": "Ajouter {category}",
@@ -122,10 +129,10 @@
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
             "attributionTitle": "Crédits",
             "codeContributionsBy": "MapComplete a été construit par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres contributeurs</a>",
-            "donate": "Soutenez MapComplete financièrement",
+            "donate": "Soutenir MapComplete financièrement",
             "editId": "Ouvrir l’éditeur en ligne OpenStreetMap ici",
             "editJosm": "Modifier ici avec JOSM",
-            "followOnMastodon": "Suivez MapComplete sur Mastodon",
+            "followOnMastodon": "Suivre MapComplete sur Mastodon",
             "iconAttribution": {
                 "title": "Icônes utilisées"
             },
@@ -136,7 +143,7 @@
             "mapDataByOsm": "Données de la carte : OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> est un service en ligne qui rassemble des photos au niveau des rues et les propose sous une licence libre. Les contributeurs sont autorisés à utiliser ces photos pour améliorer OpenStreetMap.",
             "openIssueTracker": "Signaler un problème",
-            "openMapillary": "Ouvrez Mapillary ici",
+            "openMapillary": "Ouvrir Mapillary ici",
             "openOsmcha": "Voir les dernières modifications faites avec {theme}",
             "themeBy": "Thème maintenu par {author}",
             "title": "Droits d'auteur et attribution",
@@ -349,11 +356,13 @@
     "hotkeyDocumentation": {
         "action": "Action",
         "closeSidebar": "Fermer la barre latérale",
+        "intro": "MapComplete autorise les raccourcis clavier suivants :",
         "key": "Combinaison de touches",
         "openLayersPanel": "Ouvre le panneau fond-de-plan, couches et filtres",
         "selectMapnik": "Appliquer le fond de carte OpenStreetMap-carto",
         "selectSearch": "Sélectionner la barre de recherche de lieux",
-        "title": "Raccourcis clavier"
+        "title": "Raccourcis clavier",
+        "translationMode": "Activer/désactiver le mode traduction"
     },
     "image": {
         "addPicture": "Ajoutez une photo",
@@ -460,12 +469,15 @@
         "i_am_affiliated": "<span>Je suis affilié à cet objet</span><br><span class=\"subtle\">Cochez si vous en êtes le propriétaire, créateur, employé, …</span>",
         "name_required": "Un nom est requis pour afficher et créer des avis",
         "no_reviews_yet": "Il n'y a pas encore d'avis. Soyez le premier à en écrire un et aidez le lieu et les données ouvertes !",
+        "reviews_bug": "Certains de vos avis sont manquants ? Certains ne sont pas visible à cause d'un bug.",
         "saved": "<span class=\"thanks\">Avis enregistré. Merci du partage !</span>",
         "saving_review": "Enregistrement…",
         "title": "{count} avis",
         "title_singular": "Un avis",
         "tos": "En publiant un avis, vous êtes d'accord avec <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">les conditions d'utilisation et la politique de confidentialité de Mangrove.reviews</a>",
-        "write_a_comment": "Laisser un avis…"
+        "write_a_comment": "Laisser un avis…",
+        "your_reviews": "Vos précédents avis",
+        "your_reviews_empty": "Aucun avis n'a été trouvé"
     },
     "split": {
         "cancel": "Annuler",
