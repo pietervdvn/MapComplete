@@ -143,7 +143,7 @@ export class OsmConnection {
 
             options.oauth_token.setData(undefined)
         }
-        if (this.auth.authenticated() && options.attemptLogin !== false) {
+        if (!Utils.runningFromConsole && this.auth.authenticated() && options.attemptLogin !== false) {
             this.AttemptLogin()
         } else {
             console.log("Not authenticated")
