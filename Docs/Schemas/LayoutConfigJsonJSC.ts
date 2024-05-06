@@ -586,7 +586,7 @@ export default {
           ]
         },
         "condition": {
-          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or ask the question if unkown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or show this question if unknown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -600,7 +600,7 @@ export default {
           ]
         },
         "metacondition": {
-          "description": "question: When should this item be shown (including special conditions)?\ntype: tag\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
+          "description": "question: When should this item be shown (including special conditions)?\ntype: tag\nifunset: No specific metacondition set which is evaluated against the <i>usersettings/application state</i>; always show this tagRendering or show this question if unknown\n\nIf set, this tag will be evaluated against the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options (at the settings-tab).\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1115,7 +1115,7 @@ export default {
               "type": "string"
             },
             "placeholder": {
-              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation\ngroup: expert",
+              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation\ngroup: expert\nifunset: No specific placeholder is set, show the type of the textfield",
               "anyOf": [
                 {
                   "$ref": "#/definitions/Record<string,string>"
@@ -1263,7 +1263,7 @@ export default {
           ]
         },
         "condition": {
-          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or ask the question if unkown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or show this question if unknown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1277,7 +1277,7 @@ export default {
           ]
         },
         "metacondition": {
-          "description": "question: When should this item be shown (including special conditions)?\ntype: tag\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
+          "description": "question: When should this item be shown (including special conditions)?\ntype: tag\nifunset: No specific metacondition set which is evaluated against the <i>usersettings/application state</i>; always show this tagRendering or show this question if unknown\n\nIf set, this tag will be evaluated against the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options (at the settings-tab).\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1340,7 +1340,7 @@ export default {
               "type": "string"
             },
             "placeholder": {
-              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation\ngroup: expert",
+              "description": "question: What placeholder text should be shown in the input-element if there is no input?\nA (translated) text that is shown (as gray text) within the textfield\ntype: translation\ngroup: expert\nifunset: No specific placeholder is set, show the type of the textfield",
               "anyOf": [
                 {
                   "$ref": "#/definitions/Record<string,string>"
@@ -1488,7 +1488,7 @@ export default {
           ]
         },
         "condition": {
-          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or ask the question if unkown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "description": "question: When should this item be shown?\ntype: tag\nifunset: No specific condition set; always show this tagRendering or show this question if unknown\n\nOnly show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1502,7 +1502,7 @@ export default {
           ]
         },
         "metacondition": {
-          "description": "question: When should this item be shown (including special conditions)?\ntype: tag\n\nIf set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
+          "description": "question: When should this item be shown (including special conditions)?\ntype: tag\nifunset: No specific metacondition set which is evaluated against the <i>usersettings/application state</i>; always show this tagRendering or show this question if unknown\n\nIf set, this tag will be evaluated against the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options (at the settings-tab).\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
               "$ref": "#/definitions/{and:TagConfigJson[];}"
@@ -1820,7 +1820,7 @@ export default {
         "applicableUnits"
       ]
     },
-    "Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>": {
+    "Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;inverted?:boolean|undefined;}>": {
       "type": "object"
     },
     "default": {
@@ -2073,7 +2073,7 @@ export default {
           "type": "boolean"
         },
         "presets": {
-          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<a class='block m-2 min-w-64' href='./Docs/Screenshots/AddNewItemScreencast.webm' target='_blank'> <video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/></a>\n</div>\n\ngroup: presets",
+          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets",
           "type": "array",
           "items": {
             "type": "object",
@@ -2248,7 +2248,7 @@ export default {
           "type": "boolean"
         },
         "units": {
-          "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]",
+          "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]\n\nUse `\"inverted\": true` if the amount should be _divided_ by the denomination, e.g. for charge over time (`€5/day`)",
           "type": "array",
           "items": {
             "anyOf": [
@@ -2256,7 +2256,7 @@ export default {
                 "$ref": "#/definitions/default_2"
               },
               {
-                "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
+                "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;inverted?:boolean|undefined;}>"
               }
             ]
           }
@@ -2491,7 +2491,7 @@ export default {
           "type": "boolean"
         },
         "presets": {
-          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<a class='block m-2 min-w-64' href='./Docs/Screenshots/AddNewItemScreencast.webm' target='_blank'> <video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/></a>\n</div>\n\ngroup: presets",
+          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets",
           "type": "array",
           "items": {
             "type": "object",
@@ -2666,7 +2666,7 @@ export default {
           "type": "boolean"
         },
         "units": {
-          "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]",
+          "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]\n\nUse `\"inverted\": true` if the amount should be _divided_ by the denomination, e.g. for charge over time (`€5/day`)",
           "type": "array",
           "items": {
             "anyOf": [
@@ -2674,7 +2674,7 @@ export default {
                 "$ref": "#/definitions/default_2"
               },
               {
-                "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
+                "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;inverted?:boolean|undefined;}>"
               }
             ]
           }
