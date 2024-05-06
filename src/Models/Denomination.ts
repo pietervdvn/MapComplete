@@ -183,7 +183,7 @@ export class Denomination {
         }
 
         function substr(key) {
-            if (this.prefix) {
+            if (self.prefix) {
                 return value.substring(key.length).trim()
             }
             let trimmed = value.substring(0, value.length - key.length).trim()
