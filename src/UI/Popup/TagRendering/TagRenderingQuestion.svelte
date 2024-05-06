@@ -73,7 +73,6 @@
   console.log("Initing ", config.id)
 
   function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void {
-    console.trace("Initing question state for", confg.id, config.id)
     mappings = confg.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
         return !m.hideInAnswer
