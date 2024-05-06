@@ -70,8 +70,7 @@ export default class Locale {
         }
 
         if (!Utils.runningFromConsole) {
-            // @ts-ignore
-            window.setLanguage = function (language: string) {
+            window["setLanguage"] = function (language: string) {
                 source.setData(language)
             }
         }

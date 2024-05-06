@@ -18,7 +18,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon,
+    XCircleIcon
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -73,6 +73,8 @@
   import { BBox } from "../Logic/BBox"
   import ReviewsOverview from "./Reviews/ReviewsOverview.svelte"
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
+  import Locale from "./i18n/Locale"
+  import LanguageUtils from "../Utils/LanguageUtils"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -138,7 +140,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat],
+      [bottomRight.lng, bottomRight.lat]
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }

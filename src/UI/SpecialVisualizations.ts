@@ -94,6 +94,8 @@ import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
 import LinkedDataLoader from "../Logic/Web/LinkedDataLoader"
 import SplitRoadWizard from "./Popup/SplitRoadWizard.svelte"
 import DynLink from "./Base/DynLink.svelte"
+import Locale from "./i18n/Locale"
+import LanguageUtils from "../Utils/LanguageUtils"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -397,13 +399,18 @@ export default class SpecialVisualizations {
                 args: [],
                 docs: "A component to set the language of the user interface",
                 constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SvelteUIElement(LanguagePicker, {
-                        assignTo: state.userRelatedState.language,
-                        availableLanguages: state.layout.language,
-                        preferredLanguages: state.osmConnection.userDetails.map(
-                            (ud) => ud.languages
-                        ),
-                    })
+                    return new VariableUiElement(
+                        Locale.showLinkToWeblate.map(showTranslations => {
+                            const languages = showTranslations ? LanguageUtils.usedLanguagesSorted : state.layout.language
+                            return new SvelteUIElement(LanguagePicker, {
+                                assignTo: state.userRelatedState.language,
+                                availableLanguages: languages,
+                                preferredLanguages: state.osmConnection.userDetails.map(
+                                    (ud) => ud.languages
+                                ),
+                            })
+                        })
+                    )
                 },
             },
             {
