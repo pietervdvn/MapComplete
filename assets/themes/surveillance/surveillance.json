@@ -52,6 +52,7 @@
   },
   "icon": "./assets/themes/surveillance/logo.svg",
   "defaultBackgroundId": "maptiler.carto",
+  "enableMorePrivacy": true,
   "layers": [
     "surveillance_camera",
     {

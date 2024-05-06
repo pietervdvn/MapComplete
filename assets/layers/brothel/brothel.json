@@ -11,6 +11,7 @@
   "source": {
     "osmTags": "amenity=brothel"
   },
+  "enableMorePrivacy": true,
   "minzoom": 6,
   "title": {
     "render": {
