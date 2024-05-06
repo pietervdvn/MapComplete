@@ -1,4 +1,3 @@
-// @ts-ignore
 import { osmAuth } from "osm-auth"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
 import { OsmPreferences } from "./OsmPreferences"
@@ -6,7 +5,18 @@ import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { AuthConfig } from "./AuthConfig"
 import Constants from "../../Models/Constants"
-import OSMAuthInstance = OSMAuth.OSMAuthInstance
+
+interface OsmUserInfo {
+    id: number
+    display_name: string
+    account_created: string
+    description: string
+    contributor_terms: { agreed: boolean }
+    roles: []
+    changesets: { count: number }
+    traces: { count: number }
+    blocks: { received: { count: number; active: number } }
+}
 
 export default class UserDetails {
     public loggedIn = false
@@ -31,7 +41,7 @@ export default class UserDetails {
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
-    public auth: OSMAuthInstance
+    public auth: osmAuth
     public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
     public gpxServiceIsOnline: UIEventSource<OsmServiceState> = new UIEventSource<OsmServiceState>(
@@ -49,7 +59,7 @@ export class OsmConnection {
     private readonly _dryRun: Store<boolean>
     private readonly fakeUser: boolean
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
-    private readonly _iframeMode: Boolean | boolean
+    private readonly _iframeMode: boolean
     private readonly _singlePage: boolean
     private isChecking = false
     private readonly _doCheckRegularly
@@ -99,20 +109,19 @@ export class OsmConnection {
             ud.languages = ["en"]
             this.loadingStatus.setData("logged-in")
         }
-        const self = this
         this.UpdateCapabilities()
 
         this.isLoggedIn = this.userDetails.map(
             (user) =>
                 user.loggedIn &&
-                (self.apiIsOnline.data === "unknown" || self.apiIsOnline.data === "online"),
+                (this.apiIsOnline.data === "unknown" || this.apiIsOnline.data === "online"),
             [this.apiIsOnline]
         )
         this.isLoggedIn.addCallback((isLoggedIn) => {
-            if (self.userDetails.data.loggedIn == false && isLoggedIn == true) {
+            if (this.userDetails.data.loggedIn == false && isLoggedIn == true) {
                 // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
                 // This means someone attempted to toggle this; so we attempt to login!
-                self.AttemptLogin()
+                this.AttemptLogin()
             }
         })
 
@@ -120,17 +129,16 @@ export class OsmConnection {
 
         this.updateAuthObject()
         if (!this.fakeUser) {
-            self.CheckForMessagesContinuously()
+            this.CheckForMessagesContinuously()
         }
 
         this.preferencesHandler = new OsmPreferences(this.auth, this, this.fakeUser)
 
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
-            const self = this
             this.auth.bootstrapToken(options.oauth_token.data, (err, result) => {
                 console.log("Bootstrap token called back", err, result)
-                self.AttemptLogin()
+                this.AttemptLogin()
             })
 
             options.oauth_token.setData(undefined)
@@ -142,15 +150,15 @@ export class OsmConnection {
         }
     }
 
-    public GetPreference(
+    public GetPreference<T extends string = string>(
         key: string,
         defaultValue: string = undefined,
         options?: {
             documentation?: string
             prefix?: string
         }
-    ): UIEventSource<string> {
-        return this.preferencesHandler.GetPreference(key, defaultValue, options)
+    ): UIEventSource<T | undefined> {
+        return <UIEventSource<T>>this.preferencesHandler.GetPreference(key, defaultValue, options)
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
@@ -192,7 +200,7 @@ export class OsmConnection {
             console.log("AttemptLogin called, but ignored as fakeUser is set")
             return
         }
-        const self = this
+
         console.log("Trying to log in...")
         this.updateAuthObject()
 
@@ -202,33 +210,33 @@ export class OsmConnection {
         this.auth.xhr(
             {
                 method: "GET",
-                path: "/api/0.6/user/details",
+                path: "/api/0.6/user/details"
             },
-            function (err, details: XMLDocument) {
+            (err, details: XMLDocument) => {
                 if (err != null) {
                     console.log("Could not login due to:", err)
-                    self.loadingStatus.setData("error")
+                    this.loadingStatus.setData("error")
                     if (err.status == 401) {
                         console.log("Clearing tokens...")
                         // Not authorized - our token probably got revoked
-                        self.auth.logout()
-                        self.LogOut()
+                        this.auth.logout()
+                        this.LogOut()
                     } else {
                         console.log("Other error. Status:", err.status)
-                        self.apiIsOnline.setData("unreachable")
+                        this.apiIsOnline.setData("unreachable")
                     }
                     return
                 }
 
                 if (details == null) {
-                    self.loadingStatus.setData("error")
+                    this.loadingStatus.setData("error")
                     return
                 }
 
                 // details is an XML DOM of user details
-                let userInfo = details.getElementsByTagName("user")[0]
+                const userInfo = details.getElementsByTagName("user")[0]
 
-                let data = self.userDetails.data
+                const data = this.userDetails.data
                 data.loggedIn = true
                 console.log("Login completed, userinfo is ", userInfo)
                 data.name = userInfo.getAttribute("display_name")
@@ -261,18 +269,18 @@ export class OsmConnection {
                     data.home = { lat: lat, lon: lon }
                 }
 
-                self.loadingStatus.setData("logged-in")
+                this.loadingStatus.setData("logged-in")
                 const messages = userInfo
                     .getElementsByTagName("messages")[0]
                     .getElementsByTagName("received")[0]
                 data.unreadMessages = parseInt(messages.getAttribute("unread"))
                 data.totalMessages = parseInt(messages.getAttribute("count"))
 
-                self.userDetails.ping()
-                for (const action of self._onLoggedIn) {
-                    action(self.userDetails.data)
+                this.userDetails.ping()
+                for (const action of this._onLoggedIn) {
+                    action(this.userDetails.data)
                 }
-                self._onLoggedIn = []
+                this._onLoggedIn = []
             }
         )
     }
@@ -289,11 +297,11 @@ export class OsmConnection {
     public async interact(
         path: string,
         method: "GET" | "POST" | "PUT" | "DELETE",
-        header?: Record<string, string | number>,
+        header?: Record<string, string>,
         content?: string,
         allowAnonymous: boolean = false
     ): Promise<string> {
-        let connection: OSMAuthInstance = this.auth
+        const connection: osmAuth = this.auth
         if (allowAnonymous && !this.auth.authenticated()) {
             const possibleResult = await Utils.downloadAdvanced(
                 `${this.Backend()}/api/0.6/${path}`,
@@ -310,15 +318,13 @@ export class OsmConnection {
 
         return new Promise((ok, error) => {
             connection.xhr(
-                <any>{
+                {
                     method,
-                    options: {
-                        header,
-                    },
+                    headers: header,
                     content,
-                    path: `/api/0.6/${path}`,
+                    path: `/api/0.6/${path}`
                 },
-                function (err, response) {
+                function(err, response) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -329,32 +335,32 @@ export class OsmConnection {
         })
     }
 
-    public async post(
+    public async post<T extends string>(
         path: string,
         content?: string,
-        header?: Record<string, string | number>,
+        header?: Record<string, string>,
         allowAnonymous: boolean = false
-    ): Promise<any> {
-        return await this.interact(path, "POST", header, content, allowAnonymous)
+    ): Promise<T> {
+        return <T> await this.interact(path, "POST", header, content, allowAnonymous)
     }
 
-    public async put(
+    public async put<T extends string>(
         path: string,
         content?: string,
-        header?: Record<string, string | number>
-    ): Promise<any> {
-        return await this.interact(path, "PUT", header, content)
+        header?: Record<string, string>
+    ): Promise<T> {
+        return <T> await this.interact(path, "PUT", header, content)
     }
 
     public async get(
         path: string,
-        header?: Record<string, string | number>,
+        header?: Record<string, string>,
         allowAnonymous: boolean = false
     ): Promise<string> {
         return await this.interact(path, "GET", header, undefined, allowAnonymous)
     }
 
-    public closeNote(id: number | string, text?: string): Promise<void> {
+    public closeNote(id: number | string, text?: string): Promise<string> {
         let textSuffix = ""
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
@@ -362,17 +368,17 @@ export class OsmConnection {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually closing note ", id, " with text ", text)
             return new Promise((ok) => {
-                ok()
+                ok("")
             })
         }
         return this.post(`notes/${id}/close${textSuffix}`)
     }
 
-    public reopenNote(id: number | string, text?: string): Promise<void> {
+    public reopenNote(id: number | string, text?: string): Promise<string> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
-            return new Promise((ok) => {
-                ok()
+            return new Promise(resolve => {
+                resolve("")
             })
         }
         let textSuffix = ""
@@ -398,7 +404,7 @@ export class OsmConnection {
             "notes.json",
             content,
             {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             true
         )
@@ -439,7 +445,7 @@ export class OsmConnection {
             file: gpx,
             description: options.description,
             tags: options.labels?.join(",") ?? "",
-            visibility: options.visibility,
+            visibility: options.visibility
         }
 
         if (!contents.description) {
@@ -447,9 +453,9 @@ export class OsmConnection {
         }
         const extras = {
             file:
-                '; filename="' +
+                "; filename=\"" +
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
-                '"\r\nContent-Type: application/gpx+xml',
+                "\"\r\nContent-Type: application/gpx+xml"
         }
 
         const boundary = "987654"
@@ -457,7 +463,7 @@ export class OsmConnection {
         let body = ""
         for (const key in contents) {
             body += "--" + boundary + "\r\n"
-            body += 'Content-Disposition: form-data; name="' + key + '"'
+            body += "Content-Disposition: form-data; name=\"" + key + "\""
             if (extras[key] !== undefined) {
                 body += extras[key]
             }
@@ -468,7 +474,7 @@ export class OsmConnection {
 
         const response = await this.post("gpx/create", body, {
             "Content-Type": "multipart/form-data; boundary=" + boundary,
-            "Content-Length": body.length,
+            "Content-Length": ""+body.length
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
@@ -491,9 +497,9 @@ export class OsmConnection {
                 {
                     method: "POST",
 
-                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
                 },
-                function (err, _) {
+                function(err) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -508,7 +514,7 @@ export class OsmConnection {
      * To be called by land.html
      */
     public finishLogin(callback: (previousURL: string) => void) {
-        this.auth.authenticate(function () {
+        this.auth.authenticate(function() {
             // Fully authed at this point
             console.log("Authentication successful!")
             const previousLocation = LocalStorageSource.Get("location_before_login")
@@ -517,28 +523,6 @@ export class OsmConnection {
     }
 
     private updateAuthObject() {
-        let pwaStandAloneMode = false
-        try {
-            if (Utils.runningFromConsole) {
-                pwaStandAloneMode = true
-            } else if (
-                window.matchMedia("(display-mode: standalone)").matches ||
-                window.matchMedia("(display-mode: fullscreen)").matches
-            ) {
-                pwaStandAloneMode = true
-            }
-        } catch (e) {
-            console.warn(
-                "Detecting standalone mode failed",
-                e,
-                ". Assuming in browser and not worrying furhter"
-            )
-        }
-        const standalone = this._iframeMode || pwaStandAloneMode || !this._singlePage
-
-        // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
-        // Same for an iframe...
-
         this.auth = new osmAuth({
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
@@ -546,23 +530,22 @@ export class OsmConnection {
             redirect_uri: Utils.runningFromConsole
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
-            singlepage: true,
-            auto: true,
+            singlepage: true, // We always use 'singlePage', it is the most stable - including in PWA
+            auto: true
         })
     }
 
     private CheckForMessagesContinuously() {
-        const self = this
         if (this.isChecking) {
             return
         }
-        Stores.Chronic(3 * 1000).addCallback((_) => {
-            if (!(self.apiIsOnline.data === "unreachable" || self.apiIsOnline.data === "offline")) {
+        Stores.Chronic(3 * 1000).addCallback(() => {
+            if (!(this.apiIsOnline.data === "unreachable" || this.apiIsOnline.data === "offline")) {
                 return
             }
             try {
                 console.log("Api is offline - trying to reconnect...")
-                self.AttemptLogin()
+                this.AttemptLogin()
             } catch (e) {
                 console.log("Could not login due to", e)
             }
@@ -571,10 +554,10 @@ export class OsmConnection {
         if (!this._doCheckRegularly) {
             return
         }
-        Stores.Chronic(60 * 5 * 1000).addCallback((_) => {
-            if (self.isLoggedIn.data) {
+        Stores.Chronic(60 * 5 * 1000).addCallback(() => {
+            if (this.isLoggedIn.data) {
                 try {
-                    self.AttemptLogin()
+                    this.AttemptLogin()
                 } catch (e) {
                     console.log("Could not login due to", e)
                 }
@@ -592,19 +575,9 @@ export class OsmConnection {
         })
     }
 
-    private readonly _userInfoCache: Record<number, any> = {}
+    private readonly _userInfoCache: Record<number, OsmUserInfo> = {}
 
-    public async getInformationAboutUser(id: number): Promise<{
-        id: number
-        display_name: string
-        account_created: string
-        description: string
-        contributor_terms: { agreed: boolean }
-        roles: []
-        changesets: { count: number }
-        traces: { count: number }
-        blocks: { received: { count: number; active: number } }
-    }> {
+    public async getInformationAboutUser(id: number): Promise<OsmUserInfo> {
         if (id === undefined) {
             return undefined
         }

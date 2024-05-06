@@ -564,5 +564,5 @@ export interface LayerConfigJson {
      * ifunset: Write 'change_within_x_m' as usual and if GPS is enabled
      * iftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey
      */
-    enableMorePrivacy: boolean
+    enableMorePrivacy?: boolean
 }
