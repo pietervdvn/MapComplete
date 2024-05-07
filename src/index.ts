@@ -30,8 +30,8 @@ async function getAvailableLayers(): Promise<Set<string>> {
     try {
         const host = new URL(Constants.VectorTileServer).host
         const status: { layers: string[] } = await Promise.any([
-            // Utils.downloadJson("https://" + host + "/summary/status.json"),
-            timeout(0),
+            Utils.downloadJson<{layers}>("https://" + host + "/summary/status.json"),
+            timeout(2500),
         ])
         return new Set<string>(status.layers)
     } catch (e) {

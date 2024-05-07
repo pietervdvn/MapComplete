@@ -64,10 +64,14 @@
   )
 </script>
 
+{#if unit.inverted}
+  <div class="bold px-2">/</div>
+{/if}
+
 <select bind:value={$selectedUnit}>
   {#each unit.denominations as denom (denom.canonical)}
     <option value={denom.canonical}>
-      {#if $isSingle}
+      {#if $isSingle || unit.inverted}
         <Tr t={denom.humanSingular} />
       {:else}
         <Tr t={denom.human.Subs({ quantity: "" })} />

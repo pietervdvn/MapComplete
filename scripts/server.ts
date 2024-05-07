@@ -91,6 +91,12 @@ export class Server {
 
                 try {
                     const result = await handler.handle(path, url.searchParams)
+                    if(result === undefined){
+                        res.writeHead(500)
+                        res.write("Could not fetch this website, probably blocked by them")
+                        res.end()
+                        return
+                    }
                     if (typeof result !== "string") {
                         console.error(
                             "Internal server error: handling",
@@ -103,7 +109,7 @@ export class Server {
                     }
                     const extraHeaders = handler.addHeaders ?? {}
                     res.writeHead(200, { "Content-Type": handler.mimetype, ...extraHeaders })
-                    res.write(result)
+                    res.write(""+result)
                     res.end()
                 } catch (e) {
                     console.error("Could not handle request:", e)

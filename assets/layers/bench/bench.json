@@ -155,8 +155,8 @@
         {
           "if": "backrest=yes",
           "then": {
-            "en": "Does have a backrest",
-            "de": "Die Sitzbank hat eine Rückenlehne",
+            "en": "This bench does have a backrest",
+            "de": "Diese Sitzbank hat eine Rückenlehne",
             "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
             "es": "Tiene respaldo",
@@ -186,8 +186,8 @@
             "two_sided="
           ],
           "then": {
-            "en": "Does <b>not</b> have a backrest",
-            "de": "Die Sitzbank hat <b>keine</b> Rückenlehne",
+            "en": "This bench does <b>not</b> have a backrest",
+            "de": "Diese Sitzbank hat <b>keine</b> Rückenlehne",
             "fr": "Dossier : Non",
             "nl": "Heeft <b>geen</b> rugleuning",
             "es": "<b>No</b> tiene respaldo",
@@ -236,8 +236,8 @@
     },
     {
       "render": {
-        "en": "{seats} seats",
-        "de": "Die Sitzbank hat {seats} Sitzplätze",
+        "en": "This bench has {seats} seats",
+        "de": "Diese Sitzbank hat {seats} Sitzplätze",
         "fr": "{seats} places",
         "nl": "{seats} zitplaatsen",
         "es": "{seats} asientos",
@@ -882,7 +882,7 @@
         "bench-questions"
       ],
       "render": {
-        "en": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>",
+        "en": "This bench has the following inscription:<br/><p><i>{inscription}</i></p>",
         "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>",
         "de": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>",
         "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>",
@@ -931,7 +931,7 @@
         {
           "if": "inscription=",
           "then": {
-            "en": "This bench does <span class='subtle'>(probably)</span> not have an inscription",
+            "en": "This bench <span class='subtle'>(probably)</span> does not not have an inscription",
             "nl": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie",
             "de": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift",
             "fr": "Ce banc n'a <span class='subtle'>(probablement)</span> pas d'inscription",

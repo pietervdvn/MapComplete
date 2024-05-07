@@ -38,6 +38,7 @@ class OsmPoiDatabase {
         this._client = new Client(connectionString)
     }
 
+
     async getCount(
         layer: string,
         bbox: [[number, number], [number, number]] = undefined

@@ -173,6 +173,7 @@
     "marked": "^12.0.2",
     "monaco-editor": "^0.46.0",
     "name-suggestion-index": "^6.0.20240422",
+    "npm": "^10.7.0",
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.2.0",
     "osmtogeojson": "^3.0.0-beta.5",

@@ -127,7 +127,9 @@ export abstract class OsmObject {
         return result
     }
 
-    // The centerpoint of the feature, as [lat, lon]
+    /** The centerpoint of the feature, as [lat, lon]
+     *
+     */
     public abstract centerpoint(): [number, number]
 
     public abstract asGeoJson(): any

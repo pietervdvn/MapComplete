@@ -11,7 +11,7 @@
   export let configs: ConfigMeta[]
   export let title: string | undefined = undefined
 
-  export let path: (string | number)[] = []
+  export let path: readonly (string | number)[] = []
 
   let expertMode = state.expertMode
   let configsNoHidden = configs.filter((schema) => schema.hints?.group !== "hidden")
@@ -21,9 +21,9 @@
 </script>
 
 {#if configs === undefined}
-  Bug: 'Region' received 'undefined'
+  Bug: 'Region' received 'undefined' at {path.join(".")}
 {:else if configs.length === 0}
-  Bug: Region received empty list as configuration
+  Bug: Region received empty list as configuration at {path.join(".")}
 {:else if title}
   <div class="flex w-full flex-col">
     <h3>{title}</h3>

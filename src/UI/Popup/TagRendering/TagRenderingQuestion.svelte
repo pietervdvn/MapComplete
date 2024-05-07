@@ -36,6 +36,7 @@
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
+
   export let selectedElement: Feature
   export let state: SpecialVisualizationState
   export let layer: LayerConfig | undefined
@@ -71,6 +72,8 @@
   /**
    * Prepares and fills the checkedMappings
    */
+  console.log("Initing ", config.id)
+
   function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void {
     mappings = confg.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
@@ -139,11 +142,33 @@
     feedback.setData(undefined)
   }
 
-  $: {
-    // Even though 'config' is not declared as a store, Svelte uses it as one to update the component
-    // We want to (re)-initialize whenever the 'tags' or 'config' change - but not when 'checkedConfig' changes
-    initialize($tags, config)
-  }
+  let usedKeys: string[] = config.usedTags().flatMap((t) => t.usedKeys())
+  /**
+   * The 'minimalTags' is a subset of the tags of the feature, only containing the values relevant for this object.
+   * The main goal is to be stable and only 'ping' when an actual change is relevant
+   */
+  let minimalTags = new UIEventSource<Record<string, string>>(undefined)
+  tags.addCallbackAndRunD((tags) => {
+    const previousMinimal = minimalTags.data
+    const newMinimal: Record<string, string> = {}
+    let somethingChanged = previousMinimal === undefined
+    for (const key of usedKeys) {
+      const newValue = tags[key]
+      somethingChanged ||= previousMinimal?.[key] !== newValue
+      if (newValue !== undefined && newValue !== null) {
+        newMinimal[key] = newValue
+      }
+    }
+    if (somethingChanged) {
+      console.log("Updating minimal tags to", newMinimal, "of", config.id)
+      minimalTags.setData(newMinimal)
+    }
+  })
+
+  minimalTags.addCallbackAndRunD((tgs) => {
+    initialize(tgs, config)
+  })
+
   onDestroy(
     freeformInput.subscribe((freeformValue) => {
       if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
@@ -180,6 +205,19 @@
           checkedMappings,
           tags.data
         )
+        if (state.featureSwitches.featureSwitchIsDebugging.data) {
+          console.log(
+            "Constructing change spec from",
+            {
+              freeform: $freeformInput,
+              selectedMapping,
+              checkedMappings,
+              currentTags: tags.data,
+            },
+            " --> ",
+            selectedTags
+          )
+        }
       } catch (e) {
         console.error("Could not calculate changeSpecification:", e)
         selectedTags = undefined
@@ -210,7 +248,7 @@
 
     if (layer === undefined || (layer?.source === null && layer.id !== "favourite")) {
       /**
-       * This is a special, priviliged layer.
+       * This is a special, privileged layer.
        * We simply apply the tags onto the records
        */
       const kv = selectedTags.asChange(tags.data)

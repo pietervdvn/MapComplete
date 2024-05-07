@@ -79,7 +79,7 @@
     console.log("Applying questions to ask")
     const qta = questionsToAsk.data
     firstQuestion.setData(undefined)
-    allQuestionsToAsk.setData([])
+    //allQuestionsToAsk.setData([])
     await Utils.awaitAnimationFrame()
     firstQuestion.setData(qta[0])
     allQuestionsToAsk.setData(qta)

@@ -998,6 +998,16 @@
           "weeks",
           "months"
         ]
+      },
+      "charge": {
+        "quantity": "duration",
+        "inverted": true,
+        "denominations": [
+          "days",
+          "weeks",
+          "months",
+          "years"
+        ]
       }
     }
   ]

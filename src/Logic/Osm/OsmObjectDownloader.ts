@@ -62,7 +62,7 @@ export default class OsmObjectDownloader {
         if (idN < 0) {
             obj = this.constructObject(<"node" | "way" | "relation">type, idN)
         } else {
-            obj = await this.RawDownloadObjectAsync(type, idN, maxCacheAgeInSecs)
+            obj = await OsmObjectDownloader.RawDownloadObjectAsync(type, idN, this.backend, maxCacheAgeInSecs)
         }
         if (obj === "deleted") {
             return obj
@@ -211,13 +211,22 @@ export default class OsmObjectDownloader {
         }
     }
 
-    private async RawDownloadObjectAsync(
+    /**
+     * Only to be used in exceptional cases
+     * @param type
+     * @param idN
+     * @param backend
+     * @param maxCacheAgeInSecs
+     * @constructor
+     */
+    public static async RawDownloadObjectAsync(
         type: string,
         idN: number,
+        backend: string,
         maxCacheAgeInSecs?: number
     ): Promise<OsmObject | "deleted"> {
         const full = type !== "node" ? "/full" : ""
-        const url = `${this.backend}api/0.6/${type}/${idN}${full}`
+        const url = `${backend}api/0.6/${type}/${idN}${full}`
         const rawData = await Utils.downloadJsonCachedAdvanced(
             url,
             (maxCacheAgeInSecs ?? 10) * 1000
@@ -227,7 +236,7 @@ export default class OsmObjectDownloader {
         }
         // A full query might contain more then just the requested object (e.g. nodes that are part of a way, where we only want the way)
         const parsed = OsmObject.ParseObjects(rawData["content"].elements)
-        // Lets fetch the object we need
+        // Let us fetch the object we need
         for (const osmObject of parsed) {
             if (osmObject.type !== type) {
                 continue

@@ -13,7 +13,6 @@ This theme contains the following layers:
 
 
 
-  - [walls_and_buildings](../Layers/walls_and_buildings.md)
   - [indoors](../Layers/indoors.md)
   - [stairs](../Layers/stairs.md)
   - [pedestrian_path](../Layers/pedestrian_path.md)
@@ -36,6 +35,7 @@ This theme contains the following layers:
   - [bench](../Layers/bench.md)
   - [drinking_water](../Layers/drinking_water.md)
   - [departures_board](../Layers/departures_board.md)
+  - [walls_and_buildings](../Layers/walls_and_buildings.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
