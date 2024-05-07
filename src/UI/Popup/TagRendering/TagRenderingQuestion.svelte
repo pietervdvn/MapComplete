@@ -223,12 +223,6 @@
         selectedTags = undefined
       }
     }
-  }
-
-  function onSave(_ = undefined) {
-    if (selectedTags === undefined) {
-      return
-    }
 
     if (extraTags.data) {
       // Map the extraTags into an array of Tag objects
@@ -244,6 +238,12 @@
       } else {
         console.error("selectedTags is not of type Tag or And")
       }
+    }
+  }
+
+  function onSave(_ = undefined) {
+    if (selectedTags === undefined) {
+      return
     }
 
     if (layer === undefined || (layer?.source === null && layer.id !== "favourite")) {
