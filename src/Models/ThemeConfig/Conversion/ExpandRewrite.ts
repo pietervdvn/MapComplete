@@ -258,11 +258,11 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
             }
         }
 
-        let renderings = Array.isArray(rewrite.renderings)
+        const renderings = Array.isArray(rewrite.renderings)
             ? rewrite.renderings
             : [rewrite.renderings]
         for (let i = 0; i < keysToRewrite.into.length; i++) {
-            let ts: T[] = <T[]>Utils.Clone(renderings)
+            const ts: T[] = <T[]>Utils.Clone(renderings)
             for (const tx of ts) {
                 let t = <T>tx
                 const sourceKeysToIgnore: string[] = []
