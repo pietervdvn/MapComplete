@@ -562,14 +562,16 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
 }
 
 export class DetectMappingsShadowedByCondition extends DesugaringStep<TagRenderingConfigJson> {
+    private readonly _forceError: boolean
 
-    constructor() {
+    constructor(forceError: boolean = false) {
         super("Checks that, if the tagrendering has a condition, that a mapping is not contradictory to it, i.e. that there are no dead mappings", [], "DetectMappingsShadowedByCondition")
+        this._forceError = forceError
     }
 
     /**
      *
-     * const validator = new DetectMappingsShadowedByCondition()
+     * const validator = new DetectMappingsShadowedByCondition(true)
      * const ctx = ConversionContext.construct([],["test"])
      * validator.convert({
      *     condition: "count>0",
@@ -602,7 +604,13 @@ export class DetectMappingsShadowedByCondition extends DesugaringStep<TagRenderi
             const tagIf = TagUtils.Tag(mapping.if, context.path.join("."))
             const optimized = new And([tagIf, condition]).optimize()
             if(optimized === false){
-                context.enters("mappings",i).warn("Detected a conflicting mapping and condition. The mapping requires tags " + tagIf.asHumanString()+", yet this can never happen because the set condition requires "+condition.asHumanString())
+                const msg = ("Detected a conflicting mapping and condition. The mapping requires tags " + tagIf.asHumanString() + ", yet this can never happen because the set condition requires " + condition.asHumanString())
+                const ctx = context.enters("mappings", i)
+                if (this._forceError) {
+                    ctx.err(msg)
+                } else {
+                    ctx.warn(msg)
+                }
             }
         }
 
