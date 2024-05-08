@@ -16,6 +16,7 @@ export class LastClickFeatureSource {
     private i: number = 0
     private readonly hasPresets: boolean
     private readonly hasNoteLayer: boolean
+    public static readonly newPointElementId=  "new_point_dialog"
 
     constructor(layout: LayoutConfig) {
         this.hasNoteLayer = layout.hasNoteLayer()
@@ -46,7 +47,7 @@ export class LastClickFeatureSource {
 
     public createFeature(lon: number, lat: number): Feature<Point, OsmTags> {
         const properties: OsmTags = {
-            id: "new_point_dialog",
+            id: LastClickFeatureSource.newPointElementId,
             has_note_layer: this.hasNoteLayer ? "yes" : "no",
             has_presets: this.hasPresets ? "yes" : "no",
             renderings: this.renderings.join(""),
