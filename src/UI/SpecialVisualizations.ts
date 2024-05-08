@@ -1814,7 +1814,6 @@ console.log(">>> ",helpTexts.join("\n\n"))
                                             ) ?? features[0]
                                         const properties = feature.properties
                                         properties["ref:velopark"] = url
-                                        delete properties["name"]
                                         console.log("Got properties from velopark:", properties)
                                         return properties
                                     } catch (e) {
