@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.42.4",
+  "version": "0.42.5",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -175,7 +175,7 @@
     "name-suggestion-index": "^6.0.20240422",
     "npm": "^10.7.0",
     "opening_hours": "^3.6.0",
-    "osm-auth": "^2.2.0",
+    "osm-auth": "^2.5.0",
     "osmtogeojson": "^3.0.0-beta.5",
     "panzoom": "^9.4.3",
     "papaparse": "^5.3.1",

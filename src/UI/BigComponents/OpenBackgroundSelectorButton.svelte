@@ -4,7 +4,6 @@
    * Even though the component is very small, it gets its own class as it is often reused
    */
   import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Translations from "../i18n/Translations"
   import MapControlButton from "../Base/MapControlButton.svelte"
   import Tr from "../Base/Tr.svelte"
@@ -16,11 +15,13 @@
   export let state: ThemeViewState
   export let map: Store<MlMap> = undefined
   export let hideTooltip = false
+  export let htmlElem : UIEventSource<HTMLElement> = undefined
 </script>
 
 <MapControlButton
   arialabel={Translations.t.general.labels.background}
   on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
+  {htmlElem}
 >
   <StyleLoadingIndicator map={map ?? state.map} rasterLayer={state.mapProperties.rasterLayer}>
     <Square3Stack3dIcon class="h-6 w-6" />

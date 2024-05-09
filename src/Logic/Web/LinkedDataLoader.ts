@@ -643,9 +643,7 @@ export default class LinkedDataLoader {
             allPartialResults.push(r)
         }
 
-        const results = this.mergeResults(...allPartialResults)
-
-        return results
+        return this.mergeResults(...allPartialResults)
     }
 
     private static veloparkCache : Record<string, Feature[]> = {}
@@ -655,9 +653,10 @@ export default class LinkedDataLoader {
      * The id will be saved as `ref:velopark`
      * @param url
      */
-    public static async fetchVeloparkEntry(url: string): Promise<Feature[]> {
-        if(this.veloparkCache[url]){
-            return this.veloparkCache[url]
+    public static async fetchVeloparkEntry(url: string, includeExtras: boolean = false): Promise<Feature[]> {
+        const cacheKey = includeExtras+url
+        if(this.veloparkCache[cacheKey]){
+            return this.veloparkCache[cacheKey]
         }
         const withProxyUrl = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
         const optionalPaths: Record<string, string | Record<string, string>> = {
@@ -673,6 +672,12 @@ export default class LinkedDataLoader {
                 "schema:telephone": "phone",
             },
             "schema:dateModified": "_last_edit_timestamp",
+        }
+        if(includeExtras){
+            optionalPaths["schema:address"] = {
+                "schema:streetAddress":"addr"
+            }
+            optionalPaths["schema:description"] = "description"
         }
 
         const graphOptionalPaths = {
@@ -692,7 +697,7 @@ export default class LinkedDataLoader {
             "schema:priceSpecification": {
                 "mv:freeOfCharge": "fee",
                 "schema:price": "charge",
-            },
+            }
         }
 
         const extra = [
@@ -714,7 +719,7 @@ export default class LinkedDataLoader {
             p["ref:velopark"] = [section]
             patched.push(LinkedDataLoader.asGeojson(p))
         }
-        this.veloparkCache[url] = patched
+        this.veloparkCache[cacheKey] = patched
         return patched
     }
 }

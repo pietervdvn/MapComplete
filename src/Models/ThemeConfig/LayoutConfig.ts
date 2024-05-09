@@ -63,6 +63,8 @@ export default class LayoutConfig implements LayoutInformation {
     public readonly enableExportButton: boolean
     public readonly enablePdfDownload: boolean
     public readonly enableTerrain: boolean
+    public readonly enableMorePrivacy: boolean
+
 
     public readonly customCss?: string
 
@@ -204,6 +206,7 @@ export default class LayoutConfig implements LayoutInformation {
         this.overpassTimeout = json.overpassTimeout ?? 30
         this.overpassMaxZoom = json.overpassMaxZoom ?? 16
         this.osmApiTileSize = json.osmApiTileSize ?? this.overpassMaxZoom + 1
+        this.enableMorePrivacy = json.enableMorePrivacy || json.layers.some(l => (<LayerConfigJson> l).enableMorePrivacy)
 
         this.layersDict = new Map<string, LayerConfig>()
         for (const layer of this.layers) {

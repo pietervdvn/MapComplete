@@ -67,6 +67,7 @@ export default class LayerConfig extends WithContextLoader {
 
     public readonly _needsFullNodeDatabase: boolean
     public readonly popupInFloatover: boolean | string
+    public readonly enableMorePrivacy: boolean
 
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
         context = context + "." + json.id
@@ -149,6 +150,7 @@ export default class LayerConfig extends WithContextLoader {
         this.shownByDefault = json.shownByDefault ?? true
         this.doCount = json.isCounted ?? this.shownByDefault ?? true
         this.forceLoad = json.forceLoad ?? false
+        this.enableMorePrivacy = json.enableMorePrivacy ?? false
         if (json.presets === null) json.presets = undefined
         if (json.presets !== undefined && json.presets?.map === undefined) {
             throw "Presets should be a list of items (at " + context + ")"

@@ -169,7 +169,6 @@
         "ca": "Aquesta botiga és un col·laborador postal?",
         "cs": "Jedná se o partnerskou poštu?"
       },
-      "condition": "post_office=post_partner",
       "mappings": [
         {
           "if": "post_office=post_partner",

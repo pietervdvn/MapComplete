@@ -265,6 +265,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     featurePropertiesStore: this.featureProperties,
                     osmConnection: this.osmConnection,
                     historicalUserLocations: this.geolocation.historicalUserLocations,
+                    featureSwitches: this.featureSwitches
                 },
                 layout?.isLeftRightSensitive() ?? false
             )

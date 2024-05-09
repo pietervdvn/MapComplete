@@ -48,6 +48,14 @@
       ],
       "tagRenderings": [
         {
+          "id": "login",
+          "render": {
+            "special": {
+              "type": "login_button"
+            }
+          }
+        },
+        {
           "id": "velopark-link",
           "render": {
             "special": {
@@ -61,14 +69,6 @@
             "before": {
               "en": "This is data from <b>Velopark</b>. ",
               "nl": "Dit datapunt komt van <b>Velopark</b>"
-            }
-          }
-        },
-        {
-          "id": "login",
-          "render": {
-            "special": {
-              "type": "login_button"
             }
           }
         },
@@ -87,16 +87,32 @@
         {
           "id": "closest_parkings",
           "render": {
-            "en": "<h3>Nearby parkings</h3>There are {_nearby_bicycle_parkings:count} bicycle parkings within 25m known in OpenStreetMap.",
-            "nl": "<h3>Parkings in de buurt</h3>Er zijn {_nearby_bicycle_parkings:count} fietsparkings gekend binnen 25m in OpenStreetMap."
-          }
+            "en": "<h3>Nearby parkings</h3>There are {_nearby_bicycle_parkings:count} bicycle parkings within {_distance_cutoff}m known in OpenStreetMap.",
+            "nl": "<h3>Parkings in de buurt</h3>Er zijn {_nearby_bicycle_parkings:count} fietsparkings gekend binnen {_distance_cutoff}m in OpenStreetMap."
+          },
+          "condition": "_nearby_bicycle_parkings:count>0",
+          "mappings": [
+            {
+              "if": "_nearby_bicycle_parkings:count=0",
+              "then": {
+                "en": "<h3>No nearby parkings</h3>There are no bicycle parkings in OpenStreetMap known within {_distance_cutoff}m",
+                "nl": "<h3>Geen fietsenstallingen in de buurt</h3>Er zijn geen fietsenstallingen gekend op OpenStreetMap op minder dan {_distance_cutoff}m"
+              }
+            }
+          ]
         },
         {
           "id": "list_nearby_bike_parkings",
+          "condition": {
+            "and": [
+              "mr_taskStatus=Created",
+              "_nearby_bicycle_parkings:count>0"
+            ]
+          },
           "render": {
             "before": {
-              "en": "Choose below which bicycle parking you want to link. This will <b>not</b> apply the attributes.",
-              "nl": "Kies hieronder welke fietsenstalling je wilt linken. Dit zal de attributen <b>niet</b> kopieren."
+              "en": "Choose below which bicycle parking you want to link.",
+              "nl": "Kies hieronder welke fietsenstalling je wilt linken."
             },
             "special": {
               "type": "multi",
@@ -108,6 +124,7 @@
         },
         {
           "id": "title_create_new",
+          "condition": "mr_taskStatus=Created",
           "render": {
             "en": "<h3>Add a parking to OpenStreetMap</h3>Use this if the bicycle parking is missing in OpenStreetMap (there is no blue or green pin)",
             "nl": "<h3>Parking toevoegen aan OpenStreetMap</h3>Gebruik dit als er nog geen blauwe of groene parkeerplaats-pin staat op de juiste plaats."
@@ -115,14 +132,15 @@
         },
         {
           "id": "import_point",
+          "condition": "mr_taskStatus=Created",
           "render": {
             "special": {
               "type": "import_button",
               "targetLayer": "bike_parking_with_velopark_ref bike_parking",
               "tags": "amenity=bicycle_parking;ref:velopark=$ref:velopark",
               "text": {
-                "en": "Create a new bicycle parking in OSM. This parking will have the link, but not all attributes",
-                "nl": "Maak een nieuwe parking aan in OSM. Deze parking zal gelinkt zijn met Velopark, maar niet de attributen bevatten"
+                "en": "Create a new bicycle parking in OSM. This parking will have the link, you'll be able to copy the attributes in the next step",
+                "nl": "Maak een nieuwe parking aan in OSM. Deze parking zal gelinkt zijn met Velopark en je kan in de volgende stap de attributen overzetten"
               },
               "maproulette_id": "mr_taskId"
             }
@@ -130,6 +148,7 @@
         },
         {
           "id": "title_manually_copy",
+          "condition": "mr_taskStatus=Created",
           "render": {
             "en": "<h3>Manually link</h3>Does the bicycle parking exist in OpenStreetMap but is it further then 25m away? Then: <ol><li>Copy the following URL: <span class='literal-code'>{ref:velopark}</span></li><li>Select the correct bicycle parking on the map</li><li>Paste the URL into the question <i>What is the URL of the data path in Velopark?</i></li><li>Mark this item as handled with the button below:</li></ul>",
             "nl": "<h3>Manueel linken</h3>Bestaat de fietsenstalling in OpenStreetMap maar is staat deze meer dan 25m verder?In dit geval: <ol><li>Kopieer de volgende URL: <span class='literal-code'>{ref:velopark}</span></li><li>Selecteer de juiste fietsenstalling op de kaart</li><li>Plak de URL in de vraag <i>Wat is de data-url van deze fietsenstalling in Velopark.be?</i></li><li>Open deze fietsenstalling opnieuw en markeer deze als gelinkt met onderstaande knop:</li></ul>"
@@ -137,6 +156,7 @@
         },
         {
           "id": "close_mr",
+          "condition": "mr_taskStatus=Created",
           "render": {
             "special": {
               "type": "maproulette_set_status",
@@ -150,6 +170,7 @@
         },
         {
           "id": "title_error",
+          "condition": "mr_taskStatus=Created",
           "render": {
             "en": "<h3>Closing without importing or linking</h3>",
             "nl": "<h3>Afsluiten zonder importeren of linken</h3>"
@@ -157,6 +178,7 @@
         },
         {
           "id": "close_mr_incorrect",
+          "condition": "mr_taskStatus=Created",
           "render": {
             "special": {
               "type": "maproulette_set_status",
@@ -190,7 +212,12 @@
             }
           }
         },
-        "{nearby_images(open,readonly)}"
+        {
+          "id": "nearby_images",
+          "render": {
+            "*": "{nearby_images(open,readonly)}"
+          }
+        }
       ],
       "lineRendering": [],
       "filter": [
@@ -221,8 +248,9 @@
         }
       ],
       "calculatedTags": [
+        "_distance_cutoff=50",
         "mr_velopark_id=feat.properties['ref:velopark']?.split('/')?.at(-1)",
-        "_nearby_bicycle_parkings=closestn(feat)(['bike_parking','bike_parking_with_velopark_ref'], 100, undefined, 25)",
+        "_nearby_bicycle_parkings=closestn(feat)(['bike_parking','bike_parking_with_velopark_ref'], 100, undefined, get(feat)('_distance_cutoff'))",
         "_nearby_bicycle_parkings:count=get(feat)('_nearby_bicycle_parkings').length",
         "_nearby_bicycle_parkings:props=get(feat)('_nearby_bicycle_parkings').map(f => ({_distance: Math.round(f.distance), _ref: feat.properties['ref:velopark'], _mr_id: feat.properties.id, '_velopark:id': (f.feat.properties['_velopark:id'] ?? 'unlinked') /*Explicit copy to trigger lazy loading*/, ...f.feat.properties}))"
       ],
@@ -262,7 +290,9 @@
       ],
       "hideTagRenderingsWithLabels": [
         "images",
-        "leftover-questions"
+        "leftover-questions",
+        "qr_code",
+        "favourite_status"
       ],
       "override": {
         "id": "bike_parking_with_velopark_ref",
@@ -346,7 +376,9 @@
       ],
       "hideTagRenderingsWithLabels": [
         "images",
-        "leftover-questions"
+        "leftover-questions",
+        "qr_code",
+        "favourite_status"
       ],
       "override": {
         "doCount": false,
@@ -435,6 +467,15 @@
             "useProxy": "no",
             "host": "https://data.velopark.be"
           }
+        }
+      }
+    ],
+    "tagRenderings+": [
+      {
+        "id": "no_save_needed",
+        "render": {
+          "en": "Changes are automatically saved. You can simply close this popup with the cross at the upper-right",
+          "nl": "Wijzigingen worden automatisch opgeslaan. Je kan deze popup gewoon sluiten met het kruisje rechtsbovenaan"
         }
       }
     ]
