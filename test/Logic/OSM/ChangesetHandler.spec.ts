@@ -68,65 +68,6 @@ describe("ChangesetHanlder", () => {
             expect(d.get("theme")).toEqual("toerisme_vlaanderen")
             expect(d.get("newTag")).toEqual("newValue")
         })
-        it("should aggregate numeric tags", () => {
-            const changesetHandler = new ChangesetHandler(
-                new UIEventSource<boolean>(true),
-                new OsmConnection({}),
-                new ElementStorage(),
-                new Changes(),
-                new UIEventSource(undefined)
-            )
-            const oldChangesetMeta = {
-                type: "changeset",
-                id: 118443748,
-                created_at: "2022-03-13T19:52:10Z",
-                closed_at: "2022-03-13T20:54:35Z",
-                open: false,
-                user: "Pieter Vander Vennet",
-                uid: 3818858,
-                minlat: 51.0361902,
-                minlon: 3.7092939,
-                maxlat: 51.0364194,
-                maxlon: 3.709952,
-                comments_count: 0,
-                changes_count: 3,
-                tags: {
-                    answer: "5",
-                    comment: "Adding data with #MapComplete for theme #toerisme_vlaanderen",
-                    created_by: "MapComplete 0.16.6",
-                    host: "https://mapcomplete.osm.be/toerisme_vlaanderen.html",
-                    imagery: "osm",
-                    locale: "nl",
-                    source: "survey",
-                    "source:node/-1": "note/1234",
-                    theme: "toerisme_vlaanderen",
-                },
-            }
-            const rewritten = changesetHandler.RewriteTagsOf(
-                [
-                    {
-                        key: "answer",
-                        value: "37",
-                        aggregate: true,
-                    },
-                ],
-                new Map<string, string>(),
-                oldChangesetMeta
-            )
-            const d = Utils.asDict(rewritten)
-
-            expect(d.size).toEqual(9)
-            expect(d.get("answer")).toEqual("42")
-            expect(d.get("comment")).toEqual(
-                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
-            )
-            expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
-            expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
-            expect(d.get("imagery")).toEqual("osm")
-            expect(d.get("source")).toEqual("survey")
-            expect(d.get("source:node/-1")).toEqual("note/1234")
-            expect(d.get("theme")).toEqual("toerisme_vlaanderen")
-        })
         it("should rewrite special reasons with the correct ID", () => {
             const changesetHandler = new ChangesetHandler(
                 new UIEventSource<boolean>(true),

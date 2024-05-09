@@ -139,7 +139,7 @@ export class OsmConnection {
 
             options.oauth_token.setData(undefined)
         }
-        if (this.auth.authenticated() && options.attemptLogin !== false) {
+        if (!Utils.runningFromConsole && this.auth.authenticated() && options.attemptLogin !== false) {
             this.AttemptLogin() // Also updates the user badge
         } else {
             console.log("Not authenticated")
@@ -195,6 +195,9 @@ export class OsmConnection {
     }
 
     public AttemptLogin() {
+        if(Utils.runningFromConsole){
+            return
+        }
         this.UpdateCapabilities()
         this.loadingStatus.setData("loading")
         if (this.fakeUser) {
