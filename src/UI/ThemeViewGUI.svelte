@@ -661,7 +661,7 @@
         <Tr t={Translations.t.privacy.title} />
       </h2>
       <div class="overflow-auto p-4">
-        <PrivacyPolicy />
+        <PrivacyPolicy {state}/>
       </div>
     </div>
   </FloatOver>

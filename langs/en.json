@@ -678,11 +678,20 @@
         "tryAgain": "Select a different species"
     },
     "privacy": {
-        "editing": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data: <ul><li>The changes you made</li><li>Your username</li><li>When this change is made</li><li>The theme you used while making the change</li><li>The language of the user interface</li><li>An indication of how close you were to changed objects. Other mappers can use this information to determine if a change was made based on survey or on remote research</li></ul> Please refer to <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>the privacy policy on OpenStreetMap.org</a> for detailed information. We'd like to remind you that you can use a fictional name when signing up.",
+        "editingIntro": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data:",
+        "editingOutro": "Please refer to <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>the privacy policy on OpenStreetMap.org</a> for detailed information. We'd like to remind you that you can use a fictional name when signing up.",
         "editingTitle": "When making changes",
         "geodata": "When MapComplete gets your geolocation, your geolocation and previously visited locations stay on your device. Your location data is never automatically sent to anywhere else - unless some functionality clearly states otherwise.",
         "geodataTitle": "Your geolocation",
         "intro": "Privacy is important - for both the individual and for society. MapComplete tries to respect your privacy as much as possible - up to the point no annoying cookie banner is needed. However, we still would like to inform you which information is gathered and shared, under which circumstances and why these trade-offs are made.",
+        "items": {
+            "changesYouMake": "The changes you made",
+            "username": "Your username",
+            "date": "When this change is made",
+            "theme": "The theme you used while making the change",
+            "language": "The language of the user interface",
+            "distanceIndicator": "An indication of how close you were to changed objects. Other mappers can use this information to determine if a change was made based on survey or on remote research"
+        },
         "miscCookies": "MapComplete integrates with various other services, especially to load images of features. Images are hosted on various third-party servers, which might set cookies on their own.",
         "miscCookiesTitle": "Other cookies",
         "surveillance": "As you are reading the privacy policy, you probably care about privacy - so do we! We even made <a href='https://mapcomplete.org/surveillance'>a theme showing surveillance cameras.</a> Feel free to map them all!",
